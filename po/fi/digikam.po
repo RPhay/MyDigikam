@@ -11,7 +11,7 @@
 # Mikael Lammentausta <mikael.lammentausta+kdetrans@gmail.com>, 2006, 2007, 2008, 2009, 2010.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2011, 2012, 2013, 2014.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2013.
-# SPDX-FileCopyrightText: 2014, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2014, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 # Mikael Lammentausta <mikael.lammentausta+kdetrans@gmail.com>, 2008, 2009.
 # Jorma Karvonen <karvonen.jorma@gmail.com>, 2012.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2014.
@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:42+0000\n"
-"PO-Revision-Date: 2025-10-22 17:39+0300\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
+"PO-Revision-Date: 2026-02-09 11:56+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -861,25 +861,22 @@ msgstr ""
 "kuvista kasvojen alueen. Voi myös haluttaessa poistaa kuvista luokitukset."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
-#, fuzzy, kde-format
-#| msgid "Assign Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "A&ssign Tag"
-msgstr "Määritä tunniste"
+msgstr "&Yhdistä luokitukseen"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:140
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "R&emove Tag"
-msgstr "Poista tunniste"
+msgstr "P&oista luokitus"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:177
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Remove all Tags"
-msgstr "Poista tunniste"
+msgstr "Poista kaikki luokitukset"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:186
 #, fuzzy, kde-format
@@ -889,32 +886,28 @@ msgid "Assign Labe&ls"
 msgstr "Merkkien asetus"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:251
-#, fuzzy, kde-format
-#| msgid "Album"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Album"
 msgstr "Albumi"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:252
-#, fuzzy, kde-format
-#| msgid "Date"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Date"
-msgstr "Kalenteri"
+msgstr "Päiväys"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:260
-#, fuzzy, kde-format
-#| msgid "Tag"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Tag"
-msgstr "Tunniste"
+msgstr "Luokitus"
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:303
-#, fuzzy, kde-format
-#| msgid "Go To"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Go To"
-msgstr "Vaihda näkymä"
+msgstr "Siirry"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:27
 #, kde-format
@@ -963,8 +956,7 @@ msgid "Batch Queue Manager"
 msgstr "Eräajohallinta"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:140
-#, fuzzy, kde-format
-#| msgid "Add to Existing Queue"
+#, kde-format
 msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "Lisää olemassa olevaan jonoon"
@@ -986,10 +978,9 @@ msgstr[1] "%1 kohdetta"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:297
 #: core/app/items/utils/itemcategorydrawer.cpp:306
-#, fuzzy, kde-format
-#| msgid "invalid name"
+#, kde-format
 msgid "Invalid date"
-msgstr "virheellinen nimi"
+msgstr "Virheellinen päiväys"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:337
 #, kde-format
@@ -1045,11 +1036,10 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: core/app/items/utils/itemviewutilities.cpp:203
-#, fuzzy, kde-format
-#| msgid "Select target..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
-msgstr "Valitse kohde…"
+msgstr "Valitse kohdekansio"
 
 #: core/app/items/utils/itemviewutilities.cpp:229
 #, kde-format
@@ -1084,7 +1074,7 @@ msgstr "Nimi:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:532
+#: core/app/views/stack/welcomepageview_credits.cpp:51
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1240,7 +1230,7 @@ msgid "White Balance:"
 msgstr "Valkotasapaino:"
 
 #: core/app/items/utils/tooltipfiller.cpp:325
-#: core/utilities/searchwindow/searchgroup.cpp:113
+#: core/utilities/searchwindow/searchgroup.cpp:115
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "Ääni/video-ominaisuudet"
@@ -1418,16 +1408,14 @@ msgid "Checking ICC repository..."
 msgstr "Tarkistetaan ICC-kantaa…"
 
 #: core/app/main/digikamapp.cpp:201
-#, fuzzy, kde-format
-#| msgid "Reading database..."
+#, kde-format
 msgid "Clean up Database..."
-msgstr "Luetaan tietokantaa…"
+msgstr "Siivoa tietokanta…"
 
 #: core/app/main/digikamapp.cpp:223
-#, fuzzy, kde-format
-#| msgid "Loading albums %v%"
+#, kde-format
 msgid "Loading albums..."
-msgstr "Luetaan albumeja %v %"
+msgstr "Ladataan albumeja…"
 
 #: core/app/main/digikamapp.cpp:401
 #, kde-format
@@ -1827,7 +1815,7 @@ msgstr "Poista"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Assign Tag"
-msgstr "Kytke luokitus"
+msgstr "Yhdistä luokitukseen"
 
 #: core/app/main/digikamapp_setup.cpp:350
 #, kde-format
@@ -1993,11 +1981,10 @@ msgid "Recognize Faces"
 msgstr "Tunnista kasvot"
 
 #: core/app/main/digikamapp_setup.cpp:501
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: setup"
 msgid "Remove all Faces"
-msgstr "Poista tunniste"
+msgstr "Poista kaikki kasvot"
 
 #: core/app/main/digikamapp_setup.cpp:508
 #, kde-format
@@ -2470,7 +2457,7 @@ msgstr "Muokkaa huomautuksia"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Show Assigned Tags"
-msgstr "Näytä kytketyt luokitukset"
+msgstr "Näytä yhdistetyt luokitukset"
 
 #: core/app/main/digikamapp_setup.cpp:1044
 #, kde-format
@@ -3432,9 +3419,7 @@ msgstr "Työkalut"
 
 #: core/app/views/stack/trashview.cpp:112
 #: core/libs/tags/manager/tagsmanager_p.cpp:270
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Help"
+#, kde-format
 msgid "Help"
 msgstr "Ohje"
 
@@ -3523,15 +3508,13 @@ msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Haluatko varmasti poistaa KAIKKI kohteet pysyvästi?"
 
 #: core/app/views/stack/trashview.cpp:464
-#, fuzzy, kde-format
-#| msgid "Selection"
+#, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Valinta"
 
 #: core/app/views/stack/trashview.cpp:466
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Poista"
@@ -3541,29 +3524,73 @@ msgstr "Poista"
 msgid "%1/%2 items selected"
 msgstr "%1/%2 kohdetta valittu"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:174
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Tervetuloa käyttämään digiKamia (versio %1)."
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid "New Features"
 msgstr "Uusia ominaisuuksia"
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:212
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Tietoa"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Kiitokset taustakuvasta"
 
-#: core/app/views/stack/welcomepageview.cpp:381
+#: core/app/views/stack/welcomepageview_about.cpp:27
+#, kde-format
+msgid ""
+"<h3>digiKam is an advanced open-source digital photo management application "
+"that runs on Linux, Windows, and MacOS.</h3><h3>The application provides A "
+"comprehensive set of tools for importing, managing, editing, and sharing "
+"media taken with your camera. You can use digiKam’s import capabilities to "
+"easily transfer photos, raw files, and videos directly from your camera and "
+"external storage devices (SD cards, USB disks, etc.). The application allows "
+"you to configure import settings and rules that process and organize "
+"imported items on-the-fly.</h3><h3>To resume, with digiKam you can import, "
+"organize, enhance, search, export your collections of photo and video, and "
+"much more...</h3><h3>Currently, you are in the Album view mode of digiKam. "
+"Albums are the places where your files are stored, and are identical to the "
+"folders on your hard disk.</h3><h3>digiKam has many powerful features which "
+"are described in the <a href=\"https://docs.digikam.org/en/index.html"
+"\">documentation</a></h3><h3>The <a href=\"https://www.digikam.org\">digiKam "
+"homepage</a> provides information about new versions of digiKam.</h3><h3>To "
+"contact the digiKam users community or to support the development team, "
+"follow the links provided in the application Help menu entry. Thanks to "
+"support and use the digiKam project.</h3>"
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_credits.cpp:49
+#, kde-format
+msgid "Author:"
+msgstr "Tekijä:"
+
+#: core/app/views/stack/welcomepageview_credits.cpp:50
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
+#, kde-format
+msgid "Location:"
+msgstr "Sijainti:"
+
+#: core/app/views/stack/welcomepageview_credits.cpp:52
+#, kde-format
+msgid "Camera:"
+msgstr "Kamera:"
+
+#: core/app/views/stack/welcomepageview_credits.cpp:53
+#, kde-format
+msgid "Lens:"
+msgstr "Linssi:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:26
 #, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
@@ -3571,7 +3598,7 @@ msgid ""
 "%1\">350 user-reports</a> closed on bugzilla."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:382
+#: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
@@ -3579,61 +3606,61 @@ msgid ""
 "only)."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:383
+#: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:384
+#: core/app/views/stack/welcomepageview_features.cpp:29
 #, kde-format
 msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:385
+#: core/app/views/stack/welcomepageview_features.cpp:30
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:386
+#: core/app/views/stack/welcomepageview_features.cpp:31
 #, kde-format
 msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:387
+#: core/app/views/stack/welcomepageview_features.cpp:32
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:388
+#: core/app/views/stack/welcomepageview_features.cpp:33
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:389
+#: core/app/views/stack/welcomepageview_features.cpp:34
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:390
+#: core/app/views/stack/welcomepageview_features.cpp:35
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:391
+#: core/app/views/stack/welcomepageview_features.cpp:36
 #, kde-format
 msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:392
+#: core/app/views/stack/welcomepageview_features.cpp:37
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to use the background theme color in the image editor "
@@ -3643,7 +3670,7 @@ msgid ""
 "black in case of images transparency usage."
 msgstr "Käytä kuvamuokkaimessa teeman taustaväriä valitsemalla tämä asetus."
 
-#: core/app/views/stack/welcomepageview.cpp:393
+#: core/app/views/stack/welcomepageview_features.cpp:38
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enable this option to use the background theme color in the image editor "
@@ -3653,86 +3680,91 @@ msgid ""
 "black in case of images transparency usage."
 msgstr "Käytä kuvamuokkaimessa teeman taustaväriä valitsemalla tämä asetus."
 
-#: core/app/views/stack/welcomepageview.cpp:394
+#: core/app/views/stack/welcomepageview_features.cpp:39
 #, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:395
+#: core/app/views/stack/welcomepageview_features.cpp:40
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:396
+#: core/app/views/stack/welcomepageview_features.cpp:41
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:397
+#: core/app/views/stack/welcomepageview_features.cpp:42
 #, kde-format
 msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:398
+#: core/app/views/stack/welcomepageview_features.cpp:43
+#, kde-format
+msgid "Rewrite the welcome page in more modern style."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
 msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:400
+#: core/app/views/stack/welcomepageview_features.cpp:46
 #, fuzzy, kde-format
 #| msgctxt "Caption type: COMMENT"
 #| msgid "Item comments"
 msgid "Sort Item improvements:"
 msgstr "Tietueen kommentit"
 
-#: core/app/views/stack/welcomepageview.cpp:402
+#: core/app/views/stack/welcomepageview_features.cpp:48
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:403
+#: core/app/views/stack/welcomepageview_features.cpp:49
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:404
+#: core/app/views/stack/welcomepageview_features.cpp:50
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:405
+#: core/app/views/stack/welcomepageview_features.cpp:51
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:406
+#: core/app/views/stack/welcomepageview_features.cpp:52
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:407
+#: core/app/views/stack/welcomepageview_features.cpp:53
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:410
+#: core/app/views/stack/welcomepageview_features.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@title: item properties"
 #| msgid "Item Properties"
 msgid "Item Property improvements:"
 msgstr "Kohteen ominaisuudet"
 
-#: core/app/views/stack/welcomepageview.cpp:412
+#: core/app/views/stack/welcomepageview_features.cpp:58
 #, fuzzy, kde-format
 #| msgid "Could not find any coordinates on the clipboard."
 msgid "Add new button to copy all properties as text in clipboard."
 msgstr "Leikepöydältä ei löydy koordinaatteja."
 
-#: core/app/views/stack/welcomepageview.cpp:413
+#: core/app/views/stack/welcomepageview_features.cpp:59
 #, fuzzy, kde-format
 #| msgid "Add new tag to current tag. Current tag is last clicked tag."
 msgid "Add new button to open current item in file manager."
@@ -3740,108 +3772,113 @@ msgstr ""
 "Lisää uusi tunniste nykyiseen tunnisteeseen. Nykyinen tunniste on se, joka "
 "on valittu viimeksi."
 
-#: core/app/views/stack/welcomepageview.cpp:414
+#: core/app/views/stack/welcomepageview_features.cpp:60
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:417
+#: core/app/views/stack/welcomepageview_features.cpp:63
 #, kde-format
 msgid "Grouped Item improvements:"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:419
+#: core/app/views/stack/welcomepageview_features.cpp:65
 #, kde-format
 msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:420
+#: core/app/views/stack/welcomepageview_features.cpp:66
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:421
+#: core/app/views/stack/welcomepageview_features.cpp:67
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:424
+#: core/app/views/stack/welcomepageview_features.cpp:70
 #, fuzzy, kde-format
 #| msgid "Preview grouped items"
 msgid "Preview Mode improvements:"
 msgstr "Esikatsele ryhmitettyjä kohteita"
 
-#: core/app/views/stack/welcomepageview.cpp:426
+#: core/app/views/stack/welcomepageview_features.cpp:72
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:427
+#: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:428
+#: core/app/views/stack/welcomepageview_features.cpp:74
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:429
+#: core/app/views/stack/welcomepageview_features.cpp:75
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:430
+#: core/app/views/stack/welcomepageview_features.cpp:76
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:431
+#: core/app/views/stack/welcomepageview_features.cpp:77
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:432
+#: core/app/views/stack/welcomepageview_features.cpp:78
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:433
+#: core/app/views/stack/welcomepageview_features.cpp:79
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:436
+#: core/app/views/stack/welcomepageview_features.cpp:82
 #, fuzzy, kde-format
 #| msgid "Advanced Searches Tool Improvements"
 msgid "Advanced Search improvements:"
 msgstr "Laajat hakutyökaluparannukset"
 
-#: core/app/views/stack/welcomepageview.cpp:438
+#: core/app/views/stack/welcomepageview_features.cpp:84
 #, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:439
+#: core/app/views/stack/welcomepageview_features.cpp:85
 #, kde-format
 msgid ""
-"Add support for search Creator and Author fields to be drop down lists "
+"Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:442
+#: core/app/views/stack/welcomepageview_features.cpp:86
+#, kde-format
+msgid "Add support to search recently modified items in the database."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:89
 #, fuzzy, kde-format
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
@@ -3851,84 +3888,84 @@ msgstr ""
 "Päivittää sisäisen RAW-moottorin viimeisimpään Libraw 0.20.0 -julkaisuun, "
 "joka sisältää Canon CR3- ja Sony A7R4 -tuet."
 
-#: core/app/views/stack/welcomepageview.cpp:443
+#: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
 msgid "New RAW camera supported:"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:445
+#: core/app/views/stack/welcomepageview_features.cpp:92
 #, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:446
+#: core/app/views/stack/welcomepageview_features.cpp:93
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:447
+#: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:448
+#: core/app/views/stack/welcomepageview_features.cpp:95
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:449
+#: core/app/views/stack/welcomepageview_features.cpp:96
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:450
+#: core/app/views/stack/welcomepageview_features.cpp:97
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:451
+#: core/app/views/stack/welcomepageview_features.cpp:98
 #, kde-format
 msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:452
+#: core/app/views/stack/welcomepageview_features.cpp:99
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:453
+#: core/app/views/stack/welcomepageview_features.cpp:100
 #, kde-format
 msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:454
+#: core/app/views/stack/welcomepageview_features.cpp:101
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:455
+#: core/app/views/stack/welcomepageview_features.cpp:102
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
 msgstr ""
 
-#: core/app/views/stack/welcomepageview.cpp:460
+#: core/app/views/stack/welcomepageview_features.cpp:107
 #, kde-format
 msgid "...and much more."
 msgstr "…sekä paljon muuta."
 
-#: core/app/views/stack/welcomepageview.cpp:466
+#: core/app/views/stack/welcomepageview_features.cpp:113
 #, fuzzy, kde-format
 #| msgid "<li>%1</li>\n"
 msgid "<li>%1</li>"
 msgstr "<li>%1</li>\n"
 
-#: core/app/views/stack/welcomepageview.cpp:469
+#: core/app/views/stack/welcomepageview_features.cpp:116
 #, fuzzy, kde-format
 #| msgid ""
 #| "Some of the new features in this release of digiKam include (compared to "
@@ -3938,47 +3975,6 @@ msgid ""
 "digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
 "Tämän digiKam-julkaisun uusia ominaisuuksia (digiKam 5.x:ään verrattuna):"
-
-#: core/app/views/stack/welcomepageview.cpp:490
-#, kde-format
-msgid ""
-"<h3>digiKam is an advanced open-source digital photo management application "
-"that runs on Linux, Windows, and MacOS. The application provides a "
-"comprehensive set of tools for importing, managing, editing, and sharing "
-"photos and raw files. You can use digiKam’s import capabilities to easily "
-"transfer photos, raw files, and videos directly from your camera and "
-"external storage devices (SD cards, USB disks, etc.). The application allows "
-"you to configure import settings and rules that process and organize "
-"imported items on-the-fly.</h3><h3>With digiKam you can import, organize, "
-"enhance, search, export, and more...</h3><h3>Currently, you are in the Album "
-"view mode of digiKam.</h3><h3>Albums are the places where your files are "
-"stored, and are identical to the folders on your hard disk.</h3><li>digiKam "
-"has many powerful features which are described in the <a href=\"https://docs."
-"digikam.org/en/index.html\">documentation</a></li><li>The <a href=\"https://"
-"www.digikam.org\">digiKam homepage</a> provides information about new "
-"versions of digiKam.</li>"
-msgstr ""
-
-#: core/app/views/stack/welcomepageview.cpp:530
-#, kde-format
-msgid "Author:"
-msgstr "Tekijä:"
-
-#: core/app/views/stack/welcomepageview.cpp:531
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
-#, kde-format
-msgid "Location:"
-msgstr "Sijainti:"
-
-#: core/app/views/stack/welcomepageview.cpp:533
-#, kde-format
-msgid "Camera:"
-msgstr "Kamera:"
-
-#: core/app/views/stack/welcomepageview.cpp:534
-#, kde-format
-msgid "Lens:"
-msgstr "Linssi:"
 
 #: core/app/views/tableview/tableview.cpp:369
 #, kde-format
@@ -4014,7 +4010,7 @@ msgstr "Äänen kanavatyyppi"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -4022,7 +4018,7 @@ msgstr "Äänikoodekki"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:916
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Duration"
 msgstr "Kesto"
@@ -4097,12 +4093,10 @@ msgid "Grouped"
 msgstr "Ryhmitelty: "
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
-msgstr "Versioitu: "
+msgstr "Versioitu:"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
@@ -4151,12 +4145,10 @@ msgid "Grouped"
 msgstr "Ryhmitelty: "
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
-msgstr "Versioitu: "
+msgstr "Versioitu"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:348
 #: core/app/views/tableview/tableview_column_digikam.cpp:388
@@ -4259,7 +4251,7 @@ msgstr "Kyllä"
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
-msgstr ""
+msgstr "Kyllä (pino)"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
 #: core/libs/properties/import/importitempropertiestab.cpp:349
@@ -4387,14 +4379,14 @@ msgstr "Kohteen ominaisuudet"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #: core/app/views/tableview/tableview_column_item.cpp:93
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgid "Width"
 msgstr "Leveys"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:98
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:239
 #, kde-format
 msgid "Height"
 msgstr "Korkeus"
@@ -5655,37 +5647,27 @@ msgid "TIFF"
 msgstr "TIFF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:100
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "JPEG 2000"
+#, kde-format
 msgid "JPEG 2000"
 msgstr "JPEG 2000"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "JPEG-XL"
+#, kde-format
 msgid "JPEG XL"
-msgstr "JPEG-XL"
+msgstr "JPEG XL"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:102
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "AVIF"
+#, kde-format
 msgid "AVIF"
 msgstr "AVIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "HEIF"
+#, kde-format
 msgid "HEIF"
 msgstr "HEIF"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "WEBP"
+#, kde-format
 msgid "WEBP"
 msgstr "WebP"
 
@@ -6596,11 +6578,10 @@ msgid "Apply Metadata: ExifTool reported an error."
 msgstr "Lisää metatietoja pohjasta"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:42
-#, fuzzy, kde-format
-#| msgid "Applying metadata"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Metadata"
-msgstr "Käytetään metatietoja"
+msgstr "Käytä metatietoa"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
 #, fuzzy, kde-format
@@ -6630,25 +6611,22 @@ msgstr "Otsikot:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
-#, fuzzy, kde-format
-#| msgid "Enter title here."
+#, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
-msgstr "Syötä otsikko."
+msgstr "Syötä otsikko tähän."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
-#, fuzzy, kde-format
-#| msgid "Captions: "
+#, kde-format
 msgid "Captions:"
-msgstr "Kuvatekstit: "
+msgstr "Kuvatekstit:"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
-#, fuzzy, kde-format
-#| msgid "Enter caption text here."
+#, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr "Syötä kuvateksti."
+msgstr "Syötä kuvateksti tähän."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, fuzzy, kde-format
@@ -6755,36 +6733,26 @@ msgstr ""
 "</p>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
-#, fuzzy, kde-format
-#| msgid "Assign Tag"
+#, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr "Määritä tunniste"
+msgstr "Yhdistä tunnisteita"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to assign automatically Pick Labels based on image "
-#| "quality."
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically assign tags to images"
-msgstr ""
-"Mäöäritä poimintamerkit automaattisesti kuvan laadun mukaan valitsemalla "
-"tämä asetus."
+msgstr "Työkalu luokitusten yhdistämiseksi kuviin automaattisesti"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
-#| msgid ""
-#| "<p>This Batch Queue Manager tool can apply metadata template over images."
-#| "</p>"
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<p>Tällä eräajotyökalulla voi ottaa kuvissa käyttöön metatietomallipohjan.</"
-"p><p>Tällä eräajotyökalulla voi ottaa kuvissa käyttöön metatietomallipohjan."
-"</p>"
+"<p>Tämä eräajotyökalu yhdistää kuviin tekoälyn syväoppimismalleilla "
+"automaattisesti avainsanahierarkioiden metatietoarvoja.</p>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, fuzzy, kde-format
@@ -6794,11 +6762,10 @@ msgid "Apply Template"
 msgstr "Lisää metatietoja pohjasta"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
-#, fuzzy, kde-format
-#| msgid "A tool to apply metadata template to images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata template to images"
-msgstr "Työkalu, jolla otetaan metatietomallipohja käyttöön kuvissa"
+msgstr "Työkalu metatietomallipohjan käyttöönottoon kuvissa"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:62
 #, fuzzy, kde-kuit-format
@@ -8945,7 +8912,7 @@ msgstr "Värinhallinta on poissa käytöstä…"
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:596
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "White Balance"
 msgstr "Valkotasapaino"
@@ -11780,8 +11747,8 @@ msgstr ""
 "kauan."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#: core/utilities/searchwindow/searchfields_createfield.cpp:215
-#: core/utilities/searchwindow/searchfields_createfield.cpp:233
+#: core/utilities/searchwindow/searchfields_createfield.cpp:223
+#: core/utilities/searchwindow/searchfields_createfield.cpp:241
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -17356,9 +17323,9 @@ msgstr "Kohdetiedosto"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:355
-#: core/utilities/searchwindow/searchfields_createfield.cpp:391
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:363
+#: core/utilities/searchwindow/searchfields_createfield.cpp:399
+#: core/utilities/searchwindow/searchfields_createfield.cpp:449
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
@@ -20249,6 +20216,8 @@ msgid ""
 "Pre-processing also includes a calculation of some control points to match "
 "overlaps between images. For that purpose, the \"%1\" program will be used."
 msgstr ""
+"Esikäsittelyyn sisältyy myös kuvien väliseen lomitukseen täsmäävien "
+"ohjauspisteiden laskenta. Tähän tarkoitukseen käytetään ohjelmaa ”%1”."
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:77
 #, kde-format
@@ -20447,7 +20416,7 @@ msgstr ""
 "TV:t jne. tukevat DLNA:ta.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:826
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgid "Author"
 msgstr "Kuvaaja"
@@ -20870,7 +20839,7 @@ msgstr "Aseta kuvan leveys"
 msgid ""
 "Rotate photo automatically on layout accordingly with camera orientation "
 "information"
-msgstr ""
+msgstr "Kierrä kuvaa asetteluun automaattisesti kameran suuntatiedon mukaan"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:133
 #, kde-format
@@ -20908,6 +20877,8 @@ msgid ""
 "There was an error to launch the external Gimp program. Please make sure it "
 "is properly installed."
 msgstr ""
+"Ulkoisen Gimp-ohjelman käynnistyksessä tapahtui virhe. Varmista, että se on "
+"asennettu oikein."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:284
 #, kde-format
@@ -21017,7 +20988,7 @@ msgstr "Oma asettelu"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1126
 #, kde-format
 msgid "The selected custom photo size can not be applied to the paper size."
-msgstr ""
+msgstr "Valittua mukautettua kuvakokoa ei voi soveltaa paperikokoon."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:1358
 #, kde-format
@@ -21374,6 +21345,7 @@ msgstr "Ei aktiivista prosessia"
 #, kde-format
 msgid "<p>This view list all items to export by mail.</p>"
 msgstr ""
+"<p>Tässä näkymässä luetellaan kaikki sähköpostitse vietävät kohteet.</p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:91
 #, kde-format
@@ -21383,6 +21355,10 @@ msgid ""
 "export contents, you will be able to adjust attachments properties "
 "accordingly with your mail service capabilities.</p></qt>"
 msgstr ""
+"<qt><p><h1><b>Tervetuloa sähköpostityökaluun</b></h1></p><p>Tämä opastettu "
+"toiminta auttaa sinua lähettämään kohteet sähköpostiohjelmalla.</p><p>Ennen "
+"sisällön vientiä voit säätää liitteitä sopimaan postipalvelun vaatimuksiin.</"
+"p>"
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:113
 #, kde-format
@@ -23979,6 +23955,8 @@ msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
+"Valitse, tulisiko kuvan olla näkyvissä julkisesti, tai tee asetus kaikille "
+"kuville lähetysvalintavälilehdellä"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:498
 #, kde-format
@@ -23986,6 +23964,8 @@ msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
+"Valitse, tulisiko kuvan olla näkyvissä perheelle, tai tee asetus kaikille "
+"kuville lähetysvalintavälilehdellä"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:501
 #, kde-format
@@ -23993,6 +23973,8 @@ msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
+"Valitse, tulisiko kuvan olla näkyvillä ystäville, tai tee asetus kaikille "
+"kuville lähetysvalintavälilehdellä"
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:504
 #, kde-format
@@ -25324,31 +25306,31 @@ msgstr "VIRHE poistettaessa havaintoa"
 #: core/dplugins/generic/webservices/inaturalist/inattalker.cpp:1929
 #, kde-format
 msgid "Timeout after exceeding %1 seconds"
-msgstr ""
+msgstr "Aikakatkaisu %1 sekunnin kuluttua"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:119
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "kingdom"
-msgstr ""
+msgstr "kunta"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:123
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "subkingdom"
-msgstr ""
+msgstr "alakunta"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:127
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "phylum"
-msgstr ""
+msgstr "pääjakso"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:131
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "subphylum"
-msgstr ""
+msgstr "alajakso"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:135
 #, fuzzy, kde-format
@@ -25456,7 +25438,7 @@ msgstr "Aukko"
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "genus"
-msgstr ""
+msgstr "suku"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:195
 #, fuzzy, kde-format
@@ -25465,11 +25447,12 @@ msgctxt "taxonomic rank"
 msgid "genushybrid"
 msgstr "Hybridi"
 
+# HUOM! Tätä termiä ei löydy Wikipediasta (englanninkielinen kyllä).
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:199
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "subgenus"
-msgstr ""
+msgstr "alasuku"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:203
 #, fuzzy, kde-format
@@ -25514,7 +25497,7 @@ msgstr "Määrittämätön"
 #, kde-format
 msgctxt "taxonomic rank"
 msgid "variety"
-msgstr ""
+msgstr "muunnos"
 
 #: core/dplugins/generic/webservices/inaturalist/inatutils.cpp:231
 #, fuzzy, kde-format
@@ -25683,7 +25666,7 @@ msgstr "Vähemmän valintoja"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:563
 #, kde-format
 msgid "<i>login <b>failed</b></i>"
-msgstr ""
+msgstr "<i>kirjautuminen <b>epäonnistui</b></i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:626
 #, kde-format
@@ -25693,7 +25676,7 @@ msgstr "<i>kirjautuminen <b>peruttu</b></i>"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:683
 #, kde-format
 msgid "<i>no valid identification</i>"
-msgstr ""
+msgstr "<i>ei kelvollista tunnistautumista</i>"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:730
 #, kde-format
@@ -27307,7 +27290,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "xdotcom"
-msgstr ""
+msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
 #, fuzzy, kde-format
@@ -27643,6 +27626,11 @@ msgid ""
 "for details: <a href='https://www.libraw.org/'>https://www.libraw.org/</a></"
 "p>"
 msgstr ""
+"<p>Tämä kuvankäsittelytyökalu tuo raakakuvia purkaen koodauksen Libraw-"
+"moottorilla.</p><p>Tämä on sovellukseen sisällytetty <b>natiivi</b> "
+"raakakuvatyökalu. Se ei vaadi ulkoista moottoria toimiakseen.</"
+"p><p>Lisätietoa löytyy Libraw’n sivustolta: <a href='https://www.libraw."
+"org/'>https://www.libraw.org/</a></p>"
 
 #: core/dplugins/rawimport/native/rawpreview.cpp:193
 #, kde-format
@@ -27741,9 +27729,9 @@ msgid "Reset curve to linear"
 msgstr "Palauta käyrä lineaariseksi"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
-#: core/utilities/searchwindow/searchfields_createfield.cpp:537
-#: core/utilities/searchwindow/searchfields_createfield.cpp:549
+#: core/utilities/searchwindow/searchfields_createfield.cpp:524
+#: core/utilities/searchwindow/searchfields_createfield.cpp:545
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Exposure"
 msgstr "Valotus"
@@ -27953,7 +27941,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:128
 #, kde-format
 msgid "The MySQL binary tools was not found."
-msgstr ""
+msgstr "MySQL:n ohjelmatiedostoa ei löytynyt."
 
 #: core/libs/album/manager/albummanager_database.cpp:135
 #, fuzzy, kde-format
@@ -27967,6 +27955,8 @@ msgid ""
 "<p>If you want to start with a new configuration and with a first run "
 "wizard, delete the file:<br>%1</p>"
 msgstr ""
+"<p>Jos haluat tehdä uuden asetuksen opastetulla ensikäynnistyksellä, poista "
+"tiedosto:<br>%1</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:157
 #, fuzzy, kde-format
@@ -27995,6 +27985,8 @@ msgid ""
 "<p>digiKam will attempt to start now, but it will <b>not</b> be functional.</"
 "p>"
 msgstr ""
+"<p>digiKam yrittää nyt käynnistyä, mutta se <b>ei ole</b> toimintakunnossa.</"
+"p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:215
 #, kde-format
@@ -28242,7 +28234,7 @@ msgstr ""
 #: core/libs/album/manager/albummanager_database.cpp:756
 #, kde-format
 msgid "<p><b>Please check the database settings in this dialog.</b></p>"
-msgstr ""
+msgstr "<p><b>Tarkista tietokanta-asetukset tästä ikkunasta.</b></p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:772
 #, kde-format
@@ -29798,6 +29790,8 @@ msgid ""
 "A file operation using the same path is currently in progress. Please wait "
 "for the operation to complete and try again."
 msgstr ""
+"Samaan sijaintiin on käynnissä tiedostotoimenpide. Odota sen päättymistä ja "
+"yritä uudelleen."
 
 #: core/libs/database/utils/ifaces/dio.cpp:382
 #, kde-format
@@ -29991,7 +29985,7 @@ msgstr "Tietokannan muunnos peruttiin."
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
 #, kde-format
 msgid "Step Progress (%1)"
-msgstr ""
+msgstr "Etenemisvaihe (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
@@ -30937,7 +30931,7 @@ msgstr "Älä kysy uudelleen"
 #, kde-format
 msgctxt "%p is the percent value, % is the percent sign"
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, fuzzy, kde-format
@@ -31065,11 +31059,10 @@ msgid "Items List"
 msgstr "Kohdeluettelo"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:27
-#, fuzzy, kde-format
-#| msgid "Build version"
+#, kde-format
 msgctxt "@title"
 msgid "Build Environment"
-msgstr "Koosteversio"
+msgstr "Koostamisympäristö"
 
 #: core/libs/dialogs/libsinfodlg_buildtools.cpp:95
 #, fuzzy, kde-format
@@ -38008,7 +38001,7 @@ msgstr "Perliä ei ole tai suoritusoikeus puuttuu"
 #: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
-msgstr ""
+msgstr "Tahdistusvirhe kanavien välillä"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:111
 #, kde-format
@@ -38757,7 +38750,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr "Luokitukset on jo kytketty"
+msgstr "Luokitukset on jo yhdistetty"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:122
@@ -39627,7 +39620,7 @@ msgstr "Käyttöoikeudet: "
 #: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
 msgid "Mime"
-msgstr ""
+msgstr "MIME"
 
 #: core/libs/properties/itempropertiestab.cpp:495
 #, fuzzy, kde-format
@@ -39695,15 +39688,15 @@ msgid "Date Time"
 msgstr "Päivä ja aika"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:427
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "Lens"
 msgstr "Linssi"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:466
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgid "Aperture"
 msgstr "Aukko"
@@ -39724,7 +39717,7 @@ msgstr "Valotusaika"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "Sensitivity"
 msgstr "Valotusherkkyys"
@@ -40956,7 +40949,7 @@ msgstr "Etsi albumeista:"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:186
 #, kde-format
 msgid "Error starting object detection."
-msgstr ""
+msgstr "Virhe kohteentunnistuksen käynnistyksessä."
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:201
 #, fuzzy, kde-format
@@ -40982,12 +40975,12 @@ msgstr "Etsi albumeista:"
 #: core/libs/tags/autoassignment/autotagsengine.cpp:240
 #, kde-format
 msgid "Found %1 object. Tag: %2"
-msgstr ""
+msgstr "Löytyi %1 kohde. Luokitus: %2"
 
 #: core/libs/tags/autoassignment/autotagsengine.cpp:244
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
-msgstr ""
+msgstr "Löytyi %1 kohdetta. Luokitukset: %2"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:99
 #, fuzzy, kde-format
@@ -41043,6 +41036,9 @@ msgid ""
 "<p><b>All</b>: re-scan all items for tags.</p><p><b>Non-Assigned Only</b>: "
 "scan only the items with no assigned autotags.</p>"
 msgstr ""
+"<p><b>Kaikki</b>: etsi luokituksia uudelleen kaikille kohteille.</"
+"p><p><b>Vain luokittamattomat</b>: etsi vain kohteita, joilla ei jo ole "
+"automaattiluokituksia.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:117
 #, fuzzy, kde-format
@@ -41074,6 +41070,9 @@ msgid ""
 "results of the scan.</p><p><b>Update</b>: add any new auto-tags found to the "
 "existing auto-tags.</p>"
 msgstr ""
+"<p><b>Korvaa olemassa olevat:</b> tyhjennä olemassa olevat "
+"automaattiluokitukset ja korvaa ne etsinnän tuloksilla.</p><p><b>Päivitys</"
+"b>: lisää löydetyt uudet automaattiluokitukset olemassa oleviin.</p>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:127
 #, fuzzy, kde-format
@@ -41106,6 +41105,8 @@ msgid ""
 "accurately objects will<br>be recognized, but fewer objects will be "
 "recognized.<br>"
 msgstr ""
+"Säädä herkkyyttä vs. yleisyyttä: mitä suurempi arvo, sitä tarkemmin mutta "
+"sitä<br>harvempia kohteita tunnistetaan.<br>"
 
 #: core/libs/tags/autoassignment/autotagsscanwidget.cpp:160
 #, fuzzy, kde-format
@@ -41527,7 +41528,7 @@ msgstr "Valitse kaikki käsiteltävät luokitukset."
 #: core/libs/tags/manager/tagsmanager_io.cpp:181
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
-msgstr ""
+msgstr "Valittu luokitus ei ole hierarkian ylin perusluokitus."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:189
 #, fuzzy, kde-format
@@ -41554,7 +41555,7 @@ msgstr "Valitse kaikki käsiteltävät luokitukset."
 #: core/libs/tags/manager/tagsmanager_io.cpp:298
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
-msgstr ""
+msgstr "Valittuun kasvoluokitukseen ei voi tuoda luokituksia."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:307
 #, kde-format
@@ -41599,7 +41600,7 @@ msgstr "&Vienti"
 #: core/libs/tags/manager/tagsmanager_p.cpp:131
 #, kde-format
 msgid "Mark Unassigned Tags"
-msgstr "Merkitse kytkemättömät luokitukset"
+msgstr "Merkitse yhdistämättömät luokitukset"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:151
 #, kde-format
@@ -41630,7 +41631,7 @@ msgstr "Palauta valittujen luokitusten kuvakkeet. Toimii monivalinnalla."
 #: core/libs/tags/manager/tagsmanager_p.cpp:163
 #, kde-format
 msgid "Mark all tags that are not assigned to images."
-msgstr "Merkitse kuviin kaikki kytkemättömät luokitukset."
+msgstr "Merkitse kuviin kaikki yhdistämättömät luokitukset."
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:165
 #, kde-format
@@ -41923,6 +41924,8 @@ msgid ""
 "Enter the Subject Name here. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
+"Syötä tähän kohteen nimi. Käytä englantia, jos valitsit standardin XMP/NAA-"
+"viitekoodin."
 
 #: core/libs/template/subjectedit.cpp:70
 #, kde-format
@@ -41930,6 +41933,8 @@ msgid ""
 "Enter the Subject Matter Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
+"Syötä tähän kohdeaiheen nimi. Käytä englantia, jos valitsit standardin XMP/"
+"NAA-viitekoodin."
 
 #: core/libs/template/subjectedit.cpp:74
 #, kde-format
@@ -41937,6 +41942,8 @@ msgid ""
 "Enter the Subject Detail Name here. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
+"Syötä tähän tarkemman kohteen nimi. Käytä englantia, jos valitsit standardin "
+"XMP/NAA-viitekoodin."
 
 #: core/libs/template/templatelist.cpp:70
 #, fuzzy, kde-format
@@ -42707,11 +42714,13 @@ msgstr "Määritä ero kellokuvasta"
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
+"Valitse kellokuva joko napsauttamalla tai vetämällä ja pudottamalla kuva "
+"painikkeen ylle"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:245
 #, kde-format
 msgid "Update timestamps with ExifTool"
-msgstr ""
+msgstr "Päivitä ExifToolilla aikaleimat"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:246
 #, fuzzy, kde-format
@@ -42722,7 +42731,7 @@ msgstr "Näytä tiedoston koko valitsemalla tämä asetus."
 #: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update only existing timestamps"
-msgstr ""
+msgstr "Päivitä vain olemassa olevat aikaleimat"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
@@ -43723,7 +43732,7 @@ msgstr "Virhe: %1"
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
-msgstr ""
+msgstr "Kuva taaksepäin"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:308
 #, fuzzy, kde-format
@@ -43737,7 +43746,7 @@ msgstr "Eteenpäin"
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
-msgstr ""
+msgstr "Muuta videotoistonopeutta"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, fuzzy, kde-format
@@ -44691,6 +44700,9 @@ msgid ""
 "and port faces recognition engine\n"
 "to OpenCV neural network"
 msgstr ""
+"Mentorointi, verkkopalvelutyökalujen siirros\n"
+"OAuthiin ja faktorointi sekä kasvontunnistusmoottorin\n"
+"siirros OpenCV-hermoverkkoon"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:137
 #, kde-format
@@ -44703,16 +44715,14 @@ msgid "Releases Manager"
 msgstr "Julkaisunhallinta"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:150
-#, fuzzy, kde-format
-#| msgid "Quality:"
+#, kde-format
 msgid "Quality Test Engineer"
-msgstr "Laatu:"
+msgstr "Laaduntestausinsinööri"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:157
-#, fuzzy, kde-format
-#| msgid "Port to Qt6,"
+#, kde-format
 msgid "Port to Qt6"
-msgstr "Sovitus Qt6:een"
+msgstr "Siirros Qt6:een"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:163
 #, kde-format
@@ -44749,13 +44759,15 @@ msgstr "Kuvaesityksen käyttö"
 msgid "Face management workflow improvements"
 msgstr "Kasvonhallintatyönkulun parannukset"
 
+# Minulla ei ole aavistustakaan, mitä on ”healing clone”! Verbi ”parantaa” johdannaisineen on jo muussakin käytössä (engl. improve, refine).
 #: core/libs/widgets/mainview/daboutdata.cpp:195
-#, fuzzy, kde-format
-#| msgid "UPnP / DLNA Export tool and Mentoring"
+#, kde-format
 msgid ""
 "UPNP/DLNA export tool\n"
 "and Healing clone tool for image editor"
-msgstr "UPnP/DLNA-vientityökalu ja mentorointi"
+msgstr ""
+"UPnP/DLNA-vientityökalu ja\n"
+"korjausmonistustyökalu kuvamuokkaimeen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
@@ -44768,12 +44780,13 @@ msgid "New OneDrive, Pinterrest, and Box export tools"
 msgstr "Uudet OneDrive-, Pinterest- ja Box-vientityökalut"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:213
-#, fuzzy, kde-format
-#| msgid "Face-engine improvements and manual icon-view sort"
+#, kde-format
 msgid ""
 "Face-engine improvements\n"
 "and manual icon-view sort"
-msgstr "Kasvontunnistusparannukset ja käyttäjän kuvakenäkymälajittelu"
+msgstr ""
+"Kasvontunnistusparannukset ja\n"
+"käyttäjän kuvakenäkymälajittelu"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:219
 #, kde-format
@@ -45324,7 +45337,7 @@ msgstr "Microsoft Advanced Systems -muoto"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:104
 #, kde-format
 msgid "Audible Audiobook"
-msgstr ""
+msgstr "Kuunneltava äänikirja"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:108
 #, kde-format
@@ -45473,7 +45486,7 @@ msgstr "ISO 9660 -levykuva"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:220
 #, kde-format
 msgid "iTunes Cover Flow Artwork"
-msgstr ""
+msgstr "iTunes-kansikuvataide"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:224
 #, kde-format
@@ -45488,12 +45501,12 @@ msgstr "Joint Photographic Experts Group"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:232
 #, kde-format
 msgid "JavaScript Object Notation"
-msgstr ""
+msgstr "JavaScription oliomerkintä"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:236
 #, kde-format
 msgid "Joint Photographic Experts Group 2000"
-msgstr ""
+msgstr "Joint Photographic Experts Group 2000"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:240
 #, fuzzy, kde-format
@@ -45946,7 +45959,7 @@ msgstr "Kuvan tiedot"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
-#: core/utilities/searchwindow/searchgroup.cpp:152
+#: core/utilities/searchwindow/searchgroup.cpp:154
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:60
 #, kde-format
 msgid "Photograph Information"
@@ -46035,7 +46048,7 @@ msgstr "Tiff-kuvan ominaisuudet"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:129
 #, kde-format
 msgid "Basic Schema"
-msgstr ""
+msgstr "Perusskeema"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:133
 #, kde-format
@@ -46060,7 +46073,7 @@ msgstr "Oikeuksien hallinta"
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:149
 #, kde-format
 msgid "Paged-Text"
-msgstr ""
+msgstr "Sivutettu teksti"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:156
 #, kde-format
@@ -47327,7 +47340,7 @@ msgstr "Igbo (Nigeria)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:269
 msgctxt "@info: country code"
 msgid "Sichuan Yi (People's Republic of China)"
-msgstr ""
+msgstr "Setšuanin yi (Kiinan kansantasavalta)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:270
 msgctxt "@info: country code"
@@ -47607,7 +47620,7 @@ msgstr "Pandžabi (Intia)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:325
 msgctxt "@info: country code"
 msgid "Papiamento (Aruba-Dutch Caribbean)"
-msgstr ""
+msgstr "Papiamento (Aruba-Alankomaiden Karibia)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:326
 msgctxt "@info: country code"
@@ -47657,7 +47670,7 @@ msgstr "Portugali (São Tomé ja Principe)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:335
 msgctxt "@info: country code"
 msgid "Otomi Querétaro (Mexico)"
-msgstr ""
+msgstr "Querétaron otomi (Meksiko)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:336
 msgctxt "@info: country code"
@@ -49626,23 +49639,23 @@ msgstr "Verkko-osoite %1 ei voi olla tyhjä."
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:48
 #, kde-format
 msgid "Error: Unable to find Bing credentials in web version."
-msgstr ""
+msgstr "Virhe: verkkoversiosta ei löytynyt Bing-tunnistetietoja."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:57
 #, kde-format
 msgid "Error: Unable to extract Bing key from web version."
-msgstr ""
+msgstr "Virhe: verkkoversiosta ei saatu irrotettua Bing-avainta."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:67
 #, kde-format
 msgid "Error: Unable to extract Bing token from web version."
-msgstr ""
+msgstr "Virhe: verkkoversiosta ei saatu irrotettua Bing-merkkiä."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:77
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:87
 #, kde-format
 msgid "Error: Unable to extract additional Bing information from web version."
-msgstr ""
+msgstr "Virhe: verkkoversiosta ei saatu irrotettua Bing-lisätietoa."
 
 #: core/libs/widgets/text/donlinetranslator_bing.cpp:145
 #: core/libs/widgets/text/donlinetranslator_google.cpp:88
@@ -49650,7 +49663,7 @@ msgstr ""
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:168
 #, kde-format
 msgid "Error: Unable to parse autodetected language"
-msgstr ""
+msgstr "Virhe: automaattisesti tunnistettua kieltä ei voitu jäsentää"
 
 #: core/libs/widgets/text/donlinetranslator_google.cpp:53
 #: core/libs/widgets/text/donlinetranslator_google.cpp:70
@@ -49660,6 +49673,8 @@ msgid ""
 "Error: Engine systems have detected suspicious traffic from your computer "
 "network. Please try your request again later."
 msgstr ""
+"Virhe: moottorijärjestelmät ovat havainneet verkossa epäilyttävää "
+"liikennettä. Yritä pyyntöä myöhemmin uudelleen."
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:103
 #, kde-format
@@ -50181,7 +50196,7 @@ msgstr "pandžabi"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Queretaro Otomi"
-msgstr ""
+msgstr "Querétaron otomi"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:364
 #, kde-format
@@ -50418,24 +50433,22 @@ msgid "Zulu"
 msgstr "zulu"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:48
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support voice settings"
-msgstr "Etätiedostojen käsittelyä ei tueta"
+msgstr "Valittu moottori %1 ei tue ääniasetuksia"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:55
-#, fuzzy, kde-format
-#| msgid "Remote file handling is not supported"
+#, kde-format
 msgctxt "@info"
 msgid "Selected engine %1 does not support emotion settings"
-msgstr "Etätiedostojen käsittelyä ei tueta"
+msgstr "Valittu moottori %1 ei tue tunneasetuksia"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:162
 #, kde-format
 msgctxt "@info"
 msgid "%1 engine does not support TTS"
-msgstr ""
+msgstr "%1-moottori ei tue puhesynteesiä"
 
 #: core/libs/widgets/text/donlinetranslator_tts.cpp:260
 #, kde-format
@@ -50458,12 +50471,12 @@ msgstr "%2 ei tue valittua tunnetta %1"
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:60
 #, kde-format
 msgid "Error: Unable to find Yandex SID in web version."
-msgstr ""
+msgstr "Virhe: Verkkoversiosta ei löydy Yandexin SIDiä."
 
 #: core/libs/widgets/text/donlinetranslator_yandex.cpp:69
 #, kde-format
 msgid "Error: Unable to extract Yandex SID from web version."
-msgstr ""
+msgstr "Virhe: Verkkoversiosta ei saada irrotettua Yandexin SIDiä."
 
 #: core/libs/widgets/text/localizeconfig.cpp:58
 #, kde-format
@@ -50481,7 +50494,7 @@ msgstr "Nimi"
 #, kde-format
 msgctxt "@info"
 msgid "Enter here a string to search in languages list..."
-msgstr ""
+msgstr "Etsi kieliluettelosta kirjoittamalla tähän…"
 
 #: core/libs/widgets/text/localizeconfig.cpp:144
 #, kde-format
@@ -50499,7 +50512,7 @@ msgstr "Valitse tekstinmuokkauksen vaihtoehtoiset kielet"
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr ""
+msgstr "Verkkokääntäjä:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:223
 #, kde-format
@@ -50521,12 +50534,10 @@ msgid ""
 msgstr ""
 
 #: core/libs/widgets/text/localizeconfig.cpp:320
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Translator Languages (%1/%2)"
-msgstr "Wiktionary"
+msgstr "Käytettävissä olevat käännöskielet (%1/%2)"
 
 #: core/libs/widgets/text/localizeselector.cpp:107
 #, kde-format
@@ -50615,12 +50626,10 @@ msgid "Detect automatically the language by parsing string content"
 msgstr ""
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:134
-#, fuzzy, kde-format
-#| msgctxt "@item"
-#| msgid "Wiktionary"
+#, kde-format
 msgctxt "@title"
 msgid "Available Language Dictionaries"
-msgstr "Wiktionary"
+msgstr "Käytettävissä olevat sanastot"
 
 #: core/libs/widgets/text/spellcheckconfig.cpp:147
 #, kde-format
@@ -51284,10 +51293,7 @@ msgid "Editor Window"
 msgstr "Muokkausikkuna"
 
 #: core/showfoto/setup/showfotosetup.cpp:106
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
-#| "qt>"
+#, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
 msgstr ""
@@ -51295,16 +51301,13 @@ msgstr ""
 "qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
-#| "images and metadata</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
 "images and metadata</i></qt>"
 msgstr ""
-"<qt>Metatietojen asetukset<br/><i>Valokuviin talletettujen metatietojen "
-"käsittely</i></qt>"
+"<qt>Kuvaan upotetun tiedon hallinnointi<br><i>Aseta kuvan ja metatiedon "
+"väliset suhteet</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:117
 #, kde-format
@@ -51312,16 +51315,13 @@ msgid "Tool Tip"
 msgstr "Vihjeet"
 
 #: core/showfoto/setup/showfotosetup.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
-#| "tips</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
 "information in tool-tips</i></qt>"
 msgstr ""
-"<qt>Pienoiskuvien työkaluvihjeiden asetukset<br/><i>Mukauta työkaluvihjeissä "
-"näytettäviä tietoja</i></qt>"
+"<qt>Pienoiskuvarivi- ja kansionäkymäkohteiden työkaluvihjeiden asetukset<br/"
+"><i>Mukauta työkaluvihjeissä näytettäviä tietoja</i></qt>"
 
 # tätä käytetään asetuksissa
 #: core/showfoto/setup/showfotosetup.cpp:123
@@ -51330,28 +51330,21 @@ msgid "RAW Decoding"
 msgstr "RAW-kuvatiedostot"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
 "settings</i></qt>"
 msgstr ""
-"<qt>RAW-kuvatiedostojen käsittely<br/><i>Määrittele raakakuvien "
-"käsittelytoiminnot</i></qt>"
+"<qt>Raakakuvatiedostojen purkuasetukset<br/><i>Mukauta raakakuvien "
+"koodauksenpurkuasetuksia</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:130
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Settings for Color Management<br/><i>Customize color management "
-#| "settings</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
 "i></qt>"
 msgstr ""
-"<qt>Värinhallinta-asetukset<br/><i>Määritä omat värinhallinta-asetukset</i></"
-"qt>"
+"<qt>Värinhallinta-asetukset<br/><i>Mukauta värinhallinta-asetuksia</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:135
 #, kde-format
@@ -51389,14 +51382,13 @@ msgid "Plugins"
 msgstr "Liitännäiset"
 
 #: core/showfoto/setup/showfotosetup.cpp:151
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
-#| "accessible from the main interface</i></qt>"
+#, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
-msgstr "<qt>Liitännäiset<br/><i>Määrittele käytettävät liitännäiset</i></qt>"
+msgstr ""
+"<qt>Pääkäyttöliittymän liitännäisten asetukset<br/><i>Aseta, mitkä "
+"liitännäiset ovat sovelluksesta käytettävissä</i></qt>"
 
 #: core/showfoto/setup/showfotosetup.cpp:156
 #, kde-format
@@ -51446,32 +51438,21 @@ msgstr ""
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:116
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='https://en.wikipedia.org/wiki/"
-#| "IPTC_Information_Interchange_Model'>IPTC</a> - an older standard used in "
-#| "digital photography to store photographer information in images.</p>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "an older standard used in digital photography to store photographer "
 "information in images."
 msgstr ""
-"<p><a href='http://en.wikipedia.org/wiki/"
-"IPTC_Information_Interchange_Model'>IPTC</a> on vanha digikuvien "
-"kuvaustiedon tallennusstandardi.</p>"
+"vanhempi digivalokuvauksessa käytetty standardi kuvaajatiedon "
+"tallettamiseksi kuviin."
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:122
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><a href='https://en.wikipedia.org/wiki/"
-#| "Extensible_Metadata_Platform'>XMP</a> - a new standard used in digital "
-#| "photography, designed to replace IPTC.</p>"
+#, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
-msgstr ""
-"<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</"
-"a> on digivalokuvauksen uusi, IPTC:n korvaavaksi suunniteltu standardi.</p>"
+msgstr "uusi, IPTC:n korvaajaksi suunniteltu digivalokuvausstandardi"
 
 #: core/showfoto/setup/showfotosetupmetadata.cpp:143
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
@@ -51575,12 +51556,13 @@ msgstr "Keskitä nykyinen kohde pienoiskuvarivillä"
 #: core/showfoto/setup/showfotosetupmisc.cpp:159
 #, kde-format
 msgid "Store thumbnails on disk for faster reuse"
-msgstr ""
+msgstr "Talleta pienoiskuvat levylle nopeammin käytettäviksi"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:160
 #, kde-format
 msgid "Disable this option if you do not want thumbnails to be cached on disk."
 msgstr ""
+"Poista tämä valinta käytöstä, ellet halua pienoiskuvavälimuistia levylle."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:170
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:123
@@ -51616,12 +51598,17 @@ msgid ""
 "\"Pre-releases\" are proposed weekly to tests quickly new features\n"
 "and are not recommended to use in production as bugs can remain."
 msgstr ""
+"Tällä valinnalla asetetaan, millaisia uusia versioita päivitystä varten "
+"etsitään.\n"
+"”Vakaat” julkaisut ovat virallisia, tuotantokäytössä turvallisia versioita.\n"
+"”Esijulkaisuja” tulee viikoittain uusien ominaisuuksien testaamiseksi,\n"
+"eikä niitä suositella tuotantokäyttöön, koska vikoja voi yhä esiintyä."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:183
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:136
 #, kde-format
 msgid "Use Version With Debug Symbols"
-msgstr ""
+msgstr "Käytä virheenpaikannussymbolista versiota"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:184
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:137
@@ -51632,6 +51619,10 @@ msgid ""
 "This version is more heavy but can help developers to trace dysfunctions in "
 "debugger."
 msgstr ""
+"Jos tämä on valittu, päivityksiin käytetään virheenpaikannussymbolista "
+"versiota.\n"
+"Tällainen versio on raskaampi, mutta voi auttaa kehittäjiä jäljittämään "
+"ongelmia."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:189
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:142
@@ -51805,7 +51796,7 @@ msgstr "Ulkoasu"
 #, kde-format
 msgctxt "@title:tab"
 msgid "Spellcheck"
-msgstr ""
+msgstr "Oikoluku"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:358
 #: core/utilities/setup/misc/setupmisc.cpp:49
@@ -52737,23 +52728,19 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "Sanojen alkukirjaimet suuraakkosiin"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Päiväyksen muoto:"
+msgstr "Päiväyksen muoto"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:35
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Recognize faces"
+#, kde-format
 msgid "Recognize and format a date"
-msgstr "Tunnista kasvot"
+msgstr "Tunnista ja muotoile päiväys"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:39
 #, kde-format
 msgid "Recognize and format a date to string"
-msgstr ""
+msgstr "Tunnista ja muotoile päiväys merkkijonoksi"
 
 #: core/utilities/advancedrename/parser/modifiers/defaultvaluemodifier.cpp:44
 #, kde-format
@@ -52844,14 +52831,14 @@ msgid "To:"
 msgstr "Mihin:"
 
 #: core/utilities/advancedrename/parser/modifiers/removedoublesmodifier.cpp:32
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove Doubles"
-msgstr "Poista ryhmä"
+msgstr "Poista kaksoiskappaleet"
 
 #: core/utilities/advancedrename/parser/modifiers/removedoublesmodifier.cpp:33
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove duplicate words"
-msgstr "Poista kohde"
+msgstr "Poista toistuvat sanat"
 
 #: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
@@ -52953,14 +52940,14 @@ msgid "Database..."
 msgstr "Tietokanta…"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add information from the database"
-msgstr "Lisää uudet tiedot alkuperäisiin kuvatiedostoihin"
+msgstr "Lisää tietokannasta tietoa"
 
 #: core/utilities/advancedrename/parser/options/database/databaseoption.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Add database information"
-msgstr "Lisää metatiedot"
+msgstr "Lisää tietokannan tiedot"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentTagsList)
 #. i18n: ectx: property (text), widget (QTreeWidget, m_recommendedTagsList)
@@ -52978,9 +52965,9 @@ msgid "Description"
 msgstr "Kuvaus"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Common File Information"
-msgstr "Icc-väriprofiilin tiedot"
+msgstr "Yleistä tiedostotietoa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/commonkeys.cpp:56
 #, kde-format
@@ -53083,9 +53070,9 @@ msgid "Lens of the camera"
 msgstr "Kameran linssi"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:486
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Focal length"
 msgstr "Polttoväli"
@@ -53096,8 +53083,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Polttoväli (35mm-vastine)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:524
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Exposure time"
 msgstr "Valotusaika"
@@ -53118,8 +53105,8 @@ msgid "Flash mode"
 msgstr "Salaman tila"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:615
+#: core/utilities/searchwindow/searchfields_createfield.cpp:676
 #, kde-format
 msgid "White balance"
 msgstr "Valkotasapaino"
@@ -53130,7 +53117,7 @@ msgid "White balance (color temperature)"
 msgstr "Valkotasapaino (värilämpötila)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields_createfield.cpp:666
+#: core/utilities/searchwindow/searchfields_createfield.cpp:674
 #, kde-format
 msgid "Metering mode"
 msgstr "Mittaustapa"
@@ -53151,14 +53138,14 @@ msgid "Display Aspect Ratio"
 msgstr "Näytä kuvasuhde"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Äänen bittinopeus"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -53232,7 +53219,7 @@ msgid "Altitude in a human readable form"
 msgstr "Pinnankorkeus ihmisen luettavassa muodossa"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
-#: core/utilities/searchwindow/searchfields_createfield.cpp:249
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "Orientation"
 msgstr "Suunta"
@@ -53796,8 +53783,8 @@ msgid ""
 "digiKam in the files' metadata, to improve interoperability with other photo "
 "management programs:</p></qt>"
 msgstr ""
-"<qt><p>Valitse tässä, tallennetaanko digiKamissä kohteisiin kytketty tieto "
-"tiedostojen metatietoihin, mikä voi helpottaa toimintaa muiden "
+"<qt><p>Valitse tässä, tallennetaanko digiKamin kohteisiin yhdistämä tieto "
+"tiedostojen metatietoihin helpottamaan toimintaa muiden "
 "valokuvakäsittelyohjelmien kanssa:</p></qt>"
 
 #: core/utilities/firstrun/metadatapage.cpp:69
@@ -54128,9 +54115,7 @@ msgid "This shows all found duplicate items."
 msgstr "Tässä näkyvät löydetyt kaksoiskappaleet."
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@group"
-#| msgid "Reference Image Selection Method"
+#, kde-format
 msgctxt "@info"
 msgid "Reference Image Selection Method"
 msgstr "Viitekuvan valintatapa"
@@ -54142,20 +54127,16 @@ msgid "Older or Larger"
 msgstr "Vanhempi tai suurempi"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:128
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer selected Album as reference"
-msgstr "Suosi viitteeksi valittua kansiota"
+msgstr "Suosi viitteeksi valittua albumia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:131
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox similarity reference selection method"
-#| msgid "Prefer other than selected folder as reference"
+#, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer other than selected Album as reference"
-msgstr "Suosi viitteeksi muuta kuin valittua kansiota"
+msgstr "Suosi viitteeksi muuta kuin valittua albumia"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:134
 #, kde-format
@@ -54176,27 +54157,22 @@ msgid "Select method for reference image selection"
 msgstr "Valitse viitekuvan valintatapa"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:143
-#, fuzzy, kde-format
-#| msgid "Reference:"
+#, kde-format
 msgctxt "@label"
 msgid "Reference Album:"
-msgstr "Viite:"
+msgstr "Viitealbumi:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Reference"
+#, kde-format
 msgctxt "@title:tab"
 msgid "Reference"
 msgstr "Viite"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:165
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Restrict to:"
+#, kde-format
 msgctxt "@label"
 msgid "Restrict Search to:"
-msgstr "Rajoita:"
+msgstr "Rajaa hakua:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:178
 #, kde-format
@@ -54266,11 +54242,10 @@ msgid "Similarity range:"
 msgstr "Samankaltaisuusväli:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:232
-#, fuzzy, kde-format
-#| msgid "Last Search"
+#, kde-format
 msgctxt "@label"
 msgid "Limit Search to:"
-msgstr "Viimeisin haku"
+msgstr "Rajaa hakua:"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:236
 #, kde-format
@@ -54536,11 +54511,10 @@ msgstr ""
 "sumeaa hakua varten"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:284
-#, fuzzy, kde-format
-#| msgid "Mercator"
+#, kde-format
 msgctxt "the planet"
 msgid "Mercury"
-msgstr "Mercator"
+msgstr "Merkurius"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:289
 #, kde-format
@@ -54567,11 +54541,10 @@ msgid "Jupiter"
 msgstr "Jupiter"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:309
-#, fuzzy, kde-format
-#| msgid "Saturation"
+#, kde-format
 msgctxt "the planet"
 msgid "Saturn"
-msgstr "Värikylläisyys"
+msgstr "Saturnus"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:314
 #, kde-format
@@ -54592,20 +54565,16 @@ msgid "Pluto"
 msgstr "Pluto"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:329
-#, fuzzy, kde-format
-#| msgctxt "@item: WB temperature preset"
-#| msgid "Sun"
+#, kde-format
 msgctxt "the earth's star"
 msgid "Sun"
-msgstr "Auringonvalo"
+msgstr "Aurinko"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:334
-#, fuzzy, kde-format
-#| msgctxt "@item: WB temperature preset"
-#| msgid "Moonlight"
+#, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
-msgstr "Kuunvalo"
+msgstr "Kuu"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:339
 #, kde-format
@@ -54613,11 +54582,10 @@ msgid "Sky"
 msgstr "Taivas"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:345
-#, fuzzy, kde-format
-#| msgid "Unknown title"
+#, kde-format
 msgctxt "a planet without data"
 msgid "Unknown Planet"
-msgstr "Tuntematon otsikko"
+msgstr "Tuntematon planeetta"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
 #, kde-format
@@ -54631,21 +54599,18 @@ msgstr "P&iilota"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "&Configure..."
-msgstr "Asetukset…"
+msgstr "&Asetukset…"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:160
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgctxt "means meter"
 msgid "m"
-msgstr "cm"
+msgstr "m"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "mm"
@@ -54657,26 +54622,22 @@ msgid "km"
 msgstr "km"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:169
-#, fuzzy, kde-format
-#| msgid "cm"
+#, kde-format
 msgctxt "means centimeters"
 msgid "cm"
 msgstr "cm"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:172
-#, fuzzy, kde-format
-#| msgid "fast"
+#, kde-format
 msgctxt "means feet"
 msgid "ft"
-msgstr "nopea"
+msgstr "ft"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:175
-#, fuzzy, kde-format
-#| msgctxt "Inches"
-#| msgid "in"
+#, kde-format
 msgctxt "means inches"
 msgid "in"
-msgstr "tuumaa"
+msgstr "in"
 
 # Lienee järkevintä käyttää vain alkuperäistä
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:178
@@ -54700,22 +54661,19 @@ msgid "nm"
 msgstr "M"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:116
-#, fuzzy, kde-format
-#| msgid "Copy coordinates"
+#, kde-format
 msgid "Copy Coordinates"
 msgstr "Kopioi koordinaatit"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:132
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "&Address Details"
-msgstr "Osoite:"
+msgstr "&Osoitteen tiedot"
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:155
-#, fuzzy, kde-format
-#| msgid "No description available"
+#, kde-format
 msgid "No description available."
-msgstr "Ei kuvausta saatavilla"
+msgstr "Ei kuvausta saatavilla."
 
 #: core/utilities/geolocation/engine/core/MarbleWidgetPopupMenu.cpp:441
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:511
@@ -54731,8 +54689,8 @@ msgstr "Maan pääkaupunki"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
-#: core/utilities/searchwindow/searchfields_createfield.cpp:793
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
+#: core/utilities/searchwindow/searchfields_createfield.cpp:801
 #, kde-format
 msgid "City"
 msgstr "Kaupunki"
@@ -54789,11 +54747,9 @@ msgstr "I"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
-#, fuzzy, kde-format
-#| msgctxt "Image filter reproducible: No"
-#| msgid "No"
+#, kde-format
 msgid "N"
-msgstr "Ei"
+msgstr "P"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
@@ -54898,10 +54854,9 @@ msgid "Air Port"
 msgstr "Lentokenttä"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:489
-#, fuzzy, kde-format
-#| msgid "Observation"
+#, kde-format
 msgid "Observatory"
-msgstr "Havainto"
+msgstr "Observatorio"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:492
 #, kde-format
@@ -55747,11 +55702,9 @@ msgid "Cinema"
 msgstr "Elokuvateatteri"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1021
-#, fuzzy, kde-format
-#| msgctxt "@option"
-#| msgid "Information"
+#, kde-format
 msgid "Information"
-msgstr "Tietoja"
+msgstr "Tietoa"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1024
 #, kde-format
@@ -56786,13 +56739,13 @@ msgstr "Hiusristikkoliitännäisen asetukset"
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:52
 #, kde-format
 msgid "Gun 1"
-msgstr ""
+msgstr "Ase 1"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:61
 #, kde-format
 msgid "Gun 2"
-msgstr ""
+msgstr "Ase 2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, m_themeList)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:70
@@ -56809,17 +56762,17 @@ msgstr "Saksa"
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
 #, kde-format
 msgid "Crosshairs"
-msgstr ""
+msgstr "Hiusristikko"
 
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
 #, kde-format
 msgid "Cross&hairs"
-msgstr ""
+msgstr "&Hiusristikko"
 
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
-msgstr ""
+msgstr "Hiusristikon kartalla näyttävä liitännäinen."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, GraticuleConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:14
@@ -56839,7 +56792,7 @@ msgstr "&Värit"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:444
 #, kde-format
 msgid "&Grid:"
-msgstr ""
+msgstr "R&uudukko:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, gridPushButton)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:497
@@ -56857,13 +56810,13 @@ msgstr "Kääntö&piirit:"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:938
 #, kde-format
 msgid "Color of the tropical circles."
-msgstr ""
+msgstr "Kääntöpiirien väri."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1363
 #, kde-format
 msgid "&Equator:"
-msgstr ""
+msgstr "&Päiväntasaaja:"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, equatorPushButton)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1379
@@ -56943,12 +56896,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
 #, kde-format
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Kravun kääntöpiiri"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
 #, kde-format
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Kauriin kääntöpiiri"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
 #, kde-format
@@ -57007,7 +56960,7 @@ msgstr "Alkuperäinen kehittäjä"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
 #, kde-format
 msgid "km"
-msgstr ""
+msgstr "km"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
 #, kde-format
@@ -57017,12 +56970,12 @@ msgstr "m"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "mi"
-msgstr ""
+msgstr "mi"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
 #, kde-format
 msgid "nm"
-msgstr ""
+msgstr "nm"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
 #, fuzzy, kde-format
@@ -57040,7 +56993,7 @@ msgstr "Mittaustyökalun asetukset"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:20
 #, kde-format
 msgid "Ruler Type"
-msgstr ""
+msgstr "Viivaimen tyyppi"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_1)
@@ -57048,7 +57001,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:45
 #, kde-format
 msgid "Polygon"
-msgstr ""
+msgstr "Monikulmio"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, m_modeCombo)
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
@@ -57095,7 +57048,7 @@ msgstr "Piiri"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:159
 #, kde-format
 msgid "Area"
-msgstr ""
+msgstr "Alue"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_showRadiusLabelsCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:142
@@ -57122,7 +57075,7 @@ msgstr "&Mittaustyökalu"
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:118
 #, kde-format
 msgid "Measure distances between two or more points."
-msgstr ""
+msgstr "Mittaa etäisyyksiä kahden tai useamman pisteen välillä."
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:427
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:562
@@ -57131,6 +57084,8 @@ msgid ""
 "Area:\n"
 "%1"
 msgstr ""
+"Alue:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:446
 #, kde-format
@@ -57138,6 +57093,8 @@ msgid ""
 "Circumference:\n"
 "%1"
 msgstr ""
+"Ympärysmitta:\n"
+"%1"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:581
 #, kde-format
@@ -57151,7 +57108,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:647
 #, kde-format
 msgid "Polygon Ruler"
-msgstr ""
+msgstr "Monikulmioviivain"
 
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureToolPlugin.cpp:652
 #, kde-format
@@ -57224,7 +57181,7 @@ msgstr "Nykyisen sijainnin painike"
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:273
 #, kde-format
 msgid "Home Button"
-msgstr ""
+msgstr "Kotipainike"
 
 #: core/utilities/geolocation/engine/plugins/render/overviewmap/OverviewMap.cpp:89
 #, kde-format
@@ -57363,7 +57320,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
 #, kde-format
 msgid "GeoJSON"
-msgstr ""
+msgstr "GeoJSON"
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:37
 #, kde-format
@@ -57379,7 +57336,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:69
 #, kde-format
 msgid "Google Earth KML"
-msgstr ""
+msgstr "Google Earth KML"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, kde-format
@@ -57445,7 +57402,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:68
 #, kde-format
 msgid "Micro World Database II"
-msgstr ""
+msgstr "Micro World Database II"
 
 #: core/utilities/geolocation/engine/projections/AzimuthalEquidistantProjection.cpp:73
 #, kde-format
@@ -57463,7 +57420,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:49
 #, kde-format
 msgid "Flat Map"
-msgstr ""
+msgstr "Litteä kartta"
 
 #: core/utilities/geolocation/engine/projections/EquirectProjection.cpp:54
 #, kde-format
@@ -57513,7 +57470,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
 #, kde-format
 msgid "Globe"
-msgstr ""
+msgstr "Pallokartta"
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:82
 #, kde-format
@@ -57556,17 +57513,17 @@ msgstr "Yksiköt"
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:113
 #, kde-format
 msgid "Kilometer, Meter"
-msgstr ""
+msgstr "Kilometrit, metrit"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:114
 #, kde-format
 msgid "Miles, Feet"
-msgstr ""
+msgstr "Mailit, jalat"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:115
 #, kde-format
 msgid "Nautical miles, Knots"
-msgstr ""
+msgstr "Merimailit, solmut"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:116
 #, kde-format
@@ -57574,6 +57531,8 @@ msgid ""
 "The unit that gets used to measure altitude, lengths and distances (e.g. km, "
 "mi, ft)."
 msgstr ""
+"Pinnankorkeuksiin, pituuksiin ja etäisyyksiin käytetty yksikkö (esim. km, "
+"mi, ft)."
 
 # tämä lienee valokuvaukseen liittyvä erikoistermi
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:118
@@ -57695,7 +57654,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:176
 #, kde-format
 msgid "Cache"
-msgstr ""
+msgstr "Välimuisti"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:177
 #, fuzzy, kde-format
@@ -57729,7 +57688,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:184
 #, kde-format
 msgid "Physical Memory:"
-msgstr ""
+msgstr "Fyysinen muisti:"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:189
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:196
@@ -57759,6 +57718,9 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
+"Kartalla käytettävä oletusfontti.\n"
+"Asetusta käytetään vain maailman- ja satelliittikartoilla,\n"
+"ei katukartalla."
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:215
 #, kde-format
@@ -57772,11 +57734,14 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Näytä maailmankartan koordinaattiruudukko.\n"
+"Asetusta käytetään vain maailman-, satelliitti-\n"
+"ja katukartoilla."
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:220
 #, kde-format
 msgid "Show Cross-Hair"
-msgstr ""
+msgstr "Näytä hiusristikko"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:221
 #, kde-format
@@ -57785,6 +57750,9 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
+"Näytä hiusristikko kartan keskellä.\n"
+"Asetusta käytetään vain maailman-, satelliitti-\n"
+"ja katukartoilla."
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:225
 #, fuzzy, kde-format
@@ -57826,10 +57794,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:240
-#, fuzzy, kde-format
-#| msgid "Show Preview"
+#, kde-format
 msgid "Show Relief"
-msgstr "Näytä esikatselu"
+msgstr "Näytä korkokuva"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:241
 #, kde-format
@@ -57863,7 +57830,7 @@ msgstr "Tuntemattomat työkalut"
 #: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:52
 #, kde-format
 msgid "Unable to insert data into cache"
-msgstr ""
+msgstr "Tietoa ei voi lisätä välimuistiin"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:138
 #, kde-format
@@ -57883,7 +57850,7 @@ msgstr "Lataa reitti"
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:144
 #, kde-format
 msgid "Enabled when a route exists"
-msgstr ""
+msgstr "Käytössä, kun reitti on olemassa"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:157
 #, kde-format
@@ -57940,12 +57907,12 @@ msgstr ""
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
 #, kde-format
 msgid "Estimated download size: %1 MB"
-msgstr ""
+msgstr "Arvioitu latauskoko: %1 Mt"
 
 #: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "Estimated download size: %1 kB"
-msgstr ""
+msgstr "Arvioitu latauskoko: %1 kt"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, LatLonBoxWidget)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:17
@@ -57969,13 +57936,13 @@ msgstr "Pohjoinen leveysaste"
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:203
 #, kde-format
 msgid "°"
-msgstr ""
+msgstr "°"
 
 #. i18n: ectx: property (text), widget (QLabel, northLabel)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:66
 #, kde-format
 msgid "&N"
-msgstr ""
+msgstr "&P"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, westSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:93
@@ -57987,7 +57954,7 @@ msgstr "Läntinen pituusaste"
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:118
 #, kde-format
 msgid "&W"
-msgstr ""
+msgstr "&L"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, eastSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:145
@@ -57999,7 +57966,7 @@ msgstr "Itäinen pituusaste"
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:170
 #, kde-format
 msgid "&E"
-msgstr ""
+msgstr "&I"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, southSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:197
@@ -58011,7 +57978,7 @@ msgstr "Eteläinen leveysaste"
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:222
 #, kde-format
 msgid "&S"
-msgstr ""
+msgstr "&E"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:20
@@ -58057,12 +58024,14 @@ msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
 msgstr ""
+"Marblen on luotava tämä kartta. Tämä täytyy tehdä vain kerran ja kestää "
+"joitakin sekunteja."
 
 #. i18n: ectx: property (format), widget (QProgressBar, progressBar)
 #: core/utilities/geolocation/engine/tile/TileCreatorDialog.ui:560
 #, no-c-format, kde-format
 msgid "%p%"
-msgstr ""
+msgstr "%p %"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: core/utilities/geolocation/engine/tile/TileLevelRangeWidget.ui:29
@@ -58645,24 +58614,24 @@ msgstr "Tiedoston avaaminen epäonnistui."
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1004
 #, kde-format
 msgid "Failed to add GPS info to image."
-msgstr ""
+msgstr "GPS-tiedon lisääminen kuvaan epäonnistui."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1016
 #, kde-format
 msgid "Failed to remove GPS info from image"
-msgstr ""
+msgstr "GPS-tiedon poistaminen kuvasta epäonnistui"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1051
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1059
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1082
 #, kde-format
 msgid "Failed to save tags to file."
-msgstr ""
+msgstr "Luokitusten tallentaminen tiedostoon epäonnistui."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:1094
 #, kde-format
 msgid "Unable to save changes to file"
-msgstr ""
+msgstr "Muutoksia ei voi tallentaa tiedostoon"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:87
 #, kde-format
@@ -58687,7 +58656,7 @@ msgstr "Poista korkeus"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:93
 #, kde-format
 msgid "Remove uncertainty"
-msgstr ""
+msgstr "Poista epävarmuus"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:94
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:705
@@ -58698,13 +58667,12 @@ msgstr "Poista nopeus"
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:95
 #, kde-format
 msgid "Look up missing altitude values"
-msgstr ""
+msgstr "Etsi puuttuvat pinnankorkeusarvot"
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:276
-#, fuzzy, kde-format
-#| msgid "Images with coordinates"
+#, kde-format
 msgid "Items have different coordinates."
-msgstr "Koordinaatilliset kuvat"
+msgstr "Kohteilla on eri koordinaatit."
 
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:434
 #, kde-format
@@ -58887,7 +58855,7 @@ msgstr "Lisää lähiöluokitus"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:195
 #, kde-format
 msgid "Add town tag"
-msgstr ""
+msgstr "Lisää kaupunkiluokitus"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:197
 #, kde-format
@@ -58907,7 +58875,7 @@ msgstr "Lisää katuosoite"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:203
 #, kde-format
 msgid "Add house number tag"
-msgstr ""
+msgstr "Lisää talonnumeroluokitus"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:205
 #, kde-format
@@ -58962,12 +58930,12 @@ msgstr "Open Street Map"
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:233
 #, kde-format
 msgid "Geonames.org place name (non-US)"
-msgstr ""
+msgstr "Geonames.org-paikannimi (muut kuin Yhdysvallat)"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:234
 #, kde-format
 msgid "Geonames.org full address (US only)"
-msgstr ""
+msgstr "Koko Geonames.org-osoite (vain Yhdysvallat)"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:246
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:445
@@ -59001,12 +58969,10 @@ msgid "Retrieving RG info -"
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:461
-#, fuzzy, kde-format
-#| msgctxt "@item: map tool"
-#| msgid "Reverse Geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reverse Geo-coding Error"
-msgstr "Käänteinen geokoodaus"
+msgstr "Käänteisen geokoodauksen virhe"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:799
 #, kde-format
@@ -59034,11 +59000,10 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:955
-#, fuzzy, kde-format
-#| msgid "Process reverse geocoding"
+#, kde-format
 msgctxt "@title:window"
 msgid "Abort reverse geocoding?"
-msgstr "Käsittele käänteinen sijaintitieto"
+msgstr "Keskeytetäänkö käänteinen geokoodaus?"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:248
 #, kde-format
@@ -59056,11 +59021,12 @@ msgid "Probably not a GPX file."
 msgstr "Todennäköisesti ei GPX-tiedosto."
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:299
-#, fuzzy, kde-format
-#| msgid "File is a GPX file, but no datapoints were found."
+#, kde-format
 msgid ""
 "File is a GPX file, but no track points with valid timestamps were found."
-msgstr "Tiedosto on GPX, mutta datapisteitä ei löydy."
+msgstr ""
+"Tiedosto on GPX, mutta siitä ei löydy pisteitä, joilla olisi kelvolliset "
+"aikaleimat."
 
 #: core/utilities/geolocation/geoiface/widgets/mapwidget_setup.cpp:63
 #, kde-format
@@ -59448,8 +59414,7 @@ msgid "<b>No Profile</b>"
 msgstr "<b>Ei profiilia</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:70
-#, fuzzy, kde-format
-#| msgid "Soft Proofing Options"
+#, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
 msgstr "Pehmeän vedostuksen valinnat"
@@ -59475,9 +59440,9 @@ msgid "Disable soft-proofing color managed view"
 msgstr ""
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
-#, fuzzy, kde-format
+#, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
-msgstr "<b>Metatietojen tallennus kuvatiedostoihin</b>"
+msgstr "<b>Pehmeän vedostusnäkymän asetukset</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:92
 #, kde-format
@@ -59966,11 +59931,10 @@ msgid "Rotate Right"
 msgstr "Kierrä oikealle"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:537
-#, fuzzy, kde-format
-#| msgid "Auto rotate"
+#, kde-format
 msgctxt "@action"
 msgid "Auto-Rotate"
-msgstr "Automaattinen kääntö"
+msgstr "Käännä automaattisesti"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:570
 #: core/utilities/import/main/importui.cpp:568
@@ -60059,15 +60023,15 @@ msgid "Cannot load \"%1\""
 msgstr "Ei voi ladata: ”%1”"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1586
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Cannot open the specified working space profile (\"%1\"). No color "
 "transformation will be applied. Please check the color management "
 "configuration in digiKam's setup."
 msgstr ""
-"ICC-profiilien polku näyttää olevan epäkelpo. Värimuunnosta ei suoriteta. "
-"Korjaa ICC-polku digiKamin värienhallinta-asetuksista."
+"Annettua työtilaprofiilia (”%1”) ei voi avata. Värimuunnosta ei tehdä. "
+"Tarkista digiKamin värinhallinta-asetukset."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:1643
 #, kde-format
@@ -60099,7 +60063,7 @@ msgstr "Tilapäistiedostoa kansiossa ”%1” ei saatu avattua: %2 (%3)"
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
-msgstr ""
+msgstr "Tuloskuvan tallennusmuotoa ei voitu päätellä."
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
@@ -60316,7 +60280,7 @@ msgstr "Muokkaa kommentteja"
 #: core/utilities/survey/surveywindow_setup.cpp:175
 #, kde-format
 msgid "Show Assigned Tags"
-msgstr "Näytä kytketyt tunnisteet"
+msgstr "Näytä yhdistetyt tunnisteet"
 
 #: core/utilities/imageeditor/main/imagewindow_setup.cpp:229
 #, kde-format
@@ -62230,7 +62194,7 @@ msgstr "Muokkaa oikean puolen huomautuksia"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:244
 #, kde-format
 msgid "Show Assigned Tags on the Right"
-msgstr "Näytä oikealle puolen kytketyt luokitukset"
+msgstr "Näytä oikealle yhdistetyt luokitukset"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
@@ -62414,6 +62378,8 @@ msgctxt "@info:tooltip"
 msgid ""
 "This will re-train the face recognizer with tagged faces in your library."
 msgstr ""
+"Tämä kouluttaa kasvontunnistuksen uudelleen kirjastoon luokitetuista "
+"kasvoista."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:212
 #, fuzzy, kde-format
@@ -62426,13 +62392,13 @@ msgstr "Poista kaikki kuvan kasvotunnisteet"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This will clear all detected and tagged faces."
-msgstr ""
+msgstr "Tämä tyhjentää kaikki tunnistetut ja luokitetut kasvot."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:217
 #, kde-format
 msgctxt "@option:check"
 msgid "Clear rejected face matches"
-msgstr ""
+msgstr "Tyhjennä hylätyt kasvo-osumat"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:219
 #, kde-format
@@ -62658,16 +62624,14 @@ msgid "Item scanned for duplicates: %1\n"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Kaksoiskappaleet"
+msgstr "Kaksoiskappaleita löytyi: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Kaksoiskappaleet"
+msgstr "Kaksoiskappale löytyi: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, fuzzy, kde-format
@@ -62756,7 +62720,7 @@ msgstr "Löytyi %1 kasvot."
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "Found %1 faces."
-msgstr ""
+msgstr "Löytyi %1 kasvot."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
 #, kde-format
@@ -62769,10 +62733,9 @@ msgid "Finger-prints"
 msgstr "Sormenjäljet"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
-#, fuzzy, kde-format
-#| msgid "Rebuild Fingerprint for: %1\n"
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Rakenne sormenjälki uudelleen: %1\n"
+msgstr "Rakenna sormenjälki uudelleen: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
@@ -62820,46 +62783,37 @@ msgid "Item scanned for quality: %1"
 msgstr "Etsi albumeista:"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Poista tunniste kuvista"
+msgstr "Poista kuvasta kaikki kasvotieto"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
-#, fuzzy, kde-format
-#| msgid "Remove Tag from Images"
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Poista tunniste kuvista"
+msgstr "Poista kuvasta kaikki luokitukset"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Kuvan %1 lähetys epäonnistui\n"
+"%1 valitusta kuvasta poistetaan kaikki kasvotieto.\n"
 "Haluatko jatkaa?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Kuvan %1 lähetys epäonnistui\n"
+"%1 valitusta kuvasta poistetaan kaikki luokitukset.\n"
 "Haluatko jatkaa?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
-#, fuzzy, kde-format
-#| msgid "Getting thumbnails for %1..."
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "Haetaan näytekuvaa %1..."
+msgstr "Tyhjennä metatiedot: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
 #, fuzzy, kde-format
@@ -62900,10 +62854,9 @@ msgid "Updating database from image metadata"
 msgstr "Päivitetään tietokantaa kuvien metatiedoista"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
-#, fuzzy, kde-format
-#| msgid "Getting thumbnails for %1..."
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "Haetaan näytekuvaa %1..."
+msgstr "Metatiedon tahdistus: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
 #, fuzzy, kde-format
@@ -62937,10 +62890,9 @@ msgid "Generate Thumbnails"
 msgstr "Luo pienoiskuvat"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
-#, fuzzy, kde-format
-#| msgid "Thumbnail for: %1\n"
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Pienoiskuva kohteelle: %1\n"
+msgstr "Pienoiskuva: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
 #, kde-format
@@ -63317,6 +63269,8 @@ msgid ""
 "Assigned batch tools list is empty for Queues listed below. Please assign "
 "tools."
 msgstr ""
+"Alla lueteltuihin jonoihin kytkettyjen eräajotyökalujen luettelo on tyhjä. "
+"Kytke työkaluja."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:130
 #, kde-format
@@ -63356,7 +63310,7 @@ msgstr "RAW-tiedostot latautuvat:"
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:178
 #, kde-format
 msgid "Perform RAW demosaicing"
-msgstr ""
+msgstr "Suorita raakakuvan mosaiikinpoisto"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:179
 #, kde-format
@@ -63377,12 +63331,10 @@ msgid ""
 msgstr "Aseta tämä valinta, niin muutettu kuva tallennetaan uuteen tiedostoon"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:198
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check"
 msgid "Uses all processors"
-msgstr "Käytä kaikkia suoritinytimiä"
+msgstr "Käyttää kaikkia suorittimia"
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:199
 #, kde-format
@@ -63390,6 +63342,8 @@ msgid ""
 "Turn on this option to use all CPU core from your computer to process more "
 "than one item from a queue at the same time."
 msgstr ""
+"Ota tämä asetus käyttöön, niin usea jonon kohde käsitellään samanaikaisesti "
+"tietokoneen suorittimen kaikilla ytimillä."
 
 #: core/utilities/queuemanager/views/queuesettingsview.cpp:353
 #, kde-format
@@ -63478,7 +63432,7 @@ msgstr "Työnkulku"
 #: core/utilities/queuemanager/views/toolsview.cpp:78
 #, kde-format
 msgid "You can see below the history of last batch operations processed."
-msgstr ""
+msgstr "Alta näkee käsiteltyjen eräajotoimenpiteiden historian."
 
 #: core/utilities/queuemanager/views/toolsview.cpp:79
 #, kde-format
@@ -63813,672 +63767,678 @@ msgid "and"
 msgstr "ja"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#, fuzzy, kde-format
+#| msgid "Modified"
+msgid "Modified last"
+msgstr "Muutettu"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:189
+#, fuzzy, kde-format
+#| msgid "Return items modified between"
+msgid "Return items modified within the last"
+msgstr "Etsi kuvat, joita on muutettu välillä"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
 msgid "Time"
 msgstr "Aika"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
 msgid "Return items with created time between"
 msgstr "Palauta kohteet, joiden luontiaika on välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:189
+#: core/utilities/searchwindow/searchfields_createfield.cpp:197
 #, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:199
+#: core/utilities/searchwindow/searchfields_createfield.cpp:207
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Exif-suunta"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:199
+#: core/utilities/searchwindow/searchfields_createfield.cpp:207
 #, kde-format
 msgid "Find items with orientation flag"
 msgstr "Etsi kuvat, joissa on suuntatieto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgid "Find items with a width between"
 msgstr "Etsi kuvat, joiden leveys on väliltä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:222
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:239
 #, kde-format
 msgid "Find items with a height between"
 msgstr "Etsi kuvat, joiden korkeus on väliltä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:232
+#: core/utilities/searchwindow/searchfields_createfield.cpp:240
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:250
+#: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Etsi kohteet, joilla"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:259
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgid "File Format"
 msgstr "Tiedostomuoto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:259
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgid "Return items with the file format"
 msgstr "Etsi kuvat, joiden tiedostomuoto on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:267
+#: core/utilities/searchwindow/searchfields_createfield.cpp:275
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [kuva]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:276
+#: core/utilities/searchwindow/searchfields_createfield.cpp:284
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:285
+#: core/utilities/searchwindow/searchfields_createfield.cpp:293
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [ääni]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:322
 #, kde-format
 msgid "Color Depth"
 msgstr "Värisyvyys"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:322
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Etsi kohteen, joilla"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
 #, kde-format
 msgid "Color Model"
 msgstr "Värimalli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
 #, kde-format
 msgid "Find items with the color model"
 msgstr "Etsi kuvat, joiden värimalli on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:329
-#: core/utilities/searchwindow/searchfields_createfield.cpp:330
-#: core/utilities/searchwindow/searchfields_createfield.cpp:331
-#: core/utilities/searchwindow/searchfields_createfield.cpp:332
-#: core/utilities/searchwindow/searchfields_createfield.cpp:333
-#: core/utilities/searchwindow/searchfields_createfield.cpp:334
-#: core/utilities/searchwindow/searchfields_createfield.cpp:335
-#: core/utilities/searchwindow/searchfields_createfield.cpp:336
 #: core/utilities/searchwindow/searchfields_createfield.cpp:337
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:339
+#: core/utilities/searchwindow/searchfields_createfield.cpp:340
+#: core/utilities/searchwindow/searchfields_createfield.cpp:341
+#: core/utilities/searchwindow/searchfields_createfield.cpp:342
+#: core/utilities/searchwindow/searchfields_createfield.cpp:343
+#: core/utilities/searchwindow/searchfields_createfield.cpp:344
+#: core/utilities/searchwindow/searchfields_createfield.cpp:345
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [kuva]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:341
-#: core/utilities/searchwindow/searchfields_createfield.cpp:342
-#: core/utilities/searchwindow/searchfields_createfield.cpp:343
-#: core/utilities/searchwindow/searchfields_createfield.cpp:344
+#: core/utilities/searchwindow/searchfields_createfield.cpp:349
+#: core/utilities/searchwindow/searchfields_createfield.cpp:350
+#: core/utilities/searchwindow/searchfields_createfield.cpp:351
+#: core/utilities/searchwindow/searchfields_createfield.cpp:352
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [video]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:355
+#: core/utilities/searchwindow/searchfields_createfield.cpp:363
 #, kde-format
 msgid "The make of the camera"
 msgstr "Kameran merkki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:391
+#: core/utilities/searchwindow/searchfields_createfield.cpp:399
 #, kde-format
 msgid "The model of the camera"
 msgstr "Kameran malli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:427
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "The type of the lens"
 msgstr "Linssin tyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#: core/utilities/searchwindow/searchfields_createfield.cpp:449
+#, kde-format
 msgid "Return items without a camera ..."
-msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
+msgstr "Palauta kamerattomat kohteet…"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:444
-#, fuzzy, kde-format
-#| msgctxt "camera make"
-#| msgid "Make:"
+#: core/utilities/searchwindow/searchfields_createfield.cpp:452
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
-msgstr "Merkki:"
+msgstr "Merkki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:445
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Malli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Ei linssisuodatusta"
+msgstr "Linssin tyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:466
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Linssin aukko f-lukuna"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:459
+#: core/utilities/searchwindow/searchfields_createfield.cpp:467
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:486
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Linssin polttoväli"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:479
+#: core/utilities/searchwindow/searchfields_createfield.cpp:487
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35 mm vastaava polttoväliä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:498
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:517
+#: core/utilities/searchwindow/searchfields_createfield.cpp:525
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:537
-#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#: core/utilities/searchwindow/searchfields_createfield.cpp:545
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Automaattivalotusohjelma"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:549
-#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Automaattinen tai käyttäjän valotus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO-filminopeus (lineaarinen asteikko, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:561
+#: core/utilities/searchwindow/searchfields_createfield.cpp:569
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:584
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Salama"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:584
-#: core/utilities/searchwindow/searchfields_createfield.cpp:667
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:675
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Salaman tila"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:596
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Automaattinen tai käyttäjän valkotasapaino"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:615
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Valkotasapainoon käytetty värilämpötila"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:616
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:628
 #, kde-format
 msgid "Metering Mode"
 msgstr "Kuvaustila"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:628
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Valotuksen tunnistustapa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
-#: core/utilities/searchwindow/searchfields_createfield.cpp:645
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Subject Distance"
 msgstr "Kohteen etäisyys"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Kohteen etäisyys linssistä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:633
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:645
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, fuzzy, kde-format
 #| msgid "Capture Device Settings"
 msgid "Capture Settings"
 msgstr "Kaappauslaitteen asetukset"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without selected capture settings ..."
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:665
+#: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "ISO film speed"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:677
 #, fuzzy, kde-format
 #| msgid "White balance (color temperature)"
 msgid "White balance color temperature"
 msgstr "Valkotasapaino (värilämpötila)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:671
+#: core/utilities/searchwindow/searchfields_createfield.cpp:679
 #, fuzzy, kde-format
 #| msgid "Subject distance (category)"
 msgid "Subject Distance Category"
 msgstr "Kohteen etäisyys (luokka)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:698
+#: core/utilities/searchwindow/searchfields_createfield.cpp:721
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:698
 #, kde-format
 msgid "Altitude range"
 msgstr "Korkeusalue"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:699
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:721
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "Kuvalla ei ole GPS-tietoa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:714
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Ei geopaikannettu"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:724
-#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#: core/utilities/searchwindow/searchfields_createfield.cpp:732
+#: core/utilities/searchwindow/searchfields_createfield.cpp:799
 #, kde-format
 msgid "Country"
 msgstr "Maa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:724
+#: core/utilities/searchwindow/searchfields_createfield.cpp:732
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Kohteessa näytetty maa"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
 msgid "Province"
 msgstr "Provinssi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Kohteessa näytetty alue"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, kde-format
 msgid "City shown in the item"
 msgstr "Kohteessa näytetty kaupunki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Sublocation"
 msgstr "Alisijainti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Kohteessa näytetty pienempi alue"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, fuzzy, kde-format
 #| msgid "Place:"
 msgid "Place"
 msgstr "Paikka:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, fuzzy, kde-format
 #| msgid "Return items without face regions"
 msgid "Return items without selected place information ..."
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:792
+#: core/utilities/searchwindow/searchfields_createfield.cpp:800
 #, fuzzy, kde-format
 #| msgid "State/Province:"
 msgid "State/Province"
 msgstr "Osavaltio tai provinssi:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:812
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Luoja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:813
 #, kde-format
 msgid "Return items created by"
 msgstr "Etsi kuvat, jotka on luonut"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:818
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:818
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Etsi kuvat, joiden kommentti sisältää"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgid "Return items commented by"
 msgstr "Etsi kuvat, joita on kommentoinut"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Headline"
 msgstr "IPTC-”headline”"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Etsi kuvat, joiden IPTC-otsake on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Otsikko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Etsi kuvat, joiden IPTC-otsikko on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Etsi kuvat, jotka ovat yhdistetty kaikkiin seuraaviin sanoihin:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, kde-format
 msgid "Empty Text"
 msgstr "Tyhjä teksti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, fuzzy, kde-format
 #| msgid "Return items without text in:"
 msgid "Return items without text in"
 msgstr "Etsi tekstittömiä kohteita:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:874
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Luoja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Kuvateksti"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:868
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Tekijä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:869
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Otsakerivi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:870
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Otsikko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
-#: core/utilities/searchwindow/searchfields_createfield.cpp:899
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Kuvasuhde"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Etsi kuvat, joiden kuvasuhde on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:896
 #, kde-format
 msgid "Pixel Size"
 msgstr "Kuvakoko"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:896
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Etsi kuvat, joiden korkeus × leveys on välillä"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:889
+#: core/utilities/searchwindow/searchfields_createfield.cpp:897
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:899
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Etsi videot, joiden kuvasuhde on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:916
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Length of the video"
 msgstr "Videon kesto"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:917
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:918
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr " s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:934
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Frame Rate"
 msgstr "Kuvataajuus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:934
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Etsi videot, joiden kuvataajuus on"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:935
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr " fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:952
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgid "Codec"
 msgstr "Koodekki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:952
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgid "Return video codec"
 msgstr "Etsi videot videokoodekilla"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Palauta äänen bittinopeus"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1023
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1024
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr " bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Palauta äänikanavan tyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Mono"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Stereo"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1044
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1045
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 Surround Sound"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 kanavan sekvenssi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1047
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1055
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Muu kanavatyyppi"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Palauta äänikoodekki"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1166
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Faces"
 msgstr "Kasvot"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Etsi kohteita kasvojen alueiden määrän mukaan"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1167
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "ja"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
 #, kde-format
 msgid "No Face Regions"
 msgstr "Ei kasvojen alueita"
@@ -64513,6 +64473,34 @@ msgstr "Vaakasuuntainen"
 msgid "Portrait orientation"
 msgstr "Pystysuuntainen"
 
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "seconds"
+msgid "seconds"
+msgstr "sekuntia"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "minutes"
+msgid "minutes"
+msgstr "minuuttia"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "hours"
+msgid "hours"
+msgstr "tuntia"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "time adjust offset, days value label"
+#| msgid "days"
+msgid "days"
+msgstr "päivää"
+
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
@@ -64531,29 +64519,27 @@ msgctxt "Edit selected search"
 msgid "Edit..."
 msgstr "Muokkaa…"
 
-#: core/utilities/searchwindow/searchgroup.cpp:62
+#: core/utilities/searchwindow/searchgroup.cpp:63
 #, kde-format
 msgid "File, Album, Tags"
 msgstr "Tiedosto, albumi, tunnisteet"
 
-#: core/utilities/searchwindow/searchgroup.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@title: item properties"
-#| msgid "Item Properties"
+#: core/utilities/searchwindow/searchgroup.cpp:83
+#, kde-format
 msgid "Item Properties"
 msgstr "Kohteen ominaisuudet"
 
-#: core/utilities/searchwindow/searchgroup.cpp:133
+#: core/utilities/searchwindow/searchgroup.cpp:135
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "Kuvateksti, kommentti, otsikko"
 
-#: core/utilities/searchwindow/searchgroup.cpp:184
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "Maantieteellinen sijainti"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:210
 #, kde-format
 msgid "Face regions"
 msgstr "Kasvon alueet"
@@ -65015,6 +65001,10 @@ msgid ""
 "regenerate all already stored thumbnails via the <interface>Tools / "
 "Maintenance</interface> menu."
 msgstr ""
+"Tämä valinta muuttaa tuotettujen pienoiskuvien kokoa. digiKam on "
+"käynnistettävä uudelleen, jotta asetus tulisi voimaan. Lisäksi jo talletetut "
+"pienoiskuvat täytyy luoda uudelleen <interface>Työkalut / Ylläpito</"
+"interface> -valikosta."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:27
 #, kde-format
@@ -65152,11 +65142,9 @@ msgid "Check this if you want to see icons and text in the image preview."
 msgstr "Valitse tämä, jos haluat tekstin taakse taustatäytön."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@option:radio"
-#| msgid "Save changes automatically"
+#, kde-format
 msgid "Auto play of videos or animations"
-msgstr "Tallenna muutokset automaattisesti"
+msgstr "Videoiden tai animaatioiden automaattitoisto"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, fuzzy, kde-format
@@ -65246,7 +65234,7 @@ msgstr "Puunäkymät"
 #: core/utilities/setup/album/setupcategory.cpp:78
 #, kde-format
 msgid "Manage categories to sort and re-arrange album tree-view."
-msgstr ""
+msgstr "Lajittele ja järjestele albumin puunäkymä hallinnoimalla luokkia."
 
 #: core/utilities/setup/album/setupcategory.cpp:85
 #, kde-format
@@ -65342,6 +65330,8 @@ msgid ""
 "Additional &image file extensions (<a href='image'>Currently-supported "
 "types</a>):"
 msgstr ""
+"Kuvatiedostojen lisä&päätteet (<a href='image'>tällä hetkellä tuetut tyypit</"
+"a>):"
 
 #: core/utilities/setup/album/setupmime_setup.cpp:51
 #, kde-format
@@ -65725,12 +65715,15 @@ msgstr ""
 #, kde-format
 msgid "Use a space as a separator to specify multiple file names to ignore."
 msgstr ""
+"Antaessasi useita sivuutettavia tiedostonimiä käytä erottimena välilyöntiä."
 
 #: core/utilities/setup/camera/setupcamera.cpp:389
 #, kde-format
 msgid ""
 "Use a space as a separator to specify multiple file extensions to ignore."
 msgstr ""
+"Antaessasi useita sivuutettavia tiedostopäätteitä käytä erottimena "
+"välilyöntiä."
 
 #: core/utilities/setup/camera/setupcamera.cpp:393
 #, kde-format
@@ -65748,10 +65741,9 @@ msgid "Ignored file extensions:"
 msgstr "Ohitetut tiedostonimipäätteet:"
 
 #: core/utilities/setup/camera/setupcamera.cpp:402
-#, fuzzy, kde-format
-#| msgid "Defaults"
+#, kde-format
 msgid "&Defaults"
-msgstr "Oletukset"
+msgstr "&Oletukset"
 
 #: core/utilities/setup/camera/setupcamera.cpp:418
 #, kde-format
@@ -65853,6 +65845,10 @@ msgid ""
 "images, a half size version of the Raw data is used instead of the embedded "
 "JPEG preview.</p>"
 msgstr ""
+"<p>Tällä valinnalla kuvat ladataan täyskokoisina pienennetyn sijaan "
+"esikatselua varten. Koska tämä hidastaa kuvien latausta, käytä sitä vain "
+"nopeassa tietokoneessa.</p><p><b>Huom!</b> Raakakuviin kuitenkin raakadatan "
+"puolikokoista versiota upotetun JPEG-esikatselun sijaan.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:504
 #, kde-format
@@ -65882,6 +65878,8 @@ msgid ""
 "No default target album have been selected to process download from camera "
 "device. Please select one."
 msgstr ""
+"Oletuskohdealbumia ei ole valittu kameralatauksen käsittelemiseksi. Valitse "
+"se."
 
 #: core/utilities/setup/camera/setupcamera.cpp:882
 #, kde-format
@@ -65919,6 +65917,8 @@ msgstr "Nimetön"
 msgid ""
 "In order to enable this feature, the full-sized preview will be disabled."
 msgstr ""
+"Tämän ominaisuuden käyttöön ottamiseksi täyskokoinen esikatselu poistetaan "
+"käytöstä."
 
 #: core/utilities/setup/camera/setupcamera.cpp:1022
 #, kde-format
@@ -65973,6 +65973,9 @@ msgid ""
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
+"<b>Huom! Albumien valvonta kuluttaa järjestelmäresursseja ja voi hidastaa "
+"digiKamiä. Jos käytät macOSia ja verkkokokoelmia, älä aktivoi albumien "
+"valvontaa.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
 #, kde-format
@@ -66133,7 +66136,7 @@ msgstr "Tämä kokoelma on piilotettu."
 #: core/utilities/setup/collections/setupcollectionview.cpp:1156
 #, kde-format
 msgid "Append network path"
-msgstr ""
+msgstr "Lisää verkkosijainti"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1184
 #, kde-format
@@ -66255,8 +66258,7 @@ msgid "Use AI Auto-Tools features"
 msgstr "Automaattinen asetus"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
-#, fuzzy, kde-format
-#| msgid "Use Face Detection feature"
+#, kde-format
 msgid "Use Face Management feature"
 msgstr "Käytä kasvontunnistusominaisuutta"
 
@@ -66266,10 +66268,9 @@ msgid "Use Aesthetic Detection feature"
 msgstr ""
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Use AutoTags Assignment feature"
-msgstr "Automaattinen asetus"
+msgstr "Käytä luokitusten automaattista yhdistämisominaisuutta"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
 #, kde-format
@@ -66315,7 +66316,7 @@ msgstr "Yritä uudelleen"
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:135
 #, kde-format
 msgid "Checksum is incorrect."
-msgstr ""
+msgstr "Tarkistussumma on väärin."
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:159
 #, kde-format
@@ -66508,14 +66509,15 @@ msgid "Show Settings Dialog when Saving Image Files"
 msgstr "Näytä asetusikkuna kuvatiedostoja tallennettaessa"
 
 #: core/utilities/setup/editor/setupiofiles.cpp:184
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<ul><li>Checked: A dialog where settings can be changed when saving image "
 "files</li><li>Unchecked: Default settings are used when saving image files</"
 "li></ul>"
 msgstr ""
-"<ul><li>Ruksattu: värinhallinta on käytössä.</li><li>Ruksaamaton: "
-"värinhallinta ei ole käytössä.</li></ul>"
+"<ul><li>valittu: näytetään ikkuna, jossa asetuksia voi kuvia tallennettaessa "
+"muuttaa</li><li>ei valittu: kuvia tallennettaessa käytetään oletusasetuksia</"
+"li></ul>"
 
 #: core/utilities/setup/editor/setupraw.cpp:88
 #, kde-format
@@ -66742,24 +66744,7 @@ msgid "Always show intermediate snapshots"
 msgstr "Näytä aina välivaiheen otokset"
 
 #: core/utilities/setup/editor/setupversioning.cpp:461
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG</emphasis>: It's the most commonly "
-#| "used file format, but it employs lossy compression, which means that with "
-#| "each saving operation some image information will be irreversibly lost. "
-#| "JPEG offers a good compression rate, resulting in smaller files. </"
-#| "item><item><emphasis strong='true'>PNG</emphasis>: A widely used format "
-#| "employing lossless compression. The files, though, will be larger because "
-#| "PNG does not achieve very good compression rates.</item><item><emphasis "
-#| "strong='true'>TIFF</emphasis>: A commonly used format, usually "
-#| "uncompressed or with modest lossless compression. Resulting files will be "
-#| "large, but without quality loss due to compression. </"
-#| "item><item><emphasis strong='true'>PGF</emphasis>: This is a technically "
-#| "superior file format offering good compression rates with either lossy or "
-#| "lossless compression. But it is not yet widely used and supported, so "
-#| "your friends may not directly be able to open these files, and you may "
-#| "not be able to directly publish them on the web. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG</emphasis>: It is the most commonly used "
@@ -66782,7 +66767,7 @@ msgstr ""
 "tiedostomuoto, mutta se käyttää häviöllistä pakkausta, mikä tarkoittaa, että "
 "kullakin tallennuskerralla kuvatietoa peruuttamattomasti katoaa. JPEG "
 "tarjoaa hyvän pakkaustason eli pienemmän tiedostokoon.</item><item><emphasis "
-"strong='true'>PNG</emphasis>: Yleisimmin käytetty häviötöntä pakkausta "
+"strong='true'>PNG</emphasis>: Yleisesti käytetty häviötöntä pakkausta "
 "käyttävä muoto. Tiedostot ovat kuitenkin isohkoja, koska PNG ei saavuta "
 "kovin hyviä pakkaustasoja.</item><item><emphasis strong='true'>TIFF</"
 "emphasis>: Yleisesti pakkaamattomana tai heikohkosti pakattuna käytetty "
@@ -66790,8 +66775,8 @@ msgstr ""
 "item><item><emphasis strong='true'>PGF</emphasis>: Teknisesti ylivertainen "
 "tiedostomuoto, joka tarjoaa hyvän pakkaustason sekä häviöttömästi että "
 "häviöllisenä. Muotoa ei kuitenkaan yleisesti vielä käytetä tai tueta, joten "
-"ystäväsi eivät välttämättä pysty avaamaan tiedostoja eikä niitä voi "
-"julkaista suoraan verkkoon.</item>"
+"kaikki eivät välttämättä pysty avaamaan tiedostoja eikä niitä voi julkaista "
+"suoraan verkkoon.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:494
 #, kde-kuit-format
@@ -66814,13 +66799,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/editor/setupversioning.cpp:517
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "<item><emphasis strong='true'>JPEG-XL</emphasis>: It's a royalty-free "
-#| "raster-graphics file format that supports lossless compression. It is "
-#| "designed to outperform existing raster formats and thus to become their "
-#| "universal replacement. </item>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>JPEG-XL</emphasis>: It is a royalty-free "
@@ -66834,17 +66813,7 @@ msgstr ""
 "korvaamaan ne.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:527
-#, fuzzy, kde-kuit-format
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>This Batch Queue Manager tool can convert images data to WEBP "
-#| "format.</para><para>WEBP is an image file format that Google has "
-#| "developed as a replacement for JPEG, PNG, and GIF file formats. WEBP "
-#| "yields files that are smaller for the same quality, or of higher quality "
-#| "for the same size. It supports both lossy and lossless compression, as "
-#| "well as animation and alpha transparency.</para><para>See details about "
-#| "this format from <a href='https://en.wikipedia.org/wiki/WebP'>this page</"
-#| "a>.</para>"
+#, kde-kuit-format
 msgctxt "@info:whatsthis"
 msgid ""
 "<item><emphasis strong='true'>WEBP</emphasis>: It is an image file format "
@@ -66852,13 +66821,10 @@ msgid ""
 "formats. Files are smaller for the same quality, or of higher quality for "
 "the same size. It supports both lossy and lossless compression</item>"
 msgstr ""
-"<para>Tällä eräajotyökalulla voi muuntaa kuvia WebP-muotoon.</"
-"para><para>WebP on Googlen JPEG-, PNG- ja GIF-muotojen korvaajaksi kehittämä "
-"kuvatiedostomuoto. WebP tuottaa tiedostoja, jotka ovat samanlaatuisina "
-"pienempiä tai samankokoisina parempilaatuisia. Se tukee niin häviöllistä "
-"kuin häviötöntäkin pakkausta, animointia ja alfaläpinäkyvyyttä.</"
-"para><para>Lisätietoa tiedostomuodosta löytyy <a href='https://fi.wikipedia."
-"org/wiki/WebP'>Wikipediasta</a>.</para>"
+"<item><emphasis strong='true'>WebP</emphasis>: Googlen JPEG-, PNG- ja GIF-"
+"muotojen korvaajaksi kehittämä kuvatiedostomuoto. Samanlaatuiset kuvat ovat "
+"siinä pienempiä tai parempilaatuiset saman kokoisia. Tukee sekä häviöllistä "
+"että häviötöntä pakkausta.</item>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:538
 #, kde-kuit-format
@@ -67282,20 +67248,15 @@ msgstr ""
 "Haluatko jatkaa?"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:395
-#, fuzzy, kde-format
-#| msgid ""
-#| "Advanced configuration menu allow you to manage metadata namespaces used "
-#| "by digiKam to store and retrieve tags, rating and comments.<br/><b>Note: "
-#| "</b>Order is important when reading metadata"
+#, kde-format
 msgid ""
 "Advanced configuration menu allow you to manage metadata namespaces used by "
 "digiKam to store and retrieve tags, rating and comments.<br><b>Note: </"
 "b>Order is important when reading metadata"
 msgstr ""
-"Lisäasetusvalikosta hallitaan digiKamin luokitusten, arvostelujen ja "
-"kommenttien tallentamiseen ja noutamiseen käyttämiä metatiedon "
-"nimiavaruuksia.<br/><b>Huomaa:</b> Metatietoja luettaessa järjestyksellä on "
-"väliä"
+"Lisäasetusvalikosta voi hallinnoida digiKamin luokitusten, arvostelujen ja "
+"kommenttien tallentamiseen ja noutamiseen käyttämiä metatietonimiavaruuksia."
+"<br/><b>Huom!</b> Metatietoja luettaessa järjestys on merkitsevä"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:405
 #, kde-format
@@ -67381,13 +67342,7 @@ msgid "Name:"
 msgstr "Nimi:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:230
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
-#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
-#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
-#| "path must be written.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.digiKam.TagsList\"</"
@@ -67395,20 +67350,14 @@ msgid ""
 "\"City|Paris\"</li><li>Specify if only keyword or the whole path must be "
 "written.</li></ul></p>"
 msgstr ""
-"<p>Uusia nimiavaruuksia luotaessa vaaditaan parametrit:</"
+"<p>Uusien nimiavaruuksien luomiseen vaaditaan parametreja:</"
 "p><p><ul><li>nimiavaruuden nimi (pistein)<br/>esim. <i>”Xmp.digiKam."
 "Luokitusluettelo”</i></li><li>luokituspolkujen käyttämä erotinparametri<br/"
 ">esim. ”Kaupunki/Pariisi” tai ”Kaupunki|Pariisi”</li><li>Aseta, "
-"kirjoitetaanko vain hakusana vai koko sijainti.</li></ul></p>"
+"kirjoitetaanko vain avainsana vai koko polku.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:241
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
-#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
-#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
-#| "path must be written.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new rating namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Rating\"</i></"
@@ -67416,30 +67365,23 @@ msgid ""
 "Microsoft uses 0 1 25 50 75 99</li><li>Select the correct namespace option "
 "from list.</li></ul></p>"
 msgstr ""
-"<p>Uusia nimiavaruuksia luotaessa vaaditaan parametrit:</"
+"<p>Uusien arvionimiavaruuksien luomiseen vaaditaan parametreja:</"
 "p><p><ul><li>nimiavaruuden nimi (pistein)<br/>esim. <i>”Xmp.digiKam."
-"Luokitusluettelo”</i></li><li>luokituspolkujen käyttämä erotinparametri<br/"
-">esim. ”Kaupunki/Pariisi” tai ”Kaupunki|Pariisi”</li><li>Aseta, "
-"kirjoitetaanko vain hakusana vai koko sijainti.</li></ul></p>"
+"Arvostelu”</i></li><li>Arviovastaavuudet, jos nimiavaruus käyttää muita "
+"arvoja kuin 0–5<br>Esim. Microsoft käyttää 0 1 25 50 75 99</li><li>Valitse "
+"luettelosta oikea nimiavaruusvaihtoehto.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:252
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To create new namespaces, you need to specify parameters:</"
-#| "p><p><ul><li>Namespace name with dots.<br/>Ex.: <i>\"Xmp.digiKam.TagsList"
-#| "\"</i></li><li>Separator parameter, used by tag paths <br/>Ex.: \"City/"
-#| "Paris\" or \"City|Paris\"</li><li>Specify if only keyword or the whole "
-#| "path must be written.</li></ul></p>"
+#, kde-format
 msgid ""
 "<p>To create new comment namespaces, you need to specify parameters:</"
 "p><p><ul><li>Namespace name with dots.<br>Ex.: <i>\"Xmp.xmp.Comment\"</i></"
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
-"<p>Uusia nimiavaruuksia luotaessa vaaditaan parametrit:</"
+"<p>Uusien kommenttinimiavaruuksien luomiseen vaaditaan parametreja:</"
 "p><p><ul><li>nimiavaruuden nimi (pistein)<br/>esim. <i>”Xmp.digiKam."
-"Luokitusluettelo”</i></li><li>luokituspolkujen käyttämä erotinparametri<br/"
-">esim. ”Kaupunki/Pariisi” tai ”Kaupunki|Pariisi”</li><li>Aseta, "
-"kirjoitetaanko vain hakusana vai koko sijainti.</li></ul></p>"
+"Luokitusluettelo”</i></li><li>Valitse luettelosta oikea "
+"nimiavaruusvaihtoehto.</li></ul></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
@@ -67467,9 +67409,9 @@ msgid "Set Tags Path:"
 msgstr "Aseta luokituspolku:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rating Mapping:"
-msgstr "Arvio:"
+msgstr "Arviovastaavuudet:"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
 #, kde-format
@@ -67806,21 +67748,15 @@ msgid "Use ExifTool backend to read metadata from files"
 msgstr "Lue metatieto tiedostoista ExifTool-taustajärjestelmällä"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:121
-#, fuzzy, kde-format
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Turn on this option to write metadata to files with ExifTool backend "
-#| "instead Exiv2. This will slowdown a little bit the synchronization of "
-#| "files metadata with database."
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
 "Turn on this option to read metadata from files with ExifTool backend "
 "instead Exiv2. This will slowdown a little bit the synchronization of files "
 "metadata with database."
 msgstr ""
-"Valitse tämä, niin metatiedot kirjoitetaan tiedostoihin ExifTool-"
-"taustajärjestelmällä Exiv2:n sijaan. Tämä hidastaa vähän metatietojen "
-"tahdistusta tietokantaan."
+"Valitse tämä, niin metatiedot kirjoitetaan ExifTool-taustajärjestelmällä "
+"Exiv2:n sijaan. Tämä hidastaa metatietojen tahdistusta tietokantaan vähän."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:126
 #, kde-format
@@ -68259,7 +68195,7 @@ msgstr "Oheistiedostot"
 #, kde-format
 msgctxt "@title:window"
 msgid "AI GPU Test"
-msgstr ""
+msgstr "Tekoälyn näytönohjaintestaus"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
 #, kde-format
@@ -68273,25 +68209,19 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Käynnistä"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
-msgstr "Aloita testi"
+msgstr "Aloita testaus"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Testataan…"
@@ -68307,6 +68237,8 @@ msgid ""
 "Test completed successfully! Your system can use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Testi onnistui! Järjestelmä voi käyttää tekoälymalleihin "
+"näytönohjainkiihdytystä."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:221
 #, kde-format
@@ -68314,10 +68246,11 @@ msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
 "models."
 msgstr ""
+"Testaus epäonnistui. Järjestelmä ei voi käyttää tekoälymalleihin "
+"näytönohjainkiihdytystä."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Sulje"
@@ -68326,12 +68259,14 @@ msgstr "Sulje"
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
-msgstr ""
+msgstr "Sulje testi-ikkuna"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
+"Tarkistetaan näytönohjaimen OpenCL-kiihdytyksen yhteensopivuutta "
+"tekoälymalleihin…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
 #, kde-format
@@ -68339,10 +68274,9 @@ msgid "OpenCL is available on this system."
 msgstr "OpenCL ei ole käytettävissä tässä järjestelmässä."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
-#, fuzzy, kde-format
-#| msgid "No options available"
+#, kde-format
 msgid "OpenCL acceleration device is available."
-msgstr "Ei asetuksia saatavilla"
+msgstr "OpenCL-kiihdytyslaite on käytettävissä."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
 #, kde-format
@@ -68360,28 +68294,24 @@ msgid "OpenCL is not available on this system."
 msgstr "OpenCL ei ole käytettävissä tässä järjestelmässä."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
-#, fuzzy, kde-format
-#| msgid "Loading test image..."
+#, kde-format
 msgid "Loading DNN Model test image..."
-msgstr "Ladataan testikuvaa…"
+msgstr "Ladataan DNN-mallitestikuvaa…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
-#, fuzzy, kde-format
-#| msgid "Test image not found."
+#, kde-format
 msgid "DNN model test image not found."
-msgstr "Testikuvaa ei löytynyt."
+msgstr "DNN-mallitestikuvaa ei löytynyt."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
-#, fuzzy, kde-format
-#| msgid "Failed to load test image from %1"
+#, kde-format
 msgid "Failed to load DNN model test image from %1"
-msgstr "Testikuvan lataus tiedostosta %1 epäonnistui"
+msgstr "DNN-mallitestikuvan lataus tiedostosta %1 epäonnistui"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
-#, fuzzy, kde-format
-#| msgid "Preparing the image for processing..."
+#, kde-format
 msgid "Preparing the DNN Model image for processing..."
-msgstr "Valmistellaan kuvaa käsiteltäväksi…"
+msgstr "Valmistellaan DNN-mallikuvaa käsiteltäväksi…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
 #, kde-format
@@ -68407,7 +68337,7 @@ msgstr "Valmistellaan kasvoja ominaisuuspoimintaan…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
 #, kde-format
 msgid "Extracting face features..."
-msgstr ""
+msgstr "Irrotetaan kasvonpiirteitä…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
 #, kde-format
@@ -68431,7 +68361,7 @@ msgstr "Virhe: %1"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:32
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
@@ -68442,22 +68372,15 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
 "local intranet. Please leave empty if there is no proxy.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
-"weight:400; font-style:italic;\">\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Voit ladata maasi "
-"kalenterin sivustolta <a href=\"http://www.icalshare.com\"><span style=\" "
-"text-decoration: underline; color:#0057ae;\">http://www.icalshare.com/</"
-"span></a> tai muualta.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Tämä on täysin "
-"vapaaehtoista. Tämän kalenterin tapahtumat näkyvät punaisina.</p></body></"
-"html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Paikallisen intraverkon "
+"välityspalvelinasetukset. Jätä tyhjäksi, jollei välityspalvelinta ole.</p></"
+"body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
 #: core/utilities/setup/misc/proxysettingswidget.ui:35
@@ -68469,7 +68392,7 @@ msgstr "&Verkon välityspalvelimen asetukset"
 #: core/utilities/setup/misc/proxysettingswidget.ui:43
 #, kde-format
 msgid "&Proxy:"
-msgstr ""
+msgstr "&Välityspalvelin:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
 #: core/utilities/setup/misc/proxysettingswidget.ui:60
@@ -68487,13 +68410,13 @@ msgstr "Välityspalvelimen tyyppi:"
 #: core/utilities/setup/misc/proxysettingswidget.ui:124
 #, kde-format
 msgid "Http"
-msgstr ""
+msgstr "HTTP"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
 #: core/utilities/setup/misc/proxysettingswidget.ui:129
 #, kde-format
 msgid "Socks5"
-msgstr ""
+msgstr "Socks5"
 
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_proxyAuth)
 #. i18n: ectx: property (text), widget (QGroupBox, kcfg_proxyAuth)
@@ -68545,10 +68468,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:43
-#, fuzzy, kde-format
-#| msgid "Scan for new items"
+#, kde-format
 msgid "&Scan for new items at startup"
-msgstr "Etsi uusia kuvia"
+msgstr "&Etsi uusia kuvia käynnistettäessä"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:44
 #, kde-format
@@ -68589,10 +68511,9 @@ msgid "Detect faces in newly added images"
 msgstr "Tunnista vasta lisätyistä kuvista kasvot"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:60
-#, fuzzy, kde-format
-#| msgid "Background Image Credits"
+#, kde-format
 msgid "Enable background face recognition scan"
-msgstr "Kiitokset taustakuvasta"
+msgstr "Käytä kasvontunnistuksen taustahakua"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:61
 #, kde-format
@@ -68840,7 +68761,7 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
 msgid "Test GPU AI compatibility"
-msgstr ""
+msgstr "Testaa näytönohjain tekoäly-yhteensopivuus"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:148
 #, kde-format
@@ -68880,7 +68801,7 @@ msgstr "FFmpeg (oletus)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:170
 #, kde-format
 msgid "GStreamer (System)"
-msgstr ""
+msgstr "GStreamer (järjestelmä)"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:174
 #, kde-format
@@ -69278,11 +69199,9 @@ msgstr ""
 "tunnistamiseksi kokoelmassasi.</p>"
 
 #: core/utilities/setup/template/setuptemplate.cpp:43
-#, fuzzy, kde-format
-#| msgctxt "new smug album dialog"
-#| msgid "Template:"
+#, kde-format
 msgid "Merge Template"
-msgstr "Mallipohja:"
+msgstr "Yhdistä mallipohja"
 
 # *** HUOM: id:ssä on sisäkkäisiä <b>-tägejä, onkohan ulommat tarkoitettu <p>:iksi? – Vain ASCIIsta löytyy mielekkäästi tietoa suomenkielisestä Wikipediasta.
 #: core/utilities/setup/template/setuptemplate.cpp:51

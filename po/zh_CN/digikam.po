@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -987,7 +987,7 @@ msgstr "名称："
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:532
+#: core/app/views/stack/welcomepageview_credits.cpp:51
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1143,7 +1143,7 @@ msgid "White Balance:"
 msgstr "白平衡："
 
 #: core/app/items/utils/tooltipfiller.cpp:325
-#: core/utilities/searchwindow/searchgroup.cpp:113
+#: core/utilities/searchwindow/searchgroup.cpp:115
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "音频/视频属性"
@@ -3324,417 +3324,66 @@ msgstr "删除"
 msgid "%1/%2 items selected"
 msgstr "已选中 %1 项，共 %2 项"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:174
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "欢迎使用 digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid "New Features"
 msgstr "新版特性"
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:212
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "软件简介"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid "Background Image Credits"
 msgstr "背景作者"
 
-#: core/app/views/stack/welcomepageview.cpp:381
-#, kde-format
-msgid ""
-"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 user-reports</a> closed on bugzilla."
-msgstr ""
-"解决了 <a href=\"https://bugs.kde.org/buglist.cgi?"
-"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 个用户报告的程序缺陷</a>。"
-
-#: core/app/views/stack/welcomepageview.cpp:382
-#, kde-format
-msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
-"brings with it a variety of bug fixes and performance improvements (Qt5 "
-"only)."
-msgstr ""
-"内建的 QtAVPlayer 已升级到最新的上游版本 2026-01-24，这将带来大量程序缺陷修复"
-"和性能增强 (仅限 Qt5)。"
-
-#: core/app/views/stack/welcomepageview.cpp:383
-#, kde-format
-msgid ""
-"Add support of customizable date format to show everywhere in the program."
-msgstr "新增自定义日期格式，可应用于程序中的各种日期显示。"
-
-#: core/app/views/stack/welcomepageview.cpp:384
-#, kde-format
-msgid ""
-"Color label names are now customizable in the Labels tab from left sidebar "
-"by double clicking on text. Label strings size are limited to 32 characters."
-msgstr ""
-"颜色标记名称现在可在左侧边栏的“标记”标签页中通过双击自定义。标记字符串大小限"
-"制在 32 个字符。"
-
-#: core/app/views/stack/welcomepageview.cpp:385
-#, kde-format
-msgid ""
-"Add regular expression wildcard support for ignored directories settings."
-msgstr "新增忽略目录设置中的正则表达式通配符支持。"
-
-#: core/app/views/stack/welcomepageview.cpp:386
-#, kde-format
-msgid ""
-"Split filters view into 3 separated tabs for better usability: Properties, "
-"Tags, and People."
-msgstr "将过滤器视图拆分为 3 个独立的标签页：属性、标签和人物，以改善易用性。"
-
-#: core/app/views/stack/welcomepageview.cpp:387
-#, kde-format
-msgid "Load and save Trash-view column states between sessions."
-msgstr "跨会话加载和保存回收站视图的列状态。"
-
-#: core/app/views/stack/welcomepageview.cpp:388
-#, kde-format
-msgid ""
-"Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
-msgstr "点击 GPS 图标叠加显示层打开左侧边栏的地理位置标签页。"
-
-#: core/app/views/stack/welcomepageview.cpp:389
-#, kde-format
-msgid "Add customizable columns to show Grouped and Versioned properties."
-msgstr "新增可自定义的列以显示分组和版本管理属性。"
-
-#: core/app/views/stack/welcomepageview.cpp:390
-#, kde-format
-msgid "New Advanced Rename modifier Date Format."
-msgstr "新增高级重命名修饰符日期格式。"
-
-#: core/app/views/stack/welcomepageview.cpp:391
-#, kde-format
-msgid ""
-"Add support to merge existing template entries assigned in items with a new "
-"template."
-msgstr "新增将已有模板项目与新模板项目合并的支持。"
-
-#: core/app/views/stack/welcomepageview.cpp:392
-#, kde-format
-msgid ""
-"Add new Slideshow option to customize the color background instead pure "
-"black in case of images transparency usage."
-msgstr "新增幻灯片选项，用于自定义在图像有透明度的情况下背景色，而不是纯黑。"
-
-#: core/app/views/stack/welcomepageview.cpp:393
-#, kde-format
-msgid ""
-"Add new Presentation option to customize the color background instead pure "
-"black in case of images transparency usage."
-msgstr "新增演示文稿选项，用于自定义在图像有透明度的情况下背景色，而不是纯黑。"
-
-#: core/app/views/stack/welcomepageview.cpp:394
-#, kde-format
-msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
-msgstr "完全重写文件传输工具的图形化界面以改善易用性。"
-
-#: core/app/views/stack/welcomepageview.cpp:395
-#, kde-format
-msgid "Complete rewrite the File-Copy tool GUI for a better usability."
-msgstr "完全重写文件复制工具的图形化界面以改善易用性。"
-
-#: core/app/views/stack/welcomepageview.cpp:396
-#, kde-format
-msgid "Add marching-ants effect to the canvas selection rubber band."
-msgstr "新增画布选区轨迹的动态虚线效果。"
-
-#: core/app/views/stack/welcomepageview.cpp:397
-#, kde-format
-msgid ""
-"Add pick color histogram indicators for the Curves, Levels, White Balance, "
-"and Black & White Sepia tools."
-msgstr ""
-"新增选择颜色直方图指示色功能到曲线、色阶、白平衡和黑白照片 (乌贼墨色调) 工"
-"具。"
-
-#: core/app/views/stack/welcomepageview.cpp:398
-#, kde-format
-msgid ""
-"Huge web site update about contents and design eg. screenshots, description, "
-"history, features, support, download, etc."
-msgstr ""
-"大幅更新网站的设计和内容，包括屏幕截图、描述、开发历史、功能介绍、支持、下载"
-"等栏目。"
-
-#: core/app/views/stack/welcomepageview.cpp:400
-#, kde-format
-msgid "Sort Item improvements:"
-msgstr "项目排序改进："
-
-#: core/app/views/stack/welcomepageview.cpp:402
-#, kde-format
-msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
-msgstr "新增按照挑选标记和颜色标记对相册的图标视图进行项目排序。"
-
-#: core/app/views/stack/welcomepageview.cpp:403
-#, kde-format
-msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
-msgstr "新增按照挑选标记和颜色标记对导入项目的图标视图进行项目排序。"
-
-#: core/app/views/stack/welcomepageview.cpp:404
-#, kde-format
-msgid "Add support of Album Icon-View sort items by Orientation."
-msgstr "新增按照方向对相册的图标视图进行项目排序。"
-
-#: core/app/views/stack/welcomepageview.cpp:405
-#, kde-format
-msgid "Add support of Album Icon-View sort items by GPS location."
-msgstr "新增按照 GPS 位置对相册的图标视图进行项目排序。"
-
-#: core/app/views/stack/welcomepageview.cpp:406
-#, kde-format
-msgid "Add support of Album Icon-View sort items by File Format."
-msgstr "新增按照文件格式对相册的图标视图进行项目排序。"
-
-#: core/app/views/stack/welcomepageview.cpp:407
-#, kde-format
-msgid "Add support of Import Icon-View sort items by File Format."
-msgstr "新增按照文件格式对导入项目的图标视图进行项目排序。"
-
-#: core/app/views/stack/welcomepageview.cpp:410
-#, kde-format
-msgid "Item Property improvements:"
-msgstr "项目属性改进："
-
-#: core/app/views/stack/welcomepageview.cpp:412
-#, kde-format
-msgid "Add new button to copy all properties as text in clipboard."
-msgstr "新增用于将所有属性作为文本复制到剪贴板的按钮。"
-
-#: core/app/views/stack/welcomepageview.cpp:413
-#, kde-format
-msgid "Add new button to open current item in file manager."
-msgstr "新增用于在文件管理器中打开当前项目的按钮。"
-
-#: core/app/views/stack/welcomepageview.cpp:414
-#, kde-format
-msgid "If no icon-view item selected, show current album statistics."
-msgstr "如果没有在图标视图中选择项目，则显示当前相册的统计信息。"
-
-#: core/app/views/stack/welcomepageview.cpp:417
-#, kde-format
-msgid "Grouped Item improvements:"
-msgstr "项目分组改进："
-
-#: core/app/views/stack/welcomepageview.cpp:419
-#, kde-format
-msgid ""
-"Show items from an open group highlighted for a better usability with Icon-"
-"View."
-msgstr "在图标视图中高亮显示展开的项目分组中的项目以提高易用性。"
-
-#: core/app/views/stack/welcomepageview.cpp:420
-#, kde-format
-msgid "Usability improvements of the grouped icon-view items overlay."
-msgstr "改善了图标视图中分组项目叠加层的易用性。"
-
-#: core/app/views/stack/welcomepageview.cpp:421
-#, kde-format
-msgid ""
-"Thumbbar improvements to support grouped items visibility as with Icon-View."
-msgstr "缩略图栏支持分组项目并得到与图标视图同样的显示易用性改进。"
-
-#: core/app/views/stack/welcomepageview.cpp:424
-#, kde-format
-msgid "Preview Mode improvements:"
-msgstr "预览模式改进："
-
-#: core/app/views/stack/welcomepageview.cpp:426
-#, kde-format
-msgid "Extend Image and Video preview toolbar overlay with Labels editor."
-msgstr "扩展标记编辑器的图像和视频预览工具栏叠加层。"
-
-#: core/app/views/stack/welcomepageview.cpp:427
-#, kde-format
-msgid ""
-"Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
-"magnifier."
-msgstr "新增预览工具栏按钮：曝光指示色、色彩管理、OSD、放大镜等。"
-
-#: core/app/views/stack/welcomepageview.cpp:428
-#, kde-format
-msgid "Add context-menu to the video player."
-msgstr "视频播放器新增右键菜单。"
-
-#: core/app/views/stack/welcomepageview.cpp:429
-#, kde-format
-msgid ""
-"Add load progress indicator on the status bar (Icon-view and LightTable)."
-msgstr "状态栏新增加载进度指示器 (图标视图和多图对比视图)。"
-
-#: core/app/views/stack/welcomepageview.cpp:430
-#, kde-format
-msgid ""
-"Add trackpad gesture events support to zoom the contents, pan the canvas, "
-"and change to previous/next items."
-msgstr "新增触摸板手势支持以缩放内容、平移画布视图和切换上一个/下一个项目。"
-
-#: core/app/views/stack/welcomepageview.cpp:431
-#, kde-format
-msgid ""
-"Add a magnifier glass tool to zoom and explore a small area of the preview "
-"canvas. Tool Size and zoom factor are customizable."
-msgstr ""
-"新增放大镜工具以缩放浏览预览画布视图的局部区域。放大镜的大小和缩放倍率可自定"
-"义。"
-
-#: core/app/views/stack/welcomepageview.cpp:432
-#, kde-format
-msgid "Add under and over exposure indicators for the preview canvas."
-msgstr "新增预览画布的欠曝和过曝指示色显示。"
-
-#: core/app/views/stack/welcomepageview.cpp:433
-#, kde-format
-msgid ""
-"Railway over the canvas is displayed as an overlay when the scrollbar are "
-"visible."
-msgstr "当滚动条可见时，画布上的轨迹将显示为叠加层。"
-
-#: core/app/views/stack/welcomepageview.cpp:436
-#, kde-format
-msgid "Advanced Search improvements:"
-msgstr "高级搜索改进："
-
-#: core/app/views/stack/welcomepageview.cpp:438
-#, kde-format
-msgid "New options to find empty properties registered in the database."
-msgstr "新增选项以查找已在数据库中注册的空属性。"
-
-#: core/app/views/stack/welcomepageview.cpp:439
-#, kde-format
-msgid ""
-"Add support for search Creator and Author fields to be drop down lists "
-"populated with the values already presents in the database."
-msgstr ""
-"新增对搜索创建者和作者字段的支持，以下拉列表形式呈现数据库中已存在的值。"
-
-#: core/app/views/stack/welcomepageview.cpp:442
+#: core/app/views/stack/welcomepageview_about.cpp:27
 #, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-01-24。"
-
-#: core/app/views/stack/welcomepageview.cpp:443
-#, kde-format
-msgid "New RAW camera supported:"
-msgstr "新增数码相机 RAW 格式支持："
-
-#: core/app/views/stack/welcomepageview.cpp:445
-#, kde-format
-msgid ""
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
-msgstr ""
-"佳能 EOS R1、EOS R5 Mark II、EOS R5 C、EOS R6 Mark II、EOS R8、EOS R50、EOS "
-"R100、EOS Ra；"
-
-#: core/app/views/stack/welcomepageview.cpp:446
-#, kde-format
-msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr "富士 X-T50、GFX 100S II、GFX100-II、X-T5、X-S20、X-H2、X-H2S；"
-
-#: core/app/views/stack/welcomepageview.cpp:447
-#, kde-format
-msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr "哈苏 CFV-50c、CFV-100c、X2D-100c；"
-
-#: core/app/views/stack/welcomepageview.cpp:448
-#, kde-format
-msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr "徕卡 Q3 43、D-Lux8、SL3、Q3、M11 Monochrom；"
-
-#: core/app/views/stack/welcomepageview.cpp:449
-#, kde-format
-msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr "尼康 (仅限标准压缩)：Z6-III、Z f、Z30、Z8；"
-
-#: core/app/views/stack/welcomepageview.cpp:450
-#, kde-format
-msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr "奥林巴斯/OM System OM-1 Mark II、TG-7、OM-5；"
-
-#: core/app/views/stack/welcomepageview.cpp:451
-#, kde-format
-msgid ""
-"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-"TZ220D, DC-S5-II, DC-GH6 ;"
-msgstr ""
-"松下 GH7、S9、DC-G9 II、DC-ZS200D / ZS220D、DC-TZ200D / TZ202D / TZ220D、DC-"
-"S5-II、DC-GH6；"
-
-#: core/app/views/stack/welcomepageview.cpp:452
-#, kde-format
-msgid "Pentax KF, K III Monochrome ;"
-msgstr "宾得 KF、K III Monochrome；"
-
-#: core/app/views/stack/welcomepageview.cpp:453
-#, kde-format
-msgid ""
-"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
-"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
-msgstr ""
-"索尼 ZV-E10M2、UMC-R10C、A9-III、ILX-LR1、A7C-II、A7CR、ILCE-6700、 ZV-1M2、"
-"ZV-E1、ILCE-7RM5 (A7R-V)、ILME-FX30、A1；"
-
-#: core/app/views/stack/welcomepageview.cpp:454
-#, kde-format
-msgid "Multiple DJI and Skydio drones ;"
-msgstr "多款 DJI 和 Skydio 无人机；"
-
-#: core/app/views/stack/welcomepageview.cpp:455
-#, kde-format
-msgid "Multiple smartphones with DNG format recorded."
-msgstr "多款智能手机保存的 DNG 格式。"
-
-#: core/app/views/stack/welcomepageview.cpp:460
-#, kde-format
-msgid "...and much more."
-msgstr "...更多详情请访问 digiKam 官方网站查看。"
-
-#: core/app/views/stack/welcomepageview.cpp:466
-#, kde-format
-msgid "<li>%1</li>"
-msgstr "<li>%1</li>"
-
-#: core/app/views/stack/welcomepageview.cpp:469
-#, kde-format
-msgid ""
-"<h3>Some of the new features in this release of digiKam include (compared to "
-"digiKam version 8):</h3><ul>%1</ul>"
-msgstr "<h3>这一版 digiKam 的新特性包括 (与 digiKam 8 对比)：</h3><ul>%1</ul>"
-
-#: core/app/views/stack/welcomepageview.cpp:490
-#, kde-format
+#| msgid ""
+#| "<h3>digiKam is an advanced open-source digital photo management "
+#| "application that runs on Linux, Windows, and MacOS. The application "
+#| "provides a comprehensive set of tools for importing, managing, editing, "
+#| "and sharing photos and raw files. You can use digiKam’s import "
+#| "capabilities to easily transfer photos, raw files, and videos directly "
+#| "from your camera and external storage devices (SD cards, USB disks, "
+#| "etc.). The application allows you to configure import settings and rules "
+#| "that process and organize imported items on-the-fly.</h3><h3>With digiKam "
+#| "you can import, organize, enhance, search, export, and more...</"
+#| "h3><h3>Currently, you are in the Album view mode of digiKam.</"
+#| "h3><h3>Albums are the places where your files are stored, and are "
+#| "identical to the folders on your hard disk.</h3><li>digiKam has many "
+#| "powerful features which are described in the <a href=\"https://docs."
+#| "digikam.org/en/index.html\">documentation</a></li><li>The <a href="
+#| "\"https://www.digikam.org\">digiKam homepage</a> provides information "
+#| "about new versions of digiKam.</li>"
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
-"that runs on Linux, Windows, and MacOS. The application provides a "
+"that runs on Linux, Windows, and MacOS.</h3><h3>The application provides A "
 "comprehensive set of tools for importing, managing, editing, and sharing "
-"photos and raw files. You can use digiKam’s import capabilities to easily "
-"transfer photos, raw files, and videos directly from your camera and "
+"media taken with your camera. You can use digiKam’s import capabilities to "
+"easily transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.</h3><h3>With digiKam you can import, organize, "
-"enhance, search, export, and more...</h3><h3>Currently, you are in the Album "
-"view mode of digiKam.</h3><h3>Albums are the places where your files are "
-"stored, and are identical to the folders on your hard disk.</h3><li>digiKam "
-"has many powerful features which are described in the <a href=\"https://docs."
-"digikam.org/en/index.html\">documentation</a></li><li>The <a href=\"https://"
-"www.digikam.org\">digiKam homepage</a> provides information about new "
-"versions of digiKam.</li>"
+"imported items on-the-fly.</h3><h3>To resume, with digiKam you can import, "
+"organize, enhance, search, export your collections of photo and video, and "
+"much more...</h3><h3>Currently, you are in the Album view mode of digiKam. "
+"Albums are the places where your files are stored, and are identical to the "
+"folders on your hard disk.</h3><h3>digiKam has many powerful features which "
+"are described in the <a href=\"https://docs.digikam.org/en/index.html"
+"\">documentation</a></h3><h3>The <a href=\"https://www.digikam.org\">digiKam "
+"homepage</a> provides information about new versions of digiKam.</h3><h3>To "
+"contact the digiKam users community or to support the development team, "
+"follow the links provided in the application Help menu entry. Thanks to "
+"support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>digiKam 是一款功能齐全的自由开源数码照片管理工具，支持 Linux、Windows 和 "
 "macOS，可以导入、管理、编辑、分享照片和 RAW 文件。您可以使用 digiKam 的导入工"
@@ -3746,26 +3395,410 @@ msgstr ""
 "的各项功能。</li><li>请通过 <a href=\"https://www.digikam.org\">digiKam 官方"
 "网站</a>获取版本更新信息。</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:530
+#: core/app/views/stack/welcomepageview_credits.cpp:49
 #, kde-format
 msgid "Author:"
 msgstr "作者："
 
-#: core/app/views/stack/welcomepageview.cpp:531
+#: core/app/views/stack/welcomepageview_credits.cpp:50
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "位置："
 
-#: core/app/views/stack/welcomepageview.cpp:533
+#: core/app/views/stack/welcomepageview_credits.cpp:52
 #, kde-format
 msgid "Camera:"
 msgstr "相机："
 
-#: core/app/views/stack/welcomepageview.cpp:534
+#: core/app/views/stack/welcomepageview_credits.cpp:53
 #, kde-format
 msgid "Lens:"
 msgstr "镜头："
+
+#: core/app/views/stack/welcomepageview_features.cpp:26
+#, kde-format
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
+msgstr ""
+"解决了 <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 个用户报告的程序缺陷</a>。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:27
+#, kde-format
+msgid ""
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
+"brings with it a variety of bug fixes and performance improvements (Qt5 "
+"only)."
+msgstr ""
+"内建的 QtAVPlayer 已升级到最新的上游版本 2026-01-24，这将带来大量程序缺陷修复"
+"和性能增强 (仅限 Qt5)。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:28
+#, kde-format
+msgid ""
+"Add support of customizable date format to show everywhere in the program."
+msgstr "新增自定义日期格式，可应用于程序中的各种日期显示。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:29
+#, kde-format
+msgid ""
+"Color label names are now customizable in the Labels tab from left sidebar "
+"by double clicking on text. Label strings size are limited to 32 characters."
+msgstr ""
+"颜色标记名称现在可在左侧边栏的“标记”标签页中通过双击自定义。标记字符串大小限"
+"制在 32 个字符。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:30
+#, kde-format
+msgid ""
+"Add regular expression wildcard support for ignored directories settings."
+msgstr "新增忽略目录设置中的正则表达式通配符支持。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:31
+#, kde-format
+msgid ""
+"Split filters view into 3 separated tabs for better usability: Properties, "
+"Tags, and People."
+msgstr "将过滤器视图拆分为 3 个独立的标签页：属性、标签和人物，以改善易用性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:32
+#, kde-format
+msgid "Load and save Trash-view column states between sessions."
+msgstr "跨会话加载和保存回收站视图的列状态。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:33
+#, kde-format
+msgid ""
+"Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
+msgstr "点击 GPS 图标叠加显示层打开左侧边栏的地理位置标签页。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:34
+#, kde-format
+msgid "Add customizable columns to show Grouped and Versioned properties."
+msgstr "新增可自定义的列以显示分组和版本管理属性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:35
+#, kde-format
+msgid "New Advanced Rename modifier Date Format."
+msgstr "新增高级重命名修饰符日期格式。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:36
+#, kde-format
+msgid ""
+"Add support to merge existing template entries assigned in items with a new "
+"template."
+msgstr "新增将已有模板项目与新模板项目合并的支持。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:37
+#, kde-format
+msgid ""
+"Add new Slideshow option to customize the color background instead pure "
+"black in case of images transparency usage."
+msgstr "新增幻灯片选项，用于自定义在图像有透明度的情况下背景色，而不是纯黑。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:38
+#, kde-format
+msgid ""
+"Add new Presentation option to customize the color background instead pure "
+"black in case of images transparency usage."
+msgstr "新增演示文稿选项，用于自定义在图像有透明度的情况下背景色，而不是纯黑。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:39
+#, kde-format
+msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
+msgstr "完全重写文件传输工具的图形化界面以改善易用性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:40
+#, kde-format
+msgid "Complete rewrite the File-Copy tool GUI for a better usability."
+msgstr "完全重写文件复制工具的图形化界面以改善易用性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:41
+#, kde-format
+msgid "Add marching-ants effect to the canvas selection rubber band."
+msgstr "新增画布选区轨迹的动态虚线效果。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:42
+#, kde-format
+msgid ""
+"Add pick color histogram indicators for the Curves, Levels, White Balance, "
+"and Black & White Sepia tools."
+msgstr ""
+"新增选择颜色直方图指示色功能到曲线、色阶、白平衡和黑白照片 (乌贼墨色调) 工"
+"具。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:43
+#, kde-format
+msgid "Rewrite the welcome page in more modern style."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:44
+#, kde-format
+msgid ""
+"Huge web site update about contents and design eg. screenshots, description, "
+"history, features, support, download, etc."
+msgstr ""
+"大幅更新网站的设计和内容，包括屏幕截图、描述、开发历史、功能介绍、支持、下载"
+"等栏目。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:46
+#, kde-format
+msgid "Sort Item improvements:"
+msgstr "项目排序改进："
+
+#: core/app/views/stack/welcomepageview_features.cpp:48
+#, kde-format
+msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
+msgstr "新增按照挑选标记和颜色标记对相册的图标视图进行项目排序。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:49
+#, kde-format
+msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
+msgstr "新增按照挑选标记和颜色标记对导入项目的图标视图进行项目排序。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:50
+#, kde-format
+msgid "Add support of Album Icon-View sort items by Orientation."
+msgstr "新增按照方向对相册的图标视图进行项目排序。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:51
+#, kde-format
+msgid "Add support of Album Icon-View sort items by GPS location."
+msgstr "新增按照 GPS 位置对相册的图标视图进行项目排序。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:52
+#, kde-format
+msgid "Add support of Album Icon-View sort items by File Format."
+msgstr "新增按照文件格式对相册的图标视图进行项目排序。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:53
+#, kde-format
+msgid "Add support of Import Icon-View sort items by File Format."
+msgstr "新增按照文件格式对导入项目的图标视图进行项目排序。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:56
+#, kde-format
+msgid "Item Property improvements:"
+msgstr "项目属性改进："
+
+#: core/app/views/stack/welcomepageview_features.cpp:58
+#, kde-format
+msgid "Add new button to copy all properties as text in clipboard."
+msgstr "新增用于将所有属性作为文本复制到剪贴板的按钮。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:59
+#, kde-format
+msgid "Add new button to open current item in file manager."
+msgstr "新增用于在文件管理器中打开当前项目的按钮。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:60
+#, kde-format
+msgid "If no icon-view item selected, show current album statistics."
+msgstr "如果没有在图标视图中选择项目，则显示当前相册的统计信息。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:63
+#, kde-format
+msgid "Grouped Item improvements:"
+msgstr "项目分组改进："
+
+#: core/app/views/stack/welcomepageview_features.cpp:65
+#, kde-format
+msgid ""
+"Show items from an open group highlighted for a better usability with Icon-"
+"View."
+msgstr "在图标视图中高亮显示展开的项目分组中的项目以提高易用性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:66
+#, kde-format
+msgid "Usability improvements of the grouped icon-view items overlay."
+msgstr "改善了图标视图中分组项目叠加层的易用性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:67
+#, kde-format
+msgid ""
+"Thumbbar improvements to support grouped items visibility as with Icon-View."
+msgstr "缩略图栏支持分组项目并得到与图标视图同样的显示易用性改进。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:70
+#, kde-format
+msgid "Preview Mode improvements:"
+msgstr "预览模式改进："
+
+#: core/app/views/stack/welcomepageview_features.cpp:72
+#, kde-format
+msgid "Extend Image and Video preview toolbar overlay with Labels editor."
+msgstr "扩展标记编辑器的图像和视频预览工具栏叠加层。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:73
+#, kde-format
+msgid ""
+"Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
+"magnifier."
+msgstr "新增预览工具栏按钮：曝光指示色、色彩管理、OSD、放大镜等。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:74
+#, kde-format
+msgid "Add context-menu to the video player."
+msgstr "视频播放器新增右键菜单。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:75
+#, kde-format
+msgid ""
+"Add load progress indicator on the status bar (Icon-view and LightTable)."
+msgstr "状态栏新增加载进度指示器 (图标视图和多图对比视图)。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:76
+#, kde-format
+msgid ""
+"Add trackpad gesture events support to zoom the contents, pan the canvas, "
+"and change to previous/next items."
+msgstr "新增触摸板手势支持以缩放内容、平移画布视图和切换上一个/下一个项目。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:77
+#, kde-format
+msgid ""
+"Add a magnifier glass tool to zoom and explore a small area of the preview "
+"canvas. Tool Size and zoom factor are customizable."
+msgstr ""
+"新增放大镜工具以缩放浏览预览画布视图的局部区域。放大镜的大小和缩放倍率可自定"
+"义。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:78
+#, kde-format
+msgid "Add under and over exposure indicators for the preview canvas."
+msgstr "新增预览画布的欠曝和过曝指示色显示。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:79
+#, kde-format
+msgid ""
+"Railway over the canvas is displayed as an overlay when the scrollbar are "
+"visible."
+msgstr "当滚动条可见时，画布上的轨迹将显示为叠加层。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:82
+#, kde-format
+msgid "Advanced Search improvements:"
+msgstr "高级搜索改进："
+
+#: core/app/views/stack/welcomepageview_features.cpp:84
+#, kde-format
+msgid "New options to find empty properties registered in the database."
+msgstr "新增选项以查找已在数据库中注册的空属性。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:85
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add support for search Creator and Author fields to be drop down lists "
+#| "populated with the values already presents in the database."
+msgid ""
+"Add support to search Creator and Author fields to be drop down lists "
+"populated with the values already presents in the database."
+msgstr ""
+"新增对搜索创建者和作者字段的支持，以下拉列表形式呈现数据库中已存在的值。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:86
+#, kde-format
+msgid "Add support to search recently modified items in the database."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:89
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-01-24。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:90
+#, kde-format
+msgid "New RAW camera supported:"
+msgstr "新增数码相机 RAW 格式支持："
+
+#: core/app/views/stack/welcomepageview_features.cpp:92
+#, kde-format
+msgid ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
+msgstr ""
+"佳能 EOS R1、EOS R5 Mark II、EOS R5 C、EOS R6 Mark II、EOS R8、EOS R50、EOS "
+"R100、EOS Ra；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:93
+#, kde-format
+msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+msgstr "富士 X-T50、GFX 100S II、GFX100-II、X-T5、X-S20、X-H2、X-H2S；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:94
+#, kde-format
+msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+msgstr "哈苏 CFV-50c、CFV-100c、X2D-100c；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:95
+#, kde-format
+msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+msgstr "徕卡 Q3 43、D-Lux8、SL3、Q3、M11 Monochrom；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:96
+#, kde-format
+msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
+msgstr "尼康 (仅限标准压缩)：Z6-III、Z f、Z30、Z8；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:97
+#, kde-format
+msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+msgstr "奥林巴斯/OM System OM-1 Mark II、TG-7、OM-5；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:98
+#, kde-format
+msgid ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
+msgstr ""
+"松下 GH7、S9、DC-G9 II、DC-ZS200D / ZS220D、DC-TZ200D / TZ202D / TZ220D、DC-"
+"S5-II、DC-GH6；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:99
+#, kde-format
+msgid "Pentax KF, K III Monochrome ;"
+msgstr "宾得 KF、K III Monochrome；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:100
+#, kde-format
+msgid ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
+msgstr ""
+"索尼 ZV-E10M2、UMC-R10C、A9-III、ILX-LR1、A7C-II、A7CR、ILCE-6700、 ZV-1M2、"
+"ZV-E1、ILCE-7RM5 (A7R-V)、ILME-FX30、A1；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:101
+#, kde-format
+msgid "Multiple DJI and Skydio drones ;"
+msgstr "多款 DJI 和 Skydio 无人机；"
+
+#: core/app/views/stack/welcomepageview_features.cpp:102
+#, kde-format
+msgid "Multiple smartphones with DNG format recorded."
+msgstr "多款智能手机保存的 DNG 格式。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:107
+#, kde-format
+msgid "...and much more."
+msgstr "...更多详情请访问 digiKam 官方网站查看。"
+
+#: core/app/views/stack/welcomepageview_features.cpp:113
+#, kde-format
+msgid "<li>%1</li>"
+msgstr "<li>%1</li>"
+
+#: core/app/views/stack/welcomepageview_features.cpp:116
+#, kde-format
+msgid ""
+"<h3>Some of the new features in this release of digiKam include (compared to "
+"digiKam version 8):</h3><ul>%1</ul>"
+msgstr "<h3>这一版 digiKam 的新特性包括 (与 digiKam 8 对比)：</h3><ul>%1</ul>"
 
 #: core/app/views/tableview/tableview.cpp:369
 #, kde-format
@@ -3801,7 +3834,7 @@ msgstr "音频声道"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -3809,7 +3842,7 @@ msgstr "音频编码"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:916
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Duration"
 msgstr "时间长度"
@@ -4162,14 +4195,14 @@ msgstr "项目属性"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #: core/app/views/tableview/tableview_column_item.cpp:93
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgid "Width"
 msgstr "宽度"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:98
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:239
 #, kde-format
 msgid "Height"
 msgstr "高度"
@@ -8195,7 +8228,7 @@ msgstr "色彩管理功能已禁用..."
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:596
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "White Balance"
 msgstr "白平衡"
@@ -10906,8 +10939,8 @@ msgid ""
 msgstr "<b>提示：</b>使用照片还原算法对图像进行放大。该处理可能需要较长时间。"
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#: core/utilities/searchwindow/searchfields_createfield.cpp:215
-#: core/utilities/searchwindow/searchfields_createfield.cpp:233
+#: core/utilities/searchwindow/searchfields_createfield.cpp:223
+#: core/utilities/searchwindow/searchfields_createfield.cpp:241
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -16136,9 +16169,9 @@ msgstr "目标文件"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:355
-#: core/utilities/searchwindow/searchfields_createfield.cpp:391
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:363
+#: core/utilities/searchwindow/searchfields_createfield.cpp:399
+#: core/utilities/searchwindow/searchfields_createfield.cpp:449
 #, kde-format
 msgid "Camera"
 msgstr "相机"
@@ -19054,7 +19087,7 @@ msgstr ""
 "</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:826
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgid "Author"
 msgstr "开发人员"
@@ -26036,9 +26069,9 @@ msgid "Reset curve to linear"
 msgstr "重置曲线为直线"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
-#: core/utilities/searchwindow/searchfields_createfield.cpp:537
-#: core/utilities/searchwindow/searchfields_createfield.cpp:549
+#: core/utilities/searchwindow/searchfields_createfield.cpp:524
+#: core/utilities/searchwindow/searchfields_createfield.cpp:545
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Exposure"
 msgstr "曝光时间"
@@ -37567,15 +37600,15 @@ msgid "Date Time"
 msgstr "日期和时间"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:427
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "Lens"
 msgstr "镜头"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:466
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgid "Aperture"
 msgstr "光圈"
@@ -37592,7 +37625,7 @@ msgstr "曝光时间"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "Sensitivity"
 msgstr "感光度"
@@ -43594,7 +43627,7 @@ msgstr "图像信息"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
-#: core/utilities/searchwindow/searchgroup.cpp:152
+#: core/utilities/searchwindow/searchgroup.cpp:154
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:60
 #, kde-format
 msgid "Photograph Information"
@@ -50660,9 +50693,9 @@ msgid "Lens of the camera"
 msgstr "相机镜头"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:486
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Focal length"
 msgstr "焦距"
@@ -50673,8 +50706,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "焦距 (35 毫米等效)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:524
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Exposure time"
 msgstr "曝光时间"
@@ -50695,8 +50728,8 @@ msgid "Flash mode"
 msgstr "闪光灯模式"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:615
+#: core/utilities/searchwindow/searchfields_createfield.cpp:676
 #, kde-format
 msgid "White balance"
 msgstr "白平衡"
@@ -50707,7 +50740,7 @@ msgid "White balance (color temperature)"
 msgstr "白平衡 (色温)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields_createfield.cpp:666
+#: core/utilities/searchwindow/searchfields_createfield.cpp:674
 #, kde-format
 msgid "Metering mode"
 msgstr "测光模式"
@@ -50728,14 +50761,14 @@ msgid "Display Aspect Ratio"
 msgstr "显示宽高比"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "音频比特率"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -50808,7 +50841,7 @@ msgid "Altitude in a human readable form"
 msgstr "人类可读海拔高度值"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
-#: core/utilities/searchwindow/searchfields_createfield.cpp:249
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "Orientation"
 msgstr "画面方向"
@@ -52180,8 +52213,8 @@ msgstr "国家首都/行政中心"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
-#: core/utilities/searchwindow/searchfields_createfield.cpp:793
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
+#: core/utilities/searchwindow/searchfields_createfield.cpp:801
 #, kde-format
 msgid "City"
 msgstr "城市"
@@ -61049,658 +61082,670 @@ msgid "and"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#, fuzzy, kde-format
+#| msgid "Modified Date"
+msgid "Modified last"
+msgstr "修改日期"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:189
+#, fuzzy, kde-format
+#| msgid "Return items modified between"
+msgid "Return items modified within the last"
+msgstr "修改时间范围"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
 msgid "Time"
 msgstr "时间"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
 msgid "Return items with created time between"
 msgstr "创建时间范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:189
+#: core/utilities/searchwindow/searchfields_createfield.cpp:197
 #, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:199
+#: core/utilities/searchwindow/searchfields_createfield.cpp:207
 #, kde-format
 msgid "Exif Orientation"
 msgstr "EXIF 方向"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:199
+#: core/utilities/searchwindow/searchfields_createfield.cpp:207
 #, kde-format
 msgid "Find items with orientation flag"
 msgstr "画面方向标签"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgid "Find items with a width between"
 msgstr "图像宽度范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:222
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:239
 #, kde-format
 msgid "Find items with a height between"
 msgstr "图像高度范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:232
+#: core/utilities/searchwindow/searchfields_createfield.cpp:240
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:250
+#: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "图像方向"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:259
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgid "File Format"
 msgstr "文件格式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:259
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgid "Return items with the file format"
 msgstr "文件格式范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:267
+#: core/utilities/searchwindow/searchfields_createfield.cpp:275
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [图像]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:276
+#: core/utilities/searchwindow/searchfields_createfield.cpp:284
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [视频]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:285
+#: core/utilities/searchwindow/searchfields_createfield.cpp:293
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [音频]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:322
 #, kde-format
 msgid "Color Depth"
 msgstr "色彩深度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:322
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "图像色彩深度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
 #, kde-format
 msgid "Color Model"
 msgstr "色彩模型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
 #, kde-format
 msgid "Find items with the color model"
 msgstr "图像色彩模型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:329
-#: core/utilities/searchwindow/searchfields_createfield.cpp:330
-#: core/utilities/searchwindow/searchfields_createfield.cpp:331
-#: core/utilities/searchwindow/searchfields_createfield.cpp:332
-#: core/utilities/searchwindow/searchfields_createfield.cpp:333
-#: core/utilities/searchwindow/searchfields_createfield.cpp:334
-#: core/utilities/searchwindow/searchfields_createfield.cpp:335
-#: core/utilities/searchwindow/searchfields_createfield.cpp:336
 #: core/utilities/searchwindow/searchfields_createfield.cpp:337
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:339
+#: core/utilities/searchwindow/searchfields_createfield.cpp:340
+#: core/utilities/searchwindow/searchfields_createfield.cpp:341
+#: core/utilities/searchwindow/searchfields_createfield.cpp:342
+#: core/utilities/searchwindow/searchfields_createfield.cpp:343
+#: core/utilities/searchwindow/searchfields_createfield.cpp:344
+#: core/utilities/searchwindow/searchfields_createfield.cpp:345
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [图像]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:341
-#: core/utilities/searchwindow/searchfields_createfield.cpp:342
-#: core/utilities/searchwindow/searchfields_createfield.cpp:343
-#: core/utilities/searchwindow/searchfields_createfield.cpp:344
+#: core/utilities/searchwindow/searchfields_createfield.cpp:349
+#: core/utilities/searchwindow/searchfields_createfield.cpp:350
+#: core/utilities/searchwindow/searchfields_createfield.cpp:351
+#: core/utilities/searchwindow/searchfields_createfield.cpp:352
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [视频]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:355
+#: core/utilities/searchwindow/searchfields_createfield.cpp:363
 #, kde-format
 msgid "The make of the camera"
 msgstr "相机制造商"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:391
+#: core/utilities/searchwindow/searchfields_createfield.cpp:399
 #, kde-format
 msgid "The model of the camera"
 msgstr "相机型号"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:427
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "The type of the lens"
 msgstr "镜头类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:449
 #, kde-format
 msgid "Return items without a camera ..."
 msgstr "返回没有相机的项目..."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:444
+#: core/utilities/searchwindow/searchfields_createfield.cpp:452
 #, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "制造商"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:445
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "型号"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "镜头类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:466
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "镜头光圈 F 值范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:459
+#: core/utilities/searchwindow/searchfields_createfield.cpp:467
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:486
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "镜头焦距范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:479
+#: core/utilities/searchwindow/searchfields_createfield.cpp:487
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "35mm 等价焦距范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:498
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:517
+#: core/utilities/searchwindow/searchfields_createfield.cpp:525
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:537
-#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#: core/utilities/searchwindow/searchfields_createfield.cpp:545
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "自动曝光程序"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:549
-#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "自动/手动曝光"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "ISO 速度 (线性/ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:561
+#: core/utilities/searchwindow/searchfields_createfield.cpp:569
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:584
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "闪光灯"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:584
-#: core/utilities/searchwindow/searchfields_createfield.cpp:667
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:675
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "闪光灯模式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:596
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "自动/手动白平衡"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:615
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "白平衡色温"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:616
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:628
 #, kde-format
 msgid "Metering Mode"
 msgstr "测光模式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:628
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "曝光测量方式"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
-#: core/utilities/searchwindow/searchfields_createfield.cpp:645
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Subject Distance"
 msgstr "主体距离"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "镜头/主体距离范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:633
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:645
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "微距/近景/远景"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Capture Settings"
 msgstr "拍摄设置"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Return items without selected capture settings ..."
 msgstr "返回没有选择拍摄设置的项目..."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:665
+#: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "ISO film speed"
 msgstr "ISO 速度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:677
 #, kde-format
 msgid "White balance color temperature"
 msgstr "白平衡色温"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:671
+#: core/utilities/searchwindow/searchfields_createfield.cpp:679
 #, kde-format
 msgid "Subject Distance Category"
 msgstr "主体距离类别"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:698
+#: core/utilities/searchwindow/searchfields_createfield.cpp:721
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:698
 #, kde-format
 msgid "Altitude range"
 msgstr "海拔范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:699
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:721
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "无 GPS 信息项"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:714
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, kde-format
 msgid "Not Geo-located"
 msgstr "包含无地理位置信息项"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:724
-#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#: core/utilities/searchwindow/searchfields_createfield.cpp:732
+#: core/utilities/searchwindow/searchfields_createfield.cpp:799
 #, kde-format
 msgid "Country"
 msgstr "国家/地区"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:724
+#: core/utilities/searchwindow/searchfields_createfield.cpp:732
 #, kde-format
 msgid "Country shown in the item"
 msgstr "项目中显示的国家/地区"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
 msgid "Province"
 msgstr "州/省"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
 msgid "Province shown in the item"
 msgstr "项目中显示的州/省"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, kde-format
 msgid "City shown in the item"
 msgstr "项目中显示的城市"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Sublocation"
 msgstr "次级位置"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "项目中显示的次级位置"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
 msgid "Place"
 msgstr "地点"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
 msgid "Return items without selected place information ..."
 msgstr "返回没有选择地点信息的项目..."
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:792
+#: core/utilities/searchwindow/searchfields_createfield.cpp:800
 #, kde-format
 msgid "State/Province"
 msgstr "州/省"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:812
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "创建者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:813
 #, kde-format
 msgid "Return items created by"
 msgstr "包含创建者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:818
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "说明文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:818
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "包含说明文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgid "Return items commented by"
 msgstr "包含注释者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Headline"
 msgstr "大标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "包含 IPTC 大标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "包含 IPTC 标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "包含全部关键词："
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, kde-format
 msgid "Empty Text"
 msgstr "空白文本"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, kde-format
 msgid "Return items without text in"
 msgstr "返回在这些字段中不含文本的项目"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:874
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "创建者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "说明文字"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:868
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "作者"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:869
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "大标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:870
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "标题"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
-#: core/utilities/searchwindow/searchfields_createfield.cpp:899
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "宽高比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "图像宽高比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:896
 #, kde-format
 msgid "Pixel Size"
 msgstr "像素大小"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:896
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "像素 (宽x高) 范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:889
+#: core/utilities/searchwindow/searchfields_createfield.cpp:897
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:899
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "视频画面宽高比"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:916
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Length of the video"
 msgstr "视频长度"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:917
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:918
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "s"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:934
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Frame Rate"
 msgstr "帧速率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:934
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "视频帧速率"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:935
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "fps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:952
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgid "Codec"
 msgstr "编码"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:952
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgid "Return video codec"
 msgstr "视频编码类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "音频比特率范围"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1023
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1024
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "bps"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "音频声道"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "单声道"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "立体声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1044
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "5.1 环绕声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1045
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "7.1 环绕声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16 声道环绕声"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1047
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1055
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "其他声道类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "音频编码类型"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1166
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Faces"
 msgstr "人脸"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "人脸区域数量"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1167
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "-"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Return items without face regions"
 msgstr "无人脸区域"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
 #, kde-format
 msgid "No Face Regions"
 msgstr "无人脸区域"
@@ -61735,6 +61780,34 @@ msgstr "横向"
 msgid "Portrait orientation"
 msgstr "纵向"
 
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "seconds"
+msgid "seconds"
+msgstr "秒"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "minutes"
+msgid "minutes"
+msgstr "分"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "hours"
+msgid "hours"
+msgstr "小时"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "time adjust offset, days value label"
+#| msgid "days"
+msgid "days"
+msgstr "天"
+
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
@@ -61753,27 +61826,27 @@ msgctxt "Edit selected search"
 msgid "Edit..."
 msgstr "编辑..."
 
-#: core/utilities/searchwindow/searchgroup.cpp:62
+#: core/utilities/searchwindow/searchgroup.cpp:63
 #, kde-format
 msgid "File, Album, Tags"
 msgstr "文件 / 相册 / 标签"
 
-#: core/utilities/searchwindow/searchgroup.cpp:82
+#: core/utilities/searchwindow/searchgroup.cpp:83
 #, kde-format
 msgid "Item Properties"
 msgstr "项目属性"
 
-#: core/utilities/searchwindow/searchgroup.cpp:133
+#: core/utilities/searchwindow/searchgroup.cpp:135
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "说明 / 注释 / 标题"
 
-#: core/utilities/searchwindow/searchgroup.cpp:184
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "地理位置"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:210
 #, kde-format
 msgid "Face regions"
 msgstr "人脸区域"

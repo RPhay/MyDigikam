@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-16 00:42+0000\n"
+"POT-Creation-Date: 2026-02-21 00:41+0000\n"
 "PO-Revision-Date: 2026-02-16 08:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1034,7 +1034,7 @@ msgstr "Назва:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview.cpp:532
+#: core/app/views/stack/welcomepageview_credits.cpp:51
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -1190,7 +1190,7 @@ msgid "White Balance:"
 msgstr "Баланс білого:"
 
 #: core/app/items/utils/tooltipfiller.cpp:325
-#: core/utilities/searchwindow/searchgroup.cpp:113
+#: core/utilities/searchwindow/searchgroup.cpp:115
 #, kde-format
 msgid "Audio/Video Properties"
 msgstr "Властивості відео та звуку"
@@ -3450,478 +3450,66 @@ msgstr "Вилучити"
 msgid "%1/%2 items selected"
 msgstr "Позначено %1 з %2 записів"
 
-#: core/app/views/stack/welcomepageview.cpp:203
+#: core/app/views/stack/welcomepageview.cpp:174
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Ласкаво просимо до digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:240
+#: core/app/views/stack/welcomepageview.cpp:211
 #, kde-format
 msgid "New Features"
 msgstr "Нові можливості"
 
-#: core/app/views/stack/welcomepageview.cpp:241
+#: core/app/views/stack/welcomepageview.cpp:212
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Про програму"
 
-#: core/app/views/stack/welcomepageview.cpp:242
+#: core/app/views/stack/welcomepageview.cpp:213
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Подяки за фонове зображення"
 
-#: core/app/views/stack/welcomepageview.cpp:381
-#, kde-format
-msgid ""
-"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 user-reports</a> closed on bugzilla."
-msgstr ""
-"Закрито понад <a href=\"https://bugs.kde.org/buglist.cgi?"
-"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 звітів щодо вад у Bugzilla</a>."
-
-#: core/app/views/stack/welcomepageview.cpp:382
-#, kde-format
-msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
-"brings with it a variety of bug fixes and performance improvements (Qt5 "
-"only)."
-msgstr ""
-"Вбудований QtAVPlayer було оновлено до останньої версії 24.01.2026, яка "
-"містить різноманітні виправлення помилок та покращення продуктивності (лише "
-"для Qt5)."
-
-#: core/app/views/stack/welcomepageview.cpp:383
-#, kde-format
-msgid ""
-"Add support of customizable date format to show everywhere in the program."
-msgstr ""
-"Додано підтримку налаштовуваного формату дати для показу скрізь у програмі."
-
-#: core/app/views/stack/welcomepageview.cpp:384
-#, kde-format
-msgid ""
-"Color label names are now customizable in the Labels tab from left sidebar "
-"by double clicking on text. Label strings size are limited to 32 characters."
-msgstr ""
-"Назви кольорових міток тепер можна налаштовувати на вкладці «Мітки» на лівій "
-"бічній панелі подвійним клацанням на тексті. Розмір рядків міток обмежений "
-"32 символами."
-
-#: core/app/views/stack/welcomepageview.cpp:385
-#, kde-format
-msgid ""
-"Add regular expression wildcard support for ignored directories settings."
-msgstr ""
-"До параметрів ігнорованих каталогів додано підтримку формальних виразів."
-
-#: core/app/views/stack/welcomepageview.cpp:386
-#, kde-format
-msgid ""
-"Split filters view into 3 separated tabs for better usability: Properties, "
-"Tags, and People."
-msgstr ""
-"Панель перегляду фільтрів поділено на три окремі вкладки з метою поліпшення "
-"умов перегляду: «Властивості», «Мітки» і «Люди»."
-
-#: core/app/views/stack/welcomepageview.cpp:387
-#, kde-format
-msgid "Load and save Trash-view column states between sessions."
-msgstr ""
-"Реалізовано завантаження і збереження станів стовпчиків панелі Смітника між "
-"сеансами роботи."
-
-#: core/app/views/stack/welcomepageview.cpp:388
-#, kde-format
-msgid ""
-"Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
-msgstr ""
-"Натискання накладки з піктограмою GPS відкриває вкладку «Геопозиціювання» на "
-"лівій бічній панелі."
-
-#: core/app/views/stack/welcomepageview.cpp:389
-#, kde-format
-msgid "Add customizable columns to show Grouped and Versioned properties."
-msgstr ""
-"Додано нетипові стовпчики для показу властивостей групування та версії."
-
-#: core/app/views/stack/welcomepageview.cpp:390
-#, kde-format
-msgid "New Advanced Rename modifier Date Format."
-msgstr "Новий формат дати для розширеного перейменування."
-
-#: core/app/views/stack/welcomepageview.cpp:391
-#, kde-format
-msgid ""
-"Add support to merge existing template entries assigned in items with a new "
-"template."
-msgstr ""
-"Додано підтримку об'єднання наявних записів шаблонів, пов'язаних із записами "
-"з новим шаблоном."
-
-#: core/app/views/stack/welcomepageview.cpp:392
-#, kde-format
-msgid ""
-"Add new Slideshow option to customize the color background instead pure "
-"black in case of images transparency usage."
-msgstr ""
-"Додано новий пункт для показу слайдів з метою налаштовування кольорового тла "
-"замість суцільного чорного у випадку використання напівпрозорості зображень."
-
-#: core/app/views/stack/welcomepageview.cpp:393
-#, kde-format
-msgid ""
-"Add new Presentation option to customize the color background instead pure "
-"black in case of images transparency usage."
-msgstr ""
-"Додано новий пункт для презентацій з метою налаштовування кольорового тла "
-"замість суцільного чорного у випадку використання напівпрозорості зображень."
-
-#: core/app/views/stack/welcomepageview.cpp:394
-#, kde-format
-msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
-msgstr ""
-"Повністю переписано графічний інтерфейс інструменту «Файл - Передати» з "
-"метою поліпшення зручності."
-
-#: core/app/views/stack/welcomepageview.cpp:395
-#, kde-format
-msgid "Complete rewrite the File-Copy tool GUI for a better usability."
-msgstr ""
-"Повністю переписано графічний інтерфейс інструменту «Файл - Копіювати» з "
-"метою поліпшення зручності."
-
-#: core/app/views/stack/welcomepageview.cpp:396
-#, kde-format
-msgid "Add marching-ants effect to the canvas selection rubber band."
-msgstr "Додано ефект блимання для гнучкої межі позначення на полотні."
-
-#: core/app/views/stack/welcomepageview.cpp:397
-#, kde-format
-msgid ""
-"Add pick color histogram indicators for the Curves, Levels, White Balance, "
-"and Black & White Sepia tools."
-msgstr ""
-"Додано індикатори вибору кольору для інструментів кривих, рівнів, балансу "
-"білого та чорно-білої сепії."
-
-#: core/app/views/stack/welcomepageview.cpp:398
-#, kde-format
-msgid ""
-"Huge web site update about contents and design eg. screenshots, description, "
-"history, features, support, download, etc."
-msgstr ""
-"Велике оновлення сайта щодо даних і дизайну, зокрема нові знімки вікон, "
-"описи, історія, можливості, підтримка, отримання тощо."
-
-#: core/app/views/stack/welcomepageview.cpp:400
-#, kde-format
-msgid "Sort Item improvements:"
-msgstr "Удосконалення упорядкування записів:"
-
-#: core/app/views/stack/welcomepageview.cpp:402
-#, kde-format
-msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
-msgstr ""
-"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
-"за допомогою впорядкувальних та кольорових міток."
-
-#: core/app/views/stack/welcomepageview.cpp:403
-#, kde-format
-msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
-msgstr ""
-"Додано підтримку впорядкування записів у режимі імпортування перегляду "
-"піктограм альбомів за допомогою впорядкувальних та кольорових міток."
-
-#: core/app/views/stack/welcomepageview.cpp:404
-#, kde-format
-msgid "Add support of Album Icon-View sort items by Orientation."
-msgstr ""
-"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
-"за орієнтацією."
-
-#: core/app/views/stack/welcomepageview.cpp:405
-#, kde-format
-msgid "Add support of Album Icon-View sort items by GPS location."
-msgstr ""
-"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
-"за місцем GPS."
-
-#: core/app/views/stack/welcomepageview.cpp:406
-#, kde-format
-msgid "Add support of Album Icon-View sort items by File Format."
-msgstr ""
-"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
-"за форматом файлів."
-
-#: core/app/views/stack/welcomepageview.cpp:407
-#, kde-format
-msgid "Add support of Import Icon-View sort items by File Format."
-msgstr ""
-"Додано підтримку впорядкування записів у режимі перегляду піктограм "
-"імпортування за форматом файлів."
-
-#: core/app/views/stack/welcomepageview.cpp:410
-#, kde-format
-msgid "Item Property improvements:"
-msgstr "Поліпшення у властивостях запису:"
-
-#: core/app/views/stack/welcomepageview.cpp:412
-#, kde-format
-msgid "Add new button to copy all properties as text in clipboard."
-msgstr ""
-"Додано нову кнопку для копіювання усіх властивостей як тексту до буфера "
-"обміну даними."
-
-#: core/app/views/stack/welcomepageview.cpp:413
-#, kde-format
-msgid "Add new button to open current item in file manager."
-msgstr ""
-"Додано кнопку для відкриття поточного запису у програмі для керування "
-"файлами."
-
-#: core/app/views/stack/welcomepageview.cpp:414
-#, kde-format
-msgid "If no icon-view item selected, show current album statistics."
-msgstr ""
-"Реалізовано показ статистичних даних поточного альбому, якщо не позначено "
-"жодного запису на панелі перегляду піктограм."
-
-#: core/app/views/stack/welcomepageview.cpp:417
-#, kde-format
-msgid "Grouped Item improvements:"
-msgstr "Удосконалення групування записів:"
-
-#: core/app/views/stack/welcomepageview.cpp:419
-#, kde-format
-msgid ""
-"Show items from an open group highlighted for a better usability with Icon-"
-"View."
-msgstr ""
-"Реалізовано показ записів з підсвіченої відкритої групи для поліпшення умов "
-"перегляду на панелі піктограм."
-
-#: core/app/views/stack/welcomepageview.cpp:420
-#, kde-format
-msgid "Usability improvements of the grouped icon-view items overlay."
-msgstr ""
-"Реалізовано удосконалення накладки для згрупованих записів на панелі "
-"перегляду піктограм."
-
-#: core/app/views/stack/welcomepageview.cpp:421
-#, kde-format
-msgid ""
-"Thumbbar improvements to support grouped items visibility as with Icon-View."
-msgstr ""
-"Удосконалено панель мініатюр з метою підтримки показу згрупованих записів "
-"так, як це зроблено на панелі перегляду піктограм."
-
-#: core/app/views/stack/welcomepageview.cpp:424
-#, kde-format
-msgid "Preview Mode improvements:"
-msgstr "Поліпшення у режимі попереднього перегляду:"
-
-#: core/app/views/stack/welcomepageview.cpp:426
-#, kde-format
-msgid "Extend Image and Video preview toolbar overlay with Labels editor."
-msgstr ""
-"Розширено можливості панелі інструментів перегляду зображень і відео за "
-"рахунок редактора міток."
-
-#: core/app/views/stack/welcomepageview.cpp:427
-#, kde-format
-msgid ""
-"Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
-"magnifier."
-msgstr ""
-"Додано кнопки панелі інструментів вікна попереднього перегляду: індикатори "
-"експозиції, керування кольорами, екранна панель, збільшувальне скло."
-
-#: core/app/views/stack/welcomepageview.cpp:428
-#, kde-format
-msgid "Add context-menu to the video player."
-msgstr "До відеопрогравача додано контекстне меню."
-
-#: core/app/views/stack/welcomepageview.cpp:429
-#, kde-format
-msgid ""
-"Add load progress indicator on the status bar (Icon-view and LightTable)."
-msgstr ""
-"На панель стану додано індикатор поступу завантаження (панель перегляду "
-"піктограм та стіл із підсвічуванням)."
-
-#: core/app/views/stack/welcomepageview.cpp:430
-#, kde-format
-msgid ""
-"Add trackpad gesture events support to zoom the contents, pan the canvas, "
-"and change to previous/next items."
-msgstr ""
-"Додано підтримку подій сенсорної панелі для керування масштабом, "
-"панорамування полотном та переходу між попереднім та наступним записами."
-
-#: core/app/views/stack/welcomepageview.cpp:431
-#, kde-format
-msgid ""
-"Add a magnifier glass tool to zoom and explore a small area of the preview "
-"canvas. Tool Size and zoom factor are customizable."
-msgstr ""
-"Додано інструмент збільшувального скла для масштабування та вивчення "
-"невеличких ділянок полотна попереднього перегляду. Можна налаштовувати "
-"розмір віконця інструменту та коефіцієнт масштабування."
-
-#: core/app/views/stack/welcomepageview.cpp:432
-#, kde-format
-msgid "Add under and over exposure indicators for the preview canvas."
-msgstr ""
-"На полотні попереднього перегляду додано індикатори недо- та "
-"переекспонування."
-
-#: core/app/views/stack/welcomepageview.cpp:433
-#, kde-format
-msgid ""
-"Railway over the canvas is displayed as an overlay when the scrollbar are "
-"visible."
-msgstr ""
-"Доріжку над полотном показано як накладку, якщо видимою є смужка гортання."
-
-#: core/app/views/stack/welcomepageview.cpp:436
-#, kde-format
-msgid "Advanced Search improvements:"
-msgstr "Поліпшення у роботі складного пошуку:"
-
-#: core/app/views/stack/welcomepageview.cpp:438
-#, kde-format
-msgid "New options to find empty properties registered in the database."
-msgstr ""
-"Нові пункти для пошуку порожніх властивостей, які зареєстровано у базі даних."
-
-#: core/app/views/stack/welcomepageview.cpp:439
-#, kde-format
-msgid ""
-"Add support for search Creator and Author fields to be drop down lists "
-"populated with the values already presents in the database."
-msgstr ""
-"Додано підтримку спадних списків для полів творця і автора; списки буде "
-"заповнено значеннями, які вже є у базі даних."
-
-#: core/app/views/stack/welcomepageview.cpp:442
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr ""
-"Оновлено внутрішній рушій обробки RAW до знімка Libraw версії 2026-02-16."
-
-#: core/app/views/stack/welcomepageview.cpp:443
-#, kde-format
-msgid "New RAW camera supported:"
-msgstr "Підтримка нових камер RAW:"
-
-#: core/app/views/stack/welcomepageview.cpp:445
-#, kde-format
-msgid ""
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
-msgstr ""
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
-
-#: core/app/views/stack/welcomepageview.cpp:446
-#, kde-format
-msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-
-#: core/app/views/stack/welcomepageview.cpp:447
-#, kde-format
-msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-
-#: core/app/views/stack/welcomepageview.cpp:448
-#, kde-format
-msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-
-#: core/app/views/stack/welcomepageview.cpp:449
-#, kde-format
-msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr "Nikon (лише стандартне стискання): Z6-III, Z f, Z30, Z8 ;"
-
-#: core/app/views/stack/welcomepageview.cpp:450
-#, kde-format
-msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-
-#: core/app/views/stack/welcomepageview.cpp:451
-#, kde-format
-msgid ""
-"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-"TZ220D, DC-S5-II, DC-GH6 ;"
-msgstr ""
-"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
-"TZ220D, DC-S5-II, DC-GH6 ;"
-
-#: core/app/views/stack/welcomepageview.cpp:452
-#, kde-format
-msgid "Pentax KF, K III Monochrome ;"
-msgstr "Pentax KF, K III Monochrome ;"
-
-#: core/app/views/stack/welcomepageview.cpp:453
-#, kde-format
-msgid ""
-"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
-"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
-msgstr ""
-"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
-"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
-
-#: core/app/views/stack/welcomepageview.cpp:454
-#, kde-format
-msgid "Multiple DJI and Skydio drones ;"
-msgstr "Багато дронів DJI і Skydio ;"
-
-#: core/app/views/stack/welcomepageview.cpp:455
-#, kde-format
-msgid "Multiple smartphones with DNG format recorded."
-msgstr "Багато смартфонів з записаним форматом DNG."
-
-#: core/app/views/stack/welcomepageview.cpp:460
-#, kde-format
-msgid "...and much more."
-msgstr "…та багато інших можливостей."
-
-#: core/app/views/stack/welcomepageview.cpp:466
-#, kde-format
-msgid "<li>%1</li>"
-msgstr "<li>%1</li>"
-
-#: core/app/views/stack/welcomepageview.cpp:469
-#, kde-format
-msgid ""
-"<h3>Some of the new features in this release of digiKam include (compared to "
-"digiKam version 8):</h3><ul>%1</ul>"
-msgstr ""
-"<h3>Серед нових можливостей у цьому випуску digiKam (порівняно із digiKam 8):"
-"</h3><ul>%1</ul>"
-
-#: core/app/views/stack/welcomepageview.cpp:490
-#, kde-format
+#: core/app/views/stack/welcomepageview_about.cpp:27
+#, fuzzy, kde-format
+#| msgid ""
+#| "<h3>digiKam is an advanced open-source digital photo management "
+#| "application that runs on Linux, Windows, and MacOS. The application "
+#| "provides a comprehensive set of tools for importing, managing, editing, "
+#| "and sharing photos and raw files. You can use digiKam’s import "
+#| "capabilities to easily transfer photos, raw files, and videos directly "
+#| "from your camera and external storage devices (SD cards, USB disks, "
+#| "etc.). The application allows you to configure import settings and rules "
+#| "that process and organize imported items on-the-fly.</h3><h3>With digiKam "
+#| "you can import, organize, enhance, search, export, and more...</"
+#| "h3><h3>Currently, you are in the Album view mode of digiKam.</"
+#| "h3><h3>Albums are the places where your files are stored, and are "
+#| "identical to the folders on your hard disk.</h3><li>digiKam has many "
+#| "powerful features which are described in the <a href=\"https://docs."
+#| "digikam.org/en/index.html\">documentation</a></li><li>The <a href="
+#| "\"https://www.digikam.org\">digiKam homepage</a> provides information "
+#| "about new versions of digiKam.</li>"
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
-"that runs on Linux, Windows, and MacOS. The application provides a "
+"that runs on Linux, Windows, and MacOS.</h3><h3>The application provides A "
 "comprehensive set of tools for importing, managing, editing, and sharing "
-"photos and raw files. You can use digiKam’s import capabilities to easily "
-"transfer photos, raw files, and videos directly from your camera and "
+"media taken with your camera. You can use digiKam’s import capabilities to "
+"easily transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.</h3><h3>With digiKam you can import, organize, "
-"enhance, search, export, and more...</h3><h3>Currently, you are in the Album "
-"view mode of digiKam.</h3><h3>Albums are the places where your files are "
-"stored, and are identical to the folders on your hard disk.</h3><li>digiKam "
-"has many powerful features which are described in the <a href=\"https://docs."
-"digikam.org/en/index.html\">documentation</a></li><li>The <a href=\"https://"
-"www.digikam.org\">digiKam homepage</a> provides information about new "
-"versions of digiKam.</li>"
+"imported items on-the-fly.</h3><h3>To resume, with digiKam you can import, "
+"organize, enhance, search, export your collections of photo and video, and "
+"much more...</h3><h3>Currently, you are in the Album view mode of digiKam. "
+"Albums are the places where your files are stored, and are identical to the "
+"folders on your hard disk.</h3><h3>digiKam has many powerful features which "
+"are described in the <a href=\"https://docs.digikam.org/en/index.html"
+"\">documentation</a></h3><h3>The <a href=\"https://www.digikam.org\">digiKam "
+"homepage</a> provides information about new versions of digiKam.</h3><h3>To "
+"contact the digiKam users community or to support the development team, "
+"follow the links provided in the application Help menu entry. Thanks to "
+"support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>digiKam — це професійна програма з відкритим кодом для керування "
 "цифровими фотографіями, яка працює у Linux, Windows та MacOS. Програма надає "
@@ -3940,26 +3528,471 @@ msgstr ""
 "a></li><li>На <a href=\"https://www.digikam.org\">домашній сторінці digiKam</"
 "a> наведено відомості щодо нових версій digiKam.</li>"
 
-#: core/app/views/stack/welcomepageview.cpp:530
+#: core/app/views/stack/welcomepageview_credits.cpp:49
 #, kde-format
 msgid "Author:"
 msgstr "Автор:"
 
-#: core/app/views/stack/welcomepageview.cpp:531
+#: core/app/views/stack/welcomepageview_credits.cpp:50
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Розташування:"
 
-#: core/app/views/stack/welcomepageview.cpp:533
+#: core/app/views/stack/welcomepageview_credits.cpp:52
 #, kde-format
 msgid "Camera:"
 msgstr "Фотоапарат:"
 
-#: core/app/views/stack/welcomepageview.cpp:534
+#: core/app/views/stack/welcomepageview_credits.cpp:53
 #, kde-format
 msgid "Lens:"
 msgstr "Об'єктив:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:26
+#, kde-format
+msgid ""
+"More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 user-reports</a> closed on bugzilla."
+msgstr ""
+"Закрито понад <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">350 звітів щодо вад у Bugzilla</a>."
+
+#: core/app/views/stack/welcomepageview_features.cpp:27
+#, kde-format
+msgid ""
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
+"brings with it a variety of bug fixes and performance improvements (Qt5 "
+"only)."
+msgstr ""
+"Вбудований QtAVPlayer було оновлено до останньої версії 24.01.2026, яка "
+"містить різноманітні виправлення помилок та покращення продуктивності (лише "
+"для Qt5)."
+
+#: core/app/views/stack/welcomepageview_features.cpp:28
+#, kde-format
+msgid ""
+"Add support of customizable date format to show everywhere in the program."
+msgstr ""
+"Додано підтримку налаштовуваного формату дати для показу скрізь у програмі."
+
+#: core/app/views/stack/welcomepageview_features.cpp:29
+#, kde-format
+msgid ""
+"Color label names are now customizable in the Labels tab from left sidebar "
+"by double clicking on text. Label strings size are limited to 32 characters."
+msgstr ""
+"Назви кольорових міток тепер можна налаштовувати на вкладці «Мітки» на лівій "
+"бічній панелі подвійним клацанням на тексті. Розмір рядків міток обмежений "
+"32 символами."
+
+#: core/app/views/stack/welcomepageview_features.cpp:30
+#, kde-format
+msgid ""
+"Add regular expression wildcard support for ignored directories settings."
+msgstr ""
+"До параметрів ігнорованих каталогів додано підтримку формальних виразів."
+
+#: core/app/views/stack/welcomepageview_features.cpp:31
+#, kde-format
+msgid ""
+"Split filters view into 3 separated tabs for better usability: Properties, "
+"Tags, and People."
+msgstr ""
+"Панель перегляду фільтрів поділено на три окремі вкладки з метою поліпшення "
+"умов перегляду: «Властивості», «Мітки» і «Люди»."
+
+#: core/app/views/stack/welcomepageview_features.cpp:32
+#, kde-format
+msgid "Load and save Trash-view column states between sessions."
+msgstr ""
+"Реалізовано завантаження і збереження станів стовпчиків панелі Смітника між "
+"сеансами роботи."
+
+#: core/app/views/stack/welcomepageview_features.cpp:33
+#, kde-format
+msgid ""
+"Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
+msgstr ""
+"Натискання накладки з піктограмою GPS відкриває вкладку «Геопозиціювання» на "
+"лівій бічній панелі."
+
+#: core/app/views/stack/welcomepageview_features.cpp:34
+#, kde-format
+msgid "Add customizable columns to show Grouped and Versioned properties."
+msgstr ""
+"Додано нетипові стовпчики для показу властивостей групування та версії."
+
+#: core/app/views/stack/welcomepageview_features.cpp:35
+#, kde-format
+msgid "New Advanced Rename modifier Date Format."
+msgstr "Новий формат дати для розширеного перейменування."
+
+#: core/app/views/stack/welcomepageview_features.cpp:36
+#, kde-format
+msgid ""
+"Add support to merge existing template entries assigned in items with a new "
+"template."
+msgstr ""
+"Додано підтримку об'єднання наявних записів шаблонів, пов'язаних із записами "
+"з новим шаблоном."
+
+#: core/app/views/stack/welcomepageview_features.cpp:37
+#, kde-format
+msgid ""
+"Add new Slideshow option to customize the color background instead pure "
+"black in case of images transparency usage."
+msgstr ""
+"Додано новий пункт для показу слайдів з метою налаштовування кольорового тла "
+"замість суцільного чорного у випадку використання напівпрозорості зображень."
+
+#: core/app/views/stack/welcomepageview_features.cpp:38
+#, kde-format
+msgid ""
+"Add new Presentation option to customize the color background instead pure "
+"black in case of images transparency usage."
+msgstr ""
+"Додано новий пункт для презентацій з метою налаштовування кольорового тла "
+"замість суцільного чорного у випадку використання напівпрозорості зображень."
+
+#: core/app/views/stack/welcomepageview_features.cpp:39
+#, kde-format
+msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
+msgstr ""
+"Повністю переписано графічний інтерфейс інструменту «Файл - Передати» з "
+"метою поліпшення зручності."
+
+#: core/app/views/stack/welcomepageview_features.cpp:40
+#, kde-format
+msgid "Complete rewrite the File-Copy tool GUI for a better usability."
+msgstr ""
+"Повністю переписано графічний інтерфейс інструменту «Файл - Копіювати» з "
+"метою поліпшення зручності."
+
+#: core/app/views/stack/welcomepageview_features.cpp:41
+#, kde-format
+msgid "Add marching-ants effect to the canvas selection rubber band."
+msgstr "Додано ефект блимання для гнучкої межі позначення на полотні."
+
+#: core/app/views/stack/welcomepageview_features.cpp:42
+#, kde-format
+msgid ""
+"Add pick color histogram indicators for the Curves, Levels, White Balance, "
+"and Black & White Sepia tools."
+msgstr ""
+"Додано індикатори вибору кольору для інструментів кривих, рівнів, балансу "
+"білого та чорно-білої сепії."
+
+#: core/app/views/stack/welcomepageview_features.cpp:43
+#, kde-format
+msgid "Rewrite the welcome page in more modern style."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:44
+#, kde-format
+msgid ""
+"Huge web site update about contents and design eg. screenshots, description, "
+"history, features, support, download, etc."
+msgstr ""
+"Велике оновлення сайта щодо даних і дизайну, зокрема нові знімки вікон, "
+"описи, історія, можливості, підтримка, отримання тощо."
+
+#: core/app/views/stack/welcomepageview_features.cpp:46
+#, kde-format
+msgid "Sort Item improvements:"
+msgstr "Удосконалення упорядкування записів:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:48
+#, kde-format
+msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
+msgstr ""
+"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
+"за допомогою впорядкувальних та кольорових міток."
+
+#: core/app/views/stack/welcomepageview_features.cpp:49
+#, kde-format
+msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
+msgstr ""
+"Додано підтримку впорядкування записів у режимі імпортування перегляду "
+"піктограм альбомів за допомогою впорядкувальних та кольорових міток."
+
+#: core/app/views/stack/welcomepageview_features.cpp:50
+#, kde-format
+msgid "Add support of Album Icon-View sort items by Orientation."
+msgstr ""
+"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
+"за орієнтацією."
+
+#: core/app/views/stack/welcomepageview_features.cpp:51
+#, kde-format
+msgid "Add support of Album Icon-View sort items by GPS location."
+msgstr ""
+"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
+"за місцем GPS."
+
+#: core/app/views/stack/welcomepageview_features.cpp:52
+#, kde-format
+msgid "Add support of Album Icon-View sort items by File Format."
+msgstr ""
+"Додано підтримку впорядкування записів у режимі перегляду піктограм альбомів "
+"за форматом файлів."
+
+#: core/app/views/stack/welcomepageview_features.cpp:53
+#, kde-format
+msgid "Add support of Import Icon-View sort items by File Format."
+msgstr ""
+"Додано підтримку впорядкування записів у режимі перегляду піктограм "
+"імпортування за форматом файлів."
+
+#: core/app/views/stack/welcomepageview_features.cpp:56
+#, kde-format
+msgid "Item Property improvements:"
+msgstr "Поліпшення у властивостях запису:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:58
+#, kde-format
+msgid "Add new button to copy all properties as text in clipboard."
+msgstr ""
+"Додано нову кнопку для копіювання усіх властивостей як тексту до буфера "
+"обміну даними."
+
+#: core/app/views/stack/welcomepageview_features.cpp:59
+#, kde-format
+msgid "Add new button to open current item in file manager."
+msgstr ""
+"Додано кнопку для відкриття поточного запису у програмі для керування "
+"файлами."
+
+#: core/app/views/stack/welcomepageview_features.cpp:60
+#, kde-format
+msgid "If no icon-view item selected, show current album statistics."
+msgstr ""
+"Реалізовано показ статистичних даних поточного альбому, якщо не позначено "
+"жодного запису на панелі перегляду піктограм."
+
+#: core/app/views/stack/welcomepageview_features.cpp:63
+#, kde-format
+msgid "Grouped Item improvements:"
+msgstr "Удосконалення групування записів:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:65
+#, kde-format
+msgid ""
+"Show items from an open group highlighted for a better usability with Icon-"
+"View."
+msgstr ""
+"Реалізовано показ записів з підсвіченої відкритої групи для поліпшення умов "
+"перегляду на панелі піктограм."
+
+#: core/app/views/stack/welcomepageview_features.cpp:66
+#, kde-format
+msgid "Usability improvements of the grouped icon-view items overlay."
+msgstr ""
+"Реалізовано удосконалення накладки для згрупованих записів на панелі "
+"перегляду піктограм."
+
+#: core/app/views/stack/welcomepageview_features.cpp:67
+#, kde-format
+msgid ""
+"Thumbbar improvements to support grouped items visibility as with Icon-View."
+msgstr ""
+"Удосконалено панель мініатюр з метою підтримки показу згрупованих записів "
+"так, як це зроблено на панелі перегляду піктограм."
+
+#: core/app/views/stack/welcomepageview_features.cpp:70
+#, kde-format
+msgid "Preview Mode improvements:"
+msgstr "Поліпшення у режимі попереднього перегляду:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:72
+#, kde-format
+msgid "Extend Image and Video preview toolbar overlay with Labels editor."
+msgstr ""
+"Розширено можливості панелі інструментів перегляду зображень і відео за "
+"рахунок редактора міток."
+
+#: core/app/views/stack/welcomepageview_features.cpp:73
+#, kde-format
+msgid ""
+"Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
+"magnifier."
+msgstr ""
+"Додано кнопки панелі інструментів вікна попереднього перегляду: індикатори "
+"експозиції, керування кольорами, екранна панель, збільшувальне скло."
+
+#: core/app/views/stack/welcomepageview_features.cpp:74
+#, kde-format
+msgid "Add context-menu to the video player."
+msgstr "До відеопрогравача додано контекстне меню."
+
+#: core/app/views/stack/welcomepageview_features.cpp:75
+#, kde-format
+msgid ""
+"Add load progress indicator on the status bar (Icon-view and LightTable)."
+msgstr ""
+"На панель стану додано індикатор поступу завантаження (панель перегляду "
+"піктограм та стіл із підсвічуванням)."
+
+#: core/app/views/stack/welcomepageview_features.cpp:76
+#, kde-format
+msgid ""
+"Add trackpad gesture events support to zoom the contents, pan the canvas, "
+"and change to previous/next items."
+msgstr ""
+"Додано підтримку подій сенсорної панелі для керування масштабом, "
+"панорамування полотном та переходу між попереднім та наступним записами."
+
+#: core/app/views/stack/welcomepageview_features.cpp:77
+#, kde-format
+msgid ""
+"Add a magnifier glass tool to zoom and explore a small area of the preview "
+"canvas. Tool Size and zoom factor are customizable."
+msgstr ""
+"Додано інструмент збільшувального скла для масштабування та вивчення "
+"невеличких ділянок полотна попереднього перегляду. Можна налаштовувати "
+"розмір віконця інструменту та коефіцієнт масштабування."
+
+#: core/app/views/stack/welcomepageview_features.cpp:78
+#, kde-format
+msgid "Add under and over exposure indicators for the preview canvas."
+msgstr ""
+"На полотні попереднього перегляду додано індикатори недо- та "
+"переекспонування."
+
+#: core/app/views/stack/welcomepageview_features.cpp:79
+#, kde-format
+msgid ""
+"Railway over the canvas is displayed as an overlay when the scrollbar are "
+"visible."
+msgstr ""
+"Доріжку над полотном показано як накладку, якщо видимою є смужка гортання."
+
+#: core/app/views/stack/welcomepageview_features.cpp:82
+#, kde-format
+msgid "Advanced Search improvements:"
+msgstr "Поліпшення у роботі складного пошуку:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:84
+#, kde-format
+msgid "New options to find empty properties registered in the database."
+msgstr ""
+"Нові пункти для пошуку порожніх властивостей, які зареєстровано у базі даних."
+
+#: core/app/views/stack/welcomepageview_features.cpp:85
+#, fuzzy, kde-format
+#| msgid ""
+#| "Add support for search Creator and Author fields to be drop down lists "
+#| "populated with the values already presents in the database."
+msgid ""
+"Add support to search Creator and Author fields to be drop down lists "
+"populated with the values already presents in the database."
+msgstr ""
+"Додано підтримку спадних списків для полів творця і автора; списки буде "
+"заповнено значеннями, які вже є у базі даних."
+
+#: core/app/views/stack/welcomepageview_features.cpp:86
+#, kde-format
+msgid "Add support to search recently modified items in the database."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:89
+#, kde-format
+msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgstr ""
+"Оновлено внутрішній рушій обробки RAW до знімка Libraw версії 2026-02-16."
+
+#: core/app/views/stack/welcomepageview_features.cpp:90
+#, kde-format
+msgid "New RAW camera supported:"
+msgstr "Підтримка нових камер RAW:"
+
+#: core/app/views/stack/welcomepageview_features.cpp:92
+#, kde-format
+msgid ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
+msgstr ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:93
+#, kde-format
+msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:94
+#, kde-format
+msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+msgstr "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:95
+#, kde-format
+msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:96
+#, kde-format
+msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
+msgstr "Nikon (лише стандартне стискання): Z6-III, Z f, Z30, Z8 ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:97
+#, kde-format
+msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:98
+#, kde-format
+msgid ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
+msgstr ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:99
+#, kde-format
+msgid "Pentax KF, K III Monochrome ;"
+msgstr "Pentax KF, K III Monochrome ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:100
+#, kde-format
+msgid ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
+msgstr ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:101
+#, kde-format
+msgid "Multiple DJI and Skydio drones ;"
+msgstr "Багато дронів DJI і Skydio ;"
+
+#: core/app/views/stack/welcomepageview_features.cpp:102
+#, kde-format
+msgid "Multiple smartphones with DNG format recorded."
+msgstr "Багато смартфонів з записаним форматом DNG."
+
+#: core/app/views/stack/welcomepageview_features.cpp:107
+#, kde-format
+msgid "...and much more."
+msgstr "…та багато інших можливостей."
+
+#: core/app/views/stack/welcomepageview_features.cpp:113
+#, kde-format
+msgid "<li>%1</li>"
+msgstr "<li>%1</li>"
+
+#: core/app/views/stack/welcomepageview_features.cpp:116
+#, kde-format
+msgid ""
+"<h3>Some of the new features in this release of digiKam include (compared to "
+"digiKam version 8):</h3><ul>%1</ul>"
+msgstr ""
+"<h3>Серед нових можливостей у цьому випуску digiKam (порівняно із digiKam 8):"
+"</h3><ul>%1</ul>"
 
 #: core/app/views/tableview/tableview.cpp:369
 #, kde-format
@@ -3995,7 +4028,7 @@ msgstr "Тип звукових каналів"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:68
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:92
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
@@ -4003,7 +4036,7 @@ msgstr "Аудіокодек"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
-#: core/utilities/searchwindow/searchfields_createfield.cpp:916
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Duration"
 msgstr "Тривалість"
@@ -4356,14 +4389,14 @@ msgstr "Властивості запису"
 
 #: core/app/views/tableview/tableview_column_item.cpp:72
 #: core/app/views/tableview/tableview_column_item.cpp:93
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgid "Width"
 msgstr "Ширина"
 
 #: core/app/views/tableview/tableview_column_item.cpp:73
 #: core/app/views/tableview/tableview_column_item.cpp:98
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:239
 #, kde-format
 msgid "Height"
 msgstr "Висота"
@@ -8687,7 +8720,7 @@ msgstr "Керування кольорами вимкнено…"
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:77
 #: core/dplugins/editor/colors/whitebalance/whitebalancetool.cpp:241
 #: core/libs/properties/itempropertiestab.cpp:513
-#: core/utilities/searchwindow/searchfields_createfield.cpp:596
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "White Balance"
 msgstr "Баланс білого"
@@ -11596,8 +11629,8 @@ msgstr ""
 "скористайтесь Режимом відновлення. Цей процес може тривати досить довго."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
-#: core/utilities/searchwindow/searchfields_createfield.cpp:215
-#: core/utilities/searchwindow/searchfields_createfield.cpp:233
+#: core/utilities/searchwindow/searchfields_createfield.cpp:223
+#: core/utilities/searchwindow/searchfields_createfield.cpp:241
 #, kde-format
 msgctxt "Pixels"
 msgid "px"
@@ -17036,9 +17069,9 @@ msgstr "Файл призначення"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:39
 #: core/utilities/advancedrename/parser/options/cameranameoption.cpp:35
-#: core/utilities/searchwindow/searchfields_createfield.cpp:355
-#: core/utilities/searchwindow/searchfields_createfield.cpp:391
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:363
+#: core/utilities/searchwindow/searchfields_createfield.cpp:399
+#: core/utilities/searchwindow/searchfields_createfield.cpp:449
 #, kde-format
 msgid "Camera"
 msgstr "Фотоапарат"
@@ -20119,7 +20152,7 @@ msgstr ""
 "паперу та компонування для обробки наборів файлів.</p>"
 
 #: core/dplugins/generic/tools/printcreator/printcreatorplugin.cpp:85
-#: core/utilities/searchwindow/searchfields_createfield.cpp:826
+#: core/utilities/searchwindow/searchfields_createfield.cpp:834
 #, kde-format
 msgid "Author"
 msgstr "Автор"
@@ -27337,9 +27370,9 @@ msgid "Reset curve to linear"
 msgstr "Перетворити криву на пряму"
 
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:251
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
-#: core/utilities/searchwindow/searchfields_createfield.cpp:537
-#: core/utilities/searchwindow/searchfields_createfield.cpp:549
+#: core/utilities/searchwindow/searchfields_createfield.cpp:524
+#: core/utilities/searchwindow/searchfields_createfield.cpp:545
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
 #, kde-format
 msgid "Exposure"
 msgstr "Експозиція"
@@ -39392,15 +39425,15 @@ msgid "Date Time"
 msgstr "Дата і час"
 
 #: core/libs/properties/itempropertiestab.cpp:506
-#: core/utilities/searchwindow/searchfields_createfield.cpp:427
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "Lens"
 msgstr "Об'єктив"
 
 #: core/libs/properties/itempropertiestab.cpp:507
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:65
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
-#: core/utilities/searchwindow/searchfields_createfield.cpp:659
+#: core/utilities/searchwindow/searchfields_createfield.cpp:466
+#: core/utilities/searchwindow/searchfields_createfield.cpp:667
 #, kde-format
 msgid "Aperture"
 msgstr "Апертура:"
@@ -39417,7 +39450,7 @@ msgstr "Час експонування"
 
 #: core/libs/properties/itempropertiestab.cpp:510
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:71
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "Sensitivity"
 msgstr "Чутливість"
@@ -45696,7 +45729,7 @@ msgstr "Інформація про зображення"
 
 #: core/libs/widgets/metadata/exiv2/mdkeylistviewitem.cpp:55
 #: core/showfoto/setup/showfotosetuptooltip.cpp:119
-#: core/utilities/searchwindow/searchgroup.cpp:152
+#: core/utilities/searchwindow/searchgroup.cpp:154
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:60
 #, kde-format
 msgid "Photograph Information"
@@ -52899,9 +52932,9 @@ msgid "Lens of the camera"
 msgstr "Об'єктив фотоапарата"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:66
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
-#: core/utilities/searchwindow/searchfields_createfield.cpp:660
+#: core/utilities/searchwindow/searchfields_createfield.cpp:486
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:668
 #, kde-format
 msgid "Focal length"
 msgstr "Фокусна відстань"
@@ -52912,8 +52945,8 @@ msgid "Focal length (35mm equivalent)"
 msgstr "Фокусна відстань об'єктива (у 35 мм еквіваленті)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:68
-#: core/utilities/searchwindow/searchfields_createfield.cpp:516
-#: core/utilities/searchwindow/searchfields_createfield.cpp:662
+#: core/utilities/searchwindow/searchfields_createfield.cpp:524
+#: core/utilities/searchwindow/searchfields_createfield.cpp:670
 #, kde-format
 msgid "Exposure time"
 msgstr "Час експозиції"
@@ -52934,8 +52967,8 @@ msgid "Flash mode"
 msgstr "Режим спалаху"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:73
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
-#: core/utilities/searchwindow/searchfields_createfield.cpp:668
+#: core/utilities/searchwindow/searchfields_createfield.cpp:615
+#: core/utilities/searchwindow/searchfields_createfield.cpp:676
 #, kde-format
 msgid "White balance"
 msgstr "Баланс білого"
@@ -52946,7 +52979,7 @@ msgid "White balance (color temperature)"
 msgstr "Баланс білого (температура кольорів)"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:75
-#: core/utilities/searchwindow/searchfields_createfield.cpp:666
+#: core/utilities/searchwindow/searchfields_createfield.cpp:674
 #, kde-format
 msgid "Metering mode"
 msgstr "Режим вимірювання"
@@ -52967,14 +53000,14 @@ msgid "Display Aspect Ratio"
 msgstr "Показувати співвідношення розмірів"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:80
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:141
 #, kde-format
 msgid "Audio Bit Rate"
 msgstr "Бітова швидкість звуку"
 
 #: core/utilities/advancedrename/parser/options/database/keys/metadatakeys.cpp:81
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:144
 #, kde-format
 msgid "Audio Channel Type"
@@ -53047,7 +53080,7 @@ msgid "Altitude in a human readable form"
 msgstr "Висота у зручному для читання форматі"
 
 #: core/utilities/advancedrename/parser/options/database/keys/positionkeys.cpp:60
-#: core/utilities/searchwindow/searchfields_createfield.cpp:249
+#: core/utilities/searchwindow/searchfields_createfield.cpp:257
 #, kde-format
 msgid "Orientation"
 msgstr "Орієнтація"
@@ -54507,8 +54540,8 @@ msgstr "Столиця країни"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:438
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:450
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:505
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
-#: core/utilities/searchwindow/searchfields_createfield.cpp:793
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
+#: core/utilities/searchwindow/searchfields_createfield.cpp:801
 #, kde-format
 msgid "City"
 msgstr "Місто"
@@ -63656,658 +63689,670 @@ msgid "and"
 msgstr "і"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#, fuzzy, kde-format
+#| msgid "Modified Date"
+msgid "Modified last"
+msgstr "Дата зміни"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:189
+#, fuzzy, kde-format
+#| msgid "Return items modified between"
+msgid "Return items modified within the last"
+msgstr "Повернути записи, змінені між"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
 msgid "Time"
 msgstr "Час"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:188
+#: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
 msgid "Return items with created time between"
 msgstr "Повернути записи, створені між"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:189
+#: core/utilities/searchwindow/searchfields_createfield.cpp:197
 #, kde-format
 msgctxt "'Return items with created time between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:199
+#: core/utilities/searchwindow/searchfields_createfield.cpp:207
 #, kde-format
 msgid "Exif Orientation"
 msgstr "Орієнтація Exif"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:199
+#: core/utilities/searchwindow/searchfields_createfield.cpp:207
 #, kde-format
 msgid "Find items with orientation flag"
 msgstr "Знайти записи з прапорцем орієнтації"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:213
+#: core/utilities/searchwindow/searchfields_createfield.cpp:221
 #, kde-format
 msgid "Find items with a width between"
 msgstr "Знайти записи з шириною у межах"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:214
+#: core/utilities/searchwindow/searchfields_createfield.cpp:222
 #, kde-format
 msgctxt "Find items with a width between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:231
+#: core/utilities/searchwindow/searchfields_createfield.cpp:239
 #, kde-format
 msgid "Find items with a height between"
 msgstr "Знайти записи з висотою у межах"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:232
+#: core/utilities/searchwindow/searchfields_createfield.cpp:240
 #, kde-format
 msgctxt "Find items with a height between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:250
+#: core/utilities/searchwindow/searchfields_createfield.cpp:258
 #, kde-format
 msgctxt "Find items with any orientation / landscape / portrait orientation..."
 msgid "Find items with"
 msgstr "Знайти записи з"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:259
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgid "File Format"
 msgstr "Формат файла"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:259
+#: core/utilities/searchwindow/searchfields_createfield.cpp:267
 #, kde-format
 msgid "Return items with the file format"
 msgstr "Повернути записи з форматом файла"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:267
+#: core/utilities/searchwindow/searchfields_createfield.cpp:275
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Image]"
 msgstr "%1 [зображення]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:276
+#: core/utilities/searchwindow/searchfields_createfield.cpp:284
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Video]"
 msgstr "%1 [відео]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:285
+#: core/utilities/searchwindow/searchfields_createfield.cpp:293
 #, kde-format
 msgctxt "@label: file format"
 msgid "%1 [Audio]"
 msgstr "%1 [звук]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:322
 #, kde-format
 msgid "Color Depth"
 msgstr "Глибина кольору"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:314
+#: core/utilities/searchwindow/searchfields_createfield.cpp:322
 #, kde-format
 msgctxt "Find items with any color depth / 8 bits per channel..."
 msgid "Find items with"
 msgstr "Знайти записи з"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
 #, kde-format
 msgid "Color Model"
 msgstr "Модель кольору"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:324
+#: core/utilities/searchwindow/searchfields_createfield.cpp:332
 #, kde-format
 msgid "Find items with the color model"
 msgstr "Знайти записи з моделлю кольорів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:329
-#: core/utilities/searchwindow/searchfields_createfield.cpp:330
-#: core/utilities/searchwindow/searchfields_createfield.cpp:331
-#: core/utilities/searchwindow/searchfields_createfield.cpp:332
-#: core/utilities/searchwindow/searchfields_createfield.cpp:333
-#: core/utilities/searchwindow/searchfields_createfield.cpp:334
-#: core/utilities/searchwindow/searchfields_createfield.cpp:335
-#: core/utilities/searchwindow/searchfields_createfield.cpp:336
 #: core/utilities/searchwindow/searchfields_createfield.cpp:337
+#: core/utilities/searchwindow/searchfields_createfield.cpp:338
+#: core/utilities/searchwindow/searchfields_createfield.cpp:339
+#: core/utilities/searchwindow/searchfields_createfield.cpp:340
+#: core/utilities/searchwindow/searchfields_createfield.cpp:341
+#: core/utilities/searchwindow/searchfields_createfield.cpp:342
+#: core/utilities/searchwindow/searchfields_createfield.cpp:343
+#: core/utilities/searchwindow/searchfields_createfield.cpp:344
+#: core/utilities/searchwindow/searchfields_createfield.cpp:345
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Image]"
 msgstr "%1 [зображення]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:341
-#: core/utilities/searchwindow/searchfields_createfield.cpp:342
-#: core/utilities/searchwindow/searchfields_createfield.cpp:343
-#: core/utilities/searchwindow/searchfields_createfield.cpp:344
+#: core/utilities/searchwindow/searchfields_createfield.cpp:349
+#: core/utilities/searchwindow/searchfields_createfield.cpp:350
+#: core/utilities/searchwindow/searchfields_createfield.cpp:351
+#: core/utilities/searchwindow/searchfields_createfield.cpp:352
 #, kde-format
 msgctxt "@label: color model"
 msgid "%1 [Video]"
 msgstr "%1 [відео]"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:355
+#: core/utilities/searchwindow/searchfields_createfield.cpp:363
 #, kde-format
 msgid "The make of the camera"
 msgstr "За виробником фотоапарата"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:391
+#: core/utilities/searchwindow/searchfields_createfield.cpp:399
 #, kde-format
 msgid "The model of the camera"
 msgstr "За моделлю фотоапарата"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:427
+#: core/utilities/searchwindow/searchfields_createfield.cpp:435
 #, kde-format
 msgid "The type of the lens"
 msgstr "Тип об'єктива"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:441
+#: core/utilities/searchwindow/searchfields_createfield.cpp:449
 #, kde-format
 msgid "Return items without a camera ..."
 msgstr "Повернути записи без даних фотоапарата…"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:444
+#: core/utilities/searchwindow/searchfields_createfield.cpp:452
 #, kde-format
 msgctxt "Camera"
 msgid "Make"
 msgstr "Виробник"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:445
+#: core/utilities/searchwindow/searchfields_createfield.cpp:453
 #, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Модель"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:446
+#: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
 msgstr "Тип об'єктива"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:458
+#: core/utilities/searchwindow/searchfields_createfield.cpp:466
 #, kde-format
 msgid "Lens aperture as f-number"
 msgstr "Апертура об'єктива у вигляді f-числа"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:459
+#: core/utilities/searchwindow/searchfields_createfield.cpp:467
 #, kde-format
 msgctxt "Lens aperture as f-number ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:478
+#: core/utilities/searchwindow/searchfields_createfield.cpp:486
 #, kde-format
 msgid "Focal length of the lens"
 msgstr "Фокусна відстань об'єктива"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:479
+#: core/utilities/searchwindow/searchfields_createfield.cpp:487
 #, kde-format
 msgctxt "Focal length of the lens ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:497
-#: core/utilities/searchwindow/searchfields_createfield.cpp:661
+#: core/utilities/searchwindow/searchfields_createfield.cpp:505
+#: core/utilities/searchwindow/searchfields_createfield.cpp:669
 #, kde-format
 msgid "35mm equivalent focal length"
 msgstr "Фокусна відстань у 35мм еквіваленті"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:498
+#: core/utilities/searchwindow/searchfields_createfield.cpp:506
 #, kde-format
 msgctxt "35mm equivalent focal length ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:517
+#: core/utilities/searchwindow/searchfields_createfield.cpp:525
 #, kde-format
 msgctxt "Exposure time ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:537
-#: core/utilities/searchwindow/searchfields_createfield.cpp:663
+#: core/utilities/searchwindow/searchfields_createfield.cpp:545
+#: core/utilities/searchwindow/searchfields_createfield.cpp:671
 #, kde-format
 msgid "Automatic exposure program"
 msgstr "Автоматична програма експозиції"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:549
-#: core/utilities/searchwindow/searchfields_createfield.cpp:664
+#: core/utilities/searchwindow/searchfields_createfield.cpp:557
+#: core/utilities/searchwindow/searchfields_createfield.cpp:672
 #, kde-format
 msgid "Automatic or manual exposure"
 msgstr "Автоматична чи ручна експозиція"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:560
+#: core/utilities/searchwindow/searchfields_createfield.cpp:568
 #, kde-format
 msgid "ISO film speed (linear scale, ASA)"
 msgstr "Швидкість плівки у ISO (лінійна шкала, ASA)"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:561
+#: core/utilities/searchwindow/searchfields_createfield.cpp:569
 #, kde-format
 msgctxt "ISO film speed (linear scale, ASA) ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:584
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
 #, kde-format
 msgctxt "@label: flash is on or off"
 msgid "Flash"
 msgstr "Спалах"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:584
-#: core/utilities/searchwindow/searchfields_createfield.cpp:667
+#: core/utilities/searchwindow/searchfields_createfield.cpp:592
+#: core/utilities/searchwindow/searchfields_createfield.cpp:675
 #, kde-format
 msgctxt "@label: flash mode used"
 msgid "Flash mode"
 msgstr "Режим спалаху"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:596
+#: core/utilities/searchwindow/searchfields_createfield.cpp:604
 #, kde-format
 msgid "Automatic or manual white balance"
 msgstr "Автоматичний чи ручний баланс білого"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:607
+#: core/utilities/searchwindow/searchfields_createfield.cpp:615
 #, kde-format
 msgid "Color temperature used for white balance"
 msgstr "Температура кольорів, використана для балансу білого"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:608
+#: core/utilities/searchwindow/searchfields_createfield.cpp:616
 #, kde-format
 msgctxt "Color temperature used for white balance ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:628
 #, kde-format
 msgid "Metering Mode"
 msgstr "Режим вимірювання"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:620
+#: core/utilities/searchwindow/searchfields_createfield.cpp:628
 #, kde-format
 msgid "Method to determine the exposure"
 msgstr "Метод визначення експозиції"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
-#: core/utilities/searchwindow/searchfields_createfield.cpp:645
-#: core/utilities/searchwindow/searchfields_createfield.cpp:670
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
+#: core/utilities/searchwindow/searchfields_createfield.cpp:678
 #, kde-format
 msgid "Subject Distance"
 msgstr "Відстань до об'єкта"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:632
+#: core/utilities/searchwindow/searchfields_createfield.cpp:640
 #, kde-format
 msgid "Distance of the subject from the lens"
 msgstr "Відстань об'єкта від об'єктива"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:633
+#: core/utilities/searchwindow/searchfields_createfield.cpp:641
 #, kde-format
 msgctxt "Distance of the subject from the lens ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:645
+#: core/utilities/searchwindow/searchfields_createfield.cpp:653
 #, kde-format
 msgid "Macro, close or distant view"
 msgstr "Макро-, близький або віддалений вид"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Capture Settings"
 msgstr "Параметри зйомки"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:655
+#: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Return items without selected capture settings ..."
 msgstr "Повернути записи без вибраних параметрів зйомки…"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:665
+#: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "ISO film speed"
 msgstr "Швидкість плівки у ISO"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:669
+#: core/utilities/searchwindow/searchfields_createfield.cpp:677
 #, kde-format
 msgid "White balance color temperature"
 msgstr "Баланс білого, температура кольорів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:671
+#: core/utilities/searchwindow/searchfields_createfield.cpp:679
 #, kde-format
 msgid "Subject Distance Category"
 msgstr "Відстань до об'єкта за категорією"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:698
+#: core/utilities/searchwindow/searchfields_createfield.cpp:721
 #, kde-format
 msgid "GPS"
 msgstr "GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:690
+#: core/utilities/searchwindow/searchfields_createfield.cpp:698
 #, kde-format
 msgid "Altitude range"
 msgstr "Діапазон висот"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:691
+#: core/utilities/searchwindow/searchfields_createfield.cpp:699
 #, kde-format
 msgctxt "Altitude range ...-..."
 msgid "-"
 msgstr "–"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:713
+#: core/utilities/searchwindow/searchfields_createfield.cpp:721
 #, kde-format
 msgid "Item has no GPS info"
 msgstr "У записі не міститься даних GPS"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:714
+#: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, kde-format
 msgid "Not Geo-located"
 msgstr "Без даних геопозиціювання"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:724
-#: core/utilities/searchwindow/searchfields_createfield.cpp:791
+#: core/utilities/searchwindow/searchfields_createfield.cpp:732
+#: core/utilities/searchwindow/searchfields_createfield.cpp:799
 #, kde-format
 msgid "Country"
 msgstr "Країна"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:724
+#: core/utilities/searchwindow/searchfields_createfield.cpp:732
 #, kde-format
 msgid "Country shown in the item"
 msgstr "Країна, яку буде показано для запису"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
 msgid "Province"
 msgstr "Область"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:740
+#: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
 msgid "Province shown in the item"
 msgstr "Область, яку буде показано для запису"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:756
+#: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, kde-format
 msgid "City shown in the item"
 msgstr "Місто, яке буде показано для запису"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
-#: core/utilities/searchwindow/searchfields_createfield.cpp:794
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
+#: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Sublocation"
 msgstr "Точне розташування"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:772
+#: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
 msgid "Sublocation shown in the item"
 msgstr "Район, який буде показано для запису"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
 msgid "Place"
 msgstr "Місце"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:787
+#: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
 msgid "Return items without selected place information ..."
 msgstr "Повернути записи без вибраних відомостей щодо місця…"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:792
+#: core/utilities/searchwindow/searchfields_createfield.cpp:800
 #, kde-format
 msgid "State/Province"
 msgstr "Штат/Провінція"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:804
+#: core/utilities/searchwindow/searchfields_createfield.cpp:812
 #, kde-format
 msgctxt "@label: item creator"
 msgid "Creator"
 msgstr "Створювач"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:805
+#: core/utilities/searchwindow/searchfields_createfield.cpp:813
 #, kde-format
 msgid "Return items created by"
 msgstr "Повернути записи, створені"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:818
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgctxt "@label: item comment"
 msgid "Caption"
 msgstr "Підпис"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:818
+#: core/utilities/searchwindow/searchfields_createfield.cpp:826
 #, kde-format
 msgid "Return items whose comment contains"
 msgstr "Повернути записи, коментар яких містить"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:827
+#: core/utilities/searchwindow/searchfields_createfield.cpp:835
 #, kde-format
 msgid "Return items commented by"
 msgstr "Повернути записи з коментарем від"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Headline"
 msgstr "Заголовок"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:840
+#: core/utilities/searchwindow/searchfields_createfield.cpp:848
 #, kde-format
 msgid "Return items with the IPTC headline"
 msgstr "Повернути записи з заголовком IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgctxt "@label: item title"
 msgid "Title"
 msgstr "Назва"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:848
+#: core/utilities/searchwindow/searchfields_createfield.cpp:856
 #, kde-format
 msgid "Return items with the IPTC title"
 msgstr "Повернути записи з назвою IPTC"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:856
+#: core/utilities/searchwindow/searchfields_createfield.cpp:864
 #, kde-format
 msgid "Find items that have associated all these words:"
 msgstr "Знайти записи, пов'язані з усіма словами:"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, kde-format
 msgid "Empty Text"
 msgstr "Порожній текст"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:864
+#: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, kde-format
 msgid "Return items without text in"
 msgstr "Повернути записи без тексту у"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:866
+#: core/utilities/searchwindow/searchfields_createfield.cpp:874
 #, kde-format
 msgctxt "@label: search items without creator property"
 msgid "Creator"
 msgstr "Створювач"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:867
+#: core/utilities/searchwindow/searchfields_createfield.cpp:875
 #, kde-format
 msgctxt "@label: search items without caption property"
 msgid "Caption"
 msgstr "Підпис"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:868
+#: core/utilities/searchwindow/searchfields_createfield.cpp:876
 #, kde-format
 msgctxt "@label: search items without author property"
 msgid "Author"
 msgstr "Автор"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:869
+#: core/utilities/searchwindow/searchfields_createfield.cpp:877
 #, kde-format
 msgctxt "@label: search items without headline property"
 msgid "Headline"
 msgstr "Заголовок"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:870
+#: core/utilities/searchwindow/searchfields_createfield.cpp:878
 #, kde-format
 msgctxt "@label: search items without title property"
 msgid "Title"
 msgstr "Назва"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
-#: core/utilities/searchwindow/searchfields_createfield.cpp:899
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Aspect Ratio"
 msgstr "Співвідношення розмірів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:880
+#: core/utilities/searchwindow/searchfields_createfield.cpp:888
 #, kde-format
 msgid "Return items with the aspect ratio"
 msgstr "Повернути записи з відповідним співвідношенням розмірів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:896
 #, kde-format
 msgid "Pixel Size"
 msgstr "Розмір у пікселях"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:888
+#: core/utilities/searchwindow/searchfields_createfield.cpp:896
 #, kde-format
 msgid "Value of (Width * Height) between"
 msgstr "Значення добутку ширини на висоту у межах"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:889
+#: core/utilities/searchwindow/searchfields_createfield.cpp:897
 #, kde-format
 msgctxt "Value of (Width * Height) between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:899
+#: core/utilities/searchwindow/searchfields_createfield.cpp:907
 #, kde-format
 msgid "Return video with the frame aspect ratio"
 msgstr "Повернути відео з відповідним співвідношенням розмірів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:916
+#: core/utilities/searchwindow/searchfields_createfield.cpp:924
 #, kde-format
 msgid "Length of the video"
 msgstr "Тривалість відео від"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:917
+#: core/utilities/searchwindow/searchfields_createfield.cpp:925
 #, kde-format
 msgctxt "Find video with a length between...and..."
 msgid "and"
 msgstr "до"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:918
+#: core/utilities/searchwindow/searchfields_createfield.cpp:926
 #, kde-format
 msgctxt "Seconds"
 msgid "s"
 msgstr "с"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:934
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Frame Rate"
 msgstr "Частота кадрів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:934
+#: core/utilities/searchwindow/searchfields_createfield.cpp:942
 #, kde-format
 msgid "Return video with the frame rate"
 msgstr "Повернути відео з відповідною частотою кадрів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:935
+#: core/utilities/searchwindow/searchfields_createfield.cpp:943
 #, kde-format
 msgctxt "Find video with frame rate between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:936
+#: core/utilities/searchwindow/searchfields_createfield.cpp:944
 #, kde-format
 msgctxt "Frames per Second"
 msgid "fps"
 msgstr "кд/с"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:952
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgid "Codec"
 msgstr "Кодек"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:952
+#: core/utilities/searchwindow/searchfields_createfield.cpp:960
 #, kde-format
 msgid "Return video codec"
 msgstr "Повернути відео з відповідним кодеком"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1022
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1030
 #, kde-format
 msgid "Return Audio Bits Rate"
 msgstr "Повернути бітову швидкість звуку"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1023
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1031
 #, kde-format
 msgctxt "Find files with audio bit rate between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1024
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1032
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
 msgstr "біт/с"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1040
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #, kde-format
 msgid "Return Audio Channel Type"
 msgstr "Повернути тип каналів звуку"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1042
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1050
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Mono"
 msgstr "Моно"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1043
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1051
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Stereo"
 msgstr "Стерео"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1044
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1052
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "5.1 Surround Sound"
 msgstr "Об'ємний звук 5.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1045
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1053
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "7.1 Surround Sound"
 msgstr "Об'ємний звук 7.1"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1046
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1054
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "16 Channels Sequence"
 msgstr "16-канальна послідовність"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1047
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1055
 #, kde-format
 msgctxt "@label: audio channel type"
 msgid "Other Channel Type"
 msgstr "Інший тип каналів"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1059
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1067
 #, kde-format
 msgid "Return Audio Codec"
 msgstr "Повернути аудіокодек"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1166
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Faces"
 msgstr "Обличчя"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1158
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #, kde-format
 msgid "Return items by number of face regions"
 msgstr "Повернути записи за кількістю ділянок облич"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1159
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1167
 #, kde-format
 msgctxt "Return items by number of face regions between...and..."
 msgid "and"
 msgstr "і"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1168
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Повернути записи без ділянок облич"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1169
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
 #, kde-format
 msgid "No Face Regions"
 msgstr "Без ділянок облич"
@@ -64342,6 +64387,34 @@ msgstr "Альбомна орієнтація"
 msgid "Portrait orientation"
 msgstr "Книжкова орієнтація"
 
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "seconds"
+msgid "seconds"
+msgstr "секунди"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "minutes"
+msgid "minutes"
+msgstr "хвилини"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
+#, fuzzy, kde-format
+#| msgctxt "time"
+#| msgid "hours"
+msgid "hours"
+msgstr "години"
+
+#: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
+#, fuzzy, kde-format
+#| msgctxt "time adjust offset, days value label"
+#| msgid "days"
+msgid "days"
+msgstr "днів"
+
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
 msgctxt "Create new search"
@@ -64360,27 +64433,27 @@ msgctxt "Edit selected search"
 msgid "Edit..."
 msgstr "Змінити…"
 
-#: core/utilities/searchwindow/searchgroup.cpp:62
+#: core/utilities/searchwindow/searchgroup.cpp:63
 #, kde-format
 msgid "File, Album, Tags"
 msgstr "Файл, Альбом, Мітки"
 
-#: core/utilities/searchwindow/searchgroup.cpp:82
+#: core/utilities/searchwindow/searchgroup.cpp:83
 #, kde-format
 msgid "Item Properties"
 msgstr "Властивості запису"
 
-#: core/utilities/searchwindow/searchgroup.cpp:133
+#: core/utilities/searchwindow/searchgroup.cpp:135
 #, kde-format
 msgid "Caption, Comment, Title"
 msgstr "Підпис, Коментар, Заголовок"
 
-#: core/utilities/searchwindow/searchgroup.cpp:184
+#: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
 msgstr "Географічна позиція"
 
-#: core/utilities/searchwindow/searchgroup.cpp:208
+#: core/utilities/searchwindow/searchgroup.cpp:210
 #, kde-format
 msgid "Face regions"
 msgstr "Ділянки облич"
