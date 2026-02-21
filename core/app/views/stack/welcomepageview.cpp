@@ -20,112 +20,6 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN TitleEffect : public QGraphicsDropShadowEffect
-{
-    Q_OBJECT
-
-public:
-
-    explicit TitleEffect(QWidget* const parent = nullptr)
-        : QGraphicsDropShadowEffect(parent)
-    {
-        setColor(Qt::white);
-        setBlurRadius(35);
-        setOffset(0, 0);
-    }
-};
-
-// ---
-
-class Q_DECL_HIDDEN GradientWidget : public QWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit GradientWidget(QWidget* const parent = nullptr)
-        : QWidget (parent)
-    {
-        setContentsMargins(0, 0, 0, 0);
-    }
-
-protected:
-
-    void paintEvent(QPaintEvent*) override
-    {
-        QPainter painter(this);
-        QLinearGradient gradient(0, 0, 0, height());
-        gradient.setColorAt(0,    QColor(qRgb(0x01, 0x08, 0x0F)));
-        gradient.setColorAt(0.55, QColor(qRgb(0x22, 0x3c, 0x54)));
-        painter.fillRect(rect(), gradient);
-    }
-};
-
-// ---
-
-class Q_DECL_HIDDEN InvertedGradientWidget : public QWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit InvertedGradientWidget(QWidget* const parent = nullptr)
-        : QWidget(parent)
-    {
-        setContentsMargins(0, 0, 0, 0);
-    }
-
-protected:
-
-    void paintEvent(QPaintEvent*) override
-    {
-        QPainter painter(this);
-        QLinearGradient gradient(0, 0, 0, height());
-        gradient.setColorAt(0,    QColor(qRgb(0x22, 0x3c, 0x54)));
-        gradient.setColorAt(0.55, QColor(qRgb(0x01, 0x08, 0x0F)));
-        painter.fillRect(rect(), gradient);
-    }
-};
-
-// ---
-
-class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit ResizableBackgroundWidget(QWidget* const parent = nullptr)
-        : QWidget(parent)
-    {
-        setContentsMargins(0, 0, 0, 0);
-    }
-
-protected:
-
-    void resizeEvent(QResizeEvent* event) override
-    {
-        QWidget::resizeEvent(event);
-        update();
-    }
-
-    void paintEvent(QPaintEvent*) override
-    {
-        QPainter painter(this);
-        painter.fillRect(rect(), QColor(qRgb(0x22, 0x3c, 0x54)));
-
-        QPixmap scaledPixmap = m_backgroundPixmap.scaledToWidth(width(), Qt::SmoothTransformation);
-        painter.drawPixmap(0, 0, scaledPixmap);
-    }
-
-private:
-
-    QPixmap m_backgroundPixmap = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                        QLatin1String("digikam/data/body-background.webp"));
-};
-
-// ---
-
 WelcomePageView::WelcomePageView(QWidget* const parent)
     : QWidget(parent)
 {
@@ -359,7 +253,5 @@ QString WelcomePageView::appendSubList(const QStringList& list) const
 }
 
 } // namespace Digikam
-
-#include "welcomepageview.moc"
 
 #include "moc_welcomepageview.cpp"

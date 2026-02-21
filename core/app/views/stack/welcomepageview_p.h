@@ -45,3 +45,69 @@
 #include "daboutdata.h"
 #include "thememanager.h"
 #include "webbrowserdlg.h"
+
+namespace Digikam
+{
+
+class Q_DECL_HIDDEN TitleEffect : public QGraphicsDropShadowEffect
+{
+    Q_OBJECT
+
+public:
+
+    explicit TitleEffect(QWidget* const parent = nullptr);
+};
+
+// ---
+
+class Q_DECL_HIDDEN GradientWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit GradientWidget(QWidget* const parent = nullptr);
+
+protected:
+
+    void paintEvent(QPaintEvent*) override;
+};
+
+// ---
+
+class Q_DECL_HIDDEN InvertedGradientWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit InvertedGradientWidget(QWidget* const parent = nullptr);
+
+protected:
+
+    void paintEvent(QPaintEvent*) override;
+};
+
+// ---
+
+class Q_DECL_HIDDEN ResizableBackgroundWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit ResizableBackgroundWidget(QWidget* const parent = nullptr);
+
+protected:
+
+    void resizeEvent(QResizeEvent* event) override;
+
+    void paintEvent(QPaintEvent*)         override;
+
+private:
+
+    QPixmap m_backgroundPixmap = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                        QLatin1String("digikam/data/body-background.webp"));
+};
+
+} // namespace Digikam
