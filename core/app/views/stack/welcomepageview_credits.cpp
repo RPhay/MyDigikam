@@ -45,12 +45,26 @@ QString WelcomePageView::creditsTabContent()  const
                     "<td width=\"10%\">%9</td>"
                     "<td><h4>%10</h4></td>"
                   "</tr>"
-                "</table>"
-        ).arg(i18n("Author:"))  .arg(QString::fromUtf8("Andreas K. Huettel"))
-         .arg(i18n("Location:")).arg(QString::fromUtf8("<a href=\"https://en.wikipedia.org/wiki/Kjem%C3%A5vatnet\">Kjemåvatnet - Nordland county - Norway.</a>"))
-         .arg(i18n("Date:"))    .arg(QString::fromUtf8("August 2020"))
-         .arg(i18n("Camera:"))  .arg(QString::fromUtf8("Canon EOS 7D Mark II"))
-         .arg(i18n("Lens:"))    .arg(QString::fromUtf8("Sigma 18-250mm f/3.5-6.3 DC OS HSM"))
+                "</table>")
+
+        .arg(i18n("Author:"))
+        .arg(QString::fromUtf8("Andreas K. Huettel"))
+
+        .arg(i18n("Location:"))
+        .arg(QString::fromUtf8("<a href=\""
+                                    "https://en.wikipedia.org/wiki/Kjem%C3%A5vatnet"
+                               "\">"
+                                    "Kjemåvatnet - Nordland county - Norway."
+                               "</a>"))
+
+        .arg(i18n("Date:"))
+        .arg(QString::fromUtf8("August 2020"))
+
+        .arg(i18n("Camera:"))
+        .arg(QString::fromUtf8("Canon EOS 7D Mark II"))
+
+        .arg(i18n("Lens:"))
+        .arg(QString::fromUtf8("Sigma 18-250mm f/3.5-6.3 DC OS HSM"))
     ;
 
     return creditsTab;
