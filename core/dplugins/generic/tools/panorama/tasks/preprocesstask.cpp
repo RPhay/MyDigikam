@@ -132,7 +132,7 @@ bool PreProcessTask::computePreview(const QUrl& inUrl)
 {
     QUrl& outUrl = d->preProcessedUrl.previewUrl;
 
-    QFileInfo fi(inUrl.toLocalFile());
+    QFileInfo fi(QDir::toNativeSeparators(inUrl.toLocalFile()));
     outUrl.setPath(outUrl.path() + fi.completeBaseName().replace(QLatin1Char('.'), QLatin1String("_"))
                                  + QLatin1String("-preview.jpg"));
 

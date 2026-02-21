@@ -16,6 +16,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QFileInfo>
 #include <QDateTime>
 #include <QScopedPointer>
@@ -55,7 +56,7 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     QFile     panoFile(panoUrl.toLocalFile());
     QFile     finalPanoFile(finalPanoUrl.toLocalFile());
 
-    QFileInfo fi(finalPanoUrl.toLocalFile());
+    QFileInfo fi(QDir::toNativeSeparators(finalPanoUrl.toLocalFile()));
     QUrl      finalPTOUrl = finalPanoUrl.adjusted(QUrl::RemoveFilename);
     finalPTOUrl.setPath(finalPTOUrl.path() + fi.completeBaseName() + QLatin1String(".pto"));
 
