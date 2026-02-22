@@ -226,6 +226,7 @@ void AdvancedRenameProcessDialog::slotRenameFailed(const QUrl& url)
         int pos = d->newNameList.size() - d->repeatList.size();
         d->newNameList.insert(pos, d->currentInfo);
         d->repeatList << d->currentInfo;
+        incrementMaximum(1);
 
         return;
     }
