@@ -51,7 +51,7 @@ MagnifierItem::~MagnifierItem()
 
 QList<qreal> MagnifierItem::zoomFactors()
 {
-    return (QList<qreal>() << 1.5 << 2.0 << 2.5 << 3.0 << 3.5 << 4.0);
+    return (QList<qreal>() << 1.5 << 2.0 << 2.5 << 3.0 << 3.5 << 4.0 << 6.0 << 8.0);
 }
 
 void MagnifierItem::setSourcePixmap(const QPixmap& pixmap, const QRectF& rect)

@@ -67,9 +67,10 @@ void SetupAlbumView::setupPreView()
     QLabel* const magSizeLabel    = new QLabel(i18nc("@label:listbox Preview magnifier tool size",
                                                      "Tool Size:"), magnifierBox);
     d->magnifierSize              = new QComboBox(magnifierBox);
-    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Small"),  150);
-    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Medium"), 300);
-    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Large"),  450);
+    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Small"),      150);
+    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Medium"),     300);
+    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Large"),      450);
+    d->magnifierSize->addItem(i18nc("@item Magnifier tool size", "Very Large"), 600);
 
     mgrid->addWidget(magnifierLabel,         0, 0, 1, 1);
     mgrid->addWidget(d->magnifierZoomFactor, 0, 2, 1, 1);
