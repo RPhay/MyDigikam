@@ -483,7 +483,7 @@ BUGFIXES:
 398 --> 515208 - Advanced Search filter for specific EXIF Orientation values (Flipped/Rotated).
 399 --> 506110 - Symlinks should be followed when using drag&drop (relative symlinks get broken).
 400 --> 513797 - Add “Modified within last X time” option to Advanced Search
-401 --> 
+401 --> 516472 - Panorama error with UNC path.
 402 --> 
 403 --> 
 404 --> 

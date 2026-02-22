@@ -16,6 +16,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 
@@ -38,7 +39,7 @@ HuginExecutorTask::HuginExecutorTask(const QString& workDirPath,
 void HuginExecutorTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     panoUrl = tmpDir;
-    QFileInfo fi(ptoUrl.toLocalFile());
+    QFileInfo fi(QDir::toNativeSeparators(ptoUrl.toLocalFile()));
 
     switch (fileType)
     {

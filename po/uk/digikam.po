@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:41+0000\n"
-"PO-Revision-Date: 2026-02-16 08:27+0200\n"
+"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"PO-Revision-Date: 2026-02-21 12:06+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1034,7 +1034,7 @@ msgstr "Назва:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview_credits.cpp:51
+#: core/app/views/stack/welcomepageview_credits.cpp:60
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3450,24 +3450,24 @@ msgstr "Вилучити"
 msgid "%1/%2 items selected"
 msgstr "Позначено %1 з %2 записів"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:68
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "Ласкаво просимо до digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "New Features"
 msgstr "Нові можливості"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:106
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "Про програму"
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid "Background Image Credits"
 msgstr "Подяки за фонове зображення"
@@ -3476,85 +3476,96 @@ msgstr "Подяки за фонове зображення"
 #, fuzzy, kde-format
 #| msgid ""
 #| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS. The application "
-#| "provides a comprehensive set of tools for importing, managing, editing, "
-#| "and sharing photos and raw files. You can use digiKam’s import "
-#| "capabilities to easily transfer photos, raw files, and videos directly "
-#| "from your camera and external storage devices (SD cards, USB disks, "
-#| "etc.). The application allows you to configure import settings and rules "
-#| "that process and organize imported items on-the-fly.</h3><h3>With digiKam "
-#| "you can import, organize, enhance, search, export, and more...</"
-#| "h3><h3>Currently, you are in the Album view mode of digiKam.</"
-#| "h3><h3>Albums are the places where your files are stored, and are "
-#| "identical to the folders on your hard disk.</h3><li>digiKam has many "
-#| "powerful features which are described in the <a href=\"https://docs."
-#| "digikam.org/en/index.html\">documentation</a></li><li>The <a href="
-#| "\"https://www.digikam.org\">digiKam homepage</a> provides information "
-#| "about new versions of digiKam.</li>"
+#| "application that runs on Linux, Windows, and MacOS.</h3><h3>The "
+#| "application provides A comprehensive set of tools for importing, "
+#| "managing, editing, and sharing media taken with your camera. You can use "
+#| "digiKam’s import capabilities to easily transfer photos, raw files, and "
+#| "videos directly from your camera and external storage devices (SD cards, "
+#| "USB disks, etc.). The application allows you to configure import settings "
+#| "and rules that process and organize imported items on-the-fly.</h3><h3>To "
+#| "resume, with digiKam you can import, organize, enhance, search, export "
+#| "your collections of photo and video, and much more...</h3><h3>Currently, "
+#| "you are in the Album view mode of digiKam. Albums are the places where "
+#| "your files are stored, and are identical to the folders on your hard disk."
+#| "</h3><h3>digiKam has many powerful features which are described in the <a "
+#| "href=\"https://docs.digikam.org/en/index.html\">documentation</a></"
+#| "h3><h3>The <a href=\"https://www.digikam.org\">digiKam homepage</a> "
+#| "provides information about new versions of digiKam.</h3><h3>To contact "
+#| "the digiKam users community or to support the development team, follow "
+#| "the links provided in the application Help menu entry. Thanks to support "
+#| "and use the digiKam project.</h3>"
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
-"that runs on Linux, Windows, and MacOS.</h3><h3>The application provides A "
+"that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
 "comprehensive set of tools for importing, managing, editing, and sharing "
 "media taken with your camera. You can use digiKam’s import capabilities to "
 "easily transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.</h3><h3>To resume, with digiKam you can import, "
+"imported items on-the-fly.</p><p>To resume, with digiKam you can import, "
 "organize, enhance, search, export your collections of photo and video, and "
-"much more...</h3><h3>Currently, you are in the Album view mode of digiKam. "
+"much more...</p><p>Currently, you are in the Album view mode of digiKam. "
 "Albums are the places where your files are stored, and are identical to the "
-"folders on your hard disk.</h3><h3>digiKam has many powerful features which "
-"are described in the <a href=\"https://docs.digikam.org/en/index.html"
-"\">documentation</a></h3><h3>The <a href=\"https://www.digikam.org\">digiKam "
-"homepage</a> provides information about new versions of digiKam.</h3><h3>To "
-"contact the digiKam users community or to support the development team, "
-"follow the links provided in the application Help menu entry. Thanks to "
-"support and use the digiKam project.</h3>"
+"folders on your hard disk.</p><p>digiKam has many powerful features which "
+"are described in the <b><a href=\"https://docs.digikam.org/en/index.html"
+"\">documentation</a></b></p><p>The <b><a href=\"https://www.digikam.org"
+"\">digiKam homepage</a></b> provides information about new versions of "
+"digiKam.</p><p>To contact the digiKam users community or to support the "
+"development team, follow the links provided in the application <b>Help</b> "
+"menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>digiKam — це професійна програма з відкритим кодом для керування "
-"цифровими фотографіями, яка працює у Linux, Windows та MacOS. Програма надає "
-"повний набір інструментів для імпортування, керування, редагування та обміну "
-"фотографіями та файлами RAW. Ви можете використовувати можливості "
-"імпортування digiKam для легкого перенесення на комп'ютер фотографій, файлів "
-"RAW та відео безпосередньо з вашої камери та зовнішніх пристроїв зберігання "
-"даних (SD-карток, USB-дисків тощо). Програма надає змогу налаштовувати "
-"параметри імпортування та правила, які обробляють та впорядковують "
-"імпортовані елементи на льоту.</h3><h3>За допомогою digiKam ви можете "
-"імпортувати, впорядковувати, покращувати, шукати, експортувати тощо...</"
-"h3><h3>Наразі ви перебуваєте в режимі перегляду альбомів digiKam.</"
-"h3><h3>Альбоми – це місця, де зберігаються ваші файли, ідентичні текам на "
+"цифровими фотографіями, яка працює у Linux, Windows та MacOS.</"
+"h3><h3>Програма надає повний набір інструментів для імпортування, керування, "
+"редагування та обміну мультимедійними даними, знятими за допомогою вашої "
+"камери. Ви можете використовувати можливості імпортування digiKam для "
+"легкого перенесення на комп'ютер фотографій, файлів RAW та відео "
+"безпосередньо з вашої камери та зовнішніх пристроїв зберігання даних (SD-"
+"карток, USB-дисків тощо). Програма надає змогу налаштовувати параметри "
+"імпортування та правила, які обробляють та впорядковують імпортовані "
+"елементи на льоту.</h3><h3>За допомогою digiKam ви можете імпортувати, "
+"впорядковувати, покращувати, шукати, експортувати ваші збірки фотографій і "
+"відео тощо.</h3><h3>Наразі ви перебуваєте в режимі перегляду альбомів "
+"digiKam. Альбоми – це місця, де зберігаються ваші файли, ідентичні текам на "
 "жорсткому диску.</h3><li>У digiKam реалізовано багато потужних функцій, "
 "описаних у <a href=\"https://docs.digikam.org/en/index.html\">документації</"
 "a></li><li>На <a href=\"https://www.digikam.org\">домашній сторінці digiKam</"
-"a> наведено відомості щодо нових версій digiKam.</li>"
+"a> наведено відомості щодо нових версій digiKam.</h3><h3>Щоб зв'язатися зі "
+"спільнотою користувачів digiKam або підтримати команду розробників, "
+"скористайтеся посиланнями у меню «Довідка» програми. Дякуємо за підтримку і "
+"користування результатами роботи проєкту digiKam.</h3>"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:49
+#: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
 msgid "Author:"
 msgstr "Автор:"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:50
+#: core/app/views/stack/welcomepageview_credits.cpp:53
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "Розташування:"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:52
+#: core/app/views/stack/welcomepageview_credits.cpp:63
 #, kde-format
 msgid "Camera:"
 msgstr "Фотоапарат:"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:53
+#: core/app/views/stack/welcomepageview_credits.cpp:66
 #, kde-format
 msgid "Lens:"
 msgstr "Об'єктив:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+#| "%1\">350 user-reports</a> closed on bugzilla."
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 user-reports</a> closed on bugzilla."
+"%1\">400 user-reports</a> closed on bugzilla."
 msgstr ""
 "Закрито понад <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3688,7 +3699,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
 msgid "Rewrite the welcome page in more modern style."
-msgstr ""
+msgstr "Сторінку вітання переписано у сучаснішому стилі."
 
 #: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
@@ -3881,10 +3892,7 @@ msgstr ""
 "Нові пункти для пошуку порожніх властивостей, які зареєстровано у базі даних."
 
 #: core/app/views/stack/welcomepageview_features.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add support for search Creator and Author fields to be drop down lists "
-#| "populated with the values already presents in the database."
+#, kde-format
 msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
@@ -3895,7 +3903,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
 msgid "Add support to search recently modified items in the database."
-msgstr ""
+msgstr "Додано підтримку пошуку нещодавно змінених записів у базі даних."
 
 #: core/app/views/stack/welcomepageview_features.cpp:89
 #, kde-format
@@ -19464,27 +19472,27 @@ msgstr "<b>Скасовано</b>"
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b>Не вдалося виконати <i>%1</i>:</b><p>%2</p>"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:68
 #, kde-format
 msgid "Temporary panorama file does not exist."
 msgstr "Тимчасового файла панорами не існує."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:76
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
 msgstr "Файл панорами з назвою <filename>%1</filename> вже існує."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:84
 #, kde-format
 msgid "Temporary project file does not exist."
 msgstr "Файла тимчасового проєкту не існує!"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:92
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exist."
 msgstr "Файл проєкту з назвою <filename>%1</filename> вже існує."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:166
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
@@ -19492,7 +19500,7 @@ msgstr ""
 "Не вдалося пересунути панораму з <filename>%1</filename> до <filename>%2</"
 "filename>!"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:181
 #, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
@@ -19501,7 +19509,7 @@ msgstr ""
 "Не вдалося пересунути файл проєкту з <filename>%1</filename> до <filename>"
 "%2</filename>."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:207
 #, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
@@ -63689,16 +63697,14 @@ msgid "and"
 msgstr "і"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgid "Modified Date"
+#, kde-format
 msgid "Modified last"
-msgstr "Дата зміни"
+msgstr "Востаннє змінено"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
-#, fuzzy, kde-format
-#| msgid "Return items modified between"
+#, kde-format
 msgid "Return items modified within the last"
-msgstr "Повернути записи, змінені між"
+msgstr "Повернути записи, змінені протягом останніх"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
@@ -64388,30 +64394,22 @@ msgid "Portrait orientation"
 msgstr "Книжкова орієнтація"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
-msgstr "секунди"
+msgstr "секунд"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
-msgstr "хвилини"
+msgstr "хвилин"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
-msgstr "години"
+msgstr "годин"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
 msgstr "днів"
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-21 00:41+0000\n"
-"PO-Revision-Date: 2026-02-16 02:42+0100\n"
+"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"PO-Revision-Date: 2026-02-21 03:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1005,7 +1005,7 @@ msgstr "სახელი:"
 
 #: core/app/items/utils/tooltipfiller.cpp:91
 #: core/app/items/utils/tooltipfiller.cpp:647
-#: core/app/views/stack/welcomepageview_credits.cpp:51
+#: core/app/views/stack/welcomepageview_credits.cpp:60
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:72
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:173
 #: core/utilities/import/items/importtooltipfiller.cpp:68
@@ -3385,24 +3385,24 @@ msgstr "წაშლა"
 msgid "%1/%2 items selected"
 msgstr "მონიშნულია ჩანაწერი %1/%2"
 
-#: core/app/views/stack/welcomepageview.cpp:174
+#: core/app/views/stack/welcomepageview.cpp:68
 #: core/utilities/firstrun/welcomepage.cpp:34
 #, kde-format
 msgid "Welcome to digiKam %1"
 msgstr "მოგესალმებათ digiKam %1"
 
-#: core/app/views/stack/welcomepageview.cpp:211
+#: core/app/views/stack/welcomepageview.cpp:105
 #, kde-format
 msgid "New Features"
 msgstr "ახალი ფუნქციები"
 
-#: core/app/views/stack/welcomepageview.cpp:212
+#: core/app/views/stack/welcomepageview.cpp:106
 #: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: core/app/views/stack/welcomepageview.cpp:213
+#: core/app/views/stack/welcomepageview.cpp:107
 #, kde-format
 msgid "Background Image Credits"
 msgstr "ფონის სურათის საავტორო უფლებები"
@@ -3411,52 +3411,56 @@ msgstr "ფონის სურათის საავტორო უფლ
 #, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
-"that runs on Linux, Windows, and MacOS.</h3><h3>The application provides A "
+"that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
 "comprehensive set of tools for importing, managing, editing, and sharing "
 "media taken with your camera. You can use digiKam’s import capabilities to "
 "easily transfer photos, raw files, and videos directly from your camera and "
 "external storage devices (SD cards, USB disks, etc.). The application allows "
 "you to configure import settings and rules that process and organize "
-"imported items on-the-fly.</h3><h3>To resume, with digiKam you can import, "
+"imported items on-the-fly.</p><p>To resume, with digiKam you can import, "
 "organize, enhance, search, export your collections of photo and video, and "
-"much more...</h3><h3>Currently, you are in the Album view mode of digiKam. "
+"much more...</p><p>Currently, you are in the Album view mode of digiKam. "
 "Albums are the places where your files are stored, and are identical to the "
-"folders on your hard disk.</h3><h3>digiKam has many powerful features which "
-"are described in the <a href=\"https://docs.digikam.org/en/index.html"
-"\">documentation</a></h3><h3>The <a href=\"https://www.digikam.org\">digiKam "
-"homepage</a> provides information about new versions of digiKam.</h3><h3>To "
-"contact the digiKam users community or to support the development team, "
-"follow the links provided in the application Help menu entry. Thanks to "
-"support and use the digiKam project.</h3>"
+"folders on your hard disk.</p><p>digiKam has many powerful features which "
+"are described in the <b><a href=\"https://docs.digikam.org/en/index.html"
+"\">documentation</a></b></p><p>The <b><a href=\"https://www.digikam.org"
+"\">digiKam homepage</a></b> provides information about new versions of "
+"digiKam.</p><p>To contact the digiKam users community or to support the "
+"development team, follow the links provided in the application <b>Help</b> "
+"menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 
-#: core/app/views/stack/welcomepageview_credits.cpp:49
+#: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
 msgid "Author:"
 msgstr "ავტორი:"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:50
+#: core/app/views/stack/welcomepageview_credits.cpp:53
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
 #, kde-format
 msgid "Location:"
 msgstr "მდებარეობა:"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:52
+#: core/app/views/stack/welcomepageview_credits.cpp:63
 #, kde-format
 msgid "Camera:"
 msgstr "კამერა:"
 
-#: core/app/views/stack/welcomepageview_credits.cpp:53
+#: core/app/views/stack/welcomepageview_credits.cpp:66
 #, kde-format
 msgid "Lens:"
 msgstr "ლინზა:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
+#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+#| "%1\">350 user-reports</a> closed on bugzilla."
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 user-reports</a> closed on bugzilla."
+"%1\">400 user-reports</a> closed on bugzilla."
 msgstr ""
 "Bugzilla-ზე დაიხურა <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3590,7 +3594,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
 msgid "Rewrite the welcome page in more modern style."
-msgstr ""
+msgstr "გადაიწერა მისალმების გვერდი უფრო თანამედროვე სტილში."
 
 #: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
@@ -3781,10 +3785,7 @@ msgstr ""
 "თვისებების მოსაძებნად."
 
 #: core/app/views/stack/welcomepageview_features.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add support for search Creator and Author fields to be drop down lists "
-#| "populated with the values already presents in the database."
+#, kde-format
 msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
@@ -3795,7 +3796,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
 msgid "Add support to search recently modified items in the database."
-msgstr ""
+msgstr "დაემატა მონაცემთა ბაზაში ახლახან შეცვლილი ელემენტების ძებნა."
 
 #: core/app/views/stack/welcomepageview_features.cpp:89
 #, kde-format
@@ -18534,27 +18535,27 @@ msgstr "<b>გაუქმდა</b>"
 msgid "<b>Cannot run <i>%1</i>:</b><p>%2</p>"
 msgstr "<b><i>%1</i>ვერ გავუშვი:</b><p>%2</p>"
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:67
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:68
 #, kde-format
 msgid "Temporary panorama file does not exist."
 msgstr "დროებითი პანორამის ფაილი არ არსებობს."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:75
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:76
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
 msgstr "პანორამის ფაილი სახელით <filename>%1</filename> უკვე არსებობს."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:83
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:84
 #, kde-format
 msgid "Temporary project file does not exist."
 msgstr "დროებითი პროექტის ფაილი არ არსებობს."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:91
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:92
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exist."
 msgstr "პროექტის ფაილი სახელით <filename>%1</filename> უკვე არსებობს."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:165
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:166
 #, kde-format
 msgid ""
 "Cannot move panorama from <filename>%1</filename> to <filename>%2</filename>."
@@ -18562,7 +18563,7 @@ msgstr ""
 "პანორამის გადატანის შეცდომა <filename>%1</filename>-დან <filename>%2</"
 "filename>-ში."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:180
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:181
 #, kde-format
 msgid ""
 "Cannot move project file from <filename>%1</filename> to <filename>%2</"
@@ -18571,7 +18572,7 @@ msgstr ""
 "პროექტის ფაილის გადატანის შეცდომა <filename>%1</filename>-დან <filename>%2</"
 "filename>-ში."
 
-#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:206
+#: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:207
 #, kde-format
 msgid ""
 "Cannot copy converted image file from <filename>%1</filename> to <filename>"
@@ -60759,16 +60760,14 @@ msgid "and"
 msgstr "და"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgid "Modified Date"
+#, kde-format
 msgid "Modified last"
-msgstr "შეცვლის თარიღი"
+msgstr "ბოლო ცვლილება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
-#, fuzzy, kde-format
-#| msgid "Return items modified between"
+#, kde-format
 msgid "Return items modified within the last"
-msgstr "ელემენტების დაბრუნება, რომლებიც შეიცვალა შუალედში"
+msgstr "ელემენტების დაბრუნება, რომლებიც შეიცვალა ბოლო"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
@@ -61458,30 +61457,22 @@ msgid "Portrait orientation"
 msgstr "პოტრეტული ორიენტაცია"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
 msgstr "წამი"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
 msgstr "წუთი"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
 msgstr "საათი"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
 msgstr "დღე"
 
