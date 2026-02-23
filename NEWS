@@ -486,7 +486,7 @@ BUGFIXES:
 401 --> 516472 - Panorama error with UNC path.
 402 --> 510691 - Renaming files with the same name but with a new, different sort order in a folder.
 403 --> 516516 - Bug 510691 - addition: Photos get deleted!
-404 --> 
+404 --> 516523 - Face-tag export to heic-files.
 405 --> 
 406 --> 
 407 --> 
