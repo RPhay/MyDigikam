@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2026-02-09 11:56+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -52554,31 +52554,31 @@ msgstr[1] "Muuta nimeä (%1 kuvaa)"
 msgid "Sort Images"
 msgstr "Lajittele kuvat"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:70
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Odota…</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "K&eskeytä"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Käsitellään…"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Muutetaan kuvien nimiä"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:164
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -52594,19 +52594,19 @@ msgstr[1] ""
 "%1 kuvan nimeä muutettaessa tapahtui virhe.\n"
 "Haluatko muuttaa kuvan nimeä uudelleen vai korvata nämä tiedostot?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Muuta nimeä uudelleen"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Korvaa"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:236
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Muutetaan kuvien nimiä. Virheet: %1</b>"
@@ -65129,36 +65129,43 @@ msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Käsitelty"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:83
+#: core/utilities/setup/album/setupalbumview_preview.cpp:73
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@item Magnifier tool size"
+msgid "Very Large"
+msgstr "Käsitelty"
+
+#: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Näytä kuvakkeet ja teksti esikatselun päällä"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:84
+#: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text."
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr "Valitse tämä, jos haluat tekstin taakse taustatäytön."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:86
+#: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Videoiden tai animaatioiden automaattitoisto"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:87
+#: core/utilities/setup/album/setupalbumview_preview.cpp:88
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:89
+#: core/utilities/setup/album/setupalbumview_preview.cpp:90
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "Näytä kuvakkeet ja teksti esikatselun päällä"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:90
+#: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, fuzzy, kde-format
 #| msgid "Check this if you want watermark to be transparent."
 msgid ""
@@ -65166,7 +65173,7 @@ msgid ""
 "and properties."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:114
+#: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"

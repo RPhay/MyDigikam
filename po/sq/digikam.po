@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -50629,32 +50629,32 @@ msgstr[1] ""
 msgid "Sort Images"
 msgstr "Zgjidh Imazhet"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:70
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Anullo"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Zgjidh Imazhet"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:164
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -50666,20 +50666,20 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:173
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Kartela Pamje"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:175
 #, fuzzy, kde-format
 #| msgid "Overwrite File?"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Ta Mbishkruajmë Skedarin?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:236
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr ""
@@ -62860,40 +62860,47 @@ msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Shënjestra"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:83
+#: core/utilities/setup/album/setupalbumview_preview.cpp:73
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@item Magnifier tool size"
+msgid "Very Large"
+msgstr "Shënjestra"
+
+#: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:84
+#: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:86
+#: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:87
+#: core/utilities/setup/album/setupalbumview_preview.cpp:88
 #, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:89
+#: core/utilities/setup/album/setupalbumview_preview.cpp:90
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:90
+#: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:114
+#: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, fuzzy, kde-format
 #| msgid "Preview"
 msgctxt "@title:tab"

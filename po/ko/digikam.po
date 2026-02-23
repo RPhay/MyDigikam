@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -53370,33 +53370,33 @@ msgstr[0] "이름 바꾸기(이미지 %1개)"
 msgid "Sort Images"
 msgstr "이미지 정렬"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:70
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>이미지 이름 바꾸는 중. 기다려 주십시오...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #, fuzzy, kde-format
 #| msgid "&Abort"
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "중단(&A)"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "처리 중..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, fuzzy, kde-format
 #| msgid "Renaming images"
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "이미지 이름 바꾸는 중"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:164
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -53410,21 +53410,21 @@ msgstr[0] ""
 "해당 이미지의 이름을 다른 것으로 바꾸시겠습니까? 아니면 기존 이미지에 덮어 쓰"
 "시겠습니까?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:173
 #, fuzzy, kde-format
 #| msgid "Rename Again"
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "다시 이름 바꾸기"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:175
 #, fuzzy, kde-format
 #| msgid "Overwrite"
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "덮어쓰기"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:236
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>이미지 이름 바꾸는 중. 오류: %1</b>"
@@ -66147,26 +66147,33 @@ msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "대상"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:83
+#: core/utilities/setup/album/setupalbumview_preview.cpp:73
+#, fuzzy, kde-format
+#| msgid "Target"
+msgctxt "@item Magnifier tool size"
+msgid "Very Large"
+msgstr "대상"
+
+#: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "미리 보기 위에 아이콘 및 텍스트 표시"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:84
+#: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, fuzzy, kde-format
 #| msgid "Check this if you want a background fill behind the text."
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr "문자열 뒤에 배경으로 채우려면 선택하십시오."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:86
+#: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Save changes automatically"
 msgid "Auto play of videos or animations"
 msgstr "자동으로 변경 사항 저장"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:87
+#: core/utilities/setup/album/setupalbumview_preview.cpp:88
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
@@ -66174,13 +66181,13 @@ msgstr "자동으로 변경 사항 저장"
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "이 옵션을 선택하면 16비트 미리 보기 이미지를 8비트로 변환합니다."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:89
+#: core/utilities/setup/album/setupalbumview_preview.cpp:90
 #, fuzzy, kde-format
 #| msgid "Show icons and text over preview"
 msgid "Show a text overlay over preview."
 msgstr "미리 보기 위에 아이콘 및 텍스트 표시"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:90
+#: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, fuzzy, kde-format
 #| msgid ""
 #| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
@@ -66190,7 +66197,7 @@ msgid ""
 "and properties."
 msgstr "이 옵션을 선택하면 16비트 미리 보기 이미지를 8비트로 변환합니다."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:114
+#: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"

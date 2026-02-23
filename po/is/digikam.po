@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
 "PO-Revision-Date: 2026-02-16 09:20+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -51591,31 +51591,31 @@ msgstr[1] "Endurnefna (%1 myndir)"
 msgid "Sort Images"
 msgstr "Raða myndum"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:70
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Endurnefni myndir. Bíddu aðeins...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Hætta við"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Í vinnslu..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Endurnefning mynda"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:164
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -51633,19 +51633,19 @@ msgstr[1] ""
 "Viltu reyna að endurnefna þessar myndir aftur eða endurnefna með því að "
 "skrifa yfir þær?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Endurnefna aftur"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Skrifa yfir"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:236
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Endurnefni myndir. Villur: %1</b>"
@@ -64069,34 +64069,42 @@ msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Stór"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:83
+#: core/utilities/setup/album/setupalbumview_preview.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@item Magnifier tool size"
+#| msgid "Large"
+msgctxt "@item Magnifier tool size"
+msgid "Very Large"
+msgstr "Stór"
+
+#: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Birta táknmyndir og texta yfir forskoðun"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:84
+#: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Merktu við hér ef þú vilt sýna táknmyndir og texta við forskoðun mynda."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:86
+#: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Sjálfvirk spilun myndskeiða eða hreyfimynda"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:87
+#: core/utilities/setup/album/setupalbumview_preview.cpp:88
 #, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr "Merktu við hér ef þú vilt spila sjálfvirkt myndskeið eða hreyfimyndir."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:89
+#: core/utilities/setup/album/setupalbumview_preview.cpp:90
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr "Birta yfirlag texta ofan á forskoðun"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:90
+#: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
@@ -64105,7 +64113,7 @@ msgstr ""
 "Merktu við hér ef þú vilt sýna yfirlag á myndfleti með tæknilegum "
 "upplýsingum um töku og eiginleika myndar."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:114
+#: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"

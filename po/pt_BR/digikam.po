@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
-"PO-Revision-Date: 2026-02-21 08:50-0300\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"PO-Revision-Date: 2026-02-22 08:04-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3420,27 +3420,7 @@ msgid "Background Image Credits"
 msgstr "Créditos da imagem de fundo"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS.</h3><h3>The "
-#| "application provides A comprehensive set of tools for importing, "
-#| "managing, editing, and sharing media taken with your camera. You can use "
-#| "digiKam’s import capabilities to easily transfer photos, raw files, and "
-#| "videos directly from your camera and external storage devices (SD cards, "
-#| "USB disks, etc.). The application allows you to configure import settings "
-#| "and rules that process and organize imported items on-the-fly.</h3><h3>To "
-#| "resume, with digiKam you can import, organize, enhance, search, export "
-#| "your collections of photo and video, and much more...</h3><h3>Currently, "
-#| "you are in the Album view mode of digiKam. Albums are the places where "
-#| "your files are stored, and are identical to the folders on your hard disk."
-#| "</h3><h3>digiKam has many powerful features which are described in the <a "
-#| "href=\"https://docs.digikam.org/en/index.html\">documentation</a></"
-#| "h3><h3>The <a href=\"https://www.digikam.org\">digiKam homepage</a> "
-#| "provides information about new versions of digiKam.</h3><h3>To contact "
-#| "the digiKam users community or to support the development team, follow "
-#| "the links provided in the application Help menu entry. Thanks to support "
-#| "and use the digiKam project.</h3>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3462,25 +3442,25 @@ msgid ""
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>DigiKam é um aplicativo avançado de código aberto para gerenciamento de "
-"fotos digitais, compatível com Linux, Windows e macOS.<h3><h3>O aplicativo "
+"fotos digitais, compatível com Linux, Windows e macOS.<h3><p>O aplicativo "
 "oferece um conjunto completo de ferramentas para importar, gerenciar, editar "
 "e compartilhar mídias capturadas com sua câmera. Você pode usar os recursos "
 "de importação do digiKam para transferir facilmente fotos, arquivos RAW e "
 "vídeos diretamente da sua câmera e dispositivos de armazenamento externos "
 "(cartões SD, discos USB, etc.). O aplicativo permite configurar as "
 "definições e regras de importação que processam e organizam os itens "
-"importados em tempo real.</h3><h3>Em resumo, com o digiKam você pode "
-"importar, organizar, aprimorar, pesquisar, exportar suas coleções de fotos e "
-"vídeos e muito mais...</h3><h3>Atualmente, você está no modo de visualização "
-"de álbuns do digiKam Os álbuns são os locais onde seus arquivos são "
-"armazenados e são idênticos às pastas do seu disco rígido.</h3><h3>O digiKam "
-"possui muitas funcionalidades poderosas que são descritas na <a href="
-"\"https://docs.digikam.org/en/index.html\">documentação</a></h3><h3>A <a "
-"href=\"https://www.digikam.org\">página inicial do digiKam</a> fornece "
-"informações sobre as novas versões do digiKam.</h3><h3>Para entrar em "
-"contato com a comunidade de usuários do digiKam ou para apoiar a equipe de "
-"desenvolvimento, siga os links fornecidos na entrada do menu Ajuda do "
-"aplicativo. Agradecemos o seu apoio e uso do projeto digiKam.</h3>"
+"importados em tempo real.</p><p>Em resumo, com o digiKam você pode importar, "
+"organizar, aprimorar, pesquisar, exportar suas coleções de fotos e vídeos e "
+"muito mais...</p><p>Atualmente, você está no modo de visualização de álbuns "
+"do digiKam Os álbuns são os locais onde seus arquivos são armazenados e são "
+"idênticos às pastas do seu disco rígido.</p><p>O digiKam possui muitas "
+"funcionalidades poderosas que são descritas na <b><a href=\"https://docs."
+"digikam.org/en/index.html\">documentação</a></b></p><p>A <b><a href="
+"\"https://www.digikam.org\">página inicial do digiKam</a></b> fornece "
+"informações sobre as novas versões do digiKam.</p><p>Para entrar em contato "
+"com a comunidade de usuários do digiKam ou para apoiar a equipe de "
+"desenvolvimento, siga os links fornecidos na entrada do menu <b>Ajuda</b> do "
+"aplicativo.</p><h3>Agradecemos o seu apoio e uso do projeto digiKam.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3504,11 +3484,7 @@ msgid "Lens:"
 msgstr "Lente:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3516,7 +3492,7 @@ msgid ""
 msgstr ""
 "Mais de <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 relatórios de usuários</a> foram fechados no Bugzilla."
+"%1\">400 relatórios de usuários</a> foram fechados no Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -52036,31 +52012,31 @@ msgstr[1] "Renomear (%1 imagens)"
 msgid "Sort Images"
 msgstr "Ordenar imagens"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:70
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Renomeando imagens. Por favor, aguarde...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "&Cancelar"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Processando..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Renomeando imagens"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:164
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -52076,19 +52052,19 @@ msgstr[1] ""
 "Ocorreu um erro ao renomear %1 imagens.\n"
 "Você prefere renomear essas imagens novamente ou sobrescrevê-las?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Renomear novamente"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Sobrescrever"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:236
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Renomeando imagens. Erros: %1</b>"
@@ -64604,35 +64580,43 @@ msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Grande"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:83
+#: core/utilities/setup/album/setupalbumview_preview.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@item Magnifier tool size"
+#| msgid "Large"
+msgctxt "@item Magnifier tool size"
+msgid "Very Large"
+msgstr "Grande"
+
+#: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Exibir os ícones e o texto sobre a visualização"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:84
+#: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
 "Habilite isto se quiser ver os ícones e o texto na visualização da imagem."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:86
+#: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Reprodução automática de vídeos ou animações"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:87
+#: core/utilities/setup/album/setupalbumview_preview.cpp:88
 #, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 "Habilite esta opção se quiser a reprodução automática de vídeos ou animações."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:89
+#: core/utilities/setup/album/setupalbumview_preview.cpp:90
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr "Exibir um texto sobre a visualização."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:90
+#: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
@@ -64641,7 +64625,7 @@ msgstr ""
 "Habilite isto se quiser exibir uma sobreposição de tela com as configurações "
 "e propriedades técnicas da foto."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:114
+#: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"

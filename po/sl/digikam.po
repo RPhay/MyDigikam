@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:41+0000\n"
-"PO-Revision-Date: 2026-02-21 07:28+0100\n"
+"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"PO-Revision-Date: 2026-02-22 12:00+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3482,27 +3482,7 @@ msgid "Background Image Credits"
 msgstr "Slike v ozadju"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS.</h3><h3>The "
-#| "application provides A comprehensive set of tools for importing, "
-#| "managing, editing, and sharing media taken with your camera. You can use "
-#| "digiKam’s import capabilities to easily transfer photos, raw files, and "
-#| "videos directly from your camera and external storage devices (SD cards, "
-#| "USB disks, etc.). The application allows you to configure import settings "
-#| "and rules that process and organize imported items on-the-fly.</h3><h3>To "
-#| "resume, with digiKam you can import, organize, enhance, search, export "
-#| "your collections of photo and video, and much more...</h3><h3>Currently, "
-#| "you are in the Album view mode of digiKam. Albums are the places where "
-#| "your files are stored, and are identical to the folders on your hard disk."
-#| "</h3><h3>digiKam has many powerful features which are described in the <a "
-#| "href=\"https://docs.digikam.org/en/index.html\">documentation</a></"
-#| "h3><h3>The <a href=\"https://www.digikam.org\">digiKam homepage</a> "
-#| "provides information about new versions of digiKam.</h3><h3>To contact "
-#| "the digiKam users community or to support the development team, follow "
-#| "the links provided in the application Help menu entry. Thanks to support "
-#| "and use the digiKam project.</h3>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3524,24 +3504,24 @@ msgid ""
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>digiKam je napredna odprtokodna aplikacija za upravljanje digitalnih "
-"fotografij, ki deluje v sistemih Linux, Windows in MacOS.</h3><h3>Aplikacija "
+"fotografij, ki deluje v sistemih Linux, Windows in MacOS.</h3><p>Aplikacija "
 "ponuja obsežen nabor orodij za uvoz, upravljanje, urejanje in skupno rabo "
 "medijev, posnetih z vašo kamero. Z digiKamovimi zmogljivostmi uvoza lahko "
 "preprosto prenesete fotografije, datoteke RAW in videoposnetke neposredno iz "
 "kamere in zunanjih pomnilniških naprav (kartice SD, USB diski itd.). "
-"Aplikacija vam omogoča konfiguriranje nastavitev in pravil uvoza, ki sproti "
-"obdelujejo in organizirajo uvožene elemente.</h3><h3>Če nadaljujemo, lahko z "
-"digiKamom uvažate, organizirate, izboljšujete, iščete, izvažate svoje zbirke "
-"fotografij in videoposnetkov ter še veliko več ...</h3><h3>Trenutno ste v "
+"Aplikacija vam omogoča konfiguriranje nastavitev uvoza in pravil, ki za "
+"sprotno obdelavo in organizacijo uvoženih elementov.</p><p>Če povzamemo, z "
+"digiKamom lahko uvažate, organizirate, izboljšujete, iščete, izvažate svoje "
+"zbirke fotografij in videoposnetkov ter še veliko več...<p><p>Trenutno ste v "
 "načinu pogleda albuma v digiKamu. Albumi so mesta, kjer so shranjene vaše "
-"datoteke, in so identični mapam na vašem trdem disku.</h3><h3>digiKam ima "
+"datoteke, in so identični mapam na vašem trdem disku.<p><p>digiKam ima "
 "veliko zmogljivih funkcij, ki so opisane v <a href=\"https://docs.digikam."
-"org/en/index.html\">dokumentaciji</a></h3><h3><a href=\"https://www.digikam."
-"org\">domača stran digiKam</a> ponuja informacije o novih različicah "
-"digiKama.</h3><h3>Če želite stopiti v stik s skupnostjo uporabnikov digiKam "
-"ali podpreti razvojno ekipo, sledite povezavam, ki so navedene v meniju "
-"Pomoč aplikacije. Zahvaljujemo se vam za podporo in uporabo projekta digiKam."
-"</h3>"
+"org/en/index.html\">dokumentaciji</a></p><p><a href=\"https://www.digikam.org"
+"\">domača stran digiKam</a> ponuja informacije o novih različicah digiKama.</"
+"p><p>Če želite stopiti v stik s skupnostjo uporabnikov digiKam ali podpreti "
+"razvojno ekipo, sledite povezavam, ki so navedene v meniju <b>Pomoč</b> "
+"aplikacije.</p><h3>Zahvaljujemo se vam za podporo in uporabo projekta "
+"digiKam.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3565,11 +3545,7 @@ msgid "Lens:"
 msgstr "Objektiv:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3577,7 +3553,7 @@ msgid ""
 msgstr ""
 "Več kot <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 uporabniških poročil</a> je bilo zaključenih na Bugzilli."
+"%1\">400 uporabniških poročil</a> je bilo zaprtih na Bugzilli."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -51831,31 +51807,31 @@ msgstr[3] "Preimenuj (%1 slike)"
 msgid "Sort Images"
 msgstr "Razvrsti slike"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:69
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:70
 #, kde-format
 msgid "<b>Renaming images. Please wait...</b>"
 msgstr "<b>Preimenovanje slik. Počakajte ...</b>"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:83
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "&Abort"
 msgstr "Prekini"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:84
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:929
 #, kde-format
 msgid "Processing..."
 msgstr "Obdelovanje ..."
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:85
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:162
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:86
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
 #, kde-format
 msgctxt "@title:window"
 msgid "Renaming Images"
 msgstr "Preimenovanje slik"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:163
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:164
 #, kde-format
 msgid ""
 "An error occurred while renaming %1 image.\n"
@@ -51879,19 +51855,19 @@ msgstr[3] ""
 "Ali želite ponovno preimenovati te slike ali jih preimenovati s "
 "prepisovanjem?"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:172
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Rename Again"
 msgstr "Spet preimenuj"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:174
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Overwrite"
 msgstr "Prepiši"
 
-#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:223
+#: core/utilities/advancedrename/advancedrenameprocessdialog.cpp:236
 #, kde-format
 msgid "<b>Renaming images. Errors: %1</b>"
 msgstr "<b>Preimenovanje slik. Napake: %1</b>"
@@ -64341,34 +64317,42 @@ msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Veliko"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:83
+#: core/utilities/setup/album/setupalbumview_preview.cpp:73
+#, fuzzy, kde-format
+#| msgctxt "@item Magnifier tool size"
+#| msgid "Large"
+msgctxt "@item Magnifier tool size"
+msgid "Very Large"
+msgstr "Veliko"
+
+#: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
 msgstr "Prikaži ikone in besedilo preko predogleda"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:84
+#: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr "Potrdite to, če želite videti ikone in besedilo v predogledu slike."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:86
+#: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
 msgid "Auto play of videos or animations"
 msgstr "Samodejno predvajaj video posnetke ali animacije"
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:87
+#: core/utilities/setup/album/setupalbumview_preview.cpp:88
 #, kde-format
 msgid "Check this if you want to auto play the videos or animations."
 msgstr ""
 "Potrdite to, če želite samodejno predvajenje video posnetkov ali animacij."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:89
+#: core/utilities/setup/album/setupalbumview_preview.cpp:90
 #, kde-format
 msgid "Show a text overlay over preview."
 msgstr "Prikaži prekrivno besedilo čez predogled."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:90
+#: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
@@ -64377,7 +64361,7 @@ msgstr ""
 "Potrdite to, če želite prikazati prekrivne plasti platna s tehničnimi "
 "nastavitvami in lastnostmi."
 
-#: core/utilities/setup/album/setupalbumview_preview.cpp:114
+#: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, kde-format
 msgctxt "@title:tab"
 msgid "Preview"
