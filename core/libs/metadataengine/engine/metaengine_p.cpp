@@ -462,13 +462,15 @@ bool MetaEngine::Private::saveUsingExiv2(const QFileInfo& finfo,
         // cppcheck-suppress knownConditionTrueFalse
         if      (!wroteComment && !wroteEXIF && !wroteIPTC && !wroteXMP)
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Writing metadata is not supported for file" << finfo.fileName();
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Writing metadata with Exiv2 is not supported for file"
+                                            << finfo.fileName();
 
-            return false;
+            return saveUsingExifTool(finfo, modTime);
         }
         else if (!wroteEXIF || !wroteIPTC || !wroteXMP)
         {
-            qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata is limited for file" << finfo.fileName();
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Support for writing metadata with Exiv2 is limited for file"
+                                            << finfo.fileName();
         }
 
         image->writeMetadata();

@@ -487,7 +487,7 @@ BUGFIXES:
 402 --> 510691 - Renaming files with the same name but with a new, different sort order in a folder.
 403 --> 516516 - Bug 510691 - addition: Photos get deleted!
 404 --> 516523 - Face-tag export to heic-files.
-405 --> 
+405 --> 516574 - EXIF container is not created.
 406 --> 
 407 --> 
 408 --> 
