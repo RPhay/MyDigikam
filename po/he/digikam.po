@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-23 00:41+0000\n"
-"PO-Revision-Date: 2026-02-13 18:03+0200\n"
+"PO-Revision-Date: 2026-02-23 22:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -6329,10 +6329,10 @@ msgid "Exif:"
 msgstr "Exif:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:100
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: exif namespace"
 msgid "Completely"
-msgstr "רכיב"
+msgstr "לחלוטין"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:101
 #, kde-format
@@ -6365,10 +6365,10 @@ msgid "Iptc:"
 msgstr "Iptc:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:108
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: iptc namespace"
 msgid "Completely"
-msgstr "רכיב"
+msgstr "לחלוטין"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:109
 #, kde-format
@@ -6395,10 +6395,10 @@ msgid "Xmp:"
 msgstr "Xmp:"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:115
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "Completely"
-msgstr "רכיב"
+msgstr "לחלוטין"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:116
 #, kde-format
@@ -6413,16 +6413,16 @@ msgid "digiKam completely"
 msgstr "מאפייני הקובץ"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam image history"
-msgstr "עורך תמונה"
+msgstr "היסטוריית תמונות ב־digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@item: xmp namespace"
 msgid "digiKam preview image"
-msgstr "תמונה קודמת"
+msgstr "תצוגת תמונה מקדימה של digiKam"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:120
 #, kde-format
@@ -30338,9 +30338,9 @@ msgstr ""
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:161
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:208
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:255
-#, fuzzy, kde-format
+#, kde-format
 msgid "Highlights:"
-msgstr "גובה:"
+msgstr "הדגשות:"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:165
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:212
@@ -30365,9 +30365,9 @@ msgid "Common Settings"
 msgstr "הגדרות משותפות"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:281
-#, fuzzy, kde-format
+#, kde-format
 msgid "Luminance Noise"
-msgstr "תאורה:"
+msgstr "רעש הארה"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
 #, fuzzy, kde-format

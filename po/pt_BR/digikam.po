@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-23 00:41+0000\n"
-"PO-Revision-Date: 2026-02-22 08:04-0300\n"
+"PO-Revision-Date: 2026-02-23 09:16-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3442,7 +3442,7 @@ msgid ""
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>DigiKam é um aplicativo avançado de código aberto para gerenciamento de "
-"fotos digitais, compatível com Linux, Windows e macOS.<h3><p>O aplicativo "
+"fotos digitais, compatível com Linux, Windows e macOS.</h3><p>O aplicativo "
 "oferece um conjunto completo de ferramentas para importar, gerenciar, editar "
 "e compartilhar mídias capturadas com sua câmera. Você pode usar os recursos "
 "de importação do digiKam para transferir facilmente fotos, arquivos RAW e "
@@ -64581,12 +64581,10 @@ msgid "Large"
 msgstr "Grande"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "Grande"
+msgstr "Muito grande"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
