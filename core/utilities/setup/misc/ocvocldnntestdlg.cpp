@@ -6,9 +6,9 @@
  * Date        : 2025-04-26
  * Description : Test OpenCV/OpenCL for DNN usage
  *
- * SPDX-FileCopyrightText: 2025 by Michael Miller <michael underscore miller at msn dot com>
- * SPDX-FileCopyrightText: 2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2025 by Maik Qualmann <metzpinguin at gmail dot com>
+ * SPDX-FileCopyrightText: 2025      by Michael Miller <michael underscore miller at msn dot com>
+ * SPDX-FileCopyrightText: 2025-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2025-2026 by Maik Qualmann <metzpinguin at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -85,7 +85,7 @@ OpenCVOpenCLDNNTestDlg::OpenCVOpenCLDNNTestDlg(QWidget* const parent)
     QString messageString = i18nc("@info",
                                   "This will check if your system is able to use GPU acceleration\n"
                                   "when running the AI models by validating OpenCV and OpenCL have the\n"
-                                  "required libraries and drivers installed."
+                                  "required libraries and drivers installed.\n"
                                   "\n\nDo you want to test your system now?");
 
     d->page             = new QWidget(this);
@@ -218,7 +218,10 @@ void OpenCVOpenCLDNNTestDlg::slotTestFinished(bool result)
     }
     else
     {
-        resultMessage = i18n("Test failed. Your system may not be able to use GPU acceleration for the AI models.");
+        resultMessage = i18n("Test failed. Your system may not be able to use GPU acceleration for the AI models.\n\n"
+                             "Note for the NVidia GPU users: please uses the \"Help\" button to read "
+                             "the online documentation and configure you device to be detectable and "
+                             "usable at digiKam run-time.");
     }
 
     d->progressText->append(QLatin1String("\n") + resultMessage);
