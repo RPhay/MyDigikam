@@ -412,7 +412,9 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
 
 void OpenCVOpenCLDNNTestDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("miscs_settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("miscs_settings"),
+                            QLatin1String("system_settings"));
 }
 
 } // namespace Digikam
