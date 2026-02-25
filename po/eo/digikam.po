@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -68442,6 +68442,7 @@ msgid ""
 "when running the AI models by validating OpenCV and OpenCL have the\n"
 "required libraries and drivers installed.\n"
 "\n"
+"\n"
 "Do you want to test your system now?"
 msgstr ""
 
@@ -68483,132 +68484,136 @@ msgstr ""
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
-"models."
+"models.\n"
+"\n"
+"Note for the NVidia GPU users: please uses the \"Help\" button to read the "
+"online documentation and configure you device to be detectable and usable at "
+"digiKam run-time."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Fermi"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:230
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:263
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "OpenGL-subteno ne haveblas en via sistemo."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, kde-format
 msgid "OpenCL acceleration device is available."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "@info: icc profile class"
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "Ligi aparaton"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:280
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "Ĉi tiu kolekto nuntempe ne haveblas."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "OpenGL-subteno ne haveblas en via sistemo."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading DNN Model test image..."
 msgstr "Ŝargante bildon..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:299
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "DNN model test image not found."
 msgstr "Binaro ne trovita."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:306
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
 msgid "Failed to load DNN model test image from %1"
 msgstr "Malsukcesis konservi bildon al %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:310
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
 msgid "Preparing the DNN Model image for processing..."
 msgstr "Pani la bildon al regiono"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "Komencante Ĉefan Vidon..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:346
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Running face detection..."
 msgstr "Vizaĝa Detekto"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "Komencante Ĉefan Vidon..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:369
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "Preparante kolekto-skanadon..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:388
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "Malsukcesis krei dosierujon"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "Datumbazo kopiita sukcese."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, fuzzy, kde-format
 #| msgid "OpenGL Error"
 msgid "OpenCV error: %1"
 msgstr "OpenGL-eraro"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:405
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

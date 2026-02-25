@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -68980,6 +68980,7 @@ msgid ""
 "when running the AI models by validating OpenCV and OpenCL have the\n"
 "required libraries and drivers installed.\n"
 "\n"
+"\n"
 "Do you want to test your system now?"
 msgstr ""
 
@@ -69020,128 +69021,132 @@ msgstr ""
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
-"models."
+"models.\n"
+"\n"
+"Note for the NVidia GPU users: please uses the \"Help\" button to read the "
+"online documentation and configure you device to be detectable and usable at "
+"digiKam run-time."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "닫기"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:230
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:263
 #, fuzzy, kde-format
 msgid "OpenCL is available on this system."
 msgstr "시스템에서 OpenGL 지원을 사용할 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "OpenCL acceleration device is available."
 msgstr "사용 가능한 옵션 없음"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "링크 장치"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:280
 #, fuzzy, kde-format
 #| msgid "The service is not available at this time."
 msgid "OpenCL acceleration device is not available."
 msgstr "현재 서비스를 사용할 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
 #, fuzzy, kde-format
 msgid "OpenCL is not available on this system."
 msgstr "시스템에서 OpenGL 지원을 사용할 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 msgid "Loading DNN Model test image..."
 msgstr "RAW 그림"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:299
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "DNN model test image not found."
 msgstr "실행 파일을 찾을 수 없습니다."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:306
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Failed to save image to %1"
 msgid "Failed to load DNN model test image from %1"
 msgstr "사진을 %1(으)로 저장할 수 없음"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:310
 #, fuzzy, kde-format
 #| msgid "%1 input images to process"
 msgid "Preparing the DNN Model image for processing..."
 msgstr "처리할 입력 이미지 %1개"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "주 보기 초기화하는 중..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:346
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Running face detection..."
 msgstr "얼굴 감지"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "주 보기 초기화하는 중..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:369
 #, fuzzy, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr "선택 반전"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:388
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "폴더를 만들 수 없음"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, fuzzy, kde-format
 #| msgid "%1 resized successfully"
 msgid "All tests completed successfully!"
 msgstr "%1 크기 조정 완료"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, fuzzy, kde-format
 #| msgid "OpenGL error"
 msgid "OpenCV error: %1"
 msgstr "OpenGL 오류"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:405
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

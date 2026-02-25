@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
-"PO-Revision-Date: 2026-02-21 17:21+0400\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
+"PO-Revision-Date: 2026-02-24 22:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3498,27 +3498,7 @@ msgid "Background Image Credits"
 msgstr "حقوق الصورة الخلفية"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS.</h3><h3>The "
-#| "application provides A comprehensive set of tools for importing, "
-#| "managing, editing, and sharing media taken with your camera. You can use "
-#| "digiKam’s import capabilities to easily transfer photos, raw files, and "
-#| "videos directly from your camera and external storage devices (SD cards, "
-#| "USB disks, etc.). The application allows you to configure import settings "
-#| "and rules that process and organize imported items on-the-fly.</h3><h3>To "
-#| "resume, with digiKam you can import, organize, enhance, search, export "
-#| "your collections of photo and video, and much more...</h3><h3>Currently, "
-#| "you are in the Album view mode of digiKam. Albums are the places where "
-#| "your files are stored, and are identical to the folders on your hard disk."
-#| "</h3><h3>digiKam has many powerful features which are described in the <a "
-#| "href=\"https://docs.digikam.org/en/index.html\">documentation</a></"
-#| "h3><h3>The <a href=\"https://www.digikam.org\">digiKam homepage</a> "
-#| "provides information about new versions of digiKam.</h3><h3>To contact "
-#| "the digiKam users community or to support the development team, follow "
-#| "the links provided in the application Help menu entry. Thanks to support "
-#| "and use the digiKam project.</h3>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3540,21 +3520,21 @@ msgid ""
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>ديجيكام هو تطبيق متقدم مفتوح المصدر لإدارة الصور الرقمية يعمل على أنظمة "
-"لينكس وويندوز وماك أو إس.</h3><h3>يوفر التطبيق مجموعة شاملة من الأدوات "
+"لينكس وويندوز وماك أو إس.</h3><p>يوفر التطبيق مجموعة شاملة من الأدوات "
 "لاستيراد وإدارة وتحرير ومشاركة الوسائط التي تم التقاطها بكاميرتك. يمكنك "
 "استخدام إمكانات الاستيراد في ديجيكام لنقل الصور والملفات الخام ومقاطع "
 "الفيديو بسهولة مباشرة من الكاميرا وأجهزة التخزين الخارجية (بطاقات SD وأقراص "
 "USB وما إلى ذلك). يتيح لك التطبيق تكوين إعدادات وقواعد الاستيراد التي تعالج "
-"وتنظم العناصر المستوردة على الفور. </h3><h3>باختصار، مع ديجيكام يمكنك "
-"استيراد مجموعات الصور ومقاطع الفيديو الخاصة بك وتنظيمها وتحسينها والبحث فيها "
-"وتصديرها، وغير ذلك الكثير...</h3><h3>حالياً، أنت في وضع عرض الألبوم في "
-"ديجيكام. الألبومات هي الأماكن التي تُخزن فيها ملفاتك، وهي مطابقة للمجلدات "
-"الموجودة على القرص الصلب الخاص بك.<h3>يحتوي ديجيكام على العديد من الميزات "
-"القوية الموضحة في <a href=\"https://docs.digikam.org/en/index.html"
-"\">الوثائق<h3>توفر <a href=\"https://www.digikam.org\">الصفحة الرئيسة لـ "
-"digiKam</a> معلومات حول الإصدارات الجديدة من ديجيكام.</h3><h3>للاتصال بمجتمع "
-"مستخدمي ديجيكام أو لدعم فريق التطوير، اتبع الروابط المتوفرة في قائمة "
-"المساعدة في التطبيق. شكرًا لدعمك واستخدامك لمشروع ديجيكام.</h3>"
+"وتنظم العناصر المستوردة على الفور. <p><p>باختصار، مع ديجيكام يمكنك استيراد "
+"مجموعات الصور ومقاطع الفيديو الخاصة بك وتنظيمها وتحسينها والبحث فيها "
+"وتصديرها، وغير ذلك الكثير...</p><p>حالياً، أنت في وضع عرض الألبوم في ديجيكام. "
+"الألبومات هي الأماكن التي تُخزن فيها ملفاتك، وهي مطابقة للمجلدات الموجودة على "
+"القرص الصلب الخاص بك.</p><p>يحتوي ديجيكام على العديد من الميزات القوية "
+"الموضحة في <b><a href=\"https://docs.digikam.org/en/index.html\">الوثائق</"
+"a></b></p><p>توفر <b><a href=\"https://www.digikam.org\">الصفحة الرئيسة لـ "
+"digiKam</a></b> معلومات حول الإصدارات الجديدة من ديجيكام.</p><p>للاتصال "
+"بمجتمع مستخدمي ديجيكام أو لدعم فريق التطوير، اتبع الروابط المتوفرة في قائمة "
+"<b>مساعدة</b> في التطبيق.</p><h3>شكرًا لدعمك واستخدامك لمشروع ديجيكام.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3578,11 +3558,7 @@ msgid "Lens:"
 msgstr "العدسة:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3590,7 +3566,7 @@ msgid ""
 msgstr ""
 "أكثر من href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 تقرير مستخدم أغلقت على bugzilla."
+"%1\">400 تقرير مستخدم أغلقت على bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -9650,9 +9626,9 @@ msgid ""
 "rectangular cells and then recreates it by filling those cells with average "
 "pixel value.</p>"
 msgstr ""
-"<p>اختر تأثير التمويه لتطبيقه على الصورة.</p><p><b>تمويه الزوم</b>: يموّه "
+"<p>اختر تأثير التمويه لتطبيقه على الصورة.</p><p><b>تمويه التكبير</b>: يموّه "
 "الصورة على طول الخطوط الشعاعية بدءًا من نقطة مركز محددة. هذا يحاكي تمويه "
-"كاميرا تقوم بالزوم.</p><p><b>تمويه شعاعي</b>: يموّه الصورة عن طريق تدوير "
+"كاميرا تقوم بالتكبير.</p><p><b>تمويه شعاعي</b>: يموّه الصورة عن طريق تدوير "
 "البكسلات حول نقطة المركز المحددة. هذا يحاكي تمويه كاميرا تدور.</"
 "p><p><b>تمويه البعيد</b>: يموّه الصورة باستخدام البكسلات البعيدة. هذا يحاكي "
 "تمويه عدسة كاميرا غير مركزة.</p><p><b>تمويه الحركة</b>: يموّه الصورة عن طريق "
@@ -13244,7 +13220,7 @@ msgstr "برنامج الإجراء"
 #, kde-format
 msgctxt "exposure program"
 msgid "Portrait mode"
-msgstr "نمط الصورة الشخصية"
+msgstr "وضع الصورة الشخصية"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:165
 #, kde-format
@@ -13441,13 +13417,13 @@ msgstr "قياسي"
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Landscape"
-msgstr "عرضيّ"
+msgstr "منظر طبيعي"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:272
 #, kde-format
 msgctxt "@item: scene type"
 msgid "Portrait"
-msgstr "طوليّ"
+msgstr "صورة شخصية"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:273
 #, kde-format
@@ -63681,12 +63657,10 @@ msgid "Large"
 msgstr "كبير"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "كبير"
+msgstr "كبير جدًّا"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -66761,12 +66735,20 @@ msgid "AI GPU Test"
 msgstr "اختبار GPU للذكاء الاصطناعي"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@info"
+#| msgid ""
+#| "This will check if your system is able to use GPU acceleration\n"
+#| "when running the AI models by validating OpenCV and OpenCL have the\n"
+#| "required libraries and drivers installed.\n"
+#| "\n"
+#| "Do you want to test your system now?"
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
 "when running the AI models by validating OpenCV and OpenCL have the\n"
 "required libraries and drivers installed.\n"
+"\n"
 "\n"
 "Do you want to test your system now?"
 msgstr ""
@@ -66811,114 +66793,116 @@ msgstr ""
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
-"models."
+"models.\n"
+"\n"
+"Note for the NVidia GPU users: please uses the \"Help\" button to read the "
+"online documentation and configure you device to be detectable and usable at "
+"digiKam run-time."
 msgstr ""
-"فشل الاختبار. قد لا يكون حاسوبك قادرًا على استخدام تسريع GPU لنماذج الذكاء "
-"الاصطناعي."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "أغلق"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:230
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "أغلق حوار الاختبار"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr "التحقق من توافق تسريع OpenCL GPU مع نماذج الذكاء الاصطناعي..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:263
 #, kde-format
 msgid "OpenCL is available on this system."
 msgstr "دعم «أوبن سي‌إل» متوفّر في النّظام."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, kde-format
 msgid "OpenCL acceleration device is available."
 msgstr "جهاز تسريع OpenCL متوفر."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, kde-format
 msgid "Using device: %1"
 msgstr "استخدام الجهاز: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:280
 #, kde-format
 msgid "OpenCL acceleration device is not available."
 msgstr "جهاز تسريع «أوبن سي‌إل» غير متوفّرة."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
 #, kde-format
 msgid "OpenCL is not available on this system."
 msgstr "لا يوجد دعم «أوبن سي‌إل» في النّظام."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, kde-format
 msgid "Loading DNN Model test image..."
 msgstr "يحمّل صورة اختبار نموذج DNN..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:299
 #, kde-format
 msgid "DNN model test image not found."
 msgstr "لم يُعثر على صورة الاختبار نموذج DNN."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:306
 #, kde-format
 msgid "Failed to load DNN model test image from %1"
 msgstr "فشل تحميل صورة الاختبار نموذج DNN من %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:310
 #, kde-format
 msgid "Preparing the DNN Model image for processing..."
 msgstr "تجهيز صورة نموذج DNN للمعالجة..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:339
 #, kde-format
 msgid "Initializing face detection model..."
 msgstr "يمهّد نموذج اكتشاف الوجه..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:346
 #, kde-format
 msgid "Running face detection..."
 msgstr "يشغّل اكتشاف الوجوه…"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
 #, kde-format
 msgid "Initializing feature extraction model..."
 msgstr "يمهد نموذج استخراج الملامح..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:369
 #, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr "يحضّر الوجه لاستخراج الملامح..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format
 msgid "Extracting face features..."
 msgstr "استخراج ملامح الوجه..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:388
 #, kde-format
 msgid "Failed to extract face features."
 msgstr "فشل في استخراج ملامح الوجه."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, kde-format
 msgid "All tests completed successfully!"
 msgstr "تمت جميع الاختبارات بنجاح!"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, kde-format
 msgid "OpenCV error: %1"
 msgstr "خطأ OpenCV: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:405
 #, kde-format
 msgid "Error: %1"
 msgstr "الخطأ: %1"
@@ -68157,6 +68141,13 @@ msgstr "استورد عناصر"
 #, kde-format
 msgid "Survey"
 msgstr "الاستقصاء"
+
+#~ msgid ""
+#~ "Test failed. Your system may not be able to use GPU acceleration for the "
+#~ "AI models."
+#~ msgstr ""
+#~ "فشل الاختبار. قد لا يكون حاسوبك قادرًا على استخدام تسريع GPU لنماذج الذكاء "
+#~ "الاصطناعي."
 
 #, fuzzy
 #~| msgid ""

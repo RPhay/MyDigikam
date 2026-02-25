@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
 "PO-Revision-Date: 2026-01-28 18:23+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -68241,6 +68241,7 @@ msgid ""
 "when running the AI models by validating OpenCV and OpenCL have the\n"
 "required libraries and drivers installed.\n"
 "\n"
+"\n"
 "Do you want to test your system now?"
 msgstr ""
 
@@ -68282,123 +68283,127 @@ msgstr ""
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
-"models."
+"models.\n"
+"\n"
+"Note for the NVidia GPU users: please uses the \"Help\" button to read the "
+"online documentation and configure you device to be detectable and usable at "
+"digiKam run-time."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, fuzzy, kde-format
 #| msgid "&Close"
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "În&chide"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:230
 #, fuzzy, kde-format
 #| msgid "Close the theme designer"
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Închide conceptorul de tematici"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:263
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "Suportul OpenGL nu este disponibil în sistemul dumneavoastră."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "OpenCL acceleration device is available."
 msgstr "Nici o opțiune disponibilă"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "Dispozitiv de legătură"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:280
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "Această colecție nu este disponibilă momentan."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "Suportul OpenGL nu este disponibil în sistemul dumneavoastră."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading DNN Model test image..."
 msgstr "Se încarcă imaginea..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:299
 #, fuzzy, kde-format
 #| msgid "Collection not found"
 msgid "DNN model test image not found."
 msgstr "Colecție negăsită"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:306
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to load DNN model test image from %1"
 msgstr "Eșec la salvarea fișierului: %1"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:310
 #, fuzzy, kde-format
 msgid "Preparing the DNN Model image for processing..."
 msgstr "Nici un filtru activ"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:339
 #, fuzzy, kde-format
 msgid "Initializing face detection model..."
 msgstr "Se inițializează fereastra principală"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:346
 #, fuzzy, kde-format
 msgid "Running face detection..."
 msgstr "Selecție"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
 #, fuzzy, kde-format
 msgid "Initializing feature extraction model..."
 msgstr "Se inițializează fereastra principală"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:369
 #, fuzzy, kde-format
 msgid "Preparing face for feature extraction..."
 msgstr "Se pregătește examinarea colecției"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:388
 #, fuzzy, kde-format
 msgid "Failed to extract face features."
 msgstr "Eșec la salvarea elementului..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "Bază de date copiată cu succes."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, fuzzy, kde-format
 msgid "OpenCV error: %1"
 msgstr "Exportă"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:405
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-23 00:41+0000\n"
+"POT-Creation-Date: 2026-02-25 00:44+0000\n"
 "PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -67619,6 +67619,7 @@ msgid ""
 "when running the AI models by validating OpenCV and OpenCL have the\n"
 "required libraries and drivers installed.\n"
 "\n"
+"\n"
 "Do you want to test your system now?"
 msgstr ""
 
@@ -67660,132 +67661,136 @@ msgstr ""
 #, kde-format
 msgid ""
 "Test failed. Your system may not be able to use GPU acceleration for the AI "
-"models."
+"models.\n"
+"\n"
+"Note for the NVidia GPU users: please uses the \"Help\" button to read the "
+"online documentation and configure you device to be detectable and usable at "
+"digiKam run-time."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:226
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "關閉"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:227
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:230
 #, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:254
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:257
 #, kde-format
 msgid "Checking for OpenCL GPU acceleration compatibility with AI models..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:260
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:263
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is available on this system."
 msgstr "您的系統無法使用 OpenGL。"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:271
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:274
 #, fuzzy, kde-format
 #| msgid "No options available"
 msgid "OpenCL acceleration device is available."
 msgstr "沒有可用的選項"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:273
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "@info: icc profile class"
 #| msgid "Link device"
 msgid "Using device: %1"
 msgstr "連結裝置"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:277
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:280
 #, fuzzy, kde-format
 #| msgid "This collection is currently not available."
 msgid "OpenCL acceleration device is not available."
 msgstr "這個收藏目前無法使用。"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:282
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:285
 #, fuzzy, kde-format
 #| msgid "OpenGL support is not available on your system."
 msgid "OpenCL is not available on this system."
 msgstr "您的系統無法使用 OpenGL。"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:287
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Loading image..."
 msgid "Loading DNN Model test image..."
 msgstr "正在載入影像..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:296
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:299
 #, fuzzy, kde-format
 #| msgid "Binary not found."
 msgid "DNN model test image not found."
 msgstr "找不到執行檔。"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:303
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:306
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to load DNN model test image from %1"
 msgstr "儲存標籤到檔案中失敗。"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:307
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:310
 #, fuzzy, kde-format
 #| msgid "Pan the image to a region"
 msgid "Preparing the DNN Model image for processing..."
 msgstr "平移影像到一個區域"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:336
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing face detection model..."
 msgstr "正在初始化主檢視..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:343
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:346
 #, fuzzy, kde-format
 #| msgid "Face Detection"
 msgid "Running face detection..."
 msgstr "臉孔偵測"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:359
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:362
 #, fuzzy, kde-format
 #| msgctxt "@info: setup"
 #| msgid "Initializing Main View..."
 msgid "Initializing feature extraction model..."
 msgstr "正在初始化主檢視..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:366
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:369
 #, fuzzy, kde-format
 #| msgid "Preparing collection scan..."
 msgid "Preparing face for feature extraction..."
 msgstr "正在準備收藏掃描..."
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:379
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:382
 #, kde-format
 msgid "Extracting face features..."
 msgstr ""
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:385
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:388
 #, fuzzy, kde-format
 #| msgid "Failed to create folder"
 msgid "Failed to extract face features."
 msgstr "建立資料夾失敗"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:390
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:393
 #, fuzzy, kde-format
 #| msgid "Database copied successfully."
 msgid "All tests completed successfully!"
 msgstr "資料庫已成功複製。"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:396
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:399
 #, fuzzy, kde-format
 #| msgid "Open error"
 msgid "OpenCV error: %1"
 msgstr "開啟失敗"
 
-#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:402
+#: core/utilities/setup/misc/ocvocldnntestdlg.cpp:405
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid "Error: %1"
