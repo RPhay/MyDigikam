@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-25 00:44+0000\n"
-"PO-Revision-Date: 2026-02-16 09:20+0000\n"
+"PO-Revision-Date: 2026-02-25 10:26+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3423,24 +3423,7 @@ msgid "Background Image Credits"
 msgstr "Þakkir vegna bakgrunnsmyndar:"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS. The application "
-#| "provides a comprehensive set of tools for importing, managing, editing, "
-#| "and sharing photos and raw files. You can use digiKam’s import "
-#| "capabilities to easily transfer photos, raw files, and videos directly "
-#| "from your camera and external storage devices (SD cards, USB disks, "
-#| "etc.). The application allows you to configure import settings and rules "
-#| "that process and organize imported items on-the-fly.</h3><h3>With digiKam "
-#| "you can import, organize, enhance, search, export, and more...</"
-#| "h3><h3>Currently, you are in the Album view mode of digiKam.</"
-#| "h3><h3>Albums are the places where your files are stored, and are "
-#| "identical to the folders on your hard disk.</h3><li>digiKam has many "
-#| "powerful features which are described in the <a href=\"https://docs."
-#| "digikam.org/en/index.html\">documentation</a></li><li>The <a href="
-#| "\"https://www.digikam.org\">digiKam homepage</a> provides information "
-#| "about new versions of digiKam.</li>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3462,20 +3445,24 @@ msgid ""
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
 "<h3>digiKam er fullkomið umsýslukerfi stafrænna ljósmynda með opinn "
-"grunnkóða sem keyrir á Linux, Windows og MacOS. Hugbúnaðurinn gefur kost á "
-"skilvirku safni verkfæra til að flytja inn, skipuleggja, myndvinna og deila "
-"bæði ljósmyndum og RAW-skrám. Þú getur notað innflutningseiginleika digiKam "
-"til að flytja myndskrár og myndskeið beint af stafrænum myndavélum og milli "
-"utanáliggjandi geymslumiðla (SD-minniskort, USB-lyklar, o.s.frv.). "
+"grunnkóða sem keyrir á Linux, Windows og MacOS.</h3><p>Hugbúnaðurinn gefur "
+"kost á skilvirku safni verkfæra til að flytja inn, skipuleggja, myndvinna og "
+"deila bæði ljósmyndum og RAW-skrám. Þú getur notað innflutningseiginleika "
+"digiKam til að flytja myndskrár og myndskeið beint af stafrænum myndavélum "
+"og milli utanáliggjandi geymslumiðla (SD-minniskort, USB-lyklar, o.s.frv.). "
 "Hugbúnaðurinn gerir kleift að setja upp reglur og stillingar við innflutning "
-"þannig að atriði séu skipulögð og unnin  um leið. </h3><h3>Með digiKam "
-"geturðu flutt inn ljósmyndir, skipulagt, bætt, leitað, flutt út og fleira..."
-"</h3><h3>Albúm eru staðir þar sem myndirnar eru geymdar, og eru í sjálfu sér "
-"nákvæmlega eins og möppurnar á harða diskinum.</h3><li>digiKam er með marga "
-"öfluga eiginleika sem eru útlistaðir nánar í <a href=\"https://docs.digikam."
-"org/en/index.html\">leiðbeiningunum</a></li><li>Svo er <a href=\"https://www."
-"digikam.org\">heimasíða digiKam</a> með mikið af upplýsingum sérstaklega "
-"varðandi nýrri útgáfur af digiKam.</li>"
+"þannig að atriði séu skipulögð og unnin  um leið. </p><p>Með digiKam geturðu "
+"flutt inn ljósmyndir, skipulagt, bætt, leitað, flutt út og fleira...</"
+"p><p>Núna ertu í albúmasýn digiKam. Albúm eru staðir þar sem myndirnar eru "
+"geymdar, og eru í sjálfu sér nákvæmlega eins og möppurnar á harða diskinum.</"
+"p><p>digiKam er með marga öfluga eiginleika sem eru útlistaðir nánar í <b><a "
+"href=\"https://docs.digikam.org/en/index.html\">leiðbeiningunum</a></b></"
+"p><p>Svo er <a href=\"https://www.digikam.org\">heimasíða digiKam</a> með "
+"mikið af upplýsingum sérstaklega varðandi nýrri útgáfur af digiKam.</"
+"p><p>Til að hafa samband við aðra notendur digiKam eða styðja við "
+"forritunarteymið, þá er hægt að nýta tenglana sem koma fram í "
+"valmyndarfærslunni <b>Hjálp</b>. </p><h3>Takk fyrir að styðja og nota "
+"digiKam-verkefnið.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3499,11 +3486,7 @@ msgid "Lens:"
 msgstr "Linsa:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3511,7 +3494,7 @@ msgid ""
 msgstr ""
 "Meira en <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 villuskýrslum notenda</a> lokað á bugzilla."
+"%1\">400 villuskýrslum notenda</a> lokað á bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -3797,7 +3780,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
 msgid "Add support to search recently modified items in the database."
-msgstr ""
+msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:89
 #, kde-format
@@ -62752,16 +62735,14 @@ msgid "and"
 msgstr "og"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgid "Modified Date"
+#, kde-format
 msgid "Modified last"
-msgstr "Breytingardagsetning"
+msgstr "Síðast breytt"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
-#, fuzzy, kde-format
-#| msgid "Return items modified between"
+#, kde-format
 msgid "Return items modified within the last"
-msgstr "Finna atriði breytt á milli"
+msgstr "Finna atriði breytt síðustu"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
@@ -63451,32 +63432,24 @@ msgid "Portrait orientation"
 msgstr "Lóðrétt stefna"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
 msgstr "sekúndur"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
 msgstr "mínútur"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
 msgstr "klukkustundir"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
-msgstr "dagar"
+msgstr "daga"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
@@ -64070,12 +64043,10 @@ msgid "Large"
 msgstr "Stór"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "Stór"
+msgstr "Mjög stórt"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -67260,14 +67231,7 @@ msgid "AI GPU Test"
 msgstr "Prófa AI-gervigreind á GPU-skjákortsörgjörva"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -67325,6 +67289,13 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"Prófun mistókst. Mögulega ræður kerfið þitt ekki við að nota GPU-hröðun "
+"fyrir AI-gervigreindarlíkönin.\n"
+"\n"
+"Þeir sem eru með NVidia GPU-skjákortsörgjörva ættu að nota valkostina sem "
+"koma upp þegar ýtt er á \"Hjálp\"-hnappinn og lesa leiðbeiningarnar á netinu "
+"og grunnstilla skjákortið þannig að það finnist og sé nothæft þegar digiKam "
+"er ræst."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format

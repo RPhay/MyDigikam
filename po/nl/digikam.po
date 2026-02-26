@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-25 00:44+0000\n"
-"PO-Revision-Date: 2026-02-23 10:43+0100\n"
+"PO-Revision-Date: 2026-02-25 12:14+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -67946,14 +67946,7 @@ msgid "AI GPU Test"
 msgstr "AI GPU-test"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -68011,6 +68004,12 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"Test mislukt. Uw systeem kan mogelijk geen GPU-acceleratie gebruiken voor de "
+"AI-modellen.\n"
+"\n"
+"Opmerking voor NVidia GPU-gebruikers: gebruik de knop \"Help\" om de online "
+"documentatie te raadplegen en uw apparaat te configureren zodat het tijdens "
+"de digiKam-runtime kan worden herkend en gebruikt."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format
