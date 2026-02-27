@@ -3347,24 +3347,7 @@ msgid "Background Image Credits"
 msgstr "背景作者"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS. The application "
-#| "provides a comprehensive set of tools for importing, managing, editing, "
-#| "and sharing photos and raw files. You can use digiKam’s import "
-#| "capabilities to easily transfer photos, raw files, and videos directly "
-#| "from your camera and external storage devices (SD cards, USB disks, "
-#| "etc.). The application allows you to configure import settings and rules "
-#| "that process and organize imported items on-the-fly.</h3><h3>With digiKam "
-#| "you can import, organize, enhance, search, export, and more...</"
-#| "h3><h3>Currently, you are in the Album view mode of digiKam.</"
-#| "h3><h3>Albums are the places where your files are stored, and are "
-#| "identical to the folders on your hard disk.</h3><li>digiKam has many "
-#| "powerful features which are described in the <a href=\"https://docs."
-#| "digikam.org/en/index.html\">documentation</a></li><li>The <a href="
-#| "\"https://www.digikam.org\">digiKam homepage</a> provides information "
-#| "about new versions of digiKam.</li>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3385,15 +3368,6 @@ msgid ""
 "development team, follow the links provided in the application <b>Help</b> "
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
-"<h3>digiKam 是一款功能齐全的自由开源数码照片管理工具，支持 Linux、Windows 和 "
-"macOS，可以导入、管理、编辑、分享照片和 RAW 文件。您可以使用 digiKam 的导入工"
-"具轻松传输数码相机和外接存储设备 (SD 卡、U 盘等) 中的照片、RAW 文件和视频，还"
-"可以通过配置导入设置和规则来自动处理导入的项目。除此之外，digiKam 还提供了用"
-"于整理、修饰、搜索和导出照片的各种工具。</h3><h3>目前 digiKam 处在相册视图模"
-"式。</h3><h3>相册是您的文件存储的位置，与硬盘中的文件夹相同。</h3><li>请通过"
-"<a href=\"https://docs.digikam.org/en/index.html\">在线文档</a>了解 digiKam "
-"的各项功能。</li><li>请通过 <a href=\"https://www.digikam.org\">digiKam 官方"
-"网站</a>获取版本更新信息。</li>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3417,19 +3391,12 @@ msgid "Lens:"
 msgstr "镜头："
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">400 user-reports</a> closed on bugzilla."
 msgstr ""
-"解决了 <a href=\"https://bugs.kde.org/buglist.cgi?"
-"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 个用户报告的程序缺陷</a>。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -3694,15 +3661,11 @@ msgid "New options to find empty properties registered in the database."
 msgstr "新增选项以查找已在数据库中注册的空属性。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add support for search Creator and Author fields to be drop down lists "
-#| "populated with the values already presents in the database."
+#, kde-format
 msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
-"新增对搜索创建者和作者字段的支持，以下拉列表形式呈现数据库中已存在的值。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
@@ -3710,10 +3673,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:89
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-01-24."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-01-24。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
@@ -6236,7 +6198,7 @@ msgstr ""
 msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
-msgstr ""
+msgstr "使用 $ORGTEXT 变量以插入已有文本到新文本中。."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
@@ -61086,16 +61048,14 @@ msgid "and"
 msgstr "-"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgid "Modified Date"
+#, kde-format
 msgid "Modified last"
-msgstr "修改日期"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
-#, fuzzy, kde-format
-#| msgid "Return items modified between"
+#, kde-format
 msgid "Return items modified within the last"
-msgstr "修改时间范围"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
@@ -61785,32 +61745,24 @@ msgid "Portrait orientation"
 msgstr "纵向"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
-msgstr "秒"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
-msgstr "分"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
-msgstr "小时"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
-msgstr "天"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
@@ -62384,12 +62336,10 @@ msgid "Large"
 msgstr "大"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "大"
+msgstr ""
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -65386,14 +65336,7 @@ msgid "AI GPU Test"
 msgstr "AI GPU 测试"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -65403,11 +65346,6 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
-"这将检查您的系统是否能够在运行 AI 模型时使用 GPU 加速。\n"
-"检查程序将验证 OpenCV 和 OpenCL 是否已安装所需的\n"
-"程序库和驱动程序。\n"
-"\n"
-"您想要立即测试您的系统吗？"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, kde-format
@@ -66743,8 +66681,3 @@ msgstr "导入视图项目"
 #, kde-format
 msgid "Survey"
 msgstr "评审工具"
-
-#~ msgid ""
-#~ "Test failed. Your system may not be able to use GPU acceleration for the "
-#~ "AI models."
-#~ msgstr "测试失败。您的系统可能无法使用 GPU 加速 AI 模型。"

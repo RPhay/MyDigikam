@@ -22599,7 +22599,7 @@ msgid ""
 msgstr ""
 "<p>حاليا، كمشروع مفتوح المصدر، لا نستطيع تلبية متطلبات فيسبوك لإعادة تفعيل "
 "هذه الإضافة.</p><p>للمزيد من المعلومات انظر هنا: <a href='https://bugs.kde."
-"org/show_bug.cgi?id=182838'>نظام تتبع الأخطاء في كدي</a></p>"
+"org/show_bug.cgi?id=182838'>نظام تتبع الأخطاء في كِيدِي</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:462
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:428
