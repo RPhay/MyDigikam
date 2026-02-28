@@ -488,8 +488,8 @@ BUGFIXES:
 403 --> 516516 - Bug 510691 - addition: Photos get deleted!
 404 --> 516523 - Face-tag export to heic-files.
 405 --> 516574 - EXIF container is not created.
-406 --> 
-407 --> 
+406 --> 516762 - OM System .orf location absent from map module.
+407 --> 515957 - Daily build Bundles are not updated to files.kde.org/digikam.
 408 --> 
 409 --> 
 410 --> 
