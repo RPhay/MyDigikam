@@ -3368,6 +3368,17 @@ msgid ""
 "development team, follow the links provided in the application <b>Help</b> "
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
+"<h3>digiKam 是一款功能齐全的自由开源数码照片管理工具，支持 Linux、Windows 和 "
+"macOS。</h3><p>该应用程序具备用于导入、管理、编辑、分享照片和 RAW 文件的各种"
+"工具。您可以使用 digiKam 的导入工具轻松传输数码相机和外接存储设备 (SD 卡、U "
+"盘等) 中的各种媒体，还可以通过配置导入设置和规则来自动处理导入的项目。</p><p>"
+"除此之外，digiKam 还提供了用于整理、修饰、搜索和导出照片和视频的各种工具。</"
+"p><p>目前您正处于 digiKam 的相册视图模式。相册是您的文件存储的位置，相当于硬"
+"盘中的文件夹。</p><p>digiKam 的<b><a href=\"https://docs.digikam.org/en/"
+"index.html\">在线文档</a>详细介绍了各项功能的使用方式。</b></p><p>digiKam 的"
+"<b><a href=\"https://www.digikam.org\">官方网站</a></b>提供了最新版本的信息以"
+"及下载。</p><p>如需联系 digiKam 用户社区或捐款支持开发团队，请点击应用程序的"
+"<b>帮助</b>菜单来访问相关链接。</p><h3>感谢您使用并支持 digiKam 项目。</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3397,6 +3408,9 @@ msgid ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">400 user-reports</a> closed on bugzilla."
 msgstr ""
+"解决了 <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">400 个用户报告的程序缺陷</a>。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -3505,7 +3519,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
 msgid "Rewrite the welcome page in more modern style."
-msgstr ""
+msgstr "以更现代的外观重写欢迎页面。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
@@ -3666,16 +3680,17 @@ msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"新增对搜索创建者和作者字段的支持，以下拉列表形式呈现数据库中已存在的值。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
 msgid "Add support to search recently modified items in the database."
-msgstr ""
+msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:89
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr ""
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-02-16。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
@@ -61050,12 +61065,12 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
 #, kde-format
 msgid "Modified last"
-msgstr ""
+msgstr "最近修改"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
 #, kde-format
 msgid "Return items modified within the last"
-msgstr ""
+msgstr "返回在最近这段时间内修改过的项目："
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
@@ -61747,22 +61762,22 @@ msgstr "纵向"
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
 #, kde-format
 msgid "seconds"
-msgstr ""
+msgstr "秒"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
 #, kde-format
 msgid "minutes"
-msgstr ""
+msgstr "分钟"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
 #, kde-format
 msgid "hours"
-msgstr ""
+msgstr "小时"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
 #, kde-format
 msgid "days"
-msgstr ""
+msgstr "天"
 
 #: core/utilities/searchwindow/searchfolderview.cpp:56
 #, kde-format
@@ -62339,7 +62354,7 @@ msgstr "大"
 #, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr ""
+msgstr "特大"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -65346,6 +65361,12 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
+"这将检查您的系统是否能够在运行 AI 模型时使用 GPU 加速。\n"
+"检查程序将验证 OpenCV 和 OpenCL 是否已安装所需的\n"
+"程序库和驱动程序。\n"
+"\n"
+"\n"
+"您想要立即测试您的系统吗？"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, kde-format
@@ -65387,6 +65408,10 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"测试失败。您的系统可能无法为 AI 模型使用 GPU 加速。\n"
+"\n"
+"提示：如果您使用的是 NVidia 的 GPU，请点击“帮助”按钮，按照在线文档的指引将设"
+"备配置为可被 digiKam 运行时检测和使用。"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format
