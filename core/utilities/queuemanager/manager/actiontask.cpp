@@ -174,10 +174,7 @@ void ActionTask::run()
 
         // Only true if it is also the last tool
 
-        noWriteMetadata |= (
-                            (set.group == BatchTool::MetadataTool)  &&
-                            (set.name  != QLatin1String("TimeAdjust"))
-                           );
+        noWriteMetadata |= (set.group == BatchTool::MetadataTool);
 
         timeAdjust      |= (set.name == QLatin1String("TimeAdjust"));
         inUrl            = outUrl;

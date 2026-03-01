@@ -490,6 +490,6 @@ BUGFIXES:
 405 --> 516574 - EXIF container is not created.
 406 --> 516762 - OM System .orf location absent from map module.
 407 --> 515957 - Daily build Bundles are not updated to files.kde.org/digikam.
-408 --> 
+408 --> 516929 - Batch Queue Manger Adjust Time isn't able to use ExifTool.
 409 --> 
 410 --> 
