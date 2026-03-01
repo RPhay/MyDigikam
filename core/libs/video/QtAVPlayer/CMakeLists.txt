@@ -115,7 +115,7 @@ add_library(core_qtavplayer_obj OBJECT ${libqtavplayer_SRCS})
 
 target_compile_definitions(core_qtavplayer_obj
                            PRIVATE
-                           digikamcore_EXPORTS
+                           QT_STATIC
 )
 
 target_compile_definitions(core_qtavplayer_obj
