@@ -1,5 +1,5 @@
 #
-# SPDX-FileCopyrightText: 2010-2026, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# SPDX-FileCopyrightText: 2010-2024, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
@@ -115,7 +115,7 @@ add_library(core_qtavplayer_obj OBJECT ${libqtavplayer_SRCS})
 
 target_compile_definitions(core_qtavplayer_obj
                            PRIVATE
-                           QT_STATIC
+                           digikamcore_EXPORTS
 )
 
 target_compile_definitions(core_qtavplayer_obj

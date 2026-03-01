@@ -30,7 +30,7 @@ Raw Engine      : Internal Libraw has been updated to the latest upstream 202602
                                   * Multiple DJI and Skydio drones
                                   * Tested with multiple smartphones with DNG format recorded.
 
-Video           : Internal QtAVPlayer has been updated to the latest upstream 20260228 which brings with
+Video           : Internal QtAVPlayer has been updated to the latest upstream 20260124 which brings with
                   it a variety of bug fixes and performance improvements (Qt5 only).
 
 General         : Add support of customizable date format to show everywhere in the program. Seconds can be displayed with the shot time-stamp, and more.
