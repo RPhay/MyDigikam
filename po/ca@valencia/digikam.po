@@ -12,9 +12,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-25 19:11+0100\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"PO-Revision-Date: 2026-03-01 11:04+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3495,11 +3495,7 @@ msgid "Lens:"
 msgstr "Lent:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">400 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3512,15 +3508,15 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, fuzzy, kde-format
 #| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
+#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
 #| "which brings with it a variety of bug fixes and performance improvements "
 #| "(Qt5 only)."
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"QtAVPlayer intern s'ha actualitzat a l'última branca principal 2026-01-24 "
+"QtAVPlayer intern s'ha actualitzat a l'última branca principal 2026-02-28 "
 "que porta amb si una diversitat d'esmenes d'errors i millores de rendiment "
 "(només les Qt5)."
 
@@ -62832,33 +62828,33 @@ msgstr "&Cues"
 msgid "Failed to find tool..."
 msgstr "Ha fallat mentre es trobava una eina…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(sobreescrit)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(canviat el nom a %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "L'element existix i s'ha omés"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Ha fallat mentre es creava el fitxer lateral…"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Element processat amb èxit %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Ha fallat mentre es creava el fitxer…"

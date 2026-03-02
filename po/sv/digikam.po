@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3526,7 +3526,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -62329,33 +62329,33 @@ msgstr "&Köer"
 msgid "Failed to find tool..."
 msgstr "Misslyckades hitta verktyg ..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(överskrivet)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(namn ändat till %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Objektet finns och hoppades över"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Misslyckades skapa associerad fil..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Objekt behandlat med lyckat resultat %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Misslyckades skapa fil..."

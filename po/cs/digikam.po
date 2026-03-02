@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3495,7 +3495,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -60483,33 +60483,33 @@ msgstr "&Fronty"
 msgid "Failed to find tool..."
 msgstr "Nástroj nebyl nalezen..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(přepsáno)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(přejmenováno na %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Vytvoření souboru Sidecar se nezdařilo..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Položka úspěšně zpracována %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Nelze vytvořit soubor..."

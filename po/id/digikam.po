@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -3456,7 +3456,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -62535,33 +62535,33 @@ msgstr ""
 msgid "Failed to find tool..."
 msgstr "Gagal mengunggah foto"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr ""

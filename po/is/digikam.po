@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
 "PO-Revision-Date: 2026-02-25 10:26+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3507,7 +3507,7 @@ msgstr ""
 #| "which brings with it a variety of bug fixes and performance improvements "
 #| "(Qt5 only)."
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -62084,33 +62084,33 @@ msgstr "&Biðraðir"
 msgid "Failed to find tool..."
 msgstr "Fann ekki verkfæri..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(yfirskrifað)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(endurnefnt sem %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Atriði er til og var sleppt"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Ekki tókst að búa til fylgiskrá..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Meðhöndlaði atriðið %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Gat ekki búið til skrá..."

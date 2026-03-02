@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-25 06:19+0100\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"PO-Revision-Date: 2026-03-01 08:47+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3545,11 +3545,7 @@ msgid "Lens:"
 msgstr "Objektiv:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">400 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3562,16 +3558,16 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, fuzzy, kde-format
 #| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
+#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
 #| "which brings with it a variety of bug fixes and performance improvements "
 #| "(Qt5 only)."
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
 "Notranji QtAVPlayer je bil posodobljen na najnovejšo različico z dne "
-"24.01.2026, ki prinaša številne popravke napak in izboljšave delovanja (samo "
+"28.02.2026, ki prinaša številne popravke napak in izboljšave delovanja (samo "
 "Qt5)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
@@ -62358,33 +62354,33 @@ msgstr "Čakalne vrste"
 msgid "Failed to find tool..."
 msgstr "Ni bilo mogoče najti orodja..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(prepisano)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(preimenovano v %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Vnos obstaja in je bil preskočen"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Ni bilo mogoče ustvariti priklopne datoteke..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Predmet je bil uspešno obdelan %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Ni bilo mogoče ustvariti datoteke ..."

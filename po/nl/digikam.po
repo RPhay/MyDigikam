@@ -62,8 +62,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-25 12:14+0100\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"PO-Revision-Date: 2026-03-01 14:29+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3538,11 +3538,7 @@ msgid "Lens:"
 msgstr "Lens:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">400 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3550,20 +3546,20 @@ msgid ""
 msgstr ""
 "Meer dan <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">400 gebruikersrapporten</a> gesloten in bugzilla."
+"%1\">400 gebruikersrapporten</a> gesloten in Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, fuzzy, kde-format
 #| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
+#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
 #| "which brings with it a variety of bug fixes and performance improvements "
 #| "(Qt5 only)."
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Interne QtAVPlayer is bijgewerkt tot de laatste upstream 2026-01-24 die een "
+"Interne QtAVPlayer is bijgewerkt tot de laatste upstream 2026-02-28 die een "
 "aantal reparaties van bugs en prestatie verbeteringen meebrengt (alleen Qt5)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
@@ -62718,33 +62714,33 @@ msgstr "&Wachtrijen"
 msgid "Failed to find tool..."
 msgstr "Hulpmiddel zoeken is mislukt..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(overschreven)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(hernoemd naar %1...)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "Item bestaat en is overgeslagen"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Aanhangsel-bestand aanmaken is mislukt..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Item met succes bewerkt %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Bestand aanmaken is mislukt..."

@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-22 11:11+0100\n"
+"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"PO-Revision-Date: 2026-02-28 19:04+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3531,7 +3531,7 @@ msgstr ""
 #| "which brings with it a variety of bug fixes and performance improvements "
 #| "(Qt5 only)."
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -62815,33 +62815,33 @@ msgstr "&Code"
 msgid "Failed to find tool..."
 msgstr "Impossibile trovare lo strumento..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:264
+#: core/utilities/queuemanager/manager/actiontask.cpp:261
 #, kde-format
 msgid "(overwritten)"
 msgstr "(sovrascritto)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:269
+#: core/utilities/queuemanager/manager/actiontask.cpp:266
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(rinominato in %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:274
+#: core/utilities/queuemanager/manager/actiontask.cpp:271
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "L'elemento esiste ed è stato saltato"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:299
+#: core/utilities/queuemanager/manager/actiontask.cpp:296
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Impossibile creare il file sidecar..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:308
+#: core/utilities/queuemanager/manager/actiontask.cpp:305
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "Elemento elaborato correttamente %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:313
-#: core/utilities/queuemanager/manager/actiontask.cpp:318
+#: core/utilities/queuemanager/manager/actiontask.cpp:310
+#: core/utilities/queuemanager/manager/actiontask.cpp:315
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Creazione del file non riuscita..."
@@ -64819,12 +64819,10 @@ msgid "Large"
 msgstr "Grande"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "Grande"
+msgstr "Molto grande"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -68086,14 +68084,7 @@ msgid "AI GPU Test"
 msgstr "Test sulla GPU per IA"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -68107,6 +68098,7 @@ msgstr ""
 "l'accelerazione della GPU\n"
 "durante l'esecuzione dei modelli di IA, confermando che OpenCV e OpenCL\n"
 "hanno installato le librerie e i driver necessari.\n"
+"\n"
 "\n"
 "Vuoi eseguire il test del sistema adesso?"
 
@@ -68152,6 +68144,12 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"Test non riuscito. Il tuo sistema potrebbe non essere in grado di utilizzare "
+"l'accelerazione GPU per i modelli di intelligenza artificiale.\n"
+"\n"
+"Nota per gli utenti di GPU NVidia: usare il pulsante «Aiuto» per leggere la "
+"documentazione in linea e configurare il proprio dispositivo in modo da "
+"essere individuabile e utilizzabile all'avvio di digiKam."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format
