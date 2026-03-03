@@ -847,6 +847,7 @@
     </screenshot>
   </screenshots>
   <releases>
+    <release date="2026-03-08" version="9.0.0"/>
     <release date="2025-10-19" version="8.8.0"/>
     <release date="2025-06-29" version="8.7.0"/>
     <release date="2025-03-16" version="8.6.0"/>
