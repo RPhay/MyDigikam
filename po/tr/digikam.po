@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-03-01 15:24+0300\n"
+"PO-Revision-Date: 2026-03-02 11:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3514,17 +3514,13 @@ msgstr ""
 "%1\">400’den fazla kullanıcı raporu</a> kapatıldı."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"İçsel QtAVPlayer, 2026‒02‒28 tarihinde en son sürüme güncellendi. Bu "
+"İçsel QtAVPlayer, 2026‒01‒24 tarihinde en son sürüme güncellendi. Bu "
 "güncelleme, bir dizi hata düzeltmesi ve başarım iyileştirmesi (yalnızca Qt5 "
 "için) getirdi."
 

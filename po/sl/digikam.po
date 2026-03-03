@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-03-01 08:47+0100\n"
+"PO-Revision-Date: 2026-03-02 06:40+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3556,18 +3556,14 @@ msgstr ""
 "%1\">400 uporabniških poročil</a> je bilo zaprtih na Bugzilli."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
 "Notranji QtAVPlayer je bil posodobljen na najnovejšo različico z dne "
-"28.02.2026, ki prinaša številne popravke napak in izboljšave delovanja (samo "
+"24.01.2026, ki prinaša številne popravke napak in izboljšave delovanja (samo "
 "Qt5)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28

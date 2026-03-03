@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-02-25 10:26+0000\n"
+"PO-Revision-Date: 2026-03-02 07:11+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3486,11 +3486,7 @@ msgid "Lens:"
 msgstr "Linsa:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">400 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3501,17 +3497,13 @@ msgstr ""
 "%1\">400 villuskýrslum notenda</a> lokað á bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Innra QtAVPlayer hefur verið uppfært í nýjustu frumútgáfuna 2026-01-24 sem "
+"Innri QtAVPlayer hefur verið uppfærður í nýjustu frumútgáfuna 2026-01-24 sem "
 "tekur með ýmsar villuleiðréttingar og bætingar á afköstum (einungis fyrir "
 "Qt5)."
 

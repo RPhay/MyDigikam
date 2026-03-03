@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-03-01 08:03-0300\n"
+"PO-Revision-Date: 2026-03-02 08:50-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3495,17 +3495,13 @@ msgstr ""
 "%1\">400 relatórios de usuários</a> foram fechados no Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"O QtAVPlayer interno foi atualizado para a versão mais recente (28/02/2026), "
+"O QtAVPlayer interno foi atualizado para a versão mais recente (24/01/2026), "
 "que traz consigo diversas correções de bugs e melhorias de desempenho "
 "(somente para Qt5)."
 

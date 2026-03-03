@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-03-01 12:16+0200\n"
+"PO-Revision-Date: 2026-03-02 08:38+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3548,17 +3548,13 @@ msgstr ""
 "%1\">400 звітів щодо вад у Bugzilla</a>."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-02-28 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Вбудований QtAVPlayer було оновлено до останньої версії 28.02.2026, яка "
+"Вбудований QtAVPlayer було оновлено до останньої версії 24.01.2026, яка "
 "містить різноманітні виправлення помилок та покращення продуктивності (лише "
 "для Qt5)."
 
