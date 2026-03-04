@@ -57,7 +57,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-02-21 14:13+0200\n"
+"PO-Revision-Date: 2026-02-26 19:43+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -3535,27 +3535,7 @@ msgid "Background Image Credits"
 msgstr "Сведения о фоновом изображении"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS.</h3><h3>The "
-#| "application provides A comprehensive set of tools for importing, "
-#| "managing, editing, and sharing media taken with your camera. You can use "
-#| "digiKam’s import capabilities to easily transfer photos, raw files, and "
-#| "videos directly from your camera and external storage devices (SD cards, "
-#| "USB disks, etc.). The application allows you to configure import settings "
-#| "and rules that process and organize imported items on-the-fly.</h3><h3>To "
-#| "resume, with digiKam you can import, organize, enhance, search, export "
-#| "your collections of photo and video, and much more...</h3><h3>Currently, "
-#| "you are in the Album view mode of digiKam. Albums are the places where "
-#| "your files are stored, and are identical to the folders on your hard disk."
-#| "</h3><h3>digiKam has many powerful features which are described in the <a "
-#| "href=\"https://docs.digikam.org/en/index.html\">documentation</a></"
-#| "h3><h3>The <a href=\"https://www.digikam.org\">digiKam homepage</a> "
-#| "provides information about new versions of digiKam.</h3><h3>To contact "
-#| "the digiKam users community or to support the development team, follow "
-#| "the links provided in the application Help menu entry. Thanks to support "
-#| "and use the digiKam project.</h3>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3578,23 +3558,23 @@ msgid ""
 msgstr ""
 "<h3>digiKam — это продвинутое приложение для управления цифровыми "
 "фотографиями с открытым исходным кодом, работающее в Linux, Windows и macOS."
-"</h3><h3>В приложении реализован полный набор инструментов для импорта, "
+"</h3><p>В приложении реализован полный набор инструментов для импорта, "
 "управления, редактирования и публикации материалов, снятых вашей камерой. "
 "Возможности импорта digiKam позволяют легко переносить фотографии, raw-файлы "
 "и видео непосредственно с камеры и внешних накопителей (карт памяти SD, USB-"
 "дисков и т. д.). В приложении можно настроить параметры и правила импорта, "
 "которые обрабатывают и организуют импортируемые элементы на лету.</"
-"h3><h3>Таким образом, с помощью digiKam вы можете импортировать, "
+"p><p>Таким образом, с помощью digiKam вы можете импортировать, "
 "организовывать, улучшать, искать, экспортировать свои коллекции фото и видео "
-"и многое другое…</h3><h3>В данный момент вы находитесь в режиме просмотра "
+"и многое другое…</p><p>В данный момент вы находитесь в режиме просмотра "
 "«Альбомы» digiKam. Альбомы — это места хранения ваших файлов, "
-"соответствующие папкам на жёстком диске.</h3><h3>digiKam обладает множеством "
-"мощных функций, описанных в <a href=\"https://docs.digikam.org/en/index.html"
-"\">документации</a>.</h3><h3>На <a href=\"https://www.digikam.org\">домашней "
-"странице digiKam</a> размещается информация о новых версиях приложения.</"
-"h3><h3>Для связи с сообществом пользователей digiKam или поддержки команды "
-"разработчиков перейдите по ссылкам, указанным в пункте меню «Справка». "
-"Спасибо за поддержку и использование проекта digiKam.</h3>"
+"соответствующие папкам на жёстком диске.</p><p>digiKam обладает множеством "
+"мощных функций, описанных в <b><a href=\"https://docs.digikam.org/en/index."
+"html\">документации</a></b>.</p><p>На <b><a href=\"https://www.digikam.org"
+"\">домашней странице digiKam</a></b> размещается информация о новых версиях "
+"приложения.</p><p>Для связи с сообществом пользователей digiKam или "
+"поддержки команды разработчиков используйте ссылки в пункте меню <b>Справка</"
+"b>.</p><h3>Спасибо за поддержку и использование проекта digiKam.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3618,19 +3598,15 @@ msgid "Lens:"
 msgstr "Объектив:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">400 user-reports</a> closed on Bugzilla."
 msgstr ""
-"Было исправлено более <a href=\"https://bugs.kde.org/buglist.cgi?"
+"Исправлено более <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 отчётов об ошибках </a> в Bugzilla;"
+"%1\">400 отчётов об ошибках</a> в Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, fuzzy, kde-format
@@ -64819,12 +64795,10 @@ msgid "Large"
 msgstr "Большой"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "Большой"
+msgstr "Очень большой"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -68038,14 +68012,7 @@ msgid "AI GPU Test"
 msgstr "Проверка AI GPU"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -68059,7 +68026,8 @@ msgstr ""
 "ускорения графического процессора при запуске моделей искусственного\n"
 "интеллекта. Будет проверено наличие установленных в OpenCV и\n"
 "OpenCL необходимых библиотек и драйверов.\n"
-"Проверить систему сейчас?"
+"\n"
+"Запустить проверку сейчас?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
 #, kde-format
@@ -68103,6 +68071,12 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"Тест не пройден. Система может не поддерживать аппаратное ускорение GPU для "
+"моделей ИИ.\n"
+"\n"
+"Примечание для пользователей видеокарт NVidia: прочитайте онлайн-"
+"документацию с помощью кнопки «Справка» и настройте устройство для его "
+"обнаружения и использования во время работы digiKam."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format
