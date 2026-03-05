@@ -3408,6 +3408,9 @@ msgid ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">400 user-reports</a> closed on Bugzilla."
 msgstr ""
+"解决了 <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">400 个用户报告的程序缺陷</a>。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -3416,6 +3419,8 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"内建的 QtAVPlayer 已升级到最新的上游版本 2026-01-24，这将带来大量程序缺陷修复"
+"和性能增强 (仅限 Qt5)。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format

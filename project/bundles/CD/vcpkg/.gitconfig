@@ -11,7 +11,7 @@
 	up = pull --rebase -v --stat
 	ci = commit -a -v
 [core]
-	editor = mcedit
+	editor = C:\\Program Files\\Notepad++\\notepad++.exe
 
 [user]
 	name = Gilles Caulier
@@ -46,3 +46,5 @@
 
 [color "sh"]
         branch = yellow
+[pull]
+	rebase = false
