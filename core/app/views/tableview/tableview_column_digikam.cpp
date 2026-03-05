@@ -498,7 +498,7 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             }
             else
             {
-                grouped = i18nc("@info: item properties", "Yes");
+                grouped = i18nc("@info: item properties", "No");
             }
 
             return grouped;
