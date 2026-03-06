@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:42+0000\n"
+"POT-Creation-Date: 2026-03-06 00:41+0000\n"
 "PO-Revision-Date: 2026-02-23 22:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -4080,7 +4080,6 @@ msgid "White"
 msgstr "לבן"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:493
-#: core/app/views/tableview/tableview_column_digikam.cpp:501
 #: core/app/views/tableview/tableview_column_digikam.cpp:509
 #: core/libs/properties/import/importitempropertiestab.cpp:353
 #: core/libs/properties/import/importitempropertiestab.cpp:368
@@ -4103,6 +4102,7 @@ msgctxt "@info: item properties"
 msgid "Yes (stack)"
 msgstr "כן (ערמה)"
 
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
 #: core/libs/properties/import/importitempropertiestab.cpp:349
 #: core/libs/properties/import/importitempropertiestab.cpp:364

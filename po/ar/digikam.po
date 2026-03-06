@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-02 00:42+0000\n"
-"PO-Revision-Date: 2026-02-25 21:47+0400\n"
+"POT-Creation-Date: 2026-03-06 00:41+0000\n"
+"PO-Revision-Date: 2026-03-05 09:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3558,11 +3558,7 @@ msgid "Lens:"
 msgstr "العدسة:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">400 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3570,7 +3566,7 @@ msgid ""
 msgstr ""
 "أكثر من href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">400 تقرير مستخدم أغلقت على bugzilla."
+"%1\">400 تقرير مستخدم أغلقت على Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -4210,7 +4206,6 @@ msgid "White"
 msgstr "أبيض"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:493
-#: core/app/views/tableview/tableview_column_digikam.cpp:501
 #: core/app/views/tableview/tableview_column_digikam.cpp:509
 #: core/libs/properties/import/importitempropertiestab.cpp:353
 #: core/libs/properties/import/importitempropertiestab.cpp:368
@@ -4233,6 +4228,7 @@ msgctxt "@info: item properties"
 msgid "Yes (stack)"
 msgstr "نعم (كومة)"
 
+#: core/app/views/tableview/tableview_column_digikam.cpp:501
 #: core/app/views/tableview/tableview_column_digikam.cpp:510
 #: core/libs/properties/import/importitempropertiestab.cpp:349
 #: core/libs/properties/import/importitempropertiestab.cpp:364
