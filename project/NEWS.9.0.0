@@ -66,6 +66,7 @@ Grouped Items   : Show items from an open group highlighted for a better usabili
 Grouped Items   : Usability improvements of the grouped icon-view items overlay.
 Grouped Items   : Thumbbar improvements to support grouped items visibility as with Icon-View.
 
+Preview         : A new Survey tool have been introduced to preview items in a separated windows and synchronized with the icon-view. It support all features available in preview mode. I can be used in fullscreen on a separated monitor to quickly review items during you workflow.
 Preview         : Extend Image and Video preview toolbar overlay with Labels editor.
 Preview         : Add new toolbar buttons: exposure indicators, color management, OSD, magnifier.
 Preview         : Add context-menu to the video player.

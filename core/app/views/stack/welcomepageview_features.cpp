@@ -69,6 +69,7 @@ QString WelcomePageView::featuresTabContent() const
 
     newFeatures << i18n("Preview Mode improvements:")
                 + appendSubList(QStringList()
+                    << i18n("A new Survey tool have been introduced to preview items in a separated windows and synchronized with the icon-view. It support all features available in preview mode. I can be used in fullscreen on a separated monitor to quickly review items during you workflow.")
                     << i18n("Extend Image and Video preview toolbar overlay with Labels editor.")
                     << i18n("Add new Preview toolbar buttons: exposure indicators, color management, OSD, magnifier.")
                     << i18n("Add context-menu to the video player.")
