@@ -338,8 +338,6 @@ void TimeAdjustDialog::slotOkExitTimestamps()
         return;
     }
 
-
-
     d->exitAfterOk = true;
     slotUpdateTimestamps();
 }
