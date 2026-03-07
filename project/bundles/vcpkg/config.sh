@@ -12,7 +12,7 @@
 # /e/ is E:/ drive
 
 # Absolute path where are installed VCPKG scripts, portfiles, and configurations.
-VCPKG_DIR="/c/vcpkg"
+VCPKG_DIR="/e/vcpkg"
 
 # Absolute path where are installed all compiled targets.
 INSTALL_DIR="/e/dk"
