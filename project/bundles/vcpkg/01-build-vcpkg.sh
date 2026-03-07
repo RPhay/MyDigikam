@@ -146,7 +146,8 @@ else
 fi
 
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install opencv4[opencl,dnn,openmp,thread]
-$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install boost
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install boost-graph
+$VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install boost-uuid
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install lcms
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install eigen3
 $VCPKG_DIR/vcpkg ${VCPKG_COMMON_OPTIONS[@]} install expat
