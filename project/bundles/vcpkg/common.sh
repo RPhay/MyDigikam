@@ -181,7 +181,7 @@ set -eE
 
 }
 
-CheckCmakeBin()
+ChecksCmakeBin()
 {
 
 # Check if the Cmake CLI tool is installed with Visual Studio.
