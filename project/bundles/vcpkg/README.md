@@ -80,10 +80,6 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
         + Checkout/Commit Unix EOL
         + MinTTY Terminal
 
-    - CMake 3.27 or later                               https://cmake.org/download/
-        + Install to default path
-        + Add CMake path to current user                Cmake needs to be installed outside Msys2
-
     - NSIS 3.x                                          https://nsis-dev.github.io/
 
     - IcoUtils 0.32 or later                            https://sourceforge.net/projects/unix-utils/files/icoutils/
