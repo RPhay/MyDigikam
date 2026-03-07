@@ -130,7 +130,7 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     To build and install the base of VCPKG tools-chain including Qt framework and all low level dependencies.
 
     NOTE: due to long path problems while compiling under Windows and MSVC, VCPKG working directories must adjusted as shortest as possible:
-        VCPKG_DIR=C:/vcpkg/
+        VCPKG_DIR=E:/vcpkg/
         INSTALL_DIR=E:/dk/
         DOWNLOAD_DIR=E:/d/
         BUILDING_DIR=E:/b/
