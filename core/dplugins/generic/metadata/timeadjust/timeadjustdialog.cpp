@@ -338,13 +338,19 @@ void TimeAdjustDialog::slotOkExitTimestamps()
         return;
     }
 
+
+
     d->exitAfterOk = true;
     slotUpdateTimestamps();
 }
 
 void TimeAdjustDialog::slotPreviewTimer()
 {
-    if (d->thread->isRunning())
+    if      (d->thread->isRunning() && d->isProcessed)
+    {
+        return;
+    }
+    else if (d->thread->isRunning())
     {
         d->thread->cancel();
         d->thread->wait();
@@ -362,6 +368,7 @@ void TimeAdjustDialog::slotUpdateTimer()
     d->listView->setWaitStatus();
 
     d->progressBar->show();
+    d->progressBar->reset();
     d->progressBar->setMaximum(d->itemsUsedMap.size());
     d->progressBar->progressScheduled(i18nc("@info", "Adjust Time and Date"), true, true);
     d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("appointment-new")).pixmap(22, 22));

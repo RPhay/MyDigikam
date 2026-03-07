@@ -79,7 +79,7 @@ ActionThreadBase::~ActionThreadBase()
 {
     // Cancel the thread
 
-    cancel(false);
+    cancel();
 
     // Wait for the thread to finish
 
@@ -151,9 +151,9 @@ void ActionThreadBase::slotJobFinished()
     d->condVarJobs.wakeAll();
 }
 
-void ActionThreadBase::cancel(bool isCancel)
+void ActionThreadBase::cancel()
 {
-    if (isCancel)
+    if (d->running)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cancel Main Thread";
     }
@@ -189,10 +189,6 @@ void ActionThreadBase::cancel(bool isCancel)
     d->todo.clear();
     d->pending.clear();
     d->running = false;
-
-    // Wait for the jobs to finish
-
-    d->pool->waitForDone();
 
     d->condVarJobs.wakeAll();
 }
@@ -252,6 +248,10 @@ void ActionThreadBase::run()
             d->condVarJobs.wait(&d->mutex);
         }
     }
+
+    // Wait for the jobs to finish
+
+    d->pool->waitForDone();
 }
 
 void ActionThreadBase::setCurrentThreadName(const QString& name)

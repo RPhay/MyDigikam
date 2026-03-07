@@ -67,7 +67,7 @@ public:
     /**
      * @brief Cancel processing of current jobs under progress.
      */
-    void cancel(bool isCancel = true);
+    void cancel();
 
     /**
      * @brief Call this method to customize a thread name visible in a process viewer.
