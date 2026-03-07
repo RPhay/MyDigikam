@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-06 00:41+0000\n"
+"POT-Creation-Date: 2026-03-07 00:41+0000\n"
 "PO-Revision-Date: 2026-03-02 08:50-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3743,12 +3743,21 @@ msgstr "Melhorias no modo de visualização:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:72
 #, kde-format
+msgid ""
+"A new Survey tool have been introduced to preview items in a separated "
+"windows and synchronized with the icon-view. It support all features "
+"available in preview mode. I can be used in fullscreen on a separated "
+"monitor to quickly review items during you workflow."
+msgstr ""
+
+#: core/app/views/stack/welcomepageview_features.cpp:73
+#, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
 "Sobreposição da barra de ferramentas da visualização de imagens e vídeos com "
 "o editor de rótulos."
 
-#: core/app/views/stack/welcomepageview_features.cpp:73
+#: core/app/views/stack/welcomepageview_features.cpp:74
 #, kde-format
 msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
@@ -3757,12 +3766,12 @@ msgstr ""
 "Adicionados novos botões à barra de ferramentas da visualização: indicadores "
 "de exposição, gerenciamento de cor, OSD e lupa."
 
-#: core/app/views/stack/welcomepageview_features.cpp:74
+#: core/app/views/stack/welcomepageview_features.cpp:75
 #, kde-format
 msgid "Add context-menu to the video player."
 msgstr "Adicionado menu de contexto ao reprodutor de vídeo."
 
-#: core/app/views/stack/welcomepageview_features.cpp:75
+#: core/app/views/stack/welcomepageview_features.cpp:76
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
@@ -3770,7 +3779,7 @@ msgstr ""
 "Adicionado indicador de progresso de carregamento na barra de status (vista "
 "em miniaturas e Mesa de Luz)."
 
-#: core/app/views/stack/welcomepageview_features.cpp:76
+#: core/app/views/stack/welcomepageview_features.cpp:77
 #, kde-format
 msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
@@ -3779,7 +3788,7 @@ msgstr ""
 "Adicionado suporte a gestos no trackpad para ampliar o conteúdo, deslocar a "
 "tela e alternar entre os itens anterior e seguinte."
 
-#: core/app/views/stack/welcomepageview_features.cpp:77
+#: core/app/views/stack/welcomepageview_features.cpp:78
 #, kde-format
 msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
@@ -3789,14 +3798,14 @@ msgstr ""
 "da tela de visualização. O tamanho da ferramenta e o fator de zoom são "
 "personalizáveis."
 
-#: core/app/views/stack/welcomepageview_features.cpp:78
+#: core/app/views/stack/welcomepageview_features.cpp:79
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
 "Adicionados indicadores de subexposição e superexposição à tela de "
 "visualização."
 
-#: core/app/views/stack/welcomepageview_features.cpp:79
+#: core/app/views/stack/welcomepageview_features.cpp:80
 #, kde-format
 msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
@@ -3804,19 +3813,19 @@ msgid ""
 msgstr ""
 "Ferrovia sobreposta à tela é exibida quando a barra de rolagem está visível."
 
-#: core/app/views/stack/welcomepageview_features.cpp:82
+#: core/app/views/stack/welcomepageview_features.cpp:83
 #, kde-format
 msgid "Advanced Search improvements:"
 msgstr "Melhorias na pesquisa avançada:"
 
-#: core/app/views/stack/welcomepageview_features.cpp:84
+#: core/app/views/stack/welcomepageview_features.cpp:85
 #, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
 "Novas opções para encontrar propriedades vazias cadastradas no banco de "
 "dados."
 
-#: core/app/views/stack/welcomepageview_features.cpp:85
+#: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
 msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
@@ -3825,25 +3834,25 @@ msgstr ""
 "Adicionado suporte para que os campos de pesquisa Criador e Autor sejam "
 "listas suspensas preenchidas com os valores já presentes no banco de dados."
 
-#: core/app/views/stack/welcomepageview_features.cpp:86
+#: core/app/views/stack/welcomepageview_features.cpp:87
 #, kde-format
 msgid "Add support to search recently modified items in the database."
 msgstr ""
 "Adicionado suporte para pesquisar itens modificados recentemente no banco de "
 "dados."
 
-#: core/app/views/stack/welcomepageview_features.cpp:89
+#: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
 msgstr ""
 "Atualiza o motor RAW interno para o último snapshot do Libraw de 16/02/2026."
 
-#: core/app/views/stack/welcomepageview_features.cpp:90
+#: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
 msgid "New RAW camera supported:"
 msgstr "Novas câmeras RAW suportadas:"
 
-#: core/app/views/stack/welcomepageview_features.cpp:92
+#: core/app/views/stack/welcomepageview_features.cpp:93
 #, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
@@ -3852,32 +3861,32 @@ msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:93
+#: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
 msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:94
+#: core/app/views/stack/welcomepageview_features.cpp:95
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
 msgstr "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:95
+#: core/app/views/stack/welcomepageview_features.cpp:96
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
 msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:96
+#: core/app/views/stack/welcomepageview_features.cpp:97
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
 msgstr "Nikon (somente compressão padrão): Z6-III, Z f, Z30, Z8 ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:97
+#: core/app/views/stack/welcomepageview_features.cpp:98
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
 msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:98
+#: core/app/views/stack/welcomepageview_features.cpp:99
 #, kde-format
 msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
@@ -3886,12 +3895,12 @@ msgstr ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:99
+#: core/app/views/stack/welcomepageview_features.cpp:100
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
 msgstr "Pentax KF, K III Monochrome ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:100
+#: core/app/views/stack/welcomepageview_features.cpp:101
 #, kde-format
 msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
@@ -3900,27 +3909,27 @@ msgstr ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:101
+#: core/app/views/stack/welcomepageview_features.cpp:102
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
 msgstr "Drones Multiple DJI e Skydio ;"
 
-#: core/app/views/stack/welcomepageview_features.cpp:102
+#: core/app/views/stack/welcomepageview_features.cpp:103
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
 msgstr "Vários smartphones com gravação no formato DNG."
 
-#: core/app/views/stack/welcomepageview_features.cpp:107
+#: core/app/views/stack/welcomepageview_features.cpp:108
 #, kde-format
 msgid "...and much more."
 msgstr "...e muito mais."
 
-#: core/app/views/stack/welcomepageview_features.cpp:113
+#: core/app/views/stack/welcomepageview_features.cpp:114
 #, kde-format
 msgid "<li>%1</li>"
 msgstr "<li>%1</li>"
 
-#: core/app/views/stack/welcomepageview_features.cpp:116
+#: core/app/views/stack/welcomepageview_features.cpp:117
 #, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
