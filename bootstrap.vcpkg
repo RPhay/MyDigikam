@@ -25,6 +25,17 @@ VCPKG_DIR="/c/vcpkg"
 VCPKG_TRIPLET="x64-windows"
 VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
 
+CMAKE_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "cmake.exe" -type f -executable`"
+echo "$CMAKE_BIN"
+
+if [ ! -f "$CMAKE_BIN" ] ; then
+    echo "CMake CLI tool is not installed"
+    echo "Install VSCommunity C++ CMake tools component."
+    exit 1
+else
+    echo "Check CMake CLI tools passed..."
+fi
+
 BUILD_TYPE=$2
 
 if [[ $BUILD_TYPE == "" ]]; then
@@ -43,11 +54,11 @@ $PATH:\
 /c/bison:/c/icoutils/bin:\
 $VCPKG_INSTALL_PREFIX/tools/gperf:\
 $VCPKG_INSTALL_PREFIX/tools/curl:\
-$VCPKG_INSTALL_PREFIX/tools/python3:\
 $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
 $VCPKG_INSTALL_PREFIX/tools/qt5/bin\
+/e/dk/tools/python/python-3.14.2-x64-1:\
 "
 
 echo "PATH=$PATH"
@@ -60,7 +71,7 @@ fi
 
 cd build
 
-cmake .. \
+"${CMAKE_BIN}" .. \
       -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
