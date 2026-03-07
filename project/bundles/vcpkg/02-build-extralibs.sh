@@ -46,8 +46,8 @@ cd $BUILDING_DIR/dk_cmake
 
 rm -rf $BUILDING_DIR/dk_cmake/* || true
 
-${CMAKE_BIN} $ORIG_WD/../3rdparty \
-      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.${CMAKE_BIN} \
+"${CMAKE_BIN}" $ORIG_WD/../3rdparty \
+      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_BUILD_TYPE=RelWithDebInfo \
       -DCMAKE_COLOR_MAKEFILE=ON \
@@ -64,53 +64,53 @@ ${CMAKE_BIN} $ORIG_WD/../3rdparty \
 # NOTE: The order to compile each component here is very important.
 
 # core KDE frameworks dependencies
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_extra-${CMAKE_BIN}-modules
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kconfig
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_breeze-icons
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kcoreaddons
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kwindowsystem
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_solid
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_threadweaver
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_karchive
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kdbusaddons
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_ki18n
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kcrash
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kcodecs
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kguiaddons
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kwidgetsaddons
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kitemviews
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kcompletion
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_extra-cmake-modules
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kconfig
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_breeze-icons
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kcoreaddons
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kwindowsystem
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_solid
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_threadweaver
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_karchive
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kdbusaddons
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_ki18n
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kcrash
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kcodecs
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kguiaddons
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kwidgetsaddons
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kitemviews
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kcompletion
 
 if [[ $DK_QTVERSION == 6 ]] ; then
 
-    ${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kcolorscheme
+    "${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kcolorscheme
 
 fi
 
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kconfigwidgets
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kiconthemes
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kservice
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kxmlgui
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kbookmarks
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kimageformats
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kconfigwidgets
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kiconthemes
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kservice
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kxmlgui
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kbookmarks
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kimageformats
 
 # Extra support for digiKam
 
 # Desktop integration support
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_knotifications
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kjobwidgets
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kio
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_knotifyconfig
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_knotifications
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kjobwidgets
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kio
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_knotifyconfig
 
 # libksane support
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_sonnet
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_ktextwidgets
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_sonnet
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_ktextwidgets
 
 # Calendar support
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kcalendarcore
 
 # Breeze style support
-${CMAKE_BIN} --build . --parallel --config RelWithDebInfo --target ext_breeze
+"${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_breeze
 
 #################################################################################################
 
