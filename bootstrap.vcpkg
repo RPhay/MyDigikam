@@ -21,7 +21,7 @@ if [[ $INSTALL_DIR == "" ]]; then
 
 fi
 
-VCPKG_DIR="/c/vcpkg"
+VCPKG_DIR="/e/vcpkg"
 VCPKG_TRIPLET="x64-windows"
 VCPKG_INSTALL_PREFIX=$INSTALL_DIR/$VCPKG_TRIPLET
 
@@ -58,7 +58,7 @@ $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
 $VCPKG_INSTALL_PREFIX/tools/qt5/bin\
-/e/dk/tools/python/python-3.14.2-x64-1:\
+$INSTALL_DIR/tools/python/python-3.14.2-x64-1:\
 "
 
 echo "PATH=$PATH"
