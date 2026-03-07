@@ -64,6 +64,7 @@ rm -rf $BUILDING_DIR/dk_cmake/* || true
 # NOTE: The order to compile each component here is very important.
 
 # core KDE frameworks dependencies
+
 "${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_extra-cmake-modules
 "${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_kconfig
 "${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_breeze-icons
