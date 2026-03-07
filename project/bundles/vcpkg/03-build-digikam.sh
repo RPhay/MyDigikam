@@ -30,6 +30,7 @@ echo "------------------------------------------------"
 . ./common.sh
 StartScript
 ChecksCPUCores
+ChecksCmakeBin
 RegisterRemoteServers
 AppendVCPKGPaths
 
@@ -66,8 +67,8 @@ cd $BUILDING_DIR/dk_cmake
 
 rm -rf $BUILDING_DIR/dk_cmake/* || true
 
-cmake $ORIG_WD/../3rdparty \
-      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
+${CMAKE_BIN} $ORIG_WD/../3rdparty \
+      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.${CMAKE_BIN} \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
@@ -82,9 +83,9 @@ cmake $ORIG_WD/../3rdparty \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_exiv2 --parallel
+${CMAKE_BIN} --build . --config RelWithDebInfo --target ext_exiv2 --parallel
 cp $DOWNLOAD_DIR/exiv2_manifest.txt $ORIG_WD/data/
-cmake --build . --config RelWithDebInfo --target ext_lensfun --parallel
+${CMAKE_BIN} --build . --config RelWithDebInfo --target ext_lensfun --parallel
 cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 #################################################################################################
@@ -175,7 +176,7 @@ echo -e "\n\n"
 echo "---------- Building digiKam $DK_VERSION"
 
 cd "$DK_BUILDTEMP/digikam-$DK_VERSION/build"
-cmake --build . --parallel --config RelWithDebInfo
+${CMAKE_BIN} --build . --parallel --config RelWithDebInfo
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot compile digiKam $DK_VERSION."
@@ -196,7 +197,7 @@ echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
 cd "$DK_BUILDTEMP/digikam-$DK_VERSION/build"
-cmake --install . --config RelWithDebInfo
+${CMAKE_BIN} --install . --config RelWithDebInfo
 
 cd "$ORIG_WD"
 
@@ -217,8 +218,8 @@ cd $BUILDING_DIR/dk_cmake
 
 rm -rf $BUILDING_DIR/dk_cmake/* || true
 
-cmake $ORIG_WD/../3rdparty \
-      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
+${CMAKE_BIN} $ORIG_WD/../3rdparty \
+      -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.${CMAKE_BIN} \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
@@ -233,9 +234,9 @@ cmake $ORIG_WD/../3rdparty \
       -DENABLE_QTVERSION=$DK_QTVERSION \
       -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_mosaicwall --parallel
-cmake --build . --config RelWithDebInfo --target ext_flowview   --parallel
-cmake --build . --config RelWithDebInfo --target ext_gmic_qt    --parallel
+${CMAKE_BIN} --build . --config RelWithDebInfo --target ext_mosaicwall --parallel
+${CMAKE_BIN} --build . --config RelWithDebInfo --target ext_flowview   --parallel
+${CMAKE_BIN} --build . --config RelWithDebInfo --target ext_gmic_qt    --parallel
 
 #################################################################################################
 

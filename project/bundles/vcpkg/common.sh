@@ -180,3 +180,21 @@ done
 set -eE
 
 }
+
+CheckCmakeBin()
+{
+
+# Check if the Cmake CLI tool is installed with Visual Studio.
+
+CMAKE_BIN="`find "/c/Program Files/Microsoft Visual Studio/" -name "cmake.exe" -type f -executable`"
+echo "$CMAKE_BIN"
+
+if [ ! -f "$CMAKEP_BIN" ] ; then
+    echo "CMake CLI tool is not installed"
+    echo "Install VSCommunity C++ CMake tools component."
+    exit 1
+else
+    echo "Check CMake CLI tools passed..."
+fi
+
+}
