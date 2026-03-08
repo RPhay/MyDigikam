@@ -30,6 +30,7 @@
 namespace Digikam
 {
 
+class StackedView;
 class DigikamItemView;
 class ItemPreviewView;
 class ItemThumbnailBar;
@@ -57,7 +58,9 @@ public:
 
 public:
 
-    explicit SurveyStack(DigikamItemView* const iconView, QWidget* const parent = nullptr);
+    explicit SurveyStack(StackedView* const stackedView,
+                         DigikamItemView* const iconView,
+                         QWidget* const parent = nullptr);
     ~SurveyStack() override;
 
     /**

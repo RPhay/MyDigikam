@@ -65,6 +65,7 @@ public:
     ItemThumbnailBar* thumbBar          = nullptr;
     ItemPreviewView*  imagePreviewView  = nullptr;
     ThumbBarDock*     thumbBarDock      = nullptr;
+    StackedView*      stackedView       = nullptr;
 
     QMap<int, int>    stackMap;
 
@@ -76,10 +77,13 @@ public:
 
 };
 
-SurveyStack::SurveyStack(DigikamItemView* const iconView, QWidget* const parent)
+SurveyStack::SurveyStack(StackedView* const stackedView,
+                         DigikamItemView* const iconView,
+                         QWidget* const parent)
     : QStackedWidget(parent),
       d             (new Private)
 {
+    d->stackedView      = stackedView;
     d->imageIconView    = iconView;
     d->imagePreviewView = new ItemPreviewView(this);
 
@@ -110,34 +114,34 @@ SurveyStack::SurveyStack(DigikamItemView* const iconView, QWidget* const parent)
     // -----------------------------------------------------------------
 
     connect(d->imagePreviewView, SIGNAL(signalPopupTagsView()),
-            this, SIGNAL(signalPopupTagsView()));
+            d->stackedView, SIGNAL(signalPopupTagsView()));
 
     connect(d->imagePreviewView, SIGNAL(signalGotoAlbumAndItem(ItemInfo)),
-            this, SIGNAL(signalGotoAlbumAndItem(ItemInfo)));
+            d->stackedView, SIGNAL(signalGotoAlbumAndItem(ItemInfo)));
 
     connect(d->imagePreviewView, SIGNAL(signalGotoDateAndItem(ItemInfo)),
-            this, SIGNAL(signalGotoDateAndItem(ItemInfo)));
+            d->stackedView, SIGNAL(signalGotoDateAndItem(ItemInfo)));
 
     connect(d->imagePreviewView, SIGNAL(signalGotoTagAndItem(int)),
-            this, SIGNAL(signalGotoTagAndItem(int)));
+            d->stackedView, SIGNAL(signalGotoTagAndItem(int)));
 
     connect(d->imagePreviewView, SIGNAL(signalNextItem()),
-            this, SIGNAL(signalNextItem()));
+            d->stackedView, SIGNAL(signalNextItem()));
 
     connect(d->imagePreviewView, SIGNAL(signalPrevItem()),
-            this, SIGNAL(signalPrevItem()));
+            d->stackedView, SIGNAL(signalPrevItem()));
 
     connect(d->imagePreviewView, SIGNAL(signalDeleteItem()),
-            this, SIGNAL(signalDeleteItem()));
+            d->stackedView, SIGNAL(signalDeleteItem()));
 
     connect(d->imagePreviewView, SIGNAL(signalEscapePreview()),
-            this, SIGNAL(signalEscapePreview()));
+            d->stackedView, SIGNAL(signalEscapePreview()));
 
     connect(d->imagePreviewView->layout(), SIGNAL(zoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
 
     connect(d->imagePreviewView, SIGNAL(signalAddToExistingQueue(int)),
-            this, SIGNAL(signalAddToExistingQueue(int)));
+            d->stackedView, SIGNAL(signalAddToExistingQueue(int)));
 
     connect(d->thumbBar, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotThumbBarSelectionChanged()));
@@ -154,19 +158,19 @@ SurveyStack::SurveyStack(DigikamItemView* const iconView, QWidget* const parent)
 #ifdef HAVE_MEDIAPLAYER
 
     connect(d->mediaPlayerView, SIGNAL(signalNextItem()),
-            this, SIGNAL(signalNextItem()));
+            d->stackedView, SIGNAL(signalNextItem()));
 
     connect(d->mediaPlayerView, SIGNAL(signalPrevItem()),
-            this, SIGNAL(signalPrevItem()));
+            d->stackedView, SIGNAL(signalPrevItem()));
 
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
-            this, SIGNAL(signalEscapePreview()));
+            d->stackedView, SIGNAL(signalEscapePreview()));
 
     connect(d->mediaPlayerView, SIGNAL(signalDeleteItem()),
-            this, SIGNAL(signalDeleteItem()));
+            d->stackedView, SIGNAL(signalDeleteItem()));
 
     connect(d->mediaPlayerView, SIGNAL(signalPopupTagsView()),
-            this, SIGNAL(signalPopupTagsView()));
+            d->stackedView, SIGNAL(signalPopupTagsView()));
 
 #endif // HAVE_MEDIAPLAYER
 

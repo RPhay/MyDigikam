@@ -20,7 +20,7 @@ Bundles component versions:
 BUGFIXES:
 
 001 --> 517251 - MariaSQL Migration.
-002 -->
+002 --> 517308 - In the new "Survey" tool, the left and right overlay navigation arrows are not working.
 003 -->
 004 -->
 005 -->

@@ -100,7 +100,7 @@ StackedView::StackedView(QWidget* const parent)
       d             (new Private)
 {
     d->imageIconView    = new DigikamItemView(this);
-    SurveyWindow::surveyWindow()->init(d->imageIconView);
+    SurveyWindow::surveyWindow()->init(this, d->imageIconView);
 
     d->imagePreviewView = new ItemPreviewView(this);
 

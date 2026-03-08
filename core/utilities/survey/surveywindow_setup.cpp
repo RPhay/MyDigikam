@@ -280,7 +280,8 @@ void SurveyWindow::setupConnections()
     );
 }
 
-void SurveyWindow::setupUserArea(DigikamItemView* const iconView)
+void SurveyWindow::setupUserArea(StackedView* const stackedView,
+                                 DigikamItemView* const iconView)
 {
     QWidget* const mainW    = new QWidget(this);
     d->hSplitter            = new SidebarSplitter(Qt::Horizontal, mainW);
@@ -294,7 +295,7 @@ void SurveyWindow::setupUserArea(DigikamItemView* const iconView)
     d->hSplitter->addWidget(d->dockArea);
     d->hSplitter->setStretchFactor(d->hSplitter->indexOf(d->dockArea), 10);
 
-    d->stack          = new SurveyStack(iconView, this);
+    d->stack                = new SurveyStack(stackedView, iconView, this);
     d->stack->setDockArea(d->dockArea);
     d->dockArea->setCentralWidget(d->stack);
 

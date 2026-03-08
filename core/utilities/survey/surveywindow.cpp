@@ -57,13 +57,14 @@ SurveyWindow::SurveyWindow()
     setAttribute(Qt::WA_DeleteOnClose, false);
 }
 
-void SurveyWindow::init(DigikamItemView* const iconView)
+void SurveyWindow::init(StackedView* const stackedView,
+                        DigikamItemView* const iconView)
 {
     setFullScreenOptions(FS_LIGHTTABLE);
 
     // -- Build the GUI -------------------------------
 
-    setupUserArea(iconView);
+    setupUserArea(stackedView, iconView);
     setupActions();
     setupStatusBar();
 

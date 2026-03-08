@@ -29,6 +29,7 @@ namespace Digikam
 {
 
 class DigikamItemView;
+class StackedView;
 
 class SurveyWindow : public DXmlGuiWindow
 {
@@ -41,7 +42,8 @@ public:
     static SurveyWindow* surveyWindow();
     static bool          surveyWindowCreated();
 
-    void init(DigikamItemView* const iconView);
+    void init(StackedView* const stackedView,
+              DigikamItemView* const iconView);
 
     void refreshView();
     bool isSleeping()                             const;
@@ -135,7 +137,8 @@ private:
 
     void setupActions();
     void setupConnections();
-    void setupUserArea(DigikamItemView* const iconView);
+    void setupUserArea(StackedView* const stackedView,
+                       DigikamItemView* const iconView);
     void setupStatusBar();
 
 // --- Extra tool methods implemented in surveywindow_tools.cpp
