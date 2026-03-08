@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:41+0000\n"
+"POT-Creation-Date: 2026-03-08 00:41+0000\n"
 "PO-Revision-Date: 2026-03-05 09:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -16038,13 +16038,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "اكتب التاريخ والوقت الصحيحين لكل صورة"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "اضبط الوقت والتاريخ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, kde-format
@@ -16052,21 +16052,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "ألغِ العمليّة الحاليّة"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "أغلق"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"

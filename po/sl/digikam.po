@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:41+0000\n"
-"PO-Revision-Date: 2026-03-02 06:40+0100\n"
+"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"PO-Revision-Date: 2026-03-07 06:20+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3804,6 +3804,11 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
+"Uvedeno je bilo novo orodje za splošni pregled, ki omogoča predogled "
+"elementov v ločenih oknih in je sinhronizirano s pogledom ikon. Podpira vse "
+"funkcije, ki so na voljo v načinu predogleda. Uporabljate ga lahko v "
+"celozaslonskem načinu na ločenem monitorju za hiter pregled elementov med "
+"delovnim procesom."
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
@@ -16251,13 +16256,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "Za vsako sliko napiši popravljen datum in čas"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "Prilagodi čas in datum"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, kde-format
@@ -16265,21 +16270,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "Prekliči trenutno opravilo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "Zapri"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"

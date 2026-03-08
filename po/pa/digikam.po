@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:41+0000\n"
+"POT-Creation-Date: 2026-03-08 00:41+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -16169,14 +16169,14 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "ਹਰੇਕ ਫਾਇਲ ਲਈ ਮੇਟਾਡਾਟਾ ਲਿਖੋ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, fuzzy, kde-format
 #| msgid "Adjust Time and Date"
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "ਸਮਾਂ ਅਤੇ ਮਿਤੀ ਠੀਕ ਕਰੋ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, fuzzy, kde-format
@@ -16185,7 +16185,7 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, fuzzy, kde-format
 #| msgid "Cancel this operation."
@@ -16193,7 +16193,7 @@ msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "ਇਹ ਕਾਰਵਾਈ ਰੱਦ ਕਰੋ।"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, fuzzy, kde-format
 #| msgid "&Close"
@@ -16201,7 +16201,7 @@ msgctxt "@action"
 msgid "Close"
 msgstr "ਬੰਦ ਕਰੋ(&C)"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, fuzzy, kde-format
 #| msgid "Close view"

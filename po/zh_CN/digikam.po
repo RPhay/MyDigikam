@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:41+0000\n"
+"POT-Creation-Date: 2026-03-08 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3513,8 +3513,7 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
-"新增选择颜色直方图指示色功能到曲线、色阶、白平衡和黑白照片 (乌贼墨色调) 工"
-"具。"
+"新增选择颜色直方图指示色功能到曲线、色阶、白平衡和黑白照片 (复古褐色) 工具。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
@@ -5559,7 +5558,7 @@ msgstr "不透明度 (%)："
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:242
 #, kde-format
 msgid "Text settings"
-msgstr "文字设置"
+msgstr "文本设置"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:250
 #, kde-format
@@ -5569,7 +5568,7 @@ msgstr "在此输入您的水印字符串。"
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:251
 #, kde-format
 msgid "Watermark text: "
-msgstr "水印文字："
+msgstr "水印文本："
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:258
 #, kde-format
@@ -5596,22 +5595,22 @@ msgstr "字体不透明度："
 msgid ""
 "Set the opacity of the watermark text. 100 is fully opaque, 0 is fully "
 "transparent."
-msgstr "设定水印文字的不透明度。100 为完全不透明，0 为完全透明。"
+msgstr "设定水印文本的不透明度。100 为完全不透明，0 为完全透明。"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:284
 #, kde-format
 msgid "Check this if you want a background fill behind the text."
-msgstr "如果您想要在文字后面填充背景色，请勾选此项。"
+msgstr "如果您想要在文本后面填充背景色，请勾选此项。"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:286
 #, kde-format
 msgid "Use background"
-msgstr "文字背景色"
+msgstr "文本背景色"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:293
 #, kde-format
 msgid "Choose the color of the watermark background."
-msgstr "选择水印文字的背景颜色。"
+msgstr "选择水印文本的背景颜色。"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:294
 #, kde-format
@@ -5628,7 +5627,7 @@ msgstr "背景不透明度："
 msgid ""
 "Set the opacity of the watermark background. 100 is fully opaque, 0 is fully "
 "transparent."
-msgstr "设定水印文字背景颜色的不透明度。100 为完全不透明，0 为完全透明。"
+msgstr "设定水印文本背景颜色的不透明度。100 为完全不透明，0 为完全透明。"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:315
 #, kde-format
@@ -5806,7 +5805,7 @@ msgstr "添加水印"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to overlay an image or text as a visible watermark"
-msgstr "叠加图像或文字水印到图像之上"
+msgstr "叠加图像或文本水印到图像之上"
 
 #: core/dplugins/bqm/decorate/watermark/watermarkplugin.cpp:62
 #, kde-kuit-format
@@ -5814,7 +5813,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add a text watermark over images.</"
 "para>"
-msgstr "<para>用于叠加图像或文字水印到图像之上的批处理工具。</para>"
+msgstr "<para>用于叠加图像或文本水印到图像之上的批处理工具。</para>"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, kde-format
@@ -6187,7 +6186,7 @@ msgstr "标题："
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
-msgstr "在此输入标题文字。"
+msgstr "在此输入标题文本。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
 #, kde-format
@@ -6199,7 +6198,7 @@ msgstr "说明："
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
-msgstr "在此输入说明文字。"
+msgstr "在此输入说明文本。"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
@@ -7025,7 +7024,7 @@ msgstr ""
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:89
 #, kde-format
 msgid "Chroma subsampling:"
-msgstr "色品采样方式："
+msgstr "色度次采样方式："
 
 #: core/dplugins/dimg/jpeg/dimgjpegexportsettings.cpp:92
 #, kde-format
@@ -7061,13 +7060,13 @@ msgid ""
 "quartered in 4x1 blocks, high compression but low quality.</p><p><b>Note: "
 "JPEG always uses lossy compression.</b></p>"
 msgstr ""
-"<p>色品次采样算法利用人眼对色彩分辨率相对不敏感的特点来减小文件体积。不同的选"
+"<p>色度次采样算法利用人眼对色彩分辨率相对不敏感的特点来减小文件体积。不同的选"
 "项带来的差异因具体图像而异 - 大尺寸照片通常很难看出差异，而色块锐利、被缩小尺"
-"寸后的图像容易丢失颜色细节。</p><p><b>4:4:4</b> - 不进行色品次采样，画质最"
-"高，压缩率最小。</p><p><b>4:2:2</b> - 色品信息的水平分辨率减半，最小单元为 "
-"2x1 像素的色块，画质中等，压缩率一般。</p><p><b>4:2:0</b> - 色品信息的水平和"
+"寸后的图像容易丢失颜色细节。</p><p><b>4:4:4</b> - 不进行色度次采样，画质最"
+"高，压缩率最小。</p><p><b>4:2:2</b> - 色度信息的水平分辨率减半，最小单元为 "
+"2x1 像素的色块，画质中等，压缩率一般。</p><p><b>4:2:0</b> - 色度信息的水平和"
 "垂直分辨率同时减半，最小单元为 2x2 像素的色块，画质较低，压缩率较高。</"
-"p><p><b>4:1:1</b> - 色品水平分辨率降低到1/4，最小单元为 4x1 像素的色块，画质"
+"p><p><b>4:1:1</b> - 色度水平分辨率降低到1/4，最小单元为 4x1 像素的色块，画质"
 "较低，压缩率较高。</p><p><b>提示：JPEG 总是使用有损方式压缩图像。</b></p>"
 
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:43
@@ -7563,7 +7562,7 @@ msgid ""
 msgstr ""
 "<para>用于通过 Libtiff 编解码器加载和保存图像的插件。</para><para>标签图像文"
 "件格式 (Tagged Image File Format, TIFF) 是一种用于保存光栅图像的文件格式，常"
-"见于插画、出版和摄影行业。TIFF 在扫描、传真、字处理、光学文字识别 (OCR)、图像"
+"见于插画、出版和摄影行业。TIFF 在扫描、传真、字处理、光学文本识别 (OCR)、图像"
 "编辑、桌面出版和页面排版等领域得到了广泛的支持和运用。</para><para>详情请参"
 "见 <a href='https://baike.baidu.com/item/TIFF/2106'>TIFF 格式介绍页面</a>。</"
 "para>"
@@ -8264,12 +8263,12 @@ msgstr "添加边框..."
 msgid ""
 "This previews the text inserted in the image. You can use the mouse to move "
 "the text to the right location."
-msgstr "预览将要插入图像的文字效果。您可以使用鼠标拖动文字的位置。"
+msgstr "预览将要插入图像的文本效果。您可以使用鼠标拖动文本的位置。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:120
 #, kde-format
 msgid "Here, enter the text you want to insert in your image."
-msgstr "在此输入您想要插入到图像中的文字。"
+msgstr "在此输入您想要插入到图像中的文本。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:126
 #, kde-format
@@ -8325,7 +8324,7 @@ msgstr "270 度"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:176
 #, kde-format
 msgid "Select the text rotation to use here."
-msgstr "选择文字的旋转角度。"
+msgstr "选择文本的旋转角度。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:180
 #, kde-format
@@ -8336,7 +8335,7 @@ msgstr "颜色："
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:183
 #, kde-format
 msgid "Set here the font color to use."
-msgstr "设置文字的颜色。"
+msgstr "设置文本的颜色。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:187
 #, kde-format
@@ -8347,7 +8346,7 @@ msgstr "不透明度："
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:192
 #, kde-format
 msgid "Select the text opacity to use here."
-msgstr "设置文字的不透明度。"
+msgstr "设置文本的不透明度。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:196
 #, kde-format
@@ -8357,7 +8356,7 @@ msgstr "添加边框"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:197
 #, kde-format
 msgid "Add a solid border around text using current text color"
-msgstr "在文字外围用文字颜色绘制一个实线边框。"
+msgstr "在文本外围用文本颜色绘制一个实线边框。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:199
 #, kde-format
@@ -8367,46 +8366,46 @@ msgstr "半透明背景色"
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:200
 #, kde-format
 msgid "Use semi-transparent text background under image"
-msgstr "在文字下方显示半透明背景色。"
+msgstr "在文本下方显示半透明背景色。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:301
 #, kde-format
 msgid "Enter your text here."
-msgstr "输入要插入的文字。"
+msgstr "输入要插入的文本。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:420
 #, kde-format
 msgid "Insert Text Tool"
-msgstr "文字插入工具"
+msgstr "文本插入工具"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:433
 #, kde-format
 msgid "Insert Text"
-msgstr "插入文字"
+msgstr "插入文本"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:40
 #, kde-format
 msgctxt "@title"
 msgid "Insert Text"
-msgstr "插入文字"
+msgstr "插入文本"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to insert text over an image"
-msgstr "插入文字到图像中"
+msgstr "插入文本到图像中"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can insert text over an image."
-msgstr "用于为图像插入文字的图像编辑器工具。"
+msgstr "用于为图像插入文本的图像编辑器工具。"
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttoolplugin.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Insert Text..."
-msgstr "插入文字..."
+msgstr "插入文本..."
 
 #: core/dplugins/editor/decorate/texture/texturetool.cpp:132
 #, kde-format
@@ -13599,7 +13598,7 @@ msgid ""
 "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"
 msgstr ""
 "<b>提示：<a href='https://en.wikipedia.org/wiki/"
-"IPTC_Information_Interchange_Model'>IPTC</a> 规范对文字标签的长度有所限制。请"
+"IPTC_Information_Interchange_Model'>IPTC</a> 规范对文本标签的长度有所限制。请"
 "使用悬停帮助了解详情。请考虑换用 <a href='https://en.wikipedia.org/wiki/"
 "Extensible_Metadata_Platform'>XMP</a> 规范。</b>"
 
@@ -15604,13 +15603,13 @@ msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
 msgstr "写入已校准日期和时间到每张图像"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:366
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, kde-format
 msgctxt "@info"
 msgid "Adjust Time and Date"
 msgstr "调整时间和日期"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:397
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:402
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:660
 #: core/utilities/imageeditor/editor/editorwindow.cpp:584
 #, kde-format
@@ -15618,21 +15617,21 @@ msgctxt "@action"
 msgid "Cancel"
 msgstr "取消"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:399
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:404
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:662
 #, kde-format
 msgctxt "@info"
 msgid "Cancel current operation"
 msgstr "取消当前操作"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:403
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:408
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:653
 #, kde-format
 msgctxt "@action"
 msgid "Close"
 msgstr "关闭"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:405
+#: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:410
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:655
 #, kde-format
 msgctxt "@info"
@@ -17997,25 +17996,25 @@ msgstr "完整自动分页，不使用 OSD (默认)。"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single column of text of variable sizes."
-msgstr "假设是一列大小不等的文字"
+msgstr "假设是一列大小不等的文本"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of vertically aligned text."
-msgstr "假设是一块间距均匀，垂直对齐的文字"
+msgstr "假设是一块间距均匀，垂直对齐的文本"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Assume a single uniform block of text."
-msgstr "假设是一块间距均匀的文字"
+msgstr "假设是一块间距均匀的文本"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Treat the image as a single text line."
-msgstr "将图像视作一行文字。"
+msgstr "将图像视作一行文本。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:62
 #, kde-format
@@ -18039,13 +18038,13 @@ msgstr "将图像视作一个字母。"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text. Find as much text as possible in no particular order."
-msgstr "稀疏文本。以非特定顺序查找尽可能多的文字。"
+msgstr "稀疏文本。以非特定顺序查找尽可能多的文本。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Sparse text with OSD."
-msgstr "稀疏文字 (使用 OSD)。"
+msgstr "稀疏文本 (使用 OSD)。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:78
 #, kde-format
@@ -18053,7 +18052,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Raw line. Treat the image as a single text line, bypassing hacks that are "
 "Tesseract-specific."
-msgstr "原始字行。将图像视作一行文字，绕过针对 Tesseract 的特殊调整。"
+msgstr "原始字行。将图像视作一行文本，绕过针对 Tesseract 的特殊调整。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:90
 #, kde-format
@@ -18113,7 +18112,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Text Recognition"
-msgstr "文字识别"
+msgstr "文本识别"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:206
 #, kde-format
@@ -18123,7 +18122,7 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
-"在识别处理完成后，双击一个项目即可在此显示识别到的文字。您可以检查识别到的单"
+"在识别处理完成后，双击一个项目即可在此显示识别到的文本。您可以检查识别到的单"
 "词并进行必要的修订。点击保存按钮以记录您的更改。"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
@@ -18136,7 +18135,7 @@ msgstr "保存"
 #, kde-format
 msgctxt "@title"
 msgid "Text Review"
-msgstr "文字检查"
+msgstr "文本检查"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:366
 #, kde-format
@@ -18172,7 +18171,7 @@ msgstr "成功"
 #, kde-format
 msgctxt "@title:window"
 msgid "Text Converter"
-msgstr "文字转换程序"
+msgstr "文本转换程序"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:567
 #, kde-format
@@ -18186,7 +18185,7 @@ msgstr "列表中不包含任何要处理的数字文件。您需要选择它们
 #, kde-format
 msgctxt "@title"
 msgid "Text Converter"
-msgstr "文字转换程序"
+msgstr "文本转换程序"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:651
 #, kde-format
@@ -18250,7 +18249,7 @@ msgstr "OCR 文本转换器"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to batch convert documented images to text using OCR"
-msgstr "使用 OCR 将文档图像批量转换为文字"
+msgstr "使用 OCR 将文档图像批量转换为文本"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:65
 #, kde-format
@@ -18264,7 +18263,7 @@ msgid ""
 msgstr ""
 "此工具可以将文档图像的数据转换为文本格式。它使用一款名为 Tesseract 的开源光学"
 "字符识别引擎，该引擎最初由 HP 实验室开发，目前由 Google 赞助开发。<br><br>它"
-"支持多种语言和书写方式 (包括从右到左书写的文字) 和页面布局分析功能。"
+"支持多种语言和书写方式 (包括从右到左书写的文本) 和页面布局分析功能。"
 "<br><br>Tesseract 的详情请见 %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
@@ -19180,13 +19179,13 @@ msgstr "下列字段可配合自定义格式使用："
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:174
 #, kde-format
 msgid "Text Color:"
-msgstr "文字颜色："
+msgstr "文本颜色："
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:197
 #, kde-format
 msgid "Text Size:"
-msgstr "文字大小："
+msgstr "文本大小："
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: core/dplugins/generic/tools/printcreator/ui/advprintcaptionpage.ui:244
@@ -20990,7 +20989,7 @@ msgstr "视觉效果使用相同速度(&S)"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.cpp:38
 #, kde-format
 msgid "This is a comment sample..."
-msgstr "这是一行注释示例文字..."
+msgstr "这是一行注释示例文本..."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_fontselectBtn)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:17
@@ -21014,7 +21013,7 @@ msgstr "颜色"
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:120
 #, kde-format
 msgid "Outlined Text"
-msgstr "描边文字"
+msgstr "描边文本"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_captionpage.ui:140
@@ -24626,7 +24625,7 @@ msgstr "在此输入将被添加到所有文件的分类。"
 #, kde-format
 msgctxt "@label"
 msgid "Generic text:"
-msgstr "常规文字："
+msgstr "常规文本："
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:397
 #, kde-format
@@ -24634,7 +24633,7 @@ msgctxt "@info"
 msgid ""
 "This is a place to enter text that will be added to all the files, below the "
 "Information template."
-msgstr "在此输入将被添加到信息模板下所有文件的文字。"
+msgstr "在此输入将被添加到信息模板下所有文件的文本。"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:401
 #, kde-format
@@ -29507,7 +29506,7 @@ msgstr "调整图像的伽马。"
 #: core/libs/dimg/filters/bw/bwsepiafilter.cpp:75
 #, kde-format
 msgid "Black & White / Sepia Filter"
-msgstr "黑白照片 / 乌贼墨滤镜"
+msgstr "黑白照片 / 复古褐色滤镜"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:135
 #, kde-format
@@ -29830,10 +29829,10 @@ msgid ""
 "expressions in close-ups and emphasizing the feeling of liveliness. This "
 "filter is highly effective for indoor portraits under tungsten lighting.</p>"
 msgstr ""
-"<b>黄绿色滤镜黑白照片</b>：<p>模拟使用黄绿色滤镜曝光的黑白胶片。它对于户外人"
-"像非常有效，因为红色区域将变暗，而绿色区域将变亮。此滤镜具有良好的肤色校准效"
-"果，在特写中能很好地衬托面部表情，演绎出拍摄对象的生命力。此滤镜对钨丝灯照明"
-"条件下的室内人像也有很好的效果。</p>"
+"<b>黑白照片 (黄绿色滤镜)</b>：<p>模拟使用黄绿色滤镜曝光的黑白胶片。它对于户外"
+"人像非常有效，因为红色区域将变暗，而绿色区域将变亮。此滤镜具有良好的肤色校准"
+"效果，在特写中能很好地衬托面部表情，演绎出拍摄对象的生命力。此滤镜对钨丝灯照"
+"明条件下的室内人像也有很好的效果。</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:255
 #, kde-format
@@ -29873,7 +29872,7 @@ msgstr "<b>无色调滤镜</b>：<p>不对图像应用色调滤镜。</p>"
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:282
 #, kde-format
 msgid "Sepia Filter"
-msgstr "乌贼墨滤镜"
+msgstr "复古褐色滤镜"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:283
 #, kde-format
@@ -29882,8 +29881,8 @@ msgid ""
 "while adding a bit of coolness to the shadows - very similar to the process "
 "of bleaching a print and re-developing in a sepia toner.</p>"
 msgstr ""
-"<b>乌贼墨色调的黑白照片</b>：<p>营造温暖的亮调和中间调，并为暗调加入一点冷峻 "
-"- 类似于乌贼墨色调调色的冲印效果。</p>"
+"<b>黑白照片 (复古褐色)</b>：<p>营造温暖的亮调和中间调，并为暗调加入一点冷峻 "
+"- 类似于复古褐色的冲印效果。</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:288
 #, kde-format
@@ -29895,8 +29894,7 @@ msgstr "褐色滤镜"
 msgid ""
 "<b>Black & White with Brown Tone</b>:<p>This filter is more neutral than the "
 "Sepia Tone filter.</p>"
-msgstr ""
-"<b>褐色色调的黑白照片</b>：<p>类似乌贼墨色调调色，但颜色更倾向中性。</p>"
+msgstr "<b>黑白照片 (褐色)</b>：<p>类似乌贼墨色调调色，但颜色更倾向中性。</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:293
 #, kde-format
@@ -29909,7 +29907,7 @@ msgid ""
 "<b>Black & White with Cold Tone</b>:<p>Start subtly and replicate printing "
 "on a cold tone black and white paper such as a bromide enlarging paper.</p>"
 msgstr ""
-"<b>冷色调的黑白照片</b>：<p>模仿在冷色调的溴化物扩印纸上冲印的效果。</p>"
+"<b>黑白照片 (冷色调)</b>：<p>模仿在冷色调的溴化物扩印纸上冲印的效果。</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:299
 #, kde-format
@@ -29921,7 +29919,7 @@ msgstr "硒调色滤镜"
 msgid ""
 "<b>Black & White with Selenium Tone</b>:<p>This effect replicates "
 "traditional selenium chemical toning done in the darkroom.</p>"
-msgstr "<b>硒调色的黑白照片</b>：<p>模仿传统暗房硒调色法的色调。</p>"
+msgstr "<b>黑白照片 (硒调色法)</b>：<p>模仿传统暗房硒调色法的色调。</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:304
 #, kde-format
@@ -29933,7 +29931,7 @@ msgstr "铂金调色滤镜"
 msgid ""
 "<b>Black & White with Platinum Tone</b>:<p>This effect replicates "
 "traditional platinum chemical toning done in the darkroom.</p>"
-msgstr "<b>铂金调色的黑白照片</b>：<p>模仿传统暗房铂金调色法的色调。</p>"
+msgstr "<b>黑白照片 (铂金调色法)</b>：<p>模仿传统暗房铂金调色法的色调。</p>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:310
 #, kde-format
@@ -31019,12 +31017,12 @@ msgstr "亮度噪点"
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:284
 #, kde-format
 msgid "Chrominance Blue Noise"
-msgstr "蓝色品噪点"
+msgstr "蓝色度噪点"
 
 #: core/libs/dimg/filters/fx/filmgrainsettings.cpp:287
 #, kde-format
 msgid "Chrominance Red Noise"
-msgstr "红色品噪点"
+msgstr "红色度噪点"
 
 #: core/libs/dimg/filters/fx/invertfilter.cpp:55
 #, kde-format
@@ -32182,12 +32180,12 @@ msgstr "亮度"
 #: core/libs/dimg/filters/nr/nrsettings.cpp:191
 #, kde-format
 msgid "Chrominance Blue"
-msgstr "蓝色品"
+msgstr "蓝色度"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:195
 #, kde-format
 msgid "Chrominance Red"
-msgstr "红色品"
+msgstr "红色度"
 
 #: core/libs/dimg/filters/nr/nrsettings.cpp:349
 #, kde-format
@@ -32306,7 +32304,7 @@ msgid ""
 "An option to apply filter on luminosity channel only used to suppress chroma "
 "noise amplification."
 msgstr ""
-"勾选此项后，将在亮度 (HSY' 光度) 通道应用一个滤镜，用于抑制色品噪点在处理中被"
+"勾选此项后，将在亮度 (HSY' 光度) 通道应用一个滤镜，用于抑制色度噪点在处理中被"
 "放大。"
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:211
@@ -34061,7 +34059,7 @@ msgstr ""
 "红色：有生效的过滤器，无匹配的项目。\n"
 "绿色：有生效的过滤器，有匹配的项目。\n"
 "\n"
-"将鼠标悬停在其提示文字上访即可查看生效过滤器的详情。\n"
+"将鼠标悬停在其提示文本上访即可查看生效过滤器的详情。\n"
 "点击“垃圾桶”按钮将清空所有过滤器。\n"
 "点击“漏斗”按钮将打开右侧栏的过滤器面板。"
 
@@ -36691,7 +36689,7 @@ msgid ""
 "hierarchy of tags. ',' can be used to create more than one hierarchy at the "
 "same time."
 msgstr ""
-"在此输入文字以创建标签。“/”可用于创建标签的层级结构，它可以用来创建多个层级。"
+"在此输入文本以创建标签。“/”可用于创建标签的层级结构，它可以用来创建多个层级。"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
 #: core/libs/properties/captions/tagsedit.cpp:116
@@ -41319,7 +41317,7 @@ msgstr "屏幕显示字体："
 #, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "选择屏幕显示的文字信息使用的字体。"
+msgstr "选择屏幕显示的文本信息使用的字体。"
 
 #: core/libs/video/player/audplayerwdg.cpp:264
 #, kde-format
@@ -42095,7 +42093,7 @@ msgid ""
 "amount that each point is corrected by the profile, and the\n"
 "direction of this correction."
 msgstr ""
-"此区域包含一个 CIE 或色品图表。\n"
+"此区域包含一个 CIE 或色度图表。\n"
 "CIE 图表表现了视力正常的人类可视的全部颜色，它呈现为风帆状。\n"
 "该图表上叠加显示了一个白色三角形轮廓，\n"
 "它代表了设备在当前特性文件下的色彩空间外轮廓，也叫做该设备的色域。\n"
@@ -48169,7 +48167,7 @@ msgid ""
 "translator engine depending of desired target language, as not all world-"
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
-"<para>翻译引擎是一种用于将文字从一种语言翻译为另一种语言的在线网络服务。此功"
+"<para>翻译引擎是一种用于将文本从一种语言翻译为另一种语言的在线网络服务。此功"
 "能在元数据选项中可用，该选项支持备选语言，例如标题、说明文字等。翻译流程是全"
 "自动的，需要使用互联网连接。</para><para>由于并非每种在线翻译服务都能支持所有"
 "语言，用户应按照目标语言选择适合自己的翻译引擎。</para>"
@@ -49284,7 +49282,7 @@ msgstr "全部显示"
 #, kde-format
 msgid "Set this option to configure how sidebars tab title are visible."
 msgstr ""
-"选择侧边栏标签页标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
+"选择侧边栏标签页标题文本的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
 "标签页显示”。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:234
@@ -49394,7 +49392,7 @@ msgstr "界面字体："
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:122
 #, kde-format
 msgid "Select here the font used to display text in whole application."
-msgstr "选择整个应用程序的文字信息使用的字体。"
+msgstr "选择整个应用程序的文本信息使用的字体。"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:337
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:143
@@ -49474,7 +49472,7 @@ msgstr "勾选此项后，鼠标悬停于缩略图栏或文件夹视图项目时
 #: core/showfoto/setup/showfotosetuptooltip.cpp:87
 #, kde-format
 msgid "Select here the font used to display text in tooltips."
-msgstr "选择悬停信息框的文字信息使用的字体。"
+msgstr "选择悬停信息框的文本信息使用的字体。"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:91
 #, kde-format
@@ -50460,13 +50458,13 @@ msgstr "替换..."
 #: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:53
 #, kde-format
 msgid "Replace text in a renaming option"
-msgstr "替换重命名选项中的文字"
+msgstr "替换重命名选项中的文本"
 
 #: core/utilities/advancedrename/parser/modifiers/replacemodifier.cpp:57
 #, kde-format
 msgid ""
 "Replace text (||options||: ||r|| = regular expression, ||i|| = ignore case)"
-msgstr "替换文字 (||选项||：||r|| = 正则表达式，||i|| = 忽略大小写)"
+msgstr "替换文本 (||选项||：||r|| = 正则表达式，||i|| = 忽略大小写)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/utilities/advancedrename/parser/modifiers/replacemodifierdialogwidget.ui:19
@@ -50868,7 +50866,7 @@ msgstr "ISO"
 #, kde-format
 msgctxt "@item:inlistbox date format"
 msgid "Text"
-msgstr "文字"
+msgstr "文本"
 
 #: core/utilities/advancedrename/parser/options/dateoption.cpp:44
 #, kde-format
@@ -54329,13 +54327,13 @@ msgstr "赤道颜色。"
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1398
 #, kde-format
 msgid "&Named Labels"
-msgstr "文字标记(&N)"
+msgstr "文本标记(&N)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, primaryCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1408
 #, kde-format
 msgid "Show Labels for Prime meridian, Equator, Tropics."
-msgstr "显示本初子午线、赤道、回归线的文字标记。"
+msgstr "显示本初子午线、赤道、回归线的文本标记。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1415
@@ -59079,8 +59077,8 @@ msgstr ""
 "月份，中文为某月，英文为缩写 (一月到十二月，Jan 到 Dec)</p><p><b>MMMM</b>：语"
 "言化月份，中文为某月，英文为全称 (一月到十二月，January 到 December)</"
 "p><p><b>yy</b>：两位数字年份 (00 到 99)</p><p><b>yyyy</b>：四位数字年份 "
-"(2012)</p><p>所有其他字符都将被视作文字，任意字符只要被单引号包围也将被视作文"
-"字，它们将不被用作表达式的一部分。例如： 2021 年 01 月 01 日的表达式显示效"
+"(2012)</p><p>所有其他字符都将被视作文本，任意字符只要被单引号包围也将被视作文"
+"本，它们将不被用作表达式的一部分。例如： 2021 年 01 月 01 日的表达式显示效"
 "果：</p><p><b>yyyy-MM-dd</b>：2021-01-01</p><p><b>yy 年 MMMM d 日 (ddd)</b>："
 "21 年 七月 1 日 (星期五)</p><p><b>'拍摄于'dddd</b>：拍摄于星期五</p>"
 
@@ -62209,7 +62207,7 @@ msgstr "图标视图字体："
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:102
 #, kde-format
 msgid "Select here the font used to display text in icon views."
-msgstr "选择图标视图的文字信息使用的字体。"
+msgstr "选择图标视图的文本信息使用的字体。"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:104
 #, kde-format
@@ -62369,12 +62367,12 @@ msgstr "特大"
 #: core/utilities/setup/camera/setupcamera.cpp:507
 #, kde-format
 msgid "Show icons and text over preview"
-msgstr "预览视图显示悬浮图标和文字"
+msgstr "预览视图显示悬浮图标和文本"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:85
 #, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
-msgstr "如果您想要在图像预览视图中看到悬浮的图标和文字，请勾选此项。"
+msgstr "如果您想要在图像预览视图中看到悬浮的图标和文本，请勾选此项。"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
@@ -62436,7 +62434,7 @@ msgstr "树形视图字体："
 #: core/utilities/setup/album/setupalbumview_treeview.cpp:48
 #, kde-format
 msgid "Select here the font used to display text in Tree Views."
-msgstr "选择树形视图的文字信息使用的字体。"
+msgstr "选择树形视图的文本信息使用的字体。"
 
 #: core/utilities/setup/album/setupalbumview_treeview.cpp:50
 #, kde-format
@@ -63023,7 +63021,7 @@ msgstr "使用图像编辑器打开"
 #: core/utilities/setup/camera/setupcamera.cpp:471
 #, kde-format
 msgid "Select here the font used to display text in Icon Views."
-msgstr "选择图标视图的文字信息使用的字体。"
+msgstr "选择图标视图的文本信息使用的字体。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:493
 #, kde-format
@@ -63062,7 +63060,7 @@ msgstr "<p>勾选此项以在下载过程中预览每一张图像。</p>"
 #, kde-format
 msgid ""
 "Uncheck this if you do not want to see icons and text in the image preview."
-msgstr "如果您不想在图像预览视图中看到悬浮的图标和文字，请不要勾选此项。"
+msgstr "如果您不想在图像预览视图中看到悬浮的图标和文本，请不要勾选此项。"
 
 #: core/utilities/setup/camera/setupcamera.cpp:527
 #, kde-format
@@ -65624,7 +65622,7 @@ msgid ""
 "For Active Tab\" option if you use a small screen resolution as with a "
 "laptop computer."
 msgstr ""
-"选择侧边栏标签页标题文字的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
+"选择侧边栏标签页标题文本的显示方式。如果您的屏幕分辨率很低，可以选择“仅在活动"
 "标签页显示”。"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:30
@@ -66373,7 +66371,7 @@ msgstr "悬停信息框字体："
 #: core/utilities/setup/tooltip/setuptooltip.cpp:29
 #, kde-format
 msgid "Select here the font used to display text in tool-tips."
-msgstr "选择悬停信息框的文字信息使用的字体。"
+msgstr "选择悬停信息框的文本信息使用的字体。"
 
 #: core/utilities/setup/tooltip/setuptooltip_album.cpp:23
 #, kde-format
