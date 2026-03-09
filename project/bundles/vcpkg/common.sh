@@ -119,6 +119,7 @@ $VCPKG_INSTALL_PREFIX/tools/curl:\
 $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
 $DOWNLOAD_DIR/tools/python/python-3.14.2-x64-1:\
+$DOWNLOAD_DIR/tools/ninja-1.13.2-windows:\
 "
 
 if [[ $DK_QTVERSION = 6 ]] ; then

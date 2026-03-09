@@ -58,7 +58,9 @@ $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
 $VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
 $VCPKG_INSTALL_PREFIX/tools/qt5/bin\
-$INSTALL_DIR/tools/python/python-3.14.2-x64-1:\
+e/d/tools/python/python-3.14.2-x64-1:\
+e/d/tools/ninja-1.13.2-windows:\
+
 "
 
 echo "PATH=$PATH"
@@ -71,7 +73,7 @@ fi
 
 cd build
 
-"${CMAKE_BIN}" .. \
+"${CMAKE_BIN}" -G "Ninja" .. \
       -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
