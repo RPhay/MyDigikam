@@ -22,7 +22,7 @@ BUGFIXES:
 001 --> 517251 - MariaSQL Migration.
 002 --> 517308 - In the new "Survey" tool, the left and right overlay navigation arrows are not working.
 003 --> 517303 - Modification date is not being edited.
-004 -->
+004 --> 517328 - Error when starting digiKam 9.0.0 - lensfun.dll.
 005 -->
 006 -->
 007 -->
