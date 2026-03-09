@@ -330,6 +330,11 @@ void DBInfoIface::slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool 
         {
             info.setModDateTime(dt);
         }
+        else
+        {
+            QFileInfo finfo(url.toLocalFile());
+            info.setModDateTime(finfo.lastModified());
+        }
     }
 
     ItemAttributesWatch::instance()->fileMetadataChanged(url);
