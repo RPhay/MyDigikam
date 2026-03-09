@@ -58,9 +58,7 @@ public:
 
 public:
 
-    explicit SurveyStack(StackedView* const stackedView,
-                         DigikamItemView* const iconView,
-                         QWidget* const parent = nullptr);
+    explicit SurveyStack(DigikamItemView* const iconView, QWidget* const parent = nullptr);
     ~SurveyStack() override;
 
     /**
