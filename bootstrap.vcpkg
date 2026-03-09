@@ -73,7 +73,7 @@ fi
 
 cd build
 
-"${CMAKE_BIN}" -G "Ninja" .. \
+"${CMAKE_BIN}" .. \
       -DCMAKE_TOOLCHAIN_FILE=$VCPKG_DIR/scripts/buildsystems/vcpkg.cmake \
       -DVCPKG_TARGET_TRIPLET=$VCPKG_TRIPLET \
       -DCMAKE_COLOR_MAKEFILE=ON \
