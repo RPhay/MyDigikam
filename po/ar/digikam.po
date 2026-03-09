@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-08 00:41+0000\n"
-"PO-Revision-Date: 2026-03-05 09:26+0400\n"
+"PO-Revision-Date: 2026-03-08 09:37+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2074,7 +2074,7 @@ msgstr "بالتّاريخ"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Album Sub-Tree"
-msgstr "ضمّن شجرات الألبومات الفرعّية"
+msgstr "ضمّن شجرات الألبومات الفرعية"
 
 #: core/app/main/digikamapp_setup.cpp:596
 #, kde-format
@@ -2086,7 +2086,7 @@ msgstr "مكّن هذا الخيار لعرض كلّ الألبومات الفر
 #, kde-format
 msgctxt "@action: setup"
 msgid "Include Tag Sub-Tree"
-msgstr "ضمّن شجرات الوسوم الفرعّية"
+msgstr "ضمّن شجرات الوسوم الفرعية"
 
 #: core/app/main/digikamapp_setup.cpp:603
 #, kde-format
@@ -3792,6 +3792,9 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
+"اُستُحدِثت أداة استطلاع جديدة لمعاينة العناصر في نوافذ منفصلة ومتزامنة مع عرض "
+"الأيقونات. تدعم جميع الميزات المتاحة في وضع المعاينة. يمكن استخدامها في وضع "
+"ملء الشاشة على شاشة منفصلة لمراجعة العناصر بسرعة أثناء سير عملك."
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
@@ -60035,7 +60038,7 @@ msgstr ""
 "المساحة المقدّرة المتبقيّة: %1\n"
 "المساحة الحرّة المتوفّرة: %2\n"
 "\n"
-"أأجربّ بأيّ حال؟"
+"أأجرّب بأيّ حال؟"
 
 #: core/utilities/import/main/importui.cpp:2327
 #: core/utilities/import/main/importui.cpp:2353
