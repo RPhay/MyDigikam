@@ -28,6 +28,10 @@ if(MSVC)
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /STACK:16777216")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} /STACK:16777216")
 
+    # More verbose output with MSVC compiler.
+
+    add_compile_options(/v:m)
+
     # --- Disable indeep warnings from Visual Studio C++
 
     # To disable warnings about no suitable definition provided for explicit template instantiation request.
