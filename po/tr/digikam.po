@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-08 00:41+0000\n"
-"PO-Revision-Date: 2026-03-07 12:55+0300\n"
+"PO-Revision-Date: 2026-03-09 22:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -414,7 +414,7 @@ msgstr "MIME türü süzgeci:"
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
 #, kde-format
 msgid "Geolocation Filter:"
-msgstr "Coğrafi konum süzgeci:"
+msgstr "Coğrafî konum süzgeci:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
 #, kde-format
@@ -542,7 +542,7 @@ msgstr "Grup kapalı."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has geolocation information."
-msgstr "Bu ögede coğrafi konum bilgisi var."
+msgstr "Bu ögede coğrafî konum bilgisi var."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
 #: core/app/views/preview/itempreviewview.cpp:268
@@ -926,7 +926,7 @@ msgstr "Kullanılabilir dışa aktarma aracı yok"
 #, kde-format
 msgctxt "@action: context menu"
 msgid "Batch Queue Manager"
-msgstr "Toplu İş Kuyruk Yöneticisi"
+msgstr "Sıralı Toplu İş Yöneticisi"
 
 #: core/app/items/utils/contextmenuhelper_tools.cpp:140
 #, kde-format
@@ -1882,7 +1882,7 @@ msgstr "İnceleme"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Batch Queue Manager"
-msgstr "Toplu İş Kuyruk Yöneticisi"
+msgstr "Sıralı Toplu İş Yöneticisi"
 
 #: core/app/main/digikamapp_setup.cpp:447
 #, kde-format
@@ -3321,7 +3321,7 @@ msgstr "Yardım"
 #, kde-format
 msgctxt "@info"
 msgid "Online help about trash-bin"
-msgstr "Çöp kutusu hakkında çevrimiçi yardım"
+msgstr "Çöp kutusu hakkında çevrim içi yardım"
 
 #: core/app/views/stack/trashview.cpp:122
 #, kde-format
@@ -4292,13 +4292,13 @@ msgstr "Görüntüleme biçimi"
 #: core/app/views/tableview/tableview_column_geo.cpp:82
 #, kde-format
 msgid "Geo properties"
-msgstr "Coğrafi Özellikler"
+msgstr "Coğrafî Özellikler"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:84
 #: core/app/views/tableview/tableview_column_geo.cpp:97
 #, kde-format
 msgid "Geotagged"
-msgstr "Coğrafi Künyeli"
+msgstr "Coğrafî Künyeli"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
@@ -4833,7 +4833,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust colors automatically from "
 "images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, renkleri görsellerden otomatik "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, renkleri görsellerden otomatik "
 "olarak ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/colors/bcgcorrection/bcgcorrectionplugin.cpp:42
@@ -4857,7 +4857,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust Brightness / Contrast / Gamma "
 "from images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki Parlaklık/Karşıtlık/"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki Parlaklık/Karşıtlık/"
 "Gama ayarlarını yapabilir.</para>"
 
 #: core/dplugins/bqm/colors/bwconvert/bwconvertplugin.cpp:42
@@ -4880,7 +4880,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images to black and white.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri siyah–beyaz’a "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri siyah–beyaz’a "
 "dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:42
@@ -4904,7 +4904,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renk kanallarını "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki renk kanallarını "
 "karıştırabilir.</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
@@ -4940,7 +4940,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust color balance from images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renk dengesini "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki renk dengesini "
 "ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/colors/convert16to8/convert16to8.cpp:32
@@ -4973,7 +4973,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert image color depth to 8 bits."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselin renk derinliğini 8 bit’e "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselin renk derinliğini 8 bit’e "
 "dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/convert8to16/convert8to16plugin.cpp:42
@@ -4997,7 +4997,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images color depth to 16 "
 "bits.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin renk derinliğini 16 "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerin renk derinliğini 16 "
 "bit’e dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/curvesadjust/curvesadjust.cpp:41
@@ -5075,7 +5075,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust the color curves from images."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renk eğrilerini "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki renk eğrilerini "
 "ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/colors/hslcorrection/hslcorrectionplugin.cpp:42
@@ -5099,8 +5099,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust Hue / Saturation / Lightness "
 "from images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi, görsellerdeki Ton/Doygunluk/Açıklık "
-"değerlerini düzenleyebilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki Ton/Doygunluk/"
+"Açıklık değerlerini düzenleyebilir.</para>"
 
 #: core/dplugins/bqm/colors/iccconvert/iccconvertplugin.cpp:42
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:46
@@ -5122,7 +5122,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can convert images to a different color "
 "space.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri başka bir renk uzayına "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri başka bir renk uzayına "
 "dönüştürebilir.</para>"
 
 #: core/dplugins/bqm/colors/invert/invertplugin.cpp:42
@@ -5145,7 +5145,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can invert colors from images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki renkleri tersine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki renkleri tersine "
 "çevirebilir.</para>"
 
 #: core/dplugins/bqm/colors/whitebalance/whitebalanceplugin.cpp:42
@@ -5169,7 +5169,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can adjust the white balance from images."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki beyaz dengesini "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki beyaz dengesini "
 "ayarlayabilir.</para>"
 
 #: core/dplugins/bqm/convert/converttoavif/converttoavifplugin.cpp:42
@@ -5194,7 +5194,7 @@ msgid ""
 "container format.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/AVIF'>this page</link>.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini AVIF biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini AVIF biçimine "
 "dönüştürebilir.</para><para>AV1 Görsel Dosyası Biçimi, AV1 ile sıkıştırılmış "
 "görselleri veya görsel dizilerini ISOBMFF kapsayıcı biçiminde depolamak için "
 "kullanılan bir görsel dosyası biçimi belirtimidir.</para><para><link "
@@ -5255,7 +5255,7 @@ msgid ""
 "url='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</link> for details.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini HEIF biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini HEIF biçimine "
 "dönüştürebilir.</para><para>Yüksek Verimli Görsel Kodlaması (HEIC) olarak da "
 "bilinen Yüksek Verimli Görsel Dosyası Biçimi (HEIF), bireysel kullanıcılar "
 "için bir dosya biçimidir. Hareketli Resim Uzmanları Grubu (MPEG) tarafından "
@@ -5292,9 +5292,9 @@ msgid ""
 "method.</para><para>See details about this format from <link url='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</link>.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini JPEG-2000 biçimine "
-"dönüştürebilir.</para><para>Bu bir görsel sıkıştırma standardı ve kodlama "
-"sistemidir. 2000 yılında Birleşik Fotoğraf Uzmanları Grubu komitesi "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini JPEG-2000 "
+"biçimine dönüştürebilir.</para><para>Bu bir görsel sıkıştırma standardı ve "
+"kodlama sistemidir. 2000 yılında Birleşik Fotoğraf Uzmanları Grubu komitesi "
 "tarafından oluşturulmuştur. Bu biçimin amacı, özgün ayrık kosinüs dönüşümü "
 "tabanlı JPEG standartlarının (1992’de oluşturulan) yerini yeni tasarlanmış, "
 "dalgacık tabanlı bir yöntemle değiştirme niyetidir.</para><para>Ayrıntılar "
@@ -5324,7 +5324,7 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/JPEG'>this page</link>."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini JPEG biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini JPEG biçimine "
 "dönüştürebilir.</para><para>Birleşik Fotoğraf Uzmanları Grubu biçimi, "
 "sayısal görseller, özellikle de sayısal fotoğrafçılıkla üretilen görseller "
 "için yaygın olarak kullanılan bir kayıplı sıkıştırma yöntemidir.</"
@@ -5354,7 +5354,7 @@ msgid ""
 "replacement.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/JPEG_XL'>this page</link>.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini JPEG-XL biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini JPEG-XL biçimine "
 "dönüştürebilir.</para><para>JPEG-XL, hem kayıplı hem de kayıpsız "
 "sıkıştırmayı destekleyen telifsiz bir raster grafik dosya biçimidir. Tasarım "
 "amacı, var olan raster biçimlerden daha iyi başarım göstererek bunların "
@@ -5383,7 +5383,7 @@ msgid ""
 "details about this format from <link url='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</link>.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini PGF biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini PGF biçimine "
 "dönüştürebilir.</para><para>Progresif Grafik Dosyası, kayıpsız ve kayıplı "
 "veri sıkıştırması kullanan, dalgacık tabanlı bir bit eşlemli görsel "
 "biçimidir.</para><para>Ayrıntılar için <link url='https://en.wikipedia.org/"
@@ -5422,7 +5422,7 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</link>.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini PNG biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini PNG biçimine "
 "dönüştürebilir.</para><para>Taşınabilir Ağ Grafikleri, kayıpsız veri "
 "sıkıştırmayı destekleyen bir raster grafik dosya biçimidir.</"
 "para><para>Ayrıntılar için <link url='https://en.wikipedia.org/wiki/"
@@ -5451,7 +5451,7 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/TIFF'>this page</link>."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini TIFF biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini TIFF biçimine "
 "dönüştürebilir.</para><para>Künyeli Görsel Dosyası Biçimi; fotoğrafçılar, "
 "grafik sanatçıları, yayıncılık endüstrisi ve yayıncılık endüstrisi arasında "
 "popüler olan, raster grafik görsellerini depolamak için kullanılan bir "
@@ -5482,7 +5482,7 @@ msgid ""
 "transparency.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/WebP'>this page</link>.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsel verisini WEBP biçimine "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsel verisini WEBP biçimine "
 "dönüştürebilir.</para><para>WEBP, Google’ın JPEG, PNG ve GIF dosya "
 "biçimlerinin yerine geçmek üzere geliştirdiği bir görsel dosyası biçimidir. "
 "WEBP, aynı kalite için daha küçük veya aynı boyut için daha yüksek kaliteli "
@@ -5633,8 +5633,8 @@ msgid ""
 "$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>"
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, kullanıcı kabuk betiklerini iş akışı "
-"aşaması olarak çalıştırabilir.</para> <para>Betik değişkenleri:</"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, kullanıcı kabuk betiklerini iş "
+"akışı aşaması olarak çalıştırabilir.</para> <para>Betik değişkenleri:</"
 "para><para>Girdi/çıktı dosya adları için <b>$INPUT</b> ve <b>$OUTPUT</b> "
 "kullanılır (özel karakterler kaçırılır) Bunlar, kabuk yürütmesinden önce "
 "değiştirilir.</para> <para>digiKam özellikleri işlemesi için <b>$TITLE</b>, "
@@ -5661,7 +5661,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can add decorative border around images."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin etrafına dekoratif "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerin etrafına dekoratif "
 "kenarlıklar ekleyebilir.</para>"
 
 #: core/dplugins/bqm/decorate/texture/textureplugin.cpp:42
@@ -5682,7 +5682,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply a texture over images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin üzerine doku "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerin üzerine doku "
 "uygulayabilir.</para>"
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:159
@@ -6034,8 +6034,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can add a text watermark over images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin üzerine metin filigranı "
-"ekleyebilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerin üzerine metin "
+"filigranı ekleyebilir.</para>"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:42
 #, kde-format
@@ -6056,7 +6056,7 @@ msgid ""
 "<para>This Batch Queue Manager tool remove or add vignettings to images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere vinyet ekler veya "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellere vinyet ekler veya "
 "kaldırır.</para>"
 
 #: core/dplugins/bqm/enhance/blur/blur.cpp:53
@@ -6094,7 +6094,8 @@ msgstr "Görselleri bulanıklaştırmak için bir araç"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görselleri bulanıklaştırabilir.</p>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri bulanıklaştırabilir.</"
+"para>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:40
@@ -6116,8 +6117,8 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix hot pixels in images.</para>"
 msgstr ""
-"<p>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki sıcak pikselleri "
-"onarabilir.</p>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki sıcak pikselleri "
+"onarabilir.</para>"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
@@ -6168,7 +6169,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
 "over images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseller üzerindeki mercek "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görseller üzerindeki mercek "
 "bozulmalarını kendiliğinden düzeltebilir.</para>"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
@@ -6192,7 +6193,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can emulate tone mapping over images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseller üzerinde ton eşlemeyi "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görseller üzerinde ton eşlemeyi "
 "taklit edebilir.</para>"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
@@ -6214,8 +6215,8 @@ msgstr "Dalgacıkları kullanarak fotoğraf gürültüsünü ortadan kaldıran b
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki gürültüyü azaltabilir."
-"</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki gürültüyü "
+"azaltabilir.</para>"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:42
 #, kde-format
@@ -6237,8 +6238,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can reduce red eye effect on images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki kırmızı göz efektini "
-"azaltabilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki kırmızı göz "
+"efektini azaltabilir.</para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
@@ -6305,7 +6306,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can restore images using Greystoration "
 "algorithm.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, Greystoration algoritmasını "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, Greystoration algoritmasını "
 "kullanarak görselleri restore edebilir.</para>"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
@@ -6325,7 +6326,8 @@ msgstr "Görselleri keskinleştirmek için bir araç"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri keskinleştirebilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri keskinleştirebilir.</"
+"para>"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:42
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:40
@@ -6347,7 +6349,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply color effects over images.</"
 "para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere renk efektleri "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellere renk efektleri "
 "uygulayabilir.</para>"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
@@ -6369,7 +6371,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add film grain over images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere film tanecikleri "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellere film tanecikleri "
 "ekleyebilir.</para>"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:82
@@ -6427,8 +6429,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, ExifTool ile bir görselden veya JSON "
-"dosyasından üst veri uygulayabilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, ExifTool ile bir görselden veya "
+"JSON dosyasından üst veri uygulayabilir.</para>"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
 #, kde-format
@@ -6498,7 +6500,7 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign title and description "
 "metadata alternative values to images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere başlık ve açıklama üst "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellere başlık ve açıklama üst "
 "verisi alternatif değerlerini atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
@@ -6535,8 +6537,8 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellere derecelendirme, renk veya "
-"etiket üst verisi değerlerini atayacaktır.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellere derecelendirme, renk "
+"veya etiket üst verisi değerlerini atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
 #, kde-format
@@ -6557,9 +6559,9 @@ msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, yapay zeka derin öğrenme modellerini "
-"kullanarak görüntülere anahtar sözcük hiyerarşileri üst veri değerlerini "
-"kendiliğinden atayacaktır.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, yapay zeka derin öğrenme "
+"modellerini kullanarak görüntülere anahtar sözcük hiyerarşileri üst veri "
+"değerlerini kendiliğinden atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -6580,7 +6582,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can apply metadata template over images."
 "</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, üst veri şablonu uygulayabilir.</"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, üst veri şablonu uygulayabilir.</"
 "para>"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:42
@@ -6602,8 +6604,8 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign a pick label metadata value "
 "by parsing image and estimate the quality.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görseli ayrıştırarak bir etiket üst "
-"veri etiketi değeri atayacaktır.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görseli ayrıştırarak bir etiket "
+"üst veri etiketi değeri atayacaktır.</para>"
 
 #: core/dplugins/bqm/metadata/removemetadata/removemetadata.cpp:98
 #, kde-format
@@ -6756,8 +6758,8 @@ msgid ""
 "<para>This Batch Queue Manager tool can remove metadata as Exif, Iptc, or "
 "Xmp from images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerden Exif, Iptc veya Xmp üst "
-"verilerini kaldırabilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerden Exif, Iptc veya Xmp "
+"üst verilerini kaldırabilir.</para>"
 
 #: core/dplugins/bqm/metadata/timeadjust/timeadjustplugin.cpp:42
 #: core/dplugins/generic/metadata/timeadjust/timeadjustplugin.cpp:45
@@ -6777,7 +6779,7 @@ msgstr "Görsellerdeki tarih ve zaman bilgisini ayarlamak için bir araç"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can adjust time in images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerdeki zaman ayarını "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerdeki zaman ayarını "
 "yapabilir.</para>"
 
 #: core/dplugins/bqm/metadata/translate/translate.cpp:95
@@ -6835,7 +6837,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can translate alternative language "
 "strings in Xmp metadata from images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görsellerin Xmp üst verisindeki "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görsellerin Xmp üst verisindeki "
 "alternatif dillerdeki dizileri çevirebilir.</para>"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:43
@@ -6857,7 +6859,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can automatically detect the correct "
 "orientation of an image and rotate the image.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, bir görselin doğru yönünü "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, bir görselin doğru yönünü "
 "kendiliğinden algılayabilir ve görseli döndürebilir.</para>"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:84
@@ -6918,7 +6920,7 @@ msgstr "Görselleri belirli bir bölgeye kırpmak için bir araç"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can crop images to a region.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri belirli bir bölgeye "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri belirli bir bölgeye "
 "kırpabilir.</para>"
 
 #: core/dplugins/bqm/transform/flip/flip.cpp:53
@@ -6958,7 +6960,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can run user shell script as workflow "
 "stage.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, bir iş akışı aşaması olarak "
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, bir iş akışı aşaması olarak "
 "kullanıcı betiklerini çalıştırabilir.</para>"
 
 #: core/dplugins/bqm/transform/resize/resize.cpp:162
@@ -7068,8 +7070,8 @@ msgstr ""
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can resize images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri yeniden boyutlandırabilir."
-"</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri yeniden "
+"boyutlandırabilir.</para>"
 
 #: core/dplugins/bqm/transform/rotate/rotate.cpp:80
 #, kde-format
@@ -7124,7 +7126,7 @@ msgstr "Görselleri döndürmek için bir araç"
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can rotate images.</para>"
 msgstr ""
-"<para>Bu Toplu Kuyruk Yöneticisi aracı, görselleri döndürebilir.</para>"
+"<para>Bu Sıralı Toplu İş Yöneticisi aracı, görselleri döndürebilir.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifexportsettings.cpp:62
 #, kde-format
@@ -11771,7 +11773,7 @@ msgstr "“%1” dosyası kaydedilemiyor"
 #, kde-format
 msgctxt "@title:window"
 msgid "Geolocation Editor"
-msgstr "Coğrafi Konum Düzenleyicisi"
+msgstr "Coğrafî Konum Düzenleyicisi"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:261
 #, kde-format
@@ -11855,7 +11857,7 @@ msgstr "Geri Al/Yenile"
 #, kde-format
 msgctxt "@item: map tool"
 msgid "Reverse Geocoding"
-msgstr "Ters Coğrafi Konumlama"
+msgstr "Ters Coğrafî Konumlama"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:381
 #, kde-format
@@ -11948,7 +11950,7 @@ msgstr "Bazı bilgiler kaydedilemedi:"
 #, kde-format
 msgctxt "@title"
 msgid "Edit Geolocation"
-msgstr "Coğrafi Konumu Düzenle"
+msgstr "Coğrafî Konumu Düzenle"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
@@ -12010,13 +12012,13 @@ msgstr "Değişen ayrıntılar"
 #, kde-format
 msgctxt "@title"
 msgid "Geolocation Edit"
-msgstr "Coğrafi Konumu Düzenle"
+msgstr "Coğrafî Konumu Düzenle"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "A tool to edit items geolocation"
-msgstr "Ögelerin coğrafi konumunu düzenlemek için bir araç"
+msgstr "Ögelerin coğrafî konumunu düzenlemek için bir araç"
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:65
 #, kde-format
@@ -12029,19 +12031,19 @@ msgid ""
 "this tool is able to read a GPS trace from a device to synchronize geo-"
 "location of items if you camera do not have an embedded GPS device."
 msgstr ""
-"Bu araç, kullanıcıların ögelerdeki coğrafi konum bilgilerini değiştirmesine "
+"Bu araç, kullanıcıların ögelerdeki coğrafî konum bilgilerini değiştirmesine "
 "olanak tanır.<br><br>Bu araç, GPS verisini elle veya bir harita üzerinden "
-"düzenleyebilir. Ters coğrafi kodlama da web hizmetleri aracılığıyla "
+"düzenleyebilir. Ters coğrafî kodlama da web hizmetleri aracılığıyla "
 "kullanılabilir.<br><br>Bu araç aynı zamanda harita izlerini Google biçiminde "
 "depolamak için KML’ye dışa aktarma işlevine de sahiptir.<br><br>Son olarak "
-"bu araç, eğer kameranızda yerleşik bir GPS aygıtı yoksa ögelerin coğrafi "
+"bu araç, eğer kameranızda yerleşik bir GPS aygıtı yoksa ögelerin coğrafî "
 "konumunu eşzamanlamak için bir aygıttan GPS izini okuyabilir."
 
 #: core/dplugins/generic/metadata/geolocationedit/geolocationeditplugin.cpp:103
 #, kde-format
 msgctxt "@action"
 msgid "Edit Geolocation..."
-msgstr "Coğrafi Konumu Düzenle…"
+msgstr "Coğrafî Konumu Düzenle…"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:133
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:150
@@ -19350,7 +19352,7 @@ msgid ""
 msgstr ""
 "“JPEG çıktısı”: JPEG çıktısı kullanıldığında, sıkıştırma sırasında bilgi "
 "kaybı pahasına panorama dosyası daha küçük olacaktır. Bu, sonucu paylaşmanın "
-"veya çevrimiçi olarak veya bir fotoğrafçıda bastırmanın en kolay yoludur."
+"veya çevrim içi olarak veya bir fotoğrafçıda bastırmanın en kolay yoludur."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:169
 #, kde-format
@@ -34823,7 +34825,7 @@ msgstr "Yardım"
 #: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:94
 #, kde-format
 msgid "Online Handbook..."
-msgstr "Çevrimiçi El Kitabı…"
+msgstr "Çevrim İçi El Kitabı…"
 
 #: core/libs/dplugins/widgets/dplugindialog.cpp:75
 #: core/libs/dplugins/widgets/dwizarddlg.cpp:68
@@ -35327,7 +35329,7 @@ msgstr "<br><nobr><i>MIME Türü</i></nobr>"
 #: core/libs/filters/filterstatusbar.cpp:131
 #, kde-format
 msgid "<br><nobr><i>Geolocation</i></nobr>"
-msgstr "<br><nobr><i>Coğrafi Konum</i></nobr>"
+msgstr "<br><nobr><i>Coğrafî Konum</i></nobr>"
 
 #: core/libs/filters/filterstatusbar.cpp:136
 #, kde-format
@@ -35379,7 +35381,7 @@ msgstr[1] "%1 etkin süzgeç"
 #: core/libs/filters/geolocationfilter.cpp:28
 #, kde-format
 msgid "No geo filtering"
-msgstr "Coğrafi süzme yok"
+msgstr "Coğrafî süzme yok"
 
 #: core/libs/filters/geolocationfilter.cpp:29
 #, kde-format
@@ -35394,12 +35396,12 @@ msgstr "Koordinatsız görseller"
 #: core/libs/filters/geolocationfilter.cpp:32
 #, kde-format
 msgid "Filter by geolocation"
-msgstr "Coğrafi konuma göre süz"
+msgstr "Coğrafî konuma göre süz"
 
 #: core/libs/filters/geolocationfilter.cpp:33
 #, kde-format
 msgid "Select how geolocation should affect the images which are shown."
-msgstr "Coğrafi konumun gösterilen görselleri nice etkileyeceğini seçin."
+msgstr "Coğrafî konumun gösterilen görselleri nice etkileyeceğini seçin."
 
 #: core/libs/filters/mimefilter.cpp:27
 #, kde-format
@@ -37328,7 +37330,7 @@ msgstr "Tahmini bitiş:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr "Çevrimiçi Sürüm Denetleyicisi — Ön Yayım"
+msgstr "Çevrim İçi Sürüm Denetleyicisi — Ön Yayım"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
@@ -37339,7 +37341,7 @@ msgstr "Kullanılabilir ön yayım sürümleri denetleniyor, lütfen bekleyin…
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
-msgstr "Çevrimiçi Sürüm Denetleyicisi — Kararlı Sürüm"
+msgstr "Çevrim İçi Sürüm Denetleyicisi — Kararlı Sürüm"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
@@ -38002,7 +38004,7 @@ msgid ""
 "Available"
 msgstr ""
 "Kullanılabilir\n"
-"coğrafi konum\n"
+"coğrafî konum\n"
 "bilgisi yok"
 
 #: core/libs/properties/geolocation/itempropertiesgpstab.cpp:139
@@ -38104,7 +38106,7 @@ msgstr "Üst Veri"
 #: core/libs/properties/import/importitempropertiessidebar.cpp:83
 #, kde-format
 msgid "Geolocation"
-msgstr "Coğrafi Konum"
+msgstr "Coğrafî Konum"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:128
 #, kde-format
@@ -40009,7 +40011,7 @@ msgstr "Işık Tablası"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:197
 #, kde-format
 msgid "Batch Queue Manager"
-msgstr "Toplu Kuyruk Yöneticisi"
+msgstr "Sıralı Toplu İş Yöneticisi"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:463
 #, kde-format
@@ -40032,7 +40034,7 @@ msgid ""
 "Operations related to metadata, labels, ratings, tags, geolocation and "
 "rotation"
 msgstr ""
-"Üst veri, yazılar, derecelendirmeler, etiketler, künyeler, coğrafi konum ve "
+"Üst veri, yazılar, derecelendirmeler, etiketler, künyeler, coğrafî konum ve "
 "döndürme ile ilgili işlemler"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:495
@@ -40043,7 +40045,7 @@ msgstr "Ögeler ışık tablasına ekleniyor"
 #: core/libs/settings/applicationsettings_miscs.cpp:500
 #, kde-format
 msgid "Adding items to the Batch Queue Manager"
-msgstr "Ögeler toplu kuyruk yöneticisine ekleniyor"
+msgstr "Ögeler sıralı toplu iş yöneticisine ekleniyor"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:505
 #, kde-format
@@ -40856,7 +40858,7 @@ msgstr "Bir yedekten geri yüklemek için bir dosyadan künyeler içe aktarın."
 #, kde-format
 msgctxt "@info"
 msgid "Online help about tags management"
-msgstr "Künye yönetimi üzerine çevrimiçi yardım"
+msgstr "Künye yönetimi üzerine çevrim içi yardım"
 
 #: core/libs/tags/widgets/tagcheckview.cpp:71
 #, kde-format
@@ -43958,7 +43960,7 @@ msgstr "Yıkıcı olmayan görsel düzenleme"
 #: core/libs/widgets/mainview/daboutdata.cpp:243
 #, kde-format
 msgid "Reverse Geo-Coding"
-msgstr "Coğrafi Kodlamayı Tersine Döndür"
+msgstr "Coğrafî Kodlamayı Tersine Döndür"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:249
 #, kde-format
@@ -43968,7 +43970,8 @@ msgstr "Yüz Tanıma"
 #: core/libs/widgets/mainview/daboutdata.cpp:255
 #, kde-format
 msgid "Multi-core Support in Batch Queue Manager and Mentoring"
-msgstr "Toplu kuyruk yöneticisinde birden çok çekirdek desteği ve danışmanlık"
+msgstr ""
+"Sıralı toplu iş yöneticisinde birden çok çekirdek desteği ve danışmanlık"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:261
 #, kde-format
@@ -44583,7 +44586,7 @@ msgstr "GNU Görüntü İşleme Programı"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:188
 #, kde-format
 msgid "Geolocated Tagged Image File Format"
-msgstr "Coğrafi Konumu Belirli Künyeli Görüntü Dosyası Biçimi"
+msgstr "Coğrafî Konumu Belirli Künyeli Görüntü Dosyası Biçimi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:192
 #, kde-format
@@ -49620,13 +49623,13 @@ msgstr "Metin Düzenleme Alternatif Dillerini Seç"
 #, kde-format
 msgctxt "@label"
 msgid "Online Translator:"
-msgstr "Çevrimiçi çevirmen:"
+msgstr "Çevrim içi çevirmen:"
 
 #: core/libs/widgets/text/localizeconfig.cpp:223
 #, kde-format
 msgctxt "@option"
 msgid "Select here the online engine to translate text"
-msgstr "Metin çevirmek için çevrimiçi işletkeyi burada seçin"
+msgstr "Metin çevirmek için çevrim içi işletkeyi burada seçin"
 
 #: core/libs/widgets/text/localizeconfig.cpp:230
 #, kde-kuit-format
@@ -49641,10 +49644,10 @@ msgid ""
 "wide languages are supported by online Web-services.</para>"
 msgstr ""
 "<para>Çevirmen işletkesi, metni bir dilden diğerine çevirmek için kullanılan "
-"çevrimiçi bir web hizmetidir. Bu özellik, Başlık, Alt Yazı vb. gibi "
+"çevrim içi bir web hizmetidir. Bu özellik, Başlık, Alt Yazı vb. gibi "
 "alternatif dilin desteklendiği üst veri seçeneğinde kullanılabilirdir. "
 "Çeviri işlemi tümüyle otomatikleştirilmiştir; ancak çalışması için İnternet "
-"bağlantısı gerektirir.</para> <para>Dünya çapındaki dillerin tümü çevrimiçi "
+"bağlantısı gerektirir.</para> <para>Dünya çapındaki dillerin tümü çevrim içi "
 "Web hizmetleri tarafından desteklenmediğinden, kullanıcı istenen hedef dile "
 "bağlı olarak daha uygun bir çevirmen işletkesi seçebilir.</para>"
 
@@ -50491,7 +50494,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
-msgstr "Coğrafi Konum"
+msgstr "Coğrafî Konum"
 
 #: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
 #, kde-format
@@ -50500,8 +50503,8 @@ msgid ""
 "Geolocation Settings\n"
 "Customize view to geolocalize items"
 msgstr ""
-"Coğrafi Konum Ayarları\n"
-"Ögelerin coğrafi konum görünümünü özelleştirin"
+"Coğrafî Konum Ayarları\n"
+"Ögelerin coğrafî konum görünümünü özelleştirin"
 
 #: core/showfoto/setup/showfotosetup.cpp:150
 #, kde-format
@@ -50672,14 +50675,14 @@ msgstr ""
 #: core/showfoto/setup/showfotosetupmisc.cpp:156
 #, kde-format
 msgid "&Show Geolocation Indicator"
-msgstr "Coğrafi Konum Göstergesini &Göster"
+msgstr "Coğrafî Konum Göstergesini &Göster"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:157
 #: core/utilities/setup/camera/setupcamera.cpp:449
 #, kde-format
 msgid "Set this option to indicate if image has geolocation information."
 msgstr ""
-"Görselin coğrafi konum bilgisi içerip içermediğini belirtmek için bu "
+"Görselin coğrafî konum bilgisi içerip içermediğini belirtmek için bu "
 "seçeneği ayarlayın."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:158
@@ -53210,7 +53213,7 @@ msgstr ""
 "<qt><p><i>Not:</i> Araç ipuçları, fare ögeler üzerinde hareket ederken "
 "fotoğraf ve digiKam üst verisini anında gösterir. Bu, ögeleri seçerken "
 "faydalı olabilir. Araç ipuçları, albüm klasörü görünümünde, albüm simgesi "
-"görünümünde, kamera simgesi görünümünde, toplu sıra listesi ve parmak "
+"görünümünde, kamera simgesi görünümünde, sıralı toplu iş listesi ve parmak "
 "çubuğunda görüntülenir. digiKam yapılandırma iletişim kutusundan, bu araç "
 "ipuçlarının içeriğini ve kullanılan yazıtiplerini özelleştirebilirsiniz.</"
 "p></qt>"
@@ -53973,7 +53976,7 @@ msgstr "Okyanus"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:477
 #, kde-format
 msgid "Geographic Pole"
-msgstr "Coğrafi Kutup"
+msgstr "Coğrafî Kutup"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:480
 #, kde-format
@@ -55854,7 +55857,7 @@ msgstr "&Pusula"
 #: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:94
 #, kde-format
 msgid "A plugin to show a float item that provides a compass over the map."
-msgstr "sBu ögede coğrafi konum bilgisi var."
+msgstr "sBu ögede coğrafî konum bilgisi var."
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, CrosshairsConfigWidget)
 #: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsConfigWidget.ui:14
@@ -56394,7 +56397,7 @@ msgstr "Önbellek Dosyası Ayrıştırıcısı"
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
-"İkili önbellek dosyalarından coğrafi konum verisi yüklemek için bir eklenti."
+"İkili önbellek dosyalarından coğrafî konum verisi yüklemek için bir eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:72
 #, kde-format
@@ -56412,7 +56415,7 @@ msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
-"GPSBabel komut satırı ile NMEA dosyalarından coğrafi konum verisi yüklemek "
+"GPSBabel komut satırı ile NMEA dosyalarından coğrafî konum verisi yüklemek "
 "için bir eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:68
@@ -56429,7 +56432,7 @@ msgstr "Gpx Dosyası Ayrıştırıcısı"
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
-"Gpx verisi dosya biçiminden coğrafi konum verisi yüklemek için bir eklenti."
+"Gpx verisi dosya biçiminden coğrafî konum verisi yüklemek için bir eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:68
 #, kde-format
@@ -56445,7 +56448,7 @@ msgstr "GeoJSON Dosyası Ayrıştırıcısı"
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
-"GeoJSON veri dosyası biçiminden coğrafi konum verisi yüklemek için bir "
+"GeoJSON veri dosyası biçiminden coğrafî konum verisi yüklemek için bir "
 "eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
@@ -56463,7 +56466,7 @@ msgstr "KML Dosyası Ayrıştırıcısı"
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
-"KML ve KMZ veri dosyası biçiminden coğrafi konum verisi yüklemek için bir "
+"KML ve KMZ veri dosyası biçiminden coğrafî konum verisi yüklemek için bir "
 "eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:69
@@ -56474,7 +56477,7 @@ msgstr "Google Earth KML"
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:39
 #, kde-format
 msgid "OpenStreetMap Nominatim Reverse Geocoding"
-msgstr "OpenStreetMap Nominatim Ters Coğrafi Konum Belirleme"
+msgstr "OpenStreetMap Nominatim Ters Coğrafî Konum Belirleme"
 
 #: core/utilities/geolocation/engine/plugins/runner/nominatim-reversegeocoding/NominatimReverseGeocodingPlugin.cpp:44
 #, kde-format
@@ -56487,7 +56490,7 @@ msgid ""
 "A plugin to process Online reverse geocoding using the OpenStreetMap "
 "Nominatim web-service"
 msgstr ""
-"OpenStreetMap Nominatim web hizmetini kullanarak çevrimiçi ters coğrafi "
+"OpenStreetMap Nominatim web hizmetini kullanarak çevrim içi ters coğrafî "
 "konum işlemek için bir eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:37
@@ -56500,7 +56503,7 @@ msgstr "OSM Dosyası Ayrıştırıcısı"
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
-"OpenStreetMap veri dosyası biçiminden coğrafi konum verisi yüklemek için bir "
+"OpenStreetMap veri dosyası biçiminden coğrafî konum verisi yüklemek için bir "
 "eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:69
@@ -56518,7 +56521,7 @@ msgstr "PNT Dosyası Ayrıştırıcısı"
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
-"Sıkıştırılmış PNT veri dosyası biçiminden coğrafi konum yüklemek için bir "
+"Sıkıştırılmış PNT veri dosyası biçiminden coğrafî konum yüklemek için bir "
 "eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:68
@@ -56537,7 +56540,7 @@ msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
-"Micro World Database II dosya biçiminden coğrafi konum verisi yüklemek için "
+"Micro World Database II dosya biçiminden coğrafî konum verisi yüklemek için "
 "bir eklenti."
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:68
@@ -57087,7 +57090,7 @@ msgstr "Tahmini indirme boyutu: %1 kB"
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:17
 #, kde-format
 msgid "Select a geographic region"
-msgstr "Coğrafi Bölge Seç"
+msgstr "Coğrafî Bölge Seç"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, northSpinBox)
 #: core/utilities/geolocation/engine/storage/LatLonBoxWidget.ui:41
@@ -57375,7 +57378,7 @@ msgstr "Yer imi yorumu"
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
-msgstr "Coğrafi Konum Yer İmlerini Düzenle"
+msgstr "Coğrafî Konum Yer İmlerini Düzenle"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
 #: core/utilities/setup/album/setupcategory.cpp:95
@@ -58163,7 +58166,7 @@ msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
-"%1/%2 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş künyeleri "
+"%1/%2 görsel tersine coğrafî konumlandı. Halihazırda elde edilmiş künyeleri "
 "tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:949
@@ -58172,7 +58175,7 @@ msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
-"1 görsel tersine coğrafi konumlandı. Halihazırda elde edilmiş künyeleri "
+"1 görsel tersine coğrafî konumlandı. Halihazırda elde edilmiş künyeleri "
 "tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:955
@@ -58302,7 +58305,7 @@ msgstr "Albümden parçalar yükle"
 #: core/utilities/geolocation/geoiface/widgets/placeholderwidget.cpp:46
 #, kde-format
 msgid "Geolocation Interface"
-msgstr "Coğrafi Konum Arayüzü"
+msgstr "Coğrafî Konum Arayüzü"
 
 #: core/utilities/geolocation/geomapwrapper/gpsiteminfosorter.cpp:185
 #, kde-format
@@ -58355,7 +58358,7 @@ msgstr "Alana göre ara:"
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:222
 #, kde-format
 msgid "Show Non-Geolocated Items"
-msgstr "Coğrafi Konumlanmamış Ögeleri Göster"
+msgstr "Coğrafî Konumlanmamış Ögeleri Göster"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:109
@@ -58379,7 +58382,7 @@ msgstr "Ad Var"
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:648
 #, kde-format
 msgid "Non Geo-located Items"
-msgstr "Coğrafi Konumlanmamış Ögeler"
+msgstr "Coğrafî Konumlanmamış Ögeler"
 
 #: core/utilities/imageeditor/core/undoaction.cpp:145
 #, kde-format
@@ -58752,7 +58755,7 @@ msgstr "Bu araç hakkında…"
 #: core/utilities/queuemanager/views/toolsettingsview.cpp:103
 #, kde-format
 msgid "Tool online handbook..."
-msgstr "Çevrimiçi araç el kitabı…"
+msgstr "Çevrim içi araç el kitabı…"
 
 #: core/utilities/imageeditor/editor/editortoolsettings.cpp:160
 #, kde-format
@@ -62136,7 +62139,8 @@ msgstr "Süreç ilerliyor"
 #, kde-format
 msgid "Batch Queue Manager is running. Do you want to cancel current job?"
 msgstr ""
-"Toplu Kuyruk Yöneticisi çalışıyor. Geçerli işi iptal etmek istiyor musunuz?"
+"Sıralı Toplu İş Yöneticisi çalışıyor. Geçerli işi iptal etmek istiyor "
+"musunuz?"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:645
 #, kde-format
@@ -62212,12 +62216,12 @@ msgstr "“%2” kuyruğundaki “%1” ögesi: %3"
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1016
 #, kde-format
 msgid "Batch queue finished"
-msgstr "Toplu iş kuyruğu bitti"
+msgstr "Sıralı toplu iş bitti"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:1020
 #, kde-format
 msgid "All batch queues finished"
-msgstr "Tüm toplu iş kuyrukları bitti"
+msgstr "Tüm sıralı toplu işler bitti"
 
 #. i18n: ectx: Menu (Queues)
 #: core/utilities/queuemanager/main/queuemgrwindowui5.rc:6
@@ -62618,7 +62622,7 @@ msgstr "Açıklama"
 #, kde-format
 msgctxt "@title:window"
 msgid "Batch Queue Manager"
-msgstr "Toplu Kuyruk Yöneticisi"
+msgstr "Sıralı Toplu İş Yöneticisi"
 
 #: core/utilities/queuemanager/views/workflowlist.cpp:127
 #, kde-format
@@ -63234,7 +63238,7 @@ msgstr "Ögenin GPS bilgisi yok"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:722
 #, kde-format
 msgid "Not Geo-located"
-msgstr "Coğrafi konumlandırılmamış"
+msgstr "Coğrafî konumlandırılmamış"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:732
 #: core/utilities/searchwindow/searchfields_createfield.cpp:799
@@ -63638,7 +63642,7 @@ msgstr "Alt Yazı, Yorum, Başlık"
 #: core/utilities/searchwindow/searchgroup.cpp:186
 #, kde-format
 msgid "Geographic position"
-msgstr "Coğrafi Konum"
+msgstr "Coğrafî Konum"
 
 #: core/utilities/searchwindow/searchgroup.cpp:210
 #, kde-format
@@ -64003,7 +64007,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:87
 #, kde-format
 msgid "Show geolocation overlay button"
-msgstr "Coğrafi konum katman düğmesini göster"
+msgstr "Coğrafî konum katman düğmesini göster"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:88
 #, kde-format
@@ -64011,7 +64015,7 @@ msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
-"Coğrafi konumlandırılmış ögeyi tanımlamak ve coğrafi konum sekmesini açmak "
+"Coğrafî konumlandırılmış ögeyi tanımlamak ve coğrafî konum sekmesini açmak "
 "için küçük görselin üzerinde bir yer paylaşımı düğmesini görüntülemek üzere "
 "bu seçeneği işaretleyin."
 
@@ -64911,7 +64915,7 @@ msgstr "Görsel biçimini göster"
 #: core/utilities/setup/camera/setupcamera.cpp:448
 #, kde-format
 msgid "Show Geolocation Indicator"
-msgstr "Coğrafi konum göstergesini göster"
+msgstr "Coğrafî konum göstergesini göster"
 
 #: core/utilities/setup/camera/setupcamera.cpp:452
 #, kde-format
@@ -65495,10 +65499,10 @@ msgid ""
 "downloading the files.</b></p>"
 msgstr ""
 "<p>Bazı gerekli dosyalar bulunamadı. Gereksiniminiz olan dosyaları kurmaya "
-"başlamak için “İndir”e tıklayın. Bu iletişim kutusunu kapatırsanız; "
-"digiKam’ı bir sonraki başlatışınızda size yeniden sorulacaktır. Bu dosyalar "
-"olmadan seçili özellikler çalışmazlar.</p><p><b>Dosyaları başarılı bir "
-"şekilde indirdikten sonra digiKam’ı yeniden başlatmanız gerekir.</b></p>"
+"başlamak için “İndir”e tıklayın. Bu iletişim kutusunu kapatırsanız digiKam’ı "
+"bir sonraki başlatışınızda size yeniden sorulacaktır. Bu dosyalar olmadan "
+"seçili özellikler çalışmazlar.</p><p><b>Dosyaları başarılı bir şekilde "
+"indirdikten sonra digiKam’ı yeniden başlatmanız gerekir.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
@@ -66955,7 +66959,7 @@ msgid ""
 "Turn on this option to store Geolocation information in the Exif tag and the "
 "XMP tags."
 msgstr ""
-"Coğrafi konum bilgisini Exif ve XMP künyelerinde depolamak için bu seçeneği "
+"Coğrafî konum bilgisini Exif ve XMP künyelerinde depolamak için bu seçeneği "
 "açın."
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:115
@@ -67497,7 +67501,7 @@ msgstr ""
 "\n"
 "NVIDIA GPU kullanıcıları için not: Aygıtınızı digiKam çalışma zamanında "
 "algılanabilir ve kullanılabilir hale getirmek için “Yardım” düğmesi ile "
-"erişilebilen çevrimiçi belgelendirmeyi okuyun."
+"erişilebilen çevrim içi belgelendirmeyi okuyun."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format
@@ -67714,7 +67718,7 @@ msgid ""
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
 "<font color='black'><i><b>⚠️ Uyarı:</b> Bu ayarlar, uygulama başlatma "
-"süresini daha uzun yapar! Öncelikle <a href=\"%1\">çevrimiçi "
+"süresini daha uzun yapar! Öncelikle <a href=\"%1\">çevrim içi "
 "belgelendirmeyi</a> dikkatlice okuyun.</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:43
@@ -67993,7 +67997,7 @@ msgstr ""
 "<font color='black'><i><b>⚠️ Uyarı:</b> Bu ayarlara yapılan tüm değişiklikler "
 "uygulama yeniden başlatıldıktan sonra geçerli olur. Bazı ayarlar donanıma "
 "bağlıdır ve yan etkileri olabilir. Daha fazla bilgi için <a href="
-"\"%1\">çevrimiçi belgelendirmeyi</a> okuyun.</i></font>"
+"\"%1\">çevrim içi belgelendirmeyi</a> okuyun.</i></font>"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
 #, kde-format
@@ -68377,7 +68381,7 @@ msgid ""
 "pricing/'>Google page</a> about usages, practices, and prices."
 msgstr ""
 "Google Haritalar’ın kullanıcı dostu bir şekilde çalışabilmesi için son "
-"kullanıcıların kimlik bilgileri kazanmak üzere çevrimiçi olarak satın "
+"kullanıcıların kimlik bilgileri kazanmak üzere çevrim içi olarak satın "
 "almaları gereken bir API anahtarı gerekir. Bu anahtar olmadan, Google "
 "Haritalar hala kullanılabilir; ancak “Yalnızca Geliştirme İçindir” "
 "açıklamalı bir filigran çerçevesiyle kullanılabilir. Daha fazla bilgi için "
@@ -68443,7 +68447,7 @@ msgstr "Görsel Düzenleyicisi"
 #, kde-format
 msgctxt "@title:tab plugins type"
 msgid "Batch Queue Manager"
-msgstr "Toplu Kuyruk Yöneticisi"
+msgstr "Sıralı Toplu İş Yöneticisi"
 
 #: core/utilities/setup/setupplugins.cpp:86
 #, kde-format
