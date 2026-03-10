@@ -31,7 +31,7 @@ class DIGIKAM_EXPORT GPSUndoCommand : public QUndoCommand
 {
 public:
 
-    class UndoInfo
+    class DIGIKAM_EXPORT UndoInfo
     {
     public:
 
