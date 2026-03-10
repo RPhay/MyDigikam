@@ -26,7 +26,7 @@ BUGFIXES:
 002 --> 517308 - In the new "Survey" tool, the left and right overlay navigation arrows are not working.
 003 --> 517303 - Modification date is not being edited.
 004 --> 517328 - Error when starting digiKam 9.0.0 - lensfun.dll.
-005 -->
+005 --> 517393 - Faces menu when viewing an image preview is showing image_recognize_faces instead of the label.
 006 -->
 007 -->
 008 -->

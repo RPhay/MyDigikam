@@ -699,7 +699,7 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
         // give the option to recognize faces
 
-        fmenu->addAction(QLatin1String("image_recognize_faces"));
+        fmenu->addAction(DigikamApp::instance()->actionCollection()->action(QLatin1String("image_recognize_faces")));
     }
 
     cmHelper.addSubMenu(fmenu);
