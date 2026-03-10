@@ -16,6 +16,9 @@ Bundles component versions:
 | macOS Qt5     | 5.15.18    | 5.116       | 4.12           | 7.1.2          | 1.20.2       | 13.52            | 0.28.7        |
 | macOS Qt6     | 6.10.0     | 6.20.0      | 4.12           | 7.1.2          | 1.20.2       | 13.52            | 0.28.7        |
 
+Raw Engine      : Internal Libraw has been updated to the latest upstream 20260310 which brings with
+                  it a variety of bug fixes and performance improvements.
+
 *****************************************************************************************************
 BUGFIXES:
 
