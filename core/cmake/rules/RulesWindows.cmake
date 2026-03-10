@@ -28,7 +28,7 @@ if(MSVC)
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} /STACK:16777216")
     set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} /STACK:16777216")
 
-    # Disable indeep warnings from Visual Studio C++
+    # --- Disable indeep warnings from Visual Studio C++
 
     # To disable warnings about no suitable definition provided for explicit template instantiation request.
     add_compile_options(/wd4661)
@@ -48,7 +48,13 @@ if(MSVC)
     # To disable warnings about truncation from double to float.
     add_compile_options(/wd4305)
 
+    # To disable warnings about enum has named enumerators with values that cannot be represented in the given bit field width.
+    add_compile_options(/wd5249)
+
+    # --- Disable linking warnings
+
     # To disable warnings about linking object specified multiple times.
     add_link_options(/ignore:4197)
+
 
 endif()
