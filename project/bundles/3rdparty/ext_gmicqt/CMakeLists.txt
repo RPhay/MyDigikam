@@ -35,7 +35,7 @@ ExternalProject_Add(ext_gmic_qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
     GIT_REPOSITORY https://github.com/cgilles/digikam-gmic-qt.git
 
-    SOURCE_DIR gmic-qt
+#    SOURCE_DIR gmic-qt
     INSTALL_DIR ${PREFIX_ext_gmicqt}
     BUILD_IN_SOURCE 1
 
