@@ -63,7 +63,7 @@ public:
 
 public:
 
-    class Tile
+    class DIGIKAM_EXPORT Tile
     {
     public:
 
