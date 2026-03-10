@@ -42,11 +42,12 @@
 #include "dnnmodelmanager.h"
 #include "dnnmodelnet.h"
 #include "dmetadata.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class AutotagsPipelineBase : public MLPipelineFoundation
+class DIGIKAM_GUI_EXPORT AutotagsPipelineBase : public MLPipelineFoundation
 {
     Q_OBJECT
 
