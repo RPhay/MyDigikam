@@ -155,6 +155,7 @@ target_link_libraries(digikamcore
                       Qt${QT_VERSION_MAJOR}::PrintSupport
                       Qt${QT_VERSION_MAJOR}::Concurrent
                       Qt${QT_VERSION_MAJOR}::Svg
+                      Qt${QT_VERSION_MAJOR}::WebEngineWidgets
 
                       KF${QT_VERSION_MAJOR}::Solid
                       KF${QT_VERSION_MAJOR}::WindowSystem
@@ -221,10 +222,6 @@ if(Qt6_FOUND)
 
 endif()
 
-target_link_libraries(digikamcore
-                      PRIVATE
-                      Qt${QT_VERSION_MAJOR}::WebEngineWidgets
-)
 
 if(ENABLE_DBUS)
 
