@@ -37,6 +37,7 @@ ExternalProject_Add(ext_gmic_qt
 
     SOURCE_DIR gmic-qt
     INSTALL_DIR ${PREFIX_ext_gmicqt}
+    BUILD_IN_SOURCE 1
 
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic}
                -DCMAKE_BUILD_TYPE=RelWithDebInfo
