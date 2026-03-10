@@ -58,7 +58,7 @@ public:
 
 protected:
 
-    class VotingGroups
+    class DIGIKAM_EXPORT VotingGroups
     {
     public:
 
