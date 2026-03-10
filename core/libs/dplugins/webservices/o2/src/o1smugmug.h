@@ -45,7 +45,7 @@ public:
     Q_INVOKABLE void initAuthorizationUrl(Access access, Permissions permissions);
 
 #if QT_VERSION >= 0x050000
-    class AuthorizationUrlBuilder {
+    class O0_EXPORT AuthorizationUrlBuilder {
     public:
         void setAccess(Access value);
         void setPermissions(Permissions value);
