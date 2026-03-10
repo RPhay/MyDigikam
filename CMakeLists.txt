@@ -107,7 +107,7 @@ else()
     set(ECM_MIN_VERSION "5.55.0")
 endif()
 
-if ("${QT_VERSION}" VERSION_GREATER 6.6.99)
+if("${QT_VERSION}" VERSION_GREATER 6.6.99)
     set(CMAKE_CXX_STANDARD      20)
 else()
     set(CMAKE_CXX_STANDARD      17)
