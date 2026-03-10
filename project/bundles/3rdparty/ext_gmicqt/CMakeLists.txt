@@ -38,7 +38,7 @@ if(MSVC)
 
         GIT_REPOSITORY https://github.com/cgilles/digikam-gmic-qt.git
 
-        CONFIGURE_COMMAND <SOURCE_DIR>/bootstrap.vcpkg ${PREFIX_ext_gmicqt} RelWithDebInfo ${GmicQt_Conf}
+        CONFIGURE_COMMAND bash <SOURCE_DIR>/bootstrap.vcpkg ${PREFIX_ext_gmicqt} RelWithDebInfo ${GmicQt_Conf}
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
 
