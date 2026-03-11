@@ -15,6 +15,7 @@ set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DBUILD_TESTING=OFF
                 -DZLIB_ROOT=${EXTPREFIX}
                 -DPNG_ROOT=${EXTPREFIX}
+                -DFFTW3_ROOT=${EXTPREFIX}
                 ${GLOBAL_PROFILE}
 )
 
