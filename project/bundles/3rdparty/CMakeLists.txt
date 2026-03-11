@@ -16,6 +16,14 @@ if(POLICY CMP0135)
 
 endif()
 
+# For ZLIB detection under Windows
+
+if(POLICY CMP0074)
+
+    cmake_policy(SET CMP0074 OLD)
+
+endif()
+
 function(JoinListAsString VALUES GLUE OUTPUT)
     string(REPLACE ";" "${GLUE}" _TMP_STR "${VALUES}")
     set(${OUTPUT} "${_TMP_STR}" PARENT_SCOPE)
