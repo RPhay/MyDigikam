@@ -164,7 +164,7 @@ void BracketStackList::addItems(const QList<QUrl>& list)
         return;
     }
 
-    QList<QUrl> urls;
+    QList<QUrl> newList;
 
     for (const QUrl& imageUrl: list)
     {
@@ -191,16 +191,16 @@ void BracketStackList::addItems(const QList<QUrl>& list)
             BracketStackItem* const item = new BracketStackItem(this);
             item->setUrl(imageUrl);
             item->setOn(true);
-            urls.append(imageUrl);
+            newList.append(imageUrl);
         }
     }
 
-    for (const QUrl& url : std::as_const(urls))
+    for (const QUrl& url : std::as_const(newList))
     {
         ThumbnailLoadThread::defaultThread()->find(ThumbnailIdentifier(url.toLocalFile()));
     }
 
-    Q_EMIT signalAddItems(urls);
+    Q_EMIT signalAddItems(newList);
 }
 
 void BracketStackList::slotThumbnail(const LoadingDescription& desc, const QPixmap& pix)
