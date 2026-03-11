@@ -227,12 +227,12 @@ const GalleryTheme::List& GalleryTheme::getList()
         {
             GalleryTheme::Ptr theme(new GalleryTheme);
             theme->d->init(*it);
-            QString internalName = theme->internalName();
+            QString intName = theme->internalName();
 
-            if (!internalNameList.contains(internalName))
+            if (!internalNameList.contains(intName))
             {
                 sList << theme;
-                internalNameList << internalName;
+                internalNameList << intName;
             }
         }
     }
