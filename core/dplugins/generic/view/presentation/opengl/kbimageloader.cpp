@@ -191,21 +191,21 @@ void KBImageLoader::run()
 
 bool KBImageLoader::loadImage()
 {
-    QString path  = d->sharedData->urlList[d->fileIndex].toLocalFile();
-    QImage  image = PreviewLoadThread::loadHighQualitySynchronously(path,
-                                                                    PreviewSettings::RawPreviewAutomatic,
-                                                                    d->iccProfile).copyQImage();
+    QString path = d->sharedData->urlList[d->fileIndex].toLocalFile();
+    QImage  img  = PreviewLoadThread::loadHighQualitySynchronously(path,
+                                                                   PreviewSettings::RawPreviewAutomatic,
+                                                                   d->iccProfile).copyQImage();
 
-    if (image.isNull())
+    if (img.isNull())
     {
         return false;
     }
 
     d->imageLock.lock();
 
-    d->textureAspect = (float)image.width() / (float)image.height();
-    d->texture       = image.scaled(d->width, d->height,
-                                    Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    d->textureAspect = (float)img.width() / (float)img.height();
+    d->texture       = img.scaled(d->width, d->height,
+                                  Qt::KeepAspectRatio, Qt::SmoothTransformation);
 
     d->imageLock.unlock();
 
