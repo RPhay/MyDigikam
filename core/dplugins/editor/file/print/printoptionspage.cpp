@@ -314,11 +314,11 @@ void PrintOptionsPage::loadConfig()
 
 void PrintOptionsPage::saveConfig()
 {
-    int position        = d->positionGroup.checkedId();
+    int position   = d->positionGroup.checkedId();
     PrintConfig::setPrintPosition(position);
 
-    ScaleMode scaleMode = ScaleMode(d->scaleGroup.checkedId());
-    PrintConfig::setPrintScaleMode(scaleMode);
+    ScaleMode mode = ScaleMode(d->scaleGroup.checkedId());
+    PrintConfig::setPrintScaleMode(mode);
 
     d->configDialogManager->updateSettings();
 
