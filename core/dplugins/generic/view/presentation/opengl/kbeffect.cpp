@@ -61,15 +61,15 @@ KBImage* KBEffect::image(int img) const
 
 KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
 {
-    KBEffect::Type type;
+    KBEffect::Type effType;
 
     do
     {
-        type = (QRandomGenerator::global()->bounded(2U) == 0) ? KBEffect::Fade : KBEffect::Blend;
+        effType = (QRandomGenerator::global()->bounded(2U) == 0) ? KBEffect::Fade : KBEffect::Blend;
     }
-    while ((type == oldType) && (m_numKBEffectRepeated >= 1));
+    while ((effType == oldType) && (m_numKBEffectRepeated >= 1));
 
-    if (type == oldType)
+    if (effType == oldType)
     {
         m_numKBEffectRepeated++;
     }
@@ -78,7 +78,7 @@ KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
         m_numKBEffectRepeated = 0;
     }
 
-    return type;
+    return effType;
 }
 
 // -------------------------------------------------------------------------
