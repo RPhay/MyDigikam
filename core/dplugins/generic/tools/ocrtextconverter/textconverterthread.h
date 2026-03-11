@@ -45,7 +45,7 @@ public:
     void ocrProcessFile(const QUrl& url);
     void ocrProcessFiles(const QList<QUrl>& urlList);
 
-    void cancel();
+    void cancel()                override;
 
 Q_SIGNALS:
 

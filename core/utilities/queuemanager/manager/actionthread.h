@@ -40,7 +40,7 @@ public:
 
     void processQueueItems(const QList<AssignedBatchTools>& items);
 
-    void cancel();
+    void cancel()   override;
 
 Q_SIGNALS:
 
