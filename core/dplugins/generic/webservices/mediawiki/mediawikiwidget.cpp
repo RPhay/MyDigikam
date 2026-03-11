@@ -722,7 +722,7 @@ void MediaWikiWidget::loadItemInfo(const QUrl& url)
 {
     DItemInfo info(d->iface->itemInfo(url));
     QStringList keywar        = info.keywords();
-    QString date              = info.dateTime().toString(Qt::ISODate).replace(QLatin1Char('T'), QLatin1Char(' '), Qt::CaseSensitive);
+    QString dt                = info.dateTime().toString(Qt::ISODate).replace(QLatin1Char('T'), QLatin1Char(' '), Qt::CaseSensitive);
     QString title             = info.name();
     QString description       = info.title();
     QString currentCategories;
@@ -749,7 +749,7 @@ void MediaWikiWidget::loadItemInfo(const QUrl& url)
 
     QMap<QString, QString> imageMetaData;
     imageMetaData[QLatin1String("title")]       = title;
-    imageMetaData[QLatin1String("date")]        = date;
+    imageMetaData[QLatin1String("date")]        = dt;
     imageMetaData[QLatin1String("categories")]  = currentCategories;
     imageMetaData[QLatin1String("description")] = description;
     imageMetaData[QLatin1String("latitude")]    = latitude;
