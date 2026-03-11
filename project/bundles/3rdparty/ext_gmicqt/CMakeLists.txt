@@ -13,7 +13,8 @@ set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_SYSTEM_GMIC=OFF
                 -DENABLE_CURL=OFF
                 -DBUILD_TESTING=OFF
-                -DZLIB_ROOT=${ZLIB_ROOT}
+                -DZLIB_ROOT=${EXTPREFIX}
+                -DPNG_ROOT=${EXTPREFIX}
                 ${GLOBAL_PROFILE}
 )
 
