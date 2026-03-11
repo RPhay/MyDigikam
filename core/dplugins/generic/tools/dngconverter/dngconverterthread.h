@@ -51,7 +51,7 @@ public:
     void processRawFile(const QUrl& url);
     void processRawFiles(const QList<QUrl>& urlList);
 
-    void cancel();
+    void cancel()               override;
 
 Q_SIGNALS:
 

@@ -91,7 +91,7 @@ message(STATUS "Target Build Type: ${CMAKE_BUILD_TYPE}")
 
 set(QT5_MIN_VERSION       "5.14.0")
 set(QT6_MIN_VERSION       "6.4.0")
-set(CMAKE_MODULE_PATH 
+set(CMAKE_MODULE_PATH
                       ${CMAKE_SOURCE_DIR}/core/cmake/modules
                       ${CMAKE_SOURCE_DIR}/core/cmake/macros
                       ${CMAKE_SOURCE_DIR}/core/cmake/rules
@@ -107,7 +107,7 @@ else()
     set(ECM_MIN_VERSION "5.55.0")
 endif()
 
-if ("${QT_VERSION}" VERSION_GREATER 6.6.99)
+if("${QT_VERSION}" VERSION_GREATER 6.6.99)
     set(CMAKE_CXX_STANDARD      20)
 else()
     set(CMAKE_CXX_STANDARD      17)
@@ -172,8 +172,8 @@ set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
 
 ### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 
-option(DIGIKAMSC_COMPILE_PO              "Build translations files (default=ON)"                                                  ON)
-option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"                                                        ON)
+option(DIGIKAMSC_COMPILE_PO              "Build translations files (default=ON)" ON)
+option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"       ON)
 
 #######################################################################################################################
 
@@ -194,7 +194,7 @@ message(STATUS "")
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     if(NOT EXISTS ${CMAKE_SOURCE_DIR}/core)
         message(STATUS "${PROJECT_NAME} will be compiled....................... NO (source code not available)")
-        set (DIGIKAMSC_COMPILE_DIGIKAM OFF)
+        set(DIGIKAMSC_COMPILE_DIGIKAM OFF)
     else()
         message(STATUS "${PROJECT_NAME} will be compiled....................... YES")
     endif()
@@ -235,10 +235,11 @@ if(BUILD_TESTING)
     # For CI runners to run tests, the following custom target serves to perform the download automatically.
     # If the directory "test-data" has already been created, the target becomes a "no-op".
     #
-    add_custom_command(OUTPUT ${CMAKE_SOURCE_DIR}/test-data 
+    add_custom_command(OUTPUT  ${CMAKE_SOURCE_DIR}/test-data
                        COMMENT "Checkout unit-test data repository. Please wait..."
                        COMMAND git
-                       ARGS clone https://invent.kde.org/graphics/digikam-test-data.git ${CMAKE_SOURCE_DIR}/test-data)
+                       ARGS    clone https://invent.kde.org/graphics/digikam-test-data.git ${CMAKE_SOURCE_DIR}/test-data
+    )
     add_custom_target(test-data ALL DEPENDS ${CMAKE_SOURCE_DIR}/test-data)
 
 endif()

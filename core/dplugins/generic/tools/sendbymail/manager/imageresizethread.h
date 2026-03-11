@@ -39,7 +39,7 @@ public:
     ~ImageResizeThread() override;
 
     void resize(MailSettings* const settings);
-    void cancel();
+    void cancel()        override;
 
 Q_SIGNALS:
 

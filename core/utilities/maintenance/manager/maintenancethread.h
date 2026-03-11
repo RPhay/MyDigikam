@@ -43,7 +43,7 @@ class MaintenanceThread : public ActionThreadBase
 public:
 
     explicit MaintenanceThread(QObject* const parent);
-    ~MaintenanceThread() override;
+    ~MaintenanceThread()    override;
 
     void setUseMultiCore(const bool b);
 
@@ -63,7 +63,7 @@ public:
     void cleanSimilarityDb(const QList<qlonglong>& imageIds);
     void shrinkDatabases();
 
-    void cancel();
+    void cancel()           override;
 
     QString getThumbFingerprintPath();
 
