@@ -57,6 +57,8 @@ ItemPreviewOsd::ItemPreviewOsd(PreviewOsdSettings* const settings, QWidget* cons
       d      (new Private)
 {
     setAttribute(Qt::WA_TransparentForMouseEvents);
+    setFocusPolicy(Qt::NoFocus);
+
     d->settings = settings;
 }
 

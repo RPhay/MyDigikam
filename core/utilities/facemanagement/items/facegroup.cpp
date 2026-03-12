@@ -137,7 +137,7 @@ void FaceGroup::setInfo(const ItemInfo& info)
 {
     if (d->info != info)
     {
-        clear();
+        d->clear(NoFaces);
     }
 
     d->info = info;
@@ -315,7 +315,7 @@ void FaceGroup::load()
 
     if (d->info.isNull())
     {
-        clear();
+        d->clear(FacesLoaded);
 
         return;
     }
@@ -324,19 +324,12 @@ void FaceGroup::load()
 
     if (faces.isEmpty())
     {
-        clear();
+        d->clear(FacesLoaded);
 
         return;
     }
 
-    d->visibilityController->clear();
-
-    for (FaceItem* const item : std::as_const(d->items))
-    {
-        delete item;
-    }
-
-    d->items.clear();
+    d->clear(FacesLoad);
 
     for (const FaceTagsIface& face : faces)
     {
@@ -358,24 +351,10 @@ void FaceGroup::load()
     d->state = FacesLoaded;
 }
 
-void FaceGroup::clear()
-{
-    slotCancelAddItem();
-    d->visibilityController->clear();
-
-    for (FaceItem* const item : std::as_const(d->items))
-    {
-        delete item;
-    }
-
-    d->items.clear();
-    d->state = NoFaces;
-}
-
 void FaceGroup::rejectAll()
 {
     d->newEditPipeline->removeAllFaces(d->info);
-    clear();
+    d->clear(NoFaces);
 }
 
 void FaceGroup::markAllAsIgnored()

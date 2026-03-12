@@ -92,10 +92,6 @@ public Q_SLOTS:
 protected:
 
     void load();
-    void clear();
-/*
-    void applyItemGeometryChanges();
-*/
 
 protected Q_SLOTS:
 

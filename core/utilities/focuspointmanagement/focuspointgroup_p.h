@@ -39,9 +39,10 @@ public:
 
     explicit Private(FocusPointGroup* const qq);
 
+    void            applyVisible();
+    void            clear(FocusPointGroupState fs);
     FocusPointItem* createItem(const FocusPoint& point) const;
     FocusPointItem* addItem(const FocusPoint& point);
-    void applyVisible();
 
 public:
 

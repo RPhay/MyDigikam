@@ -64,6 +64,7 @@ public:
     explicit Private(FaceGroup* const qq);
 
     void                       applyVisible();
+    void                       clear(FaceGroupState fs);
     FaceItem*                  createItem(const FaceTagsIface& face);
     FaceItem*                  addItem(const FaceTagsIface& face);
     AssignNameWidget*          createAssignNameWidget(const FaceTagsIface& face,

@@ -40,6 +40,20 @@ void FocusPointGroup::Private::applyVisible()
     }
 }
 
+void FocusPointGroup::Private::clear(FocusPointGroupState fs)
+{
+    q->slotCancelAddItem();
+    visibilityController->clear();
+
+    for (FocusPointItem* const item : std::as_const(items))
+    {
+        delete item;
+    }
+
+    items.clear();
+    state = fs;
+}
+
 FocusPointItem* FocusPointGroup::Private::createItem(const FocusPoint& point) const
 {
     FocusPointItem* const item = new FocusPointItem(view->previewItem());

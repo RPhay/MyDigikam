@@ -49,7 +49,6 @@ void FaceGroup::Private::applyVisible()
 
         q->load();
     }
-
     else if (state == FacesLoaded)
     {
         // Show existing faces, if we have an image.
@@ -59,6 +58,20 @@ void FaceGroup::Private::applyVisible()
             visibilityController->show();
         }
     }
+}
+
+void FaceGroup::Private::clear(FaceGroupState fs)
+{
+    q->slotCancelAddItem();
+    visibilityController->clear();
+
+    for (FaceItem* const item : std::as_const(items))
+    {
+        delete item;
+    }
+
+    items.clear();
+    state = fs;
 }
 
 FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
