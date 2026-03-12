@@ -22,6 +22,7 @@
 #include <QKeyEvent>
 #include <QScreen>
 #include <QWindow>
+#include <QDebug>
 
 // KDE includes
 
@@ -149,15 +150,18 @@ QString SearchWindow::search() const
 
 void SearchWindow::searchOk()
 {
+    qDebug() << "SearchWindow: search confirmed by user";
+
     d->hasTouchedXml = true;
 
     Q_EMIT searchEdited(d->currentId, search());
 
     hide();
 }
-
 void SearchWindow::searchCancel()
 {
+    qDebug() << "SearchWindow: search canceled by user";
+
     // redo changes by tryout
 
     if (d->hasTouchedXml)
@@ -172,11 +176,12 @@ void SearchWindow::searchCancel()
 
 void SearchWindow::searchTryout()
 {
+    qDebug() << "SearchWindow: search tryout executed";
+
     d->hasTouchedXml = true;
 
     Q_EMIT searchEdited(d->currentId, search());
 }
-
 void SearchWindow::keyPressEvent(QKeyEvent* e)
 {
     // Implement keys like in a dialog
