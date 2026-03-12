@@ -29,7 +29,7 @@ BUGFIXES:
 005 --> 517393 - Faces menu when viewing an image preview is showing image_recognize_faces instead of the label.
 006 --> 517420 - Changing rating filter does not result in immediate view update.
 007 --> 517449 - Unable to create a face region.
-008 -->
+008 --> 517441 - Grouping by Filename is behaving differently on MacOS than on Linux Mint.
 009 -->
 010 -->
 011 -->
