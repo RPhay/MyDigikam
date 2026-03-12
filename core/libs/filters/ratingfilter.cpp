@@ -160,6 +160,7 @@ void RatingFilterWidget::mousePressEvent(QMouseEvent* e)
         }
 
         updateRatingTooltip();
+        slotRatingChanged();
     }
 }
 

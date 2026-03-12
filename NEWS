@@ -27,7 +27,7 @@ BUGFIXES:
 003 --> 517303 - Modification date is not being edited.
 004 --> 517328 - Error when starting digiKam 9.0.0 - lensfun.dll.
 005 --> 517393 - Faces menu when viewing an image preview is showing image_recognize_faces instead of the label.
-006 -->
+006 --> 517420 - Changing rating filter does not result in immediate view update.
 007 -->
 008 -->
 009 -->
