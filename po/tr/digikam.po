@@ -2314,7 +2314,7 @@ msgstr "Gelişmiş Arama…"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Find Duplicates..."
-msgstr "Yinelenmişleri Bul…"
+msgstr "Yinelenenleri Bul…"
 
 #: core/app/main/digikamapp_setup.cpp:902
 #, kde-format
@@ -12526,7 +12526,7 @@ msgstr "Arama sonuçlarının haritada görünürlüğünü açın/kapatın."
 #: core/utilities/geolocation/geoiface/items/gpsitemlistcontextmenu.cpp:85
 #, kde-format
 msgid "Copy coordinates"
-msgstr "Koordinatları kopyala"
+msgstr "Koordinatları Kopyala"
 
 #: core/dplugins/generic/metadata/geolocationedit/searches/searchresultwidget.cpp:163
 #, kde-format
@@ -52760,12 +52760,12 @@ msgstr "İptal"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:113
 #, kde-format
 msgid "Confirming face"
-msgstr "Yüz onaylanıyor"
+msgstr "Yüzler onaylanıyor…"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:151
 #, kde-format
 msgid "Removing face"
-msgstr "Yüz kaldırılıyor"
+msgstr "Yüzler kaldırılıyor…"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:179
 #, kde-format
@@ -53450,7 +53450,7 @@ msgstr "Tüm görsel parmak izlerini güncellemek için bu düğmeyi kullanın."
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
-msgstr "Yinelenmişleri Bul"
+msgstr "Yinelenenleri Bul"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:289
 #, kde-format
@@ -61842,7 +61842,7 @@ msgstr "Bulunan yüz: %1"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Yüz tarama: %1\n"
+msgstr "Yüzleri tara: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
 #, kde-format
@@ -61867,7 +61867,7 @@ msgstr "Parmak İzleri"
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Parmak izi yeniden yapma: %1\n"
+msgstr "Parmak izlerini yeniden yap: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
 #, kde-format
@@ -65482,12 +65482,12 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
-"<p>digiKam, yüz yönetimi, estetiğe dayalı görsel sınıflandırması, "
-"kendiliğinden görsel döndürme gibi AI AutoTools ve kendiliğinden künye atama "
-"gibi özellikleri güçlendirmek için büyük ikili model dosyalarına güvenir. "
-"Etkinleştirmek istediğiniz belirli özellikleri seçme seçeneğiniz vardır.</"
-"p><p><b>Not:</b> Kırmızı göz giderme aracı, yüz yönetimi modeli dosyaları "
-"gerektirir.</p>"
+"<p>digiKam; yüz yönetimi, estetiğe dayalı görüntü sınıflandırması, "
+"kendiliğinden görsel döndürme gibi yapay zekâ destekli araçlar ve "
+"kendiliğinden künye atama gibi özellikler için büyük ikili model dosyalarına "
+"dayanır. Etkinleştirmek istediğiniz belirli özellikleri seçme seçeneğiniz "
+"vardır.</p><p><b>Not:</b> Kırmızı göz giderme aracı, yüz yönetimi modeli "
+"dosyaları gerektirir.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, kde-format
