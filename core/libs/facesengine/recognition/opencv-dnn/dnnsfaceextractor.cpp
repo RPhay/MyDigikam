@@ -47,7 +47,7 @@ public:
 
 public:
 
-    int                             ref             = 1;
+    int  ref   = 1;
 
     // TODO: move d private to base. Move DNNModelBase* to d private. YuNet stays in SFace.
 
