@@ -160,7 +160,7 @@ void SearchWindow::searchOk()
 }
 void SearchWindow::searchCancel()
 {
-    qDebug() << "SearchWindow: search canceled by user";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search confirmed";
 
     // redo changes by tryout
 
