@@ -414,18 +414,18 @@ void AlbumPropsEdit::slotTitleChanged()
 
 void AlbumPropsEdit::slotNewAlbumTextChanged(int index)
 {
-    QString title;
+    QString atitle;
 
     if (index == 0)
     {
-        title = d->album->title();
+        atitle = d->album->title();
     }
     else
     {
-        title = CollectionManager::instance()->albumRootLabel(d->album->albumRootId());
+        atitle = CollectionManager::instance()->albumRootLabel(d->album->albumRootId());
     }
 
-    d->topLabel->setText(i18nc("@label: album properties", "Create new Album in\n\"%1\"", title));
+    d->topLabel->setText(i18nc("@label: album properties", "Create new Album in\n\"%1\"", atitle));
 }
 
 void AlbumPropsEdit::slotDateLowButtonClicked()
