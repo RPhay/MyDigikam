@@ -293,7 +293,7 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
 
             int ret = (int)fseek(
                 pReader->f,
-                (pReader->current - ftell(pReader->f)) + pReader->offset,
+                (long)((pReader->current - ftell(pReader->f)) + pReader->offset),
                 SEEK_CUR
             );
 
