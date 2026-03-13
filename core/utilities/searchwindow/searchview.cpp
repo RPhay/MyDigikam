@@ -26,6 +26,7 @@
 #include <QApplication>
 #include <QDialogButtonBox>
 #include <QIcon>
+#include <QDebug>
 
 // KDE includes
 
@@ -293,7 +294,7 @@ QString SearchView::write() const
     SearchXmlWriter writer;
     writeGroups(writer);
     writer.finish();
-    qCDebug(DIGIKAM_GENERAL_LOG) << writer.xml();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchView: Generated search XML query:" << writer.xml();
 
     return writer.xml();
 }
