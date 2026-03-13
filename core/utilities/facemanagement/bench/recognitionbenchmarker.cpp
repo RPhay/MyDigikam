@@ -74,12 +74,12 @@ void RecognitionBenchmarker::process(const FacePipelineExtendedPackage::Ptr& pac
         Identity identity  = utils.identityForTag(package->databaseFaces[i].tagId(), recognizer);
 */
         Identity identity  = utils.identityForTag(package->databaseFaces[i].tagId());
-        Statistics& result = results[package->databaseFaces[i].tagId()];
-        result.knownFaces++;
+        Statistics& res    = results[package->databaseFaces[i].tagId()];
+        res.knownFaces++;
 
         if (identity == package->recognitionResults[i])
         {
-            result.correctlyRecognized++;
+            res.correctlyRecognized++;
         }
     }
 
