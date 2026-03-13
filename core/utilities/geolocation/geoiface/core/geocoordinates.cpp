@@ -193,7 +193,7 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
         bool okay               = true;
         double ptLongitude      = 0.0;
         double ptAltitude       = 0.0;
-        const bool hasAltitude  = (parts.size() == 3);
+        const bool hasAlt       = (parts.size() == 3);
         const double ptLatitude = parts[0].toDouble(&okay);
 
         if (okay)
@@ -201,7 +201,7 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
             ptLongitude = parts[1].toDouble(&okay);
         }
 
-        if (okay && (hasAltitude))
+        if (okay && (hasAlt))
         {
             ptAltitude = parts[2].toDouble(&okay);
         }
@@ -215,7 +215,7 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
 
         position = GeoCoordinates(ptLatitude, ptLongitude);
 
-        if (hasAltitude)
+        if (hasAlt)
         {
             position.setAlt(ptAltitude);
         }

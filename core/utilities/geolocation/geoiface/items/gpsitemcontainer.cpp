@@ -334,15 +334,15 @@ bool GPSItemContainer::loadImageData()
 
         if (haveCoordinates)
         {
-            GeoCoordinates coordinates(lat, lng);
+            GeoCoordinates crdnts(lat, lng);
             double alt;
 
             if (meta->getGPSAltitude(&alt))
             {
-                coordinates.setAlt(alt);
+                crdnts.setAlt(alt);
             }
 
-            m_gpsData.setCoordinates(coordinates);
+            m_gpsData.setCoordinates(crdnts);
         }
     }
 
