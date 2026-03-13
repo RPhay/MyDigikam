@@ -36,7 +36,7 @@ add_library(mjpegstreambackend STATIC ${libmjpegstream_SRCS})
 
 if(MSVC)
 
-    target_compile_options(mjpegstreambackend PRIVATE /w)
+    target_compile_options(mjpegstreambackend PRIVATE /W0)
 
 else()
 

@@ -39,7 +39,7 @@ target_compile_definitions(twdemo_gui PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
 if(MSVC)
 
-    target_compile_options(twdemo_gui PRIVATE /w)
+    target_compile_options(twdemo_gui PRIVATE /W0)
 
 else()
 

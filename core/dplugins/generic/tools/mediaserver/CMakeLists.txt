@@ -179,7 +179,7 @@ set_property(TARGET mediaserverbackend PROPERTY CXX_STANDARD 17)
 
 if(MSVC)
 
-    target_compile_options(mediaserverbackend PRIVATE /w)
+    target_compile_options(mediaserverbackend PRIVATE /W0)
 
 else()
 

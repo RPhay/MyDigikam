@@ -52,7 +52,7 @@ target_compile_definitions(core_libmd5_obj
 
 if(MSVC)
 
-    target_compile_options(core_libmd5_obj PRIVATE /w)
+    target_compile_options(core_libmd5_obj PRIVATE /W0)
 
 else()
 
@@ -107,7 +107,7 @@ target_compile_definitions(core_libxmp_obj
 
 if(MSVC)
 
-    target_compile_options(core_libxmp_obj PRIVATE /w)
+    target_compile_options(core_libxmp_obj PRIVATE /W0)
 
 else()
 
@@ -214,7 +214,7 @@ set_target_properties(core_libdng_obj
 
 if(MSVC)
 
-    target_compile_options(core_libdng_obj PRIVATE /w)
+    target_compile_options(core_libdng_obj PRIVATE /W0)
 
 else()
 

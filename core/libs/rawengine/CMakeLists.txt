@@ -203,7 +203,7 @@ target_compile_definitions(core_libraw_obj
 
 if(MSVC)
 
-    target_compile_options(core_libraw_obj PRIVATE /w)
+    target_compile_options(core_libraw_obj PRIVATE /W0)
 
 else()
 

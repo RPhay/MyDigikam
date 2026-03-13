@@ -47,7 +47,7 @@ target_compile_definitions(fbinter_gui PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
 if(MSVC)
 
-    target_compile_options(fbinter_gui PRIVATE /w)
+    target_compile_options(fbinter_gui PRIVATE /W0)
 
 else()
 

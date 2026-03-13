@@ -37,7 +37,7 @@ target_compile_definitions(fbdemo_gui PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
 if(MSVC)
 
-    target_compile_options(fbdemo_gui PRIVATE /w)
+    target_compile_options(fbdemo_gui PRIVATE /W0)
 
 else()
 
