@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-13 00:40+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -1240,7 +1240,7 @@ msgid "Aperture/Focal:"
 msgstr "ទី​ចំហ/​ដែល​​ប្រសព្វ​គ្នា ៖"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:206
+#: core/app/views/preview/itempreviewosd.cpp:208
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -35969,48 +35969,48 @@ msgstr ""
 "ជ្រើស​តម្លៃ​ដែល​បាន​ប្រើ ចំពោះ​មាតិកា​អាល់ប៊ុម​តម្រង ។ ប្រើ​ម៉ឺនុយ​លេច​ឡើង​បរិបទ ដើម្បី​កំណត់​​លក្ខខ័ណ្ឌ​តម្រង​ដែល​"
 "បាន​វាយ​តម្លៃ ។"
 
-#: core/libs/filters/ratingfilter.cpp:179
+#: core/libs/filters/ratingfilter.cpp:180
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "ការ​វាយ​តម្លៃ​ធំជាង ឬ​ស្នើ​នឹង %1 ។"
 
-#: core/libs/filters/ratingfilter.cpp:185
+#: core/libs/filters/ratingfilter.cpp:186
 #, kde-format
 msgid "Rating equal to %1."
 msgstr "ការ​វាយតម្លៃ​ស្នើ​នឹង %1 ។"
 
-#: core/libs/filters/ratingfilter.cpp:191
+#: core/libs/filters/ratingfilter.cpp:192
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "ការ​វាយតម្លៃ​តូច​​ជាង ឬ​ស្មើ​នឹង %1 ។"
 
-#: core/libs/filters/ratingfilter.cpp:231
+#: core/libs/filters/ratingfilter.cpp:232
 #, fuzzy, kde-format
 #| msgid "Images Without Tags"
 msgid "Items Without Rating"
 msgstr "រូបភាព​ដែល​គ្មាន​ស្លាក"
 
-#: core/libs/filters/ratingfilter.cpp:235
+#: core/libs/filters/ratingfilter.cpp:236
 #, kde-format
 msgid "Rating Filter Options"
 msgstr "ការ​វាយតម្លៃ​ជម្រើស​តម្រង"
 
-#: core/libs/filters/ratingfilter.cpp:240
+#: core/libs/filters/ratingfilter.cpp:241
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "លក្ខខណ្ឌ​ស្នើ ឬ​ធំជាង"
 
-#: core/libs/filters/ratingfilter.cpp:242
+#: core/libs/filters/ratingfilter.cpp:243
 #, kde-format
 msgid "Equals Condition"
 msgstr "លក្ខខណ្ឌ​ស្នើ"
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "លក្ខខណ្ឌ​ស្នើ ឬ​តូច​ជាង"
 
-#: core/libs/filters/ratingfilter.cpp:247
+#: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr ""

@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-13 00:40+0000\n"
 "PO-Revision-Date: 2026-03-09 22:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1165,7 +1165,7 @@ msgid "Aperture/Focal:"
 msgstr "Açıklık/Odak:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:206
+#: core/app/views/preview/itempreviewosd.cpp:208
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -35517,47 +35517,47 @@ msgstr ""
 "Derecelendirme süzgeci koşullarını ayarlamak için bağlam açılır menüsünü "
 "kullanın."
 
-#: core/libs/filters/ratingfilter.cpp:179
+#: core/libs/filters/ratingfilter.cpp:180
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "Derecelendirme %1 değerinden büyük veya eşit."
 
-#: core/libs/filters/ratingfilter.cpp:185
+#: core/libs/filters/ratingfilter.cpp:186
 #, kde-format
 msgid "Rating equal to %1."
 msgstr "Derecelendirme %1 değerine eşit."
 
-#: core/libs/filters/ratingfilter.cpp:191
+#: core/libs/filters/ratingfilter.cpp:192
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "Derecelendirme %1 değerinden daha küçük veya eşit."
 
-#: core/libs/filters/ratingfilter.cpp:231
+#: core/libs/filters/ratingfilter.cpp:232
 #, kde-format
 msgid "Items Without Rating"
 msgstr "Derecelendirmesiz Ögeler"
 
-#: core/libs/filters/ratingfilter.cpp:235
+#: core/libs/filters/ratingfilter.cpp:236
 #, kde-format
 msgid "Rating Filter Options"
 msgstr "Derecelendirme Süzgeci Seçenekleri"
 
-#: core/libs/filters/ratingfilter.cpp:240
+#: core/libs/filters/ratingfilter.cpp:241
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "Büyüklük veya Eşitlik Koşulu"
 
-#: core/libs/filters/ratingfilter.cpp:242
+#: core/libs/filters/ratingfilter.cpp:243
 #, kde-format
 msgid "Equals Condition"
 msgstr "Eşitlik Koşulu"
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "Küçüklük veya Eşitlik Koşulu"
 
-#: core/libs/filters/ratingfilter.cpp:247
+#: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr "Derecelendirmesiz Ögeleri Dışla"

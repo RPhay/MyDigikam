@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-13 00:40+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1153,7 +1153,7 @@ msgid "Aperture/Focal:"
 msgstr "एपर्चर/फोकल:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:206
+#: core/app/views/preview/itempreviewosd.cpp:208
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -34227,47 +34227,47 @@ msgid ""
 "up menu to set rating filter conditions."
 msgstr ""
 
-#: core/libs/filters/ratingfilter.cpp:179
+#: core/libs/filters/ratingfilter.cpp:180
 #, fuzzy, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "दरजा %1 से बड़ा है या समान है"
 
-#: core/libs/filters/ratingfilter.cpp:185
+#: core/libs/filters/ratingfilter.cpp:186
 #, fuzzy, kde-format
 msgid "Rating equal to %1."
 msgstr "दरजा %1 से बराबर है"
 
-#: core/libs/filters/ratingfilter.cpp:191
+#: core/libs/filters/ratingfilter.cpp:192
 #, fuzzy, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "दरजा %1 से कम है या समान है"
 
-#: core/libs/filters/ratingfilter.cpp:231
+#: core/libs/filters/ratingfilter.cpp:232
 #, fuzzy, kde-format
 msgid "Items Without Rating"
 msgstr "%1 में चित्र मिले"
 
-#: core/libs/filters/ratingfilter.cpp:235
+#: core/libs/filters/ratingfilter.cpp:236
 #, fuzzy, kde-format
 msgid "Rating Filter Options"
 msgstr "फ़िल्टर रेट करें"
 
-#: core/libs/filters/ratingfilter.cpp:240
+#: core/libs/filters/ratingfilter.cpp:241
 #, fuzzy, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "से बड़ा या समान मापदण्ड"
 
-#: core/libs/filters/ratingfilter.cpp:242
+#: core/libs/filters/ratingfilter.cpp:243
 #, fuzzy, kde-format
 msgid "Equals Condition"
 msgstr "समान मापदण्ड"
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:245
 #, fuzzy, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "से कम या समान मापदण्ड"
 
-#: core/libs/filters/ratingfilter.cpp:247
+#: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr ""

@@ -56,7 +56,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-08 00:41+0000\n"
+"POT-Creation-Date: 2026-03-13 00:40+0000\n"
 "PO-Revision-Date: 2026-03-08 08:33+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1204,7 +1204,7 @@ msgid "Aperture/Focal:"
 msgstr "Диафрагма/фокусное расстояние:"
 
 #: core/app/items/utils/tooltipfiller.cpp:244
-#: core/app/views/preview/itempreviewosd.cpp:206
+#: core/app/views/preview/itempreviewosd.cpp:208
 #: core/dplugins/generic/view/slideshow/widgets/slideproperties.cpp:199
 #: core/libs/dialogs/imagedialog_preview.cpp:186
 #: core/libs/video/osd/frameosd.cpp:204
@@ -35861,47 +35861,47 @@ msgstr ""
 "Выберите значение оценки, по которой будет фильтроваться содержимое "
 "альбомов. Используйте контекстное меню, чтобы установить параметры фильтра."
 
-#: core/libs/filters/ratingfilter.cpp:179
+#: core/libs/filters/ratingfilter.cpp:180
 #, kde-format
 msgid "Rating greater than or equal to %1."
 msgstr "Оценка не ниже %1."
 
-#: core/libs/filters/ratingfilter.cpp:185
+#: core/libs/filters/ratingfilter.cpp:186
 #, kde-format
 msgid "Rating equal to %1."
 msgstr "Оценка равна %1."
 
-#: core/libs/filters/ratingfilter.cpp:191
+#: core/libs/filters/ratingfilter.cpp:192
 #, kde-format
 msgid "Rating less than or equal to %1."
 msgstr "Оценка не выше %1."
 
-#: core/libs/filters/ratingfilter.cpp:231
+#: core/libs/filters/ratingfilter.cpp:232
 #, kde-format
 msgid "Items Without Rating"
 msgstr "Элементы без оценки"
 
-#: core/libs/filters/ratingfilter.cpp:235
+#: core/libs/filters/ratingfilter.cpp:236
 #, kde-format
 msgid "Rating Filter Options"
 msgstr "Параметры фильтра по оценке"
 
-#: core/libs/filters/ratingfilter.cpp:240
+#: core/libs/filters/ratingfilter.cpp:241
 #, kde-format
 msgid "Greater Than or Equals Condition"
 msgstr "Больше или равно"
 
-#: core/libs/filters/ratingfilter.cpp:242
+#: core/libs/filters/ratingfilter.cpp:243
 #, kde-format
 msgid "Equals Condition"
 msgstr "Равно"
 
-#: core/libs/filters/ratingfilter.cpp:244
+#: core/libs/filters/ratingfilter.cpp:245
 #, kde-format
 msgid "Less Than or Equals Condition"
 msgstr "Меньше или равно"
 
-#: core/libs/filters/ratingfilter.cpp:247
+#: core/libs/filters/ratingfilter.cpp:248
 #, kde-format
 msgid "Exclude Items Without Rating"
 msgstr "Не показывать объекты без оценки"
