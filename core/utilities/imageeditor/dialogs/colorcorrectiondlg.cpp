@@ -696,31 +696,31 @@ ICCSettingsContainer::Behavior ColorCorrectionDlg::currentBehavior() const
             return ICCSettingsContainer::NoColorManagement;
         }
 
-        ICCSettingsContainer::Behavior behavior;
+        ICCSettingsContainer::Behavior bhvr;
 
         if      (d->keepProfile->isChecked())
         {
-            behavior |= ICCSettingsContainer::KeepProfile;
+            bhvr |= ICCSettingsContainer::KeepProfile;
         }
         else if (d->convertToWorkingSpace->isChecked())
         {
-            behavior |= ICCSettingsContainer::ConvertToWorkspace;
+            bhvr |= ICCSettingsContainer::ConvertToWorkspace;
         }
 
         if      (d->imageSRGB->isChecked())
         {
-            behavior |= ICCSettingsContainer::UseSRGB;
+            bhvr |= ICCSettingsContainer::UseSRGB;
         }
         else if (d->imageWorkingSpace->isChecked())
         {
-            behavior |= ICCSettingsContainer::UseWorkspace;
+            bhvr |= ICCSettingsContainer::UseWorkspace;
         }
         else if (d->imageOtherSpace->isChecked())
         {
-            behavior |= ICCSettingsContainer::UseSpecifiedProfile;
+            bhvr |= ICCSettingsContainer::UseSpecifiedProfile;
         }
 
-        return behavior;
+        return bhvr;
     }
     else if (d->mode == UncalibratedColor)
     {
