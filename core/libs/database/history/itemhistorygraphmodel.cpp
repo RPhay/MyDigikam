@@ -830,7 +830,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
     {
         if (vertexItem->index.isValid())
         {
-            QVariant data = vertexItem->index.data(role);
+            QVariant vdata = vertexItem->index.data(role);
 
             switch (role)
             {
@@ -848,19 +848,19 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
                 {
                     if (vertexItem->category & HistoryImageId::Original)
                     {
-                        return i18nc("@item filename", "%1\n(Original Image)", data.toString());
+                        return i18nc("@item filename", "%1\n(Original Image)", vdata.toString());
                     }
 
                     if (vertexItem->category & HistoryImageId::Source)
                     {
-                        return i18nc("@item filename", "%1\n(Source Image)", data.toString());
+                        return i18nc("@item filename", "%1\n(Source Image)", vdata.toString());
                     }
 
                     break;
                 }
             }
 
-            return data;
+            return vdata;
         }
 
         // Else, read HistoryImageId from d->graph().properties(vertexItem->vertex)?
