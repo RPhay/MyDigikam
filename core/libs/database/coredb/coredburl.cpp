@@ -47,15 +47,15 @@ CoreDbUrl CoreDbUrl::fromFileUrl(const QUrl& fileUrl,
 
     // get album root path without trailing slash
 
-    QString albumRootPath = albumRoot.adjusted(QUrl::StripTrailingSlash).toLocalFile();
+    QString aRootPath     = albumRoot.adjusted(QUrl::StripTrailingSlash).toLocalFile();
 
     // get the hierarchy below the album root
 
-    QString pathUnderRoot = fileUrl.toLocalFile().remove(albumRootPath);
+    QString pathUnderRoot = fileUrl.toLocalFile().remove(aRootPath);
     url.setPath(pathUnderRoot);
 
     QUrlQuery q(url);
-    q.addQueryItem(QLatin1String("albumRoot"),   albumRootPath);
+    q.addQueryItem(QLatin1String("albumRoot"),   aRootPath);
     q.addQueryItem(QLatin1String("albumRootId"), QString::number(albumRootId));
     url.setQuery(q);
 
