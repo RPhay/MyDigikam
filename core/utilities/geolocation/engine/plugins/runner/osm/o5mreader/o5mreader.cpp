@@ -67,18 +67,19 @@ O5mreaderRet o5mreader_readInt(O5mreader* pReader, uint64_t* ret)
     *ret = *ret & 1
            ? -(int64_t)(*ret >> 1) - 1
            : (int64_t)(*ret >> 1);
+
     return O5MREADER_RET_OK;
 }
 
 
 O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int single)
 {
-    static char buffer[1024];
-    char* pBuf;
+    static char     buffer[1024];
+    char*           pBuf;
     static uint64_t pointer = 0;
-    int length;
-    uint64_t key;
-    int i;
+    int             length;
+    uint64_t        key;
+    int             i;
 
     if (o5mreader_readUInt(pReader, &key) == O5MREADER_RET_ERR)
     {
@@ -88,7 +89,7 @@ O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int singl
     if (key)
     {
         *tagpair = pReader->strPairTable[(pointer + 15000 - key) % 15000];
-        return key;
+        return (O5mreaderRet)key;
     }
 
     else
@@ -290,7 +291,7 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
                 return O5MREADER_ITERATE_RET_ERR;
             }
 
-            int ret = fseek(
+            int ret = (int)fseek(
                 pReader->f,
                 (pReader->current - ftell(pReader->f)) + pReader->offset,
                 SEEK_CUR
@@ -369,7 +370,7 @@ O5mreaderIterateRet o5mreader_readVersion(O5mreader* pReader, O5mreaderDataset* 
         return O5MREADER_ITERATE_RET_ERR;
     }
 
-    ds->version = tmp;
+    ds->version = (uint32_t)tmp;
 
     if (tmp)
     {
