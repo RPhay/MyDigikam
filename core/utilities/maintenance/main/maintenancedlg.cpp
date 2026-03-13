@@ -143,7 +143,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
-    const ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const config   = ApplicationSettings::instance();
 
     d->duplicatesBox                          = new DVBox;
     d->similarityRangeBox                     = new DHBox(d->duplicatesBox);
@@ -154,11 +154,11 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->similarityRange                        = new DIntRangeBox(d->similarityRangeBox);
     d->similarityRange->setSuffix(QLatin1String("%"));
 
-    if (settings)
+    if (config)
     {
-        d->similarityRange->setRange(settings->getMinimumSimilarityBound(), 100);
-        d->similarityRange->setInterval(settings->getDuplicatesSearchLastMinSimilarity(),
-                                        settings->getDuplicatesSearchLastMaxSimilarity());
+        d->similarityRange->setRange(config->getMinimumSimilarityBound(), 100);
+        d->similarityRange->setInterval(config->getDuplicatesSearchLastMinSimilarity(),
+                                        config->getDuplicatesSearchLastMaxSimilarity());
     }
     else
     {
@@ -182,9 +182,9 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     HaarIface::DuplicatesSearchRestrictions restrictions = HaarIface::DuplicatesSearchRestrictions::None;
 
-    if (settings)
+    if (config)
     {
-        restrictions = (HaarIface::DuplicatesSearchRestrictions) settings->getDuplicatesSearchRestrictions();
+        restrictions = (HaarIface::DuplicatesSearchRestrictions) config->getDuplicatesSearchRestrictions();
     }
 
     d->searchResultRestriction->setCurrentIndex(d->searchResultRestriction->findData(restrictions));
@@ -257,7 +257,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     if (!SystemSettings(qApp->applicationName()).enableAutoTags)
     {
-        d->expanderBox->setItemExpanded(Private::AutotagsAssignment, false);    
+        d->expanderBox->setItemExpanded(Private::AutotagsAssignment, false);
         d->expanderBox->setItemEnabled(Private::AutotagsAssignment, false);
     }
 
