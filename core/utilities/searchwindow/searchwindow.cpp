@@ -22,7 +22,7 @@
 #include <QKeyEvent>
 #include <QScreen>
 #include <QWindow>
-#include <QDebug>
+
 
 // KDE includes
 
@@ -35,6 +35,7 @@
 #include "searchview.h"
 #include "coredbsearchxml.h"
 #include "thememanager.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -150,7 +151,7 @@ QString SearchWindow::search() const
 
 void SearchWindow::searchOk()
 {
-    qDebug() << "SearchWindow: search confirmed by user";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search confirmed";
 
     d->hasTouchedXml = true;
 
@@ -160,7 +161,7 @@ void SearchWindow::searchOk()
 }
 void SearchWindow::searchCancel()
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search confirmed";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search cancelled";
 
     // redo changes by tryout
 
@@ -176,7 +177,7 @@ void SearchWindow::searchCancel()
 
 void SearchWindow::searchTryout()
 {
-    qDebug() << "SearchWindow: search tryout executed";
+     qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search tryout";
 
     d->hasTouchedXml = true;
 
