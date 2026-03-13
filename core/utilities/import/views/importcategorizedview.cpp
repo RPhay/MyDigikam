@@ -270,27 +270,27 @@ QList<CamItemInfo> ImportCategorizedView::camItemInfos() const
 QList<QUrl> ImportCategorizedView::urls() const
 {
     QList<CamItemInfo> infos = camItemInfos();
-    QList<QUrl>        urls;
+    QList<QUrl>        list;
 
     for (const CamItemInfo& info : std::as_const(infos))
     {
-        urls << info.url();
+        list << info.url();
     }
 
-    return urls;
+    return list;
 }
 
 QList<QUrl> ImportCategorizedView::selectedUrls() const
 {
     QList<CamItemInfo> infos = selectedCamItemInfos();
-    QList<QUrl>        urls;
+    QList<QUrl>        list;
 
     for (const CamItemInfo& info : std::as_const(infos))
     {
-        urls << info.url();
+        list << info.url();
     }
 
-    return urls;
+    return list;
 }
 
 void ImportCategorizedView::toIndex(const QUrl& url)
