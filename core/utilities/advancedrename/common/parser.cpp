@@ -218,17 +218,17 @@ QString Parser::parse(ParseSettings& settings)
         return fi.fileName();
     }
 
-    ParseResults results;
+    ParseResults res;
 
     for (Rule* const option : std::as_const(d->options))
     {
         ParseResults r = option->parse(settings);
-        results.append(r);
+        res.append(r);
     }
 
-    settings.invalidModifiers = applyModifiers(settings, results);
-    QString newName           = results.replaceTokens(settings.parseString);
-    settings.results          = results;
+    settings.invalidModifiers = applyModifiers(settings, res);
+    QString newName           = res.replaceTokens(settings.parseString);
+    settings.results          = res;
 
     // remove invalid modifiers from the new name
 
