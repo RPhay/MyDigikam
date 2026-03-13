@@ -56,13 +56,13 @@ QString DKCamera::port() const
 {
     if ((m_port.length() == 21) && m_port.startsWith(QLatin1String("ptpip:")))
     {
-        QString port = QString::fromLatin1("ptpip:%1.%2.%3.%4")
-                                .arg(m_port.mid( 6, 3).toInt())
-                                .arg(m_port.mid(10, 3).toInt())
-                                .arg(m_port.mid(14, 3).toInt())
-                                .arg(m_port.mid(18, 3).toInt());
+        QString portid = QString::fromLatin1("ptpip:%1.%2.%3.%4")
+                                  .arg(m_port.mid( 6, 3).toInt())
+                                  .arg(m_port.mid(10, 3).toInt())
+                                  .arg(m_port.mid(14, 3).toInt())
+                                  .arg(m_port.mid(18, 3).toInt());
 
-        return port;
+        return portid;
     }
 
     return m_port;
