@@ -310,9 +310,9 @@ void ItemCopyright::setFromTemplate(const Template& t)
 {
     const auto auths = t.authors();
 
-    for (const QString& author : auths)
+    for (const QString& auth : auths)
     {
-        setAuthor(author, ItemCopyright::AddEntryToExisting);
+        setAuthor(auth, ItemCopyright::AddEntryToExisting);
     }
 
     setCredit(t.credit());
