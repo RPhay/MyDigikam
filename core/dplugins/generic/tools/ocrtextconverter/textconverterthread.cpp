@@ -47,7 +47,7 @@ TextConverterActionThread::~TextConverterActionThread()
 {
     // cancel the thread
 
-    cancel();
+    this->cancel();
 
     // wait for the thread to finish
 

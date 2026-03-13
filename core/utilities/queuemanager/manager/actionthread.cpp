@@ -51,7 +51,7 @@ ActionThread::ActionThread(QObject* const parent)
 
 ActionThread::~ActionThread()
 {
-    cancel();
+    this->cancel();
 
     wait();
 

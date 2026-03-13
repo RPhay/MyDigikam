@@ -48,7 +48,7 @@ MaintenanceThread::MaintenanceThread(QObject* const parent)
 
 MaintenanceThread::~MaintenanceThread()
 {
-    cancel();
+    this->cancel();
     wait();
 
     delete data;

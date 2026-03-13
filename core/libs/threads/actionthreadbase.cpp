@@ -79,7 +79,7 @@ ActionThreadBase::~ActionThreadBase()
 {
     // Cancel the thread
 
-    cancel();
+    this->cancel();
 
     // Wait for the thread to finish
 
