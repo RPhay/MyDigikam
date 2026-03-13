@@ -455,12 +455,12 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::tagAction(bool askForGroupi
     QMenu popMenu(m_view);
     QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
                                                  i18n("Assign Tag to Dropped Items"));
-    QAction* groupAction     = nullptr;
+    QAction* grpAction       = nullptr;
 
     if (askForGrouping)
     {
         popMenu.addSeparator();
-        groupAction = addGroupAction(&popMenu);
+        grpAction = addGroupAction(&popMenu);
     }
 
     popMenu.addSeparator();
@@ -468,7 +468,7 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::tagAction(bool askForGroupi
 
     QAction* const choice    = popMenu.exec(m_position);
 
-    if      (groupAction && (choice == groupAction))
+    if      (grpAction && (choice == grpAction))
     {
         return GroupAction;
     }
