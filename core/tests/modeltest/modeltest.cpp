@@ -387,35 +387,46 @@ void ModelTest::checkChildren(const QModelIndex& parent, int currentDepth)
         for (int c = 0 ; c < columns ; ++c)
         {
             Q_ASSERT(model->hasIndex(r, c, parent) == true);
-            QModelIndex index = model->index(r, c, parent);
+
+            QModelIndex ind = model->index(r, c, parent);
+
             // rowCount() and columnCount() said that it existed...
-            Q_ASSERT(index.isValid() == true);
+
+            Q_ASSERT(ind.isValid() == true);
 
             // index() should always return the same index when called twice in a row
+
             QModelIndex modifiedIndex = model->index(r, c, parent);
-            Q_ASSERT(index == modifiedIndex);
+
+            Q_ASSERT(ind == modifiedIndex);
 
             // Make sure we get the same index if we request it twice in a row
+
             QModelIndex a = model->index(r, c, parent);
             QModelIndex b = model->index(r, c, parent);
+
             Q_ASSERT(a == b);
 
             // Some basic checking on the index that is returned
-            Q_ASSERT(index.model() == model);
-            Q_ASSERT(index.row() == r);
-            Q_ASSERT(index.column() == c);
+
+            Q_ASSERT(ind.model() == model);
+            Q_ASSERT(ind.row() == r);
+            Q_ASSERT(ind.column() == c);
+
             // While you can technically return a QVariant usually this is a sign
             // of an bug in data()  Disable if this really is ok in your model.
-//            Q_ASSERT(model->data(index, Qt::DisplayRole).isValid() == true);
+
+//            Q_ASSERT(model->data(ind, Qt::DisplayRole).isValid() == true);
 
             // If the next test fails here is some somewhat useful debug you play with.
 
-            if (model->parent(index) != parent)
+            if (model->parent(ind) != parent)
             {
-                qCDebug(DIGIKAM_TESTS_LOG) << r << c << currentDepth << model->data(index).toString()
+                qCDebug(DIGIKAM_TESTS_LOG) << r << c << currentDepth << model->data(ind).toString()
                                            << model->data(parent).toString();
 
-                qCDebug(DIGIKAM_TESTS_LOG) << index << parent << model->parent(index);
+                qCDebug(DIGIKAM_TESTS_LOG) << ind << parent << model->parent(ind);
+
 //                 And a view that you can even use to show the model.
 //                 QTreeView view;
 //                 view.setModel(model);
@@ -423,22 +434,26 @@ void ModelTest::checkChildren(const QModelIndex& parent, int currentDepth)
             }
 
             // Check that we can get back our real parent.
-//             qCDebug(DIGIKAM_TESTS_LOG) << model->parent(index) << parent ;
-            Q_ASSERT(model->parent(index) == parent);
+
+//             qCDebug(DIGIKAM_TESTS_LOG) << model->parent(ind) << parent ;
+            Q_ASSERT(model->parent(ind) == parent);
 
             // recursively go down the children
-            if (model->hasChildren(index) && currentDepth < 10)
+
+            if (model->hasChildren(ind) && (currentDepth < 10))
             {
-                //qCDebug(DIGIKAM_TESTS_LOG) << r << c << "has children" << model->rowCount(index);
-                checkChildren(index, ++currentDepth);
+                //qCDebug(DIGIKAM_TESTS_LOG) << r << c << "has children" << model->rowCount(ind);
+                checkChildren(ind, ++currentDepth);
             }
 /*
  *          else { if (currentDepth >= 10) qCDebug(DIGIKAM_TESTS_LOG) << "checked 10 deep"; };
 */
 
             // make sure that after testing the children that the index doesn't change.
+
             QModelIndex newerIndex = model->index(r, c, parent);
-            Q_ASSERT(index == newerIndex);
+
+            Q_ASSERT(ind == newerIndex);
         }
     }
 }
