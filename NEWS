@@ -30,7 +30,7 @@ BUGFIXES:
 006 --> 517420 - Changing rating filter does not result in immediate view update.
 007 --> 517449 - Unable to create a face region.
 008 --> 517441 - Grouping by Filename is behaving differently on MacOS than on Linux Mint.
-009 -->
+009 --> 517484 - Network error message while using reverse geocoding with OpenStreetMap.
 010 -->
 011 -->
 012 -->
