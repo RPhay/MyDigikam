@@ -404,7 +404,7 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
     }
 
     QMenu popMenu(m_view);
-    QAction* moveAction         = nullptr;
+    QAction* moveAction       = nullptr;
 
     if (allowMove)
     {
@@ -412,17 +412,17 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
                                        i18n("&Move Here"));
     }
 
-    QAction* const copyAction   = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")),
+    QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")),
                                                     i18n("&Copy Here"));
     popMenu.addSeparator();
 
-    QAction* groupAction        = nullptr;
-    QAction* groupAndMoveAction = nullptr;
+    QAction* grpAction        = nullptr;
+    QAction* grpAndMoveAction = nullptr;
 
     if (askForGrouping)
     {
-        groupAction        = addGroupAction(&popMenu);
-        groupAndMoveAction = addGroupAndMoveAction(&popMenu);
+        grpAction        = addGroupAction(&popMenu);
+        grpAndMoveAction = addGroupAndMoveAction(&popMenu);
         popMenu.addSeparator();
     }
 
@@ -438,11 +438,11 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
     {
         return CopyAction;
     }
-    else if (groupAction && (choice == groupAction))
+    else if (grpAction && (choice == grpAction))
     {
         return GroupAction;
     }
-    else if (groupAndMoveAction && (choice == groupAndMoveAction))
+    else if (grpAndMoveAction && (choice == grpAndMoveAction))
     {
         return GroupAndMoveAction;
     }
