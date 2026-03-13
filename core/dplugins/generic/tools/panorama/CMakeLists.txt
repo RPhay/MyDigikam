@@ -40,7 +40,7 @@ ADD_FLEX_BISON_DEPENDENCY(PTOScanner PTOParser)
 if(MSVC)
 
     set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/panoScanner.c
-                                PROPERTIES COMPILE_FLAGS "/w")
+                                PROPERTIES COMPILE_FLAGS "/W0")
 
 else()
 
