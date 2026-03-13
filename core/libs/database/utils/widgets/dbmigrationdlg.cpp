@@ -126,7 +126,7 @@ void DatabaseMigrationDialog::setupMainArea()
     d->copyThread                      = new DatabaseCopyThread(this);
     d->fromDatabaseSettingsWidget      = new DatabaseSettingsWidget(this);
     d->toDatabaseSettingsWidget        = new DatabaseSettingsWidget(this);
-    d->migrateButton                   = new QPushButton(i18n("Migrate ->"), this);
+    d->migrateButton                   = new QPushButton(i18n("Migrate →"), this);
     d->cancelButton                    = new QPushButton(i18n("Cancel"), this);
     d->cancelButton->setEnabled(false);
 
@@ -134,13 +134,14 @@ void DatabaseMigrationDialog::setupMainArea()
     QGridLayout* const pgrid           = new QGridLayout(progressBox);
 
     d->progressBar                     = new QProgressBar(progressBox);
+    d->progressBar->setFormat(i18nc("%p is the percent value, % is the percent sign", "%p%"));
     d->progressBar->setTextVisible(true);
     d->progressBar->setRange(0, 22);
     d->progressBarSmallStep            = new QProgressBar(progressBox);
     d->progressBarSmallStep->setTextVisible(true);
 
-    d->overallStepTitle                = new QLabel(i18n("Step Progress:"),    progressBox);
-    QLabel* const overallSteps         = new QLabel(i18n("Overall Progress:"), progressBox);
+    d->overallStepTitle                = new QLabel(i18n("Step progress:"),    progressBox);
+    QLabel* const overallSteps         = new QLabel(i18n("Overall progress:"), progressBox);
 
     pgrid->addWidget(d->overallStepTitle,     0, 0, 1, 1);
     pgrid->addWidget(overallSteps,            1, 0, 1, 1);
@@ -295,7 +296,7 @@ void DatabaseMigrationDialog::slotHandleFinish(int finishState, const QString& e
 void DatabaseMigrationDialog::slotHandleStepStarted(const QString& stepName)
 {
     int progressBarValue = d->progressBar->value();
-    d->overallStepTitle->setText(i18n("Step Progress (%1)", stepName));
+    d->overallStepTitle->setText(i18n("Step progress (%1):", stepName));
     d->progressBar->setValue(++progressBarValue);
 }
 
