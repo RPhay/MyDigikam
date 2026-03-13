@@ -56,5 +56,9 @@ if(MSVC)
     # To disable warnings about linking object specified multiple times.
     add_link_options(/ignore:4197)
 
+    # Remove this warning flag force by VCPKG which disable /wd5249
+
+    string(REPLACE "/w35249" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+    string(REPLACE "/w35249" "" CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}")
 
 endif()
