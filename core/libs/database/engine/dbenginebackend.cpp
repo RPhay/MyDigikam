@@ -1930,9 +1930,9 @@ BdEngineBackend::QueryState BdEngineBackend::commitTransaction()
             }
             else
             {
-                QSqlError lastError = db.lastError();
+                QSqlError lastErr = db.lastError();
 
-                if (transactionErrorHandling(lastError, retries++))
+                if (transactionErrorHandling(lastErr, retries++))
                 {
                     continue;
                 }
@@ -1946,7 +1946,7 @@ BdEngineBackend::QueryState BdEngineBackend::commitTransaction()
 
                     Q_UNUSED(ret);
 
-                    if (lastError.type() == QSqlError::ConnectionError)
+                    if (lastErr.type() == QSqlError::ConnectionError)
                     {
                         return BdEngineBackend::QueryState(BdEngineBackend::ConnectionError);
                     }
