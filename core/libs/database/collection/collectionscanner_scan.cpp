@@ -513,9 +513,17 @@ void CollectionScanner::scanForStaleAlbums(const CollectionLocation& location, c
 
         if ((*it).relativePath.startsWith(relativePath) || ((*it).relativePath == album))
         {
-            QUrl url     = QUrl::fromLocalFile(location.albumRootPath() + (*it).relativePath);
-            url          = url.adjusted(QUrl::StripTrailingSlash);
-            QString path = QFileInfo(url.toLocalFile()).filePath();
+            QDir dir(location.albumRootPath() + (*it).relativePath);
+            QString path = QFileInfo(dir.path()).filePath();
+
+#ifdef Q_OS_WIN
+
+            if (path.startsWith(QLatin1String("D:")))
+            {
+                qDebug() << "CacheRead:" << path << dir.path();
+            }
+
+#endif
 
             // Delete entries in the database if they do not exist in the cache.
 
@@ -564,9 +572,8 @@ void CollectionScanner::scanAlbumRoot(const CollectionLocation& location)
                     return;
                 }
 
-                QUrl url     = QUrl::fromLocalFile(location.albumRootPath() + it.key());
-                url          = url.adjusted(QUrl::StripTrailingSlash);
-                QString path = QFileInfo(url.toLocalFile()).filePath();
+                QDir dir(location.albumRootPath() + it.key());
+                QString path = QFileInfo(dir.path()).filePath();
 
                 if (s_modificationDateEquals(d->albumDateCache.value(path), it.value()))
                 {

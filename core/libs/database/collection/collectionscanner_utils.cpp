@@ -178,6 +178,16 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
 
 void CollectionScanner::readDirectoryInCache(int& items, const QString& path)
 {
+
+#ifdef Q_OS_WIN
+
+    if (path.startsWith(QLatin1String("D:")))
+    {
+        qDebug() << "CacheBuid:" << path;
+    }
+
+#endif
+
     const auto dirList = QDir(path).entryInfoList(QDir::Dirs    |
                                                   QDir::Files   |
                                                   QDir::NoDotAndDotDot);
@@ -222,7 +232,7 @@ int CollectionScanner::createAlbumDateCache(const CollectionLocation& location, 
 
     int items = 1;
     QFileInfo info(dir.path());
-    d->albumDateCache.insert(info.absoluteFilePath(),
+    d->albumDateCache.insert(info.filePath(),
                              asDateTimeUTC(info.lastModified()));
 
     readDirectoryInCache(items, info.filePath());
