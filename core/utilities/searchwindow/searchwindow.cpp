@@ -159,6 +159,7 @@ void SearchWindow::searchOk()
 
     hide();
 }
+
 void SearchWindow::searchCancel()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search cancelled";
@@ -177,12 +178,13 @@ void SearchWindow::searchCancel()
 
 void SearchWindow::searchTryout()
 {
-     qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search tryout";
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchWindow: search tryout";
 
     d->hasTouchedXml = true;
 
     Q_EMIT searchEdited(d->currentId, search());
 }
+
 void SearchWindow::keyPressEvent(QKeyEvent* e)
 {
     // Implement keys like in a dialog
