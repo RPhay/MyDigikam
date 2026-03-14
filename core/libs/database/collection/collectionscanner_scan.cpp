@@ -516,15 +516,6 @@ void CollectionScanner::scanForStaleAlbums(const CollectionLocation& location, c
             QDir dir(location.albumRootPath() + (*it).relativePath);
             QString path = QFileInfo(dir.path()).filePath();
 
-#ifdef Q_OS_WIN
-
-            if (path.startsWith(QLatin1String("D:")))
-            {
-                qDebug() << "CacheRead:" << path << dir.path();
-            }
-
-#endif
-
             // Delete entries in the database if they do not exist in the cache.
 
             if (!d->albumDateCache.contains(path))

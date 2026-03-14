@@ -178,16 +178,6 @@ void CollectionScanner::itemsWereRemoved(const QList<qlonglong>& removedIds)
 
 void CollectionScanner::readDirectoryInCache(int& items, const QString& path)
 {
-
-#ifdef Q_OS_WIN
-
-    if (path.startsWith(QLatin1String("D:")))
-    {
-        qDebug() << "CacheBuid:" << path;
-    }
-
-#endif
-
     const auto dirList = QDir(path).entryInfoList(QDir::Dirs    |
                                                   QDir::Files   |
                                                   QDir::NoDotAndDotDot);
