@@ -31,7 +31,7 @@ BUGFIXES:
 007 --> 517449 - Unable to create a face region.
 008 --> 517441 - Grouping by Filename is behaving differently on MacOS than on Linux Mint.
 009 --> 517484 - Network error message while using reverse geocoding with OpenStreetMap.
-010 -->
+010 --> 517538 - Shortcuts not working in Survey module.
 011 -->
 012 -->
 013 -->

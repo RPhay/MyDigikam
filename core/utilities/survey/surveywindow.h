@@ -48,8 +48,6 @@ public:
     bool isSleeping()                             const;
     bool isEmpty()                                const;
 
-    void toggleTag(int tagID);
-
 public:
 
     DInfoInterface* infoIface(DPluginAction* const ac)  override;
