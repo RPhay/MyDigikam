@@ -32,14 +32,10 @@ DKCamera::DKCamera(const QString& title, const QString& model, const QString& po
       m_title                       (title)
 {
     ApplicationSettings* const settings = ApplicationSettings::instance();
-    m_imageFilter                       = settings->getImageFileFilter();
-    m_movieFilter                       = settings->getMovieFileFilter();
-    m_audioFilter                       = settings->getAudioFileFilter();
-    m_rawFilter                         = settings->getRawFileFilter();
-    m_imageFilter                       = m_imageFilter.toLower();
-    m_movieFilter                       = m_movieFilter.toLower();
-    m_audioFilter                       = m_audioFilter.toLower();
-    m_rawFilter                         = m_rawFilter.toLower();
+    m_imageFilter                       = settings->getImageFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    m_movieFilter                       = settings->getMovieFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    m_audioFilter                       = settings->getAudioFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    m_rawFilter                         = settings->getRawFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
 }
 
 QString DKCamera::title() const
@@ -150,6 +146,11 @@ QString DKCamera::mimeType(const QString& fileext) const
     {
         mime = QLatin1String("audio/") + ext;
     }
+
+qDebug() << "imageFilter" << m_imageFilter;
+qDebug() << "movieFilter" << m_movieFilter;
+
+    qCDebug(DIGIKAM_IMPORTUI_LOG) << "File type:" << ext << "Mime:" << mime;
 
     return mime;
 }
