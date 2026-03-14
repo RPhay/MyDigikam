@@ -29178,7 +29178,7 @@ msgstr "İlerleme Bilgisi"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
 #, kde-format
 msgid "Step Progress:"
-msgstr "Adım ilerleme:"
+msgstr "İlerleme adımı:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, kde-format
@@ -29213,7 +29213,7 @@ msgstr "Veri tabanı dönüşümü iptal edildi."
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
 #, kde-format
 msgid "Step Progress (%1)"
-msgstr "Adım İlerlemesi (%1)"
+msgstr "İlerleme adımı (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
@@ -29279,7 +29279,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Type</b>"
-msgstr "<b>Veri tabanı türü</b> hakkında bilgi al"
+msgstr "<b>Veri tabanı türü</b> hakkında bilgi almak için buraya tıklayın."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
 #, kde-format
@@ -29291,7 +29291,7 @@ msgstr "Yol: "
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Path</b>"
-msgstr "<b>Veri tabanı yolu</b> hakkında bilgi al"
+msgstr "<b>Veri tabanı yolu</b> hakkında bilgi almak için buraya tıklayın."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
 #, kde-format
@@ -29330,13 +29330,14 @@ msgid ""
 "supported systems."
 msgstr ""
 "WAL (Write-Ahead-Log, Önden Yazılan Günlük) kipi, desteklenen sistemlerde "
-"önemli ölçüde hızlıdır."
+"önemli ölçüde daha hızlı sonuç verir."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>WAL Mode</b>"
-msgstr "<b>WAL (Önden Yazılan Günlük)</b> hakkında bilgi al"
+msgstr ""
+"<b>WAL (Önden Yazılan Günlük)</b> hakkında bilgi almak için buraya tıklayın."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
