@@ -114,7 +114,8 @@ VidSlideOutputPage::VidSlideOutputPage(QWizard* const dialog, const QString& tit
     formatLabel->setText(i18n("Media Container Format:"));
     d->formatVal                = new QComboBox(outputBox);
     d->formatVal->setEditable(false);
-    d->formatVal->setToolTip(i18n("This control allows to choose the format of the media container to host video stream and soundtrack."));
+    d->formatVal->setToolTip(i18n("This control allows to choose the format of the media container to host video stream and soundtrack."
+                                  "The entries in this list are populated corresponding to the format supported by FFMpeg."));
     formatLabel->setBuddy(d->formatVal);
 
     QLabel* const playerLabel = new QLabel(outputBox);

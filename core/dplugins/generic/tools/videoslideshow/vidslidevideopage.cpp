@@ -159,6 +159,8 @@ VidSlideVideoPage::VidSlideVideoPage(QWizard* const dialog, const QString& title
     codecLabel->setWordWrap(false);
     codecLabel->setText(i18n("Video Codec:"));
     d->codecVal              = new QComboBox(main);
+    d->codecVal->setToolTip(i18n("This control allows to choose the codec used to encode the video stream."
+                                 "The entries in this list are populated corresponding to the codec supported by FFMpeg."));
     d->codecVal->setEditable(false);
     codecLabel->setBuddy(d->codecVal);
 
