@@ -147,9 +147,6 @@ QString DKCamera::mimeType(const QString& fileext) const
         mime = QLatin1String("audio/") + ext;
     }
 
-qDebug() << "imageFilter" << m_imageFilter;
-qDebug() << "movieFilter" << m_movieFilter;
-
     qCDebug(DIGIKAM_IMPORTUI_LOG) << "File type:" << ext << "Mime:" << mime;
 
     return mime;

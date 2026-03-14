@@ -236,13 +236,9 @@ void UMSCamera::getItemInfo(const QString& folder, const QString& itemName, CamI
 
     // if we have an image, allow previews
     // TODO allow video previews at some point?
-/*
+
     if (info.mime.startsWith(QLatin1String("image/")) ||
-    {
         info.mime.startsWith(QLatin1String("video/")))
-    }
-*/
-    if (info.mime.startsWith(QLatin1String("image/")))
     {
         info.previewPossible = true;
     }
