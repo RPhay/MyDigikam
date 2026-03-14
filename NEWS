@@ -34,7 +34,7 @@ BUGFIXES:
 009 --> 517484 - Network error message while using reverse geocoding with OpenStreetMap.
 010 --> 517538 - Shortcuts not working in Survey module.
 011 --> 517354 - Images seem to be gone when upgrading from 8.8.0 with mariadb on NAS (but are still in DB).
-012 -->
+012 --> 517560 - Short key for flags do not work in new survey screen.
 013 -->
 014 -->
 015 -->
