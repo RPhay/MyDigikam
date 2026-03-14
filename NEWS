@@ -18,6 +18,7 @@ Bundles component versions:
 
 Raw Engine      : Internal Libraw has been updated to the latest upstream 20260310 which brings with
                   it a variety of bug fixes and performance improvements.
+Import          : USB Mass Storage driver now support video thumbnails.
 
 *****************************************************************************************************
 BUGFIXES:

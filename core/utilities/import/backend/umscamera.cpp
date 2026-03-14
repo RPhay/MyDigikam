@@ -59,6 +59,11 @@
 #include "itemscanner.h"
 #include "dfileoperations.h"
 
+#ifdef HAVE_MEDIAPLAYER
+#   include "videothumbnailer.h"
+#   include "videostripfilter.h"
+#endif
+
 namespace Digikam
 {
 
@@ -324,6 +329,21 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
         return true;
     }
+
+#ifdef HAVE_MEDIAPLAYER
+
+    VideoThumbnailer thumbnailer;
+    VideoStripFilter videoStrip;
+
+    thumbnailer.addFilter(&videoStrip);
+    thumbnailer.generateThumbnail(path, thumbnail);
+
+    if (!thumbnail.isNull())
+    {
+        return true;
+    }
+
+#endif
 
     return false;
 }
