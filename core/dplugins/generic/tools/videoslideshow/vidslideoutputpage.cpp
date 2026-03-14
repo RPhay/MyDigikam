@@ -322,6 +322,7 @@ void VidSlideOutputPage::initializePage()
 {
     // Populate Formats List
 
+    d->formatVal->clear();
     QMap<VidSlideSettings::VidFormat, QString> map                = VidSlideSettings::videoFormatNames();
     QMap<VidSlideSettings::VidFormat, QString>::const_iterator it = map.constBegin();
 

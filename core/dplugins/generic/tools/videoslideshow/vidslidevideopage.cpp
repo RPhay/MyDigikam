@@ -309,6 +309,7 @@ void VidSlideVideoPage::initializePage()
 {
     // Populate Codecs List
 
+    d->codecVal->clear();
     QMap<VidSlideSettings::VidCodec, QString> map5                = VidSlideSettings::videoCodecNames();
     QMap<VidSlideSettings::VidCodec, QString>::const_iterator it5 = map5.constBegin();
 
