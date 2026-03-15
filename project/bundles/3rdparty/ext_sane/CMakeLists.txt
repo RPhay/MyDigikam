@@ -10,8 +10,9 @@ SET(EXTPREFIX_sane "${EXTPREFIX}")
 
 ExternalProject_Add(ext_sane
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://gitlab.com/sane-project/backends/-/archive/1.4.0/backends-1.4.0.tar.bz2
-    URL_MD5 e00e9782ee8e9bafbec36fabaaf6aede
+
+    GIT_REPOSITORY https://gitlab.com/sane-project/backends.git
+    GIT_TAG 1.4.0
 
     INSTALL_DIR ${EXTPREFIX_sane}
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix ${EXTPREFIX_sane} --with-gphoto2=no --with-v4l=no
