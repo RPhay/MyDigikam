@@ -37,7 +37,7 @@ BUGFIXES:
 012 --> 517560 - Short key for flags do not work in new survey screen.
 013 --> 516875 - OpenCL not detected on AMD RADEON RX 470 card.
 014 --> 517588 - Cut and paste crash, jas_init_library: Assertion `!jas_global.initialized' failed.
-015 -->
+015 --> 517585 - Import from SD-card without being asked for an album.
 016 -->
 017 -->
 018 -->
