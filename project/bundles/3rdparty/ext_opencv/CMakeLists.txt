@@ -133,7 +133,7 @@ if(APPLE)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.12.0
+        GIT_TAG 4.13.0
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.${DK_APPLE_PACKAGE_MANAGER} <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.${DK_APPLE_PACKAGE_MANAGER} ${EXTPREFIX_opencv} RelWithDebInfo ${ARCH_TARGET} "${BASH_OPTIONS}"
@@ -154,7 +154,7 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/opencv/opencv.git
-        GIT_TAG 4.12.0
+        GIT_TAG 4.13.0
 
         INSTALL_DIR ${EXTPREFIX_opencv}
 
