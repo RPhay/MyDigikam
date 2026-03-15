@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:40+0000\n"
+"POT-Creation-Date: 2026-03-15 00:42+0000\n"
 "PO-Revision-Date: 2026-03-07 19:22+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1044,8 +1044,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -16938,7 +16938,7 @@ msgstr "Fitxer RAW"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:287
 #, kde-format
 msgid "Target File"
 msgstr "Fitxer de destinació"
@@ -18122,7 +18122,7 @@ msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, kde-format
 msgctxt "@title:window"
@@ -20518,13 +20518,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "Trieu el format preferit en exportar la impressió com a imatge."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:267
 #, kde-format
 msgid "Destination folder:"
 msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:273
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, kde-format
 msgid "Output Destination Path"
@@ -21212,35 +21212,39 @@ msgid "Media Container Format:"
 msgstr "Format del contenidor multimèdia:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This control allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
 "This control allows to choose the format of the media container to host "
-"video stream and soundtrack."
+"video stream and soundtrack.The entries in this list are populated "
+"corresponding to the format supported by FFMpeg."
 msgstr ""
 "Este control permet triar el format del contenidor multimèdia per a allotjar "
 "el flux de vídeo i la pista d'àudio."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "Open in Player:"
 msgstr "Obri al reproductor:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:161
 #, kde-format
 msgid "Output"
 msgstr "Eixida"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:169
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Equalitza la lluminositat del vídeo"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:174
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Intensitat de l'equalització:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:177
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:178
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -21248,7 +21252,7 @@ msgid ""
 msgstr ""
 "Controla la intensitat de l'equalització. Posant esta opció a zero no fa res."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:183
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -21263,33 +21267,33 @@ msgstr ""
 "coincidir les exposicions a partir d'una seqüència de filmació a intervals.</"
 "i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:195
 #, kde-format
 msgid "Frames Normalization"
 msgstr "Normalització de fotogrames"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:205
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Fitxer de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Trieu la pista d'àudio"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:214
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Duració de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:220
 #, kde-format
 msgid "Soundtrack Preview:"
 msgstr "Vista prèvia de la pista de so:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:227
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -21302,18 +21306,18 @@ msgstr ""
 "vídeo, es retallarà. Deixeu buit este paràmetre si no voleu cap pista "
 "d'àudio a l'element multimèdia.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:248
 #, kde-format
 msgid "Audio Track"
 msgstr "Pista d'àudio"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:257
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, kde-format
 msgid "On Screen Display"
 msgstr "Visualització en pantalla"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:277
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "El nom del fitxer d'eixida de vídeo es generarà automàticament."
@@ -21355,12 +21359,20 @@ msgstr "Tipus de vídeo:"
 msgid "Video Bit Rate:"
 msgstr "Taxa de bits del vídeo:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:162
+#, kde-format
+msgid ""
+"This control allows to choose the codec used to encode the video stream.The "
+"entries in this list are populated corresponding to the codec supported by "
+"FFMpeg."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Efecte en mostrar imatges"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:187
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:189
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21373,12 +21385,12 @@ msgstr ""
 "per a renderitzar la imatge en el flux de vídeo. Per a una filmació a "
 "intervals, deixeu este paràmetre a «Sense».</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:205
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Transició entre imatges"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:225
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21390,7 +21402,7 @@ msgstr ""
 "durant la presentació de diapositives. Per a una filmació a intervals, "
 "deixeu este paràmetre a «Sense».</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:304
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:306
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Duració: %1 segons per element, total %2 segons (sense transicions)"
@@ -29407,8 +29419,9 @@ msgid "Scanning images in individual albums..."
 msgstr "S'estan explorant les imatges en els àlbums individuals…"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, kde-format
-msgid "Migrate ->"
+#, fuzzy, kde-format
+#| msgid "Migrate ->"
+msgid "Migrate →"
 msgstr "Migra ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
@@ -29424,44 +29437,58 @@ msgstr "Cancel·la"
 msgid "Progress Information"
 msgstr "Informació de l'evolució"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/dialogs/dprogressdlg.cpp:80
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
-msgid "Step Progress:"
-msgstr "Evolució del pas:"
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr "%p%"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, kde-format
-msgid "Overall Progress:"
+#, fuzzy, kde-format
+#| msgid "Step Progress:"
+msgid "Step progress:"
+msgstr "Evolució del pas:"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
+#, fuzzy, kde-format
+#| msgid "Overall Progress:"
+msgid "Overall progress:"
 msgstr "Evolució global:"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "El tipus de la base de dades o la ubicació han de ser diferents!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:224
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "El servidor intern només es pot utilitzar una vegada!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:233
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:234
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "El servidor intern no s'utilitza i no està actiu!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:281
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
 #, kde-format
 msgid "Database copied successfully."
 msgstr "La base de dades s'ha copiat amb èxit."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:288
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:289
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "S'ha cancel·lat la conversió de la base de dades."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
-#, kde-format
-msgid "Step Progress (%1)"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
+#, fuzzy, kde-format
+#| msgid "Step Progress (%1)"
+msgid "Step progress (%1):"
 msgstr "Evolució del pas (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
@@ -30383,16 +30410,6 @@ msgstr "Continua"
 #, kde-format
 msgid "Do not ask again"
 msgstr "No ho tornes a preguntar"
-
-#: core/libs/dialogs/dprogressdlg.cpp:80
-#: core/libs/onlineversion/onlineversiondlg.cpp:194
-#: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
-#, kde-format
-msgctxt "%p is the percent value, % is the percent sign"
-msgid "%p%"
-msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -60406,7 +60423,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "no"
 
-#: core/utilities/import/backend/umscamera.cpp:566
+#: core/utilities/import/backend/umscamera.cpp:582
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60416,7 +60433,7 @@ msgstr ""
 "«Càmera muntada» controlador per a càmeres USB/IEEE1394 d'emmagatzematge "
 "massiu i lectors de targetes de disc flaix.<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:573
+#: core/utilities/import/backend/umscamera.cpp:589
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -60425,7 +60442,7 @@ msgid ""
 msgstr ""
 "Títol: «%1»<br>Model: «%2»<br>Port: «%3»<br>Camí: «%4»<br>UUID: «%5»<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:581
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -60437,29 +60454,29 @@ msgstr ""
 "«%3»<br>Càrrega d'elements: «%4»<br>Creació de directoris: «%5»<br>Suprimiu "
 "els directoris: «%6»<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "sí"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "no"
 
-#: core/utilities/import/backend/umscamera.cpp:598
+#: core/utilities/import/backend/umscamera.cpp:614
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60469,7 +60486,7 @@ msgstr ""
 "Per a més informació quant al controlador «Càmera muntada», llegiu la secció "
 "«Càmeres fotogràfiques digitals admeses» al manual de digiKam."
 
-#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:622
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -64397,7 +64414,7 @@ msgstr "Afig un grup de busca"
 msgid "Try"
 msgstr "Prova"
 
-#: core/utilities/searchwindow/searchwindow.cpp:81
+#: core/utilities/searchwindow/searchwindow.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"

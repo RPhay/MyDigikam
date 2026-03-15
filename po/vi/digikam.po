@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:40+0000\n"
+"POT-Creation-Date: 2026-03-15 00:42+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -1050,8 +1050,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -16372,7 +16372,7 @@ msgstr "Tệp RAW"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:287
 #, fuzzy, kde-format
 #| msgid "By Folder"
 msgid "Target File"
@@ -17522,7 +17522,7 @@ msgstr "Mô tả"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, fuzzy, kde-format
 msgctxt "@title:window"
@@ -19774,13 +19774,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "<p>Ở đây hãy đặt giá trị độ bão hoà."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:267
 #, fuzzy, kde-format
 msgid "Destination folder:"
 msgstr "Mô tả"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:273
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, fuzzy, kde-format
 #| msgid "Output device"
@@ -20441,38 +20441,39 @@ msgstr "Tuyến"
 #, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
-"video stream and soundtrack."
+"video stream and soundtrack.The entries in this list are populated "
+"corresponding to the format supported by FFMpeg."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, fuzzy, kde-format
 msgid "Open in Player:"
 msgstr "Mở bằng Konqueror"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:161
 #, fuzzy, kde-format
 #| msgid "Output device"
 msgid "Output"
 msgstr "Thiết bị xuất"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:169
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:174
 #, kde-format
 msgid "Equalization Strength:"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:177
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:178
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
 "effectively does nothing."
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:183
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20481,34 +20482,34 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:195
 #, fuzzy, kde-format
 #| msgid "Image Information"
 msgid "Frames Normalization"
 msgstr "Thông tin ảnh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:205
 #, fuzzy, kde-format
 msgid "Soundtrack File:"
 msgstr "Ô xem thử RAW nhanh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Tệp âm thanh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:214
 #, fuzzy, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Ô xem thử RAW nhanh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:220
 #, fuzzy, kde-format
 msgid "Soundtrack Preview:"
 msgstr "Ô xem thử RAW nhanh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:227
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20517,18 +20518,18 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:248
 #, fuzzy, kde-format
 msgid "Audio Track"
 msgstr "Tệp âm thanh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:257
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, fuzzy, kde-format
 msgid "On Screen Display"
 msgstr "Phần trăm:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:277
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr ""
@@ -20564,12 +20565,20 @@ msgstr "Tệp âm thanh"
 msgid "Video Bit Rate:"
 msgstr "Tệp âm thanh"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:162
+#, kde-format
+msgid ""
+"This control allows to choose the codec used to encode the video stream.The "
+"entries in this list are populated corresponding to the codec supported by "
+"FFMpeg."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:187
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:189
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20578,13 +20587,13 @@ msgid ""
 "</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:205
 #, fuzzy, kde-format
 #| msgid "Or Between Tags"
 msgid "Transition Between Images"
 msgstr "Hoặc giữa các thẻ"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:225
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20592,7 +20601,7 @@ msgid ""
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:304
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:306
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr ""
@@ -28309,7 +28318,7 @@ msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
 #, kde-format
-msgid "Migrate ->"
+msgid "Migrate →"
 msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
@@ -28325,45 +28334,56 @@ msgstr "T&hôi"
 msgid "Progress Information"
 msgstr "Thông tin về nhà nhiếp ảnh"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
-#, fuzzy, kde-format
-msgid "Step Progress:"
-msgstr "Tiến trình bó"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/dialogs/dprogressdlg.cpp:80
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, fuzzy, kde-format
-msgid "Overall Progress:"
+msgid "Step progress:"
 msgstr "Tiến trình bó"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
+#, fuzzy, kde-format
+msgid "Overall progress:"
+msgstr "Tiến trình bó"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:224
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:233
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:234
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:281
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
 #, fuzzy, kde-format
 msgid "Database copied successfully."
 msgstr "Đang tải về tệp %1..."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:288
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:289
 #, kde-format
 msgid "Database conversion canceled."
 msgstr ""
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
-#, kde-format
-msgid "Step Progress (%1)"
-msgstr ""
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
+#, fuzzy, kde-format
+msgid "Step progress (%1):"
+msgstr "Tiến trình bó"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, fuzzy, kde-format
@@ -29176,16 +29196,6 @@ msgstr "chứa"
 #, fuzzy, kde-format
 msgid "Do not ask again"
 msgstr "Đừng &hỏi lại"
-
-#: core/libs/dialogs/dprogressdlg.cpp:80
-#: core/libs/onlineversion/onlineversiondlg.cpp:194
-#: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
-#, kde-format
-msgctxt "%p is the percent value, % is the percent sign"
-msgid "%p%"
-msgstr ""
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, fuzzy, kde-format
@@ -58673,7 +58683,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "không"
 
-#: core/utilities/import/backend/umscamera.cpp:566
+#: core/utilities/import/backend/umscamera.cpp:582
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58683,7 +58693,7 @@ msgstr ""
 "Trình điều khiển <b>máy ảnh đã lắp</b> cho các máy ảnh cất giữ hàng loạt USB/"
 "IEEE1394 và máy đọc thẻ Flash.<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:573
+#: core/utilities/import/backend/umscamera.cpp:589
 #, fuzzy, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -58691,7 +58701,7 @@ msgid ""
 "\"%5\"<br><br>"
 msgstr "Tên: %1<br>Mô hình: %2<br>Cổng: %3<br>Đường dẫn: %4<br>"
 
-#: core/utilities/import/backend/umscamera.cpp:581
+#: core/utilities/import/backend/umscamera.cpp:597
 #, fuzzy, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -58712,31 +58722,31 @@ msgstr ""
 " • xoá thư mục: %9\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, fuzzy, kde-format
 #| msgid "yes"
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "có"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, fuzzy, kde-format
 #| msgid "no"
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "không"
 
-#: core/utilities/import/backend/umscamera.cpp:598
+#: core/utilities/import/backend/umscamera.cpp:614
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58747,7 +58757,7 @@ msgstr ""
 "digiKam, phần <b>Supported Digital Still Cameras</b> (các máy ảnh tĩnh số đã "
 "hỗ trợ)."
 
-#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:622
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -62595,7 +62605,7 @@ msgstr "Tìm kiếm cấp cao"
 msgid "Try"
 msgstr ""
 
-#: core/utilities/searchwindow/searchwindow.cpp:81
+#: core/utilities/searchwindow/searchwindow.cpp:83
 #, fuzzy, kde-format
 #| msgid "Advanced Search"
 msgctxt "@title:window"

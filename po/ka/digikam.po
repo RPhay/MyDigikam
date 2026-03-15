@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:40+0000\n"
+"POT-Creation-Date: 2026-03-15 00:42+0000\n"
 "PO-Revision-Date: 2026-03-02 03:21+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1037,8 +1037,8 @@ msgstr "%1 ( %2 )"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -16298,7 +16298,7 @@ msgstr "RAW ფაილი"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:287
 #, kde-format
 msgid "Target File"
 msgstr "სამიზნე ფაილი"
@@ -17423,7 +17423,7 @@ msgstr "სამიზნე საქაღალდე:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, kde-format
 msgctxt "@title:window"
@@ -19677,13 +19677,13 @@ msgid "Select your preferred format to export printing as image."
 msgstr "აირჩიეთ სასურველი ფორმატი დასაბეჭდი გამოსახულების გასატანად."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:267
 #, kde-format
 msgid "Destination folder:"
 msgstr "სამიზნე საქაღალდე:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:273
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, kde-format
 msgid "Output Destination Path"
@@ -20338,35 +20338,39 @@ msgid "Media Container Format:"
 msgstr "მედიის კონტეინერის ფორმატი:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This control allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
 "This control allows to choose the format of the media container to host "
-"video stream and soundtrack."
+"video stream and soundtrack.The entries in this list are populated "
+"corresponding to the format supported by FFMpeg."
 msgstr ""
 "ეს კონტროლის ელემენტი საშუალებას გაძლევთ, აირჩიოთ მედია კონტეინერის ფორმატი "
 "ვიდეონაკადისა და საუნდტრეკის დასაჰოსტად."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "Open in Player:"
 msgstr "გახსნა დამკვრელში:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:161
 #, kde-format
 msgid "Output"
 msgstr "გამოტანილი"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:169
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "ვიდეოს სიკაშკაშის ეკვალიზაცია"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:174
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "ეკვალიზაციის სიძლიერე:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:177
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:178
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -20375,7 +20379,7 @@ msgstr ""
 "ეს აკონტროლებს ეკვალიზაციის სიძლიერეს. ამ პარამეტრის ნულზე დაყენება არაფერს "
 "აკეთებს."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:183
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -20384,33 +20388,33 @@ msgid ""
 "useful for e.g. matching exposures from a timelapse sequence.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:195
 #, kde-format
 msgid "Frames Normalization"
 msgstr "კადრების ნორმალიზაცია"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:205
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "საუნდტრეკის ფაილი:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "აირჩიეთ აუდიობილიკი"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:214
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "საუნდტრეკის ხანგრძლივობა:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:220
 #, kde-format
 msgid "Soundtrack Preview:"
 msgstr "საუნდტრეკის მინიატურა:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:227
 #, kde-format
 msgid ""
 "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -20419,18 +20423,18 @@ msgid ""
 "media.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:248
 #, kde-format
 msgid "Audio Track"
 msgstr "აუდიობილიკი"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:257
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, kde-format
 msgid "On Screen Display"
 msgstr "ეკრანზე ჩვენება"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:277
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "გამოტანილი ვიდეოს ფაილის სახელი ავტომატურად დაგენერირდება."
@@ -20466,12 +20470,20 @@ msgstr "ვიდეოს ტიპი:"
 msgid "Video Bit Rate:"
 msgstr "ვიდეოს ბიტური სიჩქარე:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:162
+#, kde-format
+msgid ""
+"This control allows to choose the codec used to encode the video stream.The "
+"entries in this list are populated corresponding to the codec supported by "
+"FFMpeg."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "ეფექტი გამოსახულებების ჩვენებისას"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:187
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:189
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -20480,12 +20492,12 @@ msgid ""
 "</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:205
 #, kde-format
 msgid "Transition Between Images"
 msgstr "გადასვლა გამოსახულებებს შორის"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:225
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -20493,7 +20505,7 @@ msgid ""
 "slideshow. For a timelapse, let this setting to None.</i>"
 msgstr ""
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:304
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:306
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "ხანგრძლივობა : %1 წამი თითო ელემენტზე, სულ %2 წამი (გადასვლის გარეშე)"
@@ -28149,8 +28161,9 @@ msgid "Scanning images in individual albums..."
 msgstr "გამოსახულებების სკანირება ინდივიდუალურ ალბომებში..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, kde-format
-msgid "Migrate ->"
+#, fuzzy, kde-format
+#| msgid "Migrate ->"
+msgid "Migrate →"
 msgstr "მიგრაცია ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
@@ -28166,44 +28179,58 @@ msgstr "გაუქმება"
 msgid "Progress Information"
 msgstr "მიმდინარეობის ინფორმაცია"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/dialogs/dprogressdlg.cpp:80
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
 #, kde-format
-msgid "Step Progress:"
-msgstr "მიმდინარეობის ნაბიჯი:"
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr "%p%"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, kde-format
-msgid "Overall Progress:"
+#, fuzzy, kde-format
+#| msgid "Step Progress:"
+msgid "Step progress:"
+msgstr "მიმდინარეობის ნაბიჯი:"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
+#, fuzzy, kde-format
+#| msgid "Overall Progress:"
+msgid "Overall progress:"
 msgstr "სრული მიდინარეობა:"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "მონაცემთა ბაზის ტიპი ამ მდებარეობა უნდა განსხვავდებოდეს!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:224
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "შიდა სერვერი, მხოლოდ, ერთხელ შეგიძლიათ, გამოიყენოთ!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:233
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:234
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "შიდა სერვერი არ გამოიყენება და აქტიური არაა!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:281
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
 #, kde-format
 msgid "Database copied successfully."
 msgstr "მონაცემთა ბაზა წარმატებით დაკოპირდა."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:288
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:289
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "მონაცემთა ბაზის გადაყვანა გაუქმდა."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
-#, kde-format
-msgid "Step Progress (%1)"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
+#, fuzzy, kde-format
+#| msgid "Step Progress (%1)"
+msgid "Step progress (%1):"
 msgstr "მიმდინარეობის ნაბიჯი (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
@@ -29027,16 +29054,6 @@ msgstr "გაგრძელება"
 #, kde-format
 msgid "Do not ask again"
 msgstr "აღარ მკითხო"
-
-#: core/libs/dialogs/dprogressdlg.cpp:80
-#: core/libs/onlineversion/onlineversiondlg.cpp:194
-#: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
-#, kde-format
-msgctxt "%p is the percent value, % is the percent sign"
-msgid "%p%"
-msgstr "%p%"
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -57801,7 +57818,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "არა"
 
-#: core/utilities/import/backend/umscamera.cpp:566
+#: core/utilities/import/backend/umscamera.cpp:582
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57809,7 +57826,7 @@ msgid ""
 "disk card readers.<br><br>"
 msgstr ""
 
-#: core/utilities/import/backend/umscamera.cpp:573
+#: core/utilities/import/backend/umscamera.cpp:589
 #, kde-format
 msgctxt "@info List of device properties"
 msgid ""
@@ -57819,7 +57836,7 @@ msgstr ""
 "სათაური: \"%1\"<br>მოდელი: \"%2\"<br>პორტი: \"%3\"<br>ბილიკი: "
 "\"%4\"<br>UUID: \"%5\"<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:581
+#: core/utilities/import/backend/umscamera.cpp:597
 #, kde-format
 msgctxt "@info List of supported device operations"
 msgid ""
@@ -57831,29 +57848,29 @@ msgstr ""
 "\"%3\"<br>ელემენტების ატვირთვა: \"%4\"<br>საქაღალდეების შექმნა: "
 "\"%5\"<br>საქაღალდეების წაშლა: \"%6\"<br><br>"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "დიახ"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "არა"
 
-#: core/utilities/import/backend/umscamera.cpp:598
+#: core/utilities/import/backend/umscamera.cpp:614
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57861,7 +57878,7 @@ msgid ""
 "\"Supported Digital Still Cameras\" section in the digiKam manual."
 msgstr ""
 
-#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:622
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61661,7 +61678,7 @@ msgstr "ახალი ძებნის ჯგუფი"
 msgid "Try"
 msgstr "ცდა"
 
-#: core/utilities/searchwindow/searchwindow.cpp:81
+#: core/utilities/searchwindow/searchwindow.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"

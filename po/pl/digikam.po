@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-13 00:40+0000\n"
+"POT-Creation-Date: 2026-03-15 00:42+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1113,8 +1113,8 @@ msgstr "%1 (%2)"
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:170
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:206
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:85
 #: core/utilities/import/items/importtooltipfiller.cpp:81
@@ -17094,7 +17094,7 @@ msgstr "Pliki RAW"
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterlist.cpp:38
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterlist.cpp:91
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:286
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:287
 #, kde-format
 msgid "Target File"
 msgstr "Plik docelowy"
@@ -18283,7 +18283,7 @@ msgstr "Katalog docelowy:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:271
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
 #, kde-format
 msgctxt "@title:window"
@@ -20782,13 +20782,13 @@ msgstr ""
 "Wybierz swój ulubiony format obrazu, aby wyeksportować wydruk jako obraz."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:96
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:266
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:267
 #, kde-format
 msgid "Destination folder:"
 msgstr "Katalog docelowy:"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:102
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:273
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:278
 #, kde-format
 msgid "Output Destination Path"
@@ -21473,35 +21473,39 @@ msgid "Media Container Format:"
 msgstr "Rodzaj pojemnika nagrania:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This control allows to choose the format of the media container to host "
+#| "video stream and soundtrack."
 msgid ""
 "This control allows to choose the format of the media container to host "
-"video stream and soundtrack."
+"video stream and soundtrack.The entries in this list are populated "
+"corresponding to the format supported by FFMpeg."
 msgstr ""
 "To ustawienie umożliwia wybranie formatu kontenera multimedialnego do "
 "udostępniania strumienia obrazu i dźwięku."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:122
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
 msgid "Open in Player:"
 msgstr "Otwórz w odtwarzaczu:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:160
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:161
 #, kde-format
 msgid "Output"
 msgstr "Wynik"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:168
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:169
 #, kde-format
 msgid "Equalize Video Luminosity"
 msgstr "Korekta graficzna luminancji obrazu"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:173
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:174
 #, kde-format
 msgid "Equalization Strength:"
 msgstr "Siła korekcji:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:177
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:178
 #, kde-format
 msgid ""
 "This controls strength of equalization. Setting this option to zero "
@@ -21510,7 +21514,7 @@ msgstr ""
 "Steruje to siłą korekcji graficznej. Ustawienie tego na zero nie wywoła "
 "niczego."
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:182
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:183
 #, kde-format
 msgid ""
 "<i>These settings apply temporal midway video equalization effect while "
@@ -21524,33 +21528,33 @@ msgstr ""
 "możliwym stopniu. Użyteczne do dopasowywania naświetleń na filmach "
 "poklatkowych.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:194
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:195
 #, kde-format
 msgid "Frames Normalization"
 msgstr "Normalizacja klatek"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:204
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:205
 #, kde-format
 msgid "Soundtrack File:"
 msgstr "Plik ścieżki dźwiękowej:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:210
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:211
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Audio Track"
 msgstr "Wybierz ścieżkę dźwiękową"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:213
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:214
 #, kde-format
 msgid "Soundtrack Duration:"
 msgstr "Czas trwania ścieżki dźwiękowej:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:219
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:220
 #, kde-format
 msgid "Soundtrack Preview:"
 msgstr "Podgląd ścieżki dźwiękowej:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:226
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:227
 #, fuzzy, kde-format
 #| msgid ""
 #| "<i>Notes about soundtrack: if the audio length is smaller than video, it "
@@ -21568,18 +21572,18 @@ msgstr ""
 "docięty. Pozostaw to ustawienie pustym, jeśli nie chcesz ścieżki dźwiękowej "
 "w pliku multimedialnym.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:247
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:248
 #, kde-format
 msgid "Audio Track"
 msgstr "Ścieżka dźwiękowa"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:256
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:257
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, kde-format
 msgid "On Screen Display"
 msgstr "Wyświetlacz ekranowy"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:276
+#: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:277
 #, kde-format
 msgid "The video output file name will be generated automatically."
 msgstr "Nazwa pliku wyjściowego zostanie nadana samoczynnie."
@@ -21628,12 +21632,20 @@ msgstr "Rodzaj nagrania:"
 msgid "Video Bit Rate:"
 msgstr "Szybkość bitowa nagrania:"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:167
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:162
+#, kde-format
+msgid ""
+"This control allows to choose the codec used to encode the video stream.The "
+"entries in this list are populated corresponding to the codec supported by "
+"FFMpeg."
+msgstr ""
+
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
 msgid "Effect While Displaying Images"
 msgstr "Efekt podczas wyświetlania obrazu"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:187
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:189
 #, kde-format
 msgid ""
 "<i>An effect is an visual panning or zooming applied while an image is "
@@ -21645,12 +21657,12 @@ msgstr ""
 "podczas jego wyświetlania. Czas trwania efektu będzie równy czasowi trwania "
 "obrazu w liczbie klatek. W przypadku filmu poklatkowego ustaw to na Nic.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:203
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:205
 #, kde-format
 msgid "Transition Between Images"
 msgstr "Przejście pomiędzy obrazami"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:223
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:225
 #, kde-format
 msgid ""
 "<i>A transition is an visual effect applied between two images. For some "
@@ -21662,7 +21674,7 @@ msgstr ""
 "się zmieniać podczas trwania pokazu obrazów. W przypadku filmu poklatkowego "
 "ustaw to na Nic.</i>"
 
-#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:304
+#: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:306
 #, kde-format
 msgid "Duration : %1 seconds by item, total %2 seconds (without transitions)"
 msgstr "Czas trwania : %1 sekund na obraz, łącznie %2 sekund (bez przejść)"
@@ -29874,8 +29886,9 @@ msgid "Scanning images in individual albums..."
 msgstr "Skanowanie zdjęć w poszczególnych albumach..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, kde-format
-msgid "Migrate ->"
+#, fuzzy, kde-format
+#| msgid "Migrate ->"
+msgid "Migrate →"
 msgstr "Przenieś ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
@@ -29891,46 +29904,58 @@ msgstr "Anuluj"
 msgid "Progress Information"
 msgstr "Szczegóły o postępie"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:142
-#, fuzzy, kde-format
-#| msgid "Step Progress"
-msgid "Step Progress:"
-msgstr "Krok postępu"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:137
+#: core/libs/dialogs/dprogressdlg.cpp:80
+#: core/libs/onlineversion/onlineversiondlg.cpp:194
+#: core/libs/progressmanager/progressview.cpp:197
+#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
+#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
+#, kde-format
+msgctxt "%p is the percent value, % is the percent sign"
+msgid "%p%"
+msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, fuzzy, kde-format
+#| msgid "Step Progress"
+msgid "Step progress:"
+msgstr "Krok postępu"
+
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
+#, fuzzy, kde-format
 #| msgid "Overall Progress"
-msgid "Overall Progress:"
+msgid "Overall progress:"
 msgstr "Całkowity postęp"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:217
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
 msgid "Database type or location must be different!"
 msgstr "Rodzaj bazy danych lub położenie musi być inne!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:224
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:225
 #, kde-format
 msgid "Internal server can only be used once!"
 msgstr "Wewnętrznego serwera można użyć tylko raz!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:233
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:234
 #, kde-format
 msgid "Internal server is not used and is not active!"
 msgstr "Wewnętrzny serwer nie jest używany i nie jest aktywny!"
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:281
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:282
 #, kde-format
 msgid "Database copied successfully."
 msgstr "Pomyślnie skopiowano bazę danych."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:288
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:289
 #, kde-format
 msgid "Database conversion canceled."
 msgstr "Porzucono przekształcanie bazy danych."
 
-#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:298
-#, kde-format
-msgid "Step Progress (%1)"
+#: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
+#, fuzzy, kde-format
+#| msgid "Step Progress (%1)"
+msgid "Step progress (%1):"
 msgstr "Krok postępu (%1)"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
@@ -30885,16 +30910,6 @@ msgstr "Kontynuuj"
 #, kde-format
 msgid "Do not ask again"
 msgstr "Nie pytaj ponownie"
-
-#: core/libs/dialogs/dprogressdlg.cpp:80
-#: core/libs/onlineversion/onlineversiondlg.cpp:194
-#: core/libs/progressmanager/progressview.cpp:197
-#: core/libs/progressmanager/statusbarprogresswidget.cpp:98
-#: core/utilities/setup/downloader/filesdownloader_helpers.cpp:83
-#, kde-format
-msgctxt "%p is the percent value, % is the percent sign"
-msgid "%p%"
-msgstr ""
 
 #: core/libs/dialogs/filesaveoptionsdlg.cpp:34
 #, kde-format
@@ -61161,7 +61176,7 @@ msgctxt "@info: gphoto backend feature"
 msgid "no"
 msgstr "nie"
 
-#: core/utilities/import/backend/umscamera.cpp:566
+#: core/utilities/import/backend/umscamera.cpp:582
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -61177,7 +61192,7 @@ msgstr ""
 "czytników kart Flash.\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:573
+#: core/utilities/import/backend/umscamera.cpp:589
 #, fuzzy, kde-format
 #| msgctxt "@info List of device properties"
 #| msgid ""
@@ -61199,7 +61214,7 @@ msgstr ""
 "UUID: \"%5\"\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:581
+#: core/utilities/import/backend/umscamera.cpp:597
 #, fuzzy, kde-format
 #| msgctxt "@info List of supported device operations"
 #| msgid ""
@@ -61224,29 +61239,29 @@ msgstr ""
 "Usuwanie katalogów: \"%6\"\n"
 "\n"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "yes"
 msgstr "tak"
 
-#: core/utilities/import/backend/umscamera.cpp:587
-#: core/utilities/import/backend/umscamera.cpp:588
-#: core/utilities/import/backend/umscamera.cpp:589
-#: core/utilities/import/backend/umscamera.cpp:590
-#: core/utilities/import/backend/umscamera.cpp:591
-#: core/utilities/import/backend/umscamera.cpp:592
+#: core/utilities/import/backend/umscamera.cpp:603
+#: core/utilities/import/backend/umscamera.cpp:604
+#: core/utilities/import/backend/umscamera.cpp:605
+#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:607
+#: core/utilities/import/backend/umscamera.cpp:608
 #, kde-format
 msgctxt "@info: ums backend feature"
 msgid "no"
 msgstr "nie"
 
-#: core/utilities/import/backend/umscamera.cpp:598
+#: core/utilities/import/backend/umscamera.cpp:614
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61256,7 +61271,7 @@ msgstr ""
 "Więcej informacji o sterowniku podpięty aparat znajdziesz w dokumentacji "
 "digiKam, w rozdziale Obsługiwane aparaty cyfrowe."
 
-#: core/utilities/import/backend/umscamera.cpp:606
+#: core/utilities/import/backend/umscamera.cpp:622
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid ""
@@ -65299,7 +65314,7 @@ msgstr "Dodaj grupę wyszukiwania"
 msgid "Try"
 msgstr "Wypróbuj"
 
-#: core/utilities/searchwindow/searchwindow.cpp:81
+#: core/utilities/searchwindow/searchwindow.cpp:83
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced Search"
