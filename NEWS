@@ -39,7 +39,7 @@ BUGFIXES:
 014 --> 517588 - Cut and paste crash, jas_init_library: Assertion `!jas_global.initialized' failed.
 015 --> 517585 - Import from SD-card without being asked for an album.
 016 --> 517558 - Finalizing Tags removes EXIF Copyright and Artist entries.
-017 -->
+017 --> 511588 - Portable archive for 8.8.0 (digiKam-8.8.0-Qt6-Win64.tar.xz) is missing as a download option.
 018 -->
 019 -->
 020 -->
