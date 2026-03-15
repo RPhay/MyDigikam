@@ -9,11 +9,14 @@
 SET(PREFIX_ext_png "${EXTPREFIX}")
 
 ExternalProject_Add(ext_png
+
+    GIT_REPOSITORY https://github.com/pnggroup/libpng.git
+    GIT_TAG 1.6.55
+
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL http://prdownloads.sourceforge.net/libpng/libpng-1.6.52.tar.xz
-    URL_MD5 a496982a92ec964e7ca7be4580ee466f
 
     CONFIGURE_COMMAND <SOURCE_DIR>/configure --prefix=${PREFIX_ext_png}
+
     UPDATE_COMMAND ""
     ALWAYS 0
 )
