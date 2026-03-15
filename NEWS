@@ -36,7 +36,7 @@ BUGFIXES:
 011 --> 517354 - Images seem to be gone when upgrading from 8.8.0 with mariadb on NAS (but are still in DB).
 012 --> 517560 - Short key for flags do not work in new survey screen.
 013 --> 516875 - OpenCL not detected on AMD RADEON RX 470 card.
-014 -->
+014 --> 517588 - Cut and paste crash, jas_init_library: Assertion `!jas_global.initialized' failed.
 015 -->
 016 -->
 017 -->

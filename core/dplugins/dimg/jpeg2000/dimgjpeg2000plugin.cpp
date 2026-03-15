@@ -17,6 +17,7 @@
 // Qt includes
 
 #include <QFile>
+#include <QImageReader>
 
 // KDE includes
 
@@ -35,6 +36,13 @@ DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
 {
 
 #if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
+
+    const auto frms = QImageReader::supportedImageFormats();
+
+    if (frms.contains(QByteArray("jp2")))
+    {
+        return;
+    }
 
     size_t max_mem = jas_get_total_mem_size();
 
@@ -70,7 +78,10 @@ DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 
 #if defined JAS_VERSION_MAJOR && JAS_VERSION_MAJOR >= 3
 
-    jas_cleanup_library();
+    if (m_initJasper)
+    {
+        jas_cleanup_library();
+    }
 
 #endif
 
@@ -244,7 +255,7 @@ DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) c
 
 DImgLoaderSettings* DImgJPEG2000Plugin::exportWidget(const QString& format) const
 {
-    if (canWrite(format))
+    if (canWrite(format) || !m_initJasper)
     {
         return (new DImgJPEG2000ExportSettings());
     }
