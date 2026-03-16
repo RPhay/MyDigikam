@@ -56,11 +56,10 @@ $VCPKG_INSTALL_PREFIX/tools/gperf:\
 $VCPKG_INSTALL_PREFIX/tools/curl:\
 $VCPKG_INSTALL_PREFIX/tools/pkgconf:\
 $VCPKG_INSTALL_PREFIX/bin:\
-$VCPKG_INSTALL_PREFIX/tools/Qt6/bin\
-$VCPKG_INSTALL_PREFIX/tools/qt5/bin\
+$VCPKG_INSTALL_PREFIX/tools/Qt6/bin:\
+$VCPKG_INSTALL_PREFIX/tools/qt5/bin:\
 e/d/tools/python/python-3.14.2-x64-1:\
 e/d/tools/ninja-1.13.2-windows:\
-
 "
 
 echo "PATH=$PATH"
