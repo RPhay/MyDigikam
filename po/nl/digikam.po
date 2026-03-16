@@ -62,15 +62,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:42+0000\n"
-"PO-Revision-Date: 2026-03-08 16:45+0100\n"
+"POT-Creation-Date: 2026-03-16 00:41+0000\n"
+"PO-Revision-Date: 2026-03-15 14:30+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -7304,11 +7304,11 @@ msgstr "High efficiency image coding"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:144
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:148
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:152
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:163
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:167
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
@@ -7327,11 +7327,11 @@ msgstr "ja"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:145
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:149
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:153
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:157
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:161
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:164
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:168
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
@@ -7511,19 +7511,19 @@ msgstr ""
 "gebruik van deze instelling is JPEG 2000 geen verliesloos compressieformaat."
 "</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "JPEG 2000-lader"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Een afbeeldingslader gebaseerd op de Libjasper-codec"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:112
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7546,21 +7546,21 @@ msgstr ""
 "afbeeldingen.</para><para>Zie voor details <a href='https://en.wikipedia.org/"
 "wiki/JPEG_2000'>Joint Photographic Experts Group documentatie</a>.</para>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:154
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "JPEG-2000 afbeelding"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:162
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "JPEG-2000 stream"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
@@ -21263,17 +21263,15 @@ msgid "Media Container Format:"
 msgstr "Formaat van mediacontainer:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "This control allows to choose the format of the media container to host "
-#| "video stream and soundtrack."
+#, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack.The entries in this list are populated "
 "corresponding to the format supported by FFMpeg."
 msgstr ""
 "Deze besturing biedt het kiezen van het formaat van de mediacontainer om de "
-"videostream en soundtrack te bevatten."
+"videostream en soundtrack te bevatten. De items in deze lijst worden "
+"ingevuld volgens het formaat dat door FFMpeg wordt ondersteund."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
@@ -21419,6 +21417,9 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"Met deze besturing kunt u de codec kiezen die wordt gebruikt om de "
+"videostream te coderen. De items in deze lijst worden ingevuld op basis van "
+"de codec die door FFMpeg wordt ondersteund."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
@@ -29442,10 +29443,9 @@ msgid "Scanning images in individual albums..."
 msgstr "Zoeken naar afbeeldingen in individuele albums..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Migrate ->"
+#, kde-format
 msgid "Migrate →"
-msgstr "Overplaatsen ->"
+msgstr "Migreren ->"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
@@ -29472,14 +29472,12 @@ msgid "%p%"
 msgstr "%p%"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Step Progress:"
+#, kde-format
 msgid "Step progress:"
 msgstr "Voortgang per stap:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Overall Progress:"
+#, kde-format
 msgid "Overall progress:"
 msgstr "Totale voortgang:"
 
@@ -29509,10 +29507,9 @@ msgid "Database conversion canceled."
 msgstr "Databaseconversie geannuleerd."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
-#, fuzzy, kde-format
-#| msgid "Step Progress (%1)"
+#, kde-format
 msgid "Step progress (%1):"
-msgstr "Voortgang per stap (%1)"
+msgstr "Voortgang per stap (%1):"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format

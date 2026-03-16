@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-15 00:42+0000\n"
+"POT-Creation-Date: 2026-03-16 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -7389,11 +7389,11 @@ msgstr "Codificación de imaxe de grande eficiencia"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:119
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:124
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:129
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:144
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:148
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:152
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:163
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:167
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:171
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:182
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:107
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:115
@@ -7412,11 +7412,11 @@ msgstr "si"
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:120
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:125
 #: core/dplugins/dimg/jpeg/dimgjpegplugin.cpp:130
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:145
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:149
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:153
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:157
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:161
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:156
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:160
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:164
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:168
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:172
 #: core/dplugins/dimg/magick/dimgimagemagickplugin.cpp:185
 #: core/dplugins/dimg/pgf/dimgpgfplugin.cpp:108
 #: core/dplugins/dimg/png/dimgpngplugin.cpp:116
@@ -7608,19 +7608,19 @@ msgstr ""
 "se comprimirá e os ficheiros serán grandes)</p><p><b>Lembre: JPEG 2000 non é "
 "un formato de imaxe comprimida sen perdas se usa este parámetro.</b></p>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:81
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 loader"
 msgstr "Cargador de JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:96
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:107
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libjasper codec"
 msgstr "Un cargador de imaxes baseado no códec Libjasper."
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:101
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:112
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -7643,21 +7643,21 @@ msgstr ""
 "JPEG_2000'>documentación de Joint Photographic Experts Group</a> (en inglés) "
 "para máis información.</para>"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:143
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:147
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:154
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:158
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 image"
 msgstr "Imaxe JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:151
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:155
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:162
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:166
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 stream"
 msgstr "Fluxo JPEG-2000"
 
-#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:159
+#: core/dplugins/dimg/jpeg2000/dimgjpeg2000plugin.cpp:170
 #, kde-format
 msgctxt "@title"
 msgid "JPEG-2000 verification model"
