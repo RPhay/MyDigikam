@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-16 00:41+0000\n"
-"PO-Revision-Date: 2026-03-02 07:11+0000\n"
+"PO-Revision-Date: 2026-03-16 16:45+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3606,7 +3606,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
 msgid "Rewrite the welcome page in more modern style."
-msgstr ""
+msgstr "Upphafssíðan endurskrifuð í nútímalegri stíl."
 
 #: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
@@ -20931,17 +20931,15 @@ msgid "Media Container Format:"
 msgstr "Snið margmiðlunargáms:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "This control allows to choose the format of the media container to host "
-#| "video stream and soundtrack."
+#, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack.The entries in this list are populated "
 "corresponding to the format supported by FFMpeg."
 msgstr ""
 "Þessi stýring gerir kleift að velja sniðið á margmiðlunargámi sem á að hýsa "
-"myndstreymi og hljóðrás."
+"myndstreymi og hljóðrás. Fyllt er í færslurnar í listanum miðað við sniðin "
+"sem FFMpeg styður."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
@@ -29024,8 +29022,7 @@ msgid "Scanning images in individual albums..."
 msgstr "Skoða myndir í einstökum albúmum..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Migrate ->"
+#, kde-format
 msgid "Migrate →"
 msgstr "Yfirfæra ->"
 
@@ -29054,14 +29051,12 @@ msgid "%p%"
 msgstr "%p%"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Step Progress:"
+#, kde-format
 msgid "Step progress:"
 msgstr "Þrep í framvindu:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Overall Progress:"
+#, kde-format
 msgid "Overall progress:"
 msgstr "Heildarframvinda:"
 
@@ -29091,10 +29086,9 @@ msgid "Database conversion canceled."
 msgstr "Hætt við að afrita gagnagrunn."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
-#, fuzzy, kde-format
-#| msgid "Step Progress (%1)"
+#, kde-format
 msgid "Step progress (%1):"
-msgstr "Þrep (%1) í framvindu"
+msgstr "Þrep í framvindu (%1):"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
