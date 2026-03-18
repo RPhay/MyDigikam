@@ -42,7 +42,7 @@ BUGFIXES:
 017 --> 511588 - Portable archive for 8.8.0 (digiKam-8.8.0-Qt6-Win64.tar.xz) is missing as a download option.
 018 --> 517624 - Filtering on rating (stars 0-5) not working correct.
 019 --> 517671 - Rating filter do not work.
-020 -->
+020 --> 517668 - Show placeholders for other files in the album.
 021 -->
 022 -->
 023 -->
