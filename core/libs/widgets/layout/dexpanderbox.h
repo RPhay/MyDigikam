@@ -35,7 +35,7 @@ namespace Digikam
 {
 
 /**
- * A widget to show an horizontal or vertical line separator
+ * @brief A widget to show an horizontal or vertical line separator
  */
 class DIGIKAM_EXPORT DLineWidget : public QFrame
 {
@@ -50,7 +50,7 @@ public:
 // -------------------------------------------------------------------------
 
 /**
- * A label to show text adjusted to widget size
+ * @brief A label to show text adjusted to widget size
  */
 class DIGIKAM_EXPORT DAdjustableLabel : public QLabel
 {
@@ -103,10 +103,10 @@ public:
 
 Q_SIGNALS:
 
-    /// Emitted when activated by left mouse click
+    /// @brief Emitted when activated by left mouse click
     void leftClicked();
 
-    /// Emitted when activated, by mouse or key press
+    /// @brief Emitted when activated, by mouse or key press
     void activated();
 
 protected:
@@ -247,12 +247,12 @@ public:
     ~DExpanderBox()                                   override;
 
     /**
-     * Add DLabelExpander item at end of box layout with these settings :
-     *  'w'               : the widget hosted by DLabelExpander.
-     *  'pix'             : pixmap used as icon to item title.
-     *  'txt'             : text used as item title.
-     *  'objName'         : item object name used to read/save expanded settings to rc file.
-     *  'expandBydefault' : item state by default (expanded or not).
+     * @brief Add DLabelExpander item at end of box layout with these settings:
+     * @arg w               : the widget hosted by DLabelExpander.
+     * @arg pix             : pixmap used as icon to item title.
+     * @arg txt             : text used as item title.
+     * @arg objName         : item object name used to read/save expanded settings to rc file.
+     * @arg expandBydefault : item state by default (expanded or not).
      */
     void addItem(QWidget* const w, const QIcon &icon, const QString& txt,
                  const QString& objName, bool expandBydefault);
@@ -260,12 +260,12 @@ public:
                  const QString& objName, bool expandBydefault);
 
     /**
-     * Insert DLabelExpander item at box layout index with these settings :
-     *  'w'               : the widget hosted by DLabelExpander.
-     *  'pix'             : pixmap used as icon to item title.
-     *  'txt'             : text used as item title.
-     *  'objName'         : item object name used to read/save expanded settings to rc file.
-     *  'expandBydefault' : item state by default (expanded or not).
+     * @brief Insert DLabelExpander item at box layout index with these settings:
+     * @arg w               : the widget hosted by DLabelExpander.
+     * @arg pix             : pixmap used as icon to item title.
+     * @arg txt             : text used as item title.
+     * @arg objName         : item object name used to read/save expanded settings to rc file.
+     * @arg expandBydefault : item state by default (expanded or not).
      */
     void insertItem(int index, QWidget* const w, const QIcon &icon, const QString& txt,
                     const QString& objName, bool expandBydefault);
@@ -338,10 +338,10 @@ class DIGIKAM_EXPORT DExpanderBoxExclusive : public DExpanderBox
 public:
 
     explicit DExpanderBoxExclusive(QWidget* const parent = nullptr);
-    ~DExpanderBoxExclusive()   override = default;;
+    ~DExpanderBoxExclusive()   override = default;
 
     /**
-     * Show one expander open at most
+     * @brief Show one expander open at most
      */
     void setIsToolBox(bool b);
     bool isToolBox()    const;
