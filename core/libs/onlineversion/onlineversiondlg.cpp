@@ -616,7 +616,7 @@ void OnlineVersionDlg::slotHelp()
 {
     openOnlineDocumentation(QLatin1String("setup_application"),
                             QLatin1String("miscs_settings"),
-                            QLatin1String("updates-settings"));
+                            QLatin1String("application-updates"));
 }
 
 void OnlineVersionDlg::slotSetupUpdate()
