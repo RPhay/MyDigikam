@@ -43,8 +43,8 @@ BUGFIXES:
 018 --> 517624 - Filtering on rating (stars 0-5) not working correct.
 019 --> 517671 - Rating filter do not work.
 020 --> 517668 - Show placeholders for other files in the album.
-021 -->
-022 -->
+021 --> 517772 - Bug after update libexiv2-27.
+022 --> 517766 - Crash on App startup.
 023 -->
 024 -->
 025 -->
