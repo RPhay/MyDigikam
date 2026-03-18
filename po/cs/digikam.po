@@ -28082,8 +28082,7 @@ msgid "Step progress:"
 msgstr "Průběh kroku (%1)"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Overall Progress:"
+#, kde-format
 msgid "Overall progress:"
 msgstr "Celkový průběh:"
 

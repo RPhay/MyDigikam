@@ -20247,6 +20247,8 @@ msgid ""
 "video stream and soundtrack.The entries in this list are populated "
 "corresponding to the format supported by FFMpeg."
 msgstr ""
+"此控制项用于选择包装视频流和音轨的媒体容器格式。列表中的可选项来自 FFmpeg 支"
+"持的格式。"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
@@ -20382,6 +20384,7 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"此控制项用于选择编码视频流的编码。列表中的可选项来自 FFmpeg 支持的编码。"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
@@ -28150,7 +28153,7 @@ msgstr "正在扫描每个相册中的图像..."
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
 #, kde-format
 msgid "Migrate →"
-msgstr ""
+msgstr "迁移 →"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
@@ -28179,12 +28182,12 @@ msgstr "%p%"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, kde-format
 msgid "Step progress:"
-msgstr ""
+msgstr "步骤进度："
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Overall progress:"
-msgstr ""
+msgstr "整体进度："
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
@@ -28214,7 +28217,7 @@ msgstr "数据库转换已取消。"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
 #, kde-format
 msgid "Step progress (%1):"
-msgstr ""
+msgstr "步骤进度 (%1)："
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
