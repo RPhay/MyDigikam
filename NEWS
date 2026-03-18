@@ -45,8 +45,8 @@ BUGFIXES:
 020 --> 517668 - Show placeholders for other files in the album.
 021 --> 517772 - Bug after update libexiv2-27.
 022 --> 517766 - Crash on App startup.
-023 -->
-024 -->
+023 --> 517299 - Opening Geolocation Editor crashes digiKam.
+024 --> 517757 - Clicking on a "Help" button in a dialog causes digiKam to silently disappear.
 025 -->
 026 -->
 027 -->
