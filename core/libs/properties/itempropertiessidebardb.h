@@ -57,9 +57,11 @@ public:
     void populateTags();
     void refreshTagsView();
 
+    ItemInfoList currentSelection()                     const;
+
     /// This is for image editor to be able to update the filter list in sidebar
-    ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
-    ItemDescEditTab*           imageDescEditTab()     const;
+    ItemPropertiesVersionsTab* getFiltersHistoryTab()   const;
+    ItemDescEditTab*           imageDescEditTab()       const;
 
     /**
      * If no item selected, show the synthesis panel with information from all items.

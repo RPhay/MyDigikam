@@ -24,6 +24,7 @@
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QIcon>
+#include <QToolButton>
 #include <QTimer>
 #include <QPixmap>
 #include <QPainter>
@@ -36,12 +37,16 @@
 
 // Local includes
 
+#include "albummanager.h"
 #include "dexpanderbox.h"
 #include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
 #include "digikam_globals.h"
 #include "applicationsettings.h"
 #include "itemsgroupedview.h"
+#include "itemfiltermodel.h"
+#include "itemmodel.h"
+#include "dfileoperations.h"
 
 namespace Digikam
 {
@@ -62,40 +67,58 @@ public:
 
 public:
 
-    DTextLabelValue*  labelSelectionCount  = nullptr;
-    DTextLabelValue*  labelSelectionSize   = nullptr;
-    DTextLabelValue*  labelSelectionGroups = nullptr;
-    DTextLabelValue*  labelTotalCount      = nullptr;
-    DTextLabelValue*  labelTotalSize       = nullptr;
-    DTextLabelValue*  labelTotalGroups     = nullptr;
-    DTextLabelName*   selectionGroups      = nullptr;
+    DTextLabelValue*         labelSelectionCount  = nullptr;
+    DTextLabelValue*         labelSelectionSize   = nullptr;
+    DTextLabelValue*         labelSelectionGroups = nullptr;
+    DTextLabelValue*         labelTotalCount      = nullptr;
+    DTextLabelValue*         labelTotalSize       = nullptr;
+    DTextLabelValue*         labelTotalGroups     = nullptr;
+    DTextLabelName*          selectionGroups      = nullptr;
 
-    ItemsGroupedView* treeSelectionGroups  = nullptr;
-    ItemsGroupedView* treeTotalGroups      = nullptr;
+    ItemsGroupedView*        treeSelectionGroups  = nullptr;
+    ItemsGroupedView*        treeTotalGroups      = nullptr;
 
-    QTreeWidget*      selectionMimes       = nullptr;
-    QTreeWidget*      totalMimes           = nullptr;
+    QTreeWidget*             selectionMimes       = nullptr;
+    QTreeWidget*             totalMimes           = nullptr;
 
-    QGroupBox*        select               = nullptr;
-    QGroupBox*        total                = nullptr;
+    QToolButton*             openSelBtn           = nullptr;
+    QToolButton*             openTtlBtn           = nullptr;
+
+    QWidget*                 select               = nullptr;
+    QWidget*                 total                = nullptr;
+
+    ItemPropertiesSideBarDB* tab                  = nullptr;
 };
 
-ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
+ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(ItemPropertiesSideBarDB* const parent)
     : DVBox(parent),
       d    (new Private)
 {
     setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
     setLineWidth(style()->pixelMetric(QStyle::PM_DefaultFrameWidth));
+    d->tab                                = parent;
     const int spacing                     = layoutSpacing();
 
     // --------------------------------------------------
 
-    d->select                             = new QGroupBox(i18n("Selected Item Properties"), this);
+    d->select                             = new QWidget(this);
     QGridLayout* const grid1              = new QGridLayout(d->select);
+
+    QWidget* const sbar                   = new QWidget(d->select);
+    QLabel* const stitle                  = new QLabel(i18n("<b>Selected Item Properties</b>"), sbar);
+    d->openSelBtn                         = new QToolButton(sbar);
+    d->openSelBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
+    d->openSelBtn->setToolTip(i18n("Open in the file manager"));
+    QHBoxLayout* const slay               = new QHBoxLayout(sbar);
+    slay->addWidget(stitle);
+    slay->addStretch();
+    slay->addWidget(d->openSelBtn);
+    slay->setContentsMargins(0, 0, 0, 0);
 
     DTextLabelName* const selectionCount  = new DTextLabelName(i18n("Count: "),  d->select);
     DTextLabelName* const selectionSize   = new DTextLabelName(i18n("Size: "),   d->select);
     d->selectionGroups                    = new DTextLabelName(i18n("Groups: "), d->select);
+
     d->labelSelectionCount                = new DTextLabelValue(QString(), d->select);
     d->labelSelectionSize                 = new DTextLabelValue(QString(), d->select);
 
@@ -114,24 +137,36 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     d->treeSelectionGroups                = new ItemsGroupedView(d->select);
 
-    grid1->addWidget(selectionCount,                  0, 0, 1, 1);
-    grid1->addWidget(d->labelSelectionCount,          0, 1, 1, 1);
-    grid1->addWidget(d->selectionMimes,               1, 0, 1, 2);
-    grid1->addWidget(selectionSize,                   2, 0, 1, 1);
-    grid1->addWidget(d->labelSelectionSize,           2, 1, 1, 1);
-    grid1->addWidget(d->selectionGroups,              3, 0, 1, 1);
-    grid1->addWidget(d->labelSelectionGroups,         3, 1, 1, 1);
-    grid1->addWidget(d->treeSelectionGroups,          4, 0, 1, 2);
+    grid1->addWidget(sbar,                            0, 0, 1, 2);
+    grid1->addWidget(selectionCount,                  1, 0, 1, 1);
+    grid1->addWidget(d->labelSelectionCount,          1, 1, 1, 1);
+    grid1->addWidget(d->selectionMimes,               2, 0, 1, 2);
+    grid1->addWidget(selectionSize,                   3, 0, 1, 1);
+    grid1->addWidget(d->labelSelectionSize,           3, 1, 1, 1);
+    grid1->addWidget(d->selectionGroups,              4, 0, 1, 1);
+    grid1->addWidget(d->labelSelectionGroups,         4, 1, 1, 1);
+    grid1->addWidget(d->treeSelectionGroups,          5, 0, 1, 2);
     grid1->setContentsMargins(spacing, spacing, spacing, spacing);
     grid1->setColumnStretch(0, 10);
     grid1->setColumnStretch(1, 25);
-    grid1->setRowStretch(4, 10);
+    grid1->setRowStretch(5, 10);
     grid1->setSpacing(0);
 
     // ---
 
-    d->total                              = new QGroupBox(i18n("All Item Properties"), this);
+    d->total                              = new QWidget(this);
     QGridLayout* const grid2              = new QGridLayout(d->total);
+
+    QWidget* const tbar                   = new QWidget(d->total);
+    QLabel* const ttitle                  = new QLabel(i18n("<b>All Item Properties</b>"), tbar);
+    d->openTtlBtn                         = new QToolButton(tbar);
+    d->openTtlBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
+    d->openTtlBtn->setToolTip(i18n("Open in the file manager"));
+    QHBoxLayout* const tlay               = new QHBoxLayout(tbar);
+    tlay->addWidget(ttitle);
+    tlay->addStretch();
+    tlay->addWidget(d->openTtlBtn);
+    tlay->setContentsMargins(0, 0, 0, 0);
 
     DTextLabelName* const totalCount      = new DTextLabelName(i18n("Count: "),  d->total);
     DTextLabelName* const totalSize       = new DTextLabelName(i18n("Size: "),   d->total);
@@ -154,19 +189,26 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 
     d->treeTotalGroups                    = new ItemsGroupedView(d->total);
 
-    grid2->addWidget(totalCount,                      0, 0, 1, 1);
-    grid2->addWidget(d->labelTotalCount,              0, 1, 1, 1);
-    grid2->addWidget(d->totalMimes,                   1, 0, 1, 2);
-    grid2->addWidget(totalSize,                       2, 0, 1, 1);
-    grid2->addWidget(d->labelTotalSize,               2, 1, 1, 1);
-    grid2->addWidget(totalGroups,                     3, 0, 1, 1);
-    grid2->addWidget(d->labelTotalGroups,             3, 1, 1, 1);
-    grid2->addWidget(d->treeTotalGroups,              4, 0, 1, 2);
+    grid2->addWidget(tbar,                            0, 0, 1, 2);
+    grid2->addWidget(totalCount,                      1, 0, 1, 1);
+    grid2->addWidget(d->labelTotalCount,              1, 1, 1, 1);
+    grid2->addWidget(d->totalMimes,                   2, 0, 1, 2);
+    grid2->addWidget(totalSize,                       3, 0, 1, 1);
+    grid2->addWidget(d->labelTotalSize,               3, 1, 1, 1);
+    grid2->addWidget(totalGroups,                     4, 0, 1, 1);
+    grid2->addWidget(d->labelTotalGroups,             4, 1, 1, 1);
+    grid2->addWidget(d->treeTotalGroups,              5, 0, 1, 2);
     grid2->setContentsMargins(spacing, spacing, spacing, spacing);
     grid2->setColumnStretch(0, 10);
     grid2->setColumnStretch(1, 25);
-    grid2->setRowStretch(4, 10);
+    grid2->setRowStretch(5, 10);
     grid2->setSpacing(0);
+
+    connect(d->openSelBtn, &QToolButton::pressed,
+            this, &ItemSelectionPropertiesTab::slotOpenSelectionPressed);
+
+    connect(d->openTtlBtn, &QToolButton::pressed,
+            this, &ItemSelectionPropertiesTab::slotOpenAlbumPressed);
 }
 
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
@@ -184,6 +226,7 @@ void ItemSelectionPropertiesTab::clear()
     setSelectionSize(QString());
     setTotalCount(0);
     setTotalSize(QString());
+
 }
 
 void ItemSelectionPropertiesTab::setSelectionCount(int count)
@@ -220,6 +263,10 @@ void ItemSelectionPropertiesTab::setSelectionGroups(const ItemInfoList& groups)
 
 void ItemSelectionPropertiesTab::setTotalCount(int count)
 {
+    // Enable the open album in file manager if PAlbum only.
+
+    d->openTtlBtn->setVisible(currentPAlbum());
+
     d->labelTotalCount->setAdjustedText(QLocale().toString(count));
 }
 
@@ -251,6 +298,54 @@ void ItemSelectionPropertiesTab::setItemFilterModel(ItemFilterModel* const model
 {
     d->treeSelectionGroups->setItemFilterModel(model);
     d->treeTotalGroups->setItemFilterModel(model);
+}
+
+void ItemSelectionPropertiesTab::slotOpenSelectionPressed()
+{
+    QList<QUrl> urls;
+    const auto sel = d->tab->currentSelection();
+
+    for (const ItemInfo& inf : sel)
+    {
+        urls << inf.fileUrl();
+    }
+
+    DFileOperations::openInFileManager(urls);
+}
+
+PAlbum* ItemSelectionPropertiesTab::currentPAlbum() const
+{
+    AlbumList list = AlbumManager::instance()->currentAlbums();
+
+    if (list.isEmpty())
+    {
+        return nullptr;
+    }
+
+    Album* const album = list.constFirst();
+
+    if (!album || (album->type() != Album::PHYSICAL))
+    {
+        return nullptr;
+    }
+
+    if (album->isRoot())
+    {
+        return nullptr;
+    }
+
+    return (dynamic_cast<PAlbum*>(album));
+}
+
+void ItemSelectionPropertiesTab::slotOpenAlbumPressed()
+{
+    PAlbum* const palbum = currentPAlbum();
+
+    if (palbum)
+    {
+        QUrl url(QUrl::fromLocalFile(palbum->folderPath()));
+        DFileOperations::openInFileManager(QList<QUrl>() << url);
+    }
 }
 
 } // namespace Digikam

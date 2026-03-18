@@ -26,10 +26,12 @@
 #include "dlayoutbox.h"
 #include "iteminfo.h"
 #include "thumbnailloadthread.h"
+#include "itempropertiessidebardb.h"
 
 namespace Digikam
 {
 
+class PAlbum;
 class ItemFilterModel;
 
 class ItemSelectionPropertiesTab : public DVBox
@@ -38,7 +40,7 @@ class ItemSelectionPropertiesTab : public DVBox
 
 public:
 
-    explicit ItemSelectionPropertiesTab(QWidget* const parent);
+    explicit ItemSelectionPropertiesTab(ItemPropertiesSideBarDB* const parent);
     ~ItemSelectionPropertiesTab() override;
 
     void clear();
@@ -54,6 +56,15 @@ public:
     void setTotalGroups(const ItemInfoList& groups);
 
     void setItemFilterModel(ItemFilterModel* const model);
+
+private Q_SLOTS:
+
+    void slotOpenSelectionPressed();
+    void slotOpenAlbumPressed();
+
+private:
+
+    PAlbum* currentPAlbum() const;
 
 private:
 

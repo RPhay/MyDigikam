@@ -41,7 +41,9 @@ public:
 
     void setGroups(const ItemInfoList& items);
     void setEnableToolTips(bool val);
+
     void setItemFilterModel(ItemFilterModel* const model);
+    ItemFilterModel* itemFilterModel()                              const;
 
 private Q_SLOTS:
 

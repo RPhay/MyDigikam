@@ -164,6 +164,11 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
     );
 }
 
+ItemFilterModel* ItemsGroupedView::itemFilterModel() const
+{
+    return d->itemModel;
+}
+
 void ItemsGroupedView::setEnableToolTips(bool val)
 {
     d->showTips = val;

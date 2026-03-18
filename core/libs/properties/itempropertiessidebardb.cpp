@@ -91,7 +91,7 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
     : ItemPropertiesSideBar(parent, splitter, side, mimimizedDefault),
       d                    (new Private)
 {
-    d->selectionPropertiesTab = new ItemSelectionPropertiesTab(parent);
+    d->selectionPropertiesTab = new ItemSelectionPropertiesTab(this);
     m_propertiesStackedView->addWidget(d->selectionPropertiesTab);
 
     d->desceditTab            = new ItemDescEditTab(parent);
@@ -155,6 +155,11 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
 {
     delete d;
+}
+
+ItemInfoList ItemPropertiesSideBarDB::currentSelection() const
+{
+    return d->currentInfos;
 }
 
 void ItemPropertiesSideBarDB::setItemFilterModel(ItemFilterModel* const model)
