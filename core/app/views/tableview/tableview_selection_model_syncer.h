@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2017-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
- *
+ * SPDX-FileCopyrightText: 2026      by Anamay Narkar <anamay dot narkar dot 102 at gmail dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -58,7 +58,9 @@ private Q_SLOTS:
     void slotTargetSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
     void slotTargetColumnsInserted(const QModelIndex& parent, int start, int end);
     void slotTargetModelRowsInserted(const QModelIndex& parent, int start, int end);
+    void slotTargetModelAboutToBeReset();
     void slotTargetModelReset();
+    void slotRestoreFromSavedIds();
     void slotDoInitialSync();
 
 public Q_SLOTS:

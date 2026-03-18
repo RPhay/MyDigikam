@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2017-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
- *
+ * SPDX-FileCopyrightText: 2026      by Anamay Narkar <anamay dot narkar dot 102 at gmail dot com>
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -38,6 +38,14 @@ public:
 public:
 
     bool syncing = false;
+
+    // Snapshot taken in slotTargetModelAboutToBeReset. storing image IDs
+    // rather than model indexes, which become stale
+    // after a model reset
+
+    QList<qlonglong> savedImageIds;
+    qlonglong        savedCurrentImageId  = -1;
+    bool             hasSavedSelection    = false;
 };
 
 TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent)
@@ -59,6 +67,9 @@ TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* co
 
     connect(s->tableViewModel, SIGNAL(columnsInserted(QModelIndex,int,int)),
             this, SLOT(slotTargetColumnsInserted(QModelIndex,int,int)));
+
+    connect(s->tableViewModel, SIGNAL(modelAboutToBeReset()),
+            this, SLOT(slotTargetModelAboutToBeReset()));
 
     connect(s->tableViewModel, SIGNAL(modelReset()),
             this, SLOT(slotTargetModelReset()));
@@ -309,9 +320,106 @@ void Digikam::TableViewSelectionModelSyncer::slotSetActive(const bool isActive)
     }
 }
 
+void Digikam::TableViewSelectionModelSyncer::slotTargetModelAboutToBeReset()
+{
+    d->savedImageIds.clear();
+    d->savedCurrentImageId = -1;
+
+    const QModelIndexList selected = s->tableViewSelectionModel->selectedIndexes();
+
+    for (const QModelIndex& idx : std::as_const(selected))
+    {
+        if (idx.column() == 0)
+        {
+            const qlonglong id = s->tableViewModel->imageId(idx);
+
+            if (id > 0)
+            {
+                d->savedImageIds.append(id);
+            }
+        }
+    }
+
+    const QModelIndex currentTarget = s->tableViewSelectionModel->currentIndex();
+
+    if (currentTarget.isValid())
+    {
+        d->savedCurrentImageId = s->tableViewModel->imageId(currentTarget);
+    }
+
+    d->hasSavedSelection = true;
+    d->syncing           = true;
+}
+
 void Digikam::TableViewSelectionModelSyncer::slotTargetModelReset()
 {
-    slotDoInitialSync();
+    d->syncing = false;
+
+    if (!d->hasSavedSelection)
+    {
+        slotDoInitialSync();
+        return;
+    }
+
+    // imageFilterModel may itself be mid-reset when tableViewModel fires modelReset,
+    // Deferring the restore after a tick to let all pending updates complete/get queued for completion.
+
+    QTimer::singleShot(0, this, SLOT(slotRestoreFromSavedIds()));
+}
+
+void Digikam::TableViewSelectionModelSyncer::slotRestoreFromSavedIds()
+{
+    if (!d->hasSavedSelection)
+    {
+        return;
+    }
+
+    d->hasSavedSelection = false;
+
+    if (!s->isActive || d->savedImageIds.isEmpty())
+    {
+        return;
+    }
+
+    d->syncing = true;
+
+    s->tableViewSelectionModel->clearSelection();
+    s->imageFilterSelectionModel->clearSelection();
+
+    for (const qlonglong imageId : d->savedImageIds)
+    {
+        const QModelIndex targetIndex = s->tableViewModel->indexFromImageId(imageId, 0);
+
+        if (!targetIndex.isValid())
+        {
+            continue;
+        }
+
+        const QItemSelection rowSel = targetIndexToRowItemSelection(targetIndex);
+        s->tableViewSelectionModel->select(rowSel, QItemSelectionModel::Select);
+
+        const QModelIndex sourceIndex = toSource(targetIndex);
+
+        if (sourceIndex.isValid())
+        {
+            s->imageFilterSelectionModel->select(sourceIndex, QItemSelectionModel::Select);
+        }
+    }
+
+    if (d->savedCurrentImageId > 0)
+    {
+        const QModelIndex targetCurrent = s->tableViewModel->indexFromImageId(d->savedCurrentImageId, 0);
+
+        if (targetCurrent.isValid())
+        {
+            s->tableViewSelectionModel->setCurrentIndex(targetCurrent, QItemSelectionModel::NoUpdate);
+
+            const QModelIndex sourceCurrent = toSource(targetCurrent);
+            s->imageFilterSelectionModel->setCurrentIndex(sourceCurrent, QItemSelectionModel::NoUpdate);
+        }
+    }
+
+    d->syncing = false;
 }
 
 void Digikam::TableViewSelectionModelSyncer::slotTargetModelRowsInserted(const QModelIndex& parent, int start, int end)
