@@ -1088,7 +1088,20 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
                         << QLatin1String("Exif.Image.YResolution")
                         << QLatin1String("Exif.Image.ResolutionUnit")
                         << QLatin1String("Exif.Image.Software")
-                        << QLatin1String("Exif.Photo.RelatedSoundFile");
+                        << QLatin1String("Exif.Photo.RelatedSoundFile")
+                        << QLatin1String("Exif.GPSInfo.GPSVersionID")
+                        << QLatin1String("Exif.GPSInfo.GPSLatitude")
+                        << QLatin1String("Exif.GPSInfo.GPSLatitudeRef")
+                        << QLatin1String("Exif.GPSInfo.GPSLongitude")
+                        << QLatin1String("Exif.GPSInfo.GPSLongitudeRef")
+                        << QLatin1String("Exif.GPSInfo.GPSAltitude")
+                        << QLatin1String("Exif.GPSInfo.GPSAltitudeRef")
+                        << QLatin1String("Exif.GPSInfo.GPSTimeStamp")
+                        << QLatin1String("Exif.GPSInfo.GPSSpeed")
+                        << QLatin1String("Exif.GPSInfo.GPSSpeedRef")
+                        << QLatin1String("Exif.GPSInfo.GPSSatellites")
+                        << QLatin1String("Exif.GPSInfo.GPSMeasureMode")
+                        << QLatin1String("Exif.GPSInfo.GPSDOP");
     exifWritebackHelper.mergeFields(xmpsidecar->exifData(), exifMetadata());
 
     // IPTC

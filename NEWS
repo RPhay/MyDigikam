@@ -49,7 +49,7 @@ BUGFIXES:
 024 --> 517757 - Clicking on a "Help" button in a dialog causes digiKam to silently disappear.
 025 --> 514121 - Preserve item selection when resorting columns in Table View (Album tab).
 026 --> 517798 - digiKam crashes immediately even after reinstall.
-027 -->
+027 --> 517790 - GPS coordinate overwritten when writing tags to XMP sidecar.
 028 -->
 029 -->
 030 -->
