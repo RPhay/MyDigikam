@@ -26,7 +26,6 @@
 #include <QApplication>
 #include <QDialogButtonBox>
 #include <QIcon>
-#include <QDebug>
 
 // KDE includes
 
@@ -150,6 +149,8 @@ class Q_DECL_HIDDEN SearchView::Private
 public:
 
     Private() = default;
+
+public:
 
     bool                     needAnimationForReadIn = false;
 
