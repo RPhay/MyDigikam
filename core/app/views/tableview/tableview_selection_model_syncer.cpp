@@ -9,6 +9,7 @@
  * SPDX-FileCopyrightText: 2017-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2026      by Anamay Narkar <anamay dot narkar dot 102 at gmail dot com>
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -37,18 +38,21 @@ public:
 
 public:
 
-    bool syncing = false;
+    bool             syncing              = false;
 
-    // Snapshot taken in slotTargetModelAboutToBeReset. storing image IDs
-    // rather than model indexes, which become stale
-    // after a model reset
+    /**
+     * @note Snapshot taken in slotTargetModelAboutToBeReset. storing image IDs
+     *       rather than model indexes, which become stale
+     *       after a model reset.
+     */
 
     QList<qlonglong> savedImageIds;
     qlonglong        savedCurrentImageId  = -1;
     bool             hasSavedSelection    = false;
 };
 
-TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent)
+TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* const sharedObject,
+                                                             QObject* const parent)
     : QObject(parent),
       d      (new Private),
       s      (sharedObject)
@@ -77,8 +81,10 @@ TableViewSelectionModelSyncer::TableViewSelectionModelSyncer(TableViewShared* co
     connect(s->tableViewModel, SIGNAL(rowsInserted(QModelIndex,int,int)),
             this, SLOT(slotTargetModelRowsInserted(QModelIndex,int,int)));
 
-    /// @todo This is necessary to re-sync the selection when tags are added to images.
-    ///       Check whether both are necessary or whether we need more.
+    /**
+     * @todo This is necessary to re-sync the selection when tags are added to images.
+     *       Check whether both are necessary or whether we need more.
+     */
 
     connect(s->imageFilterModel, SIGNAL(layoutChanged()),
             this, SLOT(slotSourceModelReset()));
@@ -139,7 +145,8 @@ void TableViewSelectionModelSyncer::slotDoInitialSync()
     d->syncing                           = false;
 }
 
-void TableViewSelectionModelSyncer::slotSourceCurrentChanged(const QModelIndex& current, const QModelIndex& previous)
+void TableViewSelectionModelSyncer::slotSourceCurrentChanged(const QModelIndex& current,
+                                                             const QModelIndex& previous)
 {
     if (!s->isActive)
     {
@@ -213,7 +220,8 @@ QItemSelection TableViewSelectionModelSyncer::itemSelectionToTarget(const QItemS
     return targetSelection;
 }
 
-void TableViewSelectionModelSyncer::slotSourceSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
+void TableViewSelectionModelSyncer::slotSourceSelectionChanged(const QItemSelection& selected,
+                                                               const QItemSelection& deselected)
 {
     if (!s->isActive)
     {
@@ -236,7 +244,8 @@ void TableViewSelectionModelSyncer::slotSourceSelectionChanged(const QItemSelect
     d->syncing                             = false;
 }
 
-void TableViewSelectionModelSyncer::slotTargetCurrentChanged(const QModelIndex& current, const QModelIndex& previous)
+void TableViewSelectionModelSyncer::slotTargetCurrentChanged(const QModelIndex& current,
+                                                             const QModelIndex& previous)
 {
     if (!s->isActive)
     {
@@ -258,7 +267,8 @@ void TableViewSelectionModelSyncer::slotTargetCurrentChanged(const QModelIndex& 
     d->syncing                           = false;
 }
 
-void TableViewSelectionModelSyncer::slotTargetSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
+void TableViewSelectionModelSyncer::slotTargetSelectionChanged(const QItemSelection& selected,
+                                                               const QItemSelection& deselected)
 {
     if (!s->isActive)
     {
@@ -289,7 +299,8 @@ void TableViewSelectionModelSyncer::slotSourceModelReset()
     QTimer::singleShot(0, this, SLOT(slotDoInitialSync()));
 }
 
-void TableViewSelectionModelSyncer::slotTargetColumnsInserted(const QModelIndex& parent, int start, int end)
+void TableViewSelectionModelSyncer::slotTargetColumnsInserted(const QModelIndex& parent,
+                                                              int start, int end)
 {
     if (!s->isActive)
     {
@@ -305,9 +316,12 @@ void TableViewSelectionModelSyncer::slotTargetColumnsInserted(const QModelIndex&
         return;
     }
 
-    // New columns were inserted. We have to make sure that all selected rows include the new columns.
-    // We just re-perform the initial synchronization.
-    /// @todo There may be more efficient ways.
+    /**
+     * @note New columns were inserted. We have to make sure that all selected rows include the new columns.
+     * We just re-perform the initial synchronization.
+     *
+     * @todo There may be more efficient ways.
+     */
 
     slotDoInitialSync();
 }
@@ -386,7 +400,7 @@ void Digikam::TableViewSelectionModelSyncer::slotRestoreFromSavedIds()
     s->tableViewSelectionModel->clearSelection();
     s->imageFilterSelectionModel->clearSelection();
 
-    for (const qlonglong imageId : d->savedImageIds)
+    for (const qlonglong imageId : std::as_const(d->savedImageIds))
     {
         const QModelIndex targetIndex = s->tableViewModel->indexFromImageId(imageId, 0);
 
@@ -395,7 +409,7 @@ void Digikam::TableViewSelectionModelSyncer::slotRestoreFromSavedIds()
             continue;
         }
 
-        const QItemSelection rowSel = targetIndexToRowItemSelection(targetIndex);
+        const QItemSelection rowSel   = targetIndexToRowItemSelection(targetIndex);
         s->tableViewSelectionModel->select(rowSel, QItemSelectionModel::Select);
 
         const QModelIndex sourceIndex = toSource(targetIndex);
@@ -422,7 +436,8 @@ void Digikam::TableViewSelectionModelSyncer::slotRestoreFromSavedIds()
     d->syncing = false;
 }
 
-void Digikam::TableViewSelectionModelSyncer::slotTargetModelRowsInserted(const QModelIndex& parent, int start, int end)
+void Digikam::TableViewSelectionModelSyncer::slotTargetModelRowsInserted(const QModelIndex& parent,
+                                                                         int start, int end)
 {
     if (!s->isActive)
     {

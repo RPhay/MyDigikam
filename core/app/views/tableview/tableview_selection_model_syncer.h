@@ -9,6 +9,7 @@
  * SPDX-FileCopyrightText: 2017-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * SPDX-FileCopyrightText: 2013      by Michael G. Hansen <mike at mghansen dot de>
  * SPDX-FileCopyrightText: 2026      by Anamay Narkar <anamay dot narkar dot 102 at gmail dot com>
+ *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
  * ============================================================ */
@@ -31,7 +32,8 @@ class TableViewSelectionModelSyncer : public QObject
 
 public:
 
-    explicit TableViewSelectionModelSyncer(TableViewShared* const sharedObject, QObject* const parent = nullptr);
+    explicit TableViewSelectionModelSyncer(TableViewShared* const sharedObject,
+                                           QObject* const parent = nullptr);
     ~TableViewSelectionModelSyncer()                                                   override;
 
     QModelIndex toSource(const QModelIndex& targetIndex)                         const;
@@ -44,22 +46,22 @@ public:
 private Q_SLOTS:
 
     void slotSourceModelReset();
-    void slotSourceCurrentChanged(const QModelIndex& current, const QModelIndex& previous);
-/*
-    void slotSourceCurrentColumnChanged(const QModelIndex& current, const QModelIndex& previous);
-    void slotSourceCurrentRowChanged(const QModelIndex& current, const QModelIndex& previous);
-*/
-    void slotSourceSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
-    void slotTargetCurrentChanged(const QModelIndex& current, const QModelIndex& previous);
-/*
-    void slotTargetCurrentColumnChanged(const QModelIndex& current, const QModelIndex& previous);
-    void slotTargetCurrentRowChanged(const QModelIndex& current, const QModelIndex& previous);
-*/
-    void slotTargetSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
-    void slotTargetColumnsInserted(const QModelIndex& parent, int start, int end);
-    void slotTargetModelRowsInserted(const QModelIndex& parent, int start, int end);
+    void slotSourceCurrentChanged(const QModelIndex& current,
+                                  const QModelIndex& previous);
+    void slotSourceSelectionChanged(const QItemSelection& selected,
+                                    const QItemSelection& deselected);
+
+    void slotTargetCurrentChanged(const QModelIndex& current,
+                                  const QModelIndex& previous);
+    void slotTargetSelectionChanged(const QItemSelection& selected,
+                                    const QItemSelection& deselected);
+    void slotTargetColumnsInserted(const QModelIndex& parent,
+                                   int start, int end);
+    void slotTargetModelRowsInserted(const QModelIndex& parent,
+                                     int start, int end);
     void slotTargetModelAboutToBeReset();
     void slotTargetModelReset();
+
     void slotRestoreFromSavedIds();
     void slotDoInitialSync();
 
