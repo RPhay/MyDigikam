@@ -246,6 +246,8 @@ void TagsActionMngr::slotAssignFromShortcut()
     QWidget* const w = qApp->activeWindow();
     DigikamApp* dkw  = nullptr;
 
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test1 SurveyWindow:" << w << dynamic_cast<Digikam::SurveyWindow*>(w);
+
     if (dynamic_cast<SurveyWindow*>(w))
     {
         dkw = DigikamApp::instance();
@@ -254,6 +256,8 @@ void TagsActionMngr::slotAssignFromShortcut()
     {
         dkw = dynamic_cast<DigikamApp*>(w);
     }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Test2 SurveyWindow:" << dkw;
 
     if (dkw)
     {
