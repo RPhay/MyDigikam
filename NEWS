@@ -47,7 +47,7 @@ BUGFIXES:
 022 --> 517766 - Crash on App startup.
 023 --> 517299 - Opening Geolocation Editor crashes digiKam.
 024 --> 517757 - Clicking on a "Help" button in a dialog causes digiKam to silently disappear.
-025 -->
+025 --> 514121 - Preserve item selection when resorting columns in Table View (Album tab).
 026 -->
 027 -->
 028 -->
