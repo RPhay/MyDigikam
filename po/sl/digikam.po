@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
-"PO-Revision-Date: 2026-03-16 07:21+0100\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-19 06:31+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.8\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3899,8 +3899,9 @@ msgstr ""
 "Dodana podpora za iskanje nedavno spremenjenih elementov v zbirki podatkov."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr "Posodobi notranji mehanizem RAW na zadnji izvod Libraw 2026-02-16."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -26990,7 +26991,7 @@ msgstr "To je prilagoditev krivulje svetilnosti slike"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Ponastavi"
@@ -39082,17 +39083,15 @@ msgid " fps"
 msgstr " sličic na sekundo"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "Lastnosti izbranega predmeta"
+msgstr "<b>Lastnosti izbranega predmeta</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "Odpri predmet upravljalniku datotek"
+msgstr "Odpri v upravljalniku datotek"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -39113,10 +39112,9 @@ msgid "Groups: "
 msgstr "Grupe: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Vse lastnosti predmeta"
+msgstr "<b>Vse lastnosti predmeta</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -63930,12 +63928,12 @@ msgstr "Uredi shranjeno iskanje"
 msgid "Edit..."
 msgstr "Uredi ..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Dodaj iskalno skupino"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Poskusi"

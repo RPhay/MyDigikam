@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3805,7 +3805,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last Libraw snapshot 2023-11-21."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "内部 RAW エンジンを最新の Libraw スナップショット 2023-11-21 に更新しました。"
 
@@ -27542,7 +27542,7 @@ msgstr "これは画像の明度のトーンカーブ調整です。"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "リセット"
@@ -66396,12 +66396,12 @@ msgstr "既存の検索を編集"
 msgid "Edit..."
 msgstr "編集..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "検索グループを追加"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "テスト"

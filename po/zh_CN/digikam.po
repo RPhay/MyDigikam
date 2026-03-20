@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3699,8 +3699,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-02-16。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -26062,7 +26063,7 @@ msgstr "在此调整图像亮度 (HSY' 光度) 曲线"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "重置"
@@ -61977,12 +61978,12 @@ msgstr "编辑已保存的搜索"
 msgid "Edit..."
 msgstr "编辑..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "添加搜索分组"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "试用"

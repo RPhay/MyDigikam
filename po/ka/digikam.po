@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
-"PO-Revision-Date: 2026-03-15 07:51+0100\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-19 04:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3804,8 +3804,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "დაემატა მონაცემთა ბაზაში ახლახან შეცვლილი ელემენტების ძებნა."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2026-02-16."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -16532,6 +16533,8 @@ msgid ""
 "Increasing this value makes pixels with high saturation contribute more to "
 "the final output."
 msgstr ""
+"ამ მნიშვნელობის გაზრდა აიძულებს მაღალი გაჯერებულობის მქონე პიქსელებს, მეტი "
+"წვლილი შეიტანონ საბოლოო შედეგში."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:158
 #, kde-format
@@ -16567,6 +16570,7 @@ msgid ""
 "Convert to CIECAM02 color appearance model during the blending process "
 "instead of RGB."
 msgstr ""
+"შერევის პროცესიდან CIECAM02 ფერის გარეგნობის მოდელში გადაყვანა RGB-ის მაგიერ."
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/enfusesettings.cpp:174
 #, kde-format
@@ -17941,6 +17945,8 @@ msgid ""
 "The JPEG image size in pixels, using standard screen resolutions. Warning: "
 "larger size requires more network bandwidth"
 msgstr ""
+"JPEG გამოსახულების ზომა პიქსელებში სტანდარტული ეკრანის გარჩევადობით. "
+"გაფრთხილება: რაც მეტია ზომა, მით მეტი ქსელის გამტარობაა საჭირო"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:160
 #, kde-format
@@ -26139,7 +26145,7 @@ msgstr "ეს გამოსახულების განათებუ�
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "განულება"
@@ -37630,17 +37636,15 @@ msgid " fps"
 msgstr " კადრი/წმ"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "მონიშნული ელემენტის თვისებები"
+msgstr "<b>მონიშნული ელემენტის თვისებები</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "ელემენტის გახსნა ფაილების მმართველში"
+msgstr "ფაილების მმართველში გახსნა"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -37661,10 +37665,9 @@ msgid "Groups: "
 msgstr "ჯგუფები: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "ელემენტის ყველა თვისება"
+msgstr "<b>ყველა ელემენტის თვისება</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -61671,12 +61674,12 @@ msgstr "შენახული ძებნის ჩასწორება"
 msgid "Edit..."
 msgstr "ჩასწორება…"
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "ახალი ძებნის ჯგუფი"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "ცდა"

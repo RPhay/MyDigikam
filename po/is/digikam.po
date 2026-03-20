@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
-"PO-Revision-Date: 2026-03-16 16:45+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-19 12:17+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3792,8 +3792,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-02-16."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -26856,7 +26857,7 @@ msgstr "Settu hér breytingar á birtustigi myndar"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Frumstilla"
@@ -38877,17 +38878,15 @@ msgid " fps"
 msgstr " r/sek"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "Eiginleikar valins atriðis"
+msgstr "<b>Eiginleikar valins atriðis</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "Opna atriði í skráastjóra"
+msgstr "Opna í skráastjóranum"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -38908,10 +38907,9 @@ msgid "Groups: "
 msgstr "Hópað"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Allir eiginleikar atriðis"
+msgstr "<b>Eiginleikar allra atriða<b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -63651,12 +63649,12 @@ msgstr "Breyta geymdri leit"
 msgid "Edit..."
 msgstr "Breyta..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Bæta við leitarhóp"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Prófa"

@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2026-01-06 14:27+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3811,7 +3811,7 @@ msgstr ""
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
 #| "including Canon CR3 and Sony A7R4 support."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Eguneratu barneko RAW motorra azken «Libraw» 0.20.2era (snapshot 20210827) "
 "Canon CR3 eta Sony A7R4-aren euskarria barne."
@@ -27298,7 +27298,7 @@ msgstr "Hau da irudi argitasunaren doiketa kurba"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Berrezarri"
@@ -65744,12 +65744,12 @@ msgstr "Editatu gordetako bilaketa"
 msgid "Edit..."
 msgstr "Editatu..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Gehitu bilaketaren taldea"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Saiatu"

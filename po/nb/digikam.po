@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2024-03-09 12:45+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -3728,7 +3728,7 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -25690,7 +25690,7 @@ msgstr "Dette er kurvejustering av bildets lysstyrke"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Tilbakestill"
@@ -61354,12 +61354,12 @@ msgstr "Rediger lagret søk "
 msgid "Edit..."
 msgstr "Rediger …"
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Legg til søkegruppe"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Forsøk"

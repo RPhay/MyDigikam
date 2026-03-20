@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
-"PO-Revision-Date: 2026-03-15 19:46+0100\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-19 12:03+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3875,8 +3875,9 @@ msgstr ""
 "Permitir búsqueda de elementos modificados recientemente en la base de datos."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Se ha actualizado el motor RAW interno a la última copia disponible de "
 "Libraw 2026-02-16."
@@ -27223,7 +27224,7 @@ msgstr "Este es el ajuste de la curva de luminosidad de la imagen"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Reiniciar"
@@ -39389,17 +39390,15 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "Propiedades del elemento seleccionado"
+msgstr "<b>Propiedades del elemento seleccionado</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "Abrir elemento en el gestor de archivos"
+msgstr "Abrir en el gestor de archivos"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -39420,10 +39419,9 @@ msgid "Groups: "
 msgstr "Grupos: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Todas las propiedades del elemento"
+msgstr "<b>Todas las propiedades del elemento</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -64378,12 +64376,12 @@ msgstr "Editar búsqueda guardada"
 msgid "Edit..."
 msgstr "Editar…"
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Añadir grupo de búsqueda"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Intentar"

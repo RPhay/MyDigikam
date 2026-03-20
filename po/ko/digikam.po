@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-19 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3767,7 +3767,7 @@ msgstr ""
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.0 release including Canon "
 #| "CR3 and Sony A7R4 support."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "내장 RAW 엔진을 libraw 0.20.0 릴리스 기반으로 업데이트하여 캐논 CR3 및 소니 "
 "A7R4 지원을 추가했습니다."
@@ -27790,7 +27790,7 @@ msgstr ""
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "초기화"
@@ -65743,12 +65743,12 @@ msgstr ""
 msgid "Edit..."
 msgstr "편집..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr ""
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "시도하기"
