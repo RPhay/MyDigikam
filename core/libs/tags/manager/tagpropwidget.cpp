@@ -145,7 +145,7 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
 
 #if (KXMLGUI_VERSION >= QT_VERSION_CHECK(6, 12, 0))
 
-    d->keySeqWidget->setPatterns(d->keySeqWidget->patterns() | KKeySequenceRecorder::Modifier);
+    d->keySeqWidget->setPatterns(d->keySeqWidget->patterns() | KKeySequenceRecorder::Key);
 
 #else
 
