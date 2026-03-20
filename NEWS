@@ -50,7 +50,7 @@ BUGFIXES:
 025 --> 514121 - Preserve item selection when resorting columns in Table View (Album tab).
 026 --> 517798 - digiKam crashes immediately even after reinstall.
 027 --> 517790 - GPS coordinate overwritten when writing tags to XMP sidecar.
-028 -->
+028 --> 517864 - Unsynchronized panning control areas between left and right panes.
 029 -->
 030 -->
 031 -->
