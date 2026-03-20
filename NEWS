@@ -51,7 +51,7 @@ BUGFIXES:
 026 --> 517798 - digiKam crashes immediately even after reinstall.
 027 --> 517790 - GPS coordinate overwritten when writing tags to XMP sidecar.
 028 --> 517864 - Unsynchronized panning control areas between left and right panes.
-029 -->
+029 --> 517863 - Batch queue-subtract time errors.
 030 -->
 031 -->
 032 -->
