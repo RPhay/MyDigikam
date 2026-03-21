@@ -37,7 +37,6 @@ else()
 endif()
 
 message(STATUS "Host used to compile: ${CMAKE_HOST_PRETTY_NAME}")
-message(STATUS "Compiler is         : ${CMAKE_CXX_COMPILER_ID}")
 
 # ==============================================================================
 # Information to update before to release this package.
@@ -170,6 +169,8 @@ endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
+
+message(STATUS "Compiler is         : ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
 
 ### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 
