@@ -243,21 +243,8 @@ void TagsActionMngr::slotAssignFromShortcut()
     int val               = action->data().toInt();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Shortcut value: " << val;
 
-    QWidget* const w = qApp->activeWindow();
-    DigikamApp* dkw  = nullptr;
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Test1 SurveyWindow:" << w << dynamic_cast<Digikam::SurveyWindow*>(w);
-
-    if (dynamic_cast<SurveyWindow*>(w))
-    {
-        dkw = DigikamApp::instance();
-    }
-    else
-    {
-        dkw = dynamic_cast<DigikamApp*>(w);
-    }
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Test2 SurveyWindow:" << dkw;
+    QWidget* const w       = qApp->activeWindow();
+    DigikamApp* const dkw  = dynamic_cast<DigikamApp*>(w);
 
     if (dkw)
     {
@@ -331,6 +318,32 @@ void TagsActionMngr::slotAssignFromShortcut()
         else if (action->objectName().startsWith(d->tagShortcutPrefix))
         {
             ltw->toggleTag(val);
+        }
+
+        return;
+    }
+
+    SurveyWindow* const svw = dynamic_cast<SurveyWindow*>(w);
+
+    if (svw)
+    {
+        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by LightTableWindow";
+
+        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
+        {
+            svw->slotAssignRating(val);
+        }
+        else if (action->objectName().startsWith(d->pickShortcutPrefix))
+        {
+            svw->slotAssignPickLabel(val);
+        }
+        else if (action->objectName().startsWith(d->colorShortcutPrefix))
+        {
+            svw->slotAssignColorLabel(val);
+        }
+        else if (action->objectName().startsWith(d->tagShortcutPrefix))
+        {
+            svw->toggleTag(val);
         }
 
         return;

@@ -48,6 +48,8 @@ public:
     bool isSleeping()                             const;
     bool isEmpty()                                const;
 
+    void toggleTag(int tagID);
+
 public:
 
     DInfoInterface* infoIface(DPluginAction* const ac)  override;
@@ -55,6 +57,12 @@ public:
 Q_SIGNALS:
 
     void signalWindowHasMoved();
+
+public Q_SLOTS:
+
+    void slotAssignPickLabel(int pickId);
+    void slotAssignColorLabel(int colorId);
+    void slotAssignRating(int rating);
 
 protected:
 
