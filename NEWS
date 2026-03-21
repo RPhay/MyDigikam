@@ -53,7 +53,7 @@ BUGFIXES:
 028 --> 517864 - Unsynchronized panning control areas between left and right panes.
 029 --> 517863 - Batch queue-subtract time errors.
 030 --> 517885 - Can't assign number key without modifier as tag shortcut.
-031 -->
+031 --> 517942 - Qt assertion failure due to integer overflow in facepipeline.
 032 -->
 033 -->
 034 -->
