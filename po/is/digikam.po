@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-19 12:17+0000\n"
+"PO-Revision-Date: 2026-03-20 10:50+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3792,10 +3792,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
-msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-02-16."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -21084,6 +21083,9 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"Þessi stýring gerir kleift að velja myndkóðunarlykilinn til að kóða "
+"myndstreymið. Fyllt er í færslurnar í listanum miðað við kóðunarlykilinn sem "
+"FFMpeg styður."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format

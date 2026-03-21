@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-19 07:47-0300\n"
+"PO-Revision-Date: 2026-03-20 09:38-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3847,11 +3847,10 @@ msgstr ""
 "dados."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
-"Atualiza o motor RAW interno para o último snapshot do Libraw de 16/02/2026."
+"Atualiza o motor RAW interno para o último snapshot do Libraw de 19/03/2026."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format

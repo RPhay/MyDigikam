@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-15 14:30+0100\n"
+"PO-Revision-Date: 2026-03-21 00:34+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3899,11 +3899,10 @@ msgstr ""
 "Voeg ondersteuning toe om recent gewijzigde items in de database te zoeken."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
-"Interne RAW-engine bijgewerkt tot laatste Libraw momentopname 2026-02-16."
+"Interne RAW-engine bijgewerkt tot laatste Libraw momentopname 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -39385,17 +39384,15 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "Geselecteerde itemeigenschappen"
+msgstr "<b>Geselecteerde itemeigenschappen</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "Item in de bestandsbeheerder openen"
+msgstr "In de bestandsbeheerder openen"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -39416,10 +39413,9 @@ msgid "Groups: "
 msgstr "Gegroepeerd: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Alle itemeigenschappen"
+msgstr "<b>Alle itemeigenschappen</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format

@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-19 19:11+0100\n"
-"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2026-03-20 09:47+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3864,12 +3864,11 @@ msgstr ""
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Actualitzar el motor RAW intern a la darrera instantània de la Libraw "
-"2026-02-16."
+"2036-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format

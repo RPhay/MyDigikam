@@ -1797,7 +1797,7 @@ msgstr "将所选项目添加到多图对比工具的缩略图栏。"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr "独立窗口预览工具"
+msgstr "单窗预览"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -3620,9 +3620,9 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
-"推出了全新的独立窗口预览工具，可在单独的窗口中预览项目，并与图标视图同步切换"
-"项目，支持预览模式中的所有功能。您可以在单独的显示器上全屏使用它，在工作流程"
-"中快速查看项目。"
+"推出了全新的单窗预览工具，可在单独的窗口中预览项目，并与图标视图同步切换项"
+"目，支持预览模式中的所有功能。您可以在单独的显示器上全屏使用它，在工作流程中"
+"快速查看项目。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
@@ -3699,10 +3699,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
-msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-02-16。"
+msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -4726,14 +4725,14 @@ msgstr "<para>用于转换彩色照片为黑白照片的批处理工具。</para
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
-msgstr "色彩通道混合"
+msgstr "颜色通道混合"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
-msgstr "调整色彩通道的混合方式"
+msgstr "调整颜色通道的混合方式"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, kde-kuit-format
@@ -4741,7 +4740,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
-msgstr "<para>用于调整色彩通道混合方式的批处理工具。</para>"
+msgstr "<para>用于调整颜色通道混合方式的批处理工具。</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
@@ -7607,7 +7606,7 @@ msgstr "曲线调整..."
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
 "image."
-msgstr "原始图像选中色彩通道的直方图。"
+msgstr "原始图像的选中颜色通道的直方图。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
@@ -7737,7 +7736,7 @@ msgstr "自动调整所有色阶"
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
-msgstr "点击此按钮将自动调整所有色彩通道的色阶。"
+msgstr "点击此按钮将自动调整所有颜色通道的色阶。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
@@ -7750,7 +7749,7 @@ msgstr "重置(&R)"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid "Reset current channel levels' values."
-msgstr "重置当前色彩通道色阶的数值"
+msgstr "重置当前颜色通道色阶的数值"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:269
 #, kde-format
@@ -7926,19 +7925,19 @@ msgstr "黑白照片..."
 #: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:162
 #, kde-format
 msgid "Channel Mixer"
-msgstr "色彩通道混合"
+msgstr "颜色通道混合"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
-msgstr "用于调整色彩通道混合方式的图像编辑器工具。"
+msgstr "用于调整颜色通道混合方式的图像编辑器工具。"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
-msgstr "色彩通道混合"
+msgstr "颜色通道混合"
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:60
 #, kde-format
@@ -30007,7 +30006,7 @@ msgstr "红外滤镜"
 #: core/libs/dimg/filters/bw/mixerfilter.cpp:52
 #, kde-format
 msgid "Channel Mixer Tool"
-msgstr "色彩通道混合工具"
+msgstr "颜色通道混合工具"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, kde-format
@@ -31469,7 +31468,7 @@ msgid ""
 "values where both the original and blurred image's value are low and do the "
 "opposite on high values."
 msgstr ""
-"<b>函数</b>：用于对原始 RGB 色彩通道和去色模糊图像进行合并的函数。此函数将被"
+"<b>函数</b>：用于对原始 RGB 颜色通道和去色模糊图像进行合并的函数。此函数将被"
 "用于色调映射的每个阶段。它可以是线性的或者是指数的。此函数用于控制在原始图像"
 "和模糊图像的某个位置同时较亮时降低合并亮度，两者同时较暗时提高合并亮度。"
 
@@ -32050,7 +32049,7 @@ msgstr "全彩"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
-msgstr "<b>全彩</b>：同时显示图像的所有色彩通道数值。"
+msgstr "<b>全彩</b>：同时显示图像的所有颜色通道数值。"
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
@@ -35974,7 +35973,7 @@ msgstr "Perl 不存在，或缺少执行权限"
 #: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
-msgstr "色彩通道同步错误"
+msgstr "颜色通道同步错误"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:111
 #, kde-format
@@ -37741,17 +37740,15 @@ msgid " fps"
 msgstr " 帧/秒"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "选中项目属性"
+msgstr "<b>选中项目属性</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "用文件管理器打开项目"
+msgstr "在文件管理器中打开"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -37772,10 +37769,9 @@ msgid "Groups: "
 msgstr "分组："
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "所有项目属性"
+msgstr "<b>所有项目属性</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -66150,7 +66146,7 @@ msgstr "多图对比设置"
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr "独立窗口预览工具"
+msgstr "单窗预览工具"
 
 #: core/utilities/setup/setup.cpp:85
 #, kde-format
@@ -66158,7 +66154,7 @@ msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
-msgstr "独立窗口预览工具设置"
+msgstr "单窗预览工具设置"
 
 #: core/utilities/setup/setup.cpp:98
 #, kde-format
@@ -66738,4 +66734,4 @@ msgstr "导入视图项目"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr "独立窗口预览工具"
+msgstr "单窗预览"

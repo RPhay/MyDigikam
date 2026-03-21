@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-02-23 22:13+0200\n"
+"PO-Revision-Date: 2026-03-20 08:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -1579,7 +1579,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "בחירת תיקייה לפענוח"
+msgstr "בחירת תיקייה לפיענוח"
 
 #: core/app/main/digikamapp_import.cpp:115
 #, kde-format
@@ -3005,7 +3005,7 @@ msgstr "סריקת איכות תמונה"
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
-"אפשר להשתמש בכפתור הזה כדי לסרוק את האלבומים הנבחרים לפענוח איכות תמונות"
+"אפשר להשתמש בכפתור הזה כדי לסרוק את האלבומים הנבחרים לפיענוח איכות תמונות"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
@@ -18158,7 +18158,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
-msgstr "פענוח קובץ מיזם נכשל."
+msgstr "פיענוח קובץ מיזם נכשל."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, fuzzy, kde-format
@@ -48095,7 +48095,7 @@ msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של הת
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
-msgstr "פענוח גלם (RAW)"
+msgstr "פיענוח גלם (RAW)"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
@@ -49381,7 +49381,7 @@ msgstr "אפשרויות שינוי שם"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:379
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
-msgstr "<p>הוספת אפשרויות שינוי שם למחרוזת הפענוח.</p>"
+msgstr "<p>הוספת אפשרויות שינוי שם למחרוזת הפיענוח.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
@@ -64673,7 +64673,7 @@ msgstr "להשתמש בהמרת מרקמי וידאו"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render media:"
-msgstr "מנגנון פענוח לתיצוג המדיה:"
+msgstr "מנגנון פיענוח לתיצוג המדיה:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format

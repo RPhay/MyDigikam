@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-19 06:31+0100\n"
+"PO-Revision-Date: 2026-03-20 06:37+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3899,10 +3899,9 @@ msgstr ""
 "Dodana podpora za iskanje nedavno spremenjenih elementov v zbirki podatkov."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
-msgstr "Posodobi notranji mehanizem RAW na zadnji izvod Libraw 2026-02-16."
+msgstr "Posodobi notranji mehanizem RAW na zadnji izvod Libraw 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format

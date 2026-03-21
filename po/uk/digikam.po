@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-19 12:30+0200\n"
+"PO-Revision-Date: 2026-03-20 08:36+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3897,11 +3897,10 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Додано підтримку пошуку нещодавно змінених записів у базі даних."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
-"Оновлено внутрішній рушій обробки RAW до знімка Libraw версії 2026-02-16."
+"Оновлено внутрішній рушій обробки RAW до знімка Libraw версії 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format

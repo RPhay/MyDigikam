@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-20 00:41+0000\n"
-"PO-Revision-Date: 2026-03-19 12:03+0100\n"
+"PO-Revision-Date: 2026-03-21 01:19+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3875,12 +3875,11 @@ msgstr ""
 "Permitir búsqueda de elementos modificados recientemente en la base de datos."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Se ha actualizado el motor RAW interno a la última copia disponible de "
-"Libraw 2026-02-16."
+"Libraw 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
