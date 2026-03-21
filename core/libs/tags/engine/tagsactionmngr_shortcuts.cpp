@@ -327,7 +327,7 @@ void TagsActionMngr::slotAssignFromShortcut()
 
     if (svw)
     {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by LightTableWindow";
+        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by SurveyWindow";
 
         if      (action->objectName().startsWith(d->ratingShortcutPrefix))
         {
