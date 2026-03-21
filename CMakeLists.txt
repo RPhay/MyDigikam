@@ -37,6 +37,7 @@ else()
 endif()
 
 message(STATUS "Host used to compile: ${CMAKE_HOST_PRETTY_NAME}")
+message(STATUS "Compiler is         : ${CMAKE_CXX_COMPILER_ID}")
 
 # ==============================================================================
 # Information to update before to release this package.
