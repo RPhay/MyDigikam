@@ -74,7 +74,7 @@ BUGFIXES:
 049 --> 162441 - Unable to create an album.
 050 --> 160228 - Configure does not check for libltdl installed.
 051 --> 158374 - Download images dialog fails to report errors.
-052 --> 
+052 --> 157224 - Support for picture import through the OBEX protocol.
 053 --> 
 054 --> 
 055 --> 
