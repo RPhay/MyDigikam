@@ -56,7 +56,7 @@ BUGFIXES:
 031 --> 517942 - Qt assertion failure due to integer overflow in facepipeline.
 032 --> 517862 - Poor rendering of JXL thumbnails in general thumbnails view.
 033 --> 214957 - New tool to export to Darqroom.
-034 --> 
+034 --> 186869 - Export favorites to virtual folder for plasma to display as background.
 035 --> 
 036 --> 
 037 --> 
