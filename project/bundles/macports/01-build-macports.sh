@@ -301,7 +301,6 @@ port install lcms2
 port install expat
 port install libxml2
 port install libxslt
-port install libical
 port install bison
 port install x265
 port install libde265
@@ -317,6 +316,7 @@ port install aom
 port install libusb
 port install libgphoto2
 port install wget +ssl
+port install libical
 
 port install libheif +x265 -tests -rav1e -kvazaar
 port install ffmpeg7 +gpl2 +nonfree
