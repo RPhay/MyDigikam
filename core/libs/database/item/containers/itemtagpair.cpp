@@ -172,9 +172,9 @@ QList<ItemTagPair> ItemTagPair::availablePairs(const ItemInfo& info)
 
     QList<int> tagIds = CoreDbAccess().db()->getTagIdsWithProperties(info.id());
 
-    for (int tagId : std::as_const(tagIds))
+    for (int tid : std::as_const(tagIds))
     {
-        pairs << ItemTagPair(info, tagId);
+        pairs << ItemTagPair(info, tid);
     }
 
     return pairs;
@@ -252,14 +252,14 @@ QString ItemTagPair::value(const QString& key) const
 QStringList ItemTagPair::allValues(const QStringList& keys) const
 {
     d->checkProperties();
-    QStringList values;
+    QStringList vals;
 
     for (const QString& key : std::as_const(keys))
     {
-        values << d->properties.values(key);
+        vals << d->properties.values(key);
     }
 
-    return values;
+    return vals;
 }
 
 QStringList ItemTagPair::values(const QString& key) const

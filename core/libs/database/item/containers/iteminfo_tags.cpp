@@ -60,8 +60,8 @@ void ItemInfo::addTagPaths(const QStringList& tagPaths)
         return;
     }
 
-    QList<int> tagIds = TagsCache::instance()->tagsForPaths(tagPaths);
-    CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_data->id, tagIds);
+    QList<int> tids = TagsCache::instance()->tagsForPaths(tagPaths);
+    CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_data->id, tids);
 }
 
 QList<int> ItemInfo::tagIds() const

@@ -27,11 +27,11 @@ ThumbnailIdentifier ItemInfo::thumbnailIdentifier() const
         return ThumbnailIdentifier();
     }
 
-    ThumbnailIdentifier id;
-    id.id       = m_data->id;
-    id.filePath = filePath();
+    ThumbnailIdentifier tid;
+    tid.id       = m_data->id;
+    tid.filePath = filePath();
 
-    return id;
+    return tid;
 }
 
 ThumbnailInfo ItemInfo::thumbnailInfo() const
