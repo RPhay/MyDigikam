@@ -54,7 +54,7 @@ BUGFIXES:
 029 --> 517863 - Batch queue-subtract time errors.
 030 --> 517885 - Can't assign number key without modifier as tag shortcut.
 031 --> 517942 - Qt assertion failure due to integer overflow in facepipeline.
-032 -->
+032 --> 517862 - Poor rendering of JXL thumbnails in general thumbnails view.
 033 -->
 034 -->
 035 -->
