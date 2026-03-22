@@ -72,7 +72,7 @@ BUGFIXES:
 047 --> 170272 - Undefined signature problem prevents uploading to Flickr.
 048 --> 165403 - Build issues.
 049 --> 162441 - Unable to create an album.
-050 --> 
+050 --> 160228 - Configure does not check for libltdl installed.
 051 --> 
 052 --> 
 053 --> 
