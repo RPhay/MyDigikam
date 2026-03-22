@@ -168,7 +168,6 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                                                  << qimage.width() << "x" << qimage.height() << ")";
 
                     qimage = QImage();
-
                 }
             }
 
