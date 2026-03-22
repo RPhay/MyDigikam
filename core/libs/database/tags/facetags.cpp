@@ -493,17 +493,17 @@ int FaceTags::unconfirmedPersonTagId()
         return ids.first();
     }
 
-    int unknownPersonTagId = TagsCache::instance()->getOrCreateTag(
+    int unknownPeopleTagId = TagsCache::instance()->getOrCreateTag(
                                         FaceTagsHelper::tagPath(
                                         i18nc("The list of recognized faces from the collections but not confirmed",
                                               "Unconfirmed"),
                                         personParentTag()));
 
-    TagProperties props(unknownPersonTagId);
+    TagProperties props(unknownPeopleTagId);
     props.setProperty(TagPropertyName::person(),            QString()); // No name associated.
     props.setProperty(TagPropertyName::unconfirmedPerson(), QString()); // Special property.
 
-    return unknownPersonTagId;
+    return unknownPeopleTagId;
 }
 
 int FaceTags::ignoredPersonTagId()
