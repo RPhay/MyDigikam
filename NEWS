@@ -66,7 +66,7 @@ BUGFIXES:
 041 --> 177181 - digiKam crashes after trying to import from Nikon Coolpix 4600.
 042 --> 176231 - Browse Media Menu Not Populated.
 043 --> 175925 - USB Storage size (and Local disk) are wrong.
-044 --> 
+044 --> 175802 - Flickr uploader tool post too large.
 045 --> 
 046 --> 
 047 --> 
