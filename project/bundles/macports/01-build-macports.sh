@@ -319,14 +319,14 @@ port install wget +ssl
 port install libical
 
 port install libheif +x265 -tests -rav1e -kvazaar
-port install ffmpeg7 +gpl2 +nonfree
+port install ffmpeg8 +gpl2 +nonfree
 
 if [ ! -f $INSTALL_PREFIX/bin/ffmpeg ] ; then
 
-    # Need to push ffmpeg7 from $INSTALL_PREFIX/libexec/ffmpeg7 to $INSTALL_PREFIX
-    cp -r $INSTALL_PREFIX/libexec/ffmpeg7/include $INSTALL_PREFIX
-    cp -r $INSTALL_PREFIX/libexec/ffmpeg7/lib     $INSTALL_PREFIX
-    mv $INSTALL_PREFIX/bin/ffmpeg7 $INSTALL_PREFIX/bin/ffmpeg
+    # Need to push ffmpeg8 from $INSTALL_PREFIX/libexec/ffmpeg8 to $INSTALL_PREFIX
+    cp -r $INSTALL_PREFIX/libexec/ffmpeg8/include $INSTALL_PREFIX
+    cp -r $INSTALL_PREFIX/libexec/ffmpeg8/lib     $INSTALL_PREFIX
+    mv $INSTALL_PREFIX/bin/ffmpeg8 $INSTALL_PREFIX/bin/ffmpeg
 
 fi
 
