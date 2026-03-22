@@ -75,14 +75,14 @@ BUGFIXES:
 050 --> 160228 - Configure does not check for libltdl installed.
 051 --> 158374 - Download images dialog fails to report errors.
 052 --> 157224 - Support for picture import through the OBEX protocol.
-053 --> 
-054 --> 
-055 --> 
-056 --> 
-057 --> 
-058 --> 
-059 --> 
-060 --> 
+053 --> 154623 - Compile error about getExifTagsDataList.
+054 --> 153205 - Large images (>10 MB) cause Flickr export to fail.
+055 --> 151859 - Don't load photos from camera with error #50.
+056 --> 151747 - digiKam does not detect images on 4GB CF card.
+057 --> 151537 - Back and forward buttons are missing when viewing selected images in camera GUI.
+058 --> 151535 - Errors while downloading images from camera.
+059 --> 150523 - Precision mini digital camera.
+060 --> 150355 - Importing folder feature imports incomplete photos.
 061 --> 
 062 --> 
 063 --> 
