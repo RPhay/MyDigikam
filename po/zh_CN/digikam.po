@@ -3701,7 +3701,7 @@ msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
-msgstr ""
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-03-19。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
