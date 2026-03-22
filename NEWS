@@ -67,7 +67,7 @@ BUGFIXES:
 042 --> 176231 - Browse Media Menu Not Populated.
 043 --> 175925 - USB Storage size (and Local disk) are wrong.
 044 --> 175802 - Flickr uploader tool post too large.
-045 --> 
+045 --> 174469 - Fatal error message signal11(SIGSEGV).
 046 --> 
 047 --> 
 048 --> 
