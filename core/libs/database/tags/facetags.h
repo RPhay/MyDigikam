@@ -36,7 +36,7 @@ class DIGIKAM_DATABASE_EXPORT FaceTags
 public:
 
     /**
-     * Returns a boolean value indicating whether the given tagId represents a person.
+     * @return a boolean value indicating whether the given tagId represents a person.
      */
     static bool           isPerson(int tagId);
 
@@ -52,27 +52,27 @@ public:
     static bool           isSystemPersonTagId(int tagId);
 
     /**
-     * A method to return a list of all person tags in the DB.
+     * @brief A method to return a list of all person tags in the DB.
      */
     static QList<int>     allPersonTags();
 
     /**
-     * A method to return a list of all person tag names in the DB.
+     * @brief A method to return a list of all person tag names in the DB.
      */
     static QList<QString> allPersonNames();
 
     /**
-     * A method to return a list of all person tag paths in the DB.
+     * @brief A method to return a list of all person tag paths in the DB.
      */
     static QList<QString> allPersonPaths();
 
     /**
-     * The suggested parent tag for persons.
+     * @brief The suggested parent tag for persons.
      */
     static int            personParentTag();
 
     /**
-     * Looks for the given person name under the People tags tree, and returns an ID. Returns 0 if no name found.
+     * @brief Looks for the given person name under the People tags tree, and returns an ID. Returns 0 if no name found.
      * Per default, fullName is the same as name.
      * As parentId of -1 signals to look for any tag, a valid parentId will limit the search to direct children
      * of this tag. parentId of 0 means top-level tag.
@@ -81,7 +81,7 @@ public:
                                        const QString& fullName = QString());
 
     /**
-     * First, looks for the given person name in person tags, and returns an ID.
+     * @brief First, looks for the given person name in person tags, and returns an ID.
      * If not, creates a new tag.
      * Per default, fullName is the same as name.
      */
@@ -89,7 +89,7 @@ public:
                                                   const QString& fullName = QString());
 
     /**
-     * Ensure that the given tag is a person tag. If not, it will be converted.
+     * @brief Ensure that the given tag is a person tag. If not, it will be converted.
      * Optionally, pass the full name. (tag name is not changed).
      */
     static void           ensureIsPerson(int tagId, const QString& fullName = QString());
@@ -97,20 +97,20 @@ public:
     static QString        getNameForRect(qlonglong imageid, const QRect& faceRect);
 
     /**
-     * Use attributes as used by FacesEngine to identify or create a person tag;
+     * @brief Use attributes as used by FacesEngine to identify or create a person tag;
      * From the database, produce the identity attributes identifying the corresponding identity.
      */
     static int            getOrCreateTagForIdentity(const QMultiMap<QString, QString>& attributes);
     static QMultiMap<QString, QString> identityAttributes(int tagId);
 
     /**
-     * Map an existing tag to a FacesEngine Identity.
+     * @brief Map an existing tag to a FacesEngine Identity.
      * Subsequently, the Identity can be retrieved via the identityAttributes().
      */
     static void applyTagIdentityMapping(int tagId, const QMultiMap<QString, QString>& attributes);
 
     /**
-     * Return a person's name for a tag.
+     * @return a person's name for a tag.
      */
     static QString        faceNameForTag(int tagId);
 
