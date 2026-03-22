@@ -62,8 +62,8 @@ BUGFIXES:
 037 --> 180447 - Images imported into wrong folder.
 038 --> 180065 - digiKam image download from memory card problems.
 039 --> 179276 - Namuga webcam Samsung netbook NC10.
-040 --> 
-041 --> 
+040 --> 177934 - Image status on camera gets broken when usb device silently disconnects.
+041 --> 177181 - digiKam crashes after trying to import from Nikon Coolpix 4600.
 042 --> 
 043 --> 
 044 --> 
