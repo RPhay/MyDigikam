@@ -70,7 +70,7 @@ BUGFIXES:
 045 --> 174469 - Fatal error message signal11(SIGSEGV).
 046 --> 170620 - Export doesn't work with space in album name.
 047 --> 170272 - Undefined signature problem prevents uploading to Flickr.
-048 --> 
+048 --> 165403 - Build issues.
 049 --> 
 050 --> 
 051 --> 
