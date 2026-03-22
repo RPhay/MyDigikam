@@ -57,7 +57,7 @@ BUGFIXES:
 032 --> 517862 - Poor rendering of JXL thumbnails in general thumbnails view.
 033 --> 214957 - New tool to export to Darqroom.
 034 --> 186869 - Export favorites to virtual folder for plasma to display as background.
-035 --> 
+035 --> 181951 - digiKam crashes during the importing of pictures from Kodak V530 camera.
 036 --> 
 037 --> 
 038 --> 
