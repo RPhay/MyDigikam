@@ -215,9 +215,9 @@ DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bo
 
         // resolve referredImages
 
-        for (const HistoryImageId& id : std::as_const(e.referredImages))
+        for (const HistoryImageId& hid : std::as_const(e.referredImages))
         {
-            QList<qlonglong> imageIds = resolveHistoryImageId(id);
+            QList<qlonglong> imageIds = resolveHistoryImageId(hid);
 
             // append each image found in collection to referredImages
 
@@ -241,7 +241,7 @@ DImageHistory ItemScanner::resolvedImageHistory(const DImageHistory& history, bo
                 }
 
                 HistoryImageId newId = info.historyImageId();
-                newId.setType(id.m_type);
+                newId.setType(hid.m_type);
                 entry.referredImages << newId;
             }
         }
