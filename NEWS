@@ -60,7 +60,7 @@ BUGFIXES:
 035 --> 181951 - digiKam crashes during the importing of pictures from Kodak V530 camera.
 036 --> 181347 - Cannot download picture with digiKam: free-space over-estimated.
 037 --> 180447 - Images imported into wrong folder.
-038 --> 
+038 --> 180065 - digiKam image download from memory card problems.
 039 --> 
 040 --> 
 041 --> 
