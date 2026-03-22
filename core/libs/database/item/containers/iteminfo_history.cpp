@@ -79,18 +79,18 @@ HistoryImageId ItemInfo::historyImageId() const
         return HistoryImageId();
     }
 
-    HistoryImageId id(uuid());
-    id.setCreationDate(dateTime());
-    id.setFileName(name());
-    id.setPathOnDisk(filePath());
+    HistoryImageId hid(uuid());
+    hid.setCreationDate(dateTime());
+    hid.setFileName(name());
+    hid.setPathOnDisk(filePath());
 
     if (CoreDbAccess().db()->getUniqueHashVersion() > 1)
     {
         ItemScanInfo info = CoreDbAccess().db()->getItemScanInfo(m_data->id);
-        id.setUniqueHash(info.uniqueHash, info.fileSize);
+        hid.setUniqueHash(info.uniqueHash, info.fileSize);
     }
 
-    return id;
+    return hid;
 }
 
 bool ItemInfo::hasDerivedImages() const

@@ -90,6 +90,8 @@ public:
     void  setMagnifierVisible(bool b);
     bool  isMagnifierVisible()              const;
 
+    void  updatePanIconWidget();
+
 Q_SIGNALS:
 
     void contentsMoving(int, int);
@@ -110,9 +112,6 @@ protected:
 
     void drawForeground(QPainter* painter, const QRectF& rect)          override;
 
-    PanIconWidget* installPanIcon();
-    void updatePanIconWidget();
-
     virtual bool viewportEvent(QEvent*)                                 override;
     virtual void mouseDoubleClickEvent(QMouseEvent*)                    override;
     virtual void mousePressEvent(QMouseEvent*)                          override;
@@ -122,6 +121,7 @@ protected:
     virtual void resizeEvent(QResizeEvent*)                             override;
     virtual bool event(QEvent*)                                         override;
 
+    PanIconWidget* installPanIcon();
     void startPanning(const QPoint& pos);
     void continuePanning(const QPoint& pos);
     void finishPanning();

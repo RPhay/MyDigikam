@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
-"PO-Revision-Date: 2026-03-16 16:45+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-20 10:50+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3793,8 +3793,8 @@ msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -4139,17 +4139,17 @@ msgstr "Hvítt"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Já"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4162,10 +4162,10 @@ msgstr "Já (stafli)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -21083,6 +21083,9 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"Þessi stýring gerir kleift að velja myndkóðunarlykilinn til að kóða "
+"myndstreymið. Fyllt er í færslurnar í listanum miðað við kóðunarlykilinn sem "
+"FFMpeg styður."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
@@ -26856,7 +26859,7 @@ msgstr "Settu hér breytingar á birtustigi myndar"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Frumstilla"
@@ -38199,7 +38202,7 @@ msgstr "óbreytt"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38442,8 +38445,8 @@ msgstr "Ókvarðað"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38456,21 +38459,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -38504,7 +38507,7 @@ msgstr "Opna Merki-flipann til breytinga"
 msgid "Open the Information tab for editing"
 msgstr "Opna upplýsingaflipann til breytinga"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -38876,33 +38879,39 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " r/sek"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, kde-format
-msgid "Selected Item Properties"
-msgstr "Eiginleikar valins atriðis"
+msgid "<b>Selected Item Properties</b>"
+msgstr "<b>Eiginleikar valins atriðis</b>"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, kde-format
+msgid "Open in the file manager"
+msgstr "Opna í skráastjóranum"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "Fjöldi: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "Stærð: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, kde-format
 msgid "Groups: "
 msgstr "Hópað"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
 #, kde-format
-msgid "All Item Properties"
-msgstr "Allir eiginleikar atriðis"
+msgid "<b>All Item Properties</b>"
+msgstr "<b>Eiginleikar allra atriða<b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -63642,12 +63651,12 @@ msgstr "Breyta geymdri leit"
 msgid "Edit..."
 msgstr "Breyta..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Bæta við leitarhóp"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Prófa"

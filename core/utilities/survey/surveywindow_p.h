@@ -91,6 +91,7 @@
 #include "collectionscanner.h"
 #include "scancontroller.h"
 #include "tagsactionmngr.h"
+#include "fileactionmngr.h"
 #include "thumbnailsize.h"
 #include "thumbnailloadthread.h"
 #include "dexpanderbox.h"

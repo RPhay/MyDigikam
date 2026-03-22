@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
-"PO-Revision-Date: 2026-02-23 22:13+0200\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-20 08:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -1579,7 +1579,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Folder to Parse"
-msgstr "בחירת תיקייה לפענוח"
+msgstr "בחירת תיקייה לפיענוח"
 
 #: core/app/main/digikamapp_import.cpp:115
 #, kde-format
@@ -3005,7 +3005,7 @@ msgstr "סריקת איכות תמונה"
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for image quality parsing"
 msgstr ""
-"אפשר להשתמש בכפתור הזה כדי לסרוק את האלבומים הנבחרים לפענוח איכות תמונות"
+"אפשר להשתמש בכפתור הזה כדי לסרוק את האלבומים הנבחרים לפיענוח איכות תמונות"
 
 #: core/app/views/sidebar/labelssidebarwidget.cpp:96
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:130
@@ -3754,7 +3754,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "מנוע הגלם (RAW) הפנימי עודכן לתמונת המצב העדכנית ביותר של Libraw‏ 2025-05-12."
 
@@ -4095,17 +4095,17 @@ msgstr "לבן"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "כן"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4118,10 +4118,10 @@ msgstr "כן (ערמה)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -18158,7 +18158,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
 msgid "Project file parsing failed."
-msgstr "פענוח קובץ מיזם נכשל."
+msgstr "פיענוח קובץ מיזם נכשל."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:82
 #, fuzzy, kde-format
@@ -25592,7 +25592,7 @@ msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "איפוס"
@@ -36315,7 +36315,7 @@ msgstr "ללא שינוי"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -36559,8 +36559,8 @@ msgstr "לא מכויל"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -36573,21 +36573,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1×%2 (%3 מגה פיקסלים)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 סיביות לפיקסלים"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -36621,7 +36621,7 @@ msgstr "פתיחת לשונית התגיות לעריכה"
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -36993,32 +36993,41 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " תמוניות לשנייה"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
-#, kde-format
-msgid "Selected Item Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
+#, fuzzy, kde-format
+#| msgid "Selected Item Properties"
+msgid "<b>Selected Item Properties</b>"
 msgstr "מאפייני הפריט הנבחר"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, fuzzy, kde-format
+#| msgid "Open item in the file manager"
+msgid "Open in the file manager"
+msgstr "פתיחת פריט במנהל הקבצים"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "כמות: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "גודל: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, kde-format
 msgid "Groups: "
 msgstr "קבוצות: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
-#, kde-format
-msgid "All Item Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
+#, fuzzy, kde-format
+#| msgid "All Item Properties"
+msgid "<b>All Item Properties</b>"
 msgstr "מאפייני כל הפריטים"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
@@ -48086,7 +48095,7 @@ msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של הת
 #: core/showfoto/setup/showfotosetup.cpp:123
 #, kde-format
 msgid "RAW Decoding"
-msgstr "פענוח גלם (RAW)"
+msgstr "פיענוח גלם (RAW)"
 
 #: core/showfoto/setup/showfotosetup.cpp:124
 #, kde-format
@@ -49372,7 +49381,7 @@ msgstr "אפשרויות שינוי שם"
 #: core/utilities/advancedrename/advancedrenamewidget.cpp:379
 #, kde-format
 msgid "<p>Add renaming options to the parse string.</p>"
-msgstr "<p>הוספת אפשרויות שינוי שם למחרוזת הפענוח.</p>"
+msgstr "<p>הוספת אפשרויות שינוי שם למחרוזת הפיענוח.</p>"
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:50
 #, kde-format
@@ -60911,12 +60920,12 @@ msgstr "עריכת חיפוש שמור"
 msgid "Edit..."
 msgstr "עריכה…"
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "הוספת קבוצת חיפוש"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "לנסות"
@@ -64664,7 +64673,7 @@ msgstr "להשתמש בהמרת מרקמי וידאו"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render media:"
-msgstr "מנגנון פענוח לתיצוג המדיה:"
+msgstr "מנגנון פיענוח לתיצוג המדיה:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format

@@ -116,6 +116,7 @@ cmake --build . --config RelWithDebInfo --target ext_kimageformats       -- -j$C
 # Desktop integration support
 cmake --build . --config RelWithDebInfo --target ext_knotifications      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_kjobwidgets         -- -j$CPU_CORES
+
 cmake --build . --config RelWithDebInfo --target ext_kio                 -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_knotifyconfig       -- -j$CPU_CORES
 

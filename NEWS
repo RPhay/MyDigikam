@@ -9,14 +9,14 @@ Bundles component versions:
 
 | Bundles       | Qt version | KDE version | OpenCV version | FFmpeg version | Heif version | ExifTool version | Exiv2 version | Build Environment   |
 |---------------|------------|-------------|----------------|----------------|--------------|------------------|---------------|---------------------|
-| Windows Qt5   | 5.15.17    | 5.116       | 4.11           | 7.1.1          | 1.20.2       | 13.52            | 0.28.5        | Windows 10 + VCPKG  |
-| Windows Qt6   | 6.10.1 (*) | 6.23.0 (*)  | 4.12 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.52            | 0.28.8 (*)    | Windows 11 + VCPKG  |
-| AppImage Qt5  | 5.15.18    | 5.116       | 4.13 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.52            | 0.28.8 (*)    | XUbuntu 20.06       |
-| AppImage Qt6  | 6.10.2 (*) | 6.24.0 (*)  | 4.13 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.52            | 0.28.8 (*)    | XUbuntu 22.04       |
-| macOS Qt5     | 5.15.18    | 5.116       | 4.12           | 7.1.2          | 1.20.2       | 13.52            | 0.28.7        | Monterey + Macports |
-| macOS Qt6     | 6.10.0     | 6.20.0      | 4.12           | 7.1.2          | 1.20.2       | 13.52            | 0.28.7        | Sequoia + Macports  |
+| Windows Qt5   | 5.15.17    | 5.116       | 4.11           | 7.1.1          | 1.20.2       | 13.53 (*)        | 0.28.8 (*)    | Windows 10 + VCPKG  |
+| Windows Qt6   | 6.10.1 (*) | 6.23.0 (*)  | 4.12 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | Windows 11 + VCPKG  |
+| AppImage Qt5  | 5.15.18    | 5.116       | 4.13 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | XUbuntu 20.06       |
+| AppImage Qt6  | 6.10.2 (*) | 6.24.0 (*)  | 4.13 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | XUbuntu 22.04       |
+| macOS Qt5     | 5.15.18    | 5.116       | 4.12           | 7.1.2          | 1.20.2       | 13.53 (*)        | 0.28.7        | Monterey + Macports |
+| macOS Qt6     | 6.10.0     | 6.24.0 (*)  | 4.12           | 7.1.2          | 1.20.2       | 13.53 (*)        | 0.28.8 (*)    | Sequoia + Macports  |
 
-Raw Engine      : Internal Libraw has been updated to the latest upstream 20260310 which brings with
+Raw Engine      : Internal Libraw has been updated to the latest upstream 20260319 which brings with
                   it a variety of bug fixes and performance improvements.
 Import          : USB Mass Storage driver now support video thumbnails.
 
@@ -43,86 +43,86 @@ BUGFIXES:
 018 --> 517624 - Filtering on rating (stars 0-5) not working correct.
 019 --> 517671 - Rating filter do not work.
 020 --> 517668 - Show placeholders for other files in the album.
-021 -->
-022 -->
-023 -->
-024 -->
-025 -->
-026 -->
-027 -->
-028 -->
-029 -->
-030 -->
-031 -->
-032 -->
-033 -->
-034 -->
-035 -->
-036 -->
-037 -->
-038 -->
-039 -->
-040 -->
-041 -->
-042 -->
-043 -->
-044 -->
-045 -->
-046 -->
-047 -->
-048 -->
-049 -->
-050 -->
-051 -->
-052 -->
-053 -->
-054 -->
-055 -->
-056 -->
-057 -->
-058 -->
-059 -->
-060 -->
-061 -->
-062 -->
-063 -->
-064 -->
-065 -->
-066 -->
-067 -->
-068 -->
-069 -->
-070 -->
-071 -->
-072 -->
-073 -->
-074 -->
-075 -->
-076 -->
-077 -->
-078 -->
-079 -->
-080 -->
-081 -->
-082 -->
-083 -->
-084 -->
-085 -->
-086 -->
-087 -->
-088 -->
-089 -->
-090 -->
-091 -->
-092 -->
-093 -->
-094 -->
-095 -->
-096 -->
-097 -->
-098 -->
-099 -->
-100 -->
+021 --> 517772 - Bug after update libexiv2-27.
+022 --> 517766 - Crash on App startup.
+023 --> 517299 - Opening Geolocation Editor crashes digiKam.
+024 --> 517757 - Clicking on a "Help" button in a dialog causes digiKam to silently disappear.
+025 --> 514121 - Preserve item selection when resorting columns in Table View (Album tab).
+026 --> 517798 - digiKam crashes immediately even after reinstall.
+027 --> 517790 - GPS coordinate overwritten when writing tags to XMP sidecar.
+028 --> 517864 - Unsynchronized panning control areas between left and right panes.
+029 --> 517863 - Batch queue-subtract time errors.
+030 --> 517885 - Can't assign number key without modifier as tag shortcut.
+031 --> 517942 - Qt assertion failure due to integer overflow in facepipeline.
+032 --> 517862 - Poor rendering of JXL thumbnails in general thumbnails view.
+033 --> 214957 - New tool to export to Darqroom.
+034 --> 186869 - Export favorites to virtual folder for plasma to display as background.
+035 --> 181951 - digiKam crashes during the importing of pictures from Kodak V530 camera.
+036 --> 181347 - Cannot download picture with digiKam: free-space over-estimated.
+037 --> 180447 - Images imported into wrong folder.
+038 --> 180065 - digiKam image download from memory card problems.
+039 --> 179276 - Namuga webcam Samsung netbook NC10.
+040 --> 177934 - Image status on camera gets broken when usb device silently disconnects.
+041 --> 177181 - digiKam crashes after trying to import from Nikon Coolpix 4600.
+042 --> 176231 - Browse Media Menu Not Populated.
+043 --> 175925 - USB Storage size (and Local disk) are wrong.
+044 --> 175802 - Flickr uploader tool post too large.
+045 --> 174469 - Fatal error message signal11(SIGSEGV).
+046 --> 170620 - Export doesn't work with space in album name.
+047 --> 170272 - Undefined signature problem prevents uploading to Flickr.
+048 --> 165403 - Build issues.
+049 --> 162441 - Unable to create an album.
+050 --> 160228 - Configure does not check for libltdl installed.
+051 --> 158374 - Download images dialog fails to report errors.
+052 --> 157224 - Support for picture import through the OBEX protocol.
+053 --> 154623 - Compile error about getExifTagsDataList.
+054 --> 153205 - Large images (>10 MB) cause Flickr export to fail.
+055 --> 151859 - Don't load photos from camera with error #50.
+056 --> 151747 - digiKam does not detect images on 4GB CF card.
+057 --> 151537 - Back and forward buttons are missing when viewing selected images in camera GUI.
+058 --> 151535 - Errors while downloading images from camera.
+059 --> 150523 - Precision mini digital camera.
+060 --> 150355 - Importing folder feature imports incomplete photos.
+061 --> 
+062 --> 
+063 --> 
+064 --> 
+065 --> 
+066 --> 
+067 --> 
+068 --> 
+069 --> 
+070 --> 
+071 --> 
+072 --> 
+073 --> 
+074 --> 
+075 --> 
+076 --> 
+077 --> 
+078 --> 
+079 --> 
+080 --> 
+081 --> 
+082 --> 
+083 --> 
+084 --> 
+085 --> 
+086 --> 
+087 --> 
+088 --> 
+089 --> 
+090 --> 
+091 --> 
+092 --> 
+093 --> 
+094 --> 
+095 --> 
+096 --> 
+097 --> 
+098 --> 
+099 --> 
+100 --> 
 101 -->
 102 -->
 103 -->

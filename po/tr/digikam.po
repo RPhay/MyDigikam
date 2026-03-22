@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
-"PO-Revision-Date: 2026-03-15 13:22+0300\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-20 13:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3855,8 +3855,8 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "İçsel RAW işletkesi, güncel 2026‒02‒16 anlık görüntüsüne güncellendi."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgstr "İçsel RAW işletkesi, güncel 2026‒03‒19 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -4201,17 +4201,17 @@ msgstr "Beyaz"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Evet"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4224,10 +4224,10 @@ msgstr "Evet (Yığ)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -27002,7 +27002,7 @@ msgstr "Bu görsel parlaklığının eğrilik ayarıdır"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Sıfırla"
@@ -38347,7 +38347,7 @@ msgstr "değiştirilmemiş"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38590,8 +38590,8 @@ msgstr "Kalibre edilmemiş"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38604,21 +38604,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 Mpks)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -38652,7 +38652,7 @@ msgstr "Düzenlemek için Künyeler Sekmesini Aç"
 msgid "Open the Information tab for editing"
 msgstr "Düzenlemek için Bilgi Sekmesini Aç"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -39024,33 +39024,39 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, kde-format
-msgid "Selected Item Properties"
-msgstr "Seçili Öge Özellikleri"
+msgid "<b>Selected Item Properties</b>"
+msgstr "<b>Seçili Öge Özellikleri</b>"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, kde-format
+msgid "Open in the file manager"
+msgstr "Dosya Yöneticisinde Aç"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "Sayı: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "Boyut: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, kde-format
 msgid "Groups: "
 msgstr "Gruplar: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
 #, kde-format
-msgid "All Item Properties"
-msgstr "Tüm Ögeler Özellikleri"
+msgid "<b>All Item Properties</b>"
+msgstr "<b>Tüm Ögeler Özellikleri</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -63791,12 +63797,12 @@ msgstr "Depolanan Aramayı Düzenle"
 msgid "Edit..."
 msgstr "Düzenle…"
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Arama Grubu Ekle"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Dene"

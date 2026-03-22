@@ -317,6 +317,7 @@ void LightTableView::slotLeftContentsMoved(int x, int y)
     {
         d->rightPreview->blockSignals(true);
         d->rightPreview->setContentsPos(x, y);
+        d->rightPreview->updatePanIconWidget();
         d->rightPreview->blockSignals(false);
     }
 }
@@ -327,6 +328,7 @@ void LightTableView::slotRightContentsMoved(int x, int y)
     {
         d->leftPreview->blockSignals(true);
         d->leftPreview->setContentsPos(x, y);
+        d->leftPreview->updatePanIconWidget();
         d->leftPreview->blockSignals(false);
     }
 }
@@ -339,6 +341,7 @@ void LightTableView::slotLeftZoomFactorChanged(double zoom)
         d->rightPreview->blockSignals(true);
 
         setRightZoomFactor(zoom);
+        d->rightPreview->updatePanIconWidget();
 
         Q_EMIT signalRightZoomFactorChanged(zoom);
 
@@ -357,6 +360,7 @@ void LightTableView::slotRightZoomFactorChanged(double zoom)
         d->leftPreview->blockSignals(true);
 
         setLeftZoomFactor(zoom);
+        d->leftPreview->updatePanIconWidget();
 
         Q_EMIT signalLeftZoomFactorChanged(zoom);
 

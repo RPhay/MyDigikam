@@ -12,18 +12,11 @@ Known issues
 - There is no clear visual separation between the columns yet.
   This can make it hard to realize where the columns start and end.
 - Add imagequality sorting.
-
-Until release
--------------
-- Add columns:
- - Title, description: Default digikam title, description and language selections.
- - Exif info shown in the properties tab.
- - Folder name
-- Add missing context menu actions.
 - Set the models as inactive if not shown to stop background syncing of selections.
 
 Nice to have
 ------------
+- Add columns to select language for caption and title columns.
 - Configurable units for columns: For example: altitude in meters vs feet.
 - All exif/xmp tags as columns.
 

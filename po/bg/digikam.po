@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2026-02-16 15:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -3894,8 +3894,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Актуализирайте вътрешния RAW енджин до последната Libraw снимка от "
 "16.02.2026 г."
@@ -4243,17 +4244,17 @@ msgstr "Бяло"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Да"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4266,10 +4267,10 @@ msgstr "Да (стек)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -27280,7 +27281,7 @@ msgstr "Това е настройката на кривата на яркост
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Възстановяване"
@@ -38746,7 +38747,7 @@ msgstr "непроменен"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38991,8 +38992,8 @@ msgstr "Некалибриран"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -39005,21 +39006,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -39053,7 +39054,7 @@ msgstr "Отваряне на раздела „Етикети“ за реда�
 msgid "Open the Information tab for editing"
 msgstr "Отваряне на раздела „Информация“ за редактиране"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -39425,32 +39426,41 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
-#, kde-format
-msgid "Selected Item Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
+#, fuzzy, kde-format
+#| msgid "Selected Item Properties"
+msgid "<b>Selected Item Properties</b>"
 msgstr "Свойства на избрания елемент"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, fuzzy, kde-format
+#| msgid "Open item in the file manager"
+msgid "Open in the file manager"
+msgstr "Отваряне във файлов мениджър"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "Брой: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "Големина: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, kde-format
 msgid "Groups: "
 msgstr "Групи: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
-#, kde-format
-msgid "All Item Properties"
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
+#, fuzzy, kde-format
+#| msgid "All Item Properties"
+msgid "<b>All Item Properties</b>"
 msgstr "Всички свойства на албума"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
@@ -64389,12 +64399,12 @@ msgstr "Редактиране на съхранено търсене"
 msgid "Edit..."
 msgstr "Редактиране..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Добавяне на група за търсене"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Опитване"

@@ -15,6 +15,10 @@
 
 #include "facepipelinedetectrecognize.h"
 
+// C++ includes
+
+#include <climits>
+
 // Qt includes
 
 #include <QSet>
@@ -414,6 +418,22 @@ bool FacePipelineDetectRecognize::extractor()
                 int Y       = static_cast<int>(detectionResults.at<float>(i, 1));
                 int width   = static_cast<int>(detectionResults.at<float>(i, 2));
                 int height  = static_cast<int>(detectionResults.at<float>(i, 3));
+
+                if (
+                    (X      == INT_MIN) ||
+                    (Y      == INT_MIN) ||
+                    (width  == INT_MIN) ||
+                    (height == INT_MIN)
+                   )
+                {
+                    qCWarning(DIGIKAM_FACESENGINE_LOG) << "Invalid detection rectangle"
+                                                       << "(" << X<< ", " << Y
+                                                       << "[" << width << ", " << height << "]"
+                                                       << "for image"
+                                                       << package->info.filePath();
+
+                    continue;
+                }
 
                 // Add the rect to result list.
 

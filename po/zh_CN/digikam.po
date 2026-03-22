@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1797,7 +1797,7 @@ msgstr "将所选项目添加到多图对比工具的缩略图栏。"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr "独立窗口预览工具"
+msgstr "单窗预览"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -3620,9 +3620,9 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
-"推出了全新的独立窗口预览工具，可在单独的窗口中预览项目，并与图标视图同步切换"
-"项目，支持预览模式中的所有功能。您可以在单独的显示器上全屏使用它，在工作流程"
-"中快速查看项目。"
+"推出了全新的单窗预览工具，可在单独的窗口中预览项目，并与图标视图同步切换项"
+"目，支持预览模式中的所有功能。您可以在单独的显示器上全屏使用它，在工作流程中"
+"快速查看项目。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
@@ -3700,8 +3700,8 @@ msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-02-16。"
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw snapshot 2026-03-19。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -4044,17 +4044,17 @@ msgstr "白"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "是"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4067,10 +4067,10 @@ msgstr "是 (图集)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -4725,14 +4725,14 @@ msgstr "<para>用于转换彩色照片为黑白照片的批处理工具。</para
 #, kde-format
 msgctxt "@title"
 msgid "Channel Mixer"
-msgstr "色彩通道混合"
+msgstr "颜色通道混合"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:57
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:55
 #, kde-format
 msgctxt "@info"
 msgid "A tool to mix color channel"
-msgstr "调整色彩通道的混合方式"
+msgstr "调整颜色通道的混合方式"
 
 #: core/dplugins/bqm/colors/channelmixer/channelmixerplugin.cpp:62
 #, kde-kuit-format
@@ -4740,7 +4740,7 @@ msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
-msgstr "<para>用于调整色彩通道混合方式的批处理工具。</para>"
+msgstr "<para>用于调整颜色通道混合方式的批处理工具。</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
 #: core/dplugins/editor/colors/colorbalance/cbtool.cpp:152
@@ -7606,7 +7606,7 @@ msgstr "曲线调整..."
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
 "image."
-msgstr "原始图像选中色彩通道的直方图。"
+msgstr "原始图像的选中颜色通道的直方图。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
@@ -7736,7 +7736,7 @@ msgstr "自动调整所有色阶"
 #, kde-format
 msgid ""
 "If you press this button, all channel levels will be adjusted automatically."
-msgstr "点击此按钮将自动调整所有色彩通道的色阶。"
+msgstr "点击此按钮将自动调整所有颜色通道的色阶。"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:266
 #: core/dplugins/editor/colors/film/filmtool.cpp:212
@@ -7749,7 +7749,7 @@ msgstr "重置(&R)"
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:268
 #, kde-format
 msgid "Reset current channel levels' values."
-msgstr "重置当前色彩通道色阶的数值"
+msgstr "重置当前颜色通道色阶的数值"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:269
 #, kde-format
@@ -7925,19 +7925,19 @@ msgstr "黑白照片..."
 #: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:162
 #, kde-format
 msgid "Channel Mixer"
-msgstr "色彩通道混合"
+msgstr "颜色通道混合"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:60
 #, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
-msgstr "用于调整色彩通道混合方式的图像编辑器工具。"
+msgstr "用于调整颜色通道混合方式的图像编辑器工具。"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:91
 #, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
-msgstr "色彩通道混合"
+msgstr "颜色通道混合"
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:60
 #, kde-format
@@ -26062,7 +26062,7 @@ msgstr "在此调整图像亮度 (HSY' 光度) 曲线"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "重置"
@@ -30006,7 +30006,7 @@ msgstr "红外滤镜"
 #: core/libs/dimg/filters/bw/mixerfilter.cpp:52
 #, kde-format
 msgid "Channel Mixer Tool"
-msgstr "色彩通道混合工具"
+msgstr "颜色通道混合工具"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:101
 #, kde-format
@@ -31468,7 +31468,7 @@ msgid ""
 "values where both the original and blurred image's value are low and do the "
 "opposite on high values."
 msgstr ""
-"<b>函数</b>：用于对原始 RGB 色彩通道和去色模糊图像进行合并的函数。此函数将被"
+"<b>函数</b>：用于对原始 RGB 颜色通道和去色模糊图像进行合并的函数。此函数将被"
 "用于色调映射的每个阶段。它可以是线性的或者是指数的。此函数用于控制在原始图像"
 "和模糊图像的某个位置同时较亮时降低合并亮度，两者同时较暗时提高合并亮度。"
 
@@ -32049,7 +32049,7 @@ msgstr "全彩"
 #: core/libs/dimg/filters/levels/histogrambox.cpp:291
 #, kde-format
 msgid "<b>Colors</b>: Display all color channel values at the same time."
-msgstr "<b>全彩</b>：同时显示图像的所有色彩通道数值。"
+msgstr "<b>全彩</b>：同时显示图像的所有颜色通道数值。"
 
 #: core/libs/dimg/filters/levels/histogrambox.cpp:293
 #, kde-format
@@ -35973,7 +35973,7 @@ msgstr "Perl 不存在，或缺少执行权限"
 #: core/libs/metadataengine/exiftool/exiftoolprocess_p.cpp:152
 #, kde-format
 msgid "Synchronization error between the channels"
-msgstr "色彩通道同步错误"
+msgstr "颜色通道同步错误"
 
 #: core/libs/metadataengine/focuspoint/focuspoint.cpp:111
 #, kde-format
@@ -37064,7 +37064,7 @@ msgstr "未更改"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37305,8 +37305,8 @@ msgstr "未校准"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37319,21 +37319,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3M 像素)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 位/像素"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -37367,7 +37367,7 @@ msgstr "打开标签标签页以进行编辑"
 msgid "Open the Information tab for editing"
 msgstr "打开信息标签页以进行编辑"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -37739,33 +37739,39 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " 帧/秒"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, kde-format
-msgid "Selected Item Properties"
-msgstr "选中项目属性"
+msgid "<b>Selected Item Properties</b>"
+msgstr "<b>选中项目属性</b>"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, kde-format
+msgid "Open in the file manager"
+msgstr "在文件管理器中打开"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "数量："
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "体积："
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, kde-format
 msgid "Groups: "
 msgstr "分组："
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
 #, kde-format
-msgid "All Item Properties"
-msgstr "所有项目属性"
+msgid "<b>All Item Properties</b>"
+msgstr "<b>所有项目属性</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -61968,12 +61974,12 @@ msgstr "编辑已保存的搜索"
 msgid "Edit..."
 msgstr "编辑..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "添加搜索分组"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "试用"
@@ -66140,7 +66146,7 @@ msgstr "多图对比设置"
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr "独立窗口预览工具"
+msgstr "单窗预览工具"
 
 #: core/utilities/setup/setup.cpp:85
 #, kde-format
@@ -66148,7 +66154,7 @@ msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
-msgstr "独立窗口预览工具设置"
+msgstr "单窗预览工具设置"
 
 #: core/utilities/setup/setup.cpp:98
 #, kde-format
@@ -66728,4 +66734,4 @@ msgstr "导入视图项目"
 #: core/utilities/survey/surveywindow.cpp:51
 #, kde-format
 msgid "Survey"
-msgstr "独立窗口预览工具"
+msgstr "单窗预览"

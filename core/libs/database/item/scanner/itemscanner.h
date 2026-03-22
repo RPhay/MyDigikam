@@ -46,20 +46,20 @@ public:
 public:
 
     /**
-     * Construct an ItemScanner object from an existing QFileInfo
+     * @brief Construct an ItemScanner object from an existing QFileInfo
      * and ItemScanInfo object.
      * This constructor shall be used with fileModified() or fullScan().
      */
     ItemScanner(const QFileInfo& info, const ItemScanInfo& Iteminfo);
 
     /**
-     * Construct an ItemScanner from an existing QFileInfo object.
+     * @brief Construct an ItemScanner from an existing QFileInfo object.
      * Use this constructor if you intend to call newFile().
      */
     explicit ItemScanner(const QFileInfo& info);
 
     /**
-     * Construct an ItemScanner for an image in the database.
+     * @brief Construct an ItemScanner for an image in the database.
      * File info, Scan info and the category will be retrieved from the database.
      */
     explicit ItemScanner(qlonglong imageid);
@@ -67,20 +67,20 @@ public:
     ~ItemScanner();
 
     /**
-     * Inform the scanner about the category of the file.
+     * @brief Inform the scanner about the category of the file.
      * Required at least for newFile() calls, recommended for calls with the
      * first constructor above as well.
      */
     void setCategory(DatabaseItem::Category category);
 
     /**
-     * Provides access to the information retrieved by scanning.
+     * @brief Provides access to the information retrieved by scanning.
      * The validity depends on the previously executed scan.
      */
     const ItemScanInfo& itemScanInfo() const;
 
     /**
-     * Loads data from disk (metadata, image file properties).
+     * @brief Loads data from disk (metadata, image file properties).
      * This method is called from any of the main entry points above.
      * You can call it before if you want to control the time when it is executed.
      * Calling it a second time with data already loaded will do nothing.
@@ -88,7 +88,7 @@ public:
     void loadFromDisk();
 
     /**
-     * Helper method to translate enum values to user presentable strings
+     * @brief Helper method to translate enum values to user presentable strings
      */
     static QString formatToString(const QString& format);
 
@@ -107,13 +107,13 @@ private:
 public:
 
     /**
-     * Call this when you want ItemScanner to add a new file to the database
+     * @brief Call this when you want ItemScanner to add a new file to the database
      * and read all information into the database.
      */
     void newFile(int albumId);
 
     /**
-     * Call this when you want ItemScanner to add a new file to the database
+     * @brief Call this when you want ItemScanner to add a new file to the database
      * and read all information into the database. This variant will not use
      * the unique hash to establish identify with an existing entry, but
      * read all information newly from the file.
@@ -121,33 +121,33 @@ public:
     void newFileFullScan(int albumId);
 
     /**
-     * Call this to take an existing image in the database, but re-read
+     * @brief Call this to take an existing image in the database, but re-read
      * all information from the file into the database, possibly overwriting
      * information there.
      */
     void rescan();
 
     /**
-     * This is the same as rescan() but the database metadata
+     * @brief This is the same as rescan() but the database metadata
      * will be cleaned up if the corresponding metadata
      * write option is enabled.
      */
     void cleanScan();
 
     /**
-     * Commits the scanned information to the database.
+     * @brief Commits the scanned information to the database.
      * You must call this after scanning was done for any changes to take effect.
      * Only this method will perform write operations to the database.
      */
     void commit();
 
     /**
-     * Returns the image id of the scanned file, if (yet) available.
+     * @return the image id of the scanned file, if (yet) available.
      */
     qlonglong id() const;
 
     /**
-     * Sort a list of infos by proximity to the given subject.
+     * @brief Sort a list of infos by proximity to the given subject.
      * Infos are near if they are e.g. in the same album.
      * They are not near if they are e.g. in different collections.
      */
@@ -173,7 +173,7 @@ protected:
 public:
 
     /**
-     * Call this when you have detected that a file in the database has been
+     * @brief Call this when you have detected that a file in the database has been
      * modified on disk. Only two groups of fields will be updated in the database:
      * - filesystem specific properties (those that signaled you that the file has been modified
      *   because their state on disk differed from the state in the database)
@@ -183,13 +183,13 @@ public:
     void fileModified();
 
     /**
-     * Returns File-metadata container with user-presentable information.
+     * @return File-metadata container with user-presentable information.
      * These methods provide the reverse service: Not writing into the db, but reading from the db.
      */
     static void fillCommonContainer(qlonglong imageid, ImageCommonContainer* const container);
 
     /**
-     * Returns a suitable creation date from file system information.
+     * @return a suitable creation date from file system information.
      * Use this as a fallback if metadata is not available.
      */
     static QDateTime creationDateFromFilesystem(const QFileInfo& info);
@@ -217,7 +217,7 @@ protected:
 public:
 
     /**
-     * Helper method to return official property name by which
+     * @brief Helper method to return official property name by which
      * IPTC core properties are stored in the database (ItemCopyright and ImageProperties table).
      * Allowed arguments: All MetadataInfo::Fields starting with "IptcCore..."
      */
@@ -259,7 +259,7 @@ protected:
 public:
 
     /**
-     * Returns Video container with user-presentable information.
+     * @return Video container with user-presentable information.
      * These methods provide the reverse service: Not writing into the db, but reading from the db.
      */
     static void fillVideoMetadataContainer(qlonglong imageid, VideoMetadataContainer* const container);
@@ -285,13 +285,13 @@ protected:
 public:
 
     /**
-     * Returns true if this file has been marked as needing history resolution at a later stage
+     * @return true if this file has been marked as needing history resolution at a later stage
      */
     bool hasHistoryToResolve() const;
 
     //@{
     /**
-     * Resolves the image history of the image id by filling the ImageRelations table
+     * @brief Resolves the image history of the image id by filling the ImageRelations table
      * for all contained referred images.
      * If needTaggingIds is given, all ids marked for needing tagging of the history graph are added.
      */
@@ -300,31 +300,32 @@ public:
     //@}
 
     /**
-     * Takes the history graph reachable from the given image, and assigns
+     * @brief Takes the history graph reachable from the given image, and assigns
      * versioning tags to all entries based on history image types and graph structure
      */
     static void tagItemHistoryGraph(qlonglong id);
 
     /**
-     * All referred images of the given history will be resolved.
+     * @brief All referred images of the given history will be resolved.
      * In the returned history, the actions are the same, while each
      * referred image actually exists in the collection
      * (if mustBeAvailable is true, it is even in a currently available collection).
      * That means the number of referred images may be less or greater than initially.
-     * Note that this history may have peculiar properties, like multiple Original or Current entries
+     *
+     * @note that this history may have peculiar properties, like multiple Original or Current entries
      * (if the source entry resolves to multiple collection images), so this history
      * is only for internal use, not for storage.
      */
     static DImageHistory resolvedImageHistory(const DImageHistory& history, bool mustBeAvailable = false);
 
     /**
-     * Determines if the two ids refer to the same image.
+     * @brief Determines if the two ids refer to the same image.
      * Does not check if such a referred image really exists.
      */
     static bool sameReferredImage(const HistoryImageId& id1, const HistoryImageId& id2);
 
     /**
-     * Returns all image ids fulfilling the given image id.
+     * @return all image ids fulfilling the given image id.
      */
     static QList<qlonglong> resolveHistoryImageId(const HistoryImageId& historyId);
 

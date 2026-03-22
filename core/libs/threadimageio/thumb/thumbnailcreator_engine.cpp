@@ -155,6 +155,20 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
                 MetaEnginePreviews preview(path);
                 qimage = preview.image();
+
+                if (
+                    !qimage.isNull()                                     &&
+                    (
+                      (qimage.width()  < ThumbnailSize::maxThumbsSize()) ||
+                      (qimage.height() < ThumbnailSize::maxThumbsSize())
+                    )
+                   )
+                {
+                    qCDebug(DIGIKAM_GENERAL_LOG) << "Embedded preview too small for a thumbnail ("
+                                                 << qimage.width() << "x" << qimage.height() << ")";
+
+                    qimage = QImage();
+                }
             }
 
             // DImg-dependent loading methods: TIFF, PNG, everything supported by QImage

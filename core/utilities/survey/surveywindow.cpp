@@ -174,6 +174,42 @@ bool SurveyWindow::isEmpty() const
     return (d->stack->thumbBar()->allItemInfos().count() == 0);
 }
 
+void SurveyWindow::toggleTag(int tagID)
+{
+    ItemInfo info = d->stack->thumbBar()->currentInfo();
+
+    if (!info.isNull())
+    {
+        if (!info.tagIds().contains(tagID))
+        {
+            FileActionMngr::instance()->assignTag(info, tagID);
+        }
+        else
+        {
+            FileActionMngr::instance()->removeTag(info, tagID);
+        }
+    }
+}
+
+void SurveyWindow::slotAssignPickLabel(int pickId)
+{
+    ItemInfo info = d->stack->thumbBar()->currentInfo();
+    FileActionMngr::instance()->assignPickLabel(info, pickId);
+}
+
+void SurveyWindow::slotAssignColorLabel(int colorId)
+{
+    ItemInfo info = d->stack->thumbBar()->currentInfo();
+    FileActionMngr::instance()->assignColorLabel(info, colorId);
+}
+
+void SurveyWindow::slotAssignRating(int rating)
+{
+    ItemInfo info = d->stack->thumbBar()->currentInfo();
+    rating        = qMin(RatingMax, qMax(RatingMin, rating));
+    FileActionMngr::instance()->assignRating(info, rating);
+}
+
 void SurveyWindow::slotItemSelected()
 {
     if (isSleeping())

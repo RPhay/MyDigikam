@@ -170,6 +170,8 @@ endif()
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
 
+message(STATUS "Compiler is         : ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+
 ### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 
 option(DIGIKAMSC_COMPILE_PO              "Build translations files (default=ON)" ON)

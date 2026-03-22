@@ -38,15 +38,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
-"PO-Revision-Date: 2026-01-06 14:27+0100\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-21 20:25+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -386,7 +386,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "People"
-msgstr "Jendartea"
+msgstr "Pertsonak"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
 #, kde-format
@@ -1610,11 +1610,10 @@ msgstr "Ikuspegi nagusia hasieratzen..."
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:426
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:449
 #: core/utilities/survey/surveywindow_setup.cpp:264
-#, fuzzy, kde-format
-#| msgid "Loading: "
+#, kde-format
 msgctxt "@label"
 msgid "Loading:"
-msgstr "Zamatzen..."
+msgstr "Zamatzen:"
 
 #: core/app/main/digikamapp_setup.cpp:156
 #, kde-format
@@ -1870,7 +1869,7 @@ msgstr "Gehitu hautatutako elementuak argi-mahaiaren koadro txikien barrara."
 #, kde-format
 msgctxt "@action: setup"
 msgid "Survey"
-msgstr ""
+msgstr "Azterketa"
 
 #: core/app/main/digikamapp_setup.cpp:441
 #, kde-format
@@ -2869,11 +2868,9 @@ msgid "format settings"
 msgstr "formatuaren ezarpenak"
 
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "Hasiera: "
+msgstr "Sostengua: "
 
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
@@ -2881,110 +2878,93 @@ msgid "Documentation: "
 msgstr "Dokumentazioa: "
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "Lagundu..."
+msgstr "Laguntza eman: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "Data: "
+msgstr "Egin dohaintza: "
 
 #: core/app/views/preview/itempreviewvideo.cpp:98
 #: core/app/views/preview/itempreviewview.cpp:264
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show OSD Information"
-msgstr "Informazioa"
+msgstr "Erakutsi OSD informazioa"
 
 #: core/app/views/preview/itempreviewview.cpp:185
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Atzera"
 
 #: core/app/views/preview/itempreviewview.cpp:187
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Aurrera"
 
 #: core/app/views/preview/itempreviewview.cpp:198
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
-msgstr "Gehitu aurpegi etiketa bat"
+msgstr "Gehitu aurpegi-etiketa bat"
 
 #: core/app/views/preview/itempreviewview.cpp:203
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Garbitu irudi honetako aurpegi guztiak"
 
 #: core/app/views/preview/itempreviewview.cpp:206
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
-msgstr "Markatu baieztatu gabeko aurpegi guztiak ezikusi gisa"
+msgstr "Baieztatu gabeko aurpegi guztiak ezikusi gisa markatu"
 
 #: core/app/views/preview/itempreviewview.cpp:213
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
-msgstr "Erakutsi  aurpegi etiketak"
+msgstr "Erakutsi aurpegi-etiketak"
 
 #: core/app/views/preview/itempreviewview.cpp:218
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
-msgstr "Gehitu puntu fokal bat"
+msgstr "Gehitu foku-puntu bat"
 
 #: core/app/views/preview/itempreviewview.cpp:220
-#, fuzzy, kde-format
-#| msgid "Show focus points"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
-msgstr "Erakutsi puntu fokalak"
+msgstr "Erakutsi foku-puntuak"
 
 #: core/app/views/preview/itempreviewview.cpp:228
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr "Erakutsi zenbakiak"
+msgstr "Erakutsi lupa"
 
 #: core/app/views/preview/itempreviewview.cpp:233
-#, fuzzy, kde-format
-#| msgid "Zoom Out"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "Txikiagotu"
+msgstr "Zoom-faktorea"
 
 #: core/app/views/preview/itempreviewview.cpp:256
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
-msgstr "Azpi-esposizioaren adierazlea"
+msgstr "Azpiesposizio-adierazlea"
 
 #: core/app/views/preview/itempreviewview.cpp:260
-#, fuzzy, kde-format
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
-msgstr "Gain-esposizioaren adierazlea"
+msgstr "Gainesposizio-adierazlea"
 
 #: core/app/views/preview/itempreviewview.cpp:678
 #: core/app/views/stack/itemiconview_views.cpp:325
@@ -2996,7 +2976,7 @@ msgstr "Aurpegiak"
 #: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
-msgstr ""
+msgstr "Erakutsi lupa (x%1)"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3069,7 +3049,7 @@ msgstr "Labelak"
 #, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
-msgstr "Aztertu aurpegien bila"
+msgstr "Aztertu aurpegi bila"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -3107,7 +3087,7 @@ msgstr ""
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
-msgstr "Jendartea"
+msgstr "Pertsonak"
 
 #: core/app/views/sidebar/searchsidebarwidget.cpp:144
 #, kde-format
@@ -3485,6 +3465,26 @@ msgid ""
 "development team, follow the links provided in the application <b>Help</b> "
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
+"<h3>digiKam argazki digitalak kudeatzeko kode irekiko aplikazio aurreratu "
+"bat da, Linux, Windows eta macOS sistemetan dabilena.</h3><p>Aplikazioak "
+"zure kamerarekin ateratako mediak inportatzeko, kudeatzeko, editatzeko eta "
+"partekatzeko tresna multzo oso bat eskaintzen du. digiKamen inportazio "
+"gaitasunak erabiliz, argazkiak, RAW fitxategiak eta bideoak erraz "
+"transferitu ditzakezu zure kameratik zuzenean edo kanpoko biltegiratze "
+"gailuetatik (SD txartelak, USB diskoak, etab.). Aplikazioak inportatutako "
+"elementuak inportatu ahala prozesatu eta antolatzeko inportazio-ezarpena eta "
+"arauak konfiguratzeko aukera ematen dizu.<p> <p>Laburbilduz, digiKam-ekin "
+"zure argazki eta bideo bildumak inportatu, antolatu, hobetu, bilatu eta "
+"esportatu ditzakezu, eta askoz gehiago…</p><p>Une honetan digiKamen albumen "
+"ikuspegian zaude. Albumak fitxategiak gordetzen diren lekuak dira, eta zure "
+"disko zurruneko karpeten baliokideak dira.</p><p>digiKamek ezaugarri ahaltsu "
+"ugari ditu, <b><a href=\"https://docs.digikam.org/en/index.html"
+"\">dokumentazioan</a></b> azaltzen dira.</p><p><b><a href=\"https://www."
+"digikam.org\">digiKam webguneak</a></b> digiKam-en bertsio berriei buruzko "
+"informazioa eskaintzen du.</p><p>digiKam erabiltzaileen komunitatearekin "
+"harremanetan jartzeko edo garapen-taldeari laguntzeko, jarraitu "
+"aplikazioaren <b>Laguntza</b> menu-sarrerako estekei.</p><h3>Eskerrik asko "
+"digiKam proiektua erabiltzeagatik eta babesteagatik.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3514,6 +3514,9 @@ msgid ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">400 user-reports</a> closed on Bugzilla."
 msgstr ""
+"Bugzillan <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">erabiltzaileen 400 akats-txosten</a> baino gehiago itxi dira."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -3522,12 +3525,17 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"Barneko QtAVPlayer 2026-01-24ko azken upstream bertsiora eguneratu da; "
+"horrek akats-konponketa ugari eta errendimendu-hobekuntzak ekartzen ditu "
+"(Qt5erako bakarrik)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"Programan zehar data-formatu pertsonalizagarria erabiltzeko euskarria gehitu "
+"da."
 
 #: core/app/views/stack/welcomepageview_features.cpp:29
 #, kde-format
@@ -3535,12 +3543,17 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
+"Kolore-etiketen izenak orain pertsonalizatu daitezke ezkerreko alboko "
+"barrako Etiketak fitxan, testuan klik bikoitza eginez. Etiketen testuen "
+"luzera 32 karakteretara mugatuta dago."
 
 #: core/app/views/stack/welcomepageview_features.cpp:30
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
+"Ez ikusi egin beharreko direktorioen ezarpenetarako adierazpen erregularren "
+"komodin-euskarria gehitu da."
 
 #: core/app/views/stack/welcomepageview_features.cpp:31
 #, kde-format
@@ -3548,11 +3561,15 @@ msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr ""
+"Erabilerraztasuna hobetzeko iragazkien ikuspegia 3 fitxa bereizitan banatu "
+"da: Propietateak, Etiketak eta Pertsonak."
 
 #: core/app/views/stack/welcomepageview_features.cpp:32
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
 msgstr ""
+"Zakarrontzi-ikuspegiko zutabeen egoerak saioen artean zamatu eta gordetzen "
+"dira."
 
 #: core/app/views/stack/welcomepageview_features.cpp:33
 #, kde-format
@@ -3811,7 +3828,7 @@ msgstr ""
 #| msgid ""
 #| "Update internal RAW engine to last Libraw 0.20.2 (snapshot 20210827) "
 #| "including Canon CR3 and Sony A7R4 support."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Eguneratu barneko RAW motorra azken «Libraw» 0.20.2era (snapshot 20210827) "
 "Canon CR3 eta Sony A7R4-aren euskarria barne."
@@ -4157,17 +4174,17 @@ msgstr "Zuria"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Bai"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4180,10 +4197,10 @@ msgstr "Bai (pila)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -12572,9 +12589,7 @@ msgid "Opinion"
 msgstr "Iritzia"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Content type"
-#| msgid "Polls & Surveys"
+#, kde-format
 msgctxt "Content type"
 msgid "Polls and Surveys"
 msgstr "Galdeketak eta inkestak"
@@ -23864,7 +23879,7 @@ msgid "Publication Options"
 msgstr "Argitalpen aukerak"
 
 #: core/dplugins/generic/webservices/flickr/flickrwidget.cpp:155
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "As in accessible for people"
 msgid "Public (anyone can see them)"
 msgstr "Publikoa (edonork ikus ditzake)"
@@ -27298,7 +27313,7 @@ msgstr "Hau da irudi argitasunaren doiketa kurba"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Berrezarri"
@@ -29426,7 +29441,7 @@ msgstr ""
 #, kde-format
 msgctxt "People on your photos"
 msgid "People"
-msgstr "Jendartea"
+msgstr "Pertsonak"
 
 #: core/libs/database/tags/facetags.cpp:477
 #, kde-format
@@ -30026,7 +30041,7 @@ msgstr ""
 "Aurpegi datu-basea erabiltzen du digiKamek aurpegi ezagutza\n"
 "prozesura bideratutako irudi histogramak ostatzeko.\n"
 "Honek azkar erabili dezake leku mordo bat, bereziki\n"
-"jendearen aurpegiak hautemanda eta etiketatuta duten irudi mordoa baduzu."
+"pertsonen aurpegiak hautemanda eta etiketatuta duten irudi mordoa baduzu."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:295
 #, kde-format
@@ -39258,7 +39273,7 @@ msgstr "Aldatu gabe"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -39539,8 +39554,8 @@ msgstr "Kalibratu gabea"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -39555,7 +39570,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -39563,7 +39578,7 @@ msgid "%1 bpp"
 msgstr "%1bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -39571,7 +39586,7 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
@@ -39610,7 +39625,7 @@ msgstr "Ireki irudi editorea."
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"
@@ -39750,12 +39765,10 @@ msgid "Keywords: "
 msgstr "Gako-hitzak"
 
 #: core/libs/properties/itempropertiestab.cpp:312
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@label: item properties"
 msgid "People: "
-msgstr "Jendartea"
+msgstr "Pertsonak: "
 
 #: core/libs/properties/itempropertiestab.cpp:328
 #, fuzzy, kde-format
@@ -39987,11 +40000,9 @@ msgid "Title"
 msgstr "Titulua"
 
 #: core/libs/properties/itempropertiestab.cpp:526
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
-msgstr "Jendartea"
+msgstr "Pertsonak"
 
 #: core/libs/properties/itempropertiestab.cpp:528
 #: core/libs/template/templatepanel.cpp:209
@@ -40038,36 +40049,44 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, fuzzy, kde-format
 #| msgid "File Properties"
-msgid "Selected Item Properties"
+msgid "<b>Selected Item Properties</b>"
 msgstr "Fitxategiaren propietateak"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, fuzzy, kde-format
+#| msgctxt "@action: context menu"
+#| msgid "Open in File Manager"
+msgid "Open in the file manager"
+msgstr "Ireki fitxategi-kudeatzailean"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "Kopurua: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "Tamaina:"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, fuzzy, kde-format
 #| msgctxt "@action: group items"
 #| msgid "Group"
 msgid "Groups: "
 msgstr "Taldea"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
 #, fuzzy, kde-format
 #| msgid "Album Properties"
-msgid "All Item Properties"
+msgid "<b>All Item Properties</b>"
 msgstr "Albumaren propietateak"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
@@ -62947,17 +62966,17 @@ msgstr ""
 #: core/utilities/import/widgets/scriptingsettings.cpp:72
 #, kde-format
 msgid "Execute script for image:"
-msgstr ""
+msgstr "Exekutatu gidoia irudirako:"
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 msgid "No script selected"
-msgstr "Ez da etiketarik hautatu"
+msgstr "Ez da gidoirik hautatu"
 
 #: core/utilities/import/widgets/scriptingsettings.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the script that is executed for every imported image."
-msgstr "Ezarri erliebearen irabazia testura eta irudia batzean erabiltzeko."
+msgstr "Ezarri hemen inportatutako irudi bakoitzerako exekutatuko den gidoia."
 
 #: core/utilities/lighttable/lighttablepreview.cpp:57
 #, kde-format
@@ -62998,19 +63017,17 @@ msgstr[1] "%1 elementu argi-mahaian"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:35
 #: core/utilities/survey/surveywindow_setup.cpp:35
-#, fuzzy, kde-format
-#| msgid "&First"
+#, kde-format
 msgctxt "@action: go to first item on list"
 msgid "&First"
-msgstr "Lehena"
+msgstr "&Lehena"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:41
 #: core/utilities/survey/surveywindow_setup.cpp:41
-#, fuzzy, kde-format
-#| msgid "&Last"
+#, kde-format
 msgctxt "@action: go to last item on list"
 msgid "&Last"
-msgstr "Azkena"
+msgstr "A&zkena"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:47
 #, kde-format
@@ -63041,9 +63058,9 @@ msgstr "Ireki lehenetsitako aplikazioarekin"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:68
 #: core/utilities/survey/surveywindow_setup.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Open the item with default assigned application."
-msgstr "Ireki hautatutako elementua irudien editorean."
+msgstr "Ireki elementua esleitutako aplikazio lehenetsiarekin."
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:73
 #, kde-format
@@ -63130,34 +63147,34 @@ msgid "Previous Image"
 msgstr "Aurreko irudia"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Titles on the Right"
-msgstr "Lerrokatu testua eskuinean"
+msgstr "Editatu tituluak eskuinean"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:239
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Comments on the Right"
-msgstr "Editatu iruzkinak eta etiketak..."
+msgstr "Editatu iruzkinak eskuinean"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Assigned Tags on the Right"
-msgstr "Esleitu etiketak &elementu honi"
+msgstr "Erakutsi esleitutako etiketak eskuinean"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:249
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Titles on the Left"
-msgstr "Lerrokatu testua ezkerrean"
+msgstr "Editatu tituluak ezkerrean"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:254
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit Comments on the Left"
-msgstr "Editatu iruzkinak eta etiketak..."
+msgstr "Editatu iruzkinak eta ezkerrean"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:259
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show Assigned Tags on the Left"
-msgstr "Esleitu etiketak &elementu honi"
+msgstr "Erakutsi esleitutako etiketak ezkerrean"
 
 #. i18n: ectx: Menu (LeftPanel)
 #: core/utilities/lighttable/lighttablewindowui5.rc:35
@@ -63172,40 +63189,38 @@ msgid "&Right Panel"
 msgstr "e&skuineko panela"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Maintenance"
-msgstr "Mantentzea"
+msgstr "Mantentze-lanak"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:54
 #, kde-format
 msgid "<qt><b>Select Maintenance Operations to Process</b></qt>"
-msgstr ""
+msgstr "<qt><b>Hautatu prozesatu beharreko mantentze-eragiketak</b></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label"
 msgid "Process items from:"
-msgstr "Kendu prozesatutako elementuak"
+msgstr "Prozesatu hemengo elementuak:"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:62
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
-msgstr ""
+msgstr "Erabili gordetako azken tresna eta ezarpen aktiboak"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@option:check"
-#| msgid "Work on all processor cores"
+#, kde-format
 msgctxt "@option:check"
 msgid "Work on all processor cores (when it is possible)"
-msgstr "Prozesatzailearen nukleo guztiekin lan egitea"
+msgstr "Lan egin prozesatzailearen nukleo guztiekin (ahal denean)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid "Common Options"
-msgstr "Ezarpen arruntak"
+msgstr "Aukera arruntak"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:78
 #, kde-format
@@ -63213,11 +63228,13 @@ msgid ""
 "<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
 msgstr ""
+"<qt>Aukerarik ez<br><i>Oharra: tresna honek albumen bildumak soilik "
+"prozesatzen ditu.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:81
 #, kde-format
 msgid "Scan for new items"
-msgstr "Miatu irudi berri bila"
+msgstr "Miatu elementu berri bila"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:91
 #, kde-format
@@ -63228,26 +63245,30 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
+"<qt><i>Oharra: gaituta badago, oinarrizko datu-basea beti garbitzen da. "
+"Garbiketa egiteko beste datu-base batzuk ere hauta ditzakezu.<br>Beheko "
+"aukeretako bat hautatzen baduzu, prozesuak denbora luzea har dezake eta "
+"digiKam aldi baterako izoztu dezake, datu-basea hondatu ez dadin.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:96
-#, fuzzy, kde-format
+#, kde-format
 msgid "Also clean up the thumbnail database."
-msgstr "Huts egin du etiketa datu-baseari gehitzean"
+msgstr "Koadro txikien datu-basea ere garbitu."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "Also clean up the faces database."
-msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
+msgstr "Aurpegien datu-basea ere garbitu."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:98
-#, fuzzy, kde-format
+#, kde-format
 msgid "Also clean up the similarity database."
-msgstr "Huts egin du etiketa datu-baseari gehitzean"
+msgstr "Antzekotasun datu-basea ere garbitu."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid "Extended clean up and shrink all databases."
-msgstr "Huts egin du etiketa datu-baseari gehitzean"
+msgstr "Egin datu-base guztien garbiketa sakona eta haiek trinkotu."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:100
 #, kde-format
@@ -63255,11 +63276,13 @@ msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
+"Aukera honek datu-baseak trinkotzera darama. Trinkotzea SQLite eta MySQL "
+"bietarako onartzen da."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:107
 #, kde-format
 msgid "Perform database cleaning"
-msgstr ""
+msgstr "Egin datu-baseen garbiketa"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:116
 #: core/utilities/maintenance/main/maintenancedlg.cpp:131
@@ -63268,19 +63291,19 @@ msgid "Scan for changed or non-cataloged items (faster)"
 msgstr "Miatu aldatutako edo katalogatu gabeko elementu bila (azkarragoa)"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:122
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rebuild Thumbnails"
-msgstr "Eraiki berriro koadro txikiak..."
+msgstr "Berreraiki koadro txikiak"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:137
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rebuild Finger-prints"
-msgstr "Eraiki berriro hatz-markak..."
+msgstr "Berreraiki hatz-markak"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:150
 #, kde-format
 msgid "Similarity range (in percents): "
-msgstr ""
+msgstr "Antzekotasuna barrutia (ehunekotan): "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:170
 #, fuzzy, kde-format
@@ -63289,10 +63312,9 @@ msgid "Restriction on duplicates:"
 msgstr "Bilatu bikoiztutakoak"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:174
-#, fuzzy, kde-format
-#| msgid "No selection"
+#, kde-format
 msgid "No restriction"
-msgstr "Hautapenik ez"
+msgstr "Murrizketarik ez"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:176
 #, fuzzy, kde-format
@@ -63362,33 +63384,32 @@ msgid "Auto-tags Assignment"
 msgstr "Doitze automatikoa"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:284
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sync Direction: "
-msgstr "ÑSA zuzenketa"
+msgstr "Sinkronizazioaren noranzkoa: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:288
-#, fuzzy, kde-format
+#, kde-format
 msgid "From database to image metadata"
-msgstr "Datu-basea irudiaren metadatuetatik eguneratzen. Itxaron..."
+msgstr "Datu-basetik irudiaren metadatuetara"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:290
-#, fuzzy, kde-format
+#, kde-format
 msgid "From image metadata to database"
-msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
+msgstr "Irudiaren metadatuetatik datu-basera"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:294
 #, kde-format
 msgid "Check metadata setup panel for details: "
-msgstr ""
+msgstr "Xehetasunetarako begiratu metadatuen konfigurazio panela: "
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:303
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sync Metadata and Database"
-msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen. Itxaron..."
+msgstr "Sinkronizatu metadatuak eta datu-basea"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:354
-#, fuzzy, kde-format
-#| msgid "Warning"
+#, kde-format
 msgctxt "@title: window reset face database"
 msgid "Warning"
 msgstr "Abisua"
@@ -63400,19 +63421,25 @@ msgid ""
 "faces? You’ll need to rescan images and start tagging unknown faces again "
 "before any faces can be recognized."
 msgstr ""
+"Ziur zaude baieztatutako, baieztatu gabeko eta ezezagunak diren aurpegi "
+"guztiak ezabatu nahi dituzula? Irudiak berriro eskaneatu eta aurpegi "
+"ezezagunak berriro etiketatzen hasi beharko duzu aurpegiak ezagutu ahal "
+"izateko."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:433
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "All operations are done.\n"
 "Duration: %1"
-msgstr "Alderantzizko ordenan"
+msgstr ""
+"Eragiketa guztiak egin dira.\n"
+"Iraupena: %1"
 
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:434
-#, fuzzy, kde-format
+#, kde-format
 msgid "digiKam Maintenance"
-msgstr "Angelu nagusia:"
+msgstr "digiKamen mantentze-lanak"
 
 #: core/utilities/maintenance/manager/maintenancetool.cpp:129
 #, kde-format
@@ -63420,6 +63447,8 @@ msgid ""
 "Process is done.\n"
 "Duration: %1"
 msgstr ""
+"Prozesua egin da.\n"
+"Iraupena: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
@@ -63429,23 +63458,22 @@ msgstr ""
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
 #, kde-format
 msgid "Clean up the databases : "
-msgstr ""
+msgstr "Garbitu datu-baseak: "
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "analysing databases"
-msgstr "Datu-basea hasieratzea"
+msgstr "datu-baseak aztertzea"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
 #, kde-format
 msgid "cleaning core db"
-msgstr ""
+msgstr "Oinarrizko db garbitzen"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
-#, fuzzy, kde-format
-#| msgid "Build Missing Thumbnails"
+#, kde-format
 msgid "cleaning thumbnails db"
-msgstr "Eraiki falta diren koadro txikiak"
+msgstr "Koadro txikien DB garbitzen"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
 #, kde-format
@@ -63453,15 +63481,14 @@ msgid "cleaning recognition db"
 msgstr "ezagutza DB garbitzea"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
-#, fuzzy, kde-format
-#| msgid "Build Missing Thumbnails"
+#, kde-format
 msgid "cleaning similarity db"
-msgstr "Eraiki falta diren koadro txikiak"
+msgstr "Antzekotasun db garbitzen"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
-#, fuzzy, kde-format
+#, kde-format
 msgid "shrinking databases"
-msgstr "Datu-basea hasieratzea"
+msgstr "datu-baseak trinkotzen"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:66
 #, kde-format
@@ -63472,17 +63499,21 @@ msgid ""
 "info box will vanish when the shrinking process is finished.</p>Current "
 "Status:"
 msgstr ""
+"<p>Datu-baseak trinkotzen ari da.</p><p>Une honetan, zure datu-baseak "
+"trinkotzen ari dira. Horrek denbora apur bat beharko du - datu-basearen "
+"tamainaren araberakoa.</p><p>Datu-basea hondatzea saihesteko digiKam izoztu "
+"behar dugu. Trinkotzeko prozesua bukatzen denean informazio-koadro hau "
+"desagertuko da.</p>Egoera une honetan:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "Schema Name"
+#, kde-format
 msgid "Core DB"
-msgstr "Eskemaren izena"
+msgstr "Oinarrizko DB"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:80
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thumbnails DB"
-msgstr "Koadro txikiak"
+msgstr "Koadro txikien DB"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:81
 #, kde-format
@@ -63490,10 +63521,9 @@ msgid "Face Recognition DB"
 msgstr "Aurpegi ezagutza DB"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Similarity:"
+#, kde-format
 msgid "Similarity DB"
-msgstr "Antzekotasuna:"
+msgstr "Antzekotasun DB"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
 #, kde-format
@@ -63501,85 +63531,75 @@ msgid "Find new items"
 msgstr "Aurkitu elementu berriak"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Scanning: %1\n"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Miatzen: %1\n"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album Root: %1"
-msgstr "Albuma: %1"
+msgstr "Albumaren erroa: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr ""
+"Miatuta:\n"
+"%1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for cataloging: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Katalogatzeko miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for cataloging: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Katalogatzeko miatutako elementua: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:109
-#, fuzzy, kde-format
+#, kde-format
 msgid "Find duplicates items"
-msgstr "Bilatu bikoiztutakoak"
+msgstr "Aurkitu bikoiztutako elementuak"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
-#, fuzzy, kde-format
-#| msgid "Find duplicates"
+#, kde-format
 msgid "Finding Duplicates: %1\n"
-msgstr "Bilatu bikoiztutakoak..."
+msgstr "Bikoiztuak bilatzen: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
-#, fuzzy, kde-format
-#| msgid "Find duplicates"
+#, kde-format
 msgid "No duplicate item"
-msgstr "Bilatu bikoiztutakoak"
+msgstr "Ez dago bikoiztutako elementurik"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
-#, fuzzy, kde-format
-#| msgid "Find duplicates"
+#, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
-msgstr[0] "Bikoiztu elementua"
-msgstr[1] "Bilatu bikoiztutakoak"
+msgstr[0] "Bikoiztutako elementu 1"
+msgstr[1] "Bikoiztutako %1 elementu"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for duplicates: %1\n"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Bikoiztutakoen bila miatutako elementuak: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for duplicates: %1\n"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Bikoiztutakoen bila miatutako elementua: %1\n"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicates found: %1"
-msgstr "Bikoiztutakoak"
+msgstr "Bikoiztutakoak aurkitu dira: %1"
 
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
-#, fuzzy, kde-format
-#| msgid "Duplicates"
+#, kde-format
 msgid "Duplicate found: %1"
-msgstr "Bikoiztutakoak"
+msgstr "Bikoiztutakoa aurkitu da: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:130
 #, fuzzy, kde-format
@@ -63614,9 +63634,9 @@ msgid "Scan for faces in %1 images"
 msgstr "Miatu %1 irudiak aurpegi bila"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:277
-#, fuzzy, kde-format
+#, kde-format
 msgid "Updating faces database"
-msgstr "<b>Hatz-marken datu-basea eguneratzen. Itxaron...</b>"
+msgstr "Aurpegien datu-basea eguneratzen"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
@@ -63638,33 +63658,29 @@ msgid "Item scanned for faces: %1\n"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
-#, fuzzy, kde-format
-#| msgid "Plugins found: %1"
+#, kde-format
 msgid "Faces found: %1"
-msgstr "Aurkitutako plugin-ak: %1"
+msgstr "Aurkitutako aurpegiak: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
-#, fuzzy, kde-format
-#| msgid "Plugins found: %1"
+#, kde-format
 msgid "Face found: %1"
-msgstr "Aurkitutako plugin-ak: %1"
+msgstr "Aurkitutako aurpegia: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Aurpegi miaketa: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
-#, fuzzy, kde-format
-#| msgid "No flash"
+#, kde-format
 msgid "Found %1 face."
-msgstr "aurpegia"
+msgstr "Aurpegi %1 aurkitu da."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
 #, kde-format
 msgid "Found %1 faces."
-msgstr ""
+msgstr "%1 aurpegi aurkitu dira."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
 #, fuzzy, kde-format
@@ -63673,40 +63689,34 @@ msgid "Recognized: %1"
 msgstr "Ikonoen neurria"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 msgid "Finger-prints"
-msgstr "Hatz-markarik ez"
+msgstr "Hatz-markak"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid "Rebuild Fingerprint: %1\n"
-msgstr "Eraiki berriro hatz-markak..."
+msgstr "Berreraiki hatz-marka: %1\n"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
-#, fuzzy, kde-format
-#| msgid "Album \"%1\""
+#, kde-format
 msgid "Album: %1"
 msgstr "Albuma: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned for fingerprint: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Hatz-marka bila miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned for fingerprint: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Hatz-marka bila miatutako elementua: %1"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized"
-#| msgid "Image Quality Sort"
-#| msgid_plural "Image Quality Sort"
+#, kde-format
 msgid "Image Quality: %1\n"
-msgstr "Irudi-kalitatearen araberako sailkapena"
+msgstr "Irudiaren kalitatea: %1\n"
 
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
 #, kde-format
@@ -63726,68 +63736,57 @@ msgid "Item scanned for quality: %1"
 msgstr "Miatu albumetan aurpegi bila: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove all faces from image"
-msgstr "Irakurri berriro metadatuak irudietatik"
+msgstr "Kendu irudiko aurpegi guztiak"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
-#, fuzzy, kde-format
+#, kde-format
 msgid "Remove all tags from image"
-msgstr "Irakurri berriro metadatuak irudietatik"
+msgstr "Kendu irudiko etiketa guztiak"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Huts egin du %1 irudia zama-igotzea\n"
+"Hautatutako %1 irudietatik aurpegi guztiak kendu dira.\n"
 "Jarraitu nahi duzu?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
-#, fuzzy, kde-format
-#| msgid ""
-#| "Failed to upload image %1\n"
-#| "Do you want to continue?"
+#, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
 "Do you want to continue?"
 msgstr ""
-"Huts egin du %1 irudia zama-igotzea\n"
+"Hautatutako %1 irudietatik etiketa guztiak kendu dira.\n"
 "Jarraitu nahi duzu?"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
-#, fuzzy, kde-format
-#| msgid "Getting thumbnails for %1..."
+#, kde-format
 msgid "Clear Metadata: %1\n"
-msgstr "%1(r)en koadro txikiak eskuratzen..."
+msgstr "Garbitu metadatuak: %1\n"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove faces: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Aurpegiak kentzeko miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove faces: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Aurpegiak kentzeko miatutako elementua: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to remove tags: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Etiketak kentzeko miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to remove tags: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Etiketak kentzeko miatutako elementua: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
 #, kde-format
@@ -63800,56 +63799,51 @@ msgid "Updating database from image metadata"
 msgstr "Datu-basea irudiaren metadatuetatik eguneratzen"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
-#, fuzzy, kde-format
-#| msgid "Getting thumbnails for %1..."
+#, kde-format
 msgid "Metadata Sync: %1\n"
-msgstr "%1(r)en koadro txikiak eskuratzen..."
+msgstr "Metadatuak sinkronizatzea: %1\n"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
-msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen"
+msgstr "Metadatuak datu-basearekin sinkronizatzeko miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
-#, fuzzy, kde-format
-#| msgid "Synchronizing image metadata with database"
+#, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
-msgstr "Irudiaren metadatuak datu-basearekin sinkronizatzen"
+msgstr "Metadatuak datu-basearekin sinkronizatzeko miatutako elementua: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Items scanned to update database with metadata: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Datu-basea metadatuekin sinkronizatzeko miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
-#, fuzzy, kde-format
-#| msgid "Scan for faces in album: %1"
+#, kde-format
 msgid "Item scanned to update database with metadata: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Datu-basea metadatuekin sinkronizatzeko miatutako elementua: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:121
-#, fuzzy, kde-format
+#, kde-format
 msgid "Generate Thumbnails"
 msgstr "Sortu koadro txikiak"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thumbnail: %1\n"
-msgstr "Propietateak"
+msgstr "Koadro txikia: %1\n"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Items scanned for thumbnails: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Koadro txikietarako miatutako elementuak: %1"
 
 #: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
 #, fuzzy, kde-format
 #| msgid "Scan for faces in album: %1"
 msgid "Item scanned for thumbnails: %1"
-msgstr "Miatu albumetan aurpegi bila: %1"
+msgstr "Koadro txikietarako miatutako elementua: %1"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:128
 #, kde-format
@@ -63969,11 +63963,10 @@ msgid "Ready"
 msgstr "Prest"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:545
-#, fuzzy, kde-format
-#| msgid "Printing and Proofing"
+#, kde-format
 msgctxt "@title:window"
 msgid "Processing Under Progress"
-msgstr "Inprimatzea eta frogatzea"
+msgstr "Prozesatzen ari da"
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:546
 #, kde-format
@@ -65736,12 +65729,12 @@ msgstr "Editatu gordetako bilaketa"
 msgid "Edit..."
 msgstr "Editatu..."
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Gehitu bilaketaren taldea"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Saiatu"
@@ -66262,7 +66255,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview_treeview.cpp:36
 #, kde-format
 msgid "People Tree View icon size:"
-msgstr "Jendea Zuhaitz-ikuspegiko koadro txikien tamaina:"
+msgstr "Pertsonak zuhaitz-ikuspegiko koadro txikien tamaina:"
 
 #: core/utilities/setup/album/setupalbumview_treeview.cpp:44
 #, kde-format
@@ -66270,8 +66263,8 @@ msgid ""
 "Set this option to configure the size in pixels of the Tree View icons in "
 "digiKam's people sidebar."
 msgstr ""
-"Ezarri aukera hau, digiKamen jendea alboko barran Zuhaitz-ikuspegiko ikonoen "
-"neurria pixeletan konfiguratzeko."
+"Ezarri aukera hau, digiKamen pertsonak alboko barran Zuhaitz-ikuspegiko "
+"ikonoen neurria pixeletan konfiguratzeko."
 
 #: core/utilities/setup/album/setupalbumview_treeview.cpp:47
 #, kde-format
@@ -69687,7 +69680,7 @@ msgstr "Ez baieztatu e&skuineko alboko barran aldaketak aplikatzean"
 #, kde-format
 msgid "Show only face tags for assigning names in people sidebar"
 msgstr ""
-"Erakutsi aurpegi etiketak jendarte alboko barran izenak esleitzeko bakarrik"
+"Erakutsi aurpegi etiketak pertsonak alboko barran izenak esleitzeko bakarrik"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:77
 #, kde-format
@@ -70105,21 +70098,17 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Survey"
-msgstr ""
+msgstr "Azterketa"
 
 #: core/utilities/setup/setup.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid ""
-#| "Light Table Settings\n"
-#| "Customize tool used to compare items"
+#, kde-format
 msgctxt "@title"
 msgid ""
 "Survey Settings\n"
 "Customize tool used to review items"
 msgstr ""
-"Argi-mahaiaren ezarpenak\n"
-"Irudiak konparatzeko erabilitako tresna neurrira ipini"
+"Azterketa-ezarpenak\n"
+"Elementuak aztertzeko tresna neurrira ipini"
 
 #: core/utilities/setup/setup.cpp:98
 #, kde-format

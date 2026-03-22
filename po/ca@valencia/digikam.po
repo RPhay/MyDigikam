@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-16 00:41+0000\n"
-"PO-Revision-Date: 2026-03-15 10:42+0100\n"
+"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"PO-Revision-Date: 2026-03-20 09:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3865,10 +3865,10 @@ msgstr ""
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Actualitzar el motor RAW intern a l'última instantània de la Libraw "
-"2026-02-16."
+"2036-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -4213,17 +4213,17 @@ msgstr "Blanc"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:747
-#: core/libs/properties/itempropertiessidebardb.cpp:749
-#: core/libs/properties/itempropertiessidebardb.cpp:852
-#: core/libs/properties/itempropertiessidebardb.cpp:859
+#: core/libs/properties/itempropertiessidebardb.cpp:752
+#: core/libs/properties/itempropertiessidebardb.cpp:754
+#: core/libs/properties/itempropertiessidebardb.cpp:857
+#: core/libs/properties/itempropertiessidebardb.cpp:864
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Sí"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:863
+#: core/libs/properties/itempropertiessidebardb.cpp:868
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4236,10 +4236,10 @@ msgstr "Sí (pila)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:748
-#: core/libs/properties/itempropertiessidebardb.cpp:750
-#: core/libs/properties/itempropertiessidebardb.cpp:853
-#: core/libs/properties/itempropertiessidebardb.cpp:871
+#: core/libs/properties/itempropertiessidebardb.cpp:753
+#: core/libs/properties/itempropertiessidebardb.cpp:755
+#: core/libs/properties/itempropertiessidebardb.cpp:858
+#: core/libs/properties/itempropertiessidebardb.cpp:876
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -4916,7 +4916,7 @@ msgid ""
 "<para>This Batch Queue Manager tool can mix color channels from images.</"
 "para>"
 msgstr ""
-"<para>Esta eina del gestor de la cua per lots pot barrejar els canals de "
+"<para>Esta eina del gestor de la cua per lots pot mesclar els canals de "
 "color de les imatges.</para>"
 
 #: core/dplugins/bqm/colors/colorbalance/colorbalance.cpp:37
@@ -5499,7 +5499,7 @@ msgid ""
 "url='https://en.wikipedia.org/wiki/WebP'>this page</link>.</para>"
 msgstr ""
 "<para>Esta eina del gestor de la cua per lots pot convertir les dades "
-"d'imatges al format WEBP.</para><para>WEBP és un format de fitxer d'imatges "
+"d'imatges al format WEBP.</para><para>WEBP és un format de fitxer d'imatge "
 "que Google ha desenvolupat com a substitució dels formats de fitxer JPEG, "
 "PNG i GIF. WEBP oferix fitxers més petits per la mateixa qualitat, o de "
 "major qualitat per la mateixa mida. Permet la compressió amb pèrdua i sense "
@@ -7638,7 +7638,7 @@ msgid ""
 msgstr ""
 "<para>Este connector permet als usuaris carregar i guardar imatges "
 "utilitzant el còdec Libjpgf.</para><para>«Progressive Graphics File» (PGF) "
-"és un format de fitxer d'imatges eficient, que està basant en una "
+"és un format de fitxer d'imatge eficient, que està basant en una "
 "transformació discreta d'ondetes amb característiques de codificació "
 "progressiva. PGF es pot utilitzar per a compressió sense pèrdua i amb "
 "pèrdua. És més adequat per a les imatges naturals. PGF es pot utilitzar com "
@@ -8538,8 +8538,8 @@ msgstr "Una eina per a emular la pel·lícula de color negatiu"
 msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
 msgstr ""
-"Esta eina de l'editor d'imatges pot emular la pel·lícula negativa d'una "
-"imatge."
+"Esta eina de l'editor d'imatges pot emular la pel·lícula de color negatiu "
+"d'una imatge."
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:91
 #, kde-format
@@ -10068,7 +10068,7 @@ msgstr "Coordenades no polars"
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:112
 #, kde-format
 msgid "Tile"
-msgstr "Mosaic"
+msgstr "Tessel·la"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:114
 #, kde-format
@@ -10115,7 +10115,7 @@ msgstr ""
 "una altra variació de l'efecte d'ones circulars.</p><p><b>Coordenades "
 "polars</b>: convertix la fotografia de coordenades polars a rectangulars.</"
 "p><p><b>Coordenades no polars</b>: efecte de les coordenades polars invertit."
-"</p><p><b>Mosaic</b>: dividix la fotografia en blocs quadrats i els mou "
+"</p><p><b>Tessel·la</b>: dividix la fotografia en blocs quadrats i els mou "
 "aleatòriament dins la imatge.</p>"
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:139
@@ -10139,7 +10139,8 @@ msgstr "Iteració:"
 msgid ""
 "This value controls the iterations to use for Waves, Tile, and Neon effects."
 msgstr ""
-"Este valor controla les iteracions a fer pels efectes d'ones, mosaic, i neó."
+"Este valor controla les iteracions a fer pels efectes d'ones, tessel·la, i "
+"neó."
 
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:329
 #, kde-format
@@ -13800,7 +13801,7 @@ msgstr "Informació de la data i hora"
 #, kde-format
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
-msgstr "Grava les propietats de la marca horària de la càmera"
+msgstr "Grava les propietats de la marca de temps de la càmera"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
 #, kde-format
@@ -27210,7 +27211,7 @@ msgstr "Este és l'ajust de la corba de la lluminositat en la imatge"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:503
+#: core/utilities/searchwindow/searchview.cpp:505
 #, kde-format
 msgid "Reset"
 msgstr "Restablix"
@@ -32622,22 +32623,22 @@ msgstr "Establiu ací la precisió de la funció del gaussià."
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:181
 #, kde-format
 msgid "Tile size:"
-msgstr "Mida de la peça de mosaic:"
+msgstr "Mida de la peça de tessel·la:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:184
 #, kde-format
 msgid "Sets the tile size."
-msgstr "Establix la mida de la peça de mosaic."
+msgstr "Establix la mida de la peça de tessel·la."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:186
 #, kde-format
 msgid "Tile border:"
-msgstr "Vora de la peça de mosaic:"
+msgstr "Vora de la peça de tessel·la:"
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:189
 #, kde-format
 msgid "Sets the size of each tile border."
-msgstr "Establix la mida de cada vora de peça de mosaic."
+msgstr "Establix la mida de cada vora de peça de tessel·la."
 
 #: core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp:191
 #, kde-format
@@ -38719,7 +38720,7 @@ msgstr "sense canvis"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:690
+#: core/libs/properties/itempropertiessidebardb.cpp:695
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38963,8 +38964,8 @@ msgstr "Sense calibrar"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:724
-#: core/libs/properties/itempropertiessidebardb.cpp:737
+#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:742
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38977,21 +38978,21 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3 Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:746
+#: core/libs/properties/itempropertiessidebardb.cpp:751
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:780
+#: core/libs/properties/itempropertiessidebardb.cpp:785
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:790
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
@@ -39025,7 +39026,7 @@ msgstr "Obri la pestanya d'etiquetes per a l'edició"
 msgid "Open the Information tab for editing"
 msgstr "Obri la pestanya d'informació per a l'edició"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:729
+#: core/libs/properties/itempropertiessidebardb.cpp:734
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
@@ -39397,33 +39398,39 @@ msgctxt "@info: item properties"
 msgid " fps"
 msgstr " fps"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:93
+#: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, kde-format
-msgid "Selected Item Properties"
-msgstr "Propietats seleccionades de l'element"
+msgid "<b>Selected Item Properties</b>"
+msgstr "<b>Propietats seleccionades de l'element</b>"
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:96
-#: core/libs/properties/itemselectionpropertiestab.cpp:136
+#: core/libs/properties/itemselectionpropertiestab.cpp:111
+#: core/libs/properties/itemselectionpropertiestab.cpp:164
+#, kde-format
+msgid "Open in the file manager"
+msgstr "Obri en el gestor de fitxers"
+
+#: core/libs/properties/itemselectionpropertiestab.cpp:118
+#: core/libs/properties/itemselectionpropertiestab.cpp:171
 #, kde-format
 msgid "Count: "
 msgstr "Compte: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:97
-#: core/libs/properties/itemselectionpropertiestab.cpp:137
+#: core/libs/properties/itemselectionpropertiestab.cpp:119
+#: core/libs/properties/itemselectionpropertiestab.cpp:172
 #, kde-format
 msgid "Size: "
 msgstr "Mida: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:98
-#: core/libs/properties/itemselectionpropertiestab.cpp:138
+#: core/libs/properties/itemselectionpropertiestab.cpp:120
+#: core/libs/properties/itemselectionpropertiestab.cpp:173
 #, kde-format
 msgid "Groups: "
 msgstr "Grups: "
 
-#: core/libs/properties/itemselectionpropertiestab.cpp:133
+#: core/libs/properties/itemselectionpropertiestab.cpp:161
 #, kde-format
-msgid "All Item Properties"
-msgstr "Totes les propietats de l'element"
+msgid "<b>All Item Properties</b>"
+msgstr "<b>Totes les propietats de l'element</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -44400,7 +44407,7 @@ msgid ""
 "and Healing clone tool for image editor"
 msgstr ""
 "Eina d'exportació cap a UPnP/DLNA\n"
-"i l'eina de clonatge de guariment de l'editor d'imatges"
+"i l'eina «Clonatge de guariment» de l'editor d'imatges"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:201
 #, kde-format
@@ -53712,18 +53719,17 @@ msgstr ""
 "vos recomanem que llegiu el <b>Manual de digiKam</b>, el trobareu a "
 "l'entrada de menú <b>Ajuda -> Manual</b> (cal que instal·leu per separat el "
 "paquet de documentació de digiKam). També podeu llegir el manual en línia "
-"des del <a href='https://docs.digikam.org/ca-va/index.html'>lloc web "
-"dedicat</a>.</p><p>Premeu <b>Acaba</b> per a tancar l'assistent. digiKam "
-"explorarà la vostra col·lecció per a registrar tots els elements en la base "
-"de dades. Els elements inclosos en els àlbums s'arreplegaran durant l'inici "
-"en segon pla.</p><p><i>Nota:</i> Depenent de la mida de la col·lecció, esta "
-"operació pot tardar una estona. Si cancel·leu l'exploració, es durà a terme "
-"en la pròxima sessió de digiKam.</p><p>Quan s'haja fet l'exploració inicial, "
-"la pròxima vegada que l'inicieu, digiKam només comprovarà la col·lecció per "
-"a veure si hi ha àlbums nous -la qual cosa serà molt més ràpida-. Podeu "
-"forçar a digiKam a que explore elements nous manualment utilitzant l'entrada "
-"de menú <b>Eines -> Manteniment -> Explora buscant elements nous</b>.</p></"
-"qt>"
+"des del <a href='https://docs.digikam.org/ca/index.html'>lloc web dedicat</"
+"a>.</p><p>Premeu <b>Acaba</b> per a tancar l'assistent. digiKam explorarà la "
+"vostra col·lecció per a registrar tots els elements en la base de dades. Els "
+"elements inclosos en els àlbums s'arreplegaran durant l'inici en segon pla.</"
+"p><p><i>Nota:</i> Depenent de la mida de la col·lecció, esta operació pot "
+"tardar una estona. Si cancel·leu l'exploració, es durà a terme en la pròxima "
+"sessió de digiKam.</p><p>Quan s'haja fet l'exploració inicial, la pròxima "
+"vegada que l'inicieu, digiKam només comprovarà la col·lecció per a veure si "
+"hi ha àlbums nous -la qual cosa serà molt més ràpida-. Podeu forçar a "
+"digiKam a que explore elements nous manualment utilitzant l'entrada de menú "
+"<b>Eines -> Manteniment -> Explora buscant elements nous</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:52
 #, kde-format
@@ -57479,7 +57485,8 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-"Mostra la capa de quadrícula de coordenades del mapamundi.\n"
+"Mostra una superposició de la capa de quadrícula de coordenades del "
+"mapamundi.\n"
 "Esta configuració només té efecte amb els mapes de l'atles,\n"
 "satèl·lit i Open Street Map."
 
@@ -57527,7 +57534,7 @@ msgid ""
 "This setting take effect only with the Atlas,\n"
 "the Satellite, and the Open-Street Maps."
 msgstr ""
-"Mostra la capa d'ombra nocturna del mapamundi.\n"
+"Mostra una superposició de la capa d'ombra nocturna del mapamundi.\n"
 "Esta configuració només té efecte amb els mapes de l'atles,\n"
 "satèl·lit i Open Street Map."
 
@@ -57543,7 +57550,8 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-"Mostra la capa de marques de lloc de ciutat del mapamundi.\n"
+"Mostra una superposició de la capa de marques de lloc de ciutat del "
+"mapamundi.\n"
 "Esta configuració només té efecte amb l'atles i els mapes de satèl·lit\n"
 "no en Open Street Map."
 
@@ -57559,7 +57567,7 @@ msgid ""
 "This setting take effect only with the Atlas and Satellite Maps\n"
 "not the Open-Street Map."
 msgstr ""
-"Mostra la capa de relleu del mapamundi.\n"
+"Mostra una superposició de la capa de relleu del mapamundi.\n"
 "Esta configuració només té efecte amb l'atles i els mapes de satèl·lit\n"
 "no en Open Street Map."
 
@@ -59193,32 +59201,32 @@ msgstr "<b>Cap perfil</b>"
 #, kde-format
 msgctxt "@title:window"
 msgid "Soft Proofing Options"
-msgstr "Opcions de la provatura suau"
+msgstr "Opcions de la prova en pantalla"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:74
 #, kde-format
 msgid "Soft Proofing On"
-msgstr "Provatura suau activada"
+msgstr "Prova en pantalla activada"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:75
 #, kde-format
 msgid "Enable soft-proofing color managed view"
-msgstr "Activa la vista gestionada del color de la provatura suau"
+msgstr "Activa la vista gestionada del color de la prova en pantalla"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:76
 #, kde-format
 msgid "Soft Proofing Off"
-msgstr "Provatura suau desactivada"
+msgstr "Prova en pantalla desactivada"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:77
 #, kde-format
 msgid "Disable soft-proofing color managed view"
-msgstr "Desactiva la vista gestionada del color de la provatura suau"
+msgstr "Desactiva la vista gestionada del color de la prova en pantalla"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:84
 #, kde-format
 msgid "<b>Configure the Soft Proofing View</b>"
-msgstr "<b>Configura la vista de la provatura suau</b>"
+msgstr "<b>Configura la vista de la prova en pantalla</b>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:92
 #, kde-format
@@ -59234,7 +59242,7 @@ msgid ""
 "an image will be rendered via an output device.</p>"
 msgstr ""
 "<p>Trieu el perfil del dispositiu d'eixida (normalment la impressora). Este "
-"perfil s'utilitzarà per a fer una provatura suau, d'esta manera podreu "
+"perfil s'utilitzarà per a fer una prova en pantalla, d'esta manera podreu "
 "previsualitzar com es renderitzarà una imatge en un dispositiu d'eixida.</p>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:101
@@ -59666,13 +59674,13 @@ msgstr "Vista gestionada del color"
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing Options..."
-msgstr "Opcions de la provatura suau…"
+msgstr "Opcions de la prova en pantalla…"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:482
 #, kde-format
 msgctxt "@action"
 msgid "Soft Proofing View"
-msgstr "Vista de la provatura suau"
+msgstr "Vista de la prova en pantalla"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:490
 #, kde-format
@@ -64401,12 +64409,12 @@ msgstr "Editeu la busca emmagatzemada"
 msgid "Edit..."
 msgstr "Edita…"
 
-#: core/utilities/searchwindow/searchview.cpp:495
+#: core/utilities/searchwindow/searchview.cpp:497
 #, kde-format
 msgid "Add Search Group"
 msgstr "Afig un grup de busca"
 
-#: core/utilities/searchwindow/searchview.cpp:524
+#: core/utilities/searchwindow/searchview.cpp:526
 #, kde-format
 msgid "Try"
 msgstr "Prova"
@@ -66185,7 +66193,7 @@ msgstr "Opcions de la interfície"
 #: core/utilities/setup/editor/setupeditoriface.cpp:107
 #, kde-format
 msgid "&Use theme background color"
-msgstr "Utilit&za un tema de color de fons"
+msgstr "&Utilitza un tema de color de fons"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:110
 #, kde-format

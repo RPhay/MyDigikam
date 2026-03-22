@@ -88,8 +88,13 @@ Scripts to install compiled digiKam dependencies with MSVC under Windows
     - WinFlexBison 2.5 or later                         https://github.com/lexxmark/winflexbison/releases
         + Uncompress the binary archive to C:/bison
 
-    - RSync 3.2 or later for git-bash                   Tutorial: https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3
-        + Install Msys/RSync and deps packages          MSys repo: https://repo.msys2.org/msys/x86_64/
+    - RSync 3.2 or later for git-bash                   MSys repo: https://repo.msys2.org/msys/x86_64/
+        + Tutorial                                      https://prasaz.medium.com/add-rsync-to-windows-git-bash-f42736bae1b3
+        + Install Msys/RSync and deps packages          
+        + target: git-bash/usr install directory        C:/Program Files/Git/usr/
+
+    - MC 4.8 or later for git-bash                      MSys repo: https://repo.msys2.org/msys/x86_64/
+        + Install Msys/mc and deps packages             libssh2 ; glib2
         + target: git-bash/usr install directory        C:/Program Files/Git/usr/
 
     - Visual Studio 2022 or later                       https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022

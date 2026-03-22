@@ -77,8 +77,8 @@ public:
     TagRegion   region()                          const;
 
     /**
-     * Returns the list of tags excluded from face recognition
-     * so "rejected" matches are not matched again.
+     * @return the list of tags excluded from face recognition
+     * so "rejected" matches are not matched again
      */
     const QList<int>  rejectedFaceTagList()       const;
 
@@ -124,33 +124,33 @@ public:
     bool operator==(const FaceTagsIface& other)   const;
 
     /**
-     * Returns a list of all image tag properties for which flags are set.
+     * @return a list of all image tag properties for which flags are set.
      */
     static QStringList attributesForFlags(TypeFlags flags);
 
     /**
-     * Return the corresponding image tag property for the given type.
+     * @return the corresponding image tag property for the given type.
      */
     static QString attributeForType(Type type);
 
     /**
-     * Returns the Face Type corresponding to the given TagId.
+     * @return the Face Type corresponding to the given TagId.
      */
     static Type typeForId(int tagId);
 
     /**
-     * Return the Type for the given attribute. To distinguish between UnknownName
+     * @return the Type for the given attribute. To distinguish between UnknownName
      * and UnconfirmedName, the tagId must be given.
      */
     static Type typeForAttribute(const QString& attribute, int tagId = 0);
 
     /**
-     * Returns the string tagId + ',' + unconfirmedFace + ',' + regionXml.
+     * @return the string tagId + ',' + unconfirmedFace + ',' + regionXml.
      */
     QString getAutodetectedPersonString()       const;
 
     /**
-     * Writes the contents of this face - in a compact way - in the QVariant.
+     * @brief Writes the contents of this face - in a compact way - in the QVariant.
      * Only native QVariant types are used, that is, the QVariant will not have a custom type,
      * thus it can be compared by value by operator==.
      */
@@ -158,51 +158,52 @@ public:
     QVariant toVariant()                        const;
 
     /**
-     * Create a FaceTagsIface from the extraValues returned from ItemLister.
+     * @brief Create a FaceTagsIface from the extraValues returned from ItemLister.
      */
     static FaceTagsIface fromListing(qlonglong imageid, const QList<QVariant>& values);
 
     /**
-     * Remove the face from face training based on the current imageId, tagId, and rect hash.
+     * @brief Remove the face from face training based on the current imageId, tagId, and rect hash.
      */
     void removeFaceTraining()                   const;
 
     /**
-     * Generate a hash based on the imageId, tagId, and rect to uniquely identify this entry in the face training DB.
+     * @brief Generate a hash based on the imageId, tagId, and rect to uniquely identify this entry in the face training DB.
      */
     const QString hash()                        const;
 
     /**
-     * Adds a tag to the list of tags excluded from face recognition
-     * so "rejected" matches are not matched again.
+     * @brief adds a tag to the list of tags excluded from face recognition
+     * so "rejected" matches are not matched again
      */
     bool addRejectedFaceTag(int tagId);
 
     /**
+     * @brief replaces the list of tags excluded from face recognition
      * Adds a tag to the list of tags excluded from face recognition
      * so "rejected" matches are not matched again.
      */
     bool setRejectedFaceTagList(const QList<int>& tagList);
 
     /**
-     * Clears the list of tags excluded from face recognition.
+     * @brief Clears the list of tags excluded from face recognition.
      */
     void clearRejectedFaceTagList();
 
     /**
-     * Returns a string representation of m_rejectedFaceTagList
-     * separated by m_listSeparator.
+     * @return a string representation of rejected face tag list
+     * separated by list separator.
      */
     const QString rejectedFaceTagListToString() const;
 
     /**
-     * Returns a QList<int> from a string representation of m_rejectedFaceTagList
-     * separated by m_listSeparator.
+     * @return a QList<int> from a string representation of m_rejectedFaceTagList
+     * separated by listSeparator.
      */
     static const QList<int> stringToRejectedFaceTagList(const QString& str);
 
     /**
-     * Returns a string of the rect and the rejectedFaceTagList to be saved in the DB.
+     * @return a string of the rect and the rejected face tag list to be saved in the DB.
      */
     const QString faceTagExtendedDataDBString() const;
 
