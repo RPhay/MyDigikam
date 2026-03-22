@@ -71,7 +71,7 @@ BUGFIXES:
 046 --> 170620 - Export doesn't work with space in album name.
 047 --> 170272 - Undefined signature problem prevents uploading to Flickr.
 048 --> 165403 - Build issues.
-049 --> 
+049 --> 162441 - Unable to create an album.
 050 --> 
 051 --> 
 052 --> 
