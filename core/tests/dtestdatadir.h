@@ -23,8 +23,8 @@
  * @brief Class that provides convenient access to digiKam test data directories and files.
  *
  * When instantiated, the test-data directory is located dynamically; this algorithm works as long as
- * the current directory is the source root directory or any sub-directory.  After construction,
- * the function \ref isValid returns true if the test data was successfully located.
+ * the current directory is the source root directory or any sub-directory. After construction,
+ * the function @ref isValid returns true if the test data was successfully located.
  */
 
 class DTestDataDir
@@ -32,7 +32,7 @@ class DTestDataDir
 public:
 
     /**
-     * True if the instance is correctly instantiated.
+     * @return true if the instance is correctly instantiated.
      * Valid means that the desired root directory was located.
      */
     bool isValid() const
@@ -41,7 +41,7 @@ public:
     }
 
     /**
-     * Root directory of test data hierarchy.
+     * @return root directory of test data hierarchy.
      */
     QDir root() const
     {
@@ -49,7 +49,7 @@ public:
     }
 
     /**
-     * Path to any test file or directory, specified using relative path from root.
+     * @return path to any test file or directory, specified using relative path from root.
      */
     QString path(const QString& name) const
     {
@@ -57,7 +57,7 @@ public:
     }
 
     /**
-     * Any test directory, specified using relative path from root.
+     * @return any test directory, specified using relative path from root.
      */
     QDir dir(const QString& relPath) const
     {
@@ -65,7 +65,7 @@ public:
     }
 
     /**
-     * Any test file, specified using relative path from root.
+     * @return any test file, specified using relative path from root.
      */
     QFile file(const QString& name) const
     {
@@ -73,8 +73,8 @@ public:
     }
 
     /**
-     * Returns DTestDataDir for the digiKam Test Data root directory.
-     * This provides access to all files in Digikam Test Data.
+     * @return DTestDataDir for the digiKam Test Data root directory.
+     * This provides access to all files in digiKam Test Data.
      */
     static DTestDataDir TestDataRoot()
     {
@@ -82,10 +82,10 @@ public:
     }
 
     /**
-     * Returns DTestDataDir for a sub-tree of the digiKam Test Data.
+     * @return DTestDataDir for a sub-tree of the digiKam Test Data.
      * This provides access to files in the subtree.
      *
-     * \param subdirPath path of subdir, relative to the Digikam Test Data root
+     * @param subdirPath path of subdir, relative to the digiKam Test Data root.
      */
     static DTestDataDir TestData(const QString& subdirPath)
     {
@@ -101,22 +101,22 @@ private:
 
     static bool s_findDirectoryUpwards(const QDir& directory, const QString& target, QDir& result)
     {
-        QDir dir = directory;
+        QDir _dir = directory;
 
-        while (dir.exists(target) == false)
+        while (_dir.exists(target) == false)
         {
-            if (!dir.cdUp())
+            if (!_dir.cdUp())
             {
                 return false;
             }
         }
 
-        if (!dir.cd(target))
+        if (!_dir.cd(target))
         {
             return false;
         }
 
-        result = dir;
+        result = _dir;
 
         return true;
     }
@@ -129,7 +129,7 @@ private:
 protected:
 
     /**
-     * Constructor with internal instance creation.
+     * @brief Constructor with internal instance creation.
      */
     DTestDataDir()
     {
