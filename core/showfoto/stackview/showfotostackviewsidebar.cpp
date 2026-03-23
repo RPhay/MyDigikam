@@ -219,8 +219,8 @@ void ShowfotoStackViewSideBar::doLoadState()
 
     d->favts->readSettings();
 
-    int iconSize       = group.readEntry(entryName(d->configIconSizeEntry),      (int)ShowfotoStackViewList::SizeSmall);
-    d->view->setIconSize(QSize(iconSize, iconSize));
+    int iSize          = group.readEntry(entryName(d->configIconSizeEntry),      (int)ShowfotoStackViewList::SizeSmall);
+    d->view->setIconSize(QSize(iSize, iSize));
 
     QByteArray state   = group.readEntry(entryName(d->configSplitterStateEntry), QByteArray());
 

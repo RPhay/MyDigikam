@@ -318,7 +318,7 @@ ShowfotoItemInfo ShowfotoStackViewList::infoFromIndex(const QModelIndex& index) 
 void ShowfotoStackViewList::slotOpenInFileManager()
 {
     QModelIndex index  = currentIndex();
-    QList<QUrl> urls;
+    QList<QUrl> urlList;
 
     if (index.isValid())
     {
@@ -326,9 +326,9 @@ void ShowfotoStackViewList::slotOpenInFileManager()
 
         if (sitem)
         {
-            urls << QUrl::fromLocalFile(sitem->info().url.toLocalFile());
+            urlList << QUrl::fromLocalFile(sitem->info().url.toLocalFile());
 
-            DFileOperations::openInFileManager(urls);
+            DFileOperations::openInFileManager(urlList);
         }
     }
 }

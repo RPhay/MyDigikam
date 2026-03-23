@@ -81,14 +81,14 @@ void ShowfotoStackViewFavoriteItem::setName(const QString& name)
 
 QString ShowfotoStackViewFavoriteItem::hierarchyFromParent(const QString& name, ShowfotoStackViewFavoriteItem* const pitem)
 {
-    QString hierarchy = QLatin1String("/");
+    QString hrch = QLatin1String("/");
 
     if (pitem && !name.isEmpty())
     {
-        hierarchy = pitem->hierarchy() + name + QLatin1String("/");
+        hrch = pitem->hierarchy() + name + QLatin1String("/");
     }
 
-    return hierarchy;
+    return hrch;
 }
 
 QString ShowfotoStackViewFavoriteItem::name() const
