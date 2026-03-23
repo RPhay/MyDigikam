@@ -78,11 +78,11 @@ DMultiTabBarTab* DMultiTabBarFrame::tab(int id) const
 
     while (it.hasNext())
     {
-        DMultiTabBarTab* const tab = it.next();
+        DMultiTabBarTab* const mtab = it.next();
 
-        if (tab->id() == id)
+        if (mtab->id() == id)
         {
-            return tab;
+            return mtab;
         }
     }
 
@@ -91,13 +91,13 @@ DMultiTabBarTab* DMultiTabBarFrame::tab(int id) const
 
 void DMultiTabBarFrame::appendTab(const QIcon& pic, int id, const QString& text)
 {
-    DMultiTabBarTab* const tab = new DMultiTabBarTab(pic, text, id, this, d->position, d->style);
-    d->tabs.append(tab);
+    DMultiTabBarTab* const mtab = new DMultiTabBarTab(pic, text, id, this, d->position, d->style);
+    d->tabs.append(mtab);
 
     // Insert before the stretch.
 
-    d->mainLayout->insertWidget(d->tabs.size()-1, tab);
-    tab->show();
+    d->mainLayout->insertWidget(d->tabs.size()-1, mtab);
+    mtab->show();
 }
 
 void DMultiTabBarFrame::removeTab(int id)

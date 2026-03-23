@@ -54,6 +54,8 @@ public:
 
     Private() = default;
 
+public:
+
     QBoxLayout*             mainLayout  = nullptr;
     QList<DMultiTabBarTab*> tabs;
     Qt::Edge                position    = Qt::LeftEdge;
@@ -68,6 +70,8 @@ public:
 
     Private() = default;
 
+public:
+
     Qt::Edge                position    = Qt::LeftEdge;
     DMultiTabBar::TextStyle style       = DMultiTabBar::AllIconsText;
 };
@@ -79,6 +83,8 @@ class Q_DECL_HIDDEN DMultiTabBar::Private
 public:
 
     Private() = default;
+
+public:
 
     DMultiTabBarFrame*         internal     = nullptr;
     QBoxLayout*                layout       = nullptr;
@@ -101,6 +107,8 @@ public:
     {
     }
 
+public:
+
     QWidget* activeWidget   = nullptr;
     int      size           = 0;
 };
@@ -113,6 +121,8 @@ class Q_DECL_HIDDEN Sidebar::Private
 public:
 
     Private() = default;
+
+public:
 
     bool                          minimizedDefault          = false;
     bool                          minimized                 = false;
@@ -147,6 +157,8 @@ class Q_DECL_HIDDEN SidebarSplitter::Private
 public:
 
     Private() = default;
+
+public:
 
     QList<Sidebar*> sidebars;
 };
