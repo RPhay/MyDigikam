@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"POT-Creation-Date: 2026-03-23 00:41+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -42521,7 +42521,7 @@ msgstr "Thumbnail is null"
 msgid "File does not exist or is not a file"
 msgstr "File does not exist or is not a file"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:231
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "Cannot create thumbnail for %1"

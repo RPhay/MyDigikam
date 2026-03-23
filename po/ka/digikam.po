@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"POT-Creation-Date: 2026-03-23 00:41+0000\n"
 "PO-Revision-Date: 2026-03-20 03:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -40061,7 +40061,7 @@ msgstr "მინიატურა ნულოვანია"
 msgid "File does not exist or is not a file"
 msgstr "ფაილი არ არსებობს, ან ფაილი არაა"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:231
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "%1-ისთვის მინიატურის შექმნა შეუძლებელია"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"POT-Creation-Date: 2026-03-23 00:41+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -40470,7 +40470,7 @@ msgstr "छोटेफोटू नल (नइ) हे"
 msgid "File does not exist or is not a file"
 msgstr "चुने गे फोल्डर नइ मिलत हे, या पढ़े नइ जा सके हे"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:231
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "%1 बर छोटेफोटू बनाय नइ जा सके"

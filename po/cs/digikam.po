@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"POT-Creation-Date: 2026-03-23 00:41+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -40298,7 +40298,7 @@ msgstr "Náhled je prázdný"
 msgid "File does not exist or is not a file"
 msgstr "Soubor neexistuje nebo se nejedná o soubor"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:231
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "Nelze vytvořit náhled %1"

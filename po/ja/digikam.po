@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-20 00:41+0000\n"
+"POT-Creation-Date: 2026-03-23 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -42550,7 +42550,7 @@ msgstr "サムネイルが空です"
 msgid "File does not exist or is not a file"
 msgstr "選択されたフォルダは、存在しないか読み取り不可です"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:217
+#: core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp:231
 #, kde-format
 msgid "Cannot create thumbnail for %1"
 msgstr "%1 のサムネイルを作成できません"
