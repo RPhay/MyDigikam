@@ -61,14 +61,14 @@ public:
     QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
 
     /**
-     * Retrieve the thumbnail pixmap in given size for the ShowfotoItemModel::ThumbnailRole for
+     * @brief retrieve the thumbnail pixmap in given size for the ShowfotoItemModel::ThumbnailRole for
      * the given index from the given index, which must adhere to ShowfotoThumbnailModel semantics.
      */
     static QPixmap retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize);
 
 public:
 
-    /// Declared as public because of use in ShowfotoNormalDelegate class.
+    /// @note declared as public because of use in ShowfotoNormalDelegate class.
     class ShowfotoDelegatePrivate;
 
 protected:
@@ -82,13 +82,13 @@ protected:
     ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QWidget* const parent);
 
     /**
-     * Reimplement this to set contentWidth. This is the maximum width of all
+     * @brief reimplement this to set contentWidth. This is the maximum width of all
      * content rectangles, typically excluding margins on both sides.
      */
     virtual void updateContentWidth();
 
     /**
-     * In a subclass, you need to implement this method to set up the rects
+     * @brief in a subclass, you need to implement this method to set up the rects
      * for drawing. The paint() method operates depending on these rects.
      */
     virtual void updateRects() = 0;
@@ -96,7 +96,7 @@ protected:
     void clearCaches()                                                                                 override;
 
     /**
-     * Reimplement to clear caches based on model indexes (hash on row number etc.)
+     * @brief reimplement to clear caches based on model indexes (hash on row number etc.)
      * Change signals are listened to this is called whenever such properties become invalid.
      */
     virtual void clearModelDataCaches();
@@ -129,7 +129,7 @@ public:
     void setFlow(QListView::Flow flow);
 
     /**
-     * Returns the minimum or maximum viewport size in the limiting dimension,
+     * @return the minimum or maximum viewport size in the limiting dimension,
      * width or height, depending on current flow.
      */
     int maximumSize()                                        const;

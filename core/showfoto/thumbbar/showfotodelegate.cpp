@@ -192,11 +192,11 @@ void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, co
         pix = d->regPixmap;
     }
 
-    QRect actualPixmapRect = drawThumbnail(p, d->pixmapRect, pix, thumbnailPixmap(index));
+    QRect actualPixRect = drawThumbnail(p, d->pixmapRect, pix, thumbnailPixmap(index));
 
-    if (!actualPixmapRect.isNull())
+    if (!actualPixRect.isNull())
     {
-        const_cast<ShowfotoDelegate*>(this)->updateActualPixmapRect(index, actualPixmapRect);
+        const_cast<ShowfotoDelegate*>(this)->updateActualPixmapRect(index, actualPixRect);
     }
 
     p->setPen(isSelected ? qApp->palette().color(QPalette::HighlightedText)
@@ -220,7 +220,7 @@ void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, co
     if (ShowfotoSettings::instance()->getShowFormatOverThumbnail())
     {
         QString frm = info.mime;
-        drawImageFormat(p, actualPixmapRect, frm);
+        drawImageFormat(p, actualPixRect, frm);
     }
 
     if (ShowfotoSettings::instance()->getShowCoordinates() && info.photoInfo.hasCoordinates)

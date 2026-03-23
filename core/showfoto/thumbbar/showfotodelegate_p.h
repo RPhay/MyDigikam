@@ -51,6 +51,10 @@ public:
         actualPixmapRectCache.setMaxCost(250);
     }
 
+    void clearRects() override;
+
+public:
+
     int                    contentWidth             = 0;
 
     QRect                  dateRect;
@@ -70,10 +74,6 @@ public:
 
     ShowfotoThumbnailBar*  currentView              = nullptr;
     QAbstractItemModel*    currentModel             = nullptr;
-
-public:
-
-    void clearRects() override;
 };
 
 // --- ShowfotoThumbnailDelegate ----------------------------------------------------
