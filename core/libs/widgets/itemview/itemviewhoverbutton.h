@@ -43,14 +43,14 @@ public:
     void setVisible(bool visible) override;
 
     /**
-     * Reimplement to match the size of your icon
+     * @brief Reimplement to match the size of your icon
      */
     QSize sizeHint() const override = 0;
 
 protected:
 
     /**
-     * to call in children class constructors to init signal/slot connections.
+     * @brief to call in children class constructors to init signal/slot connections.
      */
     void setup();
 
@@ -68,12 +68,12 @@ protected:
     void paintEvent(QPaintEvent* event);
 
     /**
-     * Return your icon here. Will be queried again on toggle.
+     * @return your icon here. Will be queried again on toggle.
      */
     virtual QIcon icon() = 0;
 
     /**
-     * Optionally update tooltip here. Will be called again on state change.
+     * @brief Optionally update tooltip here. Will be called again on state change.
      */
     virtual void updateToolTip();
 
