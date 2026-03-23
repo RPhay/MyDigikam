@@ -96,7 +96,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     GraphicsDImgItem(QObject*);
 };
 

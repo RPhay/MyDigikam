@@ -66,5 +66,4 @@ public:
     bool                      magnifierEnabled  = false;
 };
 
-
 } // namespace Digikam

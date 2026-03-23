@@ -59,17 +59,18 @@ void GraphicsDImgView::updateMagnifier()
 
     // Use the zoom factor from the magnifier to adjust the source size area
 
-    qreal magnifierZoomFactor = d->magnifier->zoomFactor();
+    qreal factor     = d->magnifier->zoomFactor();
 
     // Compute the size of the source area accordingly with the magnifier zoom factor
 
-    int halfSize = (d->magnifier->magnifierSize() / 2) / magnifierZoomFactor;
+    int halfSize     = (d->magnifier->magnifierSize() / 2) / factor;
 
-    QRectF sourceRect(
+    QRectF sourceRect
+    (
         imagePos.x() - halfSize,
         imagePos.y() - halfSize,
-        d->magnifier->magnifierSize() / magnifierZoomFactor,
-        d->magnifier->magnifierSize() / magnifierZoomFactor
+        d->magnifier->magnifierSize() / factor,
+        d->magnifier->magnifierSize() / factor
     );
 
     // Clipping at image borders
