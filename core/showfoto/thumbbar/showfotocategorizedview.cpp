@@ -67,6 +67,8 @@ public:
 
     Private() = default;
 
+public:
+
     ShowfotoItemModel*       model              = nullptr;
     ShowfotoSortFilterModel* filterModel        = nullptr;
 
@@ -268,14 +270,14 @@ QList<QUrl> ShowfotoCategorizedView::urls() const
 QList<QUrl> ShowfotoCategorizedView::selectedUrls() const
 {
     QList<ShowfotoItemInfo> infos = selectedShowfotoItemInfos();
-    QList<QUrl>             urls;
+    QList<QUrl>             urlList;
 
     for (const ShowfotoItemInfo& info : std::as_const(infos))
     {
-        urls << info.url;
+        urlList << info.url;
     }
 
-    return urls;
+    return urlList;
 }
 
 void ShowfotoCategorizedView::toIndex(const QUrl& url)
