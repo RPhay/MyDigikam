@@ -239,9 +239,9 @@ void DImgPreviewItem::reload()
 {
     Q_D(DImgPreviewItem);
 
-    QString path = d->path;
+    QString pth = d->path;
     d->path.clear();
-    setPath(path);
+    setPath(pth);
 }
 
 DImgPreviewItem::State DImgPreviewItem::state() const

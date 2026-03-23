@@ -68,7 +68,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * For the progress bar on the top level.
+     * @note Used for the progress bar on the top level.
      */
     void signalStartedLoading();
     void signalLoadingProgress(float progress);
@@ -88,7 +88,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    // @note disabled
     DImgPreviewItem(QObject*);
 
     class DImgPreviewItemPrivate;

@@ -88,7 +88,7 @@ public:
 protected:
 
     /**
-     * Convenience method.
+     * @brief Convenience method.
      * Call this to tell the cache to remove stored images for filePath from the cache.
      * Calling this method is fast, you do not need to check if the file is contained in the cache.
      * Do not hold the CacheLock when calling this method.
@@ -104,7 +104,7 @@ protected:
 
 private:
 
-    // Disable
+    // @note disabled
     LoadingCacheFileWatch(const LoadingCacheFileWatch&)            = delete;
     LoadingCacheFileWatch& operator=(const LoadingCacheFileWatch&) = delete;
     LoadingCacheFileWatch(QObject*)                                = delete;
@@ -119,7 +119,7 @@ class DIGIKAM_EXPORT LoadingCache : public QObject
 public:
 
     /**
-     * @warning All methods of LoadingCache shall only be called when a CacheLock is held
+     * @warning All methods of LoadingCache shall only be called when a CacheLock is held.
      */
     class DIGIKAM_EXPORT CacheLock
     {
@@ -132,7 +132,7 @@ public:
 
     private:
 
-        // Disable
+        // @note disabled
         CacheLock(const CacheLock&)            = delete;
         CacheLock& operator=(const CacheLock&) = delete;
 
@@ -145,19 +145,19 @@ public:
     static void cleanUp();
 
     /**
-     * Retrieves an image for the given string from the cache,
+     * @brief Retrieves an image for the given string from the cache,
      * or 0 if no image is found.
      */
     DImg* retrieveImage(const QString& cacheKey) const;
 
     /**
-     * Returns whether the given DImg fits in the cache.
+     * @return whether the given DImg fits in the cache.
      */
     bool isCacheable(const DImg& img) const;
 
     /**
-     * Put image into for given string into the cache.
-     * Returns true if image has been put in the cache, false otherwise.
+     * @brief Put image into for given string into the cache.
+     * @return true if image has been put in the cache, false otherwise.
      * Ownership of the DImg instance is passed to the cache.
      * When it cannot be put in the cache it is deleted.
      * The third parameter specifies a file path that will be watched.
@@ -166,58 +166,58 @@ public:
     bool putImage(const QString& cacheKey, const DImg& img, const QString& filePath) const;
 
     /**
-     * Remove entries for the given cacheKey from the cache
+     * @brief Remove entries for the given cacheKey from the cache
      */
     void removeImage(const QString& cacheKey);
 
     /**
-     * Remove all entries from the cache
+     * @brief Remove all entries from the cache
      */
     void removeImages();
 
     // ------- Loading process management -----------------------------------
 
     /**
-     * Find the loading process for given cacheKey, or 0 if not found
+     * @brief Find the loading process for given cacheKey, or 0 if not found
      */
     LoadingProcess* retrieveLoadingProcess(const QString& cacheKey) const;
 
     /**
-     * Add a loading process to the list. Only one loading process
+     * @brief Add a loading process to the list. Only one loading process
      * for the same cache key is registered at a time.
      */
     void addLoadingProcess(LoadingProcess* const process);
 
     /**
-     * Remove loading process for given cache key
+     * @brief Remove loading process for given cache key
      */
     void removeLoadingProcess(LoadingProcess* const process);
 
     /**
-     * Notify all currently registered loading processes
+     * @brief Notify all currently registered loading processes
      */
     void notifyNewLoadingProcess(LoadingProcess* const process, const LoadingDescription& description);
 
     /**
-     * Sets the cache size in megabytes.
+     * @brief Sets the cache size in megabytes.
      * The thumbnail cache is not affected and setThumbnailCacheSize takes the maximum number.
      */
     void setCacheSize(int megabytes);
 
     /**
-     * Get the cache size in bytes.
+     * @brief Get the cache size in bytes.
      */
     quint64 getCacheSize() const;
 
     // ------- Thumbnail cache -----------------------------------
 
     /**
-     * The LoadingCache support both the caching of QImage and QPixmap objects.
+     * @brief The LoadingCache support both the caching of QImage and QPixmap objects.
      * QPixmaps can only be accessed from the main thread, so the tasks cannot access this cache.
      */
 
     /**
-     * Retrieves a thumbnail for the given filePath from the thumbnail cache,
+     * @brief Retrieves a thumbnail for the given filePath from the thumbnail cache,
      * or a 0 if the thumbnail is not found.
      */
     const QImage* retrieveThumbnail(const QString& cacheKey) const;
@@ -226,46 +226,47 @@ public:
     bool  hasThumbnailPixmap(const QString& cacheKey) const;
 
     /**
-     * Puts a thumbnail into the thumbnail cache.
+     * @brief Puts a thumbnail into the thumbnail cache.
      */
     void putThumbnail(const QString& cacheKey, const QImage& thumb, const QString& filePath);
     void putThumbnail(const QString& cacheKey, const QPixmap& thumb, const QString& filePath);
 
     /**
-     * Remove the thumbnail for the given file path from the thumbnail cache
+     * @brief Remove the thumbnail for the given file path from the thumbnail cache
      */
     void removeThumbnail(const QString& cacheKey);
 
     /**
-     * Remove all thumbnails
+     * @brief Remove all thumbnails
      */
     void removeThumbnails();
 
     /**
-     * Sets the size of the thumbnail cache
+     * @brief Sets the size of the thumbnail cache
+     *
      *  @param numberOfQImages  The maximum number of thumbnails of max possible size in QImage format
      *                          that will be cached. If the size of the images is smaller, a larger
      *                          number will be cached.
      *  @param numberOfQPixmaps The maximum number of thumbnails of max possible size in QPixmap format
      *                          that will be cached. If the size of the images is smaller, a larger
      *                          number will be cached.
-     * Note: The main cache is unaffected by this method,
-     *       and setCacheSize takes megabytes as parameter.
-     * Note: A good caching strategy will be to set one of the numbers to 0
-     * Default values: (0, 100)
+     * @note: The main cache is unaffected by this method,
+     *        and setCacheSize takes megabytes as parameter.
+     * @note: A good caching strategy will be to set one of the numbers to 0.
+     *        Default values: (0, 100)
      */
     void setThumbnailCacheSize(int numberOfQImages, int numberOfQPixmaps);
 
     // ------- File Watch Management -----------------------------------
 
     /**
-     * Sets a LoadingCacheFileWatch to watch the files contained in this cache.
+     * @brief Sets a LoadingCacheFileWatch to watch the files contained in this cache.
      * Ownership of this object is transferred to the cache.
      */
     void setFileWatch(LoadingCacheFileWatch* const watch);
 
     /**
-     * Remove all entries from cache that were loaded from filePath.
+     * @brief Remove all entries from cache that were loaded from filePath.
      * Emits relevant signals if notify = true.
      */
     void notifyFileChanged(const QString& filePath, bool notify = true);
@@ -273,7 +274,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * This signal is emitted when the cache is notified that a file was changed.
+     * @brief This signal is emitted when the cache is notified that a file was changed.
      * There is no information in this signal if the file was ever contained in the cache.
      * The signal may be emitted under CacheLock. Strongly consider a queued connection.
      */
@@ -285,7 +286,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disabled
+    // @note disabled
     LoadingCache();
     explicit LoadingCache(QObject*)              = delete;
     ~LoadingCache() override;

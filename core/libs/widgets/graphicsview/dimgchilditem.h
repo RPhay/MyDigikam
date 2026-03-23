@@ -34,18 +34,41 @@ class DIGIKAM_EXPORT DImgChildItem : public QGraphicsObject     // clazy:exclude
 public:
 
     /**
-     * This is a base class for items that are positioned on top
+     * @brief This is a base class for items that are positioned on top
      * of a GraphicsDImgItem, positioned in relative coordinates,
      * i.e. [0;1], on the image.
      * From the set relative size, the boundingRect() is calculated.
+     *
+     * This is a simple example. Just create
+     * new SimpleRectChildItem(item);
+     * where item is a GrahpicsDImgItem,
+     * and at the center of the image,
+     * a rectangle of 1% the size of the image will be drawn.
+     *
+     * class SimpleRectChildItem : public DImgChildItem
+     * {
+     * public:
+     *
+     *     SimpleRectChildItem(QGraphicsItem* const parent)
+     *         : DImgChildItem(parent)
+     *     {
+     *         setRelativePos(0.5, 0.5);
+     *         setRelativeSize(0.01, 0.01);
+     *     }
+     *
+     *     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
+     *     {
+     *         painter->setPen(Qt::red);
+     *         painter->drawRect(boundingRect());
+     *     }
+     * };
      */
-
     explicit DImgChildItem(QGraphicsItem* const parent = nullptr);
     ~DImgChildItem()                              override;
 
     /**
-     * Sets the position and size of this item, relative to the DImg displayed in the parent item.
-     * The values of relativePosition must be in the interval [0;1].
+     * @brief Sets the position and size of this item, relative to the DImg displayed in the parent item.
+     * The values of @param relativePosition must be in the interval [0-1].
      */
     void setRelativePos(const QPointF& relativePosition);
     void setRelativePos(qreal x, qreal y)
@@ -66,18 +89,17 @@ public:
     }
 
     /**
-     * Returns the position and size relative to the DImg displayed in the parent item.
-     * All four values are in the interval [0;1].
+     * @return the position and size relative to the DImg displayed in the parent item.
+     * All four values are in the interval [0-1].
      */
     QRectF  relativeRect()                  const;
     QPointF relativePos()                   const;
     QSizeF  relativeSize()                  const;
 
     /**
-     * Sets the position and size of this item, in coordinates of the original image.
+     * @brief Sets the position and size of this item, in coordinates of the original image.
      * Requires a valid parent item.
      */
-
     void setOriginalPos(const QPointF& posInOriginal);
     void setOriginalPos(qreal x, qreal y)
     {
@@ -97,8 +119,8 @@ public:
     }
 
     /**
-     * Returns the position and size in coordinates of the original image.
-     * Note that the return value is integer based. At high zoom rates,
+     * @return the position and size in coordinates of the original image.
+     * @note the return value is integer based. At high zoom rates,
      * different values of relativeRect() or zoomedRect() may result in the same originalRect(),
      * when one pixel in the original is represented by more than one pixel on screen.
      */
@@ -107,7 +129,7 @@ public:
     QSize  originalSize()                   const;
 
     /**
-     * Sets the position and size of this item, in coordinates of the parent DImg item.
+     * @brief Sets the position and size of this item, in coordinates of the parent DImg item.
      * This is accepting unscaled parent coordinates, just like the "normal" setPos() does.
      * Requires a valid parent item.
      */
@@ -131,12 +153,12 @@ public:
     }
 
     /**
-     * Equivalent to mapping the scene coordinates to the parent item, and calling setRect().
+     * @brief Equivalent to mapping the scene coordinates to the parent item, and calling setRect().
      */
     void setRectInSceneCoordinates(const QRectF& rect);
 
     /**
-     * Returns position and size of this item, in coordinates of the parent DImg with the current zoom.
+     * @return position and size of this item, in coordinates of the parent DImg with the current zoom.
      * This is the same result as QRectF(pos(), boundingRect()), boundingRect is virtual and may be
      * overridden by base classes.
      */
@@ -150,13 +172,14 @@ public:
     }
 
     /**
-     * If the parent item is a GraphicsDImgItem, return it,
-     * if the parent item is null or of a different class, returns 0.
+     * @brief If the parent item is a GraphicsDImgItem, return it,
+     * if the parent item is null or of a different class, returns nullptr.
      */
     GraphicsDImgItem* parentDImgItem()      const;
 
     /**
-     * Reimplemented. Returns a rectangle starting at (0,0) (pos() in parent coordinates)
+     * @brief Reimplemented.
+     * @return a rectangle starting at (0,0) (pos() in parent coordinates)
      * and has a size determined by the relative size.
      */
     QRectF boundingRect()                   const override;
@@ -168,7 +191,7 @@ protected Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * These signals are emitted when the geometry, relative to the original image,
+     * @brief These signals are emitted when the geometry, relative to the original image,
      * of this item has changed. This happens by calling any of the methods above.
      */
     void positionOnImageChanged();
@@ -176,7 +199,7 @@ Q_SIGNALS:
     void geometryOnImageChanged();
 
     /**
-     * These signals are emitted in any case when the geometry changed:
+     * @brief These signals are emitted in any case when the geometry changed:
      * Either after changing the geometry relative to the original image,
      * or when the size of the parent GraphicsDImgItem changed (zooming).
      * positionChanged() is equivalent to listening to xChanged() and yChanged().
