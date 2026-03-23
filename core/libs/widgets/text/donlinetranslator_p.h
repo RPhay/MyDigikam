@@ -43,6 +43,8 @@ public:
 
     explicit Private(DOnlineTranslator* const parent);
 
+public:
+
     QStateMachine*                                          stateMachine                 = nullptr;
     QNetworkAccessManager*                                  networkManager               = nullptr;
     QPointer<QNetworkReply>                                 currentReply;
@@ -59,8 +61,10 @@ public:
     QString                                                 translationTranslit;
     QString                                                 errorString;
 
-    // Self-hosted engines settings
-    // Can be empty, since free instances ignore api key parameter
+    /**
+     * @brief self-hosted engines settings.
+     * Can be empty, since free instances ignore api key parameter.
+     */
 
     QByteArray                                              libreApiKey;
     QString                                                 libreUrl;
@@ -75,21 +79,24 @@ public:
 
     bool                                                    onlyDetectLanguage           = false;
 
-    // Credentials that are parsed from the web version to receive the translation using the API
-
+    /**
+     *@brief credentials that are parsed from the web version to receive the translation using the API.
+     */
     static inline QString                                   s_yandexKey;
     static inline QByteArray                                s_bingKey;
     static inline QByteArray                                s_bingToken;
     static inline QString                                   s_bingIg;
     static inline QString                                   s_bingIid;
 
-    // These properties are used to store useful information in states
-
+    /**
+     * @brief these properties are used to store useful information in states.
+     */
     static constexpr char                                   s_textProperty[]               = "Text";
 
-    // Engines have a limit of characters per translation request.
-    // If the query is larger, then it should be split into several with getSplitIndex() helper function
-
+    /**
+     * @brief Engines have a limit of characters per translation request.
+     * If the query is larger, then it should be split into several with @method getSplitIndex() helper function.
+     */
     static constexpr int                                    s_googleTranslateLimit         = 5000;
     static constexpr int                                    s_yandexTranslateLimit         = 150;
     static constexpr int                                    s_yandexTranslitLimit          = 180;
@@ -116,6 +123,8 @@ class Q_DECL_HIDDEN DOnlineTts::Private
 public:
 
     Private() = default;
+
+public:
 
     QList<QUrl>                             media;
     QString                                 errorString;
