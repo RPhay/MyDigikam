@@ -107,11 +107,11 @@ DMultiTabBarButton* DMultiTabBar::button(int id) const
 
     while (it.hasNext())
     {
-        DMultiTabBarButton* const button = it.next();
+        DMultiTabBarButton* const btn = it.next();
 
-        if (button->id() == id)
+        if (btn->id() == id)
         {
-            return button;
+            return btn;
         }
     }
 
