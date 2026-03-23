@@ -759,11 +759,11 @@ QList<QObject*> ItemVisibilityController::items() const
 
 QList<QObject*> ItemVisibilityController::visibleItems(IncludeFadingOutMode mode) const
 {
-    QList<QObject*> items;
+    QList<QObject*> itms;
 
     if (d->control && d->control->hasVisibleItems(mode))
     {
-        items = d->control->m_items;
+        itms = d->control->m_items;
     }
 
     for (AnimationControl* const child : std::as_const(d->childControls))
@@ -771,11 +771,11 @@ QList<QObject*> ItemVisibilityController::visibleItems(IncludeFadingOutMode mode
         if (child->hasVisibleItems(mode))
         {
             // cppcheck-suppress useStlAlgorithm
-            items += child->m_items;
+            itms += child->m_items;
         }
     }
 
-    return items;
+    return itms;
 }
 
 bool ItemVisibilityController::shallBeShown() const

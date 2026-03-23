@@ -39,23 +39,23 @@ class DIGIKAM_EXPORT ItemVisibilityController : public QObject
 public:
 
     /**
-     *  This class handles complex visibility situations for items.
-     *  There is a 3-tiered approach:
-     *  1) shallBeShown determines if the items shall at any time be shown.
-     *     If it is false, items will never be shown.
-     *     Default is true, so you can ignore this setting.
-     *  2) visible determines if the items shall be shown now.
-     *     Only takes effect if shallBeShown is true.
-     *     Default is false: Initially, controlled items are hidden.
-     *  3) Opacity and individual item visibility:
-     *     When showing, items are first set to individually visible,
-     *     then their opacity is increased from 0 to 1.
-     *     When hiding, opacity is first decreased from 1 to 0,
-     *     then they are set individually to hidden.
-     *  Different types of items can be handled:
-     *  - a group of items with an "opacity" and "visible" property
-     *  - a single item with an "opacity" and "visible" property
-     *  - a proxy object with these properties (see above)
+     * @brief This class handles complex visibility situations for items.
+     * There is a 3-tiered approach:
+     * 1) shallBeShown determines if the items shall at any time be shown.
+     *    If it is false, items will never be shown.
+     *    Default is true, so you can ignore this setting.
+     * 2) visible determines if the items shall be shown now.
+     *    Only takes effect if shallBeShown is true.
+     *    Default is false: Initially, controlled items are hidden.
+     * 3) Opacity and individual item visibility:
+     *    When showing, items are first set to individually visible,
+     *    then their opacity is increased from 0 to 1.
+     *    When hiding, opacity is first decreased from 1 to 0,
+     *    then they are set individually to hidden.
+     * Different types of items can be handled:
+     * - a group of items with an "opacity" and "visible" property
+     * - a single item with an "opacity" and "visible" property
+     * - a proxy object with these properties (see above)
      */
 
     enum State
@@ -86,19 +86,19 @@ public:
     State state()                                                               const;
 
     /**
-     *  This returns the "result" of isVisible and shallBeShown:
-     *  Something is indeed visible on the scene.
-     *  Also returns false if no items are available.
+     * @return the "result" of isVisible and shallBeShown:
+     * Something is indeed visible on the scene.
+     * Also returns false if no items are available.
      */
     bool  hasVisibleItems(IncludeFadingOutMode mode = IncludeFadingOut)         const;
 
     /**
-     * Remove all animations
+     * @brief Remove all animations.
      */
     void clear();
 
     /**
-     * Add and remove objects. The given objects shall provide
+     * @brief Add and remove objects. The given objects shall provide
      * an "opacity" and a "visible" property.
      * You can, for convenience, use a ItemVisibilityControllerPropertyObject
      * as a value container, if your items do not provide these properties directly.
@@ -109,17 +109,17 @@ public:
     void removeItem(QObject* const object);
 
     /**
-     * Returns all items under control
+     * @return all items under control
      */
     QList<QObject*> items()                                                     const;
 
     /**
-     * Returns all currently visible items.
+     * @return all currently visible items.
      */
     QList<QObject*> visibleItems(IncludeFadingOutMode mode = IncludeFadingOut)  const;
 
     /**
-     * Allows to change the default parameters of all animations.
+     * @brief Allows to change the default parameters of all animations.
      */
     void setEasingCurve(const QEasingCurve& easing);
     void setAnimationDuration(int msecs);
@@ -127,38 +127,38 @@ public:
 Q_SIGNALS:
 
     /**
-     * Emitted when the (main) transition has finished
+     * @brief Emitted when the (main) transition has finished
      */
     void propertiesAssigned(bool visible);
 
     /**
-     * Emitted when a transition for a single item finished
+     * @brief Emitted when a transition for a single item finished
      * (see setItemVisible())
      */
     void propertiesAssignedToItem(QObject* item, bool visible);
 
     /**
-     * Emitted when hideAndRemoveItem has finished
+     * @brief Emitted when hideAndRemoveItem has finished
      */
     void hiddenAndRemoved(QObject* item);
 
 public Q_SLOTS:
 
     /**
-     * Adjusts the first condition - the items are shown if shallBeShown is true and isVisible is true
+     * @brief Adjusts the first condition - the items are shown if shallBeShown is true and isVisible is true
      */
     void setShallBeShown(bool shallBeShown);
     void setShallBeShownDirectly(bool shallBeShown);
 
     /**
-     * Sets a single item to be shown. Calling setVisible() will effectively
+     * @brief Sets a single item to be shown. Calling setVisible() will effectively
      * effect only this single item, as if calling setItemVisible().
      * Reset by calling with 0 or setShallBeShown().
      */
     void setItemThatShallBeShown(QObject* item);
 
     /**
-     * Adjusts the main condition.
+     * @brief Adjusts the main condition.
      * All items are affected.
      * If any items were shown or hidden separately, they will be resynchronized.
      * "Directly" means no animation is employed.
@@ -169,7 +169,7 @@ public Q_SLOTS:
     void setDirectlyVisible(bool visible);
 
     /**
-     * Shows or hides a single item.
+     * @brief Shows or hides a single item.
      * The item's status is changed individually.
      * The next call to the "global" method will take precedence again.
      * "Directly" means no animation is employed.
@@ -180,7 +180,7 @@ public Q_SLOTS:
     void setItemDirectlyVisible(QObject* item, bool visible);
 
     /**
-     * Hide the item, and then remove it.
+     * @brief Hide the item, and then remove it.
      * When finished, hiddenAndRemoved() is emitted.
      */
     void hideAndRemoveItem(QObject* item);
@@ -188,7 +188,7 @@ public Q_SLOTS:
 protected:
 
     /**
-     * Creates the animation for showing and hiding the given item.
+     * @brief Creates the animation for showing and hiding the given item.
      * The item is given for information only, you do not need to use it.
      * The default implementation creates and animation for "opacity"
      * from 0.0 to 1.0, using default easing curve and duration,
@@ -203,7 +203,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemVisibilityController(const ItemVisibilityController&)                         = delete;
     ItemVisibilityController& operator=(const ItemVisibilityController&)              = delete;
 
@@ -224,9 +224,9 @@ class DIGIKAM_EXPORT ItemVisibilityControllerPropertyObject : public QObject
 public:
 
     /**
-     *  You can use this object as a container providing the properties
-     *  set by ItemVisibilityController.
-     *  Connect to the signals accordingly, e.g. to trigger a repaint.
+     * @brief You can use this object as a container providing the properties
+     * set by ItemVisibilityController.
+     * Connect to the signals accordingly, e.g. to trigger a repaint.
      */
 
     explicit ItemVisibilityControllerPropertyObject(QObject* const parent = nullptr);
@@ -256,11 +256,12 @@ class DIGIKAM_EXPORT AnimatedVisibility : public ItemVisibilityControllerPropert
 
 public:
 
-    /** A convenience class:
-     *  The property object brings its own controller.
-     *  Ready to use: Just construct an object and connect to the signals.
-     *  Please note the difference between controller()->setVisible() and setVisible():
-     *  You want to call the controller's method!
+    /**
+     * @brief A convenience class:
+     * The property object brings its own controller.
+     * Ready to use: Just construct an object and connect to the signals.
+     * Please note the difference between controller()->setVisible() and setVisible():
+     * You want to call the controller's method!
      */
 
     explicit AnimatedVisibility(QObject* const parent = nullptr);
@@ -281,7 +282,7 @@ class DIGIKAM_EXPORT HidingStateChanger : public ItemVisibilityController
 public:
 
     /**
-     * This class provides a state change while fading in and out:
+     * @brief This class provides a state change while fading in and out:
      * When changeValue is called, first the items are hidden,
      * when this is finished, the property is assigned to the object.
      * Afterwards, the items are shown again.
@@ -291,7 +292,7 @@ public:
     explicit HidingStateChanger(QObject* const parent = nullptr);
 
     /**
-     * Convenience constructor: Sets target and property name
+     * @brief Convenience constructor: Sets target and property name
      */
     HidingStateChanger(QObject* const target, const QByteArray& property, QObject* const parent = nullptr);
 
@@ -305,12 +306,12 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * Emitted when the items were hidden and the target object's property changed
+     * @brief Emitted when the items were hidden and the target object's property changed
      */
     void stateChanged();
 
     /**
-     * Emitted when the items were hidden, the target object's property changed, and the items shown again
+     * @brief Emitted when the items were hidden, the target object's property changed, and the items shown again
      */
     void finished();
 
