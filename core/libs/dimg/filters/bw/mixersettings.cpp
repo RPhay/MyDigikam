@@ -500,7 +500,7 @@ void MixerSettings::loadSettings()
 {
     QUrl           loadGainsFileUrl;
     FILE*          fp = nullptr;
-    MixerContainer settings;
+    MixerContainer msettings;
 
     loadGainsFileUrl = DFileDialog::getOpenFileUrl(qApp->activeWindow(),
                                                    i18nc("@title:window", "Select Gimp Gains Mixer File to Load"),
@@ -538,47 +538,47 @@ void MixerSettings::loadSettings()
 
         if (strcmp(buf1, "true") == 0)
         {
-            settings.bMonochrome = true;
+            msettings.bMonochrome = true;
         }
         else
         {
-            settings.bMonochrome = false;
+            msettings.bMonochrome = false;
         }
 
         fscanf(fp, "%*s %256s", buf1);
 
         if (strcmp(buf1, "true") == 0)
         {
-            settings.bPreserveLum = true;
+            msettings.bPreserveLum = true;
         }
         else
         {
-            settings.bPreserveLum = false;
+            msettings.bPreserveLum = false;
         }
 
         fscanf(fp, "%*s %256s %256s %256s", buf1, buf2, buf3);
-        settings.redRedGain   = atof(buf1);
-        settings.redGreenGain = atof(buf2);
-        settings.redBlueGain  = atof(buf3);
+        msettings.redRedGain   = atof(buf1);
+        msettings.redGreenGain = atof(buf2);
+        msettings.redBlueGain  = atof(buf3);
 
         fscanf(fp, "%*s %256s %256s %256s", buf1, buf2, buf3);
-        settings.greenRedGain   = atof(buf1);
-        settings.greenGreenGain = atof(buf2);
-        settings.greenBlueGain  = atof(buf3);
+        msettings.greenRedGain   = atof(buf1);
+        msettings.greenGreenGain = atof(buf2);
+        msettings.greenBlueGain  = atof(buf3);
 
         fscanf(fp, "%*s %256s %256s %256s", buf1, buf2, buf3);
-        settings.blueRedGain   = atof(buf1);
-        settings.blueGreenGain = atof(buf2);
-        settings.blueBlueGain  = atof(buf3);
+        msettings.blueRedGain   = atof(buf1);
+        msettings.blueGreenGain = atof(buf2);
+        msettings.blueBlueGain  = atof(buf3);
 
         fscanf(fp, "%*s %256s %256s %256s", buf1, buf2, buf3);
-        settings.blackRedGain   = atof(buf1);
-        settings.blackGreenGain = atof(buf2);
-        settings.blackBlueGain  = atof(buf3);
+        msettings.blackRedGain   = atof(buf1);
+        msettings.blackGreenGain = atof(buf2);
+        msettings.blackBlueGain  = atof(buf3);
 
         fclose(fp);
 
-        setSettings(settings);
+        setSettings(msettings);
     }
     else
     {
