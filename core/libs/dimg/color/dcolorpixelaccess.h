@@ -19,11 +19,10 @@ namespace Digikam
 {
 
 /**
- * These methods are used in quite a few image effects,
+ * @brief These methods are used in quite a few image effects,
  * typically in loops iterating the data.
  * Providing them as inline methods allows the compiler to optimize better.
  */
-
 inline void DColor::setColor(uchar* const data, bool sixteenBit)
 {
     m_sixteenBit = sixteenBit;

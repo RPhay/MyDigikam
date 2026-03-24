@@ -53,8 +53,8 @@ void DImg::detach()
 
     if (old->data)
     {
-        size_t size = allocateData();
-        memcpy(m_priv->data, old->data, size);
+        size_t bsize = allocateData();
+        memcpy(m_priv->data, old->data, bsize);
     }
 }
 
@@ -81,12 +81,12 @@ void DImg::putImageData(uint width, uint height, bool sixteenBit, bool alpha, uc
     }
     else if (copyData)
     {
-        size_t size = allocateData();
+        size_t bsize = allocateData();
 
         // cppcheck-suppress knownConditionTrueFalse
         if (m_priv->data && data)
         {
-            memcpy(m_priv->data, data, size);
+            memcpy(m_priv->data, data, bsize);
         }
     }
     else
@@ -155,18 +155,18 @@ void DImg::copyImageData(const QExplicitlySharedDataPointer<Private>& src)
 
 size_t DImg::allocateData() const
 {
-    quint64 size = (quint64)m_priv->width  *
+    quint64 bsize = (quint64)m_priv->width  *
                     (quint64)m_priv->height *
                     (quint64)(m_priv->sixteenBit ? 8 : 4);
 
-    if (size >= std::numeric_limits<size_t>::max())
+    if (bsize >= std::numeric_limits<size_t>::max())
     {
         m_priv->null = true;
 
         return 0;
     }
 
-    m_priv->data = DImgLoader::new_failureTolerant(size);
+    m_priv->data = DImgLoader::new_failureTolerant(bsize);
 
     if (!m_priv->data)
     {
@@ -177,7 +177,7 @@ size_t DImg::allocateData() const
 
     m_priv->null = false;
 
-    return size;
+    return bsize;
 }
 
 void DImg::setImageDimension(uint width, uint height)

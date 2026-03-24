@@ -115,9 +115,9 @@ bool DImg::load(const QString& filePath,
     if (plugin && (!(loadFlags & DImgLoader::LoadPreview) || plugin->previewSupported()))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plugin->loaderName() << "file identified";
-        FORMAT format            = DImgStaticPriv::loaderNameToFormat(plugin->loaderName());
+        FORMAT frmt              = DImgStaticPriv::loaderNameToFormat(plugin->loaderName());
         DImgLoader* const loader = plugin->loader(this, rawDecodingSettings);
-        setAttribute(QLatin1String("detectedFileFormat"), format);
+        setAttribute(QLatin1String("detectedFileFormat"), frmt);
         loader->setLoadFlags(loadFlags);
 
         if (loader->load(filePath, observer))
@@ -146,9 +146,9 @@ bool DImg::load(const QString& filePath,
     if (plugin && (!(loadFlags & DImgLoader::LoadPreview) || plugin->previewSupported()))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plugin->loaderName() << "file identified (magic)";
-        FORMAT format            = DImgStaticPriv::loaderNameToFormat(plugin->loaderName());
+        FORMAT frmt              = DImgStaticPriv::loaderNameToFormat(plugin->loaderName());
         DImgLoader* const loader = plugin->loader(this, rawDecodingSettings);
-        setAttribute(QLatin1String("detectedFileFormat"), format);
+        setAttribute(QLatin1String("detectedFileFormat"), frmt);
         loader->setLoadFlags(loadFlags);
 
         if (loader->load(filePath, observer))
@@ -183,59 +183,60 @@ bool DImg::load(const QString& filePath,
 
 QString DImg::formatToMimeType(FORMAT frm)
 {
-    QString format;
+    QString frmstr;
 
     switch (frm)
     {
         case (NONE):
         {
-            return format;
+            return frmstr;
         }
 
         case (JPEG):
         {
-            format = QLatin1String("JPG");
+            frmstr = QLatin1String("JPG");
             break;
         }
 
         case (TIFF):
         {
-            format = QLatin1String("TIF");
+            frmstr = QLatin1String("TIF");
             break;
         }
 
         case (PNG):
         {
-            format = QLatin1String("PNG");
+            frmstr = QLatin1String("PNG");
             break;
         }
 
         case (JP2K):
         {
-            format = QLatin1String("JP2");
+            frmstr = QLatin1String("JP2");
             break;
         }
 
         case (PGF):
         {
-            format = QLatin1String("PGF");
+            frmstr = QLatin1String("PGF");
             break;
         }
 
         case (HEIF):
         {
-            format = QLatin1String("HEIC");
+            frmstr = QLatin1String("HEIC");
             break;
         }
 
         default:
         {
             // For QImage or ImageMagick based.
+
             break;
         }
     }
 
-    return format;
+    return frmstr;
 }
 
 bool DImg::save(const QString& filePath, FORMAT frm, DImgLoaderObserver* const observer)
@@ -300,18 +301,18 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
 
 DImg::FORMAT DImg::fileFormat(const QString& filePath)
 {
-    FORMAT format = DImg::NONE;
+    FORMAT frmt = DImg::NONE;
 
     if (filePath.isEmpty())
     {
-        return format;
+        return frmt;
     }
 
     QFileInfo fileInfo(filePath);
 
     if (!fileInfo.exists() || !fileInfo.isReadable())
     {
-        return format;
+        return frmt;
     }
 
     DPluginDImg* const plugin = DImgStaticPriv::pluginForFile(fileInfo, false);
@@ -319,10 +320,10 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
     if (plugin)
     {
         QString name = plugin->loaderName();
-        format       = DImgStaticPriv::loaderNameToFormat(name);
+        frmt         = DImgStaticPriv::loaderNameToFormat(name);
     }
 
-    return format;
+    return frmt;
 }
 
 QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const

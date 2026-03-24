@@ -34,12 +34,12 @@ class DIGIKAM_EXPORT DColor
 public:
 
     /**
-     * Initialize with default value, fully transparent eight bit black
+     * @brief Initialize with default value, fully transparent eight bit black
      */
     DColor() = default;
 
     /**
-     * Read value from data. Equivalent to setColor()
+     * @brief Read value from data. Equivalent to setColor()
      */
     explicit DColor(uchar* data, bool sixteenBit = false)
     {
@@ -47,7 +47,7 @@ public:
     }
 
     /**
-     * Initialize with given RGBA values
+     * @brief Initialize with given RGBA values
      */
     DColor(int red, int green, int blue, int alpha, bool sixteenBit)
         : m_red         (red),
@@ -59,24 +59,24 @@ public:
     }
 
     /**
-     * Read values from QColor, convert to sixteenBit of sixteenBit is true
+     * @brief Read values from QColor, convert to sixteenBit of sixteenBit is true
      */
     explicit DColor(const QColor& color, bool sixteenBit=false);
 
-    // Use default copy constructor, assignment operator and destructor
+    /// @note Use default copy constructor, assignment operator and destructor
 
     /**
-     * Read color values as RGBA from the given memory location.
-     * If sixteenBit is false, 4 bytes are read.
-     * If sixteenBit is true, 8 bytes are read.
+     * @brief Read color values as RGBA from the given memory location.
+     * If @param sixteenBit is false, 4 bytes are read.
+     * If @param sixteenBit is true, 8 bytes are read.
      * Inline method.
      */
     inline void setColor(uchar* const data, bool sixteenBit = false);
 
     /**
-     * Write the values of this color to the given memory location.
-     * If sixteenBit is false, 4 bytes are written.
-     * If sixteenBit is true, 8 bytes are written.
+     * @brief Write the values of this color to the given memory location.
+     * If @param sixteenBit is false, 4 bytes are written.
+     * If @param sixteenBit is true, 8 bytes are written.
      * Inline method.
      */
     inline void setPixel(uchar* const data) const;
@@ -144,14 +144,14 @@ public:
     }
 
     /**
-     * Convert the color values of this color to and from sixteen bit
-     * and set the sixteenBit value accordingly
+     * @brief Convert the color values of this color to and from sixteen bit
+     * and set the sixteen bit value accordingly
      */
     void convertToSixteenBit();
     void convertToEightBit();
 
     /**
-     * Premultiply and demultiply this color.
+     * @brief Premultiply and demultiply this color.
      * DImg stores the color non-premultiplied.
      * Inline methods.
      */
@@ -159,34 +159,34 @@ public:
     void demultiply();
 
     /**
-     * Return the current RGB color values of this color
+     * @return the current RGB color values of this color
      * in the HSL color space.
      * Alpha is ignored for the conversion.
      */
     void getHSL(int* const h, int* const s, int* const l) const;
 
     /**
-     * Set the RGB color values of this color
+     * @brief Set the RGB color values of this color
      * to the given HSL values converted to RGB.
      * Alpha is set to be fully opaque.
-     * sixteenBit determines both how the HSL values are interpreted
-     * and the sixteenBit value of this color after this operation.
+     * @param sixteenBit determines both how the HSL values are interpreted
+     * and the sixteen bit value of this color after this operation.
      */
     void setHSL(int h, int s, int l, bool sixteenBit);
 
     /**
-     * Return the current RGB color values of this color
+     * @return the current RGB color values of this color
      * in the YCrCb color space.
      * Alpha is ignored for the conversion.
      */
     void getYCbCr(double* const y, double* const cb, double* const cr) const;
 
     /**
-     * Set the RGB color values of this color
+     * @brief Set the RGB color values of this color
      * to the given YCrCb values converted to RGB.
      * Alpha is set to be fully opaque.
-     * sixteenBit determines both how the YCrCb values are interpreted
-     * and the sixteenBit value of this color after this operation.
+     * @param sixteenBit determines both how the YCrCb values are interpreted
+     * and the sixteen bit value of this color after this operation.
      */
     void setYCbCr(double y, double cb, double cr, bool sixteenBit);
 
@@ -202,7 +202,7 @@ private:
 public:
 
     /**
-     * Inline alpha blending helper functions.
+     * @brief Inline alpha blending helper functions.
      * These functions are used by DColorComposer.
      * Look at that code to learn how to use them for
      * composition if you want to use them in optimized code.

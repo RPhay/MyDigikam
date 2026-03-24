@@ -98,55 +98,55 @@ void DColor::getHSL(int* const h, int* const s, int* const l) const
 {
     double min;
     double max;
-    double red;
-    double green;
-    double blue;
+    double redv;
+    double greenv;
+    double bluev;
     double sum;
     double hue, sat, lig;
 
     double range = m_sixteenBit ? 65535.0 : 255.0;
-    red          = m_red   / range;
-    green        = m_green / range;
-    blue         = m_blue  / range;
+    redv         = m_red   / range;
+    greenv       = m_green / range;
+    bluev        = m_blue  / range;
 
-    if (red > green)
+    if (redv > greenv)
     {
-        if (red > blue)
+        if (redv > bluev)
         {
-            max = red;
+            max = redv;
         }
         else
         {
-            max = blue;
+            max = bluev;
         }
 
-        if (green < blue)
+        if (greenv < bluev)
         {
-            min = green;
+            min = greenv;
         }
         else
         {
-            min = blue;
+            min = bluev;
         }
     }
     else
     {
-        if (green > blue)
+        if (greenv > bluev)
         {
-            max = green;
+            max = greenv;
         }
         else
         {
-            max = blue;
+            max = bluev;
         }
 
-        if (red < blue)
+        if (redv < bluev)
         {
-            min = red;
+            min = redv;
         }
         else
         {
-            min = blue;
+            min = bluev;
         }
     }
 
@@ -168,17 +168,17 @@ void DColor::getHSL(int* const h, int* const s, int* const l) const
             sat = delta / (2 - sum);
         }
 
-        if      (red == max)
+        if      (redv == max)
         {
-            hue = (green - blue) / delta;
+            hue = (greenv - bluev) / delta;
         }
-        else if (green == max)
+        else if (greenv == max)
         {
-            hue = 2 + (blue - red) / delta;
+            hue = 2 + (bluev - redv) / delta;
         }
-        else if (blue == max)
+        else if (bluev == max)
         {
-            hue = 4 + (red - green) / delta;
+            hue = 4 + (redv - greenv) / delta;
         }
 
         if (hue < 0)

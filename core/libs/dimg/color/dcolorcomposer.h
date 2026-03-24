@@ -27,7 +27,7 @@ class DIGIKAM_EXPORT DColorComposer
 public:
 
     /**
-     * The available rules to combine src and destination color.
+     * @brief The available rules to combine src and destination color.
      *
      * For the Porter-Duff rules, the formula is
      *     component = (source * fs + destination * fd)
@@ -85,14 +85,14 @@ public:
     };
 
     /**
-     * Retrieve a DColorComposer object for one of the predefined rules.
+     * @brief Retrieve a DColorComposer object for one of the predefined rules.
      * The object needs to be deleted by the caller.
      */
     static DColorComposer* getComposer(CompositingOperation rule);
 
     /**
-     * Carry out the actual composition process.
-     * Src and Dest are composed and the result is written to dest.
+     * @brief Carry out the actual composition process.
+     * @param src and @param dest are composed and the result is written to the destination.
      * No pre-/demultiplication is done by this method, use the other overloaded
      * methods, which call this method, if you need  pre- or demultiplication
      * (you need it if any of the colors are read from or written to a DImg).
@@ -106,8 +106,8 @@ public:
     virtual void compose(DColor& dest, DColor& src) = 0;
 
     /**
-     * Compose the two colors by calling compose(dest, src).
-     * Pre- and demultiplication operations are done as specified.
+     * @brief Compose the two colors by calling compose(dest, src).
+     * Pre- and de-multiplication operations are done as specified.
      * For PorterDuff operations except PorterDuffNone, you need
      *
      * - PremultiplySrc    if src is not premultiplied (read from a DImg)
