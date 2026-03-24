@@ -129,17 +129,16 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
     QImage img(size(), QImage::Format_ARGB32);
     img.fill(0x00000000);      // Full transparent.
 
-    // NOTE: Qt4 do not provide anymore QImage::setAlphaChannel() because
-    // alpha channel is auto-detected during QImage->QPixmap conversion
-
-    uchar* bits = img.bits();
-
-    // NOTE: Using DImgScale before to compute Mask clamp to 65534 | 254. Why ?
+    /**
+     * @note Qt4 and later do not provide anymore QImage::setAlphaChannel() because
+     * alpha channel is auto-detected during QImage->QPixmap conversion.
+     */
+    uchar* ibits = img.bits();
 
     int    max  = lround(sixteenBit() ? 65535.0 - (65535.0 * expoSettings->overExposurePercent  / 100.0)
-                         : 255.0   - (255.0   * expoSettings->overExposurePercent  / 100.0));
+                                      : 255.0   - (255.0   * expoSettings->overExposurePercent  / 100.0));
     int    min  = lround(sixteenBit() ? 0.0     + (65535.0 * expoSettings->underExposurePercent / 100.0)
-                         : 0.0     + (255.0   * expoSettings->underExposurePercent / 100.0));
+                                      : 0.0     + (255.0   * expoSettings->underExposurePercent / 100.0));
 
     // --------------------------------------------------------
 
@@ -159,10 +158,10 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
 
     // --------------------------------------------------------
 
-    uint   dim   = m_priv->width * m_priv->height;
-    uchar* dptr  = bits;
-    int    s_blue, s_green, s_red;
-    bool   match = false;
+    uint   dim    = m_priv->width * m_priv->height;
+    uchar* dptr   = ibits;
+    int    s_blue = 0, s_green = 0, s_red = 0;
+    bool   match  = false;
 
     if (sixteenBit())
     {

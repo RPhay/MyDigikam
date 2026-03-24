@@ -266,14 +266,15 @@ void DImg::rotate(ANGLE angle)
 
         if (it != m_priv->attributes.end())
         {
-            QSize size = it.value().toSize();
-            it.value() = QSize(size.height(), size.width());
+            QSize isize = it.value().toSize();
+            it.value()  = QSize(isize.height(), isize.width());
         }
     }
 }
 
-// NOTE: This method have been tested in-deep with valgrind.
-
+/**
+ * @note This method have been tested in-deep with valgrind.
+ */
 void DImg::flip(FLIP direction)
 {
     if (isNull())

@@ -61,7 +61,9 @@ public:
         JP2K,
         PGF,
         HEIF,
+
         // Others file formats.
+
         RAW,
         QIMAGE  ///< QImage or ImageMagick
     };

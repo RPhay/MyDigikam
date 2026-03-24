@@ -100,11 +100,11 @@ QSize DImg::originalSize() const
 {
     if (hasAttribute(QLatin1String("originalSize")))
     {
-        QSize size = attribute(QLatin1String("originalSize")).toSize();
+        QSize osize = attribute(QLatin1String("originalSize")).toSize();
 
-        if (size.isValid() && !size.isNull())
+        if (osize.isValid() && !osize.isNull())
         {
-            return size;
+            return osize;
         }
     }
 
@@ -113,15 +113,17 @@ QSize DImg::originalSize() const
 
 QSize DImg::originalRatioSize() const
 {
-    QSize size = originalSize();
+    QSize osize = originalSize();
 
-    if (((width() < height()) && (size.width() > size.height())) ||
-        ((width() > height()) && (size.width() < size.height())))
+    if (
+        ((width() < height()) && (osize.width() > osize.height())) ||
+        ((width() > height()) && (osize.width() < osize.height()))
+       )
     {
-        size.transpose();
+        osize.transpose();
     }
 
-    return size;
+    return osize;
 }
 
 DImg::FORMAT DImg::detectedFormat() const

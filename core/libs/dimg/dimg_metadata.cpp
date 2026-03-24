@@ -549,8 +549,8 @@ QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
 
 #endif
 
-            QByteArray size;
-            md5.addData(size.setNum(qfile.size()));
+            QByteArray bsize;
+            md5.addData(bsize.setNum(qfile.size()));
 
             hash = md5.result().toHex();
         }
@@ -575,16 +575,16 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
     // Specified size: 100 kB; but limit to file size
 
     const qint64 specifiedSize = 100 * 1024; // 100 kB
-    qint64 size                = qMin(file.size(), specifiedSize);
+    qint64 fsize               = qMin(file.size(), specifiedSize);
 
-    if (size)
+    if (fsize)
     {
-        QScopedArrayPointer<char> databuf(new char[size] { 0 });
+        QScopedArrayPointer<char> databuf(new char[fsize] { 0 });
         int read;
 
         // Read first 100 kB
 
-        if ((read = file.read(databuf.data(), size)) > 0)
+        if ((read = file.read(databuf.data(), fsize)) > 0)
         {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))
@@ -601,9 +601,9 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
 
         // Read last 100 kB
 
-        file.seek(file.size() - size);
+        file.seek(file.size() - fsize);
 
-        if ((read = file.read(databuf.data(), size)) > 0)
+        if ((read = file.read(databuf.data(), fsize)) > 0)
         {
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 3, 0))

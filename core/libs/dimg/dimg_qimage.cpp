@@ -26,10 +26,10 @@ QImage DImg::copyQImage() const
         return QImage();
     }
 
-    QImage::Format format = sixteenBit() ? QImage::Format_RGBA64
-                                         : QImage::Format_ARGB32;
+    QImage::Format frmt = sixteenBit() ? QImage::Format_RGBA64
+                                       : QImage::Format_ARGB32;
 
-    QImage img(width(), height(), format);
+    QImage img(width(), height(), frmt);
 
     if (img.isNull())
     {
