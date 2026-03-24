@@ -60,7 +60,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     SyncJob();
     explicit SyncJob(QObject*) = delete;
     ~SyncJob() override;

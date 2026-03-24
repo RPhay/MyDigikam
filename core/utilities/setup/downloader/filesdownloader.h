@@ -67,7 +67,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     FilesDownloader(const FilesDownloader&)            = delete;
     FilesDownloader& operator=(const FilesDownloader&) = delete;
 

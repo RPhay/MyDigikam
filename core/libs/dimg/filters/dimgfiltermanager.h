@@ -102,7 +102,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DImgFilterManager(const DImgFilterManager&)            = delete;
     DImgFilterManager& operator=(const DImgFilterManager&) = delete;
 

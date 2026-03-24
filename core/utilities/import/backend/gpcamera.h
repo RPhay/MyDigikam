@@ -93,7 +93,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit GPCamera(QObject*) = delete;
 
 private:

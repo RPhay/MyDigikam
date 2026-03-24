@@ -40,7 +40,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit FaceClassifierBase(QObject*)                                      = delete;
     FaceClassifierBase(const FaceClassifierBase&)                              = delete;
 };

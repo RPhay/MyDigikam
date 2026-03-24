@@ -59,7 +59,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     FacePipelineRetrain()                                       = delete;
     FacePipelineRetrain(QObject* const)                         = delete;
     FacePipelineRetrain(const FacePipelineRetrain&)             = delete;

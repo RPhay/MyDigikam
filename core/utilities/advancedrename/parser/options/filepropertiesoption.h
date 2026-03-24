@@ -42,7 +42,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     FilePropertiesOption(QObject*)                               = delete;
     FilePropertiesOption(const FilePropertiesOption&)            = delete;
     FilePropertiesOption& operator=(const FilePropertiesOption&) = delete;

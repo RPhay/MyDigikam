@@ -57,7 +57,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit Button(QObject*);
 
 private:

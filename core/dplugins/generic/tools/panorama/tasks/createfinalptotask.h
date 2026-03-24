@@ -50,7 +50,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CreateFinalPtoTask() = delete;
 
     Q_DISABLE_COPY(CreateFinalPtoTask)

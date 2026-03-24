@@ -161,7 +161,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     PrintConfig();
     explicit PrintConfig(QObject*) = delete;
 

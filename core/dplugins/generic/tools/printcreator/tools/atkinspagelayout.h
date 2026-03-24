@@ -68,7 +68,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AtkinsPageLayout(const AtkinsPageLayout&)            = delete;
     AtkinsPageLayout& operator=(const AtkinsPageLayout&) = delete;
 

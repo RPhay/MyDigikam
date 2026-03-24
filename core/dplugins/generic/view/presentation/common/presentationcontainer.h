@@ -119,7 +119,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     PresentationContainer(const PresentationContainer&)            = delete;
     PresentationContainer& operator=(const PresentationContainer&) = delete;
 };

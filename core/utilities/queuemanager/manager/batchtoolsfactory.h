@@ -46,7 +46,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit BatchToolsFactory(QObject*) = delete;
 
 private:

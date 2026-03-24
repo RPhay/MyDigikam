@@ -187,7 +187,7 @@ public:
 
 private:
 
-    SignatureMap& operator=(const SignatureMap&); // Disable
+    SignatureMap& operator=(const SignatureMap&); /// @note disabled
 };
 
 // ---------------------------------------------------------------------------------

@@ -69,7 +69,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     BenchmarkMessageDisplay(QWidget*);
 };
 

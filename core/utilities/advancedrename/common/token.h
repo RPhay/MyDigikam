@@ -95,7 +95,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     Token(QObject*)                = delete;
     Token(const Token&)            = delete;
     Token& operator=(const Token&) = delete;

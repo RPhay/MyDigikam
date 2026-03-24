@@ -64,7 +64,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ActionTask(QObject*) = delete;
 
 private:

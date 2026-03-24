@@ -84,7 +84,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     LightTableThumbBar(const LightTableThumbBar&)            = delete;
     LightTableThumbBar& operator=(const LightTableThumbBar&) = delete;
 

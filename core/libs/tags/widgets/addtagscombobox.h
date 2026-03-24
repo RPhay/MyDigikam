@@ -103,7 +103,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     void setEditable(bool editable);
 
 private:

@@ -47,7 +47,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DatabaseServerStarter(QObject*) = delete;
 
 private:

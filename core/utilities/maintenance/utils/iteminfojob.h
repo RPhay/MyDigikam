@@ -53,7 +53,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemInfoJob(QObject*) = delete;
 
 private:

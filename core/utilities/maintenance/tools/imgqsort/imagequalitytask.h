@@ -58,7 +58,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImageQualityTask(QObject*) = delete;
 
 private:

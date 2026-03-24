@@ -66,7 +66,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit RajceCommand(QObject*)              = delete;
     RajceCommand(const RajceCommand&)            = delete;
     RajceCommand& operator=(const RajceCommand&) = delete;
@@ -94,7 +94,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit LoginCommand(QObject*) = delete;
 };
 
@@ -115,7 +115,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit OpenAlbumCommand(QObject*) = delete;
 };
 
@@ -139,7 +139,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit CreateAlbumCommand(QObject*) = delete;
 };
 
@@ -160,7 +160,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit CloseAlbumCommand(QObject*) = delete;
 };
 
@@ -181,7 +181,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AlbumListCommand(QObject*) = delete;
 };
 
@@ -213,7 +213,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AddPhotoCommand(QObject*) = delete;
 
 private:

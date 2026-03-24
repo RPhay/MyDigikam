@@ -285,7 +285,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     MetadataHub(const MetadataHub&)            = delete;
     MetadataHub& operator=(const MetadataHub&) = delete;
 };

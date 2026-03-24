@@ -193,7 +193,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     EditorCore(QObject*);
 
 private:

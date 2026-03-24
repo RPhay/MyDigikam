@@ -301,7 +301,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     CollectionScanner(QObject*) = delete;
 
     class Private;

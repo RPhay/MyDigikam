@@ -264,7 +264,7 @@ public:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit DRawDecoder(QObject*) = delete;
 
     Private* const d = nullptr;

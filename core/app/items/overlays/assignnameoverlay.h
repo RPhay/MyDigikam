@@ -77,7 +77,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     AssignNameOverlay() = delete;
 
 private:

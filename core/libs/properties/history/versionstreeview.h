@@ -72,7 +72,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     VersionsTreeView(const VersionsTreeView&)            = delete;
     VersionsTreeView& operator=(const VersionsTreeView&) = delete;
 };

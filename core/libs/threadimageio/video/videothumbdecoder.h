@@ -53,7 +53,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     VideoThumbDecoder(const VideoThumbDecoder&)            = delete;
     VideoThumbDecoder& operator=(const VideoThumbDecoder&) = delete;
 

@@ -54,7 +54,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     VideoThumbWriter(const VideoThumbWriter&)            = delete;
     VideoThumbWriter& operator=(const VideoThumbWriter&) = delete;
 };

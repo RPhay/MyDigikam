@@ -45,7 +45,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     HuginExecutorTask() = delete;
 
     Q_DISABLE_COPY(HuginExecutorTask)

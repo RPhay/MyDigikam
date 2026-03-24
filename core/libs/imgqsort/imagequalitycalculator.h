@@ -54,7 +54,7 @@ private:
     void adjustWeightByQualityLevel()           const;
     int  numberDetectors()                      const;
 
-    // Disable
+    /// @note disabled
     ImageQualityCalculator(const ImageQualityCalculator&)            = delete;
     ImageQualityCalculator& operator=(const ImageQualityCalculator&) = delete;
 

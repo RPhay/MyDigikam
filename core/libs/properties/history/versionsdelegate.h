@@ -79,7 +79,7 @@ protected:
 
 private:
 
-    VersionsDelegate(); // Disable default constructor.
+    VersionsDelegate(); /// @note disabled default constructor.
 
 private:
 

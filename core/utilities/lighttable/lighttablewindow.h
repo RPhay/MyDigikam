@@ -75,7 +75,7 @@ private:
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);
 
-    // Disable
+    /// @note disabled
     LightTableWindow();
     explicit LightTableWindow(QWidget*);
 

@@ -33,7 +33,7 @@ public:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit MysqlUpgradeBinary(QObject*) = delete;
 };
 

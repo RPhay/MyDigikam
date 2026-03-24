@@ -88,7 +88,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemAttributesWatch();
     explicit ItemAttributesWatch(QObject*) = delete;
     ~ItemAttributesWatch() override;

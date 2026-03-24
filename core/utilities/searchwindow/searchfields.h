@@ -122,7 +122,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchField(const SearchField&)            = delete;
     SearchField& operator=(const SearchField&) = delete;
 };
@@ -156,7 +156,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldText(const SearchFieldText&)            = delete;
     SearchFieldText& operator=(const SearchFieldText&) = delete;
 };
@@ -178,7 +178,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldKeyword(const SearchFieldKeyword&)            = delete;
     SearchFieldKeyword& operator=(const SearchFieldKeyword&) = delete;
 };
@@ -228,7 +228,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldRangeInt(const SearchFieldRangeInt&)            = delete;
     SearchFieldRangeInt& operator=(const SearchFieldRangeInt&) = delete;
 };
@@ -278,7 +278,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldRangeDouble(const SearchFieldRangeDouble&)            = delete;
     SearchFieldRangeDouble& operator=(const SearchFieldRangeDouble&) = delete;
 };
@@ -329,7 +329,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldRangeDate(const SearchFieldRangeDate&)            = delete;
     SearchFieldRangeDate& operator=(const SearchFieldRangeDate&) = delete;
 };
@@ -368,7 +368,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldRangeTime(const SearchFieldRangeTime&)            = delete;
     SearchFieldRangeTime& operator=(const SearchFieldRangeTime&) = delete;
 };
@@ -413,7 +413,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldRecentModified(const SearchFieldRecentModified&)            = delete;
     SearchFieldRecentModified& operator=(const SearchFieldRecentModified&) = delete;
 };
@@ -468,7 +468,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldChoice(const SearchFieldChoice&)            = delete;
     SearchFieldChoice& operator=(const SearchFieldChoice&) = delete;
 };
@@ -529,7 +529,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldAlbum(const SearchFieldAlbum&)            = delete;
     SearchFieldAlbum& operator=(const SearchFieldAlbum&) = delete;
 };
@@ -568,7 +568,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldRating(const SearchFieldRating&)            = delete;
     SearchFieldRating& operator=(const SearchFieldRating&) = delete;
 };
@@ -601,7 +601,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldComboBox(const SearchFieldComboBox&)            = delete;
     SearchFieldComboBox& operator=(const SearchFieldComboBox&) = delete;
 };
@@ -638,7 +638,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldCheckBox(const SearchFieldCheckBox&)            = delete;
     SearchFieldCheckBox& operator=(const SearchFieldCheckBox&) = delete;
 };
@@ -660,7 +660,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldColorDepth(const SearchFieldColorDepth&)            = delete;
     SearchFieldColorDepth& operator=(const SearchFieldColorDepth&) = delete;
 };
@@ -682,7 +682,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldPageOrientation(const SearchFieldPageOrientation&)            = delete;
     SearchFieldPageOrientation& operator=(const SearchFieldPageOrientation&) = delete;
 };
@@ -717,7 +717,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldLabels(const SearchFieldLabels&)            = delete;
     SearchFieldLabels& operator=(const SearchFieldLabels&) = delete;
 };
@@ -753,7 +753,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldMonthDay(const SearchFieldMonthDay&)            = delete;
     SearchFieldMonthDay& operator=(const SearchFieldMonthDay&) = delete;
 };

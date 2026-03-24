@@ -51,7 +51,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     PresentationLoader(const PresentationLoader&)            = delete;
     PresentationLoader& operator=(const PresentationLoader&) = delete;
 

@@ -53,7 +53,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     MetadataSyncTask(QObject*) = delete;
 
 private:

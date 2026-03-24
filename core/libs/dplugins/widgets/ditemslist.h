@@ -315,7 +315,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     DItemsList() = delete;
 
     class Private;

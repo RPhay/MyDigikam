@@ -88,7 +88,7 @@ public Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     DbEngineErrorHandler(QObject*) = delete;
 };
 

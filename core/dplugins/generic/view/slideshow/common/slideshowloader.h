@@ -116,7 +116,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit SlideShowLoader(QWidget*) = delete;
 
 private:

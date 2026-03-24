@@ -49,7 +49,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DSplashScreen(QWidget*) = delete;
 
 private:

@@ -58,7 +58,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DItemDrag(QObject*) = delete;
 };
 
@@ -83,7 +83,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DAlbumDrag(QObject*) = delete;
 };
 
@@ -108,7 +108,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DTagListDrag(QObject*) = delete;
 };
 
@@ -133,7 +133,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DCameraItemListDrag(QObject*) = delete;
 };
 
@@ -158,7 +158,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DCameraDragObject(QObject*) = delete;
 };
 

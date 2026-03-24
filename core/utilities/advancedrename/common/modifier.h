@@ -38,7 +38,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     Modifier(QObject*)                   = delete;
     Modifier(const Modifier&)            = delete;
     Modifier& operator=(const Modifier&) = delete;

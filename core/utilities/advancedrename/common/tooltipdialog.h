@@ -35,7 +35,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     TooltipDialog(const TooltipDialog&)            = delete;
     TooltipDialog& operator=(const TooltipDialog&) = delete;
 

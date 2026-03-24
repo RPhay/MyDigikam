@@ -80,7 +80,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     LensDistortionPixelAccess(const LensDistortionPixelAccess&)            = delete;
     LensDistortionPixelAccess& operator=(const LensDistortionPixelAccess&) = delete;
 };

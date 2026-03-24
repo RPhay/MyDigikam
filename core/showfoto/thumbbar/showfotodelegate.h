@@ -149,7 +149,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ShowfotoThumbnailDelegate(QObject*) = delete;
 
 private:

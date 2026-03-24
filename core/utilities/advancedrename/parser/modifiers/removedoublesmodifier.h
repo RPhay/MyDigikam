@@ -33,7 +33,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit RemoveDoublesModifier(QObject*)                       = delete;
     RemoveDoublesModifier(const RemoveDoublesModifier&)            = delete;
     RemoveDoublesModifier& operator=(const RemoveDoublesModifier&) = delete;

@@ -199,7 +199,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImportCategorizedView(const ImportCategorizedView&)            = delete;
     ImportCategorizedView& operator=(const ImportCategorizedView&) = delete;
 

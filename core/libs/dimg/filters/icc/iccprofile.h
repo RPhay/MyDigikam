@@ -190,7 +190,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     LcmsLock(const LcmsLock&)            = delete;
     LcmsLock& operator=(const LcmsLock&) = delete;
 };

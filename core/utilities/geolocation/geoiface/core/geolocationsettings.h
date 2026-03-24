@@ -96,7 +96,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit GeolocationSettings(QObject*);
 
     void readFromConfig();

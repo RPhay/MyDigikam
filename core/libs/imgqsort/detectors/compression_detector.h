@@ -43,7 +43,7 @@ private:
 
     float normalize(const float number);
 
-    // Disable
+    /// @note disabled
     explicit CompressionDetector(QObject*);
 
 private:

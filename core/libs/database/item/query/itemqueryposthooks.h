@@ -43,7 +43,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemQueryPostHook(const ItemQueryPostHook&)            = delete;
     ItemQueryPostHook& operator=(const ItemQueryPostHook&) = delete;
 };
@@ -74,7 +74,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemQueryPostHooks(const ItemQueryPostHooks&)            = delete;
     ItemQueryPostHooks& operator=(const ItemQueryPostHooks&) = delete;
 };

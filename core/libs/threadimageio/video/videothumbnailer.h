@@ -68,7 +68,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     VideoThumbnailer(const VideoThumbnailer&)            = delete;
     VideoThumbnailer& operator=(const VideoThumbnailer&) = delete;
 

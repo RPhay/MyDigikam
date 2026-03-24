@@ -89,7 +89,7 @@ private:
     QRect   repositionRect()              override;
     QString tipContents()                 override;
 
-    // Disable
+    /// @note disabled
     explicit ImageDialogToolTip(QWidget*);
 
 private:
@@ -132,7 +132,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ImageDialogIconProvider(QObject*);
 
 private:
@@ -176,7 +176,7 @@ private:
     void hideToolTip();
     bool acceptToolTip(const QUrl& url)                         const;
 
-    // Disable
+    /// @note disabled
     ImageDialog(const ImageDialog&)            = delete;
     ImageDialog& operator=(const ImageDialog&) = delete;
 

@@ -872,7 +872,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AlbumManager(QObject*) = delete;
 
 public:

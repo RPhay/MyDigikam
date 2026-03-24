@@ -304,7 +304,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit TagsCache(QObject*) = delete;
 
     void initialize();

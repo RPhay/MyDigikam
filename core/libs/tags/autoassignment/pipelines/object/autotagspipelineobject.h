@@ -49,7 +49,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsPipelineObject()                                    = delete;
     AutotagsPipelineObject(QObject*)                            = delete;
     AutotagsPipelineObject(const AutotagsPipelineObject&)       = delete;

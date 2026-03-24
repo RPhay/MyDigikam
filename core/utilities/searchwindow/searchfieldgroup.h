@@ -76,7 +76,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchFieldGroup(QWidget*) = delete;
 };
 

@@ -56,7 +56,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     PreviewLoadingTask(const PreviewLoadingTask&)            = delete;
     PreviewLoadingTask& operator=(const PreviewLoadingTask&) = delete;
 };

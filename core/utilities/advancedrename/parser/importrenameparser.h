@@ -31,7 +31,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImportRenameParser(const ImportRenameParser&)            = delete;
     ImportRenameParser& operator=(const ImportRenameParser&) = delete;
 };

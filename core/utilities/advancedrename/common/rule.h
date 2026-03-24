@@ -173,7 +173,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     Rule(QObject*)               = delete;
     Rule(const Rule&)            = delete;
     Rule& operator=(const Rule&) = delete;

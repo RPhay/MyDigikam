@@ -38,7 +38,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FunnelReal(const FunnelReal&)            = delete;
     FunnelReal& operator=(const FunnelReal&) = delete;
 

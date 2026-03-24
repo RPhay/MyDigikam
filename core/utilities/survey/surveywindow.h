@@ -81,7 +81,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     SurveyWindow();
     explicit SurveyWindow(QWidget*);
 

@@ -62,7 +62,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AdvPrintTask(QObject*) = delete;
 
 private:

@@ -105,7 +105,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     FocusPointGroup()                                   = delete;
     FocusPointGroup(const FocusPointGroup&)             = delete;
     FocusPointGroup& operator=(const FocusPointGroup&)  = delete;

@@ -32,7 +32,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit CaseModifier(QObject*)              = delete;
     CaseModifier(const CaseModifier&)            = delete;
     CaseModifier& operator=(const CaseModifier&) = delete;

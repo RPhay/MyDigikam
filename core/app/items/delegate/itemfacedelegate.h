@@ -46,7 +46,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemFaceDelegate(QObject*) = delete;
 
 private:

@@ -184,7 +184,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     StateSavingObject(const StateSavingObject&)            = delete;
     StateSavingObject& operator=(const StateSavingObject&) = delete;
 

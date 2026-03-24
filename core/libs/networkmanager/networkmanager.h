@@ -50,7 +50,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit NetworkManager(QObject*) = delete;
 
 private:

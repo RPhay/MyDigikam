@@ -133,7 +133,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit CoreDbAccess(bool);
     CoreDbAccess(const CoreDbAccess&)            = delete;
     CoreDbAccess& operator=(const CoreDbAccess&) = delete;
@@ -162,7 +162,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     CoreDbAccessUnlock(const CoreDbAccessUnlock&)            = delete;
     CoreDbAccessUnlock& operator=(const CoreDbAccessUnlock&) = delete;
 

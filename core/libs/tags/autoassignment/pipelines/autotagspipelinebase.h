@@ -102,7 +102,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsPipelineBase()                            = delete;
     AutotagsPipelineBase(QObject*)                    = delete;
     AutotagsPipelineBase(const AutotagsPipelineBase&) = delete;

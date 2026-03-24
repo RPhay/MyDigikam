@@ -83,7 +83,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DMediaServerMngr(QObject*) = delete;
 
 private:

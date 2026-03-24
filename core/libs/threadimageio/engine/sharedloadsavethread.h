@@ -36,7 +36,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     SharedLoadSaveThread(const SharedLoadSaveThread&)            = delete;
     SharedLoadSaveThread& operator=(const SharedLoadSaveThread&) = delete;
 };

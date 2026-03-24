@@ -66,7 +66,7 @@ private:
 
     explicit FaceDbAccess(bool);
 
-    // Disable
+    /// @note disabled
     FaceDbAccess(const FaceDbAccess&)            = delete;
     FaceDbAccess& operator=(const FaceDbAccess&) = delete;
 
@@ -100,7 +100,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     FaceDbAccessUnlock(const FaceDbAccessUnlock&)            = delete;
     FaceDbAccessUnlock& operator=(const FaceDbAccessUnlock&) = delete;
 };

@@ -70,7 +70,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     CoreDbOperationGroup(const CoreDbOperationGroup&)            = delete;
     CoreDbOperationGroup& operator=(const CoreDbOperationGroup&) = delete;
 

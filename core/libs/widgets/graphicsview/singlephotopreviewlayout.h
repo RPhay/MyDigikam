@@ -115,7 +115,7 @@ protected:
 
 private:
 
-    SinglePhotoPreviewLayout(); // Disable default constructor.
+    SinglePhotoPreviewLayout(); /// @note disabled default constructor.
 
 private:
 

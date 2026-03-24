@@ -65,7 +65,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvancedRenameProcessDialog(const AdvancedRenameProcessDialog&)            = delete;
     AdvancedRenameProcessDialog& operator=(const AdvancedRenameProcessDialog&) = delete;
 

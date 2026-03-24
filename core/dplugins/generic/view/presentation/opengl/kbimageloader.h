@@ -59,7 +59,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit KBImageLoader(QObject*) = delete;
 
 private:

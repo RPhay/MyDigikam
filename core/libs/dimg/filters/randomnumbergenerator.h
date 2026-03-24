@@ -135,7 +135,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     RandomNumberGenerator(const RandomNumberGenerator&)            = delete;
     RandomNumberGenerator& operator=(const RandomNumberGenerator&) = delete;
 

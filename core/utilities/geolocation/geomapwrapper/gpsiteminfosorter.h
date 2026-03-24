@@ -76,7 +76,7 @@ private:
 
 private:
 
-     // Disable
+     /// @note disabled
     GPSItemInfoSorter() = delete;
 
 private:

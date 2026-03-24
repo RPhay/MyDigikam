@@ -47,7 +47,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     FileActionProgress(QObject*);
 };
 

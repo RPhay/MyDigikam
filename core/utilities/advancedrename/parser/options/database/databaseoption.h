@@ -45,7 +45,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DatabaseOptionDialog(QWidget*)                      = delete;
     DatabaseOptionDialog(const DatabaseOptionDialog&)            = delete;
     DatabaseOptionDialog& operator=(const DatabaseOptionDialog&) = delete;
@@ -89,7 +89,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DatabaseOption(QObject*)                = delete;
     DatabaseOption(const DatabaseOption&)            = delete;
     DatabaseOption& operator=(const DatabaseOption&) = delete;

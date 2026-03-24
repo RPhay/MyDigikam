@@ -157,7 +157,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvPrintPhoto& operator=(const AdvPrintPhoto&) = delete;
 };
 

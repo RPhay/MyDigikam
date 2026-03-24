@@ -33,7 +33,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit MysqlInitBinary(QObject*) = delete;
 };
 

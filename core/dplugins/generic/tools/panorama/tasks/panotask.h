@@ -50,7 +50,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     PanoTask() = delete;
 
     Q_DISABLE_COPY(PanoTask)

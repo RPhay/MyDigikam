@@ -127,7 +127,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit PresentationWidget(QWidget*) = delete;
 
 private:

@@ -63,7 +63,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     GLViewerTexture(const GLViewerTexture&) = delete;
 
 private:

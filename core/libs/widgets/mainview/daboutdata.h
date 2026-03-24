@@ -49,7 +49,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DAboutData(QObject*);
 };
 

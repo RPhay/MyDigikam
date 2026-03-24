@@ -67,7 +67,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DbEngineActionType& operator=(const DbEngineActionType&) = delete;
 
     class Private;

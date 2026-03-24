@@ -80,7 +80,7 @@ public:
 
 private:
 
-    /// Disable
+    //// @note disabled
     DNNFaceExtractorBase(const DNNFaceExtractorBase&)                               = delete;
     DNNFaceExtractorBase& operator=(const DNNFaceExtractorBase&)                    = delete;
 };

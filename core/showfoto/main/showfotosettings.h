@@ -143,7 +143,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ShowfotoSettings(QObject*) = delete;
 
 private:

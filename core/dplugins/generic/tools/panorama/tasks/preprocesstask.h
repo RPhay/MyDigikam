@@ -59,7 +59,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     PreProcessTask() = delete;
 
     Q_DISABLE_COPY(PreProcessTask)

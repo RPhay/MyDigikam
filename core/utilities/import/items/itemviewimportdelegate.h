@@ -141,7 +141,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemViewImportDelegate(const ItemViewImportDelegate&)            = delete;
     ItemViewImportDelegate& operator=(const ItemViewImportDelegate&) = delete;
 

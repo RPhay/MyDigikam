@@ -63,7 +63,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsPipelinePackageBase(const AutotagsPipelinePackageBase&)            = delete;
 };
 

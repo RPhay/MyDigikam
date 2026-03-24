@@ -129,7 +129,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     IOJobData(const IOJobData&)            = delete;
     IOJobData& operator=(const IOJobData&) = delete;
 

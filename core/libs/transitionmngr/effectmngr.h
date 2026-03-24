@@ -62,7 +62,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     EffectMngr(const EffectMngr&)            = delete;
     EffectMngr& operator=(const EffectMngr&) = delete;
 

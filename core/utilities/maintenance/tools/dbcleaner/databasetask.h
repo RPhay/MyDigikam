@@ -79,7 +79,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DatabaseTask(QObject*) = delete;
 
 private:

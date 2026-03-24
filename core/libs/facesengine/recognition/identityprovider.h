@@ -171,7 +171,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit IdentityProvider(QObject*)       = delete;
     IdentityProvider(const IdentityProvider&) = delete;
 

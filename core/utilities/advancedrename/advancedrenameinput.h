@@ -139,7 +139,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvancedRenameInput(const AdvancedRenameInput&)            = delete;
     AdvancedRenameInput& operator=(const AdvancedRenameInput&) = delete;
 

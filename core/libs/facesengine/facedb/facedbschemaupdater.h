@@ -57,7 +57,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     FaceDbSchemaUpdater(const FaceDbSchemaUpdater&)            = delete;
     FaceDbSchemaUpdater& operator=(const FaceDbSchemaUpdater&) = delete;
 

@@ -101,7 +101,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     KBImage(const KBImage&)            = delete;
     KBImage& operator=(const KBImage&) = delete;
 };
@@ -156,7 +156,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit PresentationKB(QWidget*) = delete;
 
 private:

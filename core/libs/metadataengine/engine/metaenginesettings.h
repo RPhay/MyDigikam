@@ -69,7 +69,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit MetaEngineSettings(QObject*);
 
     void readFromConfig();

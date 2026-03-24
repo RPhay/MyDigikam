@@ -278,7 +278,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbnailLoadThread(const ThumbnailLoadThread&)            = delete;
     ThumbnailLoadThread& operator=(const ThumbnailLoadThread&) = delete;
 
@@ -348,7 +348,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbnailImageCatcher(const ThumbnailImageCatcher&)            = delete;
     ThumbnailImageCatcher& operator=(const ThumbnailImageCatcher&) = delete;
 

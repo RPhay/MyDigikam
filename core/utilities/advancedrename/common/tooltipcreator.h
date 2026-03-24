@@ -59,7 +59,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     TooltipCreator()                                 = default;
     TooltipCreator(const TooltipCreator&)            = delete;
     TooltipCreator& operator=(const TooltipCreator&) = delete;

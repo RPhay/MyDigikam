@@ -71,7 +71,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     PageItem(const PageItem&)            = delete;
     PageItem& operator=(const PageItem&) = delete;
 };
@@ -136,7 +136,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DConfigDlgWdgModelPrivate(const DConfigDlgWdgModelPrivate&)            = delete;
     DConfigDlgWdgModelPrivate& operator=(const DConfigDlgWdgModelPrivate&) = delete;
 };

@@ -53,7 +53,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CommandTask() = delete;
 
     Q_DISABLE_COPY(CommandTask)

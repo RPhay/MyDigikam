@@ -71,7 +71,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AlbumPropsEdit(QWidget*) = delete;
 
 private:

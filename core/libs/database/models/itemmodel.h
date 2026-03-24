@@ -400,7 +400,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemModel(const ItemModel&)            = delete;
     ItemModel& operator=(const ItemModel&) = delete;
 

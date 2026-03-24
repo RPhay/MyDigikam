@@ -128,7 +128,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     QueueMgrWindow(QWidget*) = delete;
 
 private:

@@ -112,7 +112,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     PreviewLoadThread(const PreviewLoadThread&)            = delete;
     PreviewLoadThread& operator=(const PreviewLoadThread&) = delete;
 };

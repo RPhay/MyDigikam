@@ -76,7 +76,7 @@ public:
 
 public:
 
-    // Disable
+    /// @note disabled
     ThumbnailLoadThreadStaticPriv(const ThumbnailLoadThreadStaticPriv&)            = delete;
     ThumbnailLoadThreadStaticPriv& operator=(const ThumbnailLoadThreadStaticPriv&) = delete;
 

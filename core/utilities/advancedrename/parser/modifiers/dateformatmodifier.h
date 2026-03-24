@@ -33,7 +33,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DateFormatModifier(QObject*)                    = delete;
     DateFormatModifier(const DateFormatModifier&)            = delete;
     DateFormatModifier& operator=(const DateFormatModifier&) = delete;

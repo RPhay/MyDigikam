@@ -148,7 +148,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemViewDelegate(const ItemViewDelegate&);
     ItemViewDelegate& operator=(const ItemViewDelegate&);
 

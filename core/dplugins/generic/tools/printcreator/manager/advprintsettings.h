@@ -157,7 +157,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvPrintSettings(const AdvPrintSettings&)            = delete;
     AdvPrintSettings& operator=(const AdvPrintSettings&) = delete;
 };

@@ -43,7 +43,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     LoadingProcessListener(const LoadingProcessListener&)            = delete;
     LoadingProcessListener& operator=(const LoadingProcessListener&) = delete;
 };
@@ -65,7 +65,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     LoadingProcess(const LoadingProcess&)            = delete;
     LoadingProcess& operator=(const LoadingProcess&) = delete;
 };

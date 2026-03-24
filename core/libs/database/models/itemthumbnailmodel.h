@@ -123,7 +123,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemThumbnailModel(const ItemThumbnailModel&)            = delete;
     ItemThumbnailModel& operator=(const ItemThumbnailModel&) = delete;
 

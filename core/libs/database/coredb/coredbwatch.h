@@ -152,7 +152,7 @@ public:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit CoreDbWatch(QObject*) = delete;
 
     Private* const d = nullptr;

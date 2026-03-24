@@ -43,7 +43,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FocusPointItem()                                 = delete;
     FocusPointItem(const FocusPointItem&)            = delete;
     FocusPointItem& operator=(const FocusPointItem&) = delete;

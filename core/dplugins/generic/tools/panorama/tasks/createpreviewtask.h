@@ -52,7 +52,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CreatePreviewTask() = delete;
 
     Q_DISABLE_COPY(CreatePreviewTask)

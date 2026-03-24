@@ -67,7 +67,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit IOJobsManager(QObject*);
 };
 

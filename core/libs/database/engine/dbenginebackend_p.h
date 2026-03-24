@@ -52,7 +52,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DbEngineThreadData(const DbEngineThreadData&)            = delete;
     DbEngineThreadData& operator=(const DbEngineThreadData&) = delete;
 };

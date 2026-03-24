@@ -96,7 +96,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CoreDbSchemaUpdater(const CoreDbSchemaUpdater&)            = delete;
     CoreDbSchemaUpdater& operator=(const CoreDbSchemaUpdater&) = delete;
 

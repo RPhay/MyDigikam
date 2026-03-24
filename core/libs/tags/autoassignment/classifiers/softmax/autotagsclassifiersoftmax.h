@@ -41,7 +41,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsClassifierSoftmax()                                                                 = delete;
     AutotagsClassifierSoftmax(const AutotagsClassifierSoftmax&)                                 = delete;
     explicit AutotagsClassifierSoftmax(QObject*)                                                = delete;

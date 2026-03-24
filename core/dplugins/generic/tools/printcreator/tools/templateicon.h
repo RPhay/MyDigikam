@@ -70,7 +70,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     TemplateIcon(const TemplateIcon&)            = delete;
     TemplateIcon& operator=(const TemplateIcon&) = delete;
 

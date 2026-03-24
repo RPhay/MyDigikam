@@ -90,7 +90,7 @@ public:
 
     private:
 
-        // Disable
+        /// @note disabled
         Tile(const Tile&)            = delete;
         Tile& operator=(const Tile&) = delete;
 
@@ -128,7 +128,7 @@ public:
 
     private:
 
-        // Disable
+        /// @note disabled
         NonEmptyIterator(const NonEmptyIterator&)            = delete;
         NonEmptyIterator& operator=(const NonEmptyIterator&) = delete;
 

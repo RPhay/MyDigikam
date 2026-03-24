@@ -78,7 +78,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImageLevels(const ImageLevels&)            = delete;
     ImageLevels& operator=(const ImageLevels&) = delete;
 

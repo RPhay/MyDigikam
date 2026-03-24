@@ -39,7 +39,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DefaultValueDialog(QWidget*)                        = delete;
     DefaultValueDialog(const DefaultValueDialog&);
     DefaultValueDialog& operator=(const DefaultValueDialog&);
@@ -62,7 +62,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DefaultValueModifier(QObject*)                      = delete;
     DefaultValueModifier(const DefaultValueModifier&)            = delete;
     DefaultValueModifier& operator=(const DefaultValueModifier&) = delete;

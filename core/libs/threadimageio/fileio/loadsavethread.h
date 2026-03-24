@@ -237,7 +237,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     LoadSaveThread(const LoadSaveThread&)            = delete;
     LoadSaveThread& operator=(const LoadSaveThread&) = delete;
 

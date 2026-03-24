@@ -72,7 +72,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DWItemDelegatePool(const DWItemDelegatePool&)            = delete;
     DWItemDelegatePool& operator=(const DWItemDelegatePool&) = delete;
 
@@ -106,7 +106,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DWItemDelegatePoolPrivate(const DWItemDelegatePoolPrivate&)            = delete;
     DWItemDelegatePoolPrivate& operator=(const DWItemDelegatePoolPrivate&) = delete;
 };

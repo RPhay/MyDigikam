@@ -78,7 +78,7 @@ public:
 
     private:
 
-        // Disable
+        /// @note disabled
         Item(const Item&)            = delete;
         Item& operator=(const Item&) = delete;
     };

@@ -67,7 +67,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AutotagsClassifierBase(QObject*)                                    = delete;
     AutotagsClassifierBase()                                                     = delete;
     AutotagsClassifierBase(const AutotagsClassifierBase&)                        = delete;

@@ -138,7 +138,7 @@ protected:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit DBinaryIface(QObject*);
 };
 

@@ -68,7 +68,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&)            = delete;
     OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&) = delete;
 

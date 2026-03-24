@@ -100,7 +100,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemAlbumModel(const ItemAlbumModel&)            = delete;
     ItemAlbumModel& operator=(const ItemAlbumModel&) = delete;
 

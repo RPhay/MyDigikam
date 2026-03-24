@@ -90,7 +90,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsClassifierYolo()                                                                 = delete;
     AutotagsClassifierYolo(const AutotagsClassifierYolo&)                                    = delete;
     explicit AutotagsClassifierYolo(QObject*)                                                = delete;

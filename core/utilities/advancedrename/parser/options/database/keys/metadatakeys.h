@@ -36,7 +36,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     MetadataKeys(const MetadataKeys&)            = delete;
     MetadataKeys& operator=(const MetadataKeys&) = delete;
 };

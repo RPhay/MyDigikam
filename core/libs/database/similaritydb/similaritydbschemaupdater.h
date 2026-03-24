@@ -49,7 +49,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     SimilarityDbSchemaUpdater(const SimilarityDbSchemaUpdater&)            = delete;
     SimilarityDbSchemaUpdater& operator=(const SimilarityDbSchemaUpdater&) = delete;
 

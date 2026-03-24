@@ -120,7 +120,7 @@ protected:
 
 private:
 
-    // Disable.
+    /// @note disabled.
     ShowfotoItemViewDelegate(const ShowfotoItemViewDelegate&)            = delete;
     ShowfotoItemViewDelegate& operator=(const ShowfotoItemViewDelegate&) = delete;
 

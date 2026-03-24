@@ -56,7 +56,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     AlbumParser(QObject*) = delete;
 
     class Private;

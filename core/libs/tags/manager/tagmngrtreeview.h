@@ -75,7 +75,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     TagMngrTreeView(QWidget*) = delete;
 
 private:

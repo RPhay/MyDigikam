@@ -45,7 +45,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     CoreDbTransaction(const CoreDbTransaction&)            = delete;
     CoreDbTransaction& operator=(const CoreDbTransaction&) = delete;
 

@@ -55,7 +55,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
 
     FaceItem()                           = delete;
     FaceItem(const FaceItem&)            = delete;

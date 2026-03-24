@@ -66,7 +66,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ImageResizeJob(QObject*) = delete;
 };
 

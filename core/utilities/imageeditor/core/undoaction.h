@@ -74,7 +74,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     UndoAction(const UndoAction&)            = delete;
     UndoAction& operator=(const UndoAction&) = delete;
 

@@ -290,7 +290,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ShowfotoItemModel(const ShowfotoItemModel&)            = delete;
     ShowfotoItemModel& operator=(const ShowfotoItemModel&) = delete;
 

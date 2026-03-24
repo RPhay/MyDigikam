@@ -56,7 +56,7 @@ public:
 
 private:
 
-    /// Disable
+    //// @note disabled
     DNNSFaceExtractor(const DNNSFaceExtractor&)                                 = delete;
     DNNSFaceExtractor& operator=(const DNNSFaceExtractor&)                      = delete;
 

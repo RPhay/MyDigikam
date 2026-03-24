@@ -156,7 +156,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DynamicThread(const DynamicThread&)            = delete;
     DynamicThread& operator=(const DynamicThread&) = delete;
 

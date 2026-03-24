@@ -150,7 +150,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     FaceUtils(const FaceUtils&)            = delete;
     FaceUtils& operator=(const FaceUtils&) = delete;
 };

@@ -186,7 +186,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImageIface(const ImageIface&)            = delete;
     ImageIface& operator=(const ImageIface&) = delete;
 

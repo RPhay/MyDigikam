@@ -44,7 +44,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CpFindTask() = delete;
 
     Q_DISABLE_COPY(CpFindTask)

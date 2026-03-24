@@ -136,7 +136,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     LensFunIface(const LensFunIface&)            = delete;
     LensFunIface& operator=(const LensFunIface&) = delete;
 

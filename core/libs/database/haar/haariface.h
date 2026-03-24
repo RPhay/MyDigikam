@@ -299,7 +299,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     HaarIface(const HaarIface&)            = delete;
     HaarIface& operator=(const HaarIface&) = delete;
 

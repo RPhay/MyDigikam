@@ -43,7 +43,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DBJob(QObject*) = delete;
 };
 
@@ -72,7 +72,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AlbumsJob(QObject*);
 };
 
@@ -101,7 +101,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     DatesJob(QObject*) = delete;
 };
 
@@ -130,7 +130,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     GPSJob(QObject*);
 };
 
@@ -160,7 +160,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     TagsJob(QObject*);
 };
 
@@ -200,7 +200,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchesJob(QObject*);
 
     void runSearches();

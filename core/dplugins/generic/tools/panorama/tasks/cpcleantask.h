@@ -41,7 +41,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CpCleanTask() = delete;
 
     Q_DISABLE_COPY(CpCleanTask)

@@ -43,7 +43,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit UniqueModifier(QObject*)                = delete;
     UniqueModifier(const UniqueModifier&)            = delete;
     UniqueModifier& operator=(const UniqueModifier&) = delete;

@@ -68,7 +68,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     BookmarkNode(const BookmarkNode&)            = delete;
     BookmarkNode& operator=(const BookmarkNode&) = delete;
 

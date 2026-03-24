@@ -35,7 +35,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     CommonKeys(const CommonKeys&)            = delete;
     CommonKeys& operator=(const CommonKeys&) = delete;
 };

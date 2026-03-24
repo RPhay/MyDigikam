@@ -45,7 +45,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit IOJob(QObject*);
 };
 
@@ -65,7 +65,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     CopyOrMoveJob(QObject*);
 
 private:
@@ -89,7 +89,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DeleteJob(QObject*);
 
 private:
@@ -117,7 +117,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     RenameFileJob(QObject*);
 
 private:
@@ -145,7 +145,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DTrashItemsListingJob(QObject*);
 
 private:
@@ -169,7 +169,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     RestoreDTrashItemsJob(QObject*);
 
 private:
@@ -193,7 +193,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     EmptyDTrashItemsJob(QObject*);
 
 private:
@@ -221,7 +221,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     BuildTrashCountersJob(QObject*);
 };
 

@@ -123,7 +123,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     DDatePickerPopup() = delete;
 
 private:

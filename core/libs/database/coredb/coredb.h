@@ -1546,7 +1546,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     CoreDB(const CoreDB&)            = delete;
     CoreDB& operator=(const CoreDB&) = delete;
 

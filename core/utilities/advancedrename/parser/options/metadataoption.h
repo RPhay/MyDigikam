@@ -47,7 +47,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit MetadataOptionDialog(QWidget*)                      = delete;
     MetadataOptionDialog(const MetadataOptionDialog&)            = delete;
     MetadataOptionDialog& operator=(const MetadataOptionDialog&) = delete;
@@ -86,7 +86,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit MetadataOption(QObject*)                = delete;
     MetadataOption(const MetadataOption&)            = delete;
     MetadataOption& operator=(const MetadataOption&) = delete;

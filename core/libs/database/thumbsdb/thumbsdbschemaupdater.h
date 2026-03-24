@@ -52,7 +52,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbsDbSchemaUpdater(const ThumbsDbSchemaUpdater&)            = delete;
     ThumbsDbSchemaUpdater& operator=(const ThumbsDbSchemaUpdater&) = delete;
 

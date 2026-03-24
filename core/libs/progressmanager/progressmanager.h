@@ -492,7 +492,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ProgressManager(QObject*);
     ProgressManager(const ProgressManager&);
 

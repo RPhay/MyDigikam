@@ -86,7 +86,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImportIconView(const ImportIconView&)            = delete;
     ImportIconView& operator=(const ImportIconView&) = delete;
 

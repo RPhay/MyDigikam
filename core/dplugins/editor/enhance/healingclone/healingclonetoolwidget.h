@@ -112,7 +112,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     HealingCloneToolWidget(const HealingCloneToolWidget&)            = delete;
     HealingCloneToolWidget& operator=(const HealingCloneToolWidget&) = delete;
 

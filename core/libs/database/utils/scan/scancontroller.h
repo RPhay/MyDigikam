@@ -78,7 +78,7 @@ public:
 
     private:
 
-        // Disable
+        /// @note disabled
         FileMetadataWrite(const FileMetadataWrite&)            = delete;
         FileMetadataWrite& operator=(const FileMetadataWrite&) = delete;
     };
@@ -345,7 +345,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ScanController(QObject*)                         = delete;
     ScanController(const ScanController&)            = delete;
     ScanController& operator=(const ScanController&) = delete;

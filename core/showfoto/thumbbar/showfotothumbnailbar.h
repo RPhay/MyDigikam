@@ -67,7 +67,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ShowfotoThumbnailBar(const ShowfotoThumbnailBar&)            = delete;
     ShowfotoThumbnailBar& operator=(const ShowfotoThumbnailBar&) = delete;
 

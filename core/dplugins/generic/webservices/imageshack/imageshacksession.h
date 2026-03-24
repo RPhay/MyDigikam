@@ -53,7 +53,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImageShackSession(const ImageShackSession&)            = delete;
     ImageShackSession& operator=(const ImageShackSession&) = delete;
 

@@ -55,7 +55,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbsTask(QObject*) = delete;
 
 private:

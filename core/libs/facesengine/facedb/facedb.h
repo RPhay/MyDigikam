@@ -132,7 +132,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FaceDb(const FaceDb&)            = delete;
     FaceDb& operator=(const FaceDb&) = delete;
 

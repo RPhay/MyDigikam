@@ -120,7 +120,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit GeoIfaceGlobalObject(QObject*) = delete;
 
     Q_DISABLE_COPY(GeoIfaceGlobalObject)

@@ -177,7 +177,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemLister(const ItemLister&)            = delete;
     ItemLister& operator=(const ItemLister&) = delete;
 

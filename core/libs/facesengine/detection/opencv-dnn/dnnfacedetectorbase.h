@@ -83,7 +83,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DNNFaceDetectorBase(const DNNFaceDetectorBase&)            = delete;
     DNNFaceDetectorBase& operator=(const DNNFaceDetectorBase&) = delete;
 };

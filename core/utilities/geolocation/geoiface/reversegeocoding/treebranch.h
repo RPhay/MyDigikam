@@ -51,7 +51,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     TreeBranch(const TreeBranch&)            = delete;
     TreeBranch& operator=(const TreeBranch&) = delete;
 };

@@ -48,7 +48,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     InvisibleButtonGroup() = delete;
 
 private:

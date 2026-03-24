@@ -54,7 +54,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     UndoCache(const UndoCache&)            = delete;
     UndoCache& operator=(const UndoCache&) = delete;
 

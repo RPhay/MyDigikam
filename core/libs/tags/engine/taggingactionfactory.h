@@ -97,7 +97,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     TaggingActionFactory(const TaggingActionFactory&)            = delete;
     TaggingActionFactory& operator=(const TaggingActionFactory&) = delete;
 

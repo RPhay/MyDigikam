@@ -106,7 +106,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     JpegRotator(const JpegRotator&)            = delete;
     JpegRotator& operator=(const JpegRotator&) = delete;
 };

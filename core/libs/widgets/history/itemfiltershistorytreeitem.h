@@ -50,7 +50,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemFiltersHistoryTreeItem(const ItemFiltersHistoryTreeItem&);
     ItemFiltersHistoryTreeItem& operator=(const ItemFiltersHistoryTreeItem&) = delete;
 

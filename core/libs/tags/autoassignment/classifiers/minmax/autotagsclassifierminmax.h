@@ -41,7 +41,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsClassifierMinmax()                                                                 = delete;
     AutotagsClassifierMinmax(const AutotagsClassifierMinmax&)                                  = delete;
     explicit AutotagsClassifierMinmax(QObject*)                                                = delete;

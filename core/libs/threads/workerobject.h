@@ -180,7 +180,7 @@ private:
 
 private:
 
-    // Disable.
+    /// @note disabled.
     WorkerObject(const WorkerObject&)            = delete;
     WorkerObject& operator=(const WorkerObject&) = delete;
     WorkerObject(QObject*)                       = delete;

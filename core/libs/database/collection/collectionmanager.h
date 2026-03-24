@@ -78,7 +78,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     CollectionManager();
     explicit CollectionManager(QObject*) = delete;
     ~CollectionManager() override;

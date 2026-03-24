@@ -36,7 +36,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     VideoStripFilter(const VideoStripFilter&)            = delete;
     VideoStripFilter& operator=(const VideoStripFilter&) = delete;
 };

@@ -45,7 +45,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FileReadWriteLockKey(const FileReadWriteLockKey&)            = delete;
     FileReadWriteLockKey& operator=(const FileReadWriteLockKey&) = delete;
 
@@ -63,7 +63,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FileReadLocker(const FileReadLocker&)            = delete;
     FileReadLocker& operator=(const FileReadLocker&) = delete;
 
@@ -81,7 +81,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FileWriteLocker(const FileWriteLocker&)            = delete;
     FileWriteLocker& operator=(const FileWriteLocker&) = delete;
 
@@ -109,7 +109,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SafeTemporaryFile(QObject*) = delete;
 
 private:

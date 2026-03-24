@@ -63,7 +63,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FaceDbOperationGroup(const FaceDbOperationGroup&)            = delete;
     FaceDbOperationGroup& operator=(const FaceDbOperationGroup&) = delete;
 

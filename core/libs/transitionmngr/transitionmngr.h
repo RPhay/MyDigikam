@@ -80,7 +80,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     TransitionMngr(const TransitionMngr&)            = delete;
     TransitionMngr& operator=(const TransitionMngr&) = delete;
 

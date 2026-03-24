@@ -207,7 +207,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ManagedLoadSaveThread(const ManagedLoadSaveThread&)            = delete;
     ManagedLoadSaveThread& operator=(const ManagedLoadSaveThread&) = delete;
 };

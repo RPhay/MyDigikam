@@ -96,7 +96,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit FaceClassifier(QObject*)     = delete;
     FaceClassifier(const FaceClassifier&) = delete;
 };

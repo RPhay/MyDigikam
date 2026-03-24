@@ -69,7 +69,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     GalleryTheme();
     GalleryTheme(const GalleryTheme&)            = delete;
     GalleryTheme& operator=(const GalleryTheme&) = delete;

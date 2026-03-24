@@ -56,7 +56,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CopyFilesTask() = delete;
 
     Q_DISABLE_COPY(CopyFilesTask)

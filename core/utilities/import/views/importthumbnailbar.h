@@ -62,7 +62,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImportThumbnailBar(const ImportThumbnailBar&)            = delete;
     ImportThumbnailBar& operator=(const ImportThumbnailBar&) = delete;
 

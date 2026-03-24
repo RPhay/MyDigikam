@@ -265,7 +265,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     DigikamApp(QWidget*) = delete;
 
 private:

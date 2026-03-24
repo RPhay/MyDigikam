@@ -73,7 +73,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     VersionManager(const VersionManager&)            = delete;
     VersionManager& operator=(const VersionManager&) = delete;
 

@@ -133,7 +133,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     IccManager(const IccManager&)            = delete;
     IccManager& operator=(const IccManager&) = delete;
 

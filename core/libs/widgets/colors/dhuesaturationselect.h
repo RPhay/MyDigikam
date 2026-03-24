@@ -136,7 +136,7 @@ private:
 
 private:
 
-    DPointSelect(); // Disable default constructor.
+    DPointSelect(); /// @note disabled default constructor.
     Q_DISABLE_COPY(DPointSelect)
 
     class Private;

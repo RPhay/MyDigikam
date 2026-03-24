@@ -117,7 +117,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     FacePipelineEdit(QObject* const)                            = delete;
     FacePipelineEdit(const FacePipelineEdit&)                   = delete;
     FacePipelineEdit& operator=(const FacePipelineEdit&)        = delete;

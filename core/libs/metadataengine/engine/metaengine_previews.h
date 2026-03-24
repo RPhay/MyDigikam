@@ -84,7 +84,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     MetaEnginePreviews(const MetaEnginePreviews&)            = delete;
     MetaEnginePreviews& operator=(const MetaEnginePreviews&) = delete;
 

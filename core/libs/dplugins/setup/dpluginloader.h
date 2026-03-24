@@ -149,7 +149,7 @@ class DIGIKAM_EXPORT DPluginLoader : public QObject
 
 private:
 
-    // Disable constructor and destructor
+    /// @note disabled constructor and destructor
     DPluginLoader();
     explicit DPluginLoader(QObject*);
     ~DPluginLoader() override;

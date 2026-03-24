@@ -47,7 +47,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     VidSlideTask(QObject*);
 
 private:

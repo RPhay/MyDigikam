@@ -94,7 +94,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     FacePipelinePackageBase(const FacePipelinePackageBase&)                 = delete;
     FacePipelinePackageBase& operator=(const FacePipelinePackageBase&)      = delete;
 };

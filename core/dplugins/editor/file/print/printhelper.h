@@ -38,7 +38,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     PrintHelper(const PrintHelper&)            = delete;
     PrintHelper& operator=(const PrintHelper&) = delete;
 

@@ -108,7 +108,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit FileActionMngr(QObject*);
 
     Private* const d = nullptr;

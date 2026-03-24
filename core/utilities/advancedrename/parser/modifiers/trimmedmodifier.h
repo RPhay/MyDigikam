@@ -32,7 +32,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit TrimmedModifier(QObject*)                 = delete;
     TrimmedModifier(const TrimmedModifier&)            = delete;
     TrimmedModifier& operator=(const TrimmedModifier&) = delete;

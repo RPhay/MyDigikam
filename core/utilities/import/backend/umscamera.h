@@ -83,7 +83,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit UMSCamera(QObject*) = delete;
 };
 

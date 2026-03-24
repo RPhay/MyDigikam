@@ -113,7 +113,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit PresentationGL(QWidget*) = delete;
 
 private:

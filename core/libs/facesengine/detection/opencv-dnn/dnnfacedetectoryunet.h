@@ -53,7 +53,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DNNFaceDetectorYuNet(const DNNFaceDetectorYuNet&)            = delete;
     DNNFaceDetectorYuNet& operator=(const DNNFaceDetectorYuNet&) = delete;
 

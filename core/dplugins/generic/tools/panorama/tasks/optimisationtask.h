@@ -46,7 +46,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     OptimisationTask() = delete;
 
     Q_DISABLE_COPY(OptimisationTask)

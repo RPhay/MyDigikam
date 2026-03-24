@@ -120,7 +120,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit CalSettings(QObject* const parent);
     CalSettings(CalSettings const&)             = delete;
     CalSettings& operator=(CalSettings const&)  = delete;

@@ -50,7 +50,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit FCTask(QObject*) = delete;
 
 private:

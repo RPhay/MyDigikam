@@ -348,7 +348,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemScanner(const ItemScanner&)            = delete;
     ItemScanner& operator=(const ItemScanner&) = delete;
 

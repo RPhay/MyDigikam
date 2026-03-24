@@ -51,7 +51,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     MaintenanceData(const MaintenanceData&)            = delete;
     MaintenanceData& operator=(const MaintenanceData&) = delete;
 

@@ -91,7 +91,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     WorkflowManager(QObject*) = delete;
 
 private:

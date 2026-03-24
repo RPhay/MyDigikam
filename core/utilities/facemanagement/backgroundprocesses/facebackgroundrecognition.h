@@ -48,7 +48,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit FaceRecognitionBackgroundController(QObject*)                           = delete;
     FaceRecognitionBackgroundController(const FaceRecognitionBackgroundController&)  = delete;
 

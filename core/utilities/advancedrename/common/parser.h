@@ -80,7 +80,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     Parser(const Parser&)            = delete;
     Parser& operator=(const Parser&) = delete;
 

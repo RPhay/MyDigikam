@@ -73,7 +73,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     Private() = delete;
 };
 

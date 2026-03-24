@@ -137,7 +137,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbsDb(const ThumbsDb&)            = delete;
     ThumbsDb& operator=(const ThumbsDb&) = delete;
 

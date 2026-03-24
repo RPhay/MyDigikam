@@ -68,7 +68,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit LocalizeSettings(QObject*);
 
     void readFromConfig();

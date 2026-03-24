@@ -230,7 +230,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbnailCreator(const ThumbnailCreator&)            = delete;
     ThumbnailCreator& operator=(const ThumbnailCreator&) = delete;
 

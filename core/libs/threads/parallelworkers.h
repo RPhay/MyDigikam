@@ -110,7 +110,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     ParallelWorkers(const ParallelWorkers&)            = delete;
     ParallelWorkers& operator=(const ParallelWorkers&) = delete;
 };
@@ -205,7 +205,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ParallelAdapter(const ParallelAdapter&)            = delete;
     ParallelAdapter& operator=(const ParallelAdapter&) = delete;
 };

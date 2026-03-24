@@ -40,7 +40,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     PTOFile(const PTOFile&)            = delete;
     PTOFile& operator=(const PTOFile&) = delete;
 

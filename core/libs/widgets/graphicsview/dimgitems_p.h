@@ -66,7 +66,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     CachedPixmaps(const CachedPixmaps&)            = delete;
     CachedPixmaps& operator=(const CachedPixmaps&) = delete;
 };

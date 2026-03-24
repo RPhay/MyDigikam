@@ -116,7 +116,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvancedRenameManager(QObject*)                                = delete;
     AdvancedRenameManager(const AdvancedRenameManager&)            = delete;
     AdvancedRenameManager& operator=(const AdvancedRenameManager&) = delete;

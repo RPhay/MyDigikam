@@ -76,7 +76,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     UndoManager(const UndoManager&)            = delete;
     UndoManager& operator=(const UndoManager&) = delete;
 

@@ -63,7 +63,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit Marquee(QObject*);
 
 private:

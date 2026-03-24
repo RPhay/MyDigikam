@@ -59,7 +59,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutotagsAssign(const AutotagsAssign&)            = delete;
     AutotagsAssign& operator=(const AutotagsAssign&) = delete;
 

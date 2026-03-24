@@ -47,7 +47,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     DbKeySelectorItem(const DbKeySelectorItem&)            = delete;
     DbKeySelectorItem& operator=(const DbKeySelectorItem&) = delete;
 };
@@ -68,7 +68,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DbKeySelector(const DbKeySelector&)            = delete;
     DbKeySelector& operator=(const DbKeySelector&) = delete;
 };
@@ -97,7 +97,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     DbKeySelectorView(const DbKeySelectorView&)            = delete;
     DbKeySelectorView& operator=(const DbKeySelectorView&) = delete;
 

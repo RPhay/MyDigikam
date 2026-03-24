@@ -61,7 +61,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     LoadSaveTask(const LoadSaveTask&)            = delete;
     LoadSaveTask& operator=(const LoadSaveTask&) = delete;
 };
@@ -111,7 +111,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     LoadingTask(const LoadingTask&)            = delete;
     LoadingTask& operator=(const LoadingTask&) = delete;
 };
@@ -164,7 +164,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SharedLoadingTask(const SharedLoadingTask&)            = delete;
     SharedLoadingTask& operator=(const SharedLoadingTask&) = delete;
 };
@@ -211,7 +211,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     SavingTask(const SavingTask&)            = delete;
     SavingTask& operator=(const SavingTask&) = delete;
 };

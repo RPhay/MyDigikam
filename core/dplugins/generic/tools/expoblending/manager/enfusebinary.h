@@ -62,7 +62,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit EnfuseBinary(QObject*) = delete;
 };
 

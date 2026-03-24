@@ -1361,7 +1361,7 @@ protected:
 
 private:
 
-    // Disable copy constructor and operator to prevent potential slicing with this class, reported by Clazy static analyzer.
+    /// @note disabled copy constructor and operator to prevent potential slicing with this class, reported by Clazy static analyzer.
     // https://github.com/KDE/clazy/blob/master/docs/checks/README-copyable-polymorphic.md
     // This methods was implemented to be able to pass this class or a derived version to signals and slots. This is very
     // Dangerous as virtual methods are present in this polymorphic class and is copyable.

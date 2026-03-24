@@ -291,10 +291,10 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DisjointMetadata(QObject*) = delete;
 
-    // Disable copy constructor and operator to prevent potential slicing with this class, reported by Clazy static analyzer.
+    /// @note disabled copy constructor and operator to prevent potential slicing with this class, reported by Clazy static analyzer.
     // https://github.com/KDE/clazy/blob/master/docs/checks/README-copyable-polymorphic.md
     // Use DisjointMetadataDataFields container setter and getter instead.
     // TODO: remove legacy implementations for these methods later if no side effect.

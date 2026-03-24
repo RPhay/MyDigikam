@@ -41,7 +41,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     CameraNameOption(QObject*)                           = delete;
     CameraNameOption(const CameraNameOption&)            = delete;
     CameraNameOption& operator=(const CameraNameOption&) = delete;

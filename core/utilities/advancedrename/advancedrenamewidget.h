@@ -157,7 +157,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvancedRenameWidget(const AdvancedRenameWidget&)            = delete;
     AdvancedRenameWidget& operator=(const AdvancedRenameWidget&) = delete;
 

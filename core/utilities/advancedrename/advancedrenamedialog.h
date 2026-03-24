@@ -68,7 +68,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvancedRenameListItem(const AdvancedRenameListItem&)            = delete;
     AdvancedRenameListItem& operator=(const AdvancedRenameListItem&) = delete;
 
@@ -123,7 +123,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AdvancedRenameDialog(const AdvancedRenameDialog&)            = delete;
     AdvancedRenameDialog& operator=(const AdvancedRenameDialog&) = delete;
 

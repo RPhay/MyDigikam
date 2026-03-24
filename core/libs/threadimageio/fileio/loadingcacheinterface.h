@@ -80,7 +80,7 @@ private:
     explicit LoadingCacheInterface();
     ~LoadingCacheInterface();
 
-    // Disable
+    /// @note disabled
     LoadingCacheInterface(const LoadingCacheInterface&)            = delete;
     LoadingCacheInterface& operator=(const LoadingCacheInterface&) = delete;
 };

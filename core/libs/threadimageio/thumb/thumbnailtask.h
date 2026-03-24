@@ -51,7 +51,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     ThumbnailLoadingTask(const ThumbnailLoadingTask&)            = delete;
     ThumbnailLoadingTask& operator=(const ThumbnailLoadingTask&) = delete;
 };

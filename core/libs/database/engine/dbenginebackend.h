@@ -551,7 +551,7 @@ private:
 
     Q_DECLARE_PRIVATE(BdEngineBackend)
 
-    // Disable
+    /// @note disabled
     BdEngineBackend(QObject*) = delete;
 };
 

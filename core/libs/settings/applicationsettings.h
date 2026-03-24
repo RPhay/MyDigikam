@@ -570,7 +570,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit ApplicationSettings(QObject*) = delete;
 
     KConfigGroup generalConfigGroup() const;

@@ -62,7 +62,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     FacePipelineDetectRecognize()                                               = delete;
     FacePipelineDetectRecognize(QObject* const)                                 = delete;
     FacePipelineDetectRecognize(const FacePipelineDetectRecognize&)             = delete;

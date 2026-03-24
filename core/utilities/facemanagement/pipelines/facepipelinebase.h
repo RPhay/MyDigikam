@@ -113,7 +113,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
 
     FacePipelineBase()                                   = delete;
     FacePipelineBase(QObject* const)                     = delete;

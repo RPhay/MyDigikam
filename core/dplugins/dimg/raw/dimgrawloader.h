@@ -63,7 +63,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit DImgRAWLoader(QObject*)               = delete;
     DImgRAWLoader(const DImgRAWLoader&)            = delete;
     DImgRAWLoader& operator=(const DImgRAWLoader&) = delete;

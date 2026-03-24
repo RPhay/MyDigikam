@@ -79,7 +79,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
 
     OcrTesseractEngine(const OcrTesseractEngine&)            = delete;
     OcrTesseractEngine& operator=(const OcrTesseractEngine&) = delete;

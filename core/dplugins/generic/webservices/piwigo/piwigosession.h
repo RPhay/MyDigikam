@@ -53,7 +53,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     PiwigoSession(const PiwigoSession&)            = delete;
     PiwigoSession& operator=(const PiwigoSession&) = delete;
 

@@ -190,7 +190,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit AlbumThumbnailLoader(QObject*) = delete;
 
     void    addUrl(Album* const album, qlonglong id);

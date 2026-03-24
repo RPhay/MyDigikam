@@ -147,7 +147,7 @@ protected:
 
 private:
 
-    // Disable.
+    /// @note disabled.
     SearchView(QWidget*)                     = delete;
     SearchView(const SearchView&)            = delete;
     SearchView& operator=(const SearchView&) = delete;

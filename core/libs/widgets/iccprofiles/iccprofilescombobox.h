@@ -141,7 +141,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     IccProfilesMenuAction(QWidget*);
 };
 

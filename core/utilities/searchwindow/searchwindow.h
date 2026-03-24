@@ -71,7 +71,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     SearchWindow(QWidget*) = delete;
 
 private:

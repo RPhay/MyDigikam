@@ -66,7 +66,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     FacePipelineReset()                                         = delete;
     FacePipelineReset(QObject* const)                           = delete;
     FacePipelineReset(const FacePipelineReset&)                 = delete;

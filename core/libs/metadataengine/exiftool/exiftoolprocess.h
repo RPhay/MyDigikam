@@ -251,7 +251,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ExifToolProcess(QObject*) = delete;
 
 private:

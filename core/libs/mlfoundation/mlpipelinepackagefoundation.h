@@ -40,7 +40,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     MLPipelinePackageFoundation(const MLPipelinePackageFoundation&)            = delete;
     MLPipelinePackageFoundation& operator=(const MLPipelinePackageFoundation&) = delete;
 };

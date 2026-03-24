@@ -57,7 +57,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CreatePtoTask() = delete;
 
     Q_DISABLE_COPY(CreatePtoTask)

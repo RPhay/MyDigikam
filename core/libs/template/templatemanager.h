@@ -65,7 +65,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit TemplateManager(QObject*);
 
 private:

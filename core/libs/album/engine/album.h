@@ -319,7 +319,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     Album()                         = delete;
     Album& operator==(const Album&) = delete;
 
@@ -582,7 +582,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AlbumIterator() = delete;
 
     Q_DISABLE_COPY(AlbumIterator)

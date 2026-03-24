@@ -63,7 +63,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ThemeManager(QObject*);
 
     void    populateThemeMenu();

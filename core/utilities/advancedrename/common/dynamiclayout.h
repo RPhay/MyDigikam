@@ -65,7 +65,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     DynamicLayout(const DynamicLayout&)            = delete;
     DynamicLayout& operator=(const DynamicLayout&) = delete;
 

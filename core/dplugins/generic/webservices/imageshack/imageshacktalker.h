@@ -87,7 +87,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ImageShackTalker(QObject*) = delete;
 
 private:

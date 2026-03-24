@@ -43,7 +43,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DirectoryNameOption(QObject*)                              = delete;
     DirectoryNameOption(const DirectoryNameOption&)            = delete;
     DirectoryNameOption& operator=(const DirectoryNameOption&) = delete;

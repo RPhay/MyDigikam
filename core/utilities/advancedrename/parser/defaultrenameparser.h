@@ -34,7 +34,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DefaultRenameParser(const DefaultRenameParser&)            = delete;
     DefaultRenameParser& operator=(const DefaultRenameParser&) = delete;
 };

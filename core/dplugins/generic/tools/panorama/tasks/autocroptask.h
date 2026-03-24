@@ -47,7 +47,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     AutoCropTask() = delete;
 
     Q_DISABLE_COPY(AutoCropTask)

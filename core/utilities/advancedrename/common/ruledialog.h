@@ -43,7 +43,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit RuleDialog(QWidget*)            = delete;
     RuleDialog(const RuleDialog&)            = delete;
     RuleDialog& operator=(const RuleDialog&) = delete;

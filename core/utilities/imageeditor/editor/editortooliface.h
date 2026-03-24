@@ -75,7 +75,7 @@ public Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     EditorToolIface(QObject*) = delete;
 
 private:

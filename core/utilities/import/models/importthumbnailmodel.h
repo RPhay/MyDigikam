@@ -79,7 +79,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImportThumbnailModel(const ImportThumbnailModel&)            = delete;
     ImportThumbnailModel& operator=(const ImportThumbnailModel&) = delete;
 

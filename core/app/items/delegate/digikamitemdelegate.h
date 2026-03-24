@@ -41,7 +41,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DigikamItemDelegate(QObject*) = delete;
 
 private:

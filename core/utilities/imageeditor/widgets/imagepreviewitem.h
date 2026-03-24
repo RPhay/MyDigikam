@@ -41,7 +41,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ImagePreviewItem(QObject*) = delete;
 };
 

@@ -162,7 +162,7 @@ public:
 
 private:
 
-    // Disable;
+    /// @note disabled;
     explicit ImportSettings(QObject*) = delete;
 
 private:

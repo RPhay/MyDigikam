@@ -51,7 +51,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     MetadataRemoveTask(QObject*) = delete;
 
 private:

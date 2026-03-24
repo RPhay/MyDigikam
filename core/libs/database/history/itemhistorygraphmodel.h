@@ -119,7 +119,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemHistoryGraphModel(const ItemHistoryGraphModel&)            = delete;
     ItemHistoryGraphModel& operator=(const ItemHistoryGraphModel&) = delete;
 

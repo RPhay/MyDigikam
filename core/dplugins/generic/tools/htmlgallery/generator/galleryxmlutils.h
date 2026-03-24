@@ -76,7 +76,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     CWrapper(const CWrapper&)            = delete;
     CWrapper& operator=(const CWrapper&) = delete;
 };
@@ -141,7 +141,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     XMLElement(const XMLElement&)            = delete;
     XMLElement& operator=(const XMLElement&) = delete;
 

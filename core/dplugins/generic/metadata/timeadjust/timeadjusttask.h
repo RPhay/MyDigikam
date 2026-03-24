@@ -54,7 +54,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     TimeAdjustTask(QObject*) = delete;
 
 private:
@@ -86,7 +86,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     TimePreviewTask(QObject*) = delete;
 
 private:

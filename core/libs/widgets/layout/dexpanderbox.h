@@ -78,7 +78,7 @@ private:
     void resizeEvent(QResizeEvent*) override;
     void adjustTextToLabel();
 
-    // Disabled methods from QLabel
+    /// @note disabledd methods from QLabel
     QString text() const { return QString(); }; ///< Use adjustedText() instead.
     void setText(const QString&) {};            ///< Use setAdjustedText(text) instead.
     void clear()                 {};            ///< Use setdjustedText(QString()) instead.

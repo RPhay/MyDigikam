@@ -44,7 +44,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ReplaceDialog(QWidget*)               = delete;
     ReplaceDialog(const ReplaceDialog&)            = delete;
     ReplaceDialog& operator=(const ReplaceDialog&) = delete;
@@ -67,7 +67,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit ReplaceModifier(QObject*)                 = delete;
     ReplaceModifier(const ReplaceModifier&)            = delete;
     ReplaceModifier& operator=(const ReplaceModifier&) = delete;

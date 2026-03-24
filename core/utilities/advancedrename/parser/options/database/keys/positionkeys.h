@@ -36,7 +36,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     PositionKeys(const PositionKeys&)            = delete;
     PositionKeys& operator=(const PositionKeys&) = delete;
 };

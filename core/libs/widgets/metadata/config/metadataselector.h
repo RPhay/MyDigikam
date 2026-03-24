@@ -139,7 +139,7 @@ private:
 
 private:
 
-    // Disable.
+    /// @note disabled.
     MetadataSelectorView() = delete;
 
 private:

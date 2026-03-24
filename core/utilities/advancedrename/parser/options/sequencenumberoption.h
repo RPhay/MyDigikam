@@ -46,7 +46,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit SequenceNumberDialog(QWidget*)                      = delete;
     SequenceNumberDialog(const SequenceNumberDialog&)            = delete;
     SequenceNumberDialog& operator=(const SequenceNumberDialog&) = delete;
@@ -74,7 +74,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit SequenceNumberOption(QObject*)                      = delete;
     SequenceNumberOption(const SequenceNumberOption&)            = delete;
     SequenceNumberOption& operator=(const SequenceNumberOption&) = delete;

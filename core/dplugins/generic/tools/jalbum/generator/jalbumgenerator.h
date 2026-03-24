@@ -70,7 +70,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit JAlbumGenerator(QObject*) = delete;
 
 private:

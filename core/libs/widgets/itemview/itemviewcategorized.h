@@ -212,7 +212,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ItemViewCategorized(const ItemViewCategorized&)            = delete;
     ItemViewCategorized& operator=(const ItemViewCategorized&) = delete;
 

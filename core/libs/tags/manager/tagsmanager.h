@@ -147,7 +147,7 @@ private Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit TagsManager(QWidget*) = delete;
 
 private:

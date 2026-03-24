@@ -298,7 +298,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImportItemModel(const ImportItemModel&)            = delete;
     ImportItemModel& operator=(const ImportItemModel&) = delete;
 

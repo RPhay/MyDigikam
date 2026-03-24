@@ -244,7 +244,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     SimilarityDb(const SimilarityDb&)            = delete;
     SimilarityDb& operator=(const SimilarityDb&) = delete;
 

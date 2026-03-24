@@ -60,7 +60,7 @@ public Q_SLOTS:
 
 private:
 
-    // Disabled
+    /// @note disabledd
     explicit CoreDbCopyManager(QObject*) = delete;
 
     bool copyTable(CoreDbBackend& fromDBbackend,

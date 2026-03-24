@@ -50,7 +50,7 @@ private:
 
 private:
 
-    // Disable
+    /// @note disabled
     OpenCVOpenCLDNNSetter(const OpenCVOpenCLDNNSetter&)            = delete;
     OpenCVOpenCLDNNSetter& operator=(const OpenCVOpenCLDNNSetter&) = delete;
 

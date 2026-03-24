@@ -62,7 +62,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     AbstractThemeParameter(const AbstractThemeParameter&)            = delete;
     AbstractThemeParameter& operator=(const AbstractThemeParameter&) = delete;
 

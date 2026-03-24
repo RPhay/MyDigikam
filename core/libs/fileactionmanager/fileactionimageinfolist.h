@@ -85,7 +85,7 @@ Q_SIGNALS:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit FileActionProgressItemContainer(QObject*);
 };
 

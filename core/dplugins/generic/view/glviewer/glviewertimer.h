@@ -35,7 +35,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     GLViewerTimer(const GLViewerTimer&)            = delete;
     GLViewerTimer& operator=(const GLViewerTimer&) = delete;
 

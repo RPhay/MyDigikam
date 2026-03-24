@@ -120,7 +120,7 @@ protected Q_SLOTS:
 
 private:
 
-    // Disable
+    /// @note disabled
     ShowfotoThumbnailModel(const ShowfotoThumbnailModel&)            = delete;
     ShowfotoThumbnailModel& operator=(const ShowfotoThumbnailModel&) = delete;
 

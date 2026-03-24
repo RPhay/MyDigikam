@@ -66,7 +66,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     Iface(const Iface&)            = delete;
     Iface& operator=(const Iface&) = delete;
 

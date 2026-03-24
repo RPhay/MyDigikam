@@ -2024,7 +2024,7 @@ namespace cimg_library {
       defining the environment variable <tt>cimg_debug</tt> to 0 before including the %CImg header file.
       The example below shows how to cleanly handle %CImg Library exceptions :
       \code
-      #define cimg_debug 0     // Disable modal window in CImg exceptions.
+      #define cimg_debug 0     /// @note disabled modal window in CImg exceptions.
       #define "CImg.h"
       int main() {
         try {

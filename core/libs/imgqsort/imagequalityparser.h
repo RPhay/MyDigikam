@@ -49,7 +49,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     ImageQualityParser(const ImageQualityParser&)            = delete;
     ImageQualityParser& operator=(const ImageQualityParser&) = delete;
     explicit ImageQualityParser(QObject*);

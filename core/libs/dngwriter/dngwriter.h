@@ -88,7 +88,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     DNGWriter(const DNGWriter&)            = delete;
     DNGWriter& operator=(const DNGWriter&) = delete;
 

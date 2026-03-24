@@ -139,7 +139,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DImgLoader() = delete;
 
 private:

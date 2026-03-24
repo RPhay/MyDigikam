@@ -93,7 +93,7 @@ public:
 
 private:
 
-    // Disable
+    /// @note disabled
     explicit BalooWrap(QObject*) = delete;
 
 private:

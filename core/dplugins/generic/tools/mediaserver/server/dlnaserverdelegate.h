@@ -134,7 +134,7 @@ protected:
 
 private:
 
-    // Disable
+    /// @note disabled
     DLNAMediaServerDelegate(const DLNAMediaServerDelegate&)            = delete;
     DLNAMediaServerDelegate& operator=(const DLNAMediaServerDelegate&) = delete;
 };
