@@ -256,8 +256,15 @@ void SearchView::read(const QString& xml)
 
 void SearchView::addGroupToLayout(SearchGroup* group)
 {
-    // insert at last-but-one position; leave stretch at the bottom
+    if (!group)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "SearchView: Attempted to add null SearchGroup to layout";
+        return;
+    }
 
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchView: Adding search group to layout";
+
+    // insert at last-but-one position; leave stretch at the bottom
     d->layout->insertWidget(d->layout->count() - 1, group);
 }
 
