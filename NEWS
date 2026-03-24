@@ -85,7 +85,7 @@ BUGFIXES:
 060 --> 150355 - Importing folder feature imports incomplete photos.
 061 --> 518046 - AssignCaption tool: caption/title disappear after restart.
 062 --> 518072 - Declutter sidebars.
-063 --> 
+063 --> 518091 - Error 429 from OpenstreetMap: too much request.
 064 --> 
 065 --> 
 066 --> 
