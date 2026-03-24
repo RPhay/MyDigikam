@@ -273,11 +273,22 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier,
                 }
                 else
                 {
+                    qCDebug(DIGIKAM_GENERAL_LOG)
+                        << "Generating thumbnail for:" << identifier.filePath;
+
                     image = createThumbnail(info, rect);
 
                     if (!image.isNull())
                     {
                         storeInDatabase(info, image);
+
+                        qCDebug(DIGIKAM_GENERAL_LOG)
+                            << "Thumbnail stored in database for:" << identifier.filePath;
+                    }
+                    else
+                    {
+                        qCWarning(DIGIKAM_GENERAL_LOG)
+                            << "Failed to generate thumbnail for:" << identifier.filePath;
                     }
                 }
 

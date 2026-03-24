@@ -17,6 +17,7 @@
 // Local includes
 
 #include "batchtool.h"
+#include "captionvalues.h"
 
 using namespace Digikam;
 
@@ -30,22 +31,28 @@ class AssignCaptions : public BatchTool
 public:
 
     explicit AssignCaptions(QObject* const parent = nullptr);
-    ~AssignCaptions()                                          override;
+    ~AssignCaptions()                                                     override;
 
-    BatchToolSettings defaultSettings()                     override;
+    BatchToolSettings defaultSettings()                                   override;
 
-    BatchTool* clone(QObject* const parent = nullptr) const override;
+    BatchTool* clone(QObject* const parent = nullptr)               const override;
 
-    void registerSettingsWidget()                           override;
+    void registerSettingsWidget()                                         override;
 
 private Q_SLOTS:
 
-    void slotAssignSettings2Widget()                        override;
-    void slotSettingsChanged()                              override;
+    void slotAssignSettings2Widget()                                      override;
+    void slotSettingsChanged()                                            override;
 
 private:
 
-    bool toolOperations()                                   override;
+    QString captionsMapToString(const CaptionsMap& cmap)            const;
+    CaptionsMap captionsMapFromString(const QString& str)           const;
+
+    QString altLangMapToString(const MetaEngine::AltLangMap& amap)  const;
+    MetaEngine::AltLangMap altLangMapFromString(const QString& str) const;
+
+    bool toolOperations()                                                 override;
 
 private:
 

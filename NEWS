@@ -83,8 +83,8 @@ BUGFIXES:
 058 --> 151535 - Errors while downloading images from camera.
 059 --> 150523 - Precision mini digital camera.
 060 --> 150355 - Importing folder feature imports incomplete photos.
-061 --> 
-062 --> 
+061 --> 518046 - AssignCaption tool: caption/title disappear after restart.
+062 --> 518072 - Declutter sidebars.
 063 --> 
 064 --> 
 065 --> 
