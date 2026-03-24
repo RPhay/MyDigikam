@@ -39,7 +39,6 @@
 #include "altlangstredit.h"
 #include "dexpanderbox.h"
 #include "dlayoutbox.h"
-#include "captionvalues.h"
 #include "captionedit.h"
 
 namespace DigikamBqmAssignCaptionsPlugin
@@ -158,9 +157,9 @@ BatchToolSettings AssignCaptions::defaultSettings()
     BatchToolSettings settings;
 
     settings.insert(QLatin1String("SetTitles"),     false);
-    settings.insert(QLatin1String("TitleValues"),   QVariant::fromValue(MetaEngine::AltLangMap()));
+    settings.insert(QLatin1String("TitleValues"),   QString());
     settings.insert(QLatin1String("SetCaptions"),   false);
-    settings.insert(QLatin1String("CaptionValues"), QVariant::fromValue(CaptionsMap()));
+    settings.insert(QLatin1String("CaptionValues"), QString());
     settings.insert(QLatin1String("CleanUp"),       false);
 
     return settings;
@@ -171,9 +170,9 @@ void AssignCaptions::slotAssignSettings2Widget()
     d->changeSettings             = false;
 
     bool setTitles                = settings().value(QLatin1String("SetTitles")).toBool();
-    MetaEngine::AltLangMap titles = qvariant_cast<MetaEngine::AltLangMap>(settings().value(QLatin1String("TitleValues")));
+    MetaEngine::AltLangMap titles = altLangMapFromString(settings().value(QLatin1String("TitleValues")).toString());
     bool setCaptions              = settings().value(QLatin1String("SetCaptions")).toBool();
-    CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings().value(QLatin1String("CaptionValues")));
+    CaptionsMap captions          = captionsMapFromString(settings().value(QLatin1String("CaptionValues")).toString());
     bool cleanup                  = settings().value(QLatin1String("CleanUp")).toBool();
 
     d->setTitles->setChecked(setTitles);
@@ -201,13 +200,91 @@ void AssignCaptions::slotSettingsChanged()
         BatchToolSettings settings;
 
         settings.insert(QLatin1String("SetTitles"),     d->setTitles->isChecked());
-        settings.insert(QLatin1String("TitleValues"),   QVariant::fromValue(d->titlesWidget->values()));
+        settings.insert(QLatin1String("TitleValues"),   altLangMapToString(d->titlesWidget->values()));
         settings.insert(QLatin1String("SetCaptions"),   d->setCaptions->isChecked());
-        settings.insert(QLatin1String("CaptionValues"), QVariant::fromValue(d->captionsWidget->values()));
+        settings.insert(QLatin1String("CaptionValues"), captionsMapToString(d->captionsWidget->values()));
         settings.insert(QLatin1String("CleanUp"),       d->cleanupCB->isChecked());
 
         BatchTool::slotSettingsChanged(settings);
     }
+}
+
+QString AssignCaptions::captionsMapToString(const CaptionsMap& cmap) const
+{
+    QString str;
+
+    for (CaptionsMap::const_iterator it = cmap.constBegin() ;
+         it != cmap.constEnd() ; ++it)
+    {
+        if (it != cmap.constBegin())
+        {
+            str.append(QLatin1String("||"));
+        }
+
+        str.append(QString::fromUtf8("%1||%2||%3||%4")
+                   .arg(it.key()).arg((*it).caption)
+                   .arg((*it).author).arg((*it).date.toString(Qt::ISODate)));
+    }
+
+    return str;
+}
+
+CaptionsMap AssignCaptions::captionsMapFromString(const QString& str) const
+{
+    CaptionsMap cmap;
+    QStringList entryList = str.split(QLatin1String("||"),
+                                      Qt::KeepEmptyParts);
+
+    if ((entryList.size() % 4) == 0)
+    {
+        for (int i = 0 ; i < entryList.size() ; i += 4)
+        {
+            CaptionValues val;
+            val.caption = entryList.at(i + 1);
+            val.author  = entryList.at(i + 2);
+            val.date    = QDateTime::fromString(entryList.at(i + 3),
+                                                Qt::ISODate);
+            cmap.insert(entryList.at(i), val);
+        }
+    }
+
+    return cmap;
+}
+
+QString AssignCaptions::altLangMapToString(const MetaEngine::AltLangMap& amap) const
+{
+    QString str;
+
+    for (MetaEngine::AltLangMap::const_iterator it = amap.constBegin() ;
+         it != amap.constEnd() ; ++it)
+    {
+        if (it != amap.constBegin())
+        {
+            str.append(QLatin1String("||"));
+        }
+
+        str.append(QString::fromUtf8("%1||%2")
+                   .arg(it.key()).arg(it.value()));
+    }
+
+    return str;
+}
+
+MetaEngine::AltLangMap AssignCaptions::altLangMapFromString(const QString& str) const
+{
+    MetaEngine::AltLangMap amap;
+    QStringList entryList = str.split(QLatin1String("||"),
+                                      Qt::KeepEmptyParts);
+
+    if ((entryList.size() % 2) == 0)
+    {
+        for (int i = 0 ; i < entryList.size() ; i += 2)
+        {
+            amap.insert(entryList.at(i), entryList.at(i + 1));
+        }
+    }
+
+    return amap;
 }
 
 bool AssignCaptions::toolOperations()
@@ -228,9 +305,9 @@ bool AssignCaptions::toolOperations()
     }
 
     bool setTitles                = settings().value(QLatin1String("SetTitles")).toBool();
-    MetaEngine::AltLangMap titles = qvariant_cast<MetaEngine::AltLangMap>(settings().value(QLatin1String("TitleValues")));
+    MetaEngine::AltLangMap titles = altLangMapFromString(settings().value(QLatin1String("TitleValues")).toString());
     bool setCaptions              = settings().value(QLatin1String("SetCaptions")).toBool();
-    CaptionsMap captions          = qvariant_cast<CaptionsMap>(settings().value(QLatin1String("CaptionValues")));
+    CaptionsMap captions          = captionsMapFromString(settings().value(QLatin1String("CaptionValues")).toString());
     bool cleanup                  = settings().value(QLatin1String("CleanUp")).toBool();
     const QString variableOrgText(QLatin1String("$ORGTEXT"));
 
