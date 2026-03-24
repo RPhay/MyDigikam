@@ -26,10 +26,10 @@ public:
 
 public:
 
-    QMutex               mutex;
+    QMutex                mutex;
 
-    QTimer*              timer     = nullptr;
-    ThumbnailLoadThread* thread    = nullptr;    ///< The separated thread to render thumbnail images.
+    QTimer*               timer     = nullptr;
+    ThumbnailLoadThread*  thread    = nullptr;    ///< The separated thread to render thumbnail images.
 
     QHash<QString, QIcon> iconHash;
 };
@@ -135,16 +135,16 @@ void ImageDialogIconProvider::slotThumbnailLoaded(const LoadingDescription& desc
                              Qt::KeepAspectRatio,
                              Qt::FastTransformation);
 
-        QPixmap icon(QSize(256, 256));
-        icon.fill(Qt::transparent);
-        QPainter p(&icon);
-        p.drawPixmap((icon.width()  - pix.width() ) / 2,
-                     (icon.height() - pix.height()) / 2,
+        QPixmap icn(QSize(256, 256));
+        icn.fill(Qt::transparent);
+        QPainter p(&icn);
+        p.drawPixmap((icn.width()  - pix.width() ) / 2,
+                     (icn.height() - pix.height()) / 2,
                      pix);
 
         QMutexLocker locker(&d->mutex);
 
-        d->iconHash.insert(desc.filePath, icon);
+        d->iconHash.insert(desc.filePath, icn);
     }
     else
     {
