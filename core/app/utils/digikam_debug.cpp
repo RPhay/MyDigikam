@@ -56,7 +56,7 @@ Q_LOGGING_CATEGORY(DIGIKAM_FACEDB_LOG,                  "digikam.facedb",       
 Q_LOGGING_CATEGORY(DIGIKAM_THUMBSDB_LOG,                "digikam.thumbsdb",                 QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_SIMILARITYDB_LOG,            "digikam.similaritydb",             QtInfoMsg)
 
-// NOTE: per default only warnings and more severe messages are logged for other than general category
+//@note per default only warnings and more severe messages are logged for other than general category
 
 Q_LOGGING_CATEGORY(DIGIKAM_DIMG_LOG,                    "digikam.dimg",                     QtInfoMsg)
 Q_LOGGING_CATEGORY(DIGIKAM_DIMG_LOG_JPEG,               "digikam.dimg.jpeg",                QtWarningMsg)
@@ -83,6 +83,6 @@ void digikamSetDebugFilterRules(bool on)
     {
         QLoggingCategory::setFilterRules(QLatin1String("digikam.*=true\n"
                                                        "digikam.dimg.jpeg=false\n"
-                                                       "digikam.geocore=false"));        // to much verbose at the console
+                                                       "digikam.geocore=false"));        // Reduce verbosity on the console
     }
 }
