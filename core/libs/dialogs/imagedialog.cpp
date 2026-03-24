@@ -138,14 +138,15 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
 
                         if (!name.isEmpty())
                         {
-                            QUrl url = QUrl::fromLocalFile(QDir::fromNativeSeparators(d->dlg->directoryUrl().toLocalFile() +
-                                                                                      QLatin1Char('/') + name));
+                            QUrl localUrl = QUrl::fromLocalFile(QDir::fromNativeSeparators(d->dlg->directoryUrl().toLocalFile() +
+                                                                                           QLatin1Char('/') + name));
 
                             if (d->showToolTips)
                             {
                                 if (!d->dlg->isActiveWindow())
                                 {
                                     hideToolTip();
+
                                     return false;
                                 }
 
@@ -153,17 +154,17 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
                                 {
                                     hideToolTip();
 
-                                    if (acceptToolTip(url))
+                                    if (acceptToolTip(localUrl))
                                     {
                                         d->toolTipView  = view;
                                         d->toolTipIndex = index;
-                                        d->toolTipUrl   = url;
+                                        d->toolTipUrl   = localUrl;
                                         d->toolTipTimer->setSingleShot(true);
                                         d->toolTipTimer->start(500);
                                     }
                                 }
 
-                                if ((index == d->toolTipIndex) && !acceptToolTip(url))
+                                if ((index == d->toolTipIndex) && !acceptToolTip(localUrl))
                                 {
                                     hideToolTip();
                                 }
@@ -175,6 +176,7 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
                     else
                     {
                          hideToolTip();
+
                          return false;
                     }
                 }
@@ -188,6 +190,7 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
                     )
             {
                 hideToolTip();
+
                 return false;
             }
         }
