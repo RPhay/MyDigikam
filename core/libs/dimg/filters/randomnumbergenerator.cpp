@@ -109,17 +109,17 @@ RandomNumberGenerator::~RandomNumberGenerator()
 
 quint32 RandomNumberGenerator::nonDeterministicSeed()
 {
-    NonDeterministicRandomData seed(sizeof(quint32));
+    NonDeterministicRandomData rseed(sizeof(quint32));
 
-    return *reinterpret_cast<quint32*>(seed.data());
+    return *reinterpret_cast<quint32*>(rseed.data());
 }
 
 quint32 RandomNumberGenerator::timeSeed()
 {
-    uint seed;
-    seed = quintptr(&seed) + QDateTime::currentSecsSinceEpoch();
+    uint rseed;
+    rseed = quintptr(&rseed) + QDateTime::currentSecsSinceEpoch();
 
-    return seed;
+    return rseed;
 }
 
 quint32 RandomNumberGenerator::seedNonDeterministic()

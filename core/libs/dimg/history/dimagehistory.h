@@ -204,7 +204,7 @@ public:
 
 public:
 
-    // Set as public there because of PrivateSharedNull
+    /// @note Set as public there because of PrivateSharedNull
     class Private;
 
 private:

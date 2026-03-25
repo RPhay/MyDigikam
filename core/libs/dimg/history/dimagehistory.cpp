@@ -37,6 +37,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<DImageHistory::Entry> entries;
 };
 
@@ -688,11 +690,11 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
                         imageId.setCreationDate(QDateTime::fromString(date, Qt::ISODate));
                     }
 
-                    QString size = stream.attributes().value(QLatin1String("fileSize")).toString();
+                    QString fsize = stream.attributes().value(QLatin1String("fileSize")).toString();
 
-                    if (stream.attributes().hasAttribute(QLatin1String("fileHash")) && !size.isNull())
+                    if (stream.attributes().hasAttribute(QLatin1String("fileHash")) && !fsize.isNull())
                     {
-                        imageId.setUniqueHash(stream.attributes().value(QLatin1String("fileHash")).toString(), size.toInt());
+                        imageId.setUniqueHash(stream.attributes().value(QLatin1String("fileHash")).toString(), fsize.toInt());
                     }
 
                     stream.skipCurrentElement();
@@ -745,13 +747,13 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
                 c = FilterAction::DocumentedHistory;
             }
 
-            FilterAction action(stream.attributes().value(QLatin1String("filterName")).toString(),
-                                stream.attributes().value(QLatin1String("filterVersion")).toString().toInt(), c);
-            action.setDisplayableName(stream.attributes().value(QLatin1String("filterDisplayName")).toString());
+            FilterAction faction(stream.attributes().value(QLatin1String("filterName")).toString(),
+                                 stream.attributes().value(QLatin1String("filterVersion")).toString().toInt(), c);
+            faction.setDisplayableName(stream.attributes().value(QLatin1String("filterDisplayName")).toString());
 
             if (stream.attributes().value(QLatin1String("branch")) == QLatin1String("true"))
             {
-                action.addFlag(FilterAction::ExplicitBranch);
+                faction.addFlag(FilterAction::ExplicitBranch);
             }
 
             while (stream.readNextStartElement())
@@ -760,11 +762,13 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
                 {
                     while (stream.readNextStartElement())
                     {
-                        if ((stream.name() == QLatin1String("param")) &&
-                            stream.attributes().hasAttribute(QLatin1String("name")))
+                        if (
+                            (stream.name() == QLatin1String("param")) &&
+                            stream.attributes().hasAttribute(QLatin1String("name"))
+                           )
                         {
-                            action.addParameter(stream.attributes().value(QLatin1String("name")).toString(),
-                                                stream.attributes().value(QLatin1String("value")).toString());
+                            faction.addParameter(stream.attributes().value(QLatin1String("name")).toString(),
+                                                 stream.attributes().value(QLatin1String("value")).toString());
                             stream.skipCurrentElement();
                         }
                         else
@@ -780,7 +784,7 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
                 }
             }
 
-            h << action;
+            h << faction;
         }
         else
         {
