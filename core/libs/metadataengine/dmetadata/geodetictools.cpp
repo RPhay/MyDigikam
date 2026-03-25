@@ -246,10 +246,10 @@ bool GeodeticCalculator::computeDestinationPoint()
 
     // Protect internal variables from changes
 
-    const double lat1     = m_lat1;
-    const double long1    = m_long1;
-    const double azimuth  = m_azimuth;
-    const double distance = m_distance;
+    const double lat1Val     = m_lat1;
+    const double long1Val    = m_long1;
+    const double azimuthVal  = m_azimuth;
+    const double distanceVal = m_distance;
 
     /*
      * Solution of the geodetic direct problem after T.Vincenty.
@@ -267,9 +267,9 @@ bool GeodeticCalculator::computeDestinationPoint()
      *         subroutine DIRECT1
      */
 
-    double TU  = fo * sin(lat1) / cos(lat1);
-    double SF  = sin(azimuth);
-    double CF  = cos(azimuth);
+    double TU  = fo * sin(lat1Val) / cos(lat1Val);
+    double SF  = sin(azimuthVal);
+    double CF  = cos(azimuthVal);
     double BAZ = (CF != 0) ? atan2(TU, CF) * 2.0 : 0;
     double CU  = 1 / sqrt(TU * TU + 1.0);
     double SU  = TU * CU;
@@ -280,7 +280,7 @@ bool GeodeticCalculator::computeDestinationPoint()
     double CC  = 1.0 - X;
     CC         = (X * X / 4.0 + 1.0) / CC;
     double DD  = (0.375 * X * X - 1.0) * X;
-    TU         = distance / fo / m_semiMajorAxis / CC;
+    TU         = distanceVal / fo / m_semiMajorAxis / CC;
     double Y   = TU;
     double SY, CY, CZ, EE;
 
@@ -305,7 +305,7 @@ bool GeodeticCalculator::computeDestinationPoint()
     X                  = atan2(SY * SF, CC);
     CC                 = ((-3.0 * C2A + 4.0) * f + 4.0) * C2A * f / 16.0;
     DD                 = ((EE * CY * CC + CZ) * SY * CC + Y) * SA;
-    m_long2            = long1 + X - (1.0 - CC) * DD * f;
+    m_long2            = long1Val + X - (1.0 - CC) * DD * f;
     m_long2            = castToAngleRange(m_long2);
     m_destinationValid = true;
 

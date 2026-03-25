@@ -34,7 +34,7 @@ namespace Digikam
 namespace Coordinates
 {
 
-/// Converting between radians and degrees
+/// @brief Converting between radians and degrees
 
 inline double toRadians(double deg)
 {
@@ -61,7 +61,7 @@ inline double toDegreesFactor()
 // ------------------------------------------------------------------------------------------------
 
 /**
- * Geometric figure that can be used to describe the approximate shape of the earth.
+ * @brief Geometric figure that can be used to describe the approximate shape of the earth.
  * In mathematical terms, it is a surface formed by the rotation of an ellipse about
  * its minor axis. An ellipsoid requires two defining parameters:
  *  - semi-major axis and inverse flattening, or
@@ -73,35 +73,35 @@ class DIGIKAM_EXPORT Ellipsoid
 public:
 
     /**
-     * WGS 1984 ellipsoid with axis in metres. This ellipsoid is used
+     * @brief WGS 1984 ellipsoid with axis in metres. This ellipsoid is used
      * in GPS systems and is the default for most <code>org.geotools</code> packages.
      */
     static Ellipsoid WGS84();
 
     /**
-     * GRS 80 ellipsoid with axis in metres.
+     * @brief GRS 80 ellipsoid with axis in metres.
      */
     static Ellipsoid GRS80();
 
     /**
-     * International 1924 ellipsoid with axis in metres.
+     * @brief International 1924 ellipsoid with axis in metres.
      */
     static Ellipsoid INTERNATIONAL_1924();
 
     /**
-     * Clarke 1866 ellipsoid with axis in metres.
+     * @brief Clarke 1866 ellipsoid with axis in metres.
      */
     static Ellipsoid CLARKE_1866();
 
     /**
-     * A sphere with a radius of 6371000 metres. Spheres use a simpler
+     * @brief A sphere with a radius of 6371000 metres. Spheres use a simpler
      * algorithm for orthodromic distance computation, which
      * may be faster and more robust.
      */
     static Ellipsoid SPHERE();
 
     /**
-     * Constructs a new ellipsoid using the specified axis length.
+     * @brief Constructs a new ellipsoid using the specified axis length.
      *
      * @param name              The ellipsoid name.
      * @param semiMajorAxis The equatorial radius.
@@ -112,7 +112,7 @@ public:
                                      double semiMinorAxis);
 
     /**
-     * Constructs a new ellipsoid using the specified axis length and inverse flattening value.
+     * @brief Constructs a new ellipsoid using the specified axis length and inverse flattening value.
      *
      * @param name              The ellipsoid name.
      * @param semiMajorAxis     The equatorial radius.
@@ -124,7 +124,7 @@ public:
                                            double inverseFlattening);
 
     /**
-     * Length of the semi-major axis of the ellipsoid. This is the
+     * @brief Length of the semi-major axis of the ellipsoid. This is the
      * equatorial radius in axis linear unit.
      *
      * @return Length of semi-major axis.
@@ -132,7 +132,7 @@ public:
     double semiMajorAxis() const;
 
     /**
-     * Length of the semi-minor axis of the ellipsoid. This is the
+     * @brief Length of the semi-minor axis of the ellipsoid. This is the
      * polar radius in axis linear unit.
      *
      * @return Length of semi-minor axis.
@@ -140,14 +140,14 @@ public:
     double semiMinorAxis() const;
 
     /**
-     * The ratio of the distance between the center and a focus of the ellipse
+     * @brief The ratio of the distance between the center and a focus of the ellipse
      * to the length of its semimajor axis. The eccentricity can alternately be
      * computed from the equation: e=sqrt(2f-f^2).
      */
     double eccentricity() const;
 
     /**
-     * Returns the value of the inverse of the flattening constant. Flattening is a value
+     * @return the value of the inverse of the flattening constant. Flattening is a value
      * used to indicate how closely an ellipsoid approaches a spherical shape. The inverse
      * flattening is related to the equatorial/polar radius by the formula
      *
@@ -161,7 +161,7 @@ public:
     double inverseFlattening() const;
 
     /**
-     * Indicates if the inverse flattening is definitive for
+     * @brief Indicates if the inverse flattening is definitive for
      * this ellipsoid. Some ellipsoids use the IVF as the defining value, and calculate the polar
      * radius whenever asked. Other ellipsoids use the polar radius to calculate the IVF whenever
      * asked. This distinction can be important to avoid floating-point rounding errors.
@@ -182,7 +182,7 @@ public:
     bool isSphere() const;
 
     /**
-     * Returns the orthodromic distance between two geographic coordinates.
+     * @return the orthodromic distance between two geographic coordinates.
      * The orthodromic distance is the shortest distance between two points
      * on a sphere's surface. The orthodromic path is always on a great circle.
      * This is different from the loxodromic distance, which is a
@@ -197,7 +197,7 @@ public:
     double orthodromicDistance(double x1, double y1, double x2, double y2);
 
     /**
-     * Returns the Radius Of Curvature for the given latitude,
+     * @return the Radius Of Curvature for the given latitude,
      * using the geometric mean of two radii of
      * curvature for all azimuths.
      * @param latitude in degrees
@@ -207,7 +207,7 @@ public:
 protected:
 
     /**
-     * Constructs a new ellipsoid using the specified axis length. The properties map is
+     * @brief Constructs a new ellipsoid using the specified axis length. The properties map is
      * given unchanged to the AbstractIdentifiedObjectAbstractIdentifiedObject(Map)
      * super-class constructor.
      *
@@ -234,19 +234,19 @@ protected:
     QString name;
 
     /**
-     * The equatorial radius.
+     * @brief The equatorial radius.
      * @see getSemiMajorAxis
      */
     double m_semiMajorAxis      = 0.0;
 
     /**
-     * The polar radius.
+     * @brief The polar radius.
      * @see getSemiMinorAxis
      */
     double m_semiMinorAxis      = 0.0;
 
     /**
-     * The inverse of the flattening value, or DBL_MAX
+     * @brief The inverse of the flattening value, or DBL_MAX
      * if the ellipsoid is a sphere.
      *
      * @see getInverseFlattening
@@ -254,7 +254,7 @@ protected:
     double m_inverseFlattening  = 0.0;
 
     /**
-     * Tells if the Inverse Flattening definitive for this ellipsoid.
+     * @brief Tells if the Inverse Flattening definitive for this ellipsoid.
      *
      * @see isIvfDefinitive
      */
@@ -268,7 +268,7 @@ protected:
 class DIGIKAM_EXPORT GeodeticCalculator
 {
     /**
-     * Performs geodetic calculations on an ellipsoid. This class encapsulates
+     * @brief Performs geodetic calculations on an ellipsoid. This class encapsulates
      * a generic ellipsoid and calculates the following properties:
      *
      *
@@ -296,12 +296,12 @@ public:
     explicit GeodeticCalculator(const Ellipsoid& e = Ellipsoid::WGS84());
 
     /**
-     * Returns the referenced ellipsoid.
+     * @return the referenced ellipsoid.
      */
     Ellipsoid ellipsoid() const;
 
     /**
-     * Set the starting point in geographic coordinates.
+     * @brief Set the starting point in geographic coordinates.
      * The azimuth, the orthodromic distance and the destination point
      * are discarded. They will need to be specified again.
      * Coordinates positive North and East.
@@ -312,7 +312,7 @@ public:
     void setStartingGeographicPoint(double longitude, double latitude);
 
     /**
-     * Set the destination point in geographic coordinates. The azimuth and distance values
+     * @brief Set the destination point in geographic coordinates. The azimuth and distance values
      * will be updated as a side effect of this call. They will be recomputed the next time
      * getAzimuth() or getOrthodromicDistance() are invoked.
      * Coordinates positive North and East.
@@ -324,7 +324,7 @@ public:
     void setDestinationGeographicPoint(double longitude, double latitude);
 
     /**
-     * Returns the destination point. This method returns the point set by the last
+     * @return the destination point. This method returns the point set by the last
      * call to a setDestinationGeographicPoint(...)
      * method, except if setDirection(...) has been
      * invoked after. In this later case, the destination point will be computed from the
@@ -338,7 +338,7 @@ public:
     QPointF destinationGeographicPoint();
 
     /**
-     * Set the azimuth and the distance from the startingGeographicPoint
+     * @brief Set the azimuth and the distance from the startingGeographicPoint
      * starting point. The destination point will be updated as a side effect of this call.
      * It will be recomputed the next time destinationGeographicPoint() is invoked.
      * Azimuth 0° North.
@@ -349,7 +349,7 @@ public:
     void setDirection(double azimuth, double distance);
 
     /**
-     * Returns the azimuth. This method returns the value set by the last call to
+     * @return the azimuth. This method returns the value set by the last call to
      * <code>setDirection(double,double) setDirection(azimuth,distance)</code>,
      * except if <code>setDestinationGeographicPoint(double,double)
      * setDestinationGeographicPoint(...)</code> has been invoked after. In this later case, the
@@ -361,7 +361,7 @@ public:
     double azimuth();
 
     /**
-     * Returns the orthodromic distance. This method returns the value set by the last call to
+     * @return the orthodromic distance. This method returns the value set by the last call to
      * <code>setDirection(double,double) setDirection(azimuth,distance)</code>,
      * except if <code>setDestinationGeographicPoint(double,double)
      * setDestinationGeographicPoint(...)</code> has been invoked after. In this later case, the
@@ -374,20 +374,20 @@ public:
     double orthodromicDistance();
 
     /**
-     * Computes the orthodromic distance using the algorithm implemented in the Geotools's
+     * @brief Computes the orthodromic distance using the algorithm implemented in the Geotools's
      * ellipsoid class (if available), and check if the error is smaller than some tolerance
      * error.
      */
     bool checkOrthodromicDistance();
 
     /**
-     * Computes the destination point from the starting
+     * @brief Computes the destination point from the starting
      * point, the azimuth and the orthodromic distance.
      */
     bool computeDestinationPoint();
 
     /**
-     * Calculates the meridian arc length between two points in the same meridian
+     * @brief Calculates the meridian arc length between two points in the same meridian
      * in the referenced ellipsoid.
      *
      * @param  latitude1 The latitude of the first  point (in decimal degrees).
@@ -397,7 +397,7 @@ public:
     double meridianArcLength(double latitude1, double latitude2);
 
     /**
-     * Calculates the meridian arc length between two points in the same meridian
+     * @brief Calculates the meridian arc length between two points in the same meridian
      * in the referenced ellipsoid.
      *
      * @param  P1 The latitude of the first  point (in radians).
@@ -407,7 +407,7 @@ public:
     double meridianArcLengthRadians(double P1, double P2);
 
     /**
-     * Computes the azimuth and orthodromic distance from the
+     * @brief Computes the azimuth and orthodromic distance from the
      * startingGeographicPoint starting point and the
      * destinationGeographicPoint destination point.
      */
@@ -418,7 +418,7 @@ protected:
     double castToAngleRange(const double alpha);
 
     /**
-     * Checks the latitude validity. The argument @c latitude should be
+     * @brief Checks the latitude validity. The argument @c latitude should be
      * greater or equal than -90 degrees and lower or equals than +90 degrees. As
      * a convenience, this method converts the latitude to radians.
      *
@@ -427,7 +427,7 @@ protected:
     bool checkLatitude(double* latitude);
 
     /**
-     * Checks the longitude validity. The argument @c longitude should be
+     * @brief Checks the longitude validity. The argument @c longitude should be
      * greater or equal than -180 degrees and lower or equals than +180 degrees. As
      * a convenience, this method converts the longitude to radians.
      *
@@ -436,7 +436,7 @@ protected:
     bool checkLongitude(double* longitude);
 
     /**
-     * Checks the azimuth validity. The argument @c azimuth should be
+     * @brief Checks the azimuth validity. The argument @c azimuth should be
      * greater or equal than -180 degrees and lower or equals than +180 degrees.
      * As a convenience, this method converts the azimuth to radians.
      *
@@ -445,7 +445,7 @@ protected:
     bool checkAzimuth(double* azimuth);
 
     /**
-     * Checks the orthodromic distance validity. Arguments @c orthodromicDistance
+     * @brief Checks the orthodromic distance validity. Arguments @c orthodromicDistance
      * should be greater or equal than 0 and lower or equals than the maximum orthodromic distance.
      *
      * @param  distance The orthodromic distance value.
@@ -455,7 +455,7 @@ protected:
 protected:
 
     /**
-     * Tolerance factors from the strictest (<code>TOLERANCE_0</CODE>)
+     * @brief Tolerance factors from the strictest (<code>TOLERANCE_0</CODE>)
      * to the most relax one (<code>TOLERANCE_3</CODE>).
      */
     double m_TOLERANCE_0            = 5.0e-15;
@@ -464,37 +464,37 @@ protected:
     double m_TOLERANCE_3            = 7.0e-3;
 
     /**
-     * Tolerance factor for assertions. It has no impact on computed values.
+     * @brief Tolerance factor for assertions. It has no impact on computed values.
      */
     double m_TOLERANCE_CHECK        = 1E-8;
 
     /**
-     * The encapsulated ellipsoid.
+     * @brief The encapsulated ellipsoid.
      */
     Ellipsoid m_ellipsoid;
 
     /**
-     * The semi major axis of the referenced ellipsoid.
+     * @brief The semi major axis of the referenced ellipsoid.
      */
     double m_semiMajorAxis          = 0.0;
 
     /**
-     * The semi minor axis of the referenced ellipsoid.
+     * @brief The semi minor axis of the referenced ellipsoid.
      */
     double m_semiMinorAxis          = 0.0;
 
     /**
-     * The eccentricity squared of the referenced ellipsoid.
+     * @brief The eccentricity squared of the referenced ellipsoid.
      */
     double m_eccentricitySquared    = 0.0;
 
     /**
-     * The maximum orthodromic distance that could be calculated onto the referenced ellipsoid.
+     * @brief The maximum orthodromic distance that could be calculated onto the referenced ellipsoid.
      */
     double m_maxOrthodromicDistance = 0.0;
 
     /**
-     * GPNARC parameters computed from the ellipsoid.
+     * @brief GPNARC parameters computed from the ellipsoid.
      */
     double m_A                      = 0.0;
     double m_B                      = 0.0;
@@ -504,7 +504,7 @@ protected:
     double m_F                      = 0.0;
 
     /**
-     * GPNHRI parameters computed from the ellipsoid.
+     * @brief GPNHRI parameters computed from the ellipsoid.
      *
      * @c f if the flattening of the referenced ellipsoid. @c f2,
      * @c f3 and @c f4 are <var>f<sup>2</sup></var>,
@@ -517,7 +517,7 @@ protected:
     double f4                       = 0.0;
 
     /**
-     * Parameters computed from the ellipsoid.
+     * @brief Parameters computed from the ellipsoid.
      */
     double T1                       = 1.0;
     double T2                       = 0.0;
@@ -525,7 +525,7 @@ protected:
     double T6                       = 0.0;
 
     /**
-     * Parameters computed from the ellipsoid.
+     * @brief Parameters computed from the ellipsoid.
      */
     double a01                      = 0.0;
     double a02                      = 0.0;
@@ -538,21 +538,21 @@ protected:
     double a63                      = 0.0;
 
     /**
-     * The (<var>latitude</var>, <var>longitude</var>) coordinate of the first point
+     * @brief The (<var>latitude</var>, <var>longitude</var>) coordinate of the first point
      * in radians. This point is set by setStartingGeographicPoint.
      */
     double m_lat1                   = 0.0;
     double m_long1                  = 0.0;
 
     /**
-     * The (<var>latitude</var>, <var>longitude</var>) coordinate of the destination point
+     * @brief The (<var>latitude</var>, <var>longitude</var>) coordinate of the destination point
      * in radians. This point is set by setDestinationGeographicPoint.
      */
     double m_lat2                   = 0.0;
     double m_long2                  = 0.0;
 
     /**
-     * The distance and azimuth (in radians) from the starting point
+     * @brief The distance and azimuth (in radians) from the starting point
      * (long1, lat1) to the destination point
      * (long2, lat2).
      */
@@ -560,13 +560,13 @@ protected:
     double m_azimuth                = 0.0;
 
     /**
-     * Tell if the destination point is valid.
+     * @brief Tell if the destination point is valid.
      * @c false if long2 and lat2 need to be computed.
      */
     bool m_destinationValid         = false;
 
     /**
-     * Tell if the azimuth and the distance are valids.
+     * @brief Tell if the azimuth and the distance are valids.
      * @c false if distance and azimuth need to be computed.
      */
     bool m_directionValid           = false;
