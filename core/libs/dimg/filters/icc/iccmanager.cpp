@@ -450,13 +450,13 @@ IccTransform IccManager::displaySoftProofingTransform(const IccProfile& devicePr
 
 IccTransform IccManager::displaySoftProofingTransform(const IccProfile& deviceProfile, const IccProfile& displayProfile)
 {
-    IccTransform transform = displayTransform(displayProfile);
-    transform.setProofProfile(deviceProfile);
-    transform.setCheckGamut(d->settings.doGamutCheck);
-    transform.setProofIntent(d->settings.proofingRenderingIntent);
-    transform.setCheckGamutMaskColor(d->settings.gamutCheckMaskColor);
+    IccTransform trnsfrm = displayTransform(displayProfile);
+    trnsfrm.setProofProfile(deviceProfile);
+    trnsfrm.setCheckGamut(d->settings.doGamutCheck);
+    trnsfrm.setProofIntent(d->settings.proofingRenderingIntent);
+    trnsfrm.setCheckGamutMaskColor(d->settings.gamutCheckMaskColor);
 
-    return transform;
+    return trnsfrm;
 }
 
 // -- sRGB and Output -------------------------------------------------------------------------------------------------

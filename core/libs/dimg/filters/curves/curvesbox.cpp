@@ -416,9 +416,9 @@ void CurvesBox::slotResetChannels()
 
 void CurvesBox::resetChannels()
 {
-    for (int channel = 0 ; channel < ImageCurves::NUM_CHANNELS ; ++channel)
+    for (int chn = 0 ; chn < ImageCurves::NUM_CHANNELS ; ++chn)
     {
-        resetChannel(channel);
+        resetChannel(chn);
     }
 
     Q_EMIT signalChannelReset(d->channel);
