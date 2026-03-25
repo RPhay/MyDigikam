@@ -139,9 +139,10 @@ QStringList TagMngrListModel::mimeTypes() const
 bool TagMngrListModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
     Q_UNUSED(role);
-    ListItem* const parent = static_cast<ListItem*>(index.internalPointer());
 
-    if (!parent)
+    ListItem* const prnt = static_cast<ListItem*>(index.internalPointer());
+
+    if (!prnt)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "No node found";
 
@@ -150,7 +151,7 @@ bool TagMngrListModel::setData(const QModelIndex& index, const QVariant& value, 
 
     QList<QVariant> itemDa;
     itemDa << value;
-    parent->appendChild(new ListItem(itemDa,parent));
+    prnt->appendChild(new ListItem(itemDa, prnt));
 
     return true;
 }
@@ -162,11 +163,11 @@ QMimeData* TagMngrListModel::mimeData(const QModelIndexList& indexes) const
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& indx : std::as_const(indexes))
     {
-        if (index.isValid())
+        if (indx.isValid())
         {
-            stream << (qint32)index.row();
+            stream << (qint32)indx.row();
         }
     }
 

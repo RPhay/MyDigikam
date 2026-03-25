@@ -304,15 +304,15 @@ void TagEditDlg::slotIconChanged()
 
     QPointer<KIconDialog> dlg = new KIconDialog(this);
     dlg->setup(KIconLoader::NoGroup, KIconLoader::Application, false, 20, false, false, false);
-    QString icon              = dlg->openDialog();
+    QString icn               = dlg->openDialog();
     delete dlg;
 
-    if (icon.isEmpty() || (icon == d->icon))
+    if (icn.isEmpty() || (icn == d->icon))
     {
         return;
     }
 
-    d->icon                   = icon;
+    d->icon                   = icn;
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
 
 #endif

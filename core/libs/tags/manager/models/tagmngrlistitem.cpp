@@ -68,11 +68,11 @@ ListItem::~ListItem()
 
 void ListItem::deleteChild(ListItem* const item)
 {
-    int row = d->childItems.indexOf(item);
+    int crow = d->childItems.indexOf(item);
 
-    if (row != -1)
+    if (crow != -1)
     {
-        deleteChild(row);
+        deleteChild(crow);
     }
 }
 
