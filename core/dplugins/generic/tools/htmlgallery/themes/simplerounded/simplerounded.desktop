@@ -197,7 +197,7 @@ Max=75
 
 [X-HTMLGallery Parameter homepage]
 Name=Name of the Homepage
-Name[ar]=اسم الصفحة الرئيسية
+Name[ar]=اسم الصفحة الرئيسة
 Name[be]=Назва хатняй старонкі
 Name[bg]=Име на началната страница
 Name[ca]=Nom de la pàgina web
@@ -238,7 +238,7 @@ Default[de]=
 
 [X-HTMLGallery Parameter homepageUrl]
 Name=Url to the Homepage
-Name[ar]=عنوان الصفحة الرئيسية
+Name[ar]=عنوان الصفحة الرئيسة
 Name[be]=Адрас хатняй старонкі
 Name[bg]=Адрес на началната страница
 Name[ca]=URL de la pàgina web
