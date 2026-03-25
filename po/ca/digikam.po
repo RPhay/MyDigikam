@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2026-03-20 09:47+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -6459,36 +6459,36 @@ msgstr ""
 "<para>Aquesta eina del gestor de la cua per lots pot aplicar metadades d'una "
 "imatge o un fitxer JSON amb l'ExifTool.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, kde-format
 msgid "Titles:"
 msgstr "Títols:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Introduïu aquí el text del títol."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, kde-format
 msgid "Captions:"
 msgstr "Llegendes:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Introduïu aquí el text de la llegenda."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Neteja i sobreescriu les metadades"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6500,7 +6500,7 @@ msgstr ""
 "substituiran amb els valors nous,\n"
 "altrament, els valors antics es fusionaran amb els valors nous."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -27233,7 +27233,7 @@ msgstr "Aquest és l'ajust de la corba de la lluminositat en la imatge"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "Inicialitza"
@@ -30437,12 +30437,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Informació del perfil de color - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, kde-format
 msgid "Select an Item"
 msgstr "Selecciona un element"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, kde-format
 msgid "Select Items"
 msgstr "Selecciona els elements"
@@ -42136,7 +42136,7 @@ msgstr ""
 msgid "No or invalid size specified"
 msgstr "La mida especificada és nul·la o no vàlida"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "La miniatura és nul·la"
@@ -64415,12 +64415,12 @@ msgstr "Edició de la cerca emmagatzemada"
 msgid "Edit..."
 msgstr "Edita..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, kde-format
 msgid "Add Search Group"
 msgstr "Afegeix un grup de cerca"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "Prova"

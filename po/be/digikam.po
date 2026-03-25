@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -6433,36 +6433,36 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, kde-format
 msgid "Titles:"
 msgstr "Назвы:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, kde-format
 msgid "Captions:"
 msgstr "Подпісы:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6471,7 +6471,7 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -25829,7 +25829,7 @@ msgstr "Гэта крывая для наладжвання агульнай а�
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "Скінуць"
@@ -28850,12 +28850,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Звесткі пра колеравы профіль — %1"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, kde-format
 msgid "Select an Item"
 msgstr "Абраць элемент"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, kde-format
 msgid "Select Items"
 msgstr "Абраць элементы"
@@ -39881,7 +39881,7 @@ msgstr "Абраць шрыфт тэксту ў падказках."
 msgid "No or invalid size specified"
 msgstr ""
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Мініяцюра нулявая"
@@ -61412,12 +61412,12 @@ msgstr ""
 msgid "Edit..."
 msgstr "Рэдагаванне..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, kde-format
 msgid "Add Search Group"
 msgstr "Дадаць групу пошуку"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "Паспрабаваць"

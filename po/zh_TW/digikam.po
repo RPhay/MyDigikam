@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -6254,36 +6254,36 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "這張影像不能套用色彩管理。"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, kde-format
 msgid "Titles:"
 msgstr "標題："
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "在這裡輸入標題文字。"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, kde-format
 msgid "Captions:"
 msgstr "簡短說明："
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "在這裡輸入簡短說明文字。"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "清理並覆寫中繼資料"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6292,7 +6292,7 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -26980,7 +26980,7 @@ msgstr "這是影像明度的曲線調整。"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "重設"
@@ -30111,12 +30111,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "色彩描述檔資訊 - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "選擇項目"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, fuzzy, kde-format
 msgid "Select Items"
 msgstr "選擇項目"
@@ -41718,7 +41718,7 @@ msgstr "在這裡選擇樹狀檢視中顯示文字的字型。"
 msgid "No or invalid size specified"
 msgstr "未指定或指定了無效的大小"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "縮圖是空的"
@@ -64098,12 +64098,12 @@ msgstr "編輯儲存的搜尋"
 msgid "Edit..."
 msgstr "編輯..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, kde-format
 msgid "Add Search Group"
 msgstr "加入搜尋群組"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "測試"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2026-03-20 03:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -6310,36 +6310,36 @@ msgstr ""
 "<para>ამ პაკეტური რიგის მართვის ხელსაწყოს ExifTool-ით გამოსახულებიდან ან "
 "JSON ფაილიდან მეტამონაცემების გადატარება შეუძლია.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, kde-format
 msgid "Titles:"
 msgstr "სათაური:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "შეიყვანეთ თქვენი ტექსტი."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, kde-format
 msgid "Captions:"
 msgstr "წარწერები:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "შეიყვანეთ აღწერის ტექსტი."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "მოსუფთავება და მეტამონაცემების თავზე გადაწერა"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6348,7 +6348,7 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -26144,7 +26144,7 @@ msgstr "ეს გამოსახულების განათებუ�
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "განულება"
@@ -29066,12 +29066,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "ფერის პროფილის ინფორმაცია - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, kde-format
 msgid "Select an Item"
 msgstr "აირჩიეთ ელემენტი"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, kde-format
 msgid "Select Items"
 msgstr "ჩანაწერების არჩევა"
@@ -40051,7 +40051,7 @@ msgstr ""
 msgid "No or invalid size specified"
 msgstr "ზომა არასწორია ან მითითებული არაა"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "მინიატურა ნულოვანია"
@@ -61673,12 +61673,12 @@ msgstr "შენახული ძებნის ჩასწორება"
 msgid "Edit..."
 msgstr "ჩასწორება…"
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, kde-format
 msgid "Add Search Group"
 msgstr "ახალი ძებნის ჯგუფი"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "ცდა"

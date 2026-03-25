@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2026-02-20 19:31+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@yahoo.com>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -6459,36 +6459,36 @@ msgstr ""
 "<para>Is féidir leis an uirlis Bainisteoir Scuaine Baisce seo meiteashonraí "
 "ó íomhá nó comhad JSON a chur i bhfeidhm le ExifTool.</para>"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, kde-format
 msgid "Titles:"
 msgstr "Teidil:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Cuir téacs teidil isteach anseo."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, kde-format
 msgid "Captions:"
 msgstr "Fotheidil:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Cuir téacs an fhotheidil isteach anseo."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Glan suas agus athscríobh meiteashonraí"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6500,7 +6500,7 @@ msgstr ""
 "cuirfear na luachanna nua ina n-áit,\n"
 "nó cuirfear seanluachanna le chéile le luachanna nua."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -27275,7 +27275,7 @@ msgstr "Seo é coigeartú cuar lonrúlacht na híomhá"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "Athshocraigh"
@@ -30503,12 +30503,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Eolas Próifíl Datha - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, kde-format
 msgid "Select an Item"
 msgstr "Roghnaigh Mír"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, kde-format
 msgid "Select Items"
 msgstr "Roghnaigh Míreanna"
@@ -42355,7 +42355,7 @@ msgstr ""
 msgid "No or invalid size specified"
 msgstr "Níor sonraíodh méid, nó sonraíodh méid neamhbhailí"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Tá an mionsamhail neamhní"
@@ -65234,12 +65234,12 @@ msgstr "Cuir Cuardach Sábháilte in Eagar"
 msgid "Edit..."
 msgstr "Eagar..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, kde-format
 msgid "Add Search Group"
 msgstr "Cuir Grúpa Cuardaigh Leis"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "Bain Triail As"

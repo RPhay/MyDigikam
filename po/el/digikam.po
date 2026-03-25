@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -6612,14 +6612,14 @@ msgstr ""
 "Προσθήκη νέου εργαλείου διαχείρισης ουράς για προσαρμογή μεταδεδομένων ώρας "
 "και ημερομηνίας;"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, fuzzy, kde-format
 #| msgctxt "title of the file"
 #| msgid "Title:"
 msgid "Titles:"
 msgstr "Τίτλος:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, fuzzy, kde-format
 #| msgid "Enter title here."
@@ -6627,13 +6627,13 @@ msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Εισαγάγετε τον τίτλο εδώ."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, fuzzy, kde-format
 #| msgid "Captions: "
 msgid "Captions:"
 msgstr "Επιγραφές:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
@@ -6641,12 +6641,12 @@ msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Εισαγάγετε το κείμενο τίτλου εδώ."
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, fuzzy, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Καθαρισμός ανεπιβεβαίωτων αποτελεσμάτων και επανάληψη σάρωσης"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6655,7 +6655,7 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -28550,7 +28550,7 @@ msgstr "Αυτή είναι η προσαρμογή καμπύλης της φω
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "Επαναφορά"
@@ -32025,12 +32025,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Πληροφορίες προφίλ χρώματος - %1"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, kde-format
 msgid "Select an Item"
 msgstr "Επιλογή αντικειμένου"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, kde-format
 msgid "Select Items"
 msgstr "Επιλογή αντικειμένων"
@@ -44448,7 +44448,7 @@ msgstr ""
 msgid "No or invalid size specified"
 msgstr "Δεν ορίσθηκε μέγεθος ή ορίσθηκε μη έγκυρο μέγεθος"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "Η εικόνα επισκόπησης είναι κενή"
@@ -68881,12 +68881,12 @@ msgstr "Επεξεργασία αποθηκευμένης αναζήτησης"
 msgid "Edit..."
 msgstr "Επεξεργασία..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, kde-format
 msgid "Add Search Group"
 msgstr "Προσθήκη ομάδας αναζήτησης"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "Δοκιμή"

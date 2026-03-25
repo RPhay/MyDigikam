@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -6705,36 +6705,36 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "فاصله رنگ"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, fuzzy, kde-format
 msgid "Titles:"
 msgstr "عنوان:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "متن خود را در اینجا وارد کنید!"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, fuzzy, kde-format
 msgid "Captions:"
 msgstr "چرخش:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "متن خود را در اینجا وارد کنید!"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, fuzzy, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "پاک کردن همه فقره‌ها"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6743,7 +6743,7 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -26849,7 +26849,7 @@ msgstr "<p>این، تنظیم منحنی درخشش تصویر است"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "بازنشانی"
@@ -29781,12 +29781,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "اطلاعات Profile رنگ"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "انتخاب مورد"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, fuzzy, kde-format
 msgid "Select Items"
 msgstr "انتخاب مورد"
@@ -41028,7 +41028,7 @@ msgstr "<p>در اینجا رنگ استفاده‌شده برای ترسیم خ
 msgid "No or invalid size specified"
 msgstr "هیچ اندازه یا اندازه نامعتبری مشخص نشد"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, kde-format
 msgid "Thumbnail is null"
 msgstr "ریزنقش خالی است"
@@ -63444,12 +63444,12 @@ msgstr "ویرایش جستجو..."
 msgid "Edit..."
 msgstr "ویرایش..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, fuzzy, kde-format
 msgid "Add Search Group"
 msgstr "جستجوی پیشرفته"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr "امتحان شود"

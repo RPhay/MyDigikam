@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-23 00:41+0000\n"
+"POT-Creation-Date: 2026-03-25 00:42+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -6236,36 +6236,36 @@ msgid ""
 "file with ExifTool.</para>"
 msgstr "Miền màu"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:95
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, fuzzy, kde-format
 msgid "Titles:"
 msgstr "&Tựa:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:97
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:96
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:277
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter title text here."
 msgstr "Hãy nhập đoạn vào đây !"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:103
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:102
 #, fuzzy, kde-format
 msgid "Captions:"
 msgstr "Độ xoay:"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:105
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:104
 #: core/libs/properties/captions/itemdescedittab_descview.cpp:282
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter caption text here."
 msgstr "Hãy nhập đoạn vào đây !"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:109
 #, fuzzy, kde-format
 msgid "Clean up and overwrite metadata"
 msgstr "Xoá sạch mọi mục"
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:111
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:110
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -6274,7 +6274,7 @@ msgid ""
 "else old values will be merged with new values."
 msgstr ""
 
-#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:117
+#: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
 msgctxt "@label"
 msgid ""
@@ -26268,7 +26268,7 @@ msgstr "<p>Đây là cách điều chỉnh độ trưng của ảnh"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:505
+#: core/utilities/searchwindow/searchview.cpp:512
 #, kde-format
 msgid "Reset"
 msgstr "Đặt lại"
@@ -29209,12 +29209,12 @@ msgctxt "@title:window"
 msgid "Color Profile Info - %1"
 msgstr "Thông tin hồ sơ màu"
 
-#: core/libs/dialogs/imagedialog.cpp:223
+#: core/libs/dialogs/imagedialog.cpp:226
 #, fuzzy, kde-format
 msgid "Select an Item"
 msgstr "Chọ&n mục mới"
 
-#: core/libs/dialogs/imagedialog.cpp:237
+#: core/libs/dialogs/imagedialog.cpp:240
 #, fuzzy, kde-format
 msgid "Select Items"
 msgstr "Chọ&n mục mới"
@@ -40425,7 +40425,7 @@ msgstr "<p>Ở đây đặt màu dùng để vẽ đường gạch gạch dẫn.
 msgid "No or invalid size specified"
 msgstr "Chưa ghi rõ kích cỡ hay kích cỡ không hợp lệ"
 
-#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:314
+#: core/libs/threadimageio/thumb/thumbnailcreator.cpp:325
 #, fuzzy, kde-format
 msgid "Thumbnail is null"
 msgstr "Khi nhấn vào ảnh mẫu :"
@@ -62602,12 +62602,12 @@ msgstr "Sửa tìm kiếm..."
 msgid "Edit..."
 msgstr "Sửa..."
 
-#: core/utilities/searchwindow/searchview.cpp:497
+#: core/utilities/searchwindow/searchview.cpp:504
 #, fuzzy, kde-format
 msgid "Add Search Group"
 msgstr "Tìm kiếm cấp cao"
 
-#: core/utilities/searchwindow/searchview.cpp:526
+#: core/utilities/searchwindow/searchview.cpp:533
 #, kde-format
 msgid "Try"
 msgstr ""
