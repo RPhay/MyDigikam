@@ -290,7 +290,7 @@ void BackendOsmRG::slotFinished(QNetworkReply* reply)
 
             if (!d->jobs.isEmpty())
             {
-                QTimer::singleShot(500, this, SLOT(nextPhoto()));
+                QTimer::singleShot(1000, this, SLOT(nextPhoto()));
             }
 
             reply->deleteLater();
