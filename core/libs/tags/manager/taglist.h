@@ -43,13 +43,13 @@ public:
 
     /**
      * @brief read settings from digikam_tagsmanagerrc
-     *        config and populate model with data.
+     * config and populate model with data.
      */
     void restoreSettings();
 
     /**
      * @brief disable Add Button when selection is empty
-     *        or only root tag is selected.
+     * or only root tag is selected.
      */
     void enableAddButton(bool value);
 

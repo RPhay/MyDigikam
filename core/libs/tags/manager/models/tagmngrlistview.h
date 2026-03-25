@@ -39,7 +39,7 @@ public:
 protected:
 
     /**
-     * Reimplemented methods to enable custom drag-n-drop in QListView.
+     * @brief Reimplemented methods to enable custom drag-n-drop in QListView.
      */
     void startDrag(Qt::DropActions supportedActions)    override;
     void dropEvent(QDropEvent *e)                       override;

@@ -45,7 +45,7 @@ public:
     ~AddTagsComboBox()                                                          override;
 
     /**
-     * You must call this after construction.
+     * @brief You must call this after construction.
      * If filtered/filterModel is 0, a default one is constructed
      */
     void setAlbumModels(TagModel* const model,
@@ -53,14 +53,14 @@ public:
                         CheckableAlbumFilterModel* const filterModel = nullptr) override;
 
     /**
-     * Returns the currently set tagging action.
+     * @return the currently set tagging action.
      * This is the last action emitted by either taggingActionActivated()
      * or taggingActionSelected()
      */
     TaggingAction currentTaggingAction();
 
     /**
-     * Sets the currently selected tag
+     * @brief Sets the currently selected tag
      */
     void setCurrentTag(TAlbum* const album);
 
@@ -74,19 +74,19 @@ public:
 public Q_SLOTS:
 
     /**
-     * Set a parent tag for suggesting a parent tag for a new tag, and a default action.
+     * @brief Set a parent tag for suggesting a parent tag for a new tag, and a default action.
      */
     void setParentTag(TAlbum* const album);
 
 Q_SIGNALS:
 
     /**
-     * Emitted when the user activates an action (typically, by pressing return)
+     * @brief Emitted when the user activates an action (typically, by pressing return)
      */
     void taggingActionActivated(const TaggingAction& action);
 
     /**
-     * Emitted when an action is selected, but not explicitly activated.
+     * @brief Emitted when an action is selected, but not explicitly activated.
      * (typically by selecting an item in the tree view
      */
     void taggingActionSelected(const TaggingAction& action);

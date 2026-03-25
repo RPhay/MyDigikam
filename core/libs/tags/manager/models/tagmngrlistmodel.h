@@ -52,7 +52,7 @@ public:
     void deleteItem(ListItem* const item);
 
     /**
-     * Standard methods to be implemented when subcassing QAbstractItemModel.
+     * @brief Standard methods to be implemented when subcassing QAbstractItemModel.
      */
     QVariant data(const QModelIndex& index, int role)                                           const override;
 
@@ -71,7 +71,7 @@ public:
     bool setData(const QModelIndex& index, const QVariant& value, int role) override;
 
     /**
-     * Reimplemented methods for handling drag-n-drop, encoding and decoding mime types.
+     * @brief Reimplemented methods for handling drag-n-drop, encoding and decoding mime types.
      */
     Qt::DropActions supportedDropActions()                                                      const override;
     QStringList mimeTypes()                                                                     const override;

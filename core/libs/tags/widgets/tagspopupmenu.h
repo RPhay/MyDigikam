@@ -38,7 +38,7 @@ public:
     {
         ASSIGN = 0,
         REMOVE,
-        DISPLAY,           ///< Used by "GoTo Tag" feature
+        DISPLAY,           ///< @note Used by "GoTo Tag" feature
         RECENTLYASSIGNED
     };
 

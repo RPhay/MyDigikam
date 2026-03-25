@@ -56,8 +56,8 @@ public:
 
     /**
      * @brief If @param checkNewTags is switched on, a tag that is created
-     *        from _within_ this view, typically via the context menu,
-     *        will automatically be set checked.
+     * from _within_ this view, typically via the context menu,
+     * will automatically be set checked.
      */
     void setCheckNewTags(bool checkNewTags);
     bool checkNewTags() const;

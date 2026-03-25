@@ -37,7 +37,7 @@ class TagFolderView: public TagTreeView
 public:
 
     /**
-     * Constructor.
+     * @brief Constructor.
      *
      * @param parent the parent for Qt's parent child mechanism
      * @param model tag model to display
@@ -45,12 +45,12 @@ public:
     TagFolderView(QWidget* const parent, TagModel* const model);
 
     /**
-     * Destructor.
+     * @brief Destructor.
      */
     ~TagFolderView()                                                                        override;
 
     /**
-     * Define whether to show the "find duplicate" action in context menus
+     * @brief Define whether to show the "find duplicate" action in context menus
      * or not.
      *
      * @param show if <code>true</code> the action to find duplicate images in
@@ -59,7 +59,7 @@ public:
     void setShowFindDuplicateAction(bool show);
 
     /**
-     * Define whether to show the "Delete People Tags" action in context menus
+     * @brief Define whether to show the "Delete People Tags" action in context menus
      * or not.
      *
      * @param show if <code>true</code> the action to delete people tags in
@@ -68,7 +68,7 @@ public:
     void setShowDeleteFaceTagsAction(bool show);
 
     /**
-     * Open tag for editing.
+     * @brief Open tag for editing.
      */
     void tagPropsEdit();
 
@@ -81,7 +81,7 @@ protected:
     QString contextMenuTitle()                                                        const override;
 
     /**
-     * Hook method to add custom actions to the generated context menu.
+     * @brief Hook method to add custom actions to the generated context menu.
      *
      * The default implementation adds actions to reset the tag icon and to
      * find duplicates in a tag album. If you want to use these actions,
@@ -95,7 +95,7 @@ protected:
     void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)                  override;
 
     /**
-     * Hook method to handle the custom context menu actions that were added
+     * @brief Hook method to handle the custom context menu actions that were added
      * with addCustomContextMenuActions.
      *
      * @param action the action that was chosen by the user, may be null if none
@@ -106,7 +106,7 @@ protected:
     void handleCustomContextMenuAction(QAction* action, const AlbumPointer<Album>& album)   override;
 
     /**
-     * Reimplement contextMenuEvent from AbstractAlbumTree to support multiple
+     * @brief Reimplement contextMenuEvent from AbstractAlbumTree to support multiple
      * selection
      *
      * @param event context menu event triggered by right click
@@ -114,7 +114,7 @@ protected:
     void contextMenuEvent(QContextMenuEvent* event)                                         override;
 
     /**
-     * Implementation of AddCustomContextMenuActions(see above) that handle
+     * @brief Implementation of AddCustomContextMenuActions(see above) that handle
      * multiple selection. If only one element is selected, only
      * AddCustomContextMenuActions is called
      *

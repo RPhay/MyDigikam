@@ -119,7 +119,7 @@ public:
     QAction*         titleEdit          = nullptr;
 
     /**
-     * Options unavailable for root tag
+     * @note Options unavailable for root tag
      */
     QList<QAction*>  rootDisabledOptions;
 
