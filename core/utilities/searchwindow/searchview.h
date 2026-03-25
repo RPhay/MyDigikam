@@ -130,6 +130,7 @@ protected Q_SLOTS:
 
     void setTheme();
     void slotAddGroupButton();
+    void slotClearAllGroups();
     void slotResetButton();
     void startAnimation();
     void animationFrame(int);
@@ -176,6 +177,7 @@ Q_SIGNALS:
     void tryoutPressed();
     void addGroupPressed();
     void resetPressed();
+    void clearAllPressed();
 
 protected:
 
@@ -188,6 +190,7 @@ protected:
     QDialogButtonBox*           m_buttonBox         = nullptr;
     QPushButton*                m_addGroupsButton   = nullptr;
     QPushButton*                m_resetButton       = nullptr;
+    QPushButton*                m_clearAllButton    = nullptr;
 
     SearchViewThemedPartsCache* m_themeCache        = nullptr;
 

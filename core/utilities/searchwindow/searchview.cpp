@@ -223,6 +223,9 @@ void SearchView::setBottomBar(SearchViewBottomBar* const bar)
 
     connect(d->bar, SIGNAL(resetPressed()),
             this, SLOT(slotResetButton()));
+            
+    connect(d->bar, SIGNAL(clearAllPressed()),
+            this, SLOT(slotClearAllGroups()));
 }
 
 void SearchView::read(const QString& xml)
@@ -295,6 +298,20 @@ void SearchView::slotResetButton()
             m_groups.first()->reset();
         }
     }
+}
+
+void SearchView::slotClearAllGroups()
+{
+    // Remove all existing search groups
+    while (!m_groups.isEmpty())
+    {
+        delete m_groups.takeLast();
+    }
+
+    // Add a new initial group so UI remains usable
+    addSearchGroup();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "SearchView: Cleared all search groups";
 }
 
 QString SearchView::write() const
@@ -516,6 +533,15 @@ SearchViewBottomBar::SearchViewBottomBar(SearchViewThemedPartsCache* const cache
             this, SIGNAL(resetPressed()));
 
     m_mainLayout->addWidget(m_resetButton);
+
+    m_clearAllButton = new QPushButton(i18n("Clear All Groups"));
+    m_clearAllButton->setIcon(QIcon::fromTheme(QLatin1String("edit-clear")));
+
+    connect(m_clearAllButton, SIGNAL(clicked()),
+            this, SIGNAL(clearAllPressed()));
+
+    m_mainLayout->addWidget(m_clearAllButton);
+
     m_mainLayout->addStretch(1);
 
     m_buttonBox = new QDialogButtonBox(this);
