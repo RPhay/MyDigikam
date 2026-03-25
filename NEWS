@@ -86,7 +86,7 @@ BUGFIXES:
 061 --> 518046 - AssignCaption tool: caption/title disappear after restart.
 062 --> 518072 - Declutter sidebars.
 063 --> 518091 - Error 429 from OpenstreetMap: too much request.
-064 --> 
+064 --> 518100 - BQM Time adjust not changing the time.
 065 --> 
 066 --> 
 067 --> 
