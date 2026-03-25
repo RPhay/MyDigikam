@@ -346,7 +346,10 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
 
             if (this->state() == EditingState)
             {
-                option.state |= QStyle::State_Editing;
+                /**
+                 * @note QStyle::State_Editing is deprecated: Not used and no effect since Qt 5.
+                 */
+                //option.state |= QStyle::State_Editing;
             }
         }
 
