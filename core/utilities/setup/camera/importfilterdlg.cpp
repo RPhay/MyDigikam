@@ -32,6 +32,7 @@
 
 #include <klocalizedstring.h>
 #include <kmimetypechooser.h>
+#include <kwidgetsaddons_version.h>
 
 // Local includes
 
@@ -202,10 +203,22 @@ void ImportFilterDlg::mimeCheckBoxClicked()
 
 void ImportFilterDlg::mimeButtonClicked()
 {
-    QString text     = i18n("Select the MimeTypes you want for this filter.");
-    QStringList list = d->mimeLabel->adjustedText().split(QLatin1Char(';'), Qt::SkipEmptyParts);
-    QPointer<KMimeTypeChooserDialog> dlg = new KMimeTypeChooserDialog(i18n("Select Mime Types"), text,
-                                                                      list, QLatin1String("image"), this);
+    QString text                         = i18n("Select the MimeTypes you want for this filter.");
+    QStringList list                     = d->mimeLabel->adjustedText().split(QLatin1Char(';'), Qt::SkipEmptyParts);
+
+    QPointer<KMimeTypeChooserDialog> dlg = new KMimeTypeChooserDialog(
+                                                                      i18n("Select Mime Types"),
+                                                                      text,
+                                                                      list,
+                                                                      QLatin1String("image"),
+#if (KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(6, 24, 0))
+
+                                                                      QStringList(),
+                                                                      KMimeTypeChooser::Comments | KMimeTypeChooser::Patterns | KMimeTypeChooser::EditButton,
+
+#endif
+                                                                      this
+                                                                     );
 
     if (dlg->exec() == QDialog::Accepted)
     {
