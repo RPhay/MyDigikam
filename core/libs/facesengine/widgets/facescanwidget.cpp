@@ -41,24 +41,24 @@ void FaceScanWidget::doLoadState()
 {
     KConfigGroup group = getConfigGroup();
 
-    FaceScanSettings settings;
-    settings.readFromConfig(group);
+    FaceScanSettings set;
+    set.readFromConfig(group);
 
     /**
      * ClearAll isn't a valid value anymore so set it Rescan.
      * ClearAll is only used by ResetFacesDb in maintenance.
      */
 
-    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == settings.alreadyScannedHandling)
+    if (FaceScanSettings::AlreadyScannedHandling::ClearAll == set.alreadyScannedHandling)
     {
-        settings.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
+        set.alreadyScannedHandling = FaceScanSettings::AlreadyScannedHandling::Rescan;
     }
 
-    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(settings.alreadyScannedHandling));
-    d->detectAccuracyInput->setValue(settings.detectAccuracy);
-    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(settings.detectSize));
-    d->recognizeAccuracyInput->setValue(settings.recognizeAccuracy);
-    d->useFullCpuButton->setChecked(settings.useFullCpu);
+    d->alreadyScannedBox->setCurrentIndex(d->alreadyScannedBox->findData(set.alreadyScannedHandling));
+    d->detectAccuracyInput->setValue(set.detectAccuracy);
+    d->detectSizeBox->setCurrentIndex(d->detectSizeBox->findData(set.detectSize));
+    d->recognizeAccuracyInput->setValue(set.recognizeAccuracy);
+    d->useFullCpuButton->setChecked(set.useFullCpu);
 
     d->albumSelectors->loadState();
 
@@ -69,17 +69,17 @@ void FaceScanWidget::doSaveState()
 {
     KConfigGroup group = getConfigGroup();
 
-    FaceScanSettings settings;
+    FaceScanSettings set;
 
-    settings.alreadyScannedHandling = static_cast<FaceScanSettings::AlreadyScannedHandling>
-                                      (d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
-    settings.detectAccuracy         = d->detectAccuracyInput->value();
-    settings.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>
-                                      (d->detectSizeBox->currentData().toInt());
-    settings.recognizeAccuracy      = d->recognizeAccuracyInput->value();
-    settings.useFullCpu             = d->useFullCpuButton->isChecked();
+    set.alreadyScannedHandling = static_cast<FaceScanSettings::AlreadyScannedHandling>
+                                 (d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt());
+    set.detectAccuracy         = d->detectAccuracyInput->value();
+    set.detectSize             = static_cast<FaceScanSettings::FaceDetectionSize>
+                                 (d->detectSizeBox->currentData().toInt());
+    set.recognizeAccuracy      = d->recognizeAccuracyInput->value();
+    set.useFullCpu             = d->useFullCpuButton->isChecked();
 
-    settings.writeToConfig(group);
+    set.writeToConfig(group);
 
     d->albumSelectors->saveState();
 }
@@ -244,16 +244,16 @@ void FaceScanWidget::slotSettingsChanged()
 {
     KConfigGroup group = getConfigGroup();
 
-    FaceScanSettings settings;
-    settings.readFromConfig(group);
+    FaceScanSettings set;
+    set.readFromConfig(group);
 
-    settings.detectSize        = static_cast<FaceScanSettings::FaceDetectionSize>
-                                 (d->detectSizeBox->currentData().toInt());
-    settings.useFullCpu        = d->useFullCpuButton->isChecked();
-    settings.detectAccuracy    = d->detectAccuracyInput->value();
-    settings.recognizeAccuracy = d->recognizeAccuracyInput->value();
+    set.detectSize        = static_cast<FaceScanSettings::FaceDetectionSize>
+                            (d->detectSizeBox->currentData().toInt());
+    set.useFullCpu        = d->useFullCpuButton->isChecked();
+    set.detectAccuracy    = d->detectAccuracyInput->value();
+    set.recognizeAccuracy = d->recognizeAccuracyInput->value();
 
-    settings.writeToConfig(group);
+    set.writeToConfig(group);
 }
 
 bool FaceScanWidget::settingsConflicted() const
