@@ -192,8 +192,8 @@ void AlbumModelTest::init()
     // create two of them by creating directories and scanning
 
     QDir dir(dbPath);
-    dir.mkdir(QLatin1String("root0"));
-    dir.mkdir(QLatin1String("root1"));
+    (void)dir.mkdir(QLatin1String("root0"));
+    (void)dir.mkdir(QLatin1String("root1"));
 
     ScanController::instance()->completeCollectionScan();
     AlbumManager::instance()->refresh();

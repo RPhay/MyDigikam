@@ -47,8 +47,8 @@ void IOJobsTest::init()
     QFile f(filePath);
 
     QDir d;
-    d.mkpath(QDir::currentPath() + QLatin1Char('/') + srcFolderName + QLatin1Char('/') + testFolderName);
-    d.mkpath(QDir::currentPath() + QLatin1Char('/') + dstFolderPath);
+    (void)d.mkpath(QDir::currentPath() + QLatin1Char('/') + srcFolderName + QLatin1Char('/') + testFolderName);
+    (void)d.mkpath(QDir::currentPath() + QLatin1Char('/') + dstFolderPath);
 
     QVERIFY2(f.copy(QDir::currentPath() + QLatin1Char('/') + srcFolderName + QLatin1Char('/') + testFileName),
              qPrintable(QLatin1String("Could not copy the test target to src folder")));

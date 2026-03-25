@@ -56,7 +56,7 @@ void DImgHistoryGraphTest::initTestCase()
 
     QString name  = tempFileName(QLatin1String("collection"));
     collectionDir = QDir::temp();
-    collectionDir.mkdir(name);
+    (void)collectionDir.mkdir(name);
     QVERIFY(collectionDir.cd(name));
     QVERIFY(collectionDir.exists());
 

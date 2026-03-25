@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 
         QString path = destination.absolutePath() + QLatin1String("/") + subDir.dirName();
 
-        destination.mkpath(path);
+        (void)destination.mkpath(path);
 
         QFileInfoList filesInfo = subDir.entryInfoList(QDir::Files | QDir::Readable);
 
