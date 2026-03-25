@@ -594,29 +594,29 @@ void LensFunCameraSelector::readSettings(const KConfigGroup& group)
 
     if (!useMetadata())
     {
-        LensFunContainer settings = d->iface->settings();
-        settings.cameraModel      = group.readEntry(d->configCameraModel, QString());
-        settings.cameraMake       = group.readEntry(d->configCameraMake,  QString());
-        settings.lensModel        = group.readEntry(d->configLensModel,   QString());
+        LensFunContainer set = d->iface->settings();
+        set.cameraModel      = group.readEntry(d->configCameraModel, QString());
+        set.cameraMake       = group.readEntry(d->configCameraMake,  QString());
+        set.lensModel        = group.readEntry(d->configLensModel,   QString());
 
-        if (settings.subjectDistance <= 0.0)
+        if (set.subjectDistance <= 0.0)
         {
-            settings.subjectDistance = group.readEntry(d->configSubjectDistance, -1.0);
+            set.subjectDistance = group.readEntry(d->configSubjectDistance, -1.0);
         }
 
-        if (settings.focalLength <= 0.0)
+        if (set.focalLength <= 0.0)
         {
-            settings.focalLength = group.readEntry(d->configFocalLength, -1.0);
+            set.focalLength = group.readEntry(d->configFocalLength, -1.0);
         }
 
-        settings.cropFactor = group.readEntry(d->configCropFactor, -1.0);
+        set.cropFactor = group.readEntry(d->configCropFactor, -1.0);
 
-        if (settings.aperture <= 0.0)
+        if (set.aperture <= 0.0)
         {
-            settings.aperture = group.readEntry(d->configAperture, -1.0);
+            set.aperture = group.readEntry(d->configAperture, -1.0);
         }
 
-        setSettings(settings);
+        setSettings(set);
     }
 
     slotUseMetadata(useMetadata());
@@ -776,11 +776,11 @@ void LensFunCameraSelector::slotLensSelected()
     d->iface->setUsedLens((d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? nullptr
                                                                                      : v.value<LensFunIface::LensPtr>());
 
-    LensFunContainer settings = d->iface->settings();
+    LensFunContainer set = d->iface->settings();
 
     if (
         d->iface->usedLens() &&
-        (settings.cropFactor <= 0.0) // this should not happen
+        (set.cropFactor <= 0.0) // this should not happen
        )
     {
 
@@ -788,50 +788,50 @@ void LensFunCameraSelector::slotLensSelected()
 
         qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using 1.0 default value.";
 
-        settings.cropFactor = 1.0;
+        set.cropFactor = 1.0;
 
 #else
 
         qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using lens calibration data: "
                                   << d->iface->usedLens()->CropFactor;
 
-        settings.cropFactor = d->iface->usedLens()->CropFactor;
+        set.cropFactor = d->iface->usedLens()->CropFactor;
 
 #endif
 
     }
 
-    d->iface->setSettings(settings);
+    d->iface->setSettings(set);
 
     Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotFocalChanged()
 {
-    LensFunContainer settings = d->iface->settings();
-    settings.focalLength      = (d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? -1.0
-                                                                                           : d->focal->value();
-    d->iface->setSettings(settings);
+    LensFunContainer set = d->iface->settings();
+    set.focalLength      = (d->metadataUsage->isChecked() && d->passiveMetadataUsage) ? -1.0
+                                                                                      : d->focal->value();
+    d->iface->setSettings(set);
 
     Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotApertureChanged()
 {
-    LensFunContainer settings = d->iface->settings();
-    settings.aperture         = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
-                                                                                         : d->aperture->value();
-    d->iface->setSettings(settings);
+    LensFunContainer set = d->iface->settings();
+    set.aperture         = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
+                                                                                    : d->aperture->value();
+    d->iface->setSettings(set);
 
     Q_EMIT signalLensSettingsChanged();
 }
 
 void LensFunCameraSelector::slotDistanceChanged()
 {
-    LensFunContainer settings = d->iface->settings();
-    settings.subjectDistance  = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
-                                                                                         : d->distance->value();
-    d->iface->setSettings(settings);
+    LensFunContainer set = d->iface->settings();
+    set.subjectDistance  = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
+                                                                                    : d->distance->value();
+    d->iface->setSettings(set);
 
     Q_EMIT signalLensSettingsChanged();
 }
