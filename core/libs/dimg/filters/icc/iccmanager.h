@@ -35,7 +35,7 @@ class DIGIKAM_EXPORT IccManager
 public:
 
     /**
-     * Constructs an IccManager object.
+     * @brief Constructs an IccManager object.
      * The DImg will be edited. The filePath is for display only.
      */
     explicit IccManager(const DImg& image, const ICCSettingsContainer& settings = IccSettings::instance()->settings());
@@ -53,34 +53,34 @@ public:
     bool isProfileMismatch()        const;
 
     /**
-     * Transforms the image for full editing, using default settings.
+     * @brief Transforms the image for full editing, using default settings.
      * If the default settings require showing a dialog, the image is marked as such
      * but no action is taken. See IccPostLoadingManager.
      */
     void transformDefault();
 
     /**
-     * Same as above, but not using default settings but the given settings.
+     * @brief Same as above, but not using default settings but the given settings.
      */
     void transform(ICCSettingsContainer::Behavior behavior,
                    const IccProfile& specifiedProfile = IccProfile());
     /**
-     * Transforms the image to sRGB
+     * @brief Transforms the image to sRGB
      */
     void transformToSRGB();
 
     /**
-     * Returns true if a call to transformToSRGB() would have an effect.
+     * @return true if a call to transformToSRGB() would have an effect.
      */
     static bool isSRGB(const DImg& img);
 
     /**
-     * Transforms the image for output to the specified output profile
+     * @brief Transforms the image for output to the specified output profile
      */
     void transformForOutput(const IccProfile& outputProfile);
 
     /**
-     * Transforms the image for display on screen. The result is not suitable
+     * @brief Transforms the image for display on screen. The result is not suitable
      * for editing or storage.
      * You can specify the widget in which the image will be displayed, or specify
      * the display profile yourself.
@@ -96,32 +96,32 @@ public:
     IccTransform displayTransform(const IccProfile& displayProfile);
 
     /**
-     * Returns a display transform, with soft-proofing enabled for the given device profile.
+     * @return a display transform, with soft-proofing enabled for the given device profile.
      */
     IccTransform displaySoftProofingTransform(const IccProfile& deviceProfile, QWidget* const displayingWidget = nullptr);
     IccTransform displaySoftProofingTransform(const IccProfile& deviceProfile, const IccProfile& displayProfile);
 
     /**
-     * Returns true if the given image is marked as needing user interaction
+     * @return true if the given image is marked as needing user interaction
      * for further color management decision after loading.
      * If this returns true, use IccPostLoadingManager to do this.
      */
     static bool needsPostLoadingManagement(const DImg& img);
 
     /**
-     * Returns the profile that will be used to interpret the image,
+     * @return the profile that will be used to interpret the image,
      * using the given behavior
      */
     IccProfile imageProfile(ICCSettingsContainer::Behavior behavior,
                             const IccProfile& specifiedProfile = IccProfile());
 
     /**
-     * Transforms the given QImage from the given inputProfile to sRGB.
+     * @brief Transforms the given QImage from the given inputProfile to sRGB.
      */
     static void transformToSRGB(QImage& qimage, const IccProfile& inputProfile);
 
     /**
-     * Transforms the given QImage from sRGB to given display profile.
+     * @brief Transforms the given QImage from sRGB to given display profile.
      */
     static void transformForDisplay(QImage& qimage, const IccProfile& displayProfile1 = displayProfile());
 

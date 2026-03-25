@@ -35,13 +35,13 @@ public:
 
     enum ProfileType
     {
-        /// Returned for a null profile or an unknown (non-standard) profile type
+        /// @brief Returned for a null profile or an unknown (non-standard) profile type
         InvalidType,
-        /// For an input device like a scanner or digital camera
+        /// @brief For an input device like a scanner or digital camera
         Input,
-        /// For an output device like a printer
+        /// @brief For an output device like a printer
         Output,
-        /// For a display device like a monitor
+        /// @brief For a display device like a monitor
         Display,
         Abstract,
         ColorSpace,
@@ -52,22 +52,22 @@ public:
 public:
 
     /**
-     * Creates a null profile
+     * @brief Creates a null profile
      */
     IccProfile();
 
     /**
-     * Creates a profile from the given data in memory
+     * @brief Creates a profile from the given data in memory
      */
     explicit IccProfile(const QByteArray& data);
 
     /**
-     * Creates a profile from the given file
+     * @brief Creates a profile from the given file
      */
     explicit IccProfile(const QString& filePath);
 
     /**
-     * Returns the profiles available with RawEngine. You still need to call open() on them.
+     * @return the profiles available with RawEngine. You still need to call open() on them.
      */
     static IccProfile sRGB();
     static IccProfile adobeRGB();
@@ -75,7 +75,7 @@ public:
     static IccProfile proPhotoRGB();
 
     /**
-     * Returns a list with the profiles above
+     * @return a list with the profiles above
      */
     static QList<IccProfile> defaultProfiles();
 
@@ -87,9 +87,9 @@ public:
     bool isNull() const;
 
     /**
-     *  Returns true if both profiles are null, if both profiles are created from the
+     *  @return true if both profiles are null, if both profiles are created from the
      *  same file profile, or if the loaded profile data is identical.
-     *  Note: This will not ensure that the data is loaded. Use isSameProfile().
+     *  @note This will not ensure that the data is loaded. Use isSameProfile().
      */
     bool operator==(const IccProfile& other) const;
 
@@ -99,55 +99,55 @@ public:
     }
 
     /**
-     * This method compares the actual profile data bit by bit.
+     * @brief This method compares the actual profile data bit by bit.
      */
     bool isSameProfileAs(IccProfile& other);
 
     /**
-     * Open this profile. Returns true if the operation succeeded
-     * or the profile is already open. Returns false if the profile is null
+     * @brief Open this profile. @return true if the operation succeeded
+     * or the profile is already open. @return false if the profile is null
      * or the operation failed.
      * You need to open each profile after construction.
      */
     bool open();
 
     /**
-     * Close the profile, freeing resources. You can re-open.
+     * @brief Close the profile, freeing resources. You can re-open.
      * Called automatically at destruction.
      */
     void close();
 
     /**
-     * Returns if the profile is opened.
+     * @return if the profile is opened.
      */
     bool isOpen()       const;
 
     /**
-     * Returns the filename that this profile was read from.
-     * returns a null QString() if this profile was loaded from memory.
+     * @return the filename that this profile was read from.
+     * @return a null QString() if this profile was loaded from memory.
      */
     QString filePath()  const;
 
     /**
-     * Reads the profile description. Opens the profile if necessary.
+     * @brief Reads the profile description. Opens the profile if necessary.
      */
     QString description();
 
     ProfileType type();
 
     /**
-     * Returns the raw profile data.
+     * @return the raw profile data.
      * Reads the data from disk if loaded from disk and not yet loaded.
      */
     QByteArray data();
 
     /**
-     * Writes the profile to the given file.
+     * @brief Writes the profile to the given file.
      */
     bool writeToFile(const QString& filePath);
 
     /**
-     * Access to the LCMS cmsHPROFILE handle.
+     * @brief Access to the LCMS cmsHPROFILE handle.
      */
     void* handle()      const;
 
@@ -157,7 +157,7 @@ public:
     }
 
     /**
-     * Returns the default search paths for ICC profiles.
+     * @return the default search paths for ICC profiles.
      * This does not include any user-specified settings.
      */
     static QStringList defaultSearchPaths();
@@ -183,7 +183,7 @@ class DIGIKAM_EXPORT LcmsLock
 public:
 
     /**
-     * Obtain an LcmsLock if you access not clearly thread-safe LittleCMS methods
+     * @brief Obtain an LcmsLock if you access not clearly thread-safe LittleCMS methods
      */
     LcmsLock();
     ~LcmsLock();

@@ -131,7 +131,7 @@ IccProfile::IccProfile(const QString& filePath)
 IccProfile::IccProfile(const char* const location, const QString& relativePath)
     : d(nullptr)
 {
-    QString filePath;
+    QString fPath;
 
     // NOTE: if necessary, implement new location support here.
 
@@ -140,21 +140,22 @@ IccProfile::IccProfile(const char* const location, const QString& relativePath)
 /*
          qCDebug(DIGIKAM_DIMG_LOG) << "Searching ICC profile from data directory with relative path:" << relativePath;
 */
-         filePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, relativePath);
+         fPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, relativePath);
     }
     else
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Data location " << location << " to handle bundled profile is not supported.";
     }
 
-    if (filePath.isNull())
+    if (fPath.isNull())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "The bundled profile" << relativePath << "cannot be found. Check your installation.";
+
         return;
     }
 
     d           = new Private;
-    d->filePath = filePath;
+    d->filePath = fPath;
 }
 
 IccProfile IccProfile::sRGB()
