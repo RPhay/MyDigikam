@@ -46,7 +46,7 @@ class DIGIKAM_EXPORT DMetadata : public MetaEngine
 public:
 
     /**
-     * Video color model reported by FFMPEG following XMP DM Spec from Adobe.
+     * @brief Video color model reported by FFMPEG following XMP DM Spec from Adobe.
      * These values are stored in DB as Image color model properties (extension of DImg::ColorModel)
      */
     enum VIDEOCOLORMODEL
@@ -77,7 +77,7 @@ public: // Settings helpers
 public: // File I/O helpers
 
     /**
-     * Re-implemented from MetaEngine to use libraw identify, libheif,
+     * @brief Re-implemented from MetaEngine to use libraw identify, libheif,
      * ffmpeg probe, and ImageMAgick identify methods if Exiv2 failed.
      * If backend is non null, return the backend used to populate metadata (Exiv2).
      * See MetaEngine::Backend enum for details.
@@ -87,7 +87,7 @@ public: // File I/O helpers
     bool applyChanges(bool setVersion = false)                                                                          const override;
 
     /**
-     * Try to extract metadata using Raw Engine identify method (libraw).
+     * @brief Try to extract metadata using Raw Engine identify method (libraw).
      */
     bool loadUsingRawEngine(const QString& filePath);
 
@@ -103,13 +103,13 @@ public: // History helpers
 public: // Faces helpers
 
     /**
-     * Get Images Face Map based on tags stored in Picassa/Metadatagroup
+     * @brief Get Images Face Map based on tags stored in Picassa/Metadatagroup
      * format.
      */
     bool getItemFacesMap(QMultiMap<QString, QVariant>& facesPath)                                                       const;
 
     /**
-     * Set Images Face Map tags in Picassa/Metadatagroup format.
+     * @brief Set Images Face Map tags in Picassa/Metadatagroup format.
      *
      * @param facesPath The face  map to register in metadata based on tags stored in Picassa/Metadatagroup
      * @param write If true all faces will be written, else update mode
@@ -119,7 +119,7 @@ public: // Faces helpers
     bool setItemFacesMap(const QMultiMap<QString, QVariant>& facesPath, bool write, const QSize& size = QSize())        const;
 
     /**
-     * Remove Images Face Map tags from Picassa/Metadatagroup format.
+     * @brief Remove Images Face Map tags from Picassa/Metadatagroup format.
      */
     bool removeItemFacesMap()                                                                                           const;
 
@@ -167,15 +167,15 @@ public: // Template helpers
     bool     removeMetadataTemplate()                                                                                   const;
 
     /**
-     * Fills only the copyright values in the template. Use getMetadataTemplate() usually.
-     * Returns true if valid fields were read.
+     * @brief Fills only the copyright values in the template. Use getMetadataTemplate() usually.
+     * @return true if valid fields were read.
      */
     bool getCopyrightInformation(Template& t)                                                                           const;
 
 public: // EXIF helpers
 
     /**
-     * Reads an IccProfile that is described or embedded in the metadata.
+     * @brief Reads an IccProfile that is described or embedded in the metadata.
      * This method does not retrieve profiles embedded in the image but from the Exif metadata,
      * e.g. embedded profiles in JPEG images.
      * Returns a null profile if no profile is found.
@@ -183,23 +183,23 @@ public: // EXIF helpers
     IccProfile getIccProfile()                                                                                          const;
 
     /**
-     * Sets the IccProfile embedded in the Exif metadata.
+     * @brief Sets the IccProfile embedded in the Exif metadata.
      */
     bool setIccProfile(const IccProfile& profile);
 
     /**
-     * Remove the Exif color space identification from the image.
+     * @brief Remove the Exif color space identification from the image.
      */
     bool removeExifColorSpace()                                                                                         const;
 
     /**
-     * Returns millisecond time-stamp from Exif tags or 0 if not found.
+     * @return millisecond time-stamp from Exif tags or 0 if not found.
      */
     int  getMSecsInfo()                                                                                                 const;
 
     /**
-     * Extract milliseconds time-stamp of photo from an Exif tag and store it to 'ms'.
-     * Returns true if data are extracted.
+     * @brief Extract milliseconds time-stamp of photo from an Exif tag and store it to 'ms'.
+     * @return true if data are extracted.
      */
     bool mSecTimeStamp(const char* const exifTagName, int& ms)                                                          const;
 
@@ -222,12 +222,12 @@ public: // IPTC helpers
     bool removeIptcTags(const QStringList& tagFilters);
 
     /**
-     * Return a map of ISO-639-1 2 letters country codes with country names.
+     * @return a map of ISO-639-1 2 letters country codes with country names.
      */
     static CountryCodeMap countryCodeMap();
 
     /**
-     * Return a map of ISO-639-2 3 letters country codes with country names.
+     * @return a map of ISO-639-2 3 letters country codes with country names.
      */
     static CountryCodeMap countryCodeMap2();
 
@@ -253,24 +253,24 @@ private:
 public: // Video helpers
 
     /**
-     * Try to extract metadata using FFMpeg probe method (libav).
+     * @brief Try to extract metadata using FFMpeg probe method (libav).
      */
     bool loadUsingFFmpeg(const QString& filePath);
 
     /**
-     * Returns video metadata from Xmp tags.
+     * @return video metadata from Xmp tags.
      */
     VideoInfoContainer getVideoInformation()                                                                            const;
 
     /**
-     * Helper method to translate enum values to user presentable strings
+     * @brief Helper method to translate enum values to user presentable strings
      */
     static QString videoColorModelToString(VIDEOCOLORMODEL videoColorModel);
 
 public: // Photo helpers
 
     /**
-     * Return a string with Lens mounted on the front of camera.
+     * @return a string with Lens mounted on the front of camera.
      * There no standard Exif tag for Lens information.
      * Camera makernotes and Xmp tags are parsed.
      * Take a care : lens information are not standardized and string content is not homogeneous between
@@ -279,7 +279,7 @@ public: // Photo helpers
     QString getLensDescription()                                                                                        const;
 
     /**
-     * Return a string with Camera serial number.
+     * @return a string with Camera serial number.
      */
     QString getCameraSerialNumber()                                                                                     const;
 
@@ -291,21 +291,21 @@ public: // Photo helpers
 public: // Generic helpers
 
     /**
-     * Returns the requested metadata field as a QVariant. See metadatainfo.h for a specification
+     * @return the requested metadata field as a QVariant. See metadatainfo.h for a specification
      * of the format of the QVariant.
      */
     QVariant     getMetadataField(MetadataInfo::Field field)                                                            const;
     QVariantList getMetadataFields(const MetadataFields& fields)                                                        const;
 
     /**
-     * Convert a QVariant value of the specified field to a user-presentable, i18n'ed string.
+     * @brief Convert a QVariant value of the specified field to a user-presentable, i18n'ed string.
      * The QVariant must be of the type as specified in metadatainfo.h and as obtained by getMetadataField.
      */
     static QString     valueToString (const QVariant& value, MetadataInfo::Field field);
     static QStringList valuesToString(const QVariantList& list, const MetadataFields& fields);
 
     /**
-     * Returns a map of possible enum values and their user-presentable, i18n'ed representation.
+     * @return a map of possible enum values and their user-presentable, i18n'ed representation.
      * Valid fields are those which are described as "enum from" or "bit mask from" in metadatainfo.h.
      */
     static QMap<int, QString> possibleValuesForEnumField(MetadataInfo::Field field);
@@ -324,7 +324,7 @@ private:
 private:
 
     /**
-     * Libheif helper methods.
+     * @brief Libheif helper methods.
      */
     bool loadUsingLibheif(const QString& filePath);
 
@@ -333,14 +333,14 @@ private:
 private:
 
     /**
-     * ImageMagick helper methods.
+     * @brief ImageMagick helper methods.
      */
     bool loadUsingImageMagick(const QString& filePath);
 
 private:
 
     /**
-     * ExifTool helper methods.
+     * @brief ExifTool helper methods.
      */
     bool loadUsingExifTool(const QString& filePath, bool videoAll = false);
     bool saveUsingExifTool(const QString& filePath) const;
