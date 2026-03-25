@@ -644,7 +644,7 @@ void ItemComments::apply()
     apply(access);
 }
 
-void ItemComments::apply(CoreDbAccess& access)
+void ItemComments::apply(const CoreDbAccess& access)
 {
     if (!d)
     {
