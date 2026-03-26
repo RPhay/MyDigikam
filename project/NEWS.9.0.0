@@ -35,6 +35,7 @@ Video           : Internal QtAVPlayer has been updated to the latest upstream 20
 
 General         : Add support of customizable date format to show everywhere in the program. Seconds can be displayed with the shot time-stamp, and more.
 General         : Rewrite the welcome page in more modern style.
+Search View     : Add "Clear All Groups" button to quickly remove all search groups in the search interface.
 Color Labels    : Color label names are now customizable in the Labels tab from left sidebar by double clicking on text. Label strings size are limited to 32 characters.
 Setup Collection: Add regular expression wildcard support for ignored directories settings.
 Filter Items    : Split filters view into 3 separated tabs for better usabilty: Properties, Tags, and People.
