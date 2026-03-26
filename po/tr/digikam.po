@@ -51,8 +51,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
-"PO-Revision-Date: 2026-03-20 13:07+0300\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"PO-Revision-Date: 2026-03-25 06:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -40468,7 +40468,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "Tüm Künyeler"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -57018,7 +57018,7 @@ msgstr "Sunum Araçları"
 #: core/utilities/geolocation/engine/settings/MarblePluginSettingsWidget.cpp:83
 #, kde-format
 msgid "Runner Tools"
-msgstr "Çalışan Araçları"
+msgstr "Çalıştırıcı Araçları"
 
 #: core/utilities/geolocation/engine/storage/CacheStoragePolicy.cpp:52
 #, kde-format
@@ -64729,49 +64729,49 @@ msgstr ""
 "<p>Kullanılabilecek kamera ayarlarının tam bir listesine<br>bu <a "
 "href='https://www.figuiere.net/digicam/'>URL’den</a> ulaşılabilir.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "İçe Aktarma Süzgeçlerini Düzenle"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Ad:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, kde-format
 msgid "Mime filter:"
 msgstr "MIME süzgeci:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "MIME Türü Seç…"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, kde-format
 msgid "File name filter:"
 msgstr "Dosya adı süzgeci:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "Path filter:"
 msgstr "Yol süzgeci:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Show only new files"
 msgstr "Yalnızca yeni dosyaları göster"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Bu süzgeç için istediğiniz MIME türlerini seçin."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
 msgstr "MIME Türleri Seç"

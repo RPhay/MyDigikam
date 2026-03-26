@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -40477,7 +40477,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "所有標籤"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -65039,49 +65039,49 @@ msgstr ""
 "<p>在<a href='http://www.teaser.fr/~hfiguiere/linux/digicam.html'>這個網址</"
 "a>中有一份可用的相機設定值<br/>完整清單。</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "編輯匯入過濾器"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "名稱："
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, kde-format
 msgid "Mime filter:"
 msgstr "MIME 過濾："
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "選擇 MIME 型態..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, kde-format
 msgid "File name filter:"
 msgstr "檔名過濾："
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "Path filter:"
 msgstr "路徑過濾："
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Show only new files"
 msgstr "只顯示新檔案"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "選擇您要此過濾器過濾哪些 MIME 型態。"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
 msgstr "選擇 MIME 型態"

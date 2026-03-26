@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2026-02-16 15:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -40891,7 +40891,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "Всички етикети"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -65349,49 +65349,49 @@ msgstr ""
 "е<br>достъпен на <a href='https://www.figuiere.net/digicam/'>този URL адрес</"
 "a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Редактиране на филтри за импортиране"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Име:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, kde-format
 msgid "Mime filter:"
 msgstr "Mime филтър:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Избиране на тип Mime..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, kde-format
 msgid "File name filter:"
 msgstr "Филтър за име на файл:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "Path filter:"
 msgstr "Филтър на пътя:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Show only new files"
 msgstr "Само нови файлове"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Изберете типовете MimeTypes, които искате за този филтър."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Избор на видове по MIME"

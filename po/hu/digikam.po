@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2026-03-11 21:19+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -40530,7 +40530,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "Minden címke"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -64834,49 +64834,49 @@ msgstr ""
 "<p>A kamerabeállítások teljes listája<br>elérhető <a href='https://www."
 "figuiere.net/digicam/'>ezen az URL címen</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Importszűrők szerkesztése"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Név:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, kde-format
 msgid "Mime filter:"
 msgstr "Mime szűrő:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "MIME-típus kiválasztása…"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, kde-format
 msgid "File name filter:"
 msgstr "Fájlnév szűrő:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "Path filter:"
 msgstr "Útvonal-szűrő:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Show only new files"
 msgstr "Csak az új fájlok megjelenítése"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Válassza ki a szűrőhöz használni kívánt MIME-típusokat."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Mime típusok kiválasztása"

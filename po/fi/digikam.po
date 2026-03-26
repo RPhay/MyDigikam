@@ -45,8 +45,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
-"PO-Revision-Date: 2026-02-09 11:56+0200\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"PO-Revision-Date: 2026-03-13 17:00+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -3062,7 +3062,7 @@ msgstr "Kasvot"
 #: core/app/views/preview/itempreviewview.cpp:874
 #, kde-format
 msgid "Show Magnifier (x%1)"
-msgstr ""
+msgstr "Näytä suurennuslasi (%1×)"
 
 #: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
@@ -3605,12 +3605,15 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"Sisäinen QtAVPlayer on päivitetty viimeisimpään ylävirran versioon "
+"2026-01-24, joka tuo lukuisia viankorjauksia ja suorituskykyparannuksia "
+"(vain Qt5)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
-msgstr ""
+msgstr "Lisätty mukautettavan päiväysmuodon tuki kaikkialle ohjelmaan."
 
 #: core/app/views/stack/welcomepageview_features.cpp:29
 #, kde-format
@@ -3659,6 +3662,8 @@ msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
+"Lisätty tuki olemassa olevien mallipohjatietueiden yhdistämiseksi kohteissa "
+"uuteen mallipohjaan."
 
 #: core/app/views/stack/welcomepageview_features.cpp:37
 #, fuzzy, kde-format
@@ -3776,11 +3781,12 @@ msgstr ""
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
 msgstr ""
+"Ellei kuvakenäkymäkohteita ole valittu, näytetään nykyisen albumin tilastot."
 
 #: core/app/views/stack/welcomepageview_features.cpp:63
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Ryhmiteltyjen kohteiden parannuksia:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:65
 #, kde-format
@@ -3830,13 +3836,15 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:75
 #, kde-format
 msgid "Add context-menu to the video player."
-msgstr ""
+msgstr "Lisätty videosoittimeen kontekstivalikko."
 
 #: core/app/views/stack/welcomepageview_features.cpp:76
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
+"Lisätty tilariville latauksen etenemisen ilmaisin (kuvakenäkymä ja "
+"valotaulu)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:77
 #, kde-format
@@ -3900,7 +3908,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
 msgid "New RAW camera supported:"
-msgstr ""
+msgstr "Tuetaan uusia raakakuvakameroita:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
 #, kde-format
@@ -3908,31 +3916,33 @@ msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
 msgstr ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr ""
+msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:95
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr ""
+msgstr "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:96
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr ""
+msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:97
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr ""
+msgstr "Nikon (vain vakiopakkaus): Z6-III, Z f, Z30, Z8 ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:98
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr ""
+msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:99
 #, kde-format
@@ -3940,11 +3950,13 @@ msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 msgstr ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6 ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:100
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
-msgstr ""
+msgstr "Pentax KF, K III mustavalko ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:101
 #, kde-format
@@ -3952,6 +3964,8 @@ msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 msgstr ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:102
 #, kde-format
@@ -8384,6 +8398,9 @@ msgid ""
 "<b>Highlight Tone</b> input levels on the Red, Green, Blue, and Luminosity "
 "channels."
 msgstr ""
+"Tällä painikkeella voi valita alkuperäisestä kuvasta värin, jolla asetetaan "
+"<b>korostussävyn</b> syötetasojen punainen, vihreä, sininen ja "
+"luminositeettikanava."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
@@ -9581,6 +9598,8 @@ msgid ""
 "This value controls the amount of distortion. Negative values correct lens "
 "barrel distortion, while positive values correct lens pincushion distortion."
 msgstr ""
+"Tämä arvo asettaa vääristymän määrän. Negatiiviset arvot korjaavat linssin "
+"tynnyri-, positiiviset neulatyynyvääristymää."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:111
 #, kde-format
@@ -9789,7 +9808,7 @@ msgstr "Tallennettava valokuvan entistysasetustiedosto"
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:342
 #, kde-format
 msgid "\"%1\" is not a Photograph Restoration settings text file."
-msgstr ""
+msgstr "”%1” ei ole valokuvan restaurointiasetusten tekstitiedosto."
 
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:353
 #, kde-format
@@ -17999,7 +18018,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Press the \"Next\" button to start pre-processing."
-msgstr ""
+msgstr "Aloita esikäsittely napsauttamalla ”Seuraava”."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingpreprocesspage.cpp:148
 #: core/dplugins/generic/tools/panorama/wizard/panopreprocesspage.cpp:146
@@ -19420,6 +19439,9 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"Tunnistuskäsittelyn jälkeen kaksoisnapsauta jotakin kohteista, niin se "
+"teksti näytetään tässä. Sanoja voi tarkistaa ja korjata tarvittaessa. "
+"Tallenna muutokset napsauttamalla ”Tallenna”."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
@@ -19558,6 +19580,11 @@ msgid ""
 "multiple languages and scripts (including right-to-left text) and page "
 "layout analysis.<br><br>See details on %1 for more information on Tesseract"
 msgstr ""
+"Tämä työkalu muuntaa kuvien tekstejä tekstimuotoon Tesseractilla, avoimen "
+"lähdekoodin tekstintunnistusmoottorilla, jonka alkuaan on kehittänyt HP Labs "
+"ja jota nykyään sponsoroi Google.<br><br>Se tukee useita kieliä ja "
+"kirjoitusjärjestelmiä (myös oikealta vasemmalle -suuntaisia) sekä "
+"sivuasettelun tunnistustapa<br><br>Lisätietoa Tesseractista: %1"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterplugin.cpp:95
 #, kde-format
@@ -19584,6 +19611,14 @@ msgid ""
 "You can use the Orientation and Script Detection mode instead or a specific "
 "language module if available."
 msgstr ""
+"Aseta tekstintunnistuksessa käytettävä kieli. Kieliasetusten oletustilassa "
+"digitaaliselle monikieliselle tekstille\n"
+"Tesseract voi automaattisesti tunnistaa latinalaista kirjaimistoa käyttävät "
+"kielet kuten englannin\n"
+"tai ranskan, mutta se ei sovi muihin kirjoitusjärjestelmiin kuten kiinaan "
+"tai japaniin.\n"
+"Tietyn kielimoduulin sijaan voi käyttää ”Tekstin suunnan ja "
+"kirjoitusjärjestelmän tunnistusta”."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
 #, fuzzy, kde-format
@@ -19676,7 +19711,7 @@ msgstr "Oletus"
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
-msgstr ""
+msgstr "Tekstin suunnan ja kirjoitusjärjestelmän tunnistus"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:306
 #, fuzzy, kde-format
@@ -21940,7 +21975,7 @@ msgstr "Taustakuvan ominaisuuksia ei voi asettaa."
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugin_windows.cpp:149
 #, kde-format
 msgid "Cannot apply changes to desktop wallpaper."
-msgstr ""
+msgstr "Muutoksia työpöydän taustaan ei voitu ottaa käyttöön."
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:59
 #, kde-format
@@ -34233,7 +34268,7 @@ msgstr ""
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:186
 #, kde-format
 msgid "Suppress color noise."
-msgstr ""
+msgstr "Estä värikohina."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:188
 #, kde-format
@@ -34323,7 +34358,7 @@ msgstr "Ladattavan valokuvan koonmuuttamisasetusten tiedosto"
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:506
 #, kde-format
 msgid "\"%1\" is not a Photograph Refocus settings text file."
-msgstr ""
+msgstr "”%1” ei ole valokuvan uudelleenkohdistusasetusten tekstitiedosto."
 
 #: core/libs/dimg/filters/sharp/sharpsettings.cpp:529
 #, kde-format
@@ -41319,7 +41354,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "Kaikki luokitukset"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -51097,6 +51132,9 @@ msgid ""
 "%1\n"
 "already exists in the list with name \"%2\"."
 msgstr ""
+"Tämä kirjanmerkki, jonka viite on\n"
+"%1,\n"
+"on jo olemassa luettelossa nimellä ”%2”."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, kde-format
@@ -51851,6 +51889,11 @@ msgid ""
 "unless you know what you are doing.\n"
 "Do you want to continue?"
 msgstr ""
+"Uuden version tarkistusvalinta tarkistaa myös esijulkaisut.\n"
+"Viikoittaisilla ”Esijulkaisuilla” kokeillaan uusia ominaisuuksia.\n"
+"Niitä ei suositella tuotantokäyttöön, koska vikoja voi ilmetä,\n"
+"paitsi jos tiedät, mitä teet.\n"
+"Haluatko jatkaa?"
 
 #: core/showfoto/setup/showfotosetupplugins.cpp:62
 #, kde-format
@@ -52700,7 +52743,7 @@ msgstr ""
 msgid ""
 "Be sure to use the quick access buttons: They might provide additional "
 "information about renaming and modifier options."
-msgstr ""
+msgstr " "
 
 #: core/utilities/advancedrename/common/tooltipcreator.cpp:56
 #, kde-format
@@ -56554,7 +56597,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:158
 #, kde-format
 msgid "Error parsing file at line: %1 and column %2 . "
-msgstr ""
+msgstr "Virhe jäsennettäessä tiedostoa rivillä %1 ja sarakkeessa %2. "
 
 #: core/utilities/geolocation/engine/geodata/parser/GeoParser.cpp:160
 #, kde-format
@@ -56596,7 +56639,7 @@ msgstr "Nimeä ei annettu"
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:100
 #, kde-format
 msgid "Please specify a name for this relation."
-msgstr ""
+msgstr "Anna tälle suhteelle nimi."
 
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:106
 #, kde-format
@@ -56917,10 +56960,11 @@ msgstr "Päiväntasaaja"
 msgid "Prime Meridian"
 msgstr "Nollameridiaani"
 
+# Tälle ei taida olla suomenkielistä nimitystä? Vironkielinen Wikipedia näkyy kääntäneen näin.
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
 #, kde-format
 msgid "Antimeridian"
-msgstr ""
+msgstr "180° meridiaani"
 
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
 #, kde-format
@@ -56961,7 +57005,7 @@ msgstr "Näytä kuvan otsikko"
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
 #, kde-format
 msgid "Minimize"
-msgstr ""
+msgstr "Pienennä"
 
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
 #, fuzzy, kde-format
@@ -57201,6 +57245,8 @@ msgstr "Navi&gointi"
 #, kde-format
 msgid "A plugin to add mouse control to zoom and move the map"
 msgstr ""
+"Liitännäinen hiiriohjauksen lisäämiseksi kartan lähennykseen ja kartalla "
+"liikkumiseen"
 
 #: core/utilities/geolocation/engine/plugins/render/navigation/NavigationFloatItem.cpp:270
 #, kde-format
@@ -57298,6 +57344,8 @@ msgstr "Välimuistitiedostojäsennin"
 #, kde-format
 msgid "A plugin to load Geolocation Data from the binary Cache files."
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi binaarisista "
+"välimuistitiedostoista."
 
 #: core/utilities/geolocation/engine/plugins/runner/cache/CachePlugin.cpp:72
 #, kde-format
@@ -57315,6 +57363,8 @@ msgid ""
 "A plugin to load Geolocation Data from NMEA files through GPSBabel command "
 "line tool."
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi NMEA-tiedostoista "
+"GPSBabel-komentorivityökalulla."
 
 #: core/utilities/geolocation/engine/plugins/runner/gpsbabel/GpsbabelPlugin.cpp:68
 #, kde-format
@@ -57330,6 +57380,8 @@ msgstr "GPX-tiedostojäsennin"
 #, kde-format
 msgid "A plugin to load Geolocation Data from the Gpx data File format."
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi GPX-"
+"tiedostomuodosta."
 
 #: core/utilities/geolocation/engine/plugins/runner/gpx/GpxPlugin.cpp:68
 #, kde-format
@@ -57345,6 +57397,8 @@ msgstr "GeoJSON-tiedostojäsennin"
 #, kde-format
 msgid "A plugin to load Geolocation Data from the GeoJSON data file format."
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi GeoJSON-"
+"tiedostomuodosta."
 
 #: core/utilities/geolocation/engine/plugins/runner/json/JsonPlugin.cpp:69
 #, kde-format
@@ -57361,6 +57415,8 @@ msgstr "KML-tiedostojäsennin"
 msgid ""
 "A plugin to load Geolocation Data from the KML and KMZ data file format."
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi KML- ja KMZ-"
+"tiedostomuodoista."
 
 #: core/utilities/geolocation/engine/plugins/runner/kml/KmlPlugin.cpp:69
 #, kde-format
@@ -57394,6 +57450,8 @@ msgstr "OSM-tiedostojäsennin"
 msgid ""
 "A plugin to load Geolocation Data from the OpenStreetMap data file format."
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi OpenStreetMap-"
+"tiedostomuodosta"
 
 #: core/utilities/geolocation/engine/plugins/runner/osm/OsmPlugin.cpp:69
 #, kde-format
@@ -57410,6 +57468,8 @@ msgstr "PN2-tiedostojäsennin"
 msgid ""
 "A plugin to load Geolocation Data from the compressed Pnt data files format"
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi pakatusta PNT-"
+"tiedostomuodosta"
 
 #: core/utilities/geolocation/engine/plugins/runner/pn2/Pn2Plugin.cpp:68
 #, kde-format
@@ -57427,6 +57487,8 @@ msgid ""
 "A plugin to load Geolocation Data from the Micro World Database II Files "
 "format"
 msgstr ""
+"Liitännäinen maantieteellisen sijaintitiedon lukemiseksi Micro World "
+"Database II -tiedostomuodosta"
 
 #: core/utilities/geolocation/engine/plugins/runner/pnt/PntPlugin.cpp:68
 #, kde-format
@@ -57495,6 +57557,8 @@ msgid ""
 "<p><b>Mercator Projection</b></p><p>Applications: popular standard map "
 "projection for navigation.</p>"
 msgstr ""
+"<p><b>Mercator-projektio</b></p><p>Sovelluksia: suosittu "
+"peruskarttaprojektio navigointiin.</p>"
 
 #: core/utilities/geolocation/engine/projections/SphericalProjection.cpp:77
 #, kde-format
@@ -57520,6 +57584,9 @@ msgid ""
 "<p><b>Stereographic Projection</b> (\"orthogonal\")</p><p>Applications: Used "
 "for planetary cartography, geology and panorama photography.</p>"
 msgstr ""
+"<p><b>Stereografinen projektio</b> (”ortogonaalinen”)</p><p>Sovelluksia: "
+"käytetään planetaarisessa kartografiassa, maantieteessä ja "
+"panoraamavalokuvauksessa.</p>"
 
 #: core/utilities/geolocation/engine/projections/VerticalPerspectiveProjection.cpp:94
 #, kde-format
@@ -57572,12 +57639,12 @@ msgstr "Kulma:"
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:120
 #, kde-format
 msgid "Degree (DMS)"
-msgstr ""
+msgstr "Aste (DMS)"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:121
 #, kde-format
 msgid "Degree (Decimal)"
-msgstr ""
+msgstr "Aste (desimaalinen)"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:122
 #, kde-format
@@ -62228,7 +62295,7 @@ msgstr "Näytä oikealle yhdistetyt luokitukset"
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:249
 #, kde-format
 msgid "Edit Titles on the Left"
-msgstr ""
+msgstr "Muokkaa otsikoita vasemmalla"
 
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:254
 #, fuzzy, kde-format
@@ -62273,7 +62340,7 @@ msgstr "Käsittele kuvia:"
 #, kde-format
 msgctxt "@option:check"
 msgid "Use the last saved active tools and settings"
-msgstr ""
+msgstr "Käytä viimeksi tallennettuja aktiivisia työkaluja ja asetuksia"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:63
 #, fuzzy, kde-format
@@ -62289,10 +62356,7 @@ msgid "Common Options"
 msgstr "Yleisasetukset"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:78
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>No option<br/><i>Note: only Albums Collection are processed by this "
-#| "tool.</i></qt>"
+#, kde-format
 msgid ""
 "<qt>No option<br><i>Note: only Albums Collection are processed by this tool."
 "</i></qt>"
@@ -62314,6 +62378,10 @@ msgid ""
 "temporarily in order to make sure that no database corruption occurs.</i></"
 "qt>"
 msgstr ""
+"<qt><i>Huom! Jos aktivoidaan, ydintietokanta siivotaan aina. Siivottavaksi "
+"voi valita muitakin tietokantoja.<br>Jos valitset jonkin alla olevista "
+"valinnoista, prosessi voi kestää kauan ja jähmettää digiKamin tilapäisesti "
+"tietokannan vioittumisen välttämiseksi.</i></qt>"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:96
 #, kde-format
@@ -62342,11 +62410,13 @@ msgid ""
 "This option leads to the vacuuming (shrinking) of the databases. Vacuuming "
 "is supported both for SQLite and MySQL."
 msgstr ""
+"Tämä valinta johtaa tietokantojen siivoukseen (pienentämiseen). Siivousta "
+"tuetaan niin SQLitelle kuin MySQL:llekin."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:107
 #, kde-format
 msgid "Perform database cleaning"
-msgstr ""
+msgstr "Siivoa tietokanta"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:116
 #: core/utilities/maintenance/main/maintenancedlg.cpp:131
@@ -62387,7 +62457,7 @@ msgstr "Rajaa viitekuvan albumiin"
 #: core/utilities/maintenance/main/maintenancedlg.cpp:178
 #, kde-format
 msgid "Exclude album of reference image"
-msgstr ""
+msgstr "Sulje pois viitekuvan albumi"
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:196
 #, kde-format
@@ -62436,6 +62506,8 @@ msgid ""
 "This will delete all rejected face matches allowing the face recognizer to "
 "present the suggested matches again."
 msgstr ""
+"Tämä positaa kaikki hylätyt kasvovastaavuudet, jolloin kasvontunnistin voi "
+"taas ehdottaa osumia."
 
 #: core/utilities/maintenance/main/maintenancedlg.cpp:226
 #, fuzzy, kde-format
@@ -62487,6 +62559,9 @@ msgid ""
 "faces? You’ll need to rescan images and start tagging unknown faces again "
 "before any faces can be recognized."
 msgstr ""
+"Haluatko varmasti poistaa kaikki vahvistetut, vahvistamattomat ja "
+"tuntemattomat kasvot? Kasvot täytyy tutkia ja alkaa luokitella niitä "
+"uudelleen ennen kuin kasvoja voidaan tunnistaa."
 
 #. i18n
 #: core/utilities/maintenance/manager/maintenancemngr.cpp:433
@@ -62530,7 +62605,7 @@ msgstr "analysoidaan tietokantoja"
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
 #, kde-format
 msgid "cleaning core db"
-msgstr ""
+msgstr "siivotaan ydintietokantaa"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
 #, kde-format
@@ -62561,6 +62636,10 @@ msgid ""
 "info box will vanish when the shrinking process is finished.</p>Current "
 "Status:"
 msgstr ""
+"<p>Tietokannan pienentäminen meneillään.</p><p>Nyt tietokantoja "
+"pienennetään. Tämä kestää jonkin aikaa tietokantojen koon mukaan.</"
+"p><p>digiKam pitää jähmettää tietokannan vioittumisen välttämiseksi. Tämä "
+"tietoikkuna katoaa, kun pienennysprosessi on valmis.</p>Nykyinen tila:"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbshrinkdialog.cpp:79
 #, kde-format
@@ -62710,7 +62789,7 @@ msgstr "Päivitetään kasvotietokantaa"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
 #, kde-format
 msgid "Error starting face detection."
-msgstr ""
+msgstr "Virhe käynnistettäessä kasvontunnistusta."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
 #, fuzzy, kde-format
@@ -63086,7 +63165,7 @@ msgstr ""
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:692
 #, kde-format
 msgid "There are no items to process in the queues."
-msgstr ""
+msgstr "Jonoissa ei ole käsiteltäviä kohteita."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:864
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:874
@@ -63101,6 +63180,8 @@ msgid ""
 "Album to host processed items from queue \"%1\" is not set. Please select "
 "one from Queue Settings panel."
 msgstr ""
+"Albumia, jonka tulisi isännöidä jonosta ”%1” käsiteltyjä kohteita, ei ole "
+"asetettu. Valitse se jonon asetuspaneelista."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:875
 #, kde-format
@@ -63108,6 +63189,9 @@ msgid ""
 "Album to host processed items from queue \"%1\" is not available or not "
 "writable. Please set another one from Queue Settings panel."
 msgstr ""
+"Albumi, jonka tulisi isännöidä jonosta ”%1” käsiteltyjä kohteita, ei ole "
+"käytettävissä tai siihen ei voi kirjoittaa. Valitse toinen jonon "
+"asetuspaneelista."
 
 #: core/utilities/queuemanager/main/queuemgrwindow.cpp:954
 #, kde-format
@@ -64097,10 +64181,9 @@ msgid "Macro, close or distant view"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:663
-#, fuzzy, kde-format
-#| msgid "Capture Device Settings"
+#, kde-format
 msgid "Capture Settings"
-msgstr "Kaappauslaitteen asetukset"
+msgstr "Kaappausasetukset"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, fuzzy, kde-format
@@ -64111,7 +64194,7 @@ msgstr "Palauta kohteet, joissa ei ole kasvojen alueita"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "ISO film speed"
-msgstr ""
+msgstr "ISO-filminopeus"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:677
 #, fuzzy, kde-format
@@ -64806,10 +64889,9 @@ msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr "Näyt' kuvan tarkkuuden pienoiskuvan alla valitsemalla tämä asetus."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:46
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
-msgstr "Näytä kuvasuhde"
+msgstr "Näytä kohteen kuvasuhde"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:47
 #, fuzzy, kde-format
@@ -64817,10 +64899,9 @@ msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr "Valitse tämä nähdäksesi arvion näytekuvan alla."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:50
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "Näytä kuvamuoto"
+msgstr "Näytä kohteen muoto"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:51
 #, fuzzy, kde-format
@@ -64876,10 +64957,9 @@ msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr "Näytä digiKam-arvostelut pienoiskuvien alla valitsemalla tämä asetus."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:69
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam &pick label"
-msgstr "Näytä &digiKamin otsikko"
+msgstr "Näytä digiKamin &valintaselite"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:70
 #, fuzzy, kde-format
@@ -64887,10 +64967,9 @@ msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr "Valitse tämä nähdäksesi arvion näytekuvan alla."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show digiKam tit&le"
+#, kde-format
 msgid "Show digiKam color &label"
-msgstr "Näytä &digiKamin otsikko"
+msgstr "Näytä digiKamin v&äriselite"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:74
 #, fuzzy, kde-format
@@ -64919,9 +64998,9 @@ msgstr ""
 "kuvaa voi kääntää myötä- tai vastapäivään."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Show fullscreen overlay button"
-msgstr "Näytä kääntöpainikkeet"
+msgstr "Näytä koko näytön peittopainike"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:84
 #, fuzzy, kde-format
@@ -65048,12 +65127,10 @@ msgid "Preview shows the full image"
 msgstr "Esikatselu näyttää koko kuvan"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Mode of RAW preview decoding:"
-#| msgid "Raw images:"
+#, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
-msgstr "RAW-kuvat:"
+msgstr "Raakakuvat:"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:34
 #, kde-format
@@ -65115,48 +65192,39 @@ msgid "Check this if you want to use Anti-aliasing to scale up."
 msgstr "Esikatselukuva muunnetaan 8-bittiseksi nopeampaa katselua varten"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:53
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgid "Magnifier"
-msgstr "Näytä numerot"
+msgstr "Suurennuslasi"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr "Sovita"
+msgstr "Lähennyskerroin:"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:68
-#, fuzzy, kde-format
-#| msgid "Total Size: "
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr "Yhteiskoko: "
+msgstr "Työkalun koko:"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Small"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
 msgstr "Pieni"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
-msgstr "Keskitaso"
+msgstr "Keskikokoinen"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
-msgstr "Käsitelty"
+msgstr "Suuri"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
 #, fuzzy, kde-format
@@ -65172,10 +65240,9 @@ msgid "Show icons and text over preview"
 msgstr "Näytä kuvakkeet ja teksti esikatselun päällä"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:85
-#, fuzzy, kde-format
-#| msgid "Check this if you want a background fill behind the text."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
-msgstr "Valitse tämä, jos haluat tekstin taakse taustatäytön."
+msgstr "Valitse tämä, jos haluat kuvaesikatselussa nähdä kuvakkeet ja tekstin."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
@@ -65189,10 +65256,9 @@ msgid "Check this if you want to auto play the videos or animations."
 msgstr "Valitse tämä, jos haluat vesileimasta läpikuultavan."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "Näytä kuvakkeet ja teksti esikatselun päällä"
+msgstr "Näytä esikatselun yllä peittoteksti."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:91
 #, fuzzy, kde-format
@@ -65566,32 +65632,25 @@ msgstr ""
 "tähän kameran liitospiste.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:211
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>USB Mass Storage</b> camera<br/>(which looks like a "
-#| "removable drive when mounted<br/>on your desktop), please use<br/><a href="
-#| "\"umscamera\">%1</a> from the camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>USB Mass Storage</b> camera<br>(which looks like a removable "
 "drive when mounted<br>on your desktop), please use<br><a href=\"umscamera\">"
 "%1</a> from the camera list.</p>"
 msgstr ""
-"<p>Jos kamera toimii <b>massamuistilaitteen</b> tavoin<br/>(muistikortti "
-"näkyy levyasemana), valitse luettelosta<br/><a href=\"umscamera\">%1</a>.</p>"
+"<p>Jos kamera toimii <b>USB-massamuistilaitteena</b><br>(näyttää työpöydällä "
+"liitettynä siirrettävältä asemalta),<br>valitse kameraluettelosta<br/><a "
+"href=\"umscamera\">%1</a>.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:218
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To set a <b>Generic PTP USB Device</b><br/>(which uses Picture "
-#| "Transfer Protocol), please<br/>use <a href=\"ptpcamera\">%1</a> from the "
-#| "camera list.</p>"
+#, kde-format
 msgid ""
 "<p>To set a <b>Generic PTP USB Device</b><br>(which uses Picture Transfer "
 "Protocol), please<br>use <a href=\"ptpcamera\">%1</a> from the camera list.</"
 "p>"
 msgstr ""
-"<p>Mikäli kamerasi on yleinen <b>Picture Transfer Procotol</b> (PTP)-laite,"
-"<br />valitse luettelosta <a href=\"ptpcamera\">%1</a> .</p>"
+"<p><b>Yleisen PTP-USB-laitteen</b> (joka käyttää<br>PTP-yhteyskäytäntöä) "
+"asettamiseksi valitse<br>kameraluettelosta <a href=\"ptpcamera\">%1</a>.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:224
 #, fuzzy, kde-format
@@ -65609,10 +65668,7 @@ msgstr ""
 "\"ptpipcamera\">%1</a>.</p>"
 
 #: core/utilities/setup/camera/cameraselection.cpp:231
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>A complete list of camera settings to use is<br/>available at <a "
-#| "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
+#, kde-format
 msgid ""
 "<p>A complete list of camera settings to use is<br>available at <a "
 "href='https://www.figuiere.net/digicam/'>this URL</a>.</p>"
@@ -65620,49 +65676,49 @@ msgstr ""
 "<p>Käytettävien kamera-asetusten täyden luettelon<br/>löytää <a "
 "href='https://www.figuiere.net/digicam/'>tästä osoitteesta</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Muokkaa tuontisuodattimia"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Nimi:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, kde-format
 msgid "Mime filter:"
 msgstr "MIME-suodatin:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Valitse MIME-tyyppi…"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, kde-format
 msgid "File name filter:"
 msgstr "Tiedostonimisuodin:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "Path filter:"
 msgstr "Polkusuodin:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Show only new files"
 msgstr "Näytä vain uudet tiedostot"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Valitse suodatukseen haluamasi MIME-tyypit."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Valitse MIME-tyypit"
@@ -65834,9 +65890,9 @@ msgid "Show item &rating"
 msgstr "Näytä kohteen &arvostelu"
 
 #: core/utilities/setup/camera/setupcamera.cpp:456
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to show the item rating below the image thumbnail."
-msgstr "Valitse tämä nähdäksesi arvion näytekuvan alla."
+msgstr "Näytä kohteen arvio pienoiskuvan alla asettamalla tämä valinta."
 
 #: core/utilities/setup/camera/setupcamera.cpp:460
 #, kde-format
@@ -65892,9 +65948,10 @@ msgid "Preview each item while downloading it"
 msgstr "Esikatsele jokaista kohdetta ladattaessa"
 
 #: core/utilities/setup/camera/setupcamera.cpp:505
-#, fuzzy, kde-format
+#, kde-format
 msgid "<p>Set this option to preview each item while downloading.</p>"
-msgstr "Valitse tämä nähdäksesi tiedoston päiväyksen."
+msgstr ""
+"<p>Esikatsele kutakin kohdetta ladattaessa asettamalla tämä valinta.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:508
 #, kde-format
@@ -66214,12 +66271,10 @@ msgid "Problem Adding Collection"
 msgstr "Virhe lisättäessä kokoelmaa"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1598
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Problem Adding Collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Problem updating Collection"
-msgstr "Virhe lisättäessä kokoelmaa"
+msgstr "Virhe päivitettäessä kokoelmaa"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1615
 #, kde-format
@@ -66228,8 +66283,7 @@ msgid "Adding Collection"
 msgstr "Kokoelman lisäys"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:1619
-#, fuzzy, kde-format
-#| msgid "Update collection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Update Collection"
 msgstr "Päivitä kokoelma"
@@ -66256,12 +66310,10 @@ msgid "Your collection will use this category:"
 msgstr "Kokoelmasi käyttää tätä luokkaa:"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:44
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Download Required Files"
+#, kde-format
 msgctxt "@title:window"
 msgid "Download Required Model Files"
-msgstr "Lataa vaaditut tiedostot"
+msgstr "Lataa vaaditut mallitiedostot"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:60
 #: core/utilities/setup/misc/systemsettingswidget.cpp:154
@@ -66272,26 +66324,23 @@ msgstr ""
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
 msgid "Location of the face management model files:"
-msgstr ""
+msgstr "Kasvontunnistuksen mallitiedostojen sijainti:"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:74
-#, fuzzy, kde-format
-#| msgid "Use Face Detection feature"
+#, kde-format
 msgctxt "@title:window"
 msgid "Face Management Model Target"
-msgstr "Käytä kasvontunnistusominaisuutta"
+msgstr "Kasvonhallintamallin kohde"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:75
-#, fuzzy, kde-format
-#| msgid "Sets the target address to copy the items to."
+#, kde-format
 msgid "Sets the target address to download the face management model files to."
-msgstr "Asettaa kohdeosoitteen, johon kohteet kopioidaan."
+msgstr "Asettaa kohdeosoitteen, josta kasvonhallintamallitiedostot ladataan."
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:77
-#, fuzzy, kde-format
-#| msgid "Automatic Adjustment"
+#, kde-format
 msgid "Use AI Auto-Tools features"
-msgstr "Automaattinen asetus"
+msgstr "Käytä tekoälyn automaattityökaluominaisuuksia"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:78
 #, kde-format
@@ -66301,7 +66350,7 @@ msgstr "Käytä kasvontunnistusominaisuutta"
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:79
 #, kde-format
 msgid "Use Aesthetic Detection feature"
-msgstr ""
+msgstr "Käytä esteettistä tunnistusominaisuutta"
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:80
 #, kde-format
@@ -66311,7 +66360,7 @@ msgstr "Käytä luokitusten automaattista yhdistämisominaisuutta"
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:279
 #, kde-format
 msgid "Clean up unused AI/DNN model files..."
-msgstr ""
+msgstr "Siivoa käyttämättömät AI/DNN-mallitiedostot…"
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:45
 #, kde-format
@@ -66378,6 +66427,12 @@ msgid ""
 "to select the specific features you want to enable.</p><p><b>Note:</b> The "
 "red-eye removal tool requires face management model files.</p>"
 msgstr ""
+"<p>digiKam käyttää suuria binaarimallitiedostoja teho-ominaisuuksiinsa kuten "
+"kasvojenhallintaan, estetiikkaan perustuvaan kuvien luokitteluun sekä "
+"tekoälytyökaluihin kuten kuvan automaattiseen kiertämiseen ja luokitteluun. "
+"Voit valita, mitkä nimenomaiset ominaisuudet haluat ottaa käyttöön.</"
+"p><p><b>Huom!</b> Punasilmänpoistotyökalu vaatii kasvonhallintamallin "
+"tiedostot.</p>"
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:261
 #, kde-format
@@ -66388,17 +66443,22 @@ msgid ""
 "without these files.</p><p><b>You must restart digiKam after successfully "
 "downloading the files.</b></p>"
 msgstr ""
+"<p>Joitakin vaadittuja tiedostoja puuttuu. Aloita niiden asentaminen "
+"napsauttamalla ”Lataa”. Jos suljet tämän valintaikkunan, asiaa kysytään "
+"uudestaan digiKamin seuraavalla käynnistyskerralla. Valitut piirteet eivät "
+"toimi ilman näitä tiedostoja.</p><p><b>Onnistuneen lataamisen jälkeen "
+"digiKam pitää käynnistää uudelleen.</b></p>"
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:268
 #, kde-format
 msgctxt "%1: file counter, %2: disk size with unit"
 msgid "The download requires %1 files with a size of %2."
-msgstr ""
+msgstr "Lataus vaatii %1 tiedostoa kooltaan %2."
 
 #: core/utilities/setup/downloader/filesdownloader_slots.cpp:294
 #, kde-format
 msgid "All files for the selected features were found."
-msgstr ""
+msgstr "Kaikki valittujen piirteiden tiedostot löytyivät."
 
 #: core/utilities/setup/editor/setupeditor.cpp:65
 #, kde-format
@@ -67151,7 +67211,7 @@ msgstr ""
 #: core/utilities/setup/icc/setupicc.cpp:348
 #, kde-format
 msgid "Use black point compensation"
-msgstr ""
+msgstr "Mustapisteen kompensointi"
 
 #: core/utilities/setup/icc/setupicc.cpp:349
 #, kde-format
@@ -67164,7 +67224,7 @@ msgstr ""
 #: core/utilities/setup/icc/setupicc.cpp:355
 #, kde-format
 msgid "Rendering Intents:"
-msgstr ""
+msgstr "Hahmonnuspäämäärät:"
 
 #: core/utilities/setup/icc/setupicc.cpp:370
 #, kde-format
@@ -68266,7 +68326,7 @@ msgstr "Testataan…"
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:149
 #, kde-format
 msgid "Starting OpenCV OpenCL DNN test..."
-msgstr ""
+msgstr "Aloitetaan OpenCV:n OpenCL-DNN-testi…"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:217
 #, kde-format
@@ -68505,6 +68565,8 @@ msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> These settings make startup slower! "
 "Read the <a href=\"%1\">online documentation</a> carefully first.</i></font>"
 msgstr ""
+"<font color='black'><i><b>⚠️Varoitus:</b> Näillä asetuksilla käynnistäminen "
+"hidastuu! Lue ensin tarkkaan <a href=\"%1\">ohjeet verkosta</a>.</i></font>"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:43
 #, kde-format
@@ -68562,10 +68624,9 @@ msgid ""
 msgstr ""
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:64
-#, fuzzy, kde-format
-#| msgid "Remove obsolete core database objects (makes startup slower)"
+#, kde-format
 msgid "Remove obsolete core database objects"
-msgstr "Poista vanhentuneet ydintietokantaoliot (hidastaa käynnistystä)"
+msgstr "Poista vanhentuneet ydintietokantaoliot"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:65
 #, kde-format
@@ -68700,12 +68761,7 @@ msgid "Perform the following operations on all group members:"
 msgstr "Tee kaikille ryhmän jäsenille seuraavat toimenpiteet:"
 
 #: core/utilities/setup/misc/setupmisc_grouping.cpp:30
-#, fuzzy, kde-format
-#| msgid ""
-#| "When images are grouped the following operations<br/>are performed only "
-#| "on the displayed item (No)<br/>or on all the hidden items in the group as "
-#| "well (Yes).<br/>If Ask is selected, there will be a prompt every<br/>time "
-#| "this operation is executed."
+#, kde-format
 msgid ""
 "When images are grouped the following operations<br>are performed only on "
 "the displayed item (No)<br>or on all the hidden items in the group as well "
@@ -68742,10 +68798,7 @@ msgid "Grouping"
 msgstr "Ryhmittely"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: All changes to these settings only take effect after the "
-#| "restart. Some settings are hardware dependent and may have no effect.</b>"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "<font color='black'><i><b>⚠️Warning:</b> All changes to these settings only "
@@ -68753,9 +68806,10 @@ msgid ""
 "have side-effects. Read the <a href=\"%1\">online documentation</a> for more "
 "information.</i></font>"
 msgstr ""
-"<b>Huomaa: Muutokset tulevat voimaan vasta uudelleenkäynnistyksen jälkeen. "
-"Jotkin asetukset ovat laitteistokohtaisia eikä niillä ehkä ole vaikutusta.</"
-"b>"
+"<font color='black'><i><b>⚠️Varoitus</i>: kaikki muutokset tulevat voimaan "
+"vasta uudelleenkäynnistyksen jälkeen. Jotkin asetukset ovat "
+"laitteistokohtaisia, ja niillä voi olla sivuvaikutuksia. Lisätietoa löytyy "
+"<a href=\"%1\">verkon ohjeesta</a>.</i></font>"
 
 # HUOM! Tässä alkuperäinen on epäselvä sen suhteen, mitä ”from” oikein tarkoittaa. ”Screen factor” on ilmeisesti tässä suunnilleen samaa kuin ”DPI scaling”: näytön mittakaava.
 #: core/utilities/setup/misc/systemsettingswidget.cpp:129
@@ -68771,7 +68825,7 @@ msgstr "Käytä suuren DPI-tarkkuuden bittikarttoja"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:134
 #, kde-format
 msgid "Use software OpenGL for rendering"
-msgstr ""
+msgstr "Käytä hahmonnukseen ohjelmisto-OpenGL:ää"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:138
 #, kde-format
@@ -68784,6 +68838,8 @@ msgid ""
 "This option is still experimental and requires that certain environment "
 "variables are set manually."
 msgstr ""
+"Tämä piirre on yhä kokeellinen ja vaatii käyttäjää itse asettamaan tietyt "
+"ympäristömuuttujat."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:141
 #, kde-format
@@ -68796,6 +68852,8 @@ msgid ""
 "This option is still experimental and may lead to crashes if the proper "
 "drivers are not installed."
 msgstr ""
+"Tämä piirre on yhä kokeellinen ja voi johtaa kaatumisiin, ellei oikeita "
+"ajureita ole asennettu."
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:145
 #, kde-format
@@ -68830,7 +68888,7 @@ msgstr ""
 #: core/utilities/setup/misc/systemsettingswidget.cpp:163
 #, kde-format
 msgid "Decoding backend to render media:"
-msgstr ""
+msgstr "Koodinpurkutaustaosa median hahmontamiseen:"
 
 #: core/utilities/setup/misc/systemsettingswidget.cpp:166
 #, kde-format
@@ -68855,7 +68913,7 @@ msgstr "AVFoundation (järjestelmä)"
 #: core/utilities/setup/misc/systemsettingswidget.cpp:186
 #, kde-format
 msgid "Enable internal debug logging"
-msgstr ""
+msgstr "Käytä sisäistä virheenpaikannuslokia"
 
 #: core/utilities/setup/setup.cpp:39
 #, kde-format
@@ -69070,15 +69128,7 @@ msgstr ""
 "Muuta digiKamin muiden osien asetuksia"
 
 #: core/utilities/setup/setupdatabase.cpp:171
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "The process of updating the file hashes takes a few minutes.\n"
-#| "Please ensure that any important collections on removable media are "
-#| "connected.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0.\n"
-#| "Do you want to begin the update?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "The process of updating the file hashes takes a few minutes or hours.\n"
@@ -69088,10 +69138,10 @@ msgid ""
 "to 8.5.0.\n"
 "Do you want to begin the update?"
 msgstr ""
-"Tiedostotiivisteiden päivitys vie joitakin minuutteja.\n"
-"Varmista, että siirrettävällä tietovälineellä olevat tärkeät kokoelmat on "
-"liitetty.\n"
-"Päivityksen jälkeen tietokantoja ei voi käyttää versiota 2.0 vanhemmalla "
+"Tiedostotiivisteiden päivittäminen vie joistakin minuuteista tunteihin.\n"
+"Varmista, että siirrettävillä tietovälineillä mahdollsiesti olevat tärkeät "
+"kokoelmat on liitetty.\n"
+"Päivityksen jälkeen tietokantoja ei voi käyttää versiota 8.5.0 vanhemmalla "
 "digiKamilla.\n"
 "Haluatko aloittaa päivityksen?"
 
@@ -69102,24 +69152,14 @@ msgid "Update File Hashes"
 msgstr "Päivitä tiivisteet"
 
 #: core/utilities/setup/setupdatabase.cpp:189
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <interface>Update File Hashes</interface>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Update File Hashes</b>"
 msgstr ""
 "Katso lisätietoa <interface>tiedostotiivisteiden päivittämisestä</interface>"
 
 #: core/utilities/setup/setupdatabase.cpp:191
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "File hashes are used to identify identical files and to display "
-#| "thumbnails. A new, improved algorithm to create the hash is now used. The "
-#| "old algorithm, though, still works quite well, so it is recommended to "
-#| "carry out this upgrade, but not required.\n"
-#| "After the upgrade you cannot use your database with a digiKam version "
-#| "prior to 2.0."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "File hashes are used to identify identical files and to display thumbnails. "
@@ -69131,9 +69171,9 @@ msgid ""
 msgstr ""
 "Tiedostotiivisteitä käytetään tunnistamaan keskenään yhtenevät tiedostot "
 "sekä näyttämään pienoiskuvia. Nyt käytetään uutta, parannettua "
-"tiivisteenluontialgoritmia. Vanha toimii tosin yhä hyvin,joten päivitystä "
-"vain suositellaan, sitä ei vaadita.\n"
-"Päivityksen jälkeen tietokantaa ei voi käyttää versiota 2.0 vanhemmalla "
+"tiivisteenluontialgoritmia. Vanha toimii tosin yhä hyvin, joten vaikka "
+"päivitystä suositellaan, sitä ei vaadita.\n"
+"Päivityksen jälkeen tietokantaa ei voi käyttää versiota 8.5.0 vanhemmalla "
 "digiKamilla."
 
 #: core/utilities/setup/setupdatabase.cpp:210
@@ -69384,9 +69424,9 @@ msgstr ""
 "pienoiskuvan yllä."
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:28
-#, fuzzy, kde-format
+#, kde-format
 msgid "File/Item Information"
-msgstr "Tiedosto- ja kuvatiedot"
+msgstr "Tiedoston tai kohteen tiedot"
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:31
 #, kde-format
@@ -69419,9 +69459,9 @@ msgid "Image aspect ratio"
 msgstr "Kuvan kuvasuhde"
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:47
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image aspect ratio."
-msgstr "Valitse näytetäänkö kuvatekstit."
+msgstr "Näytä kuvan kuvasuhde asettamalla tämä valinta."
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:63
 #: core/utilities/setup/tooltip/setuptooltip_import.cpp:48
@@ -69474,9 +69514,9 @@ msgid "Image title"
 msgstr "Kuvan otsikko"
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image title."
-msgstr "Valitse tämä nähdäksesi tiedoston tyypin."
+msgstr "Näytä kuvan otsikko asettamalla tämä valinta."
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:116
 #, kde-format
@@ -69504,9 +69544,9 @@ msgid "Image labels"
 msgstr "Kuvan selitteet"
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
-msgstr "Tämä valinta näyttää kuvan arvion."
+msgstr "Näytä kuvan valinta, väri ja arvio asettamalla tämä valinta."
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:135
 #, kde-format

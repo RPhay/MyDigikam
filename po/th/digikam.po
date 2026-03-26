@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -40834,7 +40834,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "ป้ายกำกับทั้งหมด"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -66614,50 +66614,50 @@ msgstr ""
 "<p>สำหรับรายการตั้งค่าต่าง ๆ ของกล้องที่เลือกใช้ได้อย่างสมบูรณ์<br/> สามารถดูได้ที่ <a "
 "href='http://www.teaser.fr/~hfiguiere/linux/digicam.html'>เว็บไซต์นี้</a></p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "แฟ้มเสียง"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "ชื่อ:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, fuzzy, kde-format
 msgid "Mime filter:"
 msgstr "ตัวกรองจุดรบกวน:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, fuzzy, kde-format
 msgid "Select Type Mime..."
 msgstr "เลือกภาพต่าง ๆ"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, fuzzy, kde-format
 msgid "File name filter:"
 msgstr "ชื่อของแฟ้ม"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, fuzzy, kde-format
 msgid "Path filter:"
 msgstr "ไม่มีฟิลเตอร์ที่ทำงานอยู่"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, fuzzy, kde-format
 msgid "Show only new files"
 msgstr "แสดงภาพเก่าสุดก่อน"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr ""
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, fuzzy, kde-format
 msgid "Select Mime Types"
 msgstr "เลือกภาพต่าง ๆ"

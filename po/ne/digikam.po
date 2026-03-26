@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -38906,7 +38906,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "सबै ट्याग"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -62935,50 +62935,50 @@ msgstr ""
 "<p>प्रयोग हुँने क्यामेराको पूर्ण सूची<br> निम्न यूआरएलमा <a href='http://www.teaser.fr/"
 "~hfiguiere/linux/digicam.html'></a> उपलब्ध छ ।</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "अडियो फाइल"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "नाम:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, fuzzy, kde-format
 msgid "Mime filter:"
 msgstr "टोन फिल्टर होइन"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, fuzzy, kde-format
 msgid "Select Type Mime..."
 msgstr "छवि बचत गर्नुहोस्"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, fuzzy, kde-format
 msgid "File name filter:"
 msgstr "नयाँ छवि फाइलनाम"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, fuzzy, kde-format
 msgid "Path filter:"
 msgstr "टोन फिल्टर होइन"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, fuzzy, kde-format
 msgid "Show only new files"
 msgstr "फाइल नाम देखाउनुहोस्"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr ""
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, fuzzy, kde-format
 msgid "Select Mime Types"
 msgstr "छवि बचत गर्नुहोस्"

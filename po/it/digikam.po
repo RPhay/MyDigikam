@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-25 00:42+0000\n"
-"PO-Revision-Date: 2026-03-07 16:36+0100\n"
+"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"PO-Revision-Date: 2026-03-20 17:36+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3873,12 +3873,11 @@ msgstr ""
 "banca dati."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
 msgstr ""
 "Aggiornato il motore interno RAW all'ultimo rilascio di Libraw snapshot "
-"2026-02-16."
+"2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -21296,17 +21295,15 @@ msgid "Media Container Format:"
 msgstr "Formato del contenitore multimediale:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "This control allows to choose the format of the media container to host "
-#| "video stream and soundtrack."
+#, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack.The entries in this list are populated "
 "corresponding to the format supported by FFMpeg."
 msgstr ""
 "Questo controllo permette di scegliere il formato del contenitore "
-"multimediale che ospita il flusso video e la traccia audio."
+"multimediale che ospita il flusso video e la traccia audio. Le voci in "
+"quest'elenco vengono popolate in base al formato supportato da FFMpeg."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
@@ -21450,6 +21447,9 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"Questo controllo permette di scegliere il codec utilizzato per decodificare "
+"il flusso video. Le voci in quest'elenco vengono popolate in base al codec "
+"supportato da FFMpeg."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
@@ -29479,10 +29479,9 @@ msgid "Scanning images in individual albums..."
 msgstr "Analisi delle immagini nei singoli album..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Migrate ->"
+#, kde-format
 msgid "Migrate →"
-msgstr "Migra ->"
+msgstr "Migra →"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
@@ -29509,14 +29508,12 @@ msgid "%p%"
 msgstr "%p%"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Step Progress:"
+#, kde-format
 msgid "Step progress:"
 msgstr "Avanzamento passaggi:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Overall Progress:"
+#, kde-format
 msgid "Overall progress:"
 msgstr "Avanzamento complessivo:"
 
@@ -29546,10 +29543,9 @@ msgid "Database conversion canceled."
 msgstr "Conversione della banca dati annullata."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
-#, fuzzy, kde-format
-#| msgid "Step Progress (%1)"
+#, kde-format
 msgid "Step progress (%1):"
-msgstr "Passo dell'avanzamento (%1)"
+msgstr "Avanzamento passaggi (%1):"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
@@ -39469,17 +39465,15 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Item Properties</b>"
-msgstr "Proprietà dell'elemento selezionate"
+msgstr "<b>Proprietà dell'elemento selezionate</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "Apri elemento nel gestore dei file"
+msgstr "Apri nel gestore dei file"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -39500,10 +39494,9 @@ msgid "Groups: "
 msgstr "Gruppi: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Tutte le proprietà dell'elemento"
+msgstr "<b>Tutte le proprietà dell'elemento</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -40925,7 +40918,7 @@ msgctxt "@info"
 msgid "All Tags"
 msgstr "Tutti i tag"
 
-#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:294
+#: core/libs/tags/manager/models/tagmngrlistmodel.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Quick Access List"
@@ -65341,49 +65334,49 @@ msgstr ""
 "<p>Un elenco completo delle impostazioni della fotocamera è <br>disponibile "
 "a <a href=\"https://www.figuiere.net/digicam/\">questo indirizzo</a>.</p>"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:74
+#: core/utilities/setup/camera/importfilterdlg.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Import Filters"
 msgstr "Modifica i filtri d'importazione"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:91
+#: core/utilities/setup/camera/importfilterdlg.cpp:92
 #, kde-format
 msgctxt "@label: name of items filter"
 msgid "Name:"
 msgstr "Nome:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:98
+#: core/utilities/setup/camera/importfilterdlg.cpp:99
 #, kde-format
 msgid "Mime filter:"
 msgstr "Filtro dei tipi MIME:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:106
+#: core/utilities/setup/camera/importfilterdlg.cpp:107
 #, kde-format
 msgid "Select Type Mime..."
 msgstr "Seleziona il tipo MIME..."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:111
+#: core/utilities/setup/camera/importfilterdlg.cpp:112
 #, kde-format
 msgid "File name filter:"
 msgstr "Filtro per nome del file:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:121
+#: core/utilities/setup/camera/importfilterdlg.cpp:122
 #, kde-format
 msgid "Path filter:"
 msgstr "Filtro per il percorso:"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:131
+#: core/utilities/setup/camera/importfilterdlg.cpp:132
 #, kde-format
 msgid "Show only new files"
 msgstr "Mostra solo i nuovi file"
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:205
+#: core/utilities/setup/camera/importfilterdlg.cpp:206
 #, kde-format
 msgid "Select the MimeTypes you want for this filter."
 msgstr "Seleziona i tipi MIME che vuoi filtrare."
 
-#: core/utilities/setup/camera/importfilterdlg.cpp:207
+#: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
 msgstr "Seleziona i tipi MIME"
