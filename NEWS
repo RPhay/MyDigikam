@@ -87,7 +87,7 @@ BUGFIXES:
 062 --> 518072 - Declutter sidebars.
 063 --> 518091 - Error 429 from OpenstreetMap: too much request.
 064 --> 518100 - BQM Time adjust not changing the time.
-065 --> 
+065 --> Add "Clear All Groups" button to SearchView interface.
 066 --> 
 067 --> 
 068 --> 
