@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-03-20 10:50+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -3792,8 +3792,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91

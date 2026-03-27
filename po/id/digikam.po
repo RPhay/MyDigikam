@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -3740,7 +3740,7 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:91

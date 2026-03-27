@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-03-20 03:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3804,8 +3804,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "დაემატა მონაცემთა ბაზაში ახლახან შეცვლილი ელემენტების ძებნა."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2026-03-19."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91

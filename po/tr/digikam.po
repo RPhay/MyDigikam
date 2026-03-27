@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-03-25 06:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3854,8 +3854,9 @@ msgstr ""
 "eklendi."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr "İçsel RAW işletkesi, güncel 2026‒03‒19 anlık görüntüsüne güncellendi."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91

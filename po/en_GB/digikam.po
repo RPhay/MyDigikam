@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -3832,7 +3832,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last Libraw snapshot 2024-10-09."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr "Update internal RAW engine to last Libraw snapshot 2024-10-09."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91

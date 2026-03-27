@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-26 00:41+0000\n"
+"POT-Creation-Date: 2026-03-27 00:42+0000\n"
 "PO-Revision-Date: 2026-03-11 21:19+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3862,7 +3862,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, fuzzy, kde-format
 #| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr ""
 "Belső RAW-motor frissítése a legutóbbi, 2026. 02. 16-i Libraw pillanatképre."
 
