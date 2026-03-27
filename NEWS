@@ -20,6 +20,8 @@ Raw Engine      : Internal Libraw has been updated to the latest upstream 202603
                   it a variety of bug fixes and performance improvements.
 Import          : USB Mass Storage driver now support video thumbnails.
 
+Advanced Search : Add "Clear All Groups" button in the SearchView interface.
+
 *****************************************************************************************************
 BUGFIXES:
 
@@ -87,7 +89,7 @@ BUGFIXES:
 062 --> 518072 - Declutter sidebars.
 063 --> 518091 - Error 429 from OpenstreetMap: too much request.
 064 --> 518100 - BQM Time adjust not changing the time.
-065 --> Add "Clear All Groups" button to SearchView interface.
+065 --> 
 066 --> 
 067 --> 
 068 --> 
