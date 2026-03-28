@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
-"PO-Revision-Date: 2026-03-20 03:48+0100\n"
+"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"PO-Revision-Date: 2026-03-27 05:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3804,10 +3804,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "დაემატა მონაცემთა ბაზაში ახლახან შეცვლილი ელემენტების ძებნა."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
-msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2026-03-19."
+msgstr "განახლდა შიდა RAW ძრავა უკანასკნელ Libraw-ის ვერსიამდე 2026-03-26."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -26145,7 +26144,7 @@ msgstr "ეს გამოსახულების განათებუ�
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:512
+#: core/utilities/searchwindow/searchview.cpp:529
 #, kde-format
 msgid "Reset"
 msgstr "განულება"
@@ -61674,12 +61673,19 @@ msgstr "შენახული ძებნის ჩასწორება"
 msgid "Edit..."
 msgstr "ჩასწორება…"
 
-#: core/utilities/searchwindow/searchview.cpp:504
+#: core/utilities/searchwindow/searchview.cpp:521
 #, kde-format
 msgid "Add Search Group"
 msgstr "ახალი ძებნის ჯგუფი"
 
-#: core/utilities/searchwindow/searchview.cpp:533
+#: core/utilities/searchwindow/searchview.cpp:537
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Close All Groups"
+msgid "Clear All Groups"
+msgstr "ყველა ჯგუფის დახურვა"
+
+#: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
 msgid "Try"
 msgstr "ცდა"

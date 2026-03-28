@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
-"PO-Revision-Date: 2026-03-20 09:47+0100\n"
+"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"PO-Revision-Date: 2026-03-27 10:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3864,12 +3864,11 @@ msgstr ""
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr ""
 "Actualitzar el motor RAW intern a la darrera instantània de la Libraw "
-"2036-03-19."
+"2036-03-26."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -27234,7 +27233,7 @@ msgstr "Aquest és l'ajust de la corba de la lluminositat en la imatge"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:512
+#: core/utilities/searchwindow/searchview.cpp:529
 #, kde-format
 msgid "Reset"
 msgstr "Inicialitza"
@@ -64416,12 +64415,19 @@ msgstr "Edició de la cerca emmagatzemada"
 msgid "Edit..."
 msgstr "Edita..."
 
-#: core/utilities/searchwindow/searchview.cpp:504
+#: core/utilities/searchwindow/searchview.cpp:521
 #, kde-format
 msgid "Add Search Group"
 msgstr "Afegeix un grup de cerca"
 
-#: core/utilities/searchwindow/searchview.cpp:533
+#: core/utilities/searchwindow/searchview.cpp:537
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Close All Groups"
+msgid "Clear All Groups"
+msgstr "Tanca tots els grups"
+
+#: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
 msgid "Try"
 msgstr "Prova"

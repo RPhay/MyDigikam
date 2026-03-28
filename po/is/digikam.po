@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
-"PO-Revision-Date: 2026-03-20 10:50+0000\n"
+"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"PO-Revision-Date: 2026-03-27 10:47+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3792,10 +3792,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
-msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-19."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-26."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -26860,7 +26859,7 @@ msgstr "Settu hér breytingar á birtustigi myndar"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:512
+#: core/utilities/searchwindow/searchview.cpp:529
 #, kde-format
 msgid "Reset"
 msgstr "Frumstilla"
@@ -63652,12 +63651,19 @@ msgstr "Breyta geymdri leit"
 msgid "Edit..."
 msgstr "Breyta..."
 
-#: core/utilities/searchwindow/searchview.cpp:504
+#: core/utilities/searchwindow/searchview.cpp:521
 #, kde-format
 msgid "Add Search Group"
 msgstr "Bæta við leitarhóp"
 
-#: core/utilities/searchwindow/searchview.cpp:533
+#: core/utilities/searchwindow/searchview.cpp:537
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Close All Groups"
+msgid "Clear All Groups"
+msgstr "Loka öllum hópum"
+
+#: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
 msgid "Try"
 msgstr "Prófa"

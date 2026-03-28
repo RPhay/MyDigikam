@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
+"POT-Creation-Date: 2026-03-28 00:41+0000\n"
 "PO-Revision-Date: 2010-08-27 21:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -25241,7 +25241,7 @@ msgstr ""
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:512
+#: core/utilities/searchwindow/searchview.cpp:529
 #, fuzzy, kde-format
 msgid "Reset"
 msgstr "Set semula"
@@ -60187,12 +60187,17 @@ msgstr ""
 msgid "Edit..."
 msgstr "Edit..."
 
-#: core/utilities/searchwindow/searchview.cpp:504
+#: core/utilities/searchwindow/searchview.cpp:521
 #, kde-format
 msgid "Add Search Group"
 msgstr ""
 
-#: core/utilities/searchwindow/searchview.cpp:533
+#: core/utilities/searchwindow/searchview.cpp:537
+#, fuzzy, kde-format
+msgid "Clear All Groups"
+msgstr "Kosongkan semua"
+
+#: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
 msgid "Try"
 msgstr ""

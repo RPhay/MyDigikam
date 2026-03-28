@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
-"PO-Revision-Date: 2026-03-20 09:47+0100\n"
+"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"PO-Revision-Date: 2026-03-27 10:46+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -162,7 +162,7 @@ msgid ""
 "Week #%1 - %2 %3\n"
 "%4\t%5"
 msgstr ""
-"Setmana núm. %1 - %2 %3\n"
+"Setmana núm. %1 – %2 %3\n"
 "%4\t%5"
 
 #: core/app/date/timelinewidget.cpp:273
@@ -924,8 +924,8 @@ msgstr "Data no vàlida"
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
-msgstr[0] "Data de l'àlbum: %2 %3 %4 - 1 element"
-msgstr[1] "Data de l'àlbum: %2 %3 %4 - %1 elements"
+msgstr[0] "Data de l'àlbum: %2 %3 %4 – 1 element"
+msgstr[1] "Data de l'àlbum: %2 %3 %4 – %1 elements"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:364
 #, kde-format
@@ -942,29 +942,29 @@ msgctxt ""
 "items in tag"
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
-msgstr[0] "%2 - 1 element"
-msgstr[1] "%2 - %1 elements"
+msgstr[0] "%2 – 1 element"
+msgstr[1] "%2 – %1 elements"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:373
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
-msgstr[0] "%2 - 1 element"
-msgstr[1] "%2 - %1 elements"
+msgstr[0] "%2 – 1 element"
+msgstr[1] "%2 – %1 elements"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:385
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
-msgstr[0] "Busca per paraula clau - 1 element"
-msgstr[1] "Busca per paraula clau - %1 elements"
+msgstr[0] "Busca per paraula clau – 1 element"
+msgstr[1] "Busca per paraula clau – %1 elements"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:389
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
-msgstr[0] "Busca avançada - 1 element"
-msgstr[1] "Busca avançada - %1 elements"
+msgstr[0] "Busca avançada – 1 element"
+msgstr[1] "Busca avançada – %1 elements"
 
 #: core/app/items/utils/itemcategorydrawer.cpp:403
 #, kde-format
@@ -3864,12 +3864,11 @@ msgstr ""
 
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr ""
 "Actualitzar el motor RAW intern a l'última instantània de la Libraw "
-"2036-03-19."
+"2036-03-26."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -7398,11 +7397,11 @@ msgstr ""
 "perceptible en funció de la imatge -les fotografies grans generalment no "
 "mostren cap diferència, mentre que els gràfics més definits amb píxels "
 "d'escala reduïda poden perdre els detalls fins del color.</p><p><b>4:4:4</b> "
-"- Sense submostreig del croma, la qualitat és més alta però la compressió és "
-"més baixa.</p><p><b>4:2:2</b> - El croma es reduïx a la meitat "
-"horitzontalment, compressió mitjana, qualitat mitjana.</p><p><b>4:2:0</b> - "
+"– Sense submostreig del croma, la qualitat és més alta però la compressió és "
+"més baixa.</p><p><b>4:2:2</b> – El croma es reduïx a la meitat "
+"horitzontalment, compressió mitjana, qualitat mitjana.</p><p><b>4:2:0</b> – "
 "Croma dividit per quatre en blocs de 2x2, alta compressió però baixa "
-"qualitat.</p><p><b>4:1:1</b> - Croma dividit per quatre en blocs de 4x1, "
+"qualitat.</p><p><b>4:1:1</b> – Croma dividit per quatre en blocs de 4x1, "
 "alta compressió però baixa qualitat.</p><p><b>Nota: JPEG sempre utilitza "
 "compressió amb pèrdua.</b></p>"
 
@@ -11879,13 +11878,13 @@ msgstr "Un mapa"
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - left and right"
-msgstr "Dos mapes - esquerra i dreta"
+msgstr "Dos mapes – esquerra i dreta"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:283
 #, kde-format
 msgctxt "@item"
 msgid "Two maps - top and bottom"
-msgstr "Dos mapes - superior i inferior"
+msgstr "Dos mapes – superior i inferior"
 
 #. i18n: ectx: property (text), widget (QPushButton, m_doneButton)
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:302
@@ -12697,7 +12696,7 @@ msgstr "Edita l'XMP"
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 (%2/%3) - Edit Metadata"
-msgstr "%1 (%2/%3) - Editeu les metadades"
+msgstr "%1 (%2/%3) – Editeu les metadades"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:78
 #: core/dplugins/generic/metadata/metadataedit/dialog/multivaluesedit.cpp:76
@@ -14085,25 +14084,25 @@ msgstr "Ombra"
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
-msgstr "Fluorescent amb llum de dia (D 5700 - 7100 K)"
+msgstr "Fluorescent amb llum de dia (D 5700 – 7100K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
-msgstr "Fluorescent blanc de llum de dia (N 4600 - 5400 K)"
+msgstr "Fluorescent blanc de llum de dia (N 4600 – 5400K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
-msgstr "Fluorescent blanc fred (W 3900 - 4500 K)"
+msgstr "Fluorescent blanc fred (W 3900 – 4500K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
-msgstr "Fluorescent blanc (WW 3200 - 3700 K)"
+msgstr "Fluorescent blanc (WW 3200 – 3700K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
@@ -18660,7 +18659,7 @@ msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
 msgstr ""
-"La qualitat JPEG [50:baixa - 100:alta]. Avís: Millor qualitat requerix més "
+"La qualitat JPEG [50:baixa – 100:alta]. Avís: Millor qualitat requerix més "
 "amplada de banda de xarxa"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
@@ -21860,7 +21859,7 @@ msgstr "Pista de so:"
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
 #, kde-format
@@ -26983,7 +26982,7 @@ msgstr "<h3>Esta vista llista tots els elements de l'usuari.</h3>"
 #, kde-format
 msgctxt "@title:window"
 msgid "%1 - Create Album Failed"
-msgstr "%1 - No s'ha pogut crear l'àlbum"
+msgstr "%1 – No s'ha pogut crear l'àlbum"
 
 #: core/dplugins/generic/webservices/unified/wizard/wsintropage.cpp:78
 #, kde-format
@@ -27212,7 +27211,7 @@ msgstr "Este és l'ajust de la corba de la lluminositat en la imatge"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:512
+#: core/utilities/searchwindow/searchview.cpp:529
 #, kde-format
 msgid "Reset"
 msgstr "Restablix"
@@ -30420,7 +30419,7 @@ msgstr "Configuració per a guardar fitxers d'imatge"
 #, kde-format
 msgctxt "@title:window"
 msgid "Color Profile Info - %1"
-msgstr "Informació del perfil de color - %1"
+msgstr "Informació del perfil de color – %1"
 
 #: core/libs/dialogs/imagedialog.cpp:226
 #, kde-format
@@ -37715,7 +37714,7 @@ msgstr "ETA:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Pre-Release"
-msgstr "Comprovador de versions en línia - prellançament"
+msgstr "Comprovador de versions en línia – prellançament"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:174
 #, kde-format
@@ -37728,7 +37727,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Online Version Checker - Stable Version"
-msgstr "Comprovador de versions en línia - versió estable"
+msgstr "Comprovador de versions en línia – versió estable"
 
 #: core/libs/onlineversion/onlineversiondlg.cpp:179
 #, kde-format
@@ -42351,37 +42350,37 @@ msgstr "Sense"
 #, kde-format
 msgctxt "Effect: KenBurnsZoomIn"
 msgid "Ken Burns - Camera Zoom In"
-msgstr "Ken Burns - Apropament de la càmera"
+msgstr "Ken Burns – Apropament de la càmera"
 
 #: core/libs/transitionmngr/effectmngr.cpp:101
 #, kde-format
 msgctxt "Effect: KenBurnsZoomOut"
 msgid "Ken Burns - Camera Zoom Out"
-msgstr "Ken Burns - Allunyament de la càmera"
+msgstr "Ken Burns – Allunyament de la càmera"
 
 #: core/libs/transitionmngr/effectmngr.cpp:102
 #, kde-format
 msgctxt "Effect: KenBurnsPanLR"
 msgid "Ken Burns - Camera Pan Left to Right"
-msgstr "Ken Burns - Desplaçament d'esquerra a dreta de la càmera"
+msgstr "Ken Burns – Desplaçament d'esquerra a dreta de la càmera"
 
 #: core/libs/transitionmngr/effectmngr.cpp:103
 #, kde-format
 msgctxt "Effect: KenBurnsPanRL"
 msgid "Ken Burns - Camera Pan Right to Left"
-msgstr "Ken Burns - Desplaçament de dreta a esquerra de la càmera"
+msgstr "Ken Burns – Desplaçament de dreta a esquerra de la càmera"
 
 #: core/libs/transitionmngr/effectmngr.cpp:104
 #, kde-format
 msgctxt "Effect: KenBurnsPanTB"
 msgid "Ken Burns - Camera Pan Top to Bottom"
-msgstr "Ken Burns - Desplaçament de dalt a baix de la càmera"
+msgstr "Ken Burns – Desplaçament de dalt a baix de la càmera"
 
 #: core/libs/transitionmngr/effectmngr.cpp:105
 #, kde-format
 msgctxt "Effect: KenBurnsPanBT"
 msgid "Ken Burns - Camera Pan Bottom to Top"
-msgstr "Ken Burns - Desplaçament de baix a dalt de la càmera"
+msgstr "Ken Burns – Desplaçament de baix a dalt de la càmera"
 
 #: core/libs/transitionmngr/effectmngr.cpp:106
 #, kde-format
@@ -42576,331 +42575,331 @@ msgstr ""
 #, kde-format
 msgctxt "Video Type: QVGA"
 msgid "QVGA - 320x180 - 16:9"
-msgstr "QVGA - 320x180 - 16:9"
+msgstr "QVGA – 320x180 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:470
 #, kde-format
 msgctxt "Video Type: VCD1"
 msgid "VCD - 352x240 - 7:5"
-msgstr "VCD - 352x240 - 7:5"
+msgstr "VCD – 352x240 – 7:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:471
 #, kde-format
 msgctxt "Video Type: VCD2"
 msgid "VCD - 352x288 - 6:5"
-msgstr "VCD - 352x288 - 6:5"
+msgstr "VCD – 352x288 – 6:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:472
 #, kde-format
 msgctxt "Video Type: CVD1"
 msgid "CVD - 352x480 - 4:3"
-msgstr "CVD - 352x480 - 4:3"
+msgstr "CVD – 352x480 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:473
 #, kde-format
 msgctxt "Video Type: CVD2"
 msgid "CVD - 352x576 - 16:9"
-msgstr "CVD - 352x576 - 16:9"
+msgstr "CVD – 352x576 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:474
 #, kde-format
 msgctxt "Video Type: HVGA"
 msgid "HVGA - 480x270 - 16:9"
-msgstr "HVGA - 480x270 - 16:9"
+msgstr "HVGA – 480x270 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:475
 #, kde-format
 msgctxt "Video Type: SVCD1"
 msgid "SVCD - 480x480 - 1:1"
-msgstr "SVCD - 480x480 - 1:1"
+msgstr "SVCD – 480x480 – 1:1"
 
 #: core/libs/video/manager/vidslidesettings.cpp:476
 #, kde-format
 msgctxt "Video Type: SDTV1"
 msgid "SDTV - 528x480 - 11:10"
-msgstr "SDTV - 528x480 - 11:10"
+msgstr "SDTV – 528x480 – 11:10"
 
 #: core/libs/video/manager/vidslidesettings.cpp:477
 #, kde-format
 msgctxt "Video Type: SDTV2"
 msgid "SDTV - 544x480 - 17:15"
-msgstr "SDTV - 544x480 - 17:15"
+msgstr "SDTV – 544x480 – 17:15"
 
 #: core/libs/video/manager/vidslidesettings.cpp:478
 #, kde-format
 msgctxt "Video Type: EDTV1"
 msgid "EDTV - 544x576 - 17:18"
-msgstr "EDTV - 544x576 - 17:18"
+msgstr "EDTV – 544x576 – 17:18"
 
 #: core/libs/video/manager/vidslidesettings.cpp:479
 #, kde-format
 msgctxt "Video Type: SVCD2"
 msgid "SVCD - 480x576 - 5:6"
-msgstr "SVCD - 480x576 - 5:6"
+msgstr "SVCD – 480x576 – 5:6"
 
 #: core/libs/video/manager/vidslidesettings.cpp:480
 #, kde-format
 msgctxt "Video Type: EGA"
 msgid "EGA - 640x350 - 16:9"
-msgstr "EGA - 640x350 - 16:9"
+msgstr "EGA – 640x350 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:481
 #, kde-format
 msgctxt "Video Type: VGA"
 msgid "VGA - 640x480 - 4:3"
-msgstr "VGA - 640x480 - 4:3"
+msgstr "VGA – 640x480 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:482
 #, kde-format
 msgctxt "Video Type: SDTV3"
 msgid "SDTV - 704x480 - 22:15"
-msgstr "SDTV - 704x480 - 22:15"
+msgstr "SDTV – 704x480 – 22:15"
 
 #: core/libs/video/manager/vidslidesettings.cpp:483
 #, kde-format
 msgctxt "Video Type: EDTV2"
 msgid "EDTV - 704x576 - 11:9"
-msgstr "EDTV - 704x576 - 11:9"
+msgstr "EDTV – 704x576 – 11:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:484
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x480 - 3:2"
-msgstr "DVD - 720x480 - 3:2"
+msgstr "DVD – 720x480 – 3:2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:485
 #, kde-format
 msgctxt "Video Type: DVD"
 msgid "DVD - 720x576 - 5:4"
-msgstr "DVD - 720x576 - 5:4"
+msgstr "DVD – 720x576 – 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:486
 #, kde-format
 msgctxt "Video Type: WVGA"
 msgid "WVGA - 800x450 - 16:9"
-msgstr "WVGA - 800x450 - 16:9"
+msgstr "WVGA – 800x450 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:487
 #, kde-format
 msgctxt "Video Type: SVGA"
 msgid "SVGA - 800x600 - 4:3"
-msgstr "SVGA - 800x600 - 4:3"
+msgstr "SVGA – 800x600 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:488
 #, kde-format
 msgctxt "Video Type: DVGA"
 msgid "DVGA - 960x640 - 3:2"
-msgstr "DVGA - 960x640 - 3:2"
+msgstr "DVGA – 960x640 – 3:2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:489
 #, kde-format
 msgctxt "Video Type: XVGA"
 msgid "XVGA - 1024x576 - 16:9"
-msgstr "XVGA - 1024x576 - 16:9"
+msgstr "XVGA – 1024x576 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:490
 #, kde-format
 msgctxt "Video Type: HDTV"
 msgid "HDTV - 1280x720 - 16:9"
-msgstr "HDTV - 1280x720 - 16:9"
+msgstr "HDTV – 1280x720 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:491
 #, kde-format
 msgctxt "Video Type: WXGA1"
 msgid "WXGA - 1280x768 - 5:3"
-msgstr "WXGA - 1280x768 - 5:3"
+msgstr "WXGA – 1280x768 – 5:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:492
 #, kde-format
 msgctxt "Video Type: WXGA2"
 msgid "WXGA - 1280x800 - 8:5"
-msgstr "WXGA - 1280x800 - 8:5"
+msgstr "WXGA – 1280x800 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:493
 #, kde-format
 msgctxt "Video Type: SXGA"
 msgid "SXGA - 1280x1024 - 5:4"
-msgstr "SXGA - 1280x1024 - 5:4"
+msgstr "SXGA – 1280x1024 – 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:494
 #, kde-format
 msgctxt "Video Type: SXGAPLUS"
 msgid "SXGAPLUS - 1400x1050 - 4:3"
-msgstr "SXGAPLUS - 1400x1050 - 4:3"
+msgstr "SXGAPLUS – 1400x1050 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:495
 #, kde-format
 msgctxt "Video Type: WSXGA"
 msgid "WSXGA - 1440x900 - 8:5"
-msgstr "WSXGA - 1440x900 - 8:5"
+msgstr "WSXGA – 1440x900 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:496
 #, kde-format
 msgctxt "Video Type: HDPLUS"
 msgid "HDPLUS - 1600x900 - 16:9"
-msgstr "HDPLUS - 1600x900 - 16:9"
+msgstr "HDPLUS – 1600x900 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:497
 #, kde-format
 msgctxt "Video Type: WSXGAPLUS"
 msgid "WSXGAPLUS - 1680x1050 - 8:5"
-msgstr "WSXGAPLUS - 1680x1050 - 8:5"
+msgstr "WSXGAPLUS – 1680x1050 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:498
 #, kde-format
 msgctxt "Video Type: UXGA"
 msgid "UXGA - 1600x1200 - 4:3"
-msgstr "UXGA - 1600x1200 - 4:3"
+msgstr "UXGA – 1600x1200 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:499
 #, kde-format
 msgctxt "Video Type: BLUERAY"
 msgid "BLUERAY - 1920x1080 - 16:9"
-msgstr "BLUERAY - 1920x1080 - 16:9"
+msgstr "BLUERAY – 1920x1080 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:500
 #, kde-format
 msgctxt "Video Type: WUXGA"
 msgid "WUXGA - 1920x1200 - 8:5"
-msgstr "WUXGA - 1920x1200 - 8:5"
+msgstr "WUXGA – 1920x1200 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:501
 #, kde-format
 msgctxt "Video Type: TXGA"
 msgid "TXGA - 1920x1440 - 7:5"
-msgstr "TXGA - 1920x1440 - 7:5"
+msgstr "TXGA – 1920x1440 – 7:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:502
 #, kde-format
 msgctxt "Video Type: QXGA"
 msgid "QXGA - 2048x1536 - 4:3"
-msgstr "QXGA - 2048x1536 - 4:3"
+msgstr "QXGA – 2048x1536 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:503
 #, kde-format
 msgctxt "Video Type: UWFHD"
 msgid "UWFHD - 2560x1080 - 21:9"
-msgstr "UWFHD - 2560x1080 - 21:9"
+msgstr "UWFHD – 2560x1080 – 21:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:504
 #, kde-format
 msgctxt "Video Type: WQHD"
 msgid "WQHD - 2560x1440 - 16:9"
-msgstr "WQHD - 2560x1440 - 16:9"
+msgstr "WQHD – 2560x1440 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:505
 #, kde-format
 msgctxt "Video Type: WQXGA"
 msgid "WQXGA - 2560x1600 - 8:5"
-msgstr "WQXGA - 2560x1600 - 8:5"
+msgstr "WQXGA – 2560x1600 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:506
 #, kde-format
 msgctxt "Video Type: QSXGA"
 msgid "QSXGA - 2560x2048 - 5:4"
-msgstr "QSXGA - 2560x2048 - 5:4"
+msgstr "QSXGA – 2560x2048 – 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:507
 #, kde-format
 msgctxt "Video Type: QSXGAPLUS"
 msgid "QSXGAPLUS - 2800x2100 - 4:3"
-msgstr "QSXGAPLUS - 2800x2100 - 4:3"
+msgstr "QSXGAPLUS – 2800x2100 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:508
 #, kde-format
 msgctxt "Video Type: WQXGAPLUS"
 msgid "WQXGAPLUS - 3200x1800 - 16:9"
-msgstr "WQXGAPLUS - 3200x1800 - 16:9"
+msgstr "WQXGAPLUS – 3200x1800 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:509
 #, kde-format
 msgctxt "Video Type: WQSXGA"
 msgid "WQSXGA - 3200x2048 - 25:16"
-msgstr "WQSXGA - 3200x2048 - 25:16"
+msgstr "WQSXGA – 3200x2048 – 25:16"
 
 #: core/libs/video/manager/vidslidesettings.cpp:510
 #, kde-format
 msgctxt "Video Type: QUXGA"
 msgid "QUXGA - 3200x2400 - 4:3"
-msgstr "QUXGA - 3200x2400 - 4:3"
+msgstr "QUXGA – 3200x2400 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:511
 #, kde-format
 msgctxt "Video Type: UHD4K"
 msgid "UHD4K - 3840x2160 - 16:9"
-msgstr "UHD4K - 3840x2160 - 16:9"
+msgstr "UHD4K – 3840x2160 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:512
 #, kde-format
 msgctxt "Video Type: WQUXGA"
 msgid "WQUXGA - 3840x2400 - 8:5"
-msgstr "WQUXGA - 3840x2400 - 8:5"
+msgstr "WQUXGA – 3840x2400 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:513
 #, kde-format
 msgctxt "Video Type: HXGA"
 msgid "HXGA - 4096x3072 - 4:3"
-msgstr "HXGA - 4096x3072 - 4:3"
+msgstr "HXGA – 4096x3072 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:514
 #, kde-format
 msgctxt "Video Type: UHD5K"
 msgid "UHD5K - 5120x2880 - 16:9"
-msgstr "UHD5K - 5120x2880 - 16:9"
+msgstr "UHD5K – 5120x2880 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:515
 #, kde-format
 msgctxt "Video Type: WHXGA"
 msgid "WHXGA - 5120x3200 - 8:5"
-msgstr "WHXGA - 5120x3200 - 8:5"
+msgstr "WHXGA – 5120x3200 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:516
 #, kde-format
 msgctxt "Video Type: HSXGA"
 msgid "HSXGA - 5120x4096 - 5:4"
-msgstr "HSXGA - 5120x4096 - 5:4"
+msgstr "HSXGA – 5120x4096 – 5:4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:517
 #, kde-format
 msgctxt "Video Type: UHD6K"
 msgid "UHD6K - 6016x3384 - 16:9"
-msgstr "UHD6K - 6016x3384 - 16:9"
+msgstr "UHD6K – 6016x3384 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:518
 #, kde-format
 msgctxt "Video Type: WHSXGA"
 msgid "WHSXGA - 6400x4096 - 25:16"
-msgstr "WHSXGA - 6400x4096 - 25:16"
+msgstr "WHSXGA – 6400x4096 – 25:16"
 
 #: core/libs/video/manager/vidslidesettings.cpp:519
 #, kde-format
 msgctxt "Video Type: HUXGA"
 msgid "HUXGA - 6400x4800 - 4:3"
-msgstr "HUXGA - 6400x4800 - 4:3"
+msgstr "HUXGA – 6400x4800 – 4:3"
 
 #: core/libs/video/manager/vidslidesettings.cpp:520
 #, kde-format
 msgctxt "Video Type: UHD8K"
 msgid "UHD8K - 7680x4320 - 16:9"
-msgstr "UHD8K - 7680x4320 - 16:9"
+msgstr "UHD8K – 7680x4320 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:521
 #, kde-format
 msgctxt "Video Type: WHUXGA"
 msgid "WHUXGA - 7680x4800 - 8:5"
-msgstr "WHUXGA - 7680x4800 - 8:5"
+msgstr "WHUXGA – 7680x4800 – 8:5"
 
 #: core/libs/video/manager/vidslidesettings.cpp:522
 #, kde-format
 msgctxt "Video Type: UW10K"
 msgid "UW10K - 10240x4320 - 21:9"
-msgstr "UW10K - 10240x4320 - 21:9"
+msgstr "UW10K – 10240x4320 – 21:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:523
 #, kde-format
 msgctxt "Video Type: UW16K"
 msgid "UW16K - 15360x8640 - 16:9"
-msgstr "UW16K - 15360x8640 - 16:9"
+msgstr "UW16K – 15360x8640 – 16:9"
 
 #: core/libs/video/manager/vidslidesettings.cpp:746
 #, kde-format
@@ -42984,13 +42983,13 @@ msgstr "8000k"
 #, kde-format
 msgctxt "Video Standard PAL"
 msgid "PAL - 25 FPS"
-msgstr "PAL - 25 FPS"
+msgstr "PAL – 25 FPS"
 
 #: core/libs/video/manager/vidslidesettings.cpp:768
 #, kde-format
 msgctxt "Video Standard NTSC"
 msgid "NTSC - 29.97 FPS"
-msgstr "NTSC - 29,97 FPS"
+msgstr "NTSC – 29,97 FPS"
 
 #: core/libs/video/manager/vidslidesettings.cpp:780
 #, kde-format
@@ -43014,25 +43013,25 @@ msgstr "MPEG-2 Video"
 #, kde-format
 msgctxt "Video Standard AVI"
 msgid "AVI - Audio Video Interleave"
-msgstr "AVI - Audio Video Interleave"
+msgstr "AVI – Audio Video Interleave"
 
 #: core/libs/video/manager/vidslidesettings.cpp:800
 #, kde-format
 msgctxt "Video Standard MKV"
 msgid "MKV - Matroska"
-msgstr "MKV - Matroska"
+msgstr "MKV – Matroska"
 
 #: core/libs/video/manager/vidslidesettings.cpp:801
 #, kde-format
 msgctxt "Video Standard MP4"
 msgid "MP4 - MPEG-4"
-msgstr "MP4 - MPEG-4"
+msgstr "MP4 – MPEG-4"
 
 #: core/libs/video/manager/vidslidesettings.cpp:802
 #, kde-format
 msgctxt "Video Standard MPG"
 msgid "MPG - MPEG-2"
-msgstr "MPG - MPEG-2"
+msgstr "MPG – MPEG-2"
 
 #: core/libs/video/manager/vidslidesettings.cpp:811
 #, kde-format
@@ -53718,7 +53717,7 @@ msgstr ""
 "que podeu personalitzar més opcions de configuració mitjançant el quadro de "
 "configuració de digiKam. Per a aprendre més coses quant al món de digiKam, "
 "vos recomanem que llegiu el <b>Manual de digiKam</b>, el trobareu a "
-"l'entrada de menú <b>Ajuda -> Manual</b> (cal que instal·leu per separat el "
+"l'entrada de menú <b>Ajuda → Manual</b> (cal que instal·leu per separat el "
 "paquet de documentació de digiKam). També podeu llegir el manual en línia "
 "des del <a href='https://docs.digikam.org/ca/index.html'>lloc web dedicat</"
 "a>.</p><p>Premeu <b>Acaba</b> per a tancar l'assistent. digiKam explorarà la "
@@ -53730,7 +53729,7 @@ msgstr ""
 "vegada que l'inicieu, digiKam només comprovarà la col·lecció per a veure si "
 "hi ha àlbums nous -la qual cosa serà molt més ràpida-. Podeu forçar a "
 "digiKam a que explore elements nous manualment utilitzant l'entrada de menú "
-"<b>Eines -> Manteniment -> Explora buscant elements nous</b>.</p></qt>"
+"<b>Eines → Manteniment → Explora buscant elements nous</b>.</p></qt>"
 
 #: core/utilities/firstrun/tooltipspage.cpp:52
 #, kde-format
@@ -59033,7 +59032,7 @@ msgstr "Imatge amb el color sense calibrar"
 #, kde-format
 msgctxt "<Problem> - <b>"
 msgid "%1 - %2"
-msgstr "%1 - %2"
+msgstr "%1 – %2"
 
 #: core/utilities/imageeditor/dialogs/colorcorrectiondlg.cpp:204
 #, kde-format
@@ -59996,7 +59995,7 @@ msgstr "Obri amb…"
 #: core/utilities/imageeditor/main/imagewindow.cpp:198
 #, kde-format
 msgid "Image Editor - %1"
-msgstr "Editor d'imatges - %1"
+msgstr "Editor d'imatges – %1"
 
 #: core/utilities/imageeditor/main/imagewindow.cpp:202
 #, kde-format
@@ -60511,7 +60510,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
-msgstr "%1 - Trieu la carpeta de la càmera"
+msgstr "%1 – Trieu la carpeta de la càmera"
 
 #: core/utilities/import/dialogs/camerafolderdialog.cpp:81
 #, kde-format
@@ -64410,12 +64409,19 @@ msgstr "Editeu la busca emmagatzemada"
 msgid "Edit..."
 msgstr "Edita…"
 
-#: core/utilities/searchwindow/searchview.cpp:504
+#: core/utilities/searchwindow/searchview.cpp:521
 #, kde-format
 msgid "Add Search Group"
 msgstr "Afig un grup de busca"
 
-#: core/utilities/searchwindow/searchview.cpp:533
+#: core/utilities/searchwindow/searchview.cpp:537
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Close All Groups"
+msgid "Clear All Groups"
+msgstr "Tanca tots els grups"
+
+#: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
 msgid "Try"
 msgstr "Prova"

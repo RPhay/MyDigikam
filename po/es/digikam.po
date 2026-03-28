@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-27 00:42+0000\n"
-"PO-Revision-Date: 2026-03-21 01:19+0100\n"
+"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"PO-Revision-Date: 2026-03-27 11:36+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3875,12 +3875,11 @@ msgstr ""
 "Permitir búsqueda de elementos modificados recientemente en la base de datos."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-19."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr ""
 "Se ha actualizado el motor RAW interno a la última copia disponible de "
-"Libraw 2026-03-19."
+"Libraw 2026-03-26."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -27224,7 +27223,7 @@ msgstr "Este es el ajuste de la curva de luminosidad de la imagen"
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:228
 #: core/dplugins/rawimport/native/rawsettingsbox.cpp:280
 #: core/libs/tags/widgets/tageditdlg.cpp:185
-#: core/utilities/searchwindow/searchview.cpp:512
+#: core/utilities/searchwindow/searchview.cpp:529
 #, kde-format
 msgid "Reset"
 msgstr "Reiniciar"
@@ -64376,12 +64375,19 @@ msgstr "Editar búsqueda guardada"
 msgid "Edit..."
 msgstr "Editar…"
 
-#: core/utilities/searchwindow/searchview.cpp:504
+#: core/utilities/searchwindow/searchview.cpp:521
 #, kde-format
 msgid "Add Search Group"
 msgstr "Añadir grupo de búsqueda"
 
-#: core/utilities/searchwindow/searchview.cpp:533
+#: core/utilities/searchwindow/searchview.cpp:537
+#, fuzzy, kde-format
+#| msgctxt "@action:inmenu"
+#| msgid "Close All Groups"
+msgid "Clear All Groups"
+msgstr "Cerrar todos los grupos"
+
+#: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
 msgid "Try"
 msgstr "Intentar"
