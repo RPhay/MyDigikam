@@ -67,6 +67,9 @@ fi
 # Adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion $MACOS_MAJOR.$MACOS_MINOR" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 
+# Install Metal SDK for QtWebEngine
+xcodebuild -downloadComponent MetalToolchain
+
 }
 
 ########################################################################
