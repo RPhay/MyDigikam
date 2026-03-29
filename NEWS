@@ -90,7 +90,7 @@ BUGFIXES:
 063 --> 518091 - Error 429 from OpenstreetMap: too much request.
 064 --> 518100 - BQM Time adjust not changing the time.
 065 --> 518263 - Filter on star rating does not work.
-066 --> 
+066 --> 518287 - Small fault in the "Selected Item Properties" caption.
 067 --> 
 068 --> 
 069 --> 

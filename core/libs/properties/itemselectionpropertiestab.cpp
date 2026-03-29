@@ -105,7 +105,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(ItemPropertiesSideBarDB* 
     QGridLayout* const grid1              = new QGridLayout(d->select);
 
     QWidget* const sbar                   = new QWidget(d->select);
-    QLabel* const stitle                  = new QLabel(i18n("<b>Selected Item Properties</b>"), sbar);
+    QLabel* const stitle                  = new QLabel(i18n("<b>Selected Items Properties</b>"), sbar);
     d->openSelBtn                         = new QToolButton(sbar);
     d->openSelBtn->setIcon(QIcon::fromTheme(QLatin1String("folder-open")));
     d->openSelBtn->setToolTip(i18n("Open in the file manager"));
