@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-28 00:41+0000\n"
-"PO-Revision-Date: 2026-03-27 06:36+0100\n"
+"PO-Revision-Date: 2026-03-28 06:47+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -63933,11 +63933,9 @@ msgid "Add Search Group"
 msgstr "Dodaj iskalno skupino"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "Zapri vse skupine"
+msgstr "Počisti vse skupine"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format

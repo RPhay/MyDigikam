@@ -63,7 +63,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-28 00:41+0000\n"
-"PO-Revision-Date: 2026-03-27 11:39+0100\n"
+"PO-Revision-Date: 2026-03-28 15:40+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -64298,11 +64298,9 @@ msgid "Add Search Group"
 msgstr "Voeg zoekgroep toe"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "Alle groepen sluiten"
+msgstr "Alle groepen wissen"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format

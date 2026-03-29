@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-28 00:41+0000\n"
-"PO-Revision-Date: 2026-03-27 05:12+0100\n"
+"PO-Revision-Date: 2026-03-28 04:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -61679,11 +61679,9 @@ msgid "Add Search Group"
 msgstr "ახალი ძებნის ჯგუფი"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "ყველა ჯგუფის დახურვა"
+msgstr "ყველა ჯგუფის გასუფთავება"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
