@@ -69,9 +69,11 @@ void RecognitionTrainingUpdateQueue::registerReaderThread(const QThread* thread)
 
 void RecognitionTrainingUpdateQueue::unregisterReaderThread(const QThread* thread)
 {
-    if (readers.contains(thread))
+    const int index = readers.indexOf(thread);
+
+    if (index >= 0)
     {
-        readers.removeAt(readers.contains(thread));
+        readers.removeAt(index);
     }
 }
 
