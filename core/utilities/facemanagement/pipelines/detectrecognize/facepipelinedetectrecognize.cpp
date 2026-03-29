@@ -383,6 +383,10 @@ bool FacePipelineDetectRecognize::extractor()
             int newHeight           = (int)(resizeFactor * cvUImage.rows);
             cv::resize(cvUImage, cvUResizedImage, cv::Size(newWidth, newHeight));
         }
+        else
+        {
+            cvUResizedImage = cvUImage;
+        }
 
         // get reciprocal factor for resizing the face to back the original image size
 
@@ -437,17 +441,19 @@ bool FacePipelineDetectRecognize::extractor()
 
                 // Add the rect to result list.
 
-                faceFRects << QRectF(qreal(X)      / qreal(cvUResizedImage.cols),
-                                     qreal(Y)      / qreal(cvUResizedImage.rows),
-                                     qreal(width)  / qreal(cvUResizedImage.cols),
-                                     qreal(height) / qreal(cvUResizedImage.rows));
+                QRectF currentFaceFRect(qreal(X)      / qreal(cvUResizedImage.cols),
+                                        qreal(Y)      / qreal(cvUResizedImage.rows),
+                                        qreal(width)  / qreal(cvUResizedImage.cols),
+                                        qreal(height) / qreal(cvUResizedImage.rows));
+
+                faceFRects << currentFaceFRect;
 
                 // compute current image relative rect
 
-                QRect rect = QRect(package->image.width()  * faceFRects[i].x(),
-                                   package->image.height() * faceFRects[i].y(),
-                                   package->image.width()  * faceFRects[i].width(),
-                                   package->image.height() * faceFRects[i].height());
+                QRect rect = QRect(package->image.width()  * currentFaceFRect.x(),
+                                   package->image.height() * currentFaceFRect.y(),
+                                   package->image.width()  * currentFaceFRect.width(),
+                                   package->image.height() * currentFaceFRect.height());
 
                 // check if rect is already assigned to a face to filter out confirmed and ignored faces
 
@@ -548,7 +554,7 @@ bool FacePipelineDetectRecognize::extractor()
                         // add the face features and face rect to the package
 
                         package->featuresList << normalized_features;
-                        package->faceRects << faceFRects[i];
+                        package->faceRects << currentFaceFRect;
                         package->faceList << face;
                     }
                 }
