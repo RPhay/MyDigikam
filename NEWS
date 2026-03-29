@@ -13,8 +13,8 @@ Bundles component versions:
 | Windows Qt6   | 6.10.1 (*) | 6.23.0 (*)  | 4.12 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | Windows 11 + VCPKG  |
 | AppImage Qt5  | 5.15.18    | 5.116       | 4.13 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | XUbuntu 20.06       |
 | AppImage Qt6  | 6.10.2 (*) | 6.24.0 (*)  | 4.13 (*)       | 8.0.1 (*)      | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | XUbuntu 22.04       |
-| macOS Qt5     | 5.15.18    | 5.116       | 4.13 (*)       | 7.1.2          | 1.21.2 (*)   | 13.53 (*)        | 0.28.8 (*)    | Monterey + Macports |
-| macOS Qt6     | 6.10.0     | 6.24.0 (*)  | 4.12           | 7.1.2          | 1.20.2       | 13.53 (*)        | 0.28.8 (*)    | Sequoia + Macports  |
+| macOS Qt5     | 5.15.18    | 5.116       | 4.13 (*)       | 7.1.2          | 1.20.2       | 13.53 (*)        | 0.28.8 (*)    | Monterey + Macports |
+| macOS Qt6     | 6.10.2 (*) | 6.24.0 (*)  | 4.13 (*)       | 8.0.1 (*)      | 1.20.2       | 13.53 (*)        | 0.28.8 (*)    | Sequoia + Macports  |
 
 Raw Engine      : Internal Libraw has been updated to the latest upstream 20260326 which brings with
                   it a variety of bug fixes and performance improvements.
