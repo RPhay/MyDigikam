@@ -413,6 +413,27 @@ bool ExifToolParser::version()
     return (d->startProcess(cmdArgs, ExifToolProcess::VERSION_STRING));
 }
 
+bool ExifToolParser::extractMotionPhotoVideo(const QString& path)
+{
+    QFileInfo fileInfo(path);
+
+    if (!fileInfo.exists())
+    {
+        qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot open source file to process with ExifTool...";
+        return false;
+    }
+
+    d->prepareProcess();
+
+    QByteArrayList cmdArgs;
+    cmdArgs << QByteArray("-b");
+    cmdArgs << QByteArray("-MotionPhotoVideo");
+    cmdArgs << d->filePathEncoding(fileInfo);
+    d->currentPath = fileInfo.filePath();
+
+    return (d->startProcess(cmdArgs, ExifToolProcess::EXTRACT_MOTION_PHOTO_VIDEO));
+}
+
 bool ExifToolParser::copyTags(const QString& src, const QString& dst,
                               unsigned char copyOps,
                               unsigned char writeModes)

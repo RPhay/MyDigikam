@@ -222,6 +222,11 @@ QString ExifToolParser::Private::actionString(int cmdAction) const
             return QLatin1String("Translate Tags");
         }
 
+        case ExifToolProcess::EXTRACT_MOTION_PHOTO_VIDEO:
+        {
+            return QLatin1String("Extract Motion Photo Video");
+        }
+
         default: // ExifToolProcess::NO_ACTION
         {
             break;

@@ -217,7 +217,10 @@ StackedView::StackedView(QWidget* const parent)
             this, SIGNAL(signalPrevItem()));
 
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
-            this, SIGNAL(signalEscapePreview()));
+            this, SLOT(slotMediaPlayerEscapePreview()));
+
+    connect(d->imagePreviewView, SIGNAL(signalPlayMotionPhoto(QSharedPointer<QIODevice>,QUrl,int)),
+            this, SLOT(slotPlayMotionPhoto(QSharedPointer<QIODevice>,QUrl,int)));
 
     connect(d->mediaPlayerView, SIGNAL(signalDeleteItem()),
             this, SIGNAL(signalDeleteItem()));
@@ -359,6 +362,11 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 
 #ifdef HAVE_MEDIAPLAYER
 
+            if (d->mediaPlayerView->isMotionPhotoMode())
+            {
+                d->mediaPlayerView->setMotionPhotoMode(false);
+            }
+
             setViewMode(MediaPlayerMode);
             d->mediaPlayerView->setItemInfo(info, previous, next);
 
@@ -375,6 +383,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 #ifdef HAVE_MEDIAPLAYER
 
                 d->mediaPlayerView->setCurrentItem();
+                d->mediaPlayerView->setMotionPhotoMode(false);
 
 #endif // HAVE_MEDIAPLAYER
 
@@ -407,6 +416,14 @@ void StackedView::setViewMode(const StackedViewMode mode, bool focus)
 
     if ((viewMode() == MediaPlayerMode) && (mode != MediaPlayerMode))
     {
+        if (d->mediaPlayerView->isMotionPhotoMode() && (mode != PreviewImageMode))
+        {
+            d->mediaPlayerView->setMotionPhotoMode(false);
+            setViewMode(PreviewImageMode, focus);
+
+            return;
+        }
+
         d->mediaPlayerView->escapePreview();
     }
 
@@ -628,6 +645,32 @@ void StackedView::slotPreviewLoaded(bool)
     setViewMode(StackedView::PreviewImageMode);
     previewLoaded();
 }
+
+#ifdef HAVE_MEDIAPLAYER
+
+void StackedView::slotPlayMotionPhoto(const QSharedPointer<QIODevice>& videoData, const QUrl& sourceUrl, int orientation)
+{
+    d->mediaPlayerView->setMotionPhotoMode(true);
+    d->mediaPlayerView->setMotionPhotoSourceItem(sourceUrl);
+    d->mediaPlayerView->setVideoOrientation(orientation);
+    setViewMode(MediaPlayerMode);
+    d->mediaPlayerView->setCurrentItem(videoData, sourceUrl, false, false);
+}
+
+void StackedView::slotMediaPlayerEscapePreview()
+{
+    if (d->mediaPlayerView->isMotionPhotoMode())
+    {
+        d->mediaPlayerView->setMotionPhotoMode(false);
+        setViewMode(PreviewImageMode);
+
+        return;
+    }
+
+    Q_EMIT signalEscapePreview();
+}
+
+#endif
 
 } // namespace Digikam
 

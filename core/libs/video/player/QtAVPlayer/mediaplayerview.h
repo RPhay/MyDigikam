@@ -16,6 +16,8 @@
 
 // Qt includes
 
+#include <QIODevice>
+#include <QSharedPointer>
 #include <QStackedWidget>
 #include <QEvent>
 #include <QUrl>
@@ -44,9 +46,18 @@ public:
                         bool  hasPrevious = false,
                         bool  hasNext     = false);
 
+    void setCurrentItem(const QSharedPointer<QIODevice>& videoData,
+                        const QUrl& sourceUrl,
+                        bool hasPrevious, bool hasNext);
+
     void setInfoInterface(DInfoInterface* const iface);
     void escapePreview();
     void reload();
+
+    void setVideoOrientation(int degrees);
+    void setMotionPhotoMode(bool enabled);
+    void setMotionPhotoSourceItem(const QUrl& sourceUrl);
+    bool isMotionPhotoMode() const;
 
     /**
      * @brief plug an extra widget at end of the toolbar.

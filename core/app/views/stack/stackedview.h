@@ -18,7 +18,9 @@
 
 // Qt includes
 
+#include <QIODevice>
 #include <QMainWindow>
+#include <QSharedPointer>
 #include <QStackedWidget>
 
 // Local includes
@@ -149,6 +151,13 @@ private Q_SLOTS:
     void slotZoomFactorChanged(double);
     void slotThumbBarSelectionChanged();
     void slotIconViewSelectionChanged();
+
+#ifdef HAVE_MEDIAPLAYER
+
+    void slotPlayMotionPhoto(const QSharedPointer<QIODevice>& videoData, const QUrl& sourceUrl, int orientation);
+    void slotMediaPlayerEscapePreview();
+
+#endif
 
 private:
 

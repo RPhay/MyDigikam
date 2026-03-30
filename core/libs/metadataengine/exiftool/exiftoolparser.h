@@ -228,6 +228,11 @@ public:
      */
     bool translateTags(const QString& path, unsigned char transOps);
 
+    /**
+     * Extract the embedded video from a Motion Photo.
+     */
+    bool extractMotionPhotoVideo(const QString& path);
+
     //@}
 
 public:

@@ -19,6 +19,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QBuffer>
 #include <QGraphicsSceneContextMenuEvent>
 #include <QMouseEvent>
 #include <QToolBar>
@@ -69,6 +70,7 @@
 #include "paniconwidget.h"
 #include "imagezoomsettings.h"
 #include "magnifieritem.h"
+#include "dmetadata.h"
 
 namespace Digikam
 {
@@ -110,6 +112,13 @@ public:
     FocusPointGroup*       focusPointGroup      = nullptr;
     QAction*               addFocusPointAction  = nullptr;
     QAction*               showFocusPointAction = nullptr;
+
+#ifdef HAVE_MEDIAPLAYER
+
+    QAction*                   playMotionPhotoAction = nullptr;
+    QSharedPointer<QBuffer>    motionPhotoBuffer;
+
+#endif
 
     QAction*               fullscreenAction     = nullptr;
     QAction*               magnifierAction      = nullptr;
@@ -221,6 +230,16 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     d->peopleToggleAction->setCheckable(true);
     d->showFocusPointAction->setCheckable(true);
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->playMotionPhotoAction = new QAction(QIcon::fromTheme(QLatin1String("video-clip")),
+                                           i18nc("@info:tooltip", "Play Motion Photo"),
+                                           this);
+    d->playMotionPhotoAction->setVisible(false);
+
+    connect(d->playMotionPhotoAction, SIGNAL(triggered()), this, SLOT(slotPlayMotionPhoto()));
+#endif
 
     // ---
 
@@ -472,6 +491,13 @@ void ItemPreviewView::setupOverlays()
 
     d->toolBar->addAction(d->peopleToggleAction);
     d->toolBar->addAction(d->addPersonAction);
+
+#ifdef HAVE_MEDIAPLAYER
+
+    d->toolBar->addAction(d->playMotionPhotoAction);
+
+#endif
+
     d->toolBar->addAction(d->fullscreenAction);
     d->toolBar->addAction(d->magnifierAction);
     d->toolBar->addWidget(d->zoomButton);
@@ -572,6 +598,12 @@ void ItemPreviewView::slotItemLoadingFailed()
 
 void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
 {
+#ifdef HAVE_MEDIAPLAYER
+
+    d->motionPhotoBuffer.reset();
+
+#endif
+
     d->faceGroup->aboutToSetInfo(info);
     d->item->setItemInfo(info);
     d->osd->setItemInfo(info);
@@ -596,6 +628,20 @@ void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous
     }
 
     d->item->setPreloadPaths(previewPaths);
+
+#ifdef HAVE_MEDIAPLAYER
+
+    bool isMotionPhoto = false;
+
+    if (!info.isNull())
+    {
+        DMetadata meta(info.filePath());
+        isMotionPhoto = meta.isMotionPhoto();
+    }
+
+    d->playMotionPhotoAction->setVisible(isMotionPhoto);
+
+#endif
 }
 
 ItemInfo ItemPreviewView::getItemInfo() const
@@ -1009,6 +1055,77 @@ void ItemPreviewView::dropEvent(QDropEvent* e)
     e->accept();
 
     return;
+}
+
+void ItemPreviewView::slotPlayMotionPhoto()
+{
+#ifdef HAVE_MEDIAPLAYER
+
+    ItemInfo info = d->item->imageInfo();
+
+    if (info.isNull())
+    {
+        return;
+    }
+
+    DMetadata meta(info.filePath());
+
+    QByteArray videoData = meta.extractMotionPhotoVideo();
+
+    if (videoData.isEmpty())
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to extract motion photo video from" << info.filePath();
+
+        return;
+    }
+
+    d->motionPhotoBuffer.reset(new QBuffer);
+    d->motionPhotoBuffer->setData(videoData);
+    d->motionPhotoBuffer->open(QIODevice::ReadOnly);
+
+    int orientation = 0;
+
+    switch (meta.getItemOrientation())
+    {
+        case MetaEngine::ORIENTATION_ROT_90:
+        case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+        case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        {
+            orientation = 90;
+            break;
+        }
+
+        case MetaEngine::ORIENTATION_ROT_180:
+        {
+            orientation = 180;
+            break;
+        }
+
+        case MetaEngine::ORIENTATION_ROT_270:
+        {
+            orientation = 270;
+            break;
+        }
+
+        default:
+        {
+            // The embedded video is always in sensor orientation (landscape).
+            // Detect portrait images and rotate the video to match.
+
+            QSize imageSize = meta.getPixelSize();
+
+            if (imageSize.isValid() && (imageSize.height() > imageSize.width()))
+            {
+                orientation = 90;
+            }
+
+            break;
+        }
+    }
+
+    Q_EMIT signalPlayMotionPhoto(d->motionPhotoBuffer, QUrl::fromLocalFile(info.filePath()), orientation);
+
+#endif
 }
 
 void ItemPreviewView::mousePressEvent(QMouseEvent* e)

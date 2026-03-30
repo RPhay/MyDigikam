@@ -180,6 +180,14 @@ void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
             break;
         }
 
+        case ExifToolProcess::EXTRACT_MOTION_PHOTO_VIDEO:
+        {
+            qCDebug(DIGIKAM_METAENGINE_LOG) << "Motion photo video size:" << result.output.size();
+
+            exifToolData.insert(QLatin1String("MOTION_PHOTO_VIDEO"), QVariantList() << result.output);
+            break;
+        }
+
         case ExifToolProcess::APPLY_CHANGES:
         {
             printExifToolOutput(result.output);

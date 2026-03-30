@@ -55,6 +55,7 @@ public:
         VERSION_STRING,                             ///< Return the ExifTool version as string.
         COPY_TAGS,                                  ///< Copy tags from one file to another one. See CopyTagsSource enum for details.
         TRANS_TAGS,                                 ///< Translate tags in file. See TranslateTagsOps enum for details.
+        EXTRACT_MOTION_PHOTO_VIDEO,                 ///< Extract embedded video from a Motion Photo as byte-array.
         NO_ACTION                                   ///< Last value from this list. Do nothing.
     };
 

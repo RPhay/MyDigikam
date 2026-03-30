@@ -267,6 +267,12 @@ public: // Video helpers
      */
     static QString videoColorModelToString(VIDEOCOLORMODEL videoColorModel);
 
+public: // Motion Photo helpers
+
+    bool isMotionPhoto() const;
+
+    QByteArray extractMotionPhotoVideo() const;
+
 public: // Photo helpers
 
     /**

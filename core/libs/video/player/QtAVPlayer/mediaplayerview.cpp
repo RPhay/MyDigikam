@@ -17,6 +17,8 @@
 // Qt includes
 
 #include <QApplication>
+#include <QIODevice>
+#include <QSharedPointer>
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QProxyStyle>
@@ -43,6 +45,7 @@
 #include "dlayoutbox.h"
 #include "metaengine.h"
 #include "dmetadata.h"
+#include "qaviodevice.h"
 
 namespace Digikam
 {
@@ -185,7 +188,11 @@ public:
     qint64               capturePosition    = 0;
     qint64               sliderTime         = 0;
 
-    bool                 playLoop           = false;
+    bool                         playLoop           = false;
+    bool                         motionPhotoMode    = false;
+    QUrl                         motionPhotoSource;
+    QSharedPointer<QIODevice>    ioDevice;
+    QSharedPointer<QAVIODevice>  avioDevice;
 
     const QString        errorMsg           = i18n("An error has occurred with the media player...");
     const QString        endMsg             = i18n("End of media.");
@@ -383,8 +390,76 @@ void MediaPlayerView::setInfoInterface(DInfoInterface* const iface)
 void MediaPlayerView::reload()
 {
     d->videoWidget->player()->stop();
-    d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
+
+    if (d->avioDevice)
+    {
+        d->ioDevice->seek(0);
+        d->videoWidget->player()->setSource(QLatin1String("motion_photo.mp4"), d->avioDevice);
+    }
+    else
+    {
+        d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
+    }
+
     d->videoWidget->player()->play();
+}
+
+void MediaPlayerView::setVideoOrientation(int degrees)
+{
+    d->videoWidget->setVideoItemOrientation(degrees);
+}
+
+void MediaPlayerView::setMotionPhotoMode(bool enabled)
+{
+    d->motionPhotoMode = enabled;
+
+    if (!enabled)
+    {
+        d->motionPhotoSource.clear();
+        d->ioDevice.reset();
+        d->avioDevice.reset();
+    }
+}
+
+void MediaPlayerView::setMotionPhotoSourceItem(const QUrl& sourceUrl)
+{
+    d->motionPhotoSource = sourceUrl;
+}
+
+bool MediaPlayerView::isMotionPhotoMode() const
+{
+    return d->motionPhotoMode;
+}
+
+void MediaPlayerView::setCurrentItem(const QSharedPointer<QIODevice>& videoData,
+                                     const QUrl& sourceUrl,
+                                     bool hasPrevious, bool hasNext)
+{
+    d->prevAction->setEnabled(hasPrevious);
+    d->nextAction->setEnabled(hasNext);
+    d->adjustVideoSize();
+
+    d->videoWidget->player()->stop();
+    d->videoWidget->player()->setSource(QString());
+
+    d->ioDevice   = videoData;
+    d->avioDevice.reset(new QAVIODevice(videoData));
+    d->currentItem = sourceUrl;
+
+    d->videoWidget->player()->setSource(QLatin1String("motion_photo.mp4"), d->avioDevice);
+    setPreviewMode(Private::PlayerView);
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Album Settings"));
+
+    if (group.readEntry("Preview Auto Play", true))
+    {
+        d->videoWidget->player()->play();
+    }
+    else
+    {
+        d->videoWidget->player()->pause();
+    }
 }
 
 void MediaPlayerView::slotPlayerStateChanged(QAVPlayer::State newState)
@@ -425,6 +500,34 @@ void MediaPlayerView::slotMediaStatusChanged(QAVPlayer::MediaStatus newStatus)
     }
     else if (newStatus == QAVPlayer::EndOfMedia)
     {
+        if (d->motionPhotoMode)
+        {
+            d->videoWidget->player()->stop();
+
+            if (d->avioDevice)
+            {
+                d->ioDevice->seek(0);
+                d->videoWidget->player()->setSource(QLatin1String("motion_photo.mp4"), d->avioDevice);
+            }
+            else
+            {
+                d->videoWidget->player()->setSource(d->currentItem.toLocalFile());
+            }
+
+            if (d->playLoop)
+            {
+                d->videoWidget->player()->play();
+            }
+            else
+            {
+                d->videoWidget->player()->pause();
+            }
+
+            setPreviewMode(Private::PlayerView);
+
+            return;
+        }
+
         setPreviewMode(Private::MessageView);
         d->msgLabel->setText(d->endMsg);
     }
@@ -555,9 +658,12 @@ void MediaPlayerView::slotCapture()
         QVideoFrame frame      = d->videoWidget->videoFrame();
         QImage image           = frame.image();
 
-        if (!image.isNull() && d->currentItem.isValid())
+        QUrl itemUrl = (d->motionPhotoMode && d->motionPhotoSource.isValid()) ? d->motionPhotoSource
+                                                                               : d->currentItem;
+
+        if (!image.isNull() && itemUrl.isValid())
         {
-            QFileInfo info(d->currentItem.toLocalFile());
+            QFileInfo info(itemUrl.toLocalFile());
             QString tempPath = QString::fromUtf8("%1/%2-%3.digikamtempfile.jpg")
                               .arg(info.path())
                               .arg(info.baseName())
@@ -574,7 +680,7 @@ void MediaPlayerView::slotCapture()
 
                     if (d->iface)
                     {
-                        DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+                        DItemInfo dinfo(d->iface->itemInfo(itemUrl));
 
                         dateTime    = dinfo.dateTime();
                         orientation = (MetaEngine::ImageOrientation)dinfo.orientation();
@@ -583,7 +689,7 @@ void MediaPlayerView::slotCapture()
                     {
                         QScopedPointer<DMetadata> meta2(new DMetadata);
 
-                        if (meta2->load(d->currentItem.toLocalFile()))
+                        if (meta2->load(itemUrl.toLocalFile()))
                         {
                             dateTime    = meta2->getItemDateTime();
                             orientation = meta2->getItemOrientation();
@@ -675,41 +781,44 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     d->videoWidget->player()->stop();
     d->videoWidget->player()->setSource(QString());
 
-    int orientation = 0;
-
-    if (d->iface)
+    if (!d->motionPhotoMode)
     {
-        DItemInfo info(d->iface->itemInfo(url));
+        int orientation = 0;
 
-        orientation = info.orientation();
-    }
-
-    switch (orientation)
-    {
-        case MetaEngine::ORIENTATION_ROT_90:
-        case MetaEngine::ORIENTATION_ROT_90_HFLIP:
-        case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        if (d->iface)
         {
-            d->videoWidget->setVideoItemOrientation(90);
-            break;
+            DItemInfo info(d->iface->itemInfo(url));
+
+            orientation = info.orientation();
         }
 
-        case MetaEngine::ORIENTATION_ROT_180:
+        switch (orientation)
         {
-            d->videoWidget->setVideoItemOrientation(180);
-            break;
-        }
+            case MetaEngine::ORIENTATION_ROT_90:
+            case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+            case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+            {
+                d->videoWidget->setVideoItemOrientation(90);
+                break;
+            }
 
-        case MetaEngine::ORIENTATION_ROT_270:
-        {
-            d->videoWidget->setVideoItemOrientation(270);
-            break;
-        }
+            case MetaEngine::ORIENTATION_ROT_180:
+            {
+                d->videoWidget->setVideoItemOrientation(180);
+                break;
+            }
 
-        default:
-        {
-            d->videoWidget->setVideoItemOrientation(0);
-            break;
+            case MetaEngine::ORIENTATION_ROT_270:
+            {
+                d->videoWidget->setVideoItemOrientation(270);
+                break;
+            }
+
+            default:
+            {
+                d->videoWidget->setVideoItemOrientation(0);
+                break;
+            }
         }
     }
 

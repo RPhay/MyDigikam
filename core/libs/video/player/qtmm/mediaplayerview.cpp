@@ -18,6 +18,8 @@
 
 #include <QApplication>
 #include <QActionGroup>
+#include <QIODevice>
+#include <QSharedPointer>
 #include <QVBoxLayout>
 #include <QMouseEvent>
 #include <QProxyStyle>
@@ -191,8 +193,11 @@ public:
 
     QUrl                 currentItem;
 
-    int                  videoOrientation   = 0;
-    qint64               sliderTime         = 0;
+    int                       videoOrientation   = 0;
+    bool                      motionPhotoMode    = false;
+    QUrl                      motionPhotoSource;
+    QSharedPointer<QIODevice> ioDevice;
+    qint64                    sliderTime         = 0;
 
     const QUrl           dummyVideo         = QUrl::fromLocalFile(
                                                   QStandardPaths::locate(
@@ -599,6 +604,62 @@ void MediaPlayerView::reload()
     d->player->play();
 }
 
+void MediaPlayerView::setVideoOrientation(int degrees)
+{
+    d->videoOrientation = degrees;
+    d->adjustVideoSize();
+}
+
+void MediaPlayerView::setMotionPhotoMode(bool enabled)
+{
+    d->motionPhotoMode = enabled;
+
+    if (!enabled)
+    {
+        d->motionPhotoSource.clear();
+        d->ioDevice.reset();
+    }
+}
+
+void MediaPlayerView::setMotionPhotoSourceItem(const QUrl& sourceUrl)
+{
+    d->motionPhotoSource = sourceUrl;
+}
+
+bool MediaPlayerView::isMotionPhotoMode() const
+{
+    return d->motionPhotoMode;
+}
+
+void MediaPlayerView::setCurrentItem(const QSharedPointer<QIODevice>& videoData,
+                                     const QUrl& sourceUrl,
+                                     bool hasPrevious, bool hasNext)
+{
+    d->prevAction->setEnabled(hasPrevious);
+    d->nextAction->setEnabled(hasNext);
+
+    d->player->stop();
+    d->currentItem = sourceUrl;
+    d->ioDevice    = videoData;
+
+    d->player->setSourceDevice(d->ioDevice.data(), sourceUrl);
+    setPreviewMode(Private::PlayerView);
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group(QLatin1String("Album Settings"));
+
+    if (group.readEntry("Preview Auto Play", true))
+    {
+        d->player->play();
+    }
+    else
+    {
+        d->player->pause();
+    }
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Play motion photo video with QtMultimedia started:" << sourceUrl;
+}
+
 void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newState)
 {
     if (newState == QMediaPlayer::PlayingState)
@@ -613,11 +674,15 @@ void MediaPlayerView::slotPlayerStateChanged(QMediaPlayer::PlaybackState newStat
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
 
         if (
-            (newState                 == QMediaPlayer::StoppedState) ||
-            (d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
+            !d->motionPhotoMode                                     &&
+            (
+             (newState                 == QMediaPlayer::StoppedState) ||
+             (d->player->mediaStatus() == QMediaPlayer::EndOfMedia)
+            )
            )
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Play video with QtMultimedia completed:" << d->player->source();
+
             setPreviewMode(Private::MessageView);
 
             if (d->player->error() != QMediaPlayer::NoError)
@@ -644,6 +709,32 @@ void MediaPlayerView::slotMediaStatusChanged(QMediaPlayer::MediaStatus newStatus
     }
     else if (newStatus == QMediaPlayer::EndOfMedia)
     {
+        if (d->motionPhotoMode)
+        {
+            if (d->ioDevice)
+            {
+                d->ioDevice->seek(0);
+                d->player->setSourceDevice(d->ioDevice.data(), d->currentItem);
+            }
+            else
+            {
+                d->player->setPosition(0);
+            }
+
+            if (d->loopPlay->isChecked())
+            {
+                d->player->play();
+            }
+            else
+            {
+                d->player->pause();
+            }
+
+            setPreviewMode(Private::PlayerView);
+
+            return;
+        }
+
         setPreviewMode(Private::MessageView);
         d->msgLabel->setText(d->endMsg);
     }
@@ -848,21 +939,24 @@ void MediaPlayerView::slotCapture()
         QVideoFrame frame      = sink->videoFrame();
         QImage image           = frame.toImage();
 
-        if (!image.isNull() && d->currentItem.isValid())
+        QUrl itemUrl = (d->motionPhotoMode && d->motionPhotoSource.isValid()) ? d->motionPhotoSource
+                                                                               : d->currentItem;
+
+        if (!image.isNull() && itemUrl.isValid())
         {
-            QFileInfo info(d->currentItem.toLocalFile());
+            QFileInfo info(itemUrl.toLocalFile());
             QDateTime dateTime;
 
             if (d->iface)
             {
-                DItemInfo dinfo(d->iface->itemInfo(d->currentItem));
+                DItemInfo dinfo(d->iface->itemInfo(itemUrl));
                 dateTime = dinfo.dateTime();
             }
             else
             {
                 QScopedPointer<DMetadata> meta2(new DMetadata);
 
-                if (meta2->load(d->currentItem.toLocalFile()))
+                if (meta2->load(itemUrl.toLocalFile()))
                 {
                     dateTime = meta2->getItemDateTime();
                 }
@@ -962,42 +1056,46 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
     }
 
     d->player->stop();
-    int orientation = 0;
     d->currentItem  = url;
 
-    if (d->iface)
+    if (!d->motionPhotoMode)
     {
-        DItemInfo info(d->iface->itemInfo(url));
+        int orientation = 0;
 
-        orientation = info.orientation();
-    }
-
-    switch (orientation)
-    {
-        case MetaEngine::ORIENTATION_ROT_90:
-        case MetaEngine::ORIENTATION_ROT_90_HFLIP:
-        case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+        if (d->iface)
         {
-            d->videoOrientation = 90;
-            break;
+            DItemInfo info(d->iface->itemInfo(url));
+
+            orientation = info.orientation();
         }
 
-        case MetaEngine::ORIENTATION_ROT_180:
+        switch (orientation)
         {
-            d->videoOrientation = 180;
-            break;
-        }
+            case MetaEngine::ORIENTATION_ROT_90:
+            case MetaEngine::ORIENTATION_ROT_90_HFLIP:
+            case MetaEngine::ORIENTATION_ROT_90_VFLIP:
+            {
+                d->videoOrientation = 90;
+                break;
+            }
 
-        case MetaEngine::ORIENTATION_ROT_270:
-        {
-            d->videoOrientation = 270;
-            break;
-        }
+            case MetaEngine::ORIENTATION_ROT_180:
+            {
+                d->videoOrientation = 180;
+                break;
+            }
 
-        default:
-        {
-            d->videoOrientation = 0;
-            break;
+            case MetaEngine::ORIENTATION_ROT_270:
+            {
+                d->videoOrientation = 270;
+                break;
+            }
+
+            default:
+            {
+                d->videoOrientation = 0;
+                break;
+            }
         }
     }
 

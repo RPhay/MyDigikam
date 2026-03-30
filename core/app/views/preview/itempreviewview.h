@@ -17,7 +17,9 @@
 // Qt includes
 
 #include <QAction>
+#include <QIODevice>
 #include <QMap>
+#include <QSharedPointer>
 #include <QString>
 
 // Local includes
@@ -73,6 +75,7 @@ Q_SIGNALS:
     void signalEscapePreview();
     void signalAddToExistingQueue(int);
     void signalSlideShowCurrent();
+    void signalPlayMotionPhoto(const QSharedPointer<QIODevice>& videoData, const QUrl& sourceUrl, int orientation);
 
     void signalGotoAlbumAndItem(const ItemInfo&);
     void signalGotoDateAndItem(const ItemInfo&);
@@ -111,6 +114,7 @@ private Q_SLOTS:
 
     void slotItemLoaded();
     void slotItemLoadingFailed();
+    void slotPlayMotionPhoto();
 
     void slotAssignTag(int tagID);
     void slotRemoveTag(int tagID);
