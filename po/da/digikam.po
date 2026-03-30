@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
 "PO-Revision-Date: 2020-08-01 12:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -41500,7 +41500,7 @@ msgstr "fps"
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, fuzzy, kde-format
 #| msgid "File Properties"
-msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "Filegenskaber"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111

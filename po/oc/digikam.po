@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_slideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
 "PO-Revision-Date: 2008-08-05 22:25+0200\n"
 "Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
 "Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
@@ -37776,7 +37776,7 @@ msgstr ""
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, fuzzy, kde-format
 #| msgid "images"
-msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "imatges"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111

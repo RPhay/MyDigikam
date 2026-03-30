@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -37592,7 +37592,7 @@ msgstr ""
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
 #, fuzzy, kde-format
 #| msgid "File Properties"
-msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "फाइल गुण"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
 "PO-Revision-Date: 2026-03-28 18:05+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -38606,8 +38606,9 @@ msgid " fps"
 msgstr "  إطار/ثا"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, kde-format
-msgid "<b>Selected Item Properties</b>"
+#, fuzzy, kde-format
+#| msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "<b>خصائص العنصر المحدد</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111

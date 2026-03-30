@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
-"PO-Revision-Date: 2026-03-27 08:33+0200\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
+"PO-Revision-Date: 2026-03-29 12:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -39574,8 +39574,9 @@ msgid " fps"
 msgstr " кд/с"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, kde-format
-msgid "<b>Selected Item Properties</b>"
+#, fuzzy, kde-format
+#| msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "<b>Властивості позначеного запису</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
@@ -64603,11 +64604,9 @@ msgid "Add Search Group"
 msgstr "Додати групу пошуку"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "Закрити всі групи"
+msgstr "Спорожнити всі групи"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format

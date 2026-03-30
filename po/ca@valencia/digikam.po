@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
-"PO-Revision-Date: 2026-03-27 10:46+0100\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
+"PO-Revision-Date: 2026-03-29 13:53+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -12377,7 +12377,7 @@ msgstr "Trieu el fitxer GPX que s'ha de carregar"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:165
 #, kde-format
 msgid "Time Zone:"
-msgstr "Zona horària:"
+msgstr "Fus horari:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:167
 #, kde-format
@@ -12520,7 +12520,7 @@ msgid ""
 "Sets the time zone of the camera during picture shooting, so that the time "
 "stamps of the GPS can be converted to match the local time"
 msgstr ""
-"Establix la zona horària de la càmera durant la presa de la fotografia, de "
+"Establix el fus horari de la càmera durant la presa de la fotografia, de "
 "manera que les marques de temps del GPS es podran convertir perquè "
 "coincidisquen amb l'hora local"
 
@@ -14998,7 +14998,7 @@ msgstr "Establiu ací l'hora quan el servei ha enviat el material."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:251
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
-msgstr "Establiu ací la zona horària quan el servei ha enviat el material."
+msgstr "Establiu ací el fus horari quan el servei ha enviat el material."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:67
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:66
@@ -15043,7 +15043,7 @@ msgstr "Establiu ací l'hora de creació de la representació digital."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:117
 #, kde-format
 msgid "Set here the time zone of digital representation."
-msgstr "Establiu ací la zona horària de la representació digital."
+msgstr "Establiu ací el fus horari de la representació digital."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:124
@@ -15078,7 +15078,7 @@ msgstr "Establiu ací l'hora de creació del contingut intel·lectual."
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:157
 #, kde-format
 msgid "Set here the time zone of intellectual content."
-msgstr "Establiu ací la zona horària del contingut intel·lectual."
+msgstr "Establiu ací el fus horari del contingut intel·lectual."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:158
 #, kde-format
@@ -15204,7 +15204,7 @@ msgstr ""
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr ""
-"Establiu ací la zona horària de la primera proposta d'ús del contingut "
+"Establiu ací el fus horari de la primera proposta d'ús del contingut "
 "intel·lectual."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
@@ -15236,7 +15236,7 @@ msgstr "Establiu ací l'última hora proposada d'ús del contingut intel·lectua
 #, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr ""
-"Establiu ací la zona horària de l'última proposta d'ús del contingut "
+"Establiu ací el fus horari de l'última proposta d'ús del contingut "
 "intel·lectual."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
@@ -39399,8 +39399,9 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, kde-format
-msgid "<b>Selected Item Properties</b>"
+#, fuzzy, kde-format
+#| msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "<b>Propietats seleccionades de l'element</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
@@ -58170,7 +58171,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
 #, kde-format
 msgid "Camera time zone:"
-msgstr "Zona horària de la càmera:"
+msgstr "Fus horari de la càmera:"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:154
 #, kde-format
@@ -58180,11 +58181,11 @@ msgid ""
 "reference.</p><p>Note: positive offsets count eastwards from zero longitude "
 "(GMT), they are 'ahead of time'.</p>"
 msgstr ""
-"<p>Establix la zona horària de la càmera durant la presa de la fotografia, "
-"de manera que les marques de temps de les imatges es poden convertir a GMT "
-"per a coincidir amb l'hora de referència del GPS.</p><p>Nota: Els "
-"desplaçaments positius compten cap a l'est des de la longitud zero (GMT), "
-"són «abans de l'hora».</p>"
+"<p>Establix el fus horari de la càmera durant la presa de la fotografia, de "
+"manera que les marques de temps de les imatges es poden convertir a GMT per "
+"a coincidir amb l'hora de referència del GPS.</p><p>Nota: Els desplaçaments "
+"positius compten cap a l'est des de la longitud zero (GMT), són «abans de "
+"l'hora».</p>"
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
 #, kde-format
@@ -58198,7 +58199,7 @@ msgid ""
 "camera clock or different time zone."
 msgstr ""
 "Establix el desplaçament entre l'hora de la imatge i l'hora del trajecte. P. "
-"ex., per a corregir un rellotge incorrecte de la càmera o una zona horària "
+"ex., per a corregir un rellotge incorrecte de la càmera o un fus horari "
 "diferent."
 
 #: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
@@ -64415,11 +64416,9 @@ msgid "Add Search Group"
 msgstr "Afig un grup de busca"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "Tanca tots els grups"
+msgstr "Neteja tots els grups"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:41+0000\n"
+"POT-Creation-Date: 2026-03-30 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3701,7 +3701,7 @@ msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
-msgstr ""
+msgstr "更新内建 RAW 引擎到最新版本的 Libraw 快照版本 2026-03-26。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -37740,8 +37740,9 @@ msgid " fps"
 msgstr " 帧/秒"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, kde-format
-msgid "<b>Selected Item Properties</b>"
+#, fuzzy, kde-format
+#| msgid "<b>Selected Item Properties</b>"
+msgid "<b>Selected Items Properties</b>"
 msgstr "<b>选中项目属性</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
@@ -61980,11 +61981,9 @@ msgid "Add Search Group"
 msgstr "添加搜索分组"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "折叠所有分组"
+msgstr ""
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
