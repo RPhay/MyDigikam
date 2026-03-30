@@ -8,8 +8,8 @@
 
 SET(EXTPREFIX_qt ${EXTPREFIX})
 
-SET(QT_URL https://download.qt.io/official_releases/qt/6.10/6.10.2/single/qt-everywhere-src-6.10.2.tar.xz)
-SET(QT_HASH c888eeca204d8ee144d9c57c2df9f8f4)
+SET(QT_URL https://download.qt.io/official_releases/qt/6.11/6.11.0/single/qt-everywhere-src-6.11.0.tar.xz)
+SET(QT_HASH a93e9f424a9d11ee8d67bf8fb1af4772)
 
 IF(MSVC)
 
@@ -65,6 +65,7 @@ ELSE()
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt6-appimage-support.patch
                    && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt6-openssl-linked.patch
+                   && ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt611-fix-compile.patch
 
         CMAKE_ARGS -DOPENSSL_LIBS='-l${EXTPREFIX}/local/lib/libssl.a -l${EXTPREFIX}/local/lib/libcrypto.a -lpthread -ldl'
                    -DOPENSSL_INCDIR='${EXTPREFIX}/local/include/openssl/'
