@@ -748,6 +748,26 @@ QDateTime MetaEngine::getItemDateTime() const
         {
             Exiv2::XmpData xmpData(d->xmpMetadata());
             {
+                // In this special case, this date is converted by ExifTool from
+                // QuickTime:CreationDate (video files). if it exists, we use it.
+
+                Exiv2::XmpKey key("Xmp.pdf.CreationDate");
+                Exiv2::XmpData::const_iterator it = xmpData.findKey(key);
+
+                if (it != xmpData.end())
+                {
+                    QDateTime dateTime = asDateTimeUTC(QDateTime::fromString(QString::fromStdString(it->toString()),
+                                                                             Qt::ISODate));
+
+                    if (dateTime.isValid())
+                    {
+                        //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.exif.DateTimeOriginal =>" << dateTime;
+
+                        return dateTime;
+                    }
+                }
+            }
+            {
                 Exiv2::XmpKey key("Xmp.exif.DateTimeOriginal");
                 Exiv2::XmpData::const_iterator it = xmpData.findKey(key);
 

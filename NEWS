@@ -91,7 +91,7 @@ BUGFIXES:
 064 --> 518100 - BQM Time adjust not changing the time.
 065 --> 518263 - Filter on star rating does not work.
 066 --> 518287 - Small fault in the "Selected Item Properties" caption.
-067 --> 
+067 --> 518334 - Use QuickTime CreationDate if Present Rather Than CreateDate in MOV files.
 068 --> 
 069 --> 
 070 --> 
