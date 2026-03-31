@@ -28,9 +28,15 @@ namespace Digikam
 
 bool DMetadata::isMotionPhoto() const
 {
-    QString val = getXmpTagString("Xmp.GCamera.MotionPhoto");
+    if (
+        (getXmpTagString("Xmp.GCamera.MotionPhoto") == QLatin1String("1")) ||
+        (getXmpTagString("Xmp.GCamera.MicroVideo")  == QLatin1String("1"))
+       )
+    {
+        return true;
+    }
 
-    return (val == QLatin1String("1"));
+    return false;
 }
 
 QByteArray DMetadata::extractMotionPhotoVideo() const

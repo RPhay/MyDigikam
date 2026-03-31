@@ -428,6 +428,7 @@ bool ExifToolParser::extractMotionPhotoVideo(const QString& path)
     QByteArrayList cmdArgs;
     cmdArgs << QByteArray("-b");
     cmdArgs << QByteArray("-MotionPhotoVideo");
+    cmdArgs << QByteArray("-EmbeddedVideoFile");
     cmdArgs << d->filePathEncoding(fileInfo);
     d->currentPath = fileInfo.filePath();
 
