@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 00:41+0000\n"
+"POT-Creation-Date: 2026-03-31 00:41+0000\n"
 "PO-Revision-Date: 2026-02-20 19:31+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@yahoo.com>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -300,7 +300,7 @@ msgstr "Athraigh an Clib Aghaidhe"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:990
+#: core/app/views/preview/itempreviewview.cpp:1036
 #, kde-format
 msgid "&Cancel"
 msgstr "&Cealaigh"
@@ -311,7 +311,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Cuir Clibeanna ar na Míreanna &Roghnaithe"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:988
+#: core/app/views/preview/itempreviewview.cpp:1034
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Cuir Clibeanna ar an Mír &Seo"
@@ -545,14 +545,14 @@ msgid "This item has geolocation information."
 msgstr "Tá faisnéis gheo-shuímh ag an mír seo."
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:268
+#: core/app/views/preview/itempreviewview.cpp:287
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr "Taispeáin Lánscáileán"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:189
+#: core/app/views/preview/itempreviewview.cpp:198
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -560,7 +560,7 @@ msgid "Rotate Left"
 msgstr "Rothlaigh go Tuathalach"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:191
+#: core/app/views/preview/itempreviewview.cpp:200
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2970,92 +2970,98 @@ msgid "Donate: "
 msgstr "Tabhair Síntiús: "
 
 #: core/app/views/preview/itempreviewvideo.cpp:98
-#: core/app/views/preview/itempreviewview.cpp:264
+#: core/app/views/preview/itempreviewview.cpp:283
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show OSD Information"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:194
 #, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Ar ais"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:196
 #, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Chun cinn"
 
-#: core/app/views/preview/itempreviewview.cpp:198
+#: core/app/views/preview/itempreviewview.cpp:207
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Cuir Clib Aghaidhe leis"
 
-#: core/app/views/preview/itempreviewview.cpp:203
+#: core/app/views/preview/itempreviewview.cpp:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Glan gach aghaidh ar an íomhá seo"
 
-#: core/app/views/preview/itempreviewview.cpp:206
+#: core/app/views/preview/itempreviewview.cpp:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Marcáil gach aghaidh neamhdheimhnithe mar neamhaird"
 
-#: core/app/views/preview/itempreviewview.cpp:213
+#: core/app/views/preview/itempreviewview.cpp:222
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Taispeáin Clibeanna Aghaidhe"
 
-#: core/app/views/preview/itempreviewview.cpp:218
+#: core/app/views/preview/itempreviewview.cpp:227
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Cuir pointe fócais leis"
 
-#: core/app/views/preview/itempreviewview.cpp:220
+#: core/app/views/preview/itempreviewview.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Taispeáin pointí fócais"
 
-#: core/app/views/preview/itempreviewview.cpp:228
+#: core/app/views/preview/itempreviewview.cpp:237
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Play Motion Photo"
+msgstr ""
+
+#: core/app/views/preview/itempreviewview.cpp:247
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Taispeáin Formhéadaitheoir"
 
-#: core/app/views/preview/itempreviewview.cpp:233
+#: core/app/views/preview/itempreviewview.cpp:252
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "Fachtóir Súmáil"
 
-#: core/app/views/preview/itempreviewview.cpp:256
+#: core/app/views/preview/itempreviewview.cpp:275
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Táscaire Tearc-Nochtadh"
 
-#: core/app/views/preview/itempreviewview.cpp:260
+#: core/app/views/preview/itempreviewview.cpp:279
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Táscaire Ró-Nochtadh"
 
-#: core/app/views/preview/itempreviewview.cpp:678
+#: core/app/views/preview/itempreviewview.cpp:724
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Aghaidheanna"
 
-#: core/app/views/preview/itempreviewview.cpp:874
+#: core/app/views/preview/itempreviewview.cpp:920
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr "Taispeáin Formhéadaitheoir (x%1)"
@@ -43467,68 +43473,68 @@ msgstr "Tharla earráid agus an seinm á dhéanamh: níl an meán bailí"
 msgid "An error has occurred while playing: %1"
 msgstr "Tharla earráid agus é ag imirt: %1"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:202
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:207
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr "Tharla earráid leis an seinnteoir meán..."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:203
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:208
 #, kde-format
 msgid "End of media."
 msgstr "Deireadh na meán."
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:210
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Ar Ais"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:213
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
 msgstr "Chun cinn"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:305
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:216
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr "Sos/Seinn"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:212
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:219
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, kde-format
 msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Gabháil"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:215
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Rothlaigh ar Chlé"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:225
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Rothlaigh ar Dheis"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:253
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:415
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:260
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:420
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr "Athraigh an seinnt i lúb"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:801
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:655
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:910
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:746
 #, kde-format
 msgid ""
 "%1\n"
@@ -43539,72 +43545,72 @@ msgstr ""
 "\n"
 "Earráid: \"%2\""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr "Fráma Ar Ais"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, kde-format
 msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Fráma Ar Aghaidh"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr "Athraigh ráta athsheinm físe"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
 #, kde-format
 msgid "Rate"
 msgstr "Rate"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:335
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr "0.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:338
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr "1.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:341
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr "1.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:339
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:344
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr "2.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:342
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr "2.5x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:350
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr "3.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:348
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr "4.0x"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:351
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:356
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"

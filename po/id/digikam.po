@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 00:41+0000\n"
+"POT-Creation-Date: 2026-03-31 00:41+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -266,7 +266,7 @@ msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:990
+#: core/app/views/preview/itempreviewview.cpp:1036
 #, kde-format
 msgid "&Cancel"
 msgstr "&Batal"
@@ -277,7 +277,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr ""
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:988
+#: core/app/views/preview/itempreviewview.cpp:1034
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr ""
@@ -505,14 +505,14 @@ msgid "This item has geolocation information."
 msgstr ""
 
 #: core/app/items/overlays/itemfullscreenoverlay.cpp:49
-#: core/app/views/preview/itempreviewview.cpp:268
+#: core/app/views/preview/itempreviewview.cpp:287
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Fullscreen"
 msgstr ""
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:58
-#: core/app/views/preview/itempreviewview.cpp:189
+#: core/app/views/preview/itempreviewview.cpp:198
 #: core/utilities/import/items/importoverlays.cpp:434
 #, kde-format
 msgctxt "@info:tooltip"
@@ -520,7 +520,7 @@ msgid "Rotate Left"
 msgstr "Rotasikan ke Kiri"
 
 #: core/app/items/overlays/itemrotationoverlay.cpp:62
-#: core/app/views/preview/itempreviewview.cpp:191
+#: core/app/views/preview/itempreviewview.cpp:200
 #: core/utilities/import/items/importoverlays.cpp:438
 #, kde-format
 msgctxt "@info:tooltip"
@@ -2840,7 +2840,7 @@ msgid "Donate: "
 msgstr "Tanggal:"
 
 #: core/app/views/preview/itempreviewvideo.cpp:98
-#: core/app/views/preview/itempreviewview.cpp:264
+#: core/app/views/preview/itempreviewview.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "@option"
 #| msgid "Information"
@@ -2848,7 +2848,7 @@ msgctxt "@info:tooltip"
 msgid "Show OSD Information"
 msgstr "Informasi"
 
-#: core/app/views/preview/itempreviewview.cpp:185
+#: core/app/views/preview/itempreviewview.cpp:194
 #, fuzzy, kde-format
 #| msgctxt "go to previous image"
 #| msgid "Back"
@@ -2856,7 +2856,7 @@ msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Mundur"
 
-#: core/app/views/preview/itempreviewview.cpp:187
+#: core/app/views/preview/itempreviewview.cpp:196
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -2864,7 +2864,7 @@ msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Maju"
 
-#: core/app/views/preview/itempreviewview.cpp:198
+#: core/app/views/preview/itempreviewview.cpp:207
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Add new tag:"
@@ -2872,68 +2872,75 @@ msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Tambahkan tag baru:"
 
-#: core/app/views/preview/itempreviewview.cpp:203
+#: core/app/views/preview/itempreviewview.cpp:212
 #, fuzzy, kde-format
 #| msgid "Remove selected images from the list"
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Buang citra yang terpilih dari daftar"
 
-#: core/app/views/preview/itempreviewview.cpp:206
+#: core/app/views/preview/itempreviewview.cpp:215
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:213
+#: core/app/views/preview/itempreviewview.cpp:222
 #, fuzzy, kde-format
 #| msgid "&Fit image to page"
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "&Paskan citra terhadap halaman"
 
-#: core/app/views/preview/itempreviewview.cpp:218
+#: core/app/views/preview/itempreviewview.cpp:227
 #, fuzzy, kde-format
 #| msgid "Add tags per image"
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Tambahkan tag tiap citra"
 
-#: core/app/views/preview/itempreviewview.cpp:220
+#: core/app/views/preview/itempreviewview.cpp:229
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr ""
 
-#: core/app/views/preview/itempreviewview.cpp:228
+#: core/app/views/preview/itempreviewview.cpp:237
+#, fuzzy, kde-format
+#| msgid "Error"
+msgctxt "@info:tooltip"
+msgid "Play Motion Photo"
+msgstr "Error"
+
+#: core/app/views/preview/itempreviewview.cpp:247
 #, fuzzy, kde-format
 #| msgid "Show grid"
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
 msgstr "Tampilkan kisi"
 
-#: core/app/views/preview/itempreviewview.cpp:233
+#: core/app/views/preview/itempreviewview.cpp:252
 #, fuzzy, kde-format
 #| msgid "Zoom to Fit"
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
 msgstr "Zoom ke Pas"
 
-#: core/app/views/preview/itempreviewview.cpp:256
+#: core/app/views/preview/itempreviewview.cpp:275
 #, fuzzy, kde-format
 #| msgid "Under-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Indikator Under-Exposure"
 
-#: core/app/views/preview/itempreviewview.cpp:260
+#: core/app/views/preview/itempreviewview.cpp:279
 #, fuzzy, kde-format
 #| msgid "Over-Exposure Indicator"
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Indikator Over-Exposure"
 
-#: core/app/views/preview/itempreviewview.cpp:678
+#: core/app/views/preview/itempreviewview.cpp:724
 #: core/app/views/stack/itemiconview_views.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
@@ -2942,7 +2949,7 @@ msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Berdasarkan Wajah"
 
-#: core/app/views/preview/itempreviewview.cpp:874
+#: core/app/views/preview/itempreviewview.cpp:920
 #, kde-format
 msgid "Show Magnifier (x%1)"
 msgstr ""
@@ -42084,41 +42091,41 @@ msgstr ""
 msgid "An error has occurred while playing: %1"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:190
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:202
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:197
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:207
 #, kde-format
 msgid "An error has occurred with the media player..."
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:191
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:203
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:208
 #, kde-format
 msgid "End of media."
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:203
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:296
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:210
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:301
 #, kde-format
 msgctxt "go to previous image"
 msgid "Back"
 msgstr "Mundur"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:206
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:299
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:213
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:304
 #, kde-format
 msgctxt "go to next image"
 msgid "Forward"
 msgstr "Maju"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:209
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:305
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:216
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:310
 #, kde-format
 msgctxt "pause/play video"
 msgid "Pause/Play"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:212
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:311
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:219
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:316
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Capture"
@@ -42126,8 +42133,8 @@ msgctxt "capture video frame"
 msgid "Capture"
 msgstr "Tangkap"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:215
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:314
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:319
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Rotate Left"
@@ -42135,8 +42142,8 @@ msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Rotasikan ke Kiri"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:218
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:317
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:225
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:322
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Rotate Right"
@@ -42144,14 +42151,14 @@ msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Rotasikan ke Kanan"
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:253
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:415
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:260
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:420
 #, kde-format
 msgid "Toggle playing in a loop"
 msgstr ""
 
-#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:801
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:655
+#: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:910
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:746
 #, fuzzy, kde-format
 #| msgid "Error"
 msgid ""
@@ -42160,13 +42167,13 @@ msgid ""
 "Error: \"%2\""
 msgstr "Error"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:302
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:307
 #, kde-format
 msgctxt "video frame backward"
 msgid "Frame Backward"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:308
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:313
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Forward"
@@ -42174,62 +42181,62 @@ msgctxt "video frame forward"
 msgid "Frame Forward"
 msgstr "Maju"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:321
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
 #, kde-format
 msgctxt "@info"
 msgid "Change video playback rate"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:326
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:331
 #, fuzzy, kde-format
 #| msgctxt "@info: download status"
 #| msgid "Rate:"
 msgid "Rate"
 msgstr "Laju:"
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:330
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:335
 #, kde-format
 msgctxt "video play rate"
 msgid "0.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:333
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:338
 #, kde-format
 msgctxt "video play rate"
 msgid "1.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:336
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:341
 #, kde-format
 msgctxt "video play rate"
 msgid "1.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:339
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:344
 #, kde-format
 msgctxt "video play rate"
 msgid "2.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:342
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:347
 #, kde-format
 msgctxt "video play rate"
 msgid "2.5x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:345
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:350
 #, kde-format
 msgctxt "video play rate"
 msgid "3.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:348
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:353
 #, kde-format
 msgctxt "video play rate"
 msgid "4.0x"
 msgstr ""
 
-#: core/libs/video/player/qtmm/mediaplayerview.cpp:351
+#: core/libs/video/player/qtmm/mediaplayerview.cpp:356
 #, kde-format
 msgctxt "video play rate"
 msgid "5.0x"
@@ -71260,11 +71267,6 @@ msgstr ""
 #~| msgid "Saturation:"
 #~ msgid "Wait duration:"
 #~ msgstr "Suram:"
-
-#, fuzzy
-#~| msgid "Error"
-#~ msgid "Play the tour"
-#~ msgstr "Error"
 
 #, fuzzy
 #~| msgid "Create new %1 folder"
