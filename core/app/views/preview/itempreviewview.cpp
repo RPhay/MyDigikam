@@ -635,8 +635,8 @@ void ItemPreviewView::setItemInfo(const ItemInfo& info, const ItemInfo& previous
 
     if (!info.isNull())
     {
-        DMetadata meta(info.filePath());
-        isMotionPhoto = meta.isMotionPhoto();
+        QScopedPointer<DMetadata> meta(new DMetadata(info.filePath()));
+        isMotionPhoto = meta->isMotionPhoto();
     }
 
     d->playMotionPhotoAction->setVisible(isMotionPhoto);
@@ -1068,9 +1068,9 @@ void ItemPreviewView::slotPlayMotionPhoto()
         return;
     }
 
-    DMetadata meta(info.filePath());
+    QScopedPointer<DMetadata> meta(new DMetadata(info.filePath()));
 
-    QByteArray videoData = meta.extractMotionPhotoVideo();
+    QByteArray videoData = meta->extractMotionPhotoVideo();
 
     if (videoData.isEmpty())
     {
@@ -1085,7 +1085,7 @@ void ItemPreviewView::slotPlayMotionPhoto()
 
     int orientation = 0;
 
-    switch (meta.getItemOrientation())
+    switch (meta->getItemOrientation())
     {
         case MetaEngine::ORIENTATION_ROT_90:
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
@@ -1112,7 +1112,7 @@ void ItemPreviewView::slotPlayMotionPhoto()
             // The embedded video is always in sensor orientation (landscape).
             // Detect portrait images and rotate the video to match.
 
-            QSize imageSize = meta.getPixelSize();
+            QSize imageSize = meta->getPixelSize();
 
             if (imageSize.isValid() && (imageSize.height() > imageSize.width()))
             {

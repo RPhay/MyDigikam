@@ -872,27 +872,27 @@ void INatWindow::slotPhotoUploaded(const INatTalker::PhotoUploadResult& result)
     if (request.m_updateIds)
     {
         const QUrl& fileUrl = request.m_images.front();
-        DMetadata meta;
+        QScopedPointer<DMetadata> meta(new DMetadata);
 
         if (
-            meta.supportXmp()                       &&
-            meta.canWriteXmp(fileUrl.toLocalFile()) &&
-            meta.load(fileUrl.toLocalFile())
+            meta->supportXmp()                       &&
+            meta->canWriteXmp(fileUrl.toLocalFile()) &&
+            meta->load(fileUrl.toLocalFile())
            )
         {
             if (!d->xmpNameSpace)
             {
-                meta.registerXmpNameSpace(xmpNameSpaceURI, xmpNameSpacePrefix);
+                meta->registerXmpNameSpace(xmpNameSpaceURI, xmpNameSpacePrefix);
                 d->xmpNameSpace = true;
             }
 
-            meta.setXmpTagString("Xmp.iNaturalist.observation",
+            meta->setXmpTagString("Xmp.iNaturalist.observation",
                                  QString::number(request.m_observationId));
-            meta.setXmpTagString("Xmp.iNaturalist.observationPhoto",
+            meta->setXmpTagString("Xmp.iNaturalist.observationPhoto",
                                  QString::number(result.m_observationPhotoId));
-            meta.setXmpTagString("Xmp.iNaturalist.photo",
+            meta->setXmpTagString("Xmp.iNaturalist.photo",
                                  QString::number(result.m_photoId));
-            meta.save(fileUrl.toLocalFile());
+            meta->save(fileUrl.toLocalFile());
         }
     }
 

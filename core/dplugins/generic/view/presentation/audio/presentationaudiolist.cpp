@@ -207,10 +207,9 @@ void PresentationAudioListItem::slotDurationChanged(qint64 duration)
     int secs     = (int)((duration / (long int)1000) - (long int)(hours * 60 * 60) - (long int)(mins * 60));
     d->totalTime = QTime(hours, mins, secs);
 
-    DMetadata meta;
-    meta.load(d->url.toLocalFile());
-    d->artist    = meta.getXmpTagString("Xmp.xmpDM.artist");
-    d->title     = meta.getXmpTagString("Xmp.xmpDM.shotName");
+    QScopedPointer<DMetadata> meta(new DMetadata(d->url.toLocalFile()));
+    d->artist    = meta->getXmpTagString("Xmp.xmpDM.artist");
+    d->title     = meta->getXmpTagString("Xmp.xmpDM.shotName");
 
     if ( d->artist.isEmpty() && d->title.isEmpty() )
     {
