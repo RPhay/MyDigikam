@@ -541,17 +541,32 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     raw->imgdata.params.dcb_iterations = m_parent->m_decoderSettings.dcbIterations;
     raw->imgdata.params.dcb_enhance_fl = m_parent->m_decoderSettings.dcbEnhanceFl;
 
+    raw->imgdata.rawparams.options    |= LIBRAW_RAWOPTIONS_CONVERTFLOAT_TO_INT;      // Raw data in float must be processd as integer.
+
+#ifdef HAVE_JXL
+
+    raw->imgdata.rawparams.options    |= LIBRAW_RAWOPTIONS_ALLOW_JPEGXL_PREVIEWS;    // Extract Raw preview encoded as JPEG-XL.
+
+#endif
+
+    // TODO: add GUI option to handle LIBRAW_RAWOPTIONS_PENTAX_PS_ALLFRAMES ?
+    // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4168819565
+
 #ifdef USE_DNGSDK
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: setup internal DNG SDK";
 
-    raw->imgdata.rawparams.use_dngsdk = LIBRAW_DNG_ALL;
+    raw->imgdata.rawparams.use_dngsdk  = LIBRAW_DNG_ALL;
 
     // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4163416644
-    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_STAGE23_IFPRESENT_JPGJXL;
-    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_ALLOWSIZECHANGE;
+    raw->imgdata.rawparams.options    |= LIBRAW_RAWOPTIONS_DNG_STAGE23_IFPRESENT_JPGJXL;
+    raw->imgdata.rawparams.options    |= LIBRAW_RAWOPTIONS_DNG_ALLOWSIZECHANGE;
 
-    dng_host* const dnghost           = new dng_host;
+    // TODO: Add GUI option to handle LIBRAW_RAWOPTIONS_DNG_ADD_ENHANCED | LIBRAW_RAWOPTIONS_DNG_PREFER_LARGEST_IMAGE ?
+    // TODO: Add GUI option to handle LIBRAW_RAWOPTIONS_DNG_STAGE2_IFPRESENT | LIBRAW_RAWOPTIONS_DNG_STAGE3_IFPRESENT ?
+    // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4168819565
+
+    dng_host* const dnghost            = new dng_host;
     raw->set_dng_host(dnghost);
 
 #endif
@@ -822,14 +837,25 @@ bool DRawDecoder::Private::loadEmbeddedPreview(QByteArray& imgData, LibRaw* cons
 
 bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw, bool rotate)
 {
-    raw->imgdata.params.use_auto_wb   = 1;         // Use automatic white balance.
-    raw->imgdata.params.use_camera_wb = 1;         // Use camera white balance, if possible.
-    raw->imgdata.params.half_size     = 1;         // Half-size color image (3x faster than -q).
+    raw->imgdata.params.use_auto_wb   = 1;                                          // Use automatic white balance.
+    raw->imgdata.params.use_camera_wb = 1;                                          // Use camera white balance, if possible.
+    raw->imgdata.params.half_size     = 1;                                          // Half-size color image (3x faster than -q).
 
     if (!rotate)
     {
         raw->imgdata.params.user_flip = 0;
     }
+
+    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_CONVERTFLOAT_TO_INT;      // Raw data in float must be processd as integer.
+
+#ifdef HAVE_JXL
+
+    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_ALLOW_JPEGXL_PREVIEWS;    // Extract Raw preview encoded as JPEG-XL.
+
+#endif
+
+    // TODO: add GUI option to handle LIBRAW_RAWOPTIONS_PENTAX_PS_ALLFRAMES ?
+    // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4168819565
 
 #ifdef USE_DNGSDK
 
@@ -840,6 +866,10 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw, boo
     // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4163416644
     raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_STAGE23_IFPRESENT_JPGJXL;
     raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_ALLOWSIZECHANGE;
+
+    // TODO: Add GUI option to handle LIBRAW_RAWOPTIONS_DNG_ADD_ENHANCED | LIBRAW_RAWOPTIONS_DNG_PREFER_LARGEST_IMAGE ?
+    // TODO: Add GUI option to handle LIBRAW_RAWOPTIONS_DNG_STAGE2_IFPRESENT | LIBRAW_RAWOPTIONS_DNG_STAGE3_IFPRESENT ?
+    // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4168819565
 
     dng_host* const dnghost           = new dng_host;
     raw->set_dng_host(dnghost);
