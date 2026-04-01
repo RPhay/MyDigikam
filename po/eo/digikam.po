@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -11975,7 +11975,7 @@ msgid "Saving changes -"
 msgstr "Konservante ŝanĝojn -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -21952,8 +21952,8 @@ msgid "Soundtrack:"
 msgstr "Muziko:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -21964,12 +21964,12 @@ msgstr "%1 - %2"
 msgid "No detail available"
 msgstr "Neniu detalo havebla"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 eble ne estas ludebla."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Ĉi tiu dosiero eble ne estas ludebla."

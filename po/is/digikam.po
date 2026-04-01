@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
-"PO-Revision-Date: 2026-03-29 12:07+0000\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"PO-Revision-Date: 2026-03-31 07:13+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -2923,12 +2923,10 @@ msgid "Show focus points"
 msgstr "Birta fókuspunkta"
 
 #: core/app/views/preview/itempreviewview.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Player Error"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play Motion Photo"
-msgstr "Villa í spilara"
+msgstr "Spila hreyfiljósmynd"
 
 #: core/app/views/preview/itempreviewview.cpp:247
 #, kde-format
@@ -11792,7 +11790,7 @@ msgid "Saving changes -"
 msgstr "Vista breytingar -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -21572,8 +21570,8 @@ msgid "Soundtrack:"
 msgstr "Hljóðrás:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -21584,12 +21582,12 @@ msgstr "%1 - %2"
 msgid "No detail available"
 msgstr "Engar ítaratriði tiltæk"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 er kannski ekki hægt að spila."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Þessa skrá er kannski ekki hægt að spila."
@@ -38888,10 +38886,9 @@ msgid " fps"
 msgstr " r/sek"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "<b>Selected Item Properties</b>"
+#, kde-format
 msgid "<b>Selected Items Properties</b>"
-msgstr "<b>Eiginleikar valins atriðis</b>"
+msgstr "<b>Eiginleikar valinna atriða</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -11802,7 +11802,7 @@ msgid "Saving changes -"
 msgstr "Attēlu saglabāšana"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -21333,8 +21333,8 @@ msgid "Soundtrack:"
 msgstr "Celiņš :"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, fuzzy, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -21346,13 +21346,13 @@ msgstr "%1 - %2"
 msgid "No detail available"
 msgstr "Nav opciju"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, fuzzy, kde-format
 #| msgid "%1 is damaged and may not be playable."
 msgid "%1 may not be playable."
 msgstr "%1 ir bojāts un to varbūt nav iespējams atskaņot."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, fuzzy, kde-format
 #| msgid "This file is damaged and may not be playable."
 msgid "This file may not be playable."

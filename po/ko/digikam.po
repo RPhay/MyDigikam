@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -12156,7 +12156,7 @@ msgid "Saving changes -"
 msgstr "변경 사항 저장 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -22256,8 +22256,8 @@ msgid "Soundtrack:"
 msgstr "사운드트랙:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -22268,12 +22268,12 @@ msgstr "%1 - %2"
 msgid "No detail available"
 msgstr "자세한 정보 없음"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1을(를) 재생할 수 없을 수도 있습니다."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, kde-format
 msgid "This file may not be playable."
 msgstr "이 파일을 재생할 수 없을 수도 있습니다."

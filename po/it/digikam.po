@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
 "PO-Revision-Date: 2026-03-20 17:36+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -12049,7 +12049,7 @@ msgid "Saving changes -"
 msgstr "Salvataggio delle modifiche -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -21943,8 +21943,8 @@ msgid "Soundtrack:"
 msgstr "Traccia audio:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -21955,12 +21955,12 @@ msgstr "%1 - %2"
 msgid "No detail available"
 msgstr "Nessuna dettaglio disponibile"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 potrebbe non essere riproducibile."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Questo file potrebbe non essere riproducibile."

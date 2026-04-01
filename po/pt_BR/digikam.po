@@ -18,8 +18,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
-"PO-Revision-Date: 2026-03-30 08:56-0300\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"PO-Revision-Date: 2026-03-31 06:25-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2918,11 +2918,10 @@ msgid "Show focus points"
 msgstr "Mostra os pontos de foco"
 
 #: core/app/views/preview/itempreviewview.cpp:237
-#, fuzzy, kde-format
-#| msgid "Error"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play Motion Photo"
-msgstr "Erro"
+msgstr "Reproduzir foto em movimento"
 
 #: core/app/views/preview/itempreviewview.cpp:247
 #, kde-format
@@ -11966,7 +11965,7 @@ msgid "Saving changes -"
 msgstr "Salvando alterações -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -21820,8 +21819,8 @@ msgid "Soundtrack:"
 msgstr "Trilha sonora:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -21832,12 +21831,12 @@ msgstr "%1 - %2"
 msgid "No detail available"
 msgstr "Nenhum detalhe disponível"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 pode não deve ser executável."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Este arquivo pode não ser executável."

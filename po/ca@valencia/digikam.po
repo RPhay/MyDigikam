@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-31 00:41+0000\n"
-"PO-Revision-Date: 2026-03-30 11:09+0200\n"
+"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"PO-Revision-Date: 2026-03-31 13:01+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2926,7 +2926,7 @@ msgstr "Mostra els punts d'enfocament"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Play Motion Photo"
-msgstr ""
+msgstr "Reproduïx una foto amb moviment"
 
 #: core/app/views/preview/itempreviewview.cpp:247
 #, kde-format
@@ -11991,7 +11991,7 @@ msgid "Saving changes -"
 msgstr "Es guarden els canvis -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -18846,7 +18846,7 @@ msgstr "Compartix com un flux MJPEG…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Orientation and script detection (OSD) only."
-msgstr "Detecció només de l'orientació i del sistema d'escriptura (OSD)."
+msgstr "Detecció només de l'orientació i de l'estil cal·ligràfic (OSD)."
 
 #: core/dplugins/generic/tools/ocrtextconverter/ocroptions.cpp:38
 #, kde-format
@@ -19150,7 +19150,7 @@ msgstr ""
 "Esta eina pot convertir les dades d'imatges de documents al format de text "
 "utilitzant Tesseract, un motor de programari de reconeixement òptic de "
 "caràcters desenvolupat originalment als laboratoris d'HP i ara patrocinat "
-"per Google.<br><br>Admet diversos idiomes i sistemes d'escriptura (incloent-"
+"per Google.<br><br>Admet múltiples idiomes i estils cal·ligràfics (incloent-"
 "hi text de dreta a esquerra) i analitza la disposició de la pàgina."
 "<br><br>Per a més informació sobre Tesseract, vegeu els detalls a %1"
 
@@ -19185,7 +19185,7 @@ msgstr ""
 "llatí, com l'anglés o el francés,\n"
 "però no és compatible amb idiomes que utilitzen jeroglífics com el xinés o "
 "el japonés.\n"
-"Podeu emprar el mode de detecció de l'orientació i del sistema d'escriptura, "
+"Podeu emprar el mode de detecció de l'orientació i de l'estil cal·ligràfic, "
 "o un mòdul d'idioma específic, si està disponible."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:90
@@ -19276,7 +19276,7 @@ msgstr "Predeterminat"
 #, kde-format
 msgctxt "@option: osd Tesseract mode"
 msgid "Orientation and Script Detection"
-msgstr "Detecció de l'orientació i del sistema d'escriptura"
+msgstr "Detecció de l'orientació i de l'estil cal·ligràfic"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconvertersettings.cpp:306
 #, kde-format
@@ -21860,8 +21860,8 @@ msgid "Soundtrack:"
 msgstr "Pista de so:"
 
 #: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
@@ -21872,12 +21872,12 @@ msgstr "%1 – %2"
 msgid "No detail available"
 msgstr "Cap detall disponible"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 potser no és reproduïble."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
 #, kde-format
 msgid "This file may not be playable."
 msgstr "El fitxer potser no és reproduïble."
