@@ -546,6 +546,11 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: setup internal DNG SDK";
 
     raw->imgdata.rawparams.use_dngsdk = LIBRAW_DNG_ALL;
+
+    // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4163416644
+    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_STAGE23_IFPRESENT_JPGJXL;
+    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_ALLOWSIZECHANGE;
+
     dng_host* const dnghost           = new dng_host;
     raw->set_dng_host(dnghost);
 
@@ -831,6 +836,11 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw, boo
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: setup internal DNG SDK";
 
     raw->imgdata.rawparams.use_dngsdk = LIBRAW_DNG_ALL;
+
+    // See comment https://github.com/LibRaw/LibRaw/issues/786#issuecomment-4163416644
+    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_STAGE23_IFPRESENT_JPGJXL;
+    raw->imgdata.rawparams.options   |= LIBRAW_RAWOPTIONS_DNG_ALLOWSIZECHANGE;
+
     dng_host* const dnghost           = new dng_host;
     raw->set_dng_host(dnghost);
 
