@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-01 00:42+0000\n"
-"PO-Revision-Date: 2026-03-28 18:05+0400\n"
+"PO-Revision-Date: 2026-04-01 17:38+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2990,12 +2990,10 @@ msgid "Show focus points"
 msgstr "أظهر نقاط البؤرة"
 
 #: core/app/views/preview/itempreviewview.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Network Error"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play Motion Photo"
-msgstr "خطأ شبكيّ"
+msgstr "شغّل صورة الحركة"
 
 #: core/app/views/preview/itempreviewview.cpp:247
 #, kde-format
@@ -38614,10 +38612,9 @@ msgid " fps"
 msgstr "  إطار/ثا"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "<b>Selected Item Properties</b>"
+#, kde-format
 msgid "<b>Selected Items Properties</b>"
-msgstr "<b>خصائص العنصر المحدد</b>"
+msgstr "<b>خصائص العناصر المحدد</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
@@ -63290,11 +63287,9 @@ msgid "Add Search Group"
 msgstr "أضف مجموعة بحث"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "أغلق كلّ المجموعات"
+msgstr "امحُ كلّ المجموعات"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format

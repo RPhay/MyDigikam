@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-01 00:42+0000\n"
-"PO-Revision-Date: 2026-03-25 08:58+0200\n"
+"PO-Revision-Date: 2026-04-01 17:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -33549,9 +33549,9 @@ msgid "Audio Files"
 msgstr "קובצי שמע"
 
 #: core/libs/filters/mimefilter.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Raster Graphics"
-msgstr "קובצי תמונת"
+msgstr "גרפיקה מעובדת"
 
 #: core/libs/filters/mimefilter.cpp:45
 #, kde-format
@@ -37026,10 +37026,9 @@ msgid " fps"
 msgstr " תמוניות לשנייה"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "<b>Selected Item Properties</b>"
+#, kde-format
 msgid "<b>Selected Items Properties</b>"
-msgstr "<b>מאפייני הפריט הנבחר</b>"
+msgstr "<b>מאפייני הפריטים הנבחרים</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
