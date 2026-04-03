@@ -37,17 +37,17 @@ void AlbumManager::scanPAlbums()
 
     // scan db and get a list of all albums
 
-    QList<AlbumInfo> currentAlbums = CoreDbAccess().db()->scanAlbums();
+    QList<AlbumInfo> currAlbums = CoreDbAccess().db()->scanAlbums();
 
     // sort by relative path so that parents are created before children
 
-    std::sort(currentAlbums.begin(), currentAlbums.end());
+    std::sort(currAlbums.begin(), currAlbums.end());
 
     QList<AlbumInfo> newAlbums;
 
     // go through all the Albums and see which ones are already present
 
-    for (const AlbumInfo& info : std::as_const(currentAlbums))
+    for (const AlbumInfo& info : std::as_const(currAlbums))
     {
         // check that location of album is available
 
@@ -197,16 +197,15 @@ void AlbumManager::updateChangedPAlbums()
 
     // scan db and get a list of all albums
 
-    const auto currentAlbums = CoreDbAccess().db()->scanAlbums();
-    const auto changedList   = d->changedPAlbums;
-    bool needScanPAlbums     = false;
-
+    const auto currAlbums  = CoreDbAccess().db()->scanAlbums();
+    const auto changedList = d->changedPAlbums;
+    bool needScanPAlbums   = false;
 
     // Find the AlbumInfo for each id in changedPAlbums
 
     for (int id : changedList)
     {
-        for (const AlbumInfo& info : currentAlbums)
+        for (const AlbumInfo& info : currAlbums)
         {
             if (info.id == id)
             {
