@@ -56,6 +56,8 @@ public:
 
     Private() = default;
 
+public:
+
     QWidget*               useSettingsBox           = nullptr;
     QWidget*               adjustSettingsBox        = nullptr;
     QWidget*               updateSettingsBox        = nullptr;
@@ -254,9 +256,9 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent, bool timeAdjustToo
     d->updXMPVideoCheck         = new QCheckBox(i18n("XMP: Video"),                      d->updateSettingsBox);
     d->updXMPDateCheck          = new QCheckBox(i18n("XMP"),                             d->updateSettingsBox);
 
-    MetaEngineSettingsContainer settings = MetaEngineSettings::instance()->settings();
-    d->enableExifTool                    = (timeAdjustTool &&
-                                            (settings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY));
+    MetaEngineSettingsContainer msettings = MetaEngineSettings::instance()->settings();
+    d->enableExifTool                     = (timeAdjustTool &&
+                                            (msettings.metadataWritingMode != DMetadata::WRITE_TO_SIDECAR_ONLY));
 
     d->updUseExifToolCheck->setVisible(d->enableExifTool);
 

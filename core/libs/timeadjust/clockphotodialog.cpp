@@ -52,10 +52,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN ClockPhotoDialog::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     DeltaTime         deltaValues;
 
