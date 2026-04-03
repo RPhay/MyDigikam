@@ -130,16 +130,11 @@ void DXmlGuiWindow::cleanupActions()
 */
     // Fix the animation logo action style.
 
-    KToolBar* const ktb = mainToolBar();
+    QWidget* const widget = mainToolBar()->widgetForAction(m_animLogo);
 
-    if (ktb)
+    if (QToolButton* const button = qobject_cast<QToolButton*>(widget))
     {
-        QWidget* const widget = ktb->widgetForAction(m_animLogo);
-
-        if (QToolButton* const button = qobject_cast<QToolButton*>(widget))
-        {
-            DLogoAction::applyStyleForToolBarButton(button);
-        }
+        DLogoAction::applyStyleForToolBarButton(button);
     }
 }
 

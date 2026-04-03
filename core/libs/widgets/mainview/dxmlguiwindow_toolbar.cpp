@@ -53,19 +53,7 @@ void DXmlGuiWindow::slotNewToolbarConfig()
 
 KToolBar* DXmlGuiWindow::mainToolBar() const
 {
-    QList<KToolBar*> toolbars = toolBars();
-    KToolBar* mainToolbar     = nullptr;
-
-    for (KToolBar* const toolbar : std::as_const(toolbars))
-    {
-        if (toolbar && (toolbar->objectName() == QLatin1String("mainToolBar")))
-        {
-            mainToolbar = toolbar;
-            break;
-        }
-    }
-
-    return mainToolbar;
+    return const_cast<DXmlGuiWindow*>(this)->toolBar(QLatin1String("mainToolBar"));
 }
 
 void DXmlGuiWindow::showToolBars(bool visible)
