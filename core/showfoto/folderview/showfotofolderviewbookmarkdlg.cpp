@@ -57,6 +57,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                            create          = false;
 
     QLabel*                         topLabel        = nullptr;
@@ -273,15 +275,15 @@ void ShowfotoFolderViewBookmarkDlg::slotIconChanged()
 
     QPointer<KIconDialog> dlg = new KIconDialog(this);
     dlg->setup(KIconLoader::NoGroup, KIconLoader::Application, false, 20, false, false, false);
-    QString icon              = dlg->openDialog();
+    QString ico               = dlg->openDialog();
     delete dlg;
 
-    if (icon.isEmpty() || (icon == d->icon))
+    if (ico.isEmpty() || (ico == d->icon))
     {
         return;
     }
 
-    d->icon                   = icon;
+    d->icon                   = ico;
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
 
 #endif
