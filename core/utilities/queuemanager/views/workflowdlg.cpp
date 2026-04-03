@@ -207,7 +207,8 @@ void WorkflowDlg::slotTitleChanged()
 
 void WorkflowDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("batch_queue"), QLatin1String("bqm_workflow"));
+    openOnlineDocumentation(QLatin1String("batch_queue"),
+                            QLatin1String("bqm_workflow"));
 }
 
 } // namespace Digikam

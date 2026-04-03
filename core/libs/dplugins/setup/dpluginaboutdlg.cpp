@@ -202,7 +202,9 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
 void DPluginAboutDlg::slotOnlineHandbook()
 {
-    openOnlineDocumentation(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
+    openOnlineDocumentation(m_tool->handbookSection(),
+                            m_tool->handbookChapter(),
+                            m_tool->handbookReference());
 }
 
 } // namespace Digikam

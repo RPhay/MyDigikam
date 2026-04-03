@@ -115,7 +115,9 @@ TrashView::TrashView(QWidget* const parent)
     connect(helpButton, &QPushButton::clicked,
             this, []()
         {
-            openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("image_view"), QLatin1String("deleting-photograph"));
+            openOnlineDocumentation(QLatin1String("main_window"),
+                                    QLatin1String("image_view"),
+                                    QLatin1String("deleting-photograph"));
         }
     );
 

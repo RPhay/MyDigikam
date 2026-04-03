@@ -234,7 +234,8 @@ ShowfotoSetup::~ShowfotoSetup()
 
 void ShowfotoSetup::slotHelp()
 {
-    Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"), QLatin1String("showfoto_setup"));
+    Digikam::openOnlineDocumentation(QLatin1String("showfoto_editor"),
+                                     QLatin1String("showfoto_setup"));
 }
 
 void ShowfotoSetup::slotCancelClicked()

@@ -505,7 +505,9 @@ void TagEditDlg::showtagsListCreationError(QWidget* const parent, const QMap<QSt
 
 void TagEditDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"), QLatin1String("tags_view"), QLatin1String("managing-tags"));
+    openOnlineDocumentation(QLatin1String("main_window"),
+                            QLatin1String("tags_view"),
+                            QLatin1String("managing-tags"));
 }
 
 // ------------------------------------------------------------------------------

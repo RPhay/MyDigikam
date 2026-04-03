@@ -1796,7 +1796,8 @@ int SetupCollectionModel::buttonMapId(const QModelIndex& index) const
 
 void SetupCollectionModel::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("collections_settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("collections_settings"));
 }
 
 } // namespace Digikam

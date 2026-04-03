@@ -92,7 +92,9 @@ void DPluginDialog::slotAboutPlugin()
 
 void DPluginDialog::slotOnlineHandbook()
 {
-    openOnlineDocumentation(m_tool->handbookSection(), m_tool->handbookChapter(), m_tool->handbookReference());
+    openOnlineDocumentation(m_tool->handbookSection(),
+                            m_tool->handbookChapter(),
+                            m_tool->handbookReference());
 }
 
 void DPluginDialog::showEvent(QShowEvent* e)

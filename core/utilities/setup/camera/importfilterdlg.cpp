@@ -254,7 +254,9 @@ void ImportFilterDlg::getData(Filter* const filter)
 
 void ImportFilterDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("camera_settings"), QLatin1String("camera-filters"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("camera_settings"),
+                            QLatin1String("camera-filters"));
 }
 
 } // namespace Digikam

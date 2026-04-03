@@ -197,8 +197,8 @@ void ToolSettingsView::slotHelpPlugin()
         if (d->tool->plugin())
         {
             openOnlineDocumentation(d->tool->plugin()->handbookSection(),
-                                        d->tool->plugin()->handbookChapter(),
-                                        d->tool->plugin()->handbookReference());
+                                    d->tool->plugin()->handbookChapter(),
+                                    d->tool->plugin()->handbookReference());
         }
     }
 }

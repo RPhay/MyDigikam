@@ -113,7 +113,8 @@ FirstRunDlg::~FirstRunDlg()
 
 void FirstRunDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("getting_started"), QLatin1String("quick_start"));
+    openOnlineDocumentation(QLatin1String("getting_started"),
+                            QLatin1String("quick_start"));
 }
 
 QString FirstRunDlg::firstAlbumPath() const

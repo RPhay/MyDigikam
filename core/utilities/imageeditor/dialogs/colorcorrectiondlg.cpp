@@ -853,7 +853,8 @@ void ColorCorrectionDlg::setSettings()
 
 void ColorCorrectionDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("color_management"), QLatin1String("working_space"));
+    openOnlineDocumentation(QLatin1String("color_management"),
+                            QLatin1String("working_space"));
 }
 
 } // namespace Digikam

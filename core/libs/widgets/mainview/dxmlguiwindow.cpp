@@ -105,7 +105,8 @@ void DXmlGuiWindow::slotConfNotifications()
     connect(buttonBox->button(QDialogButtonBox::Help), &QPushButton::clicked,
             this, []()
         {
-            openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("notifications_settings"));
+            openOnlineDocumentation(QLatin1String("setup_application"),
+                                    QLatin1String("notifications_settings"));
         }
     );
 
@@ -141,7 +142,8 @@ void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, cons
         connect(btnbox->button(QDialogButtonBox::Help), &QPushButton::clicked,
                 this, []()
             {
-                openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("shortcuts_settings"));
+                openOnlineDocumentation(QLatin1String("setup_application"),
+                                        QLatin1String("shortcuts_settings"));
             }
         );
     }

@@ -128,7 +128,9 @@ void VersioningPromptUserSaveDialog::slotButtonClicked(QAbstractButton* button)
     }
     else if (d->clicked == QDialogButtonBox::Help)
     {
-        openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("editor_settings"), QLatin1String("versioning-settings"));
+        openOnlineDocumentation(QLatin1String("setup_application"),
+                                QLatin1String("editor_settings"),
+                                QLatin1String("versioning-settings"));
 
         return;
     }

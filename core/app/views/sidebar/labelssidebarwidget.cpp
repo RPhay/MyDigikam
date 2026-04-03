@@ -103,7 +103,8 @@ LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
         {
-            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("labels_view"));
+            openOnlineDocumentation(QLatin1String("left_sidebar"),
+                                    QLatin1String("labels_view"));
         }
     );
 

@@ -280,7 +280,8 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
         {
-            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("similarity_view"));
+            openOnlineDocumentation(QLatin1String("left_sidebar"),
+                                    QLatin1String("similarity_view"));
         }
     );
 

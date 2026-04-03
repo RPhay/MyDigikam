@@ -33,7 +33,8 @@ void DXmlGuiWindow::slotConfToolbars()
         connect(btnbox->button(QDialogButtonBox::Help), &QPushButton::clicked,
                 this, []()
             {
-                openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("toolbars_settings"));
+                openOnlineDocumentation(QLatin1String("setup_application"),
+                                        QLatin1String("toolbars_settings"));
             }
         );
     }

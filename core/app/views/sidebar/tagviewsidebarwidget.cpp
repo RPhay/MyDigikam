@@ -156,7 +156,8 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     connect(d->helpButton, &QPushButton::clicked,
             this, []()
         {
-            openOnlineDocumentation(QLatin1String("left_sidebar"), QLatin1String("tags_view"));
+            openOnlineDocumentation(QLatin1String("left_sidebar"),
+                                    QLatin1String("tags_view"));
         }
     );
 

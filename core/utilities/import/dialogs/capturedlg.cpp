@@ -190,7 +190,8 @@ void CaptureDlg::slotPreviewDone(const QImage& preview)
 
 void CaptureDlg::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("import_tools"), QLatin1String("camera_import"));
+    openOnlineDocumentation(QLatin1String("import_tools"),
+                            QLatin1String("camera_import"));
 }
 
 } // namespace Digikam

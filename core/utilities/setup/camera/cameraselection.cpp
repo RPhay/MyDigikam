@@ -699,7 +699,8 @@ void CameraSelection::slotSearchTextChanged(const SearchTextSettings& settings)
 
 void CameraSelection::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("camera_settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("camera_settings"));
 }
 
 } // namespace Digikam

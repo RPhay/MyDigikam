@@ -139,7 +139,8 @@ GeoPluginAboutDlg::GeoPluginAboutDlg(PluginInterface* const tool, QWidget* const
 
 void GeoPluginAboutDlg::slotOnlineHandbook()
 {
-    openOnlineDocumentation(QLatin1String("setup_application"), QLatin1String("geolocation_settings"));
+    openOnlineDocumentation(QLatin1String("setup_application"),
+                            QLatin1String("geolocation_settings"));
 }
 
 } // namespace Digikam
