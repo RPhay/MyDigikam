@@ -47,22 +47,6 @@ public:
                            (leftColor.blue()  + rightColor.blue())  / 2);
     }
 
-    bool             showMiddleCursor   = false;
-
-    double           leftCursor         = 0.0;
-    double           middleCursor       = 0.5;
-    double           rightCursor        = 1.0;
-
-    QColor           leftColor          = Qt::black;
-    QColor           rightColor         = Qt::white;
-    QColor           middleColor;
-
-    DGradientSlider* parent             = nullptr;
-
-    Cursor           activeCursor       = NoCursor;
-
-public:
-
     int gradientHeight() const
     {
         return (parent->height() / 3);
@@ -82,6 +66,22 @@ public:
     {
         return (cursorWidth() / 2);
     }
+
+public:
+
+    bool             showMiddleCursor   = false;
+
+    double           leftCursor         = 0.0;
+    double           middleCursor       = 0.5;
+    double           rightCursor        = 1.0;
+
+    QColor           leftColor          = Qt::black;
+    QColor           rightColor         = Qt::white;
+    QColor           middleColor;
+
+    DGradientSlider* parent             = nullptr;
+
+    Cursor           activeCursor       = NoCursor;
 };
 
 DGradientSlider::DGradientSlider(QWidget* const parent)

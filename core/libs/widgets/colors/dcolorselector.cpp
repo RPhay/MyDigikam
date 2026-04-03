@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     QColor color;
     bool   alpha    = false;
 };
@@ -73,16 +75,17 @@ void DColorSelector::setAlphaChannelEnabled(bool b)
 
 void DColorSelector::slotBtnClicked()
 {
-    QColor color = QColorDialog::getColor(d->color,
-                                          this,
-                                          QString(),
-                                          d->alpha ? QColorDialog::ShowAlphaChannel
-                                                   : QColorDialog::ColorDialogOptions());
+    QColor clr = QColorDialog::getColor(d->color,
+                                        this,
+                                        QString(),
+                                        d->alpha ? QColorDialog::ShowAlphaChannel
+                                                 : QColorDialog::ColorDialogOptions());
 
-    if (color.isValid())
+    if (clr.isValid())
     {
-        setColor(color);
-        Q_EMIT signalColorSelected(color);
+        setColor(clr);
+
+        Q_EMIT signalColorSelected(clr);
     }
 }
 

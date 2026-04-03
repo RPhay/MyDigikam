@@ -29,6 +29,8 @@ public:
 
     Private() = default;
 
+public:
+
     Qt::Orientation orientation = Qt::Horizontal;
 
     QColor          color1;
