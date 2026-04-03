@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-03 00:40+0000\n"
 "PO-Revision-Date: 2026-03-31 08:46+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -44821,37 +44821,37 @@ msgstr "Виконати пошук нової версії…"
 msgid "Database Statistics"
 msgstr "Статистика бази даних"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Увімкнути/Вимкнути ліву бічну панель"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Увімкнути/Вимкнути праву бічну панель"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Попередня вкладка лівої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Наступна вкладка лівої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Попередня вкладка правої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Наступна вкладка правої бічної панелі"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Показати смужку стану"

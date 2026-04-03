@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:42+0000\n"
-"PO-Revision-Date: 2026-02-16 15:09+0100\n"
+"POT-Creation-Date: 2026-04-03 00:40+0000\n"
+"PO-Revision-Date: 2026-04-03 00:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -2945,7 +2945,7 @@ msgstr "Показване на фокусните точки"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Play Motion Photo"
-msgstr ""
+msgstr "Изпълнение на движещи се снимки"
 
 #: core/app/views/preview/itempreviewview.cpp:247
 #, kde-format
@@ -3453,24 +3453,7 @@ msgid "Background Image Credits"
 msgstr "Информация за изображението на фона"
 
 #: core/app/views/stack/welcomepageview_about.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "<h3>digiKam is an advanced open-source digital photo management "
-#| "application that runs on Linux, Windows, and MacOS. The application "
-#| "provides a comprehensive set of tools for importing, managing, editing, "
-#| "and sharing photos and raw files. You can use digiKam’s import "
-#| "capabilities to easily transfer photos, raw files, and videos directly "
-#| "from your camera and external storage devices (SD cards, USB disks, "
-#| "etc.). The application allows you to configure import settings and rules "
-#| "that process and organize imported items on-the-fly.</h3><h3>With digiKam "
-#| "you can import, organize, enhance, search, export, and more...</"
-#| "h3><h3>Currently, you are in the Album view mode of digiKam.</"
-#| "h3><h3>Albums are the places where your files are stored, and are "
-#| "identical to the folders on your hard disk.</h3><li>digiKam has many "
-#| "powerful features which are described in the <a href=\"https://docs."
-#| "digikam.org/en/index.html\">documentation</a></li><li>The <a href="
-#| "\"https://www.digikam.org\">digiKam homepage</a> provides information "
-#| "about new versions of digiKam.</li>"
+#, kde-format
 msgid ""
 "<h3>digiKam is an advanced open-source digital photo management application "
 "that runs on Linux, Windows, and MacOS.</h3><p>The application provides A "
@@ -3491,23 +3474,27 @@ msgid ""
 "development team, follow the links provided in the application <b>Help</b> "
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
-"<h3>digiKam е усъвършенствано приложение за управление на цифрови снимки с "
-"отворен код, което работи на Linux, Windows и MacOS. Приложението предоставя "
-"изчерпателен набор от инструменти за импортиране, управление, редактиране и "
-"споделяне на снимки и необработени файлове. Можете да използвате "
-"възможностите за импортиране на digiKam за лесно прехвърляне на снимки, "
-"необработени файлове и видеоклипове директно от вашия фотоапарат и външни "
-"устройства за съхранение (SD карти, USB дискове и др.). Приложението ви "
-"позволява да конфигурирате настройки за импортиране и правила, които "
-"обработват и организират импортираните елементи в движение.</h3><h3>С "
-"digiKam можете да импортирате, организирате, подобрявате, търсите, "
-"експортирате и още...</h3><h3>В момента сте в режим на изглед на албум на "
-"digiKam.</h3><h3>Албумите са местата, където се съхраняват вашите файлове и "
-"са идентични с папките на вашия твърд диск диск.</h3><li>digiKam има много "
-"мощни функции, които са описани в <a href=\"https://docs.digikam.org/en/"
-"index.html\">документацията</a></li><li><a href=\"https://www.digikam.org"
-"\">началната страница на digiKam</a> предоставя информация за новите версии "
-"на digiKam.</li>"
+"<h3>digiKam е усъвършенствано приложение с отворен код за управление на "
+"цифрови снимки,което работи на Linux, Windows и MacOS.</h3><p>Приложението "
+"предоставяцялостен набор от инструменти за импортиране, управление, "
+"редактиране и споделянена медийни файлове, заснети с вашия фотоапарат. "
+"Можете да използвате възможностите за импортиране на digiKam, за далесно "
+"прехвърляте снимки, сурови файлове и видеоклипове директно от вашия "
+"фотоапарат ивъншни устройства за съхранение (SD карти, USB дискове и др.). "
+"Приложението ви позволявада конфигурирате настройки и правила за "
+"импортиране, които обработват и организиратимпортираните елементи в движение."
+"</p><p>За да възобновим, с digiKam можете да импортирате,организирате, "
+"подобрявате, търсите, експортирате вашите колекции от снимки и видеоклипове "
+"имного други...</p><p>В момента сте в режим на преглед на албуми на digiKam."
+"Албумите са местата, където се съхраняват вашите файлове, и са идентични с "
+"папките на вашия твърд диск.</p><p>digiKam има много мощни функции, коитоса "
+"описани в <b><a href=\"https://docs.digikam.org/en/index.html"
+"\">документацията</a></b></p><p><b><a href=\"https://www.digikam.org"
+"\">началната страница на digiKam</a></b> предоставя информация за нови "
+"версии наdigiKam.</p><p>За да се свържете с общността на потребителите на "
+"digiKam или да подкрепите екипа за разработка, следвайте връзките, "
+"предоставени в менюто <b>Помощ</b> на приложението. </p><h3>Благодарим ви за "
+"подкрепата и използването на проекта digiKam.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3531,11 +3518,7 @@ msgid "Lens:"
 msgstr "Обектив:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:26
-#, fuzzy, kde-format
-#| msgid ""
-#| "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
-#| "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-#| "%1\">350 user-reports</a> closed on bugzilla."
+#, kde-format
 msgid ""
 "More than <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
@@ -3543,14 +3526,10 @@ msgid ""
 msgstr ""
 "Повече от <a href=\"https://bugs.kde.org/buglist.cgi?"
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
-"%1\">350 потребителски доклада</a> затворени в bugzilla."
+"%1\">400 потребителски доклада</a> затворени в bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
@@ -3681,7 +3660,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
 msgid "Rewrite the welcome page in more modern style."
-msgstr ""
+msgstr "Пренаписана е началната страница в по-модерен стил."
 
 #: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
@@ -3804,6 +3783,10 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
+"Въведен е нов инструмент за анкети, който визуализира елементите в отделни "
+"прозорци и е синхронизиран с изгледа на иконите. Той поддържа всички "
+"функции, достъпни в режим на визуализация. Може да се използва на цял екран "
+"на отделен монитор за бърз преглед на елементите по време на работния процес."
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
@@ -3882,10 +3865,7 @@ msgstr ""
 "Нови опции за намиране на празни свойства, регистрирани в базата данни."
 
 #: core/app/views/stack/welcomepageview_features.cpp:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add support for search Creator and Author fields to be drop down lists "
-#| "populated with the values already presents in the database."
+#, kde-format
 msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
@@ -3898,14 +3878,14 @@ msgstr ""
 #, kde-format
 msgid "Add support to search recently modified items in the database."
 msgstr ""
+"Добавена е поддръжка за търсене на наскоро променени елементи в базата данни."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-02-16."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
 msgstr ""
-"Актуализирайте вътрешния RAW енджин до последната Libraw снимка от "
-"16.02.2026 г."
+"Актуализиран е вътрешния RAW енджин до последната Libraw snapshot от "
+"26.03.2026 г."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -21299,17 +21279,15 @@ msgid "Media Container Format:"
 msgstr "Формат на медийния контейнер:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "This control allows to choose the format of the media container to host "
-#| "video stream and soundtrack."
+#, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack.The entries in this list are populated "
 "corresponding to the format supported by FFMpeg."
 msgstr ""
 "Този контрол позволява да се избере форматът на мултимедийния контейнер за "
-"хостване на видеопотока и саундтрака."
+"хостване на видеопотока и саундтрака. Записите в този списък са попълнени в "
+"съответствие с формата, поддържан от FFMpeg."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
@@ -21453,6 +21431,9 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"Този контрол позволява да изберете кодека, използван за кодиране на видео "
+"потока. Записите в този списък са попълнени в съответствие с кодека, "
+"поддържан от FFMpeg."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
@@ -29493,10 +29474,9 @@ msgid "Scanning images in individual albums..."
 msgstr "Сканиране на изображения в отделни албуми..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Migrate ->"
+#, kde-format
 msgid "Migrate →"
-msgstr "Мигриране ->"
+msgstr "Мигриране →"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
@@ -29523,14 +29503,12 @@ msgid "%p%"
 msgstr "%p%"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Step Progress:"
+#, kde-format
 msgid "Step progress:"
 msgstr "Стъпка на напредъка:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Overall Progress:"
+#, kde-format
 msgid "Overall progress:"
 msgstr "Цялостен прогрес:"
 
@@ -29560,8 +29538,7 @@ msgid "Database conversion canceled."
 msgstr "Конвертирането на базата данни е отменено."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
-#, fuzzy, kde-format
-#| msgid "Step Progress (%1)"
+#, kde-format
 msgid "Step progress (%1):"
 msgstr "Стъпки на напредъка (%1)"
 
@@ -39433,15 +39410,13 @@ msgid " fps"
 msgstr " fps"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selected Item Properties"
+#, kde-format
 msgid "<b>Selected Items Properties</b>"
-msgstr "Свойства на избрания елемент"
+msgstr "<b>Свойства на избрания елемент</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
 msgstr "Отваряне във файлов мениджър"
 
@@ -39464,10 +39439,9 @@ msgid "Groups: "
 msgstr "Групи: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "All Item Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Всички свойства на албума"
+msgstr "<b>Всички свойства на албума</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
 #, kde-format
@@ -44662,37 +44636,37 @@ msgstr "Проверка за нова версия..."
 msgid "Database Statistics"
 msgstr "Статистика на базата от данни"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Превключване на лявата странична лента"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Превключване на дясната странична лента"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Предишен раздел в лявата странична лента"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Следващ раздел в лявата странична лента"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Предишен раздел в дясната странична лента"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Следващ таб в дясната странична лента"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Показване на лентата на състоянието"
@@ -63508,14 +63482,12 @@ msgid "and"
 msgstr "и"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgid "Modified Date"
+#, kde-format
 msgid "Modified last"
-msgstr "Дата на промяна"
+msgstr "Последна промяна"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
-#, fuzzy, kde-format
-#| msgid "Return items modified between"
+#, kde-format
 msgid "Return items modified within the last"
 msgstr "Връщане на елементи, променени между"
 
@@ -64207,30 +64179,22 @@ msgid "Portrait orientation"
 msgstr "Портретна ориентация"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
 msgstr "секунди"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
 msgstr "минути"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
 msgstr "часове"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
 msgstr "дни"
 
@@ -64411,11 +64375,9 @@ msgid "Add Search Group"
 msgstr "Добавяне на група за търсене"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "Затваряне на всички групи"
+msgstr "Изчистване на всички групи"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
@@ -64869,12 +64831,10 @@ msgid "Large"
 msgstr "Голям"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@item Magnifier tool size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "Голям"
+msgstr "Много голям"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -68150,14 +68110,7 @@ msgid "AI GPU Test"
 msgstr "Тест на графичен процесор с изкуствен интелект"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -68167,9 +68120,10 @@ msgid ""
 "\n"
 "Do you want to test your system now?"
 msgstr ""
-"Това ще провери дали вашата система може да използва GPU ускорение. при "
-"изпълнение на AI модели чрез валидиране на OpenCV и OpenCL, има ли\n"
-"Необходимите библиотеки и драйвери са инсталирани.\n"
+"Това ще провери дали вашата система може да използва GPU ускорение\n"
+" при изпълнение на AI модели чрез проверка, дали OpenCV и OpenCL са \n"
+"инсталирали необходимите библиотеки и драйвери.\n"
+"\n"
 "\n"
 "Искате ли да тествате системата си сега?"
 
@@ -68215,6 +68169,13 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"Записите в този списък са попълнени.Тестът correspondi е неуспешен. Вашата "
+"система най-вероятно няма да може да използва GPU ускорение за AI моделите.\n"
+"\n"
+"Забележка за потребителите на NVidia GPU: моля, използвайте бутона „Помощ“, "
+"за да прочетете онлайн документацията и да конфигурирате устройството си, за "
+"да бъде откриваемо и използваемо в digiKam run-time.ng във формата, "
+"поддържан от FFMpeg."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
 #, kde-format

@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-03 00:40+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -45379,37 +45379,37 @@ msgstr "Comprobar se hai unha nova versión…"
 msgid "Database Statistics"
 msgstr "Estatísticas da base de datos"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Alternar a barra lateral esquerda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Alternar a barra lateral dereita"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Lapela anterior da barra lateral esquerda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Seguinte lapela da barra lateral esquerda"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Lapela anterior da barra lateral dereita"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Seguinte lapela da barra lateral dereita"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Amosar a barra de estado"

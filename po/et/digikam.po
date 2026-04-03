@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-03 00:40+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -47302,37 +47302,37 @@ msgstr "Salvesta uus versioon kui..."
 msgid "Database Statistics"
 msgstr "Andmenbaasi statistika"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Vasaku külgriba lülitamine"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Parema külgriba lülitamine"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Eelmine vasaku külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Järgmine vasaku külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Eelmine parema külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Järgmine parema külgriba kaart"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Näita olekuriba"

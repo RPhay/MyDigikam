@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:42+0000\n"
+"POT-Creation-Date: 2026-04-03 00:40+0000\n"
 "PO-Revision-Date: 2026-03-31 13:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -44184,37 +44184,37 @@ msgstr "Yeni Sürümü Denetle…"
 msgid "Database Statistics"
 msgstr "Veri Tabanı İstatistikleri"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Sol Kenar Çubuğunu Aç/Kapat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Sağ Kenar Çubuğunu Aç/Kapat"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Önceki Sol Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Sonraki Sol Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Önceki Sağ Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Sonraki Sağ Kenar Çubuğu Sekmesi"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Durum Çubuğunu Göster"
