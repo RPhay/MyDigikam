@@ -133,20 +133,20 @@ QString CollectionManager::album(const QString& filePath)
             continue;
         }
 
-        QString album = filePath.mid(rootPath.length());
+        QString albm = filePath.mid(rootPath.length());
 
-        if      (album.isEmpty() || (album == QLatin1String("/")))
+        if      (albm.isEmpty() || (albm == QLatin1String("/")))
         {
             return QLatin1String("/");
         }
-        else if (album.startsWith(QLatin1Char('/')))
+        else if (albm.startsWith(QLatin1Char('/')))
         {
-            if (album.endsWith(QLatin1Char('/')))
+            if (albm.endsWith(QLatin1Char('/')))
             {
-                album.chop(1);
+                albm.chop(1);
             }
 
-            return album;
+            return albm;
         }
     }
 
@@ -173,14 +173,14 @@ QString CollectionManager::album(const CollectionLocation& location, const QStri
     }
     else
     {
-        QString album = filePath.mid(absolutePath.length());
+        QString albm = filePath.mid(absolutePath.length());
 
-        if (album.endsWith(QLatin1Char('/')))
+        if (albm.endsWith(QLatin1Char('/')))
         {
-            album.chop(1);
+            albm.chop(1);
         }
 
-        return album;
+        return albm;
     }
 }
 
