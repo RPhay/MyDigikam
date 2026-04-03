@@ -170,10 +170,10 @@ QSize DImgChildItem::originalSize() const
 
 QPoint DImgChildItem::originalPos() const
 {
-    QSizeF originalSize = parentDImgItem()->zoomSettings()->originalImageSize();
+    QSizeF orgSize = parentDImgItem()->zoomSettings()->originalImageSize();
 
-    return QPointF(d->relativePos.x() * originalSize.width(),
-                   d->relativePos.y() * originalSize.height()).toPoint();
+    return QPointF(d->relativePos.x() * orgSize.width(),
+                   d->relativePos.y() * orgSize.height()).toPoint();
 }
 
 void DImgChildItem::setPos(const QPointF& pos)
