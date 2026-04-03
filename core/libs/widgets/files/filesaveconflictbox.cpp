@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*       conflictLabel         = nullptr;
 
     QButtonGroup* conflictButtonGroup   = nullptr;

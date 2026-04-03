@@ -142,15 +142,16 @@ bool DBinaryIface::parseHeader(const QString& output)
 
     if (firstLine.startsWith(m_headerStarts))
     {
-        QString version = firstLine.remove(0, m_headerStarts.length());
+        QString ver = firstLine.remove(0, m_headerStarts.length());
 
-        if (version.startsWith(QLatin1String("Pre-Release ")))
+        if (ver.startsWith(QLatin1String("Pre-Release ")))
         {
-            version.remove(QLatin1String("Pre-Release "));            // Special case with Hugin beta.
+            ver.remove(QLatin1String("Pre-Release "));            // Special case with Hugin beta.
             m_developmentVersion = true;
         }
 
-        setVersion(version);
+        setVersion(ver);
+
         return true;
     }
 

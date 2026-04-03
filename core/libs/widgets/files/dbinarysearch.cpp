@@ -37,6 +37,8 @@ public:
 
     Private() = default;
 
+public:
+
     QVector<DBinaryIface*>    binaryIfaces;
     QVector<QTreeWidgetItem*> items;
     QLabel*                   downloadLabel = nullptr;

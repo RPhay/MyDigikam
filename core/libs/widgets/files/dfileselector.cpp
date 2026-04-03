@@ -35,6 +35,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLineEdit*            edit      = nullptr;
     QPushButton*          btn       = nullptr;
 
