@@ -217,11 +217,8 @@ private Q_SLOTS:
 
     void slotIccSettingsChanged(const ICCSettingsContainer&, const ICCSettingsContainer&);
     void slotFileChanged(const QString& filePath);
+    void slotScrollToStoredItem();
     void slotDelayedEnter();
-
-private:
-
-    void scrollToStoredItem();
 
 private:
 

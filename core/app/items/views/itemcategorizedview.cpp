@@ -610,7 +610,7 @@ void ItemCategorizedView::addSelectionOverlay(ItemDelegate* delegate)
     addOverlay(new ItemSelectionOverlay(this), delegate);
 }
 
-void ItemCategorizedView::scrollToStoredItem()
+void ItemCategorizedView::slotScrollToStoredItem()
 {
     if (d->scrollToItemId)
     {
@@ -629,7 +629,7 @@ void ItemCategorizedView::slotItemInfosAdded()
 {
     if      (d->scrollToItemId)
     {
-        scrollToStoredItem();
+        QTimer::singleShot(100, this, SLOT(slotScrollToStoredItem()));
     }
     else if (!d->unknownCurrentUrl.isEmpty())
     {

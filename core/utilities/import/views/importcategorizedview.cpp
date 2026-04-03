@@ -388,7 +388,10 @@ void ImportCategorizedView::setThumbnailSize(const ThumbnailSize& s)
 
 void ImportCategorizedView::setCurrentWhenAvailable(qlonglong camItemId)
 {
-    d->scrollToItemId = camItemId;
+    if (!d->scrollToItemId)
+    {
+        d->scrollToItemId = camItemId;
+    }
 }
 
 void ImportCategorizedView::setCurrentUrl(const QUrl& url)
@@ -526,13 +529,14 @@ void ImportCategorizedView::addSelectionOverlay(ImportDelegate* delegate)
     addOverlay(new ItemSelectionOverlay(this), delegate);
 }
 
-void ImportCategorizedView::scrollToStoredItem()
+void ImportCategorizedView::slotScrollToStoredItem()
 {
     if (d->scrollToItemId)
     {
         if (d->model->hasImage(d->scrollToItemId))
         {
             QModelIndex index = d->filterModel->indexForCamItemId(d->scrollToItemId);
+            clearSelection();
             setCurrentIndex(index);
             scrollToRelaxed(index, QAbstractItemView::PositionAtCenter);
             d->scrollToItemId = 0;
@@ -544,7 +548,7 @@ void ImportCategorizedView::slotCamItemInfosAdded()
 {
     if (d->scrollToItemId)
     {
-        scrollToStoredItem();
+        QTimer::singleShot(100, this, SLOT(slotScrollToStoredItem()));
     }
 }
 

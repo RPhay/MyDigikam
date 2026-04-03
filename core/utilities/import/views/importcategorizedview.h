@@ -189,13 +189,10 @@ protected:
 
 private Q_SLOTS:
 
-    void slotFileChanged(const QString& filePath);
-    void slotDelayedEnter();
     void slotIccSettingsChanged(const ICCSettingsContainer&, const ICCSettingsContainer&);
-
-private:
-
-    void scrollToStoredItem();
+    void slotFileChanged(const QString& filePath);
+    void slotScrollToStoredItem();
+    void slotDelayedEnter();
 
 private:
 
