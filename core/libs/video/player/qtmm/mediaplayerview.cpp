@@ -191,6 +191,9 @@ public:
     QSlider*             volume             = nullptr;
     QLabel*              tlabel             = nullptr;
 
+    QMediaDevices*       mediaDevices       = nullptr;
+    QMenu*               audioOutMenu       = nullptr;
+
     QUrl                 currentItem;
 
     int                       videoOrientation   = 0;
@@ -428,24 +431,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->speaker->setFocusPolicy(Qt::NoFocus);
     d->speaker->setMinimumSize(22, 22);
 
-#ifndef __clang_analyzer__
-
-    QMenu* const audioMenu         = new QMenu(this);
-    QActionGroup* const audioGroup = new QActionGroup(this);
-    const auto outputs             = QMediaDevices::audioOutputs();
-
-    for (const auto& device : outputs)
-    {
-        QAction* const action = audioGroup->addAction(device.description());
-        action->setCheckable(true);
-        action->setData(device.id());
-        action->setChecked(device.isDefault());
-        audioMenu->addAction(action);
-    }
-
-    d->speaker->setMenu(audioMenu);
-
-#endif
+    d->audioOutMenu   = new QMenu(this);
+    d->mediaDevices   = new QMediaDevices(this);
+    slotCreateAudioOutputMenu();
 
     d->volume         = new QSlider(Qt::Horizontal, hbox);
     d->volume->setRange(0, 100);
@@ -547,14 +535,17 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     connect(d->videoItem, SIGNAL(nativeSizeChanged(QSizeF)),
             this, SLOT(slotNativeSizeChanged()));
 
+    connect(d->mediaDevices, SIGNAL(audioOutputsChanged()),
+            this, SLOT(slotCreateAudioOutputMenu()));
+
+    connect(d->audioOutMenu, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotAudioChanged(QAction*)));
+
     connect(d->player, SIGNAL(metaDataChanged()),
             this, SLOT(slotMetaDataChanged()));
 
     connect(rateMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(slotPlaybackRate(QAction*)));
-
-    connect(audioMenu, SIGNAL(triggered(QAction*)),
-            this, SLOT(slotAudioChanged(QAction*)));
 }
 
 MediaPlayerView::~MediaPlayerView()
@@ -746,6 +737,30 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
     d->msgLabel->setText(i18n("%1\n\nError: \"%2\"", d->errorMsg, errStr));
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "QtMultimedia Error: " << errStr;
+}
+
+void MediaPlayerView::slotCreateAudioOutputMenu()
+{
+
+#ifndef __clang_analyzer__
+
+    d->audioOutMenu->clear();
+    QActionGroup* const audioGroup = new QActionGroup(this);
+    const auto outputs             = d->mediaDevices->audioOutputs();
+
+    for (const auto& device : outputs)
+    {
+        QAction* const action = audioGroup->addAction(device.description());
+        action->setCheckable(true);
+        action->setData(device.id());
+        action->setChecked(device.isDefault());
+        d->audioOutMenu->addAction(action);
+    }
+
+    d->speaker->setMenu(d->audioOutMenu);
+
+#endif
+
 }
 
 void MediaPlayerView::slotNativeSizeChanged()
