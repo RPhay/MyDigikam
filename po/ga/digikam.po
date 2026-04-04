@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:40+0000\n"
+"POT-Creation-Date: 2026-04-04 00:42+0000\n"
 "PO-Revision-Date: 2026-02-20 19:31+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@yahoo.com>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -1448,7 +1448,7 @@ msgstr ""
 "dénártha ExifTool sa rannán meiteashonraí.\n"
 "Teachtaireacht earráide: %1"
 
-#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:526
+#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:528
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2819,7 +2819,7 @@ msgstr "Príomhbharra Uirlisí"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
 #: core/libs/album/manager/albummanager_talbum.cpp:988
-#: core/libs/timeadjust/timeadjustsettings.cpp:134
+#: core/libs/timeadjust/timeadjustsettings.cpp:136
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -3125,7 +3125,7 @@ msgstr "Cabhair"
 
 # leave as is!
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:183
+#: core/app/views/sidebar/labelssidebarwidget.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -3149,14 +3149,14 @@ msgstr ""
 "Úsáid an cnaipe seo chun na halbaim roghnaithe a scanadh le haghaidh "
 "aghaidheanna"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "Tá inneall aghaidhe díchumasaithe"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:203
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3166,7 +3166,7 @@ msgstr ""
 "seo a úsáid, smaoinigh le do thoil ar an mBosca Cabhrach sa Phainéal Bun ar "
 "Chlé a úsáid."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:258
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
@@ -3175,7 +3175,7 @@ msgstr ""
 "Cuireadh deireadh leis an scanadh aghaidhe, mar nach bhfuil aon aitheantais "
 "le haithint. Cuir aitheantais nua leis, le do thoil."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:278
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3216,12 +3216,12 @@ msgstr ""
 "Úsáid an cnaipe seo chun na halbaim roghnaithe a scanadh le haghaidh réada "
 "le clibeáil go huathoibríoch"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:326
 #, kde-format
 msgid "No Tags Album"
 msgstr "Albam Gan Clibeanna"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
 #: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -3423,55 +3423,55 @@ msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Cabhair ar líne faoi bhosca bruscair"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Undo"
 msgstr "Cuir ar ceal"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:125
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Athchóirigh an iontráil dheireanach sa bhruscar amháin."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Restore"
 msgstr "Athchóirigh"
 
-#: core/app/views/stack/trashview.cpp:129
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Athchóirigh rogha comhad ón mbosca bruscair."
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:137
 #, kde-format
 msgid "Delete..."
 msgstr "Scrios..."
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 "Bain na míreanna roghnaithe nó na míreanna go léir as an mbosca bruscair go "
 "buan."
 
-#: core/app/views/stack/trashview.cpp:140
+#: core/app/views/stack/trashview.cpp:142
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Míreanna Roghnaithe go Buan"
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:145
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Gach Mír go Buan"
 
-#: core/app/views/stack/trashview.cpp:282
+#: core/app/views/stack/trashview.cpp:284
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Deimhnigh Cealaigh"
 
-#: core/app/views/stack/trashview.cpp:283
-#: core/app/views/stack/trashview.cpp:310
+#: core/app/views/stack/trashview.cpp:285
+#: core/app/views/stack/trashview.cpp:312
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3481,18 +3481,18 @@ msgstr[2] "An bhfuil tú cinnte gur mian leat %1 míreanna a athchóiriú?"
 msgstr[3] "An bhfuil tú cinnte gur mian leat %1 míreanna a athchóiriú?"
 msgstr[4] "An bhfuil tú cinnte gur mian leat %1 míreanna a athchóiriú?"
 
-#: core/app/views/stack/trashview.cpp:309
+#: core/app/views/stack/trashview.cpp:311
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Deimhnigh Athchóiriú"
 
-#: core/app/views/stack/trashview.cpp:340
-#: core/app/views/stack/trashview.cpp:392
+#: core/app/views/stack/trashview.cpp:342
+#: core/app/views/stack/trashview.cpp:394
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Deimhnigh Scriosadh"
 
-#: core/app/views/stack/trashview.cpp:341
+#: core/app/views/stack/trashview.cpp:343
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3502,24 +3502,24 @@ msgstr[2] "An bhfuil tú cinnte gur mian leat %1 míreanna a scriosadh go buan?"
 msgstr[3] "An bhfuil tú cinnte gur mian leat %1 míreanna a scriosadh go buan?"
 msgstr[4] "An bhfuil tú cinnte gur mian leat %1 míreanna a scriosadh go buan?"
 
-#: core/app/views/stack/trashview.cpp:393
+#: core/app/views/stack/trashview.cpp:395
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "An bhfuil tú cinnte gur mian leat GACH mír a scriosadh go buan?"
 
-#: core/app/views/stack/trashview.cpp:464
+#: core/app/views/stack/trashview.cpp:466
 #, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Rogha"
 
-#: core/app/views/stack/trashview.cpp:466
+#: core/app/views/stack/trashview.cpp:468
 #, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Scrios"
 
-#: core/app/views/stack/trashview.cpp:533
+#: core/app/views/stack/trashview.cpp:535
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 mhír roghnaithe"
@@ -16475,13 +16475,13 @@ msgid "Close window"
 msgstr "Dún an fhuinneog"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:286
+#: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Stampa Ama a Úsáideadh"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:288
+#: core/libs/timeadjust/timeadjustsettings.cpp:290
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Stampa Ama Nuashonraithe"
@@ -27797,55 +27797,55 @@ msgctxt "@action:button"
 msgid "New database"
 msgstr "Bunachar sonraí nua"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:351
+#: core/libs/album/manager/albummanager_palbum.cpp:350
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
 msgstr ""
 "Tá an suíomh bailiúcháin a cuireadh ar fáil neamhbhailí nó níl sé ar fáil "
 "faoi láthair."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:359
+#: core/libs/album/manager/albummanager_palbum.cpp:358
 #, kde-format
 msgid "No album for collection location: Internal error"
 msgstr "Gan albam don suíomh bailiúcháin: Earráid inmheánach"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:375
+#: core/libs/album/manager/albummanager_palbum.cpp:374
 #, kde-format
 msgid "No parent found for album."
 msgstr "Níor aimsíodh tuismitheoir don albam."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:383
+#: core/libs/album/manager/albummanager_palbum.cpp:382
 #, kde-format
 msgid "Album name cannot be empty."
 msgstr "Ní cheadaítear ainm folamh ar an albam."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:389
+#: core/libs/album/manager/albummanager_palbum.cpp:388
 #, kde-format
 msgid "Album name cannot contain '/'."
 msgstr "Ní cheadaítear '/' in ainm an albaim."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:395
+#: core/libs/album/manager/albummanager_palbum.cpp:394
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
 msgstr "Ní ghlacann createPAlbum leis an albam fréimhe mar thuismitheoir."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:411
+#: core/libs/album/manager/albummanager_palbum.cpp:410
 #, kde-format
 msgid "An existing album has the same name."
 msgstr "Tá an t-ainm céanna ar albam atá ann cheana féin."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:427
+#: core/libs/album/manager/albummanager_palbum.cpp:426
 #, kde-format
 msgid "Failed to create directory '%1'"
 msgstr "Theip ar chruthú eolaire '%1'"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:436
+#: core/libs/album/manager/albummanager_palbum.cpp:435
 #, kde-format
 msgid "Failed to add album to database"
 msgstr "Theip ar albam a chur leis an mbunachar sonraí"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:463
-#: core/libs/album/manager/albummanager_palbum.cpp:550
+#: core/libs/album/manager/albummanager_palbum.cpp:462
+#: core/libs/album/manager/albummanager_palbum.cpp:549
 #: core/libs/album/manager/albummanager_talbum.cpp:366
 #: core/libs/album/manager/albummanager_talbum.cpp:464
 #: core/libs/album/manager/albummanager_talbum.cpp:504
@@ -27854,22 +27854,22 @@ msgstr "Theip ar albam a chur leis an mbunachar sonraí"
 msgid "No such album"
 msgstr "Níl a leithéid d'albam ann"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:469
+#: core/libs/album/manager/albummanager_palbum.cpp:468
 #, kde-format
 msgid "Cannot rename root album"
 msgstr "Ní féidir an fréamhalbam a athainmniú"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:475
+#: core/libs/album/manager/albummanager_palbum.cpp:474
 #, kde-format
 msgid "Cannot rename album root album"
 msgstr "Ní féidir fréamh-albam a athainmniú"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:481
+#: core/libs/album/manager/albummanager_palbum.cpp:480
 #, kde-format
 msgid "Album name cannot contain '/'"
 msgstr "Ní cheadaítear '/' in ainm an albaim"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:489
+#: core/libs/album/manager/albummanager_palbum.cpp:488
 #, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
@@ -27878,12 +27878,12 @@ msgstr ""
 "Tá albam eile leis an ainm céanna ann cheana féin.\n"
 "Roghnaigh ainm eile le do thoil."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:508
+#: core/libs/album/manager/albummanager_palbum.cpp:507
 #, kde-format
 msgid "Failed to rename Album"
 msgstr "Theip ar athainmniú an albaim"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:556
+#: core/libs/album/manager/albummanager_palbum.cpp:555
 #, kde-format
 msgid "Cannot edit root album"
 msgstr "Ní féidir albam fréimhe a chur in eagar"
@@ -29480,7 +29480,7 @@ msgstr "Bailiúchán scanadh"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "Error"
 msgstr "Earráid"
@@ -39080,7 +39080,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:255
+#: core/libs/timeadjust/timeadjustsettings.cpp:257
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -41636,18 +41636,18 @@ msgstr "<b>Cruthaigh Clib Nua i<br>\"%1\"</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Airíonna an Chlib<br>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:517
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Earráid Cruthú Clibeanna"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Tharla earráid agus clib á cruthú:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "Tag Path"
 msgstr "Conair na Clibe"
@@ -42387,18 +42387,18 @@ msgstr "Theip ar bhunachar sonraí na mionsamhlacha a thosú"
 msgid "Error message: %1"
 msgstr "Teachtaireacht earráide: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:78
+#: core/libs/timeadjust/clockphotodialog.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Faigh amach an Difríocht Ama le Grianghraf Clog"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:85
+#: core/libs/timeadjust/clockphotodialog.cpp:86
 #, kde-format
 msgid "Load different photo"
 msgstr "Luchtaigh grianghraf difriúil"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:93
+#: core/libs/timeadjust/clockphotodialog.cpp:94
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -42411,137 +42411,137 @@ msgstr ""
 "am (dáta agus) a thaispeántar. Cinnfear an difríocht idir clog inmheánach do "
 "cheamara ón socrú seo."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:168
 #, kde-format
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>Níorbh fhéidir<br>íomhá %1 a luchtú.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:184
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Dáta agus am an chloig:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:237
+#: core/libs/timeadjust/clockphotodialog.cpp:238
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Roghnaigh Íomhá le Grianghraf Clog a Bhaint Amach"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:138
+#: core/libs/timeadjust/timeadjustsettings.cpp:140
 #, kde-format
 msgid "Showfoto"
 msgstr "Seófoto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:141
+#: core/libs/timeadjust/timeadjustsettings.cpp:143
 #, kde-format
 msgid "%1 timestamp"
 msgstr "%1 stampa ama"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:146
+#: core/libs/timeadjust/timeadjustsettings.cpp:148
 #, kde-format
 msgid "File name timestamp"
 msgstr "Stampa ama ainm comhaid"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:150
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:152
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "File last modified"
 msgstr "Comhad athraithe go deireanach"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:155
+#: core/libs/timeadjust/timeadjustsettings.cpp:157
 #, kde-format
 msgid "File created"
 msgstr "Comhad cruthaithe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF: cruthaithe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF: bunleagan"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "EXIF: digitithe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: cruthaithe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: cruthaithe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "EXIF: cruthaithe (doiléir)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:170
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "EXIF: bunleagan (doiléir)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:169
+#: core/libs/timeadjust/timeadjustsettings.cpp:171
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr "EXIF: digitithe (doiléir)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:179
+#: core/libs/timeadjust/timeadjustsettings.cpp:181
 #, kde-format
 msgid "Reset to current date"
 msgstr "Athshocraigh go dtí an dáta reatha"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:211
+#: core/libs/timeadjust/timeadjustsettings.cpp:213
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Cóipeáil luach"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:212
+#: core/libs/timeadjust/timeadjustsettings.cpp:214
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Cuir leis"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:213
+#: core/libs/timeadjust/timeadjustsettings.cpp:215
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Dealaigh"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:217
+#: core/libs/timeadjust/timeadjustsettings.cpp:219
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Eatramh"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:223
+#: core/libs/timeadjust/timeadjustsettings.cpp:225
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "laethanta"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:226
+#: core/libs/timeadjust/timeadjustsettings.cpp:228
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Faigh amach an difríocht ón ngrianghraf den chloig"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:227
+#: core/libs/timeadjust/timeadjustsettings.cpp:229
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
@@ -42549,32 +42549,32 @@ msgstr ""
 "Cliceáil nó tarraing agus scaoil grianghraf ar an gcnaipe chun grianghraf "
 "cloig a roghnú"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr "Nuashonraigh stampaí ama le ExifTool"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "Use this option primarily with video files"
 msgstr "Úsáid an rogha seo go príomha le comhaid físe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Nuashonraigh stampaí ama atá ann cheana féin amháin"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF: Mionsamhail"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:254
+#: core/libs/timeadjust/timeadjustsettings.cpp:256
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Físeán"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:287
+#: core/libs/timeadjust/timeadjustsettings.cpp:289
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Coigeartuithe Stampa Ama"
@@ -43624,45 +43624,45 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "Athshocraigh go dtí an luach réamhshocraithe"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:193
+#: core/libs/widgets/files/dbinaryiface.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Téigh go %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:59
+#: core/libs/widgets/files/dbinarysearch.cpp:61
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr "Dénártha"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:60
+#: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Leagan"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:98
+#: core/libs/widgets/files/dbinarysearch.cpp:100
 #, kde-format
 msgid "Binary not found."
 msgstr "Níor aimsíodh an comhad dénártha."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:99
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr "Is é %1 an uimhir leagan íosta atá ag teastáil don dénártha seo"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid "Find"
 msgstr "Aimsigh"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:103
+#: core/libs/widgets/files/dbinarysearch.cpp:105
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr " nó <a href=\"%1\">íoslódáil</a>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:132
+#: core/libs/widgets/files/dbinarysearch.cpp:134
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -43675,7 +43675,7 @@ msgstr ""
 "agat, cliceáil an cnaipe 'Aimsigh' le go bhfaighidh tú iad ar do chóras, nó "
 "íoslódáil agus suiteáil iad le dul ar aghaidh.</font></p></qt>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:171
+#: core/libs/widgets/files/dbinarysearch.cpp:173
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
@@ -43684,41 +43684,41 @@ msgstr ""
 "Tá leagan forbartha braite. Níl aon ráthaíocht ann maidir le hiompar an "
 "chomhaid dhénártha seo."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:181
+#: core/libs/widgets/files/dbinarysearch.cpp:183
 #, kde-format
 msgid "Change"
 msgstr "Athraigh"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:187
+#: core/libs/widgets/files/dbinarysearch.cpp:189
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
 "Ní cosúil go bhfuil an comhad dénártha a fuarthas ag obair mar a bhí "
 "beartaithe."
 
-#: core/libs/widgets/files/dfileselector.cpp:53
+#: core/libs/widgets/files/dfileselector.cpp:55
 #, kde-format
 msgid "Browse..."
 msgstr "Brabhsáil..."
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:63
+#: core/libs/widgets/files/filesaveconflictbox.cpp:65
 #, kde-format
 msgid "If Target File Exists:"
 msgstr "Má tá an sprioc-chomhad ann:"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:67
+#: core/libs/widgets/files/filesaveconflictbox.cpp:69
 #: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Store as a different name"
 msgstr "Stóráil faoi ainm difriúil"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:68
+#: core/libs/widgets/files/filesaveconflictbox.cpp:70
 #: core/utilities/setup/camera/setupcamera.cpp:332
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Forscríobh go huathoibríoch"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:69
+#: core/libs/widgets/files/filesaveconflictbox.cpp:71
 #: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Skip automatically"
@@ -44834,7 +44834,7 @@ msgstr "Forbróir agus Meantóireacht (2005-2012)"
 msgid "Configure Notifications"
 msgstr "Cumraigh Fógraí"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:134
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -44880,37 +44880,37 @@ msgstr "Seiceáil le haghaidh Leagan Nua..."
 msgid "Database Statistics"
 msgstr "Staitisticí an Bhunachair Sonraí"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Barra Taobh Clé a Athrú"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Barra Taobh Deas a Athrú"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "An Cluaisín Barra Taobh Clé Roimhe Seo"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "An chéad chluaisín taobh-bharra clé eile"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "An Cluaisín Barra Taobh Deas Roimhe Seo"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "An chéad chluaisín taobh deas eile"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Taispeáin an Barra Stádais"
@@ -51316,58 +51316,58 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Méid na Deilbhíne: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:90
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Leabharmharc Nua"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:94
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Cuir Leabharmharc in Eagar"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:110
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:112
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Teideal:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:114
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:116
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Cuir isteach teideal leabharmharc anseo..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:115
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 "Teideal an leabharmharc nach mór a bheith uathúil agus nach bhfuil folamh"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:189
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Deilbhín:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Athshocraigh"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:142
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:144
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Cosán:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:147
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -54755,13 +54755,13 @@ msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "Úsáid an cnaipe seo chun gach méarlorg íomhá a nuashonrú."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Aimsigh dúblaigh"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -54769,13 +54769,13 @@ msgstr ""
 "Úsáid an cnaipe seo chun na halbaim roghnaithe a scanadh le haghaidh "
 "míreanna dúblacha."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Bain Dúblaigh"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."

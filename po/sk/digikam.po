@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:40+0000\n"
+"POT-Creation-Date: 2026-04-04 00:42+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1405,7 +1405,7 @@ msgid ""
 "Error message: %1"
 msgstr ""
 
-#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:526
+#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:528
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2753,7 +2753,7 @@ msgstr "Hlavný panel nástrojov"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
 #: core/libs/album/manager/albummanager_talbum.cpp:988
-#: core/libs/timeadjust/timeadjustsettings.cpp:134
+#: core/libs/timeadjust/timeadjustsettings.cpp:136
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -3083,7 +3083,7 @@ msgid "Help"
 msgstr "Pomocník"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:183
+#: core/app/views/sidebar/labelssidebarwidget.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -3110,8 +3110,8 @@ msgstr ""
 "Použite toto tlačidlo na prehľadanie vybraných albumov a nájdenie "
 "duplicitných položiek."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Color-Managed View is disabled."
@@ -3119,7 +3119,7 @@ msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "Pohľad so správou farieb je vypnutý."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:203
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3129,14 +3129,14 @@ msgstr ""
 "zvážte, prosím použitie tlačidla pomocníka v spodnej časti panela na ľavej "
 "strane."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:258
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
 "add new identities."
 msgstr ""
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:278
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3180,12 +3180,12 @@ msgstr ""
 "Použite toto tlačidlo na prehľadanie vybraných albumov a nájdenie "
 "duplicitných položiek."
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:326
 #, kde-format
 msgid "No Tags Album"
 msgstr "Album bez štítkov"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
 #: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -3383,55 +3383,55 @@ msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Undo"
 msgstr "Vrátiť späť"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:125
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: core/app/views/stack/trashview.cpp:129
+#: core/app/views/stack/trashview.cpp:131
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Remove selected images from the list"
 msgid "Restore selection of files from the trash-bin."
 msgstr "Odstrániť vybrané obrázky zo zoznamu"
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:137
 #, kde-format
 msgid "Delete..."
 msgstr "Odstrániť..."
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr ""
 
-#: core/app/views/stack/trashview.cpp:140
+#: core/app/views/stack/trashview.cpp:142
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Označené položky natrvalo"
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:145
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Všetky položky natrvalo"
 
-#: core/app/views/stack/trashview.cpp:282
+#: core/app/views/stack/trashview.cpp:284
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Potvrdiť krok späť"
 
-#: core/app/views/stack/trashview.cpp:283
-#: core/app/views/stack/trashview.cpp:310
+#: core/app/views/stack/trashview.cpp:285
+#: core/app/views/stack/trashview.cpp:312
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
@@ -3439,18 +3439,18 @@ msgstr[0] "Ste si istý, že chcete obnoviť %1 položku?"
 msgstr[1] "Ste si istý, že chcete obnoviť %1 položky?"
 msgstr[2] "Ste si istý, že chcete obnoviť %1 položiek?"
 
-#: core/app/views/stack/trashview.cpp:309
+#: core/app/views/stack/trashview.cpp:311
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Potvrdiť obnovenie"
 
-#: core/app/views/stack/trashview.cpp:340
-#: core/app/views/stack/trashview.cpp:392
+#: core/app/views/stack/trashview.cpp:342
+#: core/app/views/stack/trashview.cpp:394
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Potvrdiť odstránenie"
 
-#: core/app/views/stack/trashview.cpp:341
+#: core/app/views/stack/trashview.cpp:343
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -3458,26 +3458,26 @@ msgstr[0] "Ste si istý, že chcete trvalo odstrániť %1 položku?"
 msgstr[1] "Ste si istý, že chcete trvalo odstrániť %1 položky?"
 msgstr[2] "Ste si istý, že chcete trvalo odstrániť %1 položiek?"
 
-#: core/app/views/stack/trashview.cpp:393
+#: core/app/views/stack/trashview.cpp:395
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Ste si istý, že chcete nevratne odstrániť VŠETKY položky?"
 
-#: core/app/views/stack/trashview.cpp:464
+#: core/app/views/stack/trashview.cpp:466
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Výber"
 
-#: core/app/views/stack/trashview.cpp:466
+#: core/app/views/stack/trashview.cpp:468
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: core/app/views/stack/trashview.cpp:533
+#: core/app/views/stack/trashview.cpp:535
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 vybraných položiek"
@@ -16258,13 +16258,13 @@ msgid "Close window"
 msgstr "Zavrieť okno"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:286
+#: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Použitý časový údaj"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:288
+#: core/libs/timeadjust/timeadjustsettings.cpp:290
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Aktualizovaný časový údaj"
@@ -27569,53 +27569,53 @@ msgctxt "@action:button"
 msgid "New database"
 msgstr "Nový databázový priečinok"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:351
+#: core/libs/album/manager/albummanager_palbum.cpp:350
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
 msgstr "Dodané umiestnenie kolekcie je neplatné alebo je dočasne nedostupné."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:359
+#: core/libs/album/manager/albummanager_palbum.cpp:358
 #, kde-format
 msgid "No album for collection location: Internal error"
 msgstr "Nebol nájdený album pre umiestnenie kolekcie: Interná chyba"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:375
+#: core/libs/album/manager/albummanager_palbum.cpp:374
 #, kde-format
 msgid "No parent found for album."
 msgstr "Nenájdený žiadny predok albumu."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:383
+#: core/libs/album/manager/albummanager_palbum.cpp:382
 #, kde-format
 msgid "Album name cannot be empty."
 msgstr "Meno albumu nemôže byť prázdne."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:389
+#: core/libs/album/manager/albummanager_palbum.cpp:388
 #, kde-format
 msgid "Album name cannot contain '/'."
 msgstr "Názov albumu nemôže obsahovať znak „/“."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:395
+#: core/libs/album/manager/albummanager_palbum.cpp:394
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
 msgstr "createPAlbum nemôze mať koreňový album ako svojho rodiča."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:411
+#: core/libs/album/manager/albummanager_palbum.cpp:410
 #, kde-format
 msgid "An existing album has the same name."
 msgstr "Už existuje album s rovnakým menom."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:427
+#: core/libs/album/manager/albummanager_palbum.cpp:426
 #, kde-format
 msgid "Failed to create directory '%1'"
 msgstr "Nepodarilo sa vytvoriť priečinok '%1'"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:436
+#: core/libs/album/manager/albummanager_palbum.cpp:435
 #, kde-format
 msgid "Failed to add album to database"
 msgstr "Pridanie albumu do databázy zlyhalo"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:463
-#: core/libs/album/manager/albummanager_palbum.cpp:550
+#: core/libs/album/manager/albummanager_palbum.cpp:462
+#: core/libs/album/manager/albummanager_palbum.cpp:549
 #: core/libs/album/manager/albummanager_talbum.cpp:366
 #: core/libs/album/manager/albummanager_talbum.cpp:464
 #: core/libs/album/manager/albummanager_talbum.cpp:504
@@ -27624,22 +27624,22 @@ msgstr "Pridanie albumu do databázy zlyhalo"
 msgid "No such album"
 msgstr "Album neexistuje"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:469
+#: core/libs/album/manager/albummanager_palbum.cpp:468
 #, kde-format
 msgid "Cannot rename root album"
 msgstr "Nedá sa premenovať koreňový album"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:475
+#: core/libs/album/manager/albummanager_palbum.cpp:474
 #, kde-format
 msgid "Cannot rename album root album"
 msgstr "Nedá sa premenovať koreňový album"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:481
+#: core/libs/album/manager/albummanager_palbum.cpp:480
 #, kde-format
 msgid "Album name cannot contain '/'"
 msgstr "Názov albumu nemôže obsahovať znak „/“"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:489
+#: core/libs/album/manager/albummanager_palbum.cpp:488
 #, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
@@ -27648,12 +27648,12 @@ msgstr ""
 "Už existuje album s rovnakým menom.\n"
 "Prosím vyberte iné meno."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:508
+#: core/libs/album/manager/albummanager_palbum.cpp:507
 #, kde-format
 msgid "Failed to rename Album"
 msgstr "Premenovanie albumu zlyhalo"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:556
+#: core/libs/album/manager/albummanager_palbum.cpp:555
 #, kde-format
 msgid "Cannot edit root album"
 msgstr "Nemožno editovať domovský album"
@@ -29274,7 +29274,7 @@ msgstr "Prehľadávanie kolekcie"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "Error"
 msgstr "Chyba"
@@ -39078,7 +39078,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:255
+#: core/libs/timeadjust/timeadjustsettings.cpp:257
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -41575,19 +41575,19 @@ msgstr "<b>Vytvoriť novú značku v<br/>\"%1\"</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Vlastnosti štítku<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:517
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, fuzzy, kde-format
 #| msgid "Tag creation Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Chyba pri vytváraní značky"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Pri vytváraní štítku sa vyskytla chyba:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "Tag Path"
 msgstr "Umiestnenie štítkov"
@@ -42340,19 +42340,19 @@ msgstr "Pridanie albumu do databázy zlyhalo"
 msgid "Error message: %1"
 msgstr "Chybová správa: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:78
+#: core/libs/timeadjust/clockphotodialog.cpp:79
 #, fuzzy, kde-format
 #| msgid "Determine Time Difference With Clock Photo"
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Určiť časový rozdiel s hodinami fotografie"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:85
+#: core/libs/timeadjust/clockphotodialog.cpp:86
 #, kde-format
 msgid "Load different photo"
 msgstr "Načítať inú fotku"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:93
+#: core/libs/timeadjust/clockphotodialog.cpp:94
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -42364,175 +42364,175 @@ msgstr ""
 "môžete ho načítať a nastaviť indikátor na zobrazený (dátum a) čas. Rozdiel "
 "medzi vnútornými hodinami fotoaparátu sa určí z tohto nastavenia."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:168
 #, fuzzy, kde-format
 #| msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
 msgstr "<font color=\"red\"><b>Nemôžem načítať<br>obrázok %1.</b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:184
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Dátum a čas hodín:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:237
+#: core/libs/timeadjust/clockphotodialog.cpp:238
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Select Image to Upload"
 msgid "Select Image to Extract Clock Photo"
 msgstr "Zvoľte obrázok, ktorý sa má nahrať"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:138
+#: core/libs/timeadjust/timeadjustsettings.cpp:140
 #, kde-format
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:141
+#: core/libs/timeadjust/timeadjustsettings.cpp:143
 #, kde-format
 msgid "%1 timestamp"
 msgstr "Časový údaj %1"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:146
+#: core/libs/timeadjust/timeadjustsettings.cpp:148
 #, kde-format
 msgid "File name timestamp"
 msgstr "Časový údaj v názve súboru"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:150
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:152
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "File last modified"
 msgstr "Dátum poslednej zmeny"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:155
+#: core/libs/timeadjust/timeadjustsettings.cpp:157
 #, fuzzy, kde-format
 #| msgid "File date"
 msgid "File created"
 msgstr "Dátum súboru"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "EXIF/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "EXIF: created"
 msgstr "EXIF: vytvorený"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "EXIF: original"
 msgstr "EXIF: pôvodný"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "EXIF: digitalizovaný"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: vytvorený"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: vytvorený"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, fuzzy, kde-format
 #| msgid "EXIF: created"
 msgid "EXIF: created (fuzzy)"
 msgstr "EXIF: vytvorený"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:170
 #, fuzzy, kde-format
 #| msgid "EXIF: original"
 msgid "EXIF: original (fuzzy)"
 msgstr "EXIF: pôvodný"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:169
+#: core/libs/timeadjust/timeadjustsettings.cpp:171
 #, fuzzy, kde-format
 #| msgid "EXIF: digitized"
 msgid "EXIF: digitized (fuzzy)"
 msgstr "EXIF: digitalizovaný"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:179
+#: core/libs/timeadjust/timeadjustsettings.cpp:181
 #, kde-format
 msgid "Reset to current date"
 msgstr "Nastaviť na aktuálny dátum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:211
+#: core/libs/timeadjust/timeadjustsettings.cpp:213
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Kopírovať hodnotu"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:212
+#: core/libs/timeadjust/timeadjustsettings.cpp:214
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Pridať"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:213
+#: core/libs/timeadjust/timeadjustsettings.cpp:215
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Odobrať"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:217
+#: core/libs/timeadjust/timeadjustsettings.cpp:219
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Interval"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:223
+#: core/libs/timeadjust/timeadjustsettings.cpp:225
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "dní"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:226
+#: core/libs/timeadjust/timeadjustsettings.cpp:228
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Určiť rozdiel z hodín fotografie"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:227
+#: core/libs/timeadjust/timeadjustsettings.cpp:229
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr ""
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, fuzzy, kde-format
 msgid "Use this option primarily with video files"
 msgstr "Zapnutím tejto voľby zobrazíte pod náhľadom obrázka veľkosť súboru."
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Aktualizovať iba existujúce časové údaje"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "EXIF: Miniatúra"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:254
+#: core/libs/timeadjust/timeadjustsettings.cpp:256
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Video"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:287
+#: core/libs/timeadjust/timeadjustsettings.cpp:289
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Úprava časových údajov"
@@ -43715,46 +43715,46 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "Nastaviť na predvolenú hodnotu"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:193
+#: core/libs/widgets/files/dbinaryiface.cpp:194
 #, fuzzy, kde-format
 #| msgid "Navigate to %1"
 msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Navigovať na %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:59
+#: core/libs/widgets/files/dbinarysearch.cpp:61
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr "Program"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:60
+#: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Verzia"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:98
+#: core/libs/widgets/files/dbinarysearch.cpp:100
 #, kde-format
 msgid "Binary not found."
 msgstr "Program nenájdený."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:99
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr "Minimálne číslo verzie vyžadovanej pre tento program je %1"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid "Find"
 msgstr "Nájsť"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:103
+#: core/libs/widgets/files/dbinarysearch.cpp:105
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr " alebo <a href=\"%1\">stiahnuť</a>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:132
+#: core/libs/widgets/files/dbinarysearch.cpp:134
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -43767,7 +43767,7 @@ msgstr ""
 "na tlačidlo 'Vyhľadať' na ich lokalizovanie vo vašom systéme, inak ich "
 "prosím stiahnite a nainštalujte na pokračovanie.</font></p></qt>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:171
+#: core/libs/widgets/files/dbinarysearch.cpp:173
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
@@ -43775,39 +43775,39 @@ msgid ""
 msgstr ""
 "Bola zistená vývojová verzia. Nie je záruka na správanie tohto programu."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:181
+#: core/libs/widgets/files/dbinarysearch.cpp:183
 #, kde-format
 msgid "Change"
 msgstr "Zmeniť"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:187
+#: core/libs/widgets/files/dbinarysearch.cpp:189
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
 
-#: core/libs/widgets/files/dfileselector.cpp:53
+#: core/libs/widgets/files/dfileselector.cpp:55
 #, kde-format
 msgid "Browse..."
 msgstr "Prechádzať..."
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:63
+#: core/libs/widgets/files/filesaveconflictbox.cpp:65
 #, kde-format
 msgid "If Target File Exists:"
 msgstr "Ak cieľový súbor existuje:"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:67
+#: core/libs/widgets/files/filesaveconflictbox.cpp:69
 #: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Store as a different name"
 msgstr "Uložiť pod iným názvom"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:68
+#: core/libs/widgets/files/filesaveconflictbox.cpp:70
 #: core/utilities/setup/camera/setupcamera.cpp:332
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Automaticky prepisovať"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:69
+#: core/libs/widgets/files/filesaveconflictbox.cpp:71
 #: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Skip automatically"
@@ -44918,7 +44918,7 @@ msgstr "Hlavný vývojár a koordinátor"
 msgid "Configure Notifications"
 msgstr "Nastaviť tento stĺpec"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:134
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -44964,37 +44964,37 @@ msgstr "Skontrolovať novú verziu..."
 msgid "Database Statistics"
 msgstr "Databázová štatistika"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Prepnúť ľavý bočný panel"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Prepnúť pravý bočný panel"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Predchádzajúca karta ľavého bočného panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Nasledujúca karta ľavého bočného panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Predchádzajúca karta pravého bočného panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Nasledujúca karta pravého bočného panelu"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Zobraziť stavový riadok"
@@ -51676,21 +51676,21 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Veľkosť ikon:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:90
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:92
 #, fuzzy, kde-format
 #| msgid "Bookmarks"
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Záložky"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:94
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:96
 #, fuzzy, kde-format
 #| msgid "Edit Bookmarks"
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Upraviť záložky"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:110
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:112
 #, fuzzy, kde-format
 #| msgctxt "@label: album properties"
 #| msgid "&Title:"
@@ -51698,40 +51698,40 @@ msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Názov:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:114
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:116
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Sem zadajte meno záložky..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:115
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr "Meno záložky musí byť jedinečné a nesmie byť prázdne"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:189
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Ikona:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Nastaviť na pôvodné"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:142
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:144
 #, fuzzy, kde-format
 #| msgid "Path"
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "Cesta"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:147
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:149
 #, fuzzy, kde-format
 #| msgctxt "@label: album properties"
 #| msgid "Enter album caption here..."
@@ -55227,13 +55227,13 @@ msgctxt "@info"
 msgid "Use this button to update all image fingerprints."
 msgstr "Týmto tlačidlom aktualizujete odtlačky všetkých obrázkov."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Nájsť duplicity"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -55241,13 +55241,13 @@ msgstr ""
 "Použite toto tlačidlo na prehľadanie vybraných albumov a nájdenie "
 "duplicitných položiek."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Odstrániť duplicity"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"

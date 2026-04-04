@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-03 00:40+0000\n"
+"POT-Creation-Date: 2026-04-04 00:42+0000\n"
 "PO-Revision-Date: 2026-03-01 17:16+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1389,7 +1389,7 @@ msgstr ""
 "Verfügbarkeit der ExifTool-Programmdatei im Abschnitt Metadaten.\n"
 "Fehlermeldung: %1"
 
-#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:526
+#: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:528
 #, kde-format
 msgid "No item selected (%1 item)"
 msgid_plural "No item selected (%1 items)"
@@ -2734,7 +2734,7 @@ msgstr "Standard-Werkzeugleiste"
 #: core/libs/album/manager/albummanager_dalbum.cpp:96
 #: core/libs/album/manager/albummanager_falbum.cpp:69
 #: core/libs/album/manager/albummanager_talbum.cpp:988
-#: core/libs/timeadjust/timeadjustsettings.cpp:134
+#: core/libs/timeadjust/timeadjustsettings.cpp:136
 #, kde-format
 msgid "digiKam"
 msgstr "digiKam"
@@ -3064,7 +3064,7 @@ msgid "Help"
 msgstr "Hilfe"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: core/app/views/sidebar/labelssidebarwidget.cpp:183
+#: core/app/views/sidebar/labelssidebarwidget.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:182
 #: core/utilities/geolocation/engine/plugins/render/graticule/GraticuleConfigWidget.ui:1392
 #: core/utilities/geolocation/engine/plugins/render/measure/MeasureConfigDialog.ui:133
@@ -3088,14 +3088,14 @@ msgstr ""
 "Benutzen Sie diesen Knopf, um die ausgewählten Alben nach Gesichtern "
 "abzusuchen"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:168
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:169
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:170
 #, kde-format
 msgctxt "@info"
 msgid "Face engine is disabled"
 msgstr "Die Gesichtererkennung ist deaktiviert"
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:202
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:203
 #, kde-format
 msgid ""
 "Welcome to Face Management in digiKam. If this is your first time using this "
@@ -3105,7 +3105,7 @@ msgstr ""
 "Leistungsmerkmal zum ersten Mal verwenden, beachten Sie bitte die Hilfe am "
 "unteren Ende der linken Seitenleiste."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:257
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:258
 #, kde-format
 msgid ""
 "Face scan was aborted, because there are no identities to recognize. Please "
@@ -3114,7 +3114,7 @@ msgstr ""
 "Gesichtererkennung wurde abgebrochen, da keine zu erkennenden Identitäten "
 "vorhanden sind. Bitte fügen Sie neue Identitäten hinzu."
 
-#: core/app/views/sidebar/peoplesidebarwidget.cpp:277
+#: core/app/views/sidebar/peoplesidebarwidget.cpp:278
 #, kde-format
 msgctxt "Browse images sorted by depicted people"
 msgid "People"
@@ -3155,12 +3155,12 @@ msgstr ""
 "Benutzen Sie diesen Knopf, um die ausgewählten Alben nach Objekten für die "
 "automatische Stichwortzuweisung zu durchsuchen"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:325
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:326
 #, kde-format
 msgid "No Tags Album"
 msgstr "Kein Stichwort-Album"
 
-#: core/app/views/sidebar/tagviewsidebarwidget.cpp:352
+#: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
 #: core/libs/album/engine/album.cpp:553
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
@@ -3362,95 +3362,95 @@ msgctxt "@info"
 msgid "Online help about trash-bin"
 msgstr "Online-Hilfe zum Papierkorb"
 
-#: core/app/views/stack/trashview.cpp:122
+#: core/app/views/stack/trashview.cpp:124
 #, kde-format
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: core/app/views/stack/trashview.cpp:123
+#: core/app/views/stack/trashview.cpp:125
 #, kde-format
 msgid "Restore only the last entry in the trash-bin."
 msgstr "Nur den letzten Eintrag des Papierkorbs wiederherstellen."
 
-#: core/app/views/stack/trashview.cpp:128
+#: core/app/views/stack/trashview.cpp:130
 #, kde-format
 msgid "Restore"
 msgstr "Wiederherstellen"
 
-#: core/app/views/stack/trashview.cpp:129
+#: core/app/views/stack/trashview.cpp:131
 #, kde-format
 msgid "Restore selection of files from the trash-bin."
 msgstr "Ausgewählte Bilder aus dem Papierkorb wiederherstellen."
 
-#: core/app/views/stack/trashview.cpp:135
+#: core/app/views/stack/trashview.cpp:137
 #, kde-format
 msgid "Delete..."
 msgstr "Löschen …"
 
-#: core/app/views/stack/trashview.cpp:136
+#: core/app/views/stack/trashview.cpp:138
 #, kde-format
 msgid "Remove permanently the items selection or all items from the trash-bin."
 msgstr "Die Auswahl oder alles unwiderruflich aus dem Papierkorb löschen."
 
-#: core/app/views/stack/trashview.cpp:140
+#: core/app/views/stack/trashview.cpp:142
 #, kde-format
 msgid "Selected Items Permanently"
 msgstr "Ausgewählte Einträge unwiderruflich löschen"
 
-#: core/app/views/stack/trashview.cpp:143
+#: core/app/views/stack/trashview.cpp:145
 #, kde-format
 msgid "All Items Permanently"
 msgstr "Alle Einträge unwiderruflich löschen"
 
-#: core/app/views/stack/trashview.cpp:282
+#: core/app/views/stack/trashview.cpp:284
 #, kde-format
 msgid "Confirm Undo"
 msgstr "Zurücknehmen bestätigen"
 
-#: core/app/views/stack/trashview.cpp:283
-#: core/app/views/stack/trashview.cpp:310
+#: core/app/views/stack/trashview.cpp:285
+#: core/app/views/stack/trashview.cpp:312
 #, kde-format
 msgid "Are you sure you want to restore %1 item?"
 msgid_plural "Are you sure you want to restore %1 items?"
 msgstr[0] "Möchten Sie %1 Eintrag  wirklich wiederherstellen?"
 msgstr[1] "Möchten Sie %1 Einträge  wirklich wiederherstellen?"
 
-#: core/app/views/stack/trashview.cpp:309
+#: core/app/views/stack/trashview.cpp:311
 #, kde-format
 msgid "Confirm Restore"
 msgstr "Wiederherstellen bestätigen"
 
-#: core/app/views/stack/trashview.cpp:340
-#: core/app/views/stack/trashview.cpp:392
+#: core/app/views/stack/trashview.cpp:342
+#: core/app/views/stack/trashview.cpp:394
 #, kde-format
 msgid "Confirm Deletion"
 msgstr "Löschen bestätigen"
 
-#: core/app/views/stack/trashview.cpp:341
+#: core/app/views/stack/trashview.cpp:343
 #, kde-format
 msgid "Are you sure you want to delete %1 item permanently?"
 msgid_plural "Are you sure you want to delete %1 items permanently?"
 msgstr[0] "Möchten Sie %1 Eintrag wirklich dauerhaft löschen?"
 msgstr[1] "Möchten Sie %1 Einträge  wirklich dauerhaft löschen?"
 
-#: core/app/views/stack/trashview.cpp:393
+#: core/app/views/stack/trashview.cpp:395
 #, kde-format
 msgid "Are you sure you want to delete ALL items permanently?"
 msgstr "Möchten Sie Alle Einträge  wirklich dauerhaft löschen?"
 
-#: core/app/views/stack/trashview.cpp:464
+#: core/app/views/stack/trashview.cpp:466
 #, kde-format
 msgctxt "delete the selected items from trash"
 msgid "Selection"
 msgstr "Auswahl"
 
-#: core/app/views/stack/trashview.cpp:466
+#: core/app/views/stack/trashview.cpp:468
 #, kde-format
 msgctxt "delete all items from trash"
 msgid "Delete"
 msgstr "Löschen"
 
-#: core/app/views/stack/trashview.cpp:533
+#: core/app/views/stack/trashview.cpp:535
 #, kde-format
 msgid "%1/%2 items selected"
 msgstr "%1/%2 Einträge ausgewählt"
@@ -16620,13 +16620,13 @@ msgid "Close window"
 msgstr "Fenster schließen"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:36
-#: core/libs/timeadjust/timeadjustsettings.cpp:286
+#: core/libs/timeadjust/timeadjustsettings.cpp:288
 #, kde-format
 msgid "Timestamp Used"
 msgstr "Verwendeter Zeitstempel"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:38
-#: core/libs/timeadjust/timeadjustsettings.cpp:288
+#: core/libs/timeadjust/timeadjustsettings.cpp:290
 #, kde-format
 msgid "Timestamp Updated"
 msgstr "Zeitstempel aktualisiert"
@@ -28305,55 +28305,55 @@ msgctxt "@action:button"
 msgid "New database"
 msgstr "Neue Datenbank"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:351
+#: core/libs/album/manager/albummanager_palbum.cpp:350
 #, kde-format
 msgid "The collection location supplied is invalid or currently not available."
 msgstr ""
 "Der angegebene Ort der Sammlung ist ungültig oder zurzeit nicht verfügbar."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:359
+#: core/libs/album/manager/albummanager_palbum.cpp:358
 #, kde-format
 msgid "No album for collection location: Internal error"
 msgstr "Am Sammlungsort befinden sich keine Alben: Interner Fehler"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:375
+#: core/libs/album/manager/albummanager_palbum.cpp:374
 #, kde-format
 msgid "No parent found for album."
 msgstr "Es ist kein übergeordnetes Album auffindbar."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:383
+#: core/libs/album/manager/albummanager_palbum.cpp:382
 #, kde-format
 msgid "Album name cannot be empty."
 msgstr "Der Albumname darf nicht leer sein."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:389
+#: core/libs/album/manager/albummanager_palbum.cpp:388
 #, kde-format
 msgid "Album name cannot contain '/'."
 msgstr "Der Albumname darf keinen Schrägstrich („/“) enthalten."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:395
+#: core/libs/album/manager/albummanager_palbum.cpp:394
 #, kde-format
 msgid "createPAlbum does not accept the root album as parent."
 msgstr ""
 "createPAlbum akzeptiert den Basisordner nicht als übergeordneten Ordner."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:411
+#: core/libs/album/manager/albummanager_palbum.cpp:410
 #, kde-format
 msgid "An existing album has the same name."
 msgstr "Es existiert bereits ein Album dieses Namens."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:427
+#: core/libs/album/manager/albummanager_palbum.cpp:426
 #, kde-format
 msgid "Failed to create directory '%1'"
 msgstr "Fehler beim Erstellen des Ordners „%1“"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:436
+#: core/libs/album/manager/albummanager_palbum.cpp:435
 #, kde-format
 msgid "Failed to add album to database"
 msgstr "Das Hinzufügen des Albums zur Datenbank ist fehlgeschlagen"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:463
-#: core/libs/album/manager/albummanager_palbum.cpp:550
+#: core/libs/album/manager/albummanager_palbum.cpp:462
+#: core/libs/album/manager/albummanager_palbum.cpp:549
 #: core/libs/album/manager/albummanager_talbum.cpp:366
 #: core/libs/album/manager/albummanager_talbum.cpp:464
 #: core/libs/album/manager/albummanager_talbum.cpp:504
@@ -28362,22 +28362,22 @@ msgstr "Das Hinzufügen des Albums zur Datenbank ist fehlgeschlagen"
 msgid "No such album"
 msgstr "Album nicht gefunden"
 
-#: core/libs/album/manager/albummanager_palbum.cpp:469
+#: core/libs/album/manager/albummanager_palbum.cpp:468
 #, kde-format
 msgid "Cannot rename root album"
 msgstr "Der Basisordner kann nicht umbenannt werden."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:475
+#: core/libs/album/manager/albummanager_palbum.cpp:474
 #, kde-format
 msgid "Cannot rename album root album"
 msgstr "Das Basisalbum kann nicht umbenannt werden."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:481
+#: core/libs/album/manager/albummanager_palbum.cpp:480
 #, kde-format
 msgid "Album name cannot contain '/'"
 msgstr "Der Albumname darf keinen Schrägstrich („/“) enthalten."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:489
+#: core/libs/album/manager/albummanager_palbum.cpp:488
 #, kde-format
 msgid ""
 "Another album with the same name already exists.\n"
@@ -28386,12 +28386,12 @@ msgstr ""
 "Es existiert bereits ein Album mit diesem Namen.\n"
 "Bitte wählen Sie einen anderen Namen."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:508
+#: core/libs/album/manager/albummanager_palbum.cpp:507
 #, kde-format
 msgid "Failed to rename Album"
 msgstr "Fehler beim Umbenennen des Albums."
 
-#: core/libs/album/manager/albummanager_palbum.cpp:556
+#: core/libs/album/manager/albummanager_palbum.cpp:555
 #, kde-format
 msgid "Cannot edit root album"
 msgstr "Das Basisalbum kann nicht bearbeitet werden."
@@ -30004,7 +30004,7 @@ msgstr "Sammlung erfassen"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "Error"
 msgstr "Fehler"
@@ -39606,7 +39606,7 @@ msgid "IPTC"
 msgstr "IPTC"
 
 #: core/libs/properties/itempropertiesmetadatatab.cpp:95
-#: core/libs/timeadjust/timeadjustsettings.cpp:255
+#: core/libs/timeadjust/timeadjustsettings.cpp:257
 #, kde-format
 msgid "XMP"
 msgstr "XMP"
@@ -42178,18 +42178,18 @@ msgstr "<b>Neues Stichwort in<br/>„%1“ erstellen</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Eigenschaften des Stichwortes<br/>„%1“</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:517
+#: core/libs/tags/widgets/tageditdlg.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Fehler bei der Erstellung des Stichwortes"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:531
+#: core/libs/tags/widgets/tageditdlg.cpp:533
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Bei der Erstellung des Stichwortes ist ein Fehler aufgetreten:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "Tag Path"
 msgstr "Stichworthierarchie"
@@ -42976,18 +42976,18 @@ msgstr "Initialisierung der Vorschaubilder-Datenbank ist fehlgeschlagen"
 msgid "Error message: %1"
 msgstr "Fehlermeldung: %1"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:78
+#: core/libs/timeadjust/clockphotodialog.cpp:79
 #, kde-format
 msgctxt "@title:window"
 msgid "Determine Time Difference With Clock Photo"
 msgstr "Zeitunterschied ermitteln mit Hilfe eines Referenzfotos"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:85
+#: core/libs/timeadjust/clockphotodialog.cpp:86
 #, kde-format
 msgid "Load different photo"
 msgstr "Anderes Foto laden"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:93
+#: core/libs/timeadjust/clockphotodialog.cpp:94
 #, kde-format
 msgid ""
 "If you have a photo in your set with a clock or another external time source "
@@ -42999,7 +42999,7 @@ msgstr ""
 "hier als Referenzfoto laden. Durch Ändern der ausgelesenen Zeitangabe wird "
 "der anzuwendenden Wert für die Korrektur der Kamera-Uhr ermittelt."
 
-#: core/libs/timeadjust/clockphotodialog.cpp:167
+#: core/libs/timeadjust/clockphotodialog.cpp:168
 #, fuzzy, kde-format
 #| msgid "<font color=\"red\"><b>Could not load<br/>image %1.</b></font>"
 msgid "<font color=\"red\"><b>Could not load<br>image %1.</b></font>"
@@ -43007,133 +43007,133 @@ msgstr ""
 "<font color=\"red\"><b>Zeitangabe für Bild %1 kann nicht geladen werden.</"
 "b></font>"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:183
+#: core/libs/timeadjust/clockphotodialog.cpp:184
 #, kde-format
 msgid "The clock date and time:"
 msgstr "Datum und Uhrzeit:"
 
-#: core/libs/timeadjust/clockphotodialog.cpp:237
+#: core/libs/timeadjust/clockphotodialog.cpp:238
 #, kde-format
 msgid "Select Image to Extract Clock Photo"
 msgstr "Wählen Sie ein Bild als Referenzfoto mit Zeitangabe"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:138
+#: core/libs/timeadjust/timeadjustsettings.cpp:140
 #, kde-format
 msgid "Showfoto"
 msgstr "Showfoto"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:141
+#: core/libs/timeadjust/timeadjustsettings.cpp:143
 #, kde-format
 msgid "%1 timestamp"
 msgstr "%1-Zeitstempel"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:146
+#: core/libs/timeadjust/timeadjustsettings.cpp:148
 #, kde-format
 msgid "File name timestamp"
 msgstr "Zeitstempel aus Dateinamen:"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:150
-#: core/libs/timeadjust/timeadjustsettings.cpp:248
+#: core/libs/timeadjust/timeadjustsettings.cpp:152
+#: core/libs/timeadjust/timeadjustsettings.cpp:250
 #, kde-format
 msgid "File last modified"
 msgstr "Änderungsdatum der Datei"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:155
+#: core/libs/timeadjust/timeadjustsettings.cpp:157
 #, fuzzy, kde-format
 #| msgid "File date"
 msgid "File created"
 msgstr "Dateidatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:161
+#: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, kde-format
 msgid "EXIF/IPTC/XMP"
 msgstr "Exif/IPTC/XMP"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:162
-#: core/libs/timeadjust/timeadjustsettings.cpp:249
+#: core/libs/timeadjust/timeadjustsettings.cpp:164
+#: core/libs/timeadjust/timeadjustsettings.cpp:251
 #, kde-format
 msgid "EXIF: created"
 msgstr "Exif: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:163
-#: core/libs/timeadjust/timeadjustsettings.cpp:250
+#: core/libs/timeadjust/timeadjustsettings.cpp:165
+#: core/libs/timeadjust/timeadjustsettings.cpp:252
 #, kde-format
 msgid "EXIF: original"
 msgstr "Exif: Erstellungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:164
-#: core/libs/timeadjust/timeadjustsettings.cpp:251
+#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:253
 #, kde-format
 msgid "EXIF: digitized"
 msgstr "Exif: Digitalisierungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:165
-#: core/libs/timeadjust/timeadjustsettings.cpp:253
+#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:255
 #, kde-format
 msgid "IPTC: created"
 msgstr "IPTC: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:166
+#: core/libs/timeadjust/timeadjustsettings.cpp:168
 #, kde-format
 msgid "XMP: created"
 msgstr "XMP: Änderungsdatum"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:167
+#: core/libs/timeadjust/timeadjustsettings.cpp:169
 #, kde-format
 msgid "EXIF: created (fuzzy)"
 msgstr "Exif: Änderungsdatum (unscharf)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:168
+#: core/libs/timeadjust/timeadjustsettings.cpp:170
 #, kde-format
 msgid "EXIF: original (fuzzy)"
 msgstr "Exif: Erstellungsdatum (unscharf)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:169
+#: core/libs/timeadjust/timeadjustsettings.cpp:171
 #, kde-format
 msgid "EXIF: digitized (fuzzy)"
 msgstr "Exif: Digitalisierungsdatum (unscharf)"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:179
+#: core/libs/timeadjust/timeadjustsettings.cpp:181
 #, kde-format
 msgid "Reset to current date"
 msgstr "Auf aktuelles Datum zurücksetzen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:211
+#: core/libs/timeadjust/timeadjustsettings.cpp:213
 #, kde-format
 msgctxt "copy timestamp as well"
 msgid "Copy value"
 msgstr "Wert übernehmen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:212
+#: core/libs/timeadjust/timeadjustsettings.cpp:214
 #, kde-format
 msgctxt "add a fixed timestamp to date"
 msgid "Add"
 msgstr "Wert erhöhen"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:213
+#: core/libs/timeadjust/timeadjustsettings.cpp:215
 #, kde-format
 msgctxt "subtract a fixed timestamp to date"
 msgid "Subtract"
 msgstr "Wert verringern"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:217
+#: core/libs/timeadjust/timeadjustsettings.cpp:219
 #, kde-format
 msgctxt "interval time stamp to the next image"
 msgid "Interval"
 msgstr "Intervall bilden"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:223
+#: core/libs/timeadjust/timeadjustsettings.cpp:225
 #, kde-format
 msgctxt "time adjust offset, days value label"
 msgid "days"
 msgstr "Tage"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:226
+#: core/libs/timeadjust/timeadjustsettings.cpp:228
 #, kde-format
 msgid "Determine difference from clock photo"
 msgstr "Zeitunterschied ermitteln mit Hilfe eines Referenzfotos"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:227
+#: core/libs/timeadjust/timeadjustsettings.cpp:229
 #, kde-format
 msgid ""
 "Either click or drag'n drop a photo on the button to choose a clock photo"
@@ -43141,32 +43141,32 @@ msgstr ""
 "Klicken Sie hier zur Auswahl des Bildes oder ziehen Sie ein Bild und legen "
 "es hier ab"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:245
+#: core/libs/timeadjust/timeadjustsettings.cpp:247
 #, kde-format
 msgid "Update timestamps with ExifTool"
 msgstr "Zeitstempel mit ExifTool aktualisieren"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:246
+#: core/libs/timeadjust/timeadjustsettings.cpp:248
 #, kde-format
 msgid "Use this option primarily with video files"
 msgstr "Benutzen Sie diese Einstellung vornehmlich für Videodateien"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:247
+#: core/libs/timeadjust/timeadjustsettings.cpp:249
 #, kde-format
 msgid "Update only existing timestamps"
 msgstr "Nur vorhandene Zeitstempel aktualisieren"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:252
+#: core/libs/timeadjust/timeadjustsettings.cpp:254
 #, kde-format
 msgid "EXIF: Thumbnail"
 msgstr "Exif: Vorschaubild"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:254
+#: core/libs/timeadjust/timeadjustsettings.cpp:256
 #, kde-format
 msgid "XMP: Video"
 msgstr "XMP: Video"
 
-#: core/libs/timeadjust/timeadjustsettings.cpp:287
+#: core/libs/timeadjust/timeadjustsettings.cpp:289
 #, kde-format
 msgid "Timestamp Adjustments"
 msgstr "Zeitstempel-Anpassungen"
@@ -44227,45 +44227,45 @@ msgctxt "@info:tooltip"
 msgid "Reset to default value"
 msgstr "Auf Voreinstellung zurücksetzen"
 
-#: core/libs/widgets/files/dbinaryiface.cpp:193
+#: core/libs/widgets/files/dbinaryiface.cpp:194
 #, kde-format
 msgctxt "@title:window"
 msgid "Navigate to %1"
 msgstr "Zu %1 gehen"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:59
+#: core/libs/widgets/files/dbinarysearch.cpp:61
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Binary"
 msgstr "Programmdatei"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:60
+#: core/libs/widgets/files/dbinarysearch.cpp:62
 #, kde-format
 msgctxt "@title: binary properties"
 msgid "Version"
 msgstr "Version"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:98
+#: core/libs/widgets/files/dbinarysearch.cpp:100
 #, kde-format
 msgid "Binary not found."
 msgstr "Die Programmdatei wurde nicht gefunden."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:99
+#: core/libs/widgets/files/dbinarysearch.cpp:101
 #, kde-format
 msgid "Minimal version number required for this binary is %1"
 msgstr "Es ist mindestens Version %1 dieses Programms erforderlich"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:101
+#: core/libs/widgets/files/dbinarysearch.cpp:103
 #, kde-format
 msgid "Find"
 msgstr "Suchen"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:103
+#: core/libs/widgets/files/dbinarysearch.cpp:105
 #, kde-format
 msgid " or <a href=\"%1\">download</a>"
 msgstr " oder <a href=\"%1\">Herunterladen</a>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:132
+#: core/libs/widgets/files/dbinarysearch.cpp:134
 #, kde-format
 msgid ""
 "<qt><p><font color=\"red\"><b>Warning:</b> Some necessary binaries have not "
@@ -44278,7 +44278,7 @@ msgstr ""
 "„Ändern“, andernfalls laden Sie die Programme herunter und installieren "
 "diese bevor Sie weiterarbeiten.</font></p></qt>"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:171
+#: core/libs/widgets/files/dbinarysearch.cpp:173
 #, kde-format
 msgid ""
 "A development version has been detect. There is no guarantee on the behavior "
@@ -44287,39 +44287,39 @@ msgstr ""
 "Eine Entwicklerversion des Programms wurde gefunden. Fehlerfreiheit kann "
 "nicht garantiert werden."
 
-#: core/libs/widgets/files/dbinarysearch.cpp:181
+#: core/libs/widgets/files/dbinarysearch.cpp:183
 #, kde-format
 msgid "Change"
 msgstr "Ändern"
 
-#: core/libs/widgets/files/dbinarysearch.cpp:187
+#: core/libs/widgets/files/dbinarysearch.cpp:189
 #, kde-format
 msgid "The binary file found does not appear to be working as intended."
 msgstr ""
 
-#: core/libs/widgets/files/dfileselector.cpp:53
+#: core/libs/widgets/files/dfileselector.cpp:55
 #, kde-format
 msgid "Browse..."
 msgstr "Durchsuchen ..."
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:63
+#: core/libs/widgets/files/filesaveconflictbox.cpp:65
 #, kde-format
 msgid "If Target File Exists:"
 msgstr "Falls die Zieldatei existiert:"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:67
+#: core/libs/widgets/files/filesaveconflictbox.cpp:69
 #: core/utilities/setup/camera/setupcamera.cpp:331
 #, kde-format
 msgid "Store as a different name"
 msgstr "Unter einem anderen Namen speichern"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:68
+#: core/libs/widgets/files/filesaveconflictbox.cpp:70
 #: core/utilities/setup/camera/setupcamera.cpp:332
 #, kde-format
 msgid "Overwrite automatically"
 msgstr "Automatisch überschreiben"
 
-#: core/libs/widgets/files/filesaveconflictbox.cpp:69
+#: core/libs/widgets/files/filesaveconflictbox.cpp:71
 #: core/utilities/setup/camera/setupcamera.cpp:333
 #, kde-format
 msgid "Skip automatically"
@@ -45427,7 +45427,7 @@ msgstr "Entwickler und Mentor (2005–2012)"
 msgid "Configure Notifications"
 msgstr "Benachrichtigungen festlegen"
 
-#: core/libs/widgets/mainview/dxmlguiwindow.cpp:133
+#: core/libs/widgets/mainview/dxmlguiwindow.cpp:134
 #, kde-format
 msgctxt "general keyboard shortcuts"
 msgid "General"
@@ -45473,37 +45473,37 @@ msgstr "Auf neue Version prüfen ..."
 msgid "Database Statistics"
 msgstr "Statistik der Datenbank"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:144
 #, kde-format
 msgid "Toggle Left Side-bar"
 msgstr "Linke Seitenleiste anzeigen bzw. ausblenden"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:149
 #, kde-format
 msgid "Toggle Right Side-bar"
 msgstr "Rechte Seitenleiste anzeigen bzw. ausblenden"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:154
 #, kde-format
 msgid "Previous Left Side-bar Tab"
 msgstr "Vorheriger Reiter in linker Seitenleiste"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:159
 #, kde-format
 msgid "Next Left Side-bar Tab"
 msgstr "Nächster Reiter in linker Seitenleiste"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:164
 #, kde-format
 msgid "Previous Right Side-bar Tab"
 msgstr "Vorheriger Reiter in rechter Seitenleiste"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:174
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:169
 #, kde-format
 msgid "Next Right Side-bar Tab"
 msgstr "Nächster Reiter in rechter Seitenleiste"
 
-#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:198
+#: core/libs/widgets/mainview/dxmlguiwindow_actions.cpp:193
 #, kde-format
 msgid "Show Statusbar"
 msgstr "Statusleiste anzeigen"
@@ -51387,57 +51387,57 @@ msgctxt "@info"
 msgid "Icon Size: %1"
 msgstr "Symbolgröße: %1"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:90
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "New Bookmark"
 msgstr "Neues Lesezeichen"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:94
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:96
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Bookmark"
 msgstr "Lesezeichen bearbeiten"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:110
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:112
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Title:"
 msgstr "&Titel:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:114
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:116
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark title here..."
 msgstr "Geben Sie hier den Lesezeichentitel ein ..."
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:115
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:117
 #, kde-format
 msgctxt "@info"
 msgid "The bookmark title which must be unique and not empty"
 msgstr ""
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:121
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:123
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:189
 #, kde-format
 msgctxt "@label"
 msgid "&Icon:"
 msgstr "&Symbol:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:129
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:131
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:198
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:142
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:144
 #, kde-format
 msgctxt "@label: bookmark properties"
 msgid "&Path:"
 msgstr "&Pfad:"
 
-#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:147
+#: core/showfoto/folderview/showfotofolderviewbookmarkdlg.cpp:149
 #, kde-format
 msgctxt "@info"
 msgid "Enter bookmark path here..."
@@ -54901,13 +54901,13 @@ msgstr ""
 "Benutzen Sie diesen Knopf, um die Fingerabdrücke aller Bilder zu "
 "aktualisieren."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:287
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Find duplicates"
 msgstr "Duplikate suchen"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:289
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:290
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to scan the selected albums for duplicate items."
@@ -54915,13 +54915,13 @@ msgstr ""
 "Benutzen Sie diesen Knopf, um die ausgewählten Alben nach doppelten "
 "Einträgen zu durchsuchen."
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:292
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:293
 #, kde-format
 msgctxt "@action"
 msgid "Remove Duplicates"
 msgstr "Duplikate entfernen"
 
-#: core/utilities/fuzzysearch/findduplicatesview.cpp:294
+#: core/utilities/fuzzysearch/findduplicatesview.cpp:295
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to delete all duplicate images."
