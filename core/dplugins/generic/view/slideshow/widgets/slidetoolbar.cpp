@@ -282,7 +282,7 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
     QEventLoop loop;
 
     connect(setup, &QDialog::finished,
-            this, [this, &loop, setup, &ret](int result)
+            this, [&loop, setup, &ret](int result)
         {
             ret = result;
             loop.quit();
@@ -322,7 +322,7 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
         QEventLoop loop;
 
         connect(help, &QDialog::finished,
-                this, [this, &loop, help]()
+                this, [&loop, help]()
             {
                 loop.quit();
                 delete help;
