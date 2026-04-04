@@ -196,7 +196,7 @@ void SetupDatabase::createUpdateBox()
                                 "prior to 8.5.0."));
 
     connect(infoBtn, &QPushButton::clicked,
-            this, [this, infoBtn]()
+            this, [infoBtn]()
         {
             qApp->postEvent(infoBtn, new QHelpEvent(QEvent::WhatsThis, QPoint(0, 0), QCursor::pos()));
         }
