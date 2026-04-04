@@ -428,6 +428,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     d->audioOutMenu   = new QMenu(this);
     d->mediaDevices   = new QMediaDevices(this);
+    d->outMenuGroup   = new QActionGroup(d->audioOutMenu);
 
     d->speaker        = new QPushButton(hbox);
     d->speaker->setIcon(QIcon::fromTheme(QLatin1String("audio-volume-high")));
@@ -744,11 +745,17 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
 
 void MediaPlayerView::slotCreateAudioOutputMenu()
 {
-    d->audioOutMenu->clear();
     const auto outputs = d->mediaDevices->audioOutputs();
+    const auto agroups = d->outMenuGroup->actions();
 
-    delete d->outMenuGroup;
-    d->outMenuGroup    = new QActionGroup(d->audioOutMenu);
+    for (const auto& act : agroups)
+    {
+        d->outMenuGroup->removeAction(act);
+    }
+
+    // This delete all QActions.
+
+    d->audioOutMenu->clear();
 
     for (const auto& device : outputs)
     {
