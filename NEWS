@@ -97,7 +97,7 @@ BUGFIXES:
 067 --> 518334 - Use QuickTime CreationDate if Present Rather Than CreateDate in MOV files.
 068 --> 518245 - Crash: std::system_error EINVAL in QReadWriteLock::lockForRead() during scanPAlbums on Linux kernel 6.17 (AppImage Qt 6.10.2 vs host glibc 2.42).
 069 --> 518318 - Crash in QToolBar::widgetForAction during cleanupActions() on Fedora 43 (Qt 6.10.2).
-070 --> 
+070 --> 518518 - After opening digiKam and connecting Bluetooth headphones, you'll need to restart the application for it to recognize the headphones.
 071 --> 
 072 --> 
 073 --> 

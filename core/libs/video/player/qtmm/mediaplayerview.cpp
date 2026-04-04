@@ -192,6 +192,7 @@ public:
     QLabel*              tlabel             = nullptr;
 
     QMediaDevices*       mediaDevices       = nullptr;
+    QActionGroup*        outMenuGroup       = nullptr;
     QMenu*               audioOutMenu       = nullptr;
 
     QUrl                 currentItem;
@@ -425,14 +426,16 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->loopPlay->setMinimumSize(22, 22);
     d->loopPlay->setCheckable(true);
 
+    d->audioOutMenu   = new QMenu(this);
+    d->mediaDevices   = new QMediaDevices(this);
+
     d->speaker        = new QPushButton(hbox);
     d->speaker->setIcon(QIcon::fromTheme(QLatin1String("audio-volume-high")));
     d->speaker->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
     d->speaker->setFocusPolicy(Qt::NoFocus);
+    d->speaker->setMenu(d->audioOutMenu);
     d->speaker->setMinimumSize(22, 22);
 
-    d->audioOutMenu   = new QMenu(this);
-    d->mediaDevices   = new QMediaDevices(this);
     slotCreateAudioOutputMenu();
 
     d->volume         = new QSlider(Qt::Horizontal, hbox);
@@ -741,26 +744,20 @@ void MediaPlayerView::slotHandlePlayerError(QMediaPlayer::Error /*error*/, const
 
 void MediaPlayerView::slotCreateAudioOutputMenu()
 {
-
-#ifndef __clang_analyzer__
-
     d->audioOutMenu->clear();
-    QActionGroup* const audioGroup = new QActionGroup(this);
-    const auto outputs             = d->mediaDevices->audioOutputs();
+    const auto outputs = d->mediaDevices->audioOutputs();
+
+    delete d->outMenuGroup;
+    d->outMenuGroup    = new QActionGroup(d->audioOutMenu);
 
     for (const auto& device : outputs)
     {
-        QAction* const action = audioGroup->addAction(device.description());
+        QAction* const action = d->outMenuGroup->addAction(device.description());
         action->setCheckable(true);
         action->setData(device.id());
         action->setChecked(device.isDefault());
         d->audioOutMenu->addAction(action);
     }
-
-    d->speaker->setMenu(d->audioOutMenu);
-
-#endif
-
 }
 
 void MediaPlayerView::slotNativeSizeChanged()
