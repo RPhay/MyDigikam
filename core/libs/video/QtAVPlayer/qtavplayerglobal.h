@@ -13,6 +13,8 @@
 #include <QtGui/private/qtgui-config_p.h>
 #endif
 
+#include "digikam_export.h"
+
 QT_BEGIN_NAMESPACE
 /*
 #ifndef QT_STATIC
