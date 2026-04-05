@@ -101,7 +101,7 @@ BUGFIXES:
 068 --> 518245 - Crash: std::system_error EINVAL in QReadWriteLock::lockForRead() during scanPAlbums on Linux kernel 6.17 (AppImage Qt 6.10.2 vs host glibc 2.42).
 069 --> 518318 - Crash in QToolBar::widgetForAction during cleanupActions() on Fedora 43 (Qt 6.10.2).
 070 --> 518518 - After opening digiKam and connecting Bluetooth headphones, you'll need to restart the application for it to recognize the headphones.
-071 --> 
+071 --> 518587 - Migration from a PC to another one.
 072 --> 
 073 --> 
 074 --> 
