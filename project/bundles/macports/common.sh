@@ -67,10 +67,12 @@ fi
 # Adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion $MACOS_MAJOR.$MACOS_MINOR" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 
-# Install Metal SDK for QtWebEngine
-xcodebuild -downloadComponent MetalToolchain
+if [[ $HOST_ARCH = "arm64" ]] ; then
 
-}
+    # Install Metal SDK for QtWebEngine
+    xcodebuild -downloadComponent MetalToolchain
+
+fi
 
 ########################################################################
 # Check if Macports is installed
