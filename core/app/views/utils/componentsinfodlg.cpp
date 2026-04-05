@@ -54,6 +54,11 @@ extern "C"
 #   include <libavformat/version.h>
 #   include <libavutil/version.h>
 #   include <libavcodec/version.h>
+
+/**
+ * Function not exported in libavutil returning the FFMPEG version.
+ */
+const char* av_version_info(void);
 }
 
 #endif
@@ -126,6 +131,10 @@ public:
 
         new QTreeWidgetItem(m_libraries, QStringList() <<
                             i18nc("@item: component info", "LibAVUtil") <<              QString::fromLatin1("%1.%2.%3").arg(LIBAVUTIL_VERSION_MAJOR).arg(LIBAVUTIL_VERSION_MINOR).arg(LIBAVUTIL_VERSION_MICRO));
+
+        new QTreeWidgetItem(m_libraries, QStringList() <<
+                            i18nc("@item: component info", "FFMpeg") <<                 QString::fromLatin1(av_version_info()));
+
 
 #else
 
