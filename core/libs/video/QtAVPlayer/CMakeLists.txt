@@ -121,6 +121,7 @@ target_compile_definitions(core_qtavplayer_obj
 target_compile_definitions(core_qtavplayer_obj
                            PRIVATE
                            ${MEDIAPLAYER_DEFINITIONS}
+                           -DQT_STATIC
 )
 
 target_compile_options(core_qtavplayer_obj

@@ -37,6 +37,20 @@ static const char *vertexShaderProgram = R"(
     }
 )";
 
+static const char *vertexMonoShaderProgram = R"(
+    attribute highp vec4 vertexCoordArray;
+    attribute highp vec2 textureCoordArray;
+    uniform highp mat4 positionMatrix;
+    varying highp vec2 plane1TexCoord;
+    varying highp vec2 textureCoord;
+    void main(void)
+    {
+        plane1TexCoord = textureCoordArray;
+        gl_Position = positionMatrix * vertexCoordArray;
+        textureCoord = textureCoordArray;
+    }
+)";
+
 static const char *rgbShaderProgram = R"(
     uniform sampler2D tex1;
     varying highp vec2 textureCoord;
@@ -75,6 +89,20 @@ static const char *yuvPlanarShaderProgram = R"(
     }
 )";
 
+static const char *yuyvPlanarShaderProgram = R"(
+    uniform sampler2D tex1;
+    uniform sampler2D tex2;
+    uniform mediump mat4 colorMatrix;
+    varying highp vec2 plane1TexCoord;
+    void main(void)
+    {
+        mediump float Y = texture2D(tex1, plane1TexCoord).r;
+        mediump vec2 UV = texture2D(tex2, plane1TexCoord).ga;
+        mediump vec4 color = vec4(Y, UV.x, UV.y, 1.);
+        gl_FragColor = colorMatrix * color;
+    }
+)";
+
 static const char *nvPlanarShaderProgram = R"(
     uniform sampler2D tex1;
     uniform sampler2D tex2;
@@ -94,8 +122,9 @@ class QAVWidget_OpenGLPrivate
 {
     Q_DECLARE_PUBLIC(QAVWidget_OpenGL)
 public:
-    QAVWidget_OpenGLPrivate(QAVWidget_OpenGL *q)
-        : q_ptr(q)
+    QAVWidget_OpenGLPrivate(QAVWidget_OpenGL *q) :
+        q_ptr(q),
+        m_aspectRatioMode(Qt::KeepAspectRatio)
     {
     }
 
@@ -108,6 +137,7 @@ public:
     mutable QMutex mutex;
 
     QOpenGLShaderProgram program;
+    const char *shaderProgram = vertexShaderProgram;
     const char *fragmentProgram = nullptr;
 
     int textureCount = 0;
@@ -115,6 +145,9 @@ public:
     GLuint textureIds[3];
     GLfloat planeWidth[3];
     QMatrix4x4 colorMatrix;
+
+    // Aspect ratio mode for video scaling
+    Qt::AspectRatioMode m_aspectRatioMode;
 
     void cleanupTextures();
     void bindTexture(int id, int w, int h, const uchar *bits, GLenum format);
@@ -200,6 +233,19 @@ QAVWidget_OpenGL::~QAVWidget_OpenGL()
     Q_D(QAVWidget_OpenGL);
     QMutexLocker lock(&d->mutex);
     d->cleanupTextures();
+}
+
+void QAVWidget_OpenGL::setAspectRatioMode(Qt::AspectRatioMode mode)
+{
+    Q_D(QAVWidget_OpenGL);
+    d->m_aspectRatioMode = mode;
+    update();
+}
+
+Qt::AspectRatioMode QAVWidget_OpenGL::aspectRatioMode() const
+{
+    Q_D(const QAVWidget_OpenGL);
+    return d->m_aspectRatioMode;
 }
 
 void QAVWidget_OpenGL::setVideoFrame(const QAVVideoFrame &frame)
@@ -316,6 +362,31 @@ void QAVWidget_OpenGLPrivate::initTextureInfo<AV_PIX_FMT_NV12>()
     }
 }
 
+template<>
+void QAVWidget_OpenGLPrivate::initTextureInfo<AV_PIX_FMT_YUYV422>()
+{
+    Q_Q(QAVWidget_OpenGL);
+    colorMatrix = getColorMatrix(currentFrame);
+    shaderProgram = vertexMonoShaderProgram;
+    fragmentProgram = yuyvPlanarShaderProgram;
+    textureCount = 2;
+    if (currentFrame.handleType() == QAVVideoFrame::NoHandle) {
+        cleanupTextures();
+        q->glGenTextures(textureCount, textureIds);
+        texturesGenerated = true;
+        auto w = currentFrame.size().width();
+        auto h = currentFrame.size().height();
+        auto data = currentFrame.map();
+        planeWidth[0] = qreal(w);
+        planeWidth[1] = qreal(w) / 2;
+        planeWidth[2] = 0;
+        q->glActiveTexture(GL_TEXTURE1);
+        bindTexture(textureIds[1], planeWidth[1], h, data.data[0], GL_RGBA);
+        q->glActiveTexture(GL_TEXTURE0);
+        bindTexture(textureIds[0], planeWidth[0], h, data.data[0], GL_LUMINANCE_ALPHA);
+    }
+}
+
 #if defined(Q_OS_WIN)
 template<>
 void QAVWidget_OpenGLPrivate::initTextureInfo<AV_PIX_FMT_D3D11>()
@@ -356,6 +427,9 @@ bool QAVWidget_OpenGLPrivate::initTextureInfo()
         case AV_PIX_FMT_NV12:
             initTextureInfo<AV_PIX_FMT_NV12>();
             break;
+        case AV_PIX_FMT_YUYV422:
+            initTextureInfo<AV_PIX_FMT_YUYV422>();
+            break;
 #if defined(Q_OS_WIN)
         case AV_PIX_FMT_D3D11:
             initTextureInfo<AV_PIX_FMT_D3D11>();
@@ -376,7 +450,7 @@ bool QAVWidget_OpenGLPrivate::resetGL()
 
     Q_ASSERT(fragmentProgram);
     program.removeAllShaders();
-    if (!program.addShaderFromSourceCode(QOpenGLShader::Vertex, vertexShaderProgram)) {
+    if (!program.addShaderFromSourceCode(QOpenGLShader::Vertex, shaderProgram)) {
         qWarning() << "Vertex compile error:" << qPrintable(program.log());
         return false;
     }
@@ -422,7 +496,24 @@ void QAVWidget_OpenGL::paintGL()
         return;
     }
 
+    // Calculate the target rectangle for video (considering aspect ratio)
+    auto frameSize = d->currentFrame.size();
+    int width = this->width();
+    int height = this->height();
+
+    QRectF rect(0.0, 0.0, width, height);
+    QSizeF size = frameSize;
+    size.scale(rect.size(), d->m_aspectRatioMode);
+    QRectF target(0, 0, size.width(), size.height());
+    target.moveCenter(rect.center());
+
+    // Draw black letterboxing bars first (for areas outside the video)
+    // This ensures proper black bars when aspect ratio doesn't match
+    glDisable(GL_SCISSOR_TEST);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // Restore the color used by the video renderer
     glColor3f(0.0, 0.0, 1.0);
 
     bool stencilTestEnabled = glIsEnabled(GL_STENCIL_TEST);
@@ -432,15 +523,6 @@ void QAVWidget_OpenGL::paintGL()
     if (scissorTestEnabled)
         glEnable(GL_SCISSOR_TEST);
 
-    auto frameSize = d->currentFrame.size();
-    int width = this->width();
-    int height = this->height();
-
-    QRectF rect(0.0, 0.0, width, height);
-    QSizeF size = frameSize;
-    size.scale(rect.size(), Qt::KeepAspectRatio);
-    QRectF target(0, 0, size.width(), size.height());
-    target.moveCenter(rect.center());
     QRectF source(0, 0, frameSize.width(), frameSize.height());
     QRectF viewport(0, 0, width, height);
 
@@ -539,6 +621,6 @@ void QAVWidget_OpenGL::paintGL()
 
 void QAVWidget_OpenGL::resizeGL(int width, int height)
 {
-    int side = qMin(width, height);
-    glViewport((width - side) / 2, (height - side) / 2, side, side);
+    // Use the entire widget for rendering, not just a square
+    glViewport(0, 0, width, height);
 }
