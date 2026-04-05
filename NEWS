@@ -22,8 +22,8 @@ Import          : USB Mass Storage driver now support video thumbnails.
 
 Advanced Search : Add "Clear All Groups" button in the SearchView interface.
 
-Preview         : Add support for Pixel motion photos, which are short videos embedded in pictures
-                  taken on Google Pixel phones.
+Preview         : Add support for Pixel motion photos, which are short videos embedded in pictures taken on Google Pixel phones.
+                  Better support of the audio output selection provided by the video media player.
 
 *****************************************************************************************************
 BUGFIXES:
