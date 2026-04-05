@@ -14,7 +14,7 @@
 #endif
 
 QT_BEGIN_NAMESPACE
-
+/*
 #ifndef QT_STATIC
 #    ifdef QT_BUILD_QTAVPLAYER_LIB
 #        define Q_AVPLAYER_EXPORT Q_DECL_EXPORT
@@ -22,8 +22,9 @@ QT_BEGIN_NAMESPACE
 #        define Q_AVPLAYER_EXPORT Q_DECL_IMPORT
 #    endif
 #else
-#    define Q_AVPLAYER_EXPORT
-#endif
+*/
+#    define Q_AVPLAYER_EXPORT DIGIKAM_EXPORT
+//#endif
 
 QT_END_NAMESPACE
 #endif
