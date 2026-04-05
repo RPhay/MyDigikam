@@ -74,6 +74,8 @@ if [[ $HOST_ARCH = "arm64" ]] ; then
 
 fi
 
+}
+
 ########################################################################
 # Check if Macports is installed
 ChecksMacports()

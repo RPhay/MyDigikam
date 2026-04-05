@@ -107,8 +107,8 @@ DK_URL="http://download.kde.org/stable/digikam"
 DK_BUILDTEMP=~/dktemp
 
 # Qt version to use in bundle and provided by Macports.
-#DK_QTVERSION="5"
-DK_QTVERSION="6"
+DK_QTVERSION="5"
+#DK_QTVERSION="6"
 
 # Mariadb version to install for Qt SQL plugin.
 DK_MARIADB_VERSION="10.11"
@@ -131,7 +131,7 @@ DK_VERSION=master
 DK_APPLE_PACKAGE_MANAGER="macports"
 
 # Installer will include or not digiKam debug symbols
-DK_DEBUG=1
+DK_DEBUG=0
 
 # Sign bundles with GPG. Passphrase must be hosted in ~/.gnupg/dkorg-gpg-pwd.txt
 DK_SIGN=0
