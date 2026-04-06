@@ -87,10 +87,10 @@ QString WelcomePageView::featuresTabContent() const
                     << i18n("Add support to search recently modified items in the database.")
                 );
 
-    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-03-26.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw snapshot 2026-04-06.");
     newFeatures << i18n("New RAW camera supported:")
                 + appendSubList(QStringList()
-                    << i18n("Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra ;")
+                    << i18n("Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS R100, EOS Ra Canon EOS Kiss M2;")
                     << i18n("Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;")
                     << i18n("Hasselblad  CFV-50c, CFV-100c, X2D-100c ;")
                     << i18n("Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;")
