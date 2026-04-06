@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-05 00:41+0000\n"
+"POT-Creation-Date: 2026-04-06 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3492,7 +3492,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -4534,7 +4534,7 @@ msgstr "이 열 삭제"
 msgid "Configure this column"
 msgstr "이 열 설정"
 
-#: core/app/views/utils/componentsinfodlg.cpp:80
+#: core/app/views/utils/componentsinfodlg.cpp:85
 #, fuzzy, kde-format
 #| msgctxt "unknown / invalid image dimension"
 #| msgid "Unknown"
@@ -4542,56 +4542,56 @@ msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/app/views/utils/componentsinfodlg.cpp:83
+#: core/app/views/utils/componentsinfodlg.cpp:88
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2"
 msgstr "LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:88
+#: core/app/views/utils/componentsinfodlg.cpp:93
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
 msgstr "LibGphoto2 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:88
-#: core/app/views/utils/componentsinfodlg.cpp:100
-#: core/app/views/utils/componentsinfodlg.cpp:112
-#: core/app/views/utils/componentsinfodlg.cpp:133
-#: core/app/views/utils/componentsinfodlg.cpp:145
-#: core/app/views/utils/componentsinfodlg.cpp:157
-#: core/app/views/utils/componentsinfodlg.cpp:169
-#: core/app/views/utils/componentsinfodlg.cpp:181
-#: core/app/views/utils/componentsinfodlg.cpp:203
+#: core/app/views/utils/componentsinfodlg.cpp:93
+#: core/app/views/utils/componentsinfodlg.cpp:105
+#: core/app/views/utils/componentsinfodlg.cpp:117
+#: core/app/views/utils/componentsinfodlg.cpp:142
+#: core/app/views/utils/componentsinfodlg.cpp:154
+#: core/app/views/utils/componentsinfodlg.cpp:166
+#: core/app/views/utils/componentsinfodlg.cpp:178
+#: core/app/views/utils/componentsinfodlg.cpp:190
+#: core/app/views/utils/componentsinfodlg.cpp:212
 #, fuzzy, kde-format
 #| msgid "No"
 msgctxt "@item: component info"
 msgid "No"
 msgstr "아니요"
 
-#: core/app/views/utils/componentsinfodlg.cpp:95
 #: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:105
 #, kde-format
 msgctxt "@item: component info"
 msgid "Baloo support"
 msgstr "Baloo 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:95
-#: core/app/views/utils/componentsinfodlg.cpp:107
-#: core/app/views/utils/componentsinfodlg.cpp:119
-#: core/app/views/utils/componentsinfodlg.cpp:140
-#: core/app/views/utils/componentsinfodlg.cpp:152
-#: core/app/views/utils/componentsinfodlg.cpp:164
-#: core/app/views/utils/componentsinfodlg.cpp:176
-#: core/app/views/utils/componentsinfodlg.cpp:202
+#: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:149
+#: core/app/views/utils/componentsinfodlg.cpp:161
+#: core/app/views/utils/componentsinfodlg.cpp:173
+#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:211
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@item: component info"
 msgid "Yes"
 msgstr "예"
 
-#: core/app/views/utils/componentsinfodlg.cpp:107
 #: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:117
 #, fuzzy, kde-format
 #| msgctxt "@item: component info"
 #| msgid "Baloo support"
@@ -4599,102 +4599,108 @@ msgctxt "@item: component info"
 msgid "AddressBook support"
 msgstr "Baloo 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:119
-#: core/app/views/utils/componentsinfodlg.cpp:133
+#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:142
 #, kde-format
 msgctxt "@item: component info"
 msgid "Media player support"
 msgstr "미디어 재생기 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:122
+#: core/app/views/utils/componentsinfodlg.cpp:127
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVFormat"
 msgstr "LibAVFormat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:125
+#: core/app/views/utils/componentsinfodlg.cpp:130
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVCodec"
 msgstr "LibAVCodec"
 
-#: core/app/views/utils/componentsinfodlg.cpp:128
+#: core/app/views/utils/componentsinfodlg.cpp:133
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVUtil"
 msgstr "LibAVUtil"
 
-#: core/app/views/utils/componentsinfodlg.cpp:140
-#: core/app/views/utils/componentsinfodlg.cpp:145
+#: core/app/views/utils/componentsinfodlg.cpp:136
+#, kde-format
+msgctxt "@item: component info"
+msgid "FFMpeg"
+msgstr ""
+
+#: core/app/views/utils/componentsinfodlg.cpp:149
+#: core/app/views/utils/componentsinfodlg.cpp:154
 #, kde-format
 msgctxt "@item: component info"
 msgid "DBus support"
 msgstr "DBus 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:152
-#: core/app/views/utils/componentsinfodlg.cpp:157
+#: core/app/views/utils/componentsinfodlg.cpp:161
+#: core/app/views/utils/componentsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component info"
 msgid "Panorama support"
 msgstr "파노라마 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:164
-#: core/app/views/utils/componentsinfodlg.cpp:169
+#: core/app/views/utils/componentsinfodlg.cpp:173
+#: core/app/views/utils/componentsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
 msgstr "HTML 갤러리 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:176
-#: core/app/views/utils/componentsinfodlg.cpp:181
+#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:190
 #, kde-format
 msgctxt "@item: component info"
 msgid "Calendar support"
 msgstr "달력 지원"
 
-#: core/app/views/utils/componentsinfodlg.cpp:186
+#: core/app/views/utils/componentsinfodlg.cpp:195
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibOpenCV"
 msgstr "LibOpenCV"
 
-#: core/app/views/utils/componentsinfodlg.cpp:193
+#: core/app/views/utils/componentsinfodlg.cpp:202
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
 msgstr ""
 
-#: core/app/views/utils/componentsinfodlg.cpp:198
+#: core/app/views/utils/componentsinfodlg.cpp:207
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database backend"
 msgstr "데이터베이스 백엔드"
 
-#: core/app/views/utils/componentsinfodlg.cpp:205
+#: core/app/views/utils/componentsinfodlg.cpp:214
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
 msgstr "데이터베이스 내부 서버"
 
-#: core/app/views/utils/componentsinfodlg.cpp:210
+#: core/app/views/utils/componentsinfodlg.cpp:219
 #, fuzzy, kde-format
 #| msgid "Camera Configuration"
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "카메라 설정"
 
-#: core/app/views/utils/componentsinfodlg.cpp:217
+#: core/app/views/utils/componentsinfodlg.cpp:226
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "비디오 코덱"
 
-#: core/app/views/utils/componentsinfodlg.cpp:231
-#: core/app/views/utils/componentsinfodlg.cpp:248
-#: core/app/views/utils/componentsinfodlg.cpp:268
-#: core/app/views/utils/componentsinfodlg.cpp:285
-#: core/app/views/utils/componentsinfodlg.cpp:303
+#: core/app/views/utils/componentsinfodlg.cpp:240
+#: core/app/views/utils/componentsinfodlg.cpp:257
+#: core/app/views/utils/componentsinfodlg.cpp:277
+#: core/app/views/utils/componentsinfodlg.cpp:294
+#: core/app/views/utils/componentsinfodlg.cpp:312
 #: core/libs/dialogs/libsinfodlg_opencv.cpp:69
 #: core/libs/dialogs/libsinfodlg_opencv.cpp:75
 #: core/libs/dialogs/libsinfodlg_opencv.cpp:150
@@ -4703,28 +4709,28 @@ msgstr "비디오 코덱"
 msgid "no entry"
 msgstr "국가:"
 
-#: core/app/views/utils/componentsinfodlg.cpp:234
+#: core/app/views/utils/componentsinfodlg.cpp:243
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "비디오 코덱"
 
-#: core/app/views/utils/componentsinfodlg.cpp:254
+#: core/app/views/utils/componentsinfodlg.cpp:263
 #, fuzzy, kde-format
 #| msgid "Audio Codec"
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "오디오 코덱"
 
-#: core/app/views/utils/componentsinfodlg.cpp:271
+#: core/app/views/utils/componentsinfodlg.cpp:280
 #, fuzzy, kde-format
 #| msgid "Audio Codec"
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "오디오 코덱"
 
-#: core/app/views/utils/componentsinfodlg.cpp:291
+#: core/app/views/utils/componentsinfodlg.cpp:300
 #, fuzzy, kde-format
 #| msgid "Unsupported file extension"
 msgctxt "@item: component info"

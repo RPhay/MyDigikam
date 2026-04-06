@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-05 00:41+0000\n"
+"POT-Creation-Date: 2026-04-06 00:41+0000\n"
 "PO-Revision-Date: 2026-04-01 17:38+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3575,9 +3575,13 @@ msgstr ""
 "%1\">400 تقرير مستخدم أغلقت على Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
+#| "which brings with it a variety of bug fixes and performance improvements "
+#| "(Qt5 only)."
 msgid ""
-"Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 which "
+"Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
@@ -4612,159 +4616,165 @@ msgstr "أزل هذا العمود"
 msgid "Configure this column"
 msgstr "اضبط هذا العمود"
 
-#: core/app/views/utils/componentsinfodlg.cpp:80
+#: core/app/views/utils/componentsinfodlg.cpp:85
 #, kde-format
 msgctxt "@item: component info"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/app/views/utils/componentsinfodlg.cpp:83
+#: core/app/views/utils/componentsinfodlg.cpp:88
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2"
 msgstr "LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:88
+#: core/app/views/utils/componentsinfodlg.cpp:93
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibGphoto2 support"
 msgstr "دعم LibGphoto2"
 
-#: core/app/views/utils/componentsinfodlg.cpp:88
-#: core/app/views/utils/componentsinfodlg.cpp:100
-#: core/app/views/utils/componentsinfodlg.cpp:112
-#: core/app/views/utils/componentsinfodlg.cpp:133
-#: core/app/views/utils/componentsinfodlg.cpp:145
-#: core/app/views/utils/componentsinfodlg.cpp:157
-#: core/app/views/utils/componentsinfodlg.cpp:169
-#: core/app/views/utils/componentsinfodlg.cpp:181
-#: core/app/views/utils/componentsinfodlg.cpp:203
+#: core/app/views/utils/componentsinfodlg.cpp:93
+#: core/app/views/utils/componentsinfodlg.cpp:105
+#: core/app/views/utils/componentsinfodlg.cpp:117
+#: core/app/views/utils/componentsinfodlg.cpp:142
+#: core/app/views/utils/componentsinfodlg.cpp:154
+#: core/app/views/utils/componentsinfodlg.cpp:166
+#: core/app/views/utils/componentsinfodlg.cpp:178
+#: core/app/views/utils/componentsinfodlg.cpp:190
+#: core/app/views/utils/componentsinfodlg.cpp:212
 #, kde-format
 msgctxt "@item: component info"
 msgid "No"
 msgstr "لا"
 
-#: core/app/views/utils/componentsinfodlg.cpp:95
 #: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:105
 #, kde-format
 msgctxt "@item: component info"
 msgid "Baloo support"
 msgstr "دعم Baloo"
 
-#: core/app/views/utils/componentsinfodlg.cpp:95
-#: core/app/views/utils/componentsinfodlg.cpp:107
-#: core/app/views/utils/componentsinfodlg.cpp:119
-#: core/app/views/utils/componentsinfodlg.cpp:140
-#: core/app/views/utils/componentsinfodlg.cpp:152
-#: core/app/views/utils/componentsinfodlg.cpp:164
-#: core/app/views/utils/componentsinfodlg.cpp:176
-#: core/app/views/utils/componentsinfodlg.cpp:202
+#: core/app/views/utils/componentsinfodlg.cpp:100
+#: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:149
+#: core/app/views/utils/componentsinfodlg.cpp:161
+#: core/app/views/utils/componentsinfodlg.cpp:173
+#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:211
 #, kde-format
 msgctxt "@item: component info"
 msgid "Yes"
 msgstr "نعم"
 
-#: core/app/views/utils/componentsinfodlg.cpp:107
 #: core/app/views/utils/componentsinfodlg.cpp:112
+#: core/app/views/utils/componentsinfodlg.cpp:117
 #, kde-format
 msgctxt "@item: component info"
 msgid "AddressBook support"
 msgstr "دعم دفتر العناوين"
 
-#: core/app/views/utils/componentsinfodlg.cpp:119
-#: core/app/views/utils/componentsinfodlg.cpp:133
+#: core/app/views/utils/componentsinfodlg.cpp:124
+#: core/app/views/utils/componentsinfodlg.cpp:142
 #, kde-format
 msgctxt "@item: component info"
 msgid "Media player support"
 msgstr "دعم مشغل الوسائط"
 
-#: core/app/views/utils/componentsinfodlg.cpp:122
+#: core/app/views/utils/componentsinfodlg.cpp:127
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVFormat"
 msgstr "LibAVFormat"
 
-#: core/app/views/utils/componentsinfodlg.cpp:125
+#: core/app/views/utils/componentsinfodlg.cpp:130
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVCodec"
 msgstr "LibAVCodec"
 
-#: core/app/views/utils/componentsinfodlg.cpp:128
+#: core/app/views/utils/componentsinfodlg.cpp:133
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibAVUtil"
 msgstr "LibAVUtil"
 
-#: core/app/views/utils/componentsinfodlg.cpp:140
-#: core/app/views/utils/componentsinfodlg.cpp:145
+#: core/app/views/utils/componentsinfodlg.cpp:136
+#, kde-format
+msgctxt "@item: component info"
+msgid "FFMpeg"
+msgstr ""
+
+#: core/app/views/utils/componentsinfodlg.cpp:149
+#: core/app/views/utils/componentsinfodlg.cpp:154
 #, kde-format
 msgctxt "@item: component info"
 msgid "DBus support"
 msgstr "دعم DBus"
 
-#: core/app/views/utils/componentsinfodlg.cpp:152
-#: core/app/views/utils/componentsinfodlg.cpp:157
+#: core/app/views/utils/componentsinfodlg.cpp:161
+#: core/app/views/utils/componentsinfodlg.cpp:166
 #, kde-format
 msgctxt "@item: component info"
 msgid "Panorama support"
 msgstr "دعم البانوراما"
 
-#: core/app/views/utils/componentsinfodlg.cpp:164
-#: core/app/views/utils/componentsinfodlg.cpp:169
+#: core/app/views/utils/componentsinfodlg.cpp:173
+#: core/app/views/utils/componentsinfodlg.cpp:178
 #, kde-format
 msgctxt "@item: component info"
 msgid "HTML Gallery support"
 msgstr "دعم معرض HTML"
 
-#: core/app/views/utils/componentsinfodlg.cpp:176
-#: core/app/views/utils/componentsinfodlg.cpp:181
+#: core/app/views/utils/componentsinfodlg.cpp:185
+#: core/app/views/utils/componentsinfodlg.cpp:190
 #, kde-format
 msgctxt "@item: component info"
 msgid "Calendar support"
 msgstr "دعم التقويم"
 
-#: core/app/views/utils/componentsinfodlg.cpp:186
+#: core/app/views/utils/componentsinfodlg.cpp:195
 #, kde-format
 msgctxt "@item: component info"
 msgid "LibOpenCV"
 msgstr "LibOpenCV"
 
-#: core/app/views/utils/componentsinfodlg.cpp:193
+#: core/app/views/utils/componentsinfodlg.cpp:202
 #, kde-format
 msgctxt "@item: component info"
 msgid "Qt Sql drivers"
 msgstr "مشغلات Qt Sql"
 
-#: core/app/views/utils/componentsinfodlg.cpp:198
+#: core/app/views/utils/componentsinfodlg.cpp:207
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database backend"
 msgstr "سند قاعدة البيانات"
 
-#: core/app/views/utils/componentsinfodlg.cpp:205
+#: core/app/views/utils/componentsinfodlg.cpp:214
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
 msgstr "خطأ داخليّ بقاعدة البيانات"
 
-#: core/app/views/utils/componentsinfodlg.cpp:210
+#: core/app/views/utils/componentsinfodlg.cpp:219
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFmpeg Configuration"
 msgstr "إعدادات FFmpeg"
 
-#: core/app/views/utils/componentsinfodlg.cpp:217
+#: core/app/views/utils/componentsinfodlg.cpp:226
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Decoders"
 msgstr "مرماز الفيديو"
 
-#: core/app/views/utils/componentsinfodlg.cpp:231
-#: core/app/views/utils/componentsinfodlg.cpp:248
-#: core/app/views/utils/componentsinfodlg.cpp:268
-#: core/app/views/utils/componentsinfodlg.cpp:285
-#: core/app/views/utils/componentsinfodlg.cpp:303
+#: core/app/views/utils/componentsinfodlg.cpp:240
+#: core/app/views/utils/componentsinfodlg.cpp:257
+#: core/app/views/utils/componentsinfodlg.cpp:277
+#: core/app/views/utils/componentsinfodlg.cpp:294
+#: core/app/views/utils/componentsinfodlg.cpp:312
 #: core/libs/dialogs/libsinfodlg_opencv.cpp:69
 #: core/libs/dialogs/libsinfodlg_opencv.cpp:75
 #: core/libs/dialogs/libsinfodlg_opencv.cpp:150
@@ -4772,25 +4782,25 @@ msgstr "مرماز الفيديو"
 msgid "no entry"
 msgstr "ممنوع الدخول"
 
-#: core/app/views/utils/componentsinfodlg.cpp:234
+#: core/app/views/utils/componentsinfodlg.cpp:243
 #, kde-format
 msgctxt "@item: component info"
 msgid "Video Encoders"
 msgstr "مكودات الفيديو"
 
-#: core/app/views/utils/componentsinfodlg.cpp:254
+#: core/app/views/utils/componentsinfodlg.cpp:263
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Decoders"
 msgstr "فك ترميز الصوت"
 
-#: core/app/views/utils/componentsinfodlg.cpp:271
+#: core/app/views/utils/componentsinfodlg.cpp:280
 #, kde-format
 msgctxt "@item: component info"
 msgid "Audio Encoders"
 msgstr "نظام ترميز الصوت"
 
-#: core/app/views/utils/componentsinfodlg.cpp:291
+#: core/app/views/utils/componentsinfodlg.cpp:300
 #, kde-format
 msgctxt "@item: component info"
 msgid "Supported Extensions"
@@ -17095,13 +17105,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Welcome to Stacked Images Tool"
-msgstr "مرحباً بك في أداة الصور المكدسة"
+msgstr "مرحبًا بك في أداة الصور المكدسة"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:72
 #, kde-format
 msgctxt "@info"
 msgid "Welcome to Stacked Images Tool"
-msgstr "مرحباً بك في أداة الصور المكدسة"
+msgstr "مرحبًا بك في أداة الصور المكدسة"
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:73
 #, kde-format
@@ -17712,7 +17722,7 @@ msgid ""
 "en.wikipedia.org/wiki/HTML'>HTML and CSS standards</a></p><p>and the output "
 "can be customized with a nice theme.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>مرحباً بك في أداة معرض HTML</b></h1></p><p>سيُرشدك هذا المساعد "
+"<qt><p><h1><b>مرحبًا بك في أداة معرض HTML</b></h1></p><p>سيُرشدك هذا المساعد "
 "لتصدير صورك بسرعة</p><p></p><p>بشكل معرض صور HTML ثابت صغير.</p><p>هذه "
 "الأداة متوافقة تمامًا مع <a href='https://en.wikipedia.org/wiki/HTML'>معايير "
 "HTML وCSS</a></p><p>ويمكن تخصيص الناتج بسمة جميلة.</p></qt>"
@@ -17819,7 +17829,7 @@ msgstr "أنشئ معرض HTML"
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
-msgstr "مرحباً بك في أداة معرض HTML"
+msgstr "مرحبًا بك في أداة معرض HTML"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
@@ -17936,7 +17946,7 @@ msgid ""
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
-"<qt><p><h1><b>مرحباً بك في أداة تصدير jAlbum</b></h1></p><p>سيُرشدك هذا "
+"<qt><p><h1><b>مرحبًا بك في أداة تصدير jAlbum</b></h1></p><p>سيُرشدك هذا "
 "المساعد لتصدير صورك بسرعة</p><p></p><p>كمشروع jAlbum.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
@@ -17975,7 +17985,7 @@ msgstr "أنشئ ألبوم jAlbum"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:76
 #, kde-format
 msgid "Welcome to jAlbum Export Tool"
-msgstr "مرحباً بك في أداة تصدير jAlbum"
+msgstr "مرحبًا بك في أداة تصدير jAlbum"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:78
 #, kde-format
