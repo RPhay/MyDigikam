@@ -103,7 +103,7 @@ BUGFIXES:
 069 --> 518318 - Crash in QToolBar::widgetForAction during cleanupActions() on Fedora 43 (Qt 6.10.2).
 070 --> 518518 - After opening digiKam and connecting Bluetooth headphones, you'll need to restart the application for it to recognize the headphones.
 071 --> 518587 - Migration from a PC to another one.
-072 --> 
+072 --> 518612 - Face detection fails on low-resolution (300x300px) images.
 073 --> 
 074 --> 
 075 --> 
