@@ -416,6 +416,7 @@ void AdvancedRenameInput::readSettings()
     KConfigGroup group         = config->group(d->configGroupName);
     QStringList patternHistory = group.readEntry(d->configPatternHistoryListEntry, QStringList());
     patternHistory.removeAll(QLatin1String(""));
+    patternHistory.removeDuplicates();
     addItems(patternHistory);
     d->lineEdit->clear();
     setCurrentIndex(-1);
@@ -430,10 +431,19 @@ void AdvancedRenameInput::writeSettings()
     // remove duplicate entries and save pattern history, omit empty strings
 
     QString pattern = d->lineEdit->toPlainText();
-    patternHistory.removeAll(pattern);
     patternHistory.removeAll(QLatin1String(""));
+    patternHistory.removeAll(pattern);
+    patternHistory.removeDuplicates();
     patternHistory.prepend(pattern);
-    group.writeEntry(d->configPatternHistoryListEntry, patternHistory);
+
+    QStringList writeHistory;
+
+    for (int i = 0 ; i < qMin(patternHistory.size(), d->maxHistoryItems) ; ++i)
+    {
+        writeHistory << patternHistory.at(i);
+    }
+
+    group.writeEntry(d->configPatternHistoryListEntry, writeHistory);
 }
 
 } // namespace Digikam
