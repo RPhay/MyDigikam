@@ -30,8 +30,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:41+0000\n"
-"PO-Revision-Date: 2026-03-31 07:13+0000\n"
+"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"PO-Revision-Date: 2026-04-06 13:17+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3503,17 +3503,13 @@ msgstr ""
 "%1\">400 villuskýrslum notenda</a> lokað á bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Innri QtAVPlayer hefur verið uppfærður í nýjustu frumútgáfuna 2026-01-24 sem "
+"Innri QtAVPlayer hefur verið uppfærður í nýjustu frumútgáfuna 2026-04-05 sem "
 "tekur með ýmsar villuleiðréttingar og bætingar á afköstum (einungis fyrir "
 "Qt5)."
 
@@ -3802,8 +3798,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-26."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -3812,10 +3809,13 @@ msgid "New RAW camera supported:"
 msgstr "Nýjar RAW-myndavélar:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra ;"
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra ;"
@@ -4619,7 +4619,7 @@ msgstr "LibAVUtil"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFMpeg"
-msgstr ""
+msgstr "FFMpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:149
 #: core/app/views/utils/componentsinfodlg.cpp:154

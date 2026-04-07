@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:41+0000\n"
+"POT-Creation-Date: 2026-04-07 00:41+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -3834,7 +3834,7 @@ msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -3846,7 +3846,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 
 #: core/app/views/stack/welcomepageview_features.cpp:94

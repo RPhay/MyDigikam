@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:41+0000\n"
+"POT-Creation-Date: 2026-04-07 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3419,18 +3419,12 @@ msgstr ""
 "%1\">400 个用户报告的程序缺陷</a>。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"内建的 QtAVPlayer 已升级到最新的上游版本 2026-01-24，这将带来大量程序缺陷修复"
-"和性能增强 (仅限 Qt5)。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
@@ -3709,8 +3703,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "新增在数据库中搜索最近修改过的项目的能力。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr "更新内建 RAW 引擎到最新版本的 Libraw 快照版本 2026-03-26。"
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -3719,10 +3714,13 @@ msgid "New RAW camera supported:"
 msgstr "新增数码相机 RAW 格式支持："
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra ;"
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "佳能 EOS R1、EOS R5 Mark II、EOS R5 C、EOS R6 Mark II、EOS R8、EOS R50、EOS "
 "R100、EOS Ra；"
