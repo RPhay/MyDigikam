@@ -56,7 +56,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:41+0000\n"
+"POT-Creation-Date: 2026-04-07 00:41+0000\n"
 "PO-Revision-Date: 2026-04-03 19:52+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -3971,8 +3971,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Добавлена поддержка поиска недавно изменённых элементов в базе данных."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, fuzzy, kde-format
+#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
 "Внутренний модуль для обработки RAW-изображений обновлён до последней версии "
 "Libraw от 26.03.2026;"
@@ -3983,10 +3984,13 @@ msgid "New RAW camera supported:"
 msgstr "Поддержка «цифровых негативов» новых моделей камер:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+#| "EOS R100, EOS Ra ;"
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra;"

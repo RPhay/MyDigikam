@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-06 00:41+0000\n"
-"PO-Revision-Date: 2026-03-31 13:01+0200\n"
+"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"PO-Revision-Date: 2026-04-07 08:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2753,7 +2753,7 @@ msgstr "Detecta i obri automàticament una càmera gphoto2 connectada"
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
-"Inicia digiKam amb el fitxer de base de dades SQLite trobat en el directori "
+"Inicia digiKam amb el fitxer de base de dades SQLite trobat a la carpeta "
 "«dir»"
 
 #: core/app/main/main.cpp:266
@@ -2792,8 +2792,7 @@ msgid ""
 "written to.</p>"
 msgstr ""
 "<p>El camí indicat per al fitxer de configuració no és vàlid. O no existix "
-"el seu directori superior, o és un directori, o no es pot llegir/escriure.</"
-"p>"
+"la seua carpeta pare, o és una carpeta, o no es pot llegir/escriure.</p>"
 
 #: core/app/utils/digikam_globals.cpp:123
 #, kde-format
@@ -3512,17 +3511,13 @@ msgstr ""
 "%1\">400 informes d'usuari</a> a Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"QtAVPlayer intern s'ha actualitzat a l'última branca principal 2026-01-24 "
+"QtAVPlayer intern s'ha actualitzat a l'última branca principal 2026-04-05 "
 "que porta amb si una diversitat d'esmenes d'errors i millores de rendiment "
 "(només les Qt5)."
 
@@ -3550,7 +3545,7 @@ msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
 "Afig la implementació de comodins d'expressió regular per a la configuració "
-"de directoris ignorats."
+"de les carpetes ignorades."
 
 #: core/app/views/stack/welcomepageview_features.cpp:31
 #, kde-format
@@ -3875,10 +3870,10 @@ msgstr ""
 # skip-rule: kct-snapshot
 #: core/app/views/stack/welcomepageview_features.cpp:90
 #, kde-format
-msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
 "Actualitzar el motor RAW intern a l'última instantània de la Libraw "
-"2036-03-26."
+"2046-04-06."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -3889,10 +3884,10 @@ msgstr "Implementades càmeres RAW noves:"
 #, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
@@ -4693,7 +4688,7 @@ msgstr "LibAVUtil"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFMpeg"
-msgstr ""
+msgstr "FFmpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:149
 #: core/app/views/utils/componentsinfodlg.cpp:154
@@ -12224,12 +12219,12 @@ msgstr "No s'ha pogut obrir el fitxer per a escriptura"
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:507
 #, kde-format
 msgid "Move %1 to final directory %2"
-msgstr "Mou %1 al directori final %2"
+msgstr "Mou %1 a la carpeta final %2"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:511
 #, kde-format
 msgid "Cannot move data to destination directory"
-msgstr "No s'han pogut moure les dades cap al directori de destinació"
+msgstr "No s'han pogut moure les dades cap a la carpeta de destinació"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlexport.cpp:521
 #, kde-format
@@ -12329,13 +12324,13 @@ msgstr ""
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:100
 #, kde-format
 msgid "Destination Directory:"
-msgstr "Directori de destinació:"
+msgstr "Carpeta de destinació:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Select a Directory in Which to Save the KML File and Pictures"
-msgstr "Trieu un directori on guardar el fitxer KML i les imatges"
+msgstr "Trieu una carpeta on guardar el fitxer KML i les imatges"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:107
 #, kde-format
@@ -14100,25 +14095,25 @@ msgstr "Ombra"
 #, kde-format
 msgctxt "light source"
 msgid "Daylight fluorescent (D 5700 - 7100K)"
-msgstr "Fluorescent amb llum de dia (D 5700 – 7100K)"
+msgstr "Fluorescent amb llum de dia (D 5700 – 7100 K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:140
 #, kde-format
 msgctxt "light source"
 msgid "Day white fluorescent (N 4600 - 5400K)"
-msgstr "Fluorescent blanc de llum de dia (N 4600 – 5400K)"
+msgstr "Fluorescent blanc de llum de dia (N 4600 – 5400 K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:141
 #, kde-format
 msgctxt "light source"
 msgid "Cool white fluorescent (W 3900 - 4500K)"
-msgstr "Fluorescent blanc fred (W 3900 – 4500K)"
+msgstr "Fluorescent blanc fred (W 3900 – 4500 K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:142
 #, kde-format
 msgctxt "light source"
 msgid "White fluorescent (WW 3200 - 3700K)"
-msgstr "Fluorescent blanc (WW 3200 – 3700K)"
+msgstr "Fluorescent blanc (WW 3200 – 3700 K)"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:143
 #, kde-format
@@ -17728,7 +17723,7 @@ msgstr "No s'ha pogut trobar el tema a «%1»"
 #, kde-format
 msgctxt "@info"
 msgid "Create directories"
-msgstr "Crea directoris"
+msgstr "Crea les carpetes"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:114
 #, kde-format
@@ -18020,7 +18015,7 @@ msgstr "%1 elements que s'han de processar"
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumfinalpage.cpp:137
 #, kde-format
 msgid "Output directory: %1"
-msgstr "Directori d'eixida: %1"
+msgstr "Carpeta d'eixida: %1"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlfinalpage.cpp:156
 #, kde-format
@@ -18241,7 +18236,7 @@ msgstr "Generació de la galeria"
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:76
 #, kde-format
 msgid "Create directories"
-msgstr "Crea directoris"
+msgstr "Crea les carpetes"
 
 #: core/dplugins/generic/tools/jalbum/generator/jalbumgenerator.cpp:80
 #, kde-format
@@ -19388,13 +19383,13 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
-msgstr "El fitxer PTO ja s'ha creat en el directori temporal."
+msgstr "El fitxer PTO ja s'ha creat a la carpeta temporal."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
-msgstr "El fitxer PTO no s'ha pogut crear en el directori temporal."
+msgstr "El fitxer PTO no s'ha pogut crear a la carpeta temporal."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
@@ -19681,7 +19676,7 @@ msgstr "Felicitats. Les imatges s'han unit en un panorama."
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
-msgstr "El panorama es crearà en el directori:"
+msgstr "El panorama es crearà a la carpeta:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
 #, kde-format
@@ -20468,7 +20463,7 @@ msgstr "El procés d'impressió s'ha completat."
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:233
 #, kde-format
 msgid "Open destination directory in file-browser."
-msgstr "Obri el directori de destinació en el gestor de fitxers."
+msgstr "Obri la carpeta de destinació en el gestor de fitxers."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintfinalpage.cpp:255
 #, kde-format
@@ -20681,7 +20676,7 @@ msgstr "No s'ha pogut guardar la imatge redimensionada (PNG). S'interromp."
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:109
 #, kde-format
 msgid "Cannot create a temporary directory"
-msgstr "No s'ha pogut crear un directori temporal"
+msgstr "No s'ha pogut crear una carpeta temporal"
 
 #: core/dplugins/generic/tools/sendbymail/manager/mailprocess.cpp:170
 #, kde-format
@@ -27436,7 +27431,7 @@ msgstr "Busques"
 #: core/libs/album/manager/albummanager_database.cpp:111
 #, kde-format
 msgid "The MySQL database directory was not found."
-msgstr "No s'ha trobat el directori de la base de dades MySQL."
+msgstr "No s'ha trobat la carpeta de la base de dades MySQL."
 
 #: core/libs/album/manager/albummanager_database.cpp:128
 #, kde-format
@@ -27776,7 +27771,7 @@ msgstr "Ja hi ha un àlbum amb el mateix nom."
 #: core/libs/album/manager/albummanager_palbum.cpp:426
 #, kde-format
 msgid "Failed to create directory '%1'"
-msgstr "Ha fallat mentre es creava el directori «%1»"
+msgstr "Ha fallat mentre es creava la carpeta «%1»"
 
 #: core/libs/album/manager/albummanager_palbum.cpp:435
 #, kde-format
@@ -28518,7 +28513,7 @@ msgid ""
 msgstr ""
 "Este és un CD/DVD que s'identificarà amb l'etiqueta que heu indicat en "
 "l'aplicació de gravació de CD. Ja hi ha una altra entrada amb la mateixa "
-"etiqueta. Els dos es distingiran pels fitxers del directori principal, de "
+"etiqueta. Els dos es distingiran pels fitxers de la carpeta principal, de "
 "manera que no annexeu fitxers al CD, o no es reconeixerà. En el futur, "
 "establiu una etiqueta inequívoca en els CD i DVD si teniu la intenció "
 "d'utilitzar-los amb digiKam."
@@ -28755,7 +28750,7 @@ msgstr ""
 "El procés d'actualització de l'esquema de la versió 4 a la 6 ha fallat, "
 "causat per un error inesperat. Podeu intentar descartar la base de dades "
 "antiga i començar amb una de buida. En este cas, moveu els fitxers de base "
-"de dades «%1» i «%2» del directori «%3». Molt probablement voldreu informar "
+"de dades «%1» i «%2» de la carpeta «%3». Molt probablement voldreu informar "
 "d'este error a la llista de correu dels desenvolupadors de digiKam (vegeu "
 "www.digikam.org/support). També, doneu una ullada als missatges de digiKam "
 "en la consola. "
@@ -29143,7 +29138,7 @@ msgstr ""
 #: core/libs/database/server/databaseserver.cpp:353
 #, kde-format
 msgid "Cannot create directory %1"
-msgstr "No s'ha pogut crear el directori %1"
+msgstr "No s'ha pogut crear la carpeta %1"
 
 #: core/libs/database/server/databaseserver.cpp:436
 #, kde-format
@@ -43075,7 +43070,7 @@ msgstr "S'ha fet la generació dels fotogrames a partir de %1"
 #: core/libs/video/manager/vidslidethread.cpp:63
 #, kde-format
 msgid "Error while creating temporary directory %1!"
-msgstr "S'ha produït un error mentre es creava el directori temporal %1!"
+msgstr "S'ha produït un error mentre es creava la carpeta temporal %1!"
 
 #: core/libs/video/manager/vidslidethread.cpp:95
 #, kde-format
@@ -50400,7 +50395,7 @@ msgstr "Ves fins a l'inici"
 #, kde-format
 msgctxt "@info"
 msgid "Go to home directory"
-msgstr "Torna al directori d'inici"
+msgstr "Torna a la carpeta d'inici"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:176
 #, kde-format
@@ -53089,17 +53084,17 @@ msgstr "Format:"
 #, kde-format
 msgctxt "renaming option for directory related information"
 msgid "Directory"
-msgstr "Directori"
+msgstr "Carpeta"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:33
 #, kde-format
 msgid "Add the directory name"
-msgstr "Afig el nom del directori"
+msgstr "Afig el nom de la carpeta"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:36
 #, kde-format
 msgid "Directory name"
-msgstr "Nom del directori"
+msgstr "Nom de la carpeta"
 
 #: core/utilities/advancedrename/parser/options/directorynameoption.cpp:37
 #, kde-format
@@ -53107,8 +53102,8 @@ msgid ""
 "Name of the parent directory, additional '.' characters move up in the "
 "directory hierarchy"
 msgstr ""
-"Nom del directori del pare, els caràcters «.» addicionals mouen cap amunt en "
-"la jerarquia de directoris"
+"Nom de la carpeta pare, els caràcters «.» addicionals mouen cap amunt en la "
+"jerarquia de carpetes"
 
 #: core/utilities/advancedrename/parser/options/filepropertiesoption.cpp:41
 #, kde-format
@@ -60419,8 +60414,8 @@ msgid ""
 "Directories: \"%6\"<br><br>"
 msgstr ""
 "Miniatures: «%1»<br>Captura d'imatges: «%2»<br>Suprimiu els elements: "
-"«%3»<br>Càrrega d'elements: «%4»<br>Creació de directoris: «%5»<br>Suprimiu "
-"els directoris: «%6»<br><br>"
+"«%3»<br>Càrrega d'elements: «%4»<br>Creació de carpetes: «%5»<br>Supressió "
+"de carpetes: «%6»<br><br>"
 
 #: core/utilities/import/backend/gpcamera.cpp:1629
 #: core/utilities/import/backend/gpcamera.cpp:1630
@@ -60472,8 +60467,8 @@ msgid ""
 "directories: \"%6\"<br><br>"
 msgstr ""
 "Miniatures: «%1»<br>Captura d'imatges: «%2»<br>Suprimiu els elements: "
-"«%3»<br>Càrrega d'elements: «%4»<br>Creació de directoris: «%5»<br>Suprimiu "
-"els directoris: «%6»<br><br>"
+"«%3»<br>Càrrega d'elements: «%4»<br>Creació de carpetes: «%5»<br>Supressió "
+"de carpetes: «%6»<br><br>"
 
 #: core/utilities/import/backend/umscamera.cpp:603
 #: core/utilities/import/backend/umscamera.cpp:604
@@ -65796,17 +65791,17 @@ msgid ""
 "supported.</p><p>To re-include directories that are ignored by default "
 "prefix it with a minus, e.g. -@eaDir.</p>"
 msgstr ""
-"<p>Establiu els noms dels directoris que voleu ignorar de les col·leccions "
+"<p>Establiu els noms de les carpetes que voleu ignorar de les col·leccions "
 "de fotografies. Els noms distingixen entre majúscules i minúscules, i s'han "
 "de separar per punt i coma.</p><p>Açò és útil, per exemple, quan es vol "
 "emmagatzemar les fotografies en un NAS («Network Attached Storage», "
-"Emmagatzematge adjunt de xarxa) de Synology. El sistema crea a cada "
-"directori un subdirectori @eaDir per a emmagatzemar les miniatures. Per a "
-"evitar que digiKam inserisca la fotografia original i la seua miniatura "
-"corresponent dues vegades, el @eaDir s'ignorarà de manera predeterminada.</"
-"p><p>S'admeten els caràcters de comodí com «*» o «?».</p><p>Per a tornar a "
-"incloure els directoris que s'ignoren de manera predeterminada, poseu-hi un "
-"menys al davant, p. ex., -@eaDir.</p>"
+"Emmagatzematge adjunt de xarxa) de Synology. El sistema crea a cada carpeta "
+"una subcarpeta @eaDir per a emmagatzemar les miniatures. Per a evitar que "
+"digiKam inserisca la fotografia original i la seua miniatura corresponent "
+"dues vegades, el @eaDir s'ignorarà de manera predeterminada.</p><p>S'admeten "
+"els caràcters de comodí com «*» o «?».</p><p>Per a tornar a incloure les "
+"carpetes que s'ignoren de manera predeterminada, poseu-hi un menys al "
+"davant, p. ex., -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
@@ -65814,7 +65809,7 @@ msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr ""
-"Directoris addicionals que s'han d'ignorar (<a href='image'>directoris "
+"Carpetes addicionals que s'han d'ignorar (<a href='image'>directoris "
 "actualment ignorats</a>):"
 
 #: core/utilities/setup/collections/setupcollections.cpp:160
@@ -65822,13 +65817,13 @@ msgstr ""
 msgid ""
 "Enter directories that you want to ignore from adding to your collections."
 msgstr ""
-"Introduïu els directoris que voleu ignorar per a afegir a les col·leccions."
+"Introduïu les carpetes que voleu ignorar per a afegir-les a les col·leccions."
 
 #: core/utilities/setup/collections/setupcollections.cpp:176
 #, kde-format
 msgctxt "@title:tab"
 msgid "Ignored Directories"
-msgstr "Directoris ignorats"
+msgstr "Carpetes ignorades"
 
 #: core/utilities/setup/collections/setupcollections.cpp:247
 #, kde-format
@@ -65836,7 +65831,7 @@ msgid ""
 "<p>Directories starting with a dot are ignored by default.<br> <code>%1</"
 "code></p>"
 msgstr ""
-"<p>Els directoris que comencen amb un punt s'ignoren de manera "
+"<p>Les carpetes que comencen amb un punt s'ignoraran de manera "
 "predeterminada.<br> <code>%1</code></p>"
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:107
@@ -66041,7 +66036,7 @@ msgstr "Baixada dels fitxers de model necessaris"
 #, kde-format
 msgid "Open local directory used for the data files storage."
 msgstr ""
-"Obri el directori local utilitzat per a l'emmagatzematge de fitxers de dades."
+"Obri la carpeta local emprada per a l'emmagatzematge de fitxers de dades."
 
 #: core/utilities/setup/downloader/filesdownloader_helpers.cpp:66
 #, kde-format
@@ -67001,7 +66996,7 @@ msgid ""
 msgstr ""
 "<p>digiKam busca perfils ICC en les carpetes predeterminades del sistema i "
 "en porta uns quants de seleccionats. Emmagatzema tots els vostres perfils de "
-"color addicionals en el directori establit ací.</p>"
+"color addicionals a la carpeta establida ací.</p>"
 
 #: core/utilities/setup/icc/setupicc.cpp:348
 #, kde-format
