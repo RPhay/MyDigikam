@@ -218,14 +218,17 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
 {
     QScopedPointer<DMetadata> meta(new DMetadata);
 
+    if (d->settings.metadataSource != TimeAdjustContainer::XMPCREATED)
+    {
+        meta->setUseXMPSidecar4Reading(false);
+    }
+
     if (!meta->load(url.toLocalFile(), true))
     {
         return QDateTime();
     }
 
     QDateTime dateTime;
-    QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-    QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
     switch (d->settings.metadataSource)
     {
@@ -238,21 +241,21 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
         case TimeAdjustContainer::EXIFCREATED:
         {
             dateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
-                                             exifDateTimeFormat);
+                                             Qt::ISODate);
             break;
         }
 
         case TimeAdjustContainer::EXIFORIGINAL:
         {
             dateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
-                                             exifDateTimeFormat);
+                                             Qt::ISODate);
             break;
         }
 
         case TimeAdjustContainer::EXIFDIGITIZED:
         {
             dateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
-                                             exifDateTimeFormat);
+                                             Qt::ISODate);
             break;
         }
 
@@ -270,7 +273,8 @@ QDateTime TimeAdjustThread::readMetadataTimestamp(const QUrl& url) const
         case TimeAdjustContainer::XMPCREATED:
         {
             dateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
-                                             xmpDateTimeFormat);
+                                             Qt::ISODate);
+
             break;
         }
 

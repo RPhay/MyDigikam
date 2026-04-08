@@ -100,7 +100,7 @@ BUGFIXES:
 072 --> 518612 - Face detection fails on low-resolution (300x300px) images.
 073 --> 518662 - "Delete permanently" with Shift+Del now focus on Cancel button then Delete button as before.
 074 --> 518660 - Combobox history of used renames is empty in 9.0.0 but shown in 8.8.0.
-075 --> 
+075 --> 518687 - Time Adjust "EXIF: original" uses old XMP CreateDate/DateCreated instead of Xmp.exif.DateTimeOriginal.
 076 --> 
 077 --> 
 078 --> 

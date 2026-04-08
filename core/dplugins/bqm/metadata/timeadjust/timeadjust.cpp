@@ -153,21 +153,10 @@ void TimeAdjust::slotSettingsChanged()
 
 bool TimeAdjust::toolOperations()
 {
-    bool metaLoadState = true;
-    QScopedPointer<DMetadata> meta(new DMetadata);
-
-    if (image().isNull())
-    {
-        metaLoadState = meta->load(inputUrl().toLocalFile());
-    }
-    else
-    {
-        meta->setData(image().getMetadata());
-    }
+    bool metaLoadState                 = true;
+    bool metadataChanged               = false;
 
     TimeAdjustContainer prm;
-
-    bool metadataChanged               = false;
 
     prm.customDate                     = settings().value(QLatin1String("Custom Date")).toDateTime();
     prm.customTime                     = settings().value(QLatin1String("Custom Time")).toDateTime();
@@ -189,6 +178,22 @@ bool TimeAdjust::toolOperations()
     prm.dateSource                     = settings().value(QLatin1String("Use Timestamp Type")).toInt();
     prm.metadataSource                 = settings().value(QLatin1String("Meta Timestamp Type")).toInt();
     prm.fileDateSource                 = settings().value(QLatin1String("File Timestamp Type")).toInt();
+
+    QScopedPointer<DMetadata> meta(new DMetadata);
+
+    if (prm.metadataSource != TimeAdjustContainer::XMPCREATED)
+    {
+        meta->setUseXMPSidecar4Reading(false);
+    }
+
+    if (image().isNull())
+    {
+        metaLoadState = meta->load(inputUrl().toLocalFile());
+    }
+    else
+    {
+        meta->setData(image().getMetadata());
+    }
 
     QString exifDateTimeFormat         = QLatin1String("yyyy:MM:dd hh:mm:ss");
     QString xmpDateTimeFormat          = QLatin1String("yyyy-MM-ddThh:mm:ss");
@@ -213,21 +218,21 @@ bool TimeAdjust::toolOperations()
                 case TimeAdjustContainer::EXIFCREATED:
                 {
                     orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Image.DateTime"),
-                                                        exifDateTimeFormat);
+                                                        Qt::ISODate);
                     break;
                 }
 
                 case TimeAdjustContainer::EXIFORIGINAL:
                 {
                     orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeOriginal"),
-                                                        exifDateTimeFormat);
+                                                        Qt::ISODate);
                     break;
                 }
 
                 case TimeAdjustContainer::EXIFDIGITIZED:
                 {
                     orgDateTime = QDateTime::fromString(meta->getExifTagString("Exif.Photo.DateTimeDigitized"),
-                                                        exifDateTimeFormat);
+                                                        Qt::ISODate);
                     break;
                 }
 
@@ -243,7 +248,7 @@ bool TimeAdjust::toolOperations()
                 case TimeAdjustContainer::XMPCREATED:
                 {
                     orgDateTime = QDateTime::fromString(meta->getXmpTagString("Xmp.xmp.CreateDate"),
-                                                        xmpDateTimeFormat);
+                                                        Qt::ISODate);
                     break;
                 }
 
