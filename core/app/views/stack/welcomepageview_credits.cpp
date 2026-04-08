@@ -48,23 +48,23 @@ QString WelcomePageView::creditsTabContent()  const
                 "</table>")
 
         .arg(i18n("Author:"))
-        .arg(QString::fromUtf8("Andreas K. Huettel"))
+        .arg(QString::fromUtf8("Fabien Crespel"))
 
         .arg(i18n("Location:"))
         .arg(QString::fromUtf8("<a href=\""
-                                    "https://en.wikipedia.org/wiki/Kjem%C3%A5vatnet"
+                                    "https://en.wikipedia.org/wiki/Lac_de_Roy"
                                "\">"
-                                    "Kjemåvatnet - Nordland county - Norway."
+                                    "Lake of Roy, Haute-Savoie, Alps, France."
                                "</a>"))
 
         .arg(i18n("Date:"))
-        .arg(QString::fromUtf8("August 2020"))
+        .arg(QString::fromUtf8("August 2024"))
 
         .arg(i18n("Camera:"))
-        .arg(QString::fromUtf8("Canon EOS 7D Mark II"))
+        .arg(QString::fromUtf8("Sony ILCA-68"))
 
         .arg(i18n("Lens:"))
-        .arg(QString::fromUtf8("Sigma 18-250mm f/3.5-6.3 DC OS HSM"))
+        .arg(QString::fromUtf8("24-105mm f/3.5-4.5"))
     ;
 
     return creditsTab;
