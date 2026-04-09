@@ -315,6 +315,7 @@ void SurveyStack::setViewMode(const SurveyStackMode mode)
         return;
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if ((mode == PreviewImageMode) || (mode == MediaPlayerMode))
     {
         d->thumbBarDock->restoreVisibility();

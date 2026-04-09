@@ -100,7 +100,7 @@ void FingerprintsTask::run()
             info.isVisible()                                              &&
             (info.category() == DatabaseItem::Category::Image)            &&
             !info.filePath().isEmpty()                                    &&
-            !m_cancel                                                     &&
+            !m_cancel                                                     &&    // cppcheck-suppress knownConditionTrueFalse
             (
              d->rebuildAll                                                ||
              SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(info)

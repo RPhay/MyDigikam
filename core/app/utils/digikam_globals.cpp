@@ -260,6 +260,7 @@ int dialogExec(QDialog* const dlg)
         dlg->open();
         loop.exec();
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (dlg)
         {
             return dlg->result();

@@ -107,6 +107,7 @@ void ImageQualityTask::run()
 
         DImg dimg      = PreviewLoadThread::loadFastSynchronously(path, 1024);
 
+        // cppcheck-suppress knownConditionTrueFalse
         if (!dimg.isNull() && !m_cancel)
         {
             // Run Quality analysis backend and store Pick Label result to database.
