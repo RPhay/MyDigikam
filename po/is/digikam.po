@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-07 00:41+0000\n"
-"PO-Revision-Date: 2026-04-06 13:17+0000\n"
+"PO-Revision-Date: 2026-04-08 13:37+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3551,6 +3551,8 @@ msgstr ""
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
+"Sé smellt á GPS-tákn í yfirlagi opnast hnattstaðsetningarflipi í vinstri "
+"hliðarstikunni."
 
 #: core/app/views/stack/welcomepageview_features.cpp:34
 #, kde-format
@@ -3791,6 +3793,8 @@ msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"Bætt við stuðning við leit í 'Höfundur' og 'Hönnuður' reitum í fellilistum "
+"sem fylltir eru með atriðum sem þegar eru í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:87
 #, kde-format
@@ -3798,10 +3802,9 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Bætt við stuðning við leit að nýlegum atriðum í gagnagrunninum."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
-msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-03-26."
+msgstr "Uppfært innra RAW-kerfið í nýjasta Libraw-afrit 2026-04-06."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -3809,16 +3812,13 @@ msgid "New RAW camera supported:"
 msgstr "Nýjar RAW-myndavélar:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra ;"
+#, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
