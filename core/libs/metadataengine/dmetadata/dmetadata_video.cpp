@@ -1168,6 +1168,9 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                                rmeta,
                                QStringList() << QLatin1String("Xmp.video.Comment")
                                              << QLatin1String("Xmp.xmpDM.logComment"));
+
+    Q_UNUSED(data);
+
 /*
     if (!data.isEmpty())
     {
