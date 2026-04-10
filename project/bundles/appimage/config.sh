@@ -85,11 +85,11 @@ else
 
     # KDE KF6 frameworks version.
     # See official release here: https://download.kde.org/stable/frameworks/
-    DK_KDE_VERSION="v6.24.0"
+    DK_KDE_VERSION="v6.25.0"
 
     # KDE Plasma version.
     # See official release here: https://download.kde.org/stable/plasma/
-    DK_KP_VERSION="v6.6.2"
+    DK_KP_VERSION="v6.6.4"
 
     # KDE Application version.
     # See official release here: https://download.kde.org/stable/release-service/
