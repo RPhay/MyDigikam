@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2849,7 +2849,7 @@ msgstr "छवि बचत गर्नुहोस्"
 msgid "All supported files (%1)"
 msgstr "फड्काएको फाइल %1"
 
-#: core/app/utils/digikam_globals.cpp:319
+#: core/app/utils/digikam_globals.cpp:320
 #, fuzzy, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"

@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2816,7 +2816,7 @@ msgstr "Raw 影像 (%1)"
 msgid "All supported files (%1)"
 msgstr "所有支援的檔案 (%1)"
 
-#: core/app/utils/digikam_globals.cpp:319
+#: core/app/utils/digikam_globals.cpp:320
 #, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"

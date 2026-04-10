@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-04-01 23:15+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -2856,7 +2856,7 @@ msgstr "Immagini Raw (%1)"
 msgid "All supported files (%1)"
 msgstr "Tutti i file supportati (%1)"
 
-#: core/app/utils/digikam_globals.cpp:319
+#: core/app/utils/digikam_globals.cpp:320
 #, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"

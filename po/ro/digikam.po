@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2026-03-18 12:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3057,7 +3057,7 @@ msgstr "Imagini brute (%1)"
 msgid "All supported files (%1)"
 msgstr "Toate fișierele susținute (%1)"
 
-#: core/app/utils/digikam_globals.cpp:319
+#: core/app/utils/digikam_globals.cpp:320
 #, fuzzy, kde-format
 #| msgctxt "date format settings"
 #| msgid "format settings"

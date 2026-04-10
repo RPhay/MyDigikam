@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-07 00:41+0000\n"
+"POT-Creation-Date: 2026-04-10 00:42+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3057,7 +3057,7 @@ msgstr "ਚਿੱਤਰ ਘੁੰਮਾਉ।"
 msgid "All supported files (%1)"
 msgstr "ਫਾਇਲ %1 ਛੱਡੀ ਜਾ ਰਹੀ ਹੈ"
 
-#: core/app/utils/digikam_globals.cpp:319
+#: core/app/utils/digikam_globals.cpp:320
 #, fuzzy, kde-format
 #| msgctxt "date format settings"
 #| msgid "format settings"
