@@ -467,17 +467,26 @@ void ItemScanner::scanTags()
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Pick Label found :" << pickId;
 
-        int tagId = TagsCache::instance()->tagForPickLabel((PickLabel)pickId);
+        // Check if pickId is on the valid range for a PickLabel.
 
-        if (tagId)
+        if ((pickId >= PickLabel::FirstPickLabel) && (pickId <= PickLabel::LastPickLabel))
         {
-            d->commit.tagIds << tagId;
-            d->commit.hasPickTag = true;
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag :" << tagId;
+            int tagId = TagsCache::instance()->tagForPickLabel((PickLabel)pickId);
+
+            if (tagId)
+            {
+                d->commit.tagIds << tagId;
+                d->commit.hasPickTag = true;
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Assigned Pick Label Tag :" << tagId;
+            }
+            else
+            {
+                qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for :" << pickId;
+            }
         }
         else
         {
-            qCDebug(DIGIKAM_DATABASE_LOG) << "Cannot find Pick Label Tag for :" << pickId;
+            qCDebug(DIGIKAM_DATABASE_LOG) << "Invalid Pick Label value (out of range):" << pickId;
         }
     }
 
