@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-10 00:42+0000\n"
-"PO-Revision-Date: 2026-04-08 13:37+0000\n"
+"PO-Revision-Date: 2026-04-10 08:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -3540,6 +3540,8 @@ msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr ""
+"Síuyfirliti skipt upp í 3 aðskilda flipa sem nýtast betur: Eiginleikar, "
+"Merki og Fólk."
 
 #: core/app/views/stack/welcomepageview_features.cpp:32
 #, kde-format
@@ -3562,7 +3564,7 @@ msgstr ""
 #: core/app/views/stack/welcomepageview_features.cpp:35
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
-msgstr ""
+msgstr "Ný dagsetningasnið í ítarlegri endurnefningu."
 
 #: core/app/views/stack/welcomepageview_features.cpp:36
 #, kde-format
