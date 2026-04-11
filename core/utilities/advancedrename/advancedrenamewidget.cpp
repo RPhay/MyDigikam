@@ -187,7 +187,7 @@ void AdvancedRenameWidget::setControlWidgets(ControlWidgets mask)
     }
     else
     {
-        d->optionsButton->setVisible(enableModBtn && (mask & TokenButtons));
+        d->optionsButton->setVisible(enable && (mask & TokenButtons)); // <-- Correction ici
         d->modifiersButton->setVisible(enableModBtn && (mask & ModifierToolButton));
     }
 }
