@@ -82,6 +82,7 @@ parts:
     build-packages:
       - meson
       - pkgconf
+      - xsltproc
     build-environment:
       - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kde-qt6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kf6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
   wayland-protocols:
