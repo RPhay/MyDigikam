@@ -81,7 +81,7 @@ parts:
       - meson
       - pkgconf
   libplasma:
-    after: wayland-protocols
+    after: [wayland-protocols]
     source: https://invent.kde.org/plasma/libplasma.git
     source-branch: master
     plugin: cmake
