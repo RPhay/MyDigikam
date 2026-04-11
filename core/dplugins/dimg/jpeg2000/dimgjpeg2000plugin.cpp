@@ -255,7 +255,7 @@ DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) c
 
 DImgLoaderSettings* DImgJPEG2000Plugin::exportWidget(const QString& format) const
 {
-    if (canWrite(format) || !m_initJasper)
+    if (canWrite(format) && m_initJasper)
     {
         return (new DImgJPEG2000ExportSettings());
     }
