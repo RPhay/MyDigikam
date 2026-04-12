@@ -207,10 +207,7 @@ void Album::removeChild(Album* const child)
 
             for ( ; it != m_childCache.end(); ++it)
             {
-                if (*it)
-                {
-                    (*it)->m_row -= 1;
-                }
+                (*it)->m_row -= 1;
             }
 
             break;
