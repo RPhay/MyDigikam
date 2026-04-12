@@ -1,7 +1,7 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 index b9deaa5ac..d1f626a00 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
+--- CMakeLists.txt
++++ CMakeLists.txt
 @@ -110,8 +110,8 @@ set_package_properties(KF6 PROPERTIES
      TYPE RECOMMENDED
  )
@@ -15,8 +15,8 @@ index b9deaa5ac..d1f626a00 100644
      find_package(Qt6Positioning ${REQUIRED_QT_VERSION} REQUIRED)
 diff --git a/src/plugins/runner/osm/CMakeLists.txt b/src/plugins/runner/osm/CMakeLists.txt
 index e69a1e8b0..1d394f057 100644
---- a/src/plugins/runner/osm/CMakeLists.txt
-+++ b/src/plugins/runner/osm/CMakeLists.txt
+--- src/plugins/runner/osm/CMakeLists.txt
++++ src/plugins/runner/osm/CMakeLists.txt
 @@ -9,19 +9,19 @@ INCLUDE_DIRECTORIES(
   ${ZLIB_INCLUDE_DIRS}
  )
