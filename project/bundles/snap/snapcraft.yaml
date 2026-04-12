@@ -185,7 +185,6 @@ parts:
       - libopenexr-dev
       - libwebp-dev
       - libbtbb-dev
-      - libippcp-dev
       - libva-dev
       - rsync
     stage-packages:
