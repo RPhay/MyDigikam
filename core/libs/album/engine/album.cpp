@@ -95,14 +95,12 @@ Album* Album::next() const
 
     QReadLocker parentLocker(&m_parent->m_cacheLock);
 
-    int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
-
-    if ((row < 0) || ((row + 1) >= m_parent->m_childCache.size()))
+    if ((m_row + 1) >= m_parent->m_childCache.size())
     {
         return nullptr;
     }
 
-    return m_parent->m_childCache.at(row + 1);
+    return m_parent->m_childCache.at(m_row + 1);
 }
 
 Album* Album::prev() const
@@ -114,14 +112,12 @@ Album* Album::prev() const
 
     QReadLocker parentLocker(&m_parent->m_cacheLock);
 
-    int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
-
-    if (row < 1)
+    if (m_row < 1)
     {
         return nullptr;
     }
 
-    return m_parent->m_childCache.at(row - 1);
+    return m_parent->m_childCache.at(m_row - 1);
 }
 
 Album* Album::childAtRow(int row) const
@@ -186,6 +182,7 @@ void Album::insertChild(Album* const child)
     QWriteLocker locker(&m_cacheLock);
 
     m_childCache.append(child);
+    child->m_row = m_childCache.size() - 1;
 }
 
 void Album::removeChild(Album* const child)
@@ -197,7 +194,24 @@ void Album::removeChild(Album* const child)
 
     QWriteLocker locker(&m_cacheLock);
 
-    m_childCache.removeOne(child);
+    for (auto it = m_childCache.begin(); it != m_childCache.end(); ++it)
+    {
+        if ((*it) == child)
+        {
+            (*it)->m_row = 0;
+            it           = m_childCache.erase(it);
+
+            for ( ; it != m_childCache.end(); ++it)
+            {
+                if (*it)
+                {
+                    (*it)->m_row -= 1;
+                }
+            }
+
+            break;
+        }
+    }
 }
 
 void Album::clear()
@@ -266,21 +280,12 @@ int Album::childCount() const
 {
     QReadLocker locker(&m_cacheLock);
 
-    return m_childCache.count();
+    return m_childCache.size();
 }
 
 int Album::rowFromAlbum() const
 {
-    if (!m_parent)
-    {
-        return 0;
-    }
-
-    QReadLocker parentLocker(&m_parent->m_cacheLock);
-
-    int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
-
-    return ((row != -1) ? row : 0);
+    return m_row;
 }
 
 void Album::setTitle(const QString& title)

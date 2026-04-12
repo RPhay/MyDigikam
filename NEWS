@@ -103,7 +103,7 @@ BUGFIXES:
 075 --> 518687 - Time Adjust "EXIF: original" uses old XMP CreateDate/DateCreated instead of Xmp.exif.DateTimeOriginal.
 076 --> 518688 - macOS: digiKam cannot switch application language to Simplified Chinese (zh_CN).
 077 --> 518820 - Image Editor Save Settings are incorrect.
-078 --> 
+078 --> 518839 - Improve performance of album's cache [patch].
 079 --> 
 080 --> 
 081 --> 

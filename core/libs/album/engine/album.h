@@ -22,7 +22,6 @@
 #include <QUrl>
 #include <QList>
 #include <QString>
-#include <QObject>
 #include <QMetaType>
 #include <QReadWriteLock>
 
@@ -333,6 +332,7 @@ private:
     bool                     m_usedByLabelsTree     = false;
 
     int                      m_id                   = -1;
+    int                      m_row                  = 0;
 
     QString                  m_name;
     QString                  m_title;
