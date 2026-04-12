@@ -89,7 +89,6 @@ parts:
       - libxml2-dev
       - doxygen
       - graphviz
-      - mdbook
     build-environment:
       - PKG_CONFIG_PATH: "$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kde-qt6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig:/snap/kf6-core24-sdk/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pkgconfig"
   wayland-protocols:
@@ -156,6 +155,9 @@ parts:
       - -DENABLE_QT6=ON
       - -DBUILD_TESTING=OFF
       - -DCMAKE_FIND_ROOT_PATH="/snap/ffmpeg-2404-sdk/current;/snap/kde-qt6-core24-sdk/current;/snap/kf6-core24-sdk/current"
+    override-pull: |
+        craftctl default
+        patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/disable_broken_osm_plugin.patch
     override-build: |
       craftctl default
       rsync -a --ignore-existing $CRAFT_PART_INSTALL/ /
