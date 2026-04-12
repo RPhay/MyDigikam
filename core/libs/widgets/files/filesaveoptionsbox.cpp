@@ -113,7 +113,11 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 #ifdef HAVE_JASPER
 
     d->JPEG2000Options = ploader->exportWidget(QLatin1String("JP2"));
-    d->JPEG2000Options->setParent(this);
+
+    if (d->JPEG2000Options)
+    {
+        d->JPEG2000Options->setParent(this);
+    }
 
 #endif // HAVE_JASPER
 
@@ -160,7 +164,11 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 #ifdef HAVE_X265
 
     d->HEIFOptions     = ploader->exportWidget(QLatin1String("HEIF"));
-    d->HEIFOptions->setParent(this);
+
+    if (d->HEIFOptions)
+    {
+        d->HEIFOptions->setParent(this);
+    }
 
 #endif // HAVE_X265
 
@@ -173,7 +181,10 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
 #ifdef HAVE_JASPER
 
-    insertWidget(JP2K,        d->JPEG2000Options);
+    if (d->JPEG2000Options)
+    {
+        insertWidget(JP2K,    d->JPEG2000Options);
+    }
 
 #endif // HAVE_JASPER
 
@@ -181,7 +192,10 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
 #ifdef HAVE_X265
 
-    insertWidget(HEIF,        d->HEIFOptions);
+    if (d->HEIFOptions)
+    {
+        insertWidget(HEIF,    d->HEIFOptions);
+    }
 
 #endif // HAVE_X265
 
@@ -315,8 +329,11 @@ void FileSaveOptionsBox::applySettings()
 
 #ifdef HAVE_JASPER
 
-    group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->settings().value(QLatin1String("quality")).toInt());
-    group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->settings().value(QLatin1String("lossless")).toBool());
+    if (d->JPEG2000Options)
+    {
+        group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->settings().value(QLatin1String("lossless")).toBool());
+    }
 
 #endif // HAVE_JASPER
 
@@ -325,8 +342,11 @@ void FileSaveOptionsBox::applySettings()
 
 #ifdef HAVE_X265
 
-    group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->settings().value(QLatin1String("quality")).toInt());
-    group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->settings().value(QLatin1String("lossless")).toBool());
+    if (d->HEIFOptions)
+    {
+        group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->settings().value(QLatin1String("quality")).toInt());
+        group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->settings().value(QLatin1String("lossless")).toBool());
+    }
 
 #endif // HAVE_X265
 
@@ -377,10 +397,13 @@ void FileSaveOptionsBox::readSettings()
 
 #ifdef HAVE_JASPER
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("JPEG2000Compression"),    75));
-    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("JPEG2000LossLess"),       true));
-    d->JPEG2000Options->setSettings(set);
+    if (d->JPEG2000Options)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("JPEG2000Compression"),    75));
+        set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("JPEG2000LossLess"),       true));
+        d->JPEG2000Options->setSettings(set);
+    }
 
 #endif // HAVE_JASPER
 
@@ -391,10 +414,13 @@ void FileSaveOptionsBox::readSettings()
 
 #ifdef HAVE_X265
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("HEIFCompression"),        75));
-    set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("HEIFLossLess"),           true));
-    d->HEIFOptions->setSettings(set);
+    if (d->HEIFOptions)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  group.readEntry(QLatin1String("HEIFCompression"),        75));
+        set.insert(QLatin1String("lossless"), group.readEntry(QLatin1String("HEIFLossLess"),           true));
+        d->HEIFOptions->setSettings(set);
+    }
 
 #endif // HAVE_X265
 
