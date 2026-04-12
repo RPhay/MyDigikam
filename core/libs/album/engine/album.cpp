@@ -95,12 +95,14 @@ Album* Album::next() const
 
     QReadLocker parentLocker(&m_parent->m_cacheLock);
 
-    if ((m_row + 1) >= m_parent->m_childCache.size())
+    const int row = m_row + 1;
+
+    if (row >= m_parent->m_childCache.size())
     {
         return nullptr;
     }
 
-    return m_parent->m_childCache.at(m_row + 1);
+    return m_parent->m_childCache.at(row);
 }
 
 Album* Album::prev() const
@@ -112,12 +114,14 @@ Album* Album::prev() const
 
     QReadLocker parentLocker(&m_parent->m_cacheLock);
 
-    if (m_row < 1)
+    const int row = m_row - 1;
+
+    if ((row < 0) || (row >= m_parent->m_childCache.size()))
     {
         return nullptr;
     }
 
-    return m_parent->m_childCache.at(m_row - 1);
+    return m_parent->m_childCache.at(row);
 }
 
 Album* Album::childAtRow(int row) const
