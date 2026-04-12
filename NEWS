@@ -102,7 +102,7 @@ BUGFIXES:
 074 --> 518660 - Combobox history of used renames is empty in 9.0.0 but shown in 8.8.0.
 075 --> 518687 - Time Adjust "EXIF: original" uses old XMP CreateDate/DateCreated instead of Xmp.exif.DateTimeOriginal.
 076 --> 518688 - macOS: digiKam cannot switch application language to Simplified Chinese (zh_CN).
-077 --> 
+077 --> 518820 - Image Editor Save Settings are incorrect.
 078 --> 
 079 --> 
 080 --> 
