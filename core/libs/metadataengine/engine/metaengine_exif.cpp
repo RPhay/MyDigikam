@@ -100,7 +100,7 @@ QByteArray MetaEngine::getExifEncoded(bool addExifHeader) const
     {
         if (!d->exifMetadata().empty())
         {
-            QByteArray data;
+            QByteArray _data;
             Exiv2::ExifData& exif = d->exifMetadata();
             Exiv2::Blob blob;
             Exiv2::ExifParser::encode(blob, Exiv2::bigEndian, exif);
@@ -109,16 +109,16 @@ QByteArray MetaEngine::getExifEncoded(bool addExifHeader) const
             if (addExifHeader)
             {
                 const uchar ExifHeader[] = {0x45, 0x78, 0x69, 0x66, 0x00, 0x00};
-                data.resize(ba.size() + sizeof(ExifHeader));
-                memcpy(data.data(), ExifHeader, sizeof(ExifHeader));
-                memcpy(data.data() + sizeof(ExifHeader), ba.data(), ba.size());
+                _data.resize(ba.size() + sizeof(ExifHeader));
+                memcpy(_data.data(), ExifHeader, sizeof(ExifHeader));
+                memcpy(_data.data() + sizeof(ExifHeader), ba.data(), ba.size());
             }
             else
             {
-                data = ba;
+                _data = ba;
             }
 
-            return data;
+            return _data;
         }
     }
     catch (Exiv2::AnyError& e)
@@ -945,10 +945,10 @@ QByteArray MetaEngine::getExifTagData(const char* exifTagName) const
 
         if (it != exifData.end())
         {
-            QByteArray data((*it).size(), '\0');
-            (*it).copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), Exiv2::bigEndian);
+            QByteArray _data((*it).size(), '\0');
+            (*it).copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(_data.data())), Exiv2::bigEndian);
 
-            return data;
+            return _data;
         }
     }
     catch (Exiv2::AnyError& e)
@@ -1327,13 +1327,13 @@ bool MetaEngine::setExifThumbnail(const QImage& thumbImage) const
 
     try
     {
-        QByteArray data;
-        QBuffer buffer(&data);
+        QByteArray _data;
+        QBuffer buffer(&_data);
         buffer.open(QIODevice::WriteOnly);
         thumbImage.save(&buffer, "JPEG");
         buffer.close();
         Exiv2::ExifThumb thumb(d->exifMetadata());
-        thumb.setJpegThumbnail(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), data.size());
+        thumb.setJpegThumbnail(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(_data.data())), _data.size());
 
         return true;
     }
@@ -1410,13 +1410,13 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
         {
             // Set thumbnail tags
 
-            QByteArray data;
-            QBuffer buffer(&data);
+            QByteArray _data;
+            QBuffer buffer(&_data);
             buffer.open(QIODevice::WriteOnly);
             thumbImage.save(&buffer, "JPEG");
             buffer.close();
 
-            Exiv2::DataBuf buf(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), data.size());
+            Exiv2::DataBuf buf(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(_data.data())), _data.size());
             Exiv2::ULongValue val;
             val.read("0");
 

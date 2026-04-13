@@ -1501,8 +1501,8 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
 
     try
     {
-        QByteArray data;
-        QBuffer buffer(&data);
+        QByteArray pdata;
+        QBuffer buffer(&pdata);
         buffer.open(QIODevice::WriteOnly);
 
         // A little bit compressed preview jpeg image to limit IPTC size.
@@ -1510,10 +1510,10 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         preview.save(&buffer, "JPEG");
         buffer.close();
         qCDebug(DIGIKAM_METAENGINE_LOG) << "JPEG image preview size: (" << preview.width() << "x"
-                                        << preview.height() << ") pixels -" << data.size() << "bytes";
+                                        << preview.height() << ") pixels -" << pdata.size() << "bytes";
 
         Exiv2::DataValue val;
-        val.read(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), data.size());
+        val.read(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(pdata.data())), pdata.size());
         d->iptcMetadata()["Iptc.Application2.Preview"] = val;
 
         // See https://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf Appendix A for details.
@@ -1521,7 +1521,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         d->iptcMetadata()["Iptc.Application2.PreviewFormat"]  = 11;  // JPEG
         d->iptcMetadata()["Iptc.Application2.PreviewVersion"] = 1;
 
-        QByteArray xmpPreview(data.toBase64());
+        QByteArray xmpPreview(pdata.toBase64());
 
         if (xmpPreview.size() < 62000)
         {

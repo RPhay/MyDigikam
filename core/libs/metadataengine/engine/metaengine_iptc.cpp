@@ -100,15 +100,15 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-            QByteArray data(reinterpret_cast<const char*>(c2.data()), c2.size());
+            QByteArray _data(reinterpret_cast<const char*>(c2.data()), c2.size());
 
 #else
 
-            QByteArray data(reinterpret_cast<const char*>(c2.pData_), c2.size_);
+            QByteArray _data(reinterpret_cast<const char*>(c2.pData_), c2.size_);
 
 #endif
 
-            return data;
+            return _data;
         }
     }
     catch (Exiv2::AnyError& e)
@@ -392,10 +392,10 @@ QByteArray MetaEngine::getIptcTagData(const char* iptcTagName) const
 
         if (it != iptcData.end())
         {
-            QByteArray data((*it).size(), '\0');
-            (*it).copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(data.data())), Exiv2::bigEndian);
+            QByteArray _data((*it).size(), '\0');
+            (*it).copy(reinterpret_cast<Exiv2::byte*>(const_cast<char*>(_data.data())), Exiv2::bigEndian);
 
-            return data;
+            return _data;
         }
     }
     catch (Exiv2::AnyError& e)

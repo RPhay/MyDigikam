@@ -94,15 +94,15 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+        Exiv2::Image::AutoPtr _image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        d->load(std::move(image));
+        d->load(std::move(_image));
 
 #else
 
-        d->load(image);
+        d->load(_image);
 
 #endif
 
@@ -124,16 +124,16 @@ MetaEnginePreviews::MetaEnginePreviews(const QByteArray& imgData)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(
+        Exiv2::Image::AutoPtr _image = Exiv2::ImageFactory::open(
             reinterpret_cast<Exiv2::byte*>(const_cast<char*>(imgData.data())), imgData.size());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
-        d->load(std::move(image));
+        d->load(std::move(_image));
 
 #else
 
-        d->load(image);
+        d->load(_image);
 
 #endif
 
@@ -252,9 +252,9 @@ QByteArray MetaEnginePreviews::data(int index)
 
     try
     {
-        Exiv2::PreviewImage image = d->manager->getPreviewImage(d->properties[index]);
+        Exiv2::PreviewImage _image = d->manager->getPreviewImage(d->properties[index]);
 
-        return QByteArray(reinterpret_cast<const char*>(image.pData()), image.size());
+        return QByteArray(reinterpret_cast<const char*>(_image.pData()), _image.size());
     }
     catch (Exiv2::AnyError& e)
     {
@@ -273,14 +273,14 @@ QByteArray MetaEnginePreviews::data(int index)
 QImage MetaEnginePreviews::image(int index)
 {
     QByteArray previewData = data(index);
-    QImage     image;
+    QImage     _image;
 
-    if (previewData.isEmpty() || !image.loadFromData(previewData))
+    if (previewData.isEmpty() || !_image.loadFromData(previewData))
     {
         return QImage();
     }
 
-    return image;
+    return _image;
 }
 
 } // namespace Digikam
