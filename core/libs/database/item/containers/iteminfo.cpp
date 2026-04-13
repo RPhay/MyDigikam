@@ -175,12 +175,12 @@ ItemInfo ItemInfo::fromLocalFile(const QString& path)
         return ItemInfo();
     }
 
-    QUrl url      = QUrl::fromLocalFile(path);
-    QString album = CollectionManager::instance()->album(url.adjusted(QUrl::RemoveFilename |
-                                                                      QUrl::StripTrailingSlash).toLocalFile());
-    QString name  = url.fileName();
+    QUrl _url      = QUrl::fromLocalFile(path);
+    QString _album = CollectionManager::instance()->album(_url.adjusted(QUrl::RemoveFilename |
+                                                                        QUrl::StripTrailingSlash).toLocalFile());
+    QString _name  = _url.fileName();
 
-    return fromLocationAlbumAndName(location.id(), album, name);
+    return fromLocationAlbumAndName(location.id(), _album, _name);
 }
 
 ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album, const QString& name)
@@ -241,14 +241,14 @@ ItemInfo ItemInfo::copyItem(int dstAlbumID, const QString& dstFileName)
         }
     }
 
-    qlonglong id = CoreDbAccess().db()->copyItem(m_data->albumId, m_data->name, dstAlbumID, dstFileName);
+    qlonglong _id = CoreDbAccess().db()->copyItem(m_data->albumId, m_data->name, dstAlbumID, dstFileName);
 
-    if (id == -1)
+    if (_id == -1)
     {
         return ItemInfo();
     }
 
-    return ItemInfo(id);
+    return ItemInfo(_id);
 }
 
 bool ItemInfo::isLocationAvailable() const
