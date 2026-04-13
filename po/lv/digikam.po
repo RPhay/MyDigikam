@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-13 00:41+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -3086,7 +3086,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3236,7 +3236,7 @@ msgid "No Tags Album"
 msgstr "Mani albumi"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:553
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -26840,38 +26840,38 @@ msgstr "Pagriešana:"
 msgid "Skipped"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:411
+#: core/libs/album/engine/album.cpp:417
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:750
+#: core/libs/album/engine/album.cpp:756
 #, fuzzy, kde-format
 msgid "Current Timeline Search"
 msgstr "Aktīvā meklēšana"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Aktīvā aptuvenā attēla meklēšana"
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Aktīvā aptuvenā skices meklēšana"
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "Aktīvā kartes meklēšana"
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Search"
 msgstr "Aktīvā meklēšana"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:787
 #, fuzzy, kde-format
 msgid "Current Duplicates Search"
 msgstr "Aktīvā kartes meklēšana"

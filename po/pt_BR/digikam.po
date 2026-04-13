@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-13 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 01:09-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -2965,7 +2965,7 @@ msgstr "Mostrar lupa (x%1)"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3112,7 +3112,7 @@ msgid "No Tags Album"
 msgstr "Álbuns sem etiquetas"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:553
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -27267,38 +27267,38 @@ msgstr "Rotação: %1\n"
 msgid "Skipped"
 msgstr "Ignorado"
 
-#: core/libs/album/engine/album.cpp:411
+#: core/libs/album/engine/album.cpp:417
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr "Lixeira"
 
-#: core/libs/album/engine/album.cpp:750
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Pesquisa na linha do tempo atual"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Pesquisa aproximada da imagem atual"
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Pesquisa aproximada do desenho atual"
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "Pesquisa no mapa atual"
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Search"
 msgstr "Pesquisa atual"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:787
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Pesquisa de duplicadas atual"

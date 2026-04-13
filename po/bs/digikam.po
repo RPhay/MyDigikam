@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:42+0000\n"
+"POT-Creation-Date: 2026-04-13 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3349,7 +3349,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:486
+#: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:250
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3501,7 +3501,7 @@ msgid "No Tags Album"
 msgstr "Album bez oznaka"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:553
+#: core/libs/album/engine/album.cpp:559
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -29009,38 +29009,38 @@ msgstr "Rotacija:"
 msgid "Skipped"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:411
+#: core/libs/album/engine/album.cpp:417
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:750
+#: core/libs/album/engine/album.cpp:756
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Pretraga po trenutnoj vremenskoj liniji"
 
-#: core/libs/album/engine/album.cpp:757
+#: core/libs/album/engine/album.cpp:763
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Pretraga po trenutnoj približnoj slici"
 
-#: core/libs/album/engine/album.cpp:761
+#: core/libs/album/engine/album.cpp:767
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Pretraga po trenutnoj približnoj skici"
 
-#: core/libs/album/engine/album.cpp:769
+#: core/libs/album/engine/album.cpp:775
 #, kde-format
 msgid "Current Map Search"
 msgstr "Pretraga po trenutnoj mapi"
 
-#: core/libs/album/engine/album.cpp:776
+#: core/libs/album/engine/album.cpp:782
 #, kde-format
 msgid "Current Search"
 msgstr "Trenutna pretraga"
 
-#: core/libs/album/engine/album.cpp:781
+#: core/libs/album/engine/album.cpp:787
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Trenutna pretraga duplikata"
