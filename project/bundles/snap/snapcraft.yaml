@@ -105,7 +105,6 @@ parts:
       - kde-qt6-core24-sdk/latest/beta
       - kf6-core24-sdk/latest/beta
     build-packages:
-      - libwayland-dev
       - meson
       - pkgconf
     build-environment:
@@ -516,6 +515,8 @@ parts:
     override-pull: |
         craftctl default
         patch -p0 < ${SNAPCRAFT_PROJECT_DIR}/project/bundles/snap/snap/local/digikam_magick_isnan.patch
+    stage:
+      - -usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libwayland-client.so.0
     prime:
       - -usr/lib/*/cmake/*
       - -usr/include/*
