@@ -373,7 +373,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
 
     double supremum = (floor(maximumPercentage * 100 + 1.0)) / 100;
 
-    QMap<qlonglong, double> bestMatches;
+    QMap<qlonglong, double> bestResults;
     double score, percentage, avgPercentage = 0.0;
     QPair<double, QMap<qlonglong, double> > result;
     qlonglong id;
@@ -394,7 +394,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
 
             if ((id == imageid) || (percentage < supremum))
             {
-                bestMatches.insert(id, percentage);
+                bestResults.insert(id, percentage);
 
                 // If the current image is not the original, use the images similarity for the average percentage
                 // Also, save the similarity of the found image to the original image.
@@ -416,24 +416,24 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
 
     // Debug output
 
-    if (bestMatches.size() > 1)
+    if (bestResults.size() > 1)
     {
         // The average percentage is the sum of all percentages
         // (without the original picture) divided by the count of pictures -1.
         // Subtracting 1 is necessary since the original picture is not used for the calculation.
 
-        avgPercentage = avgPercentage / (bestMatches.size() - 1);
+        avgPercentage = avgPercentage / (bestResults.size() - 1);
 
         qCDebug(DIGIKAM_DATABASE_LOG) << "Duplicates with id and score:";
 
-        for (QMap<qlonglong, double>::const_iterator it = bestMatches.constBegin() ; it != bestMatches.constEnd() ; ++it)
+        for (QMap<qlonglong, double>::const_iterator it = bestResults.constBegin() ; it != bestResults.constEnd() ; ++it)
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << it.key() << QString::number(it.value() * 100) + QLatin1Char('%');
         }
     }
 
     result.first  = avgPercentage;
-    result.second = bestMatches;
+    result.second = bestResults;
 
     return result;
 }
@@ -773,7 +773,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
     DuplicatesResultsMap                    resultsMap;
     DuplicatesResultsMap::iterator          resultsIterator;
     QSet<qlonglong>::const_iterator         images2ScanIterator;
-    QPair<double, QMap<qlonglong, double> > bestMatches;
+    QPair<double, QMap<qlonglong, double> > bestResults;
     QList<qlonglong>                        duplicates;
     QSet<qlonglong>                         resultsCandidates;
     int                                     duplicatesFound = 0;
@@ -810,7 +810,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
         {
             // find images with required similarity
 
-            bestMatches  = bestMatchesForImageWithThreshold(*images2ScanIterator,
+            bestResults  = bestMatchesForImageWithThreshold(*images2ScanIterator,
                                                             requiredPercentage,
                                                             maximumPercentage,
                                                             emptyTargetAlbums,
@@ -819,7 +819,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
             // We need only the image ids from the best matches map.
 
-            duplicates   = bestMatches.second.keys();
+            duplicates   = bestResults.second.keys();
 
             // the list will usually contain one image: the original. Filter out.
 
@@ -988,7 +988,7 @@ HaarIface::DuplicatesResultsMap HaarIface::findDuplicates(const QSet<qlonglong>&
 
                 }
 
-                resultsMap.insert(reference, qMakePair(bestMatches.first, duplicates));
+                resultsMap.insert(reference, qMakePair(bestResults.first, duplicates));
 
                 resultsCandidates << *images2ScanIterator;
                 resultsCandidates.unite(QSet<qlonglong>(duplicates.begin(), duplicates.end()));
