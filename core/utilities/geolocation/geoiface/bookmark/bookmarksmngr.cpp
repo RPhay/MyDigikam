@@ -248,28 +248,28 @@ BookmarksManager* BookmarksModel::bookmarksManager() const
 
 QModelIndex BookmarksModel::index(BookmarkNode* node) const
 {
-    BookmarkNode* const parent = node->parent();
+    BookmarkNode* const prnt = node->parent();
 
-    if (!parent)
+    if (!prnt)
     {
         return QModelIndex();
     }
 
-    return createIndex(parent->children().indexOf(node), 0, node);
+    return createIndex(prnt->children().indexOf(node), 0, node);
 }
 
 void BookmarksModel::entryAdded(BookmarkNode* item)
 {
     Q_ASSERT(item && item->parent());
 
-    int row                    = item->parent()->children().indexOf(item);
-    BookmarkNode* const parent = item->parent();
+    int row                  = item->parent()->children().indexOf(item);
+    BookmarkNode* const prnt = item->parent();
 
     // item was already added so remove before beginInsertRows is called
 
-    parent->remove(item);
-    beginInsertRows(index(parent), row, row);
-    parent->add(item, row);
+    prnt->remove(item);
+    beginInsertRows(index(prnt), row, row);
+    prnt->add(item, row);
     endInsertRows();
 }
 
@@ -301,8 +301,8 @@ bool BookmarksModel::removeRows(int row, int count, const QModelIndex& parent)
 
     for (int i = (row + count - 1) ; i >= row ; --i)
     {
-        BookmarkNode* const node = bookmarkNode->children().at(i);
-        d->manager->removeBookmark(node);
+        BookmarkNode* const nd = bookmarkNode->children().at(i);
+        d->manager->removeBookmark(nd);
     }
 
     if (d->endMacro)
@@ -548,12 +548,12 @@ QStringList BookmarksModel::mimeTypes() const
 QMimeData* BookmarksModel::mimeData(const QModelIndexList& indexes) const
 {
     QMimeData* const mimeData = new QMimeData();
-    QByteArray data;
-    QDataStream stream(&data, QIODevice::WriteOnly);
+    QByteArray dt;
+    QDataStream stream(&dt, QIODevice::WriteOnly);
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        if ((index.column() != 0) || !index.isValid())
+        if ((ind.column() != 0) || !ind.isValid())
         {
             continue;
         }
@@ -562,12 +562,12 @@ QMimeData* BookmarksModel::mimeData(const QModelIndexList& indexes) const
         QBuffer buffer(&encodedData);
         buffer.open(QBuffer::ReadWrite);
         XbelWriter writer;
-        const BookmarkNode* const parentNode = node(index);
+        const BookmarkNode* const parentNode = node(ind);
         writer.write(&buffer, parentNode);
         stream << encodedData;
     }
 
-    mimeData->setData(QLatin1String("application/bookmarks.xbel"), data);
+    mimeData->setData(QLatin1String("application/bookmarks.xbel"), dt);
 
     return mimeData;
 }
