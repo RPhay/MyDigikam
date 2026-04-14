@@ -55,25 +55,27 @@ void DisjointMetadata::reset()
 
 void DisjointMetadata::load(const ItemInfo& info)
 {
-    Template metadataTemplate;
+    Template mtdtTemplate;
     CaptionsMap commentMap;
     CaptionsMap titleMap;
-    QDateTime dateTime;
-    int colorLabel;
-    int pickLabel;
-    int rating;
+    QDateTime dt;
+    int colorLbl;
+    int pickLbl;
+    int rtng;
 
     if (d->dateTimeStatus == DisjointMetadataDataFields::MetadataDisjoint)
     {
-        dateTime = d->dateTime;
+        dt = d->dateTime;
     }
     else
     {
-        dateTime = info.dateTime();
+        dt = info.dateTime();
     }
 
-    if ((d->titlesStatus   == DisjointMetadataDataFields::MetadataDisjoint) &&
-        (d->commentsStatus == DisjointMetadataDataFields::MetadataDisjoint))
+    if (
+        (d->titlesStatus   == DisjointMetadataDataFields::MetadataDisjoint) &&
+        (d->commentsStatus == DisjointMetadataDataFields::MetadataDisjoint)
+       )
     {
         commentMap = d->comments;
         titleMap   = d->titles;
@@ -81,59 +83,59 @@ void DisjointMetadata::load(const ItemInfo& info)
     else
     {
         CoreDbAccess access;
-        ItemComments comments = info.imageComments(access);
-        commentMap            = comments.toCaptionsMap();
-        titleMap              = comments.toCaptionsMap(DatabaseComment::Title);
+        ItemComments cmnts = info.imageComments(access);
+        commentMap         = cmnts.toCaptionsMap();
+        titleMap           = cmnts.toCaptionsMap(DatabaseComment::Title);
     }
 
     if (d->colorLabelStatus == DisjointMetadataDataFields::MetadataDisjoint)
     {
-        colorLabel = d->colorLabel;
+        colorLbl = d->colorLabel;
     }
     else
     {
-        colorLabel = info.colorLabel();
+        colorLbl = info.colorLabel();
     }
 
     if (d->pickLabelStatus == DisjointMetadataDataFields::MetadataDisjoint)
     {
-        pickLabel = d->pickLabel;
+        pickLbl = d->pickLabel;
     }
     else
     {
-        pickLabel = info.pickLabel();
+        pickLbl = info.pickLabel();
     }
 
     if (d->ratingStatus == DisjointMetadataDataFields::MetadataDisjoint)
     {
-        rating = d->rating;
+        rtng = d->rating;
     }
     else
     {
-        rating = info.rating();
+        rtng = info.rating();
     }
 
     if (d->templateStatus == DisjointMetadataDataFields::MetadataDisjoint)
     {
-        metadataTemplate = d->metadataTemplate;
+        mtdtTemplate = d->metadataTemplate;
     }
     else
     {
-        Template tref    = info.metadataTemplate();
-        Template t       = TemplateManager::defaultManager()->findByContents(tref);
+        Template tref = info.metadataTemplate();
+        Template t    = TemplateManager::defaultManager()->findByContents(tref);
 /*
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found Metadata Template:" << t.templateTitle();
 */
-        metadataTemplate = t.isNull() ? tref : t;
+        mtdtTemplate  = t.isNull() ? tref : t;
     }
 
-    load(dateTime,
+    load(dt,
          titleMap,
          commentMap,
-         colorLabel,
-         pickLabel,
-         rating,
-         metadataTemplate);
+         colorLbl,
+         pickLbl,
+         rtng,
+         mtdtTemplate);
 
     loadTags(info.tagIds());
 }
@@ -359,17 +361,17 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
     if (saveTitle && (writeAllFields || d->titlesChanged))
     {
         CoreDbAccess access;
-        ItemComments comments = info.imageComments(access);
-        comments.replaceComments(d->titles, DatabaseComment::Title);
-        changed               = true;
+        ItemComments cmnts = info.imageComments(access);
+        cmnts.replaceComments(d->titles, DatabaseComment::Title);
+        changed            = true;
     }
 
     if (saveComment && (writeAllFields || d->commentsChanged))
     {
         CoreDbAccess access;
-        ItemComments comments = info.imageComments(access);
-        comments.replaceComments(d->comments);
-        changed               = true;
+        ItemComments cmnts = info.imageComments(access);
+        cmnts.replaceComments(d->comments);
+        changed            = true;
     }
 
     if (saveDateTime && (writeAllFields || d->dateTimeChanged))
