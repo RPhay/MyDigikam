@@ -108,7 +108,6 @@ int main(int argc, char** argv)
     QDir dataset(parser->value(QLatin1String("dataset")));
     QFileInfoList filesInfo = dataset.entryInfoList(QDir::Files | QDir::NoDotAndDotDot);
 
-    std::vector<cv::Mat> cvImages;
     QScopedPointer<DNNResnetDetector> resnetDetector (new DNNResnetDetector());
 
     for (int j = 0 ; j < filesInfo.size() ; j++)

@@ -108,7 +108,6 @@ CPPCHECK_SUPPRESSIONS="\
 --suppress=purgedConfiguration \
 --suppress=toomanyconfigs \
 --suppress=unreadVariable \
---suppress=unusedVariable \
 --suppress=unusedStructMember \
 --suppress=unusedPrivateFunction \
 --suppress=unknownMacro \
