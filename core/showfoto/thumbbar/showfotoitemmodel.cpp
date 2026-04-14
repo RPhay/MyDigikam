@@ -93,9 +93,9 @@ QList<ShowfotoItemInfo> ShowfotoItemModel::showfotoItemInfos(const QList<QModelI
 {
     QList<ShowfotoItemInfo> infos;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        infos << showfotoItemInfo(index);
+        infos << showfotoItemInfo(ind);
     }
 
     return infos;
@@ -128,11 +128,11 @@ QList<QModelIndex> ShowfotoItemModel::indexesForShowfotoItemInfo(const ShowfotoI
 
 QModelIndex ShowfotoItemModel::indexForShowfotoItemId(qlonglong id) const
 {
-    int index = d->idHash.value(id, 0);
+    int ind = d->idHash.value(id, 0);
 
-    if (index != -1)
+    if (ind != -1)
     {
-        return createIndex(index, 0);
+        return createIndex(ind, 0);
     }
 
     return QModelIndex();
@@ -438,11 +438,11 @@ void ShowfotoItemModel::removeIndexs(const QList<QModelIndex>& indexes)
 {
     QList<int> indexesList;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        if (d->isValid(index))
+        if (d->isValid(ind))
         {
-            indexesList << index.row();
+            indexesList << ind.row();
         }
     }
 
@@ -576,18 +576,18 @@ QList<QPair<int, int> > ShowfotoItemModel::toContiguousPairs(const QList<int>& u
 
     for (int i = 1 ; i < indices.size() ; ++i)
     {
-        const int& index = indices.at(i);
+        const int& ind = indices.at(i);
 
-        if (index == pair.second + 1)
+        if (ind == pair.second + 1)
         {
-            pair.second = index;
+            pair.second = ind;
 
             continue;
         }
 
         pairs << pair; // insert last pair
-        pair.first  = index;
-        pair.second = index;
+        pair.first  = ind;
+        pair.second = ind;
     }
 
     pairs << pair;
