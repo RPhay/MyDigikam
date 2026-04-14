@@ -524,17 +524,17 @@ QAbstractItemView* DConfigDlgView::createView()
 
     if      (d->faceType == Auto)
     {
-        const FaceType faceType = d->detectAutoFace();
+        const FaceType facetp = d->detectAutoFace();
 
-        if      (faceType == Plain)
+        if      (facetp == Plain)
         {
             return new DConfigDlgInternal::DConfigDlgPlainView(this);
         }
-        else if (faceType == List)
+        else if (facetp == List)
         {
             return new DConfigDlgInternal::DConfigDlgListView(this);
         }
-        else if (faceType == Tree)
+        else if (facetp == Tree)
         {
             return new DConfigDlgInternal::DConfigDlgTreeView(this);
         }
@@ -570,14 +570,14 @@ bool DConfigDlgView::showPageHeader() const
 {
     Q_D(const DConfigDlgView);
 
-    FaceType faceType = d->faceType;
+    FaceType facetp = d->faceType;
 
-    if (faceType == Auto)
+    if (facetp == Auto)
     {
-        faceType = d->detectAutoFace();
+        facetp = d->detectAutoFace();
     }
 
-    if (faceType == Tabbed)
+    if (facetp == Tabbed)
     {
         return false;
     }
@@ -591,14 +591,14 @@ Qt::Alignment DConfigDlgView::viewPosition() const
 {
     Q_D(const DConfigDlgView);
 
-    FaceType faceType = d->faceType;
+    FaceType facetp = d->faceType;
 
-    if (faceType == Auto)
+    if (facetp == Auto)
     {
-        faceType = d->detectAutoFace();
+        facetp = d->detectAutoFace();
     }
 
-    if ((faceType == Plain) || (faceType == Tabbed))
+    if ((facetp == Plain) || (facetp == Tabbed))
     {
         return Qt::AlignTop;
     }
