@@ -313,8 +313,8 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
                     {
                         // get the change signal from the meta object
 
-                        const QMetaObject* const metaObject = childWidget->metaObject();
-                        QByteArray userproperty             = getCustomProperty(childWidget);
+                        const QMetaObject* const metaobj = childWidget->metaObject();
+                        QByteArray userproperty          = getCustomProperty(childWidget);
 
                         if (userproperty.isEmpty())
                         {
@@ -323,12 +323,12 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
 
                         if (!userproperty.isEmpty())
                         {
-                            const int indexOfProperty = metaObject->indexOfProperty(userproperty.constData());
+                            const int indexOfProperty = metaobj->indexOfProperty(userproperty.constData());
 
                             if (indexOfProperty != -1)
                             {
-                                const QMetaProperty property   = metaObject->property(indexOfProperty);
-                                const QMetaMethod notifySignal = property.notifySignal();
+                                const QMetaProperty prop       = metaobj->property(indexOfProperty);
+                                const QMetaMethod notifySignal = prop.notifySignal();
 
                                 if (notifySignal.isValid())
                                 {
@@ -512,8 +512,8 @@ QByteArray DConfigDlgMngr::getUserProperty(const QWidget* widget) const
 {
     if (!s_propertyMap()->contains(QString::fromUtf8(widget->metaObject()->className())))
     {
-        const QMetaObject* const metaObject = widget->metaObject();
-        const QMetaProperty user            = metaObject->userProperty();
+        const QMetaObject* const metaobj = widget->metaObject();
+        const QMetaProperty user         = metaobj->userProperty();
 
         if (user.isValid())
         {
