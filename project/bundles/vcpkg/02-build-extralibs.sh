@@ -113,42 +113,4 @@ fi
 # Breeze style support
 "${CMAKE_BIN}" --build . --parallel --config RelWithDebInfo --target ext_breeze
 
-#################################################################################################
-
-if [[ $DK_QTVERSION == 6 ]] ; then
-
-    KF6_GITREV_LST=$ORIG_WD/data/kf6_manifest.txt
-
-    echo "Populate git sub-module revisions in $KF6_GITREV_LST"
-
-    if [ -f $KF6_GITREV_LST ] ; then
-        rm -f $KF6_GITREV_LST
-    fi
-
-    currentDate=`date +"%Y-%m-%d"`
-    echo "+KF6 Snapshot $currentDate" > $KF6_GITREV_LST
-
-    # --- List git revisions for all sub-modules
-
-    DIRS=$(find $BUILDING_DIR/dk_cmake/ext_kf6/ -name "ext_*-prefix")
-
-    for ITEM in $DIRS ; do
-
-        BASE=$(basename $ITEM | awk -F'_' '{print $2}')
-        COMPONENT=${BASE%-prefix}
-        SUBDIR=$ITEM/src/ext_$COMPONENT
-
-        if [[ -d "$SUBDIR/.git" ]] ; then 
-            echo "Parsed dir: $SUBDIR"
-            cd $SUBDIR
-            echo "$COMPONENT:$(git rev-parse HEAD)" >> $KF6_GITREV_LST
-            cd $ORIG_WD
-        fi
-
-    done
-
-    cat $KF6_GITREV_LST
-
-fi
-
 TerminateScript
