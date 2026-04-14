@@ -61,6 +61,8 @@ public:
 
     Private() = default;
 
+public:
+
     QWidget*                                 fileBox            = nullptr;
     DTextEdit*                               titleEdit          = nullptr;
     DTextEdit*                               descEdit           = nullptr;
@@ -723,11 +725,11 @@ void MediaWikiWidget::loadItemInfo(const QUrl& url)
     DItemInfo info(d->iface->itemInfo(url));
     QStringList keywar        = info.keywords();
     QString dt                = info.dateTime().toString(Qt::ISODate).replace(QLatin1Char('T'), QLatin1Char(' '), Qt::CaseSensitive);
-    QString title             = info.name();
-    QString description       = info.title();
+    QString ttl               = info.name();
+    QString desc              = info.title();
     QString currentCategories;
-    QString latitude;
-    QString longitude;
+    QString lat;
+    QString lng;
 
     for (int i = 0 ; i < keywar.size() ; ++i)
     {
@@ -743,17 +745,17 @@ void MediaWikiWidget::loadItemInfo(const QUrl& url)
 
     if (info.hasGeolocationInfo())
     {
-        latitude  = QString::number(info.latitude(),  'f', 9);
-        longitude = QString::number(info.longitude(), 'f', 9);
+        lat = QString::number(info.latitude(),  'f', 9);
+        lng = QString::number(info.longitude(), 'f', 9);
     }
 
     QMap<QString, QString> imageMetaData;
-    imageMetaData[QLatin1String("title")]       = title;
+    imageMetaData[QLatin1String("title")]       = ttl;
     imageMetaData[QLatin1String("date")]        = dt;
     imageMetaData[QLatin1String("categories")]  = currentCategories;
-    imageMetaData[QLatin1String("description")] = description;
-    imageMetaData[QLatin1String("latitude")]    = latitude;
-    imageMetaData[QLatin1String("longitude")]   = longitude;
+    imageMetaData[QLatin1String("description")] = desc;
+    imageMetaData[QLatin1String("latitude")]    = lat;
+    imageMetaData[QLatin1String("longitude")]   = lng;
     d->imagesDescInfo.insert(url.toLocalFile(), imageMetaData);
 }
 
