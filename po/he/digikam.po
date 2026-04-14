@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-13 00:41+0000\n"
-"PO-Revision-Date: 2026-04-01 17:24+0300\n"
+"PO-Revision-Date: 2026-04-13 21:23+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1547,7 +1547,7 @@ msgstr "הוספת פריטים חדשים לאלבום."
 #: core/app/main/digikamapp_camera.cpp:87
 #, kde-format
 msgid "Add Folders..."
-msgstr "הוספת תיקיות..."
+msgstr "הוספת תיקיות…"
 
 #: core/app/main/digikamapp_camera.cpp:88
 #, kde-format
@@ -7801,35 +7801,33 @@ msgid ""
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Brightness/Contrast/Gamma..."
+#, kde-format
 msgctxt "@action"
 msgid "Brightness/Contrast/Gamma..."
-msgstr "בהירות/חדות/גאמה..."
+msgstr "בהירות/ניגודיות/גאמה…"
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatool.cpp:295
-#, fuzzy, kde-format
+#, kde-format
 msgid "Convert to Black and White"
 msgstr "המרה לשחור לבן"
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Black and White"
-msgstr "שחור לבן..."
+msgstr "שחור לבן"
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to black and white."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "כלי עריכת התמונות הזה יכול להמיר תמונה לשחור לבן."
 
 #: core/dplugins/editor/colors/bwsepia/bwsepiatoolplugin.cpp:94
-#, fuzzy, kde-format
-#| msgid "Black && White..."
+#, kde-format
 msgctxt "@action"
 msgid "Black && White..."
-msgstr "שחור לבן..."
+msgstr "שחור לבן…"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertool.cpp:162
 #, kde-format
@@ -7837,17 +7835,16 @@ msgid "Channel Mixer"
 msgstr "מערבל ערוצים"
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can mix color channels from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לערבב ערוצי צבע מתמונה."
 
 #: core/dplugins/editor/colors/channelmixer/channelmixertoolplugin.cpp:91
-#, fuzzy, kde-format
-#| msgid "Channel Mixer..."
+#, kde-format
 msgctxt "@action"
 msgid "Channel Mixer..."
-msgstr "מערבל ערוצים..."
+msgstr "מערבל ערוצים…"
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:60
 #, fuzzy, kde-format
@@ -7856,17 +7853,16 @@ msgid "This Image Editor tool can adjust color balance from image."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:91
-#, fuzzy, kde-format
-#| msgid "Color Balance..."
+#, kde-format
 msgctxt "@action"
 msgid "Color Balance..."
-msgstr "איזון צבע..."
+msgstr "איזון צבע…"
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:41
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Convert to 8 bits"
-msgstr "המרה"
+msgstr "המרה ל־8 סיביות"
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:61
 #, fuzzy, kde-format
@@ -7875,10 +7871,10 @@ msgid "This Image Editor tool can convert image color depth to 8 bits."
 msgstr "זוהי רשימת הפריטים שאמורים להימחק."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:92
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Convert to 8 bits"
-msgstr "המרה"
+msgstr "המרה ל־8 סיביות"
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:110
 #, kde-format
@@ -7958,9 +7954,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:214
-#, fuzzy, kde-format
+#, kde-format
 msgid "Reset white point."
-msgstr "אתחול התוכן"
+msgstr "איפוס נקודה לבנה."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:215
 #, kde-format
@@ -7968,9 +7964,9 @@ msgid "If you press this button, the white point is reset to pure white."
 msgstr "לחיצה על הכפתור הזה תאפס את הנקודה הלבנה ללבן טהור."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:220
-#, fuzzy, kde-format
+#, kde-format
 msgid "Adjust white point automatically."
-msgstr "עדכון אוטומטי של כל ערוצי הצבע."
+msgstr "כוונון הנקודה הלבנה אוטומטית."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:221
 #, kde-format
@@ -7981,9 +7977,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:241
-#, fuzzy, kde-format
+#, kde-format
 msgid "Exposure correction."
-msgstr "זמן חשיפה"
+msgstr "תיקון חשיפה."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:242
 #, kde-format
@@ -8007,16 +8003,16 @@ msgid "Film"
 msgstr "סרט צילום"
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Color Negative Film"
-msgstr "איזון צבע..."
+msgstr "פילם נגטיב (תשליל) בצבע"
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to emulate color negative film"
-msgstr "שינוי עקומת צבע"
+msgstr "בלי להדמיית פילם נגטיב (תשליל) בצבע"
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:60
 #, fuzzy, kde-format
@@ -8025,10 +8021,10 @@ msgid "This Image Editor tool can emulate color negative film from image."
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Color Negative..."
-msgstr "איזון צבע..."
+msgstr "נגטיב (תשליל) בצבע…"
 
 #: core/dplugins/editor/colors/hsl/hsltool.cpp:155
 #, kde-format
@@ -8043,11 +8039,10 @@ msgid ""
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:91
-#, fuzzy, kde-format
-#| msgid "Hue/Saturation/Lightness..."
+#, kde-format
 msgctxt "@action"
 msgid "Hue/Saturation/Lightness..."
-msgstr "גוון/רוויה/בהירות..."
+msgstr "גוון/רוויה/בהירות…"
 
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:60
 #, fuzzy, kde-format
@@ -8089,10 +8084,10 @@ msgid "Color Profile Conversion"
 msgstr "המרת פרופיל צבע"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to convert image to a color space"
-msgstr "מרחב צבע"
+msgstr "כלי להמרת תמונה למרחב צבע"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:66
 #, fuzzy, kde-format
