@@ -617,8 +617,8 @@ int TagsCache::tagForPath(const QString& path) const
     // with a matching full path.
 
     int tagID                       = 0;
-    QString tagName                 = tagHierarchy.last();
-    const QList<int> possibleTagIds = d->nameHash.values(tagName);
+    QString tagnm                   = tagHierarchy.last();
+    const QList<int> possibleTagIds = d->nameHash.values(tagnm);
 
     for (int const id : possibleTagIds)
     {
@@ -684,7 +684,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
 
         // Traverse hierarchy from top to bottom.
 
-        for (const QString& tagName : std::as_const(tagHierarchy))
+        for (const QString& tagnm : std::as_const(tagHierarchy))
         {
             tagID = 0;
 
@@ -698,7 +698,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
                 // and parent ID identical to the ID of the tag we found in
                 // the previous run.
 
-                const auto ids = d->nameHash.values(tagName);
+                const auto ids = d->nameHash.values(tagnm);
 
                 for (int id : ids)
                 {
@@ -723,7 +723,7 @@ int TagsCache::createTag(const QString& tagPathToCreate)
             }
             else
             {
-                tagsToCreate << tagName;
+                tagsToCreate << tagnm;
 
                 if (parentTagExisted)
                 {
@@ -739,9 +739,9 @@ int TagsCache::createTag(const QString& tagPathToCreate)
     {
         CoreDbAccess access;
 
-        for (const QString& tagName : std::as_const(tagsToCreate))
+        for (const QString& tagnm : std::as_const(tagsToCreate))
         {
-            tagID = access.db()->addTag(parentTagIDForCreation, tagName, QString(), 0);
+            tagID = access.db()->addTag(parentTagIDForCreation, tagnm, QString(), 0);
 
             if (tagID == -1)
             {

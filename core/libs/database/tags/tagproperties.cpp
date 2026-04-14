@@ -93,9 +93,9 @@ TagProperties::TagProperties(int tagId)
     }
 
     d->tagId                      = tagId;
-    QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(tagId);
+    QList<TagProperty> props = CoreDbAccess().db()->getTagProperties(tagId);
 
-    for (const TagProperty& p : std::as_const(properties))
+    for (const TagProperty& p : std::as_const(props))
     {
         d->properties.insert(p.property, p.value);
     }
@@ -124,9 +124,9 @@ bool TagProperties::isNull() const
 
 TagProperties TagProperties::getOrCreate(const QString& tagPath)
 {
-    int tagId = TagsCache::instance()->getOrCreateTag(tagPath);
+    int tid = TagsCache::instance()->getOrCreateTag(tagPath);
 
-    return TagProperties(tagId);
+    return TagProperties(tid);
 }
 
 int TagProperties::tagId() const
