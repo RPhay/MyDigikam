@@ -25,6 +25,8 @@ public:
 
     Private() = default;
 
+public:
+
     Album*                                rootAlbum         = nullptr;
     Album*                                addingAlbum       = nullptr;
     Album*                                removingAlbum     = nullptr;
@@ -72,8 +74,6 @@ AbstractAlbumModel::AbstractAlbumModel(Album::Type albumType,
 
     connect(AlbumManager::instance(), &AlbumManager::signalAlbumRenamed,
             this, &AbstractAlbumModel::slotAlbumRenamed);
-
-    // ---
 }
 
 AbstractAlbumModel::~AbstractAlbumModel()
@@ -339,9 +339,9 @@ QMimeData* AbstractAlbumModel::mimeData(const QModelIndexList& indexes) const
 
     QList<Album*> albums;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        Album* const a = albumForIndex(index);
+        Album* const a = albumForIndex(ind);
 
         if (a)
         {
@@ -566,14 +566,14 @@ void AbstractAlbumModel::slotAlbumAboutToBeDeleted(Album* album)
 
     // begin removing operation
 
-    int row            = album->rowFromAlbum();
-    QModelIndex parent = indexForAlbum(album->parent());
-    beginRemoveRows(parent, row, row);
+    int row          = album->rowFromAlbum();
+    QModelIndex prnt = indexForAlbum(album->parent());
+    beginRemoveRows(prnt, row, row);
     albumCleared(album);
 
     // store album for slotAlbumHasBeenDeleted
 
-    d->removingAlbum   = album;
+    d->removingAlbum = album;
 }
 
 void AbstractAlbumModel::slotAlbumHasBeenDeleted(Album* album)
@@ -600,9 +600,9 @@ void AbstractAlbumModel::slotAlbumIconChanged(Album* album)
         return;
     }
 
-    QModelIndex index = indexForAlbum(album);
+    QModelIndex ind = indexForAlbum(album);
 
-    Q_EMIT dataChanged(index, index);
+    Q_EMIT dataChanged(ind, ind);
 }
 
 void AbstractAlbumModel::slotAlbumRenamed(Album* album)
@@ -612,9 +612,9 @@ void AbstractAlbumModel::slotAlbumRenamed(Album* album)
         return;
     }
 
-    QModelIndex index = indexForAlbum(album);
+    QModelIndex ind = indexForAlbum(album);
 
-    Q_EMIT dataChanged(index, index);
+    Q_EMIT dataChanged(ind, ind);
 }
 
 } // namespace Digikam
