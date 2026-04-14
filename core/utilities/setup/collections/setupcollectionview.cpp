@@ -700,14 +700,14 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
         return;
     }
 
-    QModelIndex index = indexForId(mappedId, (int)ColumnStatus);
+    QModelIndex ind = indexForId(mappedId, (int)ColumnStatus);
 
-    if (!index.isValid() || (mappedId >= m_collections.count()))
+    if (!ind.isValid() || (mappedId >= m_collections.count()))
     {
         return;
     }
 
-    Item& orgItem   = m_collections[index.internalId()];
+    Item& orgItem   = m_collections[ind.internalId()];
 
     Item item(curl.toLocalFile(), orgItem.label, (Category)orgItem.parentId);
     orgItem.path    = !orgItem.updated ? orgItem.location.albumRootPath()
@@ -716,13 +716,13 @@ void SetupCollectionModel::slotAppendPressed(int mappedId)
     orgItem.childs << curl.toLocalFile();
     orgItem.updated = true;
 
-    item.orgIndex   = index.internalId();
+    item.orgIndex   = ind.internalId();
     item.location   = orgItem.location;
     item.appended   = true;
 
-    int row         = rowCount(index);
+    int row         = rowCount(ind);
 
-    beginInsertRows(index, row, row);
+    beginInsertRows(ind, row, row);
     m_collections << item;
     endInsertRows();
 
@@ -755,10 +755,10 @@ void SetupCollectionModel::addCollection(int category)
     {
         // Add new item to model. Adding to CollectionManager is done in apply()!
 
-        QModelIndex parent = indexForCategory((Category)category);
-        int row            = rowCount(parent);
+        QModelIndex prnt = indexForCategory((Category)category);
+        int row          = rowCount(prnt);
 
-        beginInsertRows(parent, row, row);
+        beginInsertRows(prnt, row, row);
         m_collections << Item(path, label, (Category)category);
         endInsertRows();
 
@@ -795,14 +795,14 @@ void SetupCollectionModel::emitDataChangedForChildren(const QModelIndex& parent)
 
 void SetupCollectionModel::updateCollection(int internalId)
 {
-    QModelIndex index = indexForId(internalId, (int)ColumnStatus);
+    QModelIndex ind = indexForId(internalId, (int)ColumnStatus);
 
-    if (!index.isValid() || (internalId >= m_collections.count()))
+    if (!ind.isValid() || (internalId >= m_collections.count()))
     {
         return;
     }
 
-    Item& item   = m_collections[index.internalId()];
+    Item& item   = m_collections[ind.internalId()];
     int parentId = item.parentId;
 
     if (askForNewCollectionCategory(&parentId))
@@ -838,16 +838,16 @@ void SetupCollectionModel::updateCollection(int internalId)
 
 void SetupCollectionModel::deleteCollection(int internalId)
 {
-    QModelIndex index       = indexForId(internalId, (int)ColumnStatus);
-    QModelIndex parentIndex = parent(index);
+    QModelIndex ind         = indexForId(internalId, (int)ColumnStatus);
+    QModelIndex parentIndex = parent(ind);
 
-    if (!index.isValid() || (internalId >= m_collections.count()))
+    if (!ind.isValid() || (internalId >= m_collections.count()))
     {
         return;
     }
 
     int result    = QMessageBox::No;
-    Item& item    = m_collections[index.internalId()];
+    Item& item    = m_collections[ind.internalId()];
     QString label = data(indexForId(internalId, (int)ColumnName), Qt::DisplayRole).toString();
 
     Q_UNUSED(result);
@@ -875,7 +875,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
     {
         // Remove from model. Removing from CollectionManager is done in apply()!
 
-        beginRemoveRows(parentIndex, index.row(), index.row());
+        beginRemoveRows(parentIndex, ind.row(), ind.row());
         item.deleted = true;
         endRemoveRows();
 
@@ -894,7 +894,7 @@ void SetupCollectionModel::deleteCollection(int internalId)
             {
                 Item& remItem = m_collections[i];
 
-                if (remItem.orgIndex == (int)index.internalId())
+                if (remItem.orgIndex == (int)ind.internalId())
                 {
                     QModelIndex remIndex       = indexForId(i, (int)ColumnStatus);
                     QModelIndex remParentIndex = parent(remIndex);
@@ -1328,7 +1328,7 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
     }
     else
     {
-        Qt::ItemFlags flags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+        Qt::ItemFlags flgs(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 
         switch (index.column())
         {
@@ -1338,15 +1338,15 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
 
                 if (item.appended)
                 {
-                    return flags;
+                    return flgs;
                 }
 
-                return (flags | Qt::ItemIsEditable);
+                return (flgs | Qt::ItemIsEditable);
             }
 
             default:
             {
-                return flags;
+                return flgs;
             }
         }
     }
@@ -1387,7 +1387,7 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
         // The model indices contain as internal id the index to this list.
 
         int parentId = parent.row();
-        int rowCount = 0;
+        int rowCnt   = 0;
 
         for (int i = 0 ; i < m_collections.count() ; ++i)
         {
@@ -1395,12 +1395,12 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
 
             if (!item.deleted && (item.parentId == parentId))
             {
-                if (rowCount == row)
+                if (rowCnt == row)
                 {
                     return createIndex(row, column, i);
                 }
 
-                ++rowCount;
+                ++rowCnt;
             }
         }
     }
