@@ -96,9 +96,9 @@ int ParseResults::offset(const ResultsKey& key) const
 
 ParseResults::ResultsKey ParseResults::keyAtPosition(int pos) const
 {
-    const auto keys = m_results.keys();
+    const auto kys = m_results.keys();
 
-    for (const ResultsKey& key : keys)
+    for (const ResultsKey& key : kys)
     {
         if (pos == key.first)
         {
@@ -119,9 +119,9 @@ bool ParseResults::hasKeyAtPosition(int pos) const
 
 ParseResults::ResultsKey ParseResults::keyAtApproximatePosition(int pos) const
 {
-    const auto keys = m_results.keys();
+    const auto kys = m_results.keys();
 
-    for (const ResultsKey& key : keys)
+    for (const ResultsKey& key : kys)
     {
         int start  = key.first;
         int length = key.second;
@@ -169,7 +169,7 @@ bool ParseResults::keyIsValid(const ResultsKey& key) const
 
 QString ParseResults::replaceTokens(const QString& markedString) const
 {
-    QString result;
+    QString res;
 
     for (int i = 0 ; i < markedString.size() ; )
     {
@@ -177,25 +177,25 @@ QString ParseResults::replaceTokens(const QString& markedString) const
         {
             ResultsKey key     = keyAtPosition(i);
             ResultsValue value = m_results.value(key);
-            result.append(value.second);
+            res.append(value.second);
             i                 += key.second;
         }
         else
         {
-            result.append(markedString.at(i));
+            res.append(markedString.at(i));
             ++i;
         }
     }
 
-    return result;
+    return res;
 }
 
 QString ParseResults::resultValuesAsString() const
 {
     QString valuesString;
-    const auto keys = m_results.keys();
+    const auto kys = m_results.keys();
 
-    for (const ResultsKey& key : keys)
+    for (const ResultsKey& key : kys)
     {
         valuesString += result(key);
     }
@@ -205,9 +205,9 @@ QString ParseResults::resultValuesAsString() const
 
 void ParseResults::debug() const
 {
-    const auto keys = m_results.keys();
+    const auto kys = m_results.keys();
 
-    for (const ResultsKey& key : keys)
+    for (const ResultsKey& key : kys)
     {
         QString _token  = token(key);
         QString _result = result(key);
