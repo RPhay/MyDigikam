@@ -48,10 +48,10 @@ qlonglong ItemInfo::groupImageId() const
 
     // list size should be 0 or 1
 
-    int groupImage       = ids.isEmpty() ? -1 : ids.first();
+    int groupImg         = ids.isEmpty() ? -1 : ids.first();
 
     ItemInfoWriteLocker lock;
-    m_data.data()->groupImage       = groupImage;
+    m_data.data()->groupImage       = groupImg;
     m_data.data()->groupImageCached = true;
 
     return m_data->groupImage;
@@ -64,14 +64,14 @@ bool ItemInfo::isGrouped() const
 
 ItemInfo ItemInfo::groupImage() const
 {
-    qlonglong id = groupImageId();
+    qlonglong gid = groupImageId();
 
-    if (id == -1)
+    if (gid == -1)
     {
         return ItemInfo();
     }
 
-    return ItemInfo(id);
+    return ItemInfo(gid);
 }
 
 QList<ItemInfo> ItemInfo::groupedImages() const
