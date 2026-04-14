@@ -12,6 +12,8 @@
  *
  * ============================================================ */
 
+// cppcheck-suppress-file knownConditionTrueFalse
+
 #include "backgroundblurfilter.h"
 
 // Qt includes
@@ -24,8 +26,6 @@
 #include "digikam_globals_p.h"      // For KF6::Ki18n deprecated
 #include "digikam_opencv.h"
 #include "qtopencvimg.h"
-
-// cppcheck-suppress-file knownConditionTrueFalse
 
 namespace DigikamEditorBackgroundBlurToolPlugin
 {
