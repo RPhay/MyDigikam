@@ -6,7 +6,7 @@
  * Date        : 2025-08-24
  * Description : image editor plugin to blur the background of an image
  *
- * SPDX-FileCopyrightText: 2025 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * SPDX-FileCopyrightText: 2025-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
