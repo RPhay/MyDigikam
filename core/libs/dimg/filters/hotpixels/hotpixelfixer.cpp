@@ -40,7 +40,7 @@ namespace Digikam
 {
 
 #ifndef DBL_MIN
-    static const double DBL_MIN = 1e-37;
+    static const double DBL_MIN = 1e-10;
 #endif
 
 HotPixelFixer::HotPixelFixer(QObject* const parent)
@@ -249,11 +249,6 @@ void HotPixelFixer::weightPixels(DImg& img,
 
         switch (method)
         {
-            case HotPixelContainer::AVERAGE_INTERPOLATION:  // Gilles: to prevent warnings from compiler.
-            {
-                break;
-            }
-
             case HotPixelContainer::LINEAR_INTERPOLATION:
             {
                 polynomeOrder = 1;
@@ -270,6 +265,11 @@ void HotPixelFixer::weightPixels(DImg& img,
             {
                 polynomeOrder = 3;
                 break;
+            }
+
+            default:
+            {
+                return; // Not supported.
             }
         }
 
@@ -363,7 +363,7 @@ void HotPixelFixer::weightPixels(DImg& img,
                     {
                         component = 0;
                     }
-                    else if (sum_weight >= DBL_MIN)
+                    else if (sum_weight > DBL_MIN)
                     {
                         component = (int) (v / sum_weight);
 
@@ -379,13 +379,9 @@ void HotPixelFixer::weightPixels(DImg& img,
                             component = maxComponent;
                         }
                     }
-                    else if (v >= 0.0)
-                    {
-                        component = maxComponent;
-                    }
                     else
                     {
-                        component = 0;
+                        component = (v >= 0.0) ? maxComponent : 0;
                     }
 
                     if      (iComp == 0)
