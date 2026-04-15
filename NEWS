@@ -109,7 +109,7 @@ BUGFIXES:
 081 --> 518771 - Build system and documentation issues on ARM64 Linux.
 082 --> 510124 - Black screen during video playback.
 083 --> 518981 - "Write to XMP sidecar only" not honored for rotation data.
-084 --> 
+084 --> 518995 - ExifTool not fund on first use.
 085 --> 
 086 --> 
 087 --> 
