@@ -108,7 +108,7 @@ BUGFIXES:
 080 --> 518728 - The ratings/star filters have no effect.
 081 --> 518771 - Build system and documentation issues on ARM64 Linux.
 082 --> 510124 - Black screen during video playback.
-083 --> 
+083 --> 518981 - "Write to XMP sidecar only" not honored for rotation data.
 084 --> 
 085 --> 
 086 --> 

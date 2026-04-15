@@ -212,8 +212,9 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
 
             MetaEngineSettingsContainer msettings           = MetaEngineSettings::instance()->settings();
             MetaEngineSettingsContainer::RotationBehaviorFlags behavior;
-            behavior              = msettings.rotationBehavior;
-            bool rotateByMetadata = (behavior & MetaEngineSettingsContainer::RotateByMetadataFlag);
+            behavior                = msettings.rotationBehavior;
+            bool rotateByMetadata   = (behavior & MetaEngineSettingsContainer::RotateByMetadataFlag);
+            bool writeOnlyToSidecar = (msettings.metadataWritingMode == DMetadata::WRITE_TO_SIDECAR_ONLY);
 
             // Check if rotation by content, as desired, is feasible
             // We'll later check again if it was successful
@@ -324,6 +325,14 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             if (rotatedPixels)
             {
                 metaOrientation = MetaEngine::ORIENTATION_NORMAL;
+
+                if (writeOnlyToSidecar)
+                {
+                    QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
+                    metadata->setMetadataWritingMode(DMetadata::WRITE_TO_SIDECAR_AND_FILE);
+                    metadata->setItemOrientation(metaOrientation);
+                    metadata->applyChanges();
+                }
             }
 
             // Setting the rotation flag on Raws with embedded JPEG is a mess
@@ -333,15 +342,6 @@ void FileActionMngrFileWorker::transform(const FileActionItemInfoList& infos, in
             {
                 QScopedPointer<DMetadata> metadata(new DMetadata(filePath));
                 metadata->setItemOrientation(metaOrientation);
-
-                if (
-                    (behavior & MetaEngineSettingsContainer::RotateByMetadataFlag)   &&
-                    (msettings.metadataWritingMode == DMetadata::WRITE_TO_SIDECAR_ONLY)
-                   )
-                {
-                    metadata->setMetadataWritingMode(DMetadata::WRITE_TO_SIDECAR_AND_FILE);
-                }
-
                 metadata->applyChanges();
             }
 
