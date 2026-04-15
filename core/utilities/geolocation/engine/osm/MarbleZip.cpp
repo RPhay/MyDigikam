@@ -465,7 +465,6 @@ public:
 };
 
 MarbleZipReader::FileInfo::FileInfo()
-    : isDir(false), isFile(false), isSymLink(false), crc32(0), size(0)
 {
 }
 
@@ -480,14 +479,15 @@ MarbleZipReader::FileInfo::FileInfo(const FileInfo& other)
 
 MarbleZipReader::FileInfo& MarbleZipReader::FileInfo::operator=(const FileInfo& other)
 {
-    filePath = other.filePath;
-    isDir = other.isDir;
-    isFile = other.isFile;
-    isSymLink = other.isSymLink;
-    permissions = other.permissions;
-    crc32 = other.crc32;
-    size = other.size;
+    filePath     = other.filePath;
+    isDir        = other.isDir;
+    isFile       = other.isFile;
+    isSymLink    = other.isSymLink;
+    permissions  = other.permissions;
+    crc32        = other.crc32;
+    size         = other.size;
     lastModified = other.lastModified;
+
     return *this;
 }
 
@@ -499,8 +499,9 @@ bool MarbleZipReader::FileInfo::isValid() const
 class Q_DECL_HIDDEN QZipPrivate
 {
 public:
+
     QZipPrivate(QIODevice* device, bool ownDev)
-        : device(device), ownDevice(ownDev), dirtyFileTree(true), start_of_directory(0)
+        : device(device), ownDevice(ownDev)
     {
     }
 
@@ -514,44 +515,46 @@ public:
 
     void fillFileInfo(int index, MarbleZipReader::FileInfo& fileInfo) const;
 
-    QIODevice* device;
-    bool ownDevice;
-    bool dirtyFileTree;
+public:
+
+    QIODevice*        device                = nullptr;
+    bool              ownDevice;
+    bool              dirtyFileTree         = true;
     QList<FileHeader> fileHeaders;
-    QByteArray comment;
-    uint start_of_directory;
+    QByteArray        comment;
+    uint              start_of_directory    = 0;
 };
 
 void QZipPrivate::fillFileInfo(int index, MarbleZipReader::FileInfo& fileInfo) const
 {
-    FileHeader header = fileHeaders.at(index);
-    fileInfo.filePath = QString::fromLocal8Bit(header.file_name);
+    FileHeader header  = fileHeaders.at(index);
+    fileInfo.filePath  = QString::fromLocal8Bit(header.file_name);
     const quint32 mode = (qFromLittleEndian<quint32>(&header.h.external_file_attributes[0]) >> 16) & 0xFFFF;
 
     if (mode == 0)
     {
-        fileInfo.isDir = false;
-        fileInfo.isFile = true;
-        fileInfo.isSymLink = false;
+        fileInfo.isDir       = false;
+        fileInfo.isFile      = true;
+        fileInfo.isSymLink   = false;
         fileInfo.permissions = QFile::ReadOwner;
     }
-
     else
     {
-        fileInfo.isDir = S_ISDIR(mode);
-        fileInfo.isFile = S_ISREG(mode);
-        fileInfo.isSymLink = S_ISLNK(mode);
+        fileInfo.isDir       = S_ISDIR(mode);
+        fileInfo.isFile      = S_ISREG(mode);
+        fileInfo.isSymLink   = S_ISLNK(mode);
         fileInfo.permissions = modeToPermissions(mode);
     }
 
-    fileInfo.crc32 = readUInt(header.h.crc_32);
-    fileInfo.size = readUInt(header.h.uncompressed_size);
+    fileInfo.crc32        = readUInt(header.h.crc_32);
+    fileInfo.size         = readUInt(header.h.uncompressed_size);
     fileInfo.lastModified = readMSDosDate(header.h.last_mod_file);
 }
 
 class Q_DECL_HIDDEN MarbleZipReaderPrivate : public QZipPrivate
 {
 public:
+
     MarbleZipReaderPrivate(QIODevice* device, bool ownDev)
         : QZipPrivate(device, ownDev), status(MarbleZipReader::NoError)
     {
