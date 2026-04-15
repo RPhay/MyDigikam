@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-13 00:41+0000\n"
+"POT-Creation-Date: 2026-04-15 00:43+0000\n"
 "PO-Revision-Date: 2026-04-07 08:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -8926,7 +8926,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Correcció del vinyetatge..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:105
 #, kde-format
 msgid "Background Blur Filter"
 msgstr "Filtre de difuminat del fons"
@@ -25425,13 +25425,13 @@ msgstr "Error en el fitxer «%1»: %2\n"
 msgid "Uploaded via digiKam uploader"
 msgstr "Pujat mitjançant el pujador del digiKam"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:109
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Select an image"
 msgstr "Selecciona una imatge"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:128
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25440,298 +25440,298 @@ msgstr ""
 "Aquest és un enllaç que podeu clicar per a obrir la pàgina web de MediaWiki "
 "en un navegador web."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:143
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "This is the list of images to upload to the wiki."
 msgstr "Aquesta és la llista de les imatges a pujar al wiki."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:169
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:346
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:171
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
 msgstr "Aquest és el formulari de connexió al vostre compte al wiki escollit."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:191
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
 #, kde-format
 msgctxt "@label: properties"
 msgid "Title:"
 msgstr "Títol:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
 #, kde-format
 msgctxt "@label: properties"
 msgid "Date:"
 msgstr "Data:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
 #, kde-format
 msgctxt "@label: properties"
 msgid "Description:"
 msgstr "Descripció:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
 #, kde-format
 msgctxt "@label: properties"
 msgid "Categories:"
 msgstr "Categories:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
 #, kde-format
 msgctxt "@label: properties"
 msgid "Latitude:"
 msgstr "Latitud:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:203
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
 msgstr "Longitud:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:231
 #, kde-format
 msgctxt "@option"
 msgid "Account"
 msgstr "Compte"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:230
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:232
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your MediaWiki account."
 msgstr "Aquest és el formulari de connexió al vostre compte del MediaWiki."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:238
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:240
 #, kde-format
 msgctxt "@option: button"
 msgid "New"
 msgstr "Nou"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:239
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:241
 #, kde-format
 msgctxt "@info"
 msgid "Add a wiki to this list"
 msgstr "Afegeix un wiki a la llista"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:244
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
 #, kde-format
 msgctxt "@item"
 msgid "Wikimedia Commons"
 msgstr "Wikimedia Commons"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:245
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
 #, kde-format
 msgctxt "@item"
 msgid "Wikimedia Meta"
 msgstr "Wikimedia Meta"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
 #, kde-format
 msgctxt "@item"
 msgid "Wikipedia"
 msgstr "Viquipèdia"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
 #, kde-format
 msgctxt "@item"
 msgid "Wikibooks"
 msgstr "Wikibooks"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
 #, kde-format
 msgctxt "@item"
 msgid "Wikinews"
 msgstr "Wikinews"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
 #, kde-format
 msgctxt "@item"
 msgid "Wikiquote"
 msgstr "Wikiquote"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
 #, kde-format
 msgctxt "@item"
 msgid "Wikisource"
 msgstr "Wikisource"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
 #, kde-format
 msgctxt "@item"
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
 #, kde-format
 msgctxt "@item"
 msgid "MediaWiki"
 msgstr "MediaWiki"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:255
 #, kde-format
 msgctxt "@item"
 msgid "Wikia Foto"
 msgstr "Wikia Foto"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:256
 #, kde-format
 msgctxt "@item"
 msgid "Wikia Uncyclopedia"
 msgstr "Wikia Uncyclopedia"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:259
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:261
 #, kde-format
 msgctxt "@label"
 msgid "Wiki:"
 msgstr "Wiki:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:270
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:272
 #, kde-format
 msgctxt "@info"
 msgid "These are options for adding a Wiki."
 msgstr "Aquestes són les opcions per a afegir un wiki."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:275
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:277
 #, kde-format
 msgctxt "@label: name of wiki area"
 msgid "Name:"
 msgstr "Nom:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:278
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:280
 #, kde-format
 msgctxt "@label"
 msgid "API URL:"
 msgstr "URL de l'API:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:284
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:286
 #, kde-format
 msgctxt "@action: button"
 msgid "Add"
 msgstr "Afegeix"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:285
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid "Add a new wiki"
 msgstr "Afegeix un wiki nou"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:294
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:296
 #, kde-format
 msgctxt "@label"
 msgid "Login:"
 msgstr "Usuari:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:297
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:299
 #, kde-format
 msgctxt "@label"
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:302
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:304
 #, kde-format
 msgctxt "@action"
 msgid "&Log in"
 msgstr "&Inicia la sessió"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:318
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:320
 #, kde-format
 msgctxt "@option"
 msgid "Login Information"
 msgstr "Informació per a l'inici de la sessió"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:324
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:326
 #, kde-format
 msgctxt "@label: name of the wiki the user is currently logged on"
 msgid "Logged on: "
 msgstr "Connectat a: "
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:328
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:330
 #, kde-format
 msgctxt "@label: username which is used to connect to the wiki"
 msgid "Logged as: "
 msgstr "Connectat com a: "
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:332
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:334
 #, kde-format
 msgctxt "@action: button"
 msgid "Change Account"
 msgstr "Canvia de compte"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:333
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
 msgstr "Desconnecta i canvia el compte emprat per a transferir"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:345
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:347
 #, kde-format
 msgctxt "@option"
 msgid "Information"
 msgstr "Informació"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:351
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:353
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Autor:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:354
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:356
 #, kde-format
 msgctxt "@label: source file"
 msgid "Source:"
 msgstr "Origen:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:357
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:359
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Llicència:"
 
 # skip-rule: barb-igual
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:361
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 4.0"
 msgstr "Treball propi, Creative Commons Reconeixement-Compartir Igual 4.0"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
 #, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and GFDL"
 msgstr "Treball propi, llicència múltiple amb CC-BY-SA-3.0 i GFDL"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
 #, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and older"
 msgstr "Treball propi, llicència múltiple amb CC-BY-SA-3.0 i anterior"
 
 # skip-rule: barb-igual
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 3.0"
 msgstr "Treball propi, Creative Commons Reconeixement-Compartir Igual 3.0"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution 3.0"
 msgstr "Treball propi, Creative Commons Reconeixement 3.0"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
 #, kde-format
 msgctxt "@item"
 msgid "Own work, release into public domain under the CC-Zero license"
 msgstr "Treball propi, publicat en el domini públic amb la llicència CC-Zero"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
 #, kde-format
 msgctxt "@item"
 msgid "Author died more than 100 years ago"
 msgstr "L'autor va morir fa més de 100 anys"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
 #, kde-format
 msgctxt "@item"
 msgid ""
@@ -25740,44 +25740,44 @@ msgstr ""
 "Fotografia d'un treball en dues dimensions en què l'autor va morir fa més de "
 "100 anys"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
 #, kde-format
 msgctxt "@item"
 msgid "First published in the United States before 1923"
 msgstr "Es va publicar per primer cop als Estats Units abans del 1923"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
 #, kde-format
 msgctxt "@item"
 msgid "Work of a U.S. government agency"
 msgstr "Treball d'una agència del govern dels EUA"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
 #, kde-format
 msgctxt "@item"
 msgid "Simple typefaces, individual words or geometric shapes"
 msgstr "Text senzill, paraules individuals o figures geomètriques"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
 #, kde-format
 msgctxt "@item"
 msgid "Logos with only simple typefaces, individual words or geometric shapes"
 msgstr "Logotips amb text senzill, paraules individuals o figures geomètriques"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:387
 #, kde-format
 msgctxt "@item"
 msgid "No license specified (not recommended for public wiki sites)"
 msgstr ""
 "No s'ha especificat cap llicència (no es recomana pels llocs de wiki públics)"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:388
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:390
 #, kde-format
 msgctxt "@label"
 msgid "Generic categories:"
 msgstr "Categories genèriques:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:391
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:393
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25786,13 +25786,13 @@ msgstr ""
 "Aquest és un lloc per a introduir quines categories s'afegiran a tots els "
 "fitxers."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:394
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:396
 #, kde-format
 msgctxt "@label"
 msgid "Generic text:"
 msgstr "Text genèric:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:397
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:399
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25802,13 +25802,13 @@ msgstr ""
 "Aquest és un lloc per a introduir el text que s'afegirà a tots els fitxers, "
 "per sota de la plantilla d'informació."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:401
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:403
 #, kde-format
 msgctxt "@label"
 msgid "Upload comments:"
 msgstr "Puja els comentaris:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:404
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25819,13 +25819,13 @@ msgstr ""
 "pujada. El predeterminat és «Pujat mitjançant el pujador del digiKam» i "
 "s'usarà quan resti buit."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:428
 #, kde-format
 msgctxt "@option"
 msgid "Options"
 msgstr "Opcions"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:427
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:429
 #, kde-format
 msgctxt "@info"
 msgid "These are options that will be applied to photos before upload."
@@ -25833,43 +25833,43 @@ msgstr ""
 "Aquestes són les opcions que s'aplicaran a les fotografies abans de pujar-"
 "les."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:433
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:435
 #, kde-format
 msgctxt "@option"
 msgid "Resize photos before uploading"
 msgstr "Redimensiona les fotografies abans de pujar-les"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:443
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:445
 #, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
 msgstr "Mida màxima:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:451
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:453
 #, kde-format
 msgctxt "@label"
 msgid "JPEG quality:"
 msgstr "Qualitat JPEG:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:454
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:456
 #, kde-format
 msgctxt "@option"
 msgid "Remove metadata from file"
 msgstr "Suprimeix les metadades del fitxer"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:458
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:460
 #, kde-format
 msgctxt "@option"
 msgid "Remove coordinates from file"
 msgstr "Suprimeix les coordenades del fitxer"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:475
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:477
 #, kde-format
 msgctxt "@item"
 msgid "Items Properties"
 msgstr "Propietats dels elements"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:476
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:478
 #, kde-format
 msgctxt "@item"
 msgid "Upload Settings"

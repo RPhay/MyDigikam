@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-13 00:41+0000\n"
+"POT-Creation-Date: 2026-04-15 00:43+0000\n"
 "PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -8618,7 +8618,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "暈映校正..."
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:105
 #, fuzzy, kde-format
 #| msgid "Background color: "
 msgid "Background Blur Filter"
@@ -25148,360 +25148,360 @@ msgstr "儲存檔案發生錯誤"
 msgid "Uploaded via digiKam uploader"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:109
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Select an image"
 msgstr "選擇影像"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:128
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:130
 #, kde-format
 msgctxt "@info"
 msgid ""
 "This is a clickable link to open the MediaWiki home page in a web browser."
 msgstr "這是在網頁瀏覽器開啟 MediaWiki 主頁的可點擊連結。"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:143
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgctxt "@info"
 msgid "This is the list of images to upload to the wiki."
 msgstr "這是要批次處理的影像清單。"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:169
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:346
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:171
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:348
 #, fuzzy, kde-format
 #| msgid "This is the list of images to batch process."
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
 msgstr "這是要批次處理的影像清單。"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:191
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
 #, kde-format
 msgctxt "@label: properties"
 msgid "Title:"
 msgstr "標題："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
 #, kde-format
 msgctxt "@label: properties"
 msgid "Date:"
 msgstr "日期："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
 #, kde-format
 msgctxt "@label: properties"
 msgid "Description:"
 msgstr "描述："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
 #, kde-format
 msgctxt "@label: properties"
 msgid "Categories:"
 msgstr "分類："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
 #, kde-format
 msgctxt "@label: properties"
 msgid "Latitude:"
 msgstr "緯度："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:203
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
 msgstr "經度："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:231
 #, kde-format
 msgctxt "@option"
 msgid "Account"
 msgstr "帳號"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:230
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:232
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your MediaWiki account."
 msgstr "這是您的 MediaWiki 帳號的登入表單。"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:238
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:240
 #, kde-format
 msgctxt "@option: button"
 msgid "New"
 msgstr "新增"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:239
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:241
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
 msgid "Add a wiki to this list"
 msgstr "加入新數值到清單中"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:244
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Wikimedia Commons"
 msgstr "項目註解"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:245
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Wikimedia Meta"
 msgstr "項目註解"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Wikipedia"
 msgstr "項目註解"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
 #, kde-format
 msgctxt "@item"
 msgid "Wikibooks"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
 #, kde-format
 msgctxt "@item"
 msgid "Wikinews"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
 #, kde-format
 msgctxt "@item"
 msgid "Wikiquote"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
 #, kde-format
 msgctxt "@item"
 msgid "Wikisource"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
 #, kde-format
 msgctxt "@item"
 msgid "Wiktionary"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
 #, fuzzy, kde-format
 #| msgid "Median:"
 msgctxt "@item"
 msgid "MediaWiki"
 msgstr "中值："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:255
 #, kde-format
 msgctxt "@item"
 msgid "Wikia Foto"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:256
 #, kde-format
 msgctxt "@item"
 msgid "Wikia Uncyclopedia"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:259
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:261
 #, kde-format
 msgctxt "@label"
 msgid "Wiki:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:270
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:272
 #, kde-format
 msgctxt "@info"
 msgid "These are options for adding a Wiki."
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:275
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:277
 #, kde-format
 msgctxt "@label: name of wiki area"
 msgid "Name:"
 msgstr "名稱："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:278
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:280
 #, kde-format
 msgctxt "@label"
 msgid "API URL:"
 msgstr "API 網址："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:284
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:286
 #, kde-format
 msgctxt "@action: button"
 msgid "Add"
 msgstr "新增"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:285
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:287
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgctxt "@info"
 msgid "Add a new wiki"
 msgstr "新增標籤"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:294
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:296
 #, kde-format
 msgctxt "@label"
 msgid "Login:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:297
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:299
 #, fuzzy, kde-format
 #| msgid "Password"
 msgctxt "@label"
 msgid "Password:"
 msgstr "密碼"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:302
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:304
 #, kde-format
 msgctxt "@action"
 msgid "&Log in"
 msgstr "登入(&L)"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:318
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:320
 #, kde-format
 msgctxt "@option"
 msgid "Login Information"
 msgstr "登入資訊"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:324
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:326
 #, kde-format
 msgctxt "@label: name of the wiki the user is currently logged on"
 msgid "Logged on: "
 msgstr "登入於："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:328
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:330
 #, kde-format
 msgctxt "@label: username which is used to connect to the wiki"
 msgid "Logged as: "
 msgstr "登入為："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:332
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:334
 #, kde-format
 msgctxt "@action: button"
 msgid "Change Account"
 msgstr "變更帳號"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:333
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:345
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:347
 #, kde-format
 msgctxt "@option"
 msgid "Information"
 msgstr "資訊"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:351
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:353
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "作者："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:354
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:356
 #, fuzzy, kde-format
 #| msgid "Source:"
 msgctxt "@label: source file"
 msgid "Source:"
 msgstr "來源："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:357
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:359
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:361
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 4.0"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
 #, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and GFDL"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
 #, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and older"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 3.0"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution 3.0"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
 #, kde-format
 msgctxt "@item"
 msgid "Own work, release into public domain under the CC-Zero license"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
 #, kde-format
 msgctxt "@item"
 msgid "Author died more than 100 years ago"
 msgstr "作者已逝超過 100 年"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
 #, kde-format
 msgctxt "@item"
 msgid ""
 "Photo of a two-dimensional work whose author died more than 100 years ago"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
 #, kde-format
 msgctxt "@item"
 msgid "First published in the United States before 1923"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
 #, kde-format
 msgctxt "@item"
 msgid "Work of a U.S. government agency"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
 #, kde-format
 msgctxt "@item"
 msgid "Simple typefaces, individual words or geometric shapes"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
 #, kde-format
 msgctxt "@item"
 msgid "Logos with only simple typefaces, individual words or geometric shapes"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:387
 #, kde-format
 msgctxt "@item"
 msgid "No license specified (not recommended for public wiki sites)"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:388
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:390
 #, fuzzy, kde-format
 #| msgid "Supplemental categories:"
 msgctxt "@label"
 msgid "Generic categories:"
 msgstr "參考分類："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:391
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:393
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value in degrees will be added to main angle value to set fine "
@@ -25511,7 +25511,7 @@ msgid ""
 "This is a place to enter categories that will be added to all the files."
 msgstr "這項數值 ( 單位為度) 會被加到主要角度以設定精細的目標角度。"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:394
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:396
 #, fuzzy, kde-format
 #| msgctxt "generic black and white film"
 #| msgid "Generic"
@@ -25519,7 +25519,7 @@ msgctxt "@label"
 msgid "Generic text:"
 msgstr "一般"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:397
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:399
 #, fuzzy, kde-format
 #| msgid ""
 #| "This value in degrees will be added to main angle value to set fine "
@@ -25530,13 +25530,13 @@ msgid ""
 "Information template."
 msgstr "這項數值 ( 單位為度) 會被加到主要角度以設定精細的目標角度。"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:401
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:403
 #, kde-format
 msgctxt "@label"
 msgid "Upload comments:"
 msgstr "上傳註解："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:404
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -25544,57 +25544,57 @@ msgid ""
 "default of 'Uploaded via digiKam uploader' will be used if empty."
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:428
 #, kde-format
 msgctxt "@option"
 msgid "Options"
 msgstr "選項"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:427
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:429
 #, kde-format
 msgctxt "@info"
 msgid "These are options that will be applied to photos before upload."
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:433
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:435
 #, kde-format
 msgctxt "@option"
 msgid "Resize photos before uploading"
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:443
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:445
 #, fuzzy, kde-format
 #| msgid "Matrix size:"
 msgctxt "@label"
 msgid "Maximum size:"
 msgstr "矩陣大小："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:451
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:453
 #, kde-format
 msgctxt "@label"
 msgid "JPEG quality:"
 msgstr "JPEG 品質："
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:454
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:456
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "Remove metadata from file"
 msgstr "從 Nepomuk 讀取中繼資料"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:458
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:460
 #, kde-format
 msgctxt "@option"
 msgid "Remove coordinates from file"
 msgstr "從檔案移除座標"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:475
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:477
 #, fuzzy, kde-format
 #| msgid "Item Properties"
 msgctxt "@item"
 msgid "Items Properties"
 msgstr "項目屬性"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:476
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:478
 #, kde-format
 msgctxt "@item"
 msgid "Upload Settings"

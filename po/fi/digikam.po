@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-13 00:41+0000\n"
+"POT-Creation-Date: 2026-04-15 00:43+0000\n"
 "PO-Revision-Date: 2026-03-13 17:00+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -9215,7 +9215,7 @@ msgctxt "@action"
 msgid "Vignetting Correction..."
 msgstr "Vinjetoinnin korjaus…"
 
-#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:103
+#: core/dplugins/editor/enhance/backgroundblur/backgroundblurfilter.cpp:105
 #, fuzzy, kde-format
 #| msgid "Background color: "
 msgid "Background Blur Filter"
@@ -25918,13 +25918,13 @@ msgstr "Virhe tiedostossa ”%1”: %2\n"
 msgid "Uploaded via digiKam uploader"
 msgstr "Lähetetty digiKamilla"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:109
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:111
 #, kde-format
 msgctxt "@info"
 msgid "Select an image"
 msgstr "Valitse kuva"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:128
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:130
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is a clickable link to open the MediaWiki home page in a web browser."
@@ -25935,296 +25935,296 @@ msgstr ""
 "Tämä on napsautettava linkki, josta voi avata MediaWikin kotisivun selaimeen."
 "Tämä on napsautettava linkki, josta voi avata MediaWikin kotisivun selaimeen."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:143
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:145
 #, kde-format
 msgctxt "@info"
 msgid "This is the list of images to upload to the wiki."
 msgstr "Nämä ovat wikiin lähetettävät kuvat."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:169
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:346
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:171
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:348
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your account on the chosen wiki."
 msgstr "Tällä lomakkeella kirjaudutaan valitun wikin tilille."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:191
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
 #, kde-format
 msgctxt "@label: properties"
 msgid "Title:"
 msgstr "Otsikko:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:193
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
 #, kde-format
 msgctxt "@label: properties"
 msgid "Date:"
 msgstr "Päiväys:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:195
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
 #, kde-format
 msgctxt "@label: properties"
 msgid "Description:"
 msgstr "Kuvaus:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:197
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
 #, kde-format
 msgctxt "@label: properties"
 msgid "Categories:"
 msgstr "Luokat:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:199
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
 #, kde-format
 msgctxt "@label: properties"
 msgid "Latitude:"
 msgstr "Leveysaste:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:201
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:203
 #, kde-format
 msgctxt "@label: properties"
 msgid "Longitude:"
 msgstr "Pituusaste:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:229
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:231
 #, kde-format
 msgctxt "@option"
 msgid "Account"
 msgstr "Tili"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:230
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:232
 #, kde-format
 msgctxt "@info"
 msgid "This is the login form to your MediaWiki account."
 msgstr "Tämä on MediaWiki-tilisi kirjautumislomake."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:238
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:240
 #, kde-format
 msgctxt "@option: button"
 msgid "New"
 msgstr "Uusi"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:239
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:241
 #, kde-format
 msgctxt "@info"
 msgid "Add a wiki to this list"
 msgstr "Lisää wiki tähän luetteloon"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:244
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
 #, kde-format
 msgctxt "@item"
 msgid "Wikimedia Commons"
 msgstr "Wikimedia Commons"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:245
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
 #, kde-format
 msgctxt "@item"
 msgid "Wikimedia Meta"
 msgstr "Wikimedia Meta"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:246
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
 #, kde-format
 msgctxt "@item"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:247
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
 #, kde-format
 msgctxt "@item"
 msgid "Wikibooks"
 msgstr "Wikibooks"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:248
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
 #, kde-format
 msgctxt "@item"
 msgid "Wikinews"
 msgstr "Wikinews"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:249
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
 #, kde-format
 msgctxt "@item"
 msgid "Wikiquote"
 msgstr "Wikiquote"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:250
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
 #, kde-format
 msgctxt "@item"
 msgid "Wikisource"
 msgstr "Wikisource"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:251
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
 #, kde-format
 msgctxt "@item"
 msgid "Wiktionary"
 msgstr "Wiktionary"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:252
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
 #, kde-format
 msgctxt "@item"
 msgid "MediaWiki"
 msgstr "MediaWiki"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:253
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:255
 #, kde-format
 msgctxt "@item"
 msgid "Wikia Foto"
 msgstr "Wikia Foto"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:254
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:256
 #, kde-format
 msgctxt "@item"
 msgid "Wikia Uncyclopedia"
 msgstr "Wikia Uncyclopedia"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:259
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:261
 #, kde-format
 msgctxt "@label"
 msgid "Wiki:"
 msgstr "Wiki:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:270
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:272
 #, kde-format
 msgctxt "@info"
 msgid "These are options for adding a Wiki."
 msgstr "Nämä ovat wikin lisäämisen vaihtoehdot."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:275
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:277
 #, kde-format
 msgctxt "@label: name of wiki area"
 msgid "Name:"
 msgstr "Nimi:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:278
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:280
 #, kde-format
 msgctxt "@label"
 msgid "API URL:"
 msgstr "APIn verkko-osoite:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:284
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:286
 #, kde-format
 msgctxt "@action: button"
 msgid "Add"
 msgstr "Lisää"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:285
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:287
 #, kde-format
 msgctxt "@info"
 msgid "Add a new wiki"
 msgstr "Lisää uusi wiki"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:294
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:296
 #, kde-format
 msgctxt "@label"
 msgid "Login:"
 msgstr "Käyttäjätunnus:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:297
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:299
 #, kde-format
 msgctxt "@label"
 msgid "Password:"
 msgstr "Salasana:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:302
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:304
 #, kde-format
 msgctxt "@action"
 msgid "&Log in"
 msgstr "&Kirjaudu"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:318
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:320
 #, kde-format
 msgctxt "@option"
 msgid "Login Information"
 msgstr "Kirjautumistiedot"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:324
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:326
 #, kde-format
 msgctxt "@label: name of the wiki the user is currently logged on"
 msgid "Logged on: "
 msgstr "Kirjauduttu wikiin: "
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:328
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:330
 #, kde-format
 msgctxt "@label: username which is used to connect to the wiki"
 msgid "Logged as: "
 msgstr "Käyttäjätunnus: "
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:332
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:334
 #, kde-format
 msgctxt "@action: button"
 msgid "Change Account"
 msgstr "Vaihda tiliä"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:333
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:335
 #, kde-format
 msgctxt "@info"
 msgid "Logout and change the account used for transfer"
 msgstr "Kirjaudu ulos ja vaihda siirtoon käytettävää tiliä"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:345
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:347
 #, kde-format
 msgctxt "@option"
 msgid "Information"
 msgstr "Tietoja"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:351
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:353
 #, kde-format
 msgctxt "@label"
 msgid "Author:"
 msgstr "Tekijä:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:354
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:356
 #, kde-format
 msgctxt "@label: source file"
 msgid "Source:"
 msgstr "Lähde:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:357
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:359
 #, kde-format
 msgctxt "@label"
 msgid "License:"
 msgstr "Lisenssi:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:361
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 4.0"
 msgstr "Oma teos, Creative Commons Attribution-Share Alike 4.0"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:363
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
 #, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and GFDL"
 msgstr "Oma teos, monilisenssinen, CC-BY-SA 3.0 ja GFDL"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:365
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
 #, kde-format
 msgctxt "@item"
 msgid "Own work, multi-license with CC-BY-SA-3.0 and older"
 msgstr "Oma teos, monilisenssinen, CC-BY-SA 3.0 ja vanhempi"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:367
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution-Share Alike 3.0"
 msgstr "Oma teos, Creative Commons Attribution-Share Alike 3.0"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:369
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
 #, kde-format
 msgctxt "@item"
 msgid "Own work, Creative Commons Attribution 3.0"
 msgstr "Oma teos, Creative Commons Attribution 3.0"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:371
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
 #, kde-format
 msgctxt "@item"
 msgid "Own work, release into public domain under the CC-Zero license"
 msgstr "Oma työ, viety public domainiin CC-Zero-lisenssillä"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:373
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
 #, kde-format
 msgctxt "@item"
 msgid "Author died more than 100 years ago"
 msgstr "Tekijä kuollut yli sata vuotta sitten"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:375
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
 #, fuzzy, kde-format
 #| msgid ""
 #| "Photo of a two-dimensional work whose author died more than 100 years ago"
@@ -26236,20 +26236,20 @@ msgstr ""
 "vuotta sittenValokuva kaksiulotteisesta teoksesta, jonka tekijä on kuollut "
 "yli sata vuotta sitten"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:377
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
 #, fuzzy, kde-format
 #| msgid "First published in the United States before 1923"
 msgctxt "@item"
 msgid "First published in the United States before 1923"
 msgstr "Ensijulkaisu Yhdysvalloissa ennen vuotta 1923"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:379
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
 #, kde-format
 msgctxt "@item"
 msgid "Work of a U.S. government agency"
 msgstr "Yhdysvaltain hallituksen viraston teos"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:381
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
 #, fuzzy, kde-format
 #| msgid "Simple typefaces, individual words or geometric shapes"
 msgctxt "@item"
@@ -26257,7 +26257,7 @@ msgid "Simple typefaces, individual words or geometric shapes"
 msgstr ""
 "Yksinkertainen kirjasinleikkaus, yksittäisiä sanoja tai geometrisia kuvioita"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:383
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
 #, fuzzy, kde-format
 #| msgid ""
 #| "Logos with only simple typefaces, individual words or geometric shapes"
@@ -26267,20 +26267,20 @@ msgstr ""
 "Logo yksinkertaisin kirjasinleikkauksin, yksittäisin sanoin ja geometrisin "
 "kuvioin"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:385
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:387
 #, fuzzy, kde-format
 #| msgid "No license specified (not recommended for public wiki sites)"
 msgctxt "@item"
 msgid "No license specified (not recommended for public wiki sites)"
 msgstr "Ei määrälisenssiä (ei suositella julkisilla wikisivustoilla)"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:388
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:390
 #, kde-format
 msgctxt "@label"
 msgid "Generic categories:"
 msgstr "Yleisluokat:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:391
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:393
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is a place to enter categories that will be added to all the files."
@@ -26289,13 +26289,13 @@ msgid ""
 "This is a place to enter categories that will be added to all the files."
 msgstr "Tässä kohtaa voit antaa luokkia, jotka lisätään kaikkiin tiedostoihin."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:394
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:396
 #, kde-format
 msgctxt "@label"
 msgid "Generic text:"
 msgstr "Yleisteksti:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:397
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:399
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is a place to enter categories that will be added to all the files."
@@ -26305,14 +26305,14 @@ msgid ""
 "Information template."
 msgstr "Tässä kohtaa voit antaa luokkia, jotka lisätään kaikkiin tiedostoihin."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:401
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:403
 #, fuzzy, kde-format
 #| msgid "Upload comments:"
 msgctxt "@label"
 msgid "Upload comments:"
 msgstr "Lähetä kommentit:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:404
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:406
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -26320,55 +26320,55 @@ msgid ""
 "default of 'Uploaded via digiKam uploader' will be used if empty."
 msgstr ""
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:426
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:428
 #, kde-format
 msgctxt "@option"
 msgid "Options"
 msgstr "Valinnat"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:427
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:429
 #, kde-format
 msgctxt "@info"
 msgid "These are options that will be applied to photos before upload."
 msgstr "Näitä valintoja käytetään kuviin ennen lähettämistä."
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:433
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:435
 #, kde-format
 msgctxt "@option"
 msgid "Resize photos before uploading"
 msgstr "Muuta kuvien kokoa ennen lähettämistä"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:443
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:445
 #, kde-format
 msgctxt "@label"
 msgid "Maximum size:"
 msgstr "Enimmäiskoko:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:451
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:453
 #, kde-format
 msgctxt "@label"
 msgid "JPEG quality:"
 msgstr "JPEG-laatu:"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:454
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:456
 #, kde-format
 msgctxt "@option"
 msgid "Remove metadata from file"
 msgstr "Poista tiedostosta metatieto"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:458
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:460
 #, kde-format
 msgctxt "@option"
 msgid "Remove coordinates from file"
 msgstr "Poista tiedostosta sijainti"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:475
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:477
 #, kde-format
 msgctxt "@item"
 msgid "Items Properties"
 msgstr "Kohteiden ominaisuudet"
 
-#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:476
+#: core/dplugins/generic/webservices/mediawiki/mediawikiwidget.cpp:478
 #, kde-format
 msgctxt "@item"
 msgid "Upload Settings"
