@@ -407,11 +407,11 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
      * The idea is to use the mouse over rectangle highlightment to surround all items from a group.
      */
 
-    qlonglong gid                     = -1;
-    bool groupOpen                    = false;
-    bool grouped                      = info.isGrouped();
-    QAbstractItemModel* const model   = const_cast<QAbstractItemModel*>(index.model());
-    ItemFilterModel* const fmodel     = dynamic_cast<ItemFilterModel*>(model);
+    qlonglong gid                       = -1;
+    bool groupOpen                      = false;
+    bool grouped                        = info.isGrouped();
+    QAbstractItemModel* const model     = const_cast<QAbstractItemModel*>(index.model());
+    const ItemFilterModel* const fmodel = dynamic_cast<ItemFilterModel*>(model);
 
     if (fmodel)
     {
@@ -434,7 +434,7 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
     }
     else
     {
-        ImageSortFilterModel* const imodel = dynamic_cast<ImageSortFilterModel*>(model);
+        const ImageSortFilterModel* const imodel = dynamic_cast<ImageSortFilterModel*>(model);
 
         if (imodel)
         {
@@ -612,7 +612,7 @@ QRect ItemDelegate::actualPixmapRect(const QModelIndex& index) const
 
     // We do not recompute if not found. Assumption is cache is always properly updated.
 
-    QRect* const rect = d->actualPixmapRectCache.object(index.row());
+    const QRect* const rect = d->actualPixmapRectCache.object(index.row());
 
     if (rect)
     {
@@ -628,7 +628,7 @@ void ItemDelegate::updateActualPixmapRect(const QModelIndex& index, const QRect&
 {
     Q_D(ItemDelegate);
 
-    QRect* const old = d->actualPixmapRectCache.object(index.row());
+    const QRect* const old = d->actualPixmapRectCache.object(index.row());
 
     if (!old || (*old != rect))
     {

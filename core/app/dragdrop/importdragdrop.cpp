@@ -174,16 +174,16 @@ QMimeData* ImportDragDropHandler::createMimeData(const QList<QModelIndex>& index
 
 void ImportDragDropHandler::slotUploadCamItems()
 {
-    QList<QUrl> lst         = DigikamApp::instance()->view()->selectedUrls();
+    QList<QUrl> lst               = DigikamApp::instance()->view()->selectedUrls();
 
     QMenu popMenu(m_view);
     popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Exporting"));
-    QAction* const upAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("media-flash-sd-mmc")),
+    const QAction* const upAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("media-flash-sd-mmc")),
                                                 i18n("Upload to Camera"));
     popMenu.addSeparator();
     popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-    QAction* const choice   = popMenu.exec(m_position);
+    const QAction* const choice   = popMenu.exec(m_position);
 
     if (choice)
     {

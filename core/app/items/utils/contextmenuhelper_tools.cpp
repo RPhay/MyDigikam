@@ -77,7 +77,7 @@ void ContextMenuHelper::addImportMenu()
 
     if (!actions.isEmpty())
     {
-        for (DPluginAction* const ac : std::as_const(actions))
+        for (DPluginAction* const ac : std::as_const(actions))  // cppcheck-suppress constVariablePointer
         {
             menuImport->addActions(QList<QAction*>() << ac);
         }
@@ -136,8 +136,8 @@ void ContextMenuHelper::addQueueManagerMenu()
         !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty()
        )
     {
-        QueueMgrWindow* const qmw = QueueMgrWindow::queueManagerWindow();
-        QMenu* const queueMenu    = new QMenu(i18nc("@action: context menu", "Add to Existing Queue"), bqmMenu);
+        const QueueMgrWindow* const qmw = QueueMgrWindow::queueManagerWindow();
+        QMenu* const queueMenu          = new QMenu(i18nc("@action: context menu", "Add to Existing Queue"), bqmMenu);
 
         // queueActions is used by the exec() method to Q_EMIT an appropriate signal.
         // Reset the map before filling in the actions.

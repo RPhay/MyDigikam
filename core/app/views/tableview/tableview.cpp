@@ -565,7 +565,7 @@ void TableView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
     for (const ItemInfo& info : infs)
     {
         if (info.fileUrl() == url)
-        {    // cppcheck-suppress useStlAlgorithm
+        {   // cppcheck-suppress useStlAlgorithm
             slotSetCurrentWhenAvailable(info.id());
             break;
         }

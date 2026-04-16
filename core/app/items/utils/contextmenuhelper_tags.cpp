@@ -270,8 +270,8 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
      * TODO:tags to be ported to multiple selection
      */
 
-    QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
-    Album* currentAlbum     = nullptr;
+    QList<Album*> albumList   = AlbumManager::instance()->currentAlbums();
+    const Album* currentAlbum = nullptr;
 
     if (!albumList.isEmpty())
     {

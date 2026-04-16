@@ -113,7 +113,7 @@ void DateFolderView::slotSelectionChanged(Album* selectedAlbum)
 
     d->monthview->setActive(false);
 
-    DAlbum* const dalbum = dynamic_cast<DAlbum*> (selectedAlbum);
+    DAlbum* const dalbum = dynamic_cast<DAlbum*> (selectedAlbum);       // cppcheck-suppress constVariablePointer
 
     if (!dalbum)
     {
@@ -180,7 +180,7 @@ void DateFolderView::gotoDate(const QDate& dt)
         return;
     }
 
-    DAlbum* const dateAlbum = d->dateTreeView->dalbumModel()->dalbumForIndex(dateIndex);
+    DAlbum* const dateAlbum = d->dateTreeView->dalbumModel()->dalbumForIndex(dateIndex);    // cppcheck-suppress constVariablePointer
 
     if (!dateAlbum)
     {

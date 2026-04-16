@@ -66,23 +66,23 @@ void DigikamItemDelegate::updateRects()
 {
     Q_D(DigikamItemDelegate);
 
-    int y                                    = d->margin;
-    d->pixmapRect                            = QRect(d->margin, y, d->contentWidth, d->contentWidth);
-    y                                        = d->pixmapRect.bottom();
-    d->imageInformationRect                  = QRect(d->margin, y, d->contentWidth, 0);
-    ApplicationSettings* const albumSettings = ApplicationSettings::instance();
-    d->drawImageFormat                       = albumSettings->getIconShowImageFormat();
-    d->drawCoordinates                       = albumSettings->getIconShowCoordinates();
-    const int iconSize                       = qBound(16, (d->contentWidth + 2 * d->margin) / 8 - 2, 48);
+    int y                                          = d->margin;
+    d->pixmapRect                                  = QRect(d->margin, y, d->contentWidth, d->contentWidth);
+    y                                              = d->pixmapRect.bottom();
+    d->imageInformationRect                        = QRect(d->margin, y, d->contentWidth, 0);
+    const ApplicationSettings* const albumSettings = ApplicationSettings::instance();
+    d->drawImageFormat                             = albumSettings->getIconShowImageFormat();
+    d->drawCoordinates                             = albumSettings->getIconShowCoordinates();
+    const int iconSize                             = qBound(16, (d->contentWidth + 2 * d->margin) / 8 - 2, 48);
 
     if (albumSettings->getIconShowPickLabel())
     {
-        d->pickLabelRect                     = QRect(d->margin, y - iconSize, iconSize, iconSize);
+        d->pickLabelRect                           = QRect(d->margin, y - iconSize, iconSize, iconSize);
     }
 
-    d->coordinatesRect                       = QRect(d->contentWidth - iconSize + 2, d->pixmapRect.top(), iconSize, iconSize);
-    d->groupRect                             = QRect(d->contentWidth - iconSize + d->margin, y - iconSize, iconSize, iconSize);
-    const bool showInfos                     = ((d->contentWidth - 2 * d->radius) > ThumbnailSize::Small);
+    d->coordinatesRect                             = QRect(d->contentWidth - iconSize + 2, d->pixmapRect.top(), iconSize, iconSize);
+    d->groupRect                                   = QRect(d->contentWidth - iconSize + d->margin, y - iconSize, iconSize, iconSize);
+    const bool showInfos                           = ((d->contentWidth - 2 * d->radius) > ThumbnailSize::Small);
 
     if (albumSettings->getIconShowRating())
     {

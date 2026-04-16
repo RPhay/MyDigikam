@@ -70,7 +70,7 @@ void FilterSideBarWidget::checkFilterChanges()
         {
             const auto tags = d->tagFilterView->getCheckedTags();
 
-            for (TAlbum* const tag : tags)
+            for (const TAlbum* const tag : tags)
             {
                 if (tag)
                 {
@@ -82,7 +82,7 @@ void FilterSideBarWidget::checkFilterChanges()
         {
             const auto tags = d->tagFilterView->getPartiallyCheckedTags();
 
-            for (TAlbum* const tag : tags)
+            for (const TAlbum* const tag : tags)
             {
                 if (tag)
                 {
@@ -100,7 +100,7 @@ void FilterSideBarWidget::checkFilterChanges()
     {
         const auto tags = d->colorLabelFilter->getCheckedColorLabelTags();
 
-        for (TAlbum* const tag : tags)
+        for (const TAlbum* const tag : tags)
         {
             if (tag)
             {
@@ -112,7 +112,7 @@ void FilterSideBarWidget::checkFilterChanges()
     {
         const auto tags = d->pickLabelFilter->getCheckedPickLabelTags();
 
-        for (TAlbum* const tag : tags)
+        for (const TAlbum* const tag : tags)
         {
             if (tag)
             {
