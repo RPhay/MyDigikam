@@ -154,7 +154,7 @@ PAlbum* AlbumSelectDialog::selectAlbum(QWidget* const parent, PAlbum* const albu
 {
     QPointer<AlbumSelectDialog> dlg = new AlbumSelectDialog(parent, albumToSelect, header);
 
-    if (dlg->exec() != QDialog::Accepted)
+    if (dialogExec(dlg) != QDialog::Accepted)
     {
         delete dlg;
         return nullptr;
@@ -175,7 +175,7 @@ PAlbum* AlbumSelectDialog::selectAlbum(QWidget* const parent, PAlbum* const albu
 
 void AlbumSelectDialog::slotHelp()
 {
-    openOnlineDocumentation(QLatin1String("main_window"),
+    openOnlineDocumentation(QLatin1String("left_sidebar"),
                             QLatin1String("albums_view"));
 }
 

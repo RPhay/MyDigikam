@@ -99,7 +99,6 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
     : QDialog(nullptr),
       d      (new Private)
 {
-    setModal(true);
     setWindowTitle(create ? i18nc("@title:window, album properties", "New Album")
                           : i18nc("@title:window, album properties", "Edit Album"));
 
