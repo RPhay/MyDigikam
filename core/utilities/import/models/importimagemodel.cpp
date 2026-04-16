@@ -162,9 +162,9 @@ QList<CamItemInfo> ImportItemModel::camItemInfos(const QList<QModelIndex>& index
 {
     QList<CamItemInfo> infos;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        infos << camItemInfo(index);
+        infos << camItemInfo(ind);
     }
 
     return infos;
@@ -174,9 +174,9 @@ QList<qlonglong> ImportItemModel::camItemIds(const QList<QModelIndex>& indexes) 
 {
     QList<qlonglong> ids;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        ids << camItemId(index);
+        ids << camItemId(ind);
     }
 
     return ids;
@@ -224,14 +224,14 @@ QList<QModelIndex> ImportItemModel::indexesForCamItemInfo(const CamItemInfo& inf
 
 QModelIndex ImportItemModel::indexForCamItemId(qlonglong id) const
 {
-    int index = d->idHash.value(id, -1);
+    int ind = d->idHash.value(id, -1);
 
-    if (index == -1)
+    if (ind == -1)
     {
         return QModelIndex();
     }
 
-    return createIndex(index, 0);
+    return createIndex(ind, 0);
 }
 
 QList<QModelIndex> ImportItemModel::indexesForCamItemId(qlonglong id) const
@@ -359,11 +359,11 @@ CamItemInfo ImportItemModel::camItemInfo(const QUrl& fileUrl) const
 
         if (id != -1)
         {
-            int index = d->idHash.value(id, -1);
+            int ind = d->idHash.value(id, -1);
 
-            if (index != -1)
+            if (ind != -1)
             {
-                return d->infos.at(index);
+                return d->infos.at(ind);
             }
         }
     }
@@ -393,9 +393,9 @@ QList<CamItemInfo> ImportItemModel::camItemInfos(const QUrl& fileUrl) const
         {
             const auto idx = d->idHash.values(id);
 
-            for (int index : idx)
+            for (int ind : idx)
             {
-                infos << d->infos.at(index);
+                infos << d->infos.at(ind);
             }
         }
     }
@@ -742,11 +742,11 @@ void ImportItemModel::removeIndexs(const QList<QModelIndex>& indexes)
 {
     QList<int> indexesList;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        if (d->isValid(index))
+        if (d->isValid(ind))
         {
-            indexesList << index.row();
+            indexesList << ind.row();
         }
     }
 
@@ -769,11 +769,11 @@ void ImportItemModel::removeCamItemInfos(const QList<CamItemInfo>& infos)
 
     for (const CamItemInfo& info : std::as_const(infos))
     {
-        QModelIndex index = indexForCamItemId(info.id);
+        QModelIndex ind = indexForCamItemId(info.id);
 
-        if (index.isValid())
+        if (ind.isValid())
         {
-            indexesList << index.row();
+            indexesList << ind.row();
         }
     }
 
