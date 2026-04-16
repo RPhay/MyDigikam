@@ -38,7 +38,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-15 00:43+0000\n"
-"PO-Revision-Date: 2026-04-07 07:43+0200\n"
+"PO-Revision-Date: 2026-04-15 17:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -42169,25 +42169,25 @@ msgstr "Pomik od spodaj navzgor"
 #, kde-format
 msgctxt "Transition: PushL2R"
 msgid "Push Left to Right"
-msgstr "Porini z leve na desno"
+msgstr "Potisni z leve na desno"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:118
 #, kde-format
 msgctxt "Transition: PushR2L"
 msgid "Push Right to Left"
-msgstr "Porini z desne na levo"
+msgstr "Potisni z desne na levo"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:119
 #, kde-format
 msgctxt "Transition: PushT2B"
 msgid "Push Top to Bottom"
-msgstr "Porini z vrha navzdol"
+msgstr "Potisni z vrha navzdol"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:120
 #, kde-format
 msgctxt "Transition: PushB2T"
 msgid "Push Bottom to Top"
-msgstr "Porini z dna navzgor"
+msgstr "Potisni z dna navzgor"
 
 #: core/libs/transitionmngr/transitionmngr.cpp:121
 #, kde-format
