@@ -531,8 +531,8 @@ void TableViewModel::slotSourceRowsAboutToBeRemoved(const QModelIndex& parent, i
     for (int i = start ; i <= end ; ++i)
     {
         const QModelIndex imageModelIndex = s->imageModel->index(i, 0, parent);
-        const qlonglong imageId           = s->imageModel->imageId(imageModelIndex);
-        const QModelIndex tableViewIndex  = indexFromImageId(imageId, 0);
+        const qlonglong imgId             = s->imageModel->imageId(imageModelIndex);
+        const QModelIndex tableViewIndex  = indexFromImageId(imgId, 0);
 
         if (!tableViewIndex.isValid())
         {
@@ -688,9 +688,9 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
                 continue;
             }
 
-            const ItemInfo imageInfo           = s->imageModel->imageInfo(imageModelIndex);
+            const ItemInfo imgnfo              = s->imageModel->imageInfo(imageModelIndex);
 
-            if (d->imageFilterSettings.matches(imageInfo))
+            if (d->imageFilterSettings.matches(imgnfo))
             {
                 // need to add the item
 
@@ -841,12 +841,12 @@ void TableViewModel::slotPopulateModel(const bool sendNotifications)
 
     for (const qlonglong& id : std::as_const(d->groupsToOpen))
     {
-        const QModelIndex index = indexFromImageId(id, 0);
+        const QModelIndex ind = indexFromImageId(id, 0);
 
-        if (index.isValid())
+        if (ind.isValid())
         {
             s->treeView->blockSignals(true);
-            s->treeView->setExpanded(index, true);
+            s->treeView->setExpanded(ind, true);
             s->treeView->blockSignals(false);
         }
     }
@@ -866,8 +866,8 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
 {
     ASSERT_MODEL(imageModelIndex, s->imageModel);
 
-    const ItemInfo imageInfo = s->imageModel->imageInfo(imageModelIndex);
-    const bool passedFilter  = d->imageFilterSettings.matches(imageInfo);
+    const ItemInfo imgnfo    = s->imageModel->imageInfo(imageModelIndex);
+    const bool passedFilter  = d->imageFilterSettings.matches(imgnfo);
     const bool allGroupsOpen = ApplicationSettings::instance()->getAllGroupsOpen();
 
     if (!passedFilter)
@@ -879,7 +879,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
 
     Item* const parentItem = d->rootItem;
 
-    if (!allGroupsOpen && imageInfo.isGrouped())
+    if (!allGroupsOpen && imgnfo.isGrouped())
     {
         switch (d->groupingMode)
         {
@@ -932,16 +932,16 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
         endInsertRows();
     }
 
-    if (!allGroupsOpen && (d->groupingMode == GroupingShowSubItems) && imageInfo.hasGroupedImages())
+    if (!allGroupsOpen && (d->groupingMode == GroupingShowSubItems) && imgnfo.hasGroupedImages())
     {
-        if (s->imageFilterModel->isGroupOpen(imageInfo.id()))
+        if (s->imageFilterModel->isGroupOpen(imgnfo.id()))
         {
-            d->groupsToOpen << imageInfo.id();
+            d->groupsToOpen << imgnfo.id();
         }
 
         // the item was a group leader, add its subitems
 
-        const QList<ItemInfo> groupedImages = imageInfo.groupedImages();
+        const QList<ItemInfo> groupedImages = imgnfo.groupedImages();
 
         if (sendNotifications)
         {
@@ -960,14 +960,14 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
             // However, if the sorting is currently outdated, we just
             // append the items because the model will be resorted later.
 
-            int index = item->children.count();
+            int ind = item->children.count();
 
             if (!d->sortRequired)
             {
-                index = findChildSortedPosition(item, groupedItem);
+                ind = findChildSortedPosition(item, groupedItem);
             }
 
-            item->insertChild(index, groupedItem);
+            item->insertChild(ind, groupedItem);
         }
 
         if (sendNotifications)
@@ -1000,28 +1000,28 @@ QModelIndex TableViewModel::fromItemFilterModelIndex(const QModelIndex& imageFil
 {
     ASSERT_MODEL(imageFilterModelIndex, s->imageFilterModel);
 
-    const qlonglong imageId = s->imageFilterModel->imageId(imageFilterModelIndex);
+    const qlonglong imgId = s->imageFilterModel->imageId(imageFilterModelIndex);
 
-    if (!imageId)
+    if (!imgId)
     {
         return QModelIndex();
     }
 
-    return indexFromImageId(imageId, 0);
+    return indexFromImageId(imgId, 0);
 }
 
 QModelIndex TableViewModel::fromItemModelIndex(const QModelIndex& imageModelIndex)
 {
     ASSERT_MODEL(imageModelIndex, s->imageModel);
 
-    const qlonglong imageId = s->imageModel->imageId(imageModelIndex);
+    const qlonglong imgId = s->imageModel->imageId(imageModelIndex);
 
-    if (!imageId)
+    if (!imgId)
     {
         return QModelIndex();
     }
 
-    return indexFromImageId(imageId, 0);
+    return indexFromImageId(imgId, 0);
 }
 
 ItemInfo TableViewModel::infoFromItem(TableViewModel::Item* const item) const
@@ -1101,16 +1101,16 @@ QList<qlonglong> TableViewModel::imageIds(const QModelIndexList& indexList) cons
 {
     QList<qlonglong> idList;
 
-    for (const QModelIndex& index : std::as_const(indexList))
+    for (const QModelIndex& ind : std::as_const(indexList))
     {
-        ASSERT_MODEL(index, this);
+        ASSERT_MODEL(ind, this);
 
-        if (index.column() > 0)
+        if (ind.column() > 0)
         {
             continue;
         }
 
-        const Item* const item = itemFromIndex(index);
+        const Item* const item = itemFromIndex(ind);
 
         if (!item)
         {
@@ -1127,16 +1127,16 @@ QList<ItemInfo> TableViewModel::imageInfos(const QModelIndexList& indexList) con
 {
     QList<ItemInfo> infoList;
 
-    for (const QModelIndex& index : std::as_const(indexList))
+    for (const QModelIndex& ind : std::as_const(indexList))
     {
-        ASSERT_MODEL(index, this);
+        ASSERT_MODEL(ind, this);
 
-        if (index.column() > 0)
+        if (ind.column() > 0)
         {
             continue;
         }
 
-        Item* const item = itemFromIndex(index);
+        Item* const item = itemFromIndex(ind);
 
         if (!item)
         {
