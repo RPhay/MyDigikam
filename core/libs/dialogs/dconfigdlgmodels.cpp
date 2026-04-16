@@ -318,29 +318,29 @@ QVariant DConfigDlgWdgModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    PageItem* const item = static_cast<PageItem *>(index.internalPointer());
+    PageItem* const itm = static_cast<PageItem *>(index.internalPointer());
 
     if      (role == Qt::DisplayRole)
     {
-        return QVariant(item->pageWidgetItem()->name());
+        return QVariant(itm->pageWidgetItem()->name());
     }
     else if (role == Qt::DecorationRole)
     {
-        return QVariant(item->pageWidgetItem()->icon());
+        return QVariant(itm->pageWidgetItem()->icon());
     }
     else if (role == HeaderRole)
     {
-        return QVariant(item->pageWidgetItem()->header());
+        return QVariant(itm->pageWidgetItem()->header());
     }
     else if (role == WidgetRole)
     {
-        return QVariant::fromValue(item->pageWidgetItem()->widget());
+        return QVariant::fromValue(itm->pageWidgetItem()->widget());
     }
     else if (role == Qt::CheckStateRole)
     {
-        if (item->pageWidgetItem()->isCheckable())
+        if (itm->pageWidgetItem()->isCheckable())
         {
-            return (item->pageWidgetItem()->isChecked() ? Qt::Checked : Qt::Unchecked);
+            return (itm->pageWidgetItem()->isChecked() ? Qt::Checked : Qt::Unchecked);
         }
         else
         {
@@ -365,25 +365,25 @@ bool DConfigDlgWdgModel::setData(const QModelIndex& index, const QVariant& value
         return false;
     }
 
-    PageItem* const item = static_cast<PageItem*>(index.internalPointer());
+    PageItem* const itm = static_cast<PageItem*>(index.internalPointer());
 
-    if (!item)
+    if (!itm)
     {
         return false;
     }
 
-    if (!item->pageWidgetItem()->isCheckable())
+    if (!itm->pageWidgetItem()->isCheckable())
     {
         return false;
     }
 
     if (value.toInt() == Qt::Checked)
     {
-        item->pageWidgetItem()->setChecked(true);
+        itm->pageWidgetItem()->setChecked(true);
     }
     else
     {
-        item->pageWidgetItem()->setChecked(false);
+        itm->pageWidgetItem()->setChecked(false);
     }
 
     return true;
@@ -398,14 +398,14 @@ Qt::ItemFlags DConfigDlgWdgModel::flags(const QModelIndex& index) const
 
     Qt::ItemFlags flags = Qt::ItemIsSelectable;
 
-    PageItem* const item = static_cast<PageItem *>(index.internalPointer());
+    PageItem* const itm = static_cast<PageItem*>(index.internalPointer());
 
-    if (item->pageWidgetItem()->isCheckable())
+    if (itm->pageWidgetItem()->isCheckable())
     {
         flags |= Qt::ItemIsUserCheckable;
     }
 
-    if (item->pageWidgetItem()->isEnabled())
+    if (itm->pageWidgetItem()->isEnabled())
     {
         flags |= Qt::ItemIsEnabled;
     }
@@ -445,8 +445,8 @@ QModelIndex DConfigDlgWdgModel::parent(const QModelIndex& index) const
         return QModelIndex();
     }
 
-    PageItem* const item       = static_cast<PageItem *>(index.internalPointer());
-    PageItem* const parentItem = item->parent();
+    PageItem* const itm        = static_cast<PageItem*>(index.internalPointer());
+    PageItem* const parentItem = itm->parent();
 
     if (parentItem == d_func()->rootItem)
     {
@@ -476,10 +476,10 @@ int DConfigDlgWdgModel::rowCount(const QModelIndex& parent) const
 
 DConfigDlgWdgItem* DConfigDlgWdgModel::addPage(QWidget* widget, const QString& name)
 {
-    DConfigDlgWdgItem* const item = new DConfigDlgWdgItem(widget, name);
-    addPage(item);
+    DConfigDlgWdgItem* const itm = new DConfigDlgWdgItem(widget, name);
+    addPage(itm);
 
-    return item;
+    return itm;
 }
 
 void DConfigDlgWdgModel::addPage(DConfigDlgWdgItem* item)
@@ -510,11 +510,11 @@ void DConfigDlgWdgModel::addPage(DConfigDlgWdgItem* item)
 
 DConfigDlgWdgItem* DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, QWidget* widget, const QString& name)
 {
-    DConfigDlgWdgItem* const item = new DConfigDlgWdgItem(widget, name);
+    DConfigDlgWdgItem* const itm = new DConfigDlgWdgItem(widget, name);
 
-    insertPage(before, item);
+    insertPage(before, itm);
 
-    return item;
+    return itm;
 }
 
 void DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, DConfigDlgWdgItem* item)
@@ -535,23 +535,23 @@ void DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, DConfigDlgWdgItem
     connect(item, SIGNAL(toggled(bool)),
             this, SLOT(_k_itemToggled(bool)));
 
-    PageItem* const parent = beforePageItem->parent();
+    PageItem* const prnt = beforePageItem->parent();
 
     // The row to be inserted
 
     int row                = beforePageItem->row();
 
-    QModelIndex index;
+    QModelIndex ind;
 
-    if (parent != d_func()->rootItem)
+    if (prnt != d_func()->rootItem)
     {
-        index = createIndex(parent->row(), 0, parent);
+        ind = createIndex(prnt->row(), 0, prnt);
     }
 
-    beginInsertRows(index, row, row);
+    beginInsertRows(ind, row, row);
 
-    PageItem* const newPageItem = new PageItem(item, parent);
-    parent->insertChild(row, newPageItem);
+    PageItem* const newPageItem = new PageItem(item, prnt);
+    prnt->insertChild(row, newPageItem);
 
     endInsertRows();
 
@@ -560,11 +560,11 @@ void DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, DConfigDlgWdgItem
 
 DConfigDlgWdgItem* DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, QWidget* widget, const QString& name)
 {
-    DConfigDlgWdgItem* const item = new DConfigDlgWdgItem(widget, name);
+    DConfigDlgWdgItem* const itm = new DConfigDlgWdgItem(widget, name);
 
-    addSubPage(parent, item);
+    addSubPage(parent, itm);
 
-    return item;
+    return itm;
 }
 
 void DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem* item)
@@ -589,14 +589,14 @@ void DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem
 
     int row = parentPageItem->childCount();
 
-    QModelIndex index;
+    QModelIndex ind;
 
     if (parentPageItem != d_func()->rootItem)
     {
-        index = createIndex(parentPageItem->row(), 0, parentPageItem);
+        ind = createIndex(parentPageItem->row(), 0, parentPageItem);
     }
 
-    beginInsertRows(index, row, row);
+    beginInsertRows(ind, row, row);
 
     PageItem* const newPageItem = new PageItem(item, parentPageItem);
     parentPageItem->appendChild(newPageItem);
@@ -634,14 +634,14 @@ void DConfigDlgWdgModel::removePage(DConfigDlgWdgItem* item)
     PageItem* const parentPageItem = pageItem->parent();
     int row                        = parentPageItem->row();
 
-    QModelIndex index;
+    QModelIndex ind;
 
     if (parentPageItem != d->rootItem)
     {
-        index = createIndex(row, 0, parentPageItem);
+        ind = createIndex(row, 0, parentPageItem);
     }
 
-    beginRemoveRows(index, pageItem->row(), pageItem->row());
+    beginRemoveRows(ind, pageItem->row(), pageItem->row());
 
     parentPageItem->removeChild(pageItem->row());
     delete pageItem;
