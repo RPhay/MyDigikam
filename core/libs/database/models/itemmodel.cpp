@@ -216,9 +216,9 @@ QList<ItemInfo> ItemModel::imageInfos(const QList<QModelIndex>& indexes) const
 {
     QList<ItemInfo> infos;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        infos << imageInfo(index);
+        infos << imageInfo(ind);
     }
 
     return infos;
@@ -228,9 +228,9 @@ QList<qlonglong> ItemModel::imageIds(const QList<QModelIndex>& indexes) const
 {
     QList<qlonglong> ids;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        ids << imageId(index);
+        ids << imageId(ind);
     }
 
     return ids;
@@ -283,11 +283,11 @@ QList<QModelIndex> ItemModel::indexesForItemInfo(const ItemInfo& info) const
 
 QModelIndex ItemModel::indexForImageId(qlonglong id) const
 {
-    int index = d->idHash.value(id, -1);
+    int ind = d->idHash.value(id, -1);
 
-    if (index != -1)
+    if (ind != -1)
     {
-        return createIndex(index, 0);
+        return createIndex(ind, 0);
     }
 
     return QModelIndex();
@@ -442,11 +442,11 @@ ItemInfo ItemModel::imageInfo(const QString& filePath) const
 
         if (id != -1)
         {
-            int index = d->idHash.value(id, -1);
+            int ind = d->idHash.value(id, -1);
 
-            if (index != -1)
+            if (ind != -1)
             {
-                return d->infos.at(index);
+                return d->infos.at(ind);
             }
         }
     }
@@ -476,9 +476,9 @@ QList<ItemInfo> ItemModel::imageInfos(const QString& filePath) const
         {
             const auto ids = d->idHash.values(id);
 
-            for (int index : ids)
+            for (int ind : ids)
             {
-                infos << d->infos.at(index);
+                infos << d->infos.at(ind);
             }
         }
     }
@@ -936,11 +936,11 @@ void ItemModel::removeIndexes(const QList<QModelIndex>& indexes)
 {
     QList<int> listIndexes;
 
-    for (const QModelIndex& index : std::as_const(indexes))
+    for (const QModelIndex& ind : std::as_const(indexes))
     {
-        if (d->isValid(index))
+        if (d->isValid(ind))
         {
-            listIndexes << index.row();
+            listIndexes << ind.row();
         }
     }
 
@@ -963,11 +963,11 @@ void ItemModel::removeItemInfos(const QList<ItemInfo>& infos)
 
     for (const ItemInfo& info : std::as_const(infos))
     {
-        QModelIndex index = indexForImageId(info.id());
+        QModelIndex ind = indexForImageId(info.id());
 
-        if (index.isValid())
+        if (ind.isValid())
         {
-            listIndexes << index.row();
+            listIndexes << ind.row();
         }
     }
 
@@ -986,11 +986,11 @@ void ItemModel::removeItemInfos(const QList<ItemInfo>& infos, const QList<QVaria
 
     for (int i = 0 ; i < infos.size() ; ++i)
     {
-        QModelIndex index = indexForImageId(infos.at(i).id(), extraValues.at(i));
+        QModelIndex ind = indexForImageId(infos.at(i).id(), extraValues.at(i));
 
-        if (index.isValid())
+        if (ind.isValid())
         {
-            listIndexes << index.row();
+            listIndexes << ind.row();
         }
     }
 
@@ -1442,11 +1442,11 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
                 for (const qlonglong& id : ids)
                 {
                     d->filePathHash.remove(d->filePathHash.key(id));
-                    int index = d->idHash.value(id, -1);
+                    int ind = d->idHash.value(id, -1);
 
-                    if (index != -1)
+                    if (ind != -1)
                     {
-                        const ItemInfo& info             = d->infos.at(index);
+                        const ItemInfo& info             = d->infos.at(ind);
                         d->filePathHash[info.filePath()] = id;
                     }
                 }
@@ -1460,11 +1460,11 @@ void ItemModel::slotImageChange(const ImageChangeset& changeset)
 
         for (const qlonglong& id : ids)
         {
-            QModelIndex index = indexForImageId(id);
+            QModelIndex ind = indexForImageId(id);
 
-            if (index.isValid())
+            if (ind.isValid())
             {
-                items.select(index, index);
+                items.select(ind, ind);
             }
         }
 
@@ -1489,11 +1489,11 @@ void ItemModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
     for (const qlonglong& id : ids)
     {
-        QModelIndex index = indexForImageId(id);
+        QModelIndex ind = indexForImageId(id);
 
-        if (index.isValid())
+        if (ind.isValid())
         {
-            items.select(index, index);
+            items.select(ind, ind);
         }
     }
 
