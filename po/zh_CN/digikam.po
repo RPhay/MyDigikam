@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -26983,19 +26983,19 @@ msgstr "颜色"
 msgid "Customize label name here..."
 msgstr "在此输入自定义标记名称..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:102
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "新建相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:104
+#: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "编辑相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:127
+#: core/libs/album/widgets/albumpropsedit.cpp:126
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27005,112 +27005,112 @@ msgstr ""
 "“%1”\n"
 "相册属性"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:135
+#: core/libs/album/widgets/albumpropsedit.cpp:134
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "标题(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:139
+#: core/libs/album/widgets/albumpropsedit.cpp:138
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "在此设置新相册标题"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:143
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "分类(&T)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:152
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "父相册(&I)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:158
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "说明(&P)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:163
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "在此输入相册说明..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "相册日期(&D)："
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "最旧(&O)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "使用此按钮从相册中选择最旧的图像日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "平均(&A)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "使用此按钮来计算相册图像的平均日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "最新"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:177
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "使用此按钮从相册中选择最新的图像日期。"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:261
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "新建相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "所选相册 (默认)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:265
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "当前相册集合根目录"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:339
+#: core/libs/album/widgets/albumpropsedit.cpp:338
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "未分类相册"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:428
+#: core/libs/album/widgets/albumpropsedit.cpp:427
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27120,13 +27120,13 @@ msgstr ""
 "创建新相册到\n"
 "“%1”"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:472
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "无法计算平均日期"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:474
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."

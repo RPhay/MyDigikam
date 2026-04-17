@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2026-02-06 11:53+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -28349,19 +28349,19 @@ msgstr "Couleur"
 msgid "Customize label name here..."
 msgstr "Personnalisez ici le nom de l'étiquette…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:102
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nouvel album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:104
+#: core/libs/album/widgets/albumpropsedit.cpp:103
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Modifier un album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:127
+#: core/libs/album/widgets/albumpropsedit.cpp:126
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -28371,56 +28371,56 @@ msgstr ""
 "« %1 »\n"
 "Propriétés de l'album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:135
+#: core/libs/album/widgets/albumpropsedit.cpp:134
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Titre :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:139
+#: core/libs/album/widgets/albumpropsedit.cpp:138
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Saisissez ici le titre du nouvel album."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:143
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ca&tégorie :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:152
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "F&ils de :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:158
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Lé&gende :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:163
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Saisissez ici la légende de l'album…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Date de l'album :"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&La plus ancienne"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
@@ -28428,28 +28428,28 @@ msgstr ""
 "Utiliser ce bouton pour sélectionner la date de l'image la plus ancienne de "
 "l'album."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Moyenne"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr ""
 "Utiliser ce bouton pour calculer la date moyenne des images de l'album."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "La plus récente"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:177
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
@@ -28457,31 +28457,31 @@ msgstr ""
 "Utiliser ce bouton pour sélectionner la date de l'image la plus récente de "
 "l'album."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:261
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nouvel album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Album sélectionné (Par défaut)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:265
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Racine de la collection actuelle"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:339
+#: core/libs/album/widgets/albumpropsedit.cpp:338
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Album sans catégorie"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:428
+#: core/libs/album/widgets/albumpropsedit.cpp:427
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -28491,13 +28491,13 @@ msgstr ""
 "Créer un nouvel album dans\n"
 "« %1 »"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:472
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Impossible de calculer une moyenne"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:474
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."

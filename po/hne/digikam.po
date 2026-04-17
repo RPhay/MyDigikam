@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2009-02-15 18:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@aol.in>\n"
 "Language-Team: Hindi <kde-i18n-doc@lists.kde.org>\n"
@@ -27205,21 +27205,21 @@ msgstr "रंग"
 msgid "Customize label name here..."
 msgstr "अपन टैग नाम इहां भरव..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "नवा एलबम"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:104
+#: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
 #| msgid "Edit Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "एल्बम के संपादन करव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:127
+#: core/libs/album/widgets/albumpropsedit.cpp:126
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27227,51 +27227,51 @@ msgid ""
 "Album Properties"
 msgstr "एलबम गुन..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:135
+#: core/libs/album/widgets/albumpropsedit.cpp:134
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "सीर्सकः (&T)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:139
+#: core/libs/album/widgets/albumpropsedit.cpp:138
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "इहां सम्पर्क पोस्ट पिन कोड सेट करव."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:143
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "तारीक से"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:152
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:158
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "सीर्सक:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:163
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "अपन पाठ इहां भरव!"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "एलबम तारीक: (&d)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the oldest image"
@@ -27280,13 +27280,13 @@ msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "सबसे जुन्ना (&O)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "एलबम नाम प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "Calculates the average date"
@@ -27295,13 +27295,13 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "औसत (&A)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "एलबम नाम प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -27310,39 +27310,39 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "एकदम नवा"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:177
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "एलबम नाम प्रदर्सित करे बर ए विकल्प सेट करव."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:261
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "नवा एलबम"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "एलबम चुनव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:265
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "अभी हाल के चयन साफ करव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:339
+#: core/libs/album/widgets/albumpropsedit.cpp:338
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "अ-वर्गीकृत एलबम"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:428
+#: core/libs/album/widgets/albumpropsedit.cpp:427
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -27351,14 +27351,14 @@ msgid ""
 "\"%1\""
 msgstr "नवा एल्बम बनाव"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:472
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "औसत के गनना नइ कर सकिस."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:474
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, fuzzy, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."

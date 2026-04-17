@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -27190,21 +27190,21 @@ msgstr "Màu sắc"
 msgid "Customize label name here..."
 msgstr "Hãy nhập vào tên tập ảnh mới:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Tập ảnh mới"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:104
+#: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
 #| msgid "Edit Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Sửa tập ảnh"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:127
+#: core/libs/album/widgets/albumpropsedit.cpp:126
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27212,116 +27212,116 @@ msgid ""
 "Album Properties"
 msgstr "Sửa thuộc tính tập ảnh..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:135
+#: core/libs/album/widgets/albumpropsedit.cpp:134
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Tựa:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:139
+#: core/libs/album/widgets/albumpropsedit.cpp:138
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "<p>Ở đây hãy đặt màu của viền chính."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:143
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Theo ngày"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:152
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:158
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Độ xoay:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:163
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Hãy nhập đoạn vào đây !"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Ngày tập ảnh:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, fuzzy, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Đặt &lại"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "<p>Bật tuỳ chọn này để hiển thị kiểu của tệp ảnh."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "Trung bình"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "<p>Bật tuỳ chọn này để hiển thị kiểu của tệp ảnh."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:177
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "<p>Bật tuỳ chọn này để hiển thị kiểu của tệp ảnh."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:261
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Tập ảnh mới"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Chọn tập ảnh"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:265
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Đảo vùng chọn"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:339
+#: core/libs/album/widgets/albumpropsedit.cpp:338
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Tập ảnh chưa phân loại"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:428
+#: core/libs/album/widgets/albumpropsedit.cpp:427
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -27330,14 +27330,14 @@ msgid ""
 "\"%1\""
 msgstr "Tạo tập ảnh mới"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:472
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Không thể tính trung bình"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:474
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, fuzzy, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."

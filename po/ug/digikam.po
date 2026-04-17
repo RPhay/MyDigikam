@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-15 00:43+0000\n"
+"POT-Creation-Date: 2026-04-17 00:41+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -27610,21 +27610,21 @@ msgstr "رەڭ"
 msgid "Customize label name here..."
 msgstr "خەتكۈشلەر"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:102
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "يېڭى ئالبوم"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:104
+#: core/libs/album/widgets/albumpropsedit.cpp:103
 #, fuzzy, kde-format
 #| msgid "Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "ئالبوم"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:127
+#: core/libs/album/widgets/albumpropsedit.cpp:126
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgctxt "@label: album properties"
@@ -27633,68 +27633,68 @@ msgid ""
 "Album Properties"
 msgstr "ئالبوم خاسلىق"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:135
+#: core/libs/album/widgets/albumpropsedit.cpp:134
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "ماۋزۇ(&T):"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:139
+#: core/libs/album/widgets/albumpropsedit.cpp:138
 #, fuzzy, kde-format
 #| msgid "Select None"
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "ھەممىنى تاللىما"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:144
+#: core/libs/album/widgets/albumpropsedit.cpp:143
 #, fuzzy, kde-format
 #| msgid "Category:"
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "تۈرى:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:152
+#: core/libs/album/widgets/albumpropsedit.cpp:151
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:158
+#: core/libs/album/widgets/albumpropsedit.cpp:157
 #, fuzzy, kde-format
 #| msgid "Caption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "ماۋزۇ:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:163
+#: core/libs/album/widgets/albumpropsedit.cpp:162
 #, fuzzy, kde-format
 #| msgid "Action"
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "مەشغۇلات"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:166
+#: core/libs/album/widgets/albumpropsedit.cpp:165
 #, fuzzy, kde-format
 #| msgid "Album Name"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "ئالبوم ئاتى"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:171
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:172
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "metering mode"
@@ -27703,13 +27703,13 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "ئوتتۇرىچە"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -27718,40 +27718,40 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "ئەڭ يېڭى"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:177
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:262
+#: core/libs/album/widgets/albumpropsedit.cpp:261
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "يېڭى ئالبوم"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 #| msgid "Delete Album"
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "ئالبوم ئۆچۈر"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:265
+#: core/libs/album/widgets/albumpropsedit.cpp:264
 #, fuzzy, kde-format
 #| msgid "Clear current selection"
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "نۆۋەتتىكى تاللانغان مەزمۇنىنى تازىلا"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:339
+#: core/libs/album/widgets/albumpropsedit.cpp:338
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:428
+#: core/libs/album/widgets/albumpropsedit.cpp:427
 #, fuzzy, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27759,14 +27759,14 @@ msgid ""
 "\"%1\""
 msgstr "ئېكسپورت قىلىش"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:472
 #, fuzzy, kde-format
 #| msgid "Failed to load image"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "سۈرەتنى ئوقۇش مەغلۇپ بولدى"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:474
+#: core/libs/album/widgets/albumpropsedit.cpp:473
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
