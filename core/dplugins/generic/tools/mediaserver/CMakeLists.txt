@@ -173,6 +173,8 @@ set(libmediaserver_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/server/dmediaservermngr.cpp
 )
 
+DISABLE_GCC_COMPILER_WARNINGS("13.2.99" "-Wtemplate-id-cdtor")
+
 # For Unit-tests and plugin
 add_library(mediaserverbackend STATIC ${libmediaserver_SRCS})
 set_property(TARGET mediaserverbackend PROPERTY CXX_STANDARD 17)
