@@ -835,6 +835,14 @@ bool CoreDbSchemaUpdater::updateToVersion(int targetVersion)
             return performUpdateToVersion(QLatin1String("UpdateSchemaFromV15ToV16"), 16, 5);
         }
 
+        case 17:
+        {
+            // digiKam for database version 16 can work with version 17,
+            // add index for TagProperties and a timezone column.
+
+            return performUpdateToVersion(QLatin1String("UpdateSchemaFromV16ToV17"), 17, 5);
+        }
+
         default:
         {
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: unsupported update to version" << targetVersion;
