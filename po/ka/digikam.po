@@ -41436,7 +41436,7 @@ msgstr "მოთხოვნილი ფონტი"
 #, kde-format
 msgctxt "@title: font properties"
 msgid "Font"
-msgstr "შრიფტი"
+msgstr "ფონტი"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:267
 #, kde-format

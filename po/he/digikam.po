@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-17 00:41+0000\n"
-"PO-Revision-Date: 2026-04-13 21:23+0300\n"
+"PO-Revision-Date: 2026-04-18 16:30+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -22268,9 +22268,9 @@ msgid "PhotoSet creation failed: "
 msgstr "חיבור כשל"
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1114
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to fetch list of photo sets."
-msgstr "כשל בעת הצגת קבצים ב %1"
+msgstr "משיכת רשימת סדרות התמונות נכשלה."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1259
 #, kde-format
@@ -25691,9 +25691,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:245
-#, fuzzy, kde-format
+#, kde-format
 msgid "UFRaw Raw Conversion"
-msgstr "מרחב צבע"
+msgstr "המרת גלם עם UFRaw"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:351
 #, kde-format
@@ -26956,9 +26956,9 @@ msgid "Error while scrubbing the target database."
 msgstr ""
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:140
-#, fuzzy, kde-format
+#, kde-format
 msgid "Create Schema..."
-msgstr "לכידת תמונה..."
+msgstr "יצירת סכמה…"
 
 #: core/libs/database/coredb/coredbcopymanager.cpp:144
 #, kde-format
@@ -27631,10 +27631,9 @@ msgid "Scanning images in individual albums..."
 msgstr "מתבצעת סריקת תמונות באלבומים פרטניים…"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Migrate ->"
+#, kde-format
 msgid "Migrate →"
-msgstr "הסבה ->"
+msgstr ""
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
@@ -28293,9 +28292,9 @@ msgid "Core Db name"
 msgstr "שם ליבת מסד נתונים"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:97
-#, fuzzy, kde-format
+#, kde-format
 msgid "Thumbs Db name"
-msgstr "שם התמונה"
+msgstr "שם מסד נתוני התמונות הממוזערות"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:98
 #, kde-format
@@ -28303,9 +28302,9 @@ msgid "Face Db name"
 msgstr "שם מסד נתוני פרצופים"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:103
-#, fuzzy, kde-format
+#, kde-format
 msgid "Database locale"
-msgstr "יצירת תיקייה למסד הנתונים?"
+msgstr "שפת מסד הנתונים"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:141
 #, kde-format
@@ -28556,24 +28555,24 @@ msgid "<i>Sensitivity:</i>"
 msgstr "<i>רגישות:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:280
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>AspectRatio:</i>"
-msgstr "יחס:"
+msgstr "<i>יחס תצוגה:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:281
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>AudioBitRate:</i>"
-msgstr "<i>נוצר:</i>"
+msgstr "<i>קצב סיביות שמע:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:282
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>AudioChannelType:</i>"
-msgstr "<i>לא השתנה</i>"
+msgstr "<i>סוג ערוץ שמע:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:283
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>AudioCodec:</i>"
-msgstr "<i>דגם:</i>"
+msgstr "<i>מפענח שמע:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:284
 #, kde-format
@@ -28586,9 +28585,9 @@ msgid "<i>FrameRate:</i>"
 msgstr "<i>קצב תמוניות:</i>"
 
 #: core/libs/dialogs/imagedialog_preview.cpp:286
-#, fuzzy, kde-format
+#, kde-format
 msgid "<i>VideoCodec:</i>"
-msgstr "<i>דגם:</i>"
+msgstr "<i>מפענח וידאו:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
 #, fuzzy, kde-format
