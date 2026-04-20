@@ -277,8 +277,6 @@ void FacesEngine::slotStart()
         setLabel(i18n("Updating faces database"));
     }
 
-    ProgressManager::addProgressItem(this);
-
     if      (d->source == FacesEngine::Infos)
     {
         int total = d->infoTodoList.count();

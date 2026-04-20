@@ -101,8 +101,6 @@ void FingerPrintsGenerator::slotStart()
     setThumbnail(QIcon::fromTheme(QLatin1String("fingerprint")).pixmap(48));
     setLabel(i18n("Finger-prints"));
 
-    ProgressManager::addProgressItem(this);
-
     // Activate progress bar during album calculation.
 
     setTotalItems(1);

@@ -105,8 +105,6 @@ void MetadataRemover::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    ProgressManager::addProgressItem(this);
-
     d->imageInfoJob = new ItemInfoJob;
 
     connect(d->imageInfoJob, SIGNAL(signalItemsInfo(ItemInfoList)),

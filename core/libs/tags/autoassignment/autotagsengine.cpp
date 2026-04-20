@@ -106,8 +106,6 @@ void AutotagsEngine::slotStart()
         }
     }
 
-    ProgressManager::addProgressItem(this);
-
     setUsesBusyIndicator(true);
 
     // Get total count, cached by AlbumManager.

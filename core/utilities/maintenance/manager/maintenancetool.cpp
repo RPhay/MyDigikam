@@ -106,6 +106,8 @@ void MaintenanceTool::start()
         return;
     }
 
+    ProgressManager::addProgressItem(this);
+
     // We delay start to be sure that eventloop
     // connect signals and slots in top level.
 
