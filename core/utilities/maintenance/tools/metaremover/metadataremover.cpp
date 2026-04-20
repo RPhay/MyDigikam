@@ -105,7 +105,7 @@ void MetadataRemover::slotStart()
 {
     MaintenanceTool::slotStart();
 
-    addItemToProgressManager(this);
+    ProgressManager::addProgressItem(this);
 
     d->imageInfoJob = new ItemInfoJob;
 

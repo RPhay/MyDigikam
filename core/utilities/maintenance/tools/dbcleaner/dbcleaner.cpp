@@ -123,7 +123,7 @@ void DbCleaner::slotStart()
     setLabel(i18n("Clean up the databases : ") + i18n("analysing databases"));
     setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(48));
 
-    addItemToProgressManager(this);
+    ProgressManager::addProgressItem(this);
 
     // Set one item to make sure that the progress bar is shown.
 

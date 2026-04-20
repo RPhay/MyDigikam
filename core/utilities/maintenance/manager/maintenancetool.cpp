@@ -97,24 +97,15 @@ uint MaintenanceTool::checkProgressNeeded() const
     return 0;
 }
 
-void MaintenanceTool::addItemToProgressManager(ProgressItem* const t)
+void MaintenanceTool::start()
 {
     if (ProgressManager::instance()->findItembyId(id()))
     {
-        QTimer::singleShot(2000, this, [this, t]()
-            {
-                addItemToProgressManager(t);
-            }
-        );
-    }
-    else
-    {
-        ProgressManager::addProgressItem(t);
-    }
-}
+        QTimer::singleShot(2000, this, SLOT(start()));
 
-void MaintenanceTool::start()
-{
+        return;
+    }
+
     // We delay start to be sure that eventloop
     // connect signals and slots in top level.
 

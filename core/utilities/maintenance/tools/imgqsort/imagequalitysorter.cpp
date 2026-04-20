@@ -114,7 +114,7 @@ void ImageQualitySorter::slotStart()
     setLabel(i18n("Image Quality Scanner"));
     setThumbnail(QIcon::fromTheme(QLatin1String("flag-green")).pixmap(48));
 
-    addItemToProgressManager(this);
+    ProgressManager::addProgressItem(this);
 
     if (!d->allPicturesPath.isEmpty())
     {

@@ -121,7 +121,7 @@ void ThumbsGenerator::slotStart()
     setLabel(i18n("Generate Thumbnails"));
     setThumbnail(QIcon::fromTheme(QLatin1String("photo")).pixmap(48));
 
-    addItemToProgressManager(this);
+    ProgressManager::addProgressItem(this);
 
     // Activate progress bar during album calculation.
 

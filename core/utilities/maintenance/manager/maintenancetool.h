@@ -69,10 +69,6 @@ public Q_SLOTS:
 
     void start();
 
-protected:
-
-    void addItemToProgressManager(ProgressItem* const t);
-
 protected Q_SLOTS:
 
     virtual void slotStart();
