@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:41+0000\n"
+"POT-Creation-Date: 2026-04-20 00:43+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -3279,7 +3279,7 @@ msgid "Map Search"
 msgstr "Tìm kiếm của tôì"
 
 #: core/app/views/stack/itemiconview_p.h:142
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1194
 #, kde-format
 msgid "Last Search"
 msgstr "Tìm kiếm cuối cùng"
@@ -27766,7 +27766,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:867
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, fuzzy, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -27776,12 +27776,12 @@ msgstr ""
 "Lỗi sao chép tệp cơ sở dữ liệu cũ (« %1 ») vào vị trí mới (« %2 »). Hãy kiểm "
 "tra lại tệp này có khả năng được sao chép."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:889
+#: core/libs/database/coredb/coredbschemaupdater.cpp:897
 #, fuzzy, kde-format
 msgid "Copied database file"
 msgstr "Đang đọc cơ sở dữ liệu..."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:902
 #, fuzzy, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -27792,22 +27792,22 @@ msgstr ""
 "nhưng mà không thể mở được. Hãy gỡ bỏ cả hai tệp này rồi thử lại, bắt đầu "
 "với cơ sở dữ liệu trống."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:915
+#: core/libs/database/coredb/coredbschemaupdater.cpp:923
 #, fuzzy, kde-format
 msgid "Opened new database file"
 msgstr "Đang đọc cơ sở dữ liệu..."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid "Prepared table creation"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1041
 #, fuzzy, kde-format
 msgid "Created tables"
 msgstr "Lỗi tạo thư mục"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1054
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -27815,7 +27815,7 @@ msgid ""
 "your configuration."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -27827,52 +27827,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1103
 #, kde-format
 msgid "Configured one album root"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1129
 #, fuzzy, kde-format
 msgid "Imported albums"
 msgstr "&Sắp xếp tập ảnh"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, fuzzy, kde-format
 msgid "Imported images information"
 msgstr "Thông tin ảnh"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1196
 #, fuzzy, kde-format
 msgid "Last Search (0.9)"
 msgstr "Tìm kiếm cuối cùng"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1257
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1279
 #, kde-format
 msgid "Did the initial full scan"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1303
 #, fuzzy, kde-format
 msgid "Imported creation dates"
 msgstr "Hiện ngày tạo ảnh"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, fuzzy, kde-format
 msgid "Imported comments"
 msgstr "Hiện chú thích về ảnh"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1361
 #, fuzzy, kde-format
 msgid "Imported ratings"
 msgstr "Lần lặp lại:"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1372
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr ""

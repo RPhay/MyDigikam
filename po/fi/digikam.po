@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:41+0000\n"
+"POT-Creation-Date: 2026-04-20 00:43+0000\n"
 "PO-Revision-Date: 2026-03-13 17:00+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3403,7 +3403,7 @@ msgid "Map Search"
 msgstr "Karttahaku"
 
 #: core/app/views/stack/itemiconview_p.h:142
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1194
 #, kde-format
 msgid "Last Search"
 msgstr "Viimeisin haku"
@@ -29381,7 +29381,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "Päivitettiin skeema versioon %1."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:867
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -29391,12 +29391,12 @@ msgstr ""
 "Vanhan tietokantatiedoston ”%1” kopiointi uudelle nimelle ”%2” epäonnistui. "
 "Virhe: ”%3.” Varmista että tiedosto voidaan kopioida, tai poista se."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:889
+#: core/libs/database/coredb/coredbschemaupdater.cpp:897
 #, kde-format
 msgid "Copied database file"
 msgstr "Tietokantatiedosto on kopioitu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:902
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -29407,22 +29407,22 @@ msgstr ""
 "ei voida avata. Poista molemmat tiedostot ja yritä uudelleen - tosin tällöin "
 "saatat menettää tietoja riippuen asetuksistasi."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:915
+#: core/libs/database/coredb/coredbschemaupdater.cpp:923
 #, kde-format
 msgid "Opened new database file"
 msgstr "Uusi tietokantatiedosto on avattu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid "Prepared table creation"
 msgstr "Tietokantataulujen luonti on valmisteltu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1041
 #, kde-format
 msgid "Created tables"
 msgstr "Tietokantataulut on luotu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1054
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -29432,7 +29432,7 @@ msgstr ""
 "Albumikirjastoa ei ole määritetty. Ohitetaan tietokantaskeeman päivitys. "
 "Kokeile uudelleen tyhjällä tietokannalla tai korjaa määritykset."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -29458,52 +29458,52 @@ msgstr ""
 "päivitys keskeytetään, sillä uuden tietokannan luomisen edellytykset eivät "
 "ole kunnossa."
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1103
 #, kde-format
 msgid "Configured one album root"
 msgstr "Yksi juurialbumi määritelty"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1129
 #, kde-format
 msgid "Imported albums"
 msgstr "Tuodut albumit"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Imported images information"
 msgstr "Tuotujen kuvien tiedot"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1196
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "Viimeisin haku (0,9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1257
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "Alustettu ja tuotu tiedostopäätesuodatin"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1279
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "Alustava tilastointi on suoritettu"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1303
 #, kde-format
 msgid "Imported creation dates"
 msgstr "Luomispäivät tuotu tiedostoista"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported comments"
 msgstr "Kommentit tuotu tiedostoista"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1361
 #, kde-format
 msgid "Imported ratings"
 msgstr "Arviot tuotu tiedostoista"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1372
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "Hylätyt v3-taulukot"

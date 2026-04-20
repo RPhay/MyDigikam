@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:41+0000\n"
+"POT-Creation-Date: 2026-04-20 00:43+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -3445,7 +3445,7 @@ msgid "Map Search"
 msgstr "การค้นหาผ่านแผนที่"
 
 #: core/app/views/stack/itemiconview_p.h:142
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1194
 #, kde-format
 msgid "Last Search"
 msgstr "การค้นหาล่าสุด"
@@ -28943,7 +28943,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:867
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -28954,12 +28954,12 @@ msgstr ""
 "ได้ข้อความผิดพลาดคือ: \"%3\" โปรดตรวจสอบเพื่อความแน่ใจว่า "
 "แฟ้มดังกล่าวสามารถที่จะคัดลอกหรือลบมันได้"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:889
+#: core/libs/database/coredb/coredbschemaupdater.cpp:897
 #, kde-format
 msgid "Copied database file"
 msgstr "คัดลอกฐานข้อมูลแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:902
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -28970,22 +28970,22 @@ msgstr ""
 "เรียบร้อยแล้วแต่มันไม่สามารถเปิดได้ โปรดลบแฟ้มนี้และลองใหม่อีกครั้ง "
 "โดยจะเริ่มการทำงานใหม่ด้วยฐานข้อมูลเปล่า"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:915
+#: core/libs/database/coredb/coredbschemaupdater.cpp:923
 #, kde-format
 msgid "Opened new database file"
 msgstr "เปิดแฟ้มฐานข้อมูลใหม่แล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid "Prepared table creation"
 msgstr "เตรียมการสร้างตารางข้อมูลแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1041
 #, kde-format
 msgid "Created tables"
 msgstr "สร้างตารางข้อมูลเรียบร้อยแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1054
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -28995,7 +28995,7 @@ msgstr ""
 "ไม่พบส่วนระบุถึงตำแหน่งของคลังอัลบั้มในแฟ้มปรับแต่ง กำลังยกเลิกกระบวนการปรับปรุงรายการ "
 "โปรดลองใหม่อีกครั้งโดยใช้ฐานข้อมูลเปล่า หรือแก้ไขการตั้งค่าของคุณเสียก่อน"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, fuzzy, kde-format
 #| msgid ""
 #| "There was an error associating your albumLibraryPath (\"%1\") with a "
@@ -29023,52 +29023,52 @@ msgstr ""
 "เนื่องจากเราไม่ต้องการจะสร้างฐานข้อมูลใหม่ที่มีฐานจากสมมติฐานที่ว่า "
 "มีปัญหาในการติดตั้งโปรแกรมบนระบบ"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1103
 #, kde-format
 msgid "Configured one album root"
 msgstr "ปรับแต่งตำแหน่งรากของอัลบั้มแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1129
 #, kde-format
 msgid "Imported albums"
 msgstr "นำเข้าอัลบั้มแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Imported images information"
 msgstr "นำเข้าข้อมูลรายละเอียดของรูปภาพแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1196
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "การค้นหาล่าสุด (0.9)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1257
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "เริ่มใช้และนำเข้าตัวกรองคำนำหน้าแฟ้มเรียบร้อยแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1279
 #, kde-format
 msgid "Did the initial full scan"
 msgstr "ทำการตรวจค้นเต็มรูปแบบแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1303
 #, kde-format
 msgid "Imported creation dates"
 msgstr "นำเข้าวันที่สร้างภาพแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported comments"
 msgstr "แสดงหมายเหตุของภาพแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1361
 #, kde-format
 msgid "Imported ratings"
 msgstr "นำเข้าระดับความชื่นชอบแล้ว"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1372
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "ลบตารางข้อมูล รุ่น 3"

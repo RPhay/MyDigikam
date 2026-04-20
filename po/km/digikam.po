@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:41+0000\n"
+"POT-Creation-Date: 2026-04-20 00:43+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3548,7 +3548,7 @@ msgid "Map Search"
 msgstr "ស្វែងរក​ផែនទី"
 
 #: core/app/views/stack/itemiconview_p.h:142
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1186
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1194
 #, kde-format
 msgid "Last Search"
 msgstr "ស្វែងរក​ចុងក្រោយ"
@@ -29111,7 +29111,7 @@ msgstr ""
 msgid "Updated schema to version %1."
 msgstr "គំនូរ​បំព្រួញ​ដែល​បាន​ធ្វើ​បច្ចុប្បន្នភាព​កំណែ ៦ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:867
+#: core/libs/database/coredb/coredbschemaupdater.cpp:875
 #, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
@@ -29121,12 +29121,12 @@ msgstr ""
 "បាន​បរាជ័យ​ក្នុង​ការ​ចម្លង​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់ (\"%1\") ទៅកាន់​ទីតាំង​ថ្មី​របស់​វា (\"%2\") ។ "
 "សារ​កំហុស ៖ \"%3\" ។ សូម​ប្រាកដ​ថា​ឯកសារ​​អាច​ត្រូវ​បាន​ចម្លង ឬ​លុប​ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:889
+#: core/libs/database/coredb/coredbschemaupdater.cpp:897
 #, kde-format
 msgid "Copied database file"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ដែល​បាន​ចម្លង"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:894
+#: core/libs/database/coredb/coredbschemaupdater.cpp:902
 #, kde-format
 msgid ""
 "The old database file (\"%1\") has been copied to the new location (\"%2\") "
@@ -29136,22 +29136,22 @@ msgstr ""
 "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ចាស់ (\"%1\") ត្រូវ​បាន​ចម្លង​ទៅកាន់​ទីតាំង​ថ្មី (\"%2\") ប៉ុន្តែ​វា​មិន​អាច​ត្រូវ​បាន​"
 "បើក​ឡើយ ។ សូល​លុប​ឯកសារ​ទាំងពីរ ហើយ​សាកល្បង​ម្ដងទៀត ចាប់ផ្ដើម​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:915
+#: core/libs/database/coredb/coredbschemaupdater.cpp:923
 #, kde-format
 msgid "Opened new database file"
 msgstr "ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​ថ្មី​ដែល​បាន​បើក"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1014
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1022
 #, kde-format
 msgid "Prepared table creation"
 msgstr "បាន​រៀបចំ​ការ​បង្កើត​តារាង"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1033
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1041
 #, kde-format
 msgid "Created tables"
 msgstr "បាន​បង្កើត​តារាង"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1046
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1054
 #, kde-format
 msgid ""
 "No album library path has been found in the configuration file. Giving up "
@@ -29161,7 +29161,7 @@ msgstr ""
 "​រក​មិន​ឃើញ​ផ្លូវ​​​ផ្លូវ​បណ្ណាល័យ​អាល់ប៊ុម​នៅ​ក្នុង​ឯកសារ​ការ​កំណត់​រចនា​សម្ព័ន្ធ ។ ដំណើរការ​ធ្វើ​បច្ចុប្បន្នភាព​​គំនូរ​"
 "បំព្រួញ ។ សូម​សាកល្បង​ជាមួយ​មូលដ្ឋាន​ទិន្នន័យ​ទទេ ឬ​​​បង្កើត​ការ​កំណត់​រចនាសម្ព័ន្ធ​របស់​អ្នក​ឡើង​វិញ ។"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1068
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1076
 #, kde-format
 msgid ""
 "There was an error associating your albumLibraryPath (\"%1\") with a storage "
@@ -29173,52 +29173,52 @@ msgid ""
 "based on false assumptions from a broken installation."
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1095
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1103
 #, kde-format
 msgid "Configured one album root"
 msgstr "បាន​កំណត់​រចនាសម្ព័ន្ធ​អាល់ប៊ុម​មួយ​ជា root"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1121
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1129
 #, kde-format
 msgid "Imported albums"
 msgstr "អាល់ប៊ុម​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1158
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1166
 #, kde-format
 msgid "Imported images information"
 msgstr "ព័ត៌មាន​រូបភាព​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1188
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1196
 #, kde-format
 msgid "Last Search (0.9)"
 msgstr "ស្វែងរក​ចុងក្រោយ (០.៩)"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1249
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1257
 #, kde-format
 msgid "Initialized and imported file suffix filter"
 msgstr "តម្រង​បច្ច័យ​ឯកសារ​ដែល​បាន​នាំចូល និង​បាន​រៀបចំ"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1271
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1279
 #, kde-format
 msgid "Did the initial full scan"
 msgstr ""
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1295
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1303
 #, kde-format
 msgid "Imported creation dates"
 msgstr "កាលបរិច្ឆេទ​​ការ​បង្កើត​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1326
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1334
 #, kde-format
 msgid "Imported comments"
 msgstr "មតិយោបល់​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1353
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1361
 #, kde-format
 msgid "Imported ratings"
 msgstr "ការ​វាយ​តម្លៃ​ដែល​បាន​នាំចូល"
 
-#: core/libs/database/coredb/coredbschemaupdater.cpp:1364
+#: core/libs/database/coredb/coredbschemaupdater.cpp:1372
 #, kde-format
 msgid "Dropped v3 tables"
 msgstr "តារាង v3 ដែល​បាន​ទម្លាក់"
