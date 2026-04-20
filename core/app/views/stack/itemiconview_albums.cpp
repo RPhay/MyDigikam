@@ -358,7 +358,9 @@ void ItemIconView::slotAlbumWriteMetadata()
         return;
     }
 
-    MetadataSynchronizer* const tool = new MetadataSynchronizer(AlbumList() << album, MetadataSynchronizer::WriteFromDatabaseToFile);
+    MetadataSynchronizer* const tool = new MetadataSynchronizer(AlbumList() << album,
+                                                                MetadataSynchronizer::WriteFromDatabaseToFile);
+    tool->setUseMultiCoreCPU(false);
 
     if (MetadataHubMngr::isCreated())
     {

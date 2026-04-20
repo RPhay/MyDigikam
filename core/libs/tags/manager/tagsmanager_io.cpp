@@ -47,6 +47,7 @@ void TagsManager::slotWriteToImage()
 
     MetadataSynchronizer* const tool = new MetadataSynchronizer(AlbumList(),
                                                                 MetadataSynchronizer::WriteFromDatabaseToFile);
+    tool->setUseMultiCoreCPU(false);
     tool->setTagsOnly(true);
     tool->start();
 }

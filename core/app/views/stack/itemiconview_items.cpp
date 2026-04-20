@@ -226,7 +226,9 @@ void ItemIconView::slotDispatchImageSelected()
 void ItemIconView::slotImageWriteMetadata()
 {
     const ItemInfoList& selected     = selectedInfoList(MetadataOps);
-    MetadataSynchronizer* const tool = new MetadataSynchronizer(selected, MetadataSynchronizer::WriteFromDatabaseToFile);
+    MetadataSynchronizer* const tool = new MetadataSynchronizer(selected,
+                                                                MetadataSynchronizer::WriteFromDatabaseToFile);
+    tool->setUseMultiCoreCPU(false);
 
     if (MetadataHubMngr::isCreated())
     {

@@ -1158,7 +1158,9 @@ void AlbumManager::askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& i
     }
 
     ItemInfoList infos(imageIds);
-    MetadataSynchronizer* const tool = new MetadataSynchronizer(infos, MetadataSynchronizer::WriteFromDatabaseToFile);
+    MetadataSynchronizer* const tool = new MetadataSynchronizer(infos,
+                                                                MetadataSynchronizer::WriteFromDatabaseToFile);
+    tool->setUseMultiCoreCPU(false);
     tool->start();
 }
 
