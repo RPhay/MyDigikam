@@ -59,7 +59,7 @@ QByteArray DMetadata::extractMotionPhotoVideo() const
         return QByteArray();
     }
 
-    QByteArray data = parser->currentData().value(QLatin1String("MOTION_PHOTO_VIDEO"))[0].toByteArray();
+    QByteArray data = parser->currentData().value(QLatin1String("MOTION_PHOTO_VIDEO")).at(0).toByteArray();
 
     if (data.isEmpty())
     {
