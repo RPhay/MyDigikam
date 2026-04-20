@@ -277,7 +277,7 @@ void FacesEngine::slotStart()
         setLabel(i18n("Updating faces database"));
     }
 
-    ProgressManager::addProgressItem(this);
+    addItemToProgressManager(this);
 
     if      (d->source == FacesEngine::Infos)
     {

@@ -106,7 +106,7 @@ void AutotagsEngine::slotStart()
         }
     }
 
-    ProgressManager::addProgressItem(this);
+    addItemToProgressManager(this);
 
     setUsesBusyIndicator(true);
 

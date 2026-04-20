@@ -109,7 +109,7 @@ void DuplicatesFinder::slotStart()
     setLabel(i18n("Find duplicates items"));
     setThumbnail(QIcon::fromTheme(QLatin1String("tools-wizard")).pixmap(48));
 
-    ProgressManager::addProgressItem(this);
+    addItemToProgressManager(this);
 
     double minThresh = d->minSimilarity / 100.0;
     double maxThresh = d->maxSimilarity / 100.0;
