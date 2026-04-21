@@ -44,6 +44,8 @@ public:
 
     Private() = default;
 
+public:
+
     QWidget* dialogParent = nullptr;
 };
 
@@ -89,7 +91,7 @@ bool SearchModificationHelper::checkAlbum(const QString& name) const
 
     for (AlbumList::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
-        SAlbum* const album = (SAlbum*)(*it);
+        const SAlbum* const album = (SAlbum*)(*it);
 
         if (album->title() == name)
         {

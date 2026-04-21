@@ -377,7 +377,7 @@ QList<QRect> SearchGroup::startupAnimationArea() const
 
     // field groups
 
-    for (SearchFieldGroup* const fieldGroup : std::as_const(m_fieldGroups))
+    for (const SearchFieldGroup* const fieldGroup : std::as_const(m_fieldGroups))
     {
         // cppcheck-suppress useStlAlgorithm
         rects += fieldGroup->areaOfMarkedFields();

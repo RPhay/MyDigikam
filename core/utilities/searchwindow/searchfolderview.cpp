@@ -40,6 +40,8 @@ public:
 
     Private() = default;
 
+public:
+
     QAction* newAction  = nullptr;
     QAction* copyAction = nullptr;
     QAction* editAction = nullptr;
@@ -65,7 +67,7 @@ NormalSearchTreeView::~NormalSearchTreeView()
 
 void NormalSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)
 {
-    SAlbum* const salbum        = dynamic_cast<SAlbum*>(album);
+    const SAlbum* const salbum  = dynamic_cast<SAlbum*>(album);
     const bool isAdvancedSearch = (salbum && salbum->isAdvancedSearch());
 
     cmh.addAction(d->newAction);
