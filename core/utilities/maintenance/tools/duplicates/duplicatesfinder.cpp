@@ -81,17 +81,17 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums,
     d->searchResultRestriction = searchResultRestriction;
     d->refSelMethod            = method;
 
-    for (Album* const a : std::as_const(albums))
+    for (const Album* const a : std::as_const(albums))
     {
         d->albumsIdList << a->id();
     }
 
-    for (Album* const a : std::as_const(tags))
+    for (const Album* const a : std::as_const(tags))
     {
         d->tagsIdList << a->id();
     }
 
-    for (Album* const a : std::as_const(referenceImageAlbum))
+    for (const Album* const a : std::as_const(referenceImageAlbum))
     {
         d->referenceAlbumsList << a->id();
     }

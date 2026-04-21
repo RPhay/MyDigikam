@@ -205,7 +205,7 @@ void MaintenanceMngr::stage1()
 
             for (Album* const a : std::as_const(d->settings.albums))
             {
-                PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
+                const PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
 
                 if (palbum)
                 {

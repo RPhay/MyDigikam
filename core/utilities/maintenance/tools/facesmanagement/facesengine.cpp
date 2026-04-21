@@ -337,7 +337,7 @@ void FacesEngine::slotStart()
     bool hasPAlbums = false;
     bool hasTAlbums = false;
 
-    for (Album* const album : std::as_const(d->albumTodoList))
+    for (const Album* const album : std::as_const(d->albumTodoList))
     {
         if (album->type() == Album::PHYSICAL)
         {
