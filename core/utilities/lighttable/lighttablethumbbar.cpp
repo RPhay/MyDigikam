@@ -172,7 +172,7 @@ void LightTableThumbBar::showContextMenuOnInfo(QContextMenuEvent* e, const ItemI
     connect(&cmhelper, SIGNAL(signalAssignRating(int)),
             this, SLOT(slotAssignRating(int)));
 
-    QAction* const choice = cmhelper.exec(e->globalPos());
+    const QAction* const choice = cmhelper.exec(e->globalPos());
 
     if (choice)
     {
@@ -354,7 +354,7 @@ void LightTableThumbBar::paintEvent(QPaintEvent* e)
 
 void LightTableThumbBar::slotSetupChanged()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     d->imageFilterModel->setStringTypeNatural(settings->isStringTypeNatural());
     d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)settings->getImageSortOrder());
