@@ -111,7 +111,7 @@ BUGFIXES:
 083 --> 518981 - "Write to XMP sidecar only" not honored for rotation data.
 084 --> 518995 - ExifTool not fund on first use.
 085 --> 518993 - New album dialog is blocked and hidden when selected as part of move items workflow.
-086 --> 
+086 --> 519200 - Darktable raw import fails.
 087 --> 
 088 --> 
 089 --> 
