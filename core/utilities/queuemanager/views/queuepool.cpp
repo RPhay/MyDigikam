@@ -321,7 +321,7 @@ void QueuePool::slotRemoveCurrentQueue()
 
 bool QueuePool::saveWorkflow() const
 {
-    QueueListView* const queue = currentQueue();
+    const QueueListView* const queue = currentQueue();
 
     if (queue)
     {
@@ -394,7 +394,7 @@ void QueuePool::slotAssignedToolsChanged(const AssignedBatchTools& tools4Item)
 
 void QueuePool::slotQueueSelected(int index)
 {
-    QueueListView* const queue = dynamic_cast<QueueListView*>(widget(index));
+    const QueueListView* const queue = dynamic_cast<QueueListView*>(widget(index));
 
     if (queue)
     {
@@ -478,7 +478,7 @@ bool QueuePool::customRenamingRulesAreValid() const
 
     for (int i = 0 ; i < count() ; ++i)
     {
-        QueueListView* const queue = findQueueByIndex(i);
+        const QueueListView* const queue = findQueueByIndex(i);
 
         if (queue)
         {
@@ -510,7 +510,7 @@ bool QueuePool::assignedBatchToolsListsAreValid() const
 
     for (int i = 0 ; i < count() ; ++i)
     {
-        QueueListView* const queue = findQueueByIndex(i);
+        const QueueListView* const queue = findQueueByIndex(i);
 
         if (queue)
         {

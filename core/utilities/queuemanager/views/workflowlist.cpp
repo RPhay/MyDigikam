@@ -132,7 +132,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
 
 void WorkflowList::slotAddQueueSettings(const QString& title)
 {
-    WorkflowItem* const item = findByTitle(title);
+    const WorkflowItem* const item = findByTitle(title);
 
     if (!item)
     {
@@ -175,7 +175,7 @@ void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
 
     if (!list.isEmpty())
     {
-        WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
+        const WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
 
         if (!item)
         {
@@ -248,7 +248,7 @@ QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const    
 
     if (!items.isEmpty())
     {
-        WorkflowItem* const item  = dynamic_cast<WorkflowItem*>(items.first());
+        const WorkflowItem* const item  = dynamic_cast<WorkflowItem*>(items.first());
 
         if (item)
         {
@@ -257,6 +257,7 @@ QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const    
     }
 
     mimeData->setData(QLatin1String("digikam/workflow"), encodedData);
+
     return mimeData;
 }
 
@@ -295,7 +296,7 @@ void WorkflowList::slotContextMenu()
     popmenu.addSeparator();
     popmenu.addAction(delAction);
 
-    QAction* const choice = popmenu.exec(QCursor::pos());
+    const QAction* const choice = popmenu.exec(QCursor::pos());
 
     if      (choice == assignAction)
     {
@@ -356,7 +357,7 @@ void WorkflowList::slotAssignQueueSettings()
 
     if (!list.isEmpty())
     {
-        WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
+        const WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
 
         if (item)
         {

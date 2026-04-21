@@ -74,10 +74,10 @@ AssignedListViewItem::AssignedListViewItem(QTreeWidget* const parent, QTreeWidge
 
 void AssignedListViewItem::setToolSet(const BatchToolSet& set)
 {
-    m_set                 = set;
+    m_set                       = set;
     setIndex(m_set.index);
 
-    BatchTool* const tool = BatchToolsFactory::instance()->findTool(m_set.name, m_set.group);
+    const BatchTool* const tool = BatchToolsFactory::instance()->findTool(m_set.name, m_set.group);
 
     if (tool)
     {
@@ -233,7 +233,7 @@ void AssignedListView::slotMoveCurrentToolDown()
 
 AssignedListViewItem* AssignedListView::moveTool(AssignedListViewItem* const preceding, const BatchToolSet& set)
 {
-    BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+    const BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 
     if (!tool)
     {

@@ -378,7 +378,7 @@ QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const   
 
     for (QTreeWidgetItem* const itm : std::as_const(items))
     {
-        QueueListViewItem* const vitem = dynamic_cast<QueueListViewItem*>(itm);
+        const QueueListViewItem* const vitem = dynamic_cast<QueueListViewItem*>(itm);
 
         if (vitem)
         {
@@ -698,12 +698,12 @@ void QueueListView::slotAddItems(const ItemInfoList& list)
 
     for (ItemInfoList::ConstIterator it = list.begin() ; it != list.end() ; ++it)
     {
-        ItemInfo info           = *it;
+        ItemInfo info                 = *it;
 
         // Check if the new item already exist in the list.
 
-        bool find               = false;
-        QueueListViewItem* item = nullptr;
+        bool find                     = false;
+        const QueueListViewItem* item = nullptr;
 
         QTreeWidgetItemIterator iter(this);
 
@@ -732,7 +732,7 @@ void QueueListView::slotAddItems(const ItemInfoList& list)
 
 void QueueListView::drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const
 {
-    QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(itemFromIndex(index));
+    const QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(itemFromIndex(index));
 
     if (item && !item->hasValidThumbnail())
     {
@@ -933,7 +933,7 @@ int QueueListView::itemsCount()
 
     while (*it)
     {
-        QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
+        const QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
         if (item)
         {
@@ -1022,7 +1022,7 @@ int QueueListView::pendingTasksCount()
 
     while (*it)
     {
-        QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
+        const QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
         if (item && !item->isDone())
         {
@@ -1099,7 +1099,7 @@ void QueueListView::updateDestFileNames()
 
         while (*it)
         {
-            QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
+            const QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
             if (item)
             {

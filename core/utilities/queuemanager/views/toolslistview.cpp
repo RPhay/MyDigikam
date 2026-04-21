@@ -162,7 +162,7 @@ BatchToolsList ToolsListView::toolsList()
 
     while (*it)
     {
-        ToolListViewItem* const item = dynamic_cast<ToolListViewItem*>(*it);
+        const ToolListViewItem* const item = dynamic_cast<ToolListViewItem*>(*it);
 
         if (item)
         {
@@ -372,7 +372,7 @@ QMultiMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*>&
 
     for (QTreeWidgetItem* const itm : std::as_const(items))
     {
-        ToolListViewItem* const tlwi = dynamic_cast<ToolListViewItem*>(itm);
+        const ToolListViewItem* const tlwi = dynamic_cast<ToolListViewItem*>(itm);
 
         if (tlwi)
         {
