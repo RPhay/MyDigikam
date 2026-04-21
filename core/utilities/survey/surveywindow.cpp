@@ -282,7 +282,7 @@ void SurveyWindow::deleteItem(bool permanently)
 void SurveyWindow::deleteItem(const ItemInfo& info, bool permanently)
 {
     QUrl u               = info.fileUrl();
-    PAlbum* const palbum = AlbumManager::instance()->findPAlbum(u.adjusted(QUrl::RemoveFilename));
+    const PAlbum* const palbum = AlbumManager::instance()->findPAlbum(u.adjusted(QUrl::RemoveFilename));
 
     if (!palbum)
     {

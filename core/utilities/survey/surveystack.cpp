@@ -329,13 +329,13 @@ void SurveyStack::setViewMode(const SurveyStackMode mode)
 
 void SurveyStack::syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to)
 {
-    ImageSortFilterModel* const fromModel = from->itemSortFilterModel();
-    ImageSortFilterModel* const toModel   = to->itemSortFilterModel();
-    QModelIndex currentIndex              = toModel->indexForItemInfo(from->currentInfo());
+    const ImageSortFilterModel* const fromModel = from->itemSortFilterModel();
+    const ImageSortFilterModel* const toModel   = to->itemSortFilterModel();
+    QModelIndex currentIndex                    = toModel->indexForItemInfo(from->currentInfo());
 
     // sync selection
 
-    QItemSelection selection              = from->selectionModel()->selection();
+    QItemSelection selection                    = from->selectionModel()->selection();
     QItemSelection newSelection;
 
     for (const QItemSelectionRange& range : std::as_const(selection))
