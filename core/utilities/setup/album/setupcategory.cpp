@@ -233,7 +233,7 @@ void SetupCategory::applySettings()
 
 void SetupCategory::readSettings()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (!settings)
     {

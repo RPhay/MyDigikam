@@ -160,7 +160,7 @@ bool CameraList::save()
 
     QDomElement docElem = doc.documentElement();
 
-    for (CameraType* const ctype : std::as_const(d->clist))
+    for (const CameraType* const ctype : std::as_const(d->clist))
     {
         QDomElement elem = doc.createElement(QLatin1String("item"));
         elem.setAttribute(QLatin1String("title"),          ctype->title());

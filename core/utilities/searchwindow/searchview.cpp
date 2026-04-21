@@ -133,7 +133,7 @@ QList<QRect> AbstractSearchGroupContainer::startupAnimationAreaOfGroups() const
 {
     QList<QRect> list;
 
-    for (SearchGroup* const group : std::as_const(m_groups))
+    for (const SearchGroup* const group : std::as_const(m_groups))
     {
         // cppcheck-suppress useStlAlgorithm
         list += group->startupAnimationArea();
@@ -483,8 +483,8 @@ void SearchView::setTheme()
 
 QPixmap SearchView::cachedBannerPixmap(int w, int h) const
 {
-    QString key        = QLatin1String("BannerPixmap-") + QString::number(w) + QLatin1Char('-') + QString::number(h);
-    QPixmap* const pix = d->pixmapCache.object(key);
+    QString key              = QLatin1String("BannerPixmap-") + QString::number(w) + QLatin1Char('-') + QString::number(h);
+    const QPixmap* const pix = d->pixmapCache.object(key);
 
     if (!pix)
     {

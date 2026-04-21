@@ -84,7 +84,7 @@ void SetupAlbumView::applySettings()
 
 void SetupAlbumView::readSettings()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (!settings)
     {
