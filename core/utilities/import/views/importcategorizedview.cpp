@@ -184,8 +184,8 @@ ImportDelegate* ImportCategorizedView::importDelegate() const
 
 void ImportCategorizedView::setItemDelegate(ImportDelegate* delegate)
 {
-    ThumbnailSize oldSize       = thumbnailSize();
-    ImportDelegate* oldDelegate = d->delegate;
+    ThumbnailSize oldSize             = thumbnailSize();
+    const ImportDelegate* oldDelegate = d->delegate;
 
     if (oldDelegate)
     {

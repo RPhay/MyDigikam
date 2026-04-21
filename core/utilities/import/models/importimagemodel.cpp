@@ -275,8 +275,8 @@ CamItemInfo ImportItemModel::retrieveCamItemInfo(const QModelIndex& index)
         return CamItemInfo();
     }
 
-    ImportItemModel* const model = index.data(ImportItemModelPointerRole).value<ImportItemModel*>();
-    int                    row   = index.data(ImportItemModelInternalId).toInt();
+    const ImportItemModel* const model = index.data(ImportItemModelPointerRole).value<ImportItemModel*>();
+    int                          row   = index.data(ImportItemModelInternalId).toInt();
 
     if (!model)
     {
@@ -295,8 +295,8 @@ qlonglong ImportItemModel::retrieveCamItemId(const QModelIndex& index)
         return -1;
     }
 
-    ImportItemModel* const model = index.data(ImportItemModelPointerRole).value<ImportItemModel*>();
-    int                    row   = index.data(ImportItemModelInternalId).toInt();
+    const ImportItemModel* const model = index.data(ImportItemModelPointerRole).value<ImportItemModel*>();
+    int                          row   = index.data(ImportItemModelInternalId).toInt();
 
     if (!model)
     {

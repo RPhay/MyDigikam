@@ -192,8 +192,8 @@ ImportStackedView::~ImportStackedView()
 
 void ImportStackedView::readSettings()
 {
-    ImportSettings* const settings = ImportSettings::instance();
-    bool showThumbbar              = settings->getShowThumbbar();
+    const ImportSettings* const settings = ImportSettings::instance();
+    bool showThumbbar                    = settings->getShowThumbbar();
     d->thumbBarDock->setShouldBeVisible(showThumbbar);
 }
 
@@ -402,13 +402,13 @@ void ImportStackedView::setViewMode(const StackedViewMode mode)
 
 void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportCategorizedView* const to)
 {
-    ImportSortFilterModel* const fromModel = from->importSortFilterModel();
-    ImportSortFilterModel* const toModel   = to->importSortFilterModel();
-    QModelIndex currentIndex               = toModel->indexForCamItemInfo(from->currentInfo());
+    const ImportSortFilterModel* const fromModel = from->importSortFilterModel();
+    const ImportSortFilterModel* const toModel   = to->importSortFilterModel();
+    QModelIndex currentIndex                     = toModel->indexForCamItemInfo(from->currentInfo());
 
     // sync selection
 
-    QItemSelection selection               = from->selectionModel()->selection();
+    QItemSelection selection                     = from->selectionModel()->selection();
     QItemSelection newSelection;
 
     for (const QItemSelectionRange& range : std::as_const(selection))
