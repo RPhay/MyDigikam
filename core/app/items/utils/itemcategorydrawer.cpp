@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QFont                font;
     QRect                rect;
     QPixmap              pixmap;
@@ -212,7 +214,7 @@ void ItemCategoryDrawer::viewHeaderText(const QModelIndex& index, QString* heade
     // Add here further model subclasses in use with ItemCategoryDrawer.
     // Note you need a Q_OBJECT in the class's header for this to work.
 
-    ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(sourceModel);
+    const ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(sourceModel);
 
     if (albumModel)
     {

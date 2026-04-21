@@ -638,7 +638,7 @@ void ItemDelegate::updateActualPixmapRect(const QModelIndex& index, const QRect&
 
 int ItemDelegate::calculatethumbSizeToFit(int ws)
 {
-    Q_D(ItemDelegate);
+    Q_D(ItemDelegate);  // cppcheck-suppress constVariablePointer
 
     int ts     = thumbnailSize().size();
     int gs     = gridSize().width();

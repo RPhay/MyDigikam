@@ -226,8 +226,8 @@ ItemDelegate* ItemCategorizedView::itemDelegate() const
 
 void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 {
-    ThumbnailSize oldSize     = thumbnailSize();
-    ItemDelegate* oldDelegate = d->delegate;
+    ThumbnailSize oldSize                 = thumbnailSize();
+    const ItemDelegate* const oldDelegate = d->delegate;
 
     if (oldDelegate)
     {
@@ -268,7 +268,7 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 
 Album* ItemCategorizedView::currentAlbum() const
 {
-    ItemAlbumModel* const albumModel = itemAlbumModel();
+    const ItemAlbumModel* const albumModel = itemAlbumModel();
 
     // TODO: Change to QList return type
 
