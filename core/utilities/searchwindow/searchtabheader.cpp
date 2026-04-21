@@ -543,7 +543,7 @@ void SearchTabHeader::keywordChangedTimer()
 
 void SearchTabHeader::slotEditCurrentSearch()
 {
-    SAlbum* const album        = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
+    const SAlbum* const album  = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
     SearchWindow* const window = searchWindow();
 
     if (album)
@@ -578,7 +578,7 @@ void SearchTabHeader::saveSearch()
         return;
     }
 
-    SAlbum* oldAlbum = AlbumManager::instance()->findSAlbum(name);
+    const SAlbum* oldAlbum = AlbumManager::instance()->findSAlbum(name);
 
     while (oldAlbum)
     {
@@ -601,6 +601,7 @@ void SearchTabHeader::saveSearch()
         oldAlbum = AlbumManager::instance()->findSAlbum(name);
     }
 
+    // cppcheck-suppress constVariablePointer
     SAlbum* const newAlbum = AlbumManager::instance()->createSAlbum(name, d->currentAlbum->searchType(),
                                                                     d->currentAlbum->query());
     Q_EMIT searchShallBeSelected(QList<Album*>() << newAlbum);
