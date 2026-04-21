@@ -96,7 +96,7 @@ void SetupToolTip::applySettings()
 
 void SetupToolTip::readSettings()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (!settings)
     {
@@ -153,7 +153,7 @@ void SetupToolTip::readSettings()
 
     // -- Import Settings ------------------------------------------------------------------------
 
-    ImportSettings* const importSettings = ImportSettings::instance();
+    const ImportSettings* const importSettings = ImportSettings::instance();
 
     if (!importSettings)
     {

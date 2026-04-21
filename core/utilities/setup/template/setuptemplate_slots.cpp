@@ -19,7 +19,7 @@ namespace Digikam
 
 void SetupTemplate::slotSelectionChanged()
 {
-    TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
+    const TemplateListItem* const item = dynamic_cast<TemplateListItem*>(d->listView->currentItem());
 
     if (!item)
     {

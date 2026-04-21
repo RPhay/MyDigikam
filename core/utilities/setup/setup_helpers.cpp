@@ -145,7 +145,7 @@ void Setup::showPage(Setup::Page page)
 
 Setup::Page Setup::activePageIndex() const
 {
-    DConfigDlgWdgItem* const cur = currentPage();
+    const DConfigDlgWdgItem* const cur = currentPage();
 
     if (cur == d->page_collections)
     {

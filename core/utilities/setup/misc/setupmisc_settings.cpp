@@ -118,7 +118,7 @@ void SetupMisc::readSettings()
 {
     d->systemSettingsWidget->readSettings();
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const  ApplicationSettings* const settings = ApplicationSettings::instance();
 
     d->showSplashCheck->setChecked(settings->getShowSplashScreen());
     d->showTrashDeleteDialogCheck->setChecked(settings->getShowTrashDeleteDialog());

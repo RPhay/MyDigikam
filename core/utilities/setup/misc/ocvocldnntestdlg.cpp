@@ -289,10 +289,10 @@ bool OpenCVOpenCLDNNTestDlg::runTest()
 
         Q_EMIT signalNotification(i18n("Loading DNN Model test image..."));
 
-        DNNModelBase* const testImage = DNNModelManager::instance()->getModel(
-                                                                              QLatin1String("DNNTestImage"),
-                                                                              DNNModelUsage::DNNUsageFaceDetection
-                                                                             );
+        const DNNModelBase* const testImage = DNNModelManager::instance()->getModel(
+                                                                                    QLatin1String("DNNTestImage"),
+                                                                                    DNNModelUsage::DNNUsageFaceDetection
+                                                                                   );
 
         if (!QFileInfo::exists(testImage->getModelPath()))
         {

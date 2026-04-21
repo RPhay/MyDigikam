@@ -286,8 +286,8 @@ void AdvancedMetadataTab::slotEditNamespace()
         return;
     }
 
-    QStandardItem* const root = d->models.at(getModelIndex())->invisibleRootItem();
-    QStandardItem* const item = root->child(d->namespaceView->currentIndex().row());
+    const QStandardItem* const root = d->models.at(getModelIndex())->invisibleRootItem();
+    QStandardItem* const item       = root->child(d->namespaceView->currentIndex().row());
 
     setDataToItem(item, entry);
 
