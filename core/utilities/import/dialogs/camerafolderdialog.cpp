@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString           rootPath;
     QDialogButtonBox* buttons       = nullptr;
 
@@ -156,7 +158,7 @@ QString CameraFolderDialog::selectedFolderPath() const
         return QString();
     }
 
-    CameraFolderItem* const folderItem = dynamic_cast<CameraFolderItem*>(item);
+    const CameraFolderItem* const folderItem = dynamic_cast<CameraFolderItem*>(item);
 
     if (!folderItem)
     {

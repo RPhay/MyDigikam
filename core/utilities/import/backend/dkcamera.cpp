@@ -31,11 +31,11 @@ DKCamera::DKCamera(const QString& title, const QString& model, const QString& po
       m_path                        (path),
       m_title                       (title)
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
-    m_imageFilter                       = settings->getImageFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
-    m_movieFilter                       = settings->getMovieFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
-    m_audioFilter                       = settings->getAudioFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
-    m_rawFilter                         = settings->getRawFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
+    m_imageFilter                             = settings->getImageFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    m_movieFilter                             = settings->getMovieFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    m_audioFilter                             = settings->getAudioFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
+    m_rawFilter                               = settings->getRawFileFilter().toLower().remove(QLatin1String("*.")).split(QLatin1Char(' '));
 }
 
 QString DKCamera::title() const
