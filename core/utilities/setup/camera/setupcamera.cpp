@@ -610,11 +610,11 @@ void SetupCamera::readSettings()
 {
     // Populate cameras --------------------------------------
 
-    CameraList* const clist = CameraList::defaultList();
+    const CameraList* const clist = CameraList::defaultList();
 
     if (clist)
     {
-        QList<CameraType*>* const cl = clist->cameraList();
+        const QList<CameraType*>* const cl = clist->cameraList();
 
         for (CameraType* const ctype : std::as_const(*cl))
         {
@@ -667,7 +667,7 @@ void SetupCamera::readSettings()
     d->ignoreNamesEdit->setText(importGroup.readEntry(QLatin1String("IgnoreNames"), ImportFilterComboBox::defaultIgnoreNames));
     d->ignoreExtensionsEdit->setText(importGroup.readEntry(QLatin1String("IgnoreExtensions"), ImportFilterComboBox::defaultIgnoreExtensions));
 
-    ImportSettings* const settings = ImportSettings::instance();
+    const ImportSettings* const settings = ImportSettings::instance();
 
     if (!settings)
     {
@@ -709,11 +709,11 @@ void SetupCamera::applySettings()
 
         while (*it)
         {
-            SetupCameraItem* const item = dynamic_cast<SetupCameraItem*>(*it);
+            const SetupCameraItem* const item = dynamic_cast<SetupCameraItem*>(*it);
 
             if (item)
             {
-                CameraType* const ctype = item->cameraType();
+                const CameraType* const ctype = item->cameraType();
 
                 if (ctype)
                 {
@@ -735,7 +735,7 @@ void SetupCamera::applySettings()
     group.writeEntry(d->configUseFileMetadata,  d->useFileMetadata->isChecked());
     group.writeEntry(d->configTrunHighQualityThumbs, d->turnHighQualityThumbs->isChecked());
     group.writeEntry(d->configUseDefaultTargetAlbum, d->useDefaultTargetAlbum->isChecked());
-    PAlbum* const album = d->target1AlbumSelector->currentAlbum();
+    const PAlbum* const album = d->target1AlbumSelector->currentAlbum();
     group.writeEntry(d->configDefaultTargetAlbumId, album ? album->id() : 0);
     group.writeEntry(d->configFileSaveConflictRule, d->conflictButtonGroup->checkedId());
 
@@ -801,7 +801,7 @@ bool SetupCamera::checkSettings()
 
 void SetupCamera::slotSelectionChanged()
 {
-    QTreeWidgetItem* const item = d->listView->currentItem();
+    const QTreeWidgetItem* const item = d->listView->currentItem();
 
     if (!item)
     {
@@ -840,14 +840,14 @@ void SetupCamera::slotRemoveCamera()
 
 void SetupCamera::slotEditCamera()
 {
-    SetupCameraItem* const item = dynamic_cast<SetupCameraItem*>(d->listView->currentItem());
+    const SetupCameraItem* const item = dynamic_cast<SetupCameraItem*>(d->listView->currentItem());
 
     if (!item)
     {
         return;
     }
 
-    CameraType* const ctype = item->cameraType();
+    const CameraType* const ctype = item->cameraType();
 
     if (!ctype)
     {
