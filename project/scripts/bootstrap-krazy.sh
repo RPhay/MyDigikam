@@ -7,7 +7,7 @@
 # Copy this script on root folder where are source code
 # https://github.com/Krazy-collection/krazy
 
-sudo apt install libsaxonhe-java libxml-perl libxml-libxml-perl libyaml-libyaml-perl libyaml-perl libjson-perl
+sudo apt install openjdk-25-jre libsaxonhe-java libxml-perl libxml-libxml-perl libyaml-libyaml-perl libyaml-perl libjson-perl
 
 sudo ln -sf /usr/share/java              /opt/saxon
 sudo ln -sf /usr/share/java/Saxon-HE.jar /usr/share/java/saxon9he.jar
