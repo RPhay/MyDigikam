@@ -398,10 +398,10 @@ void SetupCollectionTreeView::modelLoadedCollections()
     // which are formally location in the first column (although spanning the whole line).
     // resizeColumnToContents fails therefore.
 
-    SetupCollectionModel* const collectionModel = static_cast<SetupCollectionModel*>(model());
-    QModelIndex categoryIndex = collectionModel->indexForCategory(SetupCollectionModel::CategoryLocal);
-    QModelIndex firstChildOfFirstCategory       = collectionModel->index(0, SetupCollectionModel::ColumnStatus, categoryIndex);
-    QSize hint                                  = sizeHintForIndex(firstChildOfFirstCategory);
+    const SetupCollectionModel* const collectionModel = static_cast<SetupCollectionModel*>(model());
+    QModelIndex categoryIndex                         = collectionModel->indexForCategory(SetupCollectionModel::CategoryLocal);
+    QModelIndex firstChildOfFirstCategory             = collectionModel->index(0, SetupCollectionModel::ColumnStatus, categoryIndex);
+    QSize hint                                        = sizeHintForIndex(firstChildOfFirstCategory);
     setColumnWidth(SetupCollectionModel::ColumnStatus, hint.width() + indentation());
 }
 

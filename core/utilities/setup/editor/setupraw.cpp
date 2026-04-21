@@ -117,7 +117,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
     for (DPlugin* const p : plugs)
     {
-        DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
+        const DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
         if (raw)
         {
@@ -135,7 +135,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
                 if (raw->getRawProgram().isEmpty())
                 {
-                    QStandardItemModel* const model = qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
+                    const QStandardItemModel* const model = qobject_cast<QStandardItemModel*>(d->rawImportTool->model());
 
                     if (model)
                     {
@@ -295,7 +295,7 @@ void SetupRaw::slotAboutRawImportPlugin()
 
     for (DPlugin* const p : plugs)
     {
-        DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
+        const DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
         if (raw)
         {

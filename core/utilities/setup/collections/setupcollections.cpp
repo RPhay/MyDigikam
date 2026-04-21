@@ -231,7 +231,7 @@ void SetupCollections::readSettings()
 
     d->collectionModel->loadCollections();
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
     d->monitoringBox->setChecked(settings->getAlbumMonitoring());
 
     QString ignoreDirectory;
