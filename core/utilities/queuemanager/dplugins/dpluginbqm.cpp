@@ -112,7 +112,7 @@ QStringList DPluginBqm::categories() const
 {
     QStringList list;
 
-    for (BatchTool* const t : std::as_const(d->tools))
+    for (const BatchTool* const t : std::as_const(d->tools))
     {
         QString cat = t->toolGroupToString();
 

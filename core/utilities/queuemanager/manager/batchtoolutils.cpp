@@ -55,7 +55,7 @@ QString AssignedBatchTools::targetSuffix(bool* const extSet) const
 
     for (const BatchToolSet& set : std::as_const(m_toolsList))
     {
-        BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+        const BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 
         if (tool)
         {

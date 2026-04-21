@@ -540,7 +540,7 @@ bool WorkflowManager::load(QStringList& failed)
                         }
                     }
 
-                    BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+                    const BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 
                     if (tool)
                     {

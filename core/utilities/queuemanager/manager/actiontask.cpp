@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool               cancel   = false;
 
     BatchTool*         tool     = nullptr;
@@ -149,7 +151,7 @@ void ActionTask::run()
 
     for (const BatchToolSet& set : std::as_const(d->tools.m_toolsList))
     {
-        BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
+        const BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 
         if (!tool)
         {

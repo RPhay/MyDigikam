@@ -30,7 +30,7 @@ DPluginConfViewBqm::DPluginConfViewBqm(QWidget* const parent)
 
 void DPluginConfViewBqm::loadPlugins()
 {
-    DPluginLoader* const loader = DPluginLoader::instance();
+    const DPluginLoader* const loader = DPluginLoader::instance();
 
     if (loader)
     {

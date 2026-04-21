@@ -750,10 +750,10 @@ void QueueMgrWindow::processOneQueue()
 
     for (const ItemInfoSet& item : std::as_const(itemsList))
     {
-        AssignedBatchTools one         = d->queuePool->currentQueue()->assignedTools();
-        one.m_itemUrl                  = item.info.fileUrl();
-        QueueListViewItem* const cItem = d->queuePool->currentQueue()->findItemByUrl(one.m_itemUrl);
-        one.m_destFileName             = cItem->destFileName();
+        AssignedBatchTools one               = d->queuePool->currentQueue()->assignedTools();
+        one.m_itemUrl                        = item.info.fileUrl();
+        const QueueListViewItem* const cItem = d->queuePool->currentQueue()->findItemByUrl(one.m_itemUrl);
+        one.m_destFileName                   = cItem->destFileName();
         tools4Items.append(one);
     }
 
@@ -846,7 +846,7 @@ void QueueMgrWindow::slotAssignedToolsChanged(const AssignedBatchTools& tools)
 
 bool QueueMgrWindow::checkTargetAlbum(int queueId)
 {
-    QueueListView* const queue = d->queuePool->findQueueByIndex(queueId);
+    const QueueListView* const queue = d->queuePool->findQueueByIndex(queueId);
 
     if (!queue)
     {
@@ -1058,7 +1058,7 @@ void QueueMgrWindow::slotUpdateQueueSettings(const QString& title)
 {
     if (!title.isEmpty())
     {
-        QueueListView* const queue = d->queuePool->currentQueue();
+        const QueueListView* const queue = d->queuePool->currentQueue();
 
         if (queue)
         {
