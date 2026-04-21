@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-21 00:42+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3305,7 +3305,7 @@ msgstr "Filter"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Kan inte öppna rotalbumet. Det är inte en fysisk plats."
 
-#: core/app/views/stack/itemiconview_items.cpp:739
+#: core/app/views/stack/itemiconview_items.cpp:741
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -27110,13 +27110,13 @@ msgid "Auto-rotating: %1\n"
 msgstr "Rotera automatiskt: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
-#: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:258
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
@@ -40247,32 +40247,32 @@ msgstr "Sök efter objekt i album: %1"
 msgid "Scan for objects in %1 albums"
 msgstr "Sök efter objekt i %1 album"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:186
+#: core/libs/tags/autoassignment/autotagsengine.cpp:184
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Fel vid start av objektdetektering."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:201
+#: core/libs/tags/autoassignment/autotagsengine.cpp:199
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Objekt genomsökta efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:205
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Objekt genomsökt efter objekt: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:233
+#: core/libs/tags/autoassignment/autotagsengine.cpp:231
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Objektsökning: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:240
+#: core/libs/tags/autoassignment/autotagsengine.cpp:238
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "Hittade %1 objekt. Etikett: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:244
+#: core/libs/tags/autoassignment/autotagsengine.cpp:242
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "Hittade %1 objekt. Etiketter: %2"
@@ -40765,7 +40765,7 @@ msgstr ""
 "qt>"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:38
-#: core/libs/tags/manager/tagsmanager_io.cpp:57
+#: core/libs/tags/manager/tagsmanager_io.cpp:58
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40774,7 +40774,7 @@ msgstr ""
 "Åtgärden kan ta lång tid beroende på samlingens storlek.\n"
 "Vill du fortsätta?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:77
+#: core/libs/tags/manager/tagsmanager_io.cpp:78
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40786,45 +40786,45 @@ msgstr ""
 "metadata till filer.\n"
 "Vill du fortsätta?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:171
+#: core/libs/tags/manager/tagsmanager_io.cpp:172
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Välj en basetikett som etiketterna ska exporteras från."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:181
+#: core/libs/tags/manager/tagsmanager_io.cpp:182
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "Den valda etiketten är inte en basetikett längst upp i hierarkin."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:189
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Exportera kontrollerad ordförrådsetikettfil"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:190
-#: core/libs/tags/manager/tagsmanager_io.cpp:308
+#: core/libs/tags/manager/tagsmanager_io.cpp:191
+#: core/libs/tags/manager/tagsmanager_io.cpp:309
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr "Textfil (*.txt)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:288
+#: core/libs/tags/manager/tagsmanager_io.cpp:289
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr "Välj en etikett som etiketterna ska importeras till."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:298
+#: core/libs/tags/manager/tagsmanager_io.cpp:299
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr "Inga etiketter kan importeras till den valda ansiktsetiketten."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:307
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr "Importera kontrollerad ordförrådsetikettfil"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:406
+#: core/libs/tags/manager/tagsmanager_io.cpp:407
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -61762,7 +61762,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "Underhåll av Digikam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:129
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -61772,11 +61772,11 @@ msgstr ""
 "Tidsåtgång: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Rensa databaserna: "
@@ -61786,27 +61786,27 @@ msgstr "Rensa databaserna: "
 msgid "analysing databases"
 msgstr "Analyserar databaser"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
 #, kde-format
 msgid "cleaning core db"
 msgstr "Rensar huvuddatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "Rensar miniatyrbildsdatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "Rensar igenkänningsdatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "Rensar likhetsdatabasen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "shrinking databases"
 msgstr "reducerar databasstorlekar"
@@ -61850,17 +61850,17 @@ msgstr "Likhetsdatabas"
 msgid "Find new items"
 msgstr "Sök efter nya objekt"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "Söker: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
 #, kde-format
 msgid "Album Root: %1"
 msgstr "Albumrot: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -61869,12 +61869,12 @@ msgstr ""
 "Sökte:\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Objekt genomsökta för katalogisering: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Objekt genomsökt för katalogisering: %1"
@@ -61884,39 +61884,39 @@ msgstr "Objekt genomsökt för katalogisering: %1"
 msgid "Find duplicates items"
 msgstr "Sök efter duplicerade objekt"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:188
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Söker efter dubbletter: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:193
 #, kde-format
 msgid "No duplicate item"
 msgstr "Inget duplicerat objekt"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:197
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
 msgstr[0] "1 duplicerat objekt"
 msgstr[1] "%1 duplicerade objekt"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Objekt genomsökta efter dubbletter: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Objekt genomsökt efter dubbletter: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Funna dubbletter: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Funnen dubblett: %1"
@@ -61955,49 +61955,49 @@ msgstr "Sök efter ansikten i %1 bilder"
 msgid "Updating faces database"
 msgstr "Uppdaterar ansiktsdatabasen"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:296
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:324
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:406
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Fel vid start av ansiktsdetektering."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Objekt genomsökta efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Objekt genomsökt efter ansikten: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Hittade ansikten: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
 msgid "Face found: %1"
 msgstr "Hittat ansikte: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Ansiktssökning: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
 #, kde-format
 msgid "Found %1 face."
 msgstr "Hittade %1 ansikte."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Hittade %1 ansikten"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Igenkänd: %1"
@@ -62007,57 +62007,57 @@ msgstr "Igenkänd: %1"
 msgid "Finger-prints"
 msgstr "Fingeravtryck"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:194
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Återskapa fingeravtryck: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:195
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:209
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Objekt genomsökta efter fingeravtryck: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:213
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Objekt genomsökt efter fingeravtryck: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:235
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Bildkvalitet: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Urvalsbeteckning: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:252
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Objekt genomsökta efter kvalitet: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:256
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Objekt genomsökt efter kvalitet: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:184
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Ta bort alla ansikten från bild"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:189
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Ta bort alla etiketter från bild"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:205
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -62066,7 +62066,7 @@ msgstr ""
 "Alla ansikten har tagits bort från %1 markerade bilder.\n"
 "Vill du fortsätta?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:210
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -62075,62 +62075,62 @@ msgstr ""
 "Alla etiketter har tagits bort från %1 markerade bilder.\n"
 "Vill du fortsätta?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:241
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "Rensa metadata: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:255
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "Objekt genomsökta för att ta bort ansikten: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:259
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "Objekt genomsökt för att ta bort ansikten: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:268
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "Objekt genomsökta för att ta bort etiketter: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:272
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "Objekt genomsökt för att ta bort etiketter: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:190
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Synkroniserar bildernas metadata med databasen."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:195
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Uppdaterar databasen från bildernas metadata"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:222
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "Synkronisering av metadata: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:236
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Objekt genomsökta för att synkronisera metadata med databasen: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:240
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "Objekt genomsökt för att synkronisera metadata med databasen: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:249
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Objekt genomsökta för att uppdatera databasen med metadata: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:253
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Objekt genomsökt för att uppdatera databasen med metadata: %1"
@@ -62140,17 +62140,17 @@ msgstr "Objekt genomsökt för att uppdatera databasen med metadata: %1"
 msgid "Generate Thumbnails"
 msgstr "Skapa miniatyrbilder"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:257
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Miniatyrbild: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:272
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Objekt genomsökta efter miniatyrbilder: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:276
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Objekt genomsökt efter miniatyrbilder: %1"

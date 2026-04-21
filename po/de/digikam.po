@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-21 00:42+0000\n"
 "PO-Revision-Date: 2026-03-01 17:16+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -3304,7 +3304,7 @@ msgid "Cannot open the root album. It is not a physical location."
 msgstr ""
 "Das Basisalbum kann nicht geöffnet werden. Dies ist kein physikalischer Ort."
 
-#: core/app/views/stack/itemiconview_items.cpp:739
+#: core/app/views/stack/itemiconview_items.cpp:741
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -27884,13 +27884,13 @@ msgid "Auto-rotating: %1\n"
 msgstr "Automatisches Drehen: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
-#: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:258
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Album „%1“\n"
@@ -41295,32 +41295,32 @@ msgstr "Suche nach Objekten in Album: %1"
 msgid "Scan for objects in %1 albums"
 msgstr "Suche nach Objekten in %1 Alben"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:186
+#: core/libs/tags/autoassignment/autotagsengine.cpp:184
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Fehler beim Start der Objekterkennung."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:201
+#: core/libs/tags/autoassignment/autotagsengine.cpp:199
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Nach Objekten abgesuchte Einträge: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:205
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Nach Objekten abgesuchter Eintrag: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:233
+#: core/libs/tags/autoassignment/autotagsengine.cpp:231
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Suche nach Objekten: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:240
+#: core/libs/tags/autoassignment/autotagsengine.cpp:238
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "%1 Objekt gefunden. Stichwort: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:244
+#: core/libs/tags/autoassignment/autotagsengine.cpp:242
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "%1 Objekte gefunden. Stichworte: %2"
@@ -41844,7 +41844,7 @@ msgstr ""
 "„Stichwörter aus dem Bild einlesen“).<br/> Möchten Sie fortfahren?</qt>"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:38
-#: core/libs/tags/manager/tagsmanager_io.cpp:57
+#: core/libs/tags/manager/tagsmanager_io.cpp:58
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -41854,7 +41854,7 @@ msgstr ""
 "Ausführung.\n"
 "Möchten Sie dennoch fortfahren?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:77
+#: core/libs/tags/manager/tagsmanager_io.cpp:78
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -41866,19 +41866,19 @@ msgstr ""
 "Metadaten in die Datei auswählen.\n"
 "Möchten Sie fortfahren?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:171
+#: core/libs/tags/manager/tagsmanager_io.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Wählen Sie alle Stichwörter, die bearbeitet werden sollen."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:181
+#: core/libs/tags/manager/tagsmanager_io.cpp:182
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:189
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Export to Local Storage"
@@ -41886,32 +41886,32 @@ msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Export zu lokalem Speicher"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:190
-#: core/libs/tags/manager/tagsmanager_io.cpp:308
+#: core/libs/tags/manager/tagsmanager_io.cpp:191
+#: core/libs/tags/manager/tagsmanager_io.cpp:309
 #, fuzzy, kde-format
 #| msgid "XMP text Files (*.xmp)"
 msgid "Text File (*.txt)"
 msgstr "XMP-Textdateien (*.xmp)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:288
+#: core/libs/tags/manager/tagsmanager_io.cpp:289
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Select all tags that should be processed."
 msgid "Select a tag into which the tags should be imported."
 msgstr "Wählen Sie alle Stichwörter, die bearbeitet werden sollen."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:298
+#: core/libs/tags/manager/tagsmanager_io.cpp:299
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:307
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:406
+#: core/libs/tags/manager/tagsmanager_io.cpp:407
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -63293,7 +63293,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "digiKam-Wartung"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:129
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -63303,11 +63303,11 @@ msgstr ""
 "Dauer: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Aufräumen der Datenbanken:"
@@ -63317,27 +63317,27 @@ msgstr "Aufräumen der Datenbanken:"
 msgid "analysing databases"
 msgstr "Datenbank werden analysiert"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
 #, kde-format
 msgid "cleaning core db"
 msgstr "Hauptdatenbank aufräumen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "Vorschaubilder-Datenbank aufräumen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "Erkennungsdatenbank aufräumen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "Ähnlichkeits-Datenbank aufräumen"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "shrinking databases"
 msgstr "Datenbanken verkleinern"
@@ -63382,20 +63382,20 @@ msgstr "Ähnlichkeits-Datenbank"
 msgid "Find new items"
 msgstr "Neue Einträge suchen"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Scanning: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album Root: %1"
 msgstr "Album „%1“"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -63404,14 +63404,14 @@ msgid ""
 "%1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for cataloging: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -63423,21 +63423,21 @@ msgstr "Suchen in Alben:"
 msgid "Find duplicates items"
 msgstr "Doppelte Einträge suchen"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "Finding Duplicates: %1\n"
 msgstr "Duplikate suchen"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:193
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
 msgid "No duplicate item"
 msgstr "Duplikate suchen"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:197
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Find duplicates"
@@ -63446,28 +63446,28 @@ msgid_plural "%1 duplicate items"
 msgstr[0] "Duplikate suchen"
 msgstr[1] "Duplikate suchen"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"
 msgid "Duplicates found: %1"
 msgstr "Duplikate"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, fuzzy, kde-format
 #| msgctxt "Find Duplicates Tab"
 #| msgid "Duplicates"
@@ -63517,59 +63517,59 @@ msgstr "Nach Gesichtern suchen"
 msgid "Updating faces database"
 msgstr "Die Aktualisierung der Gesichtsdatenbank läuft"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:296
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:324
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:406
 #, kde-format
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for faces: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for faces: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "Bilder gefunden in %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "Bilder gefunden in %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Face Scanning: %1\n"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "Found %1 face."
 msgstr "Kein Gesicht"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Icon Size: %1"
@@ -63581,33 +63581,33 @@ msgstr "Symbolgröße: %1"
 msgid "Finger-prints"
 msgstr "Fingerabdrücke"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:194
 #, fuzzy, kde-format
 #| msgid "Rebuild Finger-prints"
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Fingerabdrücke neu erzeugen"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:195
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album: %1"
 msgstr "Album „%1“"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:209
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for fingerprint: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:213
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for fingerprint: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Pluralized"
 #| msgid "Image Quality Sort"
@@ -63615,40 +63615,40 @@ msgstr "Suchen in Alben:"
 msgid "Image Quality: %1\n"
 msgstr "Sortieren nach Bildqualität"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, fuzzy, kde-format
 #| msgctxt "@info: pick lablel selector"
 #| msgid "Pick Label: %1"
 msgid "Pick Label: %1"
 msgstr "Auswahlmarkierung: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:252
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for quality: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:256
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned for quality: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:184
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all faces from image"
 msgstr "Stichwort von Bildern entfernen"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:189
 #, fuzzy, kde-format
 #| msgid "Remove Tag from Images"
 msgid "Remove all tags from image"
 msgstr "Stichwort von Bildern entfernen"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:205
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload image %1\n"
@@ -63660,7 +63660,7 @@ msgstr ""
 "Beim Hochladen des Fotos ist ein Fehler aufgetreten %1\n"
 "Möchten Sie fortfahren?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:210
 #, fuzzy, kde-format
 #| msgid ""
 #| "Failed to upload image %1\n"
@@ -63672,74 +63672,74 @@ msgstr ""
 "Beim Hochladen des Fotos ist ein Fehler aufgetreten %1\n"
 "Möchten Sie fortfahren?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:241
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Clear Metadata: %1\n"
 msgstr "Metadaten-Informationen"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:255
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned to remove faces: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:259
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned to remove faces: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:268
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "Zur Entfernung von Markierungen abgesuchte Einträge: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:272
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Item scanned to remove tags: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:190
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Die Bild-Metadaten werden mit der Datenbank abgeglichen."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:195
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Die Aktualisierung der Datenbank anhand der Bild-Metadaten läuft."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:222
 #, fuzzy, kde-format
 #| msgid "Metadata Information"
 msgid "Metadata Sync: %1\n"
 msgstr "Metadaten-Informationen"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:236
 #, fuzzy, kde-format
 #| msgid "Synchronizing image metadata with database"
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "Die Bild-Metadaten werden mit der Datenbank abgeglichen."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:240
 #, fuzzy, kde-format
 #| msgid "Synchronizing image metadata with database"
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "Die Bild-Metadaten werden mit der Datenbank abgeglichen."
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:249
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:253
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
@@ -63751,20 +63751,20 @@ msgstr "Suchen in Alben:"
 msgid "Generate Thumbnails"
 msgstr "Vorschaubilder erzeugen"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:257
 #, fuzzy, kde-format
 #| msgid "Thumbnail Properties:"
 msgid "Thumbnail: %1\n"
 msgstr "Eigenschaften des Vorschaubilds:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:272
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"
 msgid "Items scanned for thumbnails: %1"
 msgstr "Suchen in Alben:"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:276
 #, fuzzy, kde-format
 #| msgctxt "@label"
 #| msgid "Search in albums:"

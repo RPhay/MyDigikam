@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
-"PO-Revision-Date: 2026-04-18 16:30+0300\n"
+"POT-Creation-Date: 2026-04-21 00:42+0000\n"
+"PO-Revision-Date: 2026-04-20 22:52+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -3245,7 +3245,7 @@ msgstr "מסננים"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "לא ניתן לפתוח את אלבום העל. זה לא מקום פיזי."
 
-#: core/app/views/stack/itemiconview_items.cpp:739
+#: core/app/views/stack/itemiconview_items.cpp:741
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -25711,13 +25711,13 @@ msgid "Auto-rotating: %1\n"
 msgstr "סיבוב אוטומטי: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
-#: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:258
 #, kde-format
 msgid "Album: %1\n"
 msgstr "אלבום: %1\n"
@@ -38013,32 +38013,32 @@ msgstr "לסרוק אם יש עצמים באלבום: %1"
 msgid "Scan for objects in %1 albums"
 msgstr "לסרוק אם יש עצמים ב־%1 אלבומים"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:186
+#: core/libs/tags/autoassignment/autotagsengine.cpp:184
 #, kde-format
 msgid "Error starting object detection."
 msgstr "שגיאה בהפעלת זיהוי עצמים."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:201
+#: core/libs/tags/autoassignment/autotagsengine.cpp:199
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "פריטים שנסרקו לאיתור עצמים: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:205
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "פריט שנסרק לאיתור עצמים: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:233
+#: core/libs/tags/autoassignment/autotagsengine.cpp:231
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "סריקת עצמים: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:240
+#: core/libs/tags/autoassignment/autotagsengine.cpp:238
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "נמצא פריט %1. תגית: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:244
+#: core/libs/tags/autoassignment/autotagsengine.cpp:242
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "נמצאו %1 פריטים. תגית: %2"
@@ -38517,14 +38517,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:38
-#: core/libs/tags/manager/tagsmanager_io.cpp:57
+#: core/libs/tags/manager/tagsmanager_io.cpp:58
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:77
+#: core/libs/tags/manager/tagsmanager_io.cpp:78
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -38532,45 +38532,45 @@ msgid ""
 "Do you want to continue?"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:171
+#: core/libs/tags/manager/tagsmanager_io.cpp:172
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:181
+#: core/libs/tags/manager/tagsmanager_io.cpp:182
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "התגית הנבחרת איננה תגית בסיס בראש ההיררכיה."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:189
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "מידע על הרכיב"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:190
-#: core/libs/tags/manager/tagsmanager_io.cpp:308
+#: core/libs/tags/manager/tagsmanager_io.cpp:191
+#: core/libs/tags/manager/tagsmanager_io.cpp:309
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr "קובץ טקסט (‎*.txt)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:288
+#: core/libs/tags/manager/tagsmanager_io.cpp:289
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr "נא לבחור תגית אליה לייבא את התגיות."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:298
+#: core/libs/tags/manager/tagsmanager_io.cpp:299
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr "לא ניתן לייבא תגיות לתגית הפרצוף הנבחרת."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:307
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr ""
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:406
+#: core/libs/tags/manager/tagsmanager_io.cpp:407
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -40945,7 +40945,7 @@ msgstr "כאן אפשר לבחור את גודל הגופן לשימוש."
 #, kde-format
 msgctxt "@info: font properties"
 msgid "The Quick Brown Fox Jumps Over The Lazy Dog"
-msgstr "דג סקרן שט לו בים זך ולפתע מצא חבורה נחמדה."
+msgstr "דג סקרן שט לו בים זך ולפתע מצא חבורה נחמדה"
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:474
 #, kde-format
@@ -58809,7 +58809,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "תחזוקה של digiKam"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:129
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -58819,11 +58819,11 @@ msgstr ""
 "משך: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "מסדי הנתונים עוברים ניקיון : "
@@ -58833,27 +58833,27 @@ msgstr "מסדי הנתונים עוברים ניקיון : "
 msgid "analysing databases"
 msgstr "מסדי הנתונים מאובחנים"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
 #, kde-format
 msgid "cleaning core db"
 msgstr "מסד נתוני הליבה עובר ניקיון"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "מסד נתוני התמונות הממוזערות מתפנה"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "מסד נתוני הזיהוי מתפנה"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "מסד נתוני הדמיון מתרוקן"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "shrinking databases"
 msgstr "מסדי הנתונים נדחסים"
@@ -58893,17 +58893,17 @@ msgstr "מסד נתוני דמיון"
 msgid "Find new items"
 msgstr "איתור פריטים חדשים"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "מתבצעת סריקה: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
 #, kde-format
 msgid "Album Root: %1"
 msgstr "שורש אלבום: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -58912,12 +58912,12 @@ msgstr ""
 "נסרקו:\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "הפריט שנסרקו למיון קטלוגי: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "הפריט שנסרק למיון קטלוגי: %1"
@@ -58927,17 +58927,17 @@ msgstr "הפריט שנסרק למיון קטלוגי: %1"
 msgid "Find duplicates items"
 msgstr "איתור פריטים כפולים"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:188
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "מתבצע איתור כפילויות: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:193
 #, kde-format
 msgid "No duplicate item"
 msgstr "אין פריטים כפולים"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:197
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -58946,22 +58946,22 @@ msgstr[1] "שני פריטים כפולים"
 msgstr[2] "%1 פריטים כפולים"
 msgstr[3] "%1 פריטים כפולים"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "הפריטים שנסרקו לאיתור כפילויות: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "הפריט שנסרק לאיתור כפילויות: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "נמצאו כפילויות: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "נמצא כפילות: %1"
@@ -58998,49 +58998,49 @@ msgstr "סריקה לאיתור פרצופים ב־%1 התמונות"
 msgid "Updating faces database"
 msgstr "מסד נתוני הפרצופים מתעדכן"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:296
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:324
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:406
 #, kde-format
 msgid "Error starting face detection."
 msgstr "שגיאה בהפעלת איתור פרצופים."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "פריטים שנסרקו לאיתור פרצופים: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "פריט שנסרק לאיתור פרצופים: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Faces found: %1"
 msgstr "פרצופים שנמצאו: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
 msgid "Face found: %1"
 msgstr "פרצוף שנמצא: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "סריקת פרצופים: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
 #, kde-format
 msgid "Found %1 face."
 msgstr "נמצא פרצוף %1."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
 #, kde-format
 msgid "Found %1 faces."
 msgstr "נמצאו %1 פרצופים."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
 #, kde-format
 msgid "Recognized: %1"
 msgstr "זוהו: %1"
@@ -59050,57 +59050,57 @@ msgstr "זוהו: %1"
 msgid "Finger-prints"
 msgstr "טביעות אצבע"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:194
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "טביעת אצבע מורכבת מחדש: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:195
 #, kde-format
 msgid "Album: %1"
 msgstr "אלבום: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:209
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "פריטים שנסרקו לאיתור טביעות אצבע: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:213
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "הפריט נסרק לאיתור טביעות אצבע: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:235
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "איכות תמונה: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "תווית בחירה: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:252
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "פריטים שנסרקו למדידת איכות: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:256
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "פריט שנסרק למדידת איכות: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:184
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "הסרת כל הפרצופים מתמונה"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:189
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "הסרת כל התגיות מתמונה"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:205
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -59109,7 +59109,7 @@ msgstr ""
 "כל הפרצופים הוסרו מ־%1 התמונות הנבחרות.\n"
 "להמשיך?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:210
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -59118,62 +59118,62 @@ msgstr ""
 "כל התגיות הוסרו מ־%1 התמונות הנבחרות.\n"
 "להמשיך?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:241
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "פינוי נתוני־על: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:255
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "פריטים שנסרקו להסרת פרצופים: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:259
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "פריט שנסרק להסרת פרצופים: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:268
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "פריטים שנסרקו להסרת תגיות: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:272
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "פריטים שנסרקו להסרת תגית: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:190
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "סנכרון נתוני העל של התמונה עם מסד הנתונים"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:195
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "מסד הנתונים מתעדכן מנתוני על של תמונות"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:222
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "סנכרון נתוני־על: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:236
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr "פריטים נסרקו לסנכרון נתוני על מול מסד הנתונים: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:240
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr "פריט נסרק לסנכרון נתוני על מול מסד הנתונים: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:249
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "פריטים שנסרקו כדי לעדכן את מסד הנתונים עם נתוני על: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:253
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "פריט שנסרק כדי לעדכן את מסד הנתונים עם נתוני על: %1"
@@ -59183,17 +59183,17 @@ msgstr "פריט שנסרק כדי לעדכן את מסד הנתונים עם נ
 msgid "Generate Thumbnails"
 msgstr "יצירת תמונות ממוזערות"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:257
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "תמונה ממוזערת: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:272
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "פריטים שנסרקו לאיתור תמונות ממוזערות: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:276
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "פריט שנסרק לאיתור תמונות ממוזערות: %1"

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:43+0000\n"
+"POT-Creation-Date: 2026-04-21 00:42+0000\n"
 "PO-Revision-Date: 2026-04-15 17:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3310,7 +3310,7 @@ msgstr "Filtri"
 msgid "Cannot open the root album. It is not a physical location."
 msgstr "Ni mogoče odpreti korenskega albuma, saj ni fizično mesto."
 
-#: core/app/views/stack/itemiconview_items.cpp:739
+#: core/app/views/stack/itemiconview_items.cpp:741
 #, kde-format
 msgid ""
 "The current query from the database returned no results. Change search "
@@ -27103,13 +27103,13 @@ msgid "Auto-rotating: %1\n"
 msgstr "Samodejno vrtenje: %1\n"
 
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
-#: core/libs/tags/autoassignment/autotagsengine.cpp:234
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:191
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:491
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:238
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:244
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:225
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:260
+#: core/libs/tags/autoassignment/autotagsengine.cpp:232
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:258
 #, kde-format
 msgid "Album: %1\n"
 msgstr "Album: %1\n"
@@ -40235,32 +40235,32 @@ msgstr "Preišči predmete v albumu: %1"
 msgid "Scan for objects in %1 albums"
 msgstr "Preišči predmete v %1 albumih"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:186
+#: core/libs/tags/autoassignment/autotagsengine.cpp:184
 #, kde-format
 msgid "Error starting object detection."
 msgstr "Napaka pri zagonu zaznavanja predmetov."
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:201
+#: core/libs/tags/autoassignment/autotagsengine.cpp:199
 #, kde-format
 msgid "Items scanned for objects: %1\n"
 msgstr "Postavk preiskanih za predmete: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:205
+#: core/libs/tags/autoassignment/autotagsengine.cpp:203
 #, kde-format
 msgid "Item scanned for objects: %1\n"
 msgstr "Postavka preiskana za predmete: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:233
+#: core/libs/tags/autoassignment/autotagsengine.cpp:231
 #, kde-format
 msgid "Object Scanning: %1\n"
 msgstr "Preiskovanje predmetov: %1\n"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:240
+#: core/libs/tags/autoassignment/autotagsengine.cpp:238
 #, kde-format
 msgid "Found %1 object. Tag: %2"
 msgstr "Najden %1 predmet. Značka: %2"
 
-#: core/libs/tags/autoassignment/autotagsengine.cpp:244
+#: core/libs/tags/autoassignment/autotagsengine.cpp:242
 #, kde-format
 msgid "Found %1 objects. Tags: %2"
 msgstr "Najdeno %1 predmetov. Značk: %2"
@@ -40788,7 +40788,7 @@ msgstr ""
 "nadaljevati?</qt>"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:38
-#: core/libs/tags/manager/tagsmanager_io.cpp:57
+#: core/libs/tags/manager/tagsmanager_io.cpp:58
 #, kde-format
 msgid ""
 "This operation can take long time depending on collection size.\n"
@@ -40797,7 +40797,7 @@ msgstr ""
 "Če je vaša zbirka velika, lahko to opravilo traja dlje časa.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:77
+#: core/libs/tags/manager/tagsmanager_io.cpp:78
 #, kde-format
 msgid ""
 "This operation will wipe all tags from database only.\n"
@@ -40809,45 +40809,45 @@ msgstr ""
 "metapodatkov v datoteke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:171
+#: core/libs/tags/manager/tagsmanager_io.cpp:172
 #, kde-format
 msgid "Select a base tag from which the tags should be exported."
 msgstr "Izberite osnovno značko, ki naj bodo izvožene značke."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:181
+#: core/libs/tags/manager/tagsmanager_io.cpp:182
 #, kde-format
 msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "Izbrana značka ni osnovna značka na vrhu hierarhije."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:189
+#: core/libs/tags/manager/tagsmanager_io.cpp:190
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
 msgstr "Izvoz datoteke z značkami nadzorovanega besedišča"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:190
-#: core/libs/tags/manager/tagsmanager_io.cpp:308
+#: core/libs/tags/manager/tagsmanager_io.cpp:191
+#: core/libs/tags/manager/tagsmanager_io.cpp:309
 #, kde-format
 msgid "Text File (*.txt)"
 msgstr "Besedilna datoteka (*.txt)"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:288
+#: core/libs/tags/manager/tagsmanager_io.cpp:289
 #, kde-format
 msgid "Select a tag into which the tags should be imported."
 msgstr "Izberite značko, v katero naj bi bile uvožene značke."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:298
+#: core/libs/tags/manager/tagsmanager_io.cpp:299
 #, kde-format
 msgid "No tags can be imported to the selected face tag."
 msgstr "Nobene značke ni mogoče uvoziti v izbrano značko obraza."
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:307
+#: core/libs/tags/manager/tagsmanager_io.cpp:308
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Controlled Vocabulary Tag File"
 msgstr "Uvozi datoteko z značkami nadzorovanega besedišča"
 
-#: core/libs/tags/manager/tagsmanager_io.cpp:406
+#: core/libs/tags/manager/tagsmanager_io.cpp:407
 #, kde-format
 msgid "Do you really want to remove the selected tag from all images?"
 msgid_plural "Do you really want to remove the selected tags from all images?"
@@ -61773,7 +61773,7 @@ msgstr ""
 msgid "digiKam Maintenance"
 msgstr "vzdrževanje digiKama"
 
-#: core/utilities/maintenance/manager/maintenancetool.cpp:129
+#: core/utilities/maintenance/manager/maintenancetool.cpp:131
 #, kde-format
 msgid ""
 "Process is done.\n"
@@ -61783,11 +61783,11 @@ msgstr ""
 "Trajanje: %1"
 
 #: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:123
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "Clean up the databases : "
 msgstr "Počisti podatkovne baze : "
@@ -61797,27 +61797,27 @@ msgstr "Počisti podatkovne baze : "
 msgid "analysing databases"
 msgstr "analiziranje podatkovne zbirke"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:228
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:226
 #, kde-format
 msgid "cleaning core db"
 msgstr "čistim jedro podatkovne baze"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:257
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:255
 #, kde-format
 msgid "cleaning thumbnails db"
 msgstr "čistim podatkovno zbirko predoglednih sličic"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:288
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:286
 #, kde-format
 msgid "cleaning recognition db"
 msgstr "čistim podatkovno zbirko Prepoznavanja obrazov"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:327
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:325
 #, kde-format
 msgid "cleaning similarity db"
 msgstr "čiščenje podatkovne zbirke podobnosti slik"
 
-#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:372
+#: core/utilities/maintenance/tools/dbcleaner/dbcleaner.cpp:370
 #, kde-format
 msgid "shrinking databases"
 msgstr "krčenje podatkovne zbirke"
@@ -61862,17 +61862,17 @@ msgstr "Podatkovna zbirka podobnosti"
 msgid "Find new items"
 msgstr "Najdi nove predmete"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:180
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "Preiskovanje: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:181
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
 #, kde-format
 msgid "Album Root: %1"
 msgstr "Koren albuma: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:210
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -61881,12 +61881,12 @@ msgstr ""
 "Preiskano:\n"
 " %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:232
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Postavk preiskanih za katalog: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:236
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Postavka preiskana za katalog: %1"
@@ -61896,17 +61896,17 @@ msgstr "Postavka preiskana za katalog: %1"
 msgid "Find duplicates items"
 msgstr "Najdi podvojene predmete"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:190
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:188
 #, kde-format
 msgid "Finding Duplicates: %1\n"
 msgstr "Iskanje dvojnikov: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:195
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:193
 #, kde-format
 msgid "No duplicate item"
 msgstr "Ni dvojnikov"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:199
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:197
 #, kde-format
 msgid "1 duplicate item"
 msgid_plural "%1 duplicate items"
@@ -61915,22 +61915,22 @@ msgstr[1] "%1 dvojnik"
 msgstr[2] "%1 dvojnika"
 msgstr[3] "%1 dvojniki"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:225
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:223
 #, kde-format
 msgid "Items scanned for duplicates: %1\n"
 msgstr "Postavk preiskanih za dvojnike: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:229
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:227
 #, kde-format
 msgid "Item scanned for duplicates: %1\n"
 msgstr "Postavka preiskana za dvojnike: %1\n"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:234
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:232
 #, kde-format
 msgid "Duplicates found: %1"
 msgstr "Najdenih dvojnikov: %1"
 
-#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:238
+#: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:236
 #, kde-format
 msgid "Duplicate found: %1"
 msgstr "Najden dvojnik: %1"
@@ -61969,49 +61969,49 @@ msgstr "Preišči obraze v %1 slikah"
 msgid "Updating faces database"
 msgstr "Posodabljanje podatkovne zbirke obrazov"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:298
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:326
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:408
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:296
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:324
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:406
 #, kde-format
 msgid "Error starting face detection."
 msgstr "Napaka pri zagonu zaznavanja obrazov."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:429
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Postavk preiskanih za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:433
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Postavka preiskana za obraze: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:438
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Obrazov najdenih: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:442
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
 #, kde-format
 msgid "Face found: %1"
 msgstr "Obraz najden: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Prečesavanje obraza: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:497
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
 #, kde-format
 msgid "Found %1 face."
 msgstr "Najden %1 obraz."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:501
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
 #, kde-format
 msgid "Found %1 faces."
 msgstr "Najdeno %1 obrazov."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:507
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Razpoznano: %1"
@@ -62021,57 +62021,57 @@ msgstr "Razpoznano: %1"
 msgid "Finger-prints"
 msgstr "Prstni odtisi"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:196
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:194
 #, kde-format
 msgid "Rebuild Fingerprint: %1\n"
 msgstr "Ponovno izgradi prstni odtis: %1\n"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:197
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:195
 #, kde-format
 msgid "Album: %1"
 msgstr "Album: \"%1\""
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:211
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:209
 #, kde-format
 msgid "Items scanned for fingerprint: %1"
 msgstr "Postavk preiskanih za prstni odtis: %1"
 
-#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:215
+#: core/utilities/maintenance/tools/fingerprints/fingerprintsgenerator.cpp:213
 #, kde-format
 msgid "Item scanned for fingerprint: %1"
 msgstr "Postavka preiskana za prstni odtis: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:235
 #, kde-format
 msgid "Image Quality: %1\n"
 msgstr "Kakovost slike: %1\n"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:239
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:237
 #, kde-format
 msgid "Pick Label: %1"
 msgstr "Poberi oznako: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:254
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:252
 #, kde-format
 msgid "Items scanned for quality: %1"
 msgstr "Postavk preiskanih za kakovost: %1"
 
-#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:258
+#: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:256
 #, kde-format
 msgid "Item scanned for quality: %1"
 msgstr "Postavka preiskana za kakovost: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:186
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:184
 #, kde-format
 msgid "Remove all faces from image"
 msgstr "Odstrani vse obraze s slike"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:191
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:189
 #, kde-format
 msgid "Remove all tags from image"
 msgstr "Odstrani vse značke iz slike"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:207
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:205
 #, kde-format
 msgid ""
 "All faces are removed from %1 selected images.\n"
@@ -62080,7 +62080,7 @@ msgstr ""
 "Vsi obrazi so bili odstranjeni iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:212
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:210
 #, kde-format
 msgid ""
 "All tags are removed from %1 selected images.\n"
@@ -62089,64 +62089,64 @@ msgstr ""
 "Vse značke so bile odstranjene iz %1 izbranih slik.\n"
 "Ali želite nadaljevati?"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:243
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:241
 #, kde-format
 msgid "Clear Metadata: %1\n"
 msgstr "Počisti metapodatke: %1\n"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:257
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:255
 #, kde-format
 msgid "Items scanned to remove faces: %1"
 msgstr "Postavk preiskanih za odstranitev obrazov: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:261
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:259
 #, kde-format
 msgid "Item scanned to remove faces: %1"
 msgstr "Postavka preiskana za odstranitev obraza: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:270
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:268
 #, kde-format
 msgid "Items scanned to remove tags: %1"
 msgstr "Postavk preiskanih za odstranitev oznake: %1"
 
-#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:274
+#: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:272
 #, kde-format
 msgid "Item scanned to remove tags: %1"
 msgstr "Postavka preiskana za odstranitev oznake: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:192
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:190
 #, kde-format
 msgid "Synchronizing image metadata with database"
 msgstr "Usklajevanje metapodatkov slike s podatkovno zbirko"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:197
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:195
 #, kde-format
 msgid "Updating database from image metadata"
 msgstr "Posodabljanje podatkovne zbirke iz metapodatkov slike"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:224
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:222
 #, kde-format
 msgid "Metadata Sync: %1\n"
 msgstr "Sinhronizacija metapodatkov: %1\n"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:238
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:236
 #, kde-format
 msgid "Items scanned to synchronize metadata with database: %1"
 msgstr ""
 "Postavk prečesanih za sinhronizacijo metapodatkov z zbirko podatkov: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:242
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:240
 #, kde-format
 msgid "Item scanned to synchronize metadata with database: %1"
 msgstr ""
 "Postavka prečesana za sinhronizacijo metapodatkov z zbirko podatkov: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:251
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:249
 #, kde-format
 msgid "Items scanned to update database with metadata: %1"
 msgstr "Postavk prečesanih za posodobitev zbirke podatkov z metapodatki: %1"
 
-#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:255
+#: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:253
 #, kde-format
 msgid "Item scanned to update database with metadata: %1"
 msgstr "Postavka prečesana za posodobitev zbirke podatkov z metapodatki: %1"
@@ -62156,17 +62156,17 @@ msgstr "Postavka prečesana za posodobitev zbirke podatkov z metapodatki: %1"
 msgid "Generate Thumbnails"
 msgstr "Generiraj predogledne sličice"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:259
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:257
 #, kde-format
 msgid "Thumbnail: %1\n"
 msgstr "Predogledna sličica: %1\n"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:274
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:272
 #, kde-format
 msgid "Items scanned for thumbnails: %1"
 msgstr "Postavk preiskanih za predogledne sličice: %1"
 
-#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:278
+#: core/utilities/maintenance/tools/thumbs/thumbsgenerator.cpp:276
 #, kde-format
 msgid "Item scanned for thumbnails: %1"
 msgstr "Postavka preiskana za predogledne sličice: %1"
