@@ -137,7 +137,7 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 
     QList<int> albumIds;
 
-    for (Album* const album : std::as_const(checkedAlbums))
+    for (const Album* const album : std::as_const(checkedAlbums))
     {
         albumIds << album->id();
     }

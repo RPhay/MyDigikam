@@ -50,8 +50,8 @@ void SearchFieldLabels::updateState()
 
 void SearchFieldLabels::read(SearchXmlCachingReader& reader)
 {
-    TAlbum* a      = nullptr;
-    QList<int> ids = reader.valueToIntOrIntList();
+    const TAlbum* a = nullptr;
+    QList<int> ids  = reader.valueToIntOrIntList();
     QList<ColorLabel> clabels;
     QList<PickLabel>  plabels;
 
@@ -94,7 +94,7 @@ void SearchFieldLabels::write(SearchXmlWriter& writer)
 
     if (!clAlbums.isEmpty())
     {
-        for (TAlbum* const album : std::as_const(clAlbums))
+        for (const TAlbum* const album : std::as_const(clAlbums))
         {
             albumIds << album->id();
         }
@@ -104,7 +104,7 @@ void SearchFieldLabels::write(SearchXmlWriter& writer)
 
     if (!plAlbums.isEmpty())
     {
-        for (TAlbum* const album : std::as_const(plAlbums))
+        for (const TAlbum* const album : std::as_const(plAlbums))
         {
             albumIds << album->id();
         }

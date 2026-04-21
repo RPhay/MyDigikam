@@ -39,6 +39,8 @@ public:
 
     Private() = default;
 
+public:
+
     SearchModificationHelper* searchModificationHelper  = nullptr;
 
     QAction*                  renameSearchAction        = nullptr;
@@ -74,7 +76,7 @@ QString EditableSearchTreeView::contextMenuTitle() const
 
 void EditableSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)
 {
-    SAlbum* const searchAlbum = dynamic_cast<SAlbum*>(album);
+    const SAlbum* const searchAlbum = dynamic_cast<SAlbum*>(album);
 
     // disable actions if there is no album or the album is a temporary search
 

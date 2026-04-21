@@ -47,10 +47,10 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
     }
     else if (name == QLatin1String("albumcollection"))
     {
-        SearchFieldChoice* const field = new SearchFieldChoice(parent);
+        SearchFieldChoice* const field            = new SearchFieldChoice(parent);
         field->setFieldName(name);
         field->setText(i18n("Album"), i18n("The album category is"));
-        ApplicationSettings* const settings = ApplicationSettings::instance();
+        const ApplicationSettings* const settings = ApplicationSettings::instance();
 
         if (settings)
         {
