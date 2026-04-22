@@ -1248,7 +1248,7 @@ bool BackendGoogleMaps::eventFilter(QObject* object, QEvent* event)
     {
         if (event->type() == QEvent::Resize)
         {
-            QResizeEvent* const resizeEvent = dynamic_cast<QResizeEvent*>(event);
+            const QResizeEvent* const resizeEvent = dynamic_cast<QResizeEvent*>(event);
 
             if (resizeEvent)
             {

@@ -107,6 +107,8 @@ public:
 
     Private() = default;
 
+public:
+
     BookmarksManager* manager   = nullptr;
     BookmarkData      type      = Url;
     QString           oldValue;
@@ -248,7 +250,7 @@ BookmarksManager* BookmarksModel::bookmarksManager() const
 
 QModelIndex BookmarksModel::index(BookmarkNode* node) const
 {
-    BookmarkNode* const prnt = node->parent();
+    const BookmarkNode* const prnt = node->parent();
 
     if (!prnt)
     {
@@ -456,7 +458,7 @@ QModelIndex BookmarksModel::index(int row, int column, const QModelIndex& parent
 
     // get the parent node
 
-    BookmarkNode* const parentNode = node(parent);
+    const BookmarkNode* const parentNode = node(parent);
 
     return createIndex(row, column, parentNode->children().at(row));
 }
@@ -468,8 +470,8 @@ QModelIndex BookmarksModel::parent(const QModelIndex& index) const
         return QModelIndex();
     }
 
-    BookmarkNode* const itemNode   = node(index);
-    BookmarkNode* const parentNode = (itemNode ? itemNode->parent() : nullptr);
+    const BookmarkNode* const itemNode = node(index);
+    BookmarkNode* const parentNode     = (itemNode ? itemNode->parent() : nullptr);
 
     if (!parentNode || (parentNode == d->manager->bookmarks()))
     {
@@ -478,8 +480,8 @@ QModelIndex BookmarksModel::parent(const QModelIndex& index) const
 
     // get the parent's row
 
-    BookmarkNode* const grandParentNode = parentNode->parent();
-    int parentRow                       = grandParentNode->children().indexOf(parentNode);
+    const BookmarkNode* const grandParentNode = parentNode->parent();
+    int parentRow                             = grandParentNode->children().indexOf(parentNode);
 
     Q_ASSERT(parentRow >= 0);
 
@@ -509,7 +511,7 @@ Qt::ItemFlags BookmarksModel::flags(const QModelIndex& index) const
     }
 
     Qt::ItemFlags flags              = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
-    BookmarkNode* const bookmarkNode = node(index);
+    const BookmarkNode* const bookmarkNode = node(index);
 
     if (bookmarkNode->type() != BookmarkNode::RootFolder)
     {

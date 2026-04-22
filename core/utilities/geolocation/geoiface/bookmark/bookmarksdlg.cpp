@@ -59,6 +59,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString                url;
     BookmarksManager*      manager      = nullptr;
     AddBookmarkProxyModel* proxyModel   = nullptr;
@@ -361,8 +363,8 @@ void BookmarksDialog::slotCustomContextMenuRequested(const QPoint& pos)
 
     if (index.isValid())
     {
-        index                    = d->proxyModel->mapToSource(index);
-        BookmarkNode* const node = d->manager->bookmarksModel()->node(index);
+        index                          = d->proxyModel->mapToSource(index);
+        const BookmarkNode* const node = d->manager->bookmarksModel()->node(index);
 
         if (node && node->type() != BookmarkNode::RootFolder)
         {

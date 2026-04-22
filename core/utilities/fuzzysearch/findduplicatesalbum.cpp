@@ -211,7 +211,7 @@ void FindDuplicatesAlbum::drawRow(QPainter* p,
                                   const QStyleOptionViewItem& opt,
                                   const QModelIndex& index) const
 {
-    FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(itemFromIndex(index));
+    const FindDuplicatesAlbumItem* const item = dynamic_cast<FindDuplicatesAlbumItem*>(itemFromIndex(index));
 
     if (item && !item->hasValidThumbnail())
     {

@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     BookmarkNode*        parent     = nullptr;
     Type                 type       = BookmarkNode::Root;
     QList<BookmarkNode*> children;
@@ -335,7 +337,7 @@ bool XbelWriter::write(QIODevice* const device, const BookmarkNode* const root)
 
     if ((root->type() == BookmarkNode::Root) && !root->children().isEmpty())
     {
-        BookmarkNode* const rootFolder = root->children().constFirst();
+        const BookmarkNode* const rootFolder = root->children().constFirst();
 
         for (int i = 0  ; i < rootFolder->children().count() ; ++i)
         {

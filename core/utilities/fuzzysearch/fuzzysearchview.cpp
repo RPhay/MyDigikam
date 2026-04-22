@@ -331,7 +331,7 @@ void FuzzySearchView::slotTabChanged(int tab)
         {
             QList<SAlbum*> sAlbums = d->findDuplicatesPanel->currentFindDuplicatesAlbums();
 
-            for (SAlbum* const album : std::as_const(sAlbums))
+            for (SAlbum* const album : std::as_const(sAlbums))      // cppcheck-suppress constVariablePointer
             {
                 albums << album;
             }

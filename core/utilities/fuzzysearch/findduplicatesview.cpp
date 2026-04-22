@@ -427,7 +427,7 @@ QList<SAlbum*> FindDuplicatesView::currentFindDuplicatesAlbums() const
 
     if (selectedItems.isEmpty())
     {
-        QTreeWidgetItem* const item = d->listView->firstItem();
+        QTreeWidgetItem* const item = d->listView->firstItem();         // cppcheck-suppress constVariablePointer
 
         if (item)
         {
@@ -439,7 +439,7 @@ QList<SAlbum*> FindDuplicatesView::currentFindDuplicatesAlbums() const
 
     for (QTreeWidgetItem* const item : std::as_const(selectedItems))
     {
-        FindDuplicatesAlbumItem* const albumItem = dynamic_cast<FindDuplicatesAlbumItem*>(item);
+        const FindDuplicatesAlbumItem* const albumItem = dynamic_cast<FindDuplicatesAlbumItem*>(item);
 
         if (albumItem)
         {
@@ -484,7 +484,7 @@ void FindDuplicatesView::slotAlbumDeleted(Album* a)
         return;
     }
 
-    SAlbum* const album = static_cast<SAlbum*>(a);
+    const SAlbum* const album = static_cast<SAlbum*>(a);
 
     FindDuplicatesAlbumItem* const item = static_cast<FindDuplicatesAlbumItem*>(album->extraData(this));
 
@@ -666,7 +666,7 @@ void FindDuplicatesView::slotDuplicatesAlbumActived()
 
     for (QTreeWidgetItem* const item : items)
     {
-        FindDuplicatesAlbumItem* const albumItem = dynamic_cast<FindDuplicatesAlbumItem*>(item);
+        const FindDuplicatesAlbumItem* const albumItem = dynamic_cast<FindDuplicatesAlbumItem*>(item);
 
         if (albumItem)
         {
