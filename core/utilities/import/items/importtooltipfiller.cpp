@@ -39,11 +39,11 @@ namespace Digikam
 QString ImportToolTipFiller::CamItemInfoTipContents(const CamItemInfo& info)
 {
     QString str;
-    ImportSettings* const settings = ImportSettings::instance();
+    const ImportSettings* const settings = ImportSettings::instance();
     DToolTipStyleSheet cnt(settings->getToolTipsFont());
 
-    PhotoInfoContainer photoInfo   = info.photoInfo;
-    QString tip                    = cnt.tipHeader;
+    PhotoInfoContainer photoInfo         = info.photoInfo;
+    QString tip                          = cnt.tipHeader;
 
     // -- File properties ----------------------------------------------
 

@@ -521,7 +521,7 @@ QRect ImportDelegate::actualPixmapRect(const QModelIndex& index) const
 
     // We do not recompute if not found. Assumption is cache is always properly updated.
 
-    QRect* const rect = d->actualPixmapRectCache.object(index.row());
+    const QRect* const rect = d->actualPixmapRectCache.object(index.row());
 
     if (rect)
     {
@@ -537,7 +537,7 @@ void ImportDelegate::updateActualPixmapRect(const QModelIndex& index, const QRec
 {
     Q_D(ImportDelegate);
 
-    QRect* const old = d->actualPixmapRectCache.object(index.row());
+    const QRect* const old = d->actualPixmapRectCache.object(index.row());
 
     if (!old || (*old != rect))
     {
@@ -547,7 +547,7 @@ void ImportDelegate::updateActualPixmapRect(const QModelIndex& index, const QRec
 
 int ImportDelegate::calculatethumbSizeToFit(int ws)
 {
-    Q_D(ImportDelegate);
+    Q_D(ImportDelegate);    // cppcheck-suppress constVariablePointer
 
     int ts     = thumbnailSize().size();
     int gs     = gridSize().width();

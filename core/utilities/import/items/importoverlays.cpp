@@ -361,7 +361,7 @@ void ImportRatingOverlay::updateRating()
         return;
     }
 
-    ImportItemModel* const model = m_index.data(ImportItemModel::ImportItemModelPointerRole).value<ImportItemModel*>();
+    const ImportItemModel* const model = m_index.data(ImportItemModel::ImportItemModelPointerRole).value<ImportItemModel*>();
     ratingWidget()->setRating(model->camItemInfoRef(m_index).rating);
 }
 
