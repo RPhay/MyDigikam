@@ -42,6 +42,8 @@ public:
 
     Private() = default;
 
+public:
+
     QPixmap checkPixmap();
 
     uchar* previewImageData();
@@ -318,7 +320,7 @@ IccProfile ImageIface::originalIccProfile() const
 
 MetaEngineData ImageIface::originalMetadata() const
 {
-    DImg* const img = original();
+    const DImg* const img = original();
 
     if (img)
     {

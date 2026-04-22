@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<UndoAction*> undoActions;
     QList<UndoAction*> redoActions;
     int                origin       = 0;
@@ -78,13 +80,13 @@ void UndoManager::addAction(UndoAction* const action)
 
     // If the _last_ action was irreversible, we need to snapshot it
 
-    UndoAction* const lastAction               = d->undoActions.isEmpty() ? nullptr : d->undoActions.last();
+    const UndoAction* const lastAction               = d->undoActions.isEmpty() ? nullptr : d->undoActions.last();
 
     d->undoActions.append(action);
 
     // action has already read the "history before step" from EditorCore in its constructor
 
-    UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
+    const UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
 
     // we always make an initial snapshot to be able to do a flying rollback in one step
 
@@ -190,18 +192,18 @@ void UndoManager::rollbackToOrigin()
 
 void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
 {
-    UndoAction* const action                   = d->undoActions.last();
-    UndoMetadataContainer dataBeforeStep       = action->getMetadata();
-    UndoMetadataContainer dataAfterStep        = UndoMetadataContainer::fromImage(*d->core->getImg());
-    UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
-    UndoActionReversible* const reversible     = dynamic_cast<UndoActionReversible*>(action);
-    QVariant originDataAfterStep               = d->core->getImg()->fileOriginData();
-    QVariant originDataBeforeStep;             // only needed if isAtOrigin()
+    UndoAction* const action                         = d->undoActions.last();
+    UndoMetadataContainer dataBeforeStep             = action->getMetadata();
+    UndoMetadataContainer dataAfterStep              = UndoMetadataContainer::fromImage(*d->core->getImg());
+    const UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
+    const UndoActionReversible* const reversible     = dynamic_cast<UndoActionReversible*>(action);
+    QVariant originDataAfterStep                     = d->core->getImg()->fileOriginData();
+    QVariant originDataBeforeStep;                   // only needed if isAtOrigin()
 
-    DImageHistory originHistoryAfterStep       = d->core->getResolvedInitialHistory();
+    DImageHistory originHistoryAfterStep             = d->core->getResolvedInitialHistory();
     DImageHistory originHistoryBeforeStep;
 
-    int lastOrigin                             = 0;
+    int lastOrigin                                   = 0;
 
     if (isAtOrigin())
     {
@@ -302,15 +304,15 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
 
 void UndoManager::redoStep(bool execute, bool flyingRollback)
 {
-    UndoAction* const action                   = d->redoActions.last();
-    UndoMetadataContainer dataBeforeStep       = UndoMetadataContainer::fromImage(*d->core->getImg());
-    UndoMetadataContainer dataAfterStep        = action->getMetadata();
-    QVariant originDataBeforeStep              = d->core->getImg()->fileOriginData();
-    QVariant originDataAfterStep               = action->fileOriginData();
-    DImageHistory originHistoryBeforeStep      = d->core->getResolvedInitialHistory();
-    DImageHistory originHistoryAfterStep       = action->fileOriginResolvedHistory();
-    UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
-    UndoActionReversible* const reversible     = dynamic_cast<UndoActionReversible*>(action);
+    UndoAction* const action                         = d->redoActions.last();
+    UndoMetadataContainer dataBeforeStep             = UndoMetadataContainer::fromImage(*d->core->getImg());
+    UndoMetadataContainer dataAfterStep              = action->getMetadata();
+    QVariant originDataBeforeStep                    = d->core->getImg()->fileOriginData();
+    QVariant originDataAfterStep                     = action->fileOriginData();
+    DImageHistory originHistoryBeforeStep            = d->core->getResolvedInitialHistory();
+    DImageHistory originHistoryAfterStep             = action->fileOriginResolvedHistory();
+    const UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
+    const UndoActionReversible* const reversible     = dynamic_cast<UndoActionReversible*>(action);
 
     if (execute)
     {
@@ -455,7 +457,7 @@ bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
 
         for ( ; snapshot > step ; --snapshot)
         {
-            UndoActionReversible* const reversible = dynamic_cast<UndoActionReversible*>(d->undoActions.at(snapshot - 1));
+            const UndoActionReversible* const reversible = dynamic_cast<UndoActionReversible*>(d->undoActions.at(snapshot - 1));
 
             if (!reversible) // would be a bug
             {
@@ -471,7 +473,7 @@ bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
 
     // adjust history
 
-    UndoAction* const action             = d->undoActions.at(step);
+    const UndoAction* const action       = d->undoActions.at(step);
     UndoMetadataContainer dataBeforeStep = action->getMetadata();
     dataBeforeStep.toImage(*img);
 
@@ -543,7 +545,7 @@ QStringList UndoManager::getUndoHistory() const
 {
     QStringList titles;
 
-    for (UndoAction* const action : std::as_const(d->undoActions))
+    for (const UndoAction* const action : std::as_const(d->undoActions))
     {
         titles.prepend(action->getTitle());
     }
@@ -555,7 +557,7 @@ QStringList UndoManager::getRedoHistory() const
 {
     QStringList titles;
 
-    for (UndoAction* const action : std::as_const(d->redoActions))
+    for (const UndoAction* const action : std::as_const(d->redoActions))
     {
         titles.prepend(action->getTitle());
     }

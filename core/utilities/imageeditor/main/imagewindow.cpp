@@ -1106,8 +1106,8 @@ void ImageWindow::dropEvent(QDropEvent* e)
         }
 
         QString ATitle;
-        AlbumManager* const man = AlbumManager::instance();
-        PAlbum* const palbum    = man->findPAlbum(albumIDs.first());
+        const AlbumManager* const man = AlbumManager::instance();
+        const PAlbum* const palbum    = man->findPAlbum(albumIDs.first());
 
         if (palbum)
         {
@@ -1120,7 +1120,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
     }
     else if (DAlbumDrag::decode(e->mimeData(), urls, albumID))
     {
-        AlbumManager* const man  = AlbumManager::instance();
+        const AlbumManager* const man  = AlbumManager::instance();
         QList<qlonglong> itemIDs = CoreDbAccess().db()->getItemIDsInAlbum(albumID);
         ItemInfoList imageInfoList(itemIDs);
 
@@ -1132,7 +1132,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         }
 
         QString ATitle;
-        PAlbum* const palbum = man->findPAlbum(albumIDs.first());
+        const PAlbum* const palbum = man->findPAlbum(albumIDs.first());
 
         if (palbum)
         {
@@ -1152,7 +1152,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
             return;
         }
 
-        AlbumManager* const man  = AlbumManager::instance();
+        const AlbumManager* const man  = AlbumManager::instance();
         QList<qlonglong> itemIDs = CoreDbAccess().db()->getItemIDsInTag(tagIDs.first(), true);
         ItemInfoList imageInfoList(itemIDs);
 
@@ -1164,7 +1164,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         }
 
         QString ATitle;
-        TAlbum* const talbum = man->findTAlbum(tagIDs.first());
+        const TAlbum* const talbum = man->findTAlbum(tagIDs.first());
 
         if (talbum)
         {

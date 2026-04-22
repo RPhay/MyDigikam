@@ -23,7 +23,7 @@ QStringList MapWidget::availableBackends() const
 {
     QStringList result;
 
-    for (MapBackend* const backend : std::as_const(d->loadedBackends))
+    for (const MapBackend* const backend : std::as_const(d->loadedBackends))
     {
         result.append(backend->backendName());
     }

@@ -137,8 +137,8 @@ void MapWidget::slotUngroupedModelChanged()
 {
     // determine the index under which we handle this model
 
-    QObject* const senderObject           = sender();
-    QAbstractItemModel* const senderModel = qobject_cast<QAbstractItemModel*>(senderObject);
+    QObject* const senderObject                 = sender();
+    const QAbstractItemModel* const senderModel = qobject_cast<QAbstractItemModel*>(senderObject);
 
     if (senderModel)
     {
@@ -154,7 +154,7 @@ void MapWidget::slotUngroupedModelChanged()
         return;
     }
 
-    GeoModelHelper* const senderHelper = qobject_cast<GeoModelHelper*>(senderObject);
+    const GeoModelHelper* const senderHelper = qobject_cast<GeoModelHelper*>(senderObject);
 
     if (senderHelper)
     {
@@ -169,7 +169,7 @@ void MapWidget::slotUngroupedModelChanged()
         }
     }
 
-    QItemSelectionModel* const senderSelectionModel = qobject_cast<QItemSelectionModel*>(senderObject);
+    const QItemSelectionModel* const senderSelectionModel = qobject_cast<QItemSelectionModel*>(senderObject);
 
     if (senderSelectionModel)
     {

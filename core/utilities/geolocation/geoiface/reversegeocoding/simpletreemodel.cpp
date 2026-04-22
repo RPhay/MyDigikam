@@ -24,6 +24,8 @@ public:
 
     Private() = default;
 
+public:
+
     SimpleTreeModel::Item* rootItem     = nullptr;
     int                    columnCount  = 1;
 };
@@ -141,7 +143,7 @@ QModelIndex SimpleTreeModel::parent(const QModelIndex& index) const
         return QModelIndex();
     }
 
-    Item* const item = indexToItem(index);
+    const Item* const item = indexToItem(index);
 
     if (!item)
     {

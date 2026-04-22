@@ -49,8 +49,12 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName            = QLatin1String("ImageViewer Settings");
     const QString configRestoreSettingsEntry = QLatin1String("RestoreToolSettings");
+
+public:
 
     bool                   initPreview       = false;
     QString                helpAnchor;
@@ -171,7 +175,7 @@ void EditorTool::setToolView(QWidget* const view)
 
     d->view->blockSignals(true);
 
-    ImageGuideWidget* const wgt = dynamic_cast<ImageGuideWidget*>(d->view);
+    const ImageGuideWidget* const wgt = dynamic_cast<ImageGuideWidget*>(d->view);
 
     if (wgt)
     {

@@ -39,10 +39,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN PreviewThreadWrapper::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QMap<int, DImgThreadedFilter*> map;
 };
@@ -112,7 +113,7 @@ void PreviewThreadWrapper::slotFilterFinished(bool success)
 
 void PreviewThreadWrapper::slotFilterProgress(int /*progress*/)
 {
-    DImgThreadedFilter* const filter = dynamic_cast<DImgThreadedFilter*>(sender());
+    const DImgThreadedFilter* const filter = dynamic_cast<DImgThreadedFilter*>(sender());
 
     if (!filter)
     {
@@ -206,6 +207,8 @@ class Q_DECL_HIDDEN PreviewList::Private
 public:
 
     Private() = default;
+
+public:
 
     int                   progressCount = 0;
 
@@ -314,7 +317,6 @@ void PreviewList::setCurrentId(int id)
 
     while (it <= this->count())
     {
-
         PreviewListItem* const item = dynamic_cast<PreviewListItem*>(this->item(it));
 
         if (item && (item->id() == id))
@@ -331,7 +333,7 @@ void PreviewList::setCurrentId(int id)
 
 int PreviewList::currentId() const
 {
-    PreviewListItem* const item = dynamic_cast<PreviewListItem*>(currentItem());
+    const PreviewListItem* const item = dynamic_cast<PreviewListItem*>(currentItem());
 
     if (item)
     {

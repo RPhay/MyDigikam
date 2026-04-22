@@ -627,7 +627,7 @@ void GPSSearchView::showNonGeolocatedItems()
     }
 
     QString title = SAlbum::getTemporaryTitle(DatabaseSearch::MapSearch);
-    SAlbum* album = AlbumManager::instance()->findSAlbum(title);
+    SAlbum* album = AlbumManager::instance()->findSAlbum(title);            // cppcheck-suppress constVariablePointer
 
     int id;
 

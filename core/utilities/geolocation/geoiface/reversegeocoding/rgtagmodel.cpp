@@ -247,7 +247,7 @@ QModelIndex RGTagModel::toSourceIndex(const QModelIndex& tagModelIndex) const
 /*
     static_cast<TreeBranch*>(tagModelIndex.internalPointer());
 */
-    TreeBranch* const treeBranch = branchFromIndex(tagModelIndex);
+    const TreeBranch* const treeBranch = branchFromIndex(tagModelIndex);
 
     if (!treeBranch)
     {
@@ -462,7 +462,7 @@ QList<QList<TagData> > RGTagModel::addNewData(const QStringList& elements, const
 
 int RGTagModel::columnCount(const QModelIndex& parent) const
 {
-    TreeBranch* const parentBranch = branchFromIndex(parent); //static_cast<TreeBranch*>(parent.internalPointer());
+    const TreeBranch* const parentBranch = branchFromIndex(parent); //static_cast<TreeBranch*>(parent.internalPointer());
 
     if (!parentBranch)
     {
@@ -496,7 +496,7 @@ QVariant RGTagModel::data(const QModelIndex& index, int role) const
 /*
     static_cast<TreeBranch*>(index.internalPointer());
 */
-    TreeBranch* const treeBranch = branchFromIndex(index);
+    const TreeBranch* const treeBranch = branchFromIndex(index);
 
     if      ((!treeBranch) || (treeBranch->type == TypeChild))
     {
@@ -665,7 +665,7 @@ QVariant RGTagModel::headerData(int section, Qt::Orientation orientation, int ro
 
 Qt::ItemFlags RGTagModel::flags(const QModelIndex& index) const
 {
-    TreeBranch* const currentBranch = branchFromIndex(index);
+    const TreeBranch* const currentBranch = branchFromIndex(index);
 
     if (currentBranch && ((currentBranch->type == TypeSpacer) || (currentBranch->type == TypeNewChild)))
     {

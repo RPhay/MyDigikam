@@ -82,6 +82,8 @@ public:
 
     Private() = default;
 
+public:
+
     GeoModelHelper*      modelHelper    = nullptr;
     QItemSelectionModel* selectionModel = nullptr;
     QAbstractItemModel*  markerModel    = nullptr;
@@ -438,7 +440,7 @@ int ItemMarkerTiler::getTileSelectedCount(const TileIndex& tileIndex)
 
     GEOIFACE_ASSERT(tileIndex.level() <= TileIndex::MaxLevel);
 
-    MyTile* const myTile = static_cast<MyTile*>(getTile(tileIndex, true));
+    const MyTile* const myTile = static_cast<MyTile*>(getTile(tileIndex, true));
 
     if (!myTile)
     {
@@ -569,7 +571,7 @@ QList<QPersistentModelIndex> ItemMarkerTiler::getTileMarkerIndices(const TileInd
 
     GEOIFACE_ASSERT(tileIndex.level() <= TileIndex::MaxLevel);
 
-    MyTile* const myTile = static_cast<MyTile*>(getTile(tileIndex, true));
+    const MyTile* const myTile = static_cast<MyTile*>(getTile(tileIndex, true));
 
     if (!myTile)
     {

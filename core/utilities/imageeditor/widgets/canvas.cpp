@@ -52,10 +52,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN Canvas::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QString               errorMessage;
 
@@ -269,7 +270,7 @@ QString Canvas::ensureHasCurrentUuid() const
 
 DImg Canvas::currentImage() const
 {
-    DImg* const image = d->core->getImg();
+    const DImg* const image = d->core->getImg();
 
     if (image)
     {
@@ -714,7 +715,7 @@ void Canvas::mousePressEvent(QMouseEvent* event)
 
     if (event->button() == Qt::LeftButton)
     {
-        GraphicsDImgItem* const item = dynamic_cast<GraphicsDImgItem*>(itemAt(event->pos()));
+        const GraphicsDImgItem* const item = dynamic_cast<GraphicsDImgItem*>(itemAt(event->pos()));
 
         if (item)
         {

@@ -842,8 +842,8 @@ void RGWidget::slotReaddNewTags()
 {
     for (int row = 0 ; row < d->imageModel->rowCount() ; ++row)
     {
-        GPSItemContainer* const currentItem = d->imageModel->itemFromIndex(d->imageModel->index(row, 0));
-        QList<QList<TagData> > tagAddresses = currentItem->getTagList();
+        const GPSItemContainer* const currentItem = d->imageModel->itemFromIndex(d->imageModel->index(row, 0));
+        QList<QList<TagData> > tagAddresses       = currentItem->getTagList();
 
         if (!tagAddresses.isEmpty())
         {

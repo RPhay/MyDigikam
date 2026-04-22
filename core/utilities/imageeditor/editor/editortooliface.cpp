@@ -180,7 +180,7 @@ void EditorToolIface::unLoadTool()
 
     // To restore  zoom level and position accordingly with zoomable preview.
 
-    ImageRegionWidget* const view2 = dynamic_cast<ImageRegionWidget*>(d->tool->toolView());
+    const ImageRegionWidget* const view2 = dynamic_cast<ImageRegionWidget*>(d->tool->toolView());
 
     if (view2)
     {

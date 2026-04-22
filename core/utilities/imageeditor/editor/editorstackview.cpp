@@ -27,10 +27,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN EditorStackView::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QWidget* toolView   = nullptr;
     Canvas*  canvas     = nullptr;
@@ -83,7 +84,7 @@ void EditorStackView::setToolView(QWidget* const view)
         insertWidget(ToolViewMode, d->toolView);
     }
 
-    GraphicsDImgView* const preview = previewWidget();
+    const GraphicsDImgView* const preview = previewWidget();
 
     if (preview)
     {
@@ -123,7 +124,7 @@ void EditorStackView::increaseZoom()
     }
     else
     {
-        GraphicsDImgView* const preview = previewWidget();
+        const GraphicsDImgView* const preview = previewWidget();
 
         if (preview)
         {
@@ -140,7 +141,7 @@ void EditorStackView::decreaseZoom()
     }
     else
     {
-        GraphicsDImgView* const preview = previewWidget();
+        const GraphicsDImgView* const preview = previewWidget();
 
         if (preview)
         {
@@ -157,7 +158,7 @@ void EditorStackView::toggleFitToWindow()
 
     d->canvas->layout()->toggleFitToWindow();
 
-    GraphicsDImgView* const preview = previewWidget();
+    const GraphicsDImgView* const preview = previewWidget();
 
     if (preview)
     {
@@ -181,7 +182,7 @@ void EditorStackView::zoomTo100Percent()
     }
     else
     {
-        GraphicsDImgView* const preview = previewWidget();
+        const GraphicsDImgView* const preview = previewWidget();
 
         if (preview)
         {
@@ -198,7 +199,7 @@ void EditorStackView::setZoomFactor(double zoom)
     }
     else
     {
-        GraphicsDImgView* const preview = previewWidget();
+        const GraphicsDImgView* const preview = previewWidget();
 
         if (preview)
         {
@@ -215,7 +216,7 @@ double EditorStackView::zoomMax() const
     }
     else
     {
-        GraphicsDImgView* const preview  = previewWidget();
+        const GraphicsDImgView* const preview  = previewWidget();
 
         if (preview)
         {
@@ -236,7 +237,7 @@ double EditorStackView::zoomMin() const
     }
     else
     {
-        GraphicsDImgView* const preview  = previewWidget();
+        const GraphicsDImgView* const preview  = previewWidget();
 
         if (preview)
         {
@@ -264,7 +265,7 @@ void EditorStackView::slotZoomSliderChanged(int size)
     }
     else
     {
-        GraphicsDImgView* const preview = previewWidget();
+        const GraphicsDImgView* const preview = previewWidget();
 
         if (preview)
         {
@@ -286,7 +287,7 @@ void EditorStackView::slotZoomChanged(double zoom)
     }
     else
     {
-        GraphicsDImgView* const preview = previewWidget();
+        const GraphicsDImgView* const preview = previewWidget();
 
         if (preview)
         {

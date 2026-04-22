@@ -28,6 +28,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<GPSItemContainer*>        items;
     int                             columnCount         = 0;
     QMap<QPair<int, int>, QVariant> headerData;
@@ -256,7 +258,7 @@ QPixmap GPSItemModel::getPixmapForIndex(const QPersistentModelIndex& itemIndex, 
     // TODO: do we need to make sure we do not request the same pixmap twice in a row?
     // construct the key under which we stored the pixmap in the cache
 
-    GPSItemContainer* const imageItem = itemFromIndex(itemIndex);
+    const GPSItemContainer* const imageItem = itemFromIndex(itemIndex);
 
     if (!imageItem)
     {
