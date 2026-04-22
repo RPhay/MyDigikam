@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     GPSItemModel*          model            = nullptr;
     QItemSelectionModel*   selectionModel   = nullptr;
     QList<GeoModelHelper*> ungroupedModelHelpers;
@@ -89,7 +91,7 @@ QItemSelectionModel* GPSGeoIfaceModelHelper::selectionModel() const
 bool GPSGeoIfaceModelHelper::itemCoordinates(const QModelIndex& index,
                                              GeoCoordinates* const coordinates) const
 {
-    GPSItemContainer* const item = d->model->itemFromIndex(index);
+    const GPSItemContainer* const item = d->model->itemFromIndex(index);
 
     if (!item)
     {

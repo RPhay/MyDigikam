@@ -34,6 +34,8 @@ public:
 
     Private() = default;
 
+public:
+
     GPSItemList* imageList      = nullptr;
     int          thumbnailSize  = 60;
 };
@@ -102,7 +104,7 @@ QSize GPSItemDelegate::sizeHint(const QStyleOptionViewItem& option, const QModel
 void GPSItemDelegate::setThumbnailSize(const int size)
 {
     d->thumbnailSize               = size;
-    GPSItemModel* const imageModel = d->imageList->getModel();
+    const GPSItemModel* const imageModel = d->imageList->getModel();
 
     if (!imageModel)
     {

@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     GeolocationSettingsContainer settings;
     QMutex                       mutex;
 
@@ -196,7 +198,7 @@ MarbleWidget* GeolocationSettings::mainMarbleWidget() const
 {
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "Registered Marble Widget:" << d->widgets;
 
-    for (MapWidget* const w : std::as_const(d->widgets))
+    for (const MapWidget* const w : std::as_const(d->widgets))
     {
         if (w)
         {
@@ -219,7 +221,7 @@ MarbleWidget* GeolocationSettings::mainMarbleWidget() const
 
 void GeolocationSettings::reloadGoogleMaps()
 {
-    for (MapWidget* const w : std::as_const(d->widgets))
+    for (const MapWidget* const w : std::as_const(d->widgets))
     {
         if (w)
         {

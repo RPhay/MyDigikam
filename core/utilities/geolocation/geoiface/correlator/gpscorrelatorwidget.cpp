@@ -66,6 +66,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString                 gpxFileOpenLastDirectory;
     QPushButton*            gpxLoadFilesButton          = nullptr;
     QTreeView*              gpxFileList                 = nullptr;
@@ -385,8 +387,8 @@ void GPSCorrelatorWidget::slotCorrelate()
 
     for (int i = 0 ; i < imageCount ; ++i)
     {
-        QPersistentModelIndex imageIndex  = selectedIndices.at(i);
-        GPSItemContainer* const imageItem = d->imageModel->itemFromIndex(imageIndex);
+        QPersistentModelIndex imageIndex        = selectedIndices.at(i);
+        const GPSItemContainer* const imageItem = d->imageModel->itemFromIndex(imageIndex);
 
         if (!imageItem)
         {

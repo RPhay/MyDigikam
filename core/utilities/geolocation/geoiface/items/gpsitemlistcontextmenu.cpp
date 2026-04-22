@@ -145,7 +145,7 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
     {
         // Enable or disable the actions.
 
-        GPSItemModel* const imageModel            = d->imagesList->getModel();
+        const GPSItemModel* const imageModel      = d->imagesList->getModel();
         QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
         const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
         const int nSelected                       = selectedIndices.size();
@@ -161,7 +161,7 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
 
         for (int i = 0 ; i < nSelected ; ++i)
         {
-            GPSItemContainer* const gpsItem = imageModel->itemFromIndex(selectedIndices.at(i));
+            const GPSItemContainer* const gpsItem = imageModel->itemFromIndex(selectedIndices.at(i));
 
             if (gpsItem)
             {
@@ -249,7 +249,7 @@ bool GPSItemListContextMenu::getCurrentItemPositionAndUrl(GPSDataContainer* cons
 {
     // NOTE: currentIndex does not seem to work any more since we use KLinkItemSelectionModel.
 
-    GPSItemModel* const imageModel            = d->imagesList->getModel();
+    const GPSItemModel* const imageModel      = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
 
@@ -258,8 +258,8 @@ bool GPSItemListContextMenu::getCurrentItemPositionAndUrl(GPSDataContainer* cons
         return false;
     }
 
-    const QModelIndex firstIndex      = selectedIndices.first();
-    GPSItemContainer* const firstItem = imageModel->itemFromIndex(firstIndex);
+    const QModelIndex firstIndex              = selectedIndices.first();
+    const GPSItemContainer* const firstItem   = imageModel->itemFromIndex(firstIndex);
 
     if (firstItem)
     {
@@ -267,7 +267,7 @@ bool GPSItemListContextMenu::getCurrentItemPositionAndUrl(GPSDataContainer* cons
         {
             if (selectedIndices.at(i).isValid())
             {
-                GPSItemContainer* const gpsItem = imageModel->itemFromIndex(selectedIndices.at(i));
+                const GPSItemContainer* const gpsItem = imageModel->itemFromIndex(selectedIndices.at(i));
 
                 if (!gpsItem || (firstItem->gpsData() != gpsItem->gpsData()))
                 {
@@ -707,7 +707,7 @@ void GPSItemListContextMenu::slotRemoveSpeed()
 
 void GPSItemListContextMenu::slotLookupMissingAltitudes()
 {
-    GPSItemModel* const imageModel            = d->imagesList->getModel();
+    const GPSItemModel* const imageModel      = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
 /*
@@ -719,7 +719,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
 
     for (const QModelIndex& currentIndex : std::as_const(selectedIndices))
     {
-        GPSItemContainer* const gpsItem = imageModel->itemFromIndex(currentIndex);
+        const GPSItemContainer* const gpsItem = imageModel->itemFromIndex(currentIndex);
 
         if (!gpsItem)
         {
