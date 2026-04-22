@@ -168,9 +168,9 @@ QString TooltipCreator::createEntries(const RulesList& data)
 {
     QString result;
 
-    for (Rule* const t : std::as_const(data))
+    for (const Rule* const t : std::as_const(data))
     {
-        for (Token* const token : std::as_const(t->tokens()))
+        for (const Token* const token : std::as_const(t->tokens()))
         {
             // cppcheck-suppress useStlAlgorithm
             result += QString::fromUtf8("<tr>"

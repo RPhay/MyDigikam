@@ -232,7 +232,7 @@ QString Parser::parse(ParseSettings& settings)
 
     // remove invalid modifiers from the new name
 
-    for (Rule* const mod : std::as_const(d->modifiers))
+    for (const Rule* const mod : std::as_const(d->modifiers))
     {
         newName.remove(mod->regExp());
     }
@@ -296,7 +296,7 @@ ParseResults Parser::applyModifiers(const ParseSettings& _settings, ParseResults
 
     QMap<ParseResults::ResultsKey, Rule*> modifierMap;
 
-    for (Rule* const modifier : std::as_const(d->modifiers))
+    for (Rule* const modifier : std::as_const(d->modifiers))              // cppcheck-suppress constVariablePointer
     {
         QRegularExpression regExp = modifier->regExp();
         int pos                   = 0;

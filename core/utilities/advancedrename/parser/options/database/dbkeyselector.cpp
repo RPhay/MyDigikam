@@ -123,7 +123,7 @@ QStringList DbKeySelector::checkedKeysList()
 
     while (*it)
     {
-        DbKeySelectorItem* const item = dynamic_cast<DbKeySelectorItem*>(*it);
+        const DbKeySelectorItem* const item = dynamic_cast<DbKeySelectorItem*>(*it);
 
         if (item)
         {

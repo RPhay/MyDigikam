@@ -139,7 +139,7 @@ QPushButton* Rule::registerButton(QWidget* parent)
     {
         QMenu* const menu = new QMenu(button);
 
-        for (Token* const token : std::as_const(d->tokens))
+        for (const Token* const token : std::as_const(d->tokens))
         {
             actions << token->action();
         }
@@ -169,7 +169,7 @@ QAction* Rule::registerMenu(QMenu* parent)
         QMenu* const menu = new QMenu(parent);
         QList<QAction*> actions;
 
-        for (Token* const token : std::as_const(d->tokens))
+        for (const Token* const token : std::as_const(d->tokens))
         {
             actions << token->action();
         }
