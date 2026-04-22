@@ -88,7 +88,7 @@ QList<RegionFrameItem*> FaceGroup::items() const
 {
     QList<RegionFrameItem*> items;
 
-    for (FaceItem* const item : std::as_const(d->items))
+    for (FaceItem* const item : std::as_const(d->items))                  // cppcheck-suppress constVariablePointer
     {
         items << item;
     }
@@ -286,7 +286,7 @@ void FaceGroup::enterEvent(QEvent*)
 
 bool FaceGroup::hasUnconfirmed()
 {
-    for (FaceItem* const item : std::as_const(d->items))
+    for (const FaceItem* const item : std::as_const(d->items))
     {
         if (item->face().isUnconfirmedType())
         {
@@ -505,10 +505,10 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
 
 void FaceGroup::slotFocusRandomFace()
 {
-    for (FaceItem* const item : std::as_const(d->items))
+    for (const FaceItem* const item : std::as_const(d->items))
     {
-        FaceTagsIface face              = item->face();
-        AddTagsComboBox* const comboBox = item->widget()->comboBox();
+        FaceTagsIface face                    = item->face();
+        const AddTagsComboBox* const comboBox = item->widget()->comboBox();
 
         if ((comboBox) && (!face.isConfirmedName()))
         {
@@ -686,7 +686,7 @@ void FaceGroup::applyItemGeometryChanges()
         return;
     }
 
-    for (FaceItem* const item : std::as_const(d->items))
+    for (const FaceItem* const item : std::as_const(d->items))
     {
         if (item->face().isNull())
         {

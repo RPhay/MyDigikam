@@ -43,7 +43,7 @@ void AssignNameWidget::setAlbumModels(TagModel* const model,
 {
     // Restrict the tag properties filter model to people if configured.
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (settings)
     {

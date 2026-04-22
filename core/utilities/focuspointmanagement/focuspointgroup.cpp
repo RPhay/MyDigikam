@@ -87,7 +87,7 @@ QList<RegionFrameItem*> FocusPointGroup::items() const
 {
     QList<RegionFrameItem*> items;
 
-    for (FocusPointItem* const item : std::as_const(d->items))
+    for (FocusPointItem* const item : std::as_const(d->items))          // cppcheck-suppress constVariablePointer
     {
         items << item;
     }

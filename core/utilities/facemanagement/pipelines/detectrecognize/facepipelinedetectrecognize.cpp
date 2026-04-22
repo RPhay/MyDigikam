@@ -678,14 +678,14 @@ bool FacePipelineDetectRecognize::writer()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    IdentityProvider* const    idProvider          = IdentityProvider::instance();
-    FaceUtils                  utils;
-    ThumbnailLoadThread* const thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
-    const QList<AlbumRootInfo> roots               = CoreDbAccess().db()->getAlbumRoots();
+    const IdentityProvider* const idProvider          = IdentityProvider::instance();
+    FaceUtils                     utils;
+    ThumbnailLoadThread* const    thumbnailLoadThread = ThumbnailLoadThread::defaultThread();
+    const QList<AlbumRootInfo>    roots               = CoreDbAccess().db()->getAlbumRoots();
     Q_UNUSED(roots);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package                                        = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                                           = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop

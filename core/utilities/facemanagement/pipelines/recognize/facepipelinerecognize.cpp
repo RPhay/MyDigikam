@@ -269,10 +269,10 @@ bool FacePipelineRecognize::writer()
      */
 
     FaceUtils utils;
-    IdentityProvider* const idProvider = IdentityProvider::instance();
+    const IdentityProvider* const idProvider = IdentityProvider::instance();
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Writer, thisQueue);
-    package                            = static_cast<FacePipelinePackageBase*>(mlpackage);
+    package                                  = static_cast<FacePipelinePackageBase*>(mlpackage);
 
     /* =========================================================================================
      * Start pipeline stage specific loop
