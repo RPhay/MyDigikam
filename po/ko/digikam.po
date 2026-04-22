@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-21 00:42+0000\n"
+"POT-Creation-Date: 2026-04-22 00:42+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -897,12 +897,12 @@ msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "기존 대기열에 추가"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:283
-#: core/app/items/utils/itemcategorydrawer.cpp:290
-#: core/app/items/utils/itemcategorydrawer.cpp:299
-#: core/app/items/utils/itemcategorydrawer.cpp:308
-#: core/app/items/utils/itemcategorydrawer.cpp:393
-#: core/app/items/utils/itemcategorydrawer.cpp:411
+#: core/app/items/utils/itemcategorydrawer.cpp:285
+#: core/app/items/utils/itemcategorydrawer.cpp:292
+#: core/app/items/utils/itemcategorydrawer.cpp:301
+#: core/app/items/utils/itemcategorydrawer.cpp:310
+#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:413
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -911,28 +911,28 @@ msgid "1 Item"
 msgid_plural "%1 Items"
 msgstr[0] "항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:297
-#: core/app/items/utils/itemcategorydrawer.cpp:306
+#: core/app/items/utils/itemcategorydrawer.cpp:299
+#: core/app/items/utils/itemcategorydrawer.cpp:308
 #, fuzzy, kde-format
 #| msgid "Invalid signature"
 msgid "Invalid date"
 msgstr "서명 잘못됨"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:337
+#: core/app/items/utils/itemcategorydrawer.cpp:339
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "앨범 날짜: %4 %3 %2 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:364
+#: core/app/items/utils/itemcategorydrawer.cpp:366
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2, 하위 태그 %1개 포함"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:368
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -941,25 +941,25 @@ msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:375
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:385
+#: core/app/items/utils/itemcategorydrawer.cpp:387
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "키워드 검색 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:389
+#: core/app/items/utils/itemcategorydrawer.cpp:391
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "고급 검색 - 항목 %1개"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:403
+#: core/app/items/utils/itemcategorydrawer.cpp:405
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -27978,7 +27978,7 @@ msgid ""
 msgstr "<b>%1</b> 파일을 삭제하지 못했습니다. 계속 진행하시겠습니까?"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:285
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:143
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title:window"
@@ -27993,7 +27993,7 @@ msgid "Rename Album Root (%1)"
 msgstr "앨범이 가득 찼습니다."
 
 #: core/libs/album/engine/albummodificationhelper.cpp:292
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
 #, kde-format
 msgid "Enter new album name:"
 msgstr ""
@@ -28006,7 +28006,7 @@ msgstr "RAW 그림"
 #: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:74
 #, fuzzy, kde-format
 msgid "Searches"
 msgstr "찾기:"
@@ -29766,7 +29766,7 @@ msgid "Move Files"
 msgstr "파일 이동"
 
 #: core/libs/database/utils/ifaces/dio.cpp:955
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:60
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
@@ -60270,7 +60270,7 @@ msgid "Show Non-Geolocated Items"
 msgstr "선택 반전"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:111
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
@@ -60279,7 +60279,7 @@ msgid ""
 msgstr ""
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:115
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
 msgctxt "@title:window"
@@ -61812,13 +61812,13 @@ msgid ""
 "<br><br>https://www.digikam.org/support/contact/"
 msgstr ""
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:62
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:64
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr "%1 - 카메라 폴더 선택"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:81
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Please select the camera folder where you want to upload the images.</"
@@ -64128,41 +64128,41 @@ msgstr ""
 msgid "&Queues"
 msgstr "대기열(&Q)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:156
+#: core/utilities/queuemanager/manager/actiontask.cpp:158
 #, fuzzy, kde-format
 #| msgid "Failed to create file..."
 msgid "Failed to find tool..."
 msgstr "파일을 만들지 못했습니다..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:261
+#: core/utilities/queuemanager/manager/actiontask.cpp:263
 #, kde-format
 msgid "(overwritten)"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:266
+#: core/utilities/queuemanager/manager/actiontask.cpp:268
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(%1(으)로 이름 바뀜)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:271
+#: core/utilities/queuemanager/manager/actiontask.cpp:273
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:296
+#: core/utilities/queuemanager/manager/actiontask.cpp:298
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr ""
 "\"%1\"\n"
 "그림을 표시할 수 없습니다"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:305
+#: core/utilities/queuemanager/manager/actiontask.cpp:307
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:310
-#: core/utilities/queuemanager/manager/actiontask.cpp:315
+#: core/utilities/queuemanager/manager/actiontask.cpp:312
+#: core/utilities/queuemanager/manager/actiontask.cpp:317
 #, kde-format
 msgid "Failed to create file..."
 msgstr "파일을 만들지 못했습니다..."
@@ -64538,40 +64538,40 @@ msgid ""
 "version of a tool."
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:281
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, fuzzy, kde-format
 #| msgid "Add to Current Queue"
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "현재 대기열에 추가"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:282
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:283
+#: core/utilities/queuemanager/views/workflowlist.cpp:284
 #, fuzzy, kde-format
 #| msgid "Workflow"
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "작업 흐름"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:284
+#: core/utilities/queuemanager/views/workflowlist.cpp:285
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "삭제"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:336
+#: core/utilities/queuemanager/views/workflowlist.cpp:337
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "삭제"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:337
+#: core/utilities/queuemanager/views/workflowlist.cpp:338
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete %1 item permanently?"
 #| msgid_plural "Are you sure you want to delete %1 items permanently?"
@@ -64579,7 +64579,7 @@ msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "항목 %1개를 영구적으로 삭제하시겠습니까?"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:59
 #, kde-format
 msgid "Rename..."
 msgstr "이름 바꾸기..."
@@ -65583,13 +65583,13 @@ msgstr "시간"
 msgid "days"
 msgstr "일"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:56
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "새로 만들기..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:57
+#: core/utilities/searchwindow/searchfolderview.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "&Copy to..."
@@ -65597,7 +65597,7 @@ msgctxt "Copy as new search"
 msgid "Copy..."
 msgstr "다음으로 복사(&C)..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:58
+#: core/utilities/searchwindow/searchfolderview.cpp:60
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."
@@ -65673,14 +65673,14 @@ msgstr "그룹 삭제"
 msgid "Hide Options"
 msgstr "캡션:"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:73
 #, fuzzy, kde-format
 #| msgid "Delete Search?"
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "검색을 삭제하시겠습니까?"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr ""

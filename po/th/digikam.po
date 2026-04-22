@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-21 00:42+0000\n"
+"POT-Creation-Date: 2026-04-22 00:42+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -955,12 +955,12 @@ msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "เพิ่มเข้าไปยังคิวที่มีอยู่แล้ว"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:283
-#: core/app/items/utils/itemcategorydrawer.cpp:290
-#: core/app/items/utils/itemcategorydrawer.cpp:299
-#: core/app/items/utils/itemcategorydrawer.cpp:308
-#: core/app/items/utils/itemcategorydrawer.cpp:393
-#: core/app/items/utils/itemcategorydrawer.cpp:411
+#: core/app/items/utils/itemcategorydrawer.cpp:285
+#: core/app/items/utils/itemcategorydrawer.cpp:292
+#: core/app/items/utils/itemcategorydrawer.cpp:301
+#: core/app/items/utils/itemcategorydrawer.cpp:310
+#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:413
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -969,28 +969,28 @@ msgid "1 Item"
 msgid_plural "%1 Items"
 msgstr[0] "%1 รายการ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:297
-#: core/app/items/utils/itemcategorydrawer.cpp:306
+#: core/app/items/utils/itemcategorydrawer.cpp:299
+#: core/app/items/utils/itemcategorydrawer.cpp:308
 #, fuzzy, kde-format
 #| msgid "Invalid Profile"
 msgid "Invalid date"
 msgstr "โพรไฟล์ไม่ถูกต้อง"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:337
+#: core/app/items/utils/itemcategorydrawer.cpp:339
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
 msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "วันที่ของอัลบั้ม: %1 %2 %3 - %4 รายการ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:364
+#: core/app/items/utils/itemcategorydrawer.cpp:366
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
 msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2 รวมถึงป้ายกำกับย่อย %1 ป้าย"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:368
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -999,25 +999,25 @@ msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - %1 รายการ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:375
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - %1 รายการ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:385
+#: core/app/items/utils/itemcategorydrawer.cpp:387
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "การค้นหาคำสำคัญ - %1 รายการ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:389
+#: core/app/items/utils/itemcategorydrawer.cpp:391
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "การค้นหาอย่างละเอียด - %1 รายการ"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:403
+#: core/app/items/utils/itemcategorydrawer.cpp:405
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -27506,7 +27506,7 @@ msgid ""
 msgstr "คลังภาพนี้ไม่มีให้เลือกใช้งานแล้วในปัจจุบัน"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:285
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:143
 #, fuzzy, kde-format
 #| msgid "Rename Album (%1)"
 msgctxt "@title:window"
@@ -27521,7 +27521,7 @@ msgid "Rename Album Root (%1)"
 msgstr "เปลี่ยนชื่ออัลบั้ม (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:292
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
 #, kde-format
 msgid "Enter new album name:"
 msgstr "ป้อนชื่ออัลบั้มใหม่:"
@@ -27534,7 +27534,7 @@ msgstr "ตรวจค้นอัลบั้ม"
 #: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:74
 #, kde-format
 msgid "Searches"
 msgstr "การค้นหา"
@@ -29488,7 +29488,7 @@ msgid "Move Files"
 msgstr "แฟ้มภาพยนตร์"
 
 #: core/libs/database/utils/ifaces/dio.cpp:955
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:60
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
@@ -60034,7 +60034,7 @@ msgid "Show Non-Geolocated Items"
 msgstr "ค้นหาภาพซ้ำ"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:111
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
@@ -60045,7 +60045,7 @@ msgstr ""
 "โปรดตั้งชื่อการค้นหาใหม่:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:115
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, fuzzy, kde-format
 #| msgid "Name exists"
@@ -61685,13 +61685,13 @@ msgstr ""
 "libgphoto2 ใด ๆ ทั้งสิ้น<br/><br/>หากต้องการแจ้งรายงานปัญหาของไดรเวอร์นี้ ติดต่อทีมพัฒนา "
 "digiKam ได้ที่:<br/><br/>http://www.digikam.org/?q=contact"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:62
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:64
 #, fuzzy, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr "%1 - เลือกโฟลเดอร์ของกล้อง"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:81
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>Please select the camera folder where you want to upload the images.</"
@@ -64024,38 +64024,38 @@ msgstr "คิวประมวลผลกลุ่มภาพเสร็จ
 msgid "&Queues"
 msgstr "คิ&ว"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:156
+#: core/utilities/queuemanager/manager/actiontask.cpp:158
 #, fuzzy, kde-format
 msgid "Failed to find tool..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:261
+#: core/utilities/queuemanager/manager/actiontask.cpp:263
 #, fuzzy, kde-format
 msgid "(overwritten)"
 msgstr "เขียนทับ"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:266
+#: core/utilities/queuemanager/manager/actiontask.cpp:268
 #, fuzzy, kde-format
 msgid "(renamed to %1)"
 msgstr "รายการถูกเปลี่ยนชื่อเป็น %1..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:271
+#: core/utilities/queuemanager/manager/actiontask.cpp:273
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr ""
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:296
+#: core/utilities/queuemanager/manager/actiontask.cpp:298
 #, fuzzy, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:305
+#: core/utilities/queuemanager/manager/actiontask.cpp:307
 #, fuzzy, kde-format
 msgid "Item processed successfully %1"
 msgstr "รายการถูกประมวลผลเสร็จเรียบร้อยแล้ว..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:310
-#: core/utilities/queuemanager/manager/actiontask.cpp:315
+#: core/utilities/queuemanager/manager/actiontask.cpp:312
+#: core/utilities/queuemanager/manager/actiontask.cpp:317
 #, fuzzy, kde-format
 msgid "Failed to create file..."
 msgstr "ล้มเหลวในการบันทึกรายการ..."
@@ -64447,43 +64447,43 @@ msgid ""
 "version of a tool."
 msgstr ""
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:281
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "เพิ่มเข้าไปยังคิวปัจจุบัน"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:282
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:283
+#: core/utilities/queuemanager/views/workflowlist.cpp:284
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:284
+#: core/utilities/queuemanager/views/workflowlist.cpp:285
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "ลบทั้งหมด"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:336
+#: core/utilities/queuemanager/views/workflowlist.cpp:337
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "ลบทั้งหมด"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:337
+#: core/utilities/queuemanager/views/workflowlist.cpp:338
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "คุณแน่ใจหรือว่า ต้องการจะลบการค้นหา \"%1\" ที่เลือกไว้นี้ ?"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:59
 #, kde-format
 msgid "Rename..."
 msgstr "เปลี่ยนชื่อ..."
@@ -65507,20 +65507,20 @@ msgstr ""
 msgid "days"
 msgstr "วันหยุดพักผ่อน"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:56
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "สร้างใหม่..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:57
+#: core/utilities/searchwindow/searchfolderview.cpp:59
 #, fuzzy, kde-format
 #| msgid "New Tag..."
 msgctxt "Copy as new search"
 msgid "Copy..."
 msgstr "สร้างป้ายกำกับใหม่..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:58
+#: core/utilities/searchwindow/searchfolderview.cpp:60
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."
@@ -65594,14 +65594,14 @@ msgstr "ลบกลุ่ม"
 msgid "Hide Options"
 msgstr "ซ่อนตัวเลือกต่าง ๆ <<"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:73
 #, fuzzy, kde-format
 #| msgid "Delete Search?"
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "ลบการค้นหา ?"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr "คุณแน่ใจหรือว่า ต้องการจะลบการค้นหา \"%1\" ที่เลือกไว้นี้ ?"

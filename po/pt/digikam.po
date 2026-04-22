@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-21 00:42+0000\n"
+"POT-Creation-Date: 2026-04-22 00:42+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -1059,12 +1059,12 @@ msgctxt "@action: context menu"
 msgid "Add to Existing Queue"
 msgstr "Adicionar à Fila Existente"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:283
-#: core/app/items/utils/itemcategorydrawer.cpp:290
-#: core/app/items/utils/itemcategorydrawer.cpp:299
-#: core/app/items/utils/itemcategorydrawer.cpp:308
-#: core/app/items/utils/itemcategorydrawer.cpp:393
-#: core/app/items/utils/itemcategorydrawer.cpp:411
+#: core/app/items/utils/itemcategorydrawer.cpp:285
+#: core/app/items/utils/itemcategorydrawer.cpp:292
+#: core/app/items/utils/itemcategorydrawer.cpp:301
+#: core/app/items/utils/itemcategorydrawer.cpp:310
+#: core/app/items/utils/itemcategorydrawer.cpp:395
+#: core/app/items/utils/itemcategorydrawer.cpp:413
 #: core/utilities/import/items/importcategorydrawer.cpp:200
 #: core/utilities/import/items/importcategorydrawer.cpp:221
 #: core/utilities/import/items/importcategorydrawer.cpp:230
@@ -1074,14 +1074,14 @@ msgid_plural "%1 Items"
 msgstr[0] "1 Item"
 msgstr[1] "%1 Itens"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:297
-#: core/app/items/utils/itemcategorydrawer.cpp:306
+#: core/app/items/utils/itemcategorydrawer.cpp:299
+#: core/app/items/utils/itemcategorydrawer.cpp:308
 #, fuzzy, kde-format
 #| msgid "Invalid signature"
 msgid "Invalid date"
 msgstr "A assinatura é inválida"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:337
+#: core/app/items/utils/itemcategorydrawer.cpp:339
 #, kde-format
 msgctxt "%1: day of month with two digits, %2: short month name, %3: year"
 msgid "Album Date: %2 %3 %4 - 1 Item"
@@ -1089,7 +1089,7 @@ msgid_plural "Album Date: %2 %3 %4 - %1 Items"
 msgstr[0] "Data do Álbum: %2 %3 %4 - 1 Item"
 msgstr[1] "Data do Álbum: %2 %3 %4 - %1 Itens"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:364
+#: core/app/items/utils/itemcategorydrawer.cpp:366
 #, kde-format
 msgctxt "%2: a tag title; %3: number of subtags"
 msgid "%2 including 1 subtag"
@@ -1097,7 +1097,7 @@ msgid_plural "%2 including %1 subtags"
 msgstr[0] "%2 que inclui %1 sub-marca"
 msgstr[1] "%2 que inclui %1 sub-marcas"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:368
+#: core/app/items/utils/itemcategorydrawer.cpp:370
 #, kde-format
 msgctxt ""
 "%2: the previous string (e.g. 'Foo including 7 subtags'); %1: number of "
@@ -1107,28 +1107,28 @@ msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 1 Item"
 msgstr[1] "%2 - %1 Itens"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:373
+#: core/app/items/utils/itemcategorydrawer.cpp:375
 #, kde-format
 msgid "%2 - 1 Item"
 msgid_plural "%2 - %1 Items"
 msgstr[0] "%2 - 1 Item"
 msgstr[1] "%2 - %1 Itens"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:385
+#: core/app/items/utils/itemcategorydrawer.cpp:387
 #, kde-format
 msgid "Keyword Search - 1 Item"
 msgid_plural "Keyword Search - %1 Items"
 msgstr[0] "Procura por Palavras-Chave - 1 Item"
 msgstr[1] "Procura por Palavras-Chave - %1 Itens"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:389
+#: core/app/items/utils/itemcategorydrawer.cpp:391
 #, kde-format
 msgid "Advanced Search - 1 Item"
 msgid_plural "Advanced Search - %1 Items"
 msgstr[0] "Procura Avançada - 1 Item"
 msgstr[1] "Procura Avançada - %1 Itens"
 
-#: core/app/items/utils/itemcategorydrawer.cpp:403
+#: core/app/items/utils/itemcategorydrawer.cpp:405
 #, kde-format
 msgctxt "Month String - Year String"
 msgid "%1 %2"
@@ -28160,7 +28160,7 @@ msgstr ""
 "<p>O álbum que deseja remover não está vazio.</p><p>Deseja continuar?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:285
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:141
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:143
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Album (%1)"
@@ -28173,7 +28173,7 @@ msgid "Rename Album Root (%1)"
 msgstr "Mudar o Nome do Álbum de Topo (%1)"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:292
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:142
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:144
 #, kde-format
 msgid "Enter new album name:"
 msgstr "Indique o novo nome do álbum:"
@@ -28186,7 +28186,7 @@ msgstr "A analisar os álbuns"
 #: core/libs/album/manager/albummanager.cpp:184
 #: core/libs/album/widgets/albumselecttabs.cpp:181
 #: core/libs/models/albummodel_search.cpp:25
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:72
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:74
 #, kde-format
 msgid "Searches"
 msgstr "Pesquisas"
@@ -30163,7 +30163,7 @@ msgid "Move Files"
 msgstr "Mover os Ficheiros"
 
 #: core/libs/database/utils/ifaces/dio.cpp:955
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:58
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:60
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:435
 #, kde-format
 msgid "Delete"
@@ -60464,7 +60464,7 @@ msgid "Show Non-Geolocated Items"
 msgstr "Mostrar os Itens Não Geo-Referenciados"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:526
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:109
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:111
 #: core/utilities/searchwindow/searchtabheader.cpp:585
 #, kde-format
 msgid ""
@@ -60475,7 +60475,7 @@ msgstr ""
 "Por favor escolha outro nome:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:113
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:115
 #: core/utilities/searchwindow/searchtabheader.cpp:589
 #, kde-format
 msgctxt "@title:window"
@@ -62091,13 +62091,13 @@ msgstr ""
 "\n"
 "https://www.digikam.org/?q=contact"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:62
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:64
 #, kde-format
 msgctxt "@title:window %1: name of the camera"
 msgid "%1 - Select Camera Folder"
 msgstr "%1 - Seleccione a Pasta da Máquina"
 
-#: core/utilities/import/dialogs/camerafolderdialog.cpp:81
+#: core/utilities/import/dialogs/camerafolderdialog.cpp:83
 #, kde-format
 msgctxt "@info"
 msgid "Please select the camera folder where you want to upload the images."
@@ -64523,38 +64523,38 @@ msgstr "Todas as filas de tarefas terminadas"
 msgid "&Queues"
 msgstr "&Filas"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:156
+#: core/utilities/queuemanager/manager/actiontask.cpp:158
 #, kde-format
 msgid "Failed to find tool..."
 msgstr "Não foi possível encontrar a ferramenta..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:261
+#: core/utilities/queuemanager/manager/actiontask.cpp:263
 #, kde-format
 msgid "(overwritten)"
 msgstr "(sobreposto)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:266
+#: core/utilities/queuemanager/manager/actiontask.cpp:268
 #, kde-format
 msgid "(renamed to %1)"
 msgstr "(nome mudado para %1)"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:271
+#: core/utilities/queuemanager/manager/actiontask.cpp:273
 #, kde-format
 msgid "Item exists and was skipped"
 msgstr "O item existe e foi ignorado"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:296
+#: core/utilities/queuemanager/manager/actiontask.cpp:298
 #, kde-format
 msgid "Failed to create sidecar file..."
 msgstr "Não foi possível criar o ficheiro acessório..."
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:305
+#: core/utilities/queuemanager/manager/actiontask.cpp:307
 #, kde-format
 msgid "Item processed successfully %1"
 msgstr "O item foi processado com sucesso %1"
 
-#: core/utilities/queuemanager/manager/actiontask.cpp:310
-#: core/utilities/queuemanager/manager/actiontask.cpp:315
+#: core/utilities/queuemanager/manager/actiontask.cpp:312
+#: core/utilities/queuemanager/manager/actiontask.cpp:317
 #, kde-format
 msgid "Failed to create file..."
 msgstr "Não foi possível criar o ficheiro..."
@@ -64932,43 +64932,43 @@ msgstr ""
 "Alguns fluxogramas não podem ser carregados a partir do seu ficheiro de "
 "configuração, devido a uma versão incompatível de uma das ferramentas."
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:281
+#: core/utilities/queuemanager/views/workflowlist.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "Assign Workflow to current queue"
 msgstr "Atribuir o fluxograma à fila actual"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:282
+#: core/utilities/queuemanager/views/workflowlist.cpp:283
 #, kde-format
 msgctxt "@action"
 msgid "Edit Workflow"
 msgstr "Editar o Fluxograma"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:283
+#: core/utilities/queuemanager/views/workflowlist.cpp:284
 #, kde-format
 msgctxt "@action"
 msgid "Update Workflow"
 msgstr "Actualizar o Fluxograma"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:284
+#: core/utilities/queuemanager/views/workflowlist.cpp:285
 #, kde-format
 msgctxt "@action"
 msgid "Delete Workflow"
 msgstr "Apagar o Fluxograma"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:336
+#: core/utilities/queuemanager/views/workflowlist.cpp:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Workflow?"
 msgstr "Remover o Fluxograma?"
 
-#: core/utilities/queuemanager/views/workflowlist.cpp:337
+#: core/utilities/queuemanager/views/workflowlist.cpp:338
 #, kde-format
 msgctxt "@info"
 msgid "Are you sure you want to delete the selected workflow \"%1\"?"
 msgstr "Tem a certeza que deseja remover o fluxograma seleccionado \"%1\"?"
 
-#: core/utilities/searchwindow/editablesearchtreeview.cpp:57
+#: core/utilities/searchwindow/editablesearchtreeview.cpp:59
 #, kde-format
 msgid "Rename..."
 msgstr "Mudar o Nome..."
@@ -65931,13 +65931,13 @@ msgstr "horas"
 msgid "days"
 msgstr "dias"
 
-#: core/utilities/searchwindow/searchfolderview.cpp:56
+#: core/utilities/searchwindow/searchfolderview.cpp:58
 #, kde-format
 msgctxt "Create new search"
 msgid "New..."
 msgstr "Nova..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:57
+#: core/utilities/searchwindow/searchfolderview.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "&Copy to..."
@@ -65945,7 +65945,7 @@ msgctxt "Copy as new search"
 msgid "Copy..."
 msgstr "&Copiar para..."
 
-#: core/utilities/searchwindow/searchfolderview.cpp:58
+#: core/utilities/searchwindow/searchfolderview.cpp:60
 #, kde-format
 msgctxt "Edit selected search"
 msgid "Edit..."
@@ -66025,13 +66025,13 @@ msgstr "Remover o Grupo"
 msgid "Hide Options"
 msgstr "Esconder as Opções"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:71
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Search?"
 msgstr "Remover a Pesquisa?"
 
-#: core/utilities/searchwindow/searchmodificationhelper.cpp:72
+#: core/utilities/searchwindow/searchmodificationhelper.cpp:74
 #, kde-format
 msgid "Are you sure you want to delete the selected search \"%1\"?"
 msgstr "Tem a certeza que deseja remover a pesquisa seleccionada \"%1\"?"
