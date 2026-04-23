@@ -173,7 +173,7 @@ ShowfotoDelegate* ShowfotoCategorizedView::showfotoDelegate() const
 void ShowfotoCategorizedView::setItemDelegate(ShowfotoDelegate* delegate)
 {
     ThumbnailSize oldSize               = thumbnailSize();
-    ShowfotoDelegate* const oldDelegate = d->delegate;
+    const ShowfotoDelegate* const oldDelegate = d->delegate;
 
     if (oldDelegate)
     {

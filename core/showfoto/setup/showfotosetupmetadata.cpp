@@ -54,6 +54,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox*         exifRotateBox            = nullptr;
     QCheckBox*         exifSetOrientationBox    = nullptr;
 
@@ -194,7 +196,7 @@ void ShowfotoSetupMetadata::applySettings()
 
 void ShowfotoSetupMetadata::readSettings()
 {
-    MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
+    const MetaEngineSettings* const mSettings = MetaEngineSettings::instance();
 
     if (!mSettings)
     {

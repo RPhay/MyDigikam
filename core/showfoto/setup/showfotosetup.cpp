@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     DConfigDlgWdgItem*            page_editorIface  = nullptr;
     DConfigDlgWdgItem*            page_metadata     = nullptr;
     DConfigDlgWdgItem*            page_tooltip      = nullptr;
@@ -346,7 +348,7 @@ void ShowfotoSetup::showPage(ShowfotoSetup::Page page)
 
 ShowfotoSetup::Page ShowfotoSetup::activePageIndex()
 {
-    DConfigDlgWdgItem* const cur = currentPage();
+    const DConfigDlgWdgItem* const cur = currentPage();
 
     if (cur == d->page_tooltip)
     {

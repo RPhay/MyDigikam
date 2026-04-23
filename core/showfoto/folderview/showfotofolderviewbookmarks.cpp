@@ -291,7 +291,7 @@ void ShowfotoFolderViewBookmarks::slotBookmarkSelectionChanged()
 
 void ShowfotoFolderViewBookmarks::slotBookmarkActivated(QTreeWidgetItem* item)
 {
-    ShowfotoFolderViewBookmarkItem* const bitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
+    const ShowfotoFolderViewBookmarkItem* const bitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(item);
 
     if (bitem)
     {

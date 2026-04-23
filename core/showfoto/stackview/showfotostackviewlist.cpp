@@ -172,7 +172,7 @@ void ShowfotoStackViewList::slotItemsListChanged()
 void ShowfotoStackViewList::slotItemsRemoved(const QList<ShowfotoItemInfo>& items)
 {
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* sitem = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;          // cppcheck-suppress constVariablePointer
     QList<ShowfotoStackViewItem*> list;
 
     while (*iter)
@@ -197,7 +197,7 @@ void ShowfotoStackViewList::slotItemsSelected(const QList<ShowfotoItemInfo>& ite
 {
     blockSignals(true);
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* sitem = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;          // cppcheck-suppress constVariablePointer
 
     while (*iter)
     {
@@ -219,7 +219,7 @@ void ShowfotoStackViewList::slotItemsDeselected(const QList<ShowfotoItemInfo>& i
     blockSignals(true);
 
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* sitem = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;          // cppcheck-suppress constVariablePointer
 
     while (*iter)
     {
@@ -259,7 +259,7 @@ void ShowfotoStackViewList::slotItemActivated(QTreeWidgetItem* item)
 void ShowfotoStackViewList::slotItemThumbnail(const ShowfotoItemInfo& info, const QPixmap& pix)
 {
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* sitem = nullptr;
+    ShowfotoStackViewItem* sitem = nullptr;              // cppcheck-suppress constVariablePointer
 
     while (*iter)
     {
@@ -567,7 +567,7 @@ void ShowfotoStackViewList::leaveEvent(QEvent* e)
 QList<QUrl> ShowfotoStackViewList::urls()
 {
     QTreeWidgetItemIterator iter(this);
-    ShowfotoStackViewItem* sitem = nullptr;
+    const ShowfotoStackViewItem* sitem = nullptr;
     QList<QUrl> list;
 
     while (*iter)
@@ -587,7 +587,7 @@ QList<QUrl> ShowfotoStackViewList::urls()
 
 QUrl ShowfotoStackViewList::currentUrl() const
 {
-    ShowfotoStackViewItem* sitem = dynamic_cast<ShowfotoStackViewItem*>(currentItem());
+    const ShowfotoStackViewItem* sitem = dynamic_cast<ShowfotoStackViewItem*>(currentItem());
 
     if (sitem)
     {

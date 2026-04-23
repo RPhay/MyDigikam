@@ -30,8 +30,9 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QTextStream>
+
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    #include <QTextCodec>
+#   include <QTextCodec>
 #endif
 
 // KDE includes
@@ -462,7 +463,7 @@ void ShowfotoStackViewFavorites::slotItemSelectionChanged()
 
     if (item)
     {
-        ShowfotoStackViewFavoriteItem* const fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
+        const ShowfotoStackViewFavoriteItem* const fitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
         if (fitem && (fitem->favoriteType() != ShowfotoStackViewFavoriteItem::FavoriteRoot))
         {
@@ -476,7 +477,7 @@ void ShowfotoStackViewFavorites::slotItemSelectionChanged()
 
 void ShowfotoStackViewFavorites::slotFavoriteActivated(QTreeWidgetItem* item)
 {
-    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
+    const ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(item);
 
     if (fvitem && (fvitem->favoriteType() == ShowfotoStackViewFavoriteItem::FavoriteItem))
     {

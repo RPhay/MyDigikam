@@ -93,7 +93,7 @@ ShowfotoStackViewFavoriteList::~ShowfotoStackViewFavoriteList()
 
 void ShowfotoStackViewFavoriteList::slotOpenInFileManager()
 {
-    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(currentItem());
+    const ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(currentItem());
 
     if (fvitem)
     {
@@ -103,7 +103,7 @@ void ShowfotoStackViewFavoriteList::slotOpenInFileManager()
 
 void ShowfotoStackViewFavoriteList::slotLoadContents()
 {
-    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(currentItem());
+    const ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(currentItem());
 
     if (fvitem)
     {
@@ -113,12 +113,12 @@ void ShowfotoStackViewFavoriteList::slotLoadContents()
 
 void ShowfotoStackViewFavoriteList::slotContextMenu(const QPoint& pos)
 {
-    QMenu* const ctxmenu        = new QMenu(this);
+    QMenu* const ctxmenu                              = new QMenu(this);
     ctxmenu->setTitle(i18nc("@title", "Favorites"));
     ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFavorite")));
     ctxmenu->addAction(d->parent->toolBarAction(QLatin1String("AddFolder")));
 
-    ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(pos));
+    const ShowfotoStackViewFavoriteItem* const fvitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itemAt(pos));
 
     if (fvitem)
     {
@@ -237,7 +237,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 {
     if (e->source() == this)
     {
-        ShowfotoStackViewFavoriteItem* const src = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->draggedItem);
+        const ShowfotoStackViewFavoriteItem* const src = dynamic_cast<ShowfotoStackViewFavoriteItem*>(d->draggedItem);
 
         if (!src)
         {
@@ -261,7 +261,7 @@ void ShowfotoStackViewFavoriteList::dropEvent(QDropEvent* e)
 
         for (int i = 0 ; i < tgt->childCount() ; ++i)
         {
-            ShowfotoStackViewFavoriteItem* const chl = dynamic_cast<ShowfotoStackViewFavoriteItem*>(tgt->child(i));
+            const ShowfotoStackViewFavoriteItem* const chl = dynamic_cast<ShowfotoStackViewFavoriteItem*>(tgt->child(i));
 
             if (chl && (chl->name() == src->name()))
             {
@@ -322,7 +322,7 @@ QMimeData* ShowfotoStackViewFavoriteList::mimeData(const QList<QTreeWidgetItem*>
 
     for (QTreeWidgetItem* const itm : std::as_const(items))
     {
-        ShowfotoStackViewFavoriteItem* const vitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itm);
+        const ShowfotoStackViewFavoriteItem* const vitem = dynamic_cast<ShowfotoStackViewFavoriteItem*>(itm);
 
         if (vitem)
         {

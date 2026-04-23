@@ -177,7 +177,7 @@ void TagsCacheTest::testDuplicateTop()
 
 int TagsCacheTest::countTags()
 {
-    const auto coredb = Digikam::CoreDbAccess().db();
+    const auto coredb = Digikam::CoreDbAccess().db();                // cppcheck-suppress constVariablePointer
     auto tags         = coredb->getTagShortInfos();
 
     return tags.size();
@@ -194,7 +194,7 @@ void TagsCacheTest::dumpTables()
 
 void TagsCacheTest::dumpTags()
 {
-    const auto coredb = Digikam::CoreDbAccess().db();
+    const auto coredb = Digikam::CoreDbAccess().db();                // cppcheck-suppress constVariablePointer
     auto tags         = coredb->getTagShortInfos();
 
     for (auto it = tags.begin() ; it != tags.end() ; ++it)

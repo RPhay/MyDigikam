@@ -87,7 +87,7 @@ ShowfotoFolderViewBookmarkList::~ShowfotoFolderViewBookmarkList()
 void ShowfotoFolderViewBookmarkList::slotOpenInFileManager()
 {
     QList<QUrl> urls;
-    ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(currentItem());
+    const ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(currentItem());
 
     if (fvitem)
     {
@@ -99,7 +99,7 @@ void ShowfotoFolderViewBookmarkList::slotOpenInFileManager()
 
 void ShowfotoFolderViewBookmarkList::slotLoadContents()
 {
-    ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(currentItem());
+    const ShowfotoFolderViewBookmarkItem* const fvitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(currentItem());
 
     if (fvitem)
     {
@@ -250,7 +250,7 @@ QMimeData* ShowfotoFolderViewBookmarkList::mimeData(const QList<QTreeWidgetItem*
 
     for (QTreeWidgetItem* const itm : std::as_const(items))
     {
-        ShowfotoFolderViewBookmarkItem* const vitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itm);
+        const ShowfotoFolderViewBookmarkItem* const vitem = dynamic_cast<ShowfotoFolderViewBookmarkItem*>(itm);
 
         if (vitem)
         {

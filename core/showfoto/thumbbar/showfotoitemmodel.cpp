@@ -146,8 +146,8 @@ ShowfotoItemInfo ShowfotoItemModel::retrieveShowfotoItemInfo(const QModelIndex& 
         return ShowfotoItemInfo();
     }
 
-    ShowfotoItemModel* const model = index.data(ShowfotoItemModelPointerRole).value<ShowfotoItemModel*>();
-    int row                        = index.data(ShowfotoItemModelInternalId).toInt();
+    const ShowfotoItemModel* const model = index.data(ShowfotoItemModelPointerRole).value<ShowfotoItemModel*>();
+    int row                              = index.data(ShowfotoItemModelInternalId).toInt();
 
     if (!model)
     {

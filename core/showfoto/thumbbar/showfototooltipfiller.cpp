@@ -41,12 +41,12 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 {
     QString str;
 
-    ShowfotoSettings* const settings = ShowfotoSettings::instance();
+    const ShowfotoSettings* const settings = ShowfotoSettings::instance();
 
     DToolTipStyleSheet cnt(settings->getToolTipFont());
 
-    PhotoInfoContainer photoInfo     = info.photoInfo;
-    QString tip                      = cnt.tipHeader;
+    PhotoInfoContainer photoInfo           = info.photoInfo;
+    QString tip                            = cnt.tipHeader;
 
     // -- File properties ----------------------------------------------
 
