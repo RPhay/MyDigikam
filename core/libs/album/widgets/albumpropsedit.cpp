@@ -82,6 +82,8 @@ public:
 
     Private() = default;
 
+public:
+
     QDialogButtonBox* buttons       = nullptr;
 
     QLabel*           topLabel      = nullptr;
@@ -270,9 +272,6 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
         d->datePicker->setDate(album->date());
     }
 
-    d->titleEdit->selectAll();
-    d->titleEdit->setFocus();
-
     // -- slots connections -------------------------------------------
 
     connect(d->titleEdit, SIGNAL(textChanged()),
@@ -298,6 +297,12 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
+
+    // ---
+
+    adjustSize();
+    d->titleEdit->selectAll();
+    d->titleEdit->setFocus();
 }
 
 AlbumPropsEdit::~AlbumPropsEdit()

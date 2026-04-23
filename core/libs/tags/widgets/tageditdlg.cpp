@@ -264,11 +264,13 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
 
-    // --------------------------------------------------------
+    // ---
 
     slotTitleChanged(d->titleEdit->text());
-    d->titleEdit->setFocus();
+
     adjustSize();
+    d->titleEdit->selectAll();
+    d->titleEdit->setFocus();
 }
 
 TagEditDlg::~TagEditDlg()
