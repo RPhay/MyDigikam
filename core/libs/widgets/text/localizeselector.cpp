@@ -253,12 +253,12 @@ QStringList LocalizeSelectorList::languagesList() const
 
 void LocalizeSelectorList::slotShowContextMenu(const QPoint& pos)
 {
-    QPoint globalPos = d->trList->mapToGlobal(pos);
+    QPoint globalPos        = d->trList->mapToGlobal(pos);
 
     QMenu menu;
-    QAction* const rm = menu.addAction(i18nc("@action", "Remove this entry"));
-    QAction* const cl = menu.addAction(i18nc("@action", "Clear List"));
-    QAction* const ac = menu.exec(globalPos);
+    const QAction* const rm = menu.addAction(i18nc("@action", "Remove this entry"));
+    const QAction* const cl = menu.addAction(i18nc("@action", "Clear List"));
+    const QAction* const ac = menu.exec(globalPos);
 
     if      (ac == rm)
     {

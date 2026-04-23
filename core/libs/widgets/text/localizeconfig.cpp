@@ -365,14 +365,14 @@ void LocalizeConfig::applySettings()
 
 void LocalizeConfig::readSettings()
 {
-    LocalizeSettings* const config = LocalizeSettings::instance();
+    const LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    LocalizeContainer set          = config->settings();
+    LocalizeContainer set                = config->settings();
 
     QTreeWidgetItemIterator it(d->altLangList);
 

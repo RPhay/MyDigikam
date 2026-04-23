@@ -300,14 +300,14 @@ void SpellCheckConfig::applySettings()
 
 void SpellCheckConfig::readSettings()
 {
-    LocalizeSettings* const config = LocalizeSettings::instance();
+    const LocalizeSettings* const config = LocalizeSettings::instance();
 
     if (!config)
     {
         return;
     }
 
-    LocalizeContainer set          = config->settings();
+    LocalizeContainer set                = config->settings();
 
     d->activeSpellCheck->setChecked(set.enableSpellCheck);
     d->languageCB->setCurrentIndex(set.defaultLanguage.isEmpty() ? 0 : d->languageCB->findData(set.defaultLanguage));
