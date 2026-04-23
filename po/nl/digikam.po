@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:42+0000\n"
+"POT-Creation-Date: 2026-04-23 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 11:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -12414,13 +12414,13 @@ msgid "GPX file:"
 msgstr "GPX-bestand:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:261
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "GPS-uitwisselformaat (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:257
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
@@ -20624,7 +20624,7 @@ msgstr "Opnieuw toevoegen"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, kde-format
 msgid "Remove"
 msgstr "Verwijderen"
@@ -57817,52 +57817,52 @@ msgstr "Projectie"
 msgid "Export as..."
 msgstr "Exporteren als..."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:156
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:181
 #, kde-format
 msgid "Bookmark folder"
 msgstr "Bladwijzermap"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:191
 #, kde-format
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Het bestand is geen XBEL versie 1.0-bestand."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:306
 #, kde-format
 msgid "Unknown title"
 msgstr "Onbekende titel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Bladwijzer toevoegen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr ""
 "Typ een naam en commentaar voor de bladwijzer en kies waar het te bewaren."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
 msgid "Bookmark title"
 msgstr "Bladwijzertitel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:106
 #, kde-format
 msgid "Bookmark comment"
 msgstr "Bladwijzercommentaar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Bladwijzers voor geolocatie bewerken"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:225
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
@@ -57871,23 +57871,23 @@ msgstr "Bladwijzers voor geolocatie bewerken"
 msgid "&Remove"
 msgstr "&Verwijderen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #, kde-format
 msgid "Add Folder"
 msgstr "Map toevoegen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:431
 #, kde-format
 msgid "New Folder"
 msgstr "Nieuwe map"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:449
 #, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Bladwijzerbeheer"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -57903,42 +57903,42 @@ msgstr "Bladwijzer verwijderen"
 msgid "Insert Bookmark"
 msgstr "Bladwijzer invoegen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:134
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:136
 #, kde-format
 msgid "Title Change"
 msgstr "Titelwijziging"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:141
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:143
 #, kde-format
 msgid "Comment Change"
 msgstr "Wijziging in toelichting"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:148
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:150
 #, kde-format
 msgid "Address Change"
 msgstr "Wijziging van adres"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:325
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:327
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Title"
 msgstr "Titel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:330
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:332
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "Toelichting"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:812
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:947
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:814
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:949
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Bladwijzer wordt geladen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:813
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:948
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:815
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:950
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
@@ -57947,41 +57947,41 @@ msgstr ""
 "Fout bij laden van bladwijzers op regel %1, kolom %2:\n"
 "%3"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:934
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Bestand openen"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:938
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:965
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr "XBEL (*.xbel *.xml)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:955
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:957
 #, kde-format
 msgid "Imported %1"
 msgstr "Geïmporteerd %1"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Bestand opslaan"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:964
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bookmarks.xbel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
 msgstr "Bladwijzer exporteren"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, kde-format
 msgid "Error saving bookmarks"
 msgstr "Fout bij opslaan van bladwijzers"
@@ -58022,44 +58022,44 @@ msgstr ""
 "Schakel het lezen van aanhangsel-bestanden in de host-toepassing in of ga "
 "door op eigen risico."
 
-#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:206
+#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:208
 #, kde-format
 msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] "1 afbeelding verplaatst"
 msgstr[1] "%1 afbeeldingen verplaatst"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:130
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:132
 #, kde-format
 msgid "Load GPX files..."
 msgstr "GPX-bestand laden..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:137
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:139
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "Sporen op de kaart tonen"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:138
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "Stel deze optie in om sporen op de kaart tonen"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:142
 #, kde-format
 msgid "Only use selected images"
 msgstr "Alleen geselecteerd geselecteerde afbeeldingen gebruiken"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:141
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:143
 #, kde-format
 msgid "Set this option to correlate selected images only"
 msgstr "Activeer deze optie om alleen geselecteerde afbeeldingen te correleren"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:153
 #, kde-format
 msgid "Camera time zone:"
 msgstr "Tijdzone van de camera:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:154
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:156
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -58073,12 +58073,12 @@ msgstr ""
 "tellen oostwaarts vanaf lengtegraad 0 (GMT), ze zijn 'verder dan de tijd'.</"
 "p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr "Offset van afbeeldingen (uu:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
@@ -58087,23 +58087,23 @@ msgstr ""
 "Stell de offset tussen tijden van afbeelding in en volg tijden. Bijv. om "
 "verkeerde klok in de camera of andere tijdzone te corrigeren."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:172
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr "Stel in of de tijd van de afbeelding voor of achter de volgen tijd is."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:189
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:191
 #, kde-format
 msgid "Interpolate"
 msgstr "Interpoleren"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:201
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:192
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:203
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "Maximaal tijdgat (uu:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:194
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:196
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -58114,12 +58114,12 @@ msgstr ""
 "naar tijdgegevens van afbeeldingen. Als het tijdsverschil deze instelling "
 "overschrijdt, zal geen overeenkomst worden geprobeerd."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:200
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:202
 #, kde-format
 msgid "Match directly"
 msgstr "Direct overeen laten komen"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:205
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -58130,19 +58130,19 @@ msgstr ""
 "afbeeldingstijd om overeen te komen. Als het tijdsverschil deze instelling "
 "overschrijdt, dan wordt er geen overeenkomst geprobeerd."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:226
 #, kde-format
 msgid "Correlate"
 msgstr "Correleren"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:299
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:301
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "Het volgende GPX-bestand kon niet worden geladen:"
 msgstr[1] "De volgende %1 GPX-bestanden konden niet worden geladen:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:303
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:305
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
@@ -58150,18 +58150,18 @@ msgid_plural "Error Loading GPX Files"
 msgstr[0] "Fout bij laden van GPX-bestand"
 msgstr[1] "Fout bij laden van GPX-bestanden"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:408
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:410
 #, kde-format
 msgid "Correlating images -"
 msgstr "Correleren van afbeeldingen -"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:492
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Correleren is mislukt"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:491
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
@@ -58170,13 +58170,13 @@ msgstr ""
 "Kon geen enkele afbeelding correleren - controleer of de instellingen voor "
 "offset en tijdgat juist zijn."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:496
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:498
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "Correleren is gelukt"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:497
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -58186,13 +58186,13 @@ msgstr ""
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:505
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Correleren is geëindigd"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:509
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -58209,7 +58209,7 @@ msgstr[1] ""
 "offset en tijdgat als u denkt dat meer afbeeldingen gecorreleerd zouden "
 "moeten zijn."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:526
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
@@ -59225,7 +59225,7 @@ msgstr ""
 "De huidige afbeelding is gewijzigd.\n"
 "Wilt u de wijzigingen opslaan?"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:406
+#: core/utilities/imageeditor/editor/editortool.cpp:410
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -59983,7 +59983,7 @@ msgstr "Tag verwijderen"
 msgid "Assign Labels"
 msgstr "Labels toewijzen"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:191
+#: core/utilities/imageeditor/widgets/canvas.cpp:192
 #, kde-format
 msgid ""
 "Failed to load image\n"

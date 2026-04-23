@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:42+0000\n"
+"POT-Creation-Date: 2026-04-23 00:41+0000\n"
 "PO-Revision-Date: 2026-04-10 08:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -12176,13 +12176,13 @@ msgid "GPX file:"
 msgstr "GPX-skrá:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:261
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "GPS samskiptasnið (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:257
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
@@ -20307,7 +20307,7 @@ msgstr "Bæta við aftur"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, kde-format
 msgid "Remove"
 msgstr "Fjarlægja"
@@ -57228,29 +57228,29 @@ msgstr "Vörpun"
 msgid "Export as..."
 msgstr "Flytja út sem..."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:156
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:181
 #, kde-format
 msgid "Bookmark folder"
 msgstr "Bókamerkjamappa"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:191
 #, kde-format
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "Skráin er ekki gild XBEL-skrá af útgáfu 1.0."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:306
 #, kde-format
 msgid "Unknown title"
 msgstr "Óþekktur titill"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Bæta við bókamerki"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
@@ -57258,23 +57258,23 @@ msgstr ""
 "Settu inn nafn og athugasemd fyrir bókamerkið og veldu hvar eigi að geyma "
 "það."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
 msgid "Bookmark title"
 msgstr "Heiti bókamerkis"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:106
 #, kde-format
 msgid "Bookmark comment"
 msgstr "Athugasemd við bókamerki"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Breyta bókamerkjum hnattstaðsetningar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:225
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
@@ -57283,23 +57283,23 @@ msgstr "Breyta bókamerkjum hnattstaðsetningar"
 msgid "&Remove"
 msgstr "Fja&rlægja"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #, kde-format
 msgid "Add Folder"
 msgstr "Bæta við möppu"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:431
 #, kde-format
 msgid "New Folder"
 msgstr "Ný mappa"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:449
 #, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Umsýsla bókamerkja"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -57315,42 +57315,42 @@ msgstr "Fjarlægja bókamerki"
 msgid "Insert Bookmark"
 msgstr "Setja inn bókamerki"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:134
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:136
 #, kde-format
 msgid "Title Change"
 msgstr "Breyttur titill"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:141
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:143
 #, kde-format
 msgid "Comment Change"
 msgstr "Breytt athugasemd"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:148
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:150
 #, kde-format
 msgid "Address Change"
 msgstr "Breytt heimilisfang"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:325
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:327
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Title"
 msgstr "Titill"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:330
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:332
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "Athugasemd"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:812
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:947
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:814
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:949
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Hleð inn bókamerkjum"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:813
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:948
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:815
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:950
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
@@ -57359,41 +57359,41 @@ msgstr ""
 "Villa við að hlaða inn bókamerkjum á línu %1, dálki %2:\n"
 "%3"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:934
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Opna skrá"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:938
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:965
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr "XBEL (*.xbel *.xml)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:955
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:957
 #, kde-format
 msgid "Imported %1"
 msgstr "Flutti inn %1"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Vista skrá"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:964
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr "%1 Bókamerki.xbel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
 msgstr "Flytja út bókamerki"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, kde-format
 msgid "Error saving bookmarks"
 msgstr "Villa við að vista bókamerki"
@@ -57433,44 +57433,44 @@ msgstr ""
 "Endilega gerðu virkt að lesa lýsigögn í fylgiskrár í aðalforritinu, annars "
 "heðdurðu áfram algerlega á eigin ábyrgð."
 
-#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:206
+#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:208
 #, kde-format
 msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] "1 mynd færð"
 msgstr[1] "%1 myndir færðar"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:130
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:132
 #, kde-format
 msgid "Load GPX files..."
 msgstr "Hlaða inn GPX skrám..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:137
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:139
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "Birta ferla á korti"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:138
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "Veldu þetta til að birta ferla á kortinu"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:142
 #, kde-format
 msgid "Only use selected images"
 msgstr "Aðeins nota valdar myndir"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:141
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:143
 #, kde-format
 msgid "Set this option to correlate selected images only"
 msgstr "Veldu þetta til að para einungis valdar myndir"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:153
 #, kde-format
 msgid "Camera time zone:"
 msgstr "Tímabelti myndavélar:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:154
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:156
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -57483,12 +57483,12 @@ msgstr ""
 "jákvæð hliðrun telst vera í austurátt frá núllbaug lengdar (GMT), þar er "
 "klukkan 'á undan'.</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr "Tímahliðrun mynda (hh:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
@@ -57497,23 +57497,23 @@ msgstr ""
 "Stillir hliðrun á tímum mynda og tímum ferilsins. Til dæmis til að leiðrétta "
 "ranga klukku í myndavél eða mismunandi tímabelti."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:172
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr "Stilltu hvort tími myndar sé á undan eða eftir tíma ferilsins."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:189
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:191
 #, kde-format
 msgid "Interpolate"
 msgstr "Skjóta inn"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:201
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:192
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:203
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "Mesti tímamunur (hh:mm:ss):"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:194
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:196
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -57523,12 +57523,12 @@ msgstr ""
 "Stillir hver mesti tímamunur má vera milli tökutíma myndar og GPS punkts svo "
 "samsvörun verði á milli. Ef tímamunurinn er meiri verður ekki tengt á milli."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:200
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:202
 #, kde-format
 msgid "Match directly"
 msgstr "Samsvara beint"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:205
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -57538,19 +57538,19 @@ msgstr ""
 "Stillir hver mesti tímamunur má vera milli tökutíma myndar og GPS punkts svo "
 "samsvörun verði á milli. Ef tímamunurinn er meiri verður ekki tengt á milli."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:226
 #, kde-format
 msgid "Correlate"
 msgstr "Pörun"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:299
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:301
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "Ekki var hægt að hlaða inn eftirfarandi GPX skrá:"
 msgstr[1] "Ekki var hægt að hlaða inn eftirfarandi %1 GPX skrám:"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:303
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:305
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
@@ -57558,18 +57558,18 @@ msgid_plural "Error Loading GPX Files"
 msgstr[0] "Villa við hleðslu GPX skráar"
 msgstr[1] "Villa við hleðslu GPX skráa"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:408
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:410
 #, kde-format
 msgid "Correlating images -"
 msgstr "Para staðsetningu við myndir -"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:492
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Pörun mistókst"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:491
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
@@ -57578,13 +57578,13 @@ msgstr ""
 "Gat ekki parað staðsetningarhnit við neina mynd - gakktu úr skugga um að "
 "stillingar á tímabelti og frávikum séu réttar."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:496
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:498
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "Pörun tókst"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:497
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -57594,13 +57594,13 @@ msgstr ""
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:505
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Pörun lokið"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:509
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -57617,7 +57617,7 @@ msgstr[1] ""
 "um að stillingar á tímabelti og frávikum séu réttar ef þú heldur að fleiri "
 "myndir hefðu átt að vera paraðar."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:526
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
@@ -58631,7 +58631,7 @@ msgstr ""
 "Núverandi mynd hefur breyst.\n"
 "Viltu vista breytingarnar?"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:406
+#: core/utilities/imageeditor/editor/editortool.cpp:410
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA:%3,%4,%5,%6"
@@ -59381,7 +59381,7 @@ msgstr "Fjarlægja merki"
 msgid "Assign Labels"
 msgstr "Úthluta merkingum"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:191
+#: core/utilities/imageeditor/widgets/canvas.cpp:192
 #, kde-format
 msgid ""
 "Failed to load image\n"

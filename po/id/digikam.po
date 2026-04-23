@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:42+0000\n"
+"POT-Creation-Date: 2026-04-23 00:41+0000\n"
 "PO-Revision-Date: 2024-11-16 08:32+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -12062,13 +12062,13 @@ msgid "GPX file:"
 msgstr "file GPX:"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:261
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr ""
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:257
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
@@ -20146,7 +20146,7 @@ msgstr "Tambahkan lagi"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, kde-format
 msgid "Remove"
 msgstr ""
@@ -57746,53 +57746,53 @@ msgstr ""
 msgid "Export as..."
 msgstr "Edit Markah:"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:156
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:181
 #, kde-format
 msgid "Bookmark folder"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:191
 #, kde-format
 msgid "The file is not an XBEL version 1.0 file."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:306
 #, kde-format
 msgid "Unknown title"
 msgstr "Judul tidak diketahui"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
 #, fuzzy, kde-format
 #| msgid "Add Bookmark"
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "Tambahkan Markah"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
 msgid "Bookmark title"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:106
 #, kde-format
 msgid "Bookmark comment"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:203
 #, fuzzy, kde-format
 #| msgid "Edit Geolocation"
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "Edit Geolokasi"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:225
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
@@ -57801,24 +57801,24 @@ msgstr "Edit Geolokasi"
 msgid "&Remove"
 msgstr "&Buang"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #, kde-format
 msgid "Add Folder"
 msgstr "Tambahkan Folder"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:431
 #, kde-format
 msgid "New Folder"
 msgstr "Folder Baru"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:449
 #, fuzzy, kde-format
 #| msgid "Color-Managed View"
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "Tampilan Warna Terkelola"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -57834,80 +57834,80 @@ msgstr "Buang Markah"
 msgid "Insert Bookmark"
 msgstr "Sisipkan Markah"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:134
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:136
 #, kde-format
 msgid "Title Change"
 msgstr "Perubahan Judul"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:141
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:143
 #, kde-format
 msgid "Comment Change"
 msgstr "Perubahan Komentar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:148
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:150
 #, kde-format
 msgid "Address Change"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:325
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:327
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Title"
 msgstr "Judul"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:330
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:332
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "Komentar"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:812
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:947
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:814
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:949
 #, fuzzy, kde-format
 #| msgid "Loading Bookmark"
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "Memuat Markah"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:813
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:948
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:815
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:950
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
 "%3"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:934
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
 #, fuzzy, kde-format
 #| msgid "Open File"
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "Buka File"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:938
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:965
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:955
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:957
 #, kde-format
 msgid "Imported %1"
 msgstr "%1 terimpor"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
 #, fuzzy, kde-format
 #| msgid "Save File"
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "Simpan File"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:964
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid "Edit Bookmark"
@@ -57915,7 +57915,7 @@ msgctxt "@title:window"
 msgid "Export Bookmark"
 msgstr "Edit Markah:"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, fuzzy, kde-format
 #| msgid "Loading Bookmark"
 msgid "Error saving bookmarks"
@@ -57953,45 +57953,45 @@ msgid ""
 "at your own risk."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:206
+#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:208
 #, kde-format
 msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:130
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:132
 #, kde-format
 msgid "Load GPX files..."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:137
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:139
 #, kde-format
 msgid "Show tracks on Map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:138
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:142
 #, fuzzy, kde-format
 #| msgid "Delete selected album"
 msgid "Only use selected images"
 msgstr "Hapus album terpilih"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:141
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:143
 #, kde-format
 msgid "Set this option to correlate selected images only"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:153
 #, kde-format
 msgid "Camera time zone:"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:154
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:156
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -58000,36 +58000,36 @@ msgid ""
 "(GMT), they are 'ahead of time'.</p>"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:172
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:189
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:191
 #, fuzzy, kde-format
 #| msgid "Interlingua"
 msgid "Interpolate"
 msgstr "Interlingua"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:201
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:192
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:203
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:194
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:196
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -58037,12 +58037,12 @@ msgid ""
 "attempted."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:200
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:202
 #, kde-format
 msgid "Match directly"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:205
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -58050,19 +58050,19 @@ msgid ""
 "attempted."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:226
 #, kde-format
 msgid "Correlate"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:299
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:301
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:303
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:305
 #, fuzzy, kde-format
 #| msgid "Error Loading File"
 msgctxt "@title:window"
@@ -58071,32 +58071,32 @@ msgid_plural "Error Loading GPX Files"
 msgstr[0] "Error Memuat File"
 msgstr[1] "Error Memuat File"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:408
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:410
 #, kde-format
 msgid "Correlating images -"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:492
 #, fuzzy, kde-format
 #| msgid "Authorization Failed"
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "Gagal Pengotorisasian"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:491
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:496
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:498
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:497
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -58104,14 +58104,14 @@ msgstr ""
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:505
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
 #, fuzzy, kde-format
 #| msgid "Authorization Failed"
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "Gagal Pengotorisasian"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:509
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -58122,7 +58122,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:526
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
@@ -59111,7 +59111,7 @@ msgid ""
 "Do you wish to save your changes?"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editortool.cpp:406
+#: core/utilities/imageeditor/editor/editortool.cpp:410
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr ""
@@ -59875,7 +59875,7 @@ msgstr "Hapus Tag"
 msgid "Assign Labels"
 msgstr ""
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:191
+#: core/utilities/imageeditor/widgets/canvas.cpp:192
 #, kde-format
 msgid ""
 "Failed to load image\n"

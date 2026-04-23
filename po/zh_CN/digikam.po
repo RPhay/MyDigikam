@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-22 00:42+0000\n"
+"POT-Creation-Date: 2026-04-23 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -11756,13 +11756,13 @@ msgid "GPX file:"
 msgstr "GPX 文件："
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:161
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:261
 #, kde-format
 msgid "GPS Exchange Format (*.gpx)"
 msgstr "GPS 交换格式文件 (*.gpx)"
 
 #: core/dplugins/generic/metadata/geolocationedit/kmlexport/kmlwidget.cpp:162
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:257
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:259
 #, kde-format
 msgctxt "@title:window"
 msgid "Select GPX File to Load"
@@ -19631,7 +19631,7 @@ msgstr "再次添加"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:370
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, kde-format
 msgid "Remove"
 msgstr "移除"
@@ -55704,51 +55704,51 @@ msgstr "投影方式"
 msgid "Export as..."
 msgstr "导出为..."
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:154
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:179
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:156
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:181
 #, kde-format
 msgid "Bookmark folder"
 msgstr "书签文件夹"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:189
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:191
 #, kde-format
 msgid "The file is not an XBEL version 1.0 file."
 msgstr "此文件并非 XBEL 版本 1.0 文件。"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:304
+#: core/utilities/geolocation/geoiface/bookmark/bookmarknode.cpp:306
 #, kde-format
 msgid "Unknown title"
 msgstr "未知名称"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:87
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:89
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Bookmark"
 msgstr "添加书签"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:92
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:94
 #, kde-format
 msgid ""
 "Type a name and a comment for the bookmark, and choose where to keep it."
 msgstr "请输入书签的名称和注释，并选择它的保存位置。"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:99
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:101
 #, kde-format
 msgid "Bookmark title"
 msgstr "书签名称"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:104
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:106
 #, kde-format
 msgid "Bookmark comment"
 msgstr "书签注释"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:201
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:203
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Geolocation Bookmarks"
 msgstr "编辑地理位置书签"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:223
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:225
 #: core/utilities/setup/album/setupcategory.cpp:95
 #: core/utilities/setup/camera/setupcamera.cpp:275
 #: core/utilities/setup/camera/setupcamera.cpp:398
@@ -55757,23 +55757,23 @@ msgstr "编辑地理位置书签"
 msgid "&Remove"
 msgstr "移除(&R)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:226
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #, kde-format
 msgid "Add Folder"
 msgstr "添加文件夹"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:429
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:431
 #, kde-format
 msgid "New Folder"
 msgstr "新建文件夹"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:447
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:449
 #, kde-format
 msgctxt "@title:window"
 msgid "Bookmarks Management"
 msgstr "书签管理"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:448
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:450
 #, kde-format
 msgctxt "@info"
 msgid "Do you want to remove \"%1\" from your Bookmarks collection?"
@@ -55789,42 +55789,42 @@ msgstr "移除书签"
 msgid "Insert Bookmark"
 msgstr "插入书签"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:134
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:136
 #, kde-format
 msgid "Title Change"
 msgstr "名称更改"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:141
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:143
 #, kde-format
 msgid "Comment Change"
 msgstr "注释更改"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:148
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:150
 #, kde-format
 msgid "Address Change"
 msgstr "地址更改"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:325
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:327
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Title"
 msgstr "标题"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:330
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:332
 #, kde-format
 msgctxt "@title: bookmark header"
 msgid "Comment"
 msgstr "注释"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:812
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:947
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:814
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:949
 #, kde-format
 msgctxt "@title:window"
 msgid "Loading Bookmark"
 msgstr "正在加载书签"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:813
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:948
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:815
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:950
 #, kde-format
 msgid ""
 "Error when loading bookmarks on line %1, column %2:\n"
@@ -55833,41 +55833,41 @@ msgstr ""
 "加载书签出错，它位于第 %1 行，第 %2 列：\n"
 "%3"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:934
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Open File"
 msgstr "打开文件"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:936
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:938
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:965
 #, kde-format
 msgid "XBEL (*.xbel *.xml)"
 msgstr "XBEL 文件 (*.xbel *.xml)"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:955
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:957
 #, kde-format
 msgid "Imported %1"
 msgstr "已导入 %1 个"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:961
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:963
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
 msgstr "保存文件"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:962
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:964
 #, kde-format
 msgid "%1 Bookmarks.xbel"
 msgstr "%1 书签.xbel"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Bookmark"
 msgstr "导出书签"
 
-#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:973
+#: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:975
 #, kde-format
 msgid "Error saving bookmarks"
 msgstr "保存书签时出错"
@@ -55905,43 +55905,43 @@ msgstr ""
 "这意味着任何附带文件存储的所有元数据都将被覆盖。\n"
 "请在宿主应用程序中启用附带文件的读取，否则风险自负。"
 
-#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:206
+#: core/utilities/geolocation/geoiface/core/gpsgeoifacemodelhelper.cpp:208
 #, kde-format
 msgid "1 image moved"
 msgid_plural "%1 images moved"
 msgstr[0] "%1 张图像已移动"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:130
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:132
 #, kde-format
 msgid "Load GPX files..."
 msgstr "加载 GPX 文件..."
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:137
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:139
 #, kde-format
 msgid "Show tracks on Map"
 msgstr "显示轨迹到地图"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:138
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
 #, kde-format
 msgid "Set this option to show tracks on the Map"
 msgstr "勾选此项以在地图上显示轨迹"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:140
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:142
 #, kde-format
 msgid "Only use selected images"
 msgstr "仅使用选中的图像"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:141
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:143
 #, kde-format
 msgid "Set this option to correlate selected images only"
 msgstr "勾选此项时，将仅与选中的图像建立关联"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:151
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:153
 #, kde-format
 msgid "Camera time zone:"
 msgstr "相机时区："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:154
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:156
 #, kde-format
 msgid ""
 "<p>Sets the time zone the camera was set to during photo shooting, so that "
@@ -55953,35 +55953,35 @@ msgstr ""
 "间参考值。</p><p>提示：0 度经线 (GMT) 往东的偏移值为正 (之后)，往西的偏移值为"
 "负 (之前)。</p>"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:161
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
 #, kde-format
 msgid "Offset of pictures (hh:mm:ss):"
 msgstr "图像时间偏移 (hh:mm:ss)："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:163
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:165
 #, kde-format
 msgid ""
 "Sets the offset between picture times and track times. E.g. to correct wrong "
 "camera clock or different time zone."
 msgstr "设置图像时间与轨迹时间的偏移量。例如用于校准相机时间偏差或者时区差异。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:170
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:172
 #, kde-format
 msgid "Set whether picture time is ahead or behind the track time."
 msgstr "设置图像时间在轨迹时间之前还是之后。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:189
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:191
 #, kde-format
 msgid "Interpolate"
 msgstr "插值"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:190
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:201
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:192
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:203
 #, kde-format
 msgid "Max. time gap (hh:mm:ss):"
 msgstr "最大时间差 (hh:mm:ss)："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:194
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:196
 #, kde-format
 msgid ""
 "Sets the maximum time difference to interpolate GPX file points to image "
@@ -55991,12 +55991,12 @@ msgstr ""
 "设置解析 GPX 文件轨迹点到图像时间数据的最大时间差。如果时间差超出设定数值，将"
 "不进行关联。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:200
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:202
 #, kde-format
 msgid "Match directly"
 msgstr "直接匹配"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:205
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:207
 #, kde-format
 msgid ""
 "Sets the maximum time difference from a GPS track point to the image time to "
@@ -56006,49 +56006,49 @@ msgstr ""
 "设置从 GPS 轨迹点匹配到图像时间的最大时间差。如果时间差超出设定数值，将不进行"
 "关联。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:224
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:226
 #, kde-format
 msgid "Correlate"
 msgstr "建立关联"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:299
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:301
 #, kde-format
 msgid "The following GPX file could not be loaded:"
 msgid_plural "The following %1 GPX files could not be loaded:"
 msgstr[0] "无法加载下列 %1 GPX 文件："
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:303
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:305
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Loading GPX File"
 msgid_plural "Error Loading GPX Files"
 msgstr[0] "加载 GPX 文件时出错"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:408
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:410
 #, kde-format
 msgid "Correlating images -"
 msgstr "正在关联图像 -"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:490
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:492
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Failed"
 msgstr "关联操作失败"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:491
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:493
 #, kde-format
 msgid ""
 "Could not correlate any image - please make sure the offset and gap settings "
 "are correct."
 msgstr "无法与任何图像建立关联 - 请检查时间偏移和时间差设置是否正确。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:496
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:498
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Succeeded"
 msgstr "关联操作成功"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:497
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:499
 #, kde-format
 msgid ""
 "All images have been correlated. You can now check their position on the map."
@@ -56056,13 +56056,13 @@ msgstr "所有图像均已建立关联。您现在可以在地图查看它们的
 
 #. i18np.
 #. See bug #376438 for details.
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:505
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
 #, kde-format
 msgctxt "@title:window"
 msgid "Correlation Finished"
 msgstr "关联操作结束"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:507
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:509
 #, kde-format
 msgid ""
 "One image out of %2 images have been correlated. Please check the offset and "
@@ -56074,7 +56074,7 @@ msgstr[0] ""
 "%2 张图像中的 %1 张图像已建立关联。如果您觉得建立关联的图像太少，请检查时间偏"
 "移和时间差设置是否正确。"
 
-#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:524
+#: core/utilities/geolocation/geoiface/correlator/gpscorrelatorwidget.cpp:526
 #, kde-format
 msgid "1 image correlated"
 msgid_plural "%1 images correlated"
@@ -57060,7 +57060,7 @@ msgstr ""
 "当前图像已被修改。\n"
 "您想要保存更改吗？"
 
-#: core/utilities/imageeditor/editor/editortool.cpp:406
+#: core/utilities/imageeditor/editor/editortool.cpp:410
 #, kde-format
 msgid "(%1,%2) RGBA:%3,%4,%5,%6"
 msgstr "(%1,%2) RGBA：%3,%4,%5,%6"
@@ -57794,7 +57794,7 @@ msgstr "移除标签"
 msgid "Assign Labels"
 msgstr "分派标记"
 
-#: core/utilities/imageeditor/widgets/canvas.cpp:191
+#: core/utilities/imageeditor/widgets/canvas.cpp:192
 #, kde-format
 msgid ""
 "Failed to load image\n"
