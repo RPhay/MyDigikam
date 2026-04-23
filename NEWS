@@ -112,7 +112,7 @@ BUGFIXES:
 084 --> 518995 - ExifTool not fund on first use.
 085 --> 518993 - New album dialog is blocked and hidden when selected as part of move items workflow.
 086 --> 519200 - Darktable raw import fails.
-087 --> 
+087 --> 519273 - New Album dialog has its initial focus on the 'Help' button rather than on Title of New Album.
 088 --> 
 089 --> 
 090 --> 
