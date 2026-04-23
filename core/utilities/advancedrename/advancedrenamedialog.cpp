@@ -60,6 +60,8 @@ public:
 
     Private() = default;
 
+public:
+
     QUrl    imageUrl;
     QString completeFileName;
 };
@@ -555,7 +557,7 @@ NewNamesList AdvancedRenameDialog::filterNewNames() const
 
     while (*it)
     {
-        AdvancedRenameListItem* const item = dynamic_cast<AdvancedRenameListItem*>((*it));
+        const AdvancedRenameListItem* const item = dynamic_cast<AdvancedRenameListItem*>((*it));
 
         if (item && !item->isNameEqual())
         {

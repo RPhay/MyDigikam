@@ -38,6 +38,8 @@ public:
         ParameterPattern
     };
 
+public:
+
     class Q_DECL_HIDDEN HighlightingRule
     {
     public:
@@ -178,7 +180,7 @@ void Highlighter::setupHighlightingGrammar()
     d->optionFormat.setForeground(Qt::red);
     const auto list = d->parser->options();
 
-    for (Rule* const option : list)
+    for (const Rule* const option : list)
     {
         QRegularExpression r    = option->regExp();
         rule.type               = Private::OptionPattern;
@@ -192,7 +194,7 @@ void Highlighter::setupHighlightingGrammar()
     d->modifierFormat.setForeground(Qt::darkGreen);
     const auto list2 = d->parser->modifiers();
 
-    for (Rule* const modifier : list2)
+    for (const Rule* const modifier : list2)
     {
         QRegularExpression r    = modifier->regExp();
         rule.type               = Private::ModifierPattern;
