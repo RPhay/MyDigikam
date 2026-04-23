@@ -319,7 +319,7 @@ void MetadataPanel::slotTabChanged(int)
     qApp->processEvents();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Image Properties SideBar"));
-    QWidget* const tab        = d->tab->currentWidget();
+    const QWidget* const tab  = d->tab->currentWidget();
 
     if      (tab == d->exifViewerConfig)
     {

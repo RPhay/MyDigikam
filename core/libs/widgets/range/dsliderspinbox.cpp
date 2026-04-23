@@ -162,7 +162,7 @@ void DAbstractSliderSpinBox::hideEdit()
 
 void DAbstractSliderSpinBox::paintEvent(QPaintEvent* e)
 {
-    Q_D(DAbstractSliderSpinBox);
+    Q_D(DAbstractSliderSpinBox);         // cppcheck-suppress constVariablePointer
     Q_UNUSED(e)
 
     QPainter painter(this);
@@ -603,7 +603,7 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
 
 void DAbstractSliderSpinBox::wheelEvent(QWheelEvent* e)
 {
-    Q_D(DAbstractSliderSpinBox);
+    Q_D(DAbstractSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     if      (e->angleDelta().y() > 0)
     {
@@ -1091,7 +1091,7 @@ int DSliderSpinBox::minimum() const
 
 void DSliderSpinBox::setMinimum(int minimum)
 {
-    Q_D(DSliderSpinBox);
+    Q_D(DSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     setRange(minimum, d->maximum);
 }
@@ -1105,7 +1105,7 @@ int DSliderSpinBox::maximum() const
 
 void DSliderSpinBox::setMaximum(int maximum)
 {
-    Q_D(DSliderSpinBox);
+    Q_D(DSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     setRange(d->minimum, maximum);
 }
@@ -1126,7 +1126,7 @@ void DSliderSpinBox::setFastSliderStep(int step)
 
 int DSliderSpinBox::value()
 {
-    Q_D(DSliderSpinBox);
+    Q_D(DSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     return d->value;
 }
@@ -1222,7 +1222,7 @@ double DDoubleSliderSpinBox::minimum() const
 
 void DDoubleSliderSpinBox::setMinimum(double minimum)
 {
-    Q_D(DAbstractSliderSpinBox);
+    Q_D(DAbstractSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     setRange(minimum, d->maximum);
 }
@@ -1236,7 +1236,7 @@ double DDoubleSliderSpinBox::maximum() const
 
 void DDoubleSliderSpinBox::setMaximum(double maximum)
 {
-    Q_D(DAbstractSliderSpinBox);
+    Q_D(DAbstractSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     setRange(d->minimum, maximum);
 }
@@ -1257,7 +1257,7 @@ void DDoubleSliderSpinBox::setFastSliderStep(double step)
 
 double DDoubleSliderSpinBox::value()
 {
-    Q_D(DAbstractSliderSpinBox);
+    Q_D(DAbstractSliderSpinBox);         // cppcheck-suppress constVariablePointer
 
     return (double)d->value / d->factor;
 }

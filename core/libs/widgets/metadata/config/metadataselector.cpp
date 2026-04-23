@@ -191,7 +191,7 @@ QStringList MetadataSelector::checkedTagsList()
 
     while (*it)
     {
-        MetadataSelectorItem* const item = dynamic_cast<MetadataSelectorItem*>(*it);
+        const MetadataSelectorItem* const item = dynamic_cast<MetadataSelectorItem*>(*it);
 
         if (item)
         {

@@ -361,7 +361,7 @@ QString MetadataWidget::metadataToText() const
 
                 if (item2)
                 {
-                    MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
+                    const MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
 
                     if (lvItem2)
                     {

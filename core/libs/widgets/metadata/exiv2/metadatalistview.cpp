@@ -68,7 +68,7 @@ QString MetadataListView::getCurrentItemKey() const
 {
     if (currentItem() && (currentItem()->flags() & Qt::ItemIsSelectable))
     {
-        MetadataListViewItem* const item = static_cast<MetadataListViewItem*>(currentItem());
+        const MetadataListViewItem* const item = static_cast<MetadataListViewItem*>(currentItem());
         return item->getKey();
     }
 
@@ -91,7 +91,7 @@ void MetadataListView::setCurrentItemByKey(const QString& itemKey)
 
         if (item && (item->flags() & Qt::ItemIsSelectable))
         {
-            MetadataListViewItem* const lvItem = dynamic_cast<MetadataListViewItem*>(item);
+            const MetadataListViewItem* const lvItem = dynamic_cast<MetadataListViewItem*>(item);
 
             if (lvItem)
             {
@@ -114,7 +114,7 @@ void MetadataListView::setCurrentItemByKey(const QString& itemKey)
 void MetadataListView::slotSelectionChanged(QTreeWidgetItem* item, int)
 {
 
-    MetadataListViewItem* const viewItem = dynamic_cast<MetadataListViewItem*>(item);
+    const MetadataListViewItem* const viewItem = dynamic_cast<MetadataListViewItem*>(item);
 
     if (!viewItem)
     {

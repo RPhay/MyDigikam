@@ -313,7 +313,7 @@ QString ExifToolWidget::metadataToText() const
 
                 if (child)
                 {
-                    ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
+                    const ExifToolListViewItem* const lvItem2 = dynamic_cast<ExifToolListViewItem*>(child);
 
                     if (lvItem2)
                     {

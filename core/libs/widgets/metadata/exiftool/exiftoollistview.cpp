@@ -186,7 +186,7 @@ QString ExifToolListView::getCurrentItemKey() const
 {
     if (currentItem() && (currentItem()->flags() & Qt::ItemIsSelectable))
     {
-        ExifToolListViewItem* const item = static_cast<ExifToolListViewItem*>(currentItem());
+        const ExifToolListViewItem* const item = static_cast<ExifToolListViewItem*>(currentItem());
 
         return item->getKey();
     }
@@ -225,7 +225,7 @@ void ExifToolListView::setCurrentItemByKey(const QString& itemKey)
 
 void ExifToolListView::slotSelectionChanged(QTreeWidgetItem* item, int)
 {
-    ExifToolListViewItem* const viewItem = dynamic_cast<ExifToolListViewItem*>(item);
+    const ExifToolListViewItem* const viewItem = dynamic_cast<ExifToolListViewItem*>(item);
 
     if (!viewItem)
     {
