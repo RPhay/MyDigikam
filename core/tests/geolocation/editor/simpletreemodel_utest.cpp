@@ -36,7 +36,7 @@ void TestSimpleTreeModel::testNoOp()
 
 void TestSimpleTreeModel::testModel1()
 {
-    SimpleTreeModel* const treeModel       = new SimpleTreeModel(1, this);
+    SimpleTreeModel* const treeModel          = new SimpleTreeModel(1, this);
 
     new ModelTest(treeModel, this);
 
@@ -48,11 +48,11 @@ void TestSimpleTreeModel::testModel1()
 
     // ---
 
-    SimpleTreeModel::Item* const item1     = treeModel->addItem();
+    const SimpleTreeModel::Item* const item1  = treeModel->addItem();
 
     Q_ASSERT(item1                              != nullptr);
 
-    const QPersistentModelIndex item1Index = treeModel->itemToIndex(item1);
+    const QPersistentModelIndex item1Index    = treeModel->itemToIndex(item1);
 
     Q_ASSERT(item1Index.isValid());
     Q_ASSERT(treeModel->indexToItem(item1Index) == item1);
@@ -60,11 +60,11 @@ void TestSimpleTreeModel::testModel1()
 
     // ---
 
-    SimpleTreeModel::Item* const item2      = treeModel->addItem();
+    SimpleTreeModel::Item* const item2        = treeModel->addItem();
 
     Q_ASSERT(item2                              != nullptr);
 
-    const QModelIndex item2Index            = treeModel->itemToIndex(item2);
+    const QModelIndex item2Index              = treeModel->itemToIndex(item2);
 
     Q_ASSERT(item2Index.isValid());
     Q_ASSERT(treeModel->indexToItem(item2Index) == item2);
@@ -72,7 +72,7 @@ void TestSimpleTreeModel::testModel1()
 
     // ---
 
-    SimpleTreeModel::Item* const item21      = treeModel->addItem(item2);
+    const SimpleTreeModel::Item* const item21 = treeModel->addItem(item2);
 
     Q_ASSERT(item21                              != nullptr);
 
@@ -105,11 +105,11 @@ void TestSimpleTreeModel::testModel1()
     // add another few items
 
     {
-        SimpleTreeModel::Item* const item22 = treeModel->addItem(item2, 0);
+        const SimpleTreeModel::Item* const item22 = treeModel->addItem(item2, 0);
 
         Q_ASSERT(item22                              != nullptr);
 
-        const QModelIndex item22Index       = treeModel->itemToIndex(item22);
+        const QModelIndex item22Index             = treeModel->itemToIndex(item22);
 
         Q_ASSERT(item22Index.isValid());
         Q_ASSERT(treeModel->indexToItem(item22Index) == item22);
@@ -121,11 +121,11 @@ void TestSimpleTreeModel::testModel1()
     // add another few items
 
     {
-        SimpleTreeModel::Item* const item23 = treeModel->addItem(item2, 1);
+        const SimpleTreeModel::Item* const item23 = treeModel->addItem(item2, 1);
 
         Q_ASSERT(item23                              != nullptr);
 
-        const QModelIndex item23Index       = treeModel->itemToIndex(item23);
+        const QModelIndex item23Index             = treeModel->itemToIndex(item23);
 
         Q_ASSERT(item23Index.isValid());
         Q_ASSERT(treeModel->indexToItem(item23Index) == item23);

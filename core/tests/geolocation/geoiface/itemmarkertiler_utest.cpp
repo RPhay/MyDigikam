@@ -141,7 +141,7 @@ void TestItemMarkerTiler::testAddMarkers1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -159,7 +159,7 @@ void TestItemMarkerTiler::testAddMarkers1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -186,7 +186,7 @@ void TestItemMarkerTiler::testRemoveMarkers2()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -203,7 +203,7 @@ void TestItemMarkerTiler::testRemoveMarkers2()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -232,7 +232,7 @@ void TestItemMarkerTiler::testMoveMarkers1()
     for (int l = 1 ; l <= fillLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_1_2, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -259,7 +259,7 @@ void TestItemMarkerTiler::testMoveMarkers1()
         // find it at the new position:
 
         tileIndex                           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -292,7 +292,7 @@ void TestItemMarkerTiler::testMoveMarkers2()
     for (int l = 1 ; l <= fillLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_1_2, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -310,7 +310,7 @@ void TestItemMarkerTiler::testMoveMarkers2()
     for (int l = 1 ; l <= fillLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -339,7 +339,7 @@ void TestItemMarkerTiler::testMoveMarkers2()
         // find it at the new position:
 
         tileIndex                           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -577,7 +577,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= preMaxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -595,7 +595,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -617,7 +617,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -634,7 +634,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -656,7 +656,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -679,7 +679,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_1_2, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -694,7 +694,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -711,7 +711,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -728,7 +728,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_50_60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {
@@ -743,7 +743,7 @@ void TestItemMarkerTiler::testSelectionState1()
     for (int l = 0 ; l <= maxLevel ; ++l)
     {
         const TileIndex tileIndex           = TileIndex::fromCoordinates(coord_m50_m60, l);
-        ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
+        const ItemMarkerTiler::Tile* const myTile = mm.getTile(tileIndex, true);
 
         if (!myTile)
         {

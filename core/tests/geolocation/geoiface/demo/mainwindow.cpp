@@ -223,6 +223,8 @@ public:
     {
     }
 
+public:
+
     QSplitter*                          splitter;
     MapWidget*                          mapWidget;
     QList<LookupAltitude*>              lookupAltitudeList;
@@ -407,7 +409,7 @@ void MainWindow::slotFutureResultsReadyAt(int startIndex, int endIndex)
 //     //qCDebug(DIGIKAM_TESTS_LOG)<<"future"<<startIndex<<endIndex;
 
     // determine the sender:
-    QFutureWatcher<MyImageData>* const futureSender = reinterpret_cast<QFutureWatcher<MyImageData>*>(sender());
+    const QFutureWatcher<MyImageData>* const futureSender = reinterpret_cast<QFutureWatcher<MyImageData>*>(sender());
 
     GEOIFACE_ASSERT(futureSender != nullptr);
 
@@ -559,7 +561,8 @@ void MainWindow::slotMarkersMoved(const QList<QPersistentModelIndex>& markerIndi
 void MainWindow::slotAltitudeRequestsReady(const QList<int>& readyRequests)
 {
     qCDebug(DIGIKAM_TESTS_LOG) << readyRequests.count() << " items ready!";
-    LookupAltitude* const myAltitudeLookup = qobject_cast<LookupAltitude*>(sender());
+
+    const LookupAltitude* const myAltitudeLookup = qobject_cast<LookupAltitude*>(sender());
 
     if (!myAltitudeLookup)
     {
