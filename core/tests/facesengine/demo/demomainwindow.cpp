@@ -279,14 +279,14 @@ void MainWindow::slotUpdateDatabase()
 
     int i = 0;
 
-    for (FaceItem* const item : std::as_const(d->faceitems))
+    for (const FaceItem* const item : std::as_const(d->faceitems))
     {
         if (item->text() != QString::fromLatin1("?"))
         {
             QElapsedTimer timer;
             timer.start();
 
-            QString name = item->text();
+            QString name      = item->text();
             qCDebug(DIGIKAM_TESTS_LOG) << "Face #" << i + 1 << ": training name '" << name << "'";
 
             Identity identity = d->database.findIdentity(QString::fromLatin1("name"), name);

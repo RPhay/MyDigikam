@@ -119,8 +119,8 @@ int main(int argc, char** argv)
 
     // Process recognition in database.
 
-    QImage* const  image = new QImage(256, 256, QImage::Format_ARGB32);
-    QList<Identity> list = db.recognizeFaces(QList<QImage*>() << image);
+    const QImage* const image = new QImage(256, 256, QImage::Format_ARGB32);
+    QList<Identity> list      = db.recognizeFaces(QList<QImage*>() << image);
 
     if (!list.isEmpty())
     {
@@ -129,7 +129,6 @@ int main(int argc, char** argv)
             qCDebug(DIGIKAM_TESTS_LOG) << "Identity" << id.attribute(QString::fromLatin1("name")) << "recognized";
         }
     }
-
     else
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "No Identity recognized from DB";

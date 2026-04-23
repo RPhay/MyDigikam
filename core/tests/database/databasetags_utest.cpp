@@ -103,7 +103,7 @@ void DatabaseTagsTest::initTestCase()
     AlbumList all = AlbumManager::instance()->allPAlbums();
     qCDebug(DIGIKAM_TESTS_LOG) << "PAlbum registered : " << all.size();
 
-    for (Album* const a : std::as_const(all))
+    for (const Album* const a : std::as_const(all))
     {
         if (a)
         {

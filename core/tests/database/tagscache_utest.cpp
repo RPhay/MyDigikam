@@ -177,8 +177,8 @@ void TagsCacheTest::testDuplicateTop()
 
 int TagsCacheTest::countTags()
 {
-    auto coredb = Digikam::CoreDbAccess().db();
-    auto tags   = coredb->getTagShortInfos();
+    const auto coredb = Digikam::CoreDbAccess().db();
+    auto tags         = coredb->getTagShortInfos();
 
     return tags.size();
 }
@@ -194,8 +194,8 @@ void TagsCacheTest::dumpTables()
 
 void TagsCacheTest::dumpTags()
 {
-    auto coredb = Digikam::CoreDbAccess().db();
-    auto tags   = coredb->getTagShortInfos();
+    const auto coredb = Digikam::CoreDbAccess().db();
+    auto tags         = coredb->getTagShortInfos();
 
     for (auto it = tags.begin() ; it != tags.end() ; ++it)
     {

@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
                 QString actions;
                 const auto acs = gene->actions(&iface);
 
-                for (DPluginAction* const ac : acs)
+                for (const DPluginAction* const ac : acs)
                 {
                     actions.append(ac->toString());
                     actions.append(QLatin1String(" ; "));
@@ -164,7 +164,7 @@ int main(int argc, char* argv[])
                         QString actions;
                         const auto gacs = gene->actions(&iface);
 
-                        for (DPluginAction* const gac : gacs)
+                        for (const DPluginAction* const gac : gacs)
                         {
                             actions.append(gac->toString());
                             actions.append(QLatin1String(" ; "));

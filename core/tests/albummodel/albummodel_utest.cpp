@@ -110,7 +110,7 @@ void AlbumModelTest::initTestCase()
     AlbumList all = AlbumManager::instance()->allPAlbums();
     qCDebug(DIGIKAM_TESTS_LOG) << "PAlbum registered : " << all.size();
 
-    for (Album* const a : std::as_const(all))
+    for (const Album* const a : std::as_const(all))
     {
         if (a)
         {
@@ -223,7 +223,7 @@ void AlbumModelTest::init()
 
     const auto palbums = AlbumManager::instance()->allPAlbums();
 
-    for (Album* const a : palbums)
+    for (const Album* const a : palbums)
     {
         qCDebug(DIGIKAM_TESTS_LOG) << "\t" << a->title();
     }
