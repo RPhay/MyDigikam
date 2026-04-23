@@ -2,7 +2,7 @@
 #
 # For a complete list of GCC and Clang compiler warnings options available
 # depending of compiler version, check this url:
-# https://github.com/Barro/compiler-warnings
+# https://github.com/pkolbus/compiler-warnings
 #
 # SPDX-FileCopyrightText: 2010-2026 by Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
