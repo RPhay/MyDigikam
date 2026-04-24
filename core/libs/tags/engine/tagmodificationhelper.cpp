@@ -509,7 +509,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         // Get the assigned faces for all person tags to delete
 
-        for (const TAlbum* const tAlbum : std::as_const(personTagsToDelete))
+        for (TAlbum* const tAlbum : std::as_const(personTagsToDelete))         // cppcheck-suppress constVariablePointer
         {
             // If the global set does not yet contain the tag
 
