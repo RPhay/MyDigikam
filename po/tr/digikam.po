@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-04-24 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 13:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -27627,7 +27627,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Künye adı “/” içeremez"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:464
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Künye adı halihazırda var"
@@ -27957,19 +27957,19 @@ msgstr "Renk"
 msgid "Customize label name here..."
 msgstr "Etiket adını burada özelleştir…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:102
+#: core/libs/album/widgets/albumpropsedit.cpp:104
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Yeni Albüm"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Albümü Düzenle"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:126
+#: core/libs/album/widgets/albumpropsedit.cpp:128
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27979,69 +27979,69 @@ msgstr ""
 "“%1”\n"
 "Albüm Özellikleri"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:134
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Başlık:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:140
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Yeni albüm başlığını burada ayarlayın"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:143
+#: core/libs/album/widgets/albumpropsedit.cpp:145
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegori:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Şunun &alt ögesi:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:159
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "A&lt yazı:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:164
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Albüm alt yazısını buraya girin…"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:167
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Albüm &tarihi:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&En Eski"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "Albümdeki en eski görselin tarihini seçmek için bu düğmeyi kullanın."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Ortalama"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
@@ -28049,44 +28049,44 @@ msgstr ""
 "Albümünüzdeki görsellerin ortalama tarihini hesaplamak için bu düğmeyi "
 "kullanın."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "En Yeni"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "Albümdeki en yeni görselin tarihini seçmek için bu düğmeyi kullanın."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:261
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Yeni Albüm"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Seçili Albüm (Öntanımlı)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:266
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Seçili koleksiyonun dizin kökü"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:338
+#: core/libs/album/widgets/albumpropsedit.cpp:343
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Kategorisiz albüm"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:427
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -28096,13 +28096,13 @@ msgstr ""
 "“%1”\n"
 "konumunda yeni albüm oluştur"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:472
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Ortalama Hesaplanamadı"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -29162,7 +29162,7 @@ msgstr "Koleksiyon taranıyor…"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Error"
 msgstr "Hata"
@@ -38125,7 +38125,7 @@ msgstr "Özellikler"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid "Metadata"
 msgstr "Üst Veri"
@@ -40975,33 +40975,33 @@ msgstr ""
 "<p><b>Not</b>: Bu kısayol ögelere künye atamak veya künye atamasını "
 "kaldırmak için kullanılabilir.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:335
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Yeni Künye Oluştur</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:339
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>“%1”<br>İçinde Yeni Künye Oluştur</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:345
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>“%1”<br>Künyesinin Özellikleri</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:519
+#: core/libs/tags/widgets/tageditdlg.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Künye Oluşturma Hatası"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Künye oluşturulurken bir hata oluştu:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Tag Path"
 msgstr "Künye Yolu"
@@ -44052,7 +44052,7 @@ msgid "LCMS2 library port"
 msgstr "LCMS2 kitaplığı geçişi"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:339
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid "Color Management"
 msgstr "Renk Yönetimi"
@@ -50184,7 +50184,7 @@ msgid "Add Bookmark"
 msgstr "Yer İmi Ekle"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
@@ -50444,18 +50444,18 @@ msgstr "&Dekorasyon"
 msgid "Effec&ts"
 msgstr "Efek&tler"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, kde-format
 msgid "Editor Window"
 msgstr "Düzenleyici Penceresi"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:108
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
@@ -50463,7 +50463,7 @@ msgstr ""
 "<qt>Düzenleyici Penceresi Ayarları<br><i>Düzenleyici penceresi davranışını "
 "özelleştir</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:114
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
@@ -50472,12 +50472,12 @@ msgstr ""
 "<qt>Gömülü Görsel Bilgisi Yönetimi<br><i>Görseller ve üst veri arasındaki "
 "ilişkiyi ayarlayın</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, kde-format
 msgid "Tool Tip"
 msgstr "Araç İpucu"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:120
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
@@ -50486,12 +50486,12 @@ msgstr ""
 "<qt>Küçük Görsel Çubuğu ve Klasör Görünümü Ögeleri Araç İpuçları "
 "Ayarları<br><i>Araç ipuçlarındaki bilgileri özelleştirin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW Kod Çözme"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:126
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
@@ -50500,7 +50500,7 @@ msgstr ""
 "<qt>RAW Dosyaları Kod Çözme Ayarları<br><i>Öntanımlı RAW kod çözme "
 "ayarlarını özelleştirin</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:132
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
@@ -50509,12 +50509,12 @@ msgstr ""
 "<qt>Renk Yönetimi Ayarları<br><i>Renk yönetimi ayarlarını özelleştirin</i></"
 "qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Save Images"
 msgstr "Görsel Kaydı"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
@@ -50523,13 +50523,13 @@ msgstr ""
 "<qt>Görsel Dosyalarını Kaydetme Ayarları<br><i>Görselleri kaydetmek için "
 "kullanılan öntanımlı yapılandırmayı ayarlayın</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
+#: core/showfoto/setup/showfotosetup.cpp:145 core/utilities/setup/setup.cpp:91
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Coğrafî Konum"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
+#: core/showfoto/setup/showfotosetup.cpp:146 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -50539,12 +50539,12 @@ msgstr ""
 "Coğrafî Konum Ayarları\n"
 "Ögelerin coğrafî konum görünümünü özelleştirin"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgid "Plugins"
 msgstr "Eklentiler"
 
-#: core/showfoto/setup/showfotosetup.cpp:151
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
@@ -50553,13 +50553,13 @@ msgstr ""
 "<qt>Ana Arayüz Eklenti Ayarları<br><i>Ana arayüzden hangi eklentilere "
 "erişilebileceğini ayarlayın</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:158
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Çeşitli"
 
-#: core/showfoto/setup/showfotosetup.cpp:157
+#: core/showfoto/setup/showfotosetup.cpp:159
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
@@ -50568,26 +50568,26 @@ msgstr ""
 "<qt>Çeşitli Ayarlar<br><i>FotoGöster’in diğer kısımlarının davranışını "
 "özelleştirin</i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:84
+#: core/showfoto/setup/showfotosetupmetadata.cpp:86
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "Eylemleri döndür"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:89
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr "Yönelim künyesine göre &döndürülmüş görselleri/küçük görselleri göster"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Döndürdükten/çevirdikten sonra yönelim künyesini normale getir"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:112
+#: core/showfoto/setup/showfotosetupmetadata.cpp:114
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, kde-format
 msgctxt "@info"
@@ -50599,7 +50599,7 @@ msgstr ""
 "bilgileri (diyafram açıklığı ve deklanşör hızı gibi) depolamak için "
 "kullanılan bir standart."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:116
+#: core/showfoto/setup/showfotosetupmetadata.cpp:118
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -50610,7 +50610,7 @@ msgstr ""
 "Görsellerde fotoğrafsal bilgileri saklamak için sayısal fotoğrafçılıkta "
 "kullanılan daha eski bir standart."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:122
+#: core/showfoto/setup/showfotosetupmetadata.cpp:124
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, kde-format
 msgctxt "@info"
@@ -50619,7 +50619,7 @@ msgstr ""
 "IPTC’nin yerini almak üzere tasarlanmış, sayısal fotoğrafçılıkta kullanılan "
 "yeni bir standart."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmetadata.cpp:145
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
@@ -50628,7 +50628,7 @@ msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Davranış"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:152
+#: core/showfoto/setup/showfotosetupmetadata.cpp:154
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -51519,67 +51519,67 @@ msgstr ""
 "Sık kullanılan yığınları buraya ekleyebilir veya buradan kaldırabilirsiniz."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:87
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Sık Kullanılanlar"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "Sık Kullanılan Ekle"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "Alt Klasör Ekle"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:115
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "Listeye yeni alt klasör ekle"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "Ögeyi Sil"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "Seçili ögeyi listeden kaldır"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "Ögeyi Düzenle"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "Listedeki seçili ögeyi düzenle"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:168
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "Sık kullanılanlarda ara…"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Öge Silmeyi Onayla"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:355
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51589,7 +51589,7 @@ msgstr ""
 "“%1” ögesini ve varsa tüm iç içe geçmiş öğelerini\n"
 "kaldırmak istediğinizden emin misiniz?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:669
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
@@ -51698,44 +51698,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "oluşturulma: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
 #, kde-format
 msgid "By Name"
 msgstr "Ada Göre"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
 #, kde-format
 msgid "By Date"
 msgstr "Tarihe Göre"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
 #, kde-format
 msgid "By File Size"
 msgstr "Dosya Boyutuna Göre"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:227
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Artan"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:226
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Azalan"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "Current Name"
 msgstr "Geçerli Ad"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "New Name"
 msgstr "Yeni Ad"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:257
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:259
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -51746,14 +51746,14 @@ msgstr ""
 "ögeler, yeni adın geçerli ada eşit olması veya adın halihazırda başka bir "
 "ögeye atanmış olması nedeniyle bir ad çakışmasını gösterir."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:313
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:315
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "Yeniden Adlandır"
 msgstr[1] "Yeniden Adlandır (%1 görsel)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:415
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:417
 #, kde-format
 msgid "Sort Images"
 msgstr "Görselleri Sırala"

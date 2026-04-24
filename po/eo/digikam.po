@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-04-24 00:41+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -28050,7 +28050,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "La nomo de etikedo ne povas enhavi '/'"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:464
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Etikednomo jam ekzistas"
@@ -28381,19 +28381,19 @@ msgstr "Koloro"
 msgid "Customize label name here..."
 msgstr "Enigu la nomon de la etikedo ĉi tie..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:102
+#: core/libs/album/widgets/albumpropsedit.cpp:104
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nova Albumo"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Redakti Albumon"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:126
+#: core/libs/album/widgets/albumpropsedit.cpp:128
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -28403,114 +28403,114 @@ msgstr ""
 "\"%1\"\n"
 "Albumaj Propraĵoj"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:134
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Titolo:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:140
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Meti ĉi tie la titolon de la nova albumo"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:143
+#: core/libs/album/widgets/albumpropsedit.cpp:145
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegorio:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "&Infano de:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:159
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Ca&ption:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:164
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Enigu la titolon de la albumo ĉi tie..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:167
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Dato de albumo:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "&Plej malnova"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr ""
 "Uzu ĉi tiun butonon por elekti la daton de la plej malnova bildo el albumo."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Averaĝa"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "Uzu ĉi tiun butonon por kalkuli la averaĝan daton de bildoj de albumo."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Plej freŝa"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr ""
 "Uzu ĉi tiun butonon por elekti la daton de la plej nova bildo el albumo."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:261
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nova Albumo"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Elektita Albumo (Defaŭlte)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:266
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Radiko de aktuala kolekto"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:338
+#: core/libs/album/widgets/albumpropsedit.cpp:343
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Nekategoriita Albumo"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:427
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -28520,13 +28520,13 @@ msgstr ""
 "Krei novan Albumon en\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:472
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Ne eblis Kalkuli Mezon"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -29593,7 +29593,7 @@ msgstr "Skananta kolekto"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Error"
 msgstr "Eraro"
@@ -38699,7 +38699,7 @@ msgstr "Ecoj"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid "Metadata"
 msgstr "Metadatenoj"
@@ -41645,35 +41645,35 @@ msgstr ""
 "<p><b>Noto</b>: ĉi tiu ŝparvojo povas esti uzata por asigni aŭ nuligi "
 "etikedon al eroj.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:335
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Krei Novan Etikedon</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:339
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, fuzzy, kde-format
 #| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Krei Novan Etikedon en<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:345
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, fuzzy, kde-format
 #| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Propertoj de Etikedo<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:519
+#: core/libs/tags/widgets/tageditdlg.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Eraro pri Kreado de Etikedoj"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Eraro okazis dum kreado de etikedo:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Tag Path"
 msgstr "Etikedvojo"
@@ -44782,7 +44782,7 @@ msgid "LCMS2 library port"
 msgstr "LCMS2-biblioteka porto"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:339
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid "Color Management"
 msgstr "Koloradministrado"
@@ -50924,7 +50924,7 @@ msgid "Add Bookmark"
 msgstr "Aldoni legosignon"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
@@ -51184,18 +51184,18 @@ msgstr "&Ornami"
 msgid "Effec&ts"
 msgstr "Efek&toj"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Agordi"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, kde-format
 msgid "Editor Window"
 msgstr "Redaktora Fenestro"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:108
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Editor Window Settings<br/><i>Customize editor window behavior</i></"
@@ -51206,7 +51206,7 @@ msgstr ""
 "<qt>Agordoj de la fenestro de la redaktilo<br/><i>Agordu la konduton de la "
 "fenestro de la redaktilo</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -51218,12 +51218,12 @@ msgstr ""
 "<qt>Enkonstruita Bilda Informa Administrado<br/><i>Agordu rilatojn inter "
 "bildoj kaj metadatenoj</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, kde-format
 msgid "Tool Tip"
 msgstr "Ila Konsilo"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br/><i>Customize "
@@ -51235,12 +51235,12 @@ msgstr ""
 "<qt>Agordoj de ilo-konsiletoj por bildeto kaj dosierujo-Vidi Erojn<br/"
 "><i>Agordi informojn en konsiletoj</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid "RAW Decoding"
 msgstr "RAW Malkodado"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:126
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -51252,7 +51252,7 @@ msgstr ""
 "<qt>Agordoj pri malkodado de RAW-dosieroj<br/><i>Agordi defaŭltajn agordojn "
 "pri RAW-malkodado</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:132
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -51264,12 +51264,12 @@ msgstr ""
 "<qt>Agordoj por Koloro-Administrado<br/><i>Agordi koloradministrado-"
 "agordojn</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Save Images"
 msgstr "Konservi Bildojn"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
@@ -51281,13 +51281,13 @@ msgstr ""
 "<qt>Agordoj por Konservado de Bildaj Dosieroj<br/><i>Agordu defaŭltan "
 "agordon uzatan por konservi bildojn</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
+#: core/showfoto/setup/showfotosetup.cpp:145 core/utilities/setup/setup.cpp:91
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokigo"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
+#: core/showfoto/setup/showfotosetup.cpp:146 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -51297,12 +51297,12 @@ msgstr ""
 "Agordoj de Geolokigo\n"
 "Agordi vidon al geolokigaj eroj"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgid "Plugins"
 msgstr "Kromaĵoj"
 
-#: core/showfoto/setup/showfotosetup.cpp:151
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -51314,13 +51314,13 @@ msgstr ""
 "<qt>Agordoj de la Krominterfaco de Ĉefa Interfaco<br/><i>Agordu kiuj "
 "kromaĵoj estos alireblaj de aplikaĵo</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:158
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Diversaj"
 
-#: core/showfoto/setup/showfotosetup.cpp:157
+#: core/showfoto/setup/showfotosetup.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
@@ -51332,26 +51332,26 @@ msgstr ""
 "<qt>Diversaj agordoj<br/><i>Agordu konduton de la aliaj partoj de Showfoto</"
 "i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:84
+#: core/showfoto/setup/showfotosetupmetadata.cpp:86
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "Rotacii agojn"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:89
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr "Montri bildojn/bildetojn &rotaciitajn laŭ orientiĝa etikedo."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Meti orientigan etikedon al normala post turnado/flipiĝo."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:112
+#: core/showfoto/setup/showfotosetupmetadata.cpp:114
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, kde-format
 msgctxt "@info"
@@ -51362,7 +51362,7 @@ msgstr ""
 "normo uzata de la plej multaj diĝitkameraoj hodiaŭ por konservi teknikajn "
 "informojn (kiel aperturo kaj obturatoro) pri bildo."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:116
+#: core/showfoto/setup/showfotosetupmetadata.cpp:118
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -51373,14 +51373,14 @@ msgstr ""
 "pli malnova normo uzita en cifereca fotarto por konservi fotistinformojn en "
 "bildoj."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:122
+#: core/showfoto/setup/showfotosetupmetadata.cpp:124
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, kde-format
 msgctxt "@info"
 msgid "a new standard used in digital photography, designed to replace IPTC."
 msgstr "nova normo uzita en cifereca fotarto, dizajnita por anstataŭigi IPTC."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmetadata.cpp:145
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
@@ -51389,7 +51389,7 @@ msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Konduto"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:152
+#: core/showfoto/setup/showfotosetupmetadata.cpp:154
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -52279,67 +52279,67 @@ msgid "You can add or remove favorite stacks here."
 msgstr "Vi povas aldoni aŭ forigi ŝatatajn stakojn ĉi tie."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:87
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Plej ŝatataj"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "Aldoni Favorito"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "Aldoni Subdosierujon"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:115
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "Aldoni novan subdosierujon al la listo"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "Forigi Eron"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "Forigi elektitan eron el la listo"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "Redakti Eron"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "Redakti nunan eron el la listo"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:168
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "Serĉi en Favoritoj..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Konfirmi Forigon de Ero"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:355
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -52349,7 +52349,7 @@ msgstr ""
 "Ĉu vi certas, ke vi volas forigi la eron \"%1\"\n"
 "kaj ĉiujn nestitajn aĵojn se ekzistas?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:669
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
@@ -52458,44 +52458,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "kreita: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
 #, kde-format
 msgid "By Name"
 msgstr "laŭ nomo"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
 #, kde-format
 msgid "By Date"
 msgstr "laŭ dato"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
 #, kde-format
 msgid "By File Size"
 msgstr "Laŭ Dosiera Grandeco"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:227
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Kreskante"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:226
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Malkreskante"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "Current Name"
 msgstr "Nuna Nomo"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "New Name"
 msgstr "Nova nomo"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:257
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:259
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -52506,14 +52506,14 @@ msgstr ""
 "indikas nomkolizion, aŭ ĉar la nova nomo estas egala al la nuna nomo, aŭ ĉar "
 "la nomo jam estis asignita al alia ero."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:313
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:315
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "Alinomi"
 msgstr[1] "Alinomi (%1 bildojn)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:415
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:417
 #, kde-format
 msgid "Sort Images"
 msgstr "Ordigi Bildojn"

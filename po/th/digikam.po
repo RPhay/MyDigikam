@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-04-24 00:41+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -27960,7 +27960,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "ชื่อของป้ายกำกับไม่สามารถมีอักษร '/' ได้"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:464
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "มีป้ายกำกับที่มีชื่อนี้อยู่แล้ว"
@@ -28304,21 +28304,21 @@ msgstr "สี"
 msgid "Customize label name here..."
 msgstr "ป้อนชื่อของป้ายกำกับที่นี่..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:102
+#: core/libs/album/widgets/albumpropsedit.cpp:104
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "อัลบั้มใหม่"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, fuzzy, kde-format
 #| msgid "Edit Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "แก้ไขอัลบั้ม"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:126
+#: core/libs/album/widgets/albumpropsedit.cpp:128
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgctxt "@label: album properties"
@@ -28327,55 +28327,55 @@ msgid ""
 "Album Properties"
 msgstr "คุณสมบัติของอัลบั้ม"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:134
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&ชื่ออัลบั้ม:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:140
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "ตั้งค่าผู้เผยแพร่เนื้อหาที่นี่ "
 
-#: core/libs/album/widgets/albumpropsedit.cpp:143
+#: core/libs/album/widgets/albumpropsedit.cpp:145
 #, fuzzy, kde-format
 #| msgid "Ca&tegory:"
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "ห&มวดหมู่:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr ""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:159
 #, fuzzy, kde-format
 #| msgid "Ca&ption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "คำ&บรรยายภาพ:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:164
 #, fuzzy, kde-format
 #| msgid "Enter caption text here."
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "ป้อนข้อความบรรยายภาพที่นี่"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:167
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "วันที่ของอัลบั้ม:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the oldest image"
@@ -28384,14 +28384,14 @@ msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "เก่าที่&สุด"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
 msgstr "ใช้ปุ่มนี้เพื่อทำการค้นหาในอัลบั้มที่เลือกไว้ เพื่อค้นหารายการต่าง ๆ ที่ซ้ำกัน"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "Calculates the average date"
@@ -28400,14 +28400,14 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "เฉ&ลี่ย"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
 msgstr "ใช้ปุ่มนี้เพื่อทำการค้นหาในอัลบั้มที่เลือกไว้ เพื่อค้นหารายการต่าง ๆ ที่ซ้ำกัน"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -28416,40 +28416,40 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "ใหม่ที่สุด"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:178
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
 msgstr "ใช้ปุ่มนี้เพื่อทำการค้นหาในอัลบั้มที่เลือกไว้ เพื่อค้นหารายการต่าง ๆ ที่ซ้ำกัน"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:261
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "อัลบั้มใหม่"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, fuzzy, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "เลือกอัลบั้ม"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:266
 #, fuzzy, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "ล้างการเลือกปัจจุบัน"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:338
+#: core/libs/album/widgets/albumpropsedit.cpp:343
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "อัลบั้มที่ยังไม่จัดหมวดหมู่"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:427
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -28458,14 +28458,14 @@ msgid ""
 "\"%1\""
 msgstr "สร้างอัลบั้มใหม่"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:472
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "ไม่สามารถคำนวณหาช่วงเฉลี่ยได้"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, fuzzy, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -29534,7 +29534,7 @@ msgstr "การเพิ่มคลังภาพ"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Error"
 msgstr "ผิดพลาด"
@@ -38524,7 +38524,7 @@ msgstr "คุณสมบัติ"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid "Metadata"
 msgstr "ข้อมูลกำกับภาพ"
@@ -41332,34 +41332,34 @@ msgid ""
 "</p>"
 msgstr ""
 
-#: core/libs/tags/widgets/tageditdlg.cpp:335
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>สร้างป้ายกำกับใหม่</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:339
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, fuzzy, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>สร้างป้ายกำกับใหม่ใน<br/><i>\"%1\"</i></b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:345
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, fuzzy, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>คุณสมบัติของป้ายกำกับ<br/><i>\"%1\"</i></b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:519
+#: core/libs/tags/widgets/tageditdlg.cpp:521
 #, fuzzy, kde-format
 #| msgid "Tag creation Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "ผิดพลาดในการสร้างป้ายกำกับ"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "เกิดข้อผิดพลาดระหว่างทำการสร้างป้ายกำกับ:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Tag Path"
 msgstr "เส้นทางไปยังป้ายกำกับ"
@@ -44415,7 +44415,7 @@ msgid "LCMS2 library port"
 msgstr "ไลบรารี CImg"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:339
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid "Color Management"
 msgstr "การจัดการระบบสี"
@@ -51590,7 +51590,7 @@ msgid "Add Bookmark"
 msgstr "ที่คั่นหน้า"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:97
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
@@ -51862,19 +51862,19 @@ msgstr "ตกแต่&งภาพ"
 msgid "Effec&ts"
 msgstr "ทำภาพเบลอ"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:31
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "ปรับแต่ง"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, fuzzy, kde-format
 msgid "Editor Window"
 msgstr "พอดีกับหน้าต่าง"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:108
 #, fuzzy, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
@@ -51882,7 +51882,7 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของเครื่องมือแก้ไขภาพ<br/><i>ปรับแต่งพฤติกรรมของเครื่องมือแก้ไขภาพ</i></"
 "qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -51894,12 +51894,12 @@ msgstr ""
 "<qt>การจัดการข้อมูลรายละเอียดที่ฝังแนบมากับภาพ<br/><i>ตั้งค่าความสัมพันธ์ต่าง ๆ "
 "ระหว่างภาพต่าง ๆ กับข้อมูลกำกับภาพ</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, kde-format
 msgid "Tool Tip"
 msgstr "หน้าต่างผุด"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -51911,12 +51911,12 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของหน้าต่างผุดแสดงข้อมูลของรายการต่าง ๆ<br/"
 "><i>ปรับแต่งข้อมูลรายละเอียดที่จะให้แสดงในหน้าต่างผุดแสดงข้อมูล</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid "RAW Decoding"
 msgstr "ถอดรหัสแฟ้มประเภท RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:126
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -51928,7 +51928,7 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของการถอดรหัสแฟ้มแบบ RAW<br/><i>ปรับตั้งค่าปริยายต่าง ๆ "
 "ของการถอดรหัสแฟ้มแบบ RAW </i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:132
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -51940,12 +51940,12 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ เกี่ยวกับการจัดการระบบสี<br/><i>ปรับตั้งค่าต่าง ๆ "
 "ของการจัดการระบบสีตามต้องการ</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Save Images"
 msgstr "บันทึกภาพ"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
@@ -51957,14 +51957,14 @@ msgstr ""
 "<qt>ตั้งค่าสำหรับการจัดเก็บแฟ้มภาพต่าง ๆ<br/><i>ตั้งค่าปริยายที่จะถูกใช้ในการจัดเก็บภาพต่าง ๆ</"
 "i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
+#: core/showfoto/setup/showfotosetup.cpp:145 core/utilities/setup/setup.cpp:91
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "การระบุพิกัดตำแหน่ง"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
+#: core/showfoto/setup/showfotosetup.cpp:146 core/utilities/setup/setup.cpp:92
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Album View Settings<br/><i>Customize the look of the albums list</i></"
@@ -51976,12 +51976,12 @@ msgid ""
 msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของมุมมองอัลบั้ม<br/><i>ปรับแต่งรูปลักษณ์ของรายการอัลบั้มต่าง ๆ</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, fuzzy, kde-format
 msgid "Plugins"
 msgstr "ส่วนเสริมของ Kipi"
 
-#: core/showfoto/setup/showfotosetup.cpp:151
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -51993,42 +51993,42 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของส่วนติดต่อผู้ใช้งานตัวหลักกับส่วนเสริม<br/> "
 "<i>ตั้งค่าว่าจะให้ใช้งานส่วนเสริมตัวใดได้บ้างจากส่วนติดต่อผู้ใช้งานตัวหลัก</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "เบ็ดเตล็ด"
 
-#: core/showfoto/setup/showfotosetup.cpp:157
+#: core/showfoto/setup/showfotosetup.cpp:159
 #, fuzzy, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
 "Showfoto</i></qt>"
 msgstr "<qt>ตั้งค่าเบ็ดเตล็ดต่าง ๆ<br/><i>ปรับแต่งพฤติกรรมของส่วนอื่น ๆ ของดิจิแคม</i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:84
+#: core/showfoto/setup/showfotosetupmetadata.cpp:86
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "การหมุน:"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:89
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, fuzzy, kde-format
 #| msgid "Show images/thumbnails &rotated according to orientation tag."
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr "แสดงภาพ/ตัวอย่างภาพ โดยห&มุนภาพตามข้อมูลทิศทางภาพของ EXIF"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:93
 #, fuzzy, kde-format
 #| msgid "Set orientation tag to normal after rotate/flip."
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "ตั้งค่าข้อมูลทิศทางภาพเป็นปกติ หลังจากหมุน/พลิกภาพแล้ว"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:112
+#: core/showfoto/setup/showfotosetupmetadata.cpp:114
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
@@ -52044,7 +52044,7 @@ msgstr ""
 "เป็นรูปแบบข้อมูลมาตรฐานที่ถูกใช้กันมากในกล้องดิจิทัลในปัจจุบัน เพื่อใช้เก็บค่าข้อมูลเชิงเทคนิคต่าง ๆ "
 "ของภาพถ่ายให้เป็นข้อมูลที่ฝังแนบมากับภาพด้วย (เช่น ค่ารูรับแสง และความเร็วชัตเตอร์ เป็นต้น)</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:116
+#: core/showfoto/setup/showfotosetupmetadata.cpp:118
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
@@ -52060,7 +52060,7 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>ข้อมูลกำกับภาพแบบ IPTC</a> - "
 "เป็นมาตรฐานเก่าที่ใช้ในวงการถ่ายภาพดิจิทัล เพื่อใช้จัดเก็บข้อมูลต่าง ๆ ของผู้ถ่ายไว้ในภาพด้วย</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:122
+#: core/showfoto/setup/showfotosetupmetadata.cpp:124
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
@@ -52074,7 +52074,7 @@ msgstr ""
 "Extensible_Metadata_Platform'>ข้อมูลกำกับภาพแบบ XMP</a> - "
 "เป็นมาตรฐานใหม่ที่ใช้วงการถ่ายภาพดิจิทัล โดยมีเป้าหมายในการใช้แทนข้อมูล IPTC แบบเก่า</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmetadata.cpp:145
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
@@ -52083,7 +52083,7 @@ msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "พฤติกรรม"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:152
+#: core/showfoto/setup/showfotosetupmetadata.cpp:154
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 msgctxt "@title:tab"
@@ -52972,34 +52972,34 @@ msgid "You can add or remove favorite stacks here."
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:87
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "เพิ่มโฟลเดอร์..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "เพิ่มโฟลเดอร์..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:115
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "เพิ่มค่าใหม่ไปยังรายการ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Deselect Item"
@@ -53007,39 +53007,39 @@ msgctxt "@action"
 msgid "Delete Item"
 msgstr "ยกเลิกการเลือกรายการ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:133
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "แฟ้มภาพ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:151
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "ลบค่าที่เลือกไว้ออกจากรายการ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:168
 #, fuzzy, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "ตรวจค้นหารูปภาพใหม่ ๆ"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "หมวด:"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:355
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -53047,7 +53047,7 @@ msgid ""
 "and all nested items if any?"
 msgstr "คุณแน่ใจหรือว่า ต้องการจะลบการค้นหา \"%1\" ที่เลือกไว้นี้ ?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:669
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Unnamed"
@@ -53171,46 +53171,46 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "สร้างเมื่อ : %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
 #, kde-format
 msgid "By Name"
 msgstr "ตามชื่อ"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
 #, kde-format
 msgid "By Date"
 msgstr "ตามวันที่"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
 #, kde-format
 msgid "By File Size"
 msgstr "ตามขนาดแฟ้ม"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:227
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "จากมากไปหาน้อย"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:226
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "จากน้อยไปหามาก"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, fuzzy, kde-format
 msgid "Current Name"
 msgstr "จำนวนนับ: "
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, fuzzy, kde-format
 msgid "New Name"
 msgstr "ชื่อใหม่: "
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:257
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:259
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -53218,13 +53218,13 @@ msgid ""
 "because the name has already been assigned to another item."
 msgstr ""
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:313
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:315
 #, fuzzy, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "เปลี่ยนชื่อ..."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:415
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:417
 #, fuzzy, kde-format
 msgid "Sort Images"
 msgstr "จัดเ&รียงรูปภาพ"

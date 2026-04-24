@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-04-24 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -27433,7 +27433,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Názov štítka nesmie obsahovať „/“"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:464
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Názov štítka už existuje"
@@ -27763,19 +27763,19 @@ msgstr "Farba"
 msgid "Customize label name here..."
 msgstr "Zadajte meno štítku..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:102
+#: core/libs/album/widgets/albumpropsedit.cpp:104
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Nový album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Upraviť album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:126
+#: core/libs/album/widgets/albumpropsedit.cpp:128
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27785,56 +27785,56 @@ msgstr ""
 "\"%1\"\n"
 "Vlastnosti albumu"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:134
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, kde-format
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Názov:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:140
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Tu môžete nastaviť veľkosť dažďových kvapiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:143
+#: core/libs/album/widgets/albumpropsedit.cpp:145
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Ka&tegória:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "&Potomok:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:159
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "Titu&lok:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:164
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Sem zadajte titulok albumu..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:167
 #, kde-format
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "&Dátum albumu:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, kde-format
 msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Naj&starší"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the oldest image from album."
@@ -27842,14 +27842,14 @@ msgstr ""
 "Použite toto tlačidlo na prejdenie zvolených albumov a nájdenie duplicitných "
 "položiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, kde-format
 msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Priemer"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to calculate the average date of images from album."
@@ -27857,14 +27857,14 @@ msgstr ""
 "Použite toto tlačidlo na prejdenie zvolených albumov a nájdenie duplicitných "
 "položiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, kde-format
 msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Najnovší"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:178
 #, kde-format
 msgctxt "@info"
 msgid "Use this button to select the date of the newest image from album."
@@ -27872,31 +27872,31 @@ msgstr ""
 "Použite toto tlačidlo na prejdenie zvolených albumov a nájdenie duplicitných "
 "položiek."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:261
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, kde-format
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Nový album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, kde-format
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Vybraný album (predvolené)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:266
 #, kde-format
 msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Koreň aktuálnej kolekcie"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:338
+#: core/libs/album/widgets/albumpropsedit.cpp:343
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Nezaradený album"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:427
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, kde-format
 msgctxt "@label: album properties"
 msgid ""
@@ -27906,13 +27906,13 @@ msgstr ""
 "Vytvoriť nový album v\n"
 "\"%1\""
 
-#: core/libs/album/widgets/albumpropsedit.cpp:472
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, kde-format
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Nepodarilo sa vypočítať priemer"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, kde-format
 msgctxt "@info: album properties"
 msgid "Could not calculate date average for this album."
@@ -28974,7 +28974,7 @@ msgstr "Prehľadávanie kolekcie"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Error"
 msgstr "Chyba"
@@ -37928,7 +37928,7 @@ msgstr "Vlastnosti"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid "Metadata"
 msgstr "Metadáta"
@@ -40784,33 +40784,33 @@ msgstr ""
 "<p><b>Poznámka</b>: túto klávesovú skratku môžete použiť na priradenie/"
 "zrušenie priradenia štítku k položkám.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:335
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Vytvoriť nový štítok</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:339
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, kde-format
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Vytvoriť novú značku v<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:345
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, kde-format
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Vlastnosti štítku<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:519
+#: core/libs/tags/widgets/tageditdlg.cpp:521
 #, kde-format
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Chyba pri vytváraní značky"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Pri vytváraní štítku sa vyskytla chyba:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Tag Path"
 msgstr "Umiestnenie štítkov"
@@ -43853,7 +43853,7 @@ msgid "LCMS2 library port"
 msgstr "Port knižnice LCMS2"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:339
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid "Color Management"
 msgstr "Správa farieb"
@@ -49980,7 +49980,7 @@ msgid "Add Bookmark"
 msgstr "Záložky"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:97
 #, kde-format
 msgctxt "@info"
 msgid "Add new bookmark to the list"
@@ -50238,18 +50238,18 @@ msgstr "&Ozdobiť"
 msgid "Effec&ts"
 msgstr "Efek&ty"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Nastaviť"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, kde-format
 msgid "Editor Window"
 msgstr "Okno editora"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:108
 #, kde-format
 msgid ""
 "<qt>Editor Window Settings<br><i>Customize editor window behavior</i></qt>"
@@ -50257,7 +50257,7 @@ msgstr ""
 "<qt>Nastavenie dekódovania RAW súborov<br/><i>Prispôsobiť predvolené "
 "nastavenie dekódovania RAW</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:114
 #, kde-format
 msgid ""
 "<qt>Embedded Image Information Management<br><i>Setup relations between "
@@ -50266,12 +50266,12 @@ msgstr ""
 "<qt>Správa informácií ukladaných do obrázka<br/><i>Nastavenie vzťahu medzi "
 "obrázkami a metadátami</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, kde-format
 msgid "Tool Tip"
 msgstr "Bublinový pomocník"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:120
 #, kde-format
 msgid ""
 "<qt>Thumbbar and Folder-View Items Tool-Tip Settings<br><i>Customize "
@@ -50280,12 +50280,12 @@ msgstr ""
 "<qt>Nastavenie bublín položiek panela náhľadov a priečinkov albumov<br/"
 "><i>Prispôsobiť informácie v bublinách</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid "RAW Decoding"
 msgstr "Dekódovanie RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:126
 #, kde-format
 msgid ""
 "<qt>RAW Files Decoding Settings<br><i>Customize default RAW decoding "
@@ -50294,7 +50294,7 @@ msgstr ""
 "<qt>Nastavenie dekódovania RAW súborov<br/><i>Prispôsobiť predvolené "
 "nastavenie dekódovania RAW</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:132
 #, kde-format
 msgid ""
 "<qt>Settings for Color Management<br><i>Customize color management settings</"
@@ -50303,12 +50303,12 @@ msgstr ""
 "<qt>Nastavenie správy farieb<br/><i>Prispôsobiť nastavenie správy farieb</"
 "i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Save Images"
 msgstr "Uložiť obrázky"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, kde-format
 msgid ""
 "<qt>Settings for Saving Image Files<br><i>Set default configuration used to "
@@ -50317,13 +50317,13 @@ msgstr ""
 "<qt>Nastavenie ukladania obrázkových súborov<br/><i>Nastaviť predvolené "
 "hodnoty pre ukladanie obrázkov</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
+#: core/showfoto/setup/showfotosetup.cpp:145 core/utilities/setup/setup.cpp:91
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Geolokácia"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
+#: core/showfoto/setup/showfotosetup.cpp:146 core/utilities/setup/setup.cpp:92
 #, kde-format
 msgctxt "@title"
 msgid ""
@@ -50333,12 +50333,12 @@ msgstr ""
 "Nastavenie geolokácie\n"
 "Prispôsobte si pohľad pre geolokáciu položiek"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, kde-format
 msgid "Plugins"
 msgstr "Pluginy"
 
-#: core/showfoto/setup/showfotosetup.cpp:151
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, kde-format
 msgid ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
@@ -50347,13 +50347,13 @@ msgstr ""
 "<qt>Main Interface Plug-in Settings<br><i>Set which plugins will be "
 "accessible from application</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:158
 #, kde-format
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Rôzne"
 
-#: core/showfoto/setup/showfotosetup.cpp:157
+#: core/showfoto/setup/showfotosetup.cpp:159
 #, kde-format
 msgid ""
 "<qt>Miscellaneous Settings<br><i>Customize behavior of the other parts of "
@@ -50362,26 +50362,26 @@ msgstr ""
 "<qt>Rôzne nastavenia<br/><i>Upraviť správanie ostatných súčastí Showfoto</"
 "i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:84
+#: core/showfoto/setup/showfotosetupmetadata.cpp:86
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "Operácie otáčania"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:89
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, kde-format
 msgctxt "@option:check"
 msgid "Show images/thumbnails &rotated according to orientation tag."
 msgstr "Zobraziť obrázky/náhľady podľa štítka orientácie"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:93
 #, kde-format
 msgctxt "@option:check"
 msgid "Set orientation tag to normal after rotate/flip."
 msgstr "Po otočení/prevrátení &nastaviť informáciu o orientácii"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:112
+#: core/showfoto/setup/showfotosetupmetadata.cpp:114
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, kde-format
 msgctxt "@info"
@@ -50393,7 +50393,7 @@ msgstr ""
 "používa väčšina dnešných digitálnych fotoaparátov na ukladanie technických "
 "informácií o fotografii.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:116
+#: core/showfoto/setup/showfotosetupmetadata.cpp:118
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, kde-format
 msgctxt "@info"
@@ -50405,7 +50405,7 @@ msgstr ""
 "IPTC_Information_Interchange_Model'>IPTC</a> je starší štandard používaný v "
 "digitálnej fotografii na vkladanie informácií do obrázkov.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:122
+#: core/showfoto/setup/showfotosetupmetadata.cpp:124
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, kde-format
 msgctxt "@info"
@@ -50414,7 +50414,7 @@ msgstr ""
 "nový štandard používaný v digitálnej fotografii, navrhnutý ako náhrada za "
 "IPTC."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmetadata.cpp:145
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
@@ -50423,7 +50423,7 @@ msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Správanie"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:152
+#: core/showfoto/setup/showfotosetupmetadata.cpp:154
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, kde-format
 msgctxt "@title:tab"
@@ -51307,67 +51307,67 @@ msgid "You can add or remove favorite stacks here."
 msgstr "Tu môžete pridať alebo odstrániť obľúbené zásobníky."
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:87
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr "Obľúbené"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "Pridať priečinok"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, kde-format
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "Pridať priečinok"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:115
 #, kde-format
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "Pridať nové obrázky do zoznamu"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, kde-format
 msgctxt "@action"
 msgid "Delete Item"
 msgstr "Zrušiť výber"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:133
 #, kde-format
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "Odstrániť vybrané obrázky zo zoznamu"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, kde-format
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "Upraviť názvy"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:151
 #, kde-format
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "Odstrániť aktuálne označenú hodnotu zo zoznamu"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:168
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "Hľadať nové obrázky"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Potvrdiť odstránenie"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:355
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -51377,7 +51377,7 @@ msgstr ""
 "Are you sure you want to remove the item \"%1\"\n"
 "and all nested items if any?"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:669
 #, kde-format
 msgctxt "@title"
 msgid "Unnamed"
@@ -51486,44 +51486,44 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "vytvorené: %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
 #, kde-format
 msgid "By Name"
 msgstr "Podľa mena"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
 #, kde-format
 msgid "By Date"
 msgstr "Podľa dátumu"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
 #, kde-format
 msgid "By File Size"
 msgstr "Podľa veľkosti súboru"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:227
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Vzostupne"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:226
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, kde-format
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Zostupne"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "Current Name"
 msgstr "Aktuálne meno"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "New Name"
 msgstr "Nový názov"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:257
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:259
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -51534,7 +51534,7 @@ msgstr ""
 "označené kolidujúce názvy položiek, pretože buď nový název je rovnaký ako "
 "pôvodný alebo bol už názov priradený inej položke."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:313
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:315
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
@@ -51542,7 +51542,7 @@ msgstr[0] "Premenovať"
 msgstr[1] "Premenovať (%1 obrázky)"
 msgstr[2] "Premenovať (%1 obrázkov)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:415
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:417
 #, kde-format
 msgid "Sort Images"
 msgstr "Zotriediť obrázky"

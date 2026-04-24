@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-23 00:41+0000\n"
+"POT-Creation-Date: 2026-04-24 00:41+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -29224,7 +29224,7 @@ msgid "Tag name cannot contain '/'"
 msgstr "Το όνομα ετικέτας δεν μπορεί να περιέχει το '/'"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:312
-#: core/libs/tags/widgets/tageditdlg.cpp:464
+#: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
 msgstr "Η ετικέτα υπάρχει ήδη"
@@ -29600,21 +29600,21 @@ msgstr "Χρώμα"
 msgid "Customize label name here..."
 msgstr "Εισάγετε εδώ όνομα ετικέτας..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:102
+#: core/libs/album/widgets/albumpropsedit.cpp:104
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@title:window, album properties"
 msgid "New Album"
 msgstr "Νέο λεύκωμα"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:103
+#: core/libs/album/widgets/albumpropsedit.cpp:105
 #, fuzzy, kde-format
 #| msgid "Edit Album"
 msgctxt "@title:window, album properties"
 msgid "Edit Album"
 msgstr "Επεξεργασία λευκώματος"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:126
+#: core/libs/album/widgets/albumpropsedit.cpp:128
 #, fuzzy, kde-format
 #| msgid "Album Properties"
 msgctxt "@label: album properties"
@@ -29623,56 +29623,56 @@ msgid ""
 "Album Properties"
 msgstr "Ιδιότητες λευκώματος"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:134
+#: core/libs/album/widgets/albumpropsedit.cpp:136
 #, fuzzy, kde-format
 #| msgid "&Title:"
 msgctxt "@label: album properties"
 msgid "&Title:"
 msgstr "&Τίτλος:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:138
+#: core/libs/album/widgets/albumpropsedit.cpp:140
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgctxt "@label: album properties"
 msgid "Set here the new album title"
 msgstr "Ορίστε εδώ τον πάροχο του περιεχομένου."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:143
+#: core/libs/album/widgets/albumpropsedit.cpp:145
 #, fuzzy, kde-format
 #| msgid "Ca&tegory:"
 msgctxt "@label: album properties"
 msgid "Ca&tegory:"
 msgstr "Κα&τηγορία:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:151
+#: core/libs/album/widgets/albumpropsedit.cpp:153
 #, fuzzy, kde-format
 #| msgid "Ch&ild Of:"
 msgctxt "@label: album properties"
 msgid "Ch&ild Of:"
 msgstr "Από&γονος του:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:157
+#: core/libs/album/widgets/albumpropsedit.cpp:159
 #, fuzzy, kde-format
 #| msgid "Ca&ption:"
 msgctxt "@label: album properties"
 msgid "Ca&ption:"
 msgstr "&Τίτλος:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:162
+#: core/libs/album/widgets/albumpropsedit.cpp:164
 #, fuzzy, kde-format
 #| msgid "Enter album caption here..."
 msgctxt "@label: album properties"
 msgid "Enter album caption here..."
 msgstr "Εισαγάγετε τον κύριο τίτλο του λευκώματος εδώ..."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:165
+#: core/libs/album/widgets/albumpropsedit.cpp:167
 #, fuzzy, kde-format
 #| msgid "Album &date:"
 msgctxt "@label: album properties"
 msgid "Album &date:"
 msgstr "Η&μερομηνία λευκώματος:"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:171
+#: core/libs/album/widgets/albumpropsedit.cpp:173
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the oldest image"
@@ -29681,7 +29681,7 @@ msgctxt "@action: Selects the date of the oldest image"
 msgid "&Oldest"
 msgstr "Η &παλαιότερη"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:172
+#: core/libs/album/widgets/albumpropsedit.cpp:174
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -29690,7 +29690,7 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:173
+#: core/libs/album/widgets/albumpropsedit.cpp:175
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:181
 #, fuzzy, kde-format
 #| msgctxt "Calculates the average date"
@@ -29699,7 +29699,7 @@ msgctxt "@action: Calculates the average date"
 msgid "&Average"
 msgstr "&Μέση"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:174
+#: core/libs/album/widgets/albumpropsedit.cpp:176
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -29708,7 +29708,7 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:175
+#: core/libs/album/widgets/albumpropsedit.cpp:177
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:183
 #, fuzzy, kde-format
 #| msgctxt "Selects the date of the newest image"
@@ -29717,7 +29717,7 @@ msgctxt "@action: Selects the date of the newest image"
 msgid "Newest"
 msgstr "Η νεότερη"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:176
+#: core/libs/album/widgets/albumpropsedit.cpp:178
 #, fuzzy, kde-format
 #| msgid "Use this button to scan the selected albums for duplicate items."
 msgctxt "@info"
@@ -29726,21 +29726,21 @@ msgstr ""
 "Χρησιμοποιήστε αυτό το κουμπί για τη σάρωση επιλεγμένων λευκωμάτων για την "
 "εύρεση διπλά εμφανιζόμενων αντικειμένων."
 
-#: core/libs/album/widgets/albumpropsedit.cpp:261
+#: core/libs/album/widgets/albumpropsedit.cpp:263
 #, fuzzy, kde-format
 #| msgid "New Album"
 msgctxt "@label: album properties"
 msgid "New Album"
 msgstr "Νέο λεύκωμα"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:263
+#: core/libs/album/widgets/albumpropsedit.cpp:265
 #, fuzzy, kde-format
 #| msgid "Selected Album (Default)"
 msgctxt "@item: album properties"
 msgid "Selected Album (Default)"
 msgstr "Επιλογή λευκώματος (προκαθορισμένο)"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:264
+#: core/libs/album/widgets/albumpropsedit.cpp:266
 #, fuzzy, kde-format
 #| msgctxt "top level folder of album"
 #| msgid "Root of current collection"
@@ -29748,14 +29748,14 @@ msgctxt "@item: top level folder of album"
 msgid "Root of current collection"
 msgstr "Ρίζα της τρέχουσας συλλογής"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:338
+#: core/libs/album/widgets/albumpropsedit.cpp:343
 #, fuzzy, kde-format
 #| msgid "Uncategorized Album"
 msgctxt "@info: album properties"
 msgid "Uncategorized Album"
 msgstr "Αταξινόμητο λεύκωμα"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:427
+#: core/libs/album/widgets/albumpropsedit.cpp:432
 #, fuzzy, kde-format
 #| msgid "Create New Album"
 msgctxt "@label: album properties"
@@ -29764,14 +29764,14 @@ msgid ""
 "\"%1\""
 msgstr "Δημιουργία νέου λευκώματος"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:472
+#: core/libs/album/widgets/albumpropsedit.cpp:477
 #, fuzzy, kde-format
 #| msgid "Could Not Calculate Average"
 msgctxt "@title:window, album properties"
 msgid "Could not Calculate Average"
 msgstr "Αδυναμία υπολογισμού μέσης ημερομηνίας"
 
-#: core/libs/album/widgets/albumpropsedit.cpp:473
+#: core/libs/album/widgets/albumpropsedit.cpp:478
 #, fuzzy, kde-format
 #| msgid "Could not calculate date average for this album."
 msgctxt "@info: album properties"
@@ -30924,7 +30924,7 @@ msgstr "Σάρωση συλλογής"
 #: core/libs/database/utils/scan/scancontroller_progress.cpp:94
 #: core/libs/mlfoundation/mlpipelinemacros.h:61
 #: core/libs/mlfoundation/mlpipelinemacros.h:71
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Error"
 msgstr "Σφάλμα"
@@ -40499,7 +40499,7 @@ msgstr "Ιδιότητες"
 
 #: core/libs/properties/import/importitempropertiessidebar.cpp:78
 #: core/libs/settings/applicationsettings_miscs.cpp:443
-#: core/showfoto/setup/showfotosetup.cpp:111
+#: core/showfoto/setup/showfotosetup.cpp:113
 #, kde-format
 msgid "Metadata"
 msgstr "Μεταδεδομένα"
@@ -43613,36 +43613,36 @@ msgstr ""
 "<p><b>Σημείωση</b>: αυτή η συντόμευση μπορεί να χρησιμοποιηθεί για να "
 "καταχωρήσει ετικέτες σε αντικείμενα.</p>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:335
+#: core/libs/tags/widgets/tageditdlg.cpp:337
 #, kde-format
 msgid "<b>Create New Tag</b>"
 msgstr "<b>Δημιουργία νέας ετικέτας</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:339
+#: core/libs/tags/widgets/tageditdlg.cpp:341
 #, fuzzy, kde-format
 #| msgid "<b>Create New Tag in<br/>\"%1\"</b>"
 msgid "<b>Create New Tag in<br>\"%1\"</b>"
 msgstr "<b>Δημιουργία νέας ετικέτας στο<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:345
+#: core/libs/tags/widgets/tageditdlg.cpp:347
 #, fuzzy, kde-format
 #| msgid "<b>Properties of Tag<br/>\"%1\"</b>"
 msgid "<b>Properties of Tag<br>\"%1\"</b>"
 msgstr "<b>Ιδιότητες της ετικέτας<br/>\"%1\"</b>"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:519
+#: core/libs/tags/widgets/tageditdlg.cpp:521
 #, fuzzy, kde-format
 #| msgid "Tag creation Error"
 msgctxt "@title:window"
 msgid "Tag Creation Error"
 msgstr "Σφάλμα δημιουργίας ετικέτας"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:533
+#: core/libs/tags/widgets/tageditdlg.cpp:535
 #, kde-format
 msgid "An error occurred during tag creation:"
 msgstr "Συνέβη ένα σφάλμα κατά τη δημιουργία ετικέτας:"
 
-#: core/libs/tags/widgets/tageditdlg.cpp:535
+#: core/libs/tags/widgets/tageditdlg.cpp:537
 #, kde-format
 msgid "Tag Path"
 msgstr "Διαδρομή ετικέτας"
@@ -46968,7 +46968,7 @@ msgid "LCMS2 library port"
 msgstr "Βιβλιοθήκη CImg"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:339
-#: core/showfoto/setup/showfotosetup.cpp:129
+#: core/showfoto/setup/showfotosetup.cpp:131
 #, kde-format
 msgid "Color Management"
 msgstr "Διαχείριση χρωμάτων"
@@ -54134,7 +54134,7 @@ msgid "Add Bookmark"
 msgstr "Σελιδοδείκτες"
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:91
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:97
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
@@ -54412,19 +54412,19 @@ msgstr "&Διακόσμηση"
 msgid "Effec&ts"
 msgstr "Ε&φέ"
 
-#: core/showfoto/setup/showfotosetup.cpp:97 core/utilities/setup/setup.cpp:31
+#: core/showfoto/setup/showfotosetup.cpp:99 core/utilities/setup/setup.cpp:31
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgctxt "@title:window"
 msgid "Configure"
 msgstr "Διαμόρφωση"
 
-#: core/showfoto/setup/showfotosetup.cpp:105
+#: core/showfoto/setup/showfotosetup.cpp:107
 #, kde-format
 msgid "Editor Window"
 msgstr "Παράθυρο επεξεργαστή"
 
-#: core/showfoto/setup/showfotosetup.cpp:106
+#: core/showfoto/setup/showfotosetup.cpp:108
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Image Editor Window Settings<br/><i>Customize the image editor "
@@ -54435,7 +54435,7 @@ msgstr ""
 "<qt>Ρυθμίσεις παραθύρου επεξεργαστή εικόνων<br/><i>Προσαρμογή του παραθύρου "
 "του επεξεργαστή εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:112
+#: core/showfoto/setup/showfotosetup.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Embedded Image Information Management<br/><i>Setup relations between "
@@ -54447,12 +54447,12 @@ msgstr ""
 "<qt>Διαχείριση ενσωματωμένης πληροφορίας εικόνας<br/><i>Ρύθμιση σχέσεων "
 "μεταξύ των μεταδεδομένων και των εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:117
+#: core/showfoto/setup/showfotosetup.cpp:119
 #, kde-format
 msgid "Tool Tip"
 msgstr "Υπόδειξη"
 
-#: core/showfoto/setup/showfotosetup.cpp:118
+#: core/showfoto/setup/showfotosetup.cpp:120
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Thumbbar Items Tool-Tip Settings<br/><i>Customize information in tool-"
@@ -54464,12 +54464,12 @@ msgstr ""
 "<qt>Ρυθμίσεις υποδείξεων αντικειμένων γραμμής επισκόπησης<br/><i>Προσαρμογή "
 "πληροφοριών στις υποδείξεις</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:123
+#: core/showfoto/setup/showfotosetup.cpp:125
 #, kde-format
 msgid "RAW Decoding"
 msgstr "Αποκωδικοποίηση RAW"
 
-#: core/showfoto/setup/showfotosetup.cpp:124
+#: core/showfoto/setup/showfotosetup.cpp:126
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>RAW Files Decoding Settings<br/><i>Customize default RAW decoding "
@@ -54481,7 +54481,7 @@ msgstr ""
 "<qt>Ρυθμίσεις αποκωδικοποίησης αρχείων RAW<br/><i>Προσαρμογή των "
 "προκαθορισμένων ρυθμίσεων αποκωδικοποίησης αρχείων RAW</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:130
+#: core/showfoto/setup/showfotosetup.cpp:132
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Color Management<br/><i>Customize color management "
@@ -54493,12 +54493,12 @@ msgstr ""
 "<qt>Ρυθμίσεις διαχείρισης χρωμάτων<br/><i>Προσαρμογή των ρυθμίσεων "
 "διαχείρισης χρωμάτων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:135
+#: core/showfoto/setup/showfotosetup.cpp:137
 #, kde-format
 msgid "Save Images"
 msgstr "Αποθήκευση εικόνων"
 
-#: core/showfoto/setup/showfotosetup.cpp:136
+#: core/showfoto/setup/showfotosetup.cpp:138
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Settings for Saving Image Files<br/><i>Set default configuration used "
@@ -54510,14 +54510,14 @@ msgstr ""
 "<qt>Ρυθμίσεις αποθήκευσης αρχείων εικόνας<br/><i>Ορισμός της προκαθορισμένης "
 "διαμόρφωσης για την αποθήκευση των εικόνων</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:143 core/utilities/setup/setup.cpp:91
+#: core/showfoto/setup/showfotosetup.cpp:145 core/utilities/setup/setup.cpp:91
 #, fuzzy, kde-format
 #| msgid "Geolocation"
 msgctxt "@title: settings section"
 msgid "Geolocation"
 msgstr "Γεωτοποθέτηση"
 
-#: core/showfoto/setup/showfotosetup.cpp:144 core/utilities/setup/setup.cpp:92
+#: core/showfoto/setup/showfotosetup.cpp:146 core/utilities/setup/setup.cpp:92
 #, fuzzy, kde-format
 #| msgctxt "@title"
 #| msgid ""
@@ -54531,13 +54531,13 @@ msgstr ""
 "Ρυθμίσεις Προβολών Εφαρμογής\n"
 "Διαμορφώστε την εμφάνιση των προβολών"
 
-#: core/showfoto/setup/showfotosetup.cpp:150
+#: core/showfoto/setup/showfotosetup.cpp:152
 #, fuzzy, kde-format
 #| msgid "Kipi-Plugins"
 msgid "Plugins"
 msgstr "Πρόσθετα Kipi"
 
-#: core/showfoto/setup/showfotosetup.cpp:151
+#: core/showfoto/setup/showfotosetup.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Main Interface Plug-in Settings<br/><i>Set which plugins will be "
@@ -54549,14 +54549,14 @@ msgstr ""
 "<qt>Ρυθμίσεις πρόσθετου του κύριου περιβάλλοντος<br/><i>Ορισμός των "
 "πρόσθετων του κύριου γραφικού περιβάλλοντος</i></qt>"
 
-#: core/showfoto/setup/showfotosetup.cpp:156
+#: core/showfoto/setup/showfotosetup.cpp:158
 #, fuzzy, kde-format
 #| msgid "Miscellaneous"
 msgctxt "@title: misc setup options page"
 msgid "Miscellaneous"
 msgstr "Διάφορα"
 
-#: core/showfoto/setup/showfotosetup.cpp:157
+#: core/showfoto/setup/showfotosetup.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Miscellaneous Settings<br/><i>Customize behavior of the other parts "
@@ -54568,14 +54568,14 @@ msgstr ""
 "<qt>Διάφορες ρυθμίσεις<br/><i>Προσαρμογή διαφόρων ρυθμίσεων σε άλλα τμήματα "
 "του Showfoto</i></qt>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:84
+#: core/showfoto/setup/showfotosetupmetadata.cpp:86
 #: core/utilities/setup/metadata/setupmetadata_rotation.cpp:102
 #, fuzzy, kde-format
 msgctxt "@label"
 msgid "Rotate actions"
 msgstr "Περιστροφή"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:89
+#: core/showfoto/setup/showfotosetupmetadata.cpp:91
 #, fuzzy, kde-format
 #| msgid "Show images/thumbnails &rotated according to orientation tag."
 msgctxt "@option:check"
@@ -54584,7 +54584,7 @@ msgstr ""
 "Εμφάνιση εικόνων/επισκοπήσεων πε&ριστραμμένων σύμφωνα με την ετικέτα "
 "προσανατολισμού."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:91
+#: core/showfoto/setup/showfotosetupmetadata.cpp:93
 #, fuzzy, kde-format
 #| msgid "Set orientation tag to normal after rotate/flip."
 msgctxt "@option:check"
@@ -54593,7 +54593,7 @@ msgstr ""
 "Ορισμός της ετικέτας προσανατολισμού στο κανονικό μετά από περιστροφή/"
 "αναστροφή."
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:112
+#: core/showfoto/setup/showfotosetupmetadata.cpp:114
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:193
 #, fuzzy, kde-format
 #| msgid ""
@@ -54610,7 +54610,7 @@ msgstr ""
 "φωτογραφικές μηχανές για την αποθήκευση τεχνικών πληροφοριών (όπως διάφραγμα "
 "και ταχύτητα κλείστρου) της φωτογραφίας.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:116
+#: core/showfoto/setup/showfotosetupmetadata.cpp:118
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:197
 #, fuzzy, kde-format
 #| msgid ""
@@ -54627,7 +54627,7 @@ msgstr ""
 "ψηφιακής φωτογραφίας για την αποθήκευση πληροφοριών του φωτογράφου σε "
 "εικόνες.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:122
+#: core/showfoto/setup/showfotosetupmetadata.cpp:124
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:203
 #, fuzzy, kde-format
 #| msgid ""
@@ -54641,7 +54641,7 @@ msgstr ""
 "a> - ένα νέο πρότυπο ψηφιακής φωτογραφίας, σχεδιασμένο να αντικαταστήσει το "
 "IPTC.</p>"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:143
+#: core/showfoto/setup/showfotosetupmetadata.cpp:145
 #: core/showfoto/setup/showfotosetupmisc.cpp:218
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:224
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:206
@@ -54650,7 +54650,7 @@ msgctxt "@title:tab"
 msgid "Behavior"
 msgstr "Συμπεριφορά"
 
-#: core/showfoto/setup/showfotosetupmetadata.cpp:152
+#: core/showfoto/setup/showfotosetupmetadata.cpp:154
 #: core/utilities/setup/metadata/setupmetadata.cpp:50
 #, fuzzy, kde-format
 #| msgid "Tools"
@@ -55615,34 +55615,34 @@ msgid "You can add or remove favorite stacks here."
 msgstr ""
 
 #: core/showfoto/stackview/showfotostackviewfavoritelist.cpp:117
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:86
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:87
 #, kde-format
 msgctxt "@title"
 msgid "Favorites"
 msgstr ""
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:95
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:96
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgctxt "@action"
 msgid "Add Favorite"
 msgstr "Προσθήκη φακέλων..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:113
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
 #, fuzzy, kde-format
 #| msgid "Add Folders..."
 msgctxt "@action"
 msgid "Add Sub-Folder"
 msgstr "Προσθήκη φακέλων..."
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:114
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:115
 #, fuzzy, kde-format
 #| msgid "Add a new value to the list"
 msgctxt "@info"
 msgid "Add new sub-folder to the list"
 msgstr "Προσθήκη μιας νέας τιμής στη λίστα"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:131
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Deselect Item"
@@ -55650,42 +55650,42 @@ msgctxt "@action"
 msgid "Delete Item"
 msgstr "Αποεπιλογή αντικειμένου"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:132
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:133
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Remove selected item from the list"
 msgstr "Αφαίρεση της τρέχουσας επιλεγμένης τιμής από τη λίστα"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:149
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
 #, fuzzy, kde-format
 #| msgid "Edit Titles"
 msgctxt "@action"
 msgid "Edit Item"
 msgstr "Επεξεργασία τίτλων"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:150
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:151
 #, fuzzy, kde-format
 #| msgid "Remove the current selected value from the list"
 msgctxt "@info"
 msgid "Edit current item from the list"
 msgstr "Αφαίρεση της τρέχουσας επιλεγμένης τιμής από τη λίστα"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:167
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:168
 #, fuzzy, kde-format
 #| msgid "Scan for new items"
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
 msgstr "Σάρωση για νέα αντικείμενα"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:353
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, fuzzy, kde-format
 #| msgid "Confirm Deletion"
 msgctxt "@title:window"
 msgid "Confirm Item Deletion"
 msgstr "Επιβεβαίωση διαγραφής"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:355
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to delete ALL items permanently?"
 msgctxt "@info"
@@ -55694,7 +55694,7 @@ msgid ""
 "and all nested items if any?"
 msgstr "Είστε βέβαιοι ότι θέλετα να διαγραφούν μόνιμα ΟΛΑ τα αντικείμενα;"
 
-#: core/showfoto/stackview/showfotostackviewfavorites.cpp:668
+#: core/showfoto/stackview/showfotostackviewfavorites.cpp:669
 #, fuzzy, kde-format
 #| msgid "Rename"
 #| msgid_plural "Rename (%1 images)"
@@ -55823,46 +55823,46 @@ msgctxt "date of image creation"
 msgid "created: %1"
 msgstr "δημιουργήθηκε : %1"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:215
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
 #, kde-format
 msgid "By Name"
 msgstr "Με όνομα"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:216
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:218
 #, kde-format
 msgid "By Date"
 msgstr "Κατά ημερομηνία"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:217
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:219
 #, kde-format
 msgid "By File Size"
 msgstr "Με μέγεθος αρχείου"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:225
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:227
 #, fuzzy, kde-format
 #| msgid "Ascending"
 msgctxt "@action: sort type"
 msgid "Ascending"
 msgstr "Αύξουσα"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:226
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:228
 #, fuzzy, kde-format
 #| msgid "Descending"
 msgctxt "@action: sort type"
 msgid "Descending"
 msgstr "Φθίνουσα"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "Current Name"
 msgstr "Τρέχον όνομα"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:253
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:255
 #, kde-format
 msgid "New Name"
 msgstr "Νέο όνομα"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:257
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:259
 #, kde-format
 msgid ""
 "This list shows the results for your renaming pattern. Red items indicate a "
@@ -55874,14 +55874,14 @@ msgstr ""
 "είναι ίδιο με το τρέχον ή επειδή το όνομα έχει ήδη καταχωρηθεί σε ένα άλλο "
 "αντικείμενο."
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:313
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:315
 #, kde-format
 msgid "Rename"
 msgid_plural "Rename (%1 images)"
 msgstr[0] "Μετονομασία"
 msgstr[1] "Μετονομασία (%1 εικόνες)"
 
-#: core/utilities/advancedrename/advancedrenamedialog.cpp:415
+#: core/utilities/advancedrename/advancedrenamedialog.cpp:417
 #, kde-format
 msgid "Sort Images"
 msgstr "Ταξινόμηση εικόνων"
