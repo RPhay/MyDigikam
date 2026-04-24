@@ -76,7 +76,7 @@ QPixmap DItemDelegate::thumbnailBorderPixmap(const QSize& pixSize, bool isGroupe
     QString cacheKey         = QString::number(pixSize.width())  + QLatin1Char('-')
                              + QString::number(pixSize.height()) + QLatin1Char('-')
                              + QString::number(isGrouped);
-    QPixmap* const cachePix  = d->thumbnailBorderCache.object(cacheKey);
+    const QPixmap* const cachePix  = d->thumbnailBorderCache.object(cacheKey);
 
     if (!cachePix)
     {
@@ -197,7 +197,7 @@ QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QS
     // We do not need to include the font into cache key, the cache is cleared on font change.
 
     QString cacheKey                      = QString::number(width) + QString::number(static_cast<qulonglong>(qHash(text)));  // clazy:exclude=qt6-qhash-signature
-    QString* const cachedString           = cache->object(cacheKey);
+    const QString* const cachedString     = cache->object(cacheKey);
 
     if (cachedString)
     {

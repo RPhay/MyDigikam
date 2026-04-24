@@ -37,6 +37,8 @@ public:
 
     Private() = default;
 
+public:
+
     ItemFiltersHistoryTreeItem* rootItem            = nullptr;
     QList<FilterAction>          filterStack;
     QUrl                         lastUrl;
@@ -120,7 +122,7 @@ QVariant ItemFiltersHistoryModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    ItemFiltersHistoryTreeItem* item = nullptr;
+    const ItemFiltersHistoryTreeItem* item = nullptr;
 
     if      (role == Qt::DecorationRole)
     {
@@ -172,7 +174,7 @@ QModelIndex ItemFiltersHistoryModel::index(int row, int column, const QModelInde
         return QModelIndex();
     }
 
-    ItemFiltersHistoryTreeItem* parentItem = nullptr;
+    const ItemFiltersHistoryTreeItem* parentItem = nullptr;
 
     if (!parent.isValid())
     {
@@ -215,7 +217,7 @@ QModelIndex ItemFiltersHistoryModel::parent(const QModelIndex& index) const
 
 int ItemFiltersHistoryModel::rowCount(const QModelIndex& parent) const
 {
-    ItemFiltersHistoryTreeItem* parentItem = nullptr;
+    const ItemFiltersHistoryTreeItem* parentItem = nullptr;
 
     if (parent.column() > 0)
     {

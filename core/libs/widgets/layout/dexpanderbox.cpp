@@ -77,6 +77,8 @@ public:
 
     Private() = default;
 
+public:
+
     QString           ajdText;
     Qt::TextElideMode emode = Qt::ElideMiddle;
 };
@@ -473,10 +475,11 @@ QSize DArrowClickLabel::sizeHint() const
 
 class Q_DECL_HIDDEN DLabelExpander::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool              expandByDefault   = true;
 
@@ -1047,7 +1050,7 @@ int DExpanderBox::indexOf(DLabelExpander* const widget) const
 {
     for (int i = 0 ; i < count() ; ++i)
     {
-        DLabelExpander* const exp = d->wList[i];
+        const DLabelExpander* const exp = d->wList[i];
 
         if (widget == exp)
         {
@@ -1079,7 +1082,7 @@ bool DExpanderBox::isItemExpanded(int index) const
         return false;
     }
 
-    DLabelExpander* const exp = d->wList[index];
+    const DLabelExpander* const exp = d->wList[index];
 
     if (!exp)
     {

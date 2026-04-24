@@ -150,7 +150,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
 
     if ((index > 0) && (sizeList.at(index-1) == 0))
     {
-        QWidget* const w = widget(index-1);
+        const QWidget* const w = widget(index-1);
 
         for (Sidebar* const sidebar : std::as_const(d->sidebars))
         {
@@ -171,7 +171,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
 
     if (sizeList.at(index) == 0)
     {
-        QWidget* const w = widget(index);
+        const QWidget* const w = widget(index);
 
         for (Sidebar* const sidebar : std::as_const(d->sidebars))
         {

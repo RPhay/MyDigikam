@@ -238,7 +238,7 @@ void ShowfotoStackViewList::slotItemsDeselected(const QList<ShowfotoItemInfo>& i
 
 void ShowfotoStackViewList::slotSelectionChanged(QTreeWidgetItem* item)
 {
-    ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
+    const ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
 
     if (sitem)
     {
@@ -248,7 +248,7 @@ void ShowfotoStackViewList::slotSelectionChanged(QTreeWidgetItem* item)
 
 void ShowfotoStackViewList::slotItemActivated(QTreeWidgetItem* item)
 {
-    ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
+    const ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(item);
 
     if (sitem)
     {
@@ -304,7 +304,7 @@ ShowfotoItemInfo ShowfotoStackViewList::infoFromIndex(const QModelIndex& index) 
 
     if (index.isValid())
     {
-        ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
+        const ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
 
         if (sitem)
         {
@@ -322,7 +322,7 @@ void ShowfotoStackViewList::slotOpenInFileManager()
 
     if (index.isValid())
     {
-        ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
+        const ShowfotoStackViewItem* const sitem = dynamic_cast<ShowfotoStackViewItem*>(itemFromIndex(index));
 
         if (sitem)
         {

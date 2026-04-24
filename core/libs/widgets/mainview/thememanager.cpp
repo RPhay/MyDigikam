@@ -56,7 +56,7 @@ QString ThemeManager::currentThemeName() const
         return defaultThemeName();
     }
 
-    QAction* const action = d->themeMenuActionGroup->checkedAction();
+    const QAction* const action = d->themeMenuActionGroup->checkedAction();
 
     return (!action ? defaultThemeName()
                     : action->text().remove(QLatin1Char('&')));
