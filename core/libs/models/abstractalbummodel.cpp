@@ -186,7 +186,7 @@ int AbstractAlbumModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.isValid())
     {
-        Album* const a = static_cast<Album*>(parent.internalPointer());
+        const Album* const a = static_cast<Album*>(parent.internalPointer());
 
         return a->childCount();
     }
@@ -229,7 +229,7 @@ bool AbstractAlbumModel::hasChildren(const QModelIndex& parent) const
 {
     if (parent.isValid())
     {
-        Album* const a = static_cast<Album*>(parent.internalPointer());
+        const Album* const a = static_cast<Album*>(parent.internalPointer());
 
         return a->firstChild();
     }
@@ -260,8 +260,8 @@ QModelIndex AbstractAlbumModel::index(int row, int column, const QModelIndex& pa
 
     if (parent.isValid())
     {
-        Album* const parentAlbum = static_cast<Album*>(parent.internalPointer());
-        Album* const a           = parentAlbum->childAtRow(row);
+        const Album* const parentAlbum = static_cast<Album*>(parent.internalPointer());
+        Album* const a                 = parentAlbum->childAtRow(row);
 
         if (a)
         {
@@ -300,7 +300,7 @@ QModelIndex AbstractAlbumModel::parent(const QModelIndex& index) const
 {
     if (index.isValid())
     {
-        Album* const a = static_cast<Album*>(index.internalPointer());
+        const Album* const a = static_cast<Album*>(index.internalPointer());
 
         return indexForAlbum(a->parent());
     }
@@ -341,7 +341,7 @@ QMimeData* AbstractAlbumModel::mimeData(const QModelIndexList& indexes) const
 
     for (const QModelIndex& ind : std::as_const(indexes))
     {
-        Album* const a = albumForIndex(ind);
+        Album* const a = albumForIndex(ind);             // cppcheck-suppress constVariablePointer
 
         if (a)
         {
