@@ -142,7 +142,7 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
     connect(this, &QTreeWidget::itemCollapsed,
             [this](QTreeWidgetItem* item)
         {
-            ItemsGroupedViewItem* const gitem = dynamic_cast<ItemsGroupedViewItem*>(item);
+            const ItemsGroupedViewItem* const gitem = dynamic_cast<ItemsGroupedViewItem*>(item);
 
             if (gitem)
             {
@@ -154,7 +154,7 @@ void ItemsGroupedView::setItemFilterModel(ItemFilterModel* const model)
     connect(this, &QTreeWidget::itemExpanded,
             [this](QTreeWidgetItem* item)
         {
-            ItemsGroupedViewItem* const gitem = dynamic_cast<ItemsGroupedViewItem*>(item);
+            const ItemsGroupedViewItem* const gitem = dynamic_cast<ItemsGroupedViewItem*>(item);
 
             if (gitem)
             {

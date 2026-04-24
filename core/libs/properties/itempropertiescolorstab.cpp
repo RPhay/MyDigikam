@@ -672,7 +672,7 @@ void ItemPropertiesColorsTab::updateInformation()
 
 void ItemPropertiesColorsTab::updateStatistics()
 {
-    ImageHistogram* const renderedHistogram = d->histogramBox->histogram()->currentHistogram();
+    const ImageHistogram* const renderedHistogram = d->histogramBox->histogram()->currentHistogram();
 
     if (!renderedHistogram)
     {

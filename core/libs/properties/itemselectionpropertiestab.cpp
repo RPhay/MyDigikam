@@ -339,7 +339,7 @@ PAlbum* ItemSelectionPropertiesTab::currentPAlbum() const
 
 void ItemSelectionPropertiesTab::slotOpenAlbumPressed()
 {
-    PAlbum* const palbum = currentPAlbum();
+    const PAlbum* const palbum = currentPAlbum();
 
     if (palbum)
     {
