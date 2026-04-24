@@ -503,7 +503,7 @@ void TagsPopupMenu::slotAboutToShow()
         for (QSet<int>::const_iterator it = d->assignedTags.constBegin() ;
              it != d->assignedTags.constEnd() ; ++it)
         {
-            TAlbum* const album = man->findTAlbum(*it);
+            const TAlbum* const album = man->findTAlbum(*it);
 
             if (!album || album->isInternalTag())
             {
@@ -511,7 +511,7 @@ void TagsPopupMenu::slotAboutToShow()
             }
 
             hasValidTag = true;
-            Album* a    = album->parent();
+            const Album* a    = album->parent();
 
             while (a)
             {
@@ -554,7 +554,7 @@ void TagsPopupMenu::slotAboutToShow()
 
                 if (album)
                 {
-                    TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
+                    const TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
 
                     if (parent)
                     {
@@ -626,7 +626,7 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
 {
     QList<Album*> sortedTags;
 
-    for (Album* a = album->firstChild() ; a ; a = a->next())
+    for (Album* a = album->firstChild() ; a ; a = a->next())             // cppcheck-suppress constVariablePointer
     {
         sortedTags << a;
     }
@@ -695,7 +695,7 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
 
 QMenu* TagsPopupMenu::buildSubMenu(int tagid)
 {
-    AlbumManager* const man = AlbumManager::instance();
+    const AlbumManager* const man = AlbumManager::instance();
     TAlbum* const album     = man->findTAlbum(tagid);
 
     if (!album)

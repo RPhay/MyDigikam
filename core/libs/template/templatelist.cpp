@@ -83,7 +83,7 @@ TemplateList::~TemplateList()
 
 void TemplateList::readSettings()
 {
-    TemplateManager* const tm = TemplateManager::defaultManager();
+    const TemplateManager* const tm = TemplateManager::defaultManager();
 
     if (tm)
     {
@@ -108,7 +108,7 @@ void TemplateList::applySettings()
 
         while (*it)
         {
-            TemplateListItem* const item = dynamic_cast<TemplateListItem*>(*it);
+            const TemplateListItem* const item = dynamic_cast<TemplateListItem*>(*it);
 
             if (item)
             {

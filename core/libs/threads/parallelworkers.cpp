@@ -128,7 +128,7 @@ bool ParallelWorkers::connect(const char* const signal,
                               const char* const method,
                               Qt::ConnectionType type) const
 {
-    for (WorkerObject* const object : std::as_const(m_workers))
+    for (const WorkerObject* const object : std::as_const(m_workers))
     {
         if (!QObject::connect(object, signal, receiver, method, type))
         {

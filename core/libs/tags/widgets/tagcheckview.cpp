@@ -43,6 +43,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configToggleAutoTagsEntry             = QLatin1String("Toggle Auto Tags");
 
     TagCheckView::ToggleAutoTags toggleAutoTags         = TagCheckView::NoToggleAuto;
@@ -177,7 +179,7 @@ QList<TAlbum*> TagCheckView::getCheckedTags() const
     QList<TAlbum*> tags;
     const auto albums = checkableAlbumModel()->checkedAlbums();
 
-    for (Album* const album : albums)
+    for (Album* const album : albums)                // cppcheck-suppress constVariablePointer
     {
         TAlbum* const tag = dynamic_cast<TAlbum*> (album);
 
@@ -195,7 +197,7 @@ QList<TAlbum*> TagCheckView::getPartiallyCheckedTags() const
     QList<TAlbum*> tags;
     const auto albums = checkableAlbumModel()->partiallyCheckedAlbums();
 
-    for (Album* const album : albums)
+    for (Album* const album : albums)                // cppcheck-suppress constVariablePointer
     {
         TAlbum* const tag = dynamic_cast<TAlbum*> (album);
 

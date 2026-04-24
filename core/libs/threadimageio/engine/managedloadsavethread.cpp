@@ -222,7 +222,7 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
 
             for (int i = 0 ; i < m_todo.size() ; ++i)
             {
-                LoadingTask* task = nullptr;
+                const LoadingTask* task = nullptr;
 
                 if ((task = checkLoadingTask(m_todo.at(i), LoadingTaskFilterAll)))
                 {
@@ -378,7 +378,7 @@ void ManagedLoadSaveThread::loadThumbnail(const LoadingDescription& description)
 void ManagedLoadSaveThread::preloadThumbnail(const LoadingDescription& description)
 {
     QMutexLocker lock(threadMutex());
-    LoadingTask* const existingTask = findExistingTask(description);
+    const LoadingTask* const existingTask = findExistingTask(description);
 
     // reuse task if it exists
 
@@ -413,7 +413,7 @@ void ManagedLoadSaveThread::preloadThumbnailGroup(const QList<LoadingDescription
 
     for (const LoadingDescription& description : std::as_const(descriptions))
     {
-        LoadingTask* const existingTask = findExistingTask(description);
+        const LoadingTask* const existingTask = findExistingTask(description);
 
         // reuse task if it exists
 
@@ -590,7 +590,7 @@ void ManagedLoadSaveThread::stopSaving(const QString& filePath)
 
         if (task->type() == LoadSaveTask::TaskTypeSaving)
         {
-            SavingTask* const savingTask = dynamic_cast<SavingTask*>(task);
+            const SavingTask* const savingTask = dynamic_cast<SavingTask*>(task);
 
             if (savingTask && (filePath.isNull() || (savingTask->filePath() == filePath)))
             {

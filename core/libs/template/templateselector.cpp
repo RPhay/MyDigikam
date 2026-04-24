@@ -44,6 +44,8 @@ public:
 
     Private() = default;
 
+public:
+
     QLabel*           label             = nullptr;
     QLabel*           mergeLabel        = nullptr;
 
@@ -112,7 +114,7 @@ void TemplateSelector::populateTemplates()
     d->templateCombo->insertSqueezedItem(i18n("Do not change"), DONTCHANGE);
     d->templateCombo->insertSeparator(DONTCHANGE + 1);
 
-    TemplateManager* const tm = TemplateManager::defaultManager();
+    const TemplateManager* const tm = TemplateManager::defaultManager();
 
     if (tm)
     {
@@ -145,7 +147,7 @@ Template TemplateSelector::getTemplate() const
 
         default:
         {
-            TemplateManager* const tm = TemplateManager::defaultManager();
+            const TemplateManager* const tm = TemplateManager::defaultManager();
 
             if (tm)
             {

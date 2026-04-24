@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool     showFindDuplicateAction    = true;
     bool     showDeleteFaceTagsAction   = false;
 
@@ -252,7 +254,7 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
 
         QList<TAlbum*> toFaceTags;
 
-        for (TAlbum* const tag : std::as_const(albums))
+        for (TAlbum* const tag : std::as_const(albums))              // cppcheck-suppress constVariablePointer
         {
             if (!FaceTags::isPerson(tag->id()))
             {

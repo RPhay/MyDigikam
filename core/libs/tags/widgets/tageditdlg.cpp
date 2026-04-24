@@ -152,7 +152,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
         for (AlbumList::const_iterator it = tList.constBegin() ; it != tList.constEnd() ; ++it)
         {
-            TAlbum* const tag = static_cast<TAlbum*>(*it);
+            const TAlbum* const tag = static_cast<TAlbum*>(*it);
 
             if (tag && !tag->isInternalTag())
             {

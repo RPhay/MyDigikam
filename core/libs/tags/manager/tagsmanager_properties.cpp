@@ -98,7 +98,7 @@ void TagsManager::slotMarkNotAssignedTags()
         }
         else
         {
-            TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
+            const TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
             if (t && !t->isRoot() && !t->isInternalTag())
             {
@@ -132,7 +132,7 @@ void TagsManager::slotMarkNotAssignedTags()
 
         while (current.isValid() && !greenNodes.contains(current))
         {
-            TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
+            const TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
             if (
                 t                                       &&

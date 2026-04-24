@@ -47,8 +47,8 @@ ThumbnailLoadingTask::ThumbnailLoadingTask(LoadSaveThread* const thread, const L
     // Thread must be a ThumbnailLoadThread, crashes otherwise.
     // Not a clean but pragmatic solution.
 
-    ThumbnailLoadThread* const thumbThread = static_cast<ThumbnailLoadThread*>(thread);
-    m_creator                              = thumbThread->thumbnailCreator();
+    const ThumbnailLoadThread* const thumbThread = static_cast<ThumbnailLoadThread*>(thread);
+    m_creator                                    = thumbThread->thumbnailCreator();
 }
 
 void ThumbnailLoadingTask::execute()

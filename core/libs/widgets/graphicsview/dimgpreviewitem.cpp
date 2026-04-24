@@ -311,7 +311,7 @@ void DImgPreviewItem::preloadNext()
 
 void DImgPreviewItem::slotFileChanged(const QString& path)
 {
-    Q_D(DImgPreviewItem);
+    Q_D(DImgPreviewItem);            // cppcheck-suppress constVariablePointer
 
     if (d->path == path)
     {

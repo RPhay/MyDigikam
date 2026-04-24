@@ -41,7 +41,7 @@ void LoadingCacheInterface::fileChanged(const QString& filePath, bool notify)
 
 void LoadingCacheInterface::connectToSignalFileChanged(QObject* const object, const char* slot)
 {
-    LoadingCache* const cache = LoadingCache::cache();
+    const LoadingCache* const cache = LoadingCache::cache();
 
     QObject::connect(cache, SIGNAL(fileChanged(QString)),
                      object, slot,

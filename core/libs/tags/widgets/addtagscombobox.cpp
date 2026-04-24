@@ -40,6 +40,8 @@ public:
 
     Private() = default;
 
+public:
+
     AddTagsLineEdit* lineEdit = nullptr;
     TaggingAction    viewTaggingAction;
 };
@@ -72,9 +74,9 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
 
     connect(d->lineEdit->completer(), QOverload<const QString&>::of(&QCompleter::highlighted),
             this, [this](const QString& text)
-            {
-                d->lineEdit->setText(text);
-            }
+        {
+            d->lineEdit->setText(text);
+        }
     );
 
     TagTreeView::Flags flags;
@@ -146,7 +148,7 @@ TaggingAction AddTagsComboBox::currentTaggingAction()
 
 void AddTagsComboBox::slotViewIndexActivated(const QModelIndex& index)
 {
-    TAlbum* const album = treeView()->albumForIndex(index);
+    const TAlbum* const album = treeView()->albumForIndex(index);
 
     if (album)
     {
