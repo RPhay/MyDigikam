@@ -53,7 +53,7 @@ TagsActionMngr::~TagsActionMngr()
 
 void TagsActionMngr::slotAlbumDeleted(Album* album)
 {
-    TAlbum* const talbum = dynamic_cast<TAlbum*>(album);
+    const TAlbum* const talbum = dynamic_cast<TAlbum*>(album);
 
     if (!talbum)
     {

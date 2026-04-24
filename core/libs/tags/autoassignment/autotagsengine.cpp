@@ -115,7 +115,7 @@ void AutotagsEngine::slotStart()
     bool hasPAlbums = false;
     bool hasTAlbums = false;
 
-    for (Album* const album : std::as_const(d->settings.albums))
+    for (const Album* const album : std::as_const(d->settings.albums))
     {
         if (album->type() == Album::PHYSICAL)
         {

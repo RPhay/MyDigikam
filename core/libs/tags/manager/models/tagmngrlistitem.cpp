@@ -138,16 +138,16 @@ QVariant ListItem::data(int role) const
 
             for (int tagId : std::as_const(d->tagIds))
             {
-                TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
+                const TAlbum* const album = AlbumManager::instance()->findTAlbum(tagId);
 
                 if (!album)
                 {
                     continue;
                 }
 
-                display.append(album->title()+ QLatin1String(", "));
+                display.append(album->title() + QLatin1String(", "));
 
-                if (role == Qt::DisplayRole && display.size() > 30)
+                if ((role == Qt::DisplayRole) && (display.size() > 30))
                 {
                     break;
                 }
@@ -159,7 +159,7 @@ QVariant ListItem::data(int role) const
             }
             else
             {
-                display.remove(display.size()-2, 2);
+                display.remove(display.size() - 2, 2);
             }
 
             return QVariant(display);

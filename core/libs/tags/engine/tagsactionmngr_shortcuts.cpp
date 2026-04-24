@@ -240,11 +240,11 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    int val               = action->data().toInt();
+    int val                      = action->data().toInt();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Shortcut value: " << val;
 
-    QWidget* const w       = qApp->activeWindow();
-    DigikamApp* const dkw  = dynamic_cast<DigikamApp*>(w);
+    QWidget* const w             = qApp->activeWindow();
+    const DigikamApp* const dkw  = dynamic_cast<DigikamApp*>(w);
 
     if (dkw)
     {

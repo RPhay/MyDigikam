@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumPointer<TAlbum> parentTag      = nullptr;
     QWidget*             dialogParent   = nullptr;
 };
@@ -365,8 +367,8 @@ void TagModificationHelper::slotMultipleTagDel(const QList<TAlbum*>& tags)
          * to root tag
          */
 
-        Album* parent = t;
-        int depth     = 0;
+        const Album* parent = t;
+        int depth           = 0;
 
         while (!parent->isRoot())
         {
@@ -507,7 +509,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         // Get the assigned faces for all person tags to delete
 
-        for (TAlbum* const tAlbum : std::as_const(personTagsToDelete))
+        for (const TAlbum* const tAlbum : std::as_const(personTagsToDelete))
         {
             // If the global set does not yet contain the tag
 
@@ -552,7 +554,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         // Add the found tags to the global set.
 
-        for (TAlbum* const album : std::as_const(personTagsToDelete))
+        for (TAlbum* const album : std::as_const(personTagsToDelete))            // cppcheck-suppress constVariablePointer
         {
             if (!allPersonTagsToDelete.contains(album))
             {
@@ -623,7 +625,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(const QList<TAlbum*>& tags)
 
         for (const qlonglong& imageId : std::as_const(allAssignedItems))
         {
-            for (TAlbum* const tagToRemove : std::as_const(allPersonTagsToDelete))
+            for (const TAlbum* const tagToRemove : std::as_const(allPersonTagsToDelete))
             {
                 ItemTagPair imageTagAssociation(imageId, tagToRemove->id());
 

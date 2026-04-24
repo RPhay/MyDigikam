@@ -230,7 +230,7 @@ void TagsManager::slotSaveTags()
 
     for (it = tList.constBegin() ; it != tList.constEnd() ; ++it)
     {
-        TAlbum* const tag = static_cast<TAlbum*>(*it);
+        const TAlbum* const tag = static_cast<TAlbum*>(*it);
 
         if (
             tag                                    &&
@@ -291,7 +291,7 @@ void TagsManager::slotLoadTags()
         return;
     }
 
-    TAlbum* const selTag = static_cast<TAlbum*>(selectedTags.constFirst());
+    const TAlbum* const selTag = static_cast<TAlbum*>(selectedTags.constFirst());
 
     if (FaceTags::isSystemPersonTagId(selTag->id()))
     {

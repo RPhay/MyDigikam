@@ -103,7 +103,7 @@ void TagList::saveSettings()
     QStringList itemList;
     const auto items = d->tagListModel->allItems();
 
-    for (ListItem* const listItem : items)
+    for (const ListItem* const listItem : items)
     {
         QList<int> ids = listItem->getTagIds();
 
@@ -137,7 +137,7 @@ void TagList::restoreSettings()
         QList<QVariant> itemData;
         itemData << QBrush(Qt::cyan, Qt::Dense2Pattern);
 
-        TAlbum* const talbum = AlbumManager::instance()->findTAlbum(item.toInt());
+        const TAlbum* const talbum = AlbumManager::instance()->findTAlbum(item.toInt());
 
         if (talbum)
         {
@@ -179,7 +179,7 @@ void TagList::slotAddPressed()
 
     for (const QModelIndex& index : std::as_const(selected))
     {
-        TAlbum* const album = static_cast<TAlbum*>(d->treeView->albumForIndex(index));
+        const TAlbum* const album = static_cast<TAlbum*>(d->treeView->albumForIndex(index));
         itemData << album->id();
     }
 
@@ -204,7 +204,7 @@ void TagList::slotSelectionChanged()
 
     for (const QModelIndex& index : std::as_const(indexList))
     {
-        ListItem* const item = static_cast<ListItem*>(index.internalPointer());
+        const ListItem* const item = static_cast<ListItem*>(index.internalPointer());
 
         if (item->getTagIds().isEmpty())
         {
@@ -227,7 +227,7 @@ void TagList::slotSelectionChanged()
 
 void TagList::slotTagDeleted(Album* album)
 {
-    TAlbum* const talbum = dynamic_cast<TAlbum*>(album);
+    const TAlbum* const talbum = dynamic_cast<TAlbum*>(album);
 
     if (!talbum)
     {

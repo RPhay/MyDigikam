@@ -118,8 +118,8 @@ void TagsManager::slotDeleteAction()
          * to step on invalid index. Use QMultiMap to order them by distance
          * to root tag
          */
-        Album* parent = t;
-        int depth     = 0;
+        const Album* parent = t;
+        int depth           = 0;
 
         while (!parent->isRoot())
         {

@@ -318,7 +318,7 @@ void TagPropWidget::slotIconResetClicked()
 {
     if (d->selectedAlbums.size() == 1)
     {
-        TAlbum* const tag = d->selectedAlbums.first();
+        const TAlbum* const tag = d->selectedAlbums.first();
 
         if (tag)
         {

@@ -268,7 +268,7 @@ QVariant TagMngrListModel::data(const QModelIndex& index, int role) const
         return Qt::AlignCenter;
     }
 
-    ListItem* const item = static_cast<ListItem*>(index.internalPointer());
+    const ListItem* const item = static_cast<ListItem*>(index.internalPointer());
 
     return item->data(role);
 }
@@ -305,7 +305,7 @@ QModelIndex TagMngrListModel::index(int row, int column, const QModelIndex& pare
         return QModelIndex();
     }
 
-    ListItem* parentItem = nullptr;
+    const ListItem* parentItem = nullptr;
 
     if (!parent.isValid())
     {
@@ -348,7 +348,7 @@ QModelIndex TagMngrListModel::parent(const QModelIndex& index) const
 
 int TagMngrListModel::rowCount(const QModelIndex& parent) const
 {
-    ListItem* parentItem = nullptr;
+    const ListItem* parentItem = nullptr;
 
     if (parent.column() > 0)
     {
