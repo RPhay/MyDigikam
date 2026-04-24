@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     QList<Album*>     currentAlbums;
     DBJobsThread*     jobThread                 = nullptr;
     QTimer*           incrementalTimer          = nullptr;
@@ -174,7 +176,7 @@ void ItemAlbumModel::openAlbum(const QList<Album*>& albums)
      * Extra safety, ensure that no null pointers are added
      */
 
-    for (Album* const a : std::as_const(albums))
+    for (Album* const a : std::as_const(albums))                 // cppcheck-suppress constVariablePointer
     {
         if (a)
         {
@@ -529,8 +531,8 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     {
         if ((*it)->type() == Album::SEARCH)
         {
-            SAlbum* const salbum  = static_cast<SAlbum*>(*it);
-            bool needCheckRefresh = false;
+            const SAlbum* const salbum = static_cast<SAlbum*>(*it);
+            bool needCheckRefresh      = false;
 
             if      (salbum->isNormalSearch())
             {
@@ -742,7 +744,7 @@ void ItemAlbumModel::slotSearchChange(const SearchChangeset& changeset)
         return;
     }
 
-    SAlbum* const album = AlbumManager::instance()->findSAlbum(changeset.searchId());
+    const SAlbum* const album = AlbumManager::instance()->findSAlbum(changeset.searchId());
 
     QList<Album*>::iterator it;
 

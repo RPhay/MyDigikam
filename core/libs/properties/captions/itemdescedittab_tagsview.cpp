@@ -142,7 +142,7 @@ void ItemDescEditTab::populateTags()
 
 void ItemDescEditTab::slotTagStateChanged(Album* album, Qt::CheckState checkState)
 {
-    TAlbum* const tag = dynamic_cast<TAlbum*>(album);
+    const TAlbum* const tag = dynamic_cast<TAlbum*>(album);
 
     if (!tag || d->ignoreTagChanges)
     {
@@ -320,7 +320,7 @@ void ItemDescEditTab::updateRecentTags()
                     }
                 }
 
-                TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
+                const TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
 
                 if (parent)
                 {

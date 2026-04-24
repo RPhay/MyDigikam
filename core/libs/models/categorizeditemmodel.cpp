@@ -112,7 +112,7 @@ public:
 
         for (QAction* const a : std::as_const(actions))
         {
-            QAction* categoryAction = nullptr;
+            const QAction* categoryAction = nullptr;
 
             if (mode & ActionItemModel::ToplevelMenuCategory)
             {

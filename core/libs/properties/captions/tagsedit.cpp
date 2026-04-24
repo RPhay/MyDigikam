@@ -55,6 +55,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                 togglingTagsSearchSettings = false;
     bool                 ignoreTagChanges           = false;
     QToolButton*         recentTagsBtn              = nullptr;
@@ -167,7 +169,7 @@ void TagsEdit::slotOpenTagsManager()
 
 void TagsEdit::slotTagStateChanged(Album* album, Qt::CheckState checkState)
 {
-    TAlbum* const tag = dynamic_cast<TAlbum*>(album);
+    const TAlbum* const tag = dynamic_cast<TAlbum*>(album);
 
     if (!tag || d->ignoreTagChanges)
     {
@@ -300,7 +302,7 @@ void TagsEdit::updateRecentTags()
                     }
                 }
 
-                TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
+                const TAlbum* const parent = dynamic_cast<TAlbum*> (album->parent());
 
                 if (parent)
                 {

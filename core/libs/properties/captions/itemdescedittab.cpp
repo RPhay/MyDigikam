@@ -552,7 +552,7 @@ void ItemDescEditTab::slotImagesChanged(int albumId)
         return;
     }
 
-    Album* const a = AlbumManager::instance()->findAlbum(albumId);
+    const Album* const a = AlbumManager::instance()->findAlbum(albumId);
 
     if (d->currInfos.isEmpty() || !a || a->isRoot() || (a->type() != Album::TAG))
     {

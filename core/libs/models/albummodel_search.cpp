@@ -83,16 +83,16 @@ QVariant SearchModel::albumData(Album* a, int role) const
 {
     if      ((role == Qt::DisplayRole) || (role == AlbumTitleRole) || (role == Qt::ToolTipRole))
     {
-        SAlbum* const salbum = static_cast<SAlbum*>(a);
-        QString title        = a->title();
-        QString displayTitle = salbum->displayTitle();
+        const SAlbum* const salbum = static_cast<SAlbum*>(a);
+        QString title              = a->title();
+        QString displayTitle       = salbum->displayTitle();
 
         return m_replaceNames.value(title, displayTitle);
     }
     else if (role == Qt::DecorationRole)
     {
-        SAlbum* const salbum = static_cast<SAlbum*>(a);
-        QPixmap pixmap       = m_pixmaps.value(salbum->searchType());
+        const SAlbum* const salbum = static_cast<SAlbum*>(a);
+        QPixmap pixmap             = m_pixmaps.value(salbum->searchType());
 
         if (pixmap.isNull() && salbum->isNormalSearch())
         {

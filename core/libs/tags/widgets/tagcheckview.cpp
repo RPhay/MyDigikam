@@ -179,9 +179,9 @@ QList<TAlbum*> TagCheckView::getCheckedTags() const
     QList<TAlbum*> tags;
     const auto albums = checkableAlbumModel()->checkedAlbums();
 
-    for (Album* const album : albums)                // cppcheck-suppress constVariablePointer
+    for (Album* const album : albums)                                 // cppcheck-suppress constVariablePointer
     {
-        TAlbum* const tag = dynamic_cast<TAlbum*> (album);
+        TAlbum* const tag = dynamic_cast<TAlbum*> (album);            // cppcheck-suppress constVariablePointer
 
         if (tag)
         {
@@ -197,9 +197,9 @@ QList<TAlbum*> TagCheckView::getPartiallyCheckedTags() const
     QList<TAlbum*> tags;
     const auto albums = checkableAlbumModel()->partiallyCheckedAlbums();
 
-    for (Album* const album : albums)                // cppcheck-suppress constVariablePointer
+    for (Album* const album : albums)                                 // cppcheck-suppress constVariablePointer
     {
-        TAlbum* const tag = dynamic_cast<TAlbum*> (album);
+        TAlbum* const tag = dynamic_cast<TAlbum*> (album);            // cppcheck-suppress constVariablePointer
 
         if (tag)
         {

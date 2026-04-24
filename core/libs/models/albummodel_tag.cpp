@@ -158,7 +158,7 @@ void TagModel::activateFaceTagModel()
 
 bool TagModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    TAlbum* const talbum = talbumForIndex(index);
+    const TAlbum* const talbum = talbumForIndex(index);
 
     if (talbum && talbum->isInternalTag())
     {

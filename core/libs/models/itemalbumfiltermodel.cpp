@@ -41,6 +41,8 @@ public:
 
     ItemAlbumFilterModelPrivate() = default;
 
+public:
+
     QHash<int, QString> tagNamesHash;
     QHash<int, QString> albumNamesHash;
     QTimer*             delayedAlbumNamesTimer  = nullptr;
@@ -116,7 +118,7 @@ ItemAlbumModel* ItemAlbumFilterModel::sourceModel() const
 
 void ItemAlbumFilterModel::setItemFilterSettings(const ItemFilterSettings& s)
 {
-    Q_D(ItemAlbumFilterModel);
+    Q_D(ItemAlbumFilterModel);               // cppcheck-suppress constVariablePointer
 
     ItemFilterSettings settings(s);
     settings.setAlbumNames(d->albumNamesHash);
@@ -140,10 +142,10 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
     {
         case ItemSortSettings::CategoryByAlbum:
         {
-            int leftAlbumId          = left.albumId();
-            int rightAlbumId         = right.albumId();
-            PAlbum* const leftAlbum  = AlbumManager::instance()->findPAlbum(leftAlbumId);
-            PAlbum* const rightAlbum = AlbumManager::instance()->findPAlbum(rightAlbumId);
+            int leftAlbumId                = left.albumId();
+            int rightAlbumId               = right.albumId();
+            const PAlbum* const leftAlbum  = AlbumManager::instance()->findPAlbum(leftAlbumId);
+            const PAlbum* const rightAlbum = AlbumManager::instance()->findPAlbum(rightAlbumId);
 
             if (!leftAlbum || !rightAlbum)
             {

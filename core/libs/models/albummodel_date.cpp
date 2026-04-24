@@ -43,8 +43,8 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
 
     for (int yearIndex = 0 ; yearIndex < rowCount() ; ++yearIndex)
     {
-        QModelIndex year        = index(yearIndex, 0);
-        DAlbum* const yearAlbum = dalbumForIndex(year);
+        QModelIndex year              = index(yearIndex, 0);
+        const DAlbum* const yearAlbum = dalbumForIndex(year);
 
         // do not search through months if we are sure, that the year already
         // does not match
@@ -62,8 +62,8 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
 
         for (int monthIndex = 0 ; monthIndex < rowCount(year) ; ++monthIndex)
         {
-            QModelIndex month        = index(monthIndex, 0, year);
-            DAlbum* const monthAlbum = dalbumForIndex(month);
+            QModelIndex month              = index(monthIndex, 0, year);
+            const DAlbum* const monthAlbum = dalbumForIndex(month);
 
             if (
                 monthAlbum                                  &&
@@ -89,7 +89,7 @@ void DateAlbumModel::setPixmaps(const QPixmap& forYearAlbums, const QPixmap& for
 
 QString DateAlbumModel::albumName(Album* album) const
 {
-    DAlbum* const dalbum = static_cast<DAlbum*>(album);
+    const DAlbum* const dalbum = static_cast<DAlbum*>(album);
 
     if (dalbum->range() == DAlbum::Year)
     {
@@ -103,7 +103,7 @@ QString DateAlbumModel::albumName(Album* album) const
 
 QVariant DateAlbumModel::decorationRoleData(Album* album) const
 {
-    DAlbum* const dalbum = static_cast<DAlbum*>(album);
+    const DAlbum* const dalbum = static_cast<DAlbum*>(album);
 
     if (dalbum->range() == DAlbum::Year)
     {
@@ -117,7 +117,7 @@ QVariant DateAlbumModel::decorationRoleData(Album* album) const
 
 QVariant DateAlbumModel::sortRoleData(Album* a) const
 {
-    DAlbum* const dalbum = static_cast<DAlbum*>(a);
+    const DAlbum* const dalbum = static_cast<DAlbum*>(a);
 
     if (dalbum)
     {
@@ -142,8 +142,8 @@ void DateAlbumModel::setYearMonthMap(const QMap<YearMonth, int>& yearMonthMap)
 
     while (it.current())
     {
-        DAlbum* const dalbum = static_cast<DAlbum*>(*it);
-        QDate date           = dalbum->date();
+        const DAlbum* const dalbum = static_cast<DAlbum*>(*it);
+        QDate date                 = dalbum->date();
 
         switch (dalbum->range())
         {

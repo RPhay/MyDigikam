@@ -187,7 +187,7 @@ void DHistoryView::addEntry(const QString& msg, EntryType type, const QVariant& 
 
 void DHistoryView::slotItemDoubleClicked(QTreeWidgetItem* item)
 {
-    DHistoryViewItem* const lvi = dynamic_cast<DHistoryViewItem*>(item);
+    const DHistoryViewItem* const lvi = dynamic_cast<DHistoryViewItem*>(item);
 
     if (lvi)
     {
@@ -200,7 +200,7 @@ void DHistoryView::slotItemDoubleClicked(QTreeWidgetItem* item)
 
 void DHistoryView::mouseMoveEvent(QMouseEvent* e)
 {
-    DHistoryViewItem* const lvi = dynamic_cast<DHistoryViewItem*>(itemAt(e->pos()));
+    const DHistoryViewItem* const lvi = dynamic_cast<DHistoryViewItem*>(itemAt(e->pos()));
 
     if (lvi)
     {
