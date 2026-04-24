@@ -184,7 +184,7 @@ bool TagPropertiesFilterModel::matches(Album* album) const
         return false;
     }
 
-    TAlbum* const talbum = static_cast<TAlbum*>(album);
+    const TAlbum* const talbum = static_cast<TAlbum*>(album);
 
     for (const QString& prop : std::as_const(m_propertiesBlackList))
     {

@@ -70,7 +70,7 @@ bool TagsManagerFilterModel::matches(Album* album) const
     for (QSet<int>::const_iterator it = m_keywords.begin() ;
          it != m_keywords.end() ; ++it)
     {
-        TAlbum* const talbum = AlbumManager::instance()->findTAlbum(*it);
+        const TAlbum* const talbum = AlbumManager::instance()->findTAlbum(*it);
 
         if (!talbum)
         {

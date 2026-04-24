@@ -129,7 +129,7 @@ bool SearchFilterModel::matches(Album* album) const
         return false;
     }
 
-    SAlbum* const salbum = static_cast<SAlbum*>(album);
+    const SAlbum* const salbum = static_cast<SAlbum*>(album);
 
     if      (m_searchType == -1)
     {

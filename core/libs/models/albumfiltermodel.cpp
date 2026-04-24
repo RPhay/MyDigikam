@@ -272,7 +272,7 @@ Album* AlbumFilterModel::albumForIndex(const QModelIndex& index) const
 
 QModelIndex AlbumFilterModel::indexForAlbum(Album* album) const
 {
-    AbstractAlbumModel* const model = sourceAlbumModel();
+    const AbstractAlbumModel* const model = sourceAlbumModel();
 
     if (!model)
     {
@@ -284,7 +284,7 @@ QModelIndex AlbumFilterModel::indexForAlbum(Album* album) const
 
 QModelIndex AlbumFilterModel::rootAlbumIndex() const
 {
-    AbstractAlbumModel* const model = sourceAlbumModel();
+    const AbstractAlbumModel* const model = sourceAlbumModel();
 
     if (!model)
     {
@@ -300,7 +300,7 @@ QVariant AlbumFilterModel::dataForCurrentSortRole(Album* album) const
     {
         if      (album->type() == Album::PHYSICAL)
         {
-            PAlbum* const a = static_cast<PAlbum*>(album);
+            const PAlbum* const a = static_cast<PAlbum*>(album);
 
             ApplicationSettings::AlbumSortRole sortRole = ApplicationSettings::instance()->getAlbumSortRole();
 
@@ -370,14 +370,14 @@ AlbumFilterModel::MatchResult AlbumFilterModel::matchResult(Album* album) const
         return NoMatch;
     }
 
-    PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
+    const PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
 
     if (album->isRoot() || (palbum && palbum->isAlbumRoot()))
     {
         return SpecialMatch;
     }
 
-    TAlbum* const talbum = dynamic_cast<TAlbum*>(album);
+    const TAlbum* const talbum = dynamic_cast<TAlbum*>(album);
 
     if (talbum && talbum->isInternalTag())
     {
@@ -398,8 +398,8 @@ AlbumFilterModel::MatchResult AlbumFilterModel::matchResult(Album* album) const
     {
         // check if any of the parents match the search
 
-        Album* parent         = album->parent();
-        PAlbum* const pparent = palbum ? static_cast<PAlbum*>(parent) : nullptr;
+        Album* parent               = album->parent();
+        const PAlbum* const pparent = palbum ? static_cast<PAlbum*>(parent) : nullptr;
 
         while (parent && !(parent->isRoot() || (pparent && pparent->isAlbumRoot())))
         {
@@ -538,8 +538,8 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
 #endif
 
     {
-        ItemSortCollator* const sorter = ItemSortCollator::instance();
-        bool natural                   = ApplicationSettings::instance()->isStringTypeNatural();
+        const ItemSortCollator* const sorter = ItemSortCollator::instance();
+        bool natural                         = ApplicationSettings::instance()->isStringTypeNatural();
 
         return (sorter->albumCompare(valLeft.toString(), valRight.toString(), sortCaseSensitivity(), natural) < 0);
     }

@@ -78,7 +78,7 @@ QVariant AlbumModel::albumData(Album* a, int role) const
         a->isTrashAlbum()
        )
     {
-        PAlbum* const palbum = static_cast<PAlbum*>(a->parent());
+        const PAlbum* const palbum = static_cast<PAlbum*>(a->parent());
 
         if (palbum)
         {
