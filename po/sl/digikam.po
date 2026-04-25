@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:41+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-15 17:47+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3175,7 +3175,7 @@ msgstr "Album brez značk"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/properties/itempropertiestab.cpp:525
-#: core/libs/tags/widgets/tagfolderview.cpp:100
+#: core/libs/tags/widgets/tagfolderview.cpp:102
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #: core/utilities/searchwindow/searchfields_createfield.cpp:83
@@ -27856,7 +27856,7 @@ msgstr "Album z oznakami"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
-#: core/libs/tags/widgets/tagfolderview.cpp:128
+#: core/libs/tags/widgets/tagfolderview.cpp:130
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Razširi izbrana vozlišča"
@@ -27867,8 +27867,8 @@ msgid "Expand all Albums"
 msgstr "Razširi vse albume"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:206
-#: core/libs/tags/widgets/tagfolderview.cpp:133
-#: core/libs/tags/widgets/tagfolderview.cpp:236
+#: core/libs/tags/widgets/tagfolderview.cpp:135
+#: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Zloži izbrane rekurzivno"
@@ -27879,7 +27879,7 @@ msgid "Collapse all Albums"
 msgstr "Strni vse albume"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:212
-#: core/libs/tags/widgets/tagfolderview.cpp:64
+#: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Najdi dvojnike..."
@@ -38034,21 +38034,21 @@ msgid "Selected items have different text here."
 msgstr "Izbrane postavke imajo tu različno besedilo."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:92
+#: core/libs/properties/captions/tagsedit.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "Odpri upravljalnik značk"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:98
+#: core/libs/properties/captions/tagsedit.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "Sem vnesite značko."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:99
+#: core/libs/properties/captions/tagsedit.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -38060,21 +38060,21 @@ msgstr ""
 "lahko ustvarite hierarhijo značk, s pomočjo ',' pa več hierarhij naenkrat."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:116
+#: core/libs/properties/captions/tagsedit.cpp:118
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "Značke, ki so že dodeljene"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:122
+#: core/libs/properties/captions/tagsedit.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr "Nedavne značke"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
-#: core/libs/properties/captions/tagsedit.cpp:280
+#: core/libs/properties/captions/tagsedit.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
@@ -40413,7 +40413,7 @@ msgstr "Ustvari \"%1\" v %2"
 msgid "Create \"%1\""
 msgstr "Ustvari \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:258
+#: core/libs/tags/engine/tagmodificationhelper.cpp:260
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -40438,7 +40438,7 @@ msgstr[3] ""
 "njene pod-značke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:281
+#: core/libs/tags/engine/tagmodificationhelper.cpp:283
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -40447,19 +40447,19 @@ msgstr[1] "Značka '%2' je dodeljena %1 predmetoma. Ali želite nadaljevati?"
 msgstr[2] "Značka '%2' je dodeljena %1 predmetom. Ali želite nadaljevati?"
 msgstr[3] "Značka '%2' je dodeljena %1 predmetom. Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:289
+#: core/libs/tags/engine/tagmodificationhelper.cpp:291
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Izbrišem značko '%1'?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:292
-#: core/libs/tags/engine/tagmodificationhelper.cpp:411
+#: core/libs/tags/engine/tagmodificationhelper.cpp:294
+#: core/libs/tags/engine/tagmodificationhelper.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Izbriši značko"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:385
+#: core/libs/tags/engine/tagmodificationhelper.cpp:387
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -40470,18 +40470,18 @@ msgstr ""
 "izbrisali tudi vse njihove pod-značke.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:402
+#: core/libs/tags/engine/tagmodificationhelper.cpp:404
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Značke '%1' so dodeljene enemu ali več predmetom. Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:408
+#: core/libs/tags/engine/tagmodificationhelper.cpp:410
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Izbrišem '%1' značk?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:573
+#: core/libs/tags/engine/tagmodificationhelper.cpp:575
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -40508,7 +40508,7 @@ msgstr[3] ""
 "izbrisalo tudi vse njihove podrejene oznake.\n"
 "Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:595
+#: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -40524,7 +40524,7 @@ msgstr[2] ""
 msgstr[3] ""
 "Oznake obrazov '%2' so dodeljene vsaj enemu predmetu. Ali želite nadaljevati?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
@@ -40533,7 +40533,7 @@ msgstr[1] "Odstrani oznaki obraza?"
 msgstr[2] "Odstrani oznake obraza?"
 msgstr[3] "Odstrani oznake obraza?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:614
+#: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -40610,7 +40610,7 @@ msgstr "Uredi imena značk"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager_p.cpp:128
-#: core/libs/tags/widgets/tagfolderview.cpp:63
+#: core/libs/tags/widgets/tagfolderview.cpp:65
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Ponastavi ikono značke"
@@ -41003,30 +41003,30 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr "Spletna pomoč glede upravljanja značk"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:71
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Preklopi samodejno"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:72
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Brez"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:74
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Podrejene"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:75
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Nadrejene"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:76
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
@@ -41116,17 +41116,17 @@ msgstr "Med ustvarjanjem značke je prišlo do napake:"
 msgid "Tag Path"
 msgstr "Pot značk"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:138
+#: core/libs/tags/widgets/tagfolderview.cpp:140
 #, kde-format
 msgid "Expand all Tags"
 msgstr "Razširi vse značke"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:143
+#: core/libs/tags/widgets/tagfolderview.cpp:145
 #, kde-format
 msgid "Collapse all Tags"
 msgstr "Strni vse značke"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:231
+#: core/libs/tags/widgets/tagfolderview.cpp:233
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Razširi izbrane rekurzivno"
@@ -41618,17 +41618,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "Zadeve"
 
-#: core/libs/template/templateselector.cpp:62
+#: core/libs/template/templateselector.cpp:64
 #, kde-format
 msgid "Template: "
 msgstr "Predloga: "
 
-#: core/libs/template/templateselector.cpp:66
+#: core/libs/template/templateselector.cpp:68
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Odpri urejevalnik predlog metapodatkov"
 
-#: core/libs/template/templateselector.cpp:67
+#: core/libs/template/templateselector.cpp:69
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -41643,22 +41643,22 @@ msgstr ""
 "vrednosti so naslovi predlog, ki jih upravlja digiKam. Ob izboru ene, bodo "
 "dodeljeni tudi podatki.</p>"
 
-#: core/libs/template/templateselector.cpp:111
+#: core/libs/template/templateselector.cpp:113
 #, kde-format
 msgid "To remove"
 msgstr "Za odstranitev"
 
-#: core/libs/template/templateselector.cpp:112
+#: core/libs/template/templateselector.cpp:114
 #, kde-format
 msgid "Do not change"
 msgstr "Ne spremeni"
 
-#: core/libs/template/templateselector.cpp:213
+#: core/libs/template/templateselector.cpp:215
 #, kde-format
 msgid "Template overwrites all"
 msgstr "Predloga prepiše vse"
 
-#: core/libs/template/templateselector.cpp:217
+#: core/libs/template/templateselector.cpp:219
 #, kde-format
 msgid "Template will be merged"
 msgstr "Predloga bo združena"

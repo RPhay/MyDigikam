@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:41+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -3551,7 +3551,7 @@ msgstr "آلبومهای من"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/properties/itempropertiestab.cpp:525
-#: core/libs/tags/widgets/tagfolderview.cpp:100
+#: core/libs/tags/widgets/tagfolderview.cpp:102
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #: core/utilities/searchwindow/searchfields_createfield.cpp:83
@@ -27672,7 +27672,7 @@ msgstr "آلبوم جدید"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
-#: core/libs/tags/widgets/tagfolderview.cpp:128
+#: core/libs/tags/widgets/tagfolderview.cpp:130
 #, fuzzy, kde-format
 msgid "Expand Selected Nodes"
 msgstr "برگزیدن هیچ‌کدام"
@@ -27684,8 +27684,8 @@ msgid "Expand all Albums"
 msgstr "آلبومهای من"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:206
-#: core/libs/tags/widgets/tagfolderview.cpp:133
-#: core/libs/tags/widgets/tagfolderview.cpp:236
+#: core/libs/tags/widgets/tagfolderview.cpp:135
+#: core/libs/tags/widgets/tagfolderview.cpp:238
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 فقره برگزیده شد"
@@ -27697,7 +27697,7 @@ msgid "Collapse all Albums"
 msgstr "آلبومهای من"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:212
-#: core/libs/tags/widgets/tagfolderview.cpp:64
+#: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "جستجو برای تکراری‌ها..."
@@ -37525,21 +37525,21 @@ msgid "Selected items have different text here."
 msgstr "<p>مقدار ورودی gamma را در اینجا برگزینید."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:92
+#: core/libs/properties/captions/tagsedit.cpp:94
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "باز کردن در مدیر پرونده"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:98
+#: core/libs/properties/captions/tagsedit.cpp:100
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "نام آلبوم جدید را وارد کنید:"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:99
+#: core/libs/properties/captions/tagsedit.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -37549,14 +37549,14 @@ msgid ""
 msgstr ""
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:116
+#: core/libs/properties/captions/tagsedit.cpp:118
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "برچسبهای قبلاً انتساب‌شده"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:122
+#: core/libs/properties/captions/tagsedit.cpp:124
 #, fuzzy, kde-format
 #| msgid "Recent Tags"
 msgctxt "@info"
@@ -37564,7 +37564,7 @@ msgid "Recent Tags"
 msgstr "برچسبهای اخیر"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
-#: core/libs/properties/captions/tagsedit.cpp:280
+#: core/libs/properties/captions/tagsedit.cpp:282
 #, fuzzy, kde-format
 #| msgid "No Recently Assigned Tags"
 msgctxt "@action"
@@ -39799,7 +39799,7 @@ msgstr "%1 بیت در تصویردانه"
 msgid "Create \"%1\""
 msgstr "ایجاد کردن"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:258
+#: core/libs/tags/engine/tagmodificationhelper.cpp:260
 #, fuzzy, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -39812,7 +39812,7 @@ msgstr[0] ""
 "ادامه دهید؟"
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:281
+#: core/libs/tags/engine/tagmodificationhelper.cpp:283
 #, fuzzy, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -39821,20 +39821,20 @@ msgstr[0] ""
 "ادامه دهید؟"
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:289
+#: core/libs/tags/engine/tagmodificationhelper.cpp:291
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "برچسب »%1« حذف شود؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:292
-#: core/libs/tags/engine/tagmodificationhelper.cpp:411
+#: core/libs/tags/engine/tagmodificationhelper.cpp:294
+#: core/libs/tags/engine/tagmodificationhelper.cpp:413
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "حذف برچسب"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:385
+#: core/libs/tags/engine/tagmodificationhelper.cpp:387
 #, fuzzy, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -39844,19 +39844,19 @@ msgstr ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:402
+#: core/libs/tags/engine/tagmodificationhelper.cpp:404
 #, fuzzy, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "برچسب »%1«، %n زیربرچسب دارد. حذف این، زیربرچسبها را هم حذف می‌کند. می‌خواهید "
 "ادامه دهید؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:408
+#: core/libs/tags/engine/tagmodificationhelper.cpp:410
 #, fuzzy, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "برچسب »%1« حذف شود؟"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:573
+#: core/libs/tags/engine/tagmodificationhelper.cpp:575
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -39871,7 +39871,7 @@ msgstr[0] ""
 "ادامه دهید؟"
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:595
+#: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, fuzzy, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -39882,14 +39882,14 @@ msgstr[0] ""
 "ادامه دهید؟"
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, fuzzy, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "بازنشانی شمایل برچسب"
 msgstr[1] ""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:614
+#: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, fuzzy, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -39965,7 +39965,7 @@ msgstr "پرونده تصاویر"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager_p.cpp:128
-#: core/libs/tags/widgets/tagfolderview.cpp:63
+#: core/libs/tags/widgets/tagfolderview.cpp:65
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "بازنشانی شمایل برچسب"
@@ -40329,30 +40329,30 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:71
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, fuzzy, kde-format
 msgid "Toggle Auto"
 msgstr "زدن ضامن قفل"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:72
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, fuzzy, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "هیچ‌کدام"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:74
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "بچه‌ها"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:75
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "والدین"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:76
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, fuzzy, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
@@ -40437,19 +40437,19 @@ msgstr ""
 msgid "Tag Path"
 msgstr "بر اساس مسیر"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:138
+#: core/libs/tags/widgets/tagfolderview.cpp:140
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgid "Expand all Tags"
 msgstr "همه برچسبها"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:143
+#: core/libs/tags/widgets/tagfolderview.cpp:145
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Tags"
 msgstr "آلبومهای من"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:231
+#: core/libs/tags/widgets/tagfolderview.cpp:233
 #, fuzzy, kde-format
 msgid "Expand Selected Recursively"
 msgstr "برگزیدن هیچ‌کدام"
@@ -40871,17 +40871,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "فاصله:"
 
-#: core/libs/template/templateselector.cpp:62
+#: core/libs/template/templateselector.cpp:64
 #, fuzzy, kde-format
 msgid "Template: "
 msgstr "قالب"
 
-#: core/libs/template/templateselector.cpp:66
+#: core/libs/template/templateselector.cpp:68
 #, fuzzy, kde-format
 msgid "Open metadata template editor"
 msgstr "باز کردن در Konqueror"
 
-#: core/libs/template/templateselector.cpp:67
+#: core/libs/template/templateselector.cpp:69
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -40891,22 +40891,22 @@ msgid ""
 "well.</p>"
 msgstr ""
 
-#: core/libs/template/templateselector.cpp:111
+#: core/libs/template/templateselector.cpp:113
 #, fuzzy, kde-format
 msgid "To remove"
 msgstr "&حذف‌"
 
-#: core/libs/template/templateselector.cpp:112
+#: core/libs/template/templateselector.cpp:114
 #, kde-format
 msgid "Do not change"
 msgstr "تغییر داده نشود"
 
-#: core/libs/template/templateselector.cpp:213
+#: core/libs/template/templateselector.cpp:215
 #, fuzzy, kde-format
 msgid "Template overwrites all"
 msgstr "ایجادشده:"
 
-#: core/libs/template/templateselector.cpp:217
+#: core/libs/template/templateselector.cpp:219
 #, fuzzy, kde-format
 msgid "Template will be merged"
 msgstr "ایجادشده:"

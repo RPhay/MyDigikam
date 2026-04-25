@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:41+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2026-04-07 12:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3133,7 +3133,7 @@ msgstr "Álbum sin etiquetas"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/properties/itempropertiestab.cpp:525
-#: core/libs/tags/widgets/tagfolderview.cpp:100
+#: core/libs/tags/widgets/tagfolderview.cpp:102
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #: core/utilities/searchwindow/searchfields_createfield.cpp:83
@@ -28091,7 +28091,7 @@ msgstr "Emblemas del álbum"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
-#: core/libs/tags/widgets/tagfolderview.cpp:128
+#: core/libs/tags/widgets/tagfolderview.cpp:130
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Expandir nodos seleccionados"
@@ -28102,8 +28102,8 @@ msgid "Expand all Albums"
 msgstr "Expandir todos los álbumes"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:206
-#: core/libs/tags/widgets/tagfolderview.cpp:133
-#: core/libs/tags/widgets/tagfolderview.cpp:236
+#: core/libs/tags/widgets/tagfolderview.cpp:135
+#: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Contraer seleccionados recursivamente"
@@ -28114,7 +28114,7 @@ msgid "Collapse all Albums"
 msgstr "Contraer todos los álbumes"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:212
-#: core/libs/tags/widgets/tagfolderview.cpp:64
+#: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Buscar duplicados…"
@@ -38337,21 +38337,21 @@ msgid "Selected items have different text here."
 msgstr "Los elementos seleccionados tienen textos distintos aquí."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:92
+#: core/libs/properties/captions/tagsedit.cpp:94
 #, kde-format
 msgctxt "@action"
 msgid "Open Tag Manager"
 msgstr "Abrir el gestor de etiquetas"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:98
+#: core/libs/properties/captions/tagsedit.cpp:100
 #, kde-format
 msgctxt "@info"
 msgid "Enter tag here."
 msgstr "Introduzca la etiqueta aquí."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:99
+#: core/libs/properties/captions/tagsedit.cpp:101
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -38364,21 +38364,21 @@ msgstr ""
 "jerarquía al mismo tiempo."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:116
+#: core/libs/properties/captions/tagsedit.cpp:118
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
 msgstr "Etiquetas ya asignadas"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:122
+#: core/libs/properties/captions/tagsedit.cpp:124
 #, kde-format
 msgctxt "@info"
 msgid "Recent Tags"
 msgstr "Etiquetas recientes"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
-#: core/libs/properties/captions/tagsedit.cpp:280
+#: core/libs/properties/captions/tagsedit.cpp:282
 #, kde-format
 msgctxt "@action"
 msgid "No Recently Assigned Tags"
@@ -40722,7 +40722,7 @@ msgstr "Crear «%1» en %2"
 msgid "Create \"%1\""
 msgstr "Crear «%1»"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:258
+#: core/libs/tags/engine/tagmodificationhelper.cpp:260
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -40739,7 +40739,7 @@ msgstr[1] ""
 "subetiquetas.\n"
 "¿Seguro que desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:281
+#: core/libs/tags/engine/tagmodificationhelper.cpp:283
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -40748,19 +40748,19 @@ msgstr[0] ""
 msgstr[1] ""
 "La etiqueta «%2» tiene %1 elementos asignados. ¿Seguro que desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:289
+#: core/libs/tags/engine/tagmodificationhelper.cpp:291
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "¿Borrar la etiqueta «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:292
-#: core/libs/tags/engine/tagmodificationhelper.cpp:411
+#: core/libs/tags/engine/tagmodificationhelper.cpp:294
+#: core/libs/tags/engine/tagmodificationhelper.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Borrar etiqueta"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:385
+#: core/libs/tags/engine/tagmodificationhelper.cpp:387
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -40771,19 +40771,19 @@ msgstr ""
 "borrará las subetiquetas.\n"
 "¿Seguro que desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:402
+#: core/libs/tags/engine/tagmodificationhelper.cpp:404
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Las etiquetas «%1» están asignadas a uno o más elementos. ¿Seguro que desea "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:408
+#: core/libs/tags/engine/tagmodificationhelper.cpp:410
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "¿Borrar la(s) etiqueta(s) «%1»?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:573
+#: core/libs/tags/engine/tagmodificationhelper.cpp:575
 #, kde-format
 msgid ""
 "Face tag '%2' has at least one face tag child. Removing it will also remove "
@@ -40802,7 +40802,7 @@ msgstr[1] ""
 "las elimina, también eliminará las etiquetas anidadas.\n"
 "¿Desea continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:595
+#: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -40815,14 +40815,14 @@ msgstr[1] ""
 "Las etiquetas de caras «%2» están asignadas al menos a un elemento. ¿Desea "
 "continuar?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "¿Eliminar etiqueta de cara?"
 msgstr[1] "¿Eliminar etiquetas de caras?"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:614
+#: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -40901,7 +40901,7 @@ msgstr "Editar título de la etiqueta"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager_p.cpp:128
-#: core/libs/tags/widgets/tagfolderview.cpp:63
+#: core/libs/tags/widgets/tagfolderview.cpp:65
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Restablecer icono de etiquetas"
@@ -41298,30 +41298,30 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr "Ayuda en línea sobre la gestión de etiquetas"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:71
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Conmutar auto"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:72
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Ninguna"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:74
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Hijas"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:75
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Padres"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:76
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
@@ -41411,17 +41411,17 @@ msgstr "Ha ocurrido un error al crear la etiqueta:"
 msgid "Tag Path"
 msgstr "Ruta de la etiqueta"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:138
+#: core/libs/tags/widgets/tagfolderview.cpp:140
 #, kde-format
 msgid "Expand all Tags"
 msgstr "Expandir todas las etiquetas"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:143
+#: core/libs/tags/widgets/tagfolderview.cpp:145
 #, kde-format
 msgid "Collapse all Tags"
 msgstr "Contraer todas las etiquetas"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:231
+#: core/libs/tags/widgets/tagfolderview.cpp:233
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Expandir seleccionados recursivamente"
@@ -41938,17 +41938,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "Sujetos"
 
-#: core/libs/template/templateselector.cpp:62
+#: core/libs/template/templateselector.cpp:64
 #, kde-format
 msgid "Template: "
 msgstr "Plantilla: "
 
-#: core/libs/template/templateselector.cpp:66
+#: core/libs/template/templateselector.cpp:68
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Abrir el editor de plantillas de metadatos"
 
-#: core/libs/template/templateselector.cpp:67
+#: core/libs/template/templateselector.cpp:69
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -41963,22 +41963,22 @@ msgstr ""
 "títulos de plantillas gestionadas por digiKam. Si se selecciona uno se "
 "asignará también la información.</p>"
 
-#: core/libs/template/templateselector.cpp:111
+#: core/libs/template/templateselector.cpp:113
 #, kde-format
 msgid "To remove"
 msgstr "Eliminar"
 
-#: core/libs/template/templateselector.cpp:112
+#: core/libs/template/templateselector.cpp:114
 #, kde-format
 msgid "Do not change"
 msgstr "No hacer nada"
 
-#: core/libs/template/templateselector.cpp:213
+#: core/libs/template/templateselector.cpp:215
 #, kde-format
 msgid "Template overwrites all"
 msgstr "La plantilla sobrescribe todo"
 
-#: core/libs/template/templateselector.cpp:217
+#: core/libs/template/templateselector.cpp:219
 #, kde-format
 msgid "Template will be merged"
 msgstr "La plantilla se fusionará"

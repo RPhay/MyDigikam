@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:41+0000\n"
+"POT-Creation-Date: 2026-04-25 00:42+0000\n"
 "PO-Revision-Date: 2023-08-28 12:02+0300\n"
 "Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -3240,7 +3240,7 @@ msgstr "Λεύκωμα χωρίς ετικέτες"
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
 #: core/libs/properties/itempropertiestab.cpp:525
-#: core/libs/tags/widgets/tagfolderview.cpp:100
+#: core/libs/tags/widgets/tagfolderview.cpp:102
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:689
 #: core/utilities/searchwindow/searchfields_createfield.cpp:75
 #: core/utilities/searchwindow/searchfields_createfield.cpp:83
@@ -29501,7 +29501,7 @@ msgstr "Τίτλοι λευκώματος"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:200
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
-#: core/libs/tags/widgets/tagfolderview.cpp:128
+#: core/libs/tags/widgets/tagfolderview.cpp:130
 #, kde-format
 msgid "Expand Selected Nodes"
 msgstr "Επέκταση επιλεγμένων κόμβων"
@@ -29513,8 +29513,8 @@ msgid "Expand all Albums"
 msgstr "Αντιγραφή λευκωμάτων..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:206
-#: core/libs/tags/widgets/tagfolderview.cpp:133
-#: core/libs/tags/widgets/tagfolderview.cpp:236
+#: core/libs/tags/widgets/tagfolderview.cpp:135
+#: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Αναδρομική σύμπτυξη επιλεγμένων"
@@ -29526,7 +29526,7 @@ msgid "Collapse all Albums"
 msgstr "Αντιγραφή λευκωμάτων..."
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:212
-#: core/libs/tags/widgets/tagfolderview.cpp:64
+#: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Αναζήτηση διπλών εμφανίσεων..."
@@ -40336,7 +40336,7 @@ msgid "Selected items have different text here."
 msgstr "Επιλέξτε εδώ την τιμή εισόδου γάμμα."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:41
-#: core/libs/properties/captions/tagsedit.cpp:92
+#: core/libs/properties/captions/tagsedit.cpp:94
 #, fuzzy, kde-format
 #| msgid "Open Tag Manager"
 msgctxt "@action"
@@ -40344,7 +40344,7 @@ msgid "Open Tag Manager"
 msgstr "Άνοιγμα διαχειριστή ετικετών"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:47
-#: core/libs/properties/captions/tagsedit.cpp:98
+#: core/libs/properties/captions/tagsedit.cpp:100
 #, fuzzy, kde-format
 #| msgid "Enter tag here."
 msgctxt "@info"
@@ -40352,7 +40352,7 @@ msgid "Enter tag here."
 msgstr "Εισαγάγετε εδώ ετικέτα."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:48
-#: core/libs/properties/captions/tagsedit.cpp:99
+#: core/libs/properties/captions/tagsedit.cpp:101
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the text used to create tags here. '/' can be used to create a "
@@ -40369,7 +40369,7 @@ msgstr ""
 "δημιουργία περισσότερων της μίας ιεραρχίας ταυτόχρονα."
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:64
-#: core/libs/properties/captions/tagsedit.cpp:116
+#: core/libs/properties/captions/tagsedit.cpp:118
 #, fuzzy, kde-format
 #| msgid "Tags already assigned"
 msgctxt "@info"
@@ -40377,7 +40377,7 @@ msgid "Tags already assigned"
 msgstr "Ήδη καθορισμένες ετικέτες"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
-#: core/libs/properties/captions/tagsedit.cpp:122
+#: core/libs/properties/captions/tagsedit.cpp:124
 #, fuzzy, kde-format
 #| msgid "Recent Tags"
 msgctxt "@info"
@@ -40385,7 +40385,7 @@ msgid "Recent Tags"
 msgstr "Πρόσφατες ετικέτες"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:300
-#: core/libs/properties/captions/tagsedit.cpp:280
+#: core/libs/properties/captions/tagsedit.cpp:282
 #, fuzzy, kde-format
 #| msgid "No Recently Assigned Tags"
 msgctxt "@action"
@@ -42899,7 +42899,7 @@ msgstr "Δημιουργία \"%1\" στο %2"
 msgid "Create \"%1\""
 msgstr "Δημιουργία \"%1\""
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:258
+#: core/libs/tags/engine/tagmodificationhelper.cpp:260
 #, kde-format
 msgid ""
 "Tag '%2' has one subtag. Deleting this will also delete the subtag.\n"
@@ -42916,7 +42916,7 @@ msgstr[1] ""
 "υποετικέτες.\n"
 "Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:281
+#: core/libs/tags/engine/tagmodificationhelper.cpp:283
 #, kde-format
 msgid "Tag '%2' is assigned to one item. Do you want to continue?"
 msgid_plural "Tag '%2' is assigned to %1 items. Do you want to continue?"
@@ -42925,20 +42925,20 @@ msgstr[0] ""
 msgstr[1] ""
 "Η ετικέτα '%2' έχει οριστεί σε %1 αντικείμενα. Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:289
+#: core/libs/tags/engine/tagmodificationhelper.cpp:291
 #, kde-format
 msgid "Delete '%1' tag?"
 msgstr "Διαγραφή της ετικέτας '%1';"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:292
-#: core/libs/tags/engine/tagmodificationhelper.cpp:411
+#: core/libs/tags/engine/tagmodificationhelper.cpp:294
+#: core/libs/tags/engine/tagmodificationhelper.cpp:413
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
 msgid "Delete Tag"
 msgstr "Διαγραφή ετικέτας"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:385
+#: core/libs/tags/engine/tagmodificationhelper.cpp:387
 #, kde-format
 msgid ""
 "Tags '%1' have one or more subtags. Deleting them will also delete the "
@@ -42949,19 +42949,19 @@ msgstr ""
 "διαγραφούν και οι υποετικέτες.\n"
 "Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:402
+#: core/libs/tags/engine/tagmodificationhelper.cpp:404
 #, kde-format
 msgid "Tags '%1' are assigned to one or more items. Do you want to continue?"
 msgstr ""
 "Οι ετικέτες '%1' έχουν οριστεί σε ένα ή περισσότερα αντικείμενα. Θέλετε να "
 "συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:408
+#: core/libs/tags/engine/tagmodificationhelper.cpp:410
 #, kde-format
 msgid "Delete '%1' tag(s)?"
 msgstr "Διαγραφή '%1' ετικετών;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:573
+#: core/libs/tags/engine/tagmodificationhelper.cpp:575
 #, fuzzy, kde-format
 #| msgid ""
 #| "Face tag '%2' has at least one face tag child. Deleting it will also "
@@ -42988,7 +42988,7 @@ msgstr[1] ""
 "δισγρφή τους θα διαγραφούν και οι απόγονοι.\n"
 "Επιθυμείτε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:595
+#: core/libs/tags/engine/tagmodificationhelper.cpp:597
 #, kde-format
 msgid ""
 "Face tag '%2' is assigned to at least one item. Do you want to continue?"
@@ -43001,14 +43001,14 @@ msgstr[1] ""
 "Οι ετικέτες προσώπου '%2' έχουν οριστεί σε ένα τουλάχιστον αντικείμενο. "
 "Θέλετε να συνεχίσετε;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:603
+#: core/libs/tags/engine/tagmodificationhelper.cpp:605
 #, kde-format
 msgid "Remove face tag?"
 msgid_plural "Remove face tags?"
 msgstr[0] "Να αφαιρεθεί η ετικέτα προσώπου;"
 msgstr[1] "Να αφαιρεθούν οι ετικέτες προσώπου;"
 
-#: core/libs/tags/engine/tagmodificationhelper.cpp:614
+#: core/libs/tags/engine/tagmodificationhelper.cpp:616
 #, kde-format
 msgid "Remove the tag corresponding to this face tag from the images?"
 msgid_plural ""
@@ -43091,7 +43091,7 @@ msgstr "Επεξεργασία τίτλου ετικέτας"
 
 #: core/libs/tags/manager/tagmngrtreeview.cpp:153
 #: core/libs/tags/manager/tagsmanager_p.cpp:128
-#: core/libs/tags/widgets/tagfolderview.cpp:63
+#: core/libs/tags/widgets/tagfolderview.cpp:65
 #, kde-format
 msgid "Reset Tag Icon"
 msgstr "Επαναφορά εικονιδίου ετικέτας"
@@ -43521,30 +43521,30 @@ msgctxt "@info"
 msgid "Online help about tags management"
 msgstr ""
 
-#: core/libs/tags/widgets/tagcheckview.cpp:71
+#: core/libs/tags/widgets/tagcheckview.cpp:73
 #, kde-format
 msgid "Toggle Auto"
 msgstr "Εναλλαγή αυτόματου"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:72
+#: core/libs/tags/widgets/tagcheckview.cpp:74
 #, kde-format
 msgctxt "no auto toggle"
 msgid "None"
 msgstr "Καθόλου"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:74
+#: core/libs/tags/widgets/tagcheckview.cpp:76
 #, kde-format
 msgctxt "toggle child tags"
 msgid "Children"
 msgstr "Απόγονοι"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:75
+#: core/libs/tags/widgets/tagcheckview.cpp:77
 #, kde-format
 msgctxt "toggle parent tag"
 msgid "Parents"
 msgstr "Γονείς"
 
-#: core/libs/tags/widgets/tagcheckview.cpp:76
+#: core/libs/tags/widgets/tagcheckview.cpp:78
 #, kde-format
 msgctxt "toggle child and parent tags"
 msgid "Both"
@@ -43647,19 +43647,19 @@ msgstr "Συνέβη ένα σφάλμα κατά τη δημιουργία ετ
 msgid "Tag Path"
 msgstr "Διαδρομή ετικέτας"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:138
+#: core/libs/tags/widgets/tagfolderview.cpp:140
 #, fuzzy, kde-format
 #| msgid "Expand Tag Tree"
 msgid "Expand all Tags"
 msgstr "Επέκταση δέντρου ετικετών"
 
-#: core/libs/tags/widgets/tagfolderview.cpp:143
+#: core/libs/tags/widgets/tagfolderview.cpp:145
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse all Tags"
 msgstr "Αντιγραφή λευκωμάτων..."
 
-#: core/libs/tags/widgets/tagfolderview.cpp:231
+#: core/libs/tags/widgets/tagfolderview.cpp:233
 #, kde-format
 msgid "Expand Selected Recursively"
 msgstr "Αναδρομική επέκταση επιλεγμένων"
@@ -44258,17 +44258,17 @@ msgstr ""
 msgid "Subjects"
 msgstr "Θέματα"
 
-#: core/libs/template/templateselector.cpp:62
+#: core/libs/template/templateselector.cpp:64
 #, kde-format
 msgid "Template: "
 msgstr "Πρότυπο: "
 
-#: core/libs/template/templateselector.cpp:66
+#: core/libs/template/templateselector.cpp:68
 #, kde-format
 msgid "Open metadata template editor"
 msgstr "Άνοιγμα επεξεργαστή προτύπων μεταδεδομένων"
 
-#: core/libs/template/templateselector.cpp:67
+#: core/libs/template/templateselector.cpp:69
 #, kde-format
 msgid ""
 "<p>Select here the action to perform using the metadata template.</"
@@ -44283,23 +44283,23 @@ msgstr ""
 "προτύπου.</p><p>Όλες οι άλλες τιμές είναι τίτλοι προτύπων που διαχειρίζεται "
 "το digiKam. Η επιλογή ενός θα σημαίνει και καταχώριση πληροφοριών.</p>"
 
-#: core/libs/template/templateselector.cpp:111
+#: core/libs/template/templateselector.cpp:113
 #, kde-format
 msgid "To remove"
 msgstr "Για αφαίρεση"
 
-#: core/libs/template/templateselector.cpp:112
+#: core/libs/template/templateselector.cpp:114
 #, kde-format
 msgid "Do not change"
 msgstr "Χωρίς αλλαγή"
 
-#: core/libs/template/templateselector.cpp:213
+#: core/libs/template/templateselector.cpp:215
 #, fuzzy, kde-format
 #| msgid "Template Title:"
 msgid "Template overwrites all"
 msgstr "Τίτλος προτύπου:"
 
-#: core/libs/template/templateselector.cpp:217
+#: core/libs/template/templateselector.cpp:219
 #, fuzzy, kde-format
 #| msgid "Template Title:"
 msgid "Template will be merged"
