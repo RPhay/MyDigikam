@@ -266,9 +266,10 @@
             <dbaction name="CreateIndices" mode="transaction">
                 <statement mode="plain">CREATE INDEX dir_index  ON Images (album);</statement>
                 <statement mode="plain">CREATE INDEX hash_index ON Images (uniqueHash);</statement>
+                <statement mode="plain">CREATE INDEX image_name_index ON Images (name);</statement>
+                <statement mode="plain">CREATE INDEX image_status_index ON Images (status);</statement>
                 <statement mode="plain">CREATE INDEX tag_index  ON ImageTags (tagid);</statement>
                 <statement mode="plain">CREATE INDEX tag_id_index  ON ImageTags (imageid);</statement>
-                <statement mode="plain">CREATE INDEX image_name_index ON Images (name);</statement>
                 <statement mode="plain">CREATE INDEX creationdate_index ON ImageInformation (creationDate);</statement>
                 <statement mode="plain">CREATE INDEX comments_imageid_index ON ImageComments (imageid);</statement>
                 <statement mode="plain">CREATE INDEX copyright_imageid_index ON ImageCopyright (imageid);</statement>
@@ -276,10 +277,8 @@
                 <statement mode="plain">CREATE INDEX subject_relations_index ON ImageRelations (subject);</statement>
                 <statement mode="plain">CREATE INDEX object_relations_index ON ImageRelations (object);</statement>
                 <statement mode="plain">CREATE INDEX tagproperties_index ON TagProperties (tagid);</statement>
-                <statement mode="plain">CREATE INDEX imagetagproperties_index ON ImageTagProperties (imageid, tagid);</statement>
-                <statement mode="plain">CREATE INDEX imagetagproperties_imageid_index ON ImageTagProperties (imageid);</statement>
-                <statement mode="plain">CREATE INDEX imagetagproperties_tagid_index ON ImageTagProperties (tagid);</statement>
-                <statement mode="plain">CREATE INDEX imagetagproperties_tagid_property_index ON ImageTagProperties (tagid, property);</statement>
+                <statement mode="plain">CREATE INDEX imgtagprop_idx ON ImageTagProperties (imageid, tagid);</statement>
+                <statement mode="plain">CREATE INDEX imgtagprop_prop_tag_img_idx ON ImageTagProperties (property, tagid, imageid);</statement>
             </dbaction>
 
             <!-- SQlite Core Triggers -->
@@ -1018,8 +1017,13 @@
             </dbaction>
 
             <dbaction name="UpdateSchemaFromV16ToV17" mode="transaction">
+                <statement mode="plain">DROP INDEX imagetagproperties_index ON ImageTagProperties;</statement>
+                <statement mode="plain">DROP INDEX imagetagproperties_tagid_index ON ImageTagProperties;</statement>
+                <statement mode="plain">DROP INDEX imagetagproperties_imageid_index ON ImageTagProperties;</statement>
+                <statement mode="plain">DROP INDEX imagetagproperties_tagid_property_index ON ImageTagProperties;</statement>
                 <statement mode="plain">ALTER TABLE ImageInformation ADD timeZone INTEGER;</statement>
-                <statement mode="plain">CREATE INDEX imagetagproperties_tagid_property_index ON ImageTagProperties (tagid, property);</statement>
+                <statement mode="plain">CREATE INDEX imgtagprop_idx ON ImageTagProperties (imageid, tagid);</statement>
+                <statement mode="plain">CREATE INDEX imgtagprop_prop_tag_img_idx ON ImageTagProperties (property, tagid, imageid);</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
@@ -1348,7 +1352,7 @@
                 <statement mode="plain">CREATE TABLE IF NOT EXISTS ImageTagProperties
                     (imageid BIGINT,
                     tagid INTEGER,
-                    property TEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
+                    property VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci,
                     value LONGTEXT CHARACTER SET utf8 COLLATE utf8_general_ci,
                     CONSTRAINT ImageTagProperties_Images FOREIGN KEY (imageid) REFERENCES Images (id) ON DELETE CASCADE ON UPDATE CASCADE,
                     CONSTRAINT ImageTagProperties_Tags FOREIGN KEY (tagid) REFERENCES Tags (id) ON DELETE CASCADE ON UPDATE CASCADE)
@@ -1392,9 +1396,10 @@
                 </statement>
                 <statement mode="plain">CALL create_index_if_not_exists('Images','dir_index','album');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('Images','hash_index','uniqueHash');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('Images','image_name_index','name(255)');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('Images','image_status_index','status');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTags','tag_index','tagid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTags','tag_id_index','imageid');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('Images','image_name_index','name(255)');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageInformation','creationdate_index','creationDate');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageComments','comments_imageid_index','imageid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageCopyright','copyright_imageid_index','imageid');</statement>
@@ -1402,10 +1407,8 @@
                 <statement mode="plain">CALL create_index_if_not_exists('ImageRelations','subject_relations_index','subject');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageRelations','object_relations_index','object');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('TagProperties','tagproperties_index','tagid');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_index','imageid, tagid');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_imageid_index','imageid');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_tagid_property_index','tagid, property(50)');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_tagid_index','tagid');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_idx','imageid, tagid');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_prop_tag_img_idx','property, tagid, imageid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_id_index','id');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_pid_index','pid');</statement>
             </dbaction>
@@ -2709,6 +2712,26 @@
 
             <dbaction name="UpdateSchemaFromV16ToV17" mode="transaction">
                 <statement mode="plain">
+                    DROP PROCEDURE IF EXISTS drop_index_if_exists;
+                </statement>
+                <statement mode="plain">
+                    CREATE PROCEDURE drop_index_if_exists(in tableName varchar(64), in indexName varchar(64))
+                    BEGIN
+                        IF((SELECT COUNT(*) AS index_exists FROM information_schema.statistics
+                            WHERE TABLE_SCHEMA = DATABASE() AND table_name = CONVERT(tableName USING latin1) AND index_name = CONVERT(indexName USING latin1)) > 0)
+                        THEN
+                            SET @query = CONCAT(
+                                CONVERT('DROP INDEX ' USING latin1),
+                                CONVERT(indexName USING latin1),
+                                CONVERT(' ON ' USING latin1),
+                                CONVERT(tableName USING latin1)
+                            );
+                            PREPARE stmt FROM @query;
+                            EXECUTE stmt;
+                        END IF;
+                    END;
+                </statement>
+                <statement mode="plain">
                     DROP PROCEDURE IF EXISTS create_index_if_not_exists;
                 </statement>
                 <statement mode="plain">
@@ -2739,8 +2762,17 @@
                     END IF;
                     END;
                 </statement>
+                <statement mode="plain">SET FOREIGN_KEY_CHECKS=0;</statement>
+                <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_index');</statement>
+                <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_tagid_index');</statement>
+                <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_imageid_index');</statement>
+                <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_tagid_property_index');</statement>
                 <statement mode="plain">ALTER TABLE ImageInformation ADD timeZone INTEGER;</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imagetagproperties_tagid_property_index','tagid, property(50)');</statement>
+                <statement mode="plain">ALTER TABLE ImageTagProperties MODIFY COLUMN property VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci;</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('Images','image_status_index','status');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_idx','imageid, tagid');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_prop_tag_img_idx','property, tagid, imageid');</statement>
+                <statement mode="plain">SET FOREIGN_KEY_CHECKS=1;</statement>
             </dbaction>
 
             <dbaction name="UpdateThumbnailsDBSchemaFromV1ToV2" mode="transaction">
