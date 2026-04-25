@@ -22,12 +22,14 @@ bool GraphicsDImgView::viewportEvent(QEvent* event)
 {
     if      (event->type() == QEvent::Leave)
     {
+        QApplication::restoreOverrideCursor();
         d->magnifier->setVisible(false);
     }
     else if (event->type() == QEvent::Enter)
     {
         if (d->magnifierEnabled)
         {
+            QApplication::setOverrideCursor(Qt::CrossCursor);
             d->magnifier->setVisible(true);
         }
     }
