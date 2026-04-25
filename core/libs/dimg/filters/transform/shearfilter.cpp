@@ -38,6 +38,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool   antiAlias        = true;
 
     int    orgW             = 0;
@@ -98,10 +100,10 @@ void ShearFilter::filterImage()
     double       horz_add, vert_add;
     double       horz_beta_angle, vert_beta_angle;
 
-    int nWidth              = m_orgImage.width();
-    int nHeight             = m_orgImage.height();
-    uchar* pBits            = m_orgImage.bits();
-    unsigned short* pBits16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
+    int nWidth                    = m_orgImage.width();
+    int nHeight                   = m_orgImage.height();
+    const uchar* pBits            = m_orgImage.bits();
+    const unsigned short* pBits16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
     // get beta ( complementary ) angle for horizontal and vertical angles
 

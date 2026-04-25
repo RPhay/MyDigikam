@@ -63,23 +63,33 @@ QString AntiVignettingFilter::DisplayableName()
  */
 void AntiVignettingFilter::filterImage()
 {
-    int    progress;
-    int    col, row, xd, td, yd, p;
-    int    xsize, ysize, /*diagonal,*/ erad, irad, xctr, yctr;
+    int    progress = 0;
+    int    col      = 0;
+    int    row      = 0;
+    int    xd       = 0;
+    int    td       = 0;
+    int    yd       = 0;
+    int    p        = 0;
+    int    xsize    = 0;
+    int    ysize    = 0;
+    int    erad     = 0;
+    int    irad     = 0;
+    int    xctr     = 0;
+    int    yctr     = 0;
 
-    uchar* NewBits            = m_destImage.bits();
-    uchar* data               = m_orgImage.bits();
+    uchar* NewBits               = m_destImage.bits();
+    const uchar* data            = m_orgImage.bits();
 
-    unsigned short* NewBits16 = reinterpret_cast<unsigned short*>(m_destImage.bits());
-    unsigned short* data16    = reinterpret_cast<unsigned short*>(m_orgImage.bits());
+    unsigned short* NewBits16    = reinterpret_cast<unsigned short*>(m_destImage.bits());
+    const unsigned short* data16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
-    int Width                 = m_orgImage.width();
-    int Height                = m_orgImage.height();
+    int Width                    = m_orgImage.width();
+    int Height                   = m_orgImage.height();
 
     // Determine the shift in pixels from the shift in percentage.
 
-    m_settings.yshift         = m_settings.yshift * Height / 200.0;
-    m_settings.xshift         = m_settings.xshift * Width  / 200.0;
+    m_settings.yshift            = m_settings.yshift * Height / 200.0;
+    m_settings.xshift            = m_settings.xshift * Width  / 200.0;
 
     // Determine the outer radius of the filter.  This is the half diagonal
     // measure of the image multiplied by the radius factor.

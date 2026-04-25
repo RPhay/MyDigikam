@@ -192,8 +192,11 @@ void ImageHistogram::calculate()
 
     if (isSixteenBit())         // 16 bits image.
     {
-        unsigned short blue, green, red, alpha;
-        unsigned short* const data = reinterpret_cast<unsigned short*>(d->img.bits());
+        unsigned short blue              = 0;
+        unsigned short green             = 0;
+        unsigned short red               = 0;
+        unsigned short alpha             = 0;
+        const unsigned short* const data = reinterpret_cast<unsigned short*>(d->img.bits());
 
         // count here instead of inside the loop, because d is not optimized because it's not defined in the header
 

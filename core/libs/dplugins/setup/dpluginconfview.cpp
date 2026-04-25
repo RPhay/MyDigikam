@@ -151,7 +151,7 @@ DPlugin* DPluginConfView::plugin(QTreeWidgetItem* const item) const
 {
     if (item)
     {
-        DPluginCB* const cb = dynamic_cast<DPluginCB*>(item);
+        const DPluginCB* const cb = dynamic_cast<DPluginCB*>(item);
 
         if (cb)
         {
@@ -164,7 +164,7 @@ DPlugin* DPluginConfView::plugin(QTreeWidgetItem* const item) const
 
 void DPluginConfView::apply()
 {
-    DPluginLoader* const loader = DPluginLoader::instance();
+    const DPluginLoader* const loader = DPluginLoader::instance();
 
     if (loader)
     {

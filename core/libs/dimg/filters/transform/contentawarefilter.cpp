@@ -262,9 +262,9 @@ void ContentAwareFilter::filterImage()
 
     lqr_carver_scan_reset(d->carver);
 
-    void*           rgb      = nullptr;
-    uchar*          rgbOut8  = nullptr;
-    unsigned short* rgbOut16 = nullptr;
+    void*                 rgb      = nullptr;
+    const uchar*          rgbOut8  = nullptr;
+    const unsigned short* rgbOut16 = nullptr;
 
     if (m_orgImage.sixteenBit())
     {

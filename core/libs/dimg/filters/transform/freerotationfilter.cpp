@@ -36,6 +36,8 @@ public:
 
     Private() = default;
 
+public:
+
     FreeRotationContainer settings;
 };
 
@@ -137,16 +139,15 @@ void FreeRotationFilter::filterImage()
     int          nhdx, nhdy, nhsx, nhsy;
     double       lfSin, lfCos, lfx, lfy;
 
-    int nWidth              = m_orgImage.width();
-    int nHeight             = m_orgImage.height();
-
-    uchar* pBits            = m_orgImage.bits();
-    unsigned short* pBits16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
+    int nWidth                    = m_orgImage.width();
+    int nHeight                   = m_orgImage.height();
+    const uchar* pBits            = m_orgImage.bits();
+    const unsigned short* pBits16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
     // first of all, we need to calculate the sin and cos of the given angle
 
-    lfSin                   = sin(d->settings.angle * -DEG2RAD);
-    lfCos                   = cos(d->settings.angle * -DEG2RAD);
+    lfSin                         = sin(d->settings.angle * -DEG2RAD);
+    lfCos                         = cos(d->settings.angle * -DEG2RAD);
 
     // now, we have to calc the new size for the destination image
 

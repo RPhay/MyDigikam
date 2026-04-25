@@ -42,6 +42,7 @@ namespace Digikam
 static const float LEVELS_RGB_INTENSITY_RED   = 0.30F;
 static const float LEVELS_RGB_INTENSITY_GREEN = 0.59;
 static const float LEVELS_RGB_INTENSITY_BLUE  = 0.11;
+
 #define LEVELS_RGB_INTENSITY(r,g,b) ((r) * LEVELS_RGB_INTENSITY_RED   + \
                                      (g) * LEVELS_RGB_INTENSITY_GREEN + \
                                      (b) * LEVELS_RGB_INTENSITY_BLUE)
@@ -489,7 +490,10 @@ void ImageLevels::levelsLutSetup(int nchannels)
 
 void ImageLevels::levelsLutProcess(uchar* const srcPR, uchar* const destPR, uint w, uint h)
 {
-    unsigned short* lut0 = nullptr, *lut1 = nullptr, *lut2 = nullptr, *lut3 = nullptr;
+    const unsigned short* lut0 = nullptr;
+    const unsigned short* lut1 = nullptr;
+    const unsigned short* lut2 = nullptr;
+    const unsigned short* lut3 = nullptr;
 
     if (d->lut->nchannels > 0)
     {

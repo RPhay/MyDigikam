@@ -259,8 +259,8 @@ void LensDistortionPixelAccess::cubicInterpolate(uchar* src, int rowStride, ucha
 
     if (sixteenBit)
     {
-        unsigned short* src16 = reinterpret_cast<unsigned short*>(src);
-        unsigned short* dst16 = reinterpret_cast<unsigned short*>(dst);
+        const unsigned short* src16 = reinterpret_cast<unsigned short*>(src);
+        unsigned short* dst16       = reinterpret_cast<unsigned short*>(dst);
 
         // for each component, read the values of 4 pixels into array
 

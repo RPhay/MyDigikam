@@ -74,7 +74,7 @@ DInfoInterface* DPluginEditor::infoIface(QObject* const ac) const
 int DPluginEditor::count() const
 {
     int count       = 0;
-    QObject* parent = nullptr;
+    const QObject* parent = nullptr;
 
     for (DPluginAction* const ac : std::as_const(d->actions))
     {
@@ -152,7 +152,7 @@ QStringList DPluginEditor::categories() const
 {
     QStringList list;
 
-    for (DPluginAction* const ac : std::as_const(d->actions))
+    for (const DPluginAction* const ac : std::as_const(d->actions))
     {
         QString cat = ac->actionCategoryToString();
 
