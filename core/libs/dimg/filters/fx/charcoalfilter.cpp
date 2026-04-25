@@ -187,18 +187,28 @@ void CharcoalFilter::convolveImageMultithreaded(uint start, uint stop, double* n
 {
     ActionThreadBase::setCurrentThreadName(QLatin1String(__FUNCTION__));       // To customize thread name
 
-    long    mx = 0, my = 0, sx = 0, sy = 0, mcx = 0, mcy = 0, oldProgress = 0, progress = 0;
-    double  red = 0.0, green = 0.0, blue = 0.0, alpha = 0.0;
-    double* k = nullptr;
+    long   mx          = 0;
+    long   my          = 0;
+    long   sx          = 0;
+    long   sy          = 0;
+    long   mcx         = 0;
+    long   mcy         = 0;
+    long   oldProgress = 0;
+    long   progress    = 0;
+    double red         = 0.0;
+    double green       = 0.0;
+    double blue        = 0.0;
+    double alpha       = 0.0;
+    const double* k    = nullptr;
 
-    uint height     = m_destImage.height();
-    uint width      = m_destImage.width();
-    bool sixteenBit = m_destImage.sixteenBit();
-    uchar* ddata    = m_destImage.bits();
-    int ddepth      = m_destImage.bytesDepth();
-    uchar* sdata    = m_orgImage.bits();
-    int sdepth      = m_orgImage.bytesDepth();
-    double maxClamp = m_destImage.sixteenBit() ? 16777215.0 : 65535.0;
+    uint height        = m_destImage.height();
+    uint width         = m_destImage.width();
+    bool sixteenBit    = m_destImage.sixteenBit();
+    uchar* ddata       = m_destImage.bits();
+    int ddepth         = m_destImage.bytesDepth();
+    uchar* sdata       = m_orgImage.bits();
+    int sdepth         = m_orgImage.bytesDepth();
+    double maxClamp    = m_destImage.sixteenBit() ? 16777215.0 : 65535.0;
 
     for (uint y = start ; runningFlag() && (y < stop) ; ++y)
     {

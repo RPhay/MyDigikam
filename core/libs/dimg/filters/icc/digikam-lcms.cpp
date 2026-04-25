@@ -428,7 +428,7 @@ QString dkCmsTakeManufacturer(cmsHPROFILE hProfile)
 
 LCMSBOOL dkCmsTakeMediaWhitePoint(LPcmsCIEXYZ Dest, cmsHPROFILE hProfile)
 {
-    LPcmsCIEXYZ tag = static_cast<LPcmsCIEXYZ>(cmsReadTag(hProfile, cmsSigMediaWhitePointTag));
+    const LPcmsCIEXYZ tag = static_cast<LPcmsCIEXYZ>(cmsReadTag(hProfile, cmsSigMediaWhitePointTag));
 
     if (tag == nullptr)
     {

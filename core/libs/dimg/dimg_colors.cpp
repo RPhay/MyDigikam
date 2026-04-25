@@ -64,10 +64,10 @@ void DImg::convertDepth(int depth)
     {
         // downgrading from 16 bit to 8 bit
 
-        uchar*  data = new uchar[width()*height() * 4] { 0 };
-        uchar*  dptr = data;
-        ushort* sptr = reinterpret_cast<ushort*>(bits());
-        uint dim     = width() * height() * 4;
+        uchar*  data       = new uchar[width()*height() * 4] { 0 };
+        uchar*  dptr       = data;
+        const ushort* sptr = reinterpret_cast<ushort*>(bits());
+        uint dim           = width() * height() * 4;
 
         for (uint i = 0 ; i < dim ; ++i)
         {
@@ -82,9 +82,9 @@ void DImg::convertDepth(int depth)
     {
         // upgrading from 8 bit to 16 bit
 
-        uchar*  data = new uchar[width()*height() * 8] { 0 };
-        ushort* dptr = reinterpret_cast<ushort*>(data);
-        uchar*  sptr = bits();
+        uchar*  data      = new uchar[width()*height() * 8] { 0 };
+        ushort* dptr      = reinterpret_cast<ushort*>(data);
+        const uchar* sptr = bits();
 
         // use default seed of the generator
 

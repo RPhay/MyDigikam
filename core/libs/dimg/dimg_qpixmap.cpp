@@ -165,7 +165,7 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
 
     if (sixteenBit())
     {
-        unsigned short* sptr = reinterpret_cast<unsigned short*>(m_priv->data);
+        const unsigned short* sptr = reinterpret_cast<unsigned short*>(m_priv->data);
 
         for (uint i = 0 ; i < dim ; ++i)
         {
@@ -220,7 +220,7 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
     }
     else
     {
-        uchar* sptr = m_priv->data;
+        const uchar* sptr = m_priv->data;
 
         for (uint i = 0 ; i < dim ; ++i)
         {

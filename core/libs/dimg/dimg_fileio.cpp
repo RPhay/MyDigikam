@@ -269,8 +269,8 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
 
     FileWriteLocker lock(filePath);
 
-    DPluginDImg* const plug = DImgStaticPriv::pluginForFormat(frm);
-    DImg copyForSave        = copy();
+    const DPluginDImg* const plug = DImgStaticPriv::pluginForFormat(frm);
+    DImg copyForSave              = copy();
 
     if ((frm == QLatin1String("JPEG")) || (frm == QLatin1String("JPG")) || (frm == QLatin1String("JPE")))
     {
@@ -315,7 +315,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
         return frmt;
     }
 
-    DPluginDImg* const plugin = DImgStaticPriv::pluginForFile(fileInfo, false);
+    const DPluginDImg* const plugin = DImgStaticPriv::pluginForFile(fileInfo, false);
 
     if (plugin)
     {

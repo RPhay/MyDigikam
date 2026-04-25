@@ -657,8 +657,11 @@ void ImageCurves::curvesLutSetup(int nchannels)
 
 void ImageCurves::curvesLutProcess(uchar* const srcPR, uchar* const destPR, int w, int h)
 {
-    unsigned short* lut0 = nullptr, *lut1 = nullptr, *lut2 = nullptr, *lut3 = nullptr;
-    int i;
+    const unsigned short* lut0 = nullptr;
+    const unsigned short* lut1 = nullptr;
+    const unsigned short* lut2 = nullptr;
+    const unsigned short* lut3 = nullptr;
+    int i                      = 0;
 
     if (d->lut->nchannels > 0)
     {

@@ -88,7 +88,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
 
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
+        const DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
@@ -108,7 +108,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
     {
         for (DPlugin* const p : std::as_const(d->allPlugins))
         {
-            DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
+            const DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
             if (edit)
             {
@@ -136,7 +136,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionCategor
 
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
+        const DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
@@ -156,7 +156,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionCategor
     {
         for (DPlugin* const p : std::as_const(d->allPlugins))
         {
-            DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
+            const DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
             if (edit)
             {
@@ -184,7 +184,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
 
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
+        const DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
@@ -206,7 +206,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
     {
         for (DPlugin* const p : std::as_const(d->allPlugins))
         {
-            DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
+            const DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
             if (edit)
             {
@@ -234,7 +234,7 @@ DPluginAction* DPluginLoader::pluginAction(const QString& actionName, QObject* c
 {
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
+        const DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
         if (gene)
         {
@@ -249,7 +249,7 @@ DPluginAction* DPluginLoader::pluginAction(const QString& actionName, QObject* c
             }
         }
 
-        DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
+        const DPluginEditor* const edit = dynamic_cast<DPluginEditor*>(p);
 
         if (edit)
         {
@@ -277,7 +277,7 @@ QString DPluginLoader::pluginXmlSections(DPluginAction::ActionCategory cat, QObj
     QString xml;
     const auto acs = pluginsActions(cat, parent);
 
-    for (DPluginAction* const ac : acs)
+    for (const DPluginAction* const ac : acs)
     {
         xml.append(ac->xmlSection());
     }
@@ -352,7 +352,7 @@ DImgLoaderSettings* DPluginLoader::exportWidget(const QString& format) const
 {
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(p);
+        const DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(p);
 
         if (dimg)
         {
@@ -372,7 +372,7 @@ bool DPluginLoader::canImport(const QString& format) const
 {
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(p);
+        const DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(p);
 
         if (dimg && dimg->canRead(QFileInfo(QString::fromLatin1("foo.%1").arg(format)), true))
         {
@@ -387,7 +387,7 @@ bool DPluginLoader::canExport(const QString& format) const
 {
     for (DPlugin* const p : std::as_const(d->allPlugins))
     {
-        DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(p);
+        const DPluginDImg* const dimg = dynamic_cast<DPluginDImg*>(p);
 
         if (dimg && dimg->canWrite(format))
         {

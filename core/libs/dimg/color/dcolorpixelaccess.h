@@ -36,7 +36,7 @@ inline void DColor::setColor(uchar* const data, bool sixteenBit)
     }
     else                      // 16 bits image
     {
-        unsigned short* data16 = reinterpret_cast<unsigned short*>(data);
+        const unsigned short* data16 = reinterpret_cast<unsigned short*>(data);
         setBlue (data16[0]);
         setGreen(data16[1]);
         setRed  (data16[2]);

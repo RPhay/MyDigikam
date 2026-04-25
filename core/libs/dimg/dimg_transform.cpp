@@ -77,9 +77,9 @@ void DImg::rotate(ANGLE angle)
 
             if (sixteenBit())
             {
-                ullong* newData = DImgLoader::new_failureTolerant<ullong>(w * h);
-                ullong* from    = reinterpret_cast<ullong*>(m_priv->data);
-                ullong* to      = nullptr;
+                ullong* newData    = DImgLoader::new_failureTolerant<ullong>(w * h);
+                const ullong* from = reinterpret_cast<ullong*>(m_priv->data);
+                ullong* to         = nullptr;
 
                 for (int y = w - 1 ; y >= 0 ; --y)
                 {
@@ -99,9 +99,9 @@ void DImg::rotate(ANGLE angle)
             }
             else
             {
-                uint* newData = DImgLoader::new_failureTolerant<uint>(w * h);
-                uint* from    = reinterpret_cast<uint*>(m_priv->data);
-                uint* to      = nullptr;
+                uint* newData    = DImgLoader::new_failureTolerant<uint>(w * h);
+                const uint* from = reinterpret_cast<uint*>(m_priv->data);
+                uint* to         = nullptr;
 
                 for (int y = w - 1 ; y >= 0 ; --y)
                 {
@@ -209,9 +209,9 @@ void DImg::rotate(ANGLE angle)
 
             if (sixteenBit())
             {
-                ullong* newData = DImgLoader::new_failureTolerant<ullong>(w * h);
-                ullong* from    = reinterpret_cast<ullong*>(m_priv->data);
-                ullong* to      = nullptr;
+                ullong* newData    = DImgLoader::new_failureTolerant<ullong>(w * h);
+                const ullong* from = reinterpret_cast<ullong*>(m_priv->data);
+                ullong* to         = nullptr;
 
                 for (uint y = 0 ; y < w ; ++y)
                 {
@@ -231,9 +231,9 @@ void DImg::rotate(ANGLE angle)
             }
             else
             {
-                uint* newData = DImgLoader::new_failureTolerant<uint>(w * h);
-                uint* from    = reinterpret_cast<uint*>(m_priv->data);
-                uint* to      = nullptr;
+                uint* newData    = DImgLoader::new_failureTolerant<uint>(w * h);
+                const uint* from = reinterpret_cast<uint*>(m_priv->data);
+                uint* to         = nullptr;
 
                 for (uint y = 0 ; y < w ; ++y)
                 {

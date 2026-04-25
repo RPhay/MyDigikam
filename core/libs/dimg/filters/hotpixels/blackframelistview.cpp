@@ -94,7 +94,7 @@ bool BlackFrameListView::contains(const QUrl& url)
 
     while (*it)
     {
-        BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(*it);
+        const BlackFrameListViewItem* const item = dynamic_cast<BlackFrameListViewItem*>(*it);
 
         if (item && (item->frameUrl() == url))
         {
@@ -263,7 +263,7 @@ void BlackFrameListView::slotContextMenu()
     popmenu.addSeparator();
     popmenu.addAction(clearAction);
 
-    QAction* const choice = popmenu.exec(QCursor::pos());
+    const QAction* const choice = popmenu.exec(QCursor::pos());
 
     if      (choice == removeAction)
     {
