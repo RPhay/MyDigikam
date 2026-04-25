@@ -1768,7 +1768,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             {
                 // No altitude available.
 
-                double* alt = nullptr;
+                const double* alt = nullptr;
                 setGPSInfo(alt, latitude, longitude);
             }
 

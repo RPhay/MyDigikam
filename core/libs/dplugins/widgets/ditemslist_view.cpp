@@ -64,7 +64,7 @@ DItemsListView::DItemsListView(DItemsList* const parent)
 
 DInfoInterface* DItemsListView::iface() const
 {
-    DItemsList* const p = dynamic_cast<DItemsList*>(parent());
+    const DItemsList* const p = dynamic_cast<DItemsList*>(parent());
 
     if (p)
     {
@@ -85,7 +85,7 @@ void DItemsListView::enableDragAndDrop(const bool enable)
 
 void DItemsListView::drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const
 {
-    DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(itemFromIndex(index));
+    const DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(itemFromIndex(index));
 
     if (item && !item->hasValidThumbnail())
     {

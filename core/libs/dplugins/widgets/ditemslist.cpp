@@ -395,7 +395,7 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
 
         while (*iter)
         {
-            DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*iter);
+            const DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*iter);
 
             if (item && (item->url() == imageUrl))
             {
@@ -737,7 +737,7 @@ QList<QUrl> DItemsList::imageUrls(bool onlyUnprocessed) const
 
     while (*it)
     {
-        DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
+        const DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
         if (item)
         {
@@ -907,7 +907,7 @@ DItemsListViewItem* DItemsListView::getCurrentItem() const
 
 QUrl DItemsList::getCurrentUrl() const
 {
-    DItemsListViewItem* const currentItem = d->listView->getCurrentItem();
+    const DItemsListViewItem* const currentItem = d->listView->getCurrentItem();
 
     if (!currentItem)
     {

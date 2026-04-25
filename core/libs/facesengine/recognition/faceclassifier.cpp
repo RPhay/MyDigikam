@@ -171,8 +171,8 @@ void FaceClassifier::setParameters(const FaceScanSettings& parameters)
         {
             // get a pointer to the model
 
-            DNNModelBase* const model = DNNModelManager::instance()->getModel(QLatin1String("sface"),
-                                                                              DNNModelUsage::DNNUsageFaceRecognition);
+            const DNNModelBase* const model = DNNModelManager::instance()->getModel(QLatin1String("sface"),
+                                                                                    DNNModelUsage::DNNUsageFaceRecognition);
 
             // check if the model is loaded
 
@@ -524,7 +524,7 @@ int FaceClassifier::predictClassifier(const cv::Mat& target, const QList<int>& e
     cv::Mat knn_neighbors;
     cv::Mat knn_distances;
     cv::Mat svm_prediction;
-    IdentityProvider* const idProvider = IdentityProvider::instance();
+    const IdentityProvider* const idProvider = IdentityProvider::instance();
 
     QElapsedTimer timer;
     timer.start();

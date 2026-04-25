@@ -116,7 +116,7 @@ public:
 
             if (mode & ActionItemModel::ToplevelMenuCategory)
             {
-                for (QAction* p = a ; p ; p = parents.value(p))
+                for (QAction* p = a ; p ; p = parents.value(p))      // cppcheck-suppress constVariablePointer
                 {
                     categoryAction = p;
                 }

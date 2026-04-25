@@ -63,7 +63,7 @@ static int heifQIODeviceMetaSeek(int64_t position, void* userdata)  // krazy:exc
 
 static heif_reader_grow_status heifQIODeviceMetaWait(int64_t target_size, void* userdata)   // krazy:exclude=typedefs
 {
-    QFile* const file = static_cast<QFile*>(userdata);
+    const QFile* const file = static_cast<QFile*>(userdata);
 
     if ((qint64)target_size > file->size())
     {
