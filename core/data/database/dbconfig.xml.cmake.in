@@ -277,7 +277,7 @@
                 <statement mode="plain">CREATE INDEX subject_relations_index ON ImageRelations (subject);</statement>
                 <statement mode="plain">CREATE INDEX object_relations_index ON ImageRelations (object);</statement>
                 <statement mode="plain">CREATE INDEX tagproperties_index ON TagProperties (tagid);</statement>
-                <statement mode="plain">CREATE INDEX imgtagprop_idx ON ImageTagProperties (imageid, tagid);</statement>
+                <statement mode="plain">CREATE INDEX imgtagprop_img_tag_idx ON ImageTagProperties (imageid, tagid);</statement>
                 <statement mode="plain">CREATE INDEX imgtagprop_prop_tag_img_idx ON ImageTagProperties (property, tagid, imageid);</statement>
             </dbaction>
 
@@ -1017,12 +1017,12 @@
             </dbaction>
 
             <dbaction name="UpdateSchemaFromV16ToV17" mode="transaction">
-                <statement mode="plain">DROP INDEX imagetagproperties_index ON ImageTagProperties;</statement>
-                <statement mode="plain">DROP INDEX imagetagproperties_tagid_index ON ImageTagProperties;</statement>
-                <statement mode="plain">DROP INDEX imagetagproperties_imageid_index ON ImageTagProperties;</statement>
-                <statement mode="plain">DROP INDEX imagetagproperties_tagid_property_index ON ImageTagProperties;</statement>
+                <statement mode="plain">DROP INDEX IF EXISTS imagetagproperties_index;</statement>
+                <statement mode="plain">DROP INDEX IF EXISTS imagetagproperties_tagid_index;</statement>
+                <statement mode="plain">DROP INDEX IF EXISTS imagetagproperties_imageid_index;</statement>
                 <statement mode="plain">ALTER TABLE ImageInformation ADD timeZone INTEGER;</statement>
-                <statement mode="plain">CREATE INDEX imgtagprop_idx ON ImageTagProperties (imageid, tagid);</statement>
+                <statement mode="plain">CREATE INDEX image_status_index ON Images (status);</statement>
+                <statement mode="plain">CREATE INDEX imgtagprop_img_tag_idx ON ImageTagProperties (imageid, tagid);</statement>
                 <statement mode="plain">CREATE INDEX imgtagprop_prop_tag_img_idx ON ImageTagProperties (property, tagid, imageid);</statement>
             </dbaction>
 
@@ -1407,7 +1407,7 @@
                 <statement mode="plain">CALL create_index_if_not_exists('ImageRelations','subject_relations_index','subject');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageRelations','object_relations_index','object');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('TagProperties','tagproperties_index','tagid');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_idx','imageid, tagid');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_img_tag_idx','imageid, tagid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_prop_tag_img_idx','property, tagid, imageid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_id_index','id');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('TagsTree','tagstree_pid_index','pid');</statement>
@@ -2766,11 +2766,10 @@
                 <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_index');</statement>
                 <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_tagid_index');</statement>
                 <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_imageid_index');</statement>
-                <statement mode="plain">CALL drop_index_if_exists('ImageTagProperties', 'imagetagproperties_tagid_property_index');</statement>
                 <statement mode="plain">ALTER TABLE ImageInformation ADD timeZone INTEGER;</statement>
                 <statement mode="plain">ALTER TABLE ImageTagProperties MODIFY COLUMN property VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci;</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('Images','image_status_index','status');</statement>
-                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_idx','imageid, tagid');</statement>
+                <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_img_tag_idx','imageid, tagid');</statement>
                 <statement mode="plain">CALL create_index_if_not_exists('ImageTagProperties','imgtagprop_prop_tag_img_idx','property, tagid, imageid');</statement>
                 <statement mode="plain">SET FOREIGN_KEY_CHECKS=1;</statement>
             </dbaction>

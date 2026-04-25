@@ -114,10 +114,10 @@ BUGFIXES:
 086 --> 519200 - Darktable raw import fails.
 087 --> 519273 - New Album dialog has its initial focus on the 'Help' button rather than on Title of New Album.
 088 --> 519370 - OS cursor is still visible when preview magnifier tool is active, obscuring the magnified content.
-089 --> 
-090 --> 
-091 --> 
-092 --> 
+089 --> 519125 - Improve face tag query performance: CREATE INDEX idx_itp_tagid_property ON ImageTagProperties(tagid, property(50)).
+090 --> 514970 - Create index on ImageTagProperties.property.
+091 --> 519389 - MariaDB/MySQL: missing index on Images.status causes full table scan on tag count, calendar, and People panel queries.
+092 --> 519390 - DB: ImageTagProperties.property should be VARCHAR, not TEXT -- TEXT prevents histogram stats and forces wrong query plans.
 093 --> 
 094 --> 
 095 --> 

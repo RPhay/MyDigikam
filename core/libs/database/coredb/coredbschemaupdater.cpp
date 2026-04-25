@@ -47,7 +47,7 @@ namespace Digikam
 
 int CoreDbSchemaUpdater::schemaVersion()
 {
-    return 16;
+    return 17;
 }
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
