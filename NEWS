@@ -113,7 +113,7 @@ BUGFIXES:
 085 --> 518993 - New album dialog is blocked and hidden when selected as part of move items workflow.
 086 --> 519200 - Darktable raw import fails.
 087 --> 519273 - New Album dialog has its initial focus on the 'Help' button rather than on Title of New Album.
-088 --> 
+088 --> 519370 - OS cursor is still visible when preview magnifier tool is active, obscuring the magnified content.
 089 --> 
 090 --> 
 091 --> 
