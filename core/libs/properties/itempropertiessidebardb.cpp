@@ -22,6 +22,7 @@
 #include <QDir>
 #include <QHash>
 #include <QColor>
+#include <QTimer>
 #include <QLocale>
 #include <QSplitter>
 #include <QFileInfo>
@@ -79,6 +80,7 @@ public:
     bool                        showAllPropertiesMode  = false;
 
     QFuture<void>               selectedItemsTask;
+    QTimer*                     selectedItemsTimer;
 
     ItemInfoList                currentInfos;                    ///< Used if multiple items are selected.
     ItemInfoList                allInfos;
@@ -99,6 +101,10 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     d->desceditTab            = new ItemDescEditTab(parent);
     d->versionsHistoryTab     = new ItemPropertiesVersionsTab(parent);
+
+    d->selectedItemsTimer     = new QTimer(this);
+    d->selectedItemsTimer->setSingleShot(true);
+    d->selectedItemsTimer->setInterval(500);
 
     appendTab(d->desceditTab,        QIcon::fromTheme(QLatin1String("edit-text-frame-update")), i18nc("@title: database properties", "Captions"));
     appendTab(d->versionsHistoryTab, QIcon::fromTheme(QLatin1String("view-catalog")),           i18nc("@title: database properties", "Versions"));
@@ -156,6 +162,9 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     // ----------------------------------------------------------
 
+    connect(d->selectedItemsTimer, &QTimer::timeout,
+            this, &ItemPropertiesSideBarDB::slotImageSelectionPropertiesInformation);
+
     connect(this, &ItemPropertiesSideBarDB::signalSetSelectionCount,
             d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetSelectionCount,
             Qt::QueuedConnection);
@@ -191,6 +200,8 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
 {
+    d->selectedItemsTimer->stop();
+
     if (d->selectedItemsTask.isRunning())
     {
         d->selectedItemsTask.cancel();
@@ -355,7 +366,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
             }
             else
             {
-                setImageSelectionPropertiesInformation();
+                d->selectedItemsTimer->start();
                 m_propertiesStackedView->setCurrentWidget(d->selectionPropertiesTab);
             }
         }
@@ -366,7 +377,7 @@ void ItemPropertiesSideBarDB::changedTab(QWidget* const tab)
         }
         else
         {
-            setImageSelectionPropertiesInformation();
+            d->selectedItemsTimer->start();
             m_propertiesStackedView->setCurrentWidget(d->selectionPropertiesTab);
         }
 
@@ -926,7 +937,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
     }
 }
 
-void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
+void ItemPropertiesSideBarDB::slotImageSelectionPropertiesInformation()
 {
     if (d->selectedItemsTask.isRunning())
     {

@@ -126,6 +126,7 @@ private Q_SLOTS:
     void slotFileMetadataChanged(const QUrl& url);
     void slotImageChangeDatabase(const ImageChangeset& changeset);
     void slotImageTagChanged(const ImageTagChangeset& changeset);
+    void slotImageSelectionPropertiesInformation();
     void slotPropertiesButtonPressed(int);
     void slotColorLabelNamesUpdated();
 
@@ -137,7 +138,6 @@ private:
     void itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos,
                      const QRect& rect, DImg* const img, const DImageHistory& history);
     void setImagePropertiesInformation(const QUrl& url) override;
-    void setImageSelectionPropertiesInformation();
     void calculateItemsMultithreaded();
 
 protected:
