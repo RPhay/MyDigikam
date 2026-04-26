@@ -767,7 +767,7 @@ FilterAction ItemHistoryGraphModel::filterAction(const QModelIndex& index) const
 {
     HistoryTreeItem* const item = d->historyItem(index);     // cppcheck-suppress constVariablePointer
 
-    if_isItem(FilterActionItem, filterActionItem, item)
+    if_isItem(FilterActionItem, filterActionItem, item)      // cppcheck-suppress constVariablePointer
     {
         return filterActionItem->action;
     }
@@ -896,7 +896,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
             }
         }
     }
-    else if_isItem(HeaderItem, headerItem, item)
+    else if_isItem(HeaderItem, headerItem, item)         // cppcheck-suppress constVariablePointer
     {
         switch (role)
         {
@@ -914,7 +914,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
             }
         }
     }
-    else if_isItem(CategoryItem, categoryItem, item)
+    else if_isItem(CategoryItem, categoryItem, item)     // cppcheck-suppress constVariablePointer
     {
         switch (role)
         {
@@ -933,7 +933,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
             }
         }
     }
-    else if_isItem(SeparatorItem, separatorItem, item)
+    else if_isItem(SeparatorItem, separatorItem, item)   // cppcheck-suppress constVariablePointer
     {
         switch (role)
         {
@@ -986,7 +986,7 @@ QModelIndex ItemHistoryGraphModel::imageModelIndex(const QModelIndex& index) con
 {
     HistoryTreeItem* const item = d->historyItem(index);     // cppcheck-suppress constVariablePointer
 
-    if_isItem(VertexItem, vertexItem, item)
+    if_isItem(VertexItem, vertexItem, item)      // cppcheck-suppress constVariablePointer
     {
         return vertexItem->index;
     }

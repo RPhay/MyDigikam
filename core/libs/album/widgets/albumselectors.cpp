@@ -85,6 +85,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configUseWholeAlbumsEntry                 = QLatin1String("UseWholeAlbumsEntry");
     const QString configUseWholeTagsEntry                   = QLatin1String("UseWholeTagsEntry");
     const QString configAlbumTypeEntry                      = QLatin1String("AlbumTypeEntry");
@@ -366,7 +368,7 @@ QList<int> AlbumSelectors::selectedAlbumIds() const
     QList<int> albumIds;
     AlbumList  albums = selectedAlbums();
 
-    for (Album* const album : std::as_const(albums))
+    for (const Album* const album : std::as_const(albums))
     {
         albumIds << album->id();
     }
@@ -400,7 +402,7 @@ QList<int> AlbumSelectors::selectedTagIds() const
     QList<int> tagIds;
     AlbumList  tags = selectedTags();
 
-    for (Album* const tag : std::as_const(tags))
+    for (const Album* const tag : std::as_const(tags))
     {
         tagIds << tag->id();
     }

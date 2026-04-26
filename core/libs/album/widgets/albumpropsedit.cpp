@@ -240,7 +240,7 @@ AlbumPropsEdit::AlbumPropsEdit(PAlbum* const album, bool create)
 
     // Initialize ---------------------------------------------
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (settings)
     {
@@ -349,7 +349,7 @@ QString AlbumPropsEdit::category() const
 QStringList AlbumPropsEdit::albumCategories() const
 {
     QStringList Categories;
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (settings)
     {

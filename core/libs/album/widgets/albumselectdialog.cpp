@@ -50,10 +50,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN AlbumSelectDialog::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QDialogButtonBox*  buttons      = nullptr;
 
@@ -144,7 +145,7 @@ AlbumSelectDialog::~AlbumSelectDialog()
 
 void AlbumSelectDialog::slotSelectionChanged()
 {
-    PAlbum* const currentAlbum = d->albumSel->currentAlbum();
+    const PAlbum* const currentAlbum = d->albumSel->currentAlbum();
 
     bool enabled = !(!currentAlbum || currentAlbum->isRoot());
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(enabled);
