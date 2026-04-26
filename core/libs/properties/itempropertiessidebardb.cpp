@@ -291,6 +291,14 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
                                           DImg* const img,
                                           const DImageHistory& history)
 {
+    d->selectedItemsTimer->stop();
+
+    if (d->selectedItemsTask.isRunning())
+    {
+        d->selectedItemsTask.cancel();
+        d->selectedItemsTask.waitForFinished();
+    }
+
     bool changedInfos    = (d->currentInfos == infos);
     m_dirtyPropertiesTab = (changedInfos && (d->allInfos == allInfos));
     m_dirtyMetadataTab   = changedInfos;
