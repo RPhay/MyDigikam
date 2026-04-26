@@ -491,7 +491,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkNetworkLocation(c
 
 void CollectionManager::removeLocation(const CollectionLocation& location)
 {
-    AlbumRootLocation* albumLoc = nullptr;
+    const AlbumRootLocation* albumLoc = nullptr;
 
     {
         QReadLocker readLocker(&d->lock);

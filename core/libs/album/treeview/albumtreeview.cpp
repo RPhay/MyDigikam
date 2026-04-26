@@ -83,7 +83,7 @@ PAlbum* AlbumTreeView::palbumForIndex(const QModelIndex& index) const
 
 void AlbumTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
-    PAlbum* const album = AlbumManager::instance()->findPAlbum(albumId);
+    PAlbum* const album = AlbumManager::instance()->findPAlbum(albumId);     // cppcheck-suppress constVariablePointer
     setCurrentAlbums(QList<Album*>() << album, selectInAlbumManager);
 }
 

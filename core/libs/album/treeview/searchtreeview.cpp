@@ -78,7 +78,7 @@ SAlbum* SearchTreeView::currentAlbum() const
 
 void SearchTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
-    SAlbum* const album = AlbumManager::instance()->findSAlbum(albumId);
+    SAlbum* const album = AlbumManager::instance()->findSAlbum(albumId);     // cppcheck-suppress constVariablePointer
     setCurrentAlbums(QList<Album*>() << album, selectInAlbumManager);
 }
 

@@ -761,7 +761,7 @@ void AbstractAlbumTreeView::restoreStateForHierarchy(const QModelIndex& index, c
 
 void AbstractAlbumTreeView::restoreState(const QModelIndex& index, const QMap<int, Digikam::State>& stateStore)
 {
-    Album* const album = albumFilterModel()->albumForIndex(index);
+    const Album* const album = albumFilterModel()->albumForIndex(index);
 
     if (album && stateStore.contains(album->id()))
     {
@@ -845,8 +845,8 @@ void AbstractAlbumTreeView::rowsAboutToBeRemoved(const QModelIndex& parent, int 
     {
         for (int i = start ; i <= end ; ++i)
         {
-            const QModelIndex child = model()->index(i, 0, parent);
-            Album* const album      = albumModel()->albumForIndex(child);
+            const QModelIndex child  = model()->index(i, 0, parent);
+            const Album* const album = albumModel()->albumForIndex(child);
 
             if (album)
             {
@@ -996,7 +996,7 @@ void AbstractAlbumTreeView::doSaveState()
         saveStateRecursive(index, selection, expansion);
     }
 
-    Album* const selectedAlbum = albumFilterModel()->albumForIndex(selectionModel()->currentIndex());
+    const Album* const selectedAlbum = albumFilterModel()->albumForIndex(selectionModel()->currentIndex());
     QString currentIndex;
 
     if (selectedAlbum)
@@ -1013,7 +1013,7 @@ void AbstractAlbumTreeView::doSaveState()
 
 void AbstractAlbumTreeView::saveStateRecursive(const QModelIndex& index, QList<int>& selection, QList<int>& expansion)
 {
-    Album* const album = albumFilterModel()->albumForIndex(index);
+    const Album* const album = albumFilterModel()->albumForIndex(index);
 
     if (album)
     {

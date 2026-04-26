@@ -61,7 +61,7 @@ DAlbum* DateTreeView::albumForIndex(const QModelIndex& index) const
 
 void DateTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
-    DAlbum* const album = AlbumManager::instance()->findDAlbum(albumId);
+    DAlbum* const album = AlbumManager::instance()->findDAlbum(albumId);     // cppcheck-suppress constVariablePointer
     setCurrentAlbums(QList<Album*>() << album, selectInAlbumManager);
 }
 

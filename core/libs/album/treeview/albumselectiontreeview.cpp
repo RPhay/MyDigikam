@@ -78,10 +78,11 @@ protected:
 
 class Q_DECL_HIDDEN AlbumSelectionTreeView::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool                                      enableToolTips            = false;
 
@@ -315,7 +316,7 @@ void AlbumSelectionTreeView::slotScanForFaces()
 
 void AlbumSelectionTreeView::slotRepairHiddenItems()
 {
-    PAlbum* const album = d->albumModificationHelper->boundAlbum(sender());
+    const PAlbum* const album = d->albumModificationHelper->boundAlbum(sender());
 
     if (!album)
     {
@@ -403,7 +404,7 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
         return true;
     }
 
-    PAlbum* const album = palbumForIndex(index);
+    const PAlbum* const album = palbumForIndex(index);
 
     if (!album || album->isRoot() || album->isAlbumRoot())
     {
