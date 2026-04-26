@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-04-26 00:41+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -10963,7 +10963,7 @@ msgid "Settings"
 msgstr "Instellen"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
-#: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
+#: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
 #, kde-format
 msgid "Free Rotation"
 msgstr "Free Dreihen"
@@ -11849,7 +11849,7 @@ msgstr ""
 "wullt. Dat Teelbild warrt denn weker, man ok en beten wat verwischt."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
-#: core/libs/dimg/filters/transform/shearfilter.cpp:83
+#: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, kde-format
 msgid "Shear Tool"
 msgstr "Scheer-Warktüüch"

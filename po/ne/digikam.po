@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-04-26 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -10311,7 +10311,7 @@ msgid "Settings"
 msgstr "सेटिङ"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
-#: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
+#: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
 #, fuzzy, kde-format
 msgid "Free Rotation"
 msgstr "अभिमुखीकरण"
@@ -11145,7 +11145,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
-#: core/libs/dimg/filters/transform/shearfilter.cpp:83
+#: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, fuzzy, kde-format
 msgid "Shear Tool"
 msgstr "गाढा कालो टोन"

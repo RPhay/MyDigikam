@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-04-26 00:41+0000\n"
 "PO-Revision-Date: 2026-02-12 16:16+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -10476,7 +10476,7 @@ msgid "Settings"
 msgstr "設定"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
-#: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
+#: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
 #, kde-format
 msgid "Free Rotation"
 msgstr "任意旋轉"
@@ -11318,7 +11318,7 @@ msgstr ""
 "有一點模糊。"
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
-#: core/libs/dimg/filters/transform/shearfilter.cpp:83
+#: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, kde-format
 msgid "Shear Tool"
 msgstr "傾斜工具"

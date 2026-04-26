@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
+"POT-Creation-Date: 2026-04-26 00:41+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -10763,7 +10763,7 @@ msgid "Settings"
 msgstr "ตั้งค่าต่าง ๆ"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
-#: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
+#: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
 #, kde-format
 msgid "Free Rotation"
 msgstr "หมุนอิสระ"
@@ -11620,7 +11620,7 @@ msgstr ""
 "แต่อาจจะทำให้ภาพเบลอได้เล็กน้อย"
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
-#: core/libs/dimg/filters/transform/shearfilter.cpp:83
+#: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, kde-format
 msgid "Shear Tool"
 msgstr "เครื่องมือปรับเบนภาพ"

@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:42+0000\n"
-"PO-Revision-Date: 2026-04-23 08:30+0300\n"
+"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"PO-Revision-Date: 2026-04-25 10:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -10098,7 +10098,7 @@ msgid "Settings"
 msgstr "הגדרות"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:335
-#: core/libs/dimg/filters/transform/freerotationfilter.cpp:65
+#: core/libs/dimg/filters/transform/freerotationfilter.cpp:67
 #, kde-format
 msgid "Free Rotation"
 msgstr "סיבוב חופשי"
@@ -10903,7 +10903,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
-#: core/libs/dimg/filters/transform/shearfilter.cpp:83
+#: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, kde-format
 msgid "Shear Tool"
 msgstr "כלי חיתוך"
@@ -15310,9 +15310,9 @@ msgid "Set here the editorial usage instructions"
 msgstr "כאן אפשר להגדיר את הנחיות השימוש העריכתי."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter the editorial usage instructions."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "מילוי הנחיות השימוש העריכתי."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:46
 #, kde-format
@@ -15364,18 +15364,16 @@ msgid "Adjust Time & Date"
 msgstr "כיוון שעה ותאריך"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:111
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image and close dialog"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "כתיבת התאריך והשעה המתוקנים לכל תמונה וסגירת החלונית"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:113
-#, fuzzy, kde-format
-#| msgid "Write metadata to each file"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Write the corrected date and time for each image"
-msgstr "כתיבה של נתוניי מידע-נוסף עבור כל קובץ"
+msgstr "כתיבת התאריך והשעה המתוקנים לכל תמונה"
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:371
 #, kde-format
@@ -15700,12 +15698,10 @@ msgstr "בחירת תמונות"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:243
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Left click on a month to select an image, right click to clear an image."
-msgstr ""
-"לחיצה שמאלית על חודש מאפשרת לבחור תמונה. לחיצה ימנית מסירה את התמונה.\n"
-"באפשרותך גם לגרור תמונות אל החודשים"
+msgstr "לחיצה שמאלית על חודש מאפשרת לבחור תמונה. לחיצה ימנית מסירה את התמונה."
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:47
 #, kde-format
@@ -16351,7 +16347,7 @@ msgid "Blend Stacked Images..."
 msgstr "לכידת תמונה..."
 
 #: core/dplugins/generic/tools/expoblending/manager/expoblendingthread.cpp:337
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "average scene luminance value unknown"
 msgid "unknown"
 msgstr "לא ידוע"
@@ -16978,9 +16974,9 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:84
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:102
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Choose image selection method:"
-msgstr "לא נבחרו תמונות"
+msgstr "בחירת &שיטת ברירת תמונות:"
 
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:84
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:91
@@ -17877,11 +17873,10 @@ msgid "Text Converter"
 msgstr "ממיר טקסט"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:651
-#, fuzzy, kde-format
-#| msgid "&Abort"
+#, kde-format
 msgctxt "@action"
 msgid "&Abort"
-msgstr "&ביטול"
+msgstr "ביטול &גורף"
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:652
 #, kde-format
@@ -20155,10 +20150,9 @@ msgid "Adjusted with Aspect ratio"
 msgstr "מותאמת "
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:78
-#, fuzzy, kde-format
-#| msgid "Adjustment:"
+#, kde-format
 msgid "Adjusted and cropped"
-msgstr "כיוונון:"
+msgstr "מכוון וחתוך"
 
 #: core/dplugins/generic/tools/wallpaper/wallpaperplugindlg.cpp:83
 #, kde-format
@@ -20364,9 +20358,9 @@ msgstr "הסרת חלק מקובצי התמונות מרשימת תיק העבו
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:188
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:216
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:244
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move the current image down in the portfolio list."
-msgstr "למחוק מסומנים"
+msgstr "העלאת התמונה הנוכחית מטה ברשימת תיק העבודות."
 
 #. i18n: ectx: property (text), widget (QPushButton, m_previewButton)
 #: core/dplugins/generic/view/presentation/audio/presentation_audiopage.ui:302
