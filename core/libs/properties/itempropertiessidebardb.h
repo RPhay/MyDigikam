@@ -138,7 +138,7 @@ private:
                      const QRect& rect, DImg* const img, const DImageHistory& history);
     void setImagePropertiesInformation(const QUrl& url) override;
     void setImageSelectionPropertiesInformation();
-    void calculateiItemsMultithreaded();
+    void calculateItemsMultithreaded();
 
 protected:
 

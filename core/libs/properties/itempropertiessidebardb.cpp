@@ -941,18 +941,18 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-                          &ItemPropertiesSideBarDB::calculateiItemsMultithreaded, this
+                          &ItemPropertiesSideBarDB::calculateItemsMultithreaded, this
 
 #else
 
-                          this, &ItemPropertiesSideBarDB::calculateiItemsMultithreaded
+                          this, &ItemPropertiesSideBarDB::calculateItemsMultithreaded
 
 #endif
 
                          );
 }
 
-void ItemPropertiesSideBarDB::calculateiItemsMultithreaded()
+void ItemPropertiesSideBarDB::calculateItemsMultithreaded()
 {
     // -- Items Selection Properties
 
