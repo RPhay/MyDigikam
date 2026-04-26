@@ -311,7 +311,7 @@ void DConfigDlgViewPrivate::_k_pageSelected(const QItemSelection& index, const Q
 
 void DConfigDlgViewPrivate::updateTitleWidget(const QModelIndex& index)
 {
-    Q_Q(DConfigDlgView);
+    Q_Q(DConfigDlgView);     // cppcheck-suppress constVariablePointer
 
     QString header = model->data(index, DConfigDlgModel::HeaderRole).toString();
 
@@ -520,7 +520,7 @@ void DConfigDlgView::setDefaultWidget(QWidget* widget)
 
 QAbstractItemView* DConfigDlgView::createView()
 {
-    Q_D(DConfigDlgView);
+    Q_D(DConfigDlgView);         // cppcheck-suppress constVariablePointer
 
     if      (d->faceType == Auto)
     {

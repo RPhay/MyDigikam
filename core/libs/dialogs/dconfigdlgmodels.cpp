@@ -318,7 +318,7 @@ QVariant DConfigDlgWdgModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    PageItem* const itm = static_cast<PageItem *>(index.internalPointer());
+    const PageItem* const itm = static_cast<PageItem *>(index.internalPointer());
 
     if      (role == Qt::DisplayRole)
     {
@@ -365,7 +365,7 @@ bool DConfigDlgWdgModel::setData(const QModelIndex& index, const QVariant& value
         return false;
     }
 
-    PageItem* const itm = static_cast<PageItem*>(index.internalPointer());
+    const PageItem* const itm = static_cast<PageItem*>(index.internalPointer());
 
     if (!itm)
     {
@@ -398,7 +398,7 @@ Qt::ItemFlags DConfigDlgWdgModel::flags(const QModelIndex& index) const
 
     Qt::ItemFlags flags = Qt::ItemIsSelectable;
 
-    PageItem* const itm = static_cast<PageItem*>(index.internalPointer());
+    const PageItem* const itm = static_cast<PageItem*>(index.internalPointer());
 
     if (itm->pageWidgetItem()->isCheckable())
     {
@@ -460,7 +460,7 @@ QModelIndex DConfigDlgWdgModel::parent(const QModelIndex& index) const
 
 int DConfigDlgWdgModel::rowCount(const QModelIndex& parent) const
 {
-    PageItem* parentItem = nullptr;
+    const PageItem* parentItem = nullptr;
 
     if (!parent.isValid())
     {
@@ -658,7 +658,7 @@ DConfigDlgWdgItem* DConfigDlgWdgModel::item(const QModelIndex& index) const
         return nullptr;
     }
 
-    PageItem* const item = static_cast<PageItem*>(index.internalPointer());
+    const PageItem* const item = static_cast<PageItem*>(index.internalPointer());
 
     if (!item)
     {

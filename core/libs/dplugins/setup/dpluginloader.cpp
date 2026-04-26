@@ -94,7 +94,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
         {
             const auto acs = gene->actions(parent);
 
-            for (DPluginAction* const ac : acs)
+            for (DPluginAction* const ac : acs)      // cppcheck-suppress constVariablePointer
             {
                 if (ac && (ac->actionType() == type))
                 {
@@ -114,7 +114,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
             {
                 const auto acs = edit->actions(parent);
 
-                for (DPluginAction* const ac : acs)
+                for (DPluginAction* const ac : acs)      // cppcheck-suppress constVariablePointer
                 {
                     if (ac && (ac->actionType() == type))
                     {
@@ -142,7 +142,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionCategor
         {
             const auto acs = gene->actions(parent);
 
-            for (DPluginAction* const ac : acs)
+            for (DPluginAction* const ac : acs)      // cppcheck-suppress constVariablePointer
             {
                 if (ac && (ac->actionCategory() == cat))
                 {
@@ -162,7 +162,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionCategor
             {
                 const auto acs = edit->actions(parent);
 
-                for (DPluginAction* const ac : acs)
+                for (DPluginAction* const ac : acs)      // cppcheck-suppress constVariablePointer
                 {
                     if (ac && (ac->actionCategory() == cat))
                     {
@@ -192,7 +192,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
             {
                 const auto acs = gene->actions(parent);
 
-                for (DPluginAction* const ac : acs)
+                for (DPluginAction* const ac : acs)      // cppcheck-suppress constVariablePointer
                 {
                     list << ac;
                 }
@@ -214,7 +214,7 @@ QList<DPluginAction*> DPluginLoader::pluginActions(const QString& pluginIID, QOb
                 {
                     const auto acs = edit->actions(parent);
 
-                    for (DPluginAction* const ac : acs)
+                    for (DPluginAction* const ac : acs)      // cppcheck-suppress constVariablePointer
                     {
                         list << ac;
                     }

@@ -54,10 +54,11 @@ namespace Digikam
 
 class Q_DECL_HIDDEN DeleteItem::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool hasThumb = false;
 
@@ -214,7 +215,7 @@ void DeleteItemList::drawRow(QPainter* p,
                              const QStyleOptionViewItem& opt,
                              const QModelIndex& index) const
 {
-    DeleteItem* const item = dynamic_cast<DeleteItem*>(itemFromIndex(index));
+    const DeleteItem* const item = dynamic_cast<DeleteItem*>(itemFromIndex(index));
 
     if (item && !item->hasValidThumbnail())
     {

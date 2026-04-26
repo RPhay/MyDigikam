@@ -428,6 +428,7 @@ QString dkCmsTakeManufacturer(cmsHPROFILE hProfile)
 
 LCMSBOOL dkCmsTakeMediaWhitePoint(LPcmsCIEXYZ Dest, cmsHPROFILE hProfile)
 {
+    // cppcheck-suppress constVariablePointer
     const LPcmsCIEXYZ tag = static_cast<LPcmsCIEXYZ>(cmsReadTag(hProfile, cmsSigMediaWhitePointTag));
 
     if (tag == nullptr)

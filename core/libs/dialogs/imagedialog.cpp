@@ -126,7 +126,7 @@ bool ImageDialog::eventFilter(QObject* obj, QEvent* ev)
         {
             if      ((ev->type() == QEvent::HoverMove) && (qApp->mouseButtons() == Qt::NoButton))
             {
-                QHoverEvent* const hev = dynamic_cast<QHoverEvent*>(ev);
+                const QHoverEvent* const hev = dynamic_cast<QHoverEvent*>(ev);
 
                 if (hev)
                 {

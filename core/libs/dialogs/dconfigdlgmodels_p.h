@@ -99,7 +99,7 @@ protected:
     {
         Q_Q(DConfigDlgWdgModel);
 
-        DConfigDlgWdgItem* const item = qobject_cast<DConfigDlgWdgItem*>(q->sender());
+        const DConfigDlgWdgItem* const item = qobject_cast<DConfigDlgWdgItem*>(q->sender());
 
         if (!item)
         {

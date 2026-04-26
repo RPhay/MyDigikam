@@ -716,16 +716,16 @@ void DImgScale::dimgSampleRGBA(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr        = nullptr;
-    uint* dptr        = nullptr;
+    const uint* sptr   = nullptr;
+    uint* dptr         = nullptr;
     int x, y;
-    uint** ypoints    = isi->ypoints;
-    int* xpoints      = isi->xpoints;
+    uint** ypoints     = isi->ypoints;
+    const int* xpoints = isi->xpoints;
 
-    const int x_begin = dxx + clip_dx;     // no clip set = dxx
-    const int x_end   = x_begin + clip_dw; // no clip set = dxx + dw
-    const int y_begin = clip_dy;           // no clip set = 0
-    const int y_end   = clip_dy + clip_dh; // no clip set = dh
+    const int x_begin  = dxx + clip_dx;     // no clip set = dxx
+    const int x_end    = x_begin + clip_dw; // no clip set = dxx + dw
+    const int y_begin  = clip_dy;           // no clip set = 0
+    const int y_end    = clip_dy + clip_dh; // no clip set = dh
 
     // go through every scanline in the output buffer
 
@@ -761,16 +761,16 @@ void DImgScale::dimgSampleRGBA16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr = nullptr;
-    ullong* dptr = nullptr;
+    const ullong* sptr = nullptr;
+    ullong* dptr       = nullptr;
     int x, y;
-    ullong** ypoints  = isi->ypoints16;
-    int* xpoints      = isi->xpoints;
+    ullong** ypoints   = isi->ypoints16;
+    const int* xpoints = isi->xpoints;
 
-    const int x_begin = dxx + clip_dx;     // no clip set = dxx
-    const int x_end   = x_begin + clip_dw; // no clip set = dxx + dw
-    const int y_begin = clip_dy;           // no clip set = 0
-    const int y_end   = clip_dy + clip_dh; // no clip set = dh
+    const int x_begin  = dxx + clip_dx;     // no clip set = dxx
+    const int x_end    = x_begin + clip_dw; // no clip set = dxx + dw
+    const int y_begin  = clip_dy;           // no clip set = 0
+    const int y_end    = clip_dy + clip_dh; // no clip set = dh
 
     // go through every scanline in the output buffer
 
@@ -811,18 +811,18 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr        = nullptr;
-    uint* dptr        = nullptr;
+    uint* sptr          = nullptr;
+    uint* dptr          = nullptr;
     int x, y;
-    uint** ypoints    = isi->ypoints;
-    int* xpoints      = isi->xpoints;
-    int* xapoints     = isi->xapoints;
-    int* yapoints     = isi->yapoints;
+    uint** ypoints      = isi->ypoints;
+    const int* xpoints  = isi->xpoints;
+    const int* xapoints = isi->xapoints;
+    const int* yapoints = isi->yapoints;
 
-    const int x_begin = dxx + clip_dx;     // no clip set = dxx
-    const int x_end   = x_begin + clip_dw; // no clip set = dxx + dw
-    const int y_begin = clip_dy;           // no clip set = 0
-    const int y_end   = clip_dy + clip_dh; // no clip set = dh
+    const int x_begin   = dxx + clip_dx;     // no clip set = dxx
+    const int x_end     = x_begin + clip_dw; // no clip set = dxx + dw
+    const int y_begin   = clip_dy;           // no clip set = 0
+    const int y_end     = clip_dy + clip_dh; // no clip set = dh
 
     // scaling up both ways
 
@@ -1301,18 +1301,18 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr        = nullptr;
-    uint* dptr        = nullptr;
+    uint* sptr          = nullptr;
+    uint* dptr          = nullptr;
     int x, y;
-    uint** ypoints    = isi->ypoints;
-    int* xpoints      = isi->xpoints;
-    int* xapoints     = isi->xapoints;
-    int* yapoints     = isi->yapoints;
+    uint** ypoints      = isi->ypoints;
+    const int* xpoints  = isi->xpoints;
+    const int* xapoints = isi->xapoints;
+    const int* yapoints = isi->yapoints;
 
-    const int x_begin = dxx + clip_dx;     // no clip set = dxx
-    const int x_end   = x_begin + clip_dw; // no clip set = dxx + dw
-    const int y_begin = clip_dy;           // no clip set = 0
-    const int y_end   = clip_dy + clip_dh; // no clip set = dh
+    const int x_begin   = dxx + clip_dx;     // no clip set = dxx
+    const int x_end     = x_begin + clip_dw; // no clip set = dxx + dw
+    const int y_begin   = clip_dy;           // no clip set = 0
+    const int y_end     = clip_dy + clip_dh; // no clip set = dh
 
     // scaling up both ways
 
@@ -1753,18 +1753,18 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr      = nullptr;
-    ullong* dptr      = nullptr;
+    ullong* sptr        = nullptr;
+    ullong* dptr        = nullptr;
     int x, y;
-    ullong** ypoints  = isi->ypoints16;
-    int*     xpoints  = isi->xpoints;
-    int*     xapoints = isi->xapoints;
-    int*     yapoints = isi->yapoints;
+    ullong** ypoints    = isi->ypoints16;
+    const int* xpoints  = isi->xpoints;
+    const int* xapoints = isi->xapoints;
+    const int* yapoints = isi->yapoints;
 
-    const int x_begin = dxx + clip_dx;     // no clip set = dxx
-    const int x_end   = x_begin + clip_dw; // no clip set = dxx + dw
-    const int y_begin = clip_dy;           // no clip set = 0
-    const int y_end   = clip_dy + clip_dh; // no clip set = dh
+    const int x_begin   = dxx + clip_dx;     // no clip set = dxx
+    const int x_end     = x_begin + clip_dw; // no clip set = dxx + dw
+    const int y_begin   = clip_dy;           // no clip set = 0
+    const int y_end     = clip_dy + clip_dh; // no clip set = dh
 
     // scaling up both ways
 
@@ -2198,18 +2198,18 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr      = nullptr;
-    ullong* dptr      = nullptr;
+    ullong* sptr        = nullptr;
+    ullong* dptr        = nullptr;
     int x, y;
-    ullong** ypoints  = isi->ypoints16;
-    int* xpoints      = isi->xpoints;
-    int* xapoints     = isi->xapoints;
-    int* yapoints     = isi->yapoints;
+    ullong** ypoints    = isi->ypoints16;
+    const int* xpoints  = isi->xpoints;
+    const int* xapoints = isi->xapoints;
+    const int* yapoints = isi->yapoints;
 
-    const int x_begin = dxx + clip_dx;     // no clip set = dxx
-    const int x_end   = x_begin + clip_dw; // no clip set = dxx + dw
-    const int y_begin = clip_dy;           // no clip set = 0
-    const int y_end   = clip_dy + clip_dh; // no clip set = dh
+    const int x_begin   = dxx + clip_dx;     // no clip set = dxx
+    const int x_end     = x_begin + clip_dw; // no clip set = dxx + dw
+    const int y_begin   = clip_dy;           // no clip set = 0
+    const int y_end     = clip_dy + clip_dh; // no clip set = dh
 
     // scaling up both ways
 

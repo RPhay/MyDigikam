@@ -437,7 +437,7 @@ DBInfoIface::DInfoMap DBInfoIface::albumInfo(int gid) const
     DInfoMap map;
     map.insert(QLatin1String("title"), a->title());
 
-    PAlbum* const p = dynamic_cast<PAlbum*>(a);
+    const PAlbum* const p = dynamic_cast<PAlbum*>(a);
 
     if (p)
     {
@@ -723,7 +723,7 @@ DBInfoIface::DAlbumIDs DBInfoIface::albumChooserItems() const
     AlbumList lst = d->albumsChooser->selectedAlbums();
     DAlbumIDs ids;
 
-    for (Album* const a : std::as_const(lst))
+    for (const Album* const a : std::as_const(lst))
     {
         if (a)
         {
@@ -758,7 +758,7 @@ QUrl DBInfoIface::uploadUrl() const
 
     if (d->albumSelector)
     {
-        PAlbum* const p = d->albumSelector->currentAlbum();
+        const PAlbum* const p = d->albumSelector->currentAlbum();
 
         if (p)
         {
@@ -789,7 +789,7 @@ QUrl DBInfoIface::defaultUploadUrl() const
 
     if (album && (album->type() == Album::PHYSICAL))
     {
-        PAlbum* const p = dynamic_cast<PAlbum*>(album);
+        const PAlbum* const p = dynamic_cast<PAlbum*>(album);
 
         if (p)
         {
