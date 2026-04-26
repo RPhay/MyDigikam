@@ -44,18 +44,19 @@ public:
     ~ItemSelectionPropertiesTab() override;
 
     void clear();
-
-    void setSelectionCount(int count);
-    void setSelectionSize(const QString& str);
-    void setSelectionMimes(const QHash<QString, int>& mimes);
-    void setSelectionGroups(const ItemInfoList& groups);
-
-    void setTotalCount(int count);
-    void setTotalSize(const QString& str);
-    void setTotalMimes(const QHash<QString, int>& mimes);
-    void setTotalGroups(const ItemInfoList& groups);
-
     void setItemFilterModel(ItemFilterModel* const model);
+
+public Q_SLOTS:
+
+    void slotSetSelectionCount(int count);
+    void slotSetSelectionSize(const QString& str);
+    void slotSetSelectionMimes(const QHash<QString, int>& mimes);
+    void slotSetSelectionGroups(const ItemInfoList& groups);
+
+    void slotSetTotalCount(int count);
+    void slotSetTotalSize(const QString& str);
+    void slotSetTotalMimes(const QHash<QString, int>& mimes);
+    void slotSetTotalGroups(const ItemInfoList& groups);
 
 private Q_SLOTS:
 

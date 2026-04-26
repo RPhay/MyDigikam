@@ -222,14 +222,14 @@ void ItemSelectionPropertiesTab::clear()
     d->treeTotalGroups->clear();
     d->selectionMimes->clear();
     d->totalMimes->clear();
-    setSelectionCount(0);
-    setSelectionSize(QString());
-    setTotalCount(0);
-    setTotalSize(QString());
+    slotSetSelectionCount(0);
+    slotSetSelectionSize(QString());
+    slotSetTotalCount(0);
+    slotSetTotalSize(QString());
 
 }
 
-void ItemSelectionPropertiesTab::setSelectionCount(int count)
+void ItemSelectionPropertiesTab::slotSetSelectionCount(int count)
 {
     d->labelSelectionCount->setAdjustedText(QLocale().toString(count));
 
@@ -237,12 +237,12 @@ void ItemSelectionPropertiesTab::setSelectionCount(int count)
     d->total->setVisible(count == 0);
 }
 
-void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
+void ItemSelectionPropertiesTab::slotSetSelectionSize(const QString& str)
 {
     d->labelSelectionSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setSelectionMimes(const QHash<QString, int>& mimes)
+void ItemSelectionPropertiesTab::slotSetSelectionMimes(const QHash<QString, int>& mimes)
 {
     d->selectionMimes->clear();
 
@@ -255,13 +255,13 @@ void ItemSelectionPropertiesTab::setSelectionMimes(const QHash<QString, int>& mi
     }
 }
 
-void ItemSelectionPropertiesTab::setSelectionGroups(const ItemInfoList& groups)
+void ItemSelectionPropertiesTab::slotSetSelectionGroups(const ItemInfoList& groups)
 {
     d->labelSelectionGroups->setAdjustedText(QString::number(groups.count()));
     d->treeSelectionGroups->setGroups(groups);
 }
 
-void ItemSelectionPropertiesTab::setTotalCount(int count)
+void ItemSelectionPropertiesTab::slotSetTotalCount(int count)
 {
     // Enable the open album in file manager if PAlbum only.
 
@@ -270,12 +270,12 @@ void ItemSelectionPropertiesTab::setTotalCount(int count)
     d->labelTotalCount->setAdjustedText(QLocale().toString(count));
 }
 
-void ItemSelectionPropertiesTab::setTotalSize(const QString& str)
+void ItemSelectionPropertiesTab::slotSetTotalSize(const QString& str)
 {
     d->labelTotalSize->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setTotalMimes(const QHash<QString, int>& mimes)
+void ItemSelectionPropertiesTab::slotSetTotalMimes(const QHash<QString, int>& mimes)
 {
     d->totalMimes->clear();
 
@@ -288,7 +288,7 @@ void ItemSelectionPropertiesTab::setTotalMimes(const QHash<QString, int>& mimes)
     }
 }
 
-void ItemSelectionPropertiesTab::setTotalGroups(const ItemInfoList& groups)
+void ItemSelectionPropertiesTab::slotSetTotalGroups(const ItemInfoList& groups)
 {
     d->labelTotalGroups->setAdjustedText(QString::number(groups.count()));
     d->treeTotalGroups->setGroups(groups);

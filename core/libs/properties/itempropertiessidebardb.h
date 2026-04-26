@@ -95,6 +95,16 @@ Q_SIGNALS:
     void signalNextItem();
     void signalLastItem();
 
+    void signalSetSelectionCount(int count);
+    void signalSetSelectionSize(const QString& str);
+    void signalSetSelectionMimes(const QHash<QString, int>& mimes);
+    void signalSetSelectionGroups(const ItemInfoList& groups);
+
+    void signalSetTotalCount(int count);
+    void signalSetTotalSize(const QString& str);
+    void signalSetTotalMimes(const QHash<QString, int>& mimes);
+    void signalSetTotalGroups(const ItemInfoList& groups);
+
 public Q_SLOTS:
 
     void slotAssignRating(int rating);
@@ -128,6 +138,7 @@ private:
                      const QRect& rect, DImg* const img, const DImageHistory& history);
     void setImagePropertiesInformation(const QUrl& url) override;
     void setImageSelectionPropertiesInformation();
+    void calculateiItemsMultithreaded();
 
 protected:
 

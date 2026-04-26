@@ -20,12 +20,13 @@
 // Qt includes
 
 #include <QDir>
+#include <QHash>
 #include <QColor>
 #include <QLocale>
 #include <QSplitter>
 #include <QFileInfo>
-#include <QHash>
 #include <QScopedPointer>
+#include <QtConcurrentRun>
 
 // KDE includes
 
@@ -76,6 +77,8 @@ public:
     bool                        hasNext                = false;
     bool                        hasItemInfoOwnership   = false;
     bool                        showAllPropertiesMode  = false;
+
+    QFuture<void>               selectedItemsTask;
 
     ItemInfoList                currentInfos;                    ///< Used if multiple items are selected.
     ItemInfoList                allInfos;
@@ -150,10 +153,50 @@ ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarS
 
     connect(TagsActionMngr::defaultManager(), &TagsActionMngr::signalColorLabelNamesUpdated,
             this, &ItemPropertiesSideBarDB::slotColorLabelNamesUpdated);
+
+    // ----------------------------------------------------------
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetSelectionCount,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetSelectionCount,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetSelectionSize,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetSelectionSize,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetSelectionMimes,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetSelectionMimes,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetSelectionGroups,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetSelectionGroups,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetTotalCount,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetTotalCount,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetTotalSize,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetTotalSize,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetTotalMimes,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetTotalMimes,
+            Qt::QueuedConnection);
+
+    connect(this, &ItemPropertiesSideBarDB::signalSetTotalGroups,
+            d->selectionPropertiesTab, &ItemSelectionPropertiesTab::slotSetTotalGroups,
+            Qt::QueuedConnection);
 }
 
 ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
 {
+    if (d->selectedItemsTask.isRunning())
+    {
+        d->selectedItemsTask.cancel();
+        d->selectedItemsTask.waitForFinished();
+    }
+
     delete d;
 }
 
@@ -885,9 +928,35 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
 void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 {
+    if (d->selectedItemsTask.isRunning())
+    {
+        d->selectedItemsTask.cancel();
+        d->selectedItemsTask.waitForFinished();
+    }
+
+    d->selectionPropertiesTab->clear();
+
+    d->selectedItemsTask =
+        QtConcurrent::run(
+
+#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
+
+                          &ItemPropertiesSideBarDB::calculateiItemsMultithreaded, this
+
+#else
+
+                          this, &ItemPropertiesSideBarDB::calculateiItemsMultithreaded
+
+#endif
+
+                         );
+}
+
+void ItemPropertiesSideBarDB::calculateiItemsMultithreaded()
+{
     // -- Items Selection Properties
 
-    d->selectionPropertiesTab->setSelectionCount(d->currentInfos.count());
+    Q_EMIT signalSetSelectionCount(d->currentInfos.count());
 
     qint64 selectionFileSize   = 0;
     auto restInfos             = d->allInfos;
@@ -896,6 +965,11 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     for (const ItemInfo& info : std::as_const(d->currentInfos))
     {
+        if (d->selectedItemsTask.isCanceled())
+        {
+            return;
+        }
+
         // cppcheck-suppress useStlAlgorithm
         selectionFileSize += info.fileSize();
         selectionMimes.insert(info.format(), selectionMimes.value(info.format()) + 1);
@@ -908,13 +982,13 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
         restInfos.removeAll(info);
     }
 
-    d->selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
-    d->selectionPropertiesTab->setSelectionMimes(selectionMimes);
-    d->selectionPropertiesTab->setSelectionGroups(selectionGroups);
+    Q_EMIT signalSetSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+    Q_EMIT signalSetSelectionMimes(selectionMimes);
+    Q_EMIT signalSetSelectionGroups(selectionGroups);
 
     // -- Total Album Items Properties
 
-    d->selectionPropertiesTab->setTotalCount(d->allInfos.count());
+    Q_EMIT signalSetTotalCount(d->allInfos.count());
 
     qint64 totalFileSize           = selectionFileSize;
     ItemInfoList totalGroups       = selectionGroups;
@@ -922,6 +996,11 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     for (const ItemInfo& info : std::as_const(restInfos))
     {
+        if (d->selectedItemsTask.isCanceled())
+        {
+            return;
+        }
+
         // cppcheck-suppress useStlAlgorithm
         totalFileSize += info.fileSize();
         totalMimes.insert(info.format(), totalMimes.value(info.format()) + 1);
@@ -932,12 +1011,10 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
         }
     }
 
-    d->selectionPropertiesTab->setTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
-    d->selectionPropertiesTab->setTotalMimes(totalMimes);
+    Q_EMIT signalSetTotalSize(ItemPropertiesTab::humanReadableBytesCount(totalFileSize));
+    Q_EMIT signalSetTotalMimes(totalMimes);
 
-    d->selectionPropertiesTab->setTotalGroups(totalGroups);
-
-    return;
+    Q_EMIT signalSetTotalGroups(totalGroups);
 }
 
 ItemPropertiesVersionsTab* ItemPropertiesSideBarDB::getFiltersHistoryTab() const
