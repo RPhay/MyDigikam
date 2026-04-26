@@ -615,7 +615,7 @@ void ItemFilterModel::setGroupItemFilterSettings(const GroupItemFilterSettings& 
 
 void ItemFilterModel::slotUpdateFilter()
 {
-    Q_D(ItemFilterModel);
+    Q_D(ItemFilterModel);        // cppcheck-suppress constVariablePointer
 
     setItemFilterSettings(d->filter);
 }

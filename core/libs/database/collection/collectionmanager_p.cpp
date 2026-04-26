@@ -542,7 +542,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
 
     QReadLocker readLocker(&lock);
 
-    for (AlbumRootLocation* const location : std::as_const(locations))
+    for (const AlbumRootLocation* const location : std::as_const(locations))
     {
         const QUrl locationPathUrl = QUrl::fromLocalFile(location->albumRootPath());
 /*

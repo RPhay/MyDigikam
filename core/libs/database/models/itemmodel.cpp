@@ -358,8 +358,8 @@ ItemInfo ItemModel::retrieveItemInfo(const QModelIndex& index)
         return ItemInfo();
     }
 
-    ItemModel* const model = index.data(ItemModelPointerRole).value<ItemModel*>();
-    int row                = index.data(ItemModelInternalId).toInt();
+    const ItemModel* const model = index.data(ItemModelPointerRole).value<ItemModel*>();
+    int row                      = index.data(ItemModelInternalId).toInt();
 
     if (!model)
     {
@@ -378,8 +378,8 @@ qlonglong ItemModel::retrieveImageId(const QModelIndex& index)
         return 0;
     }
 
-    ItemModel* const model = index.data(ItemModelPointerRole).value<ItemModel*>();
-    int row                = index.data(ItemModelInternalId).toInt();
+    const ItemModel* const model = index.data(ItemModelPointerRole).value<ItemModel*>();
+    int row                      = index.data(ItemModelInternalId).toInt();
 
     if (!model)
     {

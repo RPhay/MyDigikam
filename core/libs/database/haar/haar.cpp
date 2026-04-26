@@ -80,7 +80,7 @@ void ImageData::fillPixelData(const QImage& im)
     {
         // Get a scanline:
 
-        QRgb* const line = reinterpret_cast<QRgb*>(image.scanLine(h));
+        const QRgb* const line = reinterpret_cast<QRgb*>(image.scanLine(h));
 
         for (int w = 0 ; w < Haar::NumberOfPixels ; ++w)
         {

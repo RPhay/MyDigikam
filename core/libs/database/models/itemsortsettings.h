@@ -291,7 +291,7 @@ public:
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
-        ItemSortCollator* const sorter = ItemSortCollator::instance();
+        const ItemSortCollator* const sorter = ItemSortCollator::instance();
 
         return compareByOrder(sorter->itemCompare(a, b, caseSensitive, natural), sortOrder);
     }

@@ -751,21 +751,21 @@ ItemInfo ItemHistoryGraphModel::subject() const
 
 bool ItemHistoryGraphModel::isImage(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->historyItem(index);
+    const HistoryTreeItem* const item = d->historyItem(index);
 
     return (item && item->isType(HistoryTreeItem::VertexItemType));
 }
 
 bool ItemHistoryGraphModel::isFilterAction(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->historyItem(index);
+    const HistoryTreeItem* const item = d->historyItem(index);
 
     return (item && item->isType(HistoryTreeItem::FilterActionItemType));
 }
 
 FilterAction ItemHistoryGraphModel::filterAction(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->historyItem(index);
+    HistoryTreeItem* const item = d->historyItem(index);     // cppcheck-suppress constVariablePointer
 
     if_isItem(FilterActionItem, filterActionItem, item)
     {
@@ -824,7 +824,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    HistoryTreeItem* const item = d->historyItem(index);
+    HistoryTreeItem* const item = d->historyItem(index);     // cppcheck-suppress constVariablePointer
 
     if_isItem(VertexItem, vertexItem, item)
     {
@@ -984,7 +984,7 @@ ItemListModel* ItemHistoryGraphModel::imageModel() const
 
 QModelIndex ItemHistoryGraphModel::imageModelIndex(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->historyItem(index);
+    HistoryTreeItem* const item = d->historyItem(index);     // cppcheck-suppress constVariablePointer
 
     if_isItem(VertexItem, vertexItem, item)
     {
@@ -1056,7 +1056,7 @@ QModelIndex ItemHistoryGraphModel::index(int row, int column, const QModelIndex&
         return QModelIndex();
     }
 
-    HistoryTreeItem* const item = d->historyItem(parent);
+    const HistoryTreeItem* const item = d->historyItem(parent);
 
     if (row >= item->childCount())
     {
