@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 13:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2993,7 +2993,7 @@ msgstr "Büyüteci Göster (%1×)"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4207,17 +4207,17 @@ msgstr "Beyaz"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Evet"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4230,10 +4230,10 @@ msgstr "Evet (Yığ)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -4257,7 +4257,7 @@ msgstr "Dosya Adı"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -14190,7 +14190,7 @@ msgstr "&Ekle"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "&Sil"
@@ -27865,7 +27865,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Etiketler Albümü"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -27873,51 +27873,51 @@ msgstr "Etiketler Albümü"
 msgid "Expand Selected Nodes"
 msgstr "Seçili Düğümleri Genişlet"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Tüm Albümleri Genişlet"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Seçiliyi Özyineli Olarak Daralt"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Tüm Albümleri Daralt"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Yinelenenleri Bul…"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Yüzleri Tara"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Gizli Ögeleri Onar"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "Yenile"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Yüzleri Tara"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Alt albümler de taransın mı?"
@@ -28147,98 +28147,98 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "1 albüm dışlandı"
 msgstr[1] "%1 albüm dışlandı"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Albüm Seç"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albümler (Tümü)"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Künyeler (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Tüm albümler"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "Özyineli albüm seçimini açın/kapatın."
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "İşlenmesi gereken tüm albümleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Seçili albüm yok"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Seçili albümleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Tüm künyeler"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "Özyineli künye seçiminı açın/kapatın."
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "İşlenmesi gereken tüm künyeleri seçin."
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Seçili künye yok"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Seçili künyeleri sıfırla"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albümler (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Künyeler (Tümü)"
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -29988,22 +29988,22 @@ msgstr ""
 "Bu ikili dosya, veri tabanını geçerli sunucu sürümüne yükseltmek için "
 "kullanılır."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Küçük Görsel"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Silinmek üzere olan ögelerin listesi."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Bu, silinmek üzere olan ögelerin listesidir."
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30012,7 +30012,7 @@ msgstr ""
 "İşaretlenirse dosyalar, Çöp Kutusu’na atılmak yerine kalıcı olarak "
 "kaldırılır."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30023,17 +30023,17 @@ msgstr ""
 "olarak kaldırılır</b>.</p><p><em>Bu seçeneği dikkatli kullanın</em>: Çoğu "
 "dosya sistemi silinen ögeleri güvenilir bir şekilde geri alamaz.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Ögeleri çöp kutusuna taşımak yerine &sil"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Bir &daha sorma"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30042,7 +30042,7 @@ msgstr ""
 "İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan ve "
 "kalıcı olarak silinirler."
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30051,7 +30051,7 @@ msgstr ""
 "Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
 "doğrudan ve kalıcı olarak silinirler."
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30060,7 +30060,7 @@ msgstr ""
 "İşaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler doğrudan Çöp "
 "Kutusu’na gönderilirler."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30069,42 +30069,42 @@ msgstr ""
 "Bu kutu işaretlenirse bu iletişim kutusu artık gösterilmez ve ögeler "
 "doğrudan Çöp Kutusu’na gönderilirler."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Bu öğeler sabit diskinizden <b>kalıcı olarak</b> silinecekler."
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Bu ögeler Çöp Kutusu’na taşınacaklar."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> öge seçili."
 msgstr[1] "<b>%1</b> öge seçili."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Bu albümler sabit diskinizden <b>kalıcı olarak</b> silinecek."
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Bu albümler Çöp Kutusu’na taşınacak."
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> albüm seçili."
 msgstr[1] "<b>%1</b> albüm seçili."
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30115,7 +30115,7 @@ msgstr ""
 "<b>Tüm alt albümlerin</b> de bu listede olduğunu ve onların da kalıcı olarak "
 "silineceğini not edin.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30124,18 +30124,18 @@ msgstr ""
 "<p>Bu albümler Çöp Kutusu’na taşınacak.</p><p>Not: <b>Tüm alt albümlerin</b> "
 "de bu listede olduğunu ve onların da Çöp Kutusu’na taşınacağını not edin.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Çöp Kutusu’na Taşı"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Seçili Ögeler Silinmek Üzere"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -38359,7 +38359,7 @@ msgstr "değiştirilmemiş"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38602,8 +38602,8 @@ msgstr "Kalibre edilmemiş"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38616,55 +38616,55 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1 × %2 (%3 Mpks)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Alt Yazılar"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Sürümler"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Düzenlemek için Açıklama Sekmesini Aç"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Düzenlemek için Künyeler Sekmesini Aç"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr "Düzenlemek için Bilgi Sekmesini Aç"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

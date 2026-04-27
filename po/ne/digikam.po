@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -2986,7 +2986,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4105,17 +4105,17 @@ msgstr "शीर्षक"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "हो"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4128,10 +4128,10 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 msgctxt "@info: item properties"
@@ -4155,7 +4155,7 @@ msgstr "नयाँ छवि फाइलनाम"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -13640,7 +13640,7 @@ msgstr "थप्नुहोस्"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, fuzzy, kde-format
 msgid "&Delete"
 msgstr "मेट्नुहोस्"
@@ -26857,7 +26857,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "नयाँ एल्बम"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -26865,55 +26865,55 @@ msgstr "नयाँ एल्बम"
 msgid "Expand Selected Nodes"
 msgstr "कुनै पनि चयन नगर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Expand all Albums"
 msgstr "मेरो एल्बम"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Albums"
 msgstr "मेरो एल्बम"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, fuzzy, kde-format
 msgid "Find Duplicates..."
 msgstr "प्रकृति"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "छवि क्रमबद्ध गर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "ताजा पार्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "नयाँ छविका लागि स्क्यान गर्नुहोस्"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -27146,104 +27146,104 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "एल्बम चयन गर्नुहोस्"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "ट्याग:"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "चयन"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "चयन गरेको एल्बम मेट्ने बारेमा"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "सबै ट्याग"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "चयन"
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "ट्याग प्रतिमा रिसेट गर्नुहोस्"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "एल्बम"
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "ट्याग:"
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -28777,29 +28777,29 @@ msgstr ""
 "यो विकल्प छवि काँटछाँट गर्न प्रयोग गरिन्छ । यो कार्यलाई सक्षम पार्न छविको क्षेत्र चयन "
 "गर्नुहोस् ।"
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, fuzzy, kde-format
 msgid "Thumb"
 msgstr "थम्बनेल देखाउनुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "मेट्न लागेको फाइलको सूची"
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "यो मेट्न लागेको वस्तुको सूची हो ।"
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, fuzzy, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "यदि चेक गरिएमा, फाइलहरू रद्दीटोकरीमा राख्नुको सट्टा सदाका लागि मेटिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, fuzzy, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28812,73 +28812,73 @@ msgstr ""
 "    <p><em>यो विकल्प सावधानीपूर्वक प्रयोग गर्नुहोस्</em>: धेरै जसो फाइलप्रणालीले मेटेको "
 "फाइल फेरि फर्काउन सक्षम हुँदैनन् ।</p></qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "फाइलहरूलाई रद्दीटोरकीमा सार्नुको सट्टा तिनिहरूलाई मेट्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "फेरि नसोध्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr "यदि चेक गरिएमा, यो संवाद अब देखिदैन र फाइलहरू रद्दीटोकरीमा सिधै सारिन्छ"
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, fuzzy, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>ति वस्तुहरू तपाईँको हार्डडिस्कबाट <b>सदाका लागि मेटिनेछ </b> ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, fuzzy, kde-format
 msgid "These items will be moved to Trash."
 msgstr "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "%1 वस्तु चयन गरेको छ"
 msgstr[1] "%1 वस्तु चयन गरेको छ"
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, fuzzy, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>ति एल्बमहरू तपाईँको हार्डडिस्कबाट <b>सदाका लागि मेटिनेछ </b> ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, fuzzy, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, fuzzy, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -28889,7 +28889,7 @@ msgstr[1] ""
 "<b>१</b> एल्बम चयन गरिएको छ ।\n"
 "<b>%n</b> एल्बम चयन गरिएको छ ।"
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -28900,7 +28900,7 @@ msgstr ""
 "सहायक एल्बम</b> समाविष्ट हुन्छन् र तिनिहरू पनि सदाका लागि मेटिनेछ भनी याद राख्नुहोस् ।</"
 "qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -28909,18 +28909,18 @@ msgstr ""
 "<qt>ति एल्बमहरू रद्दीटोकरीमा सारिनेछ ।<br>यो सूचीमा <b>सबै सहायक एल्बम</b> समाविष्ट "
 "हुन्छन् र तिनिहरू पनि सदाका लागि रद्दीटोकरीमा सारिन्छ भनी याद राख्नुहोस् ।</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, fuzzy, kde-format
 msgid "&Move to Trash"
 msgstr "रद्दीटोकरीमा सार्नुहोस्"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "चयन गरेको फाइल मेट्ने बारेमा"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -36894,7 +36894,7 @@ msgstr "<i>अपरिवर्तित</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -37154,8 +37154,8 @@ msgstr "अनक्यालिब्रेट"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -37170,7 +37170,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -37178,7 +37178,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -37186,42 +37186,42 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "दर:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "<b>अनुमति</b>:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, fuzzy, kde-format
 msgid "Open the Description tab for editing"
 msgstr "छवि सूचना"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, fuzzy, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "कन्क्वेररमा खोल्नुहोस्"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

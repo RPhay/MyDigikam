@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
-"PO-Revision-Date: 2026-04-07 05:44+0200\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
+"PO-Revision-Date: 2026-04-26 04:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2958,7 +2958,7 @@ msgstr "გამადიდებლის ჩვენება (x%1)"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4157,17 +4157,17 @@ msgstr "თეთრი"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "დიახ"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4180,10 +4180,10 @@ msgstr "დიახ (დასტა)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -4207,7 +4207,7 @@ msgstr "ფაილის სახელი"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -6359,6 +6359,9 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
+"თუ ამ პარამეტრს ჩართავთ, სათაურები და წარწერები გასუფთავდება და ჩანაცვლდება "
+"ახალი მნიშვნელობებით.\n"
+"თუ არა, მოხდება ძველი მნიშვნელობების შერწყმა ახლებთან."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
@@ -6386,6 +6389,8 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign title and description "
 "metadata alternative values to images.</para>"
 msgstr ""
+"<para>პაკეტური რიგის მმართველი ხელსაწყო გამოსახულებებში სათაურისა და აღწერის "
+"მეტამონაცემებს სხვა მნიშვნელობებს მიანიჭებს.</para>"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, kde-format
@@ -6421,6 +6426,8 @@ msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
 msgstr ""
+"<para>ეს პაკეტური რიგის მმართველი ხელსაწყო გამოსახულებების რეიტინგის, ფერის, "
+"ან არჩევის ჭდის მეტამონაცემებს მიანიჭებს.</para>"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
 #, kde-format
@@ -13724,7 +13731,7 @@ msgstr "&დამატება"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "&წაშლა"
@@ -17720,6 +17727,8 @@ msgid ""
 "The items list to share has changed. Do you want to start now the media "
 "server with this contents?"
 msgstr ""
+"გასაზიარებელი ელემენტების სია შეიცვალა. გნებავთ მედიასერვერის გაშვება ამ "
+"შემცველობით?"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:247
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_server.cpp:25
@@ -17942,6 +17951,8 @@ msgid ""
 "The JPEG quality [50:lower - 100:higher]. Warning: better quality requires "
 "more network bandwidth"
 msgstr ""
+"JPEG ხარისხი [50:დაბალი - 100:მაღალი]. გაფრთხილება: რაც უკეთესია ხარისხი, "
+"მით მეტი გამტარობაა საჭირო"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:140
 #, kde-format
@@ -17984,6 +17995,8 @@ msgid ""
 "The number of frames by second to render the stream. Warning: larger rate "
 "requires more network bandwidth"
 msgstr ""
+"კადრების რაოდენობა წამში ნაკადის რენდერისთვის. გაფრთხილება: რაც მეტია "
+"სიჩქარე, მით მეტი ქსელური გამტარობაა საჭირო"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:175
 #, kde-format
@@ -26944,7 +26957,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "ჭდეების ალბომი"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -26952,51 +26965,51 @@ msgstr "ჭდეების ალბომი"
 msgid "Expand Selected Nodes"
 msgstr "არჩეული კვანძების ჩამოშლა"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, kde-format
 msgid "Expand all Albums"
 msgstr "ყველა ალბომის ჩამოშლა"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "მონიშნულების რეკურსიული აკეცვა"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "ყველა ალბომის აკეცვა"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "დუბლიკატების პოვნა…"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, kde-format
 msgid "Scan for Faces"
 msgstr "სკანირება სახეების მოსაძებნად"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "დამალული ელემენტების შეკეთება"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "განახლება"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "სკანირება სახეების მოსაძებნად"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "მოხდეს ქვეალბომების სკანირებაც?"
@@ -27227,98 +27240,98 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "ამოღებულია 1 ალბომი"
 msgstr[1] "ამოღებულია %1 ალბომი"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "ალბომის არჩევა"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "ალბომები (ყველა)"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "ჭდეები (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "ყველა ალბომი"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "რეკურსიული ალბომის მონიშვნის გადართვა."
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "მონიშნეთ ალბომები, რომლებიც გნებავთ, დამუშავდეს."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "ალბომი მონიშნული არაა"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "ალბომების მონიშვნის ჩამოყრა"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "ყველა ჭდე"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "რეკურსიული ჭდეების მონიშვნის გადართვა."
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "მონიშნეთ ჭდეები, რომლებიც გნებავთ, დამუშავდეს."
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "ჭდე მონიშნული არაა"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "ჭდეების მონიშვნის ჩამოყრა"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "ალბომები (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "ჭდეები (ყველა)"
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -27596,6 +27609,8 @@ msgid ""
 "xml file of the current version of digiKam is installed at the correct "
 "place. "
 msgstr ""
+"მონაცემთა ბაზის განახლების ქმედება აღმოჩენილი არაა. დარწმუნდით, რომ digiKam-"
+"ის მიმდინარე ვერსიის ფაილი dbconfig.xml სწორ ადგილასაა დაყენებული. "
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:719
 #, kde-format
@@ -28145,6 +28160,9 @@ msgid ""
 "registered in a database. Note: this dialog can appear automatically if a "
 "previous scan of collections have not been fully completed."
 msgstr ""
+"ეს აჩვენებს სკანირების მიმდინარეობას. სკანირებისას დისკზე არსებული ყველა "
+"ფაილი მონაცემთა ბაზაში რეგისტრირდება. შენიშვნა: ეს დიალოგი ავტომატურად "
+"გამოჩნდება, თუ კოლექციების წინა სკანირება სრულად არ დასრულებულა."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:274
 #, kde-format
@@ -28905,29 +28923,29 @@ msgstr ""
 "ეს ბინარული ფაილი მონაცემთა ბაზის უახლესი სერვერის ვერსიამდე ასაწევად "
 "გამოიყენება."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Thumb"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "ელემენტების სია, რომლების წაშლასაც აპირებთ."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "ეს ელემენტების სიაა, რომელიც ახლა წაიშლება."
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "თუ ჩართულია, ნაგვის ყუთში გადატანის მაგიერ ფაილები სამუდამოდ წაიშლება."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -28938,17 +28956,17 @@ msgstr ""
 "წაიშლება</b>.</p><p><em>ეს პარამეტრი ფრთხილად გამოიყენეთ</em>: ფაილური "
 "სისტემების უმრავლესობას ფაილების აღდგენის საშუალება არ გააჩნია.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "&ფაილების საბოლოო წაშლა, სანაგვე ყუთში გადატანის გარეშე"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "&აღარ მკითხო"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -28957,7 +28975,7 @@ msgstr ""
 "თუ ჩართულია, ეს დიალოგი ნაჩვენები აღარ იქნება და ელემენტები პირდაპირ, "
 "შეუქცევადად წაიშლება."
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -28966,7 +28984,7 @@ msgstr ""
 "თუ ეს ველი ჩართულია, ეს დიალოგი ნაჩვენები აღარ იქნება და ელემენტები "
 "პირდაპირ, შეუქცევადად წაიშლება."
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -28975,7 +28993,7 @@ msgstr ""
 "თუ ჩართულია, ეს დიალოგი ნაჩვენები აღარ იქნება და ელემენტები პირდაპირ იქნება "
 "ნაგვის ყუთში გადატანილი."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -28984,42 +29002,42 @@ msgstr ""
 "თუ ეს ველი ჩართულია, ეს დიალოგი ნაჩვენები აღარ იქნება და ელემენტები პირდაპირ "
 "იქნება ნაგვის ყუთში გადატანილი."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "ეს ელემენტები <b>სამუდამოდ წაიშლება</b> თქვენი მყარი დისკიდან."
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "ეს ელემენტები გადატანილი იქნება ნაგვის ყუთში."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "მონიშნულია <b>1</b> ელემენტი."
 msgstr[1] "მონიშნულია <b>%1</b> ელემენტი."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "ეს ალბომები<b>სამუდამოდ წაიშლება</b> თქვენი მყარი დისკიდან."
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "ეს ალბომები გადატანილი იქნება ნაგვის ყუთში."
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "მონიშნულია <b>1</b> ალბომი."
 msgstr[1] "მონიშნულია <b>%1</b> ალბომი."
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29027,25 +29045,25 @@ msgid ""
 "deleted permanently as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&სანაგვე ყუთში გადატანა"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "მონიშნული ჩანაწერები წაიშლება"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -36968,7 +36986,7 @@ msgstr "შეუცვლელი"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -37212,8 +37230,8 @@ msgstr "კალიბრაციის გარეშე"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -37226,55 +37244,55 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 ბიტ/პიქს"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 ( %2 )"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "მინაწერი"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "ვერსიები"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Description tab for editing"
 msgstr "აღწერის ჩანართის გახსნა ჩასასწორებლად"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "ჭდეების ჩანართის გახსნა ჩასასწორებლად"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr "ინფორმაციის ჩანართის გახსნა ჩასასწორებლად"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

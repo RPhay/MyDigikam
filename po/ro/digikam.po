@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
 "PO-Revision-Date: 2026-03-18 12:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3206,7 +3206,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4356,17 +4356,17 @@ msgstr "Alb"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Da"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4379,10 +4379,10 @@ msgstr "Da (stivă)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -4406,7 +4406,7 @@ msgstr "Denumire fișier"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -14223,7 +14223,7 @@ msgstr "&Adăugare..."
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, fuzzy, kde-format
 msgid "&Delete"
 msgstr "Șterge"
@@ -27914,7 +27914,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Album nou"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -27922,55 +27922,55 @@ msgstr "Album nou"
 msgid "Expand Selected Nodes"
 msgstr "Nu selecta nimic"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Expand all Albums"
 msgstr "Copiere albume..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Nici un album selectat"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, fuzzy, kde-format
 #| msgid "Copy Albums..."
 msgid "Collapse all Albums"
 msgstr "Copiere albume..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Căutare duplicate..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "Scanează după imagini noi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "&Sortează imaginile"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "Împrospătare"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Scanează după imagini noi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -28229,106 +28229,106 @@ msgstr[0] "1 album exclus"
 msgstr[1] "%1 albume excluse"
 msgstr[2] "%1 de albume excluse"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Selectează albumul"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albume"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Etichete:"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Albume"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "Selecție"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, fuzzy, kde-format
 #| msgid "No Album Selected"
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Nici un album selectat"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Pe cale de a șterge albumele alese"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "Toate etichetele"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "Selecție"
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, fuzzy, kde-format
 #| msgid "No Tag Selected"
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nici o etichetă selectată"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Reinițializează conținutul"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albume"
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Etichete:"
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -29954,22 +29954,22 @@ msgid ""
 "This binary file is used to upgrade the database to current server version."
 msgstr "Activați această opțiune pentru a defini orientarea automat."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, fuzzy, kde-format
 msgid "Thumb"
 msgstr "Miniatură"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Lista fișierelor pe cale de a fi șterse."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Aceasta este lista fișierelor ce sunt pe cale de a fi șterse."
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -29978,7 +29978,7 @@ msgstr ""
 "Dacă este bifat, fișierele vor fi înlăturate definitiv în loc de a fi "
 "plasate la gunoi."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, fuzzy, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29990,17 +29990,17 @@ msgstr ""
 "opțiune cu grijă</em>: majoritatea sistemelor de fișiere nu recuperează "
 "eficace fișierele șterse.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Ș&terge fișierele în loc de a le muta la gunoi"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Nu m&ai întreba"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30009,7 +30009,7 @@ msgstr ""
 "Dacă este bifată, acest dialog nu va mai fi afișat, iar fișierele vor fi "
 "șterse definitiv."
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30018,7 +30018,7 @@ msgstr ""
 "Dacă această căsuță este bifată, dialogul nu va mai fi afișat, iar fișierele "
 "vor fi șterse definitiv."
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30027,7 +30027,7 @@ msgstr ""
 "Dacă este bifată, acest dialog nu va mai fi afișat, iar fișierele vor fi "
 "mutate direct la gunoi."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30036,17 +30036,17 @@ msgstr ""
 "Dacă această căsuță este bifată, dialogul nu va mai fi afișat, iar fișierele "
 "vor fi mutate direct la gunoi."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Aceste elemente vor fi <b>șterse permanent</b> de pe discul dur."
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Aceste elemente vor fi mutate la gunoi."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
@@ -30054,18 +30054,18 @@ msgstr[0] "<b>1</b> fișier ales."
 msgstr[1] "<b>%1</b> fișiere alese."
 msgstr[2] "<b>%1</b> de fișiere alese."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Aceste albume vor fi <b>șterse permanent</b> de pe discul dur."
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Aceste albume vor fi mutate la gunoi."
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
@@ -30073,7 +30073,7 @@ msgstr[0] "<b>1</b> album ales."
 msgstr[1] "<b>%1</b> albume alese."
 msgstr[2] "<b>%1</b> de albume alese."
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30084,7 +30084,7 @@ msgstr ""
 "p><p>Notați că <b>toate subalbumele</b> ce sunt incluse în această listă vor "
 "fi și ele șterse definitiv.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30094,19 +30094,19 @@ msgstr ""
 "subalbumele</b> ce sunt incluse în această listă vor fi și ele mutate la "
 "gunoi.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "&Mută la gunoi"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, fuzzy, kde-format
 #| msgid "About to delete selected items"
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Pe cale de a șterge elementele alese"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -38435,7 +38435,7 @@ msgstr "<i>neschimbat</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -38719,8 +38719,8 @@ msgstr "Necalibrat"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -38735,7 +38735,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -38743,7 +38743,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -38751,43 +38751,43 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Titlu"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Permisiuni: "
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, fuzzy, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Informații"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, fuzzy, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Deschide în editor"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2976,7 +2976,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4142,10 +4142,10 @@ msgstr "흰색"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -4153,7 +4153,7 @@ msgid "Yes"
 msgstr "예"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4166,10 +4166,10 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -4194,7 +4194,7 @@ msgstr "파일 이름"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -14464,7 +14464,7 @@ msgstr "추가(&A)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "삭제(&D)"
@@ -28602,7 +28602,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "삭제"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -28610,56 +28610,56 @@ msgstr "삭제"
 msgid "Expand Selected Nodes"
 msgstr "선택한 노드 확장"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, fuzzy, kde-format
 #| msgctxt "copy timestamp as well"
 #| msgid "Copy value"
 msgid "Expand all Albums"
 msgstr "값 복사"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "선택 반전"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "copy timestamp as well"
 #| msgid "Copy value"
 msgid "Collapse all Albums"
 msgstr "값 복사"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "중복 항목 찾기..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, kde-format
 msgid "Scan for Faces"
 msgstr "얼굴 스캔"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "최근 태그"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "얼굴 스캔"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -28890,7 +28890,7 @@ msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
 msgstr[0] "선택 반전"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Delete Album"
@@ -28898,22 +28898,22 @@ msgctxt "@title:window"
 msgid "Select Album"
 msgstr "앨범 삭제"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "앨범이 가득 찼습니다."
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "태그: "
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Albums"
@@ -28921,32 +28921,32 @@ msgctxt "@option"
 msgid "All albums"
 msgstr "모든 앨범"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "테마 선택"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "선택 반전"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, fuzzy, kde-format
 #| msgctxt "@action: context menu"
 #| msgid "All Tags"
@@ -28954,46 +28954,46 @@ msgctxt "@option"
 msgid "All tags"
 msgstr "모든 태그"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, fuzzy, kde-format
 #| msgid "Theme Selection"
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "테마 선택"
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "태그를 선택하지 않았음"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "태그 아이콘 초기화"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, fuzzy, kde-format
 #| msgid "Album is full."
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "앨범이 가득 찼습니다."
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, fuzzy, kde-format
 #| msgid "Tags: "
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "태그: "
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, fuzzy, kde-format
 #| msgid "Tags: %1\n"
 msgctxt "@title"
@@ -30573,22 +30573,22 @@ msgstr ""
 "이 옵션을 사용하면 이미지를 자를 수 있습니다. 이 작업을 사용하려면 이미지의 "
 "영역을 선택하십시오."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "섬네일"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "삭제할 예정인 파일 목록입니다."
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30596,7 +30596,7 @@ msgid ""
 msgstr ""
 "이 옵션을 선택하면 휴지통으로 이동하는 대신 파일을 영구적으로 삭제합니다."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30604,78 +30604,78 @@ msgid ""
 "most filesystems are unable to undelete deleted items reliably.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "휴지통으로 이동하지 않고 바로 삭제(&D)"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "다시 묻지 않기(&A)"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "and permanently deleted."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly and permanently deleted."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
 "moved to the Trash."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
 "be directly moved to the Trash."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "다음 항목을 하드 디스크에서 <b>영구적으로 삭제합니다.</b>"
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "다음 항목을 휴지통으로 이동합니다."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "항목 <b>%1<b>개 선택됨."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] ""
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30683,25 +30683,25 @@ msgid ""
 "deleted permanently as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
 "are included in this list and will be moved to Trash as well.</p>"
 msgstr ""
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "휴지통으로 이동(&M)"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "선택 반전"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -39069,7 +39069,7 @@ msgstr "변경되지 않음"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -39325,8 +39325,8 @@ msgstr "조정하지 않음"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -39340,14 +39340,14 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2(%3백만 화소)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -39355,45 +39355,45 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "ISO %1"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, fuzzy, kde-format
 #| msgid "Captions"
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "캡션"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "버전"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgid "Open the Description tab for editing"
 msgstr "캡션 정보"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "Open the image editor."
 msgid "Open the Tags tab for editing"
 msgstr "이미지 편집기를 엽니다."
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"

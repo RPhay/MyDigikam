@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam KDE4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
 "PO-Revision-Date: 2007-07-06 22:27+0930\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -2982,7 +2982,7 @@ msgstr ""
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4107,10 +4107,10 @@ msgstr "Tựa"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, fuzzy, kde-format
 #| msgid "Yes"
 msgctxt "@info: item properties"
@@ -4118,7 +4118,7 @@ msgid "Yes"
 msgstr "Có"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4131,10 +4131,10 @@ msgstr ""
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, fuzzy, kde-format
 #| msgid "No"
@@ -4159,7 +4159,7 @@ msgstr "Tên tệp ảnh mới"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -13780,7 +13780,7 @@ msgstr "Thê&m"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "&Xoá"
@@ -27093,7 +27093,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Tập ảnh mới"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -27101,55 +27101,55 @@ msgstr "Tập ảnh mới"
 msgid "Expand Selected Nodes"
 msgstr "Chọn Không gì"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Expand all Albums"
 msgstr "Tập ảnh tôi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, fuzzy, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "%1 mục đã chọn"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, fuzzy, kde-format
 #| msgid "My Albums"
 msgid "Collapse all Albums"
 msgstr "Tập ảnh tôi"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, fuzzy, kde-format
 msgid "Find Duplicates..."
 msgstr "Vẽ biếm hoạ"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgid "Scan for Faces"
 msgstr "Quét tìm ảnh mới"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, fuzzy, kde-format
 msgid "Repair hidden Items"
 msgstr "&Sắp xếp ảnh"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "Cập nhật"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, fuzzy, kde-format
 #| msgid "Scan for New Images"
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Quét tìm ảnh mới"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr ""
@@ -27378,104 +27378,104 @@ msgid "1 Album excluded"
 msgid_plural "%1 Albums excluded"
 msgstr[0] "%1 mục đã chọn"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, fuzzy, kde-format
 #| msgid "Select Album"
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Chọn tập ảnh"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Tập"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Thẻ:"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, fuzzy, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Tập"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "Vùng chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "%1 mục đã chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Sắp xoá các tập ảnh đã chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, fuzzy, kde-format
 #| msgid "All Tags"
 msgctxt "@option"
 msgid "All tags"
 msgstr "Mọi thẻ"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "Vùng chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr ""
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "%1 mục đã chọn"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Đặt lại biểu tượng thẻ"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, fuzzy, kde-format
 #| msgid "Albums"
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Tập"
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Thẻ:"
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, fuzzy, kde-format
 #| msgid "Tag: %1"
 msgctxt "@title"
@@ -29041,29 +29041,29 @@ msgid ""
 msgstr ""
 "Tuỳ chọn này có thể được dùng để thu/phóng ảnh vào vùng chọn hiện thời."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, fuzzy, kde-format
 msgid "Thumb"
 msgstr "Hiện các ảnh mẫu"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, fuzzy, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Danh sách các tệp sắp bị xoá."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Đây là danh sách các mục sắp bị xoá."
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, fuzzy, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
 "Trash."
 msgstr "Bật thì tệp bị gỡ bỏ hoàn toàn thay vào bị chuyển vào Sọt Rác."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, fuzzy, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -29076,17 +29076,17 @@ msgstr ""
 "    <p><em>Hãy sử dụng tuỳ chọn này một cách cẩn thận</em>: phần lớn hệ "
 "thống tệp không có khả năng huỷ xoá tệp một cách tin cây.</p></qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, fuzzy, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Xoá tệp thay vào &di chuyển chúng vào Sọt Rác"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "Đừng &hỏi lại"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29095,7 +29095,7 @@ msgstr ""
 "Bật thì hộp thoại này không còn được hiển thị lại, các tệp bị di chuyển trực "
 "tiếp vào Sọt Rác."
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29104,7 +29104,7 @@ msgstr ""
 "Bật thì hộp thoại này không còn được hiển thị lại, các tệp bị di chuyển trực "
 "tiếp vào Sọt Rác."
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, fuzzy, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -29113,7 +29113,7 @@ msgstr ""
 "Bật thì hộp thoại này không còn được hiển thị lại, các tệp bị di chuyển trực "
 "tiếp vào Sọt Rác."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, fuzzy, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -29122,40 +29122,40 @@ msgstr ""
 "Bật thì hộp thoại này không còn được hiển thị lại, các tệp bị di chuyển trực "
 "tiếp vào Sọt Rác."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, fuzzy, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>Những mục này sẽ <b>bị xoá hoàn toàn</b> ra đĩa cứng.</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, fuzzy, kde-format
 msgid "These items will be moved to Trash."
 msgstr "<qt>Những tập ảnh này sẽ bị chuyển vào Sọt Rác.</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, fuzzy, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>%n</b> tệp đã chọn."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, fuzzy, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "<qt>Những tập ảnh này sẽ <b>bị xoá hoàn toàn</b> ra đĩa cứng.</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, fuzzy, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "<qt>Những tập ảnh này sẽ bị chuyển vào Sọt Rác.</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, fuzzy, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>%n</b> tập ảnh đã chọn."
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -29166,7 +29166,7 @@ msgstr ""
 "rằng <b>tất cả các tập ảnh phụ</b> cũng nằm trong danh sách này nên cũng bị "
 "xoá hoàn toàn.</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, fuzzy, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -29176,18 +29176,18 @@ msgstr ""
 "các tập ảnh con</b> cũng nằm trong danh sách này nên cũng bị chuyển vào Sọt "
 "Rác.</qt>"
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, fuzzy, kde-format
 msgid "&Move to Trash"
 msgstr "Chuyển vào Rác"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Sắp xoá các tệp đã chọn"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, fuzzy, kde-format
 #| msgid "About to delete selected albums"
 msgctxt "@title:window"
@@ -37335,7 +37335,7 @@ msgstr "<i>chưa đổi</i>"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, fuzzy, kde-format
 #| msgid "unavailable"
 msgctxt "@info: item properties"
@@ -37600,8 +37600,8 @@ msgstr "Chưa định chuẩn"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, fuzzy, kde-format
 #| msgid "Unknown"
 msgctxt "@info: item properties"
@@ -37616,7 +37616,7 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, fuzzy, kde-format
 #| msgid "%1 bpp"
 msgctxt "@info: item properties"
@@ -37624,7 +37624,7 @@ msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, fuzzy, kde-format
 #| msgid "%1 (%2)"
 msgctxt "@info: item properties"
@@ -37632,42 +37632,42 @@ msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, fuzzy, kde-format
 #| msgid "%1 ISO"
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Độ xoay:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "<b>Quyền hạn</b>:"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, fuzzy, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Thông tin"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, fuzzy, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Mở bằng Konqueror"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr ""
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, fuzzy, kde-format
 #| msgid "%1x%2 (%3Mpx)"
 msgctxt "@info: width x height (megapixels Mpx)"

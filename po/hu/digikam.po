@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-26 00:41+0000\n"
+"POT-Creation-Date: 2026-04-27 00:41+0000\n"
 "PO-Revision-Date: 2026-03-31 22:31+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2964,7 +2964,7 @@ msgstr "Nagyító megjelenítése (x%1)"
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
 #: core/libs/album/engine/album.cpp:492
 #: core/libs/album/manager/albummanager.cpp:178
-#: core/libs/album/treeview/albumselectiontreeview.cpp:250
+#: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:65
 #: core/libs/models/albummodel.cpp:25
@@ -4190,17 +4190,17 @@ msgstr "Fehér"
 #: core/libs/properties/import/importitempropertiestab.cpp:448
 #: core/libs/properties/itempropertiessidebar.cpp:277
 #: core/libs/properties/itempropertiessidebar.cpp:280
-#: core/libs/properties/itempropertiessidebardb.cpp:752
-#: core/libs/properties/itempropertiessidebardb.cpp:754
-#: core/libs/properties/itempropertiessidebardb.cpp:857
-#: core/libs/properties/itempropertiessidebardb.cpp:864
+#: core/libs/properties/itempropertiessidebardb.cpp:814
+#: core/libs/properties/itempropertiessidebardb.cpp:816
+#: core/libs/properties/itempropertiessidebardb.cpp:919
+#: core/libs/properties/itempropertiessidebardb.cpp:926
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes"
 msgstr "Igen"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:497
-#: core/libs/properties/itempropertiessidebardb.cpp:868
+#: core/libs/properties/itempropertiessidebardb.cpp:930
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Yes (stack)"
@@ -4213,10 +4213,10 @@ msgstr "Igen (halmozás)"
 #: core/libs/properties/import/importitempropertiestab.cpp:452
 #: core/libs/properties/itempropertiessidebar.cpp:278
 #: core/libs/properties/itempropertiessidebar.cpp:281
-#: core/libs/properties/itempropertiessidebardb.cpp:753
-#: core/libs/properties/itempropertiessidebardb.cpp:755
-#: core/libs/properties/itempropertiessidebardb.cpp:858
-#: core/libs/properties/itempropertiessidebardb.cpp:876
+#: core/libs/properties/itempropertiessidebardb.cpp:815
+#: core/libs/properties/itempropertiessidebardb.cpp:817
+#: core/libs/properties/itempropertiessidebardb.cpp:920
+#: core/libs/properties/itempropertiessidebardb.cpp:938
 #: core/libs/properties/itempropertiestab_setters.cpp:88
 #, kde-format
 msgctxt "@info: item properties"
@@ -4240,7 +4240,7 @@ msgstr "Fájlnév"
 
 #: core/app/views/tableview/tableview_column_file.cpp:57
 #: core/app/views/tableview/tableview_column_file.cpp:86
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:583
 #, kde-format
 msgid "Path"
@@ -14140,7 +14140,7 @@ msgstr "&Hozzáadás"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:80
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:88
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpkeywords.cpp:76
-#: core/libs/dialogs/deletedialog.cpp:586
+#: core/libs/dialogs/deletedialog.cpp:587
 #, kde-format
 msgid "&Delete"
 msgstr "&Törlés"
@@ -27858,7 +27858,7 @@ msgctxt "@info: search label default title"
 msgid "Labels Album"
 msgstr "Címkézett album"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:200
+#: core/libs/album/treeview/albumselectiontreeview.cpp:201
 #: core/libs/tags/manager/tagmngrtreeview.cpp:159
 #: core/libs/tags/manager/tagsmanager_p.cpp:137
 #: core/libs/tags/widgets/tagfolderview.cpp:130
@@ -27866,51 +27866,51 @@ msgstr "Címkézett album"
 msgid "Expand Selected Nodes"
 msgstr "Kijelölt csomópontok kibontása"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:203
+#: core/libs/album/treeview/albumselectiontreeview.cpp:204
 #, kde-format
 msgid "Expand all Albums"
 msgstr "Minden album kibontása"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:206
+#: core/libs/album/treeview/albumselectiontreeview.cpp:207
 #: core/libs/tags/widgets/tagfolderview.cpp:135
 #: core/libs/tags/widgets/tagfolderview.cpp:238
 #, kde-format
 msgid "Collapse Selected Recursively"
 msgstr "Kiválasztottak összecsukása rekurzívan"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:209
+#: core/libs/album/treeview/albumselectiontreeview.cpp:210
 #, kde-format
 msgid "Collapse all Albums"
 msgstr "Minden album összecsukása"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:212
+#: core/libs/album/treeview/albumselectiontreeview.cpp:213
 #: core/libs/tags/widgets/tagfolderview.cpp:66
 #, kde-format
 msgid "Find Duplicates..."
 msgstr "Duplikátumok keresése..."
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:215
+#: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, kde-format
 msgid "Scan for Faces"
 msgstr "Arcok keresése"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:218
+#: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, kde-format
 msgid "Repair hidden Items"
 msgstr "Rejtett elemek javítása"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:221
+#: core/libs/album/treeview/albumselectiontreeview.cpp:222
 #, kde-format
 msgid "Refresh"
 msgstr "Frissítés"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:290
+#: core/libs/album/treeview/albumselectiontreeview.cpp:291
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
 msgstr "Arcok keresése"
 
-#: core/libs/album/treeview/albumselectiontreeview.cpp:291
+#: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
 msgid "Should sub-albums be scanned too?"
 msgstr "Az album alcsoportokat is vizsgálja át?"
@@ -28138,98 +28138,98 @@ msgid_plural "%1 Albums excluded"
 msgstr[0] "1 album kizárva"
 msgstr[1] "%1 album kizárva"
 
-#: core/libs/album/widgets/albumselectdialog.cpp:75
+#: core/libs/album/widgets/albumselectdialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Album"
 msgstr "Album kijelölése"
 
-#: core/libs/album/widgets/albumselectors.cpp:142
-#: core/libs/album/widgets/albumselectors.cpp:554
+#: core/libs/album/widgets/albumselectors.cpp:144
+#: core/libs/album/widgets/albumselectors.cpp:556
 #, kde-format
 msgctxt "@title"
 msgid "Albums (All)"
 msgstr "Albumok (mind)"
 
-#: core/libs/album/widgets/albumselectors.cpp:145
+#: core/libs/album/widgets/albumselectors.cpp:147
 #, kde-format
 msgctxt "@title"
 msgid "Tags (0)"
 msgstr "Címkék (0)"
 
-#: core/libs/album/widgets/albumselectors.cpp:177
+#: core/libs/album/widgets/albumselectors.cpp:179
 #, kde-format
 msgctxt "@option"
 msgid "All albums"
 msgstr "Minden album"
 
-#: core/libs/album/widgets/albumselectors.cpp:179
+#: core/libs/album/widgets/albumselectors.cpp:181
 #, kde-format
 msgctxt "@info"
 msgid "Toggle recursive album selection."
 msgstr "Rekurzív albumkiválasztás."
 
-#: core/libs/album/widgets/albumselectors.cpp:191
+#: core/libs/album/widgets/albumselectors.cpp:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all albums that should be processed."
 msgstr "Jelöljön ki minden olyan albumot, melyet fel kell dolgozni."
 
-#: core/libs/album/widgets/albumselectors.cpp:194
+#: core/libs/album/widgets/albumselectors.cpp:196
 #, kde-format
 msgctxt "@info"
 msgid "No Album Selected"
 msgstr "Nincs kiválasztott album"
 
-#: core/libs/album/widgets/albumselectors.cpp:201
+#: core/libs/album/widgets/albumselectors.cpp:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected albums"
 msgstr "Kijelölt albumok alaphelyzetbe állítása"
 
-#: core/libs/album/widgets/albumselectors.cpp:239
+#: core/libs/album/widgets/albumselectors.cpp:241
 #, kde-format
 msgctxt "@option"
 msgid "All tags"
 msgstr "Minden címke"
 
-#: core/libs/album/widgets/albumselectors.cpp:241
+#: core/libs/album/widgets/albumselectors.cpp:243
 #, kde-format
 msgctxt "@info"
 msgid "Toggle recursive tags selection."
 msgstr "Rekurzív címkekijelölés."
 
-#: core/libs/album/widgets/albumselectors.cpp:253
+#: core/libs/album/widgets/albumselectors.cpp:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select all tags that should be processed."
 msgstr "Jelöljön ki minden olyan címkét, melyet fel kell dolgozni."
 
-#: core/libs/album/widgets/albumselectors.cpp:256
+#: core/libs/album/widgets/albumselectors.cpp:258
 #, kde-format
 msgctxt "@info"
 msgid "No Tag Selected"
 msgstr "Nincs címke kijelölve"
 
-#: core/libs/album/widgets/albumselectors.cpp:260
+#: core/libs/album/widgets/albumselectors.cpp:262
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Reset selected tags"
 msgstr "Kiválasztott címkék alaphelyzetbe állítása"
 
-#: core/libs/album/widgets/albumselectors.cpp:555
+#: core/libs/album/widgets/albumselectors.cpp:557
 #, kde-format
 msgctxt "@title"
 msgid "Albums (%1)"
 msgstr "Albumok (%1)"
 
-#: core/libs/album/widgets/albumselectors.cpp:558
+#: core/libs/album/widgets/albumselectors.cpp:560
 #, kde-format
 msgctxt "@title"
 msgid "Tags (All)"
 msgstr "Címke (mind)"
 
-#: core/libs/album/widgets/albumselectors.cpp:559
+#: core/libs/album/widgets/albumselectors.cpp:561
 #, kde-format
 msgctxt "@title"
 msgid "Tags (%1)"
@@ -29997,22 +29997,22 @@ msgstr ""
 "Ez a bináris fájl az adatbázis aktuális szerververzióra történő frissítésére "
 "szolgál."
 
-#: core/libs/dialogs/deletedialog.cpp:176
+#: core/libs/dialogs/deletedialog.cpp:177
 #, kde-format
 msgid "Thumb"
 msgstr "Miniatűr"
 
-#: core/libs/dialogs/deletedialog.cpp:179
+#: core/libs/dialogs/deletedialog.cpp:180
 #, kde-format
 msgid "List of items that are about to be deleted."
 msgstr "Törlésre kijelölt elemek listája."
 
-#: core/libs/dialogs/deletedialog.cpp:180
+#: core/libs/dialogs/deletedialog.cpp:181
 #, kde-format
 msgid "This is the list of items that are about to be deleted."
 msgstr "Törlésre kijelölt elemek listája."
 
-#: core/libs/dialogs/deletedialog.cpp:289
+#: core/libs/dialogs/deletedialog.cpp:290
 #, kde-format
 msgid ""
 "If checked, files will be permanently removed instead of being placed in the "
@@ -30020,7 +30020,7 @@ msgid ""
 msgstr ""
 "Ha be van jelölve, a fájlok véglegesen törlődnek a Lomtárba helyezés helyett."
 
-#: core/libs/dialogs/deletedialog.cpp:291
+#: core/libs/dialogs/deletedialog.cpp:292
 #, kde-format
 msgid ""
 "<p>If this box is checked, items will be <b>permanently removed</b> instead "
@@ -30031,17 +30031,17 @@ msgstr ""
 "a Kukába kerülnének.</p><p><em>Használja óvatosan</em>: a legtöbb "
 "fájlrendszer nem képes megbízhatóan visszaállítani a törölt elemeket.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:297
+#: core/libs/dialogs/deletedialog.cpp:298
 #, kde-format
 msgid "&Delete items instead of moving them to the trash"
 msgstr "Tö&rölje az elemeket ahelyett, hogy a lomtárba mozgatná"
 
-#: core/libs/dialogs/deletedialog.cpp:304
+#: core/libs/dialogs/deletedialog.cpp:305
 #, kde-format
 msgid "Do not &ask again"
 msgstr "&Ne kérdezze meg újra"
 
-#: core/libs/dialogs/deletedialog.cpp:363
+#: core/libs/dialogs/deletedialog.cpp:364
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30050,7 +30050,7 @@ msgstr ""
 "Ha be van jelölve, ez a párbeszédpanel nem jelenik meg újra, az elemek pedig "
 "közvetlenül és véglegesen törlődnek."
 
-#: core/libs/dialogs/deletedialog.cpp:365
+#: core/libs/dialogs/deletedialog.cpp:366
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30059,7 +30059,7 @@ msgstr ""
 "A négyzet bejelölésével ez a párbeszédpanel nem jelenik meg többé, az elemek "
 "pedig közvetlenül és véglegesen törlődnek."
 
-#: core/libs/dialogs/deletedialog.cpp:370
+#: core/libs/dialogs/deletedialog.cpp:371
 #, kde-format
 msgid ""
 "If checked, this dialog will no longer be shown, and items will be directly "
@@ -30068,7 +30068,7 @@ msgstr ""
 "Ha be van jelölve, ez a párbeszédpanel nem jelenik meg újra, és az elemek "
 "közvetlenül a Lomtárba kerülnek."
 
-#: core/libs/dialogs/deletedialog.cpp:372
+#: core/libs/dialogs/deletedialog.cpp:373
 #, kde-format
 msgid ""
 "If this box is checked, this dialog will no longer be shown, and items will "
@@ -30077,42 +30077,42 @@ msgstr ""
 "Ha ki van jelölve, ez a párbeszédablak nem jelenik meg újra, és az elemek "
 "közvetlenül a Lomtárba kerülnek átmozgatásra."
 
-#: core/libs/dialogs/deletedialog.cpp:384
+#: core/libs/dialogs/deletedialog.cpp:385
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ezek az elemek <b>véglegesen törlésre kerülnek</b> a háttértárról."
 
-#: core/libs/dialogs/deletedialog.cpp:390
+#: core/libs/dialogs/deletedialog.cpp:391
 #, kde-format
 msgid "These items will be moved to Trash."
 msgstr "Ezek az elemek átkerülnek a Lomtárba."
 
-#: core/libs/dialogs/deletedialog.cpp:392
+#: core/libs/dialogs/deletedialog.cpp:393
 #, kde-format
 msgid "<b>1</b> item selected."
 msgid_plural "<b>%1</b> items selected."
 msgstr[0] "<b>1</b> elem kijelölve."
 msgstr[1] "<b>%1</b> elem kijelölve."
 
-#: core/libs/dialogs/deletedialog.cpp:405
+#: core/libs/dialogs/deletedialog.cpp:406
 #, kde-format
 msgid "These albums will be <b>permanently deleted</b> from your hard disk."
 msgstr "Ezek az albumok <b>véglegesen törlésre kerülnek</b> a háttértárról."
 
-#: core/libs/dialogs/deletedialog.cpp:411
+#: core/libs/dialogs/deletedialog.cpp:412
 #, kde-format
 msgid "These albums will be moved to Trash."
 msgstr "Ezek az albumok a Lomtárba lesznek mozgatva."
 
-#: core/libs/dialogs/deletedialog.cpp:415
-#: core/libs/dialogs/deletedialog.cpp:442
+#: core/libs/dialogs/deletedialog.cpp:416
+#: core/libs/dialogs/deletedialog.cpp:443
 #, kde-format
 msgid "<b>1</b> album selected."
 msgid_plural "<b>%1</b> albums selected."
 msgstr[0] "<b>1</b> album kiválasztva."
 msgstr[1] "<b>%1</b> album kiválasztva."
 
-#: core/libs/dialogs/deletedialog.cpp:426
+#: core/libs/dialogs/deletedialog.cpp:427
 #, kde-format
 msgid ""
 "<p>These albums will be <b>permanently deleted</b> from your hard disk.</"
@@ -30123,7 +30123,7 @@ msgstr ""
 "p><p>A listában szereplő <b>minden további album is</b> véglegesen törölve "
 "lesz!</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:435
+#: core/libs/dialogs/deletedialog.cpp:436
 #, kde-format
 msgid ""
 "<p>These albums will be moved to Trash.</p><p>Note that <b>all subalbums</b> "
@@ -30132,18 +30132,18 @@ msgstr ""
 "<p>Ezek az albumok áthelyezésre kerülnek a Lomtárba.</p><p>Figyelem: a benne "
 "található minden <b>almappa</b> is áthelyezésre kerül.</p>"
 
-#: core/libs/dialogs/deletedialog.cpp:587
+#: core/libs/dialogs/deletedialog.cpp:588
 #, kde-format
 msgid "&Move to Trash"
 msgstr "Áthelyezés a &Lomtárba"
 
-#: core/libs/dialogs/deletedialog.cpp:650
+#: core/libs/dialogs/deletedialog.cpp:651
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Items"
 msgstr "Kijelölt elemek törlése"
 
-#: core/libs/dialogs/deletedialog.cpp:657
+#: core/libs/dialogs/deletedialog.cpp:658
 #, kde-format
 msgctxt "@title:window"
 msgid "About to Delete Selected Albums"
@@ -38402,7 +38402,7 @@ msgstr "változatlan"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:336
 #: core/libs/properties/itempropertiessidebar.cpp:218
-#: core/libs/properties/itempropertiessidebardb.cpp:695
+#: core/libs/properties/itempropertiessidebardb.cpp:757
 #, kde-format
 msgctxt "@info: item properties"
 msgid "unavailable"
@@ -38645,8 +38645,8 @@ msgstr "Kalibrálatlan"
 
 #: core/libs/properties/itempropertiessidebar.cpp:260
 #: core/libs/properties/itempropertiessidebar.cpp:267
-#: core/libs/properties/itempropertiessidebardb.cpp:729
-#: core/libs/properties/itempropertiessidebardb.cpp:742
+#: core/libs/properties/itempropertiessidebardb.cpp:791
+#: core/libs/properties/itempropertiessidebardb.cpp:804
 #, kde-format
 msgctxt "@info: item properties"
 msgid "Unknown"
@@ -38659,55 +38659,55 @@ msgid "%1x%2 (%3Mpx)"
 msgstr "%1x%2 (%3Mpx)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:276
-#: core/libs/properties/itempropertiessidebardb.cpp:751
+#: core/libs/properties/itempropertiessidebardb.cpp:813
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 bpp"
 msgstr "%1 bpp"
 
 #: core/libs/properties/itempropertiessidebar.cpp:312
-#: core/libs/properties/itempropertiessidebardb.cpp:785
+#: core/libs/properties/itempropertiessidebardb.cpp:847
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
 #: core/libs/properties/itempropertiessidebar.cpp:317
-#: core/libs/properties/itempropertiessidebardb.cpp:790
+#: core/libs/properties/itempropertiessidebardb.cpp:852
 #, kde-format
 msgctxt "@info: item properties"
 msgid "%1 ISO"
 msgstr "%1 ISO"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:100
+#: core/libs/properties/itempropertiessidebardb.cpp:109
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Captions"
 msgstr "Feliratok"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:101
+#: core/libs/properties/itempropertiessidebardb.cpp:110
 #, kde-format
 msgctxt "@title: database properties"
 msgid "Versions"
 msgstr "Verziók"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:105
+#: core/libs/properties/itempropertiessidebardb.cpp:114
 #, kde-format
 msgid "Open the Description tab for editing"
 msgstr "Leírás fül megnyitása a szerkesztéshez"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:109
+#: core/libs/properties/itempropertiessidebardb.cpp:118
 #, kde-format
 msgid "Open the Tags tab for editing"
 msgstr "Címkék fül megnyitása a szerkesztéshez"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:113
-#: core/libs/properties/itempropertiessidebardb.cpp:117
+#: core/libs/properties/itempropertiessidebardb.cpp:122
+#: core/libs/properties/itempropertiessidebardb.cpp:126
 #, kde-format
 msgid "Open the Information tab for editing"
 msgstr "Információk fül megnyitása a szerkesztéshez"
 
-#: core/libs/properties/itempropertiessidebardb.cpp:734
+#: core/libs/properties/itempropertiessidebardb.cpp:796
 #, kde-format
 msgctxt "@info: width x height (megapixels Mpx)"
 msgid "%1x%2 (%3Mpx)"
