@@ -18,6 +18,7 @@
 // C++ includes
 
 #include <climits>
+#include <cmath>
 
 // Qt includes
 
@@ -418,21 +419,36 @@ bool FacePipelineDetectRecognize::extractor()
             {
                 // Create the rect of the face.
 
-                int X       = static_cast<int>(detectionResults.at<float>(i, 0));
-                int Y       = static_cast<int>(detectionResults.at<float>(i, 1));
-                int width   = static_cast<int>(detectionResults.at<float>(i, 2));
-                int height  = static_cast<int>(detectionResults.at<float>(i, 3));
+                const float x      = detectionResults.at<float>(i, 0);
+                const float y      = detectionResults.at<float>(i, 1);
+                const float width  = detectionResults.at<float>(i, 2);
+                const float height = detectionResults.at<float>(i, 3);
+
+                if (!std::isfinite(x)      ||
+                    !std::isfinite(y)      ||
+                    !std::isfinite(width)  ||
+                    !std::isfinite(height) ||
+                    (width  <= 0.0F)       ||
+                    (height <= 0.0F))
+                {
+                    continue;
+                }
+
+                const int X       = static_cast<int>(x);
+                const int Y       = static_cast<int>(y);
+                const int iwidth  = static_cast<int>(width);
+                const int iheight = static_cast<int>(height);
 
                 if (
                     (X      == INT_MIN) ||
                     (Y      == INT_MIN) ||
-                    (width  == INT_MIN) ||
-                    (height == INT_MIN)
+                    (iwidth  == INT_MIN) ||
+                    (iheight == INT_MIN)
                    )
                 {
                     qCWarning(DIGIKAM_FACESENGINE_LOG) << "Invalid detection rectangle"
                                                        << "(" << X<< ", " << Y
-                                                       << "[" << width << ", " << height << "]"
+                                                       << "[" << iwidth << ", " << iheight << "]"
                                                        << "for image"
                                                        << package->info.filePath();
 
@@ -443,8 +459,8 @@ bool FacePipelineDetectRecognize::extractor()
 
                 QRectF currentFaceFRect(qreal(X)      / qreal(cvUResizedImage.cols),
                                         qreal(Y)      / qreal(cvUResizedImage.rows),
-                                        qreal(width)  / qreal(cvUResizedImage.cols),
-                                        qreal(height) / qreal(cvUResizedImage.rows));
+                                        qreal(iwidth) / qreal(cvUResizedImage.cols),
+                                        qreal(iheight)/ qreal(cvUResizedImage.rows));
 
                 faceFRects << currentFaceFRect;
 
