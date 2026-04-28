@@ -103,6 +103,7 @@ required_packages=("cmake"                   # To Compile Source Code
                    "libqt5concurrent5"       # Qt 5 Concurrent module
                    "libqt5printsupport5"     # Qt 5 PrintSupport module
                    "libqt5svg5"              # Qt 5 Svg module
+                   "libqt5svg5-dev"          # Qt 5 Svg module
                    "libqt5webengine5"        # Qt 5 webengine module
                    "qtwebengine5-dev"        # Qt 5 webengine module
                    "libqt5networkauth5-dev"  # Qt 5 network authentication.
