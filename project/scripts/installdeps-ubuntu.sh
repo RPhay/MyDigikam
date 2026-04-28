@@ -32,22 +32,47 @@ fi
 echo "Check the list of dependencies in the online doc API : https://www.digikam.org/api/index.html#externaldeps"
 echo "-------------------------------------------------------------------"
 
+# Import the official Ubuntu key for Ubuntu <= 24.*
+
+if [ "${OS_VERSION%.*}" -le 24 ]; then
+
+    if [ ! -f /usr/share/keyrings/ubuntu-archive-keyring.gpg ]; then
+
+        sudo curl -fsSL http://archive.ubuntu.com/ubuntu/project/ubuntu-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/ubuntu-archive-keyring.gpg
+        sudo chmod 644 /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+    fi
+
+fi
+
 # To download package information from all configured sources.'
 
 sudo apt-get update
 sudo apt-get upgrade
 
-# Benefit from a higher version of certain software , update the key
+# benefit from a higher version of certain software, update the key
 
-sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
-sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
+if [ "${LINUX_VERSION%.*}" -le 24 ]; then
 
-# To fix GPP key error with some repositories
-# See: https://www.skyminds.net/linux-resoudre-les-erreurs-communes-de-cle-gpg-dans-apt/
+    # Import the missing GPG keys automatically
 
-sudo apt-get update 2>&1 | \
-    sed -ne 's?^.*NO_PUBKEY ??p' | \
-    xargs -r -- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
+    sudo apt-get update 2>&1 | grep -oE "NO_PUBKEY [0-9A-Fa-f]+" | awk '{print $2}' | xargs -r -- sudo sh -c 'for key in "$@"; do
+        sudo gpg --no-default-keyring --keyring /usr/share/keyrings/"${key}-archive-keyring.gpg" --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys "$key"
+        echo "deb [signed-by=/usr/share/keyrings/${key}-archive-keyring.gpg] http://archive.ubuntu.com/ubuntu $LINUX_CODENAME main restricted universe multiverse" | sudo tee /etc/apt/sources.list.d/"${key}.list"
+    done' --
+
+    # Add the security repository with the official key
+
+    echo "deb [signed-by=/usr/share/keyrings/ubuntu-archive-keyring.gpg] http://security.ubuntu.com/ubuntu $LINUX_CODENAME-security main" | sudo tee /etc/apt/sources.list.d/security.list
+
+    # To fix GPP key error with some repositories
+    # See: https://www.skyminds.net/linux-resoudre-les-erreurs-communes-de-cle-gpg-dans-apt/
+
+    sudo apt-get update 2>&1 | \
+        sed -ne 's?^.*NO_PUBKEY ??p' | \
+        xargs -r -- sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys
+
+fi
 
 # Install dependencies to checkout source code
 
