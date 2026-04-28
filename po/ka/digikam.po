@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-27 00:41+0000\n"
-"PO-Revision-Date: 2026-04-26 04:31+0200\n"
+"PO-Revision-Date: 2026-04-27 12:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -7819,6 +7819,9 @@ msgid ""
 "<b>Shadow Tone</b> input levels on the Red, Green, Blue, and Luminosity "
 "channels."
 msgstr ""
+"ამ ღილაკით შეგიძლიათ, აირჩიოთ ფერი ორიგინალი გამოსახულებიდან <b>ჩრდილის "
+"ტონის</b> შეყვანის დონეების დასაყენებლად წითელ, მწვანე, ლურჯ და "
+"განათებულობის არხებზე."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:230
 #: core/libs/dimg/filters/curves/curvesbox.cpp:167
@@ -7833,6 +7836,9 @@ msgid ""
 "<b>Middle Tone</b> input levels on the Red, Green, Blue, and Luminosity "
 "channels."
 msgstr ""
+"ამ ღილაკით შეგიძლიათ, აირჩიოთ ფერი ორიგინალი გამოსახულებიდან <b>შუა ტონის</"
+"b> შეყვანის დონეების დასაყენებლად წითელ, მწვანე, ლურჯ და განათებულობის "
+"არხებზე."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:238
 #: core/libs/dimg/filters/curves/curvesbox.cpp:175
@@ -7847,6 +7853,9 @@ msgid ""
 "<b>Highlight Tone</b> input levels on the Red, Green, Blue, and Luminosity "
 "channels."
 msgstr ""
+"ამ ღილაკით შეგიძლიათ, აირჩიოთ ფერი ორიგინალი გამოსახულებიდან <b>გამოკვეთის "
+"ტონის</b> შეყვანის დონეების დასაყენებლად წითელ, მწვანე, ლურჯ და "
+"განათებულობის არხებზე."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:262
 #, kde-format
@@ -8397,6 +8406,8 @@ msgid ""
 "This previews the text inserted in the image. You can use the mouse to move "
 "the text to the right location."
 msgstr ""
+"ეს გადახედავს ტექსტს, რომელიც გამოსახულებაშია ჩასმული. ტექსტის საჭირო "
+"ადგილას გადატანა თაგუნას გამოყენებით შეგიძლიათ."
 
 #: core/dplugins/editor/decorate/inserttext/inserttexttool.cpp:120
 #, kde-format
@@ -8711,6 +8722,8 @@ msgid ""
 "You must select before a rectangular area including the subject.<br>Note: "
 "you can readjust the zone later in the tool."
 msgstr ""
+"მანამდე უნდა მონიშნოთ მართკუთხედი არე, რომელიც სუბიექტს შეიცავს."
+"<br>შენიშვნა: ზონის გასწორება მოგვიანებით, ხელსაწყოშიც შეგიძლიათ."
 
 #: core/dplugins/editor/enhance/blur/blurtool.cpp:150
 #, kde-format
@@ -8792,6 +8805,10 @@ msgid ""
 "To Continue polygon, either press L or double click\n"
 "To Cancel, press ESC"
 msgstr ""
+"მრავალკუთხედის მონისვნა ლასოთი.\n"
+"მალსახმობი: L\n"
+"მრავალკუთხედის გასაგრძელებლად ან დააჭირეთ ღილაკს L, ან ორჯერ დააწკაპუნეთ\n"
+"გასაუქმებლად დააჭირეთ ღილაკს ESC"
 
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:168
 #: core/dplugins/editor/enhance/healingclone/healingclonetool.cpp:169
@@ -10107,6 +10124,7 @@ msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
 "to preserve."
 msgstr ""
+"დააწკაპუნეთ ამ ღილაკზე, რომ დახატოთ ზონები, რომლებიც გნებავთ, შეინარჩუნოთ."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:251
 #, kde-format
@@ -11040,6 +11058,8 @@ msgid ""
 "Enable this option to scale-up an image to a huge size. <b>Warning</b>: This "
 "process can take some time."
 msgstr ""
+"ჩართეთ ეს პარამეტრი გამოსახულების უზარმაზარ დონემდე გასადიდებლად. "
+"<b>გაფრთხილება</b>: პროცესს, შეიძლება, საკმაო დრო დასჭირდეს."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:403
 #, kde-format
@@ -11047,6 +11067,8 @@ msgid ""
 "<b>Note:</b> use Restoration Mode to scale-up an image to a huge size. This "
 "process can take some time."
 msgstr ""
+"<b>შენიშვნა:</b> გამოიყენეთ აღდგენის რეჟიმი გამოსახულების უზარმაზარ "
+"ზომებამდე გასადიდებლად. ამ პროცესს, შეიძლება, საკმაო დრო დასჭირდეს."
 
 #: core/dplugins/editor/transform/resize/resizetool.cpp:635
 #: core/utilities/searchwindow/searchfields_createfield.cpp:223
@@ -11204,6 +11226,8 @@ msgid ""
 "Enable this option to apply the anti-aliasing filter to the sheared image. "
 "To smooth the target image, it will be blurred a little."
 msgstr ""
+"ჩართეთ ეს პარამეტრი გაჭრილ გამოსახულებაზე მოგლუვების ფილტრის გადასატარებლად. "
+"იმისათვის რომ სამიზნე გამოსახულება გლუვი იყოს, ის ოდნავ გაბუნდოვნდება."
 
 #: core/dplugins/editor/transform/shear/sheartool.cpp:314
 #: core/libs/dimg/filters/transform/shearfilter.cpp:85
@@ -12597,6 +12621,8 @@ msgid ""
 "Enter the name of the document from which this image was been scanned. This "
 "field is limited to ASCII characters."
 msgstr ""
+"შეიყვანეთ დოკუმენტის სახელი, რომლიდანაც მოხდა ამ გამოსახულების სკანირება. ეს "
+"ველი შეზღუდულია ASCII სიმბოლოებზე."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:90
 #, kde-format
@@ -12630,6 +12656,8 @@ msgid ""
 "Enter the image author's name separated by semi-colons. This field is "
 "limited to ASCII characters."
 msgstr ""
+"შეიყვანეთ გამოსახულების ავტორის სახელი, გამოყოფილი წერტილმძიმით. ეს ველი "
+"შეზღუდულია ASCII სიმბოლოებზე."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifcaption.cpp:108
 #, kde-format
@@ -12883,6 +12911,10 @@ msgid ""
 "Exchangeable_image_file_format#MakerNote_data'>Makernotes</a></b> can be "
 "unreadable if you set wrong device manufacturer/model description."
 msgstr ""
+"<b>გაფრთხილება:</b> Exif<b><a href='https://en.wikipedia.org/wiki/"
+"Exchangeable_image_file_format#MakerNote_data'>Makernote</a></b>-ის "
+"წაკითხვა, შეიძლება, შეუძლებელი იყოს, თუ დააყენებთ არასწორ მოწყობილობის "
+"მწარმოებლის/მოდელის აღწერას."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:137
 #, kde-format
@@ -13761,6 +13793,11 @@ msgid ""
 "sizes. Use contextual help for details. Consider to use <a href='https://en."
 "wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> instead.</b>"
 msgstr ""
+"<b>შენიშვნა: <a href='https://en.wikipedia.org/wiki/"
+"IPTC_Information_Interchange_Model'>IPTC</a> ტექსტური ჭდეები ზომაშია "
+"შეზღუდული. დეტალებისთვის გამოიყენეთ კონტექსტური დახმარება. იფიქრეთ <a "
+"href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP-ის</a> "
+"გამოყენებაზე ამის ნაცვლად.</b>"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:69
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcontent.cpp:70
@@ -16127,6 +16164,9 @@ msgid ""
 "you to create and print a calendar with a selection of images taken from "
 "your collection.</p>"
 msgstr ""
+"<p><h1><b>მოგესალმებით კალენდრის ხელსაწყოში</b></h1></p><p>ეს დამხმარე "
+"დაგეხმარებათ, შექმნათ და დაბეჭდოთ კალენდარი თქვენი კოლექციიდან აღებული "
+"სურათებით.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calintropage.cpp:54
 #, kde-format
@@ -18682,6 +18722,8 @@ msgid ""
 "This assistant will help you to configure how to import images before "
 "stitching them into a panorama."
 msgstr ""
+"ეს დამხმარე დაგეხმარებათ, მოირგოთ, როგორ მოხდებს სურათების შემოტანა მათი "
+"პანორამაში აკინძვამდე."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:93
 #, kde-format
@@ -18745,6 +18787,8 @@ msgid ""
 "Selects a TIFF output compressed using the LZW algorithm (lossless "
 "compression, bigger size)."
 msgstr ""
+"აირჩევს TIFF-ის LZW ალგორითმით შეკუმშვას გამოტანისას (კარგვისგარეშე "
+"შეკუმშვა, უფრო დიდი ზომა)."
 
 #: core/dplugins/generic/tools/panorama/wizard/panointropage.cpp:172
 #, kde-format
@@ -21816,6 +21860,8 @@ msgid ""
 "This tool allows users to export items to Box web-service.<br><br>See Box "
 "web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების Box-ის ვებსერვისზე გატანის საშუალებას "
+"აძლევს.<br><br>დეტალებისთვის იხილეთ Box-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/box/boxplugin.cpp:91
 #, kde-format
@@ -22021,6 +22067,8 @@ msgid ""
 "This tool allows users to export items to Dropbox web-service.<br><br>See "
 "Dropbox web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების Dropbox-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.<br><br>დეტალებისთვის იხილეთ Dropbox-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/dropbox/dbplugin.cpp:95
 #, kde-format
@@ -22134,6 +22182,9 @@ msgid ""
 "Facebook web site for details: <a href='https://www.facebook.com/'>https://"
 "www.facebook.com/</a></p>"
 msgstr ""
+"<p>ეს ხელსაწყო მომხმარებლებს ელემენტების Facebook-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.</p><p>დეტალებისთვის იხილეთ Facebook-ის ვებგვერდი: <a "
+"href='https://www.facebook.com/'>https://www.facebook.com/</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbplugin.cpp:105
 #, kde-format
@@ -22155,6 +22206,10 @@ msgid ""
 "here: <a href='https://bugs.kde.org/show_bug.cgi?id=182838'>KDE Bugtracking "
 "System</a></p>"
 msgstr ""
+"<p>ამჟამად, როგორც ღია კოდის მქონე პროექტი, ჩვენ ვერ ვაკმაყოფილებთ Facebook-"
+"ის მოთხოვნებს ამ დამატების თავიდან გასააქტიურებლად.</p><p>მეტი "
+"ინფორმაციისთვის ჩაიხედეთ აქ: <a href='https://bugs.kde.org/show_bug.cgi?"
+"id=182838'>KDE-ის შეცდომების მართვის სისტემა</a></p>"
 
 #: core/dplugins/generic/webservices/facebook/fbtalker.cpp:462
 #: core/dplugins/generic/webservices/facebook/fbtalker_wizard.cpp:428
@@ -23185,6 +23240,9 @@ msgid ""
 "<br><br>Google Photos and Google Drive web services are supported."
 "<br><br>See Google web sites for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების Google-ის ვებსერვისზე გატანის და "
+"იქიდან შემოტანის საშუალებას აძლევს.<br><br>მხარდაჭერილი სერვისებია Google "
+"Photos და Google Drive .<br><br>დეტალებისთვის იხილეთ Google-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
 #, kde-format
@@ -23722,6 +23780,9 @@ msgid ""
 "export items as anonymous or with an user account.<br><br>See ImgUr web site "
 "for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების ImgUr-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.<br><br>ისინი შეგიძლიათ, როგორც ანონიმურად, ისე თქვენი "
+"მომხმარებლით ატვირთოთ.<br><br>დეტალებისთვის იხილეთ ImgUr-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/imgur/imgurplugin.cpp:102
 #, kde-format
@@ -23828,6 +23889,8 @@ msgid ""
 "This tool exports photos as iNaturalist observations.<br><br>See iNaturalist "
 "web site for details: %1."
 msgstr ""
+"ეს ხელსაწყო ფოტოების iNaturalist-ის დაკვირვებების სახით გაიტანს."
+"<br><br>დეტალებისთვის იხილეთ iNaturalist-ის ვებგვერდი: %1."
 
 #: core/dplugins/generic/webservices/inaturalist/inatplugin.cpp:94
 #, kde-format
@@ -24306,6 +24369,8 @@ msgid ""
 "This tool allows users to export items to IPFS web-service.<br><br>See IPFS "
 "web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების IPFS-ის ვებსერვისზე გატანის საშუალებას "
+"აძლევს.<br><br>დეტალებისთვის იხილეთ IPFS-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/ipfs/ipfsplugin.cpp:96
 #, kde-format
@@ -24367,6 +24432,8 @@ msgid ""
 "This tool allows users to export items to MediaWiki web-service.<br><br>See "
 "MediaWiki web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების MediaWiki-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.<br><br>დეტალებისთვის იხილეთ MediaWiki-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/mediawiki/mediawikiplugin.cpp:101
 #, kde-format
@@ -24883,6 +24950,8 @@ msgid ""
 "This tool allows users to export items to OneDrive web-service.<br><br>See "
 "OneDrive web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების OneDrive-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.<br><br>დეტალებისთვის იხილეთ OneDrive-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/onedrive/odplugin.cpp:92
 #, kde-format
@@ -24950,6 +25019,8 @@ msgid ""
 "This tool allows users to export items to Pinterest web-service.<br><br>See "
 "Pinterest web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების Pinterest-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.<br><br>დეტალებისთვის იხილეთ Pinterest-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/pinterest/pplugin.cpp:92
 #, kde-format
@@ -25048,6 +25119,8 @@ msgid ""
 "This tool allows users to export items to Piwigo web-service.See Piwigo web "
 "site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების Piwigo-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს. დეტალებისთვის იხილეთ Piwigo-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/piwigo/piwigoplugin.cpp:104
 #, kde-format
@@ -25297,6 +25370,8 @@ msgid ""
 "This tool allows users to export items to Rajce web-service.<br><br>See "
 "Rajce web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების Pinterest-ის ვებსერვისზე გატანის "
+"საშუალებას აძლევს.<br><br>დეტალებისთვის იხილეთ Pinterest-ის ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/rajce/rajceplugin.cpp:96
 #, kde-format
@@ -25525,6 +25600,9 @@ msgid ""
 "This tool allows users to export and import items with SmugMug web-service."
 "<br><br>See SmugMug web site for details: %1"
 msgstr ""
+"ეს ხელსაწყო მომხმარებლებს ელემენტების SmugMug-ის ვებსერვისზე გატანის და "
+"იქიდან შემოტანის საშუალებას აძლევს.<br><br>დეტალებისთვის იხილეთ SmugMug-ის "
+"ვებგვერდი: %1"
 
 #: core/dplugins/generic/webservices/smugmug/smugplugin.cpp:102
 #, kde-format
@@ -26420,6 +26498,9 @@ msgid ""
 "be functional. Please check the database settings in the <b>configuration "
 "menu</b>.</p>"
 msgstr ""
+"<p>მონაცემთა ბაზის გახსნა ჩავარდა.</p><p>digiKam-ს მუშა მონაცემთა ბაზის "
+"გარეშე ვერ გამოიყენებთ. digiKam ახლა შეეცდება, გაეშვას, მაგრამ ის <b>არ</b> "
+"იმუშავებს. შეამოწმეთ მონაცემთა ბაზის პარამეტრები <b>მორგების მენიუში</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:224
 #, kde-format
@@ -26429,6 +26510,10 @@ msgid ""
 "attempt to start now, but it will <b>not</b> be functional. Please check the "
 "database settings in the <b>configuration menu</b>.</p>"
 msgstr ""
+"<p>მონაცემთა ბაზის გახსნა ჩავარდა. შეცდომის შეტყობინება მონაცემთა ბაზიდან:</"
+"p><p><b>%1</b></p><p>მუშა მონაცემთა ბაზის გარეშე digiKam-ს ვერ გამოიყენებთ. "
+"digiKam ახლა შეეცდება, გაეშვას, მაგრამ ის <b>არ</b> იმუშავებს. შეამოწმეთ "
+"მონაცემთა ბაზის პარამეტრები <b>მორგების მენიუში</b>.</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:243
 #, kde-format
@@ -26456,6 +26541,8 @@ msgid ""
 "your system.<br> Please choose the most appropriate  option to handle this "
 "situation:</p>"
 msgstr ""
+"<p>კოლექცია </p><p><b>%1</b><br>(%2)</p><p> ამჟამად სისტემაში აღმოჩენილი "
+"არაა.<br> აირჩიეთ ყველაზე შესაფერისი  არჩევანი ამ სიტუაციის გასარკვევად:</p>"
 
 #: core/libs/album/manager/albummanager_database.cpp:329
 #, kde-format
@@ -26471,6 +26558,8 @@ msgid ""
 "The collection is located on a storage device which is not always attached. "
 "Mark the collection as a removable collection."
 msgstr ""
+"კოლექცია მოთავსებულია საცავში, რომელიც ყოველთვის მიერთებული არაა. მონიშნეთ "
+"კოლექცია, როგორც მოხსნადი."
 
 #: core/libs/album/manager/albummanager_database.cpp:355
 #, kde-format
@@ -28725,6 +28814,8 @@ msgid ""
 "The database names configuration is not valid. Error is <br><p>%1</"
 "p><br>Please check your configuration."
 msgstr ""
+"მონაცემთა ბაზის სახელების კონფიგურაცია არასწორია. შეცდომა: <br><p>%1</"
+"p><br>შეამოწმეთ თქვენი კონფიგურაცია."
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:303
 #, kde-format
@@ -28732,6 +28823,8 @@ msgid ""
 "Testing database connection has failed with error<br><p>%1</p><br>Please "
 "check your configuration."
 msgstr ""
+"მონაცემთა ბაზასთან კავშირი ჩავარდა შეცდომით<br><p>%1</p><br>შეამოწმეთ თქვენი "
+"კონფიგურაცია."
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:322
 #, kde-format
@@ -29044,6 +29137,9 @@ msgid ""
 "p><p>Note that <b>all subalbums</b> are included in this list and will be "
 "deleted permanently as well.</p>"
 msgstr ""
+"<p>ეს ალბომები <b>სამუდამოდ წაიშლება</b> თქვენი დისკებით.</p><p>ასევე "
+"გახსოვდეთ, რომ ეს სია ასევე შეიცავს <b>ყველა ქვეალბომს</b> და ისინიც "
+"სამუდამოდ წაიშლება.</p>"
 
 #: core/libs/dialogs/deletedialog.cpp:436
 #, kde-format

@@ -794,8 +794,8 @@ msgid ""
 "Removes the face property from the selected tag and the face region from the "
 "contained images. Can also untag the images if wished."
 msgstr ""
-"Odstráni vlastnosť tváre z vybranej značky and the face region from the "
-"contained images. Can also untag the images if wished."
+"Odstráni vlastnosť tváre z vybranej značky a oblasť tváre z obsiahnutých "
+"obrázkov. Môže tiež odstrániť značky z obrázkov, ak si to želáte."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:108
 #, kde-format
@@ -810,8 +810,8 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"Odstráni vlastnosť tváre z vybranej značkys and the face region from the "
-"contained images. Can also untag the images if wished."
+"Odstráni vlastnosť tváre z vybraných značiek a oblasť tváre z obsiahnutých "
+"obrázkov. Môže tiež odstrániť značky z obrázkov, ak si to želáte."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
 #, kde-format
@@ -1396,10 +1396,10 @@ msgid ""
 "ExifTool binary file in the metadata section.\n"
 "Error message: %1"
 msgstr ""
-"ExifTool nie je dostupný vo vašej inštalácii digiKam or is not working "
-"correctly. Go to the digiKam settings and check the availability of the "
-"ExifTool binary file in the metadata section.\n"
-"Error message: %1"
+"ExifTool nie je dostupný vo vašej inštalácii digiKam alebo nefunguje "
+"správne. Prejdite do nastavení digiKam a skontrolujte dostupnosť binárneho "
+"súboru ExifTool v časti metadát.\n"
+"Chybová správa: %1"
 
 #: core/app/main/digikamapp.cpp:746 core/app/views/stack/trashview.cpp:528
 #, kde-format
@@ -2811,9 +2811,9 @@ msgid ""
 "directory does not exist, it is a directory itself or it cannot be read/"
 "written to.</p>"
 msgstr ""
-"<p>Zadaná cesta ku konfiguračnému súboru nie je platná. Either its parent "
-"directory does not exist, it is a directory itself or it cannot be read/"
-"written to.</p>"
+"<p>Zadaná cesta ku konfiguračnému súboru nie je platná. Buď jeho nadradený "
+"priečinok neexistuje, je to samotný priečinok alebo ho nie je možné čítať/"
+"zapisovať do neho.</p>"
 
 #: core/app/utils/digikam_globals.cpp:123
 #, kde-format
@@ -3532,17 +3532,16 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Interný QtAVPlayer bol aktualizovaný to the latest upstream 2026-04-05 which "
-"brings with it a variety of bug fixes and performance improvements (Qt5 "
-"only)."
+"Interný QtAVPlayer bol aktualizovaný na najnovšiu upstream verziu "
+"2026-04-05, ktorá prináša rôzne opravy chýb a zlepšenia výkonu (iba Qt5)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
-"Pridať podporu prispôsobiteľného formátu dátumu to show everywhere in the "
-"program."
+"Pridať podporu prispôsobiteľného formátu dátumu zobrazovaného všade v "
+"programe."
 
 #: core/app/views/stack/welcomepageview_features.cpp:29
 #, kde-format
@@ -3550,9 +3549,9 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
-"Názvy farebných štítkov sú teraz prispôsobiteľné in the Labels tab from left "
-"sidebar by double clicking on text. Label strings size are limited to 32 "
-"characters."
+"Názvy farebných štítkov sú teraz prispôsobiteľné na karte Štítky v ľavom "
+"bočnom paneli dvojitým kliknutím na text. Veľkosť reťazcov štítkov je "
+"obmedzená na 32 znakov."
 
 #: core/app/views/stack/welcomepageview_features.cpp:30
 #, kde-format
@@ -3568,8 +3567,8 @@ msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr ""
-"Rozdeliť zobrazenie filtrov do 3 samostatných kariet for better usability: "
-"Properties, Tags, and People."
+"Rozdeliť zobrazenie filtrov do 3 samostatných kariet pre lepšiu "
+"použiteľnosť: Vlastnosti, Značky a Ľudia."
 
 #: core/app/views/stack/welcomepageview_features.cpp:32
 #, kde-format
@@ -3581,7 +3580,8 @@ msgstr "Načítať a uložiť stavy stĺpcov zobrazenia koša between sessions."
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
-"Kliknutie na ikonu GPS otvorí the Geolocation tab from the left sidebar."
+"Kliknutie na prekryvnú ikonu GPS otvorí kartu Geolokácia v ľavom bočnom "
+"paneli."
 
 #: core/app/views/stack/welcomepageview_features.cpp:34
 #, kde-format
@@ -3639,7 +3639,7 @@ msgstr ""
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
-"Pridať efekt pochodujúcich mravčekov to the canvas selection rubber band."
+"Pridať efekt pochodujúcich mravčekov k výberovému gumičkovému pásu plátna."
 
 #: core/app/views/stack/welcomepageview_features.cpp:42
 #, kde-format
@@ -3647,8 +3647,8 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
-"Pridať indikátory výberu farieb histogramu for the Curves, Levels, White "
-"Balance, and Black & White Sepia tools."
+"Pridať indikátory výberu farieb histogramu pre nástroje Krivky, Úrovne, "
+"Vyváženie bielej a Čiernobiely sépiový."
 
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
@@ -3673,15 +3673,15 @@ msgstr "Komentáre položky"
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
-"Pridať podporu triedenia zobrazenia ikon albumu items by Pick and Color "
-"Labels."
+"Pridať podporu triedenia položiek v zobrazení ikon albumu podľa výberových a "
+"farebných štítkov."
 
 #: core/app/views/stack/welcomepageview_features.cpp:49
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
-"Pridať podporu triedenia zobrazenia ikon importu items by Pick and Color "
-"Labels."
+"Pridať podporu triedenia položiek v zobrazení ikon importu podľa výberových "
+"a farebných štítkov."
 
 #: core/app/views/stack/welcomepageview_features.cpp:50
 #, kde-format
@@ -3736,8 +3736,8 @@ msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
-"Zobrazenie zvýraznených položiek z otvorenej skupiny for a better usability "
-"with Icon-View."
+"Zobrazenie zvýraznených položiek z otvorenej skupiny pre lepšiu použiteľnosť "
+"so zobrazením ikon."
 
 #: core/app/views/stack/welcomepageview_features.cpp:66
 #, kde-format
@@ -3765,10 +3765,10 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
-"Nový nástroj prieskumu have been introduced to preview items in a separated "
-"windows and synchronized with the icon-view. It support all features "
-"available in preview mode. I can be used in fullscreen on a separated "
-"monitor to quickly review items during you workflow."
+"Bol predstavený nový nástroj Prieskum na náhľad položiek v oddelenych oknách "
+"synchronizovaných so zobrazením ikon. Podporuje všetky funkcie dostupné v "
+"režime náhľadu. Môže byť použitý na celú obrazovku na oddeleom monitore na "
+"rýchle prehliadanie položiek počas práce."
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
@@ -3795,7 +3795,7 @@ msgstr "Pridať kontextovú ponuku k prehrávačovi videa."
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
-"Pridať indikátor priebehu načítania on the status bar (Icon-view and "
+"Pridať indikátor priebehu načítania na stavovú lištu (zobrazenie ikon a "
 "LightTable)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:77
@@ -3804,8 +3804,8 @@ msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
-"Pridať podporu udalostí gest trackpadu to zoom the contents, pan the canvas, "
-"and change to previous/next items."
+"Pridať podporu udalostí gest trackpadu na priblíženie obsahu, posúvanie "
+"plátna a prepínanie na predchádzajúce/nasledujúce položky."
 
 #: core/app/views/stack/welcomepageview_features.cpp:78
 #, kde-format
@@ -3813,13 +3813,13 @@ msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
-"Pridať nástroj lupy to zoom and explore a small area of the preview canvas. "
-"Tool Size and zoom factor are customizable."
+"Pridať nástroj lupa na priblíženie a skúmanie malej oblasti náhľadového "
+"plátna. Veľkosť nástroja a faktor priblíženia sú prispôsobiteľné."
 
 #: core/app/views/stack/welcomepageview_features.cpp:79
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
-msgstr "Pridať indikátory podexpozície a preexpozície for the preview canvas."
+msgstr "Pridať indikátory podexpozície a preexpozície pre náhľadové plátno."
 
 #: core/app/views/stack/welcomepageview_features.cpp:80
 #, kde-format
@@ -3827,8 +3827,8 @@ msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
-"Koľajnice nad plátnom is displayed as an overlay when the scrollbar are "
-"visible."
+"Koľajnice nad plátnom sa zobrazujú ako prekrytie, keď sú viditeľné posúvacie "
+"lišty."
 
 #: core/app/views/stack/welcomepageview_features.cpp:83
 #, kde-format
@@ -3847,8 +3847,8 @@ msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
-"Pridať podporu na vyhľadávanie polí Tvorca a Autor fields to be drop down "
-"lists populated with the values already presents in the database."
+"Pridať podporu pre polia vyhľadávania Tvorca a Autor ako rozbaľovacie "
+"zoznamy naplnené hodnotami, ktoré sú už v databáze."
 
 #: core/app/views/stack/welcomepageview_features.cpp:87
 #, kde-format
@@ -3949,8 +3949,8 @@ msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
 "digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
-"<h3>Niektoré z nových funkcií v tomto vydaní of digiKam include (compared to "
-"digiKam version 8):</h3><ul>%1</ul>"
+"<h3>Niektoré z nových funkcií v tomto vydaní digiKam (v porovnaní s verziou "
+"digiKam 8) zahŕňajú:</h3><ul>%1</ul>"
 
 #: core/app/views/tableview/tableview.cpp:369
 #, kde-format
@@ -5182,11 +5182,12 @@ msgid ""
 "container format.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/AVIF'>this page</link>.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"AVIF format.</para><para>AV1 Image File Format is an image file format "
-"specification for storing images or image sequences compressed with AV1 in "
-"the ISOBMFF container format.</para><para>See details about this format from "
-"<link url='https://en.wikipedia.org/wiki/AVIF'>this page</link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu AVIF.</para><para>AV1 Image File Format je špecifikácia formátu "
+"obrazových súborov na ukladanie obrázkov alebo sekvencií obrázkov "
+"komprimovaných pomocou AV1 v kontajnerovom formáte ISOBMFF.</"
+"para><para>Podrobnosti o tomto formáte nájdete na <link url='https://en."
+"wikipedia.org/wiki/AVIF'>tejto stránke</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttodng/converttodngplugin.cpp:42
 #, kde-format
@@ -5209,10 +5210,11 @@ msgid ""
 "Adobe.</para><para>See details about this format from <link url='https://en."
 "wikipedia.org/wiki/Digital_Negative'>this page</link>.</para>"
 msgstr ""
-"<para>Tento všeobecný nástroj môže previesť RAW images data to DNG format.</"
-"para><para>The Digital Negative is a lossless RAW image format created by "
-"Adobe.</para><para>See details about this format from <link url='https://en."
-"wikipedia.org/wiki/Digital_Negative'>this page</link>.</para>"
+"<para>Tento všeobecný nástroj môže previesť údaje RAW obrázkov do formátu "
+"DNG.</para><para>Digital Negative je bezstratový formát RAW obrázkov "
+"vytvorený spoločnosťou Adobe.</para><para>Podrobnosti o tomto formáte "
+"nájdete na <link url='https://en.wikipedia.org/wiki/Digital_Negative'>tejto "
+"stránke</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttoheif/converttoheifplugin.cpp:42
 #, kde-format
@@ -5241,17 +5243,17 @@ msgid ""
 "url='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</link> for details.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"HEIF format.</para><para>High Efficiency Image File Format (HEIF), also "
-"known as High Efficiency Image Coding (HEIC), is a file format for "
-"individual images and image sequences. It was developed by the Moving "
-"Picture Experts Group (MPEG) and it claims that twice as much information "
-"can be stored in a HEIF image as in a JPEG image of the same size, resulting "
-"in a better quality image. HEIF also supports animation, and is capable of "
-"storing more information than an animated GIF at a small fraction of the "
-"size.</para><para>See <link url='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>High Efficiency Image File Format</link> "
-"for details.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu HEIF.</para><para>High Efficiency Image File Format (HEIF), tiež "
+"známy ako High Efficiency Image Coding (HEIC), je formát súborov pre "
+"jednotlivé obrázky a sekvencie obrázkov. Bol vyvinutý skupinou Moving "
+"Picture Experts Group (MPEG) a tvrdí sa, že v obrázku HEIF možno uložiť "
+"dvakrát toľko informácií ako v obrázku JPEG rovnakej veľkosti, čo vedie k "
+"lepšej kvalite obrázka. HEIF tiež podporuje animáciu a je schopný ukladať "
+"viac informácií ako animovaný GIF pri zlomku jeho veľkosti.</"
+"para><para>Podrobnosti nájdete na stránke <link url='https://en.wikipedia."
+"org/wiki/High_Efficiency_Image_File_Format'>High Efficiency Image File "
+"Format</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojp2/converttojp2plugin.cpp:42
 #, kde-format
@@ -5277,14 +5279,13 @@ msgid ""
 "method.</para><para>See details about this format from <link url='https://en."
 "wikipedia.org/wiki/JPEG_2000'>this page</link>.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"JPEG-2000 format.</para><para>This is an image compression standard and "
-"coding system. It was created by the Joint Photographic Experts Group "
-"committee in 2000 with the intention of superseding their original discrete "
-"cosine transform-based JPEG standard (created in 1992) with a newly "
-"designed, wavelet-based method.</para><para>See details about this format "
-"from <link url='https://en.wikipedia.org/wiki/JPEG_2000'>this page</link>.</"
-"para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu JPEG-2000.</para><para>Ide o štandard kompresie obrázkov a kódovací "
+"systém. Bol vytvorený výborom Joint Photographic Experts Group v roku 2000 s "
+"cieľom nahradiť pôvodný štandard JPEG založený na diskrétnej kosínusovej "
+"transformácii (vytvorený v roku 1992) novonávrhenou metódou založenou na "
+"waveletoch.</para><para>Podrobnosti o tomto formáte nájdete na <link "
+"url='https://en.wikipedia.org/wiki/JPEG_2000'>tejto stránke</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojpeg/converttojpegplugin.cpp:42
 #, kde-format
@@ -5309,12 +5310,12 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/JPEG'>this page</link>."
 "</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"JPEG format.</para><para>The Joint Photographic Experts Group format is a "
-"commonly used method of lossy compression for digital images, particularly "
-"for those images produced by digital photography.</para><para>See details "
-"about this format from <link url='https://en.wikipedia.org/wiki/JPEG'>this "
-"page</link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu JPEG.</para><para>Formát Joint Photographic Experts Group je bežne "
+"používaná metóda stratovej kompresie digitálnych obrázkov, najmä tých "
+"získaných digitálnou fotografiou.</para><para>Podrobnosti o tomto formáte "
+"nájdete na <link url='https://en.wikipedia.org/wiki/JPEG'>tejto stránke</"
+"link>.</para>"
 
 #: core/dplugins/bqm/convert/converttojxl/converttojxlplugin.cpp:42
 #, kde-format
@@ -5339,12 +5340,13 @@ msgid ""
 "replacement.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/JPEG_XL'>this page</link>.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"JPEG-XL format.</para><para>JPEG-XL is a royalty-free raster-graphics file "
-"format that supports both lossy and lossless compression. It is designed to "
-"outperform existing raster formats and thus to become their universal "
-"replacement.</para><para>See details about this format from <link "
-"url='https://en.wikipedia.org/wiki/JPEG_XL'>this page</link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu JPEG-XL.</para><para>JPEG-XL je bezplatný formát rastrových "
+"grafických súborov, ktorý podporuje stratovú aj bezstratovú kompresiu. Je "
+"navrhnutý tak, aby prekonával existujúce rastrové formáty a stal sa ich "
+"univerzálnou náhradou.</para><para>Podrobnosti o tomto formáte nájdete na "
+"<link url='https://en.wikipedia.org/wiki/JPEG_XL'>tejto stránke</link>.</"
+"para>"
 
 #: core/dplugins/bqm/convert/converttopgf/converttopgfplugin.cpp:42
 #, kde-format
@@ -5368,11 +5370,12 @@ msgid ""
 "details about this format from <link url='https://en.wikipedia.org/wiki/"
 "Progressive_Graphics_File'>this page</link>.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"PGF format.</para><para>The Progressive Graphics File is a wavelet-based "
-"bitmapped image format that employs lossless and lossy data compression.</"
-"para><para>See details about this format from <link url='https://en."
-"wikipedia.org/wiki/Progressive_Graphics_File'>this page</link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu PGF.</para><para>Progressive Graphics File je bitmapový formát "
+"obrázkov založený na waveletoch, ktorý využíva bezstratovú aj stratovú "
+"kompresiu údajov.</para><para>Podrobnosti o tomto formáte nájdete na <link "
+"url='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>tejto stránke</"
+"link>.</para>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopng.cpp:54
 #, kde-format
@@ -5381,9 +5384,9 @@ msgid ""
 "Simply insert the tool for color profile conversion before this tool and "
 "select the desired color profile.</b>"
 msgstr ""
-"<b>Ak prevod do PNG zlyhá, this may be due to the color profile check. "
-"Simply insert the tool for color profile conversion before this tool and "
-"select the desired color profile.</b>"
+"<b>Ak prevod do PNG zlyhá, môže to byť spôsobené kontrolou farebného "
+"profilu. Jednoducho vložte nástroj na konverziu farebného profilu pred tento "
+"nástroj a vyberte požadovaný farebný profil.</b>"
 
 #: core/dplugins/bqm/convert/converttopng/converttopngplugin.cpp:42
 #, kde-format
@@ -5407,11 +5410,11 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/"
 "Portable_Network_Graphics'>this page</link>.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"PNG format.</para><para>The Portable Network Graphics is a raster-graphics "
-"file-format that supports lossless data compression.</para><para>See details "
-"about this format from <link url='https://en.wikipedia.org/wiki/"
-"Portable_Network_Graphics'>this page</link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu PNG.</para><para>Portable Network Graphics je formát rastrových "
+"grafických súborov podporujúci bezstratovú kompresiu údajov.</"
+"para><para>Podrobnosti o tomto formáte nájdete na <link url='https://en."
+"wikipedia.org/wiki/Portable_Network_Graphics'>tejto stránke</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttotiff/converttotiffplugin.cpp:42
 #, kde-format
@@ -5436,12 +5439,12 @@ msgid ""
 "format from <link url='https://en.wikipedia.org/wiki/TIFF'>this page</link>."
 "</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"TIFF format.</para><para>The Tagged Image File Format is a computer file "
-"format for storing raster graphics images, popular among graphic artists, "
-"the publishing industry, and photographers.</para><para>See details about "
-"this format from <link url='https://en.wikipedia.org/wiki/TIFF'>this page</"
-"link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu TIFF.</para><para>Tagged Image File Format je počítačový formát "
+"súborov na ukladanie rastrových grafických obrázkov, obľúbený medzi "
+"grafickými umelcami, vydavateľským priemyslom a fotografmi.</"
+"para><para>Podrobnosti o tomto formáte nájdete na <link url='https://en."
+"wikipedia.org/wiki/TIFF'>tejto stránke</link>.</para>"
 
 #: core/dplugins/bqm/convert/converttowebp/converttowebpplugin.cpp:42
 #, kde-format
@@ -5467,13 +5470,13 @@ msgid ""
 "transparency.</para><para>See details about this format from <link "
 "url='https://en.wikipedia.org/wiki/WebP'>this page</link>.</para>"
 msgstr ""
-"<para>Tento nástroj Správcu dávkovej fronty môže previesť obrázky data to "
-"WEBP format.</para><para>WEBP is an image file format that Google has "
-"developed as a replacement for JPEG, PNG, and GIF file formats. WEBP yields "
-"files that are smaller for the same quality, or of higher quality for the "
-"same size. It supports both lossy and lossless compression, as well as "
-"animation and alpha transparency.</para><para>See details about this format "
-"from <link url='https://en.wikipedia.org/wiki/WebP'>this page</link>.</para>"
+"<para>Tento nástroj Správcu dávkovej fronty môže previesť údaje obrázkov do "
+"formátu WEBP.</para><para>WEBP je formát obrazových súborov, ktorý Google "
+"vyvinul ako náhradu za formáty JPEG, PNG a GIF. WEBP poskytuje menšie súbory "
+"pri rovnakej kvalite alebo vyššiu kvalitu pri rovnakej veľkosti. Podporuje "
+"stratovú aj bezstratovú kompresiu, ako aj animáciu a priehľadnosť alfa.</"
+"para><para>Podrobnosti o tomto formáte nájdete na <link url='https://en."
+"wikipedia.org/wiki/WebP'>tejto stránke</link>.</para>"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:93
 #, kde-format
@@ -5618,12 +5621,12 @@ msgid ""
 "$RATING</b> and <b>$TAGSPATH</b> to handle digiKam properties.</para>"
 msgstr ""
 "<para>Tento nástroj Správcu dávkovej fronty môže spustiť používateľský shell "
-"skript as workflow stage.</para><para>Script variables:</para><para>Uses <b>"
-"$INPUT</b> and <b>$OUTPUT</b> for input / output filenames (with special "
-"characters escaped). These would be substituted before shell execution.</"
-"para><para>Uses <b>$TITLE</b>, <b>$COMMENTS</b>, <b>$COLORLABEL</b>, <b>"
-"$PICKLABEL</b>, <b>$RATING</b> and <b>$TAGSPATH</b> to handle digiKam "
-"properties.</para>"
+"skript ako fázu pracovného toku.</para><para>Premenné skriptu:</"
+"para><para>Používa <b>$INPUT</b> a <b>$OUTPUT</b> pre vstupné/výstupné názvy "
+"súborov (so špeciálnymi znakmi escapovanými). Tieto budú nahradené pred "
+"spustením shellu.</para><para>Používa <b>$TITLE</b>, <b>$COMMENTS</b>, <b>"
+"$COLORLABEL</b>, <b>$PICKLABEL</b>, <b>$RATING</b> a <b>$TAGSPATH</b> na "
+"spracovanie vlastností digiKam.</para>"
 
 #: core/dplugins/bqm/decorate/border/borderplugin.cpp:42
 #: core/dplugins/editor/decorate/border/bordertoolplugin.cpp:40
@@ -5882,9 +5885,9 @@ msgid ""
 "higher the value the sparser the watermarks get. Use floating point values, "
 "typically between 1.0 and 3.0. It can also be less than 1.0"
 msgstr ""
-"Použite toto na väčšiu kontrolu nad the sparsity of watermark repetition. "
-"The higher the value the sparser the watermarks get. Use floating point "
-"values, typically between 1.0 and 3.0. It can also be less than 1.0"
+"Použite toto na väčšiu kontrolu nad riedkosťou opakovania vodoznaku. Čím "
+"vyššia hodnota, tým riedkejšie sú vodoznaky. Používajte hodnoty s pohyblivou "
+"desatinnou čiarkou, zvyčajne medzi 1,0 a 3,0. Môže byť aj menej ako 1,0."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:362
 #, kde-format
@@ -6332,8 +6335,8 @@ msgid ""
 "Select an image or JSON file supported by ExifTool to apply the file "
 "metadata to the images."
 msgstr ""
-"Vyberte obrázok alebo súbor JSON podporovaný by ExifTool to apply the file "
-"metadata to the images."
+"Vyberte obrázok alebo súbor JSON podporovaný nástrojom ExifTool na "
+"aplikovanie metadát súboru na obrázky."
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:148
 #, kde-format
@@ -6416,9 +6419,9 @@ msgid ""
 "replaced by the new values,\n"
 "else old values will be merged with new values."
 msgstr ""
-"Ak zapnete túto možnosť, názvy a popisy will be cleaned and replaced by the "
-"new values,\n"
-"else old values will be merged with new values."
+"Ak zapnete túto možnosť, názvy a popisy budú vyčistené a nahradené novými "
+"hodnotami,\n"
+"inak budú staré hodnoty zlúčené s novými hodnotami."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:116
 #, kde-format
@@ -6426,7 +6429,7 @@ msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
-"Použite premennú $ORGTEXT to insert the existing text into the new text."
+"Použite premennú $ORGTEXT na vloženie existujúceho textu do nového textu."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
@@ -6801,8 +6804,8 @@ msgid ""
 "Compute automatically crop area settings by a parse of black hole image "
 "borders."
 msgstr ""
-"Automaticky vypočítať nastavenia oblasti orezania by a parse of black hole "
-"image borders."
+"Automaticky vypočítať nastavenia oblasti orezania analyzovaním okrajov "
+"čiernych oblastí obrázka."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:88
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:285
@@ -7145,18 +7148,18 @@ msgid ""
 "href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>High "
 "Efficiency Image File Format</a> for details.</para>"
 msgstr ""
-"<para>Tento modul umožňuje používateľom načítať a uložiť obrázky using "
-"Libheif codec.</para><para>High Efficiency Image File Format (HEIF), also "
-"known as High Efficiency Image Coding (HEIC), is a file format for "
-"individual images and image sequences. It was developed by the Moving "
-"Picture Experts Group (MPEG) and it claims that twice as much information "
-"can be stored in a HEIF image as in a JPEG image of the same size, resulting "
-"in a better quality image. HEIF also supports animation, and is capable of "
-"storing more information than an animated GIF at a small fraction of the "
-"size.</para><para>Encoding HEIC is relevant of optional libde265 codec. %1</"
-"para><para>See <a href='https://en.wikipedia.org/wiki/"
-"High_Efficiency_Image_File_Format'>High Efficiency Image File Format</a> for "
-"details.</para>"
+"<para>Tento modul umožňuje používateľom načítavať a ukladať obrázky pomocou "
+"kodeku Libheif.</para><para>High Efficiency Image File Format (HEIF), tiež "
+"známy ako High Efficiency Image Coding (HEIC), je formát súborov pre "
+"jednotlivé obrázky a sekvencie obrázkov. Bol vyvinutý skupinou Moving "
+"Picture Experts Group (MPEG) a tvrdí sa, že v obrázku HEIF možno uložiť "
+"dvakrát toľko informácií ako v obrázku JPEG rovnakej veľkosti, čo vedie k "
+"lepšej kvalite obrázka. HEIF tiež podporuje animáciu a je schopný ukladať "
+"viac informácií ako animovaný GIF pri zlomku jeho veľkosti.</"
+"para><para>Kódovanie HEIC závisí od voliteľného kodeku libde265. %1</"
+"para><para>Podrobnosti nájdete na stránke <a href='https://en.wikipedia.org/"
+"wiki/High_Efficiency_Image_File_Format'>High Efficiency Image File Format</"
+"a>.</para>"
 
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:129
 #: core/dplugins/dimg/heif/dimgheifplugin.cpp:145
