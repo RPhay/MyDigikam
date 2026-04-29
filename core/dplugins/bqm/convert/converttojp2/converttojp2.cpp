@@ -47,8 +47,11 @@ void ConvertToJP2::registerSettingsWidget()
 {
     DImgLoaderSettings* const JP2Box = DPluginLoader::instance()->exportWidget(QLatin1String("JP2"));
 
-    connect(JP2Box, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotSettingsChanged()));
+    if (JP2Box)
+    {
+        connect(JP2Box, SIGNAL(signalSettingsChanged()),
+                this, SLOT(slotSettingsChanged()));
+    }
 
     m_settingsWidget = JP2Box;
 
