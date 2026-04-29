@@ -47,10 +47,13 @@ void ConvertToHEIF::registerSettingsWidget()
 {
     DImgLoaderSettings* const HEIFBox = DPluginLoader::instance()->exportWidget(QLatin1String("HEIF"));
 
-    connect(HEIFBox, SIGNAL(signalSettingsChanged()),
+    if (HEIFBox)
+    {
+        connect(HEIFBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
+    }
 
-    m_settingsWidget            = HEIFBox;
+    m_settingsWidget                 = HEIFBox;
 
     BatchTool::registerSettingsWidget();
 }
