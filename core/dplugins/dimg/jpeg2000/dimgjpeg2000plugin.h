@@ -67,6 +67,7 @@ public:
 private:
 
     bool m_initJasper = false;
+    bool m_useQReader = false;
 };
 
 } // namespace DigikamJPEG2000DImgPlugin
