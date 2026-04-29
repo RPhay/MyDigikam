@@ -189,7 +189,7 @@ QString DImgJPEG2000Plugin::typeMimes() const
 
 int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    if (!m_initJasper && !m_useQReader)
+    if (!m_initJasper)
     {
         return 0;
     }
@@ -242,7 +242,7 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
-    if (!m_initJasper && !m_useQReader)
+    if (!m_initJasper)
     {
         return 0;
     }
@@ -257,7 +257,7 @@ DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) c
 
 DImgLoaderSettings* DImgJPEG2000Plugin::exportWidget(const QString& format) const
 {
-    if (canWrite(format) && (m_initJasper || m_useQReader))
+    if (typeMimes().contains(format.toUpper()) && (m_initJasper || m_useQReader))
     {
         return (new DImgJPEG2000ExportSettings());
     }
