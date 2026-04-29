@@ -41,10 +41,6 @@ no-qstring-insensitive-allocation,\
 no-function-args-by-value,\
 no-fully-qualified-moc-types,\
 no-unexpected-flag-enumerator-value,\
-qt6-qhash-signature,\
-qt6-deprecated-api-fixes,\
-qt6-fwd-fixes,\
-qt6-header-fixes,\
 no-module-include,\
 signal-with-return-value,\
 raw-environment-function,\

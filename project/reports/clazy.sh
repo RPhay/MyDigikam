@@ -80,9 +80,12 @@ else
 
 fi
 
-$CMAKE_BINARY -G "Unix Makefiles" . \
+$CMAKE_BINARY -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE=Debug \
-      -DCMAKE_CXX_COMPILER=clazy \
+      -DCMAKE_C_COMPILER=clang \
+      -DCMAKE_CXX_COMPILER=clang \
+      -DCMAKE_CXX_COMPILER_LAUNCHER=clazy \
+      -DCMAKE_CXX_FLAGS="-I/usr/lib/llvm-21/lib/clang/21.1.8/include -isystem /usr/include/c++/15 -isystem /usr/include/x86_64-linux-gnu/c++/15" \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
