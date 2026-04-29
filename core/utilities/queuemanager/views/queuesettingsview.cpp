@@ -405,15 +405,21 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
 #ifdef HAVE_JASPER
 
-    connect(d->j2kSettings, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotSettingsChanged()));
+    if (d->j2kSettings)
+    {
+        connect(d->j2kSettings, SIGNAL(signalSettingsChanged()),
+                this, SLOT(slotSettingsChanged()));
+    }
 
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
 
-    connect(d->heifSettings, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotSettingsChanged()));
+    if (d->heifSettings)
+    {
+        connect(d->heifSettings, SIGNAL(signalSettingsChanged()),
+                this, SLOT(slotSettingsChanged()));
+    }
 
 #endif // HAVE_X265
 
@@ -611,26 +617,32 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
     set.insert(QLatin1String("compress"),  settings.ioFileSettings.TIFFCompression);
     d->tifSettings->setSettings(set);
 
-#ifdef HAVE_JASPER
-
-    set.clear();
-    set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
-    set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
-    d->j2kSettings->setSettings(set);
-
-#endif // HAVE_JASPER
-
     set.clear();
     set.insert(QLatin1String("quality"),  settings.ioFileSettings.PGFCompression);
     set.insert(QLatin1String("lossless"), settings.ioFileSettings.PGFLossLess);
     d->pgfSettings->setSettings(set);
 
+#ifdef HAVE_JASPER
+
+    if (d->j2kSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.JPEG2000Compression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.JPEG2000LossLess);
+        d->j2kSettings->setSettings(set);
+    }
+
+#endif // HAVE_JASPER
+
 #ifdef HAVE_X265
 
-    set.clear();
-    set.insert(QLatin1String("quality"),  settings.ioFileSettings.HEIFCompression);
-    set.insert(QLatin1String("lossless"), settings.ioFileSettings.HEIFLossLess);
-    d->heifSettings->setSettings(set);
+    if (d->heifSettings)
+    {
+        set.clear();
+        set.insert(QLatin1String("quality"),  settings.ioFileSettings.HEIFCompression);
+        set.insert(QLatin1String("lossless"), settings.ioFileSettings.HEIFLossLess);
+        d->heifSettings->setSettings(set);
+    }
 
 #endif // HAVE_X265
 
