@@ -51,8 +51,10 @@ public:
 
     RuleTypeForConversion() = default;
 
+public:
+
     QString             key;
-    SearchXml::Relation op   = SearchXml::Equal;
+    SearchXml::Relation op  = SearchXml::Equal;
     QString             val;
 };
 
@@ -91,8 +93,8 @@ class Q_DECL_HIDDEN RuleType
 {
 public:
 
-    SKey      key;
-    SOperator op = EQ;
+    SKey      key = ALBUM;
+    SOperator op  = EQ;
     QString   val;
 };
 
