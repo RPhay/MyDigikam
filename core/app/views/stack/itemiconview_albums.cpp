@@ -34,7 +34,7 @@ void ItemIconView::slotAllAlbumsLoaded()
     // now that all albums have been loaded, activate the albumHistory
 
     d->useAlbumHistory = true;
-    Album* const album = d->albumManager->findAlbum(d->initialAlbumID);
+    Album* const album = d->albumManager->findAlbum(d->initialAlbumID);     // cppcheck-suppress constVariablePointer
     d->albumManager->setCurrentAlbums(QList<Album*>() << album);
 }
 
@@ -174,7 +174,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
     }
     else if (album->isTrashAlbum())
     {
-        PAlbum* const palbum = static_cast<PAlbum*>(album->parent());
+        const PAlbum* const palbum = static_cast<PAlbum*>(album->parent());
 
         if (palbum)
         {
@@ -311,7 +311,7 @@ void ItemIconView::slotAlbumOpenInFileManager()
     }
     else
     {
-        PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
+        const PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
 
         if (palbum)
         {
@@ -351,7 +351,7 @@ void ItemIconView::slotAlbumPropsEdit()
 
 void ItemIconView::slotAlbumWriteMetadata()
 {
-    Album* const album = d->albumManager->currentAlbums().constFirst();
+    Album* const album = d->albumManager->currentAlbums().constFirst();     // cppcheck-suppress constVariablePointer
 
     if (!album)
     {
@@ -374,7 +374,7 @@ void ItemIconView::slotAlbumWriteMetadata()
 
 void ItemIconView::slotAlbumReadMetadata()
 {
-    Album* const album = d->albumManager->currentAlbums().constFirst();
+    Album* const album = d->albumManager->currentAlbums().constFirst();     // cppcheck-suppress constVariablePointer
 
     if (!album)
     {

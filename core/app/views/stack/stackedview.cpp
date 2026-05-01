@@ -239,8 +239,8 @@ StackedView::~StackedView()
 
 void StackedView::readSettings()
 {
-    ApplicationSettings* settings = ApplicationSettings::instance();
-    bool showThumbbar             = settings->getShowThumbbar();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
+    bool showThumbbar                         = settings->getShowThumbbar();
     d->thumbBarDock->setShouldBeVisible(showThumbbar);
 }
 
@@ -499,13 +499,13 @@ void StackedView::setViewMode(const StackedViewMode mode, bool focus)
 
 void StackedView::syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to)
 {
-    ImageSortFilterModel* const fromModel = from->itemSortFilterModel();
-    ImageSortFilterModel* const toModel   = to->itemSortFilterModel();
-    QModelIndex currentIndex              = toModel->indexForItemInfo(from->currentInfo());
+    const ImageSortFilterModel* const fromModel = from->itemSortFilterModel();
+    const ImageSortFilterModel* const toModel   = to->itemSortFilterModel();
+    QModelIndex currentIndex                    = toModel->indexForItemInfo(from->currentInfo());
 
     // sync selection
 
-    QItemSelection selection              = from->selectionModel()->selection();
+    QItemSelection selection                    = from->selectionModel()->selection();
     QItemSelection newSelection;
 
     for (const QItemSelectionRange& range : std::as_const(selection))

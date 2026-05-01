@@ -121,7 +121,7 @@ void ItemIconView::slotLeftSidebarChangedTab(QWidget* w)
 {
     // TODO update, temporary cast
 
-    SidebarWidget* const widget = dynamic_cast<SidebarWidget*>(w);
+    const SidebarWidget* const widget = dynamic_cast<SidebarWidget*>(w);
 
     for (SidebarWidget* const sideBarWidget : std::as_const(d->leftSideBarWidgets))
     {

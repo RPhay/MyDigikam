@@ -263,7 +263,7 @@ void ItemIconView::refreshView()
 void ItemIconView::slotShowContextMenu(QContextMenuEvent* event,
                                        const QList<QAction*>& extraGroupingActions)
 {
-    Album* const album = currentAlbum();
+    const Album* const album = currentAlbum();
 
     if (
         !album          ||
@@ -428,7 +428,7 @@ void ItemIconView::slotShowContextMenuOnInfo(QContextMenuEvent* event, const Ite
 
     // --------------------------------------------------------
 
-    QAction* const choice = cmHelper.exec(event->globalPos());
+    const QAction* const choice = cmHelper.exec(event->globalPos());
 
     if (choice && (choice == viewAction))
     {

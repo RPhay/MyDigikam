@@ -724,7 +724,7 @@ void ItemIconView::slotEmptyMessageTimer()
         return;
     }
 
-   Album* const album = albumList.first();
+   const Album* const album = albumList.first();
 
     if (!album || album->isRoot() || (album->type() != Album::SEARCH))
     {

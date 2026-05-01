@@ -579,7 +579,7 @@ void ItemIconView::saveViewState()
     group.writeEntry(QLatin1String("ThumbbarState"), d->dockArea->saveState().toBase64());
 
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
-    Album* album            = nullptr;
+    const Album* album      = nullptr;
 
     if (!albumList.isEmpty())
     {

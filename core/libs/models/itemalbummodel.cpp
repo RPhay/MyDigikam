@@ -606,7 +606,7 @@ void ItemAlbumModel::slotImageTagChange(const ImageTagChangeset& changeset)
 
                 for (int tagId : ids)
                 {
-                    Album* const a = AlbumManager::instance()->findTAlbum(tagId);
+                    const Album* const a = AlbumManager::instance()->findTAlbum(tagId);
 
                     if (a && (*it)->isAncestorOf(a))
                     {
@@ -667,7 +667,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
 
                             for (int albumId : ids)
                             {
-                                Album* const a = AlbumManager::instance()->findPAlbum(albumId);
+                                const Album* const a = AlbumManager::instance()->findPAlbum(albumId);
 
                                 if (a && (*it)->isAncestorOf(a))
                                 {
