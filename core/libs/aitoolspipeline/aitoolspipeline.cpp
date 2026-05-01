@@ -251,8 +251,8 @@ bool AIToolsPipeline::loader()
      * is at least 1. More instances are created by addMoreWorkers if needed.
      */
 
-    DNNModelBase* const model = DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"),
-                                                                      DNNModelUsage::DNNUsageAutoRotate);
+    const DNNModelBase* const model = DNNModelManager::instance()->getModel(QLatin1String("AutoRotate"),
+                                                                            DNNModelUsage::DNNUsageAutoRotate);
 
     MLPIPELINE_LOOP_START(MLPipelineStage::Loader, thisQueue);
     package = static_cast<AIToolsPipelinePackage*>(mlpackage);

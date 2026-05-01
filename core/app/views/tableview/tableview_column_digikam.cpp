@@ -473,7 +473,7 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
 
             const auto cols = s->tableViewModel->getColumnObjects();
 
-            for (TableViewColumn* const column : cols)
+            for (const TableViewColumn* const column : cols)
             {
                 if (column->getConfiguration().columnId == QLatin1String("thumbnail"))
                 {

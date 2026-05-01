@@ -292,7 +292,7 @@ ThumbnailSize TableView::getThumbnailSize() const
 
 Album* TableView::currentAlbum() const
 {
-    ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(s->imageModel);
+    const ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(s->imageModel);
 
     if (!albumModel)
     {

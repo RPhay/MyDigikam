@@ -118,7 +118,7 @@ bool RawImportNativePlugin::run(const QString& filePath, const DRawDecoding& def
 
 void RawImportNativePlugin::slotLoadRawFromTool()
 {
-    RawImport* const rawImport = dynamic_cast<RawImport*>(EditorToolIface::editorToolIface()->currentTool());
+    const RawImport* const rawImport = dynamic_cast<RawImport*>(EditorToolIface::editorToolIface()->currentTool());
 
     if (!rawImport)
     {

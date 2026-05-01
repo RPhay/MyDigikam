@@ -102,7 +102,7 @@ TableViewTreeView::~TableViewTreeView()
 
 bool TableViewTreeView::eventFilter(QObject* watched, QEvent* event)
 {
-    QHeaderView* const headerView = header();
+    const QHeaderView* const headerView = header();
 
     if ((watched == headerView) && (event->type() == QEvent::ContextMenu))
     {
@@ -303,7 +303,7 @@ Album* TableViewTreeView::albumAt(const QPoint& pos) const
 {
     Q_UNUSED(pos)
 
-    ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(s->imageModel);
+    const ItemAlbumModel* const albumModel = qobject_cast<ItemAlbumModel*>(s->imageModel);
 
     if (albumModel)
     {

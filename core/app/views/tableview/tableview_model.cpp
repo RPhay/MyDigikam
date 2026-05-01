@@ -196,7 +196,7 @@ int TableViewModel::columnCount(const QModelIndex& i) const
 
 QModelIndex TableViewModel::toItemFilterModelIndex(const QModelIndex& i) const
 {
-    Item* const item = itemFromIndex(i);
+    const Item* const item = itemFromIndex(i);
 
     if (!item)
     {
@@ -208,7 +208,7 @@ QModelIndex TableViewModel::toItemFilterModelIndex(const QModelIndex& i) const
 
 QModelIndex TableViewModel::toItemModelIndex(const QModelIndex& i) const
 {
-    Item* const item = itemFromIndex(i);
+    const Item* const item = itemFromIndex(i);
 
     if (!item)
     {
@@ -227,8 +227,8 @@ QVariant TableViewModel::data(const QModelIndex& i, int role) const
         return QVariant();
     }
 
-    const int columnNumber          = i.column();
-    TableViewColumn* const myColumn = d->columnObjects.at(columnNumber);
+    const int columnNumber                = i.column();
+    const TableViewColumn* const myColumn = d->columnObjects.at(columnNumber);
 
     return myColumn->data(item, role);
 }
@@ -320,7 +320,7 @@ QVariant TableViewModel::headerData(int section, Qt::Orientation orientation, in
         return QVariant();
     }
 
-    TableViewColumn* const myColumn = d->columnObjects.at(section);
+    const TableViewColumn* const myColumn = d->columnObjects.at(section);
 
     return myColumn->getTitle();
 }
@@ -663,8 +663,8 @@ void TableViewModel::slotDatabaseImageChanged(const ImageChangeset& imageChanges
 
     if ((d->sortColumn >= 0) && (d->sortColumn < d->columnObjects.count()))
     {
-        TableViewColumn* const sortColumnObject = d->columnObjects.at(d->sortColumn);
-        needToResort                            = sortColumnObject->columnAffectedByChangeset(imageChangeset);
+        const TableViewColumn* const sortColumnObject = d->columnObjects.at(d->sortColumn);
+        needToResort                                  = sortColumnObject->columnAffectedByChangeset(imageChangeset);
     }
 
     const auto ids = imageChangeset.ids();
@@ -1309,7 +1309,7 @@ Qt::DropActions TableViewModel::supportedDropActions() const
 
 QStringList TableViewModel::mimeTypes() const
 {
-    AbstractItemDragDropHandler* const ddHandler = s->imageModel->dragDropHandler();
+    const AbstractItemDragDropHandler* const ddHandler = s->imageModel->dragDropHandler();
 
     if (ddHandler)
     {
