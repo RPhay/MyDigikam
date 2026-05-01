@@ -68,6 +68,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                                  iconSize               = ApplicationSettings::instance()->getTreeViewIconSize();
     int                                  faceSize               = ApplicationSettings::instance()->getTreeViewFaceSize();
     int                                  minBlendSize           = 20;
@@ -183,7 +185,7 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, Relative
     }
     else if (album->isTrashAlbum())
     {
-        PAlbum* const palbum = static_cast<PAlbum*>(album->parent());
+        const PAlbum* const palbum = static_cast<PAlbum*>(album->parent());
 
         if (palbum)
         {
@@ -260,7 +262,7 @@ int AlbumThumbnailLoader::computeFaceSize(RelativeSize relativeSize) const
 
 QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
 {
-    QPixmap* cachePix = d->iconCache[qMakePair(name, size)];
+    const QPixmap* cachePix = d->iconCache[qMakePair(name, size)];
 
     if (!cachePix)
     {

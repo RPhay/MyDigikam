@@ -80,7 +80,7 @@ void AlbumManager::scanPAlbums()
 
     QSet<PAlbum*> topMostOldAlbums;
 
-    for (PAlbum* const album : std::as_const(oldAlbums))
+    for (PAlbum* const album : std::as_const(oldAlbums))        // cppcheck-suppress constVariablePointer
     {
         if (album->isTrashAlbum())
         {
@@ -401,7 +401,7 @@ PAlbum* AlbumManager::createPAlbum(PAlbum*        parent,
 
     // first check if we have a sibling album with the same name
 
-    PAlbum* child = static_cast<PAlbum*>(parent->firstChild());
+    const PAlbum* child = static_cast<PAlbum*>(parent->firstChild());
 
     while (child)
     {

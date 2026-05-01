@@ -47,8 +47,8 @@ inline uint qHash(const QList<Digikam::Album*>& key)
         return 0;
     }
 
-    Digikam::Album* const temp = key.first();
-    quint64 myint              = (unsigned long long)temp;
+    const Digikam::Album* const temp = key.first();
+    quint64 myint                    = (unsigned long long)temp;
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -62,10 +62,10 @@ inline uint qHash(const QList<Digikam::Album*>& key)
 
     for (int it = 1 ; it < key.size() ; ++it)
     {
-        Digikam::Album* const al = key.at(it);
-        quint64 myint2           = (unsigned long long)al;   // clazy:exclude=qt6-qhash-signature
+        const Digikam::Album* const al = key.at(it);
+        quint64 myint2                 = (unsigned long long)al;   // clazy:exclude=qt6-qhash-signature
 
-        value                   ^= ::qHash(myint2);
+        value                         ^= ::qHash(myint2);
     }
 
     return value;
@@ -108,6 +108,8 @@ public:
 
         return (albums == item.albums);
     }
+
+public:
 
     QList<Album*>                              albums;
     QWidget*                                   widget  = nullptr;
@@ -584,7 +586,7 @@ void AlbumHistory::slotImageSelected(const ItemInfoList& selectedImages)
 
 void AlbumHistory::slotClearSelectPAlbum(const ItemInfo& imageInfo)
 {
-    Album* const album = dynamic_cast<Album*>(AlbumManager::instance()->findPAlbum(imageInfo.albumId()));
+    Album* const album = dynamic_cast<Album*>(AlbumManager::instance()->findPAlbum(imageInfo.albumId()));   // cppcheck-suppress constVariablePointer
     QList<Album*> albums;
     albums << album;
 
@@ -596,7 +598,7 @@ void AlbumHistory::slotClearSelectPAlbum(const ItemInfo& imageInfo)
 
 void AlbumHistory::slotClearSelectTAlbum(int id)
 {
-    Album* const album = dynamic_cast<Album*>(AlbumManager::instance()->findTAlbum(id));
+    Album* const album = dynamic_cast<Album*>(AlbumManager::instance()->findTAlbum(id));    // cppcheck-suppress constVariablePointer
     QList<Album*> albums;
     albums << album;
 

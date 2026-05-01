@@ -35,7 +35,7 @@ void AlbumManager::scanTAlbums()
 
     while (it.current())
     {
-        TAlbum* const t = (TAlbum*)(*it);
+        TAlbum* const t = (TAlbum*)(*it);     // cppcheck-suppress constVariablePointer
         tmap.insert(t->id(), t);
         ++it;
     }
@@ -104,7 +104,7 @@ void AlbumManager::scanTAlbums()
 
         while (it2.current())
         {
-            TAlbum* const album = dynamic_cast<TAlbum*>(it2.current());
+            const TAlbum* const album = dynamic_cast<TAlbum*>(it2.current());
 
             if (album)
             {
@@ -322,7 +322,7 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
         return nullptr;
     }
 
-    TAlbum* const album = new TAlbum(name, id, false);
+    TAlbum* const album = new TAlbum(name, id, false);      // cppcheck-suppress constVariablePointer
     album->m_icon       = iconkde;
 
     insertTAlbum(album, parent);
@@ -385,7 +385,7 @@ bool AlbumManager::deleteTAlbum(TAlbum* album, QString& errMsg, QList<qlonglong>
     QList<int> toBeDeletedTagIds;
     toBeDeletedTagIds << album->id();
 
-    Album* subAlbum = nullptr;
+    const Album* subAlbum = nullptr;
     AlbumIterator it(album);
 
     while ((subAlbum = it.current()) != nullptr)
@@ -573,8 +573,8 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     Q_EMIT signalAlbumMoved(album);
     Q_EMIT signalAlbumsUpdated(Album::TAG);
 
-    d->currentlyMovingAlbum       = nullptr;
-    TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
+    d->currentlyMovingAlbum             = nullptr;
+    const TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
 
     if (personParentTag && personParentTag->isAncestorOf(album))
     {
@@ -755,7 +755,7 @@ QStringList AlbumManager::tagPaths(const QList<int>& tagIDs,
 
     for (QList<int>::const_iterator it = tagIDs.constBegin() ; it != tagIDs.constEnd() ; ++it)
     {
-        TAlbum* album = findTAlbum(*it);
+        const TAlbum* album = findTAlbum(*it);
 
         if (album)
         {
@@ -777,7 +777,7 @@ QStringList AlbumManager::tagNames(const QList<int>& tagIDs, bool includeInterna
 
     for (int id : std::as_const(tagIDs))
     {
-        TAlbum* const album = findTAlbum(id);
+        const TAlbum* const album = findTAlbum(id);
 
         if (album)
         {
@@ -800,7 +800,7 @@ QHash<int, QString> AlbumManager::tagPaths(bool leadingSlash, bool includeIntern
 
     while (it.current())
     {
-        TAlbum* const t = (TAlbum*)(*it);
+        const TAlbum* const t = (TAlbum*)(*it);
 
         if (includeInternal || !t->isInternalTag())
         {
@@ -820,7 +820,7 @@ QHash<int, QString> AlbumManager::tagNames(bool includeInternal) const
 
     while (it.current())
     {
-        TAlbum* const t = (TAlbum*)(*it);
+        const TAlbum* const t = (TAlbum*)(*it);
 
         if (includeInternal || !t->isInternalTag())
         {
@@ -849,8 +849,8 @@ int AlbumManager::findTopId(int tagId) const
         return -1;
     }
 
-    int topId     = tagId;
-    Album* parent = album;
+    int topId           = tagId;
+    const Album* parent = album;
 
     while (!parent->isRoot())
     {
@@ -869,7 +869,7 @@ AlbumList AlbumManager::findTagsWithProperty(const QString& property)
 
     for (int id : std::as_const(ids))
     {
-        TAlbum* const album = findTAlbum(id);
+        TAlbum* const album = findTAlbum(id);       // cppcheck-suppress constVariablePointer
 
         if (album)
         {
@@ -1108,7 +1108,7 @@ void AlbumManager::askUserForWriteChangedTAlbumToFiles(TAlbum* const album)
 
 void AlbumManager::askUserForWriteChangedTAlbumToFiles(const QList<qlonglong>& imageIds)
 {
-    MetaEngineSettings* const settings = MetaEngineSettings::instance();
+    const MetaEngineSettings* const settings = MetaEngineSettings::instance();
 
     if (
         (!settings->settings().saveTags && !settings->settings().saveFaceTags) ||

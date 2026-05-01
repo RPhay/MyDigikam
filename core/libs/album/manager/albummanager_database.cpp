@@ -102,7 +102,7 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
 
     QString databaseError;
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if      (params.internalServer && suggestedAlbumRoot.isEmpty())
     {

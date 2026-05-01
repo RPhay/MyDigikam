@@ -31,7 +31,7 @@ void AlbumManager::setCurrentAlbums(const QList<Album*>& albums)
     /**
      * Filter out the null pointers
      */
-    for (Album* const album : std::as_const(albums))
+    for (Album* const album : std::as_const(albums))        // cppcheck-suppress constVariablePointer
     {
         if (album)
         {
@@ -76,7 +76,7 @@ QHash<int, QString> AlbumManager::albumTitles() const
 
     while (it.current())
     {
-        PAlbum* const a = (PAlbum*)(*it);
+        const PAlbum* const a = (PAlbum*)(*it);
         hash.insert(a->id(), a->title());
         ++it;
     }
@@ -91,7 +91,7 @@ bool AlbumManager::isMovingAlbum(Album* album) const
 
 bool AlbumManager::hasDirectChildAlbumWithTitle(Album* parent, const QString& title)
 {
-    Album* sibling = parent->firstChild();
+    const Album* sibling = parent->firstChild();
 
     while (sibling)
     {

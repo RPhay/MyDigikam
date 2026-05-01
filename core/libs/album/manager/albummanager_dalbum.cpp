@@ -117,7 +117,7 @@ void AlbumManager::slotDatesJobData(const QHash<QDateTime, int>& datesStatHash)
 
     while (it.current())
     {
-        DAlbum* const a = (DAlbum*)(*it);
+        DAlbum* const a = (DAlbum*)(*it);       // cppcheck-suppress constVariablePointer
 
         if (a->range() == DAlbum::Month)
         {

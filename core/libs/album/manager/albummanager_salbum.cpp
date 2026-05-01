@@ -297,7 +297,7 @@ void AlbumManager::slotSearchChange(const SearchChangeset& changeset)
         {
             if (!d->currentAlbums.isEmpty())
             {
-                Album* const currentAlbum = d->currentAlbums.first();
+                const Album* const currentAlbum = d->currentAlbums.first();
 
                 if (
                     currentAlbum                            &&

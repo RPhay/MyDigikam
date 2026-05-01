@@ -239,7 +239,7 @@ void AlbumWatch::slotAlbumAdded(Album* a)
         return;
     }
 
-    PAlbum* const album         = static_cast<PAlbum*>(a);
+    const PAlbum* const album   = static_cast<PAlbum*>(a);
     CollectionLocation location = CollectionManager::instance()->locationForAlbumRootId(album->albumRootId());
 
     if (!location.isAvailable())
@@ -264,8 +264,8 @@ void AlbumWatch::slotAlbumAboutToBeDeleted(Album* a)
         return;
     }
 
-    PAlbum* const album = static_cast<PAlbum*>(a);
-    QString dir         = album->folderPath();
+    const PAlbum* const album = static_cast<PAlbum*>(a);
+    QString dir               = album->folderPath();
 
     if (dir.isEmpty())
     {

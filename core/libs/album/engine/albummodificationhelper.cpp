@@ -99,7 +99,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
         return nullptr;
     }
 
-    ApplicationSettings* settings = ApplicationSettings::instance();
+    const ApplicationSettings* settings = ApplicationSettings::instance();
 
     if (!settings)
     {
