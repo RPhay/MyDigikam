@@ -578,13 +578,11 @@ msgstr[1] "Presunúť %1 súbory do koša"
 msgstr[2] "Presunúť %1 súborov do koša"
 
 #: core/app/items/utils/contextmenuhelper_actions.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Pluralized, to scan using IQS"
-#| msgid "Image Quality Scan"
+#, kde-format
 msgctxt "@action:inmenu Pluralized, to scan using IQS"
 msgid "Image Quality Scan"
 msgid_plural "Image Quality Scan"
-msgstr[0] "Skenovanie kvality obrázkov"
+msgstr[0] "Skenovanie kvality obrázka"
 msgstr[1] "Skenovanie kvality obrázkov"
 msgstr[2] "Skenovanie kvality obrázkov"
 
