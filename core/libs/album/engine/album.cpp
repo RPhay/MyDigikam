@@ -325,7 +325,7 @@ bool Album::isRoot() const
     return m_root;
 }
 
-bool Album::isAncestorOf(Album* const album) const
+bool Album::isAncestorOf(const Album* const album) const
 {
     bool val       = false;
     const Album* a = album;

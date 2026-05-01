@@ -327,7 +327,7 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
 
     insertTAlbum(album, parent);
 
-    TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
+    const TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
 
     if (personParentTag && personParentTag->isAncestorOf(album))
     {
@@ -842,7 +842,7 @@ QList<int> AlbumManager::subTags(int tagId, bool recursive) const
 
 int AlbumManager::findTopId(int tagId) const
 {
-    TAlbum* const album = findTAlbum(tagId);
+    const TAlbum* const album = findTAlbum(tagId);
 
     if (!album || album->isInternalTag())
     {
