@@ -528,7 +528,7 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
 
     QReadLocker readLocker(&d->lock);
 
-    for (AlbumRootLocation* const location : std::as_const(d->locations))
+    for (const AlbumRootLocation* const location : std::as_const(d->locations))
     {
         // Hardwired and unavailable?
 
@@ -673,7 +673,7 @@ QList<CollectionLocation> CollectionManager::allLocations()
 
     QList<CollectionLocation> list;
 
-    for (AlbumRootLocation* const location : std::as_const(d->locations))
+    for (const AlbumRootLocation* const location : std::as_const(d->locations))
     {
         list << *location;
     }
@@ -687,7 +687,7 @@ QList<CollectionLocation> CollectionManager::allAvailableLocations()
 
     QList<CollectionLocation> list;
 
-    for (AlbumRootLocation* const location : std::as_const(d->locations))
+    for (const AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (location->status() == CollectionLocation::LocationAvailable)
         {
@@ -702,7 +702,7 @@ CollectionLocation CollectionManager::locationForAlbumRootId(int id)
 {
     QReadLocker readLocker(&d->lock);
 
-    AlbumRootLocation* const location = d->locations.value(id);
+    const AlbumRootLocation* const location = d->locations.value(id);
 
     if (location)
     {
@@ -733,7 +733,7 @@ CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& al
 
     QReadLocker readLocker(&d->lock);
 
-    for (AlbumRootLocation* const location : std::as_const(d->locations))
+    for (const AlbumRootLocation* const location : std::as_const(d->locations))
     {
         if (location->albumRootPath() == albumRootPath)
         {   // cppcheck-suppress useStlAlgorithm
@@ -753,7 +753,7 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 {
     QReadLocker readLocker(&d->lock);
 
-    for (AlbumRootLocation* const location : std::as_const(d->locations))
+    for (const AlbumRootLocation* const location : std::as_const(d->locations))
     {
         QString rootPath = location->albumRootPath();
         QString filePath = QDir::fromNativeSeparators(givenPath);
@@ -810,7 +810,7 @@ void CollectionManager::updateLocations()
 
     QList<SolidVolumeInfo> volumes = d->listVolumes();
 
-    for (AlbumRootLocation* const location : std::as_const(newLocations))
+    for (AlbumRootLocation* const location : std::as_const(newLocations))   // cppcheck-suppress constVariablePointer
     {
         oldStatus << location->status();
         bool available = false;
@@ -949,7 +949,7 @@ void CollectionManager::updateLocations()
 
     // Emit deleted old locations
 
-    for (AlbumRootLocation* const location : std::as_const(oldLocations))
+    for (AlbumRootLocation* const location : std::as_const(oldLocations))     // cppcheck-suppress constVariablePointer
     {
         CollectionLocation::Status statusOld = location->status();
         location->setStatus(CollectionLocation::LocationDeleted);
@@ -963,7 +963,7 @@ void CollectionManager::updateLocations()
 
     int i = 0;
 
-    for (AlbumRootLocation* const location : std::as_const(newLocations))
+    for (const AlbumRootLocation* const location : std::as_const(newLocations))
     {
         if (oldStatus.at(i) != location->status())
         {

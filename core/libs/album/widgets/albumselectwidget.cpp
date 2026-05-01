@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumModificationHelper* albumModificationHelper = nullptr;
     QAction*                 newAlbumAction          = nullptr;
 };
@@ -94,7 +96,7 @@ void AlbumSelectTreeView::slotNewAlbum()
 
     if (palbum)
     {
-        PAlbum* const createdAlbum = d->albumModificationHelper->slotAlbumNew(palbum);
+        PAlbum* const createdAlbum = d->albumModificationHelper->slotAlbumNew(palbum);  // cppcheck-suppress constVariablePointer
 
         if (createdAlbum)
         {
@@ -110,6 +112,8 @@ class Q_DECL_HIDDEN AlbumSelectWidget::Private
 public:
 
     Private() = default;
+
+public:
 
     PAlbum*                  complAlbum                 = nullptr;
     AlbumModel*              albumModel                 = nullptr;
@@ -173,7 +177,7 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
 
     // ------------------------------------------------------------------------------------
 
-    PAlbum* select = albumToSelect;
+    PAlbum* select = albumToSelect;     // cppcheck-suppress constVariablePointer
 
     if (!select)
     {
@@ -230,7 +234,7 @@ void AlbumSelectWidget::setCurrentAlbum(PAlbum* const albumToSelect)
 
 QUrl AlbumSelectWidget::currentAlbumUrl() const
 {
-    PAlbum* const palbum = d->albumTreeView->currentPAlbum();
+    const PAlbum* const palbum = d->albumTreeView->currentPAlbum();
 
     if (palbum)
     {
@@ -242,7 +246,7 @@ QUrl AlbumSelectWidget::currentAlbumUrl() const
 
 void AlbumSelectWidget::setCurrentAlbumUrl(const QUrl& albumUrl)
 {
-    PAlbum* const urlAlbum = AlbumManager::instance()->findPAlbum(albumUrl);
+    PAlbum* const urlAlbum = AlbumManager::instance()->findPAlbum(albumUrl);     // cppcheck-suppress constVariablePointer
 
     if (urlAlbum)
     {

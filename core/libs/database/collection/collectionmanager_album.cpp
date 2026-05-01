@@ -38,7 +38,7 @@ QString CollectionManager::albumRootPath(int id)
 {
     QReadLocker readLocker(&d->lock);
 
-    CollectionLocation* const location = d->locations.value(id);
+    const CollectionLocation* const location = d->locations.value(id);
 
     if (location && location->status() == CollectionLocation::LocationAvailable)
     {
@@ -52,7 +52,7 @@ QString CollectionManager::albumRootLabel(int id)
 {
     QReadLocker readLocker(&d->lock);
 
-    CollectionLocation* const location = d->locations.value(id);
+    const CollectionLocation* const location = d->locations.value(id);
 
     if (location && location->status() == CollectionLocation::LocationAvailable)
     {

@@ -256,7 +256,7 @@ void AbstractCheckableAlbumTreeView::doSaveState()
     const QList<Album*> checkedAlbums = checkableAlbumModel()->checkedAlbums();
     QStringList checkedIds;
 
-    for (Album* const album : std::as_const(checkedAlbums))
+    for (const Album* const album : std::as_const(checkedAlbums))
     {
         checkedIds << QString::number(album->id());
     }
@@ -271,7 +271,7 @@ void AbstractCheckableAlbumTreeView::doSaveState()
     const QList<Album*> partiallyCheckedAlbums = checkableAlbumModel()->partiallyCheckedAlbums();
     QStringList partiallyCheckedIds;
 
-    for (Album* const album : std::as_const(partiallyCheckedAlbums))
+    for (const Album* const album : std::as_const(partiallyCheckedAlbums))
     {
         partiallyCheckedIds << QString::number(album->id());
     }

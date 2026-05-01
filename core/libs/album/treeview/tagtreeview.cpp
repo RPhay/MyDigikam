@@ -132,7 +132,7 @@ TagModificationHelper* TagTreeView::tagModificationHelper() const
 
 void TagTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
 {
-    TAlbum* const album = AlbumManager::instance()->findTAlbum(albumId);
+    TAlbum* const album = AlbumManager::instance()->findTAlbum(albumId);    // cppcheck-suppress constVariablePointer
     setCurrentAlbums(QList<Album*>() << album, selectInAlbumManager);
 }
 
