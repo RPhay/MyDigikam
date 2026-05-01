@@ -119,7 +119,7 @@ BUGFIXES:
 091 --> 519389 - MariaDB/MySQL: missing index on Images.status causes full table scan on tag count, calendar, and People panel queries.
 092 --> 519390 - DB: ImageTagProperties.property should be VARCHAR, not TEXT -- TEXT prevents histogram stats and forces wrong query plans.
 093 --> 519443 - [master Qt6] UpdateSchemaFromV16ToV17 not implemented for QMYSQL / MariaDB.
-094 --> 
+094 --> 519650 - The program closes suddenly when opening geotag dialog.
 095 --> 
 096 --> 
 097 --> 
