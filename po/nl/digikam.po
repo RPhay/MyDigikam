@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:41+0000\n"
+"POT-Creation-Date: 2026-05-02 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 11:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -28490,17 +28490,17 @@ msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "Tags (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:66
+#: core/libs/album/widgets/albumselectwidget.cpp:68
 #, kde-format
 msgid "Create New Album"
 msgstr "Nieuw album aanmaken"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:158
+#: core/libs/album/widgets/albumselectwidget.cpp:162
 #, kde-format
 msgid "&New Album"
 msgstr "&Nieuw album"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:159
+#: core/libs/album/widgets/albumselectwidget.cpp:163
 #, kde-format
 msgid "Create new album"
 msgstr "Nieuw album aanmaken"

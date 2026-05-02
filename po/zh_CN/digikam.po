@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:41+0000\n"
+"POT-Creation-Date: 2026-05-02 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27264,17 +27264,17 @@ msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "标签 (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:66
+#: core/libs/album/widgets/albumselectwidget.cpp:68
 #, kde-format
 msgid "Create New Album"
 msgstr "创建新相册"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:158
+#: core/libs/album/widgets/albumselectwidget.cpp:162
 #, kde-format
 msgid "&New Album"
 msgstr "新建相册(&N)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:159
+#: core/libs/album/widgets/albumselectwidget.cpp:163
 #, kde-format
 msgid "Create new album"
 msgstr "创建新相册"

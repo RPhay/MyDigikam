@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:41+0000\n"
+"POT-Creation-Date: 2026-05-02 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -30246,17 +30246,17 @@ msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "Oznaka: %1"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:66
+#: core/libs/album/widgets/albumselectwidget.cpp:68
 #, kde-format
 msgid "Create New Album"
 msgstr "Napravi novi album"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:158
+#: core/libs/album/widgets/albumselectwidget.cpp:162
 #, kde-format
 msgid "&New Album"
 msgstr "&Novi album"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:159
+#: core/libs/album/widgets/albumselectwidget.cpp:163
 #, kde-format
 msgid "Create new album"
 msgstr "Kreiraj novi album"

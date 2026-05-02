@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extragear-graphics/digikam.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:41+0000\n"
+"POT-Creation-Date: 2026-05-02 00:41+0000\n"
 "PO-Revision-Date: 2026-02-20 19:31+0000\n"
 "Last-Translator: Aindriú Mac Giolla Eoin <aindriu80@yahoo.com>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -46,7 +46,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"3 : 4;\n"
 "X-Generator: Weblate 5.16\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -28539,17 +28539,17 @@ msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "Clibeanna (%1)"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:66
+#: core/libs/album/widgets/albumselectwidget.cpp:68
 #, kde-format
 msgid "Create New Album"
 msgstr "Cruthaigh Albam Nua"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:158
+#: core/libs/album/widgets/albumselectwidget.cpp:162
 #, kde-format
 msgid "&New Album"
 msgstr "&Albam Nua"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:159
+#: core/libs/album/widgets/albumselectwidget.cpp:163
 #, kde-format
 msgid "Create new album"
 msgstr "Cruthaigh albam nua"

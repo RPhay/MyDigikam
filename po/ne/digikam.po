@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-30 00:41+0000\n"
+"POT-Creation-Date: 2026-05-02 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -27250,17 +27250,17 @@ msgctxt "@title"
 msgid "Tags (%1)"
 msgstr "ट्याग: %1"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:66
+#: core/libs/album/widgets/albumselectwidget.cpp:68
 #, kde-format
 msgid "Create New Album"
 msgstr "नयाँ एल्बम सिर्जना गर्नुहोस्"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:158
+#: core/libs/album/widgets/albumselectwidget.cpp:162
 #, kde-format
 msgid "&New Album"
 msgstr "नयाँ एल्बम"
 
-#: core/libs/album/widgets/albumselectwidget.cpp:159
+#: core/libs/album/widgets/albumselectwidget.cpp:163
 #, fuzzy, kde-format
 msgid "Create new album"
 msgstr "नयाँ एल्बम सिर्जना गर्नुहोस्"
