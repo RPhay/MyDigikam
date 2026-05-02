@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool       cancelled   = false;
 
     int        orientation = MetaEngine::ORIENTATION_UNSPECIFIED;
@@ -88,10 +90,10 @@ void CalPainter::paint(int month)
         return;
     }
 
-    int width                   = device()->width();
-    int height                  = device()->height();
-    CalSettings* const settings = CalSettings::instance();
-    CalParams& params           = CalSettings::instance()->params;
+    int width                         = device()->width();
+    int height                        = device()->height();
+    const CalSettings* const settings = CalSettings::instance();
+    CalParams& params                 = CalSettings::instance()->params;
 
     // --------------------------------------------------
 

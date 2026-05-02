@@ -50,10 +50,11 @@ namespace DigikamGenericMetadataEditPlugin
 
 class Q_DECL_HIDDEN XMPEditWidget::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool                  modified          = false;
     bool                  isReadOnly        = false;
@@ -350,7 +351,7 @@ void XMPEditWidget::showPage(int page)
 
 int XMPEditWidget::activePageIndex() const
 {
-    DConfigDlgWdgItem* const cur = currentPage();
+    const DConfigDlgWdgItem* const cur = currentPage();
 
     if (cur == d->page_content)    return 0;
     if (cur == d->page_origin)     return 1;

@@ -53,6 +53,8 @@ public:
 
     Private() = default;
 
+public:
+
     GPSItemModel*                imageModel             = nullptr;
     GraphicsDImgView*            previewManager         = nullptr;
 
@@ -330,7 +332,7 @@ void GPSItemDetails::slotSetCurrentImage(const QModelIndex& index)
 
     if (index.isValid())
     {
-        GPSItemContainer* const item = d->imageModel->itemFromIndex(index);
+        const GPSItemContainer* const item = d->imageModel->itemFromIndex(index);
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << item;
 
         if (item)
@@ -363,7 +365,7 @@ void GPSItemDetails::slotModelDataChanged(const QModelIndex& topLeft, const QMod
         }
 
         GPSDataContainer gpsData;
-        GPSItemContainer* const item = d->imageModel->itemFromIndex(d->imageIndex);
+        const GPSItemContainer* const item = d->imageModel->itemFromIndex(d->imageIndex);
 
         if (item)
         {

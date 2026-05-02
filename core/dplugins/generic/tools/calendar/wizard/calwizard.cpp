@@ -174,7 +174,7 @@ DInfoInterface* CalWizard::iface() const
 
 void CalWizard::slotPageSelected(int curr)
 {
-    DWizardPage* const current = dynamic_cast<DWizardPage*>(page(curr));
+    const DWizardPage* const current = dynamic_cast<DWizardPage*>(page(curr));
 
     if (current == d->wPrintPage)
     {

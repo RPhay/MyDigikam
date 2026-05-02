@@ -48,10 +48,11 @@ namespace DigikamGenericMetadataEditPlugin
 
 class Q_DECL_HIDDEN EXIFEditWidget::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool                modified        = false;
     bool                isReadOnly      = false;
@@ -296,7 +297,7 @@ void EXIFEditWidget::showPage(int page)
 
 int EXIFEditWidget::activePageIndex() const
 {
-    DConfigDlgWdgItem* const cur = currentPage();
+    const DConfigDlgWdgItem* const cur = currentPage();
 
     if (cur == d->page_caption)  return 0;
     if (cur == d->page_datetime) return 1;

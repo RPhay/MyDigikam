@@ -51,10 +51,11 @@ namespace DigikamGenericMetadataEditPlugin
 
 class Q_DECL_HIDDEN IPTCEditWidget::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     bool                  modified          = false;
     bool                  isReadOnly        = false;
@@ -364,7 +365,7 @@ void IPTCEditWidget::showPage(int page)
 
 int IPTCEditWidget::activePageIndex() const
 {
-    DConfigDlgWdgItem* const cur = currentPage();
+    const DConfigDlgWdgItem* const cur = currentPage();
 
     if (cur == d->page_content)    return 0;
     if (cur == d->page_origin)     return 1;

@@ -778,8 +778,8 @@ void GeolocationEdit::closeEvent(QCloseEvent *e)
 
     for (int i = 0 ; i < d->imageModel->rowCount() ; ++i)
     {
-        const QModelIndex itemIndex  = d->imageModel->index(i, 0);
-        GPSItemContainer* const item = d->imageModel->itemFromIndex(itemIndex);
+        const QModelIndex itemIndex        = d->imageModel->index(i, 0);
+        const GPSItemContainer* const item = d->imageModel->itemFromIndex(itemIndex);
 
         if (item->isDirty() || item->isTagListDirty())
         {
@@ -834,7 +834,7 @@ void GeolocationEdit::slotImageActivated(const QModelIndex& index)
         return;
     }
 
-    GPSItemContainer* const item = d->imageModel->itemFromIndex(index);
+    const GPSItemContainer* const item = d->imageModel->itemFromIndex(index);
 
     if (!item)
     {
@@ -891,8 +891,8 @@ void GeolocationEdit::saveChanges(const bool closeAfterwards)
 
     for (int i = 0 ; i < d->imageModel->rowCount() ; ++i)
     {
-        const QModelIndex itemIndex  = d->imageModel->index(i, 0);
-        GPSItemContainer* const item = d->imageModel->itemFromIndex(itemIndex);
+        const QModelIndex itemIndex        = d->imageModel->index(i, 0);
+        const GPSItemContainer* const item = d->imageModel->itemFromIndex(itemIndex);
 
         if (item->isDirty() || item->isTagListDirty())
         {

@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName           = QLatin1String("shear Tool");
     const QString configAntiAliasingEntry   = QLatin1String("Anti Aliasing");
     const QString configMainHAngleEntry     = QLatin1String("Main HAngle");
@@ -254,15 +256,15 @@ void ShearTool::slotResetSettings()
 
 void ShearTool::preparePreview()
 {
-    float hAngle            = d->mainHAngleInput->value() + d->fineHAngleInput->value();
-    float vAngle            = d->mainVAngleInput->value() + d->fineVAngleInput->value();
-    bool antialiasing       = d->antialiasInput->isChecked();
-    QColor background       = Qt::black;
+    float hAngle                  = d->mainHAngleInput->value() + d->fineHAngleInput->value();
+    float vAngle                  = d->mainVAngleInput->value() + d->fineVAngleInput->value();
+    bool antialiasing             = d->antialiasInput->isChecked();
+    QColor background             = Qt::black;
 
-    ImageIface* const iface = d->previewWidget->imageIface();
-    int orgW                = iface->originalSize().width();
-    int orgH                = iface->originalSize().height();
-    DImg preview            = iface->preview();
+    const ImageIface* const iface = d->previewWidget->imageIface();
+    int orgW                      = iface->originalSize().width();
+    int orgH                      = iface->originalSize().height();
+    DImg preview                  = iface->preview();
     setFilter(new ShearFilter(&preview, this, hAngle, vAngle, antialiasing, background, orgW, orgH));
 }
 
@@ -296,7 +298,7 @@ void ShearTool::setPreviewImage()
 
     d->previewWidget->updatePreview();
 
-    ShearFilter* const tool = dynamic_cast<ShearFilter*>(filter());
+    const ShearFilter* const tool = dynamic_cast<ShearFilter*>(filter());
 
     if (tool)
     {
