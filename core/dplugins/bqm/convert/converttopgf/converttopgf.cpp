@@ -89,7 +89,7 @@ void ConvertToPGF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const PGFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const PGFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (PGFBox)
         {

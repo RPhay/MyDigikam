@@ -199,23 +199,23 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         observer->progressInfo(0.1F);
     }
 
-    uchar*  pixel        = nullptr;
-    uint16* pixel16      = nullptr;
-    double  alpha_factor = 0;
-    uint32  x            = 0;
-    uint32  y            = 0;
-    uint8   r8           = 0;
-    uint8   g8           = 0;
-    uint8   b8           = 0;
-    uint8   a8           = 0;
-    uint16  r16          = 0;
-    uint16  g16          = 0;
-    uint16  b16          = 0;
-    uint16  a16          = 0;
-    int     i            = 0;
+    uchar*  pixel         = nullptr;
+    const uint16* pixel16 = nullptr;
+    double  alpha_factor  = 0;
+    uint32  x             = 0;
+    uint32  y             = 0;
+    uint8   r8            = 0;
+    uint8   g8            = 0;
+    uint8   b8            = 0;
+    uint8   a8            = 0;
+    uint16  r16           = 0;
+    uint16  g16           = 0;
+    uint16  b16           = 0;
+    uint16  a16           = 0;
+    int     i             = 0;
 
-    uint8* buf           = reinterpret_cast<uint8*>(_TIFFmalloc(TIFFScanlineSize(tif)));
-    uint16* buf16        = nullptr;
+    uint8* buf            = reinterpret_cast<uint8*>(_TIFFmalloc(TIFFScanlineSize(tif)));
+    uint16* buf16         = nullptr;
 
     if (!buf)
     {

@@ -90,7 +90,7 @@ void ConvertToJPEG::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const JPGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const JPGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (JPGBox)
         {

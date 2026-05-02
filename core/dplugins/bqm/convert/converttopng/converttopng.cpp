@@ -101,7 +101,7 @@ void ConvertToPNG::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const PNGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const PNGBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (PNGBox)
         {

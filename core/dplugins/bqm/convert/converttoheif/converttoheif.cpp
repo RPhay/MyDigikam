@@ -92,7 +92,7 @@ void ConvertToHEIF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const HEIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const HEIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (HEIFBox)
         {

@@ -86,7 +86,7 @@ void ConvertToTIFF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const TIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const TIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (TIFBox)
         {

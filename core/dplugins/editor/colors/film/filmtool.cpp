@@ -469,9 +469,9 @@ void FilmTool::slotPickerColorButtonActived(bool checked)
 
 void FilmTool::slotAutoWhitePoint()
 {
-    ImageHistogram* const hist = d->levelsHistogramWidget->currentHistogram();
-    bool sixteenBit            = d->originalImage->sixteenBit();
-    int high_input[4];
+    const ImageHistogram* const hist = d->levelsHistogramWidget->currentHistogram();
+    bool  sixteenBit                 = d->originalImage->sixteenBit();
+    int   high_input[4];
 
     for (int channel = RedChannel ; channel <= BlueChannel ; ++channel)
     {

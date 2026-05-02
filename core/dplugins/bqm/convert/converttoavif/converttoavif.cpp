@@ -91,7 +91,7 @@ void ConvertToAVIF::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const AVIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const AVIFBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (AVIFBox)
         {

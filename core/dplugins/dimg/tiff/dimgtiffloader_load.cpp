@@ -338,7 +338,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     }
                 }
 
-                ushort* stripPtr = reinterpret_cast<ushort*>(strip.data());
+                ushort* stripPtr = reinterpret_cast<ushort*>(strip.data());         // cppcheck-suppress constVariablePointer
                 ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
                 ushort* p        = nullptr;
 
@@ -626,7 +626,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     break;
                 }
 
-                float* stripPtr = reinterpret_cast<float*>(strip.data());
+                const float* stripPtr = reinterpret_cast<float*>(strip.data());
 
                 for (int i = 0 ; i < (bytesRead / 4) ; ++i)
                 {
@@ -679,9 +679,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     }
                 }
 
-                float*  stripPtr = reinterpret_cast<float*>(strip.data());
-                ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
-                ushort* p        = nullptr;
+                const float*  stripPtr = reinterpret_cast<float*>(strip.data());
+                ushort*       dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
+                ushort*       p        = nullptr;
 
                 if      (
                          (samples_per_pixel == 3) &&
@@ -910,9 +910,9 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 pixelsRead      = (qint64)rows_to_read * (qint64)img.width;
 
-                uchar* stripPtr = reinterpret_cast<unsigned char*>(strip.data());
-                uchar* dataPtr  = reinterpret_cast<unsigned char*>(data.data() + offset);
-                uchar* p        = nullptr;
+                const uchar* stripPtr = reinterpret_cast<unsigned char*>(strip.data());
+                uchar*       dataPtr  = reinterpret_cast<unsigned char*>(data.data() + offset);
+                uchar*       p        = nullptr;
 
                 // Reverse red and blue
 

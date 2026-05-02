@@ -179,13 +179,13 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         }
     }
 
-    unsigned char* data  = imageData();
-    unsigned char* pixel = nullptr;
-    unsigned short r     = 0;
-    unsigned short g     = 0;
-    unsigned short b     = 0;
-    unsigned short a     = 0;
-    uint checkpoint      = 0;
+    unsigned char*       data       = imageData();
+    const unsigned char* pixel      = nullptr;
+    unsigned short       r          = 0;
+    unsigned short       g          = 0;
+    unsigned short       b          = 0;
+    unsigned short       a          = 0;
+    uint                 checkpoint = 0;
 
     for (y = 0 ; y < (long)imageHeight() ; ++y)
     {

@@ -198,8 +198,8 @@ void WhiteBalanceTool::slotAutoAdjustExposure()
     qApp->activeWindow()->setCursor(Qt::WaitCursor);
 
     ImageIface iface;
-    DImg* const img      = iface.original();
-    WBContainer settings = d->settingsView->settings();
+    const DImg* const img = iface.original();
+    WBContainer settings  = d->settingsView->settings();
     WBFilter::autoExposureAdjustement(img, settings.black, settings.expositionMain);
     d->settingsView->setSettings(settings);
 

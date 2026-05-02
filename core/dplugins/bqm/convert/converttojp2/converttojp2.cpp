@@ -92,7 +92,7 @@ void ConvertToJP2::slotSettingsChanged()
     if (m_changeSettings)
     {
         BatchToolSettings settings;
-        DImgLoaderSettings* const JP2Box = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const JP2Box = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (JP2Box)
         {

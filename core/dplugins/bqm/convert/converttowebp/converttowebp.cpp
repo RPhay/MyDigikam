@@ -91,7 +91,7 @@ void ConvertToWEBP::slotSettingsChanged()
 {
     if (m_changeSettings)
     {
-        DImgLoaderSettings* const WEBPBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
+        const DImgLoaderSettings* const WEBPBox = dynamic_cast<DImgLoaderSettings*>(m_settingsWidget);
 
         if (WEBPBox)
         {

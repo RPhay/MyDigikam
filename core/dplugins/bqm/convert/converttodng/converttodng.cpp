@@ -86,7 +86,7 @@ void ConvertToDNG::slotSettingsChanged()
     if (m_changeSettings)
     {
         BatchToolSettings settings;
-        DNGSettings* const DNGBox = dynamic_cast<DNGSettings*>(m_settingsWidget);
+        const DNGSettings* const DNGBox = dynamic_cast<DNGSettings*>(m_settingsWidget);
 
         if (DNGBox)
         {
