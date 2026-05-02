@@ -93,15 +93,17 @@ public:
 
     QVector<GeoDataCoordinates> m_vector;
 
-    mutable GeoDataLineString*  m_rangeCorrected = nullptr;
-    mutable bool                m_dirtyRange;
+    mutable GeoDataLineString*  m_rangeCorrected     = nullptr;
+    mutable bool                m_dirtyRange         = true;
 
-    mutable bool                m_dirtyBox; // tells whether there have been changes to the
+    mutable bool                m_dirtyBox           = true;    // tells whether there have been changes to the
+
     // GeoDataPoints since the LatLonAltBox has
     // been calculated. Saves performance.
+
     TessellationFlags           m_tessellationFlags;
-    mutable qreal               m_previousResolution;
-    mutable quint8              m_level;
+    mutable qreal               m_previousResolution = -1.0;
+    mutable quint8              m_level              = -1.0;
 };
 
 } // namespace Marble

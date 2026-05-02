@@ -44,6 +44,7 @@ public:
     {
         GeoDataPolygonPrivate* copy = new  GeoDataPolygonPrivate;
         *copy = *this;
+
         return copy;
     }
 
@@ -51,11 +52,13 @@ public:
 
     GeoDataLinearRing           outer;
     QVector<GeoDataLinearRing>  inner;
-    bool                        m_dirtyBox; // tells whether there have been changes to the
+    bool                        m_dirtyBox              = true;                     // tells whether there have been changes to the
+
     // GeoDataPoints since the LatLonAltBox has
     // been calculated. Saves performance.
+
     TessellationFlags           m_tessellationFlags;
-    int                         m_renderOrder;
+    int                         m_renderOrder           = 0;
 };
 
 } // namespace Marble
