@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Affinity Photo Editor
+X-Exec=Photo.exe %f
+X-Icon=Photo.exe
+MimeType=image/jpg;image/bmp;image/png;image/tiff;image/raw;image/heif;image/webp;image/dng;image/jxl;image/jp2
