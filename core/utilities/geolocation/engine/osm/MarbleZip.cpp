@@ -142,7 +142,6 @@ static void writeMSDosDate(uchar* dest, const QDateTime& dt)
         dest[2] = char(date);
         dest[3] = char(date >> 8);
     }
-
     else
     {
         dest[0] = 0;
@@ -224,7 +223,7 @@ static int inflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     z_stream stream;
     int err;
 
-    stream.next_in = (Bytef*)source;
+    stream.next_in  = const_cast<Bytef*>(source);
     stream.avail_in = (uInt)sourceLen;
 
     if ((uLong)stream.avail_in != sourceLen)
@@ -232,7 +231,7 @@ static int inflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
         return Z_BUF_ERROR;
     }
 
-    stream.next_out = dest;
+    stream.next_out  = dest;
     stream.avail_out = (uInt) * destLen;
 
     if ((uLong)stream.avail_out != *destLen)
@@ -241,9 +240,9 @@ static int inflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     }
 
     stream.zalloc = (alloc_func)nullptr;
-    stream.zfree = (free_func)nullptr;
+    stream.zfree  = (free_func)nullptr;
 
-    err = inflateInit2(&stream, -MAX_WBITS);
+    err           = inflateInit2(&stream, -MAX_WBITS);
 
     if (err != Z_OK)
     {
@@ -256,7 +255,7 @@ static int inflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     {
         inflateEnd(&stream);
 
-        if (err == Z_NEED_DICT || (err == Z_BUF_ERROR && stream.avail_in == 0))
+        if ((err == Z_NEED_DICT) || ((err == Z_BUF_ERROR) && (stream.avail_in == 0)))
         {
             return Z_DATA_ERROR;
         }
@@ -265,8 +264,8 @@ static int inflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     }
 
     *destLen = stream.total_out;
+    err      = inflateEnd(&stream);
 
-    err = inflateEnd(&stream);
     return err;
 }
 
@@ -275,9 +274,9 @@ static int deflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     z_stream stream;
     int err;
 
-    stream.next_in = (Bytef*)source;
-    stream.avail_in = (uInt)sourceLen;
-    stream.next_out = dest;
+    stream.next_in   = const_cast<Bytef*>(source);
+    stream.avail_in  = (uInt)sourceLen;
+    stream.next_out  = dest;
     stream.avail_out = (uInt) * destLen;
 
     if ((uLong)stream.avail_out != *destLen)
@@ -286,7 +285,7 @@ static int deflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     }
 
     stream.zalloc = (alloc_func)nullptr;
-    stream.zfree = (free_func)nullptr;
+    stream.zfree  = (free_func)nullptr;
     stream.opaque = (voidpf)nullptr;
 
     err = deflateInit2(&stream, Z_DEFAULT_COMPRESSION, Z_DEFLATED, -MAX_WBITS, 8, Z_DEFAULT_STRATEGY);
@@ -639,23 +638,23 @@ void MarbleZipReaderPrivate::scanFiles()
 
     // find EndOfDirectory header
 
-    int i = 0;
+    int i                  = 0;
     int start_of_directory = -1;
-    int num_dir_entries = 0;
+    int num_dir_entries    = 0;
     EndOfDirectory eod;
 
     while (start_of_directory == -1)
     {
         int pos = device->size() - sizeof(EndOfDirectory) - i;
 
-        if (pos < 0 || i > 65535)
+        if ((pos < 0) || (i > 65535))
         {
             qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: EndOfDirectory not found";
             return;
         }
 
         device->seek(pos);
-        device->read((char*)&eod, sizeof(EndOfDirectory));
+        device->read(reinterpret_cast<char*>(&eod), sizeof(EndOfDirectory));
 
         if (readUInt(eod.signature) == 0x06054b50)
         {
@@ -668,8 +667,11 @@ void MarbleZipReaderPrivate::scanFiles()
     // have the eod
 
     start_of_directory = readUInt(eod.dir_start_offset);
-    num_dir_entries = readUShort(eod.num_dir_entries);
-    qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::asprintf("start_of_directory at %d, num_dir_entries=%d", start_of_directory, num_dir_entries);
+    num_dir_entries    = readUShort(eod.num_dir_entries);
+
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::asprintf("start_of_directory at %d, num_dir_entries=%d",
+                                                        start_of_directory, num_dir_entries);
+
     int comment_length = readUShort(eod.comment_length);
 
     if (comment_length != i)
@@ -679,13 +681,12 @@ void MarbleZipReaderPrivate::scanFiles()
 
     comment = device->read(qMin(comment_length, i));
 
-
     device->seek(start_of_directory);
 
-    for (i = 0; i < num_dir_entries; ++i)
+    for (i = 0 ; i < num_dir_entries ; ++i)
     {
         FileHeader header;
-        int read = device->read((char*) &header.h, sizeof(CentralFileHeader));
+        int read = device->read(reinterpret_cast<char*>(&header.h), sizeof(CentralFileHeader));
 
         if (read < (int)sizeof(CentralFileHeader))
         {
@@ -699,7 +700,7 @@ void MarbleZipReaderPrivate::scanFiles()
             break;
         }
 
-        int l = readUShort(header.h.file_name_length);
+        int l            = readUShort(header.h.file_name_length);
         header.file_name = device->read(l);
 
         if (header.file_name.length() != l)
@@ -756,6 +757,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     device->seek(start_of_directory);
 
     // don't compress small files
+
     MarbleZipWriter::CompressionPolicy compression = compressionPolicy;
 
     if (compressionPolicy == MarbleZipWriter::AutoCompress)
@@ -764,7 +766,6 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
         {
             compression = MarbleZipWriter::NeverCompress;
         }
-
         else
         {
             compression = MarbleZipWriter::AlwaysCompress;
@@ -819,7 +820,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
 
     writeUInt(header.h.compressed_size, data.length());
     uint crc_32 = ::crc32(0, nullptr, 0);
-    crc_32 = ::crc32(crc_32, (const uchar*)contents.constData(), contents.length());
+    crc_32      = ::crc32(crc_32, (const uchar*)contents.constData(), contents.length());
     writeUInt(header.h.crc_32, crc_32);
 
     header.file_name = fileName.toLocal8Bit();
@@ -859,15 +860,14 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     writeUInt(header.h.external_file_attributes, mode << 16);
     writeUInt(header.h.offset_local_header, start_of_directory);
 
-
     fileHeaders.append(header);
 
-    LocalFileHeader h = header.h.toLocalHeader();
-    device->write((const char*)&h, sizeof(LocalFileHeader));
+    LocalFileHeader h  = header.h.toLocalHeader();
+    device->write(reinterpret_cast<const char*>(&h), sizeof(LocalFileHeader));
     device->write(header.file_name);
     device->write(data);
     start_of_directory = device->pos();
-    dirtyFileTree = true;
+    dirtyFileTree      = true;
 }
 
 //////////////////////////////  Reader
@@ -948,31 +948,27 @@ MarbleZipReader::MarbleZipReader(const QString& archive, QIODevice::OpenMode mod
     {
         status = NoError;
     }
-
     else
     {
-        if (f->error() == QFile::ReadError)
+        if      (f->error() == QFile::ReadError)
         {
             status = FileReadError;
         }
-
         else if (f->error() == QFile::OpenError)
         {
             status = FileOpenError;
         }
-
         else if (f->error() == QFile::PermissionsError)
         {
             status = FilePermissionsError;
         }
-
         else
         {
             status = FileError;
         }
     }
 
-    d = new MarbleZipReaderPrivate(f.get(), /*ownDevice=*/true);
+    d         = new MarbleZipReaderPrivate(f.get(), /*ownDevice=*/true);
     f.release();
     d->status = status;
 }
@@ -1036,7 +1032,7 @@ QList<MarbleZipReader::FileInfo> MarbleZipReader::fileInfoList() const
     d->scanFiles();
     QList<MarbleZipReader::FileInfo> files;
 
-    for (int i = 0; i < d->fileHeaders.size(); ++i)
+    for (int i = 0 ; i < d->fileHeaders.size() ; ++i)
     {
         MarbleZipReader::FileInfo fi;
         d->fillFileInfo(i, fi);
@@ -1044,7 +1040,6 @@ QList<MarbleZipReader::FileInfo> MarbleZipReader::fileInfoList() const
     }
 
     return files;
-
 }
 
 /*!
@@ -1053,6 +1048,7 @@ QList<MarbleZipReader::FileInfo> MarbleZipReader::fileInfoList() const
 int MarbleZipReader::count() const
 {
     d->scanFiles();
+
     return d->fileHeaders.count();
 }
 
@@ -1068,7 +1064,7 @@ MarbleZipReader::FileInfo MarbleZipReader::entryInfoAt(int index) const
     d->scanFiles();
     MarbleZipReader::FileInfo fi;
 
-    if (index >= 0 && index < d->fileHeaders.count())
+    if ((index >= 0) && (index < d->fileHeaders.count()))
     {
         d->fillFileInfo(index, fi);
     }
@@ -1084,7 +1080,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     d->scanFiles();
     int i;
 
-    for (i = 0; i < d->fileHeaders.size(); ++i)
+    for (i = 0 ; i < d->fileHeaders.size() ; ++i)
     {
         if (QString::fromLocal8Bit(d->fileHeaders.at(i).file_name) == fileName)
         {
@@ -1097,17 +1093,17 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
         return QByteArray();
     }
 
-    FileHeader header = d->fileHeaders.at(i);
+    FileHeader header     = d->fileHeaders.at(i);
 
-    int compressed_size = readUInt(header.h.compressed_size);
+    int compressed_size   = readUInt(header.h.compressed_size);
     int uncompressed_size = readUInt(header.h.uncompressed_size);
-    int start = readUInt(header.h.offset_local_header);
+    int start             = readUInt(header.h.offset_local_header);
 
     //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("uncompressing file %d: local header at %d", i, start);
 
     d->device->seek(start);
     LocalFileHeader lh;
-    d->device->read((char*)&lh, sizeof(LocalFileHeader));
+    d->device->read(reinterpret_cast<char*>(&lh), sizeof(LocalFileHeader));
     uint skip = readUShort(lh.file_name_length) + readUShort(lh.extra_field_length);
     d->device->seek(d->device->pos() + skip);
 
@@ -1119,7 +1115,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
 
     QByteArray compressed = d->device->read(compressed_size);
 
-    if (compression_method == 0)
+    if      (compression_method == 0)
     {
         // no compression
 
@@ -1127,7 +1123,6 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
 
         return compressed;
     }
-
     else if (compression_method == 8)
     {
         // Deflate
@@ -1173,6 +1168,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     }
 
     qCWarning(DIGIKAM_GEOENGINE_LOG) << "QZip: Unknown compression method";
+
     return QByteArray();
 }
 
@@ -1323,31 +1319,27 @@ MarbleZipWriter::MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mo
     {
         status = MarbleZipWriter::NoError;
     }
-
     else
     {
-        if (f->error() == QFile::WriteError)
+        if      (f->error() == QFile::WriteError)
         {
             status = MarbleZipWriter::FileWriteError;
         }
-
         else if (f->error() == QFile::OpenError)
         {
             status = MarbleZipWriter::FileOpenError;
         }
-
         else if (f->error() == QFile::PermissionsError)
         {
             status = MarbleZipWriter::FilePermissionsError;
         }
-
         else
         {
             status = MarbleZipWriter::FileError;
         }
     }
 
-    d = new MarbleZipWriterPrivate(f.get(), /*ownDevice=*/true);
+    d         = new MarbleZipWriterPrivate(f.get(), /*ownDevice=*/true);
     f.release();
     d->status = status;
 }
@@ -1512,7 +1504,7 @@ void MarbleZipWriter::addFile(const QString& fileName, QIODevice* device)
 {
     Q_ASSERT(device);
     QIODevice::OpenMode mode = device->openMode();
-    bool opened = false;
+    bool opened              = false;
 
     if ((mode & QIODevice::ReadOnly) == 0)
     {
@@ -1521,6 +1513,7 @@ void MarbleZipWriter::addFile(const QString& fileName, QIODevice* device)
         if (! device->open(QIODevice::ReadOnly))
         {
             d->status = FileOpenError;
+
             return;
         }
     }
@@ -1569,6 +1562,7 @@ void MarbleZipWriter::close()
     if (!(d->device->openMode() & QIODevice::WriteOnly))
     {
         d->device->close();
+
         return;
     }
 
@@ -1577,10 +1571,11 @@ void MarbleZipWriter::close()
     d->device->seek(d->start_of_directory);
 
     // write new directory
-    for (int i = 0; i < d->fileHeaders.size(); ++i)
+
+    for (int i = 0 ; i < d->fileHeaders.size() ; ++i)
     {
         const FileHeader& header = d->fileHeaders.at(i);
-        d->device->write((const char*)&header.h, sizeof(CentralFileHeader));
+        d->device->write(reinterpret_cast<const char*>(&header.h), sizeof(CentralFileHeader));
         d->device->write(header.file_name);
         d->device->write(header.extra_field);
         d->device->write(header.file_comment);
@@ -1603,7 +1598,7 @@ void MarbleZipWriter::close()
     writeUInt(eod.dir_start_offset, d->start_of_directory);
     writeUShort(eod.comment_length, d->comment.length());
 
-    d->device->write((const char*)&eod, sizeof(EndOfDirectory));
+    d->device->write(reinterpret_cast<const char*>(&eod), sizeof(EndOfDirectory));
     d->device->write(d->comment);
     d->device->close();
 }
