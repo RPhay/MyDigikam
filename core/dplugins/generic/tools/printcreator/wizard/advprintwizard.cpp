@@ -304,7 +304,7 @@ void AdvPrintWizard::previewPhotos()
 
             photo->m_cropRegion.setRect(-1, -1, -1, -1);
             photo->m_rotation  = 0;
-            QRect* const curr2 = s->m_layouts.at(count + 1);
+            const QRect* const curr2 = s->m_layouts.at(count + 1);
             photo->updateCropRegion(curr2->width(),
                                     curr2->height(),
                                     s->m_autoRotate);
