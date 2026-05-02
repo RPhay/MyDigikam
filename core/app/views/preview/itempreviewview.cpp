@@ -1031,18 +1031,19 @@ void ItemPreviewView::dropEvent(QDropEvent* e)
         }
 
         QMenu popMenu(this);
-        QAction* const assignToThisAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")), i18n("Assign Tags to &This Item"));
+        const QAction* const assignToThisAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                                    i18n("Assign Tags to &This Item"));
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
         popMenu.setMouseTracking(true);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
-        QAction* const choice             = popMenu.exec(this->mapToGlobal(e->position().toPoint()));
+        const QAction* const choice             = popMenu.exec(this->mapToGlobal(e->position().toPoint()));
 
 #else
 
-        QAction* const choice             = popMenu.exec(this->mapToGlobal(e->pos()));
+        const QAction* const choice             = popMenu.exec(this->mapToGlobal(e->pos()));
 
 #endif
 

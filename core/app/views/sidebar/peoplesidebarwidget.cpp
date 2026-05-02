@@ -234,7 +234,7 @@ void PeopleSideBarWidget::doSaveState()
 
 void PeopleSideBarWidget::applySettings()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
     d->tagFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 

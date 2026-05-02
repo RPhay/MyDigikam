@@ -420,7 +420,7 @@ void DigikamApp::show()
 
     // Init album icon view zoom factor.
 
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
 
     slotThumbSizeChanged(settings->getDefaultIconSize());
     slotZoomSliderChanged(settings->getDefaultIconSize());
@@ -618,8 +618,8 @@ void DigikamApp::slotAlbumSelected(Album* album)
 {
     if (album && !album->isTrashAlbum())
     {
-        PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
-        bool writeMetadata   = MetaEngineSettings::instance()->isMetadataWriteEnabled();
+        const PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
+        bool writeMetadata         = MetaEngineSettings::instance()->isMetadataWriteEnabled();
 
         if (album->type() != Album::PHYSICAL || !palbum)
         {
@@ -727,7 +727,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         listAllFileSize += info.fileSize();
     }
 
-    Album* const album = d->view->currentAlbum();
+    const Album* const album = d->view->currentAlbum();
 
     if (album && (album->type() == Album::PHYSICAL))
     {

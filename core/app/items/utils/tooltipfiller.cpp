@@ -56,13 +56,13 @@ namespace Digikam
 QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 {
     QString              str;
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
     DToolTipStyleSheet   cnt(settings->getToolTipsFont());
 
-    ImageCommonContainer commonInfo     = info.imageCommonContainer();
-    ImageMetadataContainer photoInfo    = info.imageMetadataContainer();
-    VideoMetadataContainer videoInfo    = info.videoMetadataContainer();
-    QString tip                         = cnt.tipHeader;
+    ImageCommonContainer commonInfo           = info.imageCommonContainer();
+    ImageMetadataContainer photoInfo          = info.imageMetadataContainer();
+    VideoMetadataContainer videoInfo          = info.videoMetadataContainer();
+    QString tip                               = cnt.tipHeader;
 
     // -- File properties ----------------------------------------------
 
@@ -464,7 +464,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
         if (settings->getToolTipsShowAlbumName())
         {
-            PAlbum* const album = AlbumManager::instance()->findPAlbum(info.albumId());
+            const PAlbum* const album = AlbumManager::instance()->findPAlbum(info.albumId());
 
             if (album)
             {
@@ -607,9 +607,9 @@ QString ToolTipFiller::albumTipContents(PAlbum* const album, int count)
     }
 
     QString                    str;
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
     DToolTipStyleSheet         cnt(settings->getToolTipsFont());
-    QString                    tip      = cnt.tipHeader;
+    QString                    tip            = cnt.tipHeader;
 
     if (
         settings->getToolTipsShowAlbumTitle()      ||

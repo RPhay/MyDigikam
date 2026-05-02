@@ -202,8 +202,8 @@ void DigikamApp::slotCameraRemoved(QAction* cAction)
 
 void DigikamApp::slotCameraAutoDetect()
 {
-    bool retry              = false;
-    CameraType* const ctype = d->cameraList->autoDetect(retry);
+    bool retry                    = false;
+    const CameraType* const ctype = d->cameraList->autoDetect(retry);
 
     if (!ctype && retry)
     {

@@ -264,7 +264,7 @@ void TagViewSideBarWidget::doSaveState()
 
 void TagViewSideBarWidget::applySettings()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
     d->tagFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
 
@@ -307,7 +307,7 @@ void TagViewSideBarWidget::setNoTagsAlbum()
     }
 
     QString title = SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch);
-    SAlbum* album = AlbumManager::instance()->findSAlbum(title);
+    SAlbum* album = AlbumManager::instance()->findSAlbum(title);                // cppcheck-suppress constVariablePointer
 
     int id;
 

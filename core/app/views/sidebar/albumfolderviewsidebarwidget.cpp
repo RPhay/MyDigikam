@@ -48,6 +48,8 @@ public:
 
     Private() = default;
 
+public:
+
     AlbumModificationHelper* albumModificationHelper = nullptr;
     AlbumSelectionTreeView*  albumFolderView         = nullptr;
     SearchTextBarDb*         searchTextBar           = nullptr;
@@ -110,7 +112,7 @@ void AlbumFolderViewSideBarWidget::doSaveState()
 
 void AlbumFolderViewSideBarWidget::applySettings()
 {
-    ApplicationSettings* const settings = ApplicationSettings::instance();
+    const ApplicationSettings* const settings = ApplicationSettings::instance();
     d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
     d->albumFolderView->setExpandNewCurrentItem(settings->getExpandNewCurrentItem());
 }
