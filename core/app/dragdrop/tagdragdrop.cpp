@@ -158,7 +158,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
 
 Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelIndex& dropIndex)
 {
-    TAlbum* const destAlbum = model()->talbumForIndex(dropIndex);
+    const TAlbum* const destAlbum = model()->talbumForIndex(dropIndex);
 
     if      (DTagListDrag::canDecode(e->mimeData()))
     {
@@ -173,7 +173,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
             return Qt::IgnoreAction;
         }
 
-        TAlbum* const droppedAlbum = AlbumManager::instance()->findTAlbum(droppedId.first());
+        const TAlbum* const droppedAlbum = AlbumManager::instance()->findTAlbum(droppedId.first());
 
         if (!droppedAlbum)
         {
@@ -185,7 +185,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
 
         if (!destAlbum)
         {
-            Album* const palbum = droppedAlbum->parent();
+            const Album* const palbum = droppedAlbum->parent();
 
             if (!palbum)
             {
@@ -251,7 +251,7 @@ QMimeData* TagDragDropHandler::createMimeData(const QList<Album*>& albums)
 
     QList<int> ids;
 
-    for (Album* const album : std::as_const(albums))
+    for (const Album* const album : std::as_const(albums))
     {
         ids << album->id();
     }
@@ -262,12 +262,12 @@ QMimeData* TagDragDropHandler::createMimeData(const QList<Album*>& albums)
 void TagDragDropHandler::slotMoveMergeTags()
 {
     QMenu popMenu(m_view);
-    QAction* const gotoAction  = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
-    QAction* const mergeAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));
+    const QAction* const gotoAction  = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
+    const QAction* const mergeAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("merge")),   i18n("M&erge Here"));
     popMenu.addSeparator();
     popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-    QAction* const choice      = popMenu.exec(m_position);
+    const QAction* const choice      = popMenu.exec(m_position);
 
     for (int index = 0 ; index < m_tagIDs.count() ; ++index)
     {
@@ -385,12 +385,12 @@ void TagDragDropHandler::slotConfirmPerson()
         else
         {
             QMenu popMenu(m_view);
-            QAction* setAction           = nullptr;
-            QAction* const confirmAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                             i18np("Confirm face name '%2' to Item",
-                                                                   "Confirm face name '%2' to Items",
-                                                                   selectedIndexes.size(),
-                                                                   targetName));
+            const QAction* setAction           = nullptr;
+            const QAction* const confirmAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                                   i18np("Confirm face name '%2' to Item",
+                                                                         "Confirm face name '%2' to Items",
+                                                                         selectedIndexes.size(),
+                                                                         targetName));
 
             if (selectedIndexes.size() == 1)
             {
@@ -400,9 +400,9 @@ void TagDragDropHandler::slotConfirmPerson()
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-            QAction* const choice = popMenu.exec(m_position);
-            confirm               = (choice == confirmAction);
-            set                   = (setAction && (choice == setAction));
+            const QAction* const choice = popMenu.exec(m_position);
+            confirm                     = (choice == confirmAction);
+            set                         = (setAction && (choice == setAction));
         }
 
         if      (confirm)
@@ -435,17 +435,17 @@ void TagDragDropHandler::slotConfirmPerson()
         else
         {
             QMenu popMenu(m_view);
-            QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                            i18np("Change face name from '%2' to '%3'",
-                                                                  "Change face names from '%2' to '%3'",
-                                                                  faceNames.count(),
-                                                                  faceNames.first(),
-                                                                  targetName));
+            const QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                                  i18np("Change face name from '%2' to '%3'",
+                                                                        "Change face names from '%2' to '%3'",
+                                                                        faceNames.count(),
+                                                                        faceNames.first(),
+                                                                        targetName));
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-            QAction* const choice       = popMenu.exec(m_position);
-            assign                      = (choice == assignAction);
+            const QAction* const choice       = popMenu.exec(m_position);
+            assign                            = (choice == assignAction);
         }
 
         if (assign)
@@ -509,7 +509,7 @@ void TagDragDropHandler::slotAssignTagItem()
 
     for (int it = 0 ; it < selTags.count() ; ++it)
     {
-        TAlbum* const temp = dynamic_cast<TAlbum*>(selTags.at(it));
+        const TAlbum* const temp = dynamic_cast<TAlbum*>(selTags.at(it));
 
         if (temp)
         {
@@ -533,12 +533,12 @@ void TagDragDropHandler::slotAssignTagItem()
     else
     {
         QMenu popMenu(m_view);
-        QAction* setAction          = nullptr;
-        QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                        i18np("Assign Tag '%2' to Items",
-                                                              "Assign Tag(s) '%2' to Items",
-                                                             tagNames.count(),
-                                                             tagNames.join(QLatin1String(", "))));
+        const QAction* setAction          = nullptr;
+        const QAction* const assignAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                              i18np("Assign Tag '%2' to Items",
+                                                                    "Assign Tag(s) '%2' to Items",
+                                                                    tagNames.count(),
+                                                                    tagNames.join(QLatin1String(", "))));
 
         if (hasSameTopId)
         {
@@ -548,9 +548,9 @@ void TagDragDropHandler::slotAssignTagItem()
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-        QAction* const choice = popMenu.exec(m_position);
-        assign                = (choice == assignAction);
-        set                   = (setAction && (choice == setAction));
+        const QAction* const choice = popMenu.exec(m_position);
+        assign                      = (choice == assignAction);
+        set                         = (setAction && (choice == setAction));
     }
 
     if      (assign)
