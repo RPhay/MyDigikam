@@ -50,7 +50,7 @@ class Q_DECL_HIDDEN KBiAssociativeContainer
     template<typename Container, typename T, typename U>
     struct Q_DECL_HIDDEN _iterator_impl_ctor : public Container::iterator
     {
-        _iterator_impl_ctor(typename Container::iterator it);
+        explicit _iterator_impl_ctor(typename Container::iterator it);
     };
 
     template<typename T, typename U>
@@ -87,26 +87,34 @@ public:
     {
     public:
 
-        explicit inline _iterator(void* data) : Container::iterator(data)
+        explicit inline _iterator(void* data)
+            : Container::iterator(data)
         {
         }
 
-        /* implicit */ _iterator(const typename Container::iterator it)
+        // cppcheck-suppress noExplicitConstructor
+        _iterator(const typename Container::iterator it)
             : _iterator_impl_ctor<Container, typename Container::key_type, typename Container::mapped_type>(it)
         {
-
         }
 
+        /**
+         * NOTE: we will always handle a QMap or QHash object here. The inline functions are fine.
+         */
+
+        // cppcheck-suppress returnTempReference
         inline const typename Container::mapped_type& value() const
         {
             return Container::iterator::value();
         }
 
+        // cppcheck-suppress returnTempReference
         inline const typename Container::mapped_type& operator*() const
         {
             return Container::iterator::operator*();
         }
 
+        // cppcheck-suppress CastIntegerToAddressAtReturn
         inline const typename Container::mapped_type* operator->() const
         {
             return Container::iterator::operator->();
@@ -623,7 +631,7 @@ struct Q_DECL_HIDDEN KBiHash : public KBiAssociativeContainer<QHash<T, U>, QHash
     {
     }
 
-    KBiHash(const KBiAssociativeContainer<QHash<T, U>, QHash<U, T> >& container)
+    explicit KBiHash(const KBiAssociativeContainer<QHash<T, U>, QHash<U, T> >& container)
         : KBiAssociativeContainer<QHash<T, U>, QHash<U, T> > (container)
     {
     }
@@ -655,10 +663,9 @@ struct Q_DECL_HIDDEN KHash2Map : public KBiAssociativeContainer<QHash<T, U>, QMa
     {
     }
 
-    KHash2Map(const KBiAssociativeContainer<QHash<T, U>, QMap<U, T> >& container)
+    explicit KHash2Map(const KBiAssociativeContainer<QHash<T, U>, QMap<U, T> >& container)
         : KBiAssociativeContainer<QHash<T, U>, QMap<U, T> > (container)
     {
-
     }
 
     typename KBiAssociativeContainer<QHash<T, U>, QMap<U, T> >::right_iterator rightLowerBound(const U& key)
