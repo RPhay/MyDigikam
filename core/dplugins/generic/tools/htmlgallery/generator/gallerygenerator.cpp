@@ -504,13 +504,13 @@ public:
 
         for ( ; it != end ; ++it)
         {
-            AbstractThemeParameter* const themeParameter = *it;
-            QByteArray internalName                      = themeParameter->internalName();
-            QString value                                = info->getThemeParameterValue(themeInternalName,
-                                                                                        QLatin1String(internalName),
-                                                                                        themeParameter->defaultValue());
+            const AbstractThemeParameter* const themeParameter = *it;
+            QByteArray internalName                            = themeParameter->internalName();
+            QString value                                      = info->getThemeParameterValue(themeInternalName,
+                                                                                              QLatin1String(internalName),
+                                                                                              themeParameter->defaultValue());
 
-            map[internalName]                            = makeXsltParam(value);
+            map[internalName]                                  = makeXsltParam(value);
         }
     }
 

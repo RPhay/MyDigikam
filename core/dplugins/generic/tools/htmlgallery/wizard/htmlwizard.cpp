@@ -54,6 +54,8 @@ public:
 
     Private() = default;
 
+public:
+
     GalleryInfo*           info                 = nullptr;
     DConfigDlgMngr*        configManager        = nullptr;
 
@@ -116,10 +118,10 @@ bool HTMLWizard::validateCurrentPage()
 
         for ( ; it != end ; ++it)
         {
-            AbstractThemeParameter* const themeParameter = *it;
-            QByteArray parameterInternalName             = themeParameter->internalName();
-            QWidget* const widget                        = d->parametersPage->themeParameterWidgetFromName(parameterInternalName);
-            QString value                                = themeParameter->valueFromWidget(widget);
+            const AbstractThemeParameter* const themeParameter = *it;
+            QByteArray parameterInternalName                   = themeParameter->internalName();
+            QWidget* const widget                              = d->parametersPage->themeParameterWidgetFromName(parameterInternalName);
+            QString value                                      = themeParameter->valueFromWidget(widget);
 
             d->info->setThemeParameterValue(themeInternalName,
                                              QString::fromLatin1(parameterInternalName),

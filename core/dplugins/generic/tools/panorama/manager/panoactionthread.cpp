@@ -55,6 +55,8 @@ public:
         threadQueue->finish();
     }
 
+public:
+
     QSharedPointer<QTemporaryDir> preprocessingTmpDir;
     QString                       preprocessingTmpPath;
     QSharedPointer<Queue>         threadQueue;
@@ -346,8 +348,8 @@ void PanoActionThread::slotStarting(JobPointer j)
 
     if (t->action == PANO_PREPROCESS_INPUT)
     {
-        PreProcessTask* const p = static_cast<PreProcessTask*>(t);
-        ad.id                   = p->id;
+        const PreProcessTask* const p = static_cast<PreProcessTask*>(t);
+        ad.id                         = p->id;
     }
 
     Q_EMIT starting(ad);
@@ -370,8 +372,8 @@ void PanoActionThread::slotStepDone(JobPointer j)
 
     if (t->action == PANO_PREPROCESS_INPUT)
     {
-        PreProcessTask* const p = static_cast<PreProcessTask*>(t);
-        ad.id                   = p->id;
+        const PreProcessTask* const p = static_cast<PreProcessTask*>(t);
+        ad.id                         = p->id;
     }
 
     if (!ad.success)
@@ -399,8 +401,8 @@ void PanoActionThread::slotDone(JobPointer j)
 
     if (t->action == PANO_PREPROCESS_INPUT)
     {
-        PreProcessTask* const p = static_cast<PreProcessTask*>(t);
-        ad.id                   = p->id;
+        const PreProcessTask* const p = static_cast<PreProcessTask*>(t);
+        ad.id                         = p->id;
     }
 
     Q_EMIT jobCollectionFinished(ad);

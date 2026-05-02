@@ -48,6 +48,8 @@ public:
     {
     }
 
+public:
+
     pt_script*     script       = nullptr;
     const QString& huginVersion;
 };
@@ -395,7 +397,7 @@ PTOType* PTOFile::getPTO()
             image.vignettingOffsetY.referenceId = tmpRef;
         }
 
-        char* const flatfield = panoScriptGetImageVignettingFlatField(d->script, i);
+        const char* const flatfield = panoScriptGetImageVignettingFlatField(d->script, i);
 
         if (flatfield != nullptr)
         {

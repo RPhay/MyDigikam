@@ -157,7 +157,7 @@ bool JAlbumOutputPage::validatePage()
 
 bool JAlbumOutputPage::isComplete() const
 {
-    JAlbumWizard* const wizard = dynamic_cast<JAlbumWizard*>(assistant());
+    const JAlbumWizard* const wizard = dynamic_cast<JAlbumWizard*>(assistant());
 
     if (!wizard)
     {

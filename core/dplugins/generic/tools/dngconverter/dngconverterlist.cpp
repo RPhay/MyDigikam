@@ -59,7 +59,7 @@ void DNGConverterList::slotAddImages(const QList<QUrl>& list)
 
         for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
         {
-            DNGConverterListViewItem* const currItem = dynamic_cast<DNGConverterListViewItem*>(listView()->topLevelItem(i));
+            const DNGConverterListViewItem* const currItem = dynamic_cast<DNGConverterListViewItem*>(listView()->topLevelItem(i));
 
             if (currItem && (currItem->url() == imageUrl))
             {

@@ -41,6 +41,8 @@ public:
 
     Private() = default;
 
+public:
+
     QListWidget*  themeList = nullptr;
     QTextBrowser* themeInfo = nullptr;
 };
@@ -76,14 +78,14 @@ HTMLThemePage::~HTMLThemePage()
 
 void HTMLThemePage::initializePage()
 {
-    HTMLWizard* const wizard              = dynamic_cast<HTMLWizard*>(assistant());
+    const HTMLWizard* const wizard        = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
     {
         return;
     }
 
-    GalleryInfo* const info               = wizard->galleryInfo();
+    const GalleryInfo* const info         = wizard->galleryInfo();
     GalleryTheme::List list               = GalleryTheme::getList();
     GalleryTheme::List::ConstIterator it  = list.constBegin();
     GalleryTheme::List::ConstIterator end = list.constEnd();
@@ -156,7 +158,7 @@ void HTMLThemePage::slotThemeSelectionChanged()
 
 GalleryTheme::Ptr HTMLThemePage::currentTheme() const
 {
-    ThemeListBoxItem* const item = dynamic_cast<ThemeListBoxItem*>(d->themeList->currentItem());
+    const ThemeListBoxItem* const item = dynamic_cast<ThemeListBoxItem*>(d->themeList->currentItem());
 
     if (item)
     {

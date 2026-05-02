@@ -47,6 +47,8 @@ public:
 
     Private() = default;
 
+public:
+
     QMap<QByteArray, QWidget*> themePrmWdgtList;
     QWidget*                   content = nullptr;
 };
@@ -102,22 +104,22 @@ QWidget* HTMLParametersPage::themeParameterWidgetFromName(const QByteArray& name
 
 void HTMLParametersPage::initializePage()
 {
-    HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
+    const HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
     {
         return;
     }
 
-    GalleryInfo* const info  = wizard->galleryInfo();
-    GalleryTheme::Ptr theme  = wizard->galleryTheme();
+    const GalleryInfo* const info  = wizard->galleryInfo();
+    GalleryTheme::Ptr theme        = wizard->galleryTheme();
 
     qDeleteAll(d->content->children());
     d->themePrmWdgtList.clear();
 
     // Create layout. We need to recreate it every time, to get rid of spacers
 
-    QGridLayout* const layout = new QGridLayout(d->content);
+    QGridLayout* const layout      = new QGridLayout(d->content);
     layout->setContentsMargins(QMargins());
     layout->setSpacing(layoutSpacing());
 

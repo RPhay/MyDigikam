@@ -35,7 +35,7 @@ QWidget* ColorThemeParameter::createWidget(QWidget* parent, const QString& value
 
 QString ColorThemeParameter::valueFromWidget(QWidget* widget) const
 {
-    DColorSelector* const button = static_cast<DColorSelector*>(widget);
+    const DColorSelector* const button = static_cast<DColorSelector*>(widget);
 
     return button->color().name();
 }

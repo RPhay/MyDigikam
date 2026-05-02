@@ -194,7 +194,7 @@ void EnfuseStackList::slotContextMenu(const QPoint& p)
 {
     QMenu popmenu(this);
 
-    EnfuseStackItem* const item = dynamic_cast<EnfuseStackItem*>(itemAt(p));
+    const EnfuseStackItem* const item = dynamic_cast<EnfuseStackItem*>(itemAt(p));
 
     if (item)
     {
@@ -229,7 +229,7 @@ QList<EnfuseSettings> EnfuseStackList::settingsList()
 
     while (*it)
     {
-        EnfuseStackItem* const item = dynamic_cast<EnfuseStackItem*>(*it);
+        const EnfuseStackItem* const item = dynamic_cast<EnfuseStackItem*>(*it);
 
         if (item && item->isOn())
         {
@@ -322,7 +322,7 @@ void EnfuseStackList::setThumbnail(const QUrl& url, const QImage& img)
 
 void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
 {
-    EnfuseStackItem* const eItem = dynamic_cast<EnfuseStackItem*>(item);
+    const EnfuseStackItem* const eItem = dynamic_cast<EnfuseStackItem*>(item);
 
     if (eItem)
     {

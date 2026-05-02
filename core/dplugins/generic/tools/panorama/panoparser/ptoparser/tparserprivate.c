@@ -42,7 +42,7 @@ extern char* yytext;
 
 int panoScriptScannerGetNextLine(void)
 {
-    char* p;
+    const char* p     = NULL;
 
     /* Reset line counters */
 

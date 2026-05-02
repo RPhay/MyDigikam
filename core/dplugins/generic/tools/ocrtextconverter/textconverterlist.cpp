@@ -110,7 +110,7 @@ void TextConverterList::slotAddImages(const QList<QUrl>& list)
 
         for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
         {
-            TextConverterListViewItem* const currItem = dynamic_cast<TextConverterListViewItem*>(listView()->topLevelItem(i));
+            const TextConverterListViewItem* const currItem = dynamic_cast<TextConverterListViewItem*>(listView()->topLevelItem(i));
 
             if (currItem && (currItem->url() == imageUrl))
             {

@@ -125,7 +125,7 @@ QList<QUrl> BracketStackList::urls()
 
     while (*it)
     {
-        BracketStackItem* const item = dynamic_cast<BracketStackItem*>(*it);
+        const BracketStackItem* const item = dynamic_cast<BracketStackItem*>(*it);
 
         if (item && item->isOn())
         {
@@ -176,7 +176,7 @@ void BracketStackList::addItems(const QList<QUrl>& list)
 
         while (*iter)
         {
-            BracketStackItem* const item = dynamic_cast<BracketStackItem*>(*iter);
+            const BracketStackItem* const item = dynamic_cast<BracketStackItem*>(*iter);
 
             if (item->url() == imageUrl)
             {
@@ -231,7 +231,7 @@ void BracketStackList::slotThumbnail(const LoadingDescription& desc, const QPixm
 
 void BracketStackList::slotItemClicked(QTreeWidgetItem* item, int column)
 {
-    BracketStackItem* const cItem = dynamic_cast<BracketStackItem*>(item);
+    const BracketStackItem* const cItem = dynamic_cast<BracketStackItem*>(item);
 
     if (cItem && (column == 1))
     {

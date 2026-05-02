@@ -49,6 +49,8 @@ public:
 
     Private() = default;
 
+public:
+
     QCheckBox* kcfg_thumbnailSquare = nullptr;
 };
 
@@ -284,15 +286,15 @@ HTMLImageSettingsPage::~HTMLImageSettingsPage()
 
 void HTMLImageSettingsPage::initializePage()
 {
-    HTMLWizard* const wizard      = dynamic_cast<HTMLWizard*>(assistant());
+    const HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
     {
         return;
     }
 
-    GalleryTheme::Ptr theme       = wizard->galleryTheme();
-    bool allowNonsquareThumbnails = theme->allowNonsquareThumbnails();
+    GalleryTheme::Ptr theme        = wizard->galleryTheme();
+    bool allowNonsquareThumbnails  = theme->allowNonsquareThumbnails();
 
     d->kcfg_thumbnailSquare->setEnabled(allowNonsquareThumbnails);
 

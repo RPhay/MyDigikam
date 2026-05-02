@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     DFileSelector* destUrl              = nullptr;
     QComboBox*     openInBrowser        = nullptr;
     QLabel*        titleLabel           = nullptr;
@@ -128,14 +130,14 @@ HTMLOutputPage::~HTMLOutputPage()
 
 void HTMLOutputPage::initializePage()
 {
-    HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
+    const HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
     {
         return;
     }
 
-    GalleryInfo* const info  = wizard->galleryInfo();
+    const GalleryInfo* const info  = wizard->galleryInfo();
 
     d->destUrl->setFileDlgPath(info->destUrl().toLocalFile());
     d->openInBrowser->setCurrentIndex(info->openInBrowser());
@@ -175,16 +177,16 @@ bool HTMLOutputPage::validatePage()
 
 bool HTMLOutputPage::isComplete() const
 {
-    HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
+    const HTMLWizard* const wizard = dynamic_cast<HTMLWizard*>(assistant());
 
     if (!wizard)
     {
         return false;
     }
 
-    GalleryInfo* const info  = wizard->galleryInfo();
+    const GalleryInfo* const info  = wizard->galleryInfo();
 
-    bool b                   = !d->destUrl->fileDlgPath().isEmpty();
+    bool b                         = !d->destUrl->fileDlgPath().isEmpty();
 
     if (info->m_getOption == GalleryInfo::IMAGES)
     {

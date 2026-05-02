@@ -586,7 +586,7 @@ int panoScriptGetPanoOutputFormat(const pt_script* const script)
 {
     assert(script != NULL);
 
-    char* str = script->pano.outputFormat;
+    const char* str = script->pano.outputFormat;
 
     if (str == 0)
     {
@@ -708,7 +708,7 @@ int panoScriptGetPanoOutputSaveCoordinates(const pt_script* const script)
 {
     assert((script != NULL) && (panoScriptGetPanoOutputFormat(script) > 1) && (panoScriptGetPanoOutputFormat(script) < 4));
 
-    char* str = script->pano.outputFormat;
+    const char* str = script->pano.outputFormat;
 
     while (str != NULL)
     {
@@ -737,7 +737,7 @@ int panoScriptGetPanoOutputCropped(const pt_script* const script)
 {
     assert((script != NULL) && (panoScriptGetPanoOutputFormat(script) > 1) && (panoScriptGetPanoOutputFormat(script) < 4));
 
-    char* str = script->pano.outputFormat;
+    const char* str = script->pano.outputFormat;
 
     while (str != NULL)
     {
@@ -905,7 +905,7 @@ int panoScriptGetVarsToOptimizeName(const pt_script* const script, int v)
 {
     assert((script != NULL) && (v >= 0) && (v < script->iVarsToOptimizeCount));
 
-    char* var = script->varsToOptimize[v].varName;
+    const char* var = script->varsToOptimize[v].varName;
 
     switch (var[0])
     {
