@@ -160,7 +160,7 @@ void SlideShowPlugin::setup(QObject* const parent)
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
 
-    DInfoInterface* const iface = infoIface(ac);
+    const DInfoInterface* const iface = infoIface(ac);
 
     if (iface && (parent->objectName() == QLatin1String("Digikam")))
     {

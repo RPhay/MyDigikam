@@ -228,7 +228,7 @@ void FlickrList::singlePermissionChanged(QTreeWidgetItem* item, int column)
 
             for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
             {
-                FlickrListViewItem* const titem = dynamic_cast<FlickrListViewItem*>(listView()->topLevelItem(i));
+                const FlickrListViewItem* const titem = dynamic_cast<FlickrListViewItem*>(listView()->topLevelItem(i));
 
                 if (titem)
                 {
@@ -321,7 +321,7 @@ void FlickrList::singleComboBoxChanged(QTreeWidgetItem* item, int column)
 
             for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
             {
-                FlickrListViewItem* const titem = dynamic_cast<FlickrListViewItem*>(listView()->topLevelItem(i));
+                const FlickrListViewItem* const titem = dynamic_cast<FlickrListViewItem*>(listView()->topLevelItem(i));
 
                 if (titem)
                 {
@@ -418,7 +418,7 @@ void FlickrList::slotAddImages(const QList<QUrl>& list)
 
         for (int i = 0 ; i < listView()->topLevelItemCount() ; ++i)
         {
-            FlickrListViewItem* const currItem = dynamic_cast<FlickrListViewItem*>(listView()->topLevelItem(i));
+            const FlickrListViewItem* const currItem = dynamic_cast<FlickrListViewItem*>(listView()->topLevelItem(i));
 
             if (currItem && (currItem->url() == imageUrl))
             {

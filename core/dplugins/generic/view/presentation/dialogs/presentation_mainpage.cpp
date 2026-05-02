@@ -370,7 +370,7 @@ bool PresentationMainPage::updateUrlList()
 
     while (*it)
     {
-        DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
+        const DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
         if (!item)
         {
@@ -401,7 +401,7 @@ void PresentationMainPage::slotImagesFilesSelected(QTreeWidgetItem* item)
         return;
     }
 
-    DItemsListViewItem* const pitem = dynamic_cast<DItemsListViewItem*>(item);
+    const DItemsListViewItem* const pitem = dynamic_cast<DItemsListViewItem*>(item);
 
     if (!pitem)
     {

@@ -207,7 +207,7 @@ void ImgurImagesList::slotCopyImurgURL()
     for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;
          it != selectedItemsList.constEnd() ; ++it)
     {
-        ImgurImageListViewItem* const item = dynamic_cast<ImgurImageListViewItem*>(*it);
+        const ImgurImageListViewItem* const item = dynamic_cast<ImgurImageListViewItem*>(*it);
 
         if (item)
         {

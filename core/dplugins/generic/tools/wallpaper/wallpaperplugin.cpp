@@ -102,8 +102,8 @@ void WallpaperPlugin::setup(QObject* const parent)
 
 void WallpaperPlugin::slotWallpaper()
 {
-    DInfoInterface* const iface = infoIface(sender());
-    QList<QUrl> images          = iface->currentSelectedItems();
+    const DInfoInterface* const iface = infoIface(sender());
+    QList<QUrl> images                = iface->currentSelectedItems();
 
     if (images.isEmpty())
     {

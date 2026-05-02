@@ -328,7 +328,7 @@ void PresentationAudioPage::slotAddNewTime(const QUrl& url, const QTime& trackTi
 
 void PresentationAudioPage::slotSoundFilesSelected(int row)
 {
-    QListWidgetItem* const item = m_SoundFilesListBox->item(row);
+    const QListWidgetItem* const item = m_SoundFilesListBox->item(row);
 
     if (!item || (m_SoundFilesListBox->count() == 0))
     {
@@ -587,7 +587,7 @@ void PresentationAudioPage::slotPreviewButtonClicked()
 
     for (int i = 0 ; i < m_SoundFilesListBox->count() ; ++i)
     {
-        PresentationAudioListItem* const pitem = dynamic_cast<PresentationAudioListItem*>(m_SoundFilesListBox->item(i));
+        const PresentationAudioListItem* const pitem = dynamic_cast<PresentationAudioListItem*>(m_SoundFilesListBox->item(i));
 
         if (pitem)
         {

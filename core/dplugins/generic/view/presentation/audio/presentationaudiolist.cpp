@@ -50,10 +50,11 @@ namespace DigikamGenericPresentationPlugin
 
 class Q_DECL_HIDDEN PresentationAudioListItem::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     QUrl          url;
     QString       artist;
@@ -304,7 +305,7 @@ QList<QUrl> PresentationAudioList::fileUrls()
 
     for (int i = 0 ; i < count() ; ++i)
     {
-        PresentationAudioListItem* const sitem = dynamic_cast<PresentationAudioListItem*>(item(i));
+        const PresentationAudioListItem* const sitem = dynamic_cast<PresentationAudioListItem*>(item(i));
 
         if (sitem)
         {

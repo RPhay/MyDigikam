@@ -771,8 +771,8 @@ void MediaWikiWidget::clearEditFields()
 
 void MediaWikiWidget::slotLoadImagesDesc(QTreeWidgetItem* item)
 {
-    QList<QTreeWidgetItem*> selectedItems = d->imgList->listView()->selectedItems();
-    DItemsListViewItem* const l_item      = dynamic_cast<DItemsListViewItem*>(item);
+    QList<QTreeWidgetItem*> selectedItems  = d->imgList->listView()->selectedItems();
+    const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(item);
 
     if (!l_item)
     {
@@ -838,7 +838,7 @@ void MediaWikiWidget::slotRestoreExtension()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {
@@ -886,7 +886,7 @@ void MediaWikiWidget::slotApplyTitle()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {
@@ -928,7 +928,7 @@ void MediaWikiWidget::slotApplyDate()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {
@@ -952,7 +952,7 @@ void MediaWikiWidget::slotApplyCategories()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {
@@ -976,7 +976,7 @@ void MediaWikiWidget::slotApplyDescription()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {
@@ -1001,7 +1001,7 @@ void MediaWikiWidget::slotApplyLatitude()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {
@@ -1025,7 +1025,7 @@ void MediaWikiWidget::slotApplyLongitude()
 
     for (int i = 0 ; i < selectedItems.size() ; ++i)
     {
-        DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
+        const DItemsListViewItem* const l_item = dynamic_cast<DItemsListViewItem*>(selectedItems.at(i));
 
         if (l_item)
         {

@@ -699,8 +699,8 @@ void PresentationGL::montage(QImage& top, QImage& bot)
     int sh = bh / 2 - th / 2;
     int eh = bh / 2 + th / 2;
 
-    unsigned int* tdata = reinterpret_cast<unsigned int*>(top.scanLine(0));
-    unsigned int* bdata = nullptr;
+    const unsigned int* tdata = reinterpret_cast<unsigned int*>(top.scanLine(0));
+    unsigned int* bdata       = nullptr;
 
     for (int y = sh ; y < eh ; ++y)
     {

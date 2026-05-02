@@ -631,7 +631,7 @@ void FlickrWindow::slotUser1()
 
     for (int i = 0 ; i < d->imglst->listView()->topLevelItemCount() ; ++i)
     {
-        FlickrListViewItem* const lvItem = dynamic_cast<FlickrListViewItem*>(d->imglst->listView()->topLevelItem(i));
+        const FlickrListViewItem* const lvItem = dynamic_cast<FlickrListViewItem*>(d->imglst->listView()->topLevelItem(i));
 
         if (lvItem)
         {

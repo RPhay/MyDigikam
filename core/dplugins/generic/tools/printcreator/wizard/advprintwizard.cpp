@@ -188,7 +188,7 @@ QList<QUrl> AdvPrintWizard::itemsList() const
     for (QList<AdvPrintPhoto*>::iterator it = d->settings->photos.begin() ;
          it != d->settings->photos.end() ; ++it)
     {
-        AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);
+        const AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);
         urls << photo->m_url;
     }
 
@@ -300,7 +300,7 @@ void AdvPrintWizard::previewPhotos()
         for (QList<AdvPrintPhoto*>::iterator it = d->settings->photos.begin() ;
              it != d->settings->photos.end() ; ++it)
         {
-            AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);
+            AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);      // cppcheck-suppress constVariablePointer
 
             photo->m_cropRegion.setRect(-1, -1, -1, -1);
             photo->m_rotation  = 0;
