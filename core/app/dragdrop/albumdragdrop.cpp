@@ -182,7 +182,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view,
 
 Qt::DropAction AlbumDragDropHandler::accepts(const QDropEvent* e, const QModelIndex& dropIndex)
 {
-    PAlbum* const destAlbum = model()->palbumForIndex(dropIndex);
+    const PAlbum* const destAlbum = model()->palbumForIndex(dropIndex);
 
     if (!destAlbum)
     {
@@ -207,7 +207,7 @@ Qt::DropAction AlbumDragDropHandler::accepts(const QDropEvent* e, const QModelIn
             return Qt::IgnoreAction;
         }
 
-        PAlbum* const droppedAlbum = AlbumManager::instance()->findPAlbum(albumId);
+        const PAlbum* const droppedAlbum = AlbumManager::instance()->findPAlbum(albumId);
 
         if (!droppedAlbum)
         {
@@ -264,7 +264,7 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
         qCWarning(DIGIKAM_GENERAL_LOG) << "Dragging multiple albums is not implemented";
     }
 
-    PAlbum* const palbum = dynamic_cast<PAlbum*>(albums.first());
+    const PAlbum* const palbum = dynamic_cast<PAlbum*>(albums.first());
 
     // Root or album root and Trash Albums are not draggable
 
@@ -279,12 +279,12 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
 void AlbumDragDropHandler::slotMoveCopyAlbum()
 {
     QMenu popMenu(m_view);
-    QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
-    QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+    const QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+    const QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
     popMenu.addSeparator();
     popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-    QAction* const choice     = popMenu.exec(m_position);
+    const QAction* const choice     = popMenu.exec(m_position);
 
     if      (choice == moveAction)
     {
@@ -329,7 +329,7 @@ void AlbumDragDropHandler::slotMoveCopyItems()
         else
         {
             QMenu popMenu(m_view);
-            QAction* setAction    = nullptr;
+            const QAction* setAction    = nullptr;
 
             if (m_imageIDs.count() == 1)
             {
@@ -339,8 +339,8 @@ void AlbumDragDropHandler::slotMoveCopyItems()
             popMenu.addSeparator();
             popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-            QAction* const choice = popMenu.exec(m_position);
-            set                   = (setAction == choice);
+            const QAction* const choice = popMenu.exec(m_position);
+            set                         = (setAction == choice);
         }
 
         if (set && m_destAlbum)
@@ -373,9 +373,9 @@ void AlbumDragDropHandler::slotMoveCopyItems()
     else
     {
         QMenu popMenu(m_view);
-        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
-        QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
-        QAction* thumbnailAction  = nullptr;
+        const QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+        const QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+        const QAction* thumbnailAction  = nullptr;
 
         if (m_imageIDs.count() == 1)
         {
@@ -385,7 +385,7 @@ void AlbumDragDropHandler::slotMoveCopyItems()
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-        QAction* const choice     = popMenu.exec(m_position);
+        const QAction* const choice     = popMenu.exec(m_position);
 
         if (choice)
         {
@@ -431,12 +431,12 @@ void AlbumDragDropHandler::slotCopyFromCamera()
     if (ui)
     {
         QMenu popMenu(m_view);
-        QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download From Camera"));
-        QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download && Delete From Camera"));
+        const QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download From Camera"));
+        const QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("file-export")), i18n("Download && Delete From Camera"));
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-        QAction* const choice        = popMenu.exec(m_position);
+        const QAction* const choice        = popMenu.exec(m_position);
 
         if (choice)
         {
@@ -474,12 +474,12 @@ void AlbumDragDropHandler::slotMoveCopyExtern()
     else
     {
         QMenu popMenu(m_view);
-        QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
-        QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+        const QAction* const moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")),   i18n("&Move Here"));
+        const QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-        QAction* const choice     = popMenu.exec(m_position);
+        const QAction* const choice     = popMenu.exec(m_position);
 
         if      (choice == copyAction)
         {
