@@ -111,7 +111,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e
     // Note that the drop event does not have to be in an ItemCategorizedView.
     // It can also be a TableViewTreeView.
 
-    ItemCategorizedView* const itemView = qobject_cast<ItemCategorizedView*>(m_view);
+    const ItemCategorizedView* const itemView = qobject_cast<ItemCategorizedView*>(m_view);
 
     if (itemView)
     {
@@ -129,7 +129,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e
     }
     else
     {
-        TableViewTreeView* const tableView = qobject_cast<TableViewTreeView*>(m_view);
+        const TableViewTreeView* const tableView = qobject_cast<TableViewTreeView*>(m_view);
 
         if (tableView)
         {
@@ -404,7 +404,7 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
     }
 
     QMenu popMenu(m_view);
-    QAction* moveAction       = nullptr;
+    const QAction* moveAction       = nullptr;
 
     if (allowMove)
     {
@@ -412,12 +412,12 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
                                        i18n("&Move Here"));
     }
 
-    QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")),
-                                                    i18n("&Copy Here"));
+    const QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")),
+                                                        i18n("&Copy Here"));
     popMenu.addSeparator();
 
-    QAction* grpAction        = nullptr;
-    QAction* grpAndMoveAction = nullptr;
+    const QAction* grpAction        = nullptr;
+    const QAction* grpAndMoveAction = nullptr;
 
     if (askForGrouping)
     {
@@ -428,7 +428,7 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
 
     addCancelAction(&popMenu);
 
-    QAction* const choice       = popMenu.exec(m_position);
+    const QAction* const choice       = popMenu.exec(m_position);
 
     if      (moveAction && (choice == moveAction))
     {
@@ -453,9 +453,9 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::copyOrMove(bool allowMove, 
 ItemDragDropHandler::DropAction ItemDragDropHandler::tagAction(bool askForGrouping) const
 {
     QMenu popMenu(m_view);
-    QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                 i18n("Assign Tag to Dropped Items"));
-    QAction* grpAction       = nullptr;
+    const QAction* const tagAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                       i18n("Assign Tag to Dropped Items"));
+    const QAction* grpAction       = nullptr;
 
     if (askForGrouping)
     {
@@ -466,7 +466,7 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::tagAction(bool askForGroupi
     popMenu.addSeparator();
     addCancelAction(&popMenu);
 
-    QAction* const choice    = popMenu.exec(m_position);
+    const QAction* const choice    = popMenu.exec(m_position);
 
     if      (grpAction && (choice == grpAction))
     {
@@ -482,11 +482,11 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::tagAction(bool askForGroupi
 
 ItemDragDropHandler::DropAction ItemDragDropHandler::groupAction() const
 {
-    ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(m_view);
-    int sortOrder                      = ApplicationSettings::instance()->getImageSortOrder();
+    const ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(m_view);
+    int sortOrder                            = ApplicationSettings::instance()->getImageSortOrder();
 
     QMenu popMenu(m_view);
-    QAction* sortAction                = nullptr;
+    const QAction* sortAction                = nullptr;
 
     if (imgView &&
         (
@@ -499,11 +499,11 @@ ItemDragDropHandler::DropAction ItemDragDropHandler::groupAction() const
         popMenu.addSeparator();
     }
 
-    QAction* const groupAction = addGroupAction(&popMenu);
+    const QAction* const groupAction = addGroupAction(&popMenu);
     popMenu.addSeparator();
     addCancelAction(&popMenu);
 
-    QAction* const choice      = popMenu.exec(m_position);
+    const QAction* const choice      = popMenu.exec(m_position);
 
     if (groupAction && (choice == groupAction))
     {
@@ -526,7 +526,7 @@ void ItemDragDropHandler::slotMoveCopyInternal()
 
     if (m_droppedOn.isValid())
     {
-        ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(m_view);
+        const ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(m_view);
 
         if (thumbBar)
         {
@@ -747,8 +747,8 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
 
         QMenu popFaceTagMenu(m_view);
 
-        QAction* assignFace  = nullptr;
-        QAction* assignFaces = nullptr;
+        const QAction* assignFace  = nullptr;
+        const QAction* assignFaces = nullptr;
 
         if (dview->selectionModel()->selectedIndexes().size() > 1)
         {
@@ -762,7 +762,7 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
         popFaceTagMenu.addSeparator();
         popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
 
-        QAction* const res = popFaceTagMenu.exec(m_position);
+        const QAction* const res = popFaceTagMenu.exec(m_position);
 
         if (res)
         {
@@ -781,7 +781,7 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
 
     // Standard tags
 
-    ItemCategorizedView* const itemView = qobject_cast<ItemCategorizedView*>(m_view);
+    const ItemCategorizedView* const itemView = qobject_cast<ItemCategorizedView*>(m_view);
 
     if (!itemView)
     {
@@ -790,8 +790,8 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
 
     QMenu popMenu(m_view);
 
-    QList<ItemInfo> selectedInfos   = itemView->selectedItemInfosCurrentFirst();
-    QAction* assignToSelectedAction = nullptr;
+    QList<ItemInfo> selectedInfos         = itemView->selectedItemInfosCurrentFirst();
+    const QAction* assignToSelectedAction = nullptr;
 
     if (selectedInfos.count() > 1)
     {
@@ -799,7 +799,7 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
                                                    i18n("Assign Tags to &Selected Items"));
     }
 
-    QAction* assignToThisAction = nullptr;
+    const QAction* assignToThisAction = nullptr;
 
     if (m_droppedOn.isValid())
     {
@@ -807,13 +807,13 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
                                                i18n("Assign Tags to &This Item"));
     }
 
-    QAction* const assignToAllAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
-                                                         i18n("Assign Tags to &All Items"));
+    const QAction* const assignToAllAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("tag")),
+                                                               i18n("Assign Tags to &All Items"));
 
     popMenu.addSeparator();
     popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
 
-    QAction* const choice = popMenu.exec(m_position);
+    const QAction* const choice = popMenu.exec(m_position);
 
     if (choice)
     {
@@ -827,8 +827,8 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
         }
         else if (choice == assignToThisAction)    // Dropped item only.
         {
-            QModelIndex dropIndex            = m_droppedOn;
-            ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(m_view);
+            QModelIndex dropIndex                  = m_droppedOn;
+            const ItemThumbnailBar* const thumbBar = qobject_cast<ItemThumbnailBar*>(m_view);
 
             if (thumbBar)
             {
@@ -842,7 +842,7 @@ void ItemDragDropHandler::slotMoveCopyItemTags()
 
 void ItemDragDropHandler::slotDownloadCamItems()
 {
-    ImportIconView* const iconView = dynamic_cast<ImportIconView*>(m_source);
+    const ImportIconView* const iconView = dynamic_cast<ImportIconView*>(m_source);
 
     if (!iconView)
     {
@@ -851,14 +851,14 @@ void ItemDragDropHandler::slotDownloadCamItems()
 
     QMenu popMenu(m_view);
     popMenu.addSection(QIcon::fromTheme(QLatin1String("digikam")), i18n("Importing"));
-    QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
-                                                     i18n("Download From Camera"));
-    QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
-                                                     i18n("Download && Delete From Camera"));
+    const QAction* const downAction    = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
+                                                           i18n("Download From Camera"));
+    const QAction* const downDelAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("get-hot-new-stuff")),
+                                                           i18n("Download && Delete From Camera"));
     popMenu.addSeparator();
     popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 
-    QAction* const choice        = popMenu.exec(m_position);
+    const QAction* const choice        = popMenu.exec(m_position);
 
     if (choice)
     {
