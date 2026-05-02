@@ -168,7 +168,7 @@ void AdvPrintTask::preparePrint()
 
         if (photo && (photo->m_cropRegion == QRect(-1, -1, -1, -1)))
         {
-            QRect* const curr = d->settings->getLayout(photoIndex, d->sizeIndex);
+            const QRect* const curr = d->settings->getLayout(photoIndex, d->sizeIndex);
 
             photo->updateCropRegion(curr->width(),
                                     curr->height(),
@@ -252,7 +252,7 @@ QStringList AdvPrintTask::printPhotosToFile()
     int current                      = 0;
     int pageCount                    = 1;
     bool printing                    = true;
-    QRect* const srcPage             = layouts->m_layouts.at(0);
+    const QRect* const srcPage       = layouts->m_layouts.at(0);
 
     while (printing)
     {
@@ -350,9 +350,9 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
     }
 
     QList<QRect*>::const_iterator it = layouts.begin();
-    QRect* const srcPage             = static_cast<QRect*>(*it);
+    const QRect* const srcPage       = static_cast<QRect*>(*it);
     ++it;
-    QRect* layout                    = static_cast<QRect*>(*it);
+    const QRect* layout              = static_cast<QRect*>(*it);
 
     // scale the page size to best fit the painter
     // size the rectangle based on the minimum image dimension
@@ -612,7 +612,7 @@ double AdvPrintTask::getMaxDPI(const QList<AdvPrintPhoto*>& photos,
     Q_ASSERT(layouts.count() > 1);
 
     QList<QRect*>::const_iterator it = layouts.begin();
-    QRect* layout                    = static_cast<QRect*>(*it);
+    const QRect* layout              = static_cast<QRect*>(*it);
     double maxDPI                    = 0.0;
 
     for ( ; current < photos.count() ; ++current)

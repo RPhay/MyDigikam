@@ -170,7 +170,7 @@ double AtkinsPageLayoutTree::score(AtkinsPageLayoutNode* const root,
 
     for (int i = 0 ; i < nodeCount ; ++i)
     {
-        AtkinsPageLayoutNode* const node = root->nodeForIndex(i);
+        const AtkinsPageLayoutNode* const node = root->nodeForIndex(i);
 
         if (node->type() == AtkinsPageLayoutNode::TerminalNode)
         {
@@ -247,8 +247,8 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
 
     for (int i = 0 ; i < treePath.count() - 1 ; ++i)
     {
-        AtkinsPageLayoutNode* const parent2 = treePath[i];
-        AtkinsPageLayoutNode* const child   = treePath[i+1]; // only iterating to count-1
+        const AtkinsPageLayoutNode* const parent2 = treePath[i];
+        const AtkinsPageLayoutNode* const child   = treePath[i+1]; // only iterating to count-1
 
         if (parent2->type() == AtkinsPageLayoutNode::VerticalDivision) // side by side
         {

@@ -510,7 +510,7 @@ void AdvPrintPhotoPage::slotContextMenuRequested()
         connect(action, SIGNAL(triggered()),
                 this , SLOT(slotIncreaseCopies()));
 
-        AdvPrintPhoto* const pPhoto  = d->settings->photos[itemIndex];
+        const AdvPrintPhoto* const pPhoto  = d->settings->photos[itemIndex];
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " copies "
                                      << pPhoto->m_copies
@@ -535,7 +535,7 @@ void AdvPrintPhotoPage::slotIncreaseCopies()
     if (d->settings->photos.size())
     {
         QList<QUrl> list;
-        DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(d->photoUi->mPrintList->listView()->currentItem());
+        const DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(d->photoUi->mPrintList->listView()->currentItem());
 
         if (!item)
         {
@@ -552,7 +552,7 @@ void AdvPrintPhotoPage::slotDecreaseCopies()
 {
     if (d->settings->photos.size())
     {
-        DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>
+        const DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>
             (d->photoUi->mPrintList->listView()->currentItem());
 
         if (!item)
