@@ -50,6 +50,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString           configGroupName = QLatin1String("antivignetting Tool");
 
     AntiVignettingSettings* settingsView    = nullptr;
@@ -121,10 +123,10 @@ void AntiVignettingTool::preparePreview()
 {
     AntiVignettingContainer settings = d->settingsView->settings();
 
-    ImageIface* const iface = d->previewWidget->imageIface();
-    int previewWidth        = iface->previewSize().width();
-    int previewHeight       = iface->previewSize().height();
-    DImg imTemp             = iface->original()->smoothScale(previewWidth, previewHeight, Qt::KeepAspectRatio);
+    const ImageIface* const iface    = d->previewWidget->imageIface();
+    int previewWidth                 = iface->previewSize().width();
+    int previewHeight                = iface->previewSize().height();
+    DImg imTemp                      = iface->original()->smoothScale(previewWidth, previewHeight, Qt::KeepAspectRatio);
 
     setFilter(new AntiVignettingFilter(&imTemp, this, settings));
 }

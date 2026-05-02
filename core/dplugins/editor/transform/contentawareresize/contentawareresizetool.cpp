@@ -64,6 +64,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("liquidrescale Tool");
     const QString configStepEntry               = QLatin1String("Step");
     const QString configSideSwitchEntry         = QLatin1String("SideSwitch");
@@ -639,12 +641,12 @@ void ContentAwareResizeTool::preparePreview()
 
     disableSettings();
 
-    ImageIface* const iface = d->previewWidget->imageIface();
-    int w                   = iface->previewSize().width();
-    int h                   = iface->previewSize().height();
-    DImg imTemp             = iface->original()->smoothScale(w, h, Qt::KeepAspectRatio);
-    int new_w               = (int)(w*d->wpInput->value() / 100.0);
-    int new_h               = (int)(h*d->hpInput->value() / 100.0);
+    const ImageIface* const iface = d->previewWidget->imageIface();
+    int w                         = iface->previewSize().width();
+    int h                         = iface->previewSize().height();
+    DImg imTemp                   = iface->original()->smoothScale(w, h, Qt::KeepAspectRatio);
+    int new_w                     = (int)(w*d->wpInput->value() / 100.0);
+    int new_h                     = (int)(h*d->hpInput->value() / 100.0);
 
     if (d->mixedRescaleInput->value()<100.0) // mixed rescale
     {

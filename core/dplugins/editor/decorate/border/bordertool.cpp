@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString       configGroupName = QLatin1String("border Tool");
 
     EditorToolSettings* gboxSettings    = nullptr;
@@ -106,7 +108,7 @@ void BorderTool::slotResetSettings()
 
 void BorderTool::preparePreview()
 {
-    ImageIface* iface        = d->previewWidget->imageIface();
+    const ImageIface* iface  = d->previewWidget->imageIface();
     DImg preview             = iface->preview();
     int w                    = iface->previewSize().width();
     float ratio              = (float)w/(float)iface->originalSize().width();

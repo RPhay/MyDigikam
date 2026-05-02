@@ -281,7 +281,7 @@ void FreeRotationTool::slotResetSettings()
 void FreeRotationTool::preparePreview()
 {
     FreeRotationContainer settings = d->settingsView->settings();
-    ImageIface* const iface        = d->previewWidget->imageIface();
+    const ImageIface* const iface  = d->previewWidget->imageIface();
     DImg preview                   = iface->preview();
     settings.orgW                  = iface->originalSize().width();
     settings.orgH                  = iface->originalSize().height();
@@ -316,7 +316,7 @@ void FreeRotationTool::setPreviewImage()
 
     QString temp;
 
-    FreeRotationFilter* const tool = dynamic_cast<FreeRotationFilter*>(filter());
+    const FreeRotationFilter* const tool = dynamic_cast<FreeRotationFilter*>(filter());
 
     if (tool)
     {

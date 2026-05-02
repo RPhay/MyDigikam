@@ -52,6 +52,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("lensdistortion Tool");
     const QString config2ndOrderDistortionEntry = QLatin1String("2nd Order Distortion");
     const QString config4thOrderDistortionEntry = QLatin1String("4th Order Distortion");
@@ -263,7 +265,7 @@ void LensDistortionTool::preparePreview()
     transformPreview.startFilterDirectly();
     d->maskPreviewLabel->setPixmap(transformPreview.getTargetImage().convertToPixmap());
 
-    ImageIface* const iface = d->previewWidget->imageIface();
+    const ImageIface* const iface = d->previewWidget->imageIface();
 
     setFilter(new LensDistortionFilter(iface->original(), this, m, e, r, b, 0, 0));
 }

@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString       configGroupName = QLatin1String("noisereduction Tool");
 
     NRSettings*         nrSettings      = nullptr;
@@ -152,7 +154,7 @@ void NoiseReductionTool::slotEstimateNoise()
 
 void NoiseReductionTool::analyserCompleted()
 {
-    NREstimate* const tool = dynamic_cast<NREstimate*>(analyser());
+    const NREstimate* const tool = dynamic_cast<NREstimate*>(analyser());
 
     if (!tool)
     {

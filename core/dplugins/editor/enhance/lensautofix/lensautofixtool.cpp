@@ -51,6 +51,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString          configGroupName  = QLatin1String("Lens Auto-Correction Tool");
     const QString          configShowGrid   = QLatin1String("Show Grid");
 
@@ -88,13 +90,13 @@ LensAutoFixTool::LensAutoFixTool(QObject* const parent)
     // -------------------------------------------------------------
 
     d->cameraSelector       = new LensFunCameraSelector(d->gboxSettings->plainPage());
-    DImg* const img         = d->previewWidget->imageIface()->original();
+    const DImg* const img   = d->previewWidget->imageIface()->original();
     d->cameraSelector->setMetadata(img->getMetadata());
     DLineWidget* const line = new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage());
 
     // -------------------------------------------------------------
 
-    d->settingsView   = new LensFunSettings(d->gboxSettings->plainPage());
+    d->settingsView         = new LensFunSettings(d->gboxSettings->plainPage());
 
     // -------------------------------------------------------------
 
@@ -173,10 +175,10 @@ void LensAutoFixTool::preparePreview()
 {
     // Settings information must be get before to disable settings view.
 
-    LensFunContainer settings = d->cameraSelector->settings();
+    LensFunContainer settings     = d->cameraSelector->settings();
     d->settingsView->assignFilterSettings(settings);
-    ImageIface* const iface   = d->previewWidget->imageIface();
-    DImg preview              = iface->preview();
+    const ImageIface* const iface = d->previewWidget->imageIface();
+    DImg preview                  = iface->preview();
 
     if (d->showGrid->isChecked())
     {
@@ -240,7 +242,7 @@ void LensAutoFixTool::setFinalImage()
     // Note: there are certain situations in the editor where these metadata changes may be undone.
     // Ignore for now, as they are not critical.
 
-    LensFunFilter* const fltr = dynamic_cast<LensFunFilter*>(filter());
+    const LensFunFilter* const fltr = dynamic_cast<LensFunFilter*>(filter());
 
     if (fltr)
     {

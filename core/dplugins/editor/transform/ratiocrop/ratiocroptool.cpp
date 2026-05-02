@@ -62,6 +62,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName                                   = QLatin1String("aspectratiocrop Tool");
     const QString configHorOrientedAspectRatioEntry                 = QLatin1String("Hor.Oriented Aspect Ratio");
     const QString configHorOrientedAspectRatioOrientationEntry      = QLatin1String("Hor.Oriented Aspect Ratio Orientation");
@@ -92,6 +94,8 @@ public:
     const QString configGuideWidthEntry                             = QLatin1String("Guide Width");
     const QString configHistogramChannelEntry                       = QLatin1String("Histogram Channel");
     const QString configHistogramScaleEntry                         = QLatin1String("Histogram Scale");
+
+public:
 
     bool                  originalIsLandscape                       = false;
 
@@ -1047,11 +1051,11 @@ void RatioCropTool::updateCropInfo()
 
 QRect RatioCropTool::getNormalizedRegion() const
 {
-    QRect currentRegion     = d->ratioCropWidget->getRegionSelection();
-    ImageIface* const iface = d->ratioCropWidget->imageIface();
-    int w                   = iface->originalSize().width();
-    int h                   = iface->originalSize().height();
-    QRect normalizedRegion  = currentRegion.normalized();
+    QRect currentRegion           = d->ratioCropWidget->getRegionSelection();
+    const ImageIface* const iface = d->ratioCropWidget->imageIface();
+    int w                         = iface->originalSize().width();
+    int h                         = iface->originalSize().height();
+    QRect normalizedRegion        = currentRegion.normalized();
 
     if (normalizedRegion.right() > w)
     {

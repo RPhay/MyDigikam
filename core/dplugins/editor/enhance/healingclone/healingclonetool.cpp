@@ -49,10 +49,11 @@ namespace DigikamEditorHealingCloneToolPlugin
 
 class Q_DECL_HIDDEN HealingCloneTool::Private
 {
-
 public:
 
     Private() = default;
+
+public:
 
     const QString configGroupName                               = QLatin1String("Healing Clone Tool");
     const QString configRadiusAdjustmentEntry                   = QLatin1String("RadiusAdjustment");
@@ -89,7 +90,6 @@ public:
     std::vector<std::vector<bool>>       lassoFlags;
     std::map<std::pair<int,int>, DColor> lassoColorsMap;
 };
-
 
 // --------------------------------------------------------
 
@@ -621,8 +621,8 @@ void HealingCloneTool::refreshImage()
 
     if (wgt)
     {
-        QRectF test                 = wgt->sceneRect();
-        ImageRegionItem* const item = dynamic_cast<ImageRegionItem*>(wgt->item());
+        QRectF test                       = wgt->sceneRect();
+        const ImageRegionItem* const item = dynamic_cast<ImageRegionItem*>(wgt->item());
 
         if (item)
         {

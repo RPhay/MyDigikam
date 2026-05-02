@@ -46,6 +46,8 @@ public:
 
     Private() = default;
 
+public:
+
     const QString configGroupName               = QLatin1String("raindrops Tool");
     const QString configDropAdjustmentEntry     = QLatin1String("DropAdjustment");
     const QString configAmountAdjustmentEntry   = QLatin1String("AmountAdjustment");
@@ -176,15 +178,15 @@ void RainDropTool::slotResetSettings()
 
 void RainDropTool::preparePreview()
 {
-    int drop                = d->dropInput->value();
-    int amount              = d->amountInput->value();
-    int coeff               = d->coeffInput->value();
+    int drop                      = d->dropInput->value();
+    int amount                    = d->amountInput->value();
+    int coeff                     = d->coeffInput->value();
 
-    ImageIface* const iface = d->previewWidget->imageIface();
+    const ImageIface* const iface = d->previewWidget->imageIface();
 
     // Selected data from the image
 
-    QRect selection         = iface->selectionRect();
+    QRect selection               = iface->selectionRect();
 
     setFilter(new RainDropFilter(iface->original(), this, drop, amount, coeff, selection));
 }

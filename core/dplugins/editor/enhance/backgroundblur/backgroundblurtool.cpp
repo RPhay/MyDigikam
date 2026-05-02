@@ -196,8 +196,8 @@ void BackgroundBlurTool::slotResetSettings()
 
 void BackgroundBlurTool::slotSelectionChanged(const QRectF& previewSel)
 {
-    ImageIface* const iface = d->previewWidget->imageIface();
-    DImg preview            = iface->preview();
+    const ImageIface* const iface = d->previewWidget->imageIface();
+    DImg preview                  = iface->preview();
 
     // Compute the scale factor between mask preview and original canvas sizes.
     // Readjust the selection in editor canvas and normalize.
@@ -242,8 +242,8 @@ void BackgroundBlurTool::preparePreview()
 {
     d->maskPreview->setBusy(true, i18nc("@info", "Processing mask preview..."));
 
-    ImageIface* const iface = d->previewWidget->imageIface();
-    DImg preview            = iface->preview();
+    const ImageIface* const iface = d->previewWidget->imageIface();
+    DImg preview                  = iface->preview();
 
     // Compute the scale factor between original canvas and mask preview sizes.
     // Readjust the selection in the mask preview and normalize.
