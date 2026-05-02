@@ -395,7 +395,9 @@ void TileCreator::run()
                                                 Qt::ThresholdDither);
                 }
 
-                bool  ok = tile.save(tileName, d->m_tileFormat.toLatin1().data(), d->m_tileFormat == QLatin1String("jpg") ? 100 : d->m_tileQuality);
+                bool ok = tile.save(tileName, d->m_tileFormat.toLatin1().data(),
+                                              (d->m_tileFormat == QLatin1String("jpg")) ? 100
+                                                                                        : d->m_tileQuality);
 
                 if (!ok)
                 {
@@ -409,19 +411,25 @@ void TileCreator::run()
                     QImage writtenTile(tileName);
                     Q_ASSERT(writtenTile.size() == tile.size());
 
-                    for (int i = 0; i < writtenTile.size().width(); ++i)
+                    for (int i = 0 ; i < writtenTile.size().width() ; ++i)
                     {
-                        for (int j = 0; j < writtenTile.size().height(); ++j)
+                        for (int j = 0 ; j < writtenTile.size().height() ; ++j)
                         {
                             if (writtenTile.pixel(i, j) != tile.pixel(i, j))
                             {
-                                unsigned int  pixel = tile.pixel(i, j);
-                                unsigned int  writtenPixel = writtenTile.pixel(i, j);
+                                unsigned int pixel        = tile.pixel(i, j);
+                                unsigned int writtenPixel = writtenTile.pixel(i, j);
+
                                 qCWarning(DIGIKAM_GEOENGINE_LOG) << "***** pixel" << i << j << "is off by" << (pixel - writtenPixel) << "pixel" << pixel << "writtenPixel" << writtenPixel;
-                                QByteArray baPixel((char*)&pixel, sizeof(unsigned int));
+
+                                QByteArray baPixel(reinterpret_cast<const char*>(&pixel), sizeof(unsigned int));
+
                                 qCWarning(DIGIKAM_GEOENGINE_LOG) << "pixel" << baPixel.size() << "0x" << baPixel.toHex();
-                                QByteArray baWrittenPixel((char*)&writtenPixel, sizeof(unsigned int));
+
+                                QByteArray baWrittenPixel(reinterpret_cast<const char*>(&writtenPixel), sizeof(unsigned int));
+
                                 qCWarning(DIGIKAM_GEOENGINE_LOG) << "writtenPixel" << baWrittenPixel.size() << "0x" << baWrittenPixel.toHex();
+
                                 Q_ASSERT(false);
                             }
                         }
@@ -431,7 +439,7 @@ void TileCreator::run()
             }
 
             percentCompleted = (int)(90 * (qreal)(createdTilesCount)
-                                     / (qreal)(totalTileCount));
+                                        / (qreal)(totalTileCount));
             createdTilesCount++;
 
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "percentCompleted" << percentCompleted;
