@@ -42,12 +42,13 @@ static const int softLimitPercent = 5;
 
 // Methods of FileStorageWatcherThread
 FileStorageWatcherThread::FileStorageWatcherThread(const QString& dataDirectory, QObject* parent)
-    : QObject(parent),
-      m_dataDirectory(dataDirectory),
-      m_deleting(false),
-      m_willQuit(false)
+    : QObject           (parent),
+      m_dataDirectory   (dataDirectory),
+      m_deleting        (false),
+      m_willQuit        (false)
 {
     // For now setting cache limit to 0. This won't delete anything
+
     setCacheLimit(0);
 
     connect(this, SIGNAL(variableChanged()),
@@ -67,7 +68,7 @@ quint64 FileStorageWatcherThread::cacheLimit()
 void FileStorageWatcherThread::setCacheLimit(quint64 bytes)
 {
     m_limitMutex.lock();
-    m_cacheLimit = bytes;
+    m_cacheLimit     = bytes;
     m_cacheSoftLimit = bytes * (100 - softLimitPercent) / 100;
     m_limitMutex.unlock();
     Q_EMIT variableChanged();
@@ -75,14 +76,14 @@ void FileStorageWatcherThread::setCacheLimit(quint64 bytes)
 
 void FileStorageWatcherThread::addToCurrentSize(qint64 bytes)
 {
-    //     qCDebug(DIGIKAM_GEOENGINE_LOG) << "Current cache size changed by " << bytes;
+    // qCDebug(DIGIKAM_GEOENGINE_LOG) << "Current cache size changed by " << bytes;
+
     qint64 changedSize = bytes + m_currentCacheSize;
 
     if (changedSize >= 0)
     {
         m_currentCacheSize = changedSize;
     }
-
     else
     {
         m_currentCacheSize = 0;
@@ -94,6 +95,7 @@ void FileStorageWatcherThread::addToCurrentSize(qint64 bytes)
 void FileStorageWatcherThread::resetCurrentSize()
 {
     m_currentCacheSize = 0;
+
     Q_EMIT variableChanged();
 }
 
@@ -105,8 +107,8 @@ void FileStorageWatcherThread::prepareQuit()
 void FileStorageWatcherThread::getCurrentCacheSize()
 {
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "FileStorageWatcher: Creating cache size";
-    quint64 dataSize = 0;
-    const QString basePath = m_dataDirectory + QLatin1String("/maps");
+    quint64 dataSize        = 0;
+    const QString basePath  = m_dataDirectory + QLatin1String("/maps");
     QDirIterator it(basePath,
                     QDir::Files | QDir::Writable,
                     QDirIterator::Subdirectories);
@@ -116,30 +118,34 @@ void FileStorageWatcherThread::getCurrentCacheSize()
     while (it.hasNext() && !m_willQuit)
     {
         it.next();
-        QFileInfo file = it.fileInfo();
+        QFileInfo file         = it.fileInfo();
+
         // We try to be very careful and just delete images
-        QString suffix = file.suffix().toLower();
+
+        QString suffix         = file.suffix().toLower();
         const QStringList path = file.path().split(QLatin1Char('/'));
 
         // planet/theme/tilelevel should be deeper than 4
-        if (path.size() > basePathDepth + 3)
+
+        if (path.size() > (basePathDepth + 3))
         {
-            bool ok = false;
+            bool ok       = false;
             int tileLevel = path[basePathDepth + 2].toInt(&ok);
 
             // internal theme layer case
             // (e.g. "earth/openseamap/seamarks/4")
+
             if (!ok)
             {
                 tileLevel = path[basePathDepth + 3].toInt(&ok);
             }
 
-            if ((ok && tileLevel >= maxBaseTileLevel) &&
-                (suffix == QLatin1String("jpg") ||
-                 suffix == QLatin1String("png") ||
-                 suffix == QLatin1String("gif") ||
-                 suffix == QLatin1String("svg") ||
-                 suffix == QLatin1String("o5m")))
+            if ((ok && (tileLevel >= maxBaseTileLevel)) &&
+                ((suffix == QLatin1String("jpg")) ||
+                 (suffix == QLatin1String("png")) ||
+                 (suffix == QLatin1String("gif")) ||
+                 (suffix == QLatin1String("svg")) ||
+                 (suffix == QLatin1String("o5m"))))
             {
                 dataSize += file.size();
                 m_filesCache.insert(file.lastModified(), file.absoluteFilePath());
@@ -157,6 +163,7 @@ void FileStorageWatcherThread::ensureCacheSize()
     // the hard cache limit. Then we delete files until our cache size
     // is smaller than the cache (soft) limit.
     // m_cacheLimit = 0 means no limit.
+
     if (((m_currentCacheSize > m_cacheLimit)
          || (m_deleting && (m_currentCacheSize > m_cacheSoftLimit)))
         && (m_cacheLimit != 0)
@@ -165,16 +172,21 @@ void FileStorageWatcherThread::ensureCacheSize()
     {
 
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Deleting extra cached tiles";
+
         // The counter for deleted files
+
         m_filesDeleted = 0;
+
         // We have not reached our soft limit, yet.
+
         m_deleting = true;
 
         // We iterate over the m_filesCache which is sorted by lastModified
         // and remove a chunk of the oldest 20 (maxFilesDelete) files.
+
         QMultiMap<QDateTime, QString>::iterator it = m_filesCache.begin();
 
-        while (it != m_filesCache.end() &&
+        while ((it != m_filesCache.end()) &&
                keepDeleting())
         {
             QString filePath = it.value();
@@ -182,8 +194,8 @@ void FileStorageWatcherThread::ensureCacheSize()
 
             ++m_filesDeleted;
             m_currentCacheSize -= info.size();
-            it = m_filesCache.erase(it);
-            bool success = QFile::remove(filePath);
+            it                  = m_filesCache.erase(it);
+            bool success        = QFile::remove(filePath);
 
             if (!success)
             {
@@ -193,26 +205,30 @@ void FileStorageWatcherThread::ensureCacheSize()
 
         // There might be more chunks left for deletion which we
         // process with a delay to account for for load-reduction.
+
         if (m_filesDeleted >= maxFilesDelete)
         {
             QTimer::singleShot(1000, this, SLOT(ensureCacheSize()));
             return;
         }
-
         else
         {
             // A partial chunk is reached at the end of m_filesCache.
             // At this point deletion is done.
+
             m_deleting = false;
         }
 
         // If the current Cache Size is still larger than the cacheSoftLimit
         // then our requested cacheSoftLimit is unreachable.
+
         if (m_currentCacheSize > m_cacheSoftLimit)
         {
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "FileStorageWatcher: Requested Cache Limit could not be reached!";
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "Increasing Cache Limit to prevent further futile attempts.";
+
             // Softlimit is now exactly on the current cache size.
+
             setCacheLimit(m_currentCacheSize / (100 - softLimitPercent) * 100);
         }
     }
@@ -224,12 +240,13 @@ bool FileStorageWatcherThread::keepDeleting() const
             (m_filesDeleted < maxFilesDelete) &&
             !m_willQuit);
 }
+
 // End of methods of our Thread
 
-
 // Beginning of Methods of the main class
+
 FileStorageWatcher::FileStorageWatcher(const QString& dataDirectory, QObject* parent)
-    : QThread(parent),
+    : QThread        (parent),
       m_dataDirectory(dataDirectory)
 {
     if (m_dataDirectory.isEmpty())
@@ -242,11 +259,11 @@ FileStorageWatcher::FileStorageWatcher(const QString& dataDirectory, QObject* pa
         QDir::root().mkpath(m_dataDirectory);
     }
 
-    m_started = false;
+    m_started    = false;
     m_limitMutex = new QMutex();
 
-    m_thread = nullptr;
-    m_quitting = false;
+    m_thread     = nullptr;
+    m_quitting   = false;
 }
 
 FileStorageWatcher::~FileStorageWatcher()
@@ -254,6 +271,7 @@ FileStorageWatcher::~FileStorageWatcher()
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "Deleting FileStorageWatcher";
 
     // Making sure that Thread is stopped.
+
     m_quitting = true;
 
     if (m_thread)
@@ -270,7 +288,6 @@ FileStorageWatcher::~FileStorageWatcher()
     }
 
     delete m_thread;
-
     delete m_limitMutex;
 }
 
@@ -278,14 +295,16 @@ void FileStorageWatcher::setCacheLimit(quint64 bytes)
 {
     QMutexLocker locker(m_limitMutex);
 
+    // This is done directly to ensure that a running ensureCacheSize()
+    // recognizes the new size.
+
     if (m_started)
-        // This is done directly to ensure that a running ensureCacheSize()
-        // recognizes the new size.
     {
         m_thread->setCacheLimit(bytes);
     }
 
     // Save the limit, thread has to be initialized with the right one.
+
     m_limit = bytes;
 }
 
@@ -295,7 +314,6 @@ quint64 FileStorageWatcher::cacheLimit()
     {
         return m_thread->cacheLimit();
     }
-
     else
     {
         return m_limit;
@@ -329,11 +347,13 @@ void FileStorageWatcher::run()
 
         connect(this, SIGNAL(sizeChanged(qint64)),
                 m_thread, SLOT(addToCurrentSize(qint64)));
+
         connect(this, SIGNAL(cleared()),
                 m_thread, SLOT(resetCurrentSize()));
 
         // Make sure that we don't want to stop process.
         // The thread wouldn't exit from event loop.
+
         if (!m_quitting)
         {
             exec();

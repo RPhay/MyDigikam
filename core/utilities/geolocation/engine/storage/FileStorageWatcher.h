@@ -162,11 +162,11 @@ private:
 private:
 
     QString                   m_dataDirectory;
-    FileStorageWatcherThread* m_thread     = nullptr;
-    QMutex*                   m_limitMutex = nullptr;
-    quint64                   m_limit;
-    bool                      m_started;
-    bool                      m_quitting;
+    FileStorageWatcherThread* m_thread      = nullptr;
+    QMutex*                   m_limitMutex  = nullptr;
+    quint64                   m_limit       = 0;
+    bool                      m_started     = false;
+    bool                      m_quitting    = false;
 };
 
 } // namespace Marble
