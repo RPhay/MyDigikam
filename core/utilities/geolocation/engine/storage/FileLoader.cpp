@@ -59,16 +59,16 @@ public:
     FileLoaderPrivate(FileLoader* parent, const PluginManager* pluginManager, bool recenter,
                       const QString& file, const QString& property, const GeoDataStyle::Ptr& style,
                       DocumentRole role, int renderOrder)
-      : q(parent),
-        m_runner(pluginManager),
-        m_filepath(file),
-        m_property(property),
-        m_style(style),
-        m_styleMap(new GeoDataStyleMap),
-        m_document(nullptr),
-        m_renderOrder(renderOrder),
-        m_documentRole(role),
-        m_recenter(recenter)
+      : q               (parent),
+        m_runner        (pluginManager),
+        m_filepath      (file),
+        m_property      (property),
+        m_style         (style),
+        m_styleMap      (new GeoDataStyleMap),
+        m_document      (nullptr),
+        m_renderOrder   (renderOrder),
+        m_documentRole  (role),
+        m_recenter      (recenter)
     {
         if (m_style)
         {
@@ -79,14 +79,14 @@ public:
 
     FileLoaderPrivate(FileLoader* parent, const PluginManager* pluginManager,
                       const QString& contents, const QString& file, DocumentRole role) :
-        q(parent),
-        m_runner(pluginManager),
-        m_filepath(file),
-        m_contents(contents),
-        m_styleMap(nullptr),
-        m_document(nullptr),
-        m_documentRole(role),
-        m_recenter(false)
+        q               (parent),
+        m_runner        (pluginManager),
+        m_filepath      (file),
+        m_contents      (contents),
+        m_styleMap      (nullptr),
+        m_document      (nullptr),
+        m_documentRole  (role),
+        m_recenter      (false)
     {
     }
 
@@ -113,9 +113,9 @@ public:
     GeoDataStyleMap*     m_styleMap     = nullptr;
     GeoDataDocument*     m_document     = nullptr;
     QString              m_error;
-    int                  m_renderOrder;
+    int                  m_renderOrder  = 0;
     DocumentRole         m_documentRole;
-    bool                 m_recenter;
+    bool                 m_recenter     = false;
 };
 
 FileLoader::FileLoader(QObject* parent, const PluginManager* pluginManager, bool recenter, const QString& file,
@@ -222,7 +222,6 @@ void FileLoader::run()
 
         // content is not empty, we load from data
     }
-
     else
     {
         // Read the KML Data
@@ -300,9 +299,9 @@ void FileLoaderPrivate::documentParsed(GeoDataDocument* doc, const QString& erro
 
 void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
 {
-    const QString styleUrl = QLatin1Char('#') + m_styleMap->id();
+    const QString styleUrl                       = QLatin1Char('#') + m_styleMap->id();
 
-    QVector<GeoDataFeature*>::Iterator i = container->begin();
+    QVector<GeoDataFeature*>::Iterator i         = container->begin();
     QVector<GeoDataFeature*>::Iterator const end = container->end();
 
     for ( ; i != end ; ++i)
@@ -325,11 +324,11 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
 
             Q_ASSERT(placemark->geometry());
 
-            bool hasPopularity = false;
+            bool hasPopularity          = false;
 
             if (!geodata_cast<GeoDataTrack>(placemark->geometry()) &&
                 !geodata_cast<GeoDataPoint>(placemark->geometry())
-                && m_documentRole == MapDocument
+                && (m_documentRole == MapDocument)
                 && m_style)
             {
                 placemark->setStyleUrl(styleUrl);
@@ -337,9 +336,9 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
 
             // Mountain (H), Volcano (V), Shipwreck (W)
 
-            if (placemarkRole == QLatin1String("H") ||
-                placemarkRole == QLatin1String("V") ||
-                placemarkRole == QLatin1String("W"))
+            if ((placemarkRole == QLatin1String("H")) ||
+                (placemarkRole == QLatin1String("V")) ||
+                (placemarkRole == QLatin1String("W")))
             {
                 qreal altitude = placemark->coordinate().altitude();
 
@@ -362,7 +361,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                 if (area >= 0.0)
                 {
                     hasPopularity = true;
-                    //                qCDebug(DIGIKAM_GEOENGINE_LOG) << placemark->name() << " " << (qint64)(area);
+                    //qCDebug(DIGIKAM_GEOENGINE_LOG) << placemark->name() << " " << (qint64)(area);
                     placemark->setPopularity((qint64)(area * 100));
                     placemark->setZoomLevel(areaPopIdx(area));
                 }
@@ -418,11 +417,11 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
 
             // Space Terrain: Craters, Maria, Montes, Valleys, etc.
 
-            else if (placemarkRole == QLatin1String("m") ||
-                     placemarkRole == QLatin1String("v") ||
-                     placemarkRole == QLatin1String("o") ||
-                     placemarkRole == QLatin1String("c") ||
-                     placemarkRole == QLatin1String("a"))
+            else if ((placemarkRole == QLatin1String("m")) ||
+                     (placemarkRole == QLatin1String("v")) ||
+                     (placemarkRole == QLatin1String("o")) ||
+                     (placemarkRole == QLatin1String("c")) ||
+                     (placemarkRole == QLatin1String("a")))
             {
                 qint64 diameter = placemark->population();
 
@@ -435,8 +434,8 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                     {
                         placemark->setZoomLevel(spacePopIdx(diameter));
 
-                        if (placemark->name() == QLatin1String("Tycho") ||
-                            placemark->name() == QLatin1String("Copernicus"))
+                        if ((placemark->name() == QLatin1String("Tycho")) ||
+                            (placemark->name() == QLatin1String("Copernicus")))
                         {
                             placemark->setZoomLevel(1);
                         }
@@ -446,7 +445,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                         placemark->setZoomLevel(spacePopIdx(diameter));
                     }
 
-                    if (placemarkRole == QLatin1String("a") && diameter == 0)
+                    if ((placemarkRole == QLatin1String("a")) && (diameter == 0))
                     {
                         placemark->setPopularity(1000000000);
                         placemark->setZoomLevel(1);
@@ -527,35 +526,43 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Nation);
             }
-            else if (placemarkRole == QLatin1String("PPL") ||
-                     placemarkRole == QLatin1String("PPLF") ||
-                     placemarkRole == QLatin1String("PPLG") ||
-                     placemarkRole == QLatin1String("PPLL") ||
-                     placemarkRole == QLatin1String("PPLQ") ||
-                     placemarkRole == QLatin1String("PPLR") ||
-                     placemarkRole == QLatin1String("PPLS") ||
-                     placemarkRole == QLatin1String("PPLW"))
+            else if ((placemarkRole == QLatin1String("PPL")) ||
+                     (placemarkRole == QLatin1String("PPLF")) ||
+                     (placemarkRole == QLatin1String("PPLG")) ||
+                     (placemarkRole == QLatin1String("PPLL")) ||
+                     (placemarkRole == QLatin1String("PPLQ")) ||
+                     (placemarkRole == QLatin1String("PPLR")) ||
+                     (placemarkRole == QLatin1String("PPLS")) ||
+                     (placemarkRole == QLatin1String("PPLW")))
             {
                 switch (placemark->zoomLevel())
                 {
                     case 3:
                     case 4:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::LargeCity);
                         break;
+                    }
 
                     case 5:
                     case 6:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::BigCity);
                         break;
+                    }
 
                     case 7:
                     case 8:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::MediumCity);
                         break;
+                    }
 
                     default:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::SmallCity);
                         break;
+                    }
                 }
             }
             else if (placemarkRole == QLatin1String("PPLA"))
@@ -564,22 +571,30 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                 {
                     case 3:
                     case 4:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::LargeStateCapital);
                         break;
+                    }
 
                     case 5:
                     case 6:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::BigStateCapital);
                         break;
+                    }
 
                     case 7:
                     case 8:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::MediumStateCapital);
                         break;
+                    }
 
                     default:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::SmallStateCapital);
                         break;
+                    }
                 }
             }
             else if (placemarkRole == QLatin1String("PPLC"))
@@ -588,51 +603,69 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                 {
                     case 3:
                     case 4:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::LargeNationCapital);
                         break;
+                    }
 
                     case 5:
                     case 6:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::BigNationCapital);
                         break;
+                    }
 
                     case 7:
                     case 8:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::MediumNationCapital);
                         break;
+                    }
 
                     default:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::SmallNationCapital);
                         break;
+                    }
                 }
             }
-            else if (placemarkRole == QLatin1String("PPLA2") ||
-                     placemarkRole == QLatin1String("PPLA3") ||
-                     placemarkRole == QLatin1String("PPLA4"))
+            else if ((placemarkRole == QLatin1String("PPLA2")) ||
+                     (placemarkRole == QLatin1String("PPLA3")) ||
+                     (placemarkRole == QLatin1String("PPLA4")))
             {
                 switch (placemark->zoomLevel())
                 {
                     case 3:
                     case 4:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::LargeCountyCapital);
                         break;
+                    }
 
                     case 5:
                     case 6:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::BigCountyCapital);
                         break;
+                    }
 
                     case 7:
                     case 8:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::MediumCountyCapital);
                         break;
+                    }
 
                     default:
+                    {
                         placemark->setVisualCategory(GeoDataPlacemark::SmallCountyCapital);
                         break;
+                    }
                 }
             }
-            else if (placemarkRole == QLatin1String(" ") && !hasPopularity && placemark->visualCategory() == GeoDataPlacemark::Unknown)
+            else if (placemarkRole == QLatin1String(" ") &&
+                     !hasPopularity                      &&
+                     (placemark->visualCategory() == GeoDataPlacemark::Unknown))
             {
                 placemark->setVisualCategory(GeoDataPlacemark::Unknown);   // default location
                 placemark->setZoomLevel(0);
@@ -686,7 +719,10 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
         }
         else
         {
-            qCWarning(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Unknown feature" << (*i)->nodeType() << ". Skipping.";
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO
+                                             << "Unknown feature"
+                                             << (*i)->nodeType()
+                                             << ". Skipping.";
         }
     }
 }
