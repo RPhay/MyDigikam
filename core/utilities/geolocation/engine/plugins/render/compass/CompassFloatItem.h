@@ -51,41 +51,41 @@ public:
 
     CompassFloatItem();
     explicit CompassFloatItem(const MarbleModel* marbleModel);
-    ~CompassFloatItem() override;
+    ~CompassFloatItem()                                               override;
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                                  const override;
 
-    QString name() const override;
+    QString name()                                              const override;
 
-    QString guiString() const override;
+    QString guiString()                                         const override;
 
-    QString nameId() const override;
+    QString nameId()                                            const override;
 
-    QString version() const override;
+    QString version()                                           const override;
 
-    QString description() const override;
+    QString description()                                       const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                                    const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()                       const override;
 
-    QIcon icon() const override;
+    QIcon icon()                                                const override;
 
-    void initialize() override;
+    void initialize()                                                 override;
 
-    bool isInitialized() const override;
+    bool isInitialized()                                        const override;
 
-    QPainterPath backgroundShape() const override;
+    QPainterPath backgroundShape()                              const override;
 
-    void setProjection(const ViewportParams* viewport) override;
+    void setProjection(const ViewportParams* viewport)                override;
 
-    void paintContent(QPainter* painter) override;
+    void paintContent(QPainter* painter)                              override;
 
-    QDialog* configDialog() override;
+    QDialog* configDialog()                                           override;
 
-    QHash<QString, QVariant> settings() const override;
+    QHash<QString, QVariant> settings()                         const override;
 
-    void setSettings(const QHash<QString, QVariant>& settings) override;
+    void setSettings(const QHash<QString, QVariant>& settings)        override;
 
 private Q_SLOTS:
 
@@ -98,13 +98,13 @@ private:
 
 private:
 
-    bool                     m_isInitialized;
+    bool                     m_isInitialized    = false;
 
     QSvgRenderer*            m_svgobj           = nullptr;
     QPixmap                  m_compass;
 
     /// allowed values: -1, 0, 1; default here: 0. FIXME: Declare enum
-    int                      m_polarity;
+    int                      m_polarity         = 0;
 
     int                      m_themeIndex;
     QDialog*                 m_configDialog     = nullptr;

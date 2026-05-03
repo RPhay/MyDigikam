@@ -38,24 +38,24 @@ namespace Marble
 {
 
 CompassFloatItem::CompassFloatItem()
-    : AbstractFloatItem(nullptr),
-      m_svgobj(nullptr),
-      m_polarity(0),
-      m_themeIndex(0),
-      m_configDialog(nullptr),
-      m_uiConfigWidget(nullptr)
+    : AbstractFloatItem (nullptr),
+      m_svgobj          (nullptr),
+      m_polarity        (0),
+      m_themeIndex      (0),
+      m_configDialog    (nullptr),
+      m_uiConfigWidget  (nullptr)
 {
 }
 
 CompassFloatItem::CompassFloatItem(const MarbleModel* marbleModel)
     : AbstractFloatItem(marbleModel, QPointF(-1.0, 10.0), QSizeF(75.0, 75.0)),
-      m_isInitialized(false),
-      m_svgobj(nullptr),
-      m_compass(),
-      m_polarity(0),
-      m_themeIndex(0),
-      m_configDialog(nullptr),
-      m_uiConfigWidget(nullptr)
+      m_isInitialized   (false),
+      m_svgobj          (nullptr),
+      m_compass         (),
+      m_polarity        (0),
+      m_themeIndex      (0),
+      m_configDialog    (nullptr),
+      m_uiConfigWidget  (nullptr)
 {
 }
 
@@ -126,8 +126,8 @@ QPainterPath CompassFloatItem::backgroundShape() const
 {
     QRectF contentRect = this->contentRect();
     QPainterPath path;
-    int fontheight = QFontMetrics(font()).ascent();
-    int compassLength = static_cast<int>(contentRect.height()) - 5 - fontheight;
+    int fontheight     = QFontMetrics(font()).ascent();
+    int compassLength  = static_cast<int>(contentRect.height()) - 5 - fontheight;
 
     path.addEllipse(QRectF(QPointF(marginLeft() + padding() + (contentRect.width() - compassLength) / 2,
                                    marginTop() + padding() + 5 + fontheight),
@@ -138,6 +138,7 @@ QPainterPath CompassFloatItem::backgroundShape() const
 void CompassFloatItem::setProjection(const ViewportParams* viewport)
 {
     // figure out the polarity ...
+
     if (m_polarity != viewport->polarity())
     {
         m_polarity = viewport->polarity();
@@ -159,7 +160,7 @@ void CompassFloatItem::paintContent(QPainter* painter)
         /*else*/             QString();
 
     int fontheight = QFontMetrics(font()).ascent();
-    int fontwidth = QFontMetrics(font()).boundingRect(dirstr).width();
+    int fontwidth  = QFontMetrics(font()).boundingRect(dirstr).width();
 
     QPen outlinepen(background().color());
     outlinepen.setWidth(2);
@@ -183,7 +184,8 @@ void CompassFloatItem::paintContent(QPainter* painter)
     QSize compassSize(compassLength, compassLength);
 
     // Rerender compass pixmap if the size has changed
-    if (m_compass.isNull() || m_compass.size() != compassSize)
+
+    if (m_compass.isNull() || (m_compass.size() != compassSize))
     {
         m_compass = QPixmap(compassSize);
         m_compass.fill(Qt::transparent);
@@ -201,17 +203,20 @@ QDialog* CompassFloatItem::configDialog()
 {
     if (!m_configDialog)
     {
-        m_configDialog = new QDialog();
+        m_configDialog   = new QDialog();
         m_uiConfigWidget = new Ui::CompassConfigWidget;
         m_uiConfigWidget->setupUi(m_configDialog);
         readSettings();
+
         connect(m_uiConfigWidget->m_buttonBox, SIGNAL(accepted()),
-                SLOT(writeSettings()));
+                this, SLOT(writeSettings()));
         connect(m_uiConfigWidget->m_buttonBox, SIGNAL(rejected()),
-                SLOT(readSettings()));
+                this, SLOT(readSettings()));
+
         QPushButton* applyButton = m_uiConfigWidget->m_buttonBox->button(QDialogButtonBox::Apply);
+
         connect(applyButton, SIGNAL(clicked()),
-                this,        SLOT(writeSettings()));
+                this, SLOT(writeSettings()));
     }
 
     return m_configDialog;
@@ -237,7 +242,7 @@ void CompassFloatItem::setSettings(const QHash<QString, QVariant>& settings)
 
 void CompassFloatItem::readSettings()
 {
-    if (m_uiConfigWidget && m_themeIndex >= 0 && m_themeIndex < m_uiConfigWidget->m_themeList->count())
+    if (m_uiConfigWidget && (m_themeIndex >= 0) && (m_themeIndex < m_uiConfigWidget->m_themeList->count()))
     {
         m_uiConfigWidget->m_themeList->setCurrentRow(m_themeIndex);
     }
@@ -247,20 +252,26 @@ void CompassFloatItem::readSettings()
     switch (m_themeIndex)
     {
         case 1:
+        {
             theme = QStringLiteral(":/compass-arrows.svg");
             break;
+        }
 
         case 2:
+        {
             theme = QStringLiteral(":/compass-atom.svg");
             break;
+        }
 
         case 3:
+        {
             theme = QStringLiteral(":/compass-magnet.svg");
             break;
+        }
     }
 
     delete m_svgobj;
-    m_svgobj = new QSvgRenderer(theme, this);
+    m_svgobj  = new QSvgRenderer(theme, this);
     m_compass = QPixmap();
 }
 
