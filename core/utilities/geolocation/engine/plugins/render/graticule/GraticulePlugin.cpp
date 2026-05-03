@@ -43,25 +43,25 @@ namespace Marble
 {
 
 GraticulePlugin::GraticulePlugin()
-    : RenderPlugin(nullptr),
-      m_showPrimaryLabels(true),
-      m_showSecondaryLabels(true),
-      m_isInitialized(false),
-      ui_configWidget(nullptr),
-      m_configDialog(nullptr)
+    : RenderPlugin          (nullptr),
+      m_showPrimaryLabels   (true),
+      m_showSecondaryLabels (true),
+      m_isInitialized       (false),
+      ui_configWidget       (nullptr),
+      m_configDialog        (nullptr)
 {
 }
 
 GraticulePlugin::GraticulePlugin(const MarbleModel* marbleModel)
-    : RenderPlugin(marbleModel),
-      m_equatorCirclePen(Qt::yellow),
-      m_tropicsCirclePen(Qt::yellow),
-      m_gridCirclePen(Qt::white),
-      m_showPrimaryLabels(true),
-      m_showSecondaryLabels(true),
-      m_isInitialized(false),
-      ui_configWidget(nullptr),
-      m_configDialog(nullptr)
+    : RenderPlugin          (marbleModel),
+      m_equatorCirclePen    (Qt::yellow),
+      m_tropicsCirclePen    (Qt::yellow),
+      m_gridCirclePen       (Qt::white),
+      m_showPrimaryLabels   (true),
+      m_showSecondaryLabels (true),
+      m_isInitialized       (false),
+      ui_configWidget       (nullptr),
+      m_configDialog        (nullptr)
 {
 }
 
@@ -139,29 +139,29 @@ QDialog* GraticulePlugin::configDialog()
 {
     if (!m_configDialog)
     {
-        m_configDialog = new QDialog();
+        m_configDialog  = new QDialog();
         ui_configWidget = new Ui::GraticuleConfigWidget;
         ui_configWidget->setupUi(m_configDialog);
 
-        connect(ui_configWidget->gridPushButton, SIGNAL(clicked()), this,
-                SLOT(gridGetColor()));
+        connect(ui_configWidget->gridPushButton, SIGNAL(clicked()),
+                this, SLOT(gridGetColor()));
 
-        connect(ui_configWidget->tropicsPushButton, SIGNAL(clicked()), this,
-                SLOT(tropicsGetColor()));
+        connect(ui_configWidget->tropicsPushButton, SIGNAL(clicked()),
+                this, SLOT(tropicsGetColor()));
 
-        connect(ui_configWidget->equatorPushButton, SIGNAL(clicked()), this,
-                SLOT(equatorGetColor()));
+        connect(ui_configWidget->equatorPushButton, SIGNAL(clicked()),
+                this, SLOT(equatorGetColor()));
 
-        connect(ui_configWidget->m_buttonBox, SIGNAL(accepted()), this,
-                SLOT(writeSettings()));
+        connect(ui_configWidget->m_buttonBox, SIGNAL(accepted()),
+                this, SLOT(writeSettings()));
 
         connect(ui_configWidget->m_buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
-                SLOT(restoreDefaultSettings()));
+                this, SLOT(restoreDefaultSettings()));
 
         QPushButton* applyButton = ui_configWidget->m_buttonBox->button(QDialogButtonBox::Apply);
 
         connect(applyButton, SIGNAL(clicked()),
-                this,        SLOT(writeSettings()));
+                this, SLOT(writeSettings()));
     }
 
     readSettings();
@@ -173,11 +173,11 @@ QHash<QString, QVariant> GraticulePlugin::settings() const
 {
     QHash<QString, QVariant> settings = RenderPlugin::settings();
 
-    settings.insert(QStringLiteral("gridColor"), m_gridCirclePen.color().name());
-    settings.insert(QStringLiteral("tropicsColor"), m_tropicsCirclePen.color().name());
-    settings.insert(QStringLiteral("equatorColor"), m_equatorCirclePen.color().name());
-    settings.insert(QStringLiteral("primaryLabels"), m_showPrimaryLabels);
-    settings.insert(QStringLiteral("secondaryLabels"), m_showSecondaryLabels);
+    settings.insert(QStringLiteral("gridColor"),        m_gridCirclePen.color().name());
+    settings.insert(QStringLiteral("tropicsColor"),     m_tropicsCirclePen.color().name());
+    settings.insert(QStringLiteral("equatorColor"),     m_equatorCirclePen.color().name());
+    settings.insert(QStringLiteral("primaryLabels"),    m_showPrimaryLabels);
+    settings.insert(QStringLiteral("secondaryLabels"),  m_showSecondaryLabels);
 
     return settings;
 }
@@ -186,17 +186,17 @@ void GraticulePlugin::setSettings(const QHash<QString, QVariant>& settings)
 {
     RenderPlugin::setSettings(settings);
 
-    const QColor gridColor = settings.value(QStringLiteral("gridColor"), QColor(Qt::white)).value<QColor>();
-    const QColor tropicsColor = settings.value(QStringLiteral("tropicsColor"), QColor(Qt::yellow)).value<QColor>();
-    const QColor equatorColor = settings.value(QStringLiteral("equatorColor"), QColor(Qt::yellow)).value<QColor>();
-    bool primaryLabels = settings.value(QStringLiteral("primaryLabels"), true).toBool();
-    bool secondaryLabels = settings.value(QStringLiteral("secondaryLabels"), true).toBool();
+    const QColor gridColor    = settings.value(QStringLiteral("gridColor"),       QColor(Qt::white)).value<QColor>();
+    const QColor tropicsColor = settings.value(QStringLiteral("tropicsColor"),    QColor(Qt::yellow)).value<QColor>();
+    const QColor equatorColor = settings.value(QStringLiteral("equatorColor"),    QColor(Qt::yellow)).value<QColor>();
+    bool primaryLabels        = settings.value(QStringLiteral("primaryLabels"),   true).toBool();
+    bool secondaryLabels      = settings.value(QStringLiteral("secondaryLabels"), true).toBool();
 
     m_gridCirclePen.setColor(gridColor);
     m_tropicsCirclePen.setColor(tropicsColor);
     m_equatorCirclePen.setColor(equatorColor);
 
-    m_showPrimaryLabels = primaryLabels;
+    m_showPrimaryLabels   = primaryLabels;
     m_showSecondaryLabels = secondaryLabels;
 
     readSettings();
@@ -227,7 +227,8 @@ void GraticulePlugin::readSettings()
 
 void GraticulePlugin::gridGetColor()
 {
-    const QColor c = QColorDialog::getColor(m_gridCirclePen.color(), nullptr, i18n("Please choose the color for the coordinate grid."));
+    const QColor c = QColorDialog::getColor(m_gridCirclePen.color(), nullptr,
+                                            i18n("Please choose the color for the coordinate grid."));
 
     if (c.isValid())
     {
@@ -239,7 +240,8 @@ void GraticulePlugin::gridGetColor()
 
 void GraticulePlugin::tropicsGetColor()
 {
-    const QColor c = QColorDialog::getColor(m_tropicsCirclePen.color(), nullptr, i18n("Please choose the color for the tropic circles."));
+    const QColor c = QColorDialog::getColor(m_tropicsCirclePen.color(), nullptr,
+                                            i18n("Please choose the color for the tropic circles."));
 
     if (c.isValid())
     {
@@ -251,7 +253,8 @@ void GraticulePlugin::tropicsGetColor()
 
 void GraticulePlugin::equatorGetColor()
 {
-    const QColor c = QColorDialog::getColor(m_equatorCirclePen.color(), nullptr, i18n("Please choose the color for the equator."));
+    const QColor c = QColorDialog::getColor(m_equatorCirclePen.color(), nullptr,
+                                            i18n("Please choose the color for the equator."));
 
     if (c.isValid())
     {
@@ -337,18 +340,21 @@ void GraticulePlugin::renderGrid(GeoPainter* painter, ViewportParams* viewport,
     renderLatitudeLine(painter, 0.0, viewLatLonAltBox, i18n("Equator"), mainPosition);
 
     // Render the Prime Meridian and Antimeridian
+
     GeoDataCoordinates::Notation notation = GeoDataCoordinates::defaultNotation();
 
-    if (marbleModel()->planet()->id() != QLatin1String("sky") && notation != GeoDataCoordinates::Astro)
+    if ((marbleModel()->planet()->id() != QLatin1String("sky")) && (notation != GeoDataCoordinates::Astro))
     {
-        renderLongitudeLine(painter, 0.0, viewLatLonAltBox, 0.0, 0.0, i18n("Prime Meridian"), mainPosition);
-        renderLongitudeLine(painter, 180.0, viewLatLonAltBox, 0.0, 0.0, i18n("Antimeridian"), mainPosition);
+        renderLongitudeLine(painter, 0.0,   viewLatLonAltBox, 0.0, 0.0, i18n("Prime Meridian"), mainPosition);
+        renderLongitudeLine(painter, 180.0, viewLatLonAltBox, 0.0, 0.0, i18n("Antimeridian"),   mainPosition);
     }
 
     painter->setPen(gridCirclePen);
+
     // painter->setPen( QPen( QBrush( Qt::white ), 0.75 ) );
 
     // Render UTM grid zones
+
     if (m_currentNotation == GeoDataCoordinates::UTM)
     {
         renderLatitudeLine(painter, 84.0, viewLatLonAltBox);
@@ -361,6 +367,7 @@ void GraticulePlugin::renderGrid(GeoPainter* painter, ViewportParams* viewport,
                              34.0, 10.0, LineStart | IgnoreXMargin);
 
         // Paint longitudes with exceptions
+
         renderLongitudeLines(painter, viewLatLonAltBox,
                              6.0, 0.0,
                              6.0, 162.0, LineEnd | IgnoreXMargin);
@@ -377,6 +384,7 @@ void GraticulePlugin::renderGrid(GeoPainter* painter, ViewportParams* viewport,
     // Render the normal grid
 
     // calculate the angular distance between coordinate lines of the normal grid
+
     qreal normalDegreeStep = 360.0 / m_normalLineMap.lowerBound(viewport->radius()).value();
 
     LabelPositionFlags labelXPosition(NoLabel), labelYPosition(NoLabel);
@@ -396,13 +404,14 @@ void GraticulePlugin::renderGrid(GeoPainter* painter, ViewportParams* viewport,
                         labelYPosition);
 
     // Render some non-cut off longitude lines ..
+
     renderLongitudeLine(painter, +90.0, viewLatLonAltBox);
     renderLongitudeLine(painter, -90.0, viewLatLonAltBox);
 
     // Render the bold grid
 
-    if (painter->mapQuality() == HighQuality
-        || painter->mapQuality() == PrintQuality)
+    if ((painter->mapQuality() == HighQuality)
+        || (painter->mapQuality() == PrintQuality))
     {
 
         QPen boldPen = gridCirclePen;
@@ -415,16 +424,15 @@ void GraticulePlugin::renderGrid(GeoPainter* painter, ViewportParams* viewport,
     renderLongitudeLines(painter, viewLatLonAltBox,
                          boldDegreeStep, 0.0,
                          normalDegreeStep, normalDegreeStep,
-                         NoLabel
-                        );
+                         NoLabel);
 
     renderLatitudeLines(painter, viewLatLonAltBox, boldDegreeStep, 0.0,
                         NoLabel);
 
     QPen tropicsPen = tropicsCirclePen;
 
-    if (painter->mapQuality() != OutlineQuality
-        && painter->mapQuality() != LowQuality)
+    if ((painter->mapQuality() != OutlineQuality)
+        && (painter->mapQuality() != LowQuality))
     {
         tropicsPen.setStyle(Qt::DotLine);
     }
@@ -432,16 +440,19 @@ void GraticulePlugin::renderGrid(GeoPainter* painter, ViewportParams* viewport,
     painter->setPen(tropicsPen);
 
     // Determine the planet's axial tilt
+
     qreal axialTilt = RAD2DEG * marbleModel()->planet()->epsilon();
 
     if (axialTilt > 0)
     {
         // Render the tropics
-        renderLatitudeLine(painter, +axialTilt, viewLatLonAltBox, i18n("Tropic of Cancer"), mainPosition);
+
+        renderLatitudeLine(painter, +axialTilt, viewLatLonAltBox, i18n("Tropic of Cancer"),    mainPosition);
         renderLatitudeLine(painter, -axialTilt, viewLatLonAltBox, i18n("Tropic of Capricorn"), mainPosition);
 
         // Render the arctics
-        renderLatitudeLine(painter, +90.0 - axialTilt, viewLatLonAltBox, i18n("Arctic Circle"), mainPosition);
+
+        renderLatitudeLine(painter, +90.0 - axialTilt, viewLatLonAltBox, i18n("Arctic Circle"),    mainPosition);
         renderLatitudeLine(painter, -90.0 + axialTilt, viewLatLonAltBox, i18n("Antarctic Circle"), mainPosition);
     }
 }
@@ -455,6 +466,7 @@ void GraticulePlugin::renderLatitudeLine(GeoPainter* painter, qreal latitude,
     qreal toNorthLat   = viewLatLonAltBox.north(GeoDataCoordinates::Degree);
 
     // Coordinate line is not displayed inside the viewport
+
     if (latitude < fromSouthLat || toNorthLat < latitude)
     {
         // mDebug() << "Lat: Out of View";
@@ -475,7 +487,6 @@ void GraticulePlugin::renderLatitudeLine(GeoPainter* painter, qreal latitude,
             line << GeoDataCoordinates(fromWestLon + i * step, latitude, 0.0, GeoDataCoordinates::Degree);
         }
     }
-
     else
     {
         qreal step = (+180.0 - toEastLon) * 0.25;
@@ -508,10 +519,10 @@ void GraticulePlugin::renderLongitudeLine(GeoPainter* painter, qreal longitude,
     // Coordinate line is not displayed inside the viewport
 
     if ((!viewLatLonAltBox.crossesDateLine()
-         && (longitude * DEG2RAD < fromWestLon || toEastLon < longitude * DEG2RAD)) ||
+         && (((longitude * DEG2RAD) < fromWestLon) || (toEastLon < (longitude * DEG2RAD)))) ||
         (viewLatLonAltBox.crossesDateLine() &&
-         longitude * DEG2RAD < toEastLon && fromWestLon < longitude * DEG2RAD &&
-         fromWestLon != -M_PI && toEastLon != +M_PI)
+        ((longitude * DEG2RAD) < toEastLon) && (fromWestLon < (longitude * DEG2RAD)) &&
+         (fromWestLon != -M_PI) && (toEastLon != +M_PI))
        )
     {
         // mDebug() << "Lon: Out of View:" << viewLatLonAltBox.toString() << " Crossing: "<< viewLatLonAltBox.crossesDateLine() << "Longitude: " << longitude;
@@ -529,7 +540,7 @@ void GraticulePlugin::renderLongitudeLine(GeoPainter* painter, qreal longitude,
 
     GeoDataLineString line(Tessellate);
 
-    if (northLat > 0 && southLat < 0)
+    if ((northLat > 0) && (southLat < 0))
     {
         GeoDataCoordinates n2(longitude, 0.0, 0.0, GeoDataCoordinates::Degree);
         line << n1 << n2 << n3;
@@ -546,8 +557,7 @@ void GraticulePlugin::renderLongitudeLine(GeoPainter* painter, qreal longitude,
 void GraticulePlugin::renderLatitudeLines(GeoPainter* painter,
                                           const GeoDataLatLonAltBox& viewLatLonAltBox,
                                           qreal step, qreal skipStep,
-                                          LabelPositionFlags labelPositionFlags
-                                         )
+                                          LabelPositionFlags labelPositionFlags)
 {
     if (step <= 0)
     {
@@ -555,10 +565,11 @@ void GraticulePlugin::renderLatitudeLines(GeoPainter* painter,
     }
 
     // Latitude
-    qreal southLat = viewLatLonAltBox.south(GeoDataCoordinates::Degree);
-    qreal northLat = viewLatLonAltBox.north(GeoDataCoordinates::Degree);
 
-    qreal southLineLat = step * static_cast<int>(southLat / step);
+    qreal southLat     = viewLatLonAltBox.south(GeoDataCoordinates::Degree);
+    qreal northLat     = viewLatLonAltBox.north(GeoDataCoordinates::Degree);
+
+    qreal southLineLat = step *  static_cast<int>(southLat / step);
     qreal northLineLat = step * (static_cast<int>(northLat / step) + 1);
 
     if (m_currentNotation == GeoDataCoordinates::UTM)
@@ -581,16 +592,19 @@ void GraticulePlugin::renderLatitudeLines(GeoPainter* painter,
     while (itStep < northLineLat)
     {
         // Create a matching label
+
         QString label = GeoDataCoordinates::latToString(itStep, notation,
                                                         GeoDataCoordinates::Degree, -1, 'g');
 
         // No additional labels for the equator
+
         if (labelPositionFlags.testFlag(LineCenter) && itStep == 0.0)
         {
             label.clear();
         }
 
         // Paint all latitude coordinate lines except for the equator
+
         if (itStep != 0.0 && fmod(itStep, skipStep) != 0)
         {
             renderLatitudeLine(painter, itStep, viewLatLonAltBox, label, labelPositionFlags);
@@ -609,26 +623,24 @@ void GraticulePlugin::renderUtmExceptions(GeoPainter* painter,
 {
     // This code renders the so called "exceptions" in the UTM coordinate grid
     // See: https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system#Exceptions
-    if (northPolarGap == 6.0 && southPolarGap == 162.0)
+
+    if      ((northPolarGap == 6.0) && (southPolarGap == 162.0))
     {
-        if (label == QLatin1String("33"))
+        if      (label == QLatin1String("33"))
         {
             renderLongitudeLine(painter, itStep - 3.0, viewLatLonAltBox, northPolarGap,
                                 southPolarGap, label, labelPositionFlags);
         }
-
         else if (label == QLatin1String("35"))
         {
             renderLongitudeLine(painter, itStep - 3.0, viewLatLonAltBox, northPolarGap,
                                 southPolarGap, label, labelPositionFlags);
         }
-
         else if (label == QLatin1String("37"))
         {
             renderLongitudeLine(painter, itStep - 3.0, viewLatLonAltBox, northPolarGap,
                                 southPolarGap, label, labelPositionFlags);
         }
-
         else if (label == QLatin1String("32") || label == QLatin1String("34") || label == QLatin1String("36"))
         {
             // paint nothing
@@ -639,7 +651,6 @@ void GraticulePlugin::renderUtmExceptions(GeoPainter* painter,
                                 southPolarGap, label, labelPositionFlags);
         }
     }
-
     else if (northPolarGap == 26.0 && southPolarGap == 146.0)
     {
         if (label == QLatin1String("32"))
@@ -647,14 +658,12 @@ void GraticulePlugin::renderUtmExceptions(GeoPainter* painter,
             renderLongitudeLine(painter, itStep - 3.0, viewLatLonAltBox, northPolarGap,
                                 southPolarGap, label, labelPositionFlags);
         }
-
         else
         {
             renderLongitudeLine(painter, itStep, viewLatLonAltBox, northPolarGap,
                                 southPolarGap, label, labelPositionFlags);
         }
     }
-
     else
     {
         renderLongitudeLine(painter, itStep, viewLatLonAltBox, northPolarGap,
@@ -673,13 +682,15 @@ void GraticulePlugin::renderLongitudeLines(GeoPainter* painter,
         return;
     }
 
-    const bool isSky = (marbleModel()->planet()->id() == QLatin1String("sky"));
+    const bool isSky                            = (marbleModel()->planet()->id() == QLatin1String("sky"));
     const GeoDataCoordinates::Notation notation = isSky ? GeoDataCoordinates::Astro : GeoDataCoordinates::defaultNotation();
 
     // Set precision to 0 in UTM in order to show only zone number.
+
     int precision = (notation == GeoDataCoordinates::UTM) ? 0 : -1;
 
     // Longitude
+
     qreal westLon = viewLatLonAltBox.west(GeoDataCoordinates::Degree);
     qreal eastLon = viewLatLonAltBox.east(GeoDataCoordinates::Degree);
 
@@ -687,13 +698,14 @@ void GraticulePlugin::renderLongitudeLines(GeoPainter* painter,
     qreal eastLineLon = step * (static_cast<int>(eastLon / step) + 1);
 
     if (!viewLatLonAltBox.crossesDateLine() ||
-        (westLon == -180.0 && eastLon == +180.0))
+        ((westLon == -180.0) && (eastLon == +180.0)))
     {
         qreal itStep = westLineLon;
 
         while (itStep < eastLineLon)
         {
             // Create a matching label
+
             QString label = GeoDataCoordinates::lonToString(itStep,
                                                             notation, GeoDataCoordinates::Degree,
                                                             precision, 'g');
@@ -706,15 +718,15 @@ void GraticulePlugin::renderLongitudeLines(GeoPainter* painter,
             }
 
             // Paint all longitude coordinate lines (except for the meridians in non-UTM mode)
-            if (notation == GeoDataCoordinates::UTM)
+
+            if      (notation == GeoDataCoordinates::UTM)
             {
                 renderUtmExceptions(painter, viewLatLonAltBox, itStep, northPolarGap,
                                     southPolarGap, label, labelPositionFlags);
             }
-
-            else if (itStep != 0.0 && itStep != 180.0 && itStep != -180.0)
+            else if ((itStep != 0.0) && (itStep != 180.0) && (itStep != -180.0))
             {
-                if (fmod(itStep, skipStep) != 0 || skipStep == 0.0)
+                if ((fmod(itStep, skipStep) != 0) || (skipStep == 0.0))
                 {
                     renderLongitudeLine(painter, itStep, viewLatLonAltBox, northPolarGap,
                                         southPolarGap, label, labelPositionFlags);
@@ -724,7 +736,6 @@ void GraticulePlugin::renderLongitudeLines(GeoPainter* painter,
             itStep += step;
         }
     }
-
     else
     {
         qreal itStep = eastLineLon;
@@ -732,27 +743,28 @@ void GraticulePlugin::renderLongitudeLines(GeoPainter* painter,
         while (itStep < 180.0)
         {
             // Create a matching label
+
             QString label = GeoDataCoordinates::lonToString(itStep,
                                                             notation, GeoDataCoordinates::Degree,
                                                             precision, 'g');
 
             // No additional labels for the prime meridian and the antimeridian
 
-            if (labelPositionFlags.testFlag(LineCenter) && (itStep == 0.0 || itStep == 180.0 || itStep == -180.0))
+            if (labelPositionFlags.testFlag(LineCenter) && ((itStep == 0.0) || (itStep == 180.0) || (itStep == -180.0)))
             {
                 label.clear();
             }
 
             // Paint all longitude coordinate lines (except for the meridians in non-UTM mode)
-            if (notation == GeoDataCoordinates::UTM)
+
+            if      (notation == GeoDataCoordinates::UTM)
             {
                 renderUtmExceptions(painter, viewLatLonAltBox, itStep, northPolarGap,
                                     southPolarGap, label, labelPositionFlags);
             }
-
-            else if (itStep != 0.0 && itStep != 180.0 && itStep != -180.0)
+            else if ((itStep != 0.0) && (itStep != 180.0) && (itStep != -180.0))
             {
-                if (fmod((itStep), skipStep) != 0 || skipStep == 0.0)
+                if ((fmod((itStep), skipStep) != 0) || (skipStep == 0.0))
                 {
                     renderLongitudeLine(painter, itStep, viewLatLonAltBox, northPolarGap,
                                         southPolarGap, label, labelPositionFlags);
@@ -767,26 +779,28 @@ void GraticulePlugin::renderLongitudeLines(GeoPainter* painter,
         while (itStep < westLineLon)
         {
             // Create a matching label
+
             QString label = GeoDataCoordinates::lonToString(itStep,
                                                             notation, GeoDataCoordinates::Degree,
                                                             precision, 'g');
 
             // No additional labels for the prime meridian and the antimeridian
-            if (labelPositionFlags.testFlag(LineCenter) && (itStep == 0.0 || itStep == 180.0 || itStep == -180.0))
+
+            if (labelPositionFlags.testFlag(LineCenter) && ((itStep == 0.0) || (itStep == 180.0) || (itStep == -180.0)))
             {
                 label.clear();
             }
 
             // Paint all longitude coordinate lines (except for the meridians in non-UTM mode)
+
             if (notation == GeoDataCoordinates::UTM)
             {
                 renderUtmExceptions(painter, viewLatLonAltBox, itStep, northPolarGap,
                                     southPolarGap, label, labelPositionFlags);
             }
-
-            else if (itStep != 0.0 && itStep != 180.0 && itStep != -180.0)
+            else if ((itStep != 0.0) && (itStep != 180.0) && (itStep != -180.0))
             {
-                if (fmod((itStep + 180), skipStep) != 0 || skipStep == 0.0)
+                if ((fmod((itStep + 180), skipStep) != 0) || (skipStep == 0.0))
                 {
                     renderLongitudeLine(painter, itStep, viewLatLonAltBox, northPolarGap,
                                         southPolarGap, label, labelPositionFlags);
@@ -808,87 +822,91 @@ void GraticulePlugin::initLineMaps(GeoDataCoordinates::Notation notation)
        with 4 longitude lines (4 half-circles).
      */
 
-    if (marbleModel()->planet()->id() == QLatin1String("sky") ||
-        notation == GeoDataCoordinates::Astro)
+    if ((marbleModel()->planet()->id() == QLatin1String("sky")) ||
+        (notation == GeoDataCoordinates::Astro))
     {
-        m_normalLineMap[100]     = 4;          // 6h
-        m_normalLineMap[1000]    = 12;          // 2h
-        m_normalLineMap[2000]   = 24;         // 1h
-        m_normalLineMap[4000]   = 48;         // 30 min
-        m_normalLineMap[8000]   = 96;         // 15 min
-        m_normalLineMap[16000]  = 288;        // 5 min
-        m_normalLineMap[100000]  = 24 * 60;     // 1 min
-        m_normalLineMap[200000]  = 24 * 60 * 2; // 30 sec
-        m_normalLineMap[400000]  = 24 * 60 * 4; // 15 sec
-        m_normalLineMap[1200000] = 24 * 60 * 12; // 5 sec
-        m_normalLineMap[6000000] = 24 * 60 * 60; // 1 sec
-        m_normalLineMap[12000000] = 24 * 60 * 60 * 2; // 0.5 sec
-        m_normalLineMap[24000000] = 24 * 60 * 60 * 4; // 0.25 sec
+        m_normalLineMap[100]      = 4;                  // 6h
+        m_normalLineMap[1000]     = 12;                 // 2h
+        m_normalLineMap[2000]     = 24;                 // 1h
+        m_normalLineMap[4000]     = 48;                 // 30 min
+        m_normalLineMap[8000]     = 96;                 // 15 min
+        m_normalLineMap[16000]    = 288;                // 5 min
+        m_normalLineMap[100000]   = 24 * 60;            // 1 min
+        m_normalLineMap[200000]   = 24 * 60 * 2;        // 30 sec
+        m_normalLineMap[400000]   = 24 * 60 * 4;        // 15 sec
+        m_normalLineMap[1200000]  = 24 * 60 * 12;       // 5 sec
+        m_normalLineMap[6000000]  = 24 * 60 * 60;       // 1 sec
+        m_normalLineMap[12000000] = 24 * 60 * 60 * 2;   // 0.5 sec
+        m_normalLineMap[24000000] = 24 * 60 * 60 * 4;   // 0.25 sec
 
-        m_boldLineMap[1000]     = 0;        // 0h
-        m_boldLineMap[2000]    = 4;         //  6h
-        m_boldLineMap[16000]    = 24;       //  30 deg
+        m_boldLineMap[1000]       = 0;                  // 0h
+        m_boldLineMap[2000]       = 4;                  // 6h
+        m_boldLineMap[16000]      = 24;                 // 30 deg
+
         return;
     }
 
-    m_normalLineMap[100]     = 4;          // 90 deg
+    m_normalLineMap[100]     = 4;           // 90 deg
     m_normalLineMap[1000]    = 12;          // 30 deg
-    m_normalLineMap[4000]   = 36;         // 10 deg
-    m_normalLineMap[16000]   = 72;         // 5 deg
-    m_normalLineMap[64000]  = 360;         //  1 deg
-    m_normalLineMap[128000] = 720;        //  0.5 deg
+    m_normalLineMap[4000]    = 36;          // 10 deg
+    m_normalLineMap[16000]   = 72;          // 5 deg
+    m_normalLineMap[64000]   = 360;         // 1 deg
+    m_normalLineMap[128000]  = 720;         // 0.5 deg
 
-    m_boldLineMap[1000]     = 0;         //  0 deg
-    m_boldLineMap[4000]    = 12;         //  30 deg
-    m_boldLineMap[16000]   = 36;         //  10 deg
+    m_boldLineMap[1000]      = 0;           // 0 deg
+    m_boldLineMap[4000]      = 12;          // 30 deg
+    m_boldLineMap[16000]     = 36;          // 10 deg
 
     switch (notation)
     {
-        case GeoDataCoordinates::Decimal :
+        case GeoDataCoordinates::Decimal:
+        {
+            m_normalLineMap[512000]     = 360 * 10;     // 0.1 deg
+            m_normalLineMap[2048000]    = 360 * 20;     // 0.05 deg
+            m_normalLineMap[8192000]    = 360 * 100;    // 0.01 deg
+            m_normalLineMap[16384000]   = 360 * 200;    // 0.005 deg
+            m_normalLineMap[32768000]   = 360 * 1000;   // 0.001 deg
+            m_normalLineMap[131072000]  = 360 * 2000;   // 0.0005 deg
+            m_normalLineMap[524288000]  = 360 * 10000;  // 0.00001 deg
 
-            m_normalLineMap[512000]  = 360 * 10;       //  0.1 deg
-            m_normalLineMap[2048000] = 360 * 20;       //  0.05 deg
-            m_normalLineMap[8192000] = 360 * 100;      //  0.01 deg
-            m_normalLineMap[16384000] = 360 * 200;      //  0.005 deg
-            m_normalLineMap[32768000] = 360 * 1000;    //  0.001 deg
-            m_normalLineMap[131072000] = 360 * 2000;    //  0.0005 deg
-            m_normalLineMap[524288000] = 360 * 10000;  //  0.00001 deg
-
-            m_boldLineMap[512000]     = 360;          // 0.1 deg
-            m_boldLineMap[2048000]    = 720;          // 0.05 deg
-            m_boldLineMap[8192000]   = 360 * 10;     // 0.01 deg
-            m_boldLineMap[1638400]   = 360 * 20;     // 0.005 deg
-            m_boldLineMap[32768000]  = 360 * 100;    // 0.001 deg
-            m_boldLineMap[131072000]  = 360 * 200;    // 0.0005 deg
-            m_boldLineMap[524288000] = 360 * 1000;   // 0.00001 deg
+            m_boldLineMap[512000]       = 360;          // 0.1 deg
+            m_boldLineMap[2048000]      = 720;          // 0.05 deg
+            m_boldLineMap[8192000]      = 360 * 10;     // 0.01 deg
+            m_boldLineMap[1638400]      = 360 * 20;     // 0.005 deg
+            m_boldLineMap[32768000]     = 360 * 100;    // 0.001 deg
+            m_boldLineMap[131072000]    = 360 * 200;    // 0.0005 deg
+            m_boldLineMap[524288000]    = 360 * 1000;   // 0.00001 deg
 
             break;
+        }
 
         default:
-        case GeoDataCoordinates::DMS :
-            m_normalLineMap[512000]  = 360 * 6;         //  10'
-            m_normalLineMap[1024000] = 360 * 12;        //  5'
-            m_normalLineMap[4096000] = 360 * 60;        //  1'
-            m_normalLineMap[8192000] = 360 * 60 * 2;    //  30"
-            m_normalLineMap[16384000] = 360 * 60 * 6;   //  10"
-            m_normalLineMap[65535000] = 360 * 60 * 12;  //  5"
-            m_normalLineMap[524288000] = 360 * 60 * 60; //  1"
+        case GeoDataCoordinates::DMS:
+        {
+            m_normalLineMap[512000]     = 360 * 6;          // 10'
+            m_normalLineMap[1024000]    = 360 * 12;         // 5'
+            m_normalLineMap[4096000]    = 360 * 60;         // 1'
+            m_normalLineMap[8192000]    = 360 * 60 * 2;     // 30"
+            m_normalLineMap[16384000]   = 360 * 60 * 6;     // 10"
+            m_normalLineMap[65535000]   = 360 * 60 * 12;    // 5"
+            m_normalLineMap[524288000]  = 360 * 60 * 60;    // 1"
 
-            m_boldLineMap[512000]     = 360;          // 10'
-            m_boldLineMap[1024000]    = 720;          // 5'
-            m_boldLineMap[4096000]   = 360 * 6;      // 1'
-            m_boldLineMap[8192000]   = 360 * 12;     // 30"
-            m_boldLineMap[16384000]  = 360 * 60;     // 10"
-            m_boldLineMap[65535000]  = 360 * 60 * 2; // 5"
-            m_boldLineMap[524288000] = 360 * 60 * 6; // 1"
+            m_boldLineMap[512000]       = 360;              // 10'
+            m_boldLineMap[1024000]      = 720;              // 5'
+            m_boldLineMap[4096000]      = 360 * 6;          // 1'
+            m_boldLineMap[8192000]      = 360 * 12;         // 30"
+            m_boldLineMap[16384000]     = 360 * 60;         // 10"
+            m_boldLineMap[65535000]     = 360 * 60 * 2;     // 5"
+            m_boldLineMap[524288000]    = 360 * 60 * 6;     // 1"
 
             break;
+        }
     }
 
-    m_normalLineMap[999999999] = m_normalLineMap.value(262144000);     //  last
-    m_boldLineMap[999999999]   = m_boldLineMap.value(262144000);     //  last
+    m_normalLineMap[999999999] = m_normalLineMap.value(262144000);      // last
+    m_boldLineMap[999999999]   = m_boldLineMap.value(262144000);        // last
 
-    m_currentNotation = notation;
+    m_currentNotation          = notation;
 }
 
 } // namespace Marble

@@ -49,7 +49,7 @@ class GeoDataLatLonAltBox;
  */
 
 class GraticulePlugin : public RenderPlugin,
-    public DialogConfigurationInterface
+                        public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.GraticulePlugin")
@@ -63,41 +63,44 @@ public:
 
     explicit GraticulePlugin(const MarbleModel* marbleModel);
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                                                  const override;
 
-    QString renderPolicy() const override;
+    QString renderPolicy()                                                      const override;
 
-    QStringList renderPosition() const override;
+    QStringList renderPosition()                                                const override;
 
-    QString name() const override;
+    QString name()                                                              const override;
 
-    QString guiString() const override;
+    QString guiString()                                                         const override;
 
-    QString nameId() const override;
+    QString nameId()                                                            const override;
 
-    QString version() const override;
+    QString version()                                                           const override;
 
-    QString description() const override;
+    QString description()                                                       const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                                                    const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()                                       const override;
 
-    QIcon icon() const override;
+    QIcon icon()                                                                const override;
 
-    QDialog* configDialog() override;
+    QDialog* configDialog()                                                           override;
 
-    void initialize() override;
+    void initialize()                                                                 override;
 
-    bool isInitialized() const override;
+    bool isInitialized()                                                        const override;
 
-    bool render(GeoPainter* painter, ViewportParams* viewport, const QString& renderPos, GeoSceneLayer* layer = nullptr) override;
+    bool render(GeoPainter* painter,
+                ViewportParams* viewport,
+                const QString& renderPos,
+                GeoSceneLayer* layer = nullptr)                                       override;
 
-    qreal zValue() const override;
+    qreal zValue()                                                              const override;
 
-    QHash<QString, QVariant> settings() const override;
+    QHash<QString, QVariant> settings()                                         const override;
 
-    void setSettings(const QHash<QString, QVariant>& settings) override;
+    void setSettings(const QHash<QString, QVariant>& settings)                        override;
 
 public Q_SLOTS:
 
@@ -126,7 +129,8 @@ private:
     * @param latitude the latitude of the coordinate line measured in degree .
     * @param viewLatLonAltBox the latitude longitude bounding box that is covered by the view.
     */
-    static void renderLatitudeLine(GeoPainter* painter, qreal latitude,
+    static void renderLatitudeLine(GeoPainter* painter,
+                                   qreal latitude,
                                    const GeoDataLatLonAltBox& viewLatLonAltBox = GeoDataLatLonAltBox(),
                                    const QString& lineLabel = QString(),
                                    LabelPositionFlags labelPositionFlags = LineCenter);
@@ -142,7 +146,8 @@ private:
      *        The radius of the polarGap area is measured in degrees.
      * @param lineLabel draws a label using the font and color properties set for the painter.
      */
-    static void renderLongitudeLine(GeoPainter* painter, qreal longitude,
+    static void renderLongitudeLine(GeoPainter* painter,
+                                    qreal longitude,
                                     const GeoDataLatLonAltBox& viewLatLonAltBox = GeoDataLatLonAltBox(),
                                     qreal northPolarGap = 0.0, qreal southPolarGap = 0.0,
                                     const QString& lineLabel = QString(),
@@ -157,8 +162,7 @@ private:
     void renderLatitudeLines(GeoPainter* painter,
                              const GeoDataLatLonAltBox& viewLatLonAltBox,
                              qreal step, qreal skipStep,
-                             LabelPositionFlags labelPositionFlags = LineCenter
-                            );
+                             LabelPositionFlags labelPositionFlags = LineCenter);
 
     /**
      * @brief Renders the longitude lines that are visible within the defined view bounding box.
@@ -178,8 +182,7 @@ private:
                               const GeoDataLatLonAltBox& viewLatLonAltBox,
                               qreal step, qreal skipStep,
                               qreal northPolarGap = 0.0, qreal southPolarGap = 0.0,
-                              LabelPositionFlags labelPositionFlags = LineCenter
-                             ) const;
+                              LabelPositionFlags labelPositionFlags = LineCenter) const;
 
     /**
      * @brief Renders UTM exceptions that are visible within the defined view bounding box.
@@ -210,24 +213,24 @@ private:
 
 private:
 
-    GeoDataCoordinates::Notation    m_currentNotation;
+    GeoDataCoordinates::Notation    m_currentNotation       = GeoDataCoordinates::defaultNotation();
 
     // Maps the zoom factor to the amount of lines per 360 deg
-    QMap<qreal, qreal>               m_boldLineMap;
-    QMap<qreal, qreal>               m_normalLineMap;
+    QMap<qreal, qreal>              m_boldLineMap;
+    QMap<qreal, qreal>              m_normalLineMap;
 
-    QPen                            m_equatorCirclePen;
-    QPen                            m_tropicsCirclePen;
-    QPen                            m_gridCirclePen;
-    bool                            m_showPrimaryLabels;
-    bool                            m_showSecondaryLabels;
+    QPen                            m_equatorCirclePen      = QPen(Qt::yellow);
+    QPen                            m_tropicsCirclePen      = QPen(Qt::yellow);
+    QPen                            m_gridCirclePen         = QPen(Qt::white);
+    bool                            m_showPrimaryLabels     = true;
+    bool                            m_showSecondaryLabels   = true;
 
-    bool                            m_isInitialized;
+    bool                            m_isInitialized         = false;
 
     QIcon                           m_icon;
 
-    Ui::GraticuleConfigWidget*      ui_configWidget  = nullptr;
-    QDialog*                        m_configDialog   = nullptr;
+    Ui::GraticuleConfigWidget*      ui_configWidget         = nullptr;
+    QDialog*                        m_configDialog          = nullptr;
 };
 
 } // namespace Marble
