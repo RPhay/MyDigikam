@@ -33,23 +33,23 @@ public:
 
     explicit Pn2Plugin(QObject* const parent = nullptr);
 
-    QString name() const override;
+    QString name()                          const override;
 
-    QString nameId() const override;
+    QString nameId()                        const override;
 
-    QString version() const override;
+    QString version()                       const override;
 
-    QString description() const override;
+    QString description()                   const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()   const override;
 
-    QString fileFormatDescription() const override;
+    QString fileFormatDescription()         const override;
 
-    QStringList fileExtensions() const override;
+    QStringList fileExtensions()            const override;
 
-    ParsingRunner* newRunner() const override;
+    ParsingRunner* newRunner()              const override;
 };
 
 } // namespace Marble

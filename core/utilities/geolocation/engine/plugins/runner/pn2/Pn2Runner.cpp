@@ -74,7 +74,7 @@ enum polygonFlagType
  *
  * The parser has to convert these relative coordinates to absolute coordinates.
  */
-Pn2Runner::Pn2Runner(QObject* parent)
+Pn2Runner::Pn2Runner(QObject* const parent)
     : ParsingRunner(parent)
 {
 }
@@ -95,9 +95,12 @@ bool Pn2Runner::errorCheckLon(qint16 lon)
 
 bool Pn2Runner::importPolygon(QDataStream& stream, GeoDataLineString* linestring, quint32 nrAbsoluteNodes)
 {
-    qint16 lat, lon, nrRelativeNodes;
-    qint8 relativeLat, relativeLon;
-    bool error = false;
+    qint16 lat             = 0;
+    qint16 lon             = 0;
+    qint16 nrRelativeNodes = 0;
+    qint8 relativeLat      = 0;
+    qint8 relativeLon      = 0;
+    bool error             = false;
 
     for (quint32 absoluteNode = 1 ; absoluteNode <= nrAbsoluteNodes ; absoluteNode++)
     {
@@ -173,15 +176,14 @@ GeoDataDocument* Pn2Runner::parseFile(const QString& fileName, DocumentRole role
         {
             return parseForVersion1(fileName, role);
         }
-
         case 2:
         {
             return parseForVersion2(fileName, role);
         }
-
         default:
         {
-            qCWarning(DIGIKAM_GEOENGINE_LOG) << "File cannot be parsed. We don't have parser for file header version:" << m_fileHeaderVersion;
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "File cannot be parsed. We don't have parser for file header version:"
+                                             << m_fileHeaderVersion;
             break;
         }
     }
@@ -274,7 +276,7 @@ GeoDataDocument* Pn2Runner::parseForVersion1(const QString& fileName, DocumentRo
         prevFlag = flag;
     }
 
-    if (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY)
+    if ((prevFlag == INNERBOUNDARY) || (prevFlag == OUTERBOUNDARY))
     {
         GeoDataPlacemark* const placemark = new GeoDataPlacemark;
 
@@ -325,7 +327,7 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
     {
         m_stream >> flag >> placemarkCurrentID;
 
-        if (flag == MULTIGEOMETRY && (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY))
+        if ((flag == MULTIGEOMETRY) && ((prevFlag == INNERBOUNDARY) || (prevFlag == OUTERBOUNDARY)))
         {
             if (placemark)
             {
@@ -333,7 +335,7 @@ GeoDataDocument* Pn2Runner::parseForVersion2(const QString& fileName, DocumentRo
             }
         }
 
-        if (flag != MULTIGEOMETRY && flag != INNERBOUNDARY && (prevFlag == INNERBOUNDARY || prevFlag == OUTERBOUNDARY))
+        if ((flag != MULTIGEOMETRY) && (flag != INNERBOUNDARY) && ((prevFlag == INNERBOUNDARY) || (prevFlag == OUTERBOUNDARY)))
         {
             if (placemark)
             {
