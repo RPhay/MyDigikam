@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-02 00:41+0000\n"
-"PO-Revision-Date: 2026-04-07 13:21+0300\n"
+"PO-Revision-Date: 2026-05-02 19:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -60,7 +60,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3848,7 +3848,7 @@ msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
-"Arama işlevinde Oluşturucu ve Yazar alanlarının, veri tabanında halihazırda "
+"Arama işlevinde Oluşturucu ve Yazar alanlarının, veri tabanında hâlihazırda "
 "var olan değerlerle doldurulmuş açılır listeler olarak gösterilmesine "
 "desteği eklendi."
 
@@ -7490,7 +7490,7 @@ msgstr ""
 "görsel yüklemesine ve kaydetmesine olanak tanır.</para> <para>2001’de son "
 "haline getirilen JPEG (Birleşik Fotoğraf Uzmanları Grubu) 2000 standardı, "
 "dalgacık teknolojisine dayalı sanat sıkıştırma teknikleri temelli en son "
-"teknolojiyi kullanarak bir görsel kodlama şeması tanımlar. Mimarisi; görsel "
+"teknolojiyi kullanarak bir görsel kodlama şeması tanımlar. Mimarîsi; görsel "
 "arşivleme, güvenlik sistemleri, sayısal fotoğrafçılık ve tıbbi görüntüleme "
 "dahil olmak üzere birçok farklı uygulama için kullanışlıdır.</"
 "para><para>Ayrıntılar için <a href='https://en.wikipedia.org/wiki/"
@@ -8351,7 +8351,7 @@ msgstr "8 Bit’e Dönüştür"
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 8 bits / color / pixel."
-msgstr "Bu görsel halihazırda 8 bit/renk/piksel derinliği kullanıyor."
+msgstr "Bu görsel hâlihazırda 8 bit/renk/piksel derinliği kullanıyor."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:118
 #, kde-format
@@ -8381,7 +8381,7 @@ msgstr "16 Bit’e Dönüştür"
 #, kde-format
 msgctxt "@info"
 msgid "This image is already using a depth of 16 bits / color / pixel."
-msgstr "Bu görsel halihazırda 16 bit/renk/piksel derinliği kullanıyor."
+msgstr "Bu görsel hâlihazırda 16 bit/renk/piksel derinliği kullanıyor."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:121
 #, kde-format
@@ -11759,7 +11759,7 @@ msgstr "Dosyanın Üzerine Yaz?"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
-"“%1” adlı bir dosya halihazırda var. Üzerine yazmak istediğinizden emin "
+"“%1” adlı bir dosya hâlihazırda var. Üzerine yazmak istediğinizden emin "
 "misiniz?"
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:301
@@ -14450,7 +14450,7 @@ msgstr "Köken Bilgisi"
 #, kde-format
 msgctxt "@title"
 msgid "Formal descriptive information about the item"
-msgstr "Ögenin Açıklayıcı Resmi Bilgisi"
+msgstr "Ögenin Açıklayıcı Resmî Bilgisi"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:202
@@ -16164,12 +16164,12 @@ msgstr "Takma ad:"
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:73
 #, kde-format
 msgid "Set here a short informal name"
-msgstr "Kısa bir resmi olmayan adı burada ayarla"
+msgstr "Kısa bir resmî olmayan adı burada ayarla"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:74
 #, kde-format
 msgid "A short informal name for the resource."
-msgstr "Özkaynak için resmi olmayan kısa bir ad."
+msgstr "Özkaynak için resmî olmayan kısa bir ad."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpstatus.cpp:78
 #, kde-format
@@ -16441,7 +16441,7 @@ msgstr "Takvim olayları"
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:26
 #, kde-format
 msgid "Select an optional calendar file with the official holidays"
-msgstr "Resmi tatillerin olduğu isteğe bağlı bir takvim dosyası seç"
+msgstr "Resmî tatillerin olduğu isteğe bağlı bir takvim dosyası seçin"
 
 #. i18n: ectx: property (text), widget (QLabel, ohExplainLabel)
 #: core/dplugins/generic/tools/calendar/ui/calevents.ui:46
@@ -19207,7 +19207,7 @@ msgstr "Geçici panorama dosyası yok."
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:76
 #, kde-format
 msgid "A panorama file named <filename>%1</filename> already exists."
-msgstr "<filename>%1</filename> adlı bir panorama dosyası halihazırda var."
+msgstr "<filename>%1</filename> adlı bir panorama dosyası hâlihazırda var."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:84
 #, kde-format
@@ -19217,7 +19217,7 @@ msgstr "Geçici proje dosyası yok."
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:92
 #, kde-format
 msgid "A project file named <filename>%1</filename> already exist."
-msgstr "<filename>%1</filename> adlı bir proje dosyası halihazırda var."
+msgstr "<filename>%1</filename> adlı bir proje dosyası hâlihazırda var."
 
 #: core/dplugins/generic/tools/panorama/tasks/copyfilestask.cpp:166
 #, kde-format
@@ -19249,7 +19249,7 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
-msgstr "Geçici dizinde PTO dosyası halihazırda oluşturulmuş."
+msgstr "Geçici dizinde PTO dosyası hâlihazırda oluşturulmuş."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
@@ -19508,7 +19508,7 @@ msgstr "Uyarı"
 #, kde-format
 msgctxt "@label"
 msgid "This file already exists"
-msgstr "Bu dosya halihazırda var"
+msgstr "Bu dosya hâlihazırda var"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:218
 #, kde-format
@@ -19517,7 +19517,7 @@ msgid ""
 "One or more converted raw files already exists (they will be skipped during "
 "the copying process)"
 msgstr ""
-"Bir veya daha fazla dönüştürülmüş ham dosya halihazırda var (kopyalama "
+"Bir veya daha fazla dönüştürülmüş ham dosya hâlihazırda var (kopyalama "
 "işlemi sırasında bunlar atlanacak)"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:263
@@ -24066,7 +24066,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:136
 #, kde-format
 msgid "A linked item already exists."
-msgstr "Bağlantılı bir öge halihazırda var."
+msgstr "Bağlantılı bir öge hâlihazırda var."
 
 #: core/dplugins/generic/webservices/google/gsreplacedlg.cpp:156
 #: core/dplugins/generic/webservices/smugmug/smugwidget.cpp:150
@@ -25889,7 +25889,7 @@ msgstr "&Piwigo’ya Dışa Aktar…"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:327
 #, kde-format
 msgid "Check if %1 already exists"
-msgstr "%1 halihazırda var mı diye bak"
+msgstr "%1 hâlihazırda var mı diye bak"
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:497
 #, kde-format
@@ -25925,12 +25925,12 @@ msgstr "Albümler listelenemedi"
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:683
 #, kde-format
 msgid "Photo '%1' already exists."
-msgstr "“%1” fotoğrafı halihazırda var."
+msgstr "“%1” fotoğrafı hâlihazırda var."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:790
 #, kde-format
 msgid "Photo '%1' already exists in this album."
-msgstr "“%1” fotoğrafı bu albümde halihazırda var."
+msgstr "“%1” fotoğrafı bu albümde hâlihazırda var."
 
 #: core/dplugins/generic/webservices/piwigo/piwigotalker.cpp:879
 #, kde-format
@@ -27480,7 +27480,7 @@ msgid ""
 "current database to this place?</p> "
 msgstr ""
 "<p>Veri tabanının depolanacağı yeni yer olarak “%1” klasörünü seçtiniz. Bu "
-"konumda halihazırda bir veri tabanı dosyası var.</p><p>Bu var olan dosyayı "
+"konumda hâlihazırda bir veri tabanı dosyası var.</p><p>Bu var olan dosyayı "
 "yeni veri tabanı olarak kullanmak mı yoksa onu kaldırıp geçerli veri "
 "tabanını bu konuma kopyalamak mı istiyorsunuz?</p>"
 
@@ -27597,7 +27597,7 @@ msgid ""
 "Another album with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"Aynı ada sahip başka bir albüm halihazırda var.\n"
+"Aynı ada sahip başka bir albüm hâlihazırda var.\n"
 "Lütfen başka bir ad seçin."
 
 #: core/libs/album/manager/albummanager_palbum.cpp:507
@@ -27630,7 +27630,7 @@ msgstr "Künye adı “/” içeremez"
 #: core/libs/tags/widgets/tageditdlg.cpp:466
 #, kde-format
 msgid "Tag name already exists"
-msgstr "Künye adı halihazırda var"
+msgstr "Künye adı hâlihazırda var"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:321
 #, kde-format
@@ -27659,7 +27659,7 @@ msgid ""
 "Another tag with the same name already exists.\n"
 "Please choose another name."
 msgstr ""
-"Aynı ada sahip başka bir künye halihazırda var.\n"
+"Aynı ada sahip başka bir künye hâlihazırda var.\n"
 "Lütfen başka bir ad seçin."
 
 #: core/libs/album/manager/albummanager_talbum.cpp:510
@@ -27678,7 +27678,7 @@ msgid ""
 "Another tag with the same name already exists.\n"
 "Do you want to merge the tags?"
 msgstr ""
-"Aynı ada sahip başka bir künye halihazırda var.\n"
+"Aynı ada sahip başka bir künye hâlihazırda var.\n"
 "Künyeleri birleştirmek istiyor musunuz?"
 
 #: core/libs/album/manager/albummanager_talbum.cpp:599
@@ -28273,7 +28273,7 @@ msgstr "Seçili klasör bulunamıyor veya okunabilir değil"
 #: core/libs/database/collection/collectionmanager_location.cpp:262
 #, kde-format
 msgid "There is already a collection containing the folder \"%1\""
-msgstr "“%1” klasörünü içeren bir koleksiyon halihazırda var"
+msgstr "“%1” klasörünü içeren bir koleksiyon hâlihazırda var"
 
 #: core/libs/database/collection/collectionmanager_location.cpp:284
 #, kde-format
@@ -28296,7 +28296,7 @@ msgid ""
 "with digiKam."
 msgstr ""
 "Bu, CD yazma uygulamanızda ayarlayabileceğiniz etiketle tanımlanan bir CD/"
-"DVD’dir. Aynı etikete sahip başka bir giriş halihazırda var. İkisi üst "
+"DVD’dir. Aynı etikete sahip başka bir giriş hâlihazırda var. İkisi üst "
 "dizindeki dosyalar tarafından ayırt edilecektir, bu nedenle lütfen dosyaları "
 "CD’ye eklemeyin, aksi takdirde tanınmayacaktır. Gelecekte, digiKam ile "
 "kullanmayı düşünüyorsanız lütfen CD ve DVD’lerinize benzersiz bir etiket "
@@ -28364,7 +28364,7 @@ msgstr ""
 #: core/libs/database/collection/collectionmanager_location.cpp:467
 #, kde-format
 msgid "There is already a collection for a network share with the same path."
-msgstr "Aynı yola sahip bir ağ paylaşımı için bir koleksiyon halihazırda var."
+msgstr "Aynı yola sahip bir ağ paylaşımı için bir koleksiyon hâlihazırda var."
 
 #: core/libs/database/collection/collectionmanager_location.cpp:480
 #, kde-format
@@ -29060,7 +29060,7 @@ msgid ""
 "Overwrite automatically: conflicting files will be overwritten.\n"
 "Skip automatically: conflicting files will be skipped."
 msgstr ""
-"Hedef klasörde aynı ada sahip dosya veya klasörler halihazırda var.\n"
+"Hedef klasörde aynı ada sahip dosya veya klasörler hâlihazırda var.\n"
 "\n"
 "Dosya çakışması durumunda hangi eylem uygulanmalıdır?\n"
 "\n"
@@ -29401,7 +29401,7 @@ msgid ""
 "installed on your computer.</p>"
 msgstr ""
 "<p>Burada MySQL ikili araçlarının bulunduğu konumları yapılandırabilirsiniz. "
-"digiKam, bilgisayarınızda halihazırda kuruluysa bu ikili dosyaları "
+"digiKam, bilgisayarınızda hâlihazırda kuruluysa bu ikili dosyaları "
 "kendiliğinden bulmaya çalışacaktır.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:178
@@ -29633,7 +29633,7 @@ msgid ""
 "following SQL commands (after replacing the <b><i>password</i></b> with the "
 "correct one).</p>"
 msgstr ""
-"<p>digiKam, veri tabanının halihazırda özel bir kullanıcı hesabıyla "
+"<p>digiKam, veri tabanının hâlihazırda özel bir kullanıcı hesabıyla "
 "oluşturulmuş olmasını bekler. Bu kullanıcı adı <i>digikam</i>, veri tabanına "
 "tam erişim gerektirecektir.<br>Veri tabanınız henüz ayarlanmadıysa aşağıdaki "
 "SQL komutlarını kullanabilirsiniz (<b><i>password</i></b>’ü doğrusuyla "
@@ -32525,7 +32525,7 @@ msgstr "Siyah Kare Ayrıştırıcısı"
 #, kde-format
 msgid "This black frame image is already present in the list of parsed items."
 msgstr ""
-"Bu siyah kare görseli, ayrıştırılmış ögeler listesinde halihazırda var."
+"Bu siyah kare görseli, ayrıştırılmış ögeler listesinde hâlihazırda var."
 
 #: core/libs/dimg/filters/hsl/hslfilter.cpp:74
 #, kde-format
@@ -35973,7 +35973,7 @@ msgstr ""
 #: core/libs/iojobs/iojob.cpp:137
 #, kde-format
 msgid "A file or folder named %1 already exists in %2"
-msgstr "%2 içinde %1 adlı bir dosya veya klasör halihazırda var"
+msgstr "%2 içinde %1 adlı bir dosya veya klasör hâlihazırda var"
 
 #: core/libs/iojobs/iojob.cpp:156
 #, kde-format
@@ -36073,7 +36073,7 @@ msgstr "%1 görseli çöp kutusuna taşınamadı"
 #: core/libs/iojobs/iojob.cpp:422
 #, kde-format
 msgid "Image with the same name %1 already there"
-msgstr "Aynı adlı %1 görseli halihazırda var"
+msgstr "Aynı adlı %1 görseli hâlihazırda var"
 
 #: core/libs/iojobs/iojob.cpp:440
 #, kde-format
@@ -37312,7 +37312,7 @@ msgstr "Uzak bağlantıdan herhangi bir veri döndürülmedi."
 #: core/libs/onlineversion/onlineversiondwnl.cpp:147
 #, kde-format
 msgid "Unsupported Architecture: %1"
-msgstr "Desteklenmeyen mimari: %1"
+msgstr "Desteklenmeyen mimarî: %1"
 
 #: core/libs/onlineversion/onlineversionchecker.cpp:237
 #, kde-format
@@ -38007,7 +38007,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Tags already assigned"
-msgstr "Halihazırda atanmış künyeler"
+msgstr "Hâlihazırda atanmış künyeler"
 
 #: core/libs/properties/captions/itemdescedittab_tagsview.cpp:70
 #: core/libs/properties/captions/tagsedit.cpp:124
@@ -41532,7 +41532,7 @@ msgid ""
 "well.</p>"
 msgstr ""
 "<p>Üst veri şablonu kullanılarak gerçekleştirilecek eylemi burada seçin.</"
-"p><p><b>Kaldırmak için</b>: Halihazırda atanmış şablonu silin.</"
+"p><p><b>Kaldırmak için</b>: Hâlihazırda atanmış şablonu silin.</"
 "p><p><b>Değiştirme</b>: Şablon bilgisine dokunma.</p><p>Diğer tüm değerler "
 "digiKam tarafından yönetilen şablon başlıklarıdır. Birini seçmek aynı "
 "zamanda bilgileri de atayacaktır.</p>"
@@ -44694,7 +44694,7 @@ msgstr "Creo Leaf Yakalaması Bilgisi"
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:248
 #, kde-format
 msgid "Lytro Light Field Picture Info"
-msgstr "Lytro Light Field Resmi Bilgisi"
+msgstr "Lytro Light Field Resmî Bilgisi"
 
 #: core/libs/widgets/metadata/exiftool/exiftoollistviewgroup.cpp:252
 #, kde-format
@@ -50230,7 +50230,7 @@ msgid ""
 msgstr ""
 "%1 ögesine\n"
 "başvuran yer imi, listede\n"
-"halihazırda “%2” adıyla var."
+"hâlihazırda “%2” adıyla var."
 
 #: core/showfoto/folderview/showfotofolderviewbookmarks.cpp:244
 #, kde-format
@@ -50772,7 +50772,7 @@ msgid ""
 msgstr ""
 "Hangi tür yeni sürüm güncellemelerinin denetlenmesi gerektiğini "
 "yapılandırmak için bu seçeneği ayarlayın.\n"
-"“Kararlı” sürümler, iş ortamında kullanılması güvenli olan resmi "
+"“Kararlı” sürümler, iş ortamında kullanılması güvenli olan resmî "
 "sürümlerdir.\n"
 "Yeni özellikleri hızlı bir şekilde sınamak için “ön yayımlar” haftalık\n"
 "çıkarılır ve hatalar sürebileceğinden iş ortamında kullanılması önerilmez."
@@ -51453,7 +51453,7 @@ msgstr "Not: Sık kullanılan dosya listesi boş bırakılamaz!"
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite item name already exists in hierarchy!"
-msgstr "Not: Sık kullanılan adı hiyerarşide halihazırda var!"
+msgstr "Not: Sık kullanılan adı hiyerarşide hâlihazırda var!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:386
 #, kde-format
@@ -51465,7 +51465,7 @@ msgstr "Not: Sık kullanılan klasör adı boş bırakılamaz!"
 #, kde-format
 msgctxt "@label"
 msgid "Note: favorite folder name already exists in hierarchy!"
-msgstr "Not: Sık kullanılan klasör adı hiyerarşide halihazırda var!"
+msgstr "Not: Sık kullanılan klasör adı hiyerarşide hâlihazırda var!"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitemdlg.cpp:406
 #, kde-format
@@ -51743,7 +51743,7 @@ msgid ""
 "because the name has already been assigned to another item."
 msgstr ""
 "Bu liste, yeniden adlandırma dizginize ilişkin sonuçları gösterir. Kırmızı "
-"ögeler, yeni adın geçerli ada eşit olması veya adın halihazırda başka bir "
+"ögeler, yeni adın geçerli ada eşit olması veya adın hâlihazırda başka bir "
 "ögeye atanmış olması nedeniyle bir ad çakışmasını gösterir."
 
 #: core/utilities/advancedrename/advancedrenamedialog.cpp:315
@@ -52915,7 +52915,7 @@ msgid ""
 "can be added later under the <i>Settings</i> menu. </p> "
 msgstr ""
 "<p>Lütfen görsellerinizi tuttuğunuz bir konum girin.</p> <p>İçinde "
-"halihazırda görseller olsa bile herhangi yerel bir klasörü seçebilirsiniz."
+"hâlihazırda görseller olsa bile herhangi yerel bir klasörü seçebilirsiniz."
 "<br><i>Ayarlar</i> menüsünden ek klasörler daha sonra eklenebilir.</p> "
 
 #: core/utilities/firstrun/collectionpage.cpp:85
@@ -58199,7 +58199,7 @@ msgid ""
 "%1 out of %2 images have been reverse geocoded. Would you like to keep the "
 "tags which were already obtained?"
 msgstr ""
-"%1/%2 görsel tersine coğrafî konumlandı. Halihazırda elde edilmiş künyeleri "
+"%1/%2 görsel tersine coğrafî konumlandı. Hâlihazırda elde edilmiş künyeleri "
 "tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:949
@@ -58208,7 +58208,7 @@ msgid ""
 "1 image have been reverse geocoded. Would you like to keep the tags which "
 "were already obtained?"
 msgstr ""
-"1 görsel tersine coğrafî konumlandı. Halihazırda elde edilmiş künyeleri "
+"1 görsel tersine coğrafî konumlandı. Hâlihazırda elde edilmiş künyeleri "
 "tutmak ister miydiniz?"
 
 #: core/utilities/geolocation/geoiface/reversegeocoding/rgwidget.cpp:955
@@ -58401,7 +58401,7 @@ msgid ""
 "Search name already exists.\n"
 "Please enter a new name:"
 msgstr ""
-"Arama adı halihazırda var.\n"
+"Arama adı hâlihazırda var.\n"
 "Lütfen yeni bir ad girin:"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:530
@@ -59313,7 +59313,7 @@ msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr ""
-"“%1” adlı bir dosya halihazırda var. Üzerine yazmak istediğinizden emin "
+"“%1” adlı bir dosya hâlihazırda var. Üzerine yazmak istediğinizden emin "
 "misiniz?"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2369
@@ -60005,7 +60005,7 @@ msgstr "Bu öge hiçbir zaman indirilmedi"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "This item has already been downloaded"
-msgstr "Bu öge halihazırda indirildi"
+msgstr "Bu öge hâlihazırda indirildi"
 
 #: core/utilities/import/main/importui.cpp:158
 #, kde-format
@@ -60449,14 +60449,14 @@ msgid ""
 "Camera Folder \"%1\" already contains the item \"%2\".\n"
 "Please enter a new filename (without extension):"
 msgstr ""
-"“%1” kamera klasörü halihazırda “%2” ögesini içeriyor.\n"
+"“%1” kamera klasörü hâlihazırda “%2” ögesini içeriyor.\n"
 "Lütfen yeni bir dosya adı girin (uzantısız):"
 
 #: core/utilities/import/main/importui.cpp:1304
 #, kde-format
 msgctxt "@title:window"
 msgid "File Already Exists"
-msgstr "Dosya Halihazırda Var"
+msgstr "Dosya Hâlihazırda Var"
 
 #: core/utilities/import/main/importui.cpp:1373
 #, kde-format
@@ -60643,7 +60643,7 @@ msgstr "Görsellerin indirilmesi tamamlandı"
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
-msgstr "“%2” klasöründe aynı adda (“%1”) bir dosya halihazırda var."
+msgstr "“%2” klasöründe aynı adda (“%1”) bir dosya hâlihazırda var."
 
 #: core/utilities/import/main/importui.cpp:2617
 #, kde-format
@@ -61817,7 +61817,7 @@ msgid ""
 "A face scan is already running. Only one face task can be running at a time. "
 "Please wait until it is finished."
 msgstr ""
-"Bir yüz taraması halihazırda çalışıyor. Aynı anda yalnızca bir yüz görevi "
+"Bir yüz taraması hâlihazırda çalışıyor. Aynı anda yalnızca bir yüz görevi "
 "çalıştırılabilir. Lütfen bitene kadar bekleyin."
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
@@ -65077,7 +65077,7 @@ msgstr ""
 #: core/utilities/setup/camera/setupcamera.cpp:908
 #, kde-format
 msgid "Camera '%1' (%2) is already in list."
-msgstr "Kamera “%1” (%2), halihazırda listede."
+msgstr "Kamera “%1” (%2), hâlihazırda listede."
 
 #: core/utilities/setup/camera/setupcamera.cpp:912
 #, kde-format
@@ -65248,7 +65248,7 @@ msgstr "Koleksiyon Eklemede Sorun"
 #: core/utilities/setup/collections/setupcollectionview.cpp:697
 #, kde-format
 msgid "A collection with the path \"%1\" already exists."
-msgstr "“%1” yoluna sahip bir koleksiyon halihazırda var."
+msgstr "“%1” yoluna sahip bir koleksiyon hâlihazırda var."
 
 #: core/utilities/setup/collections/setupcollectionview.cpp:860
 #, kde-format
@@ -67848,7 +67848,7 @@ msgid ""
 msgstr ""
 "digiKam’i çekirdek veri tabanını eski öge girdilerinden temizlemeye zorlamak "
 "için bu seçeneği ayarlayın.\n"
-"Girdiler yalnızca bağlı görsel/video/ses dosyası halihazırda kaldırılmışsa "
+"Girdiler yalnızca bağlı görsel/video/ses dosyası hâlihazırda kaldırılmışsa "
 "silinir; yani veri tabanı nesnesi yer israfına neden olur.\n"
 "Bu seçenek, küçük görseller veya tanıma veri tabanı olarak diğer "
 "veritabanlarını temizlemez.\n"
@@ -68546,7 +68546,7 @@ msgstr "Başlık olmadan yeni üst veri şablonu kaydedilemiyor."
 #: core/utilities/setup/template/setuptemplate_slots.cpp:51
 #, kde-format
 msgid "A metadata template named '%1' already exists."
-msgstr "“%1” adlı bir üst veri şablonu halihazırda var."
+msgstr "“%1” adlı bir üst veri şablonu hâlihazırda var."
 
 #: core/utilities/setup/tooltip/setuptooltip.cpp:28
 #, kde-format
