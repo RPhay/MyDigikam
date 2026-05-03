@@ -300,12 +300,13 @@ static int deflate(Bytef* dest, ulong* destLen, const Bytef* source, ulong sourc
     if (err != Z_STREAM_END)
     {
         deflateEnd(&stream);
-        return err == Z_OK ? Z_BUF_ERROR : err;
+        return ((err == Z_OK) ? Z_BUF_ERROR : err);
     }
 
     *destLen = stream.total_out;
 
     err = deflateEnd(&stream);
+
     return err;
 }
 
@@ -380,13 +381,13 @@ static QDateTime readMSDosDate(const uchar* src)
 {
     uint dosDate = readUInt(src);
     quint64 uDate;
-    uDate = (quint64)(dosDate >> 16);
+    uDate        = (quint64)(dosDate >> 16);
     uint tm_mday = (uDate & 0x1f);
-    uint tm_mon = ((uDate & 0x1E0) >> 5);
+    uint tm_mon  = ((uDate & 0x1E0) >> 5);
     uint tm_year = (((uDate & 0x0FE00) >> 9) + 1980);
     uint tm_hour = ((dosDate & 0xF800) >> 11);
-    uint tm_min = ((dosDate & 0x7E0) >> 5);
-    uint tm_sec = ((dosDate & 0x1f) << 1);
+    uint tm_min  = ((dosDate & 0x7E0) >> 5);
+    uint tm_sec  = ((dosDate & 0x1f) << 1);
 
     return QDateTime(QDate(tm_year, tm_mon, tm_mday), QTime(tm_hour, tm_min, tm_sec));
 }
@@ -395,47 +396,50 @@ class Q_DECL_HIDDEN LocalFileHeader
 {
 public:
 
-    uchar signature[4]; //  0x04034b50
-    uchar version_needed[2];
-    uchar general_purpose_bits[2];
-    uchar compression_method[2];
-    uchar last_mod_file[4];
-    uchar crc_32[4];
-    uchar compressed_size[4];
-    uchar uncompressed_size[4];
-    uchar file_name_length[2];
-    uchar extra_field_length[2];
+    uchar signature[4]              = { 0 }; //  0x04034b50
+    uchar version_needed[2]         = { 0 };
+    uchar general_purpose_bits[2]   = { 0 };
+    uchar compression_method[2]     = { 0 };
+    uchar last_mod_file[4]          = { 0 };
+    uchar crc_32[4]                 = { 0 };
+    uchar compressed_size[4]        = { 0 };
+    uchar uncompressed_size[4]      = { 0 };
+    uchar file_name_length[2]       = { 0 };
+    uchar extra_field_length[2]     = { 0 };
 };
 
 class Q_DECL_HIDDEN DataDescriptor
 {
 public:
 
-    uchar crc_32[4];
-    uchar compressed_size[4];
-    uchar uncompressed_size[4];
+    uchar crc_32[4]                 = { 0 };
+    uchar compressed_size[4]        = { 0 };
+    uchar uncompressed_size[4]      = { 0 };
 };
 
 class Q_DECL_HIDDEN CentralFileHeader
 {
 public:
 
-    uchar signature[4]; // 0x02014b50
-    uchar version_made[2];
-    uchar version_needed[2];
-    uchar general_purpose_bits[2];
-    uchar compression_method[2];
-    uchar last_mod_file[4];
-    uchar crc_32[4];
-    uchar compressed_size[4];
-    uchar uncompressed_size[4];
-    uchar file_name_length[2];
-    uchar extra_field_length[2];
-    uchar file_comment_length[2];
-    uchar disk_start[2];
-    uchar internal_file_attributes[2];
-    uchar external_file_attributes[4];
-    uchar offset_local_header[4];
+    uchar signature[4]                  = { 0 }; // 0x02014b50
+    uchar version_made[2]               = { 0 };
+    uchar version_needed[2]             = { 0 };
+    uchar general_purpose_bits[2]       = { 0 };
+    uchar compression_method[2]         = { 0 };
+    uchar last_mod_file[4]              = { 0 };
+    uchar crc_32[4]                     = { 0 };
+    uchar compressed_size[4]            = { 0 };
+    uchar uncompressed_size[4]          = { 0 };
+    uchar file_name_length[2]           = { 0 };
+    uchar extra_field_length[2]         = { 0 };
+    uchar file_comment_length[2]        = { 0 };
+    uchar disk_start[2]                 = { 0 };
+    uchar internal_file_attributes[2]   = { 0 };
+    uchar external_file_attributes[4]   = { 0 };
+    uchar offset_local_header[4]        = { 0 };
+
+public:
+
     LocalFileHeader toLocalHeader() const;
 };
 
@@ -443,14 +447,14 @@ class Q_DECL_HIDDEN EndOfDirectory
 {
 public:
 
-    uchar signature[4]; // 0x06054b50
-    uchar this_disk[2];
-    uchar start_of_directory_disk[2];
-    uchar num_dir_entries_this_disk[2];
-    uchar num_dir_entries[2];
-    uchar directory_size[4];
-    uchar dir_start_offset[4];
-    uchar comment_length[2];
+    uchar signature[4]                  = { 0 }; // 0x06054b50
+    uchar this_disk[2]                  = { 0 };
+    uchar start_of_directory_disk[2]    = { 0 };
+    uchar num_dir_entries_this_disk[2]  = { 0 };
+    uchar num_dir_entries[2]            = { 0 };
+    uchar directory_size[4]             = { 0 };
+    uchar dir_start_offset[4]           = { 0 };
+    uchar comment_length[2]             = { 0 };
 };
 
 class Q_DECL_HIDDEN FileHeader
@@ -492,7 +496,7 @@ MarbleZipReader::FileInfo& MarbleZipReader::FileInfo::operator=(const FileInfo& 
 
 bool MarbleZipReader::FileInfo::isValid() const
 {
-    return isDir || isFile || isSymLink;
+    return (isDir || isFile || isSymLink);
 }
 
 class Q_DECL_HIDDEN QZipPrivate
@@ -500,7 +504,8 @@ class Q_DECL_HIDDEN QZipPrivate
 public:
 
     QZipPrivate(QIODevice* device, bool ownDev)
-        : device(device), ownDevice(ownDev)
+        : device(device),
+          ownDevice(ownDev)
     {
     }
 
@@ -517,7 +522,7 @@ public:
 public:
 
     QIODevice*        device                = nullptr;
-    bool              ownDevice;
+    bool              ownDevice             = false;
     bool              dirtyFileTree         = true;
     QList<FileHeader> fileHeaders;
     QByteArray        comment;
@@ -561,6 +566,8 @@ public:
 
     void scanFiles();
 
+public:
+
     MarbleZipReader::Status status;
 };
 
@@ -569,15 +576,17 @@ class Q_DECL_HIDDEN MarbleZipWriterPrivate : public QZipPrivate
 public:
 
     MarbleZipWriterPrivate(QIODevice* device, bool ownDev)
-        : QZipPrivate(device, ownDev),
-          status(MarbleZipWriter::NoError),
-          permissions(QFile::ReadOwner | QFile::WriteOwner),
-          compressionPolicy(MarbleZipWriter::AlwaysCompress)
+        : QZipPrivate       (device, ownDev),
+          status            (MarbleZipWriter::NoError),
+          permissions       (QFile::ReadOwner | QFile::WriteOwner),
+          compressionPolicy (MarbleZipWriter::AlwaysCompress)
     {
     }
 
-    MarbleZipWriter::Status status;
-    QFile::Permissions permissions;
+public:
+
+    MarbleZipWriter::Status            status;
+    QFile::Permissions                 permissions;
     MarbleZipWriter::CompressionPolicy compressionPolicy;
 
     enum EntryType
@@ -620,15 +629,15 @@ void MarbleZipReaderPrivate::scanFiles()
         return;
     }
 
-    if ((device->openMode() & QIODevice::ReadOnly) == 0)   // only read the index from readable files.
+    if ((device->openMode() & (QIODevice::ReadOnly)) == 0)   // only read the index from readable files.
     {
         status = MarbleZipReader::FileReadError;
         return;
     }
 
     dirtyFileTree = false;
-    uchar tmp[4];
-    device->read((char*)tmp, 4);
+    uchar tmp[4]  = { 0 };
+    device->read(reinterpret_cast<char*>(tmp), 4);
 
     if (readUInt(tmp) != 0x04034b50)
     {
@@ -795,22 +804,30 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
         do
         {
             data.resize(len);
-            res = deflate((uchar*)data.data(), &len, (const uchar*)contents.constData(), contents.length());
+            res = deflate(reinterpret_cast<uchar*>(data.data()), &len,
+                          reinterpret_cast<const uchar*>(contents.constData()),
+                          contents.length());
 
             switch (res)
             {
                 case Z_OK:
+                {
                     data.resize(len);
                     break;
+                }
 
                 case Z_MEM_ERROR:
+                {
                     qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory to compress file, skipping");
                     data.resize(0);
                     break;
+                }
 
                 case Z_BUF_ERROR:
+                {
                     len *= 2;
                     break;
+                }
             }
         }
         while (res == Z_BUF_ERROR);
@@ -820,7 +837,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
 
     writeUInt(header.h.compressed_size, data.length());
     uint crc_32 = ::crc32(0, nullptr, 0);
-    crc_32      = ::crc32(crc_32, (const uchar*)contents.constData(), contents.length());
+    crc_32      = ::crc32(crc_32, reinterpret_cast<const uchar*>(contents.constData()), contents.length());
     writeUInt(header.h.crc_32, crc_32);
 
     header.file_name = fileName.toLocal8Bit();
@@ -845,16 +862,22 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     switch (type)
     {
         case File:
+        {
             mode |= S_IFREG;
             break;
+        }
 
         case Directory:
+        {
             mode |= S_IFDIR;
             break;
+        }
 
         case Symlink:
+        {
             mode |= S_IFLNK;
             break;
+        }
     }
 
     writeUInt(header.h.external_file_attributes, mode << 16);
@@ -1094,7 +1117,6 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     }
 
     FileHeader header     = d->fileHeaders.at(i);
-
     int compressed_size   = readUInt(header.h.compressed_size);
     int uncompressed_size = readUInt(header.h.uncompressed_size);
     int start             = readUInt(header.h.offset_local_header);
@@ -1136,30 +1158,38 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
         do
         {
             baunzip.resize(len);
-            res = inflate((uchar*)baunzip.data(), &len,
-                          (uchar*)compressed.constData(), compressed_size);
+            res = inflate(reinterpret_cast<uchar*>(baunzip.data()), &len,
+                          reinterpret_cast<uchar*>(const_cast<char*>(compressed.constData())), compressed_size);
 
             switch (res)
             {
                 case Z_OK:
+                {
                     if ((int)len != baunzip.size())
                     {
                         baunzip.resize(len);
                     }
 
                     break;
+                }
 
                 case Z_MEM_ERROR:
+                {
                     qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Z_MEM_ERROR: Not enough memory");
                     break;
+                }
 
                 case Z_BUF_ERROR:
+                {
                     len *= 2;
                     break;
+                }
 
                 case Z_DATA_ERROR:
+                {
                     qCWarning(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("QZip: Z_DATA_ERROR: Input data is corrupted");
                     break;
+                }
             }
         }
         while (res == Z_BUF_ERROR);
