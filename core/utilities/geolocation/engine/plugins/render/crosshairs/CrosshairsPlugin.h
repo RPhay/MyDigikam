@@ -43,7 +43,7 @@ namespace Marble
  * @short The class that specifies the Marble layer interface of a plugin.
  */
 class CrosshairsPlugin : public RenderPlugin,
-    public DialogConfigurationInterface
+                         public DialogConfigurationInterface
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID "org.kde.marble.CrosshairsPlugin")
@@ -57,59 +57,61 @@ public:
 
     explicit CrosshairsPlugin(const MarbleModel* marbleModel);
 
-    ~CrosshairsPlugin() override;
+    ~CrosshairsPlugin()                                               override;
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                                  const override;
 
-    QString renderPolicy() const override;
+    QString renderPolicy()                                      const override;
 
-    QStringList renderPosition() const override;
+    QStringList renderPosition()                                const override;
 
-    RenderType renderType() const override;
+    RenderType renderType()                                     const override;
 
-    QString name() const override;
+    QString name()                                              const override;
 
-    QString guiString() const override;
+    QString guiString()                                         const override;
 
-    QString nameId() const override;
+    QString nameId()                                            const override;
 
-    QString version() const override;
+    QString version()                                           const override;
 
-    QString description() const override;
+    QString description()                                       const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                                    const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()                       const override;
 
-    QIcon icon() const override;
+    QIcon icon()                                                const override;
 
-    void initialize() override;
+    void initialize()                                                 override;
 
-    bool isInitialized() const override;
+    bool isInitialized()                                        const override;
 
-    bool render(GeoPainter* painter, ViewportParams* viewport, const QString& renderPos, GeoSceneLayer* layer = nullptr) override;
+    bool render(GeoPainter* painter,
+                ViewportParams* viewport,
+                const QString& renderPos,
+                GeoSceneLayer* layer = nullptr)                       override;
 
-    QDialog* configDialog() override;
+    QDialog* configDialog()                                           override;
 
-    QHash<QString, QVariant> settings() const override;
+    QHash<QString, QVariant> settings()                         const override;
 
-    void setSettings(const QHash<QString, QVariant>& settings) override;
+    void setSettings(const QHash<QString, QVariant>& settings)        override;
 
 private Q_SLOTS:
 
     void readSettings();
-
     void writeSettings();
 
 private:
 
     Q_DISABLE_COPY(CrosshairsPlugin)
 
-    bool                        m_isInitialized;
+    bool                        m_isInitialized     = false;
 
     QSvgRenderer*               m_svgobj            = nullptr;
     QPixmap                     m_crosshairs;
-    int                         m_themeIndex;
+    int                         m_themeIndex        = 0;
 
     QString                     m_theme;
 
