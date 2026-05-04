@@ -53,7 +53,7 @@ namespace Marble
 typedef int O5mreaderRet;
 typedef int O5mreaderIterateRet;
 
-typedef struct
+typedef struct O5mreaderStruct
 {
     int         errCode         = 0;
     char*       errMsg          = 0;
@@ -78,7 +78,7 @@ typedef struct
     char**      strPairTable    = NULL;
 } O5mreader;
 
-typedef struct
+typedef struct O5mreaderDatasetStruct
 {
     uint8_t     type            = 0;
     uint64_t    id              = 0;
