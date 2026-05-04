@@ -43,17 +43,17 @@ class MarbleAbstractPresenter;
 class AbstractDataPluginItem;
 class RenderPlugin;
 
-class DIGIKAM_EXPORT MarbleInputHandler  : public QObject
+class DIGIKAM_EXPORT MarbleInputHandler : public QObject
 {
     Q_OBJECT
 
 public:
 
     explicit MarbleInputHandler(MarbleAbstractPresenter*);
-    ~MarbleInputHandler() override;
+    ~MarbleInputHandler()                                             override;
 
     void setPositionSignalConnected(bool connected);
-    bool isPositionSignalConnected() const;
+    bool isPositionSignalConnected()                            const;
 
     /**
     //
@@ -73,7 +73,7 @@ public:
 
     void setPanViaArrowsEnabled(bool enabled);
 
-    bool panViaArrowsEnabled() const;
+    bool panViaArrowsEnabled()                                  const;
 
     void setInertialEarthRotationEnabled(bool enabled);
 
@@ -82,11 +82,11 @@ public:
      * in the chosen direction for a slightly longer time than the mouse is
      * actually performing the drag operation
      */
-    bool inertialEarthRotationEnabled() const;
+    bool inertialEarthRotationEnabled()                         const;
 
     void setMouseViewRotationEnabled(bool enabled);
 
-    bool mouseViewRotationEnabled() const;
+    bool mouseViewRotationEnabled()                             const;
 
     /// should the map do kinetic scrolling, this would stop the operation
     virtual void stopInertialEarthRotation();
@@ -130,54 +130,54 @@ class AbstractSelectionRubber
 public:
 
     virtual ~AbstractSelectionRubber() {}
-    virtual void show() = 0;
-    virtual void hide() = 0;
-    virtual bool isVisible() const = 0;
-    virtual const QRect& geometry() const = 0;
-    virtual void setGeometry(const QRect& geometry) = 0;
+    virtual void show()                                                   = 0;
+    virtual void hide()                                                   = 0;
+    virtual bool isVisible()                                        const = 0;
+    virtual const QRect& geometry()                                 const = 0;
+    virtual void setGeometry(const QRect& geometry)                       = 0;
 };
 
-class DIGIKAM_EXPORT MarbleDefaultInputHandler  : public MarbleInputHandler
+class DIGIKAM_EXPORT MarbleDefaultInputHandler : public MarbleInputHandler
 {
     Q_OBJECT
 
 public:
 
     explicit MarbleDefaultInputHandler(MarbleAbstractPresenter* marblePresenter);
-    ~MarbleDefaultInputHandler() override;
+    ~MarbleDefaultInputHandler()                                      override;
 
-    void stopInertialEarthRotation() override;
+    void stopInertialEarthRotation()                                  override;
 
 protected:
 
-    bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*)                               override;
     bool handleMouseEvent(QMouseEvent* e);
     bool handlePinch(const QPointF& center, qreal scaleFactor, Qt::GestureState state);
 
     //FIXME - refactor (abstraction & composition)
-    const AbstractDataPluginItem* lastToolTipItem() const;
+    const AbstractDataPluginItem* lastToolTipItem()                 const;
     QTimer* toolTipTimer();
-    QPoint toolTipPosition() const;
+    QPoint toolTipPosition()                                        const;
 
     virtual bool handleKeyPress(QKeyEvent* e);
     virtual void handleMouseButtonPressAndHold(const QPoint& position);
 
 private Q_SLOTS:
 
-    void installPluginEventFilter(RenderPlugin* renderPlugin) override = 0;
-    virtual void showLmbMenu(int, int) = 0;
-    virtual void showRmbMenu(int, int) = 0;
+    void installPluginEventFilter(RenderPlugin* renderPlugin)             override = 0;
+    virtual void showLmbMenu(int, int)                                             = 0;
+    virtual void showRmbMenu(int, int)                                             = 0;
     void handlePressAndHold();
 
-    virtual void openItemToolTip() = 0;
-    virtual void setCursor(const QCursor&) = 0;
+    virtual void openItemToolTip()                                                 = 0;
+    virtual void setCursor(const QCursor&)                                         = 0;
 
     void lmbTimeout();
 
 private:
 
-    virtual AbstractSelectionRubber* selectionRubber() = 0;
-    virtual bool layersEventFilter(QObject*, QEvent*) = 0;
+    virtual AbstractSelectionRubber* selectionRubber()                             = 0;
+    virtual bool layersEventFilter(QObject*, QEvent*)                              = 0;
 
     virtual bool handleTouch(QTouchEvent* e);
     virtual bool handleDoubleClick(QMouseEvent* e);

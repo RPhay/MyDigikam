@@ -58,27 +58,27 @@ public:
 public:
 
     MarbleAbstractPresenter* const m_marblePresenter            = nullptr;
-    bool                           m_positionSignalConnected;
+    bool                           m_positionSignalConnected    = false;
     QTimer*                        m_mouseWheelTimer            = nullptr;
-    Qt::MouseButtons               m_disabledMouseButtons;
-    qreal                          m_wheelZoomTargetDistance;
-    bool                           m_panViaArrowsEnabled;
-    bool                           m_inertialEarthRotation;
-    bool                           m_mouseViewRotation;
-    int                            m_steps;
+    Qt::MouseButtons               m_disabledMouseButtons       = Qt::NoButton;
+    qreal                          m_wheelZoomTargetDistance    = 0.0;
+    bool                           m_panViaArrowsEnabled        = true;
+    bool                           m_inertialEarthRotation      = true;
+    bool                           m_mouseViewRotation          = true;
+    int                            m_steps                      = 0;
     const int                      m_discreteZoomSteps          = 120;
 };
 
 MarbleInputHandler::Protected::Protected(MarbleAbstractPresenter* marblePresenter)
-    : m_marblePresenter(marblePresenter),
-      m_positionSignalConnected(false),
-      m_mouseWheelTimer(nullptr),
-      m_disabledMouseButtons(Qt::NoButton),
-      m_wheelZoomTargetDistance(0.0),
-      m_panViaArrowsEnabled(true),
-      m_inertialEarthRotation(true),
-      m_mouseViewRotation(true),
-      m_steps(0)
+    : m_marblePresenter         (marblePresenter),
+      m_positionSignalConnected (false),
+      m_mouseWheelTimer         (nullptr),
+      m_disabledMouseButtons    (Qt::NoButton),
+      m_wheelZoomTargetDistance (0.0),
+      m_panViaArrowsEnabled     (true),
+      m_inertialEarthRotation   (true),
+      m_mouseViewRotation       (true),
+      m_steps                   (0)
 {
 }
 
@@ -116,7 +116,6 @@ void MarbleInputHandler::setMouseButtonPopupEnabled(Qt::MouseButton mouseButton,
     {
         d->m_disabledMouseButtons &= ~Qt::MouseButtons(mouseButton);
     }
-
     else
     {
         d->m_disabledMouseButtons |= mouseButton;
@@ -312,8 +311,8 @@ MarbleDefaultInputHandler::MarbleDefaultInputHandler(MarbleAbstractPresenter* ma
     d->m_pressAndHoldTimer.setInterval(800);
     d->m_pressAndHoldTimer.setSingleShot(true);
 
-    connect(&d->m_pressAndHoldTimer, SIGNAL(timeout()),
-            this, SLOT(handlePressAndHold()));
+    connect(&d->m_pressAndHoldTimer, &QTimer::timeout,
+            this, &MarbleDefaultInputHandler::handlePressAndHold);
 }
 
 MarbleDefaultInputHandler::~MarbleDefaultInputHandler()
