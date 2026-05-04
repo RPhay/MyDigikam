@@ -204,7 +204,7 @@ void MarblePluginSettingsWidget::slotAboutRunnerPlugin()
     {
         if (plug->name() == item->text(0))
         {
-            QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg((PluginInterface*)(plug), this);
+            QPointer<GeoPluginAboutDlg> dlg = new GeoPluginAboutDlg(qobject_cast<PluginInterface*>(const_cast<ParseRunnerPlugin*>(plug)), this);
             dlg->exec();
             delete dlg;
 
