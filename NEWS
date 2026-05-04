@@ -121,7 +121,7 @@ BUGFIXES:
 093 --> 519443 - [master Qt6] UpdateSchemaFromV16ToV17 not implemented for QMYSQL / MariaDB.
 094 --> 519650 - The program closes suddenly when opening geotag dialog.
 095 --> 519854 - Album (sorted by folder)->Refresh does not include sub-folders in specified album.
-096 --> 
+096 --> 519714 - Flickr Export reports "Unable to Write".
 097 --> 
 098 --> 
 099 --> 
