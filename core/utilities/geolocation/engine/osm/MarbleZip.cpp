@@ -524,8 +524,8 @@ class Q_DECL_HIDDEN QZipPrivate
 {
 public:
 
-    QZipPrivate(QIODevice* device, bool ownDev)
-        : device(device),
+    QZipPrivate(QIODevice* const device, bool ownDev)
+        : device   (device),
           ownDevice(ownDev)
     {
     }
@@ -542,12 +542,17 @@ public:
 
 public:
 
-    QIODevice*        device                = nullptr;
-    bool              ownDevice             = false;
-    bool              dirtyFileTree         = true;
+    QIODevice*        device                   = nullptr;
+    bool              ownDevice                = false;
+    bool              dirtyFileTree            = true;
     QList<FileHeader> fileHeaders;
     QByteArray        comment;
-    uint              start_of_directory    = 0;
+    uint              start_of_directory       = 0;
+
+private:
+
+    QZipPrivate(const QZipPrivate&)            = delete;
+    QZipPrivate& operator=(const QZipPrivate&) = delete;
 };
 
 void QZipPrivate::fillFileInfo(int index, MarbleZipReader::FileInfo& fileInfo) const
@@ -673,6 +678,7 @@ void MarbleZipReaderPrivate::scanFiles()
     int num_dir_entries    = 0;
     EndOfDirectory eod;
 
+    // // cppcheck-suppress knownConditionTrueFalse
     while (start_of_directory == -1)
     {
         int pos = device->size() - sizeof(EndOfDirectory) - i;
@@ -986,35 +992,35 @@ MarbleZipReader::MarbleZipReader(const QString& archive, QIODevice::OpenMode mod
 {
     std::unique_ptr<QFile> f(new QFile(archive));
     (void)f->open(mode);
-    MarbleZipReader::Status status;
+    MarbleZipReader::Status rstatus;
 
     if (f->error() == QFile::NoError)
     {
-        status = NoError;
+        rstatus = NoError;
     }
     else
     {
         if      (f->error() == QFile::ReadError)
         {
-            status = FileReadError;
+            rstatus = FileReadError;
         }
         else if (f->error() == QFile::OpenError)
         {
-            status = FileOpenError;
+            rstatus = FileOpenError;
         }
         else if (f->error() == QFile::PermissionsError)
         {
-            status = FilePermissionsError;
+            rstatus = FilePermissionsError;
         }
         else
         {
-            status = FileError;
+            rstatus = FileError;
         }
     }
 
     d         = new MarbleZipReaderPrivate(f.get(), /*ownDevice=*/true);
     (void)f.release();
-    d->status = status;
+    d->status = rstatus;
 }
 
 /*!
@@ -1364,35 +1370,35 @@ MarbleZipWriter::MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mo
 {
     std::unique_ptr<QFile> f(new QFile(fileName));
     (void)f->open(mode);
-    MarbleZipWriter::Status status;
+    MarbleZipWriter::Status wstatus;
 
     if (f->error() == QFile::NoError)
     {
-        status = MarbleZipWriter::NoError;
+        wstatus = MarbleZipWriter::NoError;
     }
     else
     {
         if      (f->error() == QFile::WriteError)
         {
-            status = MarbleZipWriter::FileWriteError;
+            wstatus = MarbleZipWriter::FileWriteError;
         }
         else if (f->error() == QFile::OpenError)
         {
-            status = MarbleZipWriter::FileOpenError;
+            wstatus = MarbleZipWriter::FileOpenError;
         }
         else if (f->error() == QFile::PermissionsError)
         {
-            status = MarbleZipWriter::FilePermissionsError;
+            wstatus = MarbleZipWriter::FilePermissionsError;
         }
         else
         {
-            status = MarbleZipWriter::FileError;
+            wstatus = MarbleZipWriter::FileError;
         }
     }
 
     d         = new MarbleZipWriterPrivate(f.get(), /*ownDevice=*/true);
     (void)f.release();
-    d->status = status;
+    d->status = wstatus;
 }
 
 /*!
