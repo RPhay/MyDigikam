@@ -55,37 +55,37 @@ typedef int O5mreaderIterateRet;
 
 typedef struct
 {
-    int errCode;
-    char* errMsg;
-    FILE* f;
-    uint64_t offset;
-    uint64_t offsetNd;
-    uint64_t offsetRf;
-    uint64_t current;
-    char* tagPair;
-    int64_t nodeId;
-    int64_t wayId;
-    int64_t wayNodeId;
-    int64_t relId;
-    int64_t nodeRefId;
-    int64_t wayRefId;
-    int64_t relRefId;
-    int32_t lon;
-    int32_t lat;
-    uint8_t canIterateTags;
-    uint8_t canIterateNds;
-    uint8_t canIterateRefs;
-    char** strPairTable;
+    int         errCode         = 0;
+    char*       errMsg          = 0;
+    FILE*       f               = NULL;
+    uint64_t    offset          = 0;
+    uint64_t    offsetNd        = 0;
+    uint64_t    offsetRf        = 0;
+    uint64_t    current         = 0;
+    char*       tagPair         = NULL;
+    int64_t     nodeId          = 0;
+    int64_t     wayId           = 0;
+    int64_t     wayNodeId       = 0;
+    int64_t     relId           = 0;
+    int64_t     nodeRefId       = 0;
+    int64_t     wayRefId        = 0;
+    int64_t     relRefId        = 0;
+    int32_t     lon             = 0;
+    int32_t     lat             = 0;
+    uint8_t     canIterateTags  = 0;
+    uint8_t     canIterateNds   = 0;
+    uint8_t     canIterateRefs  = 0;
+    char**      strPairTable    = NULL;
 } O5mreader;
 
 typedef struct
 {
-    uint8_t type;
-    uint64_t id;
-    uint32_t version;
-    uint8_t isEmpty;
-    int32_t lon;
-    int32_t lat;
+    uint8_t     type            = 0;
+    uint64_t    id              = 0;
+    uint32_t    version         = 0;
+    uint8_t     isEmpty         = 0;
+    int32_t     lon             = 0;
+    int32_t     lat             = 0;
 } O5mreaderDataset;
 
 void o5mreader_setError(O5mreader* pReader, int code, const char* message);

@@ -33,9 +33,9 @@ std::mutex mtx;
 
 O5mreaderRet o5mreader_readUInt(O5mreader* pReader, uint64_t* ret)
 {
-    uint8_t b;
+    uint8_t b = 0;
     uint8_t i = 0;
-    *ret = 0LL;
+    *ret      = 0LL;
 
     do
     {
@@ -43,8 +43,8 @@ O5mreaderRet o5mreader_readUInt(O5mreader* pReader, uint64_t* ret)
         {
             o5mreader_setError(pReader,
                                O5MREADER_ERR_CODE_UNEXPECTED_END_OF_FILE,
-                               NULL
-                              );
+                               NULL);
+
             return O5MREADER_RET_ERR;
         }
 
@@ -64,22 +64,21 @@ O5mreaderRet o5mreader_readInt(O5mreader* pReader, uint64_t* ret)
         return O5MREADER_RET_ERR;
     }
 
-    *ret = *ret & 1
+    *ret = (*ret & 1)
            ? -(int64_t)(*ret >> 1) - 1
-           : (int64_t)(*ret >> 1);
+           :  (int64_t)(*ret >> 1);
 
     return O5MREADER_RET_OK;
 }
 
-
 O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int single)
 {
-    static char     buffer[1024];
-    char*           pBuf;
-    static uint64_t pointer = 0;
-    int             length;
-    uint64_t        key;
-    int             i;
+    static char     buffer[1024] = { 0 };
+    char*           pBuf         = NULL;
+    static uint64_t pointer      = 0;
+    int             length       = 0;
+    uint64_t        key          = 0;
+    int             i            = 0;
 
     if (o5mreader_readUInt(pReader, &key) == O5MREADER_RET_ERR)
     {
@@ -89,9 +88,9 @@ O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int singl
     if (key)
     {
         *tagpair = pReader->strPairTable[(pointer + 15000 - key) % 15000];
+
         return (O5mreaderRet)key;
     }
-
     else
     {
         pBuf = buffer;
@@ -104,8 +103,8 @@ O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int singl
                 {
                     o5mreader_setError(pReader,
                                        O5MREADER_ERR_CODE_UNEXPECTED_END_OF_FILE,
-                                       NULL
-                                      );
+                                       NULL);
+
                     return O5MREADER_RET_ERR;
                 }
             }
@@ -119,7 +118,6 @@ O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int singl
             *tagpair = pReader->strPairTable[(pointer + 15000) % 15000];
             memcpy(pReader->strPairTable[((pointer++) + 15000) % 15000], buffer, length);
         }
-
         else
         {
             *tagpair = buffer;
@@ -132,34 +130,44 @@ O5mreaderRet o5mreader_readStrPair(O5mreader* pReader, char** tagpair, int singl
 
 O5mreaderRet o5mreader_reset(O5mreader* pReader)
 {
-    pReader->nodeId = pReader->wayId = pReader->wayNodeId = pReader->relId = pReader->nodeRefId = pReader->wayRefId = pReader->relRefId = 0;
-    pReader->lon = pReader->lat = 0;
-    pReader->offset = 0;
-    pReader->canIterateTags = pReader->canIterateNds = pReader->canIterateRefs = 0;
+    pReader->nodeId         = 0;
+    pReader->wayId          = 0;
+    pReader->wayNodeId      = 0;
+    pReader->relId          = 0;
+    pReader->nodeRefId      = 0;
+    pReader->wayRefId       = 0;
+    pReader->relRefId       = 0;
+    pReader->lon            = 0;
+    pReader->lat            = 0;
+    pReader->offset         = 0;
+    pReader->canIterateTags = 0;
+    pReader->canIterateNds  = 0;
+    pReader->canIterateRefs = 0;
+
     return O5MREADER_RET_OK;
 }
 
 O5mreaderRet o5mreader_open(O5mreader** ppReader, FILE* f)
 {
-    uint8_t byte;
-    int i;
-    *ppReader = (O5mreader*)malloc(sizeof(O5mreader));
+    uint8_t byte = 0;
+    int i        = 0;
+    *ppReader    = reinterpret_cast<O5mreader*>(malloc(sizeof(O5mreader)));
 
     if (!(*ppReader))
     {
         return O5MREADER_RET_ERR;
     }
 
-    (*ppReader)->errMsg = NULL;
-    (*ppReader)->f = f;
+    (*ppReader)->errMsg       = NULL;
+    (*ppReader)->f            = f;
     (*ppReader)->strPairTable = NULL;
 
     if (fread(&byte, 1, 1, (*ppReader)->f) == 0)
     {
         o5mreader_setError(*ppReader,
                            O5MREADER_ERR_CODE_UNEXPECTED_END_OF_FILE,
-                           NULL
-                          );
+                           NULL);
+
         return O5MREADER_RET_ERR;
     }
 
@@ -167,39 +175,40 @@ O5mreaderRet o5mreader_open(O5mreader** ppReader, FILE* f)
     {
         o5mreader_setError(*ppReader,
                            O5MREADER_ERR_CODE_FILE_HAS_WRONG_START,
-                           NULL
-                          );
+                           NULL);
+
         return O5MREADER_RET_ERR;
     }
 
     o5mreader_reset(*ppReader);
 
-    (*ppReader)->strPairTable = (char**) malloc(STR_PAIR_TABLE_SIZE * sizeof(char*));
+    (*ppReader)->strPairTable = reinterpret_cast<char**>(malloc(STR_PAIR_TABLE_SIZE * sizeof(char*)));
 
     if ((*ppReader)->strPairTable == 0)
     {
         o5mreader_setError(*ppReader,
                            O5MREADER_ERR_CODE_MEMORY_ERROR,
-                           NULL
-                          );
+                           NULL);
+
         return O5MREADER_RET_ERR;
     }
 
     for (i = 0; i < STR_PAIR_TABLE_SIZE; ++i)
     {
-        (*ppReader)->strPairTable[i] = (char*) malloc(sizeof(char) * STR_PAIR_STRING_SIZE);
+        (*ppReader)->strPairTable[i] = reinterpret_cast<char*>(malloc(sizeof(char) * STR_PAIR_STRING_SIZE));
 
         if ((*ppReader)->strPairTable[i] == 0)
         {
             o5mreader_setError(*ppReader,
                                O5MREADER_ERR_CODE_MEMORY_ERROR,
-                               NULL
-                              );
+                               NULL);
+
             return O5MREADER_RET_ERR;
         }
     }
 
     o5mreader_setNoError(*ppReader);
+
     return O5MREADER_RET_OK;
 }
 
@@ -212,10 +221,12 @@ void o5mreader_close(O5mreader* pReader)
         if (pReader->strPairTable)
         {
             for (i = 0; i < STR_PAIR_TABLE_SIZE; ++i)
+            {
                 if (pReader->strPairTable[i])
                 {
                     free(pReader->strPairTable[i]);
                 }
+            }
 
             free(pReader->strPairTable);
         }
@@ -230,25 +241,39 @@ const char* o5mreader_strerror(int errCode)
     switch (errCode)
     {
         case O5MREADER_ERR_CODE_FILE_HAS_WRONG_START:
+        {
             return "'0xFF' isn't first byte of file.";
+        }
 
         case O5MREADER_ERR_CODE_MEMORY_ERROR:
+        {
             return "Memory error.";
+        }
 
         case O5MREADER_ERR_CODE_UNEXPECTED_END_OF_FILE:
+        {
             return "Unexpected end of file.";
+        }
 
         case O5MREADER_ERR_CODE_CAN_NOT_ITERATE_TAGS_HERE:
+        {
             return "Tags iteration is not allowed here.";
+        }
 
         case O5MREADER_ERR_CODE_CAN_NOT_ITERATE_NDS_HERE:
+        {
             return "Nodes iteration is not allowed here.";
+        }
 
         case O5MREADER_ERR_CODE_CAN_NOT_ITERATE_REFS_HERE:
+        {
             return "References iteration is not allowed here.";
+        }
 
         default:
+        {
             return "Unknown error code";
+        }
     }
 }
 
@@ -263,7 +288,7 @@ void o5mreader_setError(O5mreader* pReader, int code, const char* message)
 
     if (message)
     {
-        pReader->errMsg = (char*) malloc(strlen(message) + 1);
+        pReader->errMsg = reinterpret_cast<char*>(malloc(strlen(message) + 1));
         strcpy(pReader->errMsg, message);
     }
 }
@@ -292,10 +317,10 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
             }
 
             int ret = (int)fseek(
-                pReader->f,
-                (long)((pReader->current - ftell(pReader->f)) + pReader->offset),
-                SEEK_CUR
-            );
+                                 pReader->f,
+                                 (long)((pReader->current - ftell(pReader->f)) + pReader->offset),
+                                 SEEK_CUR
+                                );
 
             (void)ret;
 
@@ -306,8 +331,8 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
         {
             o5mreader_setError(pReader,
                                O5MREADER_ERR_CODE_UNEXPECTED_END_OF_FILE,
-                               NULL
-                              );
+                               NULL);
+
             return O5MREADER_ITERATE_RET_ERR;
         }
 
@@ -335,22 +360,31 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
             switch (ds->type)
             {
                 case O5MREADER_DS_NODE:
+                {
                     return o5mreader_readNode(pReader, ds);
+                }
 
                 case O5MREADER_DS_WAY:
+                {
                     return o5mreader_readWay(pReader, ds);
+                }
 
                 case O5MREADER_DS_REL:
+                {
                     return o5mreader_readRel(pReader, ds);
-                    /*
-                    case O5MREADER_DS_BBOX:
-                    case O5MREADER_DS_TSTAMP:
-                    case O5MREADER_DS_HEADER:
-                    case O5MREADER_DS_SYNC:
-                    case O5MREADER_DS_JUMP:
-                    default:
-                        break;
-                    */
+                }
+
+/*
+                case O5MREADER_DS_BBOX:
+                case O5MREADER_DS_TSTAMP:
+                case O5MREADER_DS_HEADER:
+                case O5MREADER_DS_SYNC:
+                case O5MREADER_DS_JUMP:
+                default:
+                {
+                    break;
+                }
+*/
             }
         }
     }
@@ -358,12 +392,12 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
 
 int o5mreader_thereAreNoMoreData(O5mreader* pReader)
 {
-    return (int)((pReader->current - ftell(pReader->f)) + pReader->offset) <= 0;
+    return (int)(((pReader->current - ftell(pReader->f)) + pReader->offset) <= 0);
 }
 
 O5mreaderIterateRet o5mreader_readVersion(O5mreader* pReader, O5mreaderDataset* ds)
 {
-    uint64_t tmp;
+    uint64_t tmp = 0;
 
     if (o5mreader_readUInt(pReader, &tmp) == O5MREADER_ITERATE_RET_ERR)
     {
@@ -476,28 +510,28 @@ O5mreaderIterateRet o5mreader_skipTags(O5mreader* pReader)
 
 O5mreaderIterateRet o5mreader_readNode(O5mreader* pReader, O5mreaderDataset* ds)
 {
-    int64_t nodeId;
-    int64_t lon, lat;
+    int64_t nodeId  = 0;
+    int64_t lon     = 0;
+    int64_t lat     = 0;
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&nodeId) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&nodeId)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
 
     pReader->canIterateRefs = 0;
-    pReader->canIterateNds = 0;
+    pReader->canIterateNds  = 0;
     pReader->canIterateTags = 1;
 
-    pReader->nodeId += nodeId;
-    ds->id = pReader->nodeId;
-
+    pReader->nodeId        += nodeId;
+    ds->id                  = pReader->nodeId;
 
     if (o5mreader_readVersion(pReader, ds) == O5MREADER_ITERATE_RET_DONE)
     {
         ds->isEmpty = 1;
+
         return O5MREADER_ITERATE_RET_NEXT;
     }
-
     else
     {
         ds->isEmpty = 0;
@@ -508,14 +542,14 @@ O5mreaderIterateRet o5mreader_readNode(O5mreader* pReader, O5mreaderDataset* ds)
         return O5MREADER_ITERATE_RET_NEXT;
     }
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&lon) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&lon)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
 
     pReader->lon += (int32_t)lon;
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&lat) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&lat)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
@@ -536,8 +570,8 @@ O5mreaderIterateRet o5mreader_iterateNds(O5mreader* pReader, uint64_t* nodeId)
     {
         o5mreader_setError(pReader,
                            O5MREADER_ERR_CODE_CAN_NOT_ITERATE_NDS_HERE,
-                           NULL
-                          );
+                           NULL);
+
         return O5MREADER_ITERATE_RET_ERR;
     }
 
@@ -546,10 +580,11 @@ O5mreaderIterateRet o5mreader_iterateNds(O5mreader* pReader, uint64_t* nodeId)
         pReader->canIterateNds = 0;
         pReader->canIterateTags = 1;
         pReader->canIterateRefs = 0;
+
         return O5MREADER_ITERATE_RET_DONE;
     }
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&wayNodeId) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&wayNodeId)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
@@ -566,7 +601,7 @@ O5mreaderIterateRet o5mreader_iterateNds(O5mreader* pReader, uint64_t* nodeId)
 
 O5mreaderIterateRet o5mreader_skipNds(O5mreader* pReader)
 {
-    uint8_t ret;
+    uint8_t ret = 0;
 
     while (pReader->canIterateNds &&
            O5MREADER_ITERATE_RET_NEXT == (ret = o5mreader_iterateNds(pReader, NULL)));
@@ -576,19 +611,20 @@ O5mreaderIterateRet o5mreader_skipNds(O5mreader* pReader)
 
 O5mreaderIterateRet o5mreader_readWay(O5mreader* pReader, O5mreaderDataset* ds)
 {
-    int64_t wayId;
+    int64_t wayId = 0;
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&wayId) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&wayId)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
 
     pReader->wayId += wayId;
-    ds->id = pReader->wayId;
+    ds->id          = pReader->wayId;
 
     if (o5mreader_readVersion(pReader, ds) == O5MREADER_ITERATE_RET_DONE)
     {
         ds->isEmpty = 1;
+
         return O5MREADER_ITERATE_RET_NEXT;
     }
 
@@ -602,39 +638,40 @@ O5mreaderIterateRet o5mreader_readWay(O5mreader* pReader, O5mreaderDataset* ds)
         return O5MREADER_ITERATE_RET_ERR;
     }
 
-    pReader->offsetNd += ftell(pReader->f);
+    pReader->offsetNd      += ftell(pReader->f);
     pReader->canIterateRefs = 0;
-    pReader->canIterateNds = 1;
+    pReader->canIterateNds  = 1;
     pReader->canIterateTags = 0;
+
     return O5MREADER_ITERATE_RET_NEXT;
 }
 
 O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, uint8_t* type, char** pRole)
 {
-    int64_t relRefId;
+    int64_t relRefId = 0;
 
     if (!pReader->canIterateRefs)
     {
         o5mreader_setError(pReader,
                            O5MREADER_ERR_CODE_CAN_NOT_ITERATE_REFS_HERE,
-                           NULL
-                          );
+                           NULL);
+
         return O5MREADER_ITERATE_RET_ERR;
     }
 
     if (ftell(pReader->f) >= long(pReader->offsetRf))
     {
-        pReader->canIterateNds = 0;
+        pReader->canIterateNds  = 0;
         pReader->canIterateTags = 1;
         pReader->canIterateRefs = 0;
+
         return O5MREADER_ITERATE_RET_DONE;
     }
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&relRefId) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&relRefId)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
-
 
     //fread(_,1,1,pReader->f);
 
@@ -650,6 +687,7 @@ O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, u
     switch (pReader->tagPair[0])
     {
         case '0':
+        {
             if (type)
             {
                 *type = O5MREADER_DS_NODE;
@@ -663,8 +701,10 @@ O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, u
             }
 
             break;
+        }
 
         case '1':
+        {
             if (type)
             {
                 *type = O5MREADER_DS_WAY;
@@ -678,8 +718,10 @@ O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, u
             }
 
             break;
+        }
 
         case '2':
+        {
             if (type)
             {
                 *type = O5MREADER_DS_REL;
@@ -693,6 +735,7 @@ O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, u
             }
 
             break;
+        }
     }
 
     if (pRole)
@@ -705,43 +748,46 @@ O5mreaderIterateRet o5mreader_iterateRefs(O5mreader* pReader, uint64_t* refId, u
 
 O5mreaderIterateRet o5mreader_skipRefs(O5mreader* pReader)
 {
-    uint8_t ret;
+    uint8_t ret = 0;
 
-    while (pReader->canIterateRefs &&
-           O5MREADER_ITERATE_RET_NEXT == (ret = o5mreader_iterateRefs(pReader, NULL, NULL, NULL)));
+    while (
+           pReader->canIterateRefs &&
+           (O5MREADER_ITERATE_RET_NEXT == (ret = o5mreader_iterateRefs(pReader, NULL, NULL, NULL)))
+          );
 
     return ret;
 }
 
 O5mreaderIterateRet o5mreader_readRel(O5mreader* pReader, O5mreaderDataset* ds)
 {
-    int64_t relId;
+    int64_t relId = 0;
 
-    if (o5mreader_readInt(pReader, (uint64_t*)&relId) == O5MREADER_RET_ERR)
+    if (o5mreader_readInt(pReader, reinterpret_cast<uint64_t*>(&relId)) == O5MREADER_RET_ERR)
     {
         return O5MREADER_ITERATE_RET_ERR;
     }
 
     pReader->relId += relId;
-    ds->id = pReader->relId;
+    ds->id          = pReader->relId;
 
     if (o5mreader_readVersion(pReader, ds) == O5MREADER_ITERATE_RET_DONE)
     {
         ds->isEmpty = 1;
+
         return O5MREADER_ITERATE_RET_NEXT;
     }
-
     else
     {
         ds->isEmpty = 0;
     }
 
     o5mreader_readUInt(pReader, &pReader->offsetRf);
-    pReader->offsetRf += ftell(pReader->f);
+    pReader->offsetRf       += ftell(pReader->f);
 
     pReader->canIterateRefs = 1;
-    pReader->canIterateNds = 0;
+    pReader->canIterateNds  = 0;
     pReader->canIterateTags = 0;
+
     return O5MREADER_ITERATE_RET_NEXT;
 }
 
