@@ -392,7 +392,7 @@ O5mreaderIterateRet o5mreader_iterateDataSet(O5mreader* pReader, O5mreaderDatase
 
 int o5mreader_thereAreNoMoreData(O5mreader* pReader)
 {
-    return (int)(((pReader->current - ftell(pReader->f)) + pReader->offset) <= 0);
+    return (pReader->current + pReader->offset) <= static_cast<uint64_t>(ftell(pReader->f));
 }
 
 O5mreaderIterateRet o5mreader_readVersion(O5mreader* pReader, O5mreaderDataset* ds)
