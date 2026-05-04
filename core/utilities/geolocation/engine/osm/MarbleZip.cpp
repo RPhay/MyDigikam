@@ -396,6 +396,10 @@ class Q_DECL_HIDDEN LocalFileHeader
 {
 public:
 
+    LocalFileHeader() = default;
+
+public:
+
     uchar signature[4]              = { 0 }; //  0x04034b50
     uchar version_needed[2]         = { 0 };
     uchar general_purpose_bits[2]   = { 0 };
@@ -412,6 +416,10 @@ class Q_DECL_HIDDEN DataDescriptor
 {
 public:
 
+    DataDescriptor() = default;
+
+public:
+
     uchar crc_32[4]                 = { 0 };
     uchar compressed_size[4]        = { 0 };
     uchar uncompressed_size[4]      = { 0 };
@@ -419,6 +427,10 @@ public:
 
 class Q_DECL_HIDDEN CentralFileHeader
 {
+public:
+
+    CentralFileHeader() = default;
+
 public:
 
     uchar signature[4]                  = { 0 }; // 0x02014b50
@@ -782,7 +794,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     }
 
     FileHeader header;
-    memset(&header.h, 0, sizeof(CentralFileHeader));
+    header.h = CentralFileHeader();
     writeUInt(header.h.signature, 0x02014b50);
 
     writeUShort(header.h.version_needed, 0x14);
@@ -1616,7 +1628,6 @@ void MarbleZipWriter::close()
     // write end of directory
 
     EndOfDirectory eod;
-    memset(&eod, 0, sizeof(EndOfDirectory));
     writeUInt(eod.signature, 0x06054b50);
 
     //uchar this_disk[2];
