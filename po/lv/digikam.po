@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:41+0000\n"
+"POT-Creation-Date: 2026-05-04 00:41+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -298,7 +298,7 @@ msgstr "Mainīt seju tagu"
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:1036
+#: core/app/views/preview/itempreviewview.cpp:1037
 #, kde-format
 msgid "&Cancel"
 msgstr "At&celt"
@@ -309,7 +309,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "Piešķirt tagus &izvēlētajām vienībām"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:1034
+#: core/app/views/preview/itempreviewview.cpp:1035
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "Piešķirt tagus š&ai vienībai"
@@ -1065,7 +1065,7 @@ msgstr "Datums:"
 
 #: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
@@ -1105,7 +1105,7 @@ msgid "Unknown"
 msgstr "Nezināms"
 
 #: core/app/items/utils/tooltipfiller.cpp:117
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1048
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
@@ -3080,7 +3080,7 @@ msgstr "Pēc sejām"
 msgid "Show Magnifier (x%1)"
 msgstr ""
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:150
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:90
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
@@ -4351,14 +4351,14 @@ msgstr "Ar ģeolokācijas tagu"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:99
 #, fuzzy, kde-format
 msgid "Coordinates"
 msgstr "Polāras koordinātas"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:111
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, fuzzy, kde-format
 msgid "Altitude"
@@ -6116,8 +6116,8 @@ msgid ""
 msgstr "Rīks attēlu pārveidošanai uz PGF formātu."
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:75
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "Automātiska lēcu korekcija"
@@ -6868,7 +6868,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:88
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:285
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
 #: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
@@ -6876,20 +6876,20 @@ msgstr "Novietojums:"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:92
 #: core/dplugins/bqm/transform/crop/crop.cpp:97
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:294
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:293
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:298
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr "Šeit norādiet apciršanas augšējo kreiso stūri."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:107
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:308
 #, kde-format
 msgid "Set here the width selection for cropping."
 msgstr "Šeit norādiet apciršanas platumu."
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:112
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:316
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:320
 #, kde-format
 msgid "Set here the height selection for cropping."
 msgstr "Šeit norādiet apciršanas augstumu."
@@ -8596,8 +8596,8 @@ msgctxt "@action"
 msgid "White Balance..."
 msgstr "Baltais balanss..."
 
-#: core/dplugins/editor/decorate/border/bordertool.cpp:60
-#: core/dplugins/editor/decorate/border/bordertool.cpp:156
+#: core/dplugins/editor/decorate/border/bordertool.cpp:62
+#: core/dplugins/editor/decorate/border/bordertool.cpp:158
 #, kde-format
 msgid "Add Border"
 msgstr "Pievienot apmali"
@@ -8809,8 +8809,8 @@ msgctxt "@action"
 msgid "Apply Texture..."
 msgstr "Pielietot tekstūru..."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:65
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:153
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:67
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:155
 #, kde-format
 msgid "Vignetting Correction"
 msgstr "Vinjetēšanas korekcija"
@@ -9151,12 +9151,12 @@ msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "Karstie pikseļi..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:85
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
 #, kde-format
 msgid "Show grid"
 msgstr "Rādīt režģi"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:88
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr ""
@@ -9177,7 +9177,7 @@ msgctxt "@action"
 msgid "Lens Auto-Correction..."
 msgstr "Automātiska lēcu korekcija"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:94
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:96
 #, kde-format
 msgid ""
 "You can see here a thumbnail preview of the distortion correction applied to "
@@ -9186,13 +9186,13 @@ msgstr ""
 "Šeit var redzēt priekšskatījuma sīktēlu, kurā korekcija ir pielietota krustu "
 "paraugam."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:99
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:101
 #, kde-format
 msgctxt "value for amount of distortion"
 msgid "Main:"
 msgstr "Galvenais:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:105
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:107
 #, kde-format
 msgid ""
 "This value controls the amount of distortion. Negative values correct lens "
@@ -9201,12 +9201,12 @@ msgstr ""
 "Šī vērtība kontrolē kropļojuma daudzumu. Negatīvas vērtības koriģē mucas "
 "kropļojumu, pozitīvas - ieliekuma kropļojumu."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:111
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:113
 #, kde-format
 msgid "Edge:"
 msgstr "Stūri:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:117
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:119
 #, kde-format
 msgid ""
 "This value controls in the same manner as the Main control, but has more "
@@ -9215,27 +9215,27 @@ msgstr ""
 "Šī vērtība strādā tāpat kā galvenā kontrole, bet tai ir lielāks efekts "
 "attēla stūros."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:122
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:124
 #, kde-format
 msgid "Zoom:"
 msgstr "Tālummaiņa:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:128
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:130
 #, kde-format
 msgid "This value rescales the overall image size."
 msgstr "Šī vērtība maina attēla izmēru."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:134
 #, kde-format
 msgid "Brighten:"
 msgstr "Gaišināt:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:138
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:140
 #, kde-format
 msgid "This value adjusts the brightness in image corners."
 msgstr "Šī vērtība maina gaišumu attēlu stūros."
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:294
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:296
 #, kde-format
 msgid "Lens Distortion"
 msgstr "Lēcu kropļojumi"
@@ -9284,8 +9284,8 @@ msgctxt "@action"
 msgid "Local Contrast..."
 msgstr "Vietējais kontrasts..."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:60
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:134
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:62
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:136
 #, kde-format
 msgid "Noise Reduction"
 msgstr "Trokšņu novēršana"
@@ -10116,7 +10116,7 @@ msgid "Add Film Grain..."
 msgstr "Pievienot filmas graudainību..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:78
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:261
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:263
 #, kde-format
 msgid "Brush size:"
 msgstr "Otas izmērs:"
@@ -10167,7 +10167,7 @@ msgctxt "@action"
 msgid "Oil Paint..."
 msgstr "Eļļas glezna..."
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:71
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:73
 #, kde-format
 msgid ""
 "This is the preview of the Raindrop effect.<p>Note: if you have previously "
@@ -10176,37 +10176,37 @@ msgid ""
 "example.</p>"
 msgstr ""
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:90
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:92
 #, kde-format
 msgid "Drop size:"
 msgstr "Lāses izmērs:"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:94
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:96
 #, kde-format
 msgid "Set here the raindrops' size."
 msgstr "Šeit norādiet lietus lāses izmēru."
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:98
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:100
 #, kde-format
 msgid "Number:"
 msgstr "Skaits:"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:102
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:104
 #, kde-format
 msgid "This value controls the maximum number of raindrops."
 msgstr "Šī vērtība nosaka maksimālo lāšu skaitu."
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:106
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:108
 #, kde-format
 msgid "Fish eyes:"
 msgstr "Zivs acis:"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:110
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:112
 #, kde-format
 msgid "This value is the fish-eye-effect optical distortion coefficient."
 msgstr "Šī vērtība kontrolē zivs acs optiskā kropļojuma efektu."
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:219
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:221
 #, kde-format
 msgid "RainDrop"
 msgstr "LietusLāse"
@@ -10271,88 +10271,88 @@ msgctxt "@info"
 msgid "This option can be used to crop automatically the image."
 msgstr "Šī iespēja ļauj palielināt attēlu, parādot šobrīd iezīmēto apgabalu."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:154
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:156
 #: core/dplugins/editor/transform/resize/resizetool.cpp:348
 #, kde-format
 msgid "Maintain aspect ratio"
 msgstr "Saglabāt malu attiecību"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:155
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:157
 #: core/dplugins/editor/transform/resize/resizetool.cpp:349
 #, kde-format
 msgid "Enable this option to maintain aspect ratio with new image sizes."
 msgstr "Ieslēdziet šo iespēju, ja vēlaties saglabāt attēla malu attiecību."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:158
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:160
 #, kde-format
 msgid "Width (px):"
 msgstr "Platums (piks.):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:163
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:165
 #: core/dplugins/editor/transform/resize/resizetool.cpp:359
 #, kde-format
 msgid "Set here the new image width in pixels."
 msgstr "Šeit norādiet jauno attēla platumu pikseļos."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:165
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:167
 #, kde-format
 msgid "Height (px):"
 msgstr "Augstums (piks.):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:170
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:172
 #, kde-format
 msgid "Set here the new image height in pixels."
 msgstr "Šeit norādiet jaunā attēla augstumu pikseļos."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:172
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:174
 #: core/dplugins/editor/transform/resize/resizetool.cpp:370
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:137
 #, kde-format
 msgid "Width (%):"
 msgstr "Platums (%):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:177
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:179
 #, kde-format
 msgid "New image width, as a percentage (%)."
 msgstr "Jaunā attēla platums procentos (%)."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:179
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:181
 #: core/dplugins/editor/transform/resize/resizetool.cpp:378
 #, kde-format
 msgid "Height (%):"
 msgstr "Augstums (%):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:184
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:186
 #, kde-format
 msgid "New image height, as a percentage (%)."
 msgstr "Jaunā attēla augstums procentos (%)."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:207
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:209
 #, kde-format
 msgid "Specify here your desired content-aware rescaling percentage."
 msgstr "Norādiet saturu saglabājošās mērogošanas procentus."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:219
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:221
 #, kde-format
 msgid "Add weight masks"
 msgstr "Pievienot uzsvara iezīmes"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:220
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:222
 #, kde-format
 msgid "Enable this option to add suppression and preservation masks."
 msgstr "Ieslēdziet šo, lai pievienotu nomākšanas un saglabāšanas iezīmes."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:227
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:229
 #, kde-format
 msgid "Suppression weight mask:"
 msgstr "Nomākšanas uzsvara maska:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:233
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:235
 #, kde-format
 msgid "Draw a suppression mask"
 msgstr "Uzzīmējiet nomākšanas masku"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:234
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:236
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image are less "
@@ -10360,17 +10360,17 @@ msgid ""
 "duplicated when enlarging the picture."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:240
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:242
 #, kde-format
 msgid "Preservation weight mask:"
 msgstr "Saglabāšanas uzsvara maska:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:245
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:247
 #, kde-format
 msgid "Draw a preservation mask"
 msgstr "Uzzīmējiet saglabāšanas masku"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:246
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:248
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
@@ -10379,57 +10379,57 @@ msgstr ""
 "Nospiediet šo pogu, lai zīmētu zonas, kuras iezīmēs saglabājamos attēla "
 "apgabalus."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:251
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:253
 #, kde-format
 msgid "Erase mask:"
 msgstr "Dzēst masku:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:256
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:258
 #, kde-format
 msgid "Erase mask"
 msgstr "Dzēst masku"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:257
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:259
 #, kde-format
 msgid "Click on this button to erase mask regions."
 msgstr "Nospiediet šo pogu, lai dzēstu maskētos reģionus."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:268
 #, kde-format
 msgid "Specify here the size of the brush used to paint masks."
 msgstr "Šeit norādiet masku zīmēšanas otas izmēru."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:286
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:288
 #, kde-format
 msgid "Norm of brightness gradient"
 msgstr "Spilgtuma gradienta norma"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:287
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:289
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
 msgstr "Spilgtuma gradienta absolūto vērtību summa"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:288
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
 msgid "Absolute value of brightness gradient"
 msgstr "Spilgtuma gradienta absolūtā vērtība"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:289
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
 #, kde-format
 msgid "Norm of luma gradient"
 msgstr "Luma gradienta norma"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:292
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
 msgstr "Luma gradienta absolūto vērtību summa"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:293
 #, kde-format
 msgid "Absolute value of luma gradient"
 msgstr "Luma gradienta absolūtā vērtība"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:294
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
 msgid ""
 "This option allows you to choose a gradient function. This function is used "
@@ -10438,24 +10438,24 @@ msgstr ""
 "Šis iestatījums ļauj izvēlēties gradienta funkciju. Tā tiks izmantota, lai "
 "noteiktu, kurus pikseļus izmest un kurus - paturēt."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:297
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:299
 #, kde-format
 msgid "Preserve Skin Tones"
 msgstr "Saglabāt ādas toņus"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:298
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:300
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
 msgstr ""
 "Ieslēdziet šo iespēju, lai saglabātu pikseļus, kuri ir līdzīgi ādas tonim."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:312
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:314
 #, kde-format
 msgid "Overall rigidity of the seams:"
 msgstr "Šuvju taisnums:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:316
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:318
 #, kde-format
 msgid ""
 "Use this value to give a negative bias to the seams which are not straight. "
@@ -10467,12 +10467,12 @@ msgid ""
 "and summed up for the whole seam."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Maximum number of transversal steps:"
 msgstr "Maksimālais pārceļošanas soļu skaits:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:331
 #, kde-format
 msgid ""
 "This option lets you choose the maximum transversal step that the pixels in "
@@ -10485,12 +10485,12 @@ msgid ""
 "setting."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:339
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:341
 #, kde-format
 msgid "Side switch frequency:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:343
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:345
 #, kde-format
 msgid ""
 "During the carving process, at each step the optimal seam to be carved is "
@@ -10504,54 +10504,54 @@ msgid ""
 "performance."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:357
 #, kde-format
 msgid "Resize Order:"
 msgstr "Mērogošanas kārtība:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:357
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:359
 #, kde-format
 msgid "Horizontally first"
 msgstr "Vispirms horizontāli"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:358
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
 #, kde-format
 msgid "Vertically first"
 msgstr "Vispirms vertikāli"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:362
 #, kde-format
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr "Šeit varat iestatīt, vai vispirms mērogot horizontāli vai vertikāli."
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:380
 #, kde-format
 msgid "Target size"
 msgstr "Mērķa izmērs"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:381
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:383
 #, kde-format
 msgid "Content-aware rescale percentage"
 msgstr "Saturu saglabājošās mērogošanas procenti"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:383
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:385
 #, kde-format
 msgid "Mask Settings"
 msgstr "Maskas iestatījumi"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:385
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
 #, kde-format
 msgid "Energy function"
 msgstr "Enerģijas funkcija"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:389
 #: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "Papildu iestatījumi"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:743
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:745
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "Plūstošā mērogošana"
@@ -10594,7 +10594,7 @@ msgstr ""
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
-#: core/dplugins/editor/transform/shear/sheartool.cpp:102
+#: core/dplugins/editor/transform/shear/sheartool.cpp:104
 #, kde-format
 msgid "New width:"
 msgstr "Jaunais platums:"
@@ -10607,10 +10607,10 @@ msgstr "Jaunais platums:"
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
-#: core/dplugins/editor/transform/shear/sheartool.cpp:103
-#: core/dplugins/editor/transform/shear/sheartool.cpp:107
-#: core/dplugins/editor/transform/shear/sheartool.cpp:305
-#: core/dplugins/editor/transform/shear/sheartool.cpp:306
+#: core/dplugins/editor/transform/shear/sheartool.cpp:105
+#: core/dplugins/editor/transform/shear/sheartool.cpp:109
+#: core/dplugins/editor/transform/shear/sheartool.cpp:307
+#: core/dplugins/editor/transform/shear/sheartool.cpp:308
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
@@ -10620,7 +10620,7 @@ msgstr " piks."
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
-#: core/dplugins/editor/transform/shear/sheartool.cpp:106
+#: core/dplugins/editor/transform/shear/sheartool.cpp:108
 #, kde-format
 msgid "New height:"
 msgstr "Jaunais augstums:"
@@ -10810,14 +10810,14 @@ msgstr "Perspektīvas koriģēšana"
 msgid "Perspective Adjustment"
 msgstr "Perspektīvas koriģēšana"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:143
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1081
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1087
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:147
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1085
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1091
 #, kde-format
 msgid "Aspect Ratio Crop"
 msgstr "Apciršana ar malu attiecību"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:151
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:155
 #, kde-format
 msgid ""
 "<p>Here you can see the aspect ratio selection preview used for cropping. "
@@ -10826,68 +10826,68 @@ msgid ""
 "the <b>SHIFT</b> key to move the closest corner to the mouse pointer.</p>"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:174
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:178
 #, kde-format
 msgid "Max. Aspect"
 msgstr "Maks. izmērs"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:175
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:179
 #, kde-format
 msgid "Set selection area to the maximum size according to the current ratio."
 msgstr ""
 "Iestatīt apciršanas apgabalu un maksimālo izmēru, ievērojot malu attiecību."
 
 #. i18n: ectx: property (text), widget (QLabel, resolutionLabel)
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:191
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:195
 #: core/dplugins/editor/transform/resize/resizetool.cpp:386
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:78
 #, fuzzy, kde-format
 msgid "Resolution:"
 msgstr "Atjaunošana"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:205
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:209
 #, fuzzy, kde-format
 msgid "Crop Information"
 msgstr "Informācija"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:211
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:215
 #, kde-format
 msgid "Aspect ratio:"
 msgstr "Malu attiecība:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:213
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:217
 #, kde-format
 msgctxt "custom aspect ratio crop settings"
 msgid "Custom"
 msgstr "Pielāgota"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:226
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:798
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:230
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:802
 #, fuzzy, kde-format
 #| msgid "Format"
 msgid "Format DIN A"
 msgstr "Formāts"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:227
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:799
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:231
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:803
 #, kde-format
 msgid "Golden Ratio"
 msgstr "Zelta attiecība"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:228
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:800
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:232
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:804
 #, kde-format
 msgid "Current Aspect Ratio"
 msgstr "Saglabāt malu attiecību"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:229
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:801
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:233
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:805
 #, kde-format
 msgctxt "no aspect ratio"
 msgid "None"
 msgstr "Nav"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:232
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:236
 #, kde-format
 msgid ""
 "<p>Select your constrained aspect ratio for cropping. Aspect Ratio Crop tool "
@@ -10908,201 +10908,201 @@ msgid ""
 "from the currently opened image.</p>"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:256
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:260
 #, kde-format
 msgid "Exact aspect"
 msgstr "Precīza attiecība"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:257
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:261
 #, kde-format
 msgid "Enable this option to force exact aspect ratio crop."
 msgstr "Ieslēdziet šo, lai uzspiestu precīzu malu attiecību."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:259
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:263
 #, kde-format
 msgid "Orientation:"
 msgstr "Orientācija:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:261
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:265
 #, kde-format
 msgid "Landscape"
 msgstr "Ainava"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:262
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:266
 #, kde-format
 msgid "Portrait"
 msgstr "Portrets"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:263
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:267
 #, kde-format
 msgid "Select constrained aspect ratio orientation."
 msgstr "Izvēlieties malu attiecības orientāciju."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:266
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:270
 #, kde-format
 msgid "Auto"
 msgstr "Automātiska"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:267
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:271
 #, kde-format
 msgid "Enable this option to automatically set the orientation."
 msgstr "Ieslēdziet šo iespēju, lai automātiski noteiktu orientāciju."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:271
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:275
 #, kde-format
 msgid "Custom ratio:"
 msgstr "Pielāgota attiecība:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:276
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:280
 #, kde-format
 msgid "Set here the desired custom aspect numerator value."
 msgstr "Šeit norādiet vajadzīgo pielāgotās attiecības dalāmo."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:281
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:285
 #, kde-format
 msgid "Set here the desired custom aspect denominator value."
 msgstr "Šeit norādiet vajadzīgo pielāgotās attiecības dalītāju."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:313
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:317
 #, kde-format
 msgid "Set width position to center."
 msgstr "Iestatīt apciršanas platumu attēla centrā."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:325
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:329
 #, kde-format
 msgid "Set height position to center."
 msgstr "Iestatīt apciršanas augstumu attēla centrā."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:351
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:355
 #, kde-format
 msgid "Crop Settings"
 msgstr "Apciršanas iestatījumi"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:358
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:362
 #, fuzzy, kde-format
 msgctxt "@label: guide lines"
 msgid "Form:"
 msgstr "Forma"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:360
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:364
 #, kde-format
 msgid "Rules of Thirds"
 msgstr "Trešdaļu likumi"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:361
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:365
 #, kde-format
 msgid "Diagonal Method"
 msgstr "Diagonāles metode"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:362
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:366
 #, kde-format
 msgid "Harmonious Triangles"
 msgstr "Harmoniski trīsstūri"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:367
 #, kde-format
 msgid "Golden Mean"
 msgstr "Zelta attiecība"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:364
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
 #, fuzzy, kde-format
 msgid "Center Lines"
 msgstr "Centrimetri"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:365
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:369
 #, kde-format
 msgctxt "no geometric form"
 msgid "None"
 msgstr "Nav"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:372
 #, kde-format
 msgid ""
 "With this option, you can display guide lines to help compose your "
 "photograph."
 msgstr "Šī iespēja parāda palīglīnijas, kas palīdz novietot fotogrāfiju."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:371
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:375
 #, kde-format
 msgid "Golden sections"
 msgstr "Zelta sekcijas"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:372
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:376
 #, kde-format
 msgid "Enable this option to show golden sections."
 msgstr "Ieslēdziet šo iespēju, lai rādītu sekcijas zelta attiecībā."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:374
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:378
 #, kde-format
 msgid "Golden spiral sections"
 msgstr "Zelta spirāles sekcijas"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:375
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:379
 #, kde-format
 msgid "Enable this option to show golden spiral sections."
 msgstr "Ieslēdziet šo iespēju, lai rādītu spirāles sekcijas zelta attiecībā."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:381
 #, kde-format
 msgid "Golden spiral"
 msgstr "Zelta spirāle"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:378
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:382
 #, kde-format
 msgid "Enable this option to show a golden spiral guide."
 msgstr "Ieslēdziet šo iespēju , lai rādītu zelta spirāli."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:380
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:384
 #, kde-format
 msgid "Golden triangles"
 msgstr "Zelta trīsstūri"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:381
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:385
 #, kde-format
 msgid "Enable this option to show golden triangles."
 msgstr "Ieslēdziet šo iespēju, lai rādītu zelta trīsstūrus."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:383
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:387
 #, kde-format
 msgid "Flip horizontally"
 msgstr "Apmest horizontāli"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:384
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:388
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr "Ieslēdziet šo iespēju, lai apmestu palīglīnijas horizontāli"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:386
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:390
 #, kde-format
 msgid "Flip vertically"
 msgstr "Apmest vertikāli"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:387
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:391
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
 msgstr "Ieslēdziet šo iespēju, lai apmestu palīglīnijas vertikāli"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:389
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:393
 #, kde-format
 msgid "Color and width:"
 msgstr "Krāsa un platums:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:395
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:399
 #, kde-format
 msgid "Set here the color used to draw composition guides."
 msgstr "Šeit var norādīt palīglīniju krāsu."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:396
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:400
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr "Šeit var norādīt palīglīniju platumu pikseļos."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:415
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:419
 #, kde-format
 msgid "Composition Guides"
 msgstr "Palīglīnijas"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:768
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:772
 #, kde-format
 msgctxt "custom ratio crop settings"
 msgid "Custom"
@@ -11436,7 +11436,7 @@ msgctxt "@action"
 msgid "&Resize..."
 msgstr "&Mainīt izmēru..."
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:82
+#: core/dplugins/editor/transform/shear/sheartool.cpp:84
 #, kde-format
 msgid ""
 "This is the shear operation preview. If you move the mouse cursor on this "
@@ -11445,22 +11445,22 @@ msgid ""
 "dashed line's position."
 msgstr ""
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:110
+#: core/dplugins/editor/transform/shear/sheartool.cpp:112
 #, kde-format
 msgid "Main horizontal angle:"
 msgstr "Galvenais horizontālais leņķis:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:114
+#: core/dplugins/editor/transform/shear/sheartool.cpp:116
 #, kde-format
 msgid "The main horizontal shearing angle, in degrees."
 msgstr "Galvenais horizontālais sašķiebšanas leņķis, grādos."
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:116
+#: core/dplugins/editor/transform/shear/sheartool.cpp:118
 #, kde-format
 msgid "Fine horizontal angle:"
 msgstr "Precīzais horizontālais leņķis:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:120
+#: core/dplugins/editor/transform/shear/sheartool.cpp:122
 #, kde-format
 msgid ""
 "This value in degrees will be added to main horizontal angle value to set "
@@ -11469,22 +11469,22 @@ msgstr ""
 "Šī vērtība tiks pieskaitīta pie galvenā horizontālā leņķa, lai iegūtu "
 "precīzu korekciju."
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:122
+#: core/dplugins/editor/transform/shear/sheartool.cpp:124
 #, kde-format
 msgid "Main vertical angle:"
 msgstr "Galvenais vertikālais leņķis:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:126
+#: core/dplugins/editor/transform/shear/sheartool.cpp:128
 #, kde-format
 msgid "The main vertical shearing angle, in degrees."
 msgstr "Galvenais vertikālais sašķiebšanas leņķis, grādos."
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:128
+#: core/dplugins/editor/transform/shear/sheartool.cpp:130
 #, kde-format
 msgid "Fine vertical angle:"
 msgstr "Precīzais vertikālais leņķis:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:132
+#: core/dplugins/editor/transform/shear/sheartool.cpp:134
 #, kde-format
 msgid ""
 "This value in degrees will be added to main vertical angle value to set fine "
@@ -11493,20 +11493,20 @@ msgstr ""
 "Šī vērtība tiks pieskaitīta pie galvenā vertikālā leņķa, lai iegūtu precīzu "
 "korekciju."
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:135
+#: core/dplugins/editor/transform/shear/sheartool.cpp:137
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:93
 #, kde-format
 msgid "Anti-Aliasing"
 msgstr "Gludināšana"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:136
+#: core/dplugins/editor/transform/shear/sheartool.cpp:138
 #, kde-format
 msgid ""
 "Enable this option to apply the anti-aliasing filter to the sheared image. "
 "To smooth the target image, it will be blurred a little."
 msgstr ""
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:314
+#: core/dplugins/editor/transform/shear/sheartool.cpp:316
 #: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, kde-format
 msgid "Shear Tool"
@@ -11856,58 +11856,58 @@ msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "Rediģēt ģeolokāciju"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:105
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr "Platums"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr "Garums"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:117
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:123
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:131
 #, kde-format
 msgid "2-d"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:132
 #, kde-format
 msgid "3-d"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:135
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:139
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:141
 #, kde-format
 msgid "Apply"
 msgstr "Pielietot"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:428
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:430
 #, kde-format
 msgid "Details changed"
 msgstr ""
@@ -13506,43 +13506,43 @@ msgid ""
 "equipment."
 msgstr "Šeit norādiet apmales platumu procentos no attēla izmēra."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:84
 #, kde-format
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "Apraksts"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:88
 #, kde-format
 msgctxt "@item: date properties"
 msgid "Date & Time"
 msgstr "Datums un laiks"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
 msgstr "&Lēcas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:96
 #, fuzzy, kde-format
 msgctxt "@item: device properties"
 msgid "Device"
 msgstr "&Ierīce"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
 #, fuzzy, kde-format
 msgctxt "@item; light properties"
 msgid "Light"
 msgstr "Atļaujas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
 #, fuzzy, kde-format
 msgctxt "@item: picture adjustments"
 msgid "Adjustments"
 msgstr "Iestatīšana:"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Caption Information"
@@ -13550,13 +13550,13 @@ msgctxt "@title"
 msgid "Caption Information"
 msgstr "Apraksta informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:168
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
 msgstr "Šeit ievadiet satura pilsētu."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Date and Time Information"
@@ -13564,56 +13564,56 @@ msgctxt "@title"
 msgid "Date and Time Information"
 msgstr "Datums un laiks"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "Camera File Properties"
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
 msgstr "Fotoaparāta faila īpašības"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Lens Settings"
 msgstr "Lokālie iestatījumi"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:178
 #, kde-format
 msgctxt "@title"
 msgid "Record lens details used with camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Capture Device Settings"
 msgstr "Rindu iestatījumi"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
 #, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Light Source Information"
 msgstr "Ierīces informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
 #, kde-format
 msgctxt "@title"
 msgid "Record ambient condition captured by camera"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Pictures Adjustments"
 msgstr "Gaišuma korekcijas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
@@ -14203,102 +14203,102 @@ msgstr "Kontakts"
 msgid "Set here the person or organization to contact."
 msgstr "Šeit norādiet krāsu piesātinājuma korekciju."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:93
 #, fuzzy, kde-format
 msgctxt "@item: iptc"
 msgid "Content"
 msgstr "Kontakts"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:97
 #, fuzzy, kde-format
 msgctxt "@item: iptc"
 msgid "Origin"
 msgstr "Orģināls"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:101
 #, fuzzy, kde-format
 msgctxt "@item: iptc"
 msgid "Credits"
 msgstr "Piegādātājs:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item: iptc"
 msgid "Subjects"
 msgstr "Temati"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:109
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Keywords"
 msgstr "Atslēgvārdi"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:113
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Categories"
 msgstr "Kategorijas"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: iptc"
 msgid "Status"
 msgstr "Statuss"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:121
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Properties"
 msgstr "Īpašības"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:125
 #, fuzzy, kde-format
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "IIM aploksne"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
 #, fuzzy, kde-format
 #| msgid "Components Information"
 msgctxt "@title"
 msgid "Content Information"
 msgstr "Komponentes informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:194
 #, fuzzy, kde-format
 #| msgid "Select the input intensity of the histogram here."
 msgctxt "@title"
 msgid "Describe the visual content of the item"
 msgstr "Šeit norādiet histogrammas ievades intensitāti."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Origin Information"
 msgstr "Informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:199
 #, fuzzy, kde-format
 #| msgid "Raw information about the ICC profile model"
 msgctxt "@title"
 msgid "Formal descriptive information about the item"
 msgstr "Sākotnējā informācija par ICC profila modeli"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Credit Information"
 msgstr "Informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:204
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record copyright information about the item"
@@ -14306,36 +14306,36 @@ msgstr ""
 "<qt>Albumu kategoriju iestatījumi<br/><i>Piešķir kategorijas albumiem, lai "
 "tos var sakārtot</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Subject Information"
 msgstr "Pievienot metadatu informāciju"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:209
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record subject information about the item"
 msgstr "Vairāk informācijas skatiet internetā"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Keyword Information"
 msgstr "Komponentes informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, kde-format
 msgctxt "@title"
 msgid "Record keywords relevant to the item"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Caption Information"
@@ -14343,8 +14343,8 @@ msgctxt "@title"
 msgid "Category Information"
 msgstr "Apraksta informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record categories relevant to the item"
@@ -14352,42 +14352,42 @@ msgstr ""
 "<qt>Albumu kategoriju iestatījumi<br/><i>Piešķir kategorijas albumiem, lai "
 "tos var sakārtot</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Status Information"
 msgstr "Pievienot metadatu informāciju"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
 msgstr "Ierīces informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Status Properties"
 msgstr "Attēla īpašības"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgctxt "@title"
 msgid "Record workflow properties"
 msgstr "Pievienot faila īpašības"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Envelope Information"
 msgstr "Informācija"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:234
 #, kde-format
 msgctxt "@title"
 msgid "Record editorial details"
@@ -15383,51 +15383,51 @@ msgstr "Šeit var norādīt teksta krāsu."
 msgid "Set here the original owner of content."
 msgstr "Šeit norādiet līnijas krāsu."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:94
 #, fuzzy, kde-format
 msgctxt "@item: xmp content"
 msgid "Content"
 msgstr "Kontakts"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:98
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Origin"
 msgstr "Orģināls"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:102
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Credits"
 msgstr "Piegādātājs:"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:106
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item"
 msgid "Subjects"
 msgstr "Temati"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:110
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Keywords"
 msgstr "Metadati"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
 #, fuzzy, kde-format
 msgctxt "@item"
 msgid "Categories"
 msgstr "Kategorija"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item"
 msgid "Status"
 msgstr "Statuss"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
 #: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, kde-format
 msgctxt "@item"

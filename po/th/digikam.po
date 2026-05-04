@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-02 00:41+0000\n"
+"POT-Creation-Date: 2026-05-04 00:41+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -309,7 +309,7 @@ msgstr "เปลี่ยนตัวพิมพ์ของอักษร: "
 
 #: core/app/dragdrop/itemdragdrop.cpp:763
 #: core/app/dragdrop/itemdragdrop.cpp:814
-#: core/app/views/preview/itempreviewview.cpp:1036
+#: core/app/views/preview/itempreviewview.cpp:1037
 #, kde-format
 msgid "&Cancel"
 msgstr "&ยกเลิก"
@@ -320,7 +320,7 @@ msgid "Assign Tags to &Selected Items"
 msgstr "กำหนดป้ายกำกับไปยังรายการที่เ&ลือกไว้"
 
 #: core/app/dragdrop/itemdragdrop.cpp:807
-#: core/app/views/preview/itempreviewview.cpp:1034
+#: core/app/views/preview/itempreviewview.cpp:1035
 #, kde-format
 msgid "Assign Tags to &This Item"
 msgstr "กำหนดป้ายกำกับไปยัง&รายการนี้"
@@ -1073,7 +1073,7 @@ msgstr "วันที่:"
 
 #: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:300
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
@@ -1113,7 +1113,7 @@ msgid "Unknown"
 msgstr "ไม่ทราบ"
 
 #: core/app/items/utils/tooltipfiller.cpp:117
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1044
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1048
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:98
 #: core/utilities/import/items/importtooltipfiller.cpp:94
 #, kde-format
@@ -3132,7 +3132,7 @@ msgstr "ไม่เลือกเลย"
 msgid "Show Magnifier (x%1)"
 msgstr ""
 
-#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:148
+#: core/app/views/sidebar/albumfolderviewsidebarwidget.cpp:150
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlintropage.cpp:83
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:90
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
@@ -4398,14 +4398,14 @@ msgstr "ยังไม่มีป้ายกำกับ"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:85
 #: core/app/views/tableview/tableview_column_geo.cpp:102
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:97
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:99
 #, fuzzy, kde-format
 msgid "Coordinates"
 msgstr "พิกัดขั้ว"
 
 #: core/app/views/tableview/tableview_column_geo.cpp:86
 #: core/app/views/tableview/tableview_column_geo.cpp:107
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:111
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:682
 #, fuzzy, kde-format
 msgid "Altitude"
@@ -6181,8 +6181,8 @@ msgid ""
 msgstr "เครื่องมือสำหรับเปลี่ยนแปลงเป็นภาพขาวดำ"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:58
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:73
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:236
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:75
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:238
 #, kde-format
 msgid "Lens Auto-Correction"
 msgstr "แก้ความบิดเบือนจากเลนส์โดยอัตโนมัติ"
@@ -6950,7 +6950,7 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:88
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:285
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
 #: core/libs/template/templateviewer.cpp:104
 #, kde-format
 msgid "Position:"
@@ -6958,20 +6958,20 @@ msgstr "ตำแหน่ง:"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:92
 #: core/dplugins/bqm/transform/crop/crop.cpp:97
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:289
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:294
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:293
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:298
 #, kde-format
 msgid "Set here the top left selection corner position for cropping."
 msgstr "ตั้งค่ามุมบนซ้ายของการเลือกสำหรับครอบตัดภาพได้ที่นี่"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:107
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:308
 #, kde-format
 msgid "Set here the width selection for cropping."
 msgstr "ตั้งค่าความกว้างของการเลือกสำหรับครอบตัดภาพได้ที่นี่"
 
 #: core/dplugins/bqm/transform/crop/crop.cpp:112
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:316
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:320
 #, kde-format
 msgid "Set here the height selection for cropping."
 msgstr "ตั้งค่าความสูงของการเลือกสำหรับครอบตัดภาพได้ที่นี่"
@@ -8661,8 +8661,8 @@ msgctxt "@action"
 msgid "White Balance..."
 msgstr "สมดุลสีขาว..."
 
-#: core/dplugins/editor/decorate/border/bordertool.cpp:60
-#: core/dplugins/editor/decorate/border/bordertool.cpp:156
+#: core/dplugins/editor/decorate/border/bordertool.cpp:62
+#: core/dplugins/editor/decorate/border/bordertool.cpp:158
 #, kde-format
 msgid "Add Border"
 msgstr "เพิ่มกรอบภาพ"
@@ -8876,8 +8876,8 @@ msgctxt "@action"
 msgid "Apply Texture..."
 msgstr "ปรับใช้พื้นผิว..."
 
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:65
-#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:153
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:67
+#: core/dplugins/editor/enhance/antivignetting/antivignettingtool.cpp:155
 #, kde-format
 msgid "Vignetting Correction"
 msgstr "ปรับแก้ขอบมืดที่เกิดบนภาพ"
@@ -9216,12 +9216,12 @@ msgctxt "@action"
 msgid "Hot Pixels..."
 msgstr "แก้จุดเสียของเซ็นเซอร์ (Hot Pixel)..."
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:85
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:87
 #, kde-format
 msgid "Show grid"
 msgstr "แสดงเส้นตารางกริด"
 
-#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:86
+#: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:88
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
 msgstr "ตั้งค่าตัวเลือกนี้เพื่อให้แสดงเส้นตารางกริดที่จะช่วยปรับความถูกต้องได้ง่าย"
@@ -9241,59 +9241,59 @@ msgctxt "@action"
 msgid "Lens Auto-Correction..."
 msgstr "แก้ความบิดเบือนจากเลนส์โดยอัตโนมัติ"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:94
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:96
 #, kde-format
 msgid ""
 "You can see here a thumbnail preview of the distortion correction applied to "
 "a cross pattern."
 msgstr "คุณสามารถเห็นภาพตัวอย่างของการปรับแก้ความบิดเบือนของเลนส์ที่จะปรับใช้ได้ที่นี่"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:99
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:101
 #, kde-format
 msgctxt "value for amount of distortion"
 msgid "Main:"
 msgstr "ค่าหลัก:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:105
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:107
 #, kde-format
 msgid ""
 "This value controls the amount of distortion. Negative values correct lens "
 "barrel distortion, while positive values correct lens pincushion distortion."
 msgstr ""
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:111
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:113
 #, kde-format
 msgid "Edge:"
 msgstr "ขอบ:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:117
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:119
 #, kde-format
 msgid ""
 "This value controls in the same manner as the Main control, but has more "
 "effect at the edges of the image than at the center."
 msgstr ""
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:122
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:124
 #, kde-format
 msgid "Zoom:"
 msgstr "ระยะย่อ/ขยาย:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:128
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:130
 #, kde-format
 msgid "This value rescales the overall image size."
 msgstr "ค่านี้ใช้ในการปรับขนาดโดยรวมของภาพ"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:132
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:134
 #, kde-format
 msgid "Brighten:"
 msgstr "ค่าความสว่าง:"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:138
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:140
 #, kde-format
 msgid "This value adjusts the brightness in image corners."
 msgstr "ค่านี้ใช้ในการปรับแก้ความสว่างในส่วนมุมของภาพ"
 
-#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:294
+#: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:296
 #, kde-format
 msgid "Lens Distortion"
 msgstr "ความบิดเบือนของเลนส์"
@@ -9344,8 +9344,8 @@ msgctxt "@action"
 msgid "Local Contrast..."
 msgstr "ความเปรียบต่างภายใน..."
 
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:60
-#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:134
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:62
+#: core/dplugins/editor/enhance/noisereduction/noisereductiontool.cpp:136
 #, kde-format
 msgid "Noise Reduction"
 msgstr "ลดจุดรบกวนบนภาพ"
@@ -10206,7 +10206,7 @@ msgid "Add Film Grain..."
 msgstr "เพิ่มเกรนของฟิล์ม..."
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:78
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:261
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:263
 #, kde-format
 msgid "Brush size:"
 msgstr "ขนาดแปรง:"
@@ -10260,7 +10260,7 @@ msgctxt "@action"
 msgid "Oil Paint..."
 msgstr "วาดภาพด้วยสีน้ำมัน..."
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:71
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:73
 #, kde-format
 msgid ""
 "This is the preview of the Raindrop effect.<p>Note: if you have previously "
@@ -10273,37 +10273,37 @@ msgstr ""
 "พื้นที่บริเวณนั้นจะไม่ได้รับผลจากการสร้างหยดน้ำฝน "
 "คุณสามารถใช้วิธีนี้เพื่อยกเลิกการสร้างหยดน้ำฝนในพื้นที่ที่ต้องการได้ เช่น บริเวณใบหน้า เป็นต้น</p>"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:90
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:92
 #, kde-format
 msgid "Drop size:"
 msgstr "ขนาดของหยดน้ำฝน:"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:94
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:96
 #, kde-format
 msgid "Set here the raindrops' size."
 msgstr "ปรับตั้งค่าขนาดของหยดน้ำฝนได้ที่นี่"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:98
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:100
 #, kde-format
 msgid "Number:"
 msgstr "จำนวน:"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:102
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:104
 #, kde-format
 msgid "This value controls the maximum number of raindrops."
 msgstr "ค่านี้ใช้ควบคุมจำนวนสูงสุดของหยดน้ำฝน"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:106
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:108
 #, kde-format
 msgid "Fish eyes:"
 msgstr "ตาปลา:"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:110
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:112
 #, kde-format
 msgid "This value is the fish-eye-effect optical distortion coefficient."
 msgstr "ค่าของลูกเล่นบิดเบือนภาพเลียนแบบภาพนูนที่ได้จากเลนส์ตาปลา"
 
-#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:219
+#: core/dplugins/editor/filters/raindrop/raindroptool.cpp:221
 #, kde-format
 msgid "RainDrop"
 msgstr "หยดน้ำฝน"
@@ -10369,88 +10369,88 @@ msgctxt "@info"
 msgid "This option can be used to crop automatically the image."
 msgstr "ตัวเลือกนี้ สามารถใช้เพื่อย่อหรือขยายขนาดภาพของส่วนพื้นที่ที่เลือก"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:154
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:156
 #: core/dplugins/editor/transform/resize/resizetool.cpp:348
 #, kde-format
 msgid "Maintain aspect ratio"
 msgstr "รักษาสัดส่วนภาพ"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:155
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:157
 #: core/dplugins/editor/transform/resize/resizetool.cpp:349
 #, kde-format
 msgid "Enable this option to maintain aspect ratio with new image sizes."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้คงสัดส่วนของภาพไว้เมื่อปรับขนาดใหม่แล้ว"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:158
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:160
 #, kde-format
 msgid "Width (px):"
 msgstr "ความกว้าง (พิกเซล):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:163
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:165
 #: core/dplugins/editor/transform/resize/resizetool.cpp:359
 #, kde-format
 msgid "Set here the new image width in pixels."
 msgstr "ตั้งค่าความกว้างใหม่ของภาพได้ที่นี่ โดยมีหน่วยเป็นพิกเซล"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:165
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:167
 #, kde-format
 msgid "Height (px):"
 msgstr "ความสูง (พิกเซล):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:170
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:172
 #, kde-format
 msgid "Set here the new image height in pixels."
 msgstr "ตั้งค่าความสูงใหม่ของภาพได้ที่นี่ โดยมีหน่วยเป็นพิกเซล"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:172
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:174
 #: core/dplugins/editor/transform/resize/resizetool.cpp:370
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:137
 #, kde-format
 msgid "Width (%):"
 msgstr "ความกว้าง (%):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:177
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:179
 #, kde-format
 msgid "New image width, as a percentage (%)."
 msgstr "ตั้งค่าความกว้างใหม่ของภาพได้ที่นี่ โดยมีหน่วยเป็นร้อยละ (%)"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:179
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:181
 #: core/dplugins/editor/transform/resize/resizetool.cpp:378
 #, kde-format
 msgid "Height (%):"
 msgstr "ความสูง (%):"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:184
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:186
 #, kde-format
 msgid "New image height, as a percentage (%)."
 msgstr "ตั้งค่าความสูงใหม่ของภาพได้ที่นี่ โดยมีหน่วยเป็นร้อยละ (%)"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:207
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:209
 #, kde-format
 msgid "Specify here your desired content-aware rescaling percentage."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:219
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:221
 #, kde-format
 msgid "Add weight masks"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:220
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:222
 #, fuzzy, kde-format
 msgid "Enable this option to add suppression and preservation masks."
 msgstr "<p>เปิดใช้ตัวเลือกนี้ เพื่อให้มีการแสดงคำบรรยายภาพด้วย"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:227
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:229
 #, kde-format
 msgid "Suppression weight mask:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:233
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:235
 #, kde-format
 msgid "Draw a suppression mask"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:234
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:236
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image are less "
@@ -10458,97 +10458,97 @@ msgid ""
 "duplicated when enlarging the picture."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:240
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:242
 #, kde-format
 msgid "Preservation weight mask:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:245
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:247
 #, fuzzy, kde-format
 msgid "Draw a preservation mask"
 msgstr "การรักษารายละเอียด:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:246
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:248
 #, kde-format
 msgid ""
 "Click on this button to draw zones marking which areas of the image you want "
 "to preserve."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:251
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:253
 #, kde-format
 msgid "Erase mask:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:256
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:258
 #, kde-format
 msgid "Erase mask"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:257
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:259
 #, fuzzy, kde-format
 msgid "Click on this button to erase mask regions."
 msgstr "ใช้ปุ่มนี้ เพื่อล้างเนื้อหาของภาพร่าง"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:266
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:268
 #, fuzzy, kde-format
 msgid "Specify here the size of the brush used to paint masks."
 msgstr "คุณสามารถเห็นตัวอย่างสีของการปรับค่าความเข้มและความอิ่มสีได้ที่นี่"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:286
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:288
 #, kde-format
 msgid "Norm of brightness gradient"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:287
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:289
 #, kde-format
 msgid "Sum of absolute values of brightness gradients"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:288
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
 #, kde-format
 msgid "Absolute value of brightness gradient"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:289
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
 #, kde-format
 msgid "Norm of luma gradient"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:290
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:292
 #, kde-format
 msgid "Sum of absolute values of luma gradients"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:291
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:293
 #, fuzzy, kde-format
 msgid "Absolute value of luma gradient"
 msgstr "หน่วยวัดค่าสีสัมบูรณ์"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:294
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:296
 #, kde-format
 msgid ""
 "This option allows you to choose a gradient function. This function is used "
 "to determine which pixels should be removed or kept."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:297
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:299
 #, kde-format
 msgid "Preserve Skin Tones"
 msgstr "รักษาโทนสีผิวไว้"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:298
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:300
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อรักษาสีที่ใกล้เคียงกับโทนสีผิวไว้"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:312
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:314
 #, kde-format
 msgid "Overall rigidity of the seams:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:316
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:318
 #, kde-format
 msgid ""
 "Use this value to give a negative bias to the seams which are not straight. "
@@ -10560,12 +10560,12 @@ msgid ""
 "and summed up for the whole seam."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:325
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:327
 #, kde-format
 msgid "Maximum number of transversal steps:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:329
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:331
 #, kde-format
 msgid ""
 "This option lets you choose the maximum transversal step that the pixels in "
@@ -10578,12 +10578,12 @@ msgid ""
 "setting."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:339
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:341
 #, kde-format
 msgid "Side switch frequency:"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:343
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:345
 #, kde-format
 msgid ""
 "During the carving process, at each step the optimal seam to be carved is "
@@ -10597,54 +10597,54 @@ msgid ""
 "performance."
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:355
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:357
 #, kde-format
 msgid "Resize Order:"
 msgstr "ลำดับการปรับขนาดภาพ:"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:357
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:359
 #, kde-format
 msgid "Horizontally first"
 msgstr "ปรับขนาดทางแนวนอนก่อน"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:358
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
 #, kde-format
 msgid "Vertically first"
 msgstr "ปรับขนาดทางแนวตั้งก่อน"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:360
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:362
 #, kde-format
 msgid ""
 "Here you can set whether to resize horizontally first or vertically first."
 msgstr "ตั้งค่าว่าจะให้ทำการปรับขนาดภาพในทางแนวนอนหรือแนวตั้งก่อนได้ที่นี่"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:378
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:380
 #, kde-format
 msgid "Target size"
 msgstr "ขนาดของภาพเป้าหมาย"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:381
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:383
 #, kde-format
 msgid "Content-aware rescale percentage"
 msgstr ""
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:383
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:385
 #, kde-format
 msgid "Mask Settings"
 msgstr "ตั้งค่าต่าง ๆ ของมาสก์ภาพ"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:385
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
 #, kde-format
 msgid "Energy function"
 msgstr "ฟังก์ชันพลังงาน"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:387
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:389
 #: core/utilities/setup/icc/setupicc.cpp:344
 #, kde-format
 msgid "Advanced Settings"
 msgstr "ตั้งค่าขั้นสูง"
 
-#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:743
+#: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:745
 #, kde-format
 msgid "Liquid Rescale"
 msgstr "ปรับขนาดพร้อมลูกเล่นสีเปื้อนน้ำ"
@@ -10691,7 +10691,7 @@ msgstr ""
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:105
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:105
-#: core/dplugins/editor/transform/shear/sheartool.cpp:102
+#: core/dplugins/editor/transform/shear/sheartool.cpp:104
 #, kde-format
 msgid "New width:"
 msgstr "ความกว้างใหม่:"
@@ -10704,10 +10704,10 @@ msgstr "ความกว้างใหม่:"
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:110
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:235
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:236
-#: core/dplugins/editor/transform/shear/sheartool.cpp:103
-#: core/dplugins/editor/transform/shear/sheartool.cpp:107
-#: core/dplugins/editor/transform/shear/sheartool.cpp:305
-#: core/dplugins/editor/transform/shear/sheartool.cpp:306
+#: core/dplugins/editor/transform/shear/sheartool.cpp:105
+#: core/dplugins/editor/transform/shear/sheartool.cpp:109
+#: core/dplugins/editor/transform/shear/sheartool.cpp:307
+#: core/dplugins/editor/transform/shear/sheartool.cpp:308
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:140
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:134
 #: core/dplugins/generic/webservices/unified/wizard/wssettingspage.cpp:102
@@ -10717,7 +10717,7 @@ msgstr " พิกเซล"
 
 #: core/dplugins/editor/transform/freerotation/freerotationtool.cpp:109
 #: core/dplugins/editor/transform/perspective/perspectivetool.cpp:109
-#: core/dplugins/editor/transform/shear/sheartool.cpp:106
+#: core/dplugins/editor/transform/shear/sheartool.cpp:108
 #, kde-format
 msgid "New height:"
 msgstr "ความสูงใหม่:"
@@ -10913,14 +10913,14 @@ msgstr "ปรับแก้เพอร์สเปกทีฟ"
 msgid "Perspective Adjustment"
 msgstr "ปรับแก้เพอร์สเปกทีฟ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:143
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1081
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1087
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:147
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1085
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:1091
 #, kde-format
 msgid "Aspect Ratio Crop"
 msgstr "ตัดภาพตามสัดส่วนภาพ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:151
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:155
 #, kde-format
 msgid ""
 "<p>Here you can see the aspect ratio selection preview used for cropping. "
@@ -10933,67 +10933,67 @@ msgstr ""
 "<b>CTRL</b> ค้างไว้เพื่อเคลื่อนย้ายมุมที่อยู่ตรงข้ามด้วย</p><p>กดปุ่มพิมพ์ <b>SHIFT</b> ค้างไว้ "
 "เพื่อย้ายมุมที่อยู่ใกล้ตัวชี้เมาส์ที่สุดมายังตำแหน่งตัวชี้ของเมาส์</p>"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:174
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:178
 #, kde-format
 msgid "Max. Aspect"
 msgstr "ขนาดสูงสุดตามสัดส่วน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:175
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:179
 #, kde-format
 msgid "Set selection area to the maximum size according to the current ratio."
 msgstr "ตั้งการเลือกพื้นที่เป็นขนาดสูงสุดที่สัมพันธ์กับสัดส่วนในปัจจุบัน"
 
 #. i18n: ectx: property (text), widget (QLabel, resolutionLabel)
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:191
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:195
 #: core/dplugins/editor/transform/resize/resizetool.cpp:386
 #: core/dplugins/generic/tools/calendar/ui/caltemplate.ui:78
 #, fuzzy, kde-format
 msgid "Resolution:"
 msgstr "ซ่อมแซมภาพถ่าย"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:205
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:209
 #, fuzzy, kde-format
 msgid "Crop Information"
 msgstr "ข้อมูลรายละเอียด"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:211
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:215
 #, kde-format
 msgid "Aspect ratio:"
 msgstr "สัดส่วนภาพ:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:213
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:217
 #, kde-format
 msgctxt "custom aspect ratio crop settings"
 msgid "Custom"
 msgstr "กำหนดเอง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:226
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:798
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:230
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:802
 #, fuzzy, kde-format
 #| msgid "Format"
 msgid "Format DIN A"
 msgstr "รูปแบบ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:227
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:799
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:231
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:803
 #, kde-format
 msgid "Golden Ratio"
 msgstr "อัตราส่วนทองคำ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:228
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:800
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:232
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:804
 #, fuzzy, kde-format
 msgid "Current Aspect Ratio"
 msgstr "รักษาสัดส่วนภาพ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:229
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:801
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:233
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:805
 #, kde-format
 msgctxt "no aspect ratio"
 msgid "None"
 msgstr "ไม่มี"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:232
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:236
 #, kde-format
 msgid ""
 "<p>Select your constrained aspect ratio for cropping. Aspect Ratio Crop tool "
@@ -11014,201 +11014,201 @@ msgid ""
 "from the currently opened image.</p>"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:256
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:260
 #, fuzzy, kde-format
 msgid "Exact aspect"
 msgstr "ขนาดสูงสุดตามสัดส่วน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:257
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:261
 #, kde-format
 msgid "Enable this option to force exact aspect ratio crop."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการบังคับการครอบตัดภาพตามสัดส่วนที่ถูกต้อง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:259
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:263
 #, kde-format
 msgid "Orientation:"
 msgstr "ทิศทาง:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:261
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:265
 #, kde-format
 msgid "Landscape"
 msgstr "แนวนอน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:262
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:266
 #, kde-format
 msgid "Portrait"
 msgstr "แนวตั้ง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:263
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:267
 #, kde-format
 msgid "Select constrained aspect ratio orientation."
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:266
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:270
 #, kde-format
 msgid "Auto"
 msgstr "อัตโนมัติ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:267
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:271
 #, fuzzy, kde-format
 msgid "Enable this option to automatically set the orientation."
 msgstr "<p>เปิดใช้ตัวเลือกนี้ เพื่อให้มีการตั้งค่าทิศทางโดยอัตโนมัติ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:271
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:275
 #, kde-format
 msgid "Custom ratio:"
 msgstr "สัดส่วนกำหนดเอง:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:276
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:280
 #, fuzzy, kde-format
 msgid "Set here the desired custom aspect numerator value."
 msgstr "<p>ตั้งค่าปรับความอิ่มสีได้ที่นี่"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:281
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:285
 #, fuzzy, kde-format
 msgid "Set here the desired custom aspect denominator value."
 msgstr "<p>ตั้งค่าการชดเชยแสงหลักได้ที่นี่ โดยมีหน่วยเป็น E.V."
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:313
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:317
 #, kde-format
 msgid "Set width position to center."
 msgstr "ตั้งตำแหน่งความกว้างไปยังศูนย์กลาง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:325
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:329
 #, kde-format
 msgid "Set height position to center."
 msgstr "ตั้งตำแหน่งความสูงไปยังศูนย์กลาง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:351
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:355
 #, kde-format
 msgid "Crop Settings"
 msgstr "ตั้งค่าต่าง ๆ ของการครอบตัด"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:358
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:362
 #, fuzzy, kde-format
 msgctxt "@label: guide lines"
 msgid "Form:"
 msgstr "ชนิดแฟ้ม"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:360
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:364
 #, kde-format
 msgid "Rules of Thirds"
 msgstr "จุดตัดเก้าช่อง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:361
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:365
 #, kde-format
 msgid "Diagonal Method"
 msgstr "วิธีการใช้เส้นทแยงมุม"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:362
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:366
 #, kde-format
 msgid "Harmonious Triangles"
 msgstr "สามเหลี่ยมฮาร์โมเนียส"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:363
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:367
 #, kde-format
 msgid "Golden Mean"
 msgstr "อัตราส่วนทองคำ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:364
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
 #, fuzzy, kde-format
 msgid "Center Lines"
 msgstr "เซนติเมตร"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:365
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:369
 #, kde-format
 msgctxt "no geometric form"
 msgid "None"
 msgstr "ไม่ใช้"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:368
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:372
 #, kde-format
 msgid ""
 "With this option, you can display guide lines to help compose your "
 "photograph."
 msgstr "ด้วยตัวเลือกนี้ คุณสามารถจะแสดงเส้นนำทางที่ช่วยในการจัดองค์ประกอบภาพของคุณได้ง่ายขึ้น"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:371
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:375
 #, kde-format
 msgid "Golden sections"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:372
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:376
 #, fuzzy, kde-format
 msgid "Enable this option to show golden sections."
 msgstr "<p>เปิดใช้ตัวเลือกนี้ เพื่อให้มีการแสดงคำบรรยายภาพด้วย"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:374
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:378
 #, kde-format
 msgid "Golden spiral sections"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:375
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:379
 #, fuzzy, kde-format
 msgid "Enable this option to show golden spiral sections."
 msgstr "<p>เปิดใช้ตัวเลือกนี้ เพื่อพลิกแนวการจัดองค์ประกอบภาพทางแนวนอน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:377
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:381
 #, kde-format
 msgid "Golden spiral"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:378
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:382
 #, fuzzy, kde-format
 msgid "Enable this option to show a golden spiral guide."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อแสดงเส้นแนวการจัดองค์ประกอบภาพแบบ golden spiral"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:380
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:384
 #, kde-format
 msgid "Golden triangles"
 msgstr ""
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:381
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:385
 #, fuzzy, kde-format
 msgid "Enable this option to show golden triangles."
 msgstr "<p>เปิดใช้ตัวเลือกนี้ เพื่อพลิกแนวการจัดองค์ประกอบภาพทางแนวนอน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:383
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:387
 #, kde-format
 msgid "Flip horizontally"
 msgstr "พลิกด้านแนวนอน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:384
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:388
 #, kde-format
 msgid "Enable this option to flip the guidelines horizontally."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อพลิกแนวการจัดองค์ประกอบภาพทางแนวนอน"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:386
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:390
 #, kde-format
 msgid "Flip vertically"
 msgstr "พลิกด้านแนวตั้ง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:387
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:391
 #, kde-format
 msgid "Enable this option to flip the guidelines vertically."
 msgstr "เปิดใช้ตัวเลือกนี้ เพื่อพลิกแนวการจัดองค์ประกอบภาพทางแนวตั้ง"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:389
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:393
 #, kde-format
 msgid "Color and width:"
 msgstr "สีและความกว้าง:"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:395
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:399
 #, kde-format
 msgid "Set here the color used to draw composition guides."
 msgstr "ตั้งค่าสีที่จะใช้วาดแนวการจัดองค์ประกอบภาพได้ที่นี่"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:396
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:400
 #, kde-format
 msgid "Set here the width in pixels used to draw composition guides."
 msgstr "ตั้งค่าความกว้าง (หน่วยเป็นพิกเซล) ที่จะใช้วาดแนวการจัดองค์ประกอบภาพได้ที่นี่"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:415
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:419
 #, kde-format
 msgid "Composition Guides"
 msgstr "การจัดองค์ประกอบภาพ"
 
-#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:768
+#: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:772
 #, kde-format
 msgctxt "custom ratio crop settings"
 msgid "Custom"
@@ -11547,7 +11547,7 @@ msgctxt "@action"
 msgid "&Resize..."
 msgstr "ปรับขนาด..."
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:82
+#: core/dplugins/editor/transform/shear/sheartool.cpp:84
 #, kde-format
 msgid ""
 "This is the shear operation preview. If you move the mouse cursor on this "
@@ -11560,57 +11560,57 @@ msgstr ""
 "จะมีการวาดเส้นนำทางแบบเส้นประทั้งทางแนวตั้งและแนวนอน เพื่อใช้ในการปรับค่าฟิลเตอร์ "
 "ปล่อยเมาส์ปุ่มซ้ายเพื่อตรึงตำแหน่งแนวเส้นประ"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:110
+#: core/dplugins/editor/transform/shear/sheartool.cpp:112
 #, kde-format
 msgid "Main horizontal angle:"
 msgstr "มุมหลักทางแนวนอน:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:114
+#: core/dplugins/editor/transform/shear/sheartool.cpp:116
 #, kde-format
 msgid "The main horizontal shearing angle, in degrees."
 msgstr "มุมหลักของการปรับภาพทางแนวนอน หน่วยเป็นองศา"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:116
+#: core/dplugins/editor/transform/shear/sheartool.cpp:118
 #, kde-format
 msgid "Fine horizontal angle:"
 msgstr "มุมละเอียดทางแนวนอน:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:120
+#: core/dplugins/editor/transform/shear/sheartool.cpp:122
 #, kde-format
 msgid ""
 "This value in degrees will be added to main horizontal angle value to set "
 "fine adjustments."
 msgstr "ค่านี้มีหน่วยเป็นองศาซึ่งจะถูกเพิ่มเข้ากับค่ามุมหลักทางแนวนอนเพื่อการปรับมุมที่ละเอียดขึ้น"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:122
+#: core/dplugins/editor/transform/shear/sheartool.cpp:124
 #, kde-format
 msgid "Main vertical angle:"
 msgstr "มุมหลักทางแนวตั้ง:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:126
+#: core/dplugins/editor/transform/shear/sheartool.cpp:128
 #, kde-format
 msgid "The main vertical shearing angle, in degrees."
 msgstr "มุมหลักของการปรับเบนภาพทางแนวตั้ง หน่วยเป็นองศา"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:128
+#: core/dplugins/editor/transform/shear/sheartool.cpp:130
 #, kde-format
 msgid "Fine vertical angle:"
 msgstr "มุมละเอียดทางแนวตั้ง:"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:132
+#: core/dplugins/editor/transform/shear/sheartool.cpp:134
 #, kde-format
 msgid ""
 "This value in degrees will be added to main vertical angle value to set fine "
 "adjustments."
 msgstr "ค่านี้มีหน่วยเป็นองศาซึ่งจะถูกเพิ่มเข้ากับค่ามุมหลักทางแนวตั้งเพื่อการปรับมุมที่ละเอียดขึ้น"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:135
+#: core/dplugins/editor/transform/shear/sheartool.cpp:137
 #: core/libs/dimg/filters/transform/freerotationsettings.cpp:93
 #, kde-format
 msgid "Anti-Aliasing"
 msgstr "ปรับลดรอยหยัก"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:136
+#: core/dplugins/editor/transform/shear/sheartool.cpp:138
 #, kde-format
 msgid ""
 "Enable this option to apply the anti-aliasing filter to the sheared image. "
@@ -11619,7 +11619,7 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้ เพื่อให้มีการลดรอยหยักกับภาพที่ถูกปรับเบนภาพแล้ว เพื่อให้ภาพมีความนุ่มไม่แตก "
 "แต่อาจจะทำให้ภาพเบลอได้เล็กน้อย"
 
-#: core/dplugins/editor/transform/shear/sheartool.cpp:314
+#: core/dplugins/editor/transform/shear/sheartool.cpp:316
 #: core/libs/dimg/filters/transform/shearfilter.cpp:85
 #, kde-format
 msgid "Shear Tool"
@@ -11976,58 +11976,58 @@ msgctxt "@title"
 msgid "Edit Geolocation"
 msgstr "การระบุพิกัดตำแหน่ง"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:103
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:105
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:680
 #, kde-format
 msgid "Latitude"
 msgstr "เส้นรุ้ง"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:107
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:109
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:681
 #, kde-format
 msgid "Longitude"
 msgstr "เส้นแวง"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:115
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:117
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:687
 #, kde-format
 msgid "Speed"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:121
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:123
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:686
 #, kde-format
 msgid "# satellites"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:127
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:685
 #, kde-format
 msgid "Fix type"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:129
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:131
 #, kde-format
 msgid "2-d"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:130
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:132
 #, kde-format
 msgid "3-d"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:133
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:135
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:684
 #, kde-format
 msgid "DOP"
 msgstr ""
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:139
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:141
 #, kde-format
 msgid "Apply"
 msgstr "ปรับใช้"
 
-#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:428
+#: core/dplugins/generic/metadata/geolocationedit/dialog/gpsitemdetails.cpp:430
 #, kde-format
 msgid "Details changed"
 msgstr ""
@@ -13675,41 +13675,41 @@ msgid ""
 "equipment."
 msgstr "เลือกประเภทของระยะห่างระหว่างวัตถุกับอุปกรณ์ถ่ายภาพได้ที่นี่"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:83
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgctxt "@item: image caption"
 msgid "Caption"
 msgstr "คำบรรยายภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:87
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:88
 #, fuzzy, kde-format
 #| msgid "Date & Time"
 msgctxt "@item: date properties"
 msgid "Date & Time"
 msgstr "วันที่และเวลา"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:92
 #, fuzzy, kde-format
 msgctxt "@item: lens properties"
 msgid "Lens"
 msgstr "เ&ลนส์"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:95
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Device"
 msgctxt "@item: device properties"
 msgid "Device"
 msgstr "อุปกรณ์"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:99
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:100
 #, fuzzy, kde-format
 #| msgid "Light"
 msgctxt "@item; light properties"
 msgid "Light"
 msgstr "แหล่งแสง"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "Picture adjustments"
 #| msgid "Adjustments"
@@ -13717,56 +13717,56 @@ msgctxt "@item: picture adjustments"
 msgid "Adjustments"
 msgstr "การปรับค่า"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title"
 msgid "Caption Information"
 msgstr "ข้อมูลคำบรรยายภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:168
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title"
 msgid "Record technical descriptions"
 msgstr "รายละเอียด"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, fuzzy, kde-format
 #| msgid "Date and Time Information"
 msgctxt "@title"
 msgid "Date and Time Information"
 msgstr "ข้อมูลวันที่และเวลา"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:173
 #, fuzzy, kde-format
 #| msgid "Camera File Properties"
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
 msgstr "คุณสมบัติของแฟ้มของกล้อง"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, fuzzy, kde-format
 #| msgid "Lens Settings"
 msgctxt "@title"
 msgid "Lens Settings"
 msgstr "การตั้งค่าเลนส์"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "<qt>General Settings<br/><i>Customize general behavior</i></qt>"
 msgctxt "@title"
 msgid "Record lens details used with camera"
 msgstr "<qt>ตั้งค่าทั่วไปต่าง ๆ<br/><i>ปรับแต่งพฤติกรรมทั่ว ๆ ไป</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
 #, fuzzy, kde-format
 #| msgid "Capture Device Settings"
 msgctxt "@title"
 msgid "Capture Device Settings"
 msgstr "การตั้งค่าอุปกรณ์จับภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
@@ -13774,14 +13774,14 @@ msgstr ""
 "<qt>ตั้งค่าต่าง ๆ ของเครื่องมือแก้ไขภาพ<br/><i>ปรับแต่งพฤติกรรมของเครื่องมือแก้ไขภาพ</i></"
 "qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, fuzzy, kde-format
 #| msgid "Light Source Information"
 msgctxt "@title"
 msgid "Light Source Information"
 msgstr "ข้อมูลแหล่งกำเนิดแสง"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:188
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -13792,14 +13792,14 @@ msgstr ""
 "<qt>ช้อมูลรายละเอียดเกี่ยวกับหัวข้อ<br/><i>ใช้พาเนลนี้ "
 "เพื่อบันทึกข้อมูลรายละเอียดของหัวข้อที่เกี่ยวกับภาพ</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
 #, fuzzy, kde-format
 #| msgid "Pictures Adjustments"
 msgctxt "@title"
 msgid "Pictures Adjustments"
 msgstr "การปรับค่าภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
 #, kde-format
 msgctxt "@title"
 msgid "Record technical details used by camera"
@@ -14419,79 +14419,79 @@ msgstr "ติดต่อ:"
 msgid "Set here the person or organization to contact."
 msgstr "ตั้งค่าบุคคลหรือองค์กรสำหรับใช้ติดต่อได้ที่นี่"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:92
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:93
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@item: iptc"
 msgid "Content"
 msgstr "เนื้อหา"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:97
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgctxt "@item: iptc"
 msgid "Origin"
 msgstr "ต้นกำเนิด"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:100
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:101
 #, fuzzy, kde-format
 #| msgid "Credits"
 msgctxt "@item: iptc"
 msgid "Credits"
 msgstr "เครดิต"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:104
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:105
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item: iptc"
 msgid "Subjects"
 msgstr "หัวข้อ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:108
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item: iptc"
 msgid "Keywords"
 msgstr "คำสำคัญ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:113
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@item: iptc"
 msgid "Categories"
 msgstr "หมวดหมู่"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:117
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item: iptc"
 msgid "Status"
 msgstr "สถานะ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:121
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@item: iptc"
 msgid "Properties"
 msgstr "คุณสมบัติ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Envelope"
 msgctxt "@item: iptc"
 msgid "Envelope"
 msgstr "ซอง"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:192
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
 #, fuzzy, kde-format
 #| msgid "Components Information"
 msgctxt "@title"
 msgid "Content Information"
 msgstr "รายละเอียดของส่วนประกอบต่าง ๆ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:193
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:193
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:194
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:194
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Content Information<br/><i>Use this panel to describe the visual "
@@ -14502,15 +14502,15 @@ msgstr ""
 "<qt>ข้อมูลรายละเอียดเกี่ยวกับเนื้อหา<br/><i>ใช้พาเนลนี้ เพื่ออธิบายเกี่ยวกับเนื้อหาของภาพ</i></"
 "qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:197
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Origin Information"
 msgstr "ข้อมูลรายละเอียด"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:198
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:199
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:199
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Origin Information<br/><i>Use this panel for formal descriptive "
@@ -14521,15 +14521,15 @@ msgstr ""
 "<qt>ข้อมูลรายละเอียดเกี่ยวกับต้นกำเนิด<br/><i>ใช้พาเนลนี้ "
 "เพื่ออธิบายข้อมูลรายละเอียดเกี่ยวกับภาพอย่างเป็นทางการ</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Credit Information"
 msgstr "ข้อมูลรายละเอียด"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:203
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:204
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Credit Information<br/><i>Use this panel to record copyright "
@@ -14540,15 +14540,15 @@ msgstr ""
 "<qt>ข้อมูลรายละเอียดเกี่ยวกับเครดิต<br/><i>ใช้พาเนลนี้ "
 "เพื่อบันทึกข้อมูลรายละเอียดเกี่ยวกับการสงวนสิทธิ์ของภาพ</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:207
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:207
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Subject Information"
 msgstr "ขนาดส่วนข้อมูลกำกับภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:208
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:208
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:209
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Subject Information<br/><i>Use this panel to record subject "
@@ -14559,15 +14559,15 @@ msgstr ""
 "<qt>ช้อมูลรายละเอียดเกี่ยวกับหัวข้อ<br/><i>ใช้พาเนลนี้ "
 "เพื่อบันทึกข้อมูลรายละเอียดของหัวข้อที่เกี่ยวกับภาพ</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Keyword Information"
 msgstr "รายละเอียดของส่วนประกอบต่าง ๆ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:213
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:214
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Keyword Information<br/><i>Use this panel to record keywords relevant "
@@ -14578,16 +14578,16 @@ msgstr ""
 "<qt>ข้อมูลรายละเอียดเกี่ยวกับคำสำคัญ<br/><i>ใช้พาเนลนี้เพื่อบันทึกคำสำคัญต่าง ๆ "
 "ที่เกี่ยวพันกับภาพ</i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:217
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgid "Caption Information"
 msgctxt "@title"
 msgid "Category Information"
 msgstr "ข้อมูลคำบรรยายภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:218
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>Category Information<br/><i>Use this panel to record categories "
@@ -14598,42 +14598,42 @@ msgstr ""
 "<qt>ข้อมูลรายละเอียดของหมวดหมู่<br/><i>ใช้พาเนลนี้เพื่อบันทึกหมวดหมู่ต่าง ๆ ที่เกี่ยวพันกับภาพ</"
 "i></qt>"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:222
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:222
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Status Information"
 msgstr "ขนาดส่วนข้อมูลกำกับภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:223
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:223
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:224
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record workflow information"
 msgstr "ข้อมูลของอุปกรณ์"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:227
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:227
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Status Properties"
 msgstr "คุณสมบัติของภาพ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:228
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:228
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:229
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:229
 #, fuzzy, kde-format
 #| msgid "Add file properties"
 msgctxt "@title"
 msgid "Record workflow properties"
 msgstr "เพิ่มคุณสมบัติของแฟ้ม"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:232
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Envelope Information"
 msgstr "ข้อมูลรายละเอียด"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:233
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:234
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Record editorial details"
@@ -15705,56 +15705,56 @@ msgstr "ตั้งค่าประเทศสำหรับติดต่
 msgid "Set here the original owner of content."
 msgstr "ตั้งค่าเจ้าของดั้งเดิมของเนื้อหาที่นี่"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:93
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "Content"
 msgctxt "@item: xmp content"
 msgid "Content"
 msgstr "เนื้อหา"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:97
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:98
 #, fuzzy, kde-format
 #| msgid "Origin"
 msgctxt "@item"
 msgid "Origin"
 msgstr "ต้นกำเนิด"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:101
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:102
 #, fuzzy, kde-format
 #| msgid "Credits"
 msgctxt "@item"
 msgid "Credits"
 msgstr "เครดิต"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:106
 #, fuzzy, kde-format
 #| msgid "Subjects"
 msgctxt "@item"
 msgid "Subjects"
 msgstr "หัวข้อ"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:109
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:110
 #, fuzzy, kde-format
 #| msgid "Keywords"
 msgctxt "@item"
 msgid "Keywords"
 msgstr "คำสำคัญ"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Categories"
 msgctxt "@item"
 msgid "Categories"
 msgstr "หมวดหมู่"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:118
 #, fuzzy, kde-format
 #| msgid "Status"
 msgctxt "@item"
 msgid "Status"
 msgstr "สถานะ"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:122
 #: core/libs/dialogs/solidhardwaredlg.cpp:290
 #, fuzzy, kde-format
 #| msgid "Properties"
