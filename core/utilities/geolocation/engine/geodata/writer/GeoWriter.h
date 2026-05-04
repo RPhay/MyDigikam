@@ -67,15 +67,13 @@ public:
 
     /**
      * @brief Convenience method to write \<key\>value\</key\>
-     *
-     **/
+     */
     void writeElement(const QString& key, const QString& value);
 
     /**
      * @brief Convenience method to write \<key\>value\</key\> if value is
-     *   not equal to defaultValue. Otherwise, nothing is written.
-     *
-     **/
+     * not equal to defaultValue. Otherwise, nothing is written.
+     */
     void writeOptionalElement(const QString& key, const QString& value, const QString& defaultValue = QString());
 
     /**

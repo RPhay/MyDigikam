@@ -28,9 +28,8 @@ namespace Marble
 {
 
 GeoWriter::GeoWriter()
+    :     m_documentType(QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)) // FIXME: work out a standard way to do this.
 {
-    //FIXME: work out a standard way to do this.
-    m_documentType = QString::fromUtf8(kml::kmlTag_nameSpaceOgc22);
 }
 
 bool GeoWriter::write(QIODevice* device, const GeoNode* feature)
@@ -39,7 +38,7 @@ bool GeoWriter::write(QIODevice* device, const GeoNode* feature)
     setAutoFormatting(true);
     writeStartDocument();
 
-    //FIXME: write the starting tags. Possibly register a tag handler to do this
+    // FIXME: write the starting tags. Possibly register a tag handler to do this
     // with a null string as the object name?
 
     GeoTagWriter::QualifiedName name(QString(), m_documentType);
@@ -47,13 +46,14 @@ bool GeoWriter::write(QIODevice* device, const GeoNode* feature)
 
     if (writer)
     {
-        //FIXME is this too much of a hack?
+        // FIXME is this too much of a hack?
+
         writer->write(/* node = */ nullptr, *this); // node is never used in write()
     }
-
     else
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "There is no GeoWriter registered for: " << name;
+
         return false;
     }
 
@@ -62,8 +62,10 @@ bool GeoWriter::write(QIODevice* device, const GeoNode* feature)
         return false;
     }
 
-    //close the document
+    // close the document
+
     writeEndElement();
+
     return true;
 }
 
@@ -79,14 +81,14 @@ bool GeoWriter::writeElement(const GeoNode* object)
         if (! writer->write(object, *this))
         {
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "An error has been reported by the GeoWriter for: "
-                                        << name;
+                                           << name;
             return false;
         }
     }
-
     else
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "There is no GeoWriter registered for: " << name;
+
         return true;
     }
 
