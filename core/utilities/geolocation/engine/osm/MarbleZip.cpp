@@ -459,6 +459,10 @@ class Q_DECL_HIDDEN EndOfDirectory
 {
 public:
 
+    EndOfDirectory() = default;
+
+public:
+
     uchar signature[4]                  = { 0 }; // 0x06054b50
     uchar this_disk[2]                  = { 0 };
     uchar start_of_directory_disk[2]    = { 0 };
@@ -473,10 +477,14 @@ class Q_DECL_HIDDEN FileHeader
 {
 public:
 
+    FileHeader() = default;
+
+public:
+
     CentralFileHeader h;
-    QByteArray file_name;
-    QByteArray extra_field;
-    QByteArray file_comment;
+    QByteArray        file_name;
+    QByteArray        extra_field;
+    QByteArray        file_comment;
 };
 
 MarbleZipReader::FileInfo::FileInfo()
@@ -502,6 +510,7 @@ MarbleZipReader::FileInfo& MarbleZipReader::FileInfo::operator=(const FileInfo& 
     crc32        = other.crc32;
     size         = other.size;
     lastModified = other.lastModified;
+    d            = other.d;
 
     return *this;
 }
