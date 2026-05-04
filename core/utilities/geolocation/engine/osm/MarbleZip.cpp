@@ -992,7 +992,7 @@ MarbleZipReader::MarbleZipReader(const QString& archive, QIODevice::OpenMode mod
     }
 
     d         = new MarbleZipReaderPrivate(f.get(), /*ownDevice=*/true);
-    f.release();
+    (void)f.release();
     d->status = status;
 }
 
@@ -1370,7 +1370,7 @@ MarbleZipWriter::MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mo
     }
 
     d         = new MarbleZipWriterPrivate(f.get(), /*ownDevice=*/true);
-    f.release();
+    (void)f.release();
     d->status = status;
 }
 
