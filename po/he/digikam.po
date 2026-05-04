@@ -6,13 +6,13 @@
 # Nadav Kavalerchik <nadavkav@gmail.com>, 2009.
 # Diego Iastrubni <elcuco@kde.org>, 2012.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
-# SPDX-FileCopyrightText: 2024, 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-07 00:41+0000\n"
-"PO-Revision-Date: 2026-04-25 10:50+0300\n"
+"PO-Revision-Date: 2026-05-07 08:58+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -2580,7 +2580,7 @@ msgstr "אין גישה להתקן אחסון זה.\n"
 #: core/app/main/digikamapp_solid.cpp:696
 #, kde-format
 msgid "Images on %1"
-msgstr "תמונות נמצאו ב- %1"
+msgstr "תמונות ב־%1"
 
 #: core/app/main/digikamapp_solid.cpp:729
 #, kde-format
@@ -7682,11 +7682,10 @@ msgid "Adjust Levels"
 msgstr "עדכון רמת צבע"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:911
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Gimp Levels File to Load"
-msgstr "בחירת קובץ רמות-צבע-של-גימפ לטעינה"
+msgstr "בחירת קובץ רמות צבע של גימפ לטעינה"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:923
 #, kde-format
@@ -7694,11 +7693,10 @@ msgid "Cannot load from the Gimp levels text file."
 msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:938
-#, fuzzy, kde-format
-#| msgid "Select Gimp Levels File to Load"
+#, kde-format
 msgctxt "@title:window"
 msgid "Gimp Levels File to Save"
-msgstr "בחירת קובץ רמות-צבע-של-גימפ לטעינה"
+msgstr "קובץ רמות צבע של גימפ לטעינה"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:950
 #, kde-format
@@ -7706,29 +7704,28 @@ msgid "Cannot save to the Gimp levels text file."
 msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:40
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Adjust Levels"
-msgstr "עדכון רמת צבע"
+msgstr "כוונון רמות"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust color levels"
-msgstr "שינוי עקומת צבע"
+msgstr "כלי להתאמת רמות צבע"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color levels from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון את רמות הצבע מתמונה."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstoolplugin.cpp:91
-#, fuzzy, kde-format
-#| msgid "Levels Adjust..."
+#, kde-format
 msgctxt "@action"
 msgid "Levels Adjust..."
-msgstr "עדכון רמות צבע..."
+msgstr "כוונון רמות…"
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontool.cpp:110
 #, kde-format
@@ -7777,16 +7774,16 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust colors automatically from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון את הצבע מתמונה אוטומטית."
 
 #: core/dplugins/editor/colors/autocorrection/autocorrectiontoolplugin.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Color Auto-Correction..."
-msgstr "תיקון-עדשה-אוטומטי"
+msgstr "תיקון צבע אוטומטי…"
 
 #: core/dplugins/editor/colors/bcg/bcgtool.cpp:161
 #, kde-format
@@ -7794,11 +7791,11 @@ msgid "Brightness / Contrast / Gamma"
 msgstr "בהירות / ניגודיות / גאמה"
 
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid ""
 "This Image Editor tool can adjust Brightness / Contrast / Gamma from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון בהירות / ניגודיות / גאמה מתמונה."
 
 #: core/dplugins/editor/colors/bcg/bcgtoolplugin.cpp:94
 #, kde-format
@@ -7847,10 +7844,10 @@ msgid "Channel Mixer..."
 msgstr "מערבל ערוצים…"
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust color balance from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון איזון צבע מתמונה."
 
 #: core/dplugins/editor/colors/colorbalance/cbtoolplugin.cpp:91
 #, kde-format
@@ -7865,10 +7862,10 @@ msgid "Convert to 8 bits"
 msgstr "המרה ל־8 סיביות"
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:61
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 8 bits."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "כלי עריכת התמונות הזה יכול להמיר עומק צבע תמונה ל־8 סיביות."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:92
 #, kde-format
@@ -7883,26 +7880,24 @@ msgid "This image is already using a depth of 8 bits / color / pixel."
 msgstr "התמונה הזאת כבר משתמשת בעומק של 8 סיביות / צבע / פיקסל."
 
 #: core/dplugins/editor/colors/convert16to8/convert16to8toolplugin.cpp:118
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Performing this operation will reduce image color quality. Do you want to "
 "continue?"
-msgstr ""
-"בנייה של תמונות ממוזערות עבור כל התמונות דורשת זמן רב.\n"
-"האם להמשיך?"
+msgstr "ביצוע הפעולה הזאת יגרע מאיכות הצבע של התמונה. להמשיך?"
 
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image color depth to 16 bits."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "כלי עריכת התמונות הזה יכול להמיר עומק צבע תמונה ל־16 סיביות."
 
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@action"
 msgid "Convert to 16 bits"
-msgstr "המרה"
+msgstr "המרה ל־16 סיביות"
 
 #: core/dplugins/editor/colors/convert8to16/convert8to16toolplugin.cpp:108
 #, kde-format
@@ -7940,9 +7935,9 @@ msgstr ""
 "לאפשר לך להחיל איזון צבע בעצמך."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:206
-#, fuzzy, kde-format
+#, kde-format
 msgid "White point color picker"
-msgstr "בחירת טמפרטורת גוון הצבע."
+msgstr "בורר צבע נקודה לבנה"
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:207
 #, kde-format
@@ -8015,10 +8010,10 @@ msgid "A tool to emulate color negative film"
 msgstr "בלי להדמיית פילם נגטיב (תשליל) בצבע"
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can emulate color negative film from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לדמות תשליל מתמונה."
 
 #: core/dplugins/editor/colors/film/filmtoolplugin.cpp:91
 #, kde-format
@@ -8032,11 +8027,11 @@ msgid "HSL Adjustments"
 msgstr "כוונוני HSL"
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This Image Editor tool can adjust Hue / Saturation / Lightness from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון גוון / רוויה / בהירות מתמונה."
 
 #: core/dplugins/editor/colors/hsl/hsltoolplugin.cpp:91
 #, kde-format
@@ -8045,10 +8040,10 @@ msgid "Hue/Saturation/Lightness..."
 msgstr "גוון/רוויה/בהירות…"
 
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can invert colors from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול להפוך צבעים מתמונה."
 
 #: core/dplugins/editor/colors/invert/inverttoolplugin.cpp:91
 #, kde-format
@@ -8090,10 +8085,10 @@ msgid "A tool to convert image to a color space"
 msgstr "כלי להמרת תמונה למרחב צבע"
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can convert image to a different color space."
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "כלי עריכת התמונות הזה יכול להמיר תמונה למרחב צבעים אחר."
 
 #: core/dplugins/editor/colors/profileconversion/profileconversiontoolplugin.cpp:108
 #, kde-format
@@ -8128,10 +8123,10 @@ msgid "White Balance"
 msgstr "איזון לבן"
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the white balance from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון את איזון הלבן מתמונה."
 
 #: core/dplugins/editor/colors/whitebalance/whitebalancetoolplugin.cpp:94
 #, kde-format
@@ -35674,9 +35669,9 @@ msgid "Captions: "
 msgstr "כיתובים: "
 
 #: core/libs/properties/captions/captionedit.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Enter caption author name here."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "כאן אפשר למלא את שם יוצר/ת הכתובית."
 
 #: core/libs/properties/captions/itemdescedittab.cpp:275
 #, fuzzy, kde-format
@@ -52903,9 +52898,9 @@ msgid "Boundary (Maritime)"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1393
-#, fuzzy, kde-format
+#, kde-format
 msgid "Land Mass"
-msgstr "תבנית ביטול-חידוד"
+msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:1396
 #, kde-format
@@ -60939,11 +60934,9 @@ msgid "Add Search Group"
 msgstr "הוספת קבוצת חיפוש"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "סגירת כל הקבוצות"
+msgstr "פינוי כל הקבוצות"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
