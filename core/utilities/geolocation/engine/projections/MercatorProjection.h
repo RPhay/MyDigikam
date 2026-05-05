@@ -30,7 +30,6 @@ namespace Marble
 /**
  * @short A class to implement the Mercator projection.
  */
-
 class MercatorProjection : public CylindricalProjection
 {
     // Not a QObject so far because we don't need to send signals.
@@ -42,28 +41,28 @@ public:
      */
     MercatorProjection();
 
-    ~MercatorProjection() override;
+    ~MercatorProjection()                                                             override;
 
     /**
      * @brief Returns the user-visible name of the projection.
      */
-    QString name() const override;
+    QString name()                                                              const override;
 
     /**
      * @brief Returns a short user description of the projection
      * that can be used in tooltips or dialogs.
      */
-    QString description() const override;
+    QString description()                                                       const override;
 
     /**
      * @brief Returns an icon for the projection.
      */
-    QIcon icon() const override;
+    QIcon icon()                                                                const override;
 
-    qreal  maxValidLat() const override;
-    qreal  minValidLat() const override;
+    qreal maxValidLat()                                                         const override;
+    qreal minValidLat()                                                         const override;
 
-    PreservationType preservationType() const override
+    PreservationType preservationType()                                         const override
     {
         return Conformal;
     }
@@ -80,13 +79,14 @@ public:
      */
     bool screenCoordinates(const GeoDataCoordinates& coordinates,
                            const ViewportParams* params,
-                           qreal& x, qreal& y, bool& globeHidesPoint) const override;
+                           qreal& x, qreal& y,
+                           bool& globeHidesPoint)                               const override;
 
     bool screenCoordinates(const GeoDataCoordinates& coordinates,
                            const ViewportParams* viewport,
                            qreal* x, qreal& y, int& pointRepeatNum,
                            const QSizeF& size,
-                           bool& globeHidesPoint) const override;
+                           bool& globeHidesPoint)                               const override;
 
     using CylindricalProjection::screenCoordinates;
 
@@ -108,12 +108,12 @@ public:
     bool geoCoordinates(const int x, const int y,
                         const ViewportParams* params,
                         qreal& lon, qreal& lat,
-                        GeoDataCoordinates::Unit = GeoDataCoordinates::Degree) const override;
+                        GeoDataCoordinates::Unit = GeoDataCoordinates::Degree)  const override;
 
     GeoDataLatLonAltBox latLonAltBox(const QRect& screenRect,
-                                     const ViewportParams* viewport) const override;
+                                     const ViewportParams* viewport)            const override;
 
-    bool  mapCoversViewport(const ViewportParams* viewport) const override;
+    bool  mapCoversViewport(const ViewportParams* viewport)                     const override;
 
 private:
 

@@ -26,7 +26,7 @@ StartScript
 
 # Check run-time dependencies
 
-if [ ! -f /opt/clazy/bin/clazy ] ; then
+if [ ! -f /usr/bin/clazy ] ; then
 
     echo "Clazy static analyzer is not installed in /opt/clazy."
     echo "Please install Clazy from https://github.com/KDE/clazy"
@@ -63,7 +63,7 @@ rm -fr build.clazy
 mkdir -p build.clazy
 cd build.clazy
 
-export PATH=$PATH:/opt/clazy/bin
+#export PATH=$PATH:/opt/clazy/bin
 
 if [[ -d /opt/qt6 ]] ; then
 
@@ -76,16 +76,16 @@ else
 
     export BUILD_WITH_QT6=0
     QTPATHS="qtpaths"
-    export CMAKE_BINARY=cmake
 
 fi
 
+
 $CMAKE_BINARY -G "Unix Makefiles" \
       -DCMAKE_BUILD_TYPE=Debug \
+      -DCMAKE_CXX_COMPILER_LAUNCHER=clazy \
       -DCMAKE_C_COMPILER=clang \
       -DCMAKE_CXX_COMPILER=clang \
-      -DCMAKE_CXX_COMPILER_LAUNCHER=clazy \
-      -DCMAKE_CXX_FLAGS="-I/usr/lib/llvm-21/lib/clang/21.1.8/include -isystem /usr/include/c++/15 -isystem /usr/include/$(uname -m)-linux-gnu/c++/15" \
+      -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
       -DDIGIKAMSC_CHECKOUT_PO=OFF \
@@ -104,6 +104,8 @@ $CMAKE_BINARY -G "Unix Makefiles" \
       -DENABLE_QWEBENGINE=ON \
       -Wno-dev \
       ..
+
+ #     -DCMAKE_CXX_FLAGS="-I/usr/lib/llvm-21/lib/clang/21.1.8/include -isystem /usr/include/c++/15 -isystem /usr/include/$(uname -m)-linux-gnu/c++/15" \
 
 make -j$CPU_CORES 2> ${ORIG_WD}/${REPORT_DIR}/trace.log
 
