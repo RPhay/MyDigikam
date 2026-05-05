@@ -46,10 +46,10 @@ public:
 
     BillboardGraphicsItem();
 
-    GeoDataCoordinates coordinate() const;
+    GeoDataCoordinates coordinate()                             const;
     void setCoordinate(const GeoDataCoordinates& coordinates);
 
-    Qt::Alignment alignment() const;
+    Qt::Alignment alignment()                                   const;
     void setAlignment(Qt::Alignment alignment);
 
     /**
@@ -61,18 +61,18 @@ public:
      * the projection and zoom level.
      * @since 0.26.0
      */
-    QVector<QPointF> positions() const;
+    QVector<QPointF> positions()                                const;
 
     /**
      * @brief Returns the absolute screen bounding boxes of the item.
      * @since 0.26.0
      */
-    QVector<QRectF> boundingRects() const;
+    QVector<QRectF> boundingRects()                             const;
 
     /**
      * Returns the rect of one representation of the object that is at the given position.
      */
-    QRectF containsRect(const QPointF& point) const;
+    QRectF containsRect(const QPointF& point)                   const;
 
 private:
 

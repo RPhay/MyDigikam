@@ -29,7 +29,7 @@ class Q_DECL_HIDDEN GeoSceneLayerPrivate
 {
 public:
 
-    GeoSceneLayerPrivate(const QString& name);
+    explicit GeoSceneLayerPrivate(const QString& name);
     ~GeoSceneLayerPrivate();
 
 public:
@@ -38,7 +38,7 @@ public:
     /// (We want to preserve the order and don't care
     /// much about speed here), so we don't use a hash
 
-    QVector<GeoSceneAbstractDataset*>  m_datasets;
+    QVector<GeoSceneAbstractDataset*>   m_datasets;
 
     GeoSceneFilter*                     m_filter = nullptr;
 
@@ -46,7 +46,7 @@ public:
     QString                             m_backend;
     QString                             m_role;
 
-    bool                                m_tiled;
+    bool                                m_tiled  = true;
 };
 
 GeoSceneLayerPrivate::GeoSceneLayerPrivate(const QString& name) :
@@ -93,7 +93,6 @@ void GeoSceneLayer::addDataset(GeoSceneAbstractDataset* dataset)
             d->m_datasets.erase(it);
             break;
         }
-
         else
         {
             ++it;
@@ -108,9 +107,9 @@ void GeoSceneLayer::addDataset(GeoSceneAbstractDataset* dataset)
 
 const GeoSceneAbstractDataset* GeoSceneLayer::dataset(const QString& name) const
 {
-    GeoSceneAbstractDataset* dataset = nullptr;
+    GeoSceneAbstractDataset* dataset                      = nullptr;
 
-    QVector<GeoSceneAbstractDataset*>::const_iterator it = d->m_datasets.constBegin();
+    QVector<GeoSceneAbstractDataset*>::const_iterator it  = d->m_datasets.constBegin();
     QVector<GeoSceneAbstractDataset*>::const_iterator end = d->m_datasets.constEnd();
 
     for (; it != end; ++it)
@@ -129,8 +128,10 @@ const GeoSceneAbstractDataset* GeoSceneLayer::dataset(const QString& name) const
 // for details, see "Effective C++" (third edition)
 GeoSceneAbstractDataset* GeoSceneLayer::dataset(const QString& name)
 {
-    return const_cast<GeoSceneAbstractDataset*>
-           (static_cast<GeoSceneLayer const*>(this)->dataset(name));
+    return (
+            const_cast<GeoSceneAbstractDataset*>
+            (static_cast<GeoSceneLayer const*>(this)->dataset(name))
+           );
 }
 
 const GeoSceneAbstractDataset* GeoSceneLayer::groundDataset() const
@@ -147,8 +148,10 @@ const GeoSceneAbstractDataset* GeoSceneLayer::groundDataset() const
 // for details, see "Effective C++" (third edition)
 GeoSceneAbstractDataset* GeoSceneLayer::groundDataset()
 {
-    return const_cast<GeoSceneAbstractDataset*>
-           (static_cast<GeoSceneLayer const*>(this)->groundDataset());
+    return (
+            const_cast<GeoSceneAbstractDataset*>
+            (static_cast<GeoSceneLayer const*>(this)->groundDataset())
+           );
 }
 
 QVector<GeoSceneAbstractDataset*> GeoSceneLayer::datasets() const

@@ -39,7 +39,7 @@ class Q_DECL_HIDDEN PluginManagerPrivate
 {
 public:
 
-    PluginManagerPrivate(PluginManager* const parent)
+    explicit PluginManagerPrivate(PluginManager* const parent)
         : m_parent(parent)
     {
     }
@@ -73,8 +73,9 @@ public:
 QStringList PluginManagerPrivate::m_blacklist;
 QStringList PluginManagerPrivate::m_whitelist;
 
-PluginManager::PluginManager(QObject* parent) : QObject(parent),
-    d(new PluginManagerPrivate(this))
+PluginManager::PluginManager(QObject* parent)
+    : QObject(parent),
+      d      (new PluginManagerPrivate(this))
 {
     // Checking assets:/plugins for uninstalled plugins
 
@@ -322,7 +323,6 @@ void PluginManagerPrivate::loadPlugins()
             {
                 delete loader;
             }
-
             else
             {
                 foundPlugin = true;

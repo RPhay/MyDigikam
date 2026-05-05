@@ -28,9 +28,9 @@ class Q_DECL_HIDDEN BillboardGraphicsItemPrivate : public MarbleGraphicsItemPriv
 {
 public:
 
-    BillboardGraphicsItemPrivate(BillboardGraphicsItem* parent)
+    explicit BillboardGraphicsItemPrivate(BillboardGraphicsItem* parent)
         : MarbleGraphicsItemPrivate(parent),
-          m_alignment(Qt::AlignHCenter | Qt::AlignVCenter)
+          m_alignment              (Qt::AlignHCenter | Qt::AlignVCenter)
     {
     }
 
@@ -50,53 +50,54 @@ public:
     {
         m_positions.clear();
 
-        qreal x[100], y;
+        qreal x[100]          = { 0.0 };
+        qreal y               = 0.0;
         int pointRepeatNumber = 0;
-        bool globeHidesPoint;
+        bool globeHidesPoint  = false;
 
         viewport->screenCoordinates(m_coordinates, x, y, pointRepeatNumber,
                                     m_size, globeHidesPoint);
 
         // Don't display items if they are on the far side of the globe.
+
         if (globeHidesPoint)
         {
             return;
         }
 
         m_positions.reserve(pointRepeatNumber);
+
         // handle vertical alignment
+
         qint32 topY = (viewport->height() - m_size.height()) / 2;
 
-        if (m_alignment & Qt::AlignTop)
+        if      (m_alignment & Qt::AlignTop)
         {
             topY = y - m_size.height();
         }
-
         else if (m_alignment & Qt::AlignVCenter)
         {
             topY = y - (m_size.height() / 2);
         }
-
         else if (m_alignment & Qt::AlignBottom)
         {
             topY = y;
         }
 
-        for (int i = 0; i < pointRepeatNumber; ++i)
+        for (int i = 0 ; i < pointRepeatNumber ; ++i)
         {
             // handle horizontal alignment
+
             qint32 leftX = (viewport->width() - m_size.width()) / 2;
 
-            if (m_alignment & Qt::AlignLeft)
+            if      (m_alignment & Qt::AlignLeft)
             {
                 leftX =  x[i] - m_size.width();
             }
-
             else if (m_alignment & Qt::AlignHCenter)
             {
                 leftX = x[i] - (m_size.width() / 2);
             }
-
             else if (m_alignment & Qt::AlignRight)
             {
                 leftX = x[i];
@@ -118,18 +119,21 @@ BillboardGraphicsItem::BillboardGraphicsItem()
 GeoDataCoordinates BillboardGraphicsItem::coordinate() const
 {
     Q_D(const BillboardGraphicsItem);
+
     return d->m_coordinates;
 }
 
 void BillboardGraphicsItem::setCoordinate(const GeoDataCoordinates& coordinates)
 {
     Q_D(BillboardGraphicsItem);
+
     d->m_coordinates = coordinates;
 }
 
 QVector<QPointF> BillboardGraphicsItem::positions() const
 {
     Q_D(const BillboardGraphicsItem);
+
     return d->positions();
 }
 
@@ -166,12 +170,14 @@ QRectF BillboardGraphicsItem::containsRect(const QPointF& point) const
 Qt::Alignment BillboardGraphicsItem::alignment() const
 {
     Q_D(const BillboardGraphicsItem);
+
     return d->m_alignment;
 }
 
 void BillboardGraphicsItem::setAlignment(Qt::Alignment alignment)
 {
     Q_D(BillboardGraphicsItem);
+
     d->m_alignment = alignment;
 }
 

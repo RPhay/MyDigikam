@@ -54,7 +54,7 @@ public:
 
     explicit PluginManager(QObject* parent = nullptr);
 
-    ~PluginManager() override;
+    ~PluginManager()                                                                  override;
 
     /**
      * @brief Returns all available RenderPlugins.
@@ -63,7 +63,7 @@ public:
      * In order to use the RenderPlugins, first create new instances using
      * RenderPlugin::newInstance().
      */
-    QList<const RenderPlugin*> renderPlugins() const;
+    QList<const RenderPlugin*> renderPlugins()                                  const;
 
     /**
      * @brief Add a RenderPlugin manually to the list of known plugins. Normally you
@@ -76,7 +76,7 @@ public:
      * Returns all search runner plugins.
      * @note: Runner plugins are owned by the PluginManager, do not delete them.
      */
-    QList<const SearchRunnerPlugin*> searchRunnerPlugins() const;
+    QList<const SearchRunnerPlugin*> searchRunnerPlugins()                      const;
 
     /**
      * @brief Add a SearchRunnerPlugin manually to the list of known plugins. Normally you
@@ -89,7 +89,7 @@ public:
      * Returns all reverse geocoding runner plugins.
      * @note: The runner plugins are owned by the PluginManager, do not delete them.
      */
-    QList<const ReverseGeocodingRunnerPlugin*> reverseGeocodingRunnerPlugins() const;
+    QList<const ReverseGeocodingRunnerPlugin*> reverseGeocodingRunnerPlugins()  const;
 
     /**
      * @brief Add a ReverseGeocodingRunnerPlugin manually to the list of known plugins. Normally you
@@ -102,7 +102,7 @@ public:
      * Returns all parse runner plugins.
      * @note: The runner plugins are owned by the PluginManager, do not delete them.
      */
-    QList<const ParseRunnerPlugin*> parsingRunnerPlugins() const;
+    QList<const ParseRunnerPlugin*> parsingRunnerPlugins()                      const;
 
     /**
      * @brief Add a ParseRunnerPlugin manually to the list of known plugins. Normally you
@@ -145,7 +145,7 @@ private:
 
 #ifdef Q_OS_ANDROID
 
-    void installPluginsFromAssets() const;
+    void installPluginsFromAssets()                                             const;
 
 #endif
 

@@ -41,9 +41,9 @@ class DIGIKAM_EXPORT GeoSceneLayer : public GeoNode
 public:
 
     explicit GeoSceneLayer(const QString& name);
-    ~GeoSceneLayer() override;
+    ~GeoSceneLayer()                                              override;
 
-    const char* nodeType() const override;
+    const char* nodeType()                                  const override;
 
     /**
      * @brief  Add a data set to the legend
@@ -51,29 +51,29 @@ public:
      */
     void addDataset(GeoSceneAbstractDataset*);
 
-    const GeoSceneAbstractDataset* dataset(const QString&) const;
+    const GeoSceneAbstractDataset* dataset(const QString&)  const;
     GeoSceneAbstractDataset* dataset(const QString&);
 
-    const GeoSceneAbstractDataset* groundDataset() const;
+    const GeoSceneAbstractDataset* groundDataset()          const;
     GeoSceneAbstractDataset* groundDataset();
 
-    QVector<GeoSceneAbstractDataset*> datasets() const;
+    QVector<GeoSceneAbstractDataset*> datasets()            const;
 
-    QString name() const;
+    QString name()                                          const;
 
-    QString backend() const;
+    QString backend()                                       const;
     void setBackend(const QString& plugin);
 
     /**
      * @brief  returns whether the data is organized in quad tiles.
      */
-    bool isTiled() const;
+    bool isTiled()                                          const;
     void setTiled(bool);
 
-    QString role() const;
+    QString role()                                          const;
     void setRole(const QString& type);
 
-    const GeoSceneFilter* filter() const;
+    const GeoSceneFilter* filter()                          const;
     GeoSceneFilter* filter();
     void addFilter(GeoSceneFilter* filter);
     void removeFilter(GeoSceneFilter* filter);

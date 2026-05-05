@@ -37,8 +37,8 @@ public:
 
     GeoDataHotSpotPrivate(const QPointF& hotSpot, GeoDataHotSpot::Units xunits, GeoDataHotSpot::Units yunits)
         : m_hotSpot(hotSpot),
-          m_xunits(xunits),
-          m_yunits(yunits)
+          m_xunits (xunits),
+          m_yunits (yunits)
     {
     }
 
@@ -67,20 +67,23 @@ GeoDataHotSpot& GeoDataHotSpot::operator=(const GeoDataHotSpot& other)
     GeoDataObject::operator=(other);
 
     *d = *other.d;
+
     return *this;
 }
 
 bool GeoDataHotSpot::operator==(const GeoDataHotSpot& other) const
 {
-    return equals(other) &&
-           d->m_hotSpot == other.d->m_hotSpot &&
-           d->m_xunits == other.d->m_xunits &&
-           d->m_yunits == other.d->m_yunits;
+    return (
+            equals(other)                        &&
+            (d->m_hotSpot == other.d->m_hotSpot) &&
+            (d->m_xunits  == other.d->m_xunits)  &&
+            (d->m_yunits  == other.d->m_yunits)
+           );
 }
 
 bool GeoDataHotSpot::operator!=(const GeoDataHotSpot& other) const
 {
-    return !this->operator==(other);
+    return (!this->operator==(other));
 }
 
 const QPointF& GeoDataHotSpot::hotSpot(Units& xunits, Units& yunits) const
@@ -91,12 +94,11 @@ const QPointF& GeoDataHotSpot::hotSpot(Units& xunits, Units& yunits) const
     return d->m_hotSpot;
 }
 
-
 void GeoDataHotSpot::setHotSpot(const QPointF& hotSpot, Units xunits, Units yunits)
 {
     d->m_hotSpot = hotSpot;
-    d->m_xunits = xunits;
-    d->m_yunits = yunits;
+    d->m_xunits  = xunits;
+    d->m_yunits  = yunits;
 }
 
 const char* GeoDataHotSpot::nodeType() const
