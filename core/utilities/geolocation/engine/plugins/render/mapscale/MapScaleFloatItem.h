@@ -44,40 +44,40 @@ class MapScaleFloatItem : public AbstractFloatItem,
 public:
 
     explicit MapScaleFloatItem(const MarbleModel* marbleModel = nullptr);
-    ~MapScaleFloatItem() override;
+    ~MapScaleFloatItem()                                          override;
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                              const override;
 
-    QString name() const override;
+    QString name()                                          const override;
 
-    QString guiString() const override;
+    QString guiString()                                     const override;
 
-    QString nameId() const override;
+    QString nameId()                                        const override;
 
-    QString version() const override;
+    QString version()                                       const override;
 
-    QString description() const override;
+    QString description()                                   const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                                const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()                   const override;
 
-    QIcon icon() const override;
+    QIcon icon()                                            const override;
 
-    void initialize() override;
+    void initialize()                                             override;
 
-    bool isInitialized() const override;
+    bool isInitialized()                                    const override;
 
     void setProjection(const ViewportParams* viewport) override;
 
-    void paintContent(QPainter* painter) override;
+    void paintContent(QPainter* painter)                          override;
 
-    QDialog* configDialog() override;
+    QDialog* configDialog()                                       override;
 
 protected:
 
-    void contextMenuEvent(QWidget* w, QContextMenuEvent* e) override;
-    void toolTipEvent(QHelpEvent* e) override;
+    void contextMenuEvent(QWidget* w, QContextMenuEvent* e)       override;
+    void toolTipEvent(QHelpEvent* e)                              override;
 
 private Q_SLOTS:
 
