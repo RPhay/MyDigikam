@@ -50,16 +50,13 @@ class DIGIKAM_EXPORT MarbleInputHandler : public QObject
 public:
 
     explicit MarbleInputHandler(MarbleAbstractPresenter*);
-    ~MarbleInputHandler()                                             override;
+    ~MarbleInputHandler()                                                 override;
 
     void setPositionSignalConnected(bool connected);
-    bool isPositionSignalConnected()                            const;
+    bool isPositionSignalConnected()                                const;
 
     /**
-    //
-    // The MarbleInputHandler handles mouse and keyboard input.
-    //
-
+     * The MarbleInputHandler handles mouse and keyboard input.
      * @brief  Set whether a popup menu appears on a click (not drag) with the left mouse button
      * @param  enabled True to enable the popup menu (default), false to disable it
      */
@@ -69,11 +66,11 @@ public:
      * @brief  Return whether the left mouse button popup menu is active
      * @return True iff a popup menu is shown on left mouse button clicks
      */
-    bool isMouseButtonPopupEnabled(Qt::MouseButton mouseButton) const;
+    bool isMouseButtonPopupEnabled(Qt::MouseButton mouseButton)     const;
 
     void setPanViaArrowsEnabled(bool enabled);
 
-    bool panViaArrowsEnabled()                                  const;
+    bool panViaArrowsEnabled()                                      const;
 
     void setInertialEarthRotationEnabled(bool enabled);
 
@@ -82,22 +79,22 @@ public:
      * in the chosen direction for a slightly longer time than the mouse is
      * actually performing the drag operation
      */
-    bool inertialEarthRotationEnabled()                         const;
+    bool inertialEarthRotationEnabled()                             const;
 
     void setMouseViewRotationEnabled(bool enabled);
 
-    bool mouseViewRotationEnabled()                             const;
+    bool mouseViewRotationEnabled()                                 const;
 
     /// should the map do kinetic scrolling, this would stop the operation
     virtual void stopInertialEarthRotation();
 
 Q_SIGNALS:
 
-    // Mouse button menus
+    /// Mouse button menus
     void lmbRequest(int, int);
     void rmbRequest(int, int);
 
-    //Gps coordinates
+    /// Gps coordinates
     void mouseClickScreenPosition(int, int);
     void mouseMoveGeoPosition(const QString&);
 
@@ -118,7 +115,7 @@ protected:
 
 private Q_SLOTS:
 
-    virtual void installPluginEventFilter(RenderPlugin* renderPlugin) = 0;
+    virtual void installPluginEventFilter(RenderPlugin* renderPlugin)     = 0;
 
 private:
 
@@ -144,17 +141,17 @@ class DIGIKAM_EXPORT MarbleDefaultInputHandler : public MarbleInputHandler
 public:
 
     explicit MarbleDefaultInputHandler(MarbleAbstractPresenter* marblePresenter);
-    ~MarbleDefaultInputHandler()                                      override;
+    ~MarbleDefaultInputHandler()                                          override;
 
-    void stopInertialEarthRotation()                                  override;
+    void stopInertialEarthRotation()                                      override;
 
 protected:
 
-    bool eventFilter(QObject*, QEvent*)                               override;
+    bool eventFilter(QObject*, QEvent*)                                   override;
     bool handleMouseEvent(QMouseEvent* e);
     bool handlePinch(const QPointF& center, qreal scaleFactor, Qt::GestureState state);
 
-    //FIXME - refactor (abstraction & composition)
+    // FIXME: refactor (abstraction & composition)
     const AbstractDataPluginItem* lastToolTipItem()                 const;
     QTimer* toolTipTimer();
     QPoint toolTipPosition()                                        const;
@@ -193,7 +190,7 @@ private:
     virtual void hideSelectionIfCtrlReleased(QEvent* e);
     virtual void checkReleasedMove(QMouseEvent* e);
 
-    //Returns whatever should be returned from mouse event handling loop
+    /// Returns whatever should be returned from mouse event handling loop
     virtual bool acceptMouse();
 
     void notifyPosition(bool isAboveMap, qreal mouseLon, qreal mouseLat);
