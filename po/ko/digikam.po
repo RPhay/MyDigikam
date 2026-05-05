@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:41+0000\n"
+"POT-Creation-Date: 2026-05-05 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1017,7 +1017,7 @@ msgstr "날짜:"
 #: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:194
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -5582,15 +5582,15 @@ msgid "Same as input"
 msgstr "입력과 동일"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:98
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -9841,7 +9841,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "이미지 설정"
@@ -12162,7 +12162,7 @@ msgid "Saving changes -"
 msgstr "변경 사항 저장 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -15189,8 +15189,8 @@ msgid "Select here the envelope priority."
 msgstr "엔빌로프 우선 순위를 설정하십시오."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "형식:"
@@ -18361,50 +18361,50 @@ msgstr "기본 데스크톱 브라우저로 갤러리를 여는 중..."
 msgid "Opening gallery with internal browser..."
 msgstr "내부 브라우저로 갤러리를 여는 중..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:73
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "전체 이미지 속성:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:78
 #, kde-format
 msgid "Save image"
 msgstr "이미지 저장"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, fuzzy, kde-format
 #| msgid "JPEG"
 msgid "JPG"
 msgstr "JPEG"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:180
 #, kde-format
 msgid "Quality:"
 msgstr "품질:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:115
 #, kde-format
 msgid "Max size:"
 msgstr "최대 크기:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:137
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "다운로드할 실제 크기의 원본 이미지 포함"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:151
 #, kde-format
 msgid "Use original image"
 msgstr "원본 이미지 사용"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:159
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "섬네일 속성:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:208
 #, kde-format
 msgid "Square thumbnails"
 msgstr "사각형 섬네일"
@@ -18443,21 +18443,21 @@ msgstr "이미지 선택 방법 선택(&C):"
 msgid "Images"
 msgstr "이미지"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:67
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:69
 #, fuzzy, kde-format
 #| msgid "Gallery Title:"
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "갤러리 제목:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:77
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #, fuzzy, kde-format
 #| msgid "Destination Folder:"
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "대상 폴더:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
@@ -18467,33 +18467,33 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "대상 폴더"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, fuzzy, kde-format
 #| msgid "Open in Browser:"
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "브라우저에서 열기:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "없음"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "내부"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:95
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "데스크톱 기본값"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:64
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
@@ -18502,63 +18502,63 @@ msgstr ""
 "이 페이지에서 일부 테마 인자를 변경할 수 있습니다. 테마에 따라 다른 인자를 사"
 "용할 수 있습니다."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:142
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:144
 #, kde-format
 msgid "can be customized"
 msgstr "사용자 정의 가능"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:145
 #, kde-format
 msgid "no customization available"
 msgstr "사용자 정의할 수 있는 항목 없음"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:148
 #, fuzzy, kde-format
 #| msgid "Author: %1<br/><br/>"
 msgid "Author: %1<br><br>"
 msgstr "작성자: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, fuzzy, kde-format
 #| msgid "Create HTML Gallery"
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "HTML 갤러리 만들기"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "HTML 갤러리 도구에 오신 것을 환영합니다"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr "항목 선택"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Theme Selection"
 msgstr "테마 선택"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr "테마 인자"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "출력 설정"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, kde-format
 msgid "Generating Gallery"
 msgstr "갤러리 생성 중"
@@ -22261,25 +22261,25 @@ msgstr "슬라이드:"
 msgid "Soundtrack:"
 msgstr "사운드트랙:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:179
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:200
 #, kde-format
 msgid "No detail available"
 msgstr "자세한 정보 없음"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1을(를) 재생할 수 없을 수도 있습니다."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "이 파일을 재생할 수 없을 수도 있습니다."

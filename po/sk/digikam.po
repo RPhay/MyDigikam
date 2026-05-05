@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:41+0000\n"
+"POT-Creation-Date: 2026-05-05 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1045,7 +1045,7 @@ msgstr "Dátum:"
 #: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:194
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -5500,15 +5500,15 @@ msgid "Same as input"
 msgstr "Rovnaký ako vstup"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:98
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -7890,7 +7890,7 @@ msgstr "Úprava kriviek..."
 msgid ""
 "This is the histogram drawing of the selected channel from the original "
 "image."
-msgstr "<p>Toto je histogram zvoleného kanálu"
+msgstr "Toto je histogram zvoleného kanálu z pôvodného obrázka."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:172
 #, kde-format
@@ -9110,7 +9110,8 @@ msgstr "Zobraziť mriežku"
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtool.cpp:88
 #, kde-format
 msgid "Set this option to visualize the correction grid to be applied."
-msgstr "<p>Nastevením tejto voľby pridáte fotoaparátom poskytnutý dátum a čas."
+msgstr ""
+"<p>Nastevením tejto voľby pridáte fotoaparátom poskytnutý dátum a čas.</p>"
 
 #: core/dplugins/editor/enhance/lensautofix/lensautofixtoolplugin.cpp:60
 #, kde-format
@@ -9146,7 +9147,7 @@ msgid ""
 "barrel distortion, while positive values correct lens pincushion distortion."
 msgstr ""
 "<p>Táto hodnota určuje hlavnú mieru skreslenia. Záporné hodnoty korigujú "
-"súdkovité skreslenie, kladné hodnoty korigujú poduškovité skreslenie."
+"súdkovité skreslenie, kladné hodnoty korigujú poduškovité skreslenie.</p>"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:113
 #, kde-format
@@ -9159,8 +9160,8 @@ msgid ""
 "This value controls in the same manner as the Main control, but has more "
 "effect at the edges of the image than at the center."
 msgstr ""
-"<p>Táto hodnota má rovnakú funkciu ako hodnota \"Základ\", no prejavuje sa "
-"viac na okrajoch obrázka ako v strede."
+"<p>Táto hodnota má rovnakú funkciu ako hodnota \\\"Základ\\\", no prejavuje "
+"sa viac na okrajoch obrázka ako v strede.</p>"
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:124
 #, kde-format
@@ -9461,7 +9462,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "Nastavenie obrázka"
@@ -9667,7 +9668,8 @@ msgstr ""
 "rozmaže tie, miesto celého obrázka. <p><b>Zamrznuté sklo</b>: rozmaže "
 "obrázok náhodným prepustením jasného svetla cez zamrznuté sklo. "
 "<p><b>Mozaika</b>: rozdelí fotografiu do obdĺžnikových buniek a potom z nich "
-"vytvorí nové priemerovaním hodnôt ich pixelov.</p>"
+"vytvorí nové priemerovaním hodnôt ich pixelov.</p></p></p></p></p></p></p></"
+"p></p></p></p>"
 
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:129
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:111
@@ -9746,7 +9748,7 @@ msgstr "Vyhladzovanie:"
 #, kde-format
 msgid ""
 "This value controls the smoothing effect of the pencil under the canvas."
-msgstr "<p>Táto hodnota ovplyvňuje efekt vyhladzovania ťahov uhlíkom."
+msgstr "<p>Táto hodnota ovplyvňuje efekt vyhladzovania ťahov uhlíkom.</p>"
 
 #: core/dplugins/editor/filters/charcoal/charcoaltoolplugin.cpp:40
 #, kde-format
@@ -10079,7 +10081,7 @@ msgstr "Veľkosť štetca:"
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:82
 #, kde-format
 msgid "Set here the brush size to use for simulating the oil painting."
-msgstr "<p>Tu môžete nastaviť výšku orezu."
+msgstr "<p>Tu môžete nastaviť výšku orezu.</p>"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:86
 #, kde-format
@@ -10090,7 +10092,7 @@ msgstr "Jemnosť:"
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:90
 #, kde-format
 msgid "This value controls the smoothing effect of the brush under the canvas."
-msgstr "<p>Táto hodnota ovplyvňuje efekt vyhladzovania ťahov štetcom."
+msgstr "<p>Táto hodnota ovplyvňuje efekt vyhladzovania ťahov štetcom.</p>"
 
 #: core/dplugins/editor/filters/oilpaint/oilpainttool.cpp:180
 #, kde-format
@@ -10410,7 +10412,7 @@ msgstr "Zachovať tóny kože"
 #, kde-format
 msgid ""
 "Enable this option to preserve pixels whose color is close to a skin tone."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie oddielov zlatej špirály."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie oddielov zlatej špirály.</p>"
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:314
 #, kde-format
@@ -10811,6 +10813,7 @@ msgstr ""
 "<p>Tu môžete vidieť náhľad výberu pomeru strán pred orezaním. Veľkosť a "
 "polohu orezania môžete nastaviť ťahaním myši. Stlačením CTRL budete presúvať "
 "aj opačný roh. Stlačením SHIFT budete posúvať roh najbližšie ku kurzoru myši."
+"</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:178
 #, kde-format
@@ -10822,7 +10825,7 @@ msgstr "Vystredene dlaždicovať"
 msgid "Set selection area to the maximum size according to the current ratio."
 msgstr ""
 "<p>Nastaviť oblasť výberu na maximálnu veľkosť vzhľadom na momentálny pomer "
-"strán."
+"strán.</p>"
 
 #. i18n: ectx: property (text), widget (QLabel, resolutionLabel)
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:195
@@ -10934,7 +10937,7 @@ msgstr "Na výšku"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:267
 #, kde-format
 msgid "Select constrained aspect ratio orientation."
-msgstr "<p>Tu vyberte obmedzenie pomeru strán orientácie"
+msgstr "<p>Tu vyberte obmedzenie pomeru strán orientácie</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:270
 #, kde-format
@@ -10944,7 +10947,7 @@ msgstr "Auto"
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:271
 #, kde-format
 msgid "Enable this option to automatically set the orientation."
-msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie.</p>"
 
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:275
 #, kde-format
@@ -11787,7 +11790,7 @@ msgid "Saving changes -"
 msgstr "Zmeny sa ukladajú -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -13733,7 +13736,7 @@ msgstr "Zistený návrat blesku"
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:85
 #, kde-format
 msgid "No, compulsory"
-msgstr "<žiadny email>"
+msgstr "Nie, povinné"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:86
 #, kde-format
@@ -14422,7 +14425,7 @@ msgstr "Zaznamenať redakčné podrobnosti"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:55
 #, kde-format
 msgid "No ObjectData"
-msgstr "<žiadny email>"
+msgstr "Žiadne ObjectData"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:56
 #, kde-format
@@ -14730,8 +14733,8 @@ msgid "Select here the envelope priority."
 msgstr "Tu vyberte prioritu obálky."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "Formát:"
@@ -17773,49 +17776,49 @@ msgstr "Otvára sa galéria s predvoleným prehľadávačom pracovnej plochy..."
 msgid "Opening gallery with internal browser..."
 msgstr "Otvára sa galéria s interným prehľadávačom..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:73
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "Úplné vlastnosti obrázka:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:78
 #, kde-format
 msgid "Save image"
 msgstr "Uložiť obrázky"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPG"
 msgstr "JPG"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:180
 #, kde-format
 msgid "Quality:"
 msgstr "Kvalita:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:115
 #, kde-format
 msgid "Max size:"
 msgstr "Maximálna veľkosť:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:137
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "Vrátane plnej veľkosti pôvodných obrázkov na stiahnutie"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:151
 #, kde-format
 msgid "Use original image"
 msgstr "Použiť pôvodný obrázok"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:159
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "Vlastnosti miniatúr:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:208
 #, kde-format
 msgid "Square thumbnails"
 msgstr "Štvorcové miniatúry"
@@ -17854,19 +17857,19 @@ msgstr "&Vyberte metódu výberu obrázkov:"
 msgid "Images"
 msgstr "Obrázky"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:67
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "Názov galérie:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:77
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Cieľový priečinok:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
@@ -17875,31 +17878,31 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Cieľový priečinok"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "Otvoriť v prehliadači:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "Žiadna"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "Interný"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:95
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "Predvolené z pracovnej plochy"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:64
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
@@ -17908,61 +17911,61 @@ msgstr ""
 "Na tejto stránke môžete zmeniť niektoré nastavenia motívu. Dostupné sú rôzne "
 "parametre v závislosti na motíve."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:142
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:144
 #, kde-format
 msgid "can be customized"
 msgstr "dá sa prispôsobiť"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:145
 #, kde-format
 msgid "no customization available"
 msgstr "žiadne prispôsobenie nie je dostupné"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:148
 #, kde-format
 msgid "Author: %1<br><br>"
 msgstr "Autor: %1<br/><br/>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Vytvoriť HTML galériu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Vitajte v nástroji HTML galérie"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr "Výber položiek"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Theme Selection"
 msgstr "Výber motívu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Parametre motívu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Nastavenia výstupu"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Generating Gallery"
@@ -18126,7 +18129,7 @@ msgctxt "@info"
 msgid ""
 "Set this option to turn-on the DLNA server at application start-up "
 "automatically"
-msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu.</p>"
 
 #: core/dplugins/generic/tools/mediaserver/dmediaserverdlg.cpp:151
 #, kde-format
@@ -18342,7 +18345,7 @@ msgctxt "@info"
 msgid ""
 "Set this option to turn-on the MJPEG server at application start-up "
 "automatically"
-msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu.</p>"
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:80
 #, kde-format
@@ -21559,25 +21562,25 @@ msgstr "Posun:"
 msgid "Soundtrack:"
 msgstr "Zvuková stopa:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:179
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:200
 #, kde-format
 msgid "No detail available"
 msgstr "Nie je dostupný popis."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 je poškodená a nedá sa prehrať."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Tento súbor je poškodený a nedá sa prehrať."
@@ -22231,7 +22234,7 @@ msgstr "Pomiešať obrázky"
 msgid "If this option is enabled, the Slideshow will run in random order"
 msgstr ""
 "<p>Ak je táto voľba zapnutá, prezentácia začne aktuálnym obrázkom vybraným "
-"zo zoznamu obrázkov."
+"zo zoznamu obrázkov.</p>"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:128
 #, kde-format
@@ -29522,8 +29525,7 @@ msgid ""
 "administrator. Look in <b>Requirements</b> tab for details.</p>"
 msgstr ""
 "<p>Tu môžete zadať umiestnenie k hlavnej digiKam knižnici albumov vo vašom "
-"počítači.\n"
-"Je potrebné mať práva na zápis pre toto umiestnenie."
+"počítači.\\nJe potrebné mať práva na zápis pre toto umiestnenie.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:397
 #, kde-format
@@ -30792,7 +30794,7 @@ msgstr ""
 "zelená vyzerá svetlejšie. Skvelé pre korekciu farby kože, vyzdvihuje výrazy "
 "tváre v detailných záberoch a zdôrazňuje pocit veselosti.  Filter je veľmi "
 "efektný pre interiérové portréty pri použití osvetlenia wolfrámovou "
-"žiarovkou.</p>"
+"žiarovkou.</p></b>"
 
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:255
 #, kde-format
@@ -31046,7 +31048,7 @@ msgstr "Zachovať jas"
 #, kde-format
 msgctxt "@info"
 msgid "Enable this option if you want preserve the image luminosity."
-msgstr "<p>Ak povolíte túto voľbu, zobrazí sa cieľový obrázok."
+msgstr "<p>Ak povolíte túto voľbu, zobrazí sa cieľový obrázok.</p>"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:149
 #, kde-format
@@ -31174,7 +31176,7 @@ msgstr "Režim voľnej krivky"
 #: core/libs/dimg/filters/curves/curvesbox.cpp:128
 #, kde-format
 msgid "With this button, you can draw your curve free-hand with the mouse."
-msgstr "<p>Týmto tlačidlom môžete pomocou myši kresliť krivku od ruky."
+msgstr "<p>Týmto tlačidlom môžete pomocou myši kresliť krivku od ruky.</p>"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:134
 #, kde-format
@@ -31186,7 +31188,7 @@ msgstr "Režim hladkej krivky"
 msgid ""
 "With this button, the curve type is constrained to be a smooth line with "
 "tension."
-msgstr "<p>Týmto tlačidlom obmedzíte typ krivky na napnutú hladkú čiaru."
+msgstr "<p>Týmto tlačidlom obmedzíte typ krivky na napnutú hladkú čiaru.</p>"
 
 #: core/libs/dimg/filters/curves/curvesbox.cpp:160
 #, kde-format
@@ -32624,7 +32626,7 @@ msgid ""
 "maximum density."
 msgstr ""
 "<p>Táto hodnota určuje stupeň utlmenia intenzity v mieste maximálnej hustoty "
-"filtra."
+"filtra.</p>"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:107
 #, kde-format
@@ -32638,7 +32640,7 @@ msgid ""
 "the inner circle of the filter to the outer circle."
 msgstr ""
 "<p>Táto hodnota sa používa ako exponent ovládajúci znižovanie hustoty od "
-"stredu k okraju filtra."
+"stredu k okraju filtra.</p>"
 
 #: core/libs/dimg/filters/lens/antivignettingsettings.cpp:118
 #, kde-format
@@ -33833,13 +33835,13 @@ msgid ""
 "values."
 msgstr ""
 "<p>Týmto tlačidlom môžete vykonať automatické úpravy expozície a čierneho "
-"bodu."
+"bodu.</p>"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:260
 #, kde-format
 msgctxt "@info: WB settings"
 msgid "Set here the main exposure compensation value in E.V."
-msgstr "<p>Tu môžete nastaviť rôzne hodnoty pomerov."
+msgstr "<p>Tu môžete nastaviť rôzne hodnoty pomerov.</p>"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:262
 #, kde-format
@@ -33855,7 +33857,7 @@ msgid ""
 "fine exposure adjustment."
 msgstr ""
 "<p>Táto hodnota v stupňoch sa pridá k hodnote hlavného horizontálneho uhla "
-"pre jemné doladenie."
+"pre jemné doladenie.</p>"
 
 #: core/libs/dimg/filters/wb/wbsettings.cpp:487
 #, kde-format
@@ -37562,7 +37564,7 @@ msgstr[2] "Upravili ste dátum %1 obrázkov. "
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
-msgstr[0] "<p>Upravili ste metadáta obrázka: </p><p><ul>"
+msgstr[0] "<p>Upravili ste metadáta obrázka: </p><p><ul></p></ul>"
 msgstr[1] "Upravili ste dátum %1 obrázkov."
 msgstr[2] "Upravili ste dátum %1 obrázkov."
 
@@ -37571,7 +37573,7 @@ msgstr[2] "Upravili ste dátum %1 obrázkov."
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
-msgstr[0] "<p>Upravili ste metadáta obrázka: </p><p><ul>"
+msgstr[0] "<p>Upravili ste metadáta obrázka: </p><p><ul></p></ul>"
 msgstr[1] "Upravili ste dátum %1 obrázkov."
 msgstr[2] "Upravili ste dátum %1 obrázkov."
 
@@ -40951,6 +40953,7 @@ msgctxt "@info"
 msgid "Here you can see the metadata template list managed by digiKam."
 msgstr ""
 "<p>Tu môžete vidieť zoznam šablón metaúdajov spravovaných programom digiKam."
+"</p>"
 
 #: core/libs/template/templatelist.cpp:73
 #, kde-format
@@ -50898,7 +50901,7 @@ msgstr "Zobraziť rozmery obrázka"
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:44
 #, kde-format
 msgid "Set this option to display the image dimensions in pixels."
-msgstr "<p>Zapnutím tejto voľby zobrazíte rozmery obrázka v pixeloch."
+msgstr "<p>Zapnutím tejto voľby zobrazíte rozmery obrázka v pixeloch.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:123
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:64
@@ -50909,7 +50912,7 @@ msgid ""
 "image has been taken."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať výrobcu a model fotoaparátu "
-"s ktorým bol obrázok odfotený."
+"s ktorým bol obrázok odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:126
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:67
@@ -50926,7 +50929,7 @@ msgid ""
 "Set this option to display the lens model with which the image was taken."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať model objektívu, ktorým bol "
-"obrázok odfotený."
+"obrázok odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:130
 #, kde-format
@@ -50939,7 +50942,7 @@ msgstr "Zobrazovať dátum fotoaparátu"
 msgid "Set this option to display the date when the image was taken."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať dátum kedy bol obrázok "
-"odfotený."
+"odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:134
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:75
@@ -50950,7 +50953,7 @@ msgid ""
 "take the image."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať nastavenie clony a ohniska, "
-"s ktorým bol obrázok odfotený."
+"s ktorým bol obrázok odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:138
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:79
@@ -50961,7 +50964,7 @@ msgid ""
 "the image."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať nastavenie expozície a "
-"citlivosti, s ktorým bol obrázok odfotený."
+"citlivosti, s ktorým bol obrázok odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:141
 #, kde-format
@@ -50976,7 +50979,7 @@ msgid ""
 "image."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať nastavenie režimu a "
-"programu, s ktorým bol obrázok odfotený."
+"programu, s ktorým bol obrázok odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:145
 #, kde-format
@@ -50991,7 +50994,7 @@ msgid ""
 "Set this option to display the camera flash settings used to take the image."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať nastavenie blesku, s ktorým "
-"bol obrázok odfotený."
+"bol obrázok odfotený.</p>"
 
 #: core/showfoto/setup/showfotosetuptooltip.cpp:149
 #, kde-format
@@ -51007,7 +51010,7 @@ msgid ""
 "the image."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, bude sa zobrazovať vyváženie bielej, s ktorým "
-"bol obrázok odfotený."
+"bol obrázok odfotený.</p>"
 
 #: core/showfoto/stackview/showfotostackviewfavoriteitem.cpp:117
 #, kde-format
@@ -58183,7 +58186,7 @@ msgid ""
 "search virtual album using the name set on the left side."
 msgstr ""
 "<p>Ak stlačíte toto tlačidlo, všetky hodnoty krivky pre aktuálny kanál sa "
-"obnovia na štandardné hodnoty."
+"obnovia na štandardné hodnoty.</p>"
 
 #: core/utilities/geolocation/mapsearches/gpssearchview.cpp:194
 #, kde-format
@@ -59084,7 +59087,7 @@ msgstr "Nebolo možné otvoriť dočasný súbor v priečinku „%1“: %2 (%3)"
 #, kde-format
 msgctxt "@info"
 msgid "Unable to determine the format to save the target image with."
-msgstr "<p>Tu môžete nastaviť kontrast obrázka."
+msgstr "<p>Tu môžete nastaviť kontrast obrázka.</p>"
 
 #: core/utilities/imageeditor/editor/editorwindow.cpp:2001
 #, kde-format
@@ -60786,7 +60789,7 @@ msgstr ""
 "8601 (YYYY-MM-DD). Napr.: <i>2006-08-24</i></p><p><b>Plný text</b>: formát "
 "dátumu čitateľný pre používateľa. Napr.: <i>štv, 24. aug 14:26:18 2006</i></"
 "p><p><b>Miestne nastavenia</b>: formát dátumu závislý na nastaveniach "
-"ovládacieho panela KDE.</p>"
+"ovládacieho panela KDE."
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:140
 #, kde-format
@@ -63688,7 +63691,7 @@ msgstr "Zobraziť dátum &vytvorenia podľa fotoaparátu"
 msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "<p>Zapnutím tejto voľby zobrazíte pod náhľadom obrázka dátum vytvorenia "
-"súboru."
+"súboru.</p>"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:37
 #, kde-format
@@ -63715,7 +63718,7 @@ msgstr "Zobraziť rozmery položky"
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:43
 #, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
-msgstr "<p>Vypisovať rozmery obrázka v pixeloch pod náhľadom obrázka."
+msgstr "<p>Vypisovať rozmery obrázka v pixeloch pod náhľadom obrázka.</p>"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:46
 #, kde-format
@@ -63876,7 +63879,7 @@ msgstr "Otvoriť v predvolenom programe"
 msgid "Choose what should happen when you click on a thumbnail."
 msgstr ""
 "<p>Tu vyberte operáciu, ktorá sa vykoná po kliknutím pravým tlačidlom myši "
-"na náhľad obrázka."
+"na náhľad obrázka.</p>"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:101
 #: core/utilities/setup/camera/setupcamera.cpp:470
@@ -64171,7 +64174,7 @@ msgid ""
 "are sorted in digiKam."
 msgstr ""
 "<p>Tu môžete ovplyvniť triedenie albumov digiKamupridaním alebo vymazaním "
-"typov kolekcií albumov."
+"typov kolekcií albumov.</p>"
 
 #: core/utilities/setup/album/setupcategory.cpp:94
 #: core/utilities/setup/camera/setupcamera.cpp:273
@@ -64580,7 +64583,7 @@ msgid ""
 "interface."
 msgstr ""
 "<p>Tu môžete vidieť zoznam digitálnych fotoaparátov používaných digiKamom "
-"cez rozhranie Gphoto."
+"cez rozhranie Gphoto.</p>"
 
 #: core/utilities/setup/camera/setupcamera.cpp:256
 #, kde-format
@@ -64715,7 +64718,7 @@ msgid ""
 "Set this option to show the camera creation date below the image thumbnail."
 msgstr ""
 "<p>Zapnutím tejto voľby zobrazíte pod náhľadom obrázka dátum vytvorenia "
-"súboru."
+"súboru.</p>"
 
 #. i18n("Show ima&ge dimensions"), iconViewGroup);
 #. d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
@@ -65356,7 +65359,7 @@ msgid ""
 "area."
 msgstr ""
 "<p>Zapnutím tejto voľby použijete farbu pozadia témy pre oblasť editora "
-"obrázkov."
+"obrázkov.</p>"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:114
 #, kde-format
@@ -65366,7 +65369,8 @@ msgstr "&Farba pozadia:"
 #: core/utilities/setup/editor/setupeditoriface.cpp:117
 #, kde-format
 msgid "Customize the background color to use in the image editor area."
-msgstr "<p>Tu môžete prispôsobiť farbu pozadia pre oblasť editora obrázkov."
+msgstr ""
+"<p>Tu môžete prispôsobiť farbu pozadia pre oblasť editora obrázkov.</p>"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:131
 #, kde-format
@@ -65383,7 +65387,7 @@ msgstr "Farba pre &podexponované: "
 msgid "Customize color used in image editor to identify under-exposed pixels."
 msgstr ""
 "<p>Tu môžete prispôsobiť farbu, ktorá sa v editore obrázkov používa pre "
-"zjednodušenie identifikácie podexponovaných pixelov."
+"zjednodušenie identifikácie podexponovaných pixelov.</p>"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:140
 #, kde-format
@@ -65409,7 +65413,7 @@ msgstr "Farba pre p&reexponované: "
 msgid "Customize color used in image editor to identify over-exposed pixels."
 msgstr ""
 "<p>Tu môžete prispôsobiť farbu, ktorá sa v editore obrázkov používa pre "
-"zjednodušenie identifikácie preexponovaných pixelov."
+"zjednodušenie identifikácie preexponovaných pixelov.</p>"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:155
 #, kde-format
@@ -65611,7 +65615,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information on available image file formats"
-msgstr "<p>Zapnite túto voľbu pre zobrazenie dátumu súboru."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie dátumu súboru.</p>"
 
 #: core/utilities/setup/editor/setupversioning.cpp:198
 #, kde-format
@@ -65865,7 +65869,7 @@ msgstr ""
 "<p>Do tohto farebného priestoru budú po otvorení skonvertované všetky "
 "obrázky (ak konverziu zapnete) a tento profil bude vložený do súboru pri "
 "ukladaní. Dobré a bezpečné voľby sú <b>Adobe RGB (1998)</b> a <b>sRGB "
-"IEC61966-2.1</ b></p>"
+"IEC61966-2.1</b></p>"
 
 #: core/utilities/setup/icc/setupicc.cpp:72
 #, kde-format
@@ -66383,8 +66387,8 @@ msgid ""
 "li><li>Select the correct namespace option from list.</li></ul></p>"
 msgstr ""
 "<p>Zadajte parametre vytváraného menného priestoru komentárov:</ "
-"p><p><ul><li>Menný priestor s bodkami.<br/>Napr.: <i>\"Xmp.xmp.Comment\"</"
-"i></li><li>Zo zoznamu vyberte správny menný priestor.</li></ul></p>"
+"p><p><ul><li>Menný priestor s bodkami.<br/>Napr.: <i>\\\"Xmp.xmp.Comment\\"
+"\"</i></li><li>Zo zoznamu vyberte správny menný priestor.</li></ul></p></p>"
 
 #: core/utilities/setup/metadata/namespaceeditdlg.cpp:261
 #, kde-format
@@ -66651,7 +66655,7 @@ msgid ""
 "section, the Exif tag, the XMP tag, and the IPTC tag."
 msgstr ""
 "<p>Po zapnutí tejto voľby sa budú ukladať komentáre k obrázkom do sekcie "
-"JFIF, štítkov EXIF a IPTC."
+"JFIF, štítkov EXIF a IPTC.</p>"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:60
 #, kde-format
@@ -66709,7 +66713,7 @@ msgid ""
 "IPTC tags."
 msgstr ""
 "<p>Po zapnutí tejto voľby sa bude ukladať dátum a čas obrázka do štítkov "
-"EXIF a IPTC."
+"EXIF a IPTC.</p>"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:80
 #, kde-format
@@ -66726,7 +66730,7 @@ msgid ""
 msgstr ""
 "<p>Po zapnutí tejto voľby sa bude štandardná identita fotografa ukladať do "
 "štítkov IPTC. Túto hodnotu môžete nastaviť na záložke Identita v "
-"Nastaveniach."
+"Nastaveniach.</p>"
 
 #: core/utilities/setup/metadata/setupmetadata_behavior.cpp:85
 #, kde-format
@@ -67623,7 +67627,7 @@ msgstr "Potvrdzovať &trvalé odstránenie položiek"
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:75
 #, kde-format
 msgid "Do not confirm when applying changes in the &right sidebar"
-msgstr "Ne&potvrdzovať použitie zmien v p&ravom postrannom paneli"
+msgstr "Ne&potvrdzovať použitie zmien v pravom postrannom paneli"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:76
 #, kde-format
@@ -68342,7 +68346,7 @@ msgstr "Názov albumu"
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:111
 #, kde-format
 msgid "Set this option to display the album name."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu.</p>"
 
 #: core/utilities/setup/tooltip/setuptooltip_album.cpp:32
 #, kde-format
@@ -68382,7 +68386,7 @@ msgstr "Titulok albumu"
 #: core/utilities/setup/tooltip/setuptooltip_album.cpp:42
 #, kde-format
 msgid "Set this option to display the album caption."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie titulku albumu."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie titulku albumu.</p>"
 
 #: core/utilities/setup/tooltip/setuptooltip_album.cpp:44
 #, kde-format
@@ -68411,7 +68415,7 @@ msgid ""
 "icon-view or thumb-bar item."
 msgstr ""
 "<p>Ak je táto voľba zapnutá, budú sa zobrazovať informácie o obrázku keď "
-"podržíte kurzor myši nad položkou albumu."
+"podržíte kurzor myši nad položkou albumu.</p>"
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:28
 #, kde-format
@@ -68536,7 +68540,7 @@ msgstr "Štítky obrázkov"
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:123
 #, kde-format
 msgid "Set this option to display the image pick, color, rating labels."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie hodnotenia obrázka."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie hodnotenia obrázka.</p>"
 
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:135
 #, kde-format
@@ -68597,7 +68601,7 @@ msgstr "Názov položky"
 #: core/utilities/setup/tooltip/setuptooltip_import.cpp:30
 #, kde-format
 msgid "Set this option to display the item name."
-msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu."
+msgstr "<p>Zapnite túto voľbu pre zobrazenie názvu albumu.</p>"
 
 #: core/utilities/setup/tooltip/setuptooltip_import.cpp:32
 #, kde-format
@@ -68637,7 +68641,7 @@ msgstr "Rozmery položky"
 #: core/utilities/setup/tooltip/setuptooltip_import.cpp:42
 #, kde-format
 msgid "Set this option to display the item dimensions."
-msgstr "<p>Zapnutím tejto voľby zobrazíte rozmery položky."
+msgstr "<p>Zapnutím tejto voľby zobrazíte rozmery položky.</p>"
 
 #: core/utilities/setup/tooltip/setuptooltip_import.cpp:45
 #, kde-format
@@ -68728,27 +68732,27 @@ msgstr "Survey"
 #~ msgid ""
 #~ "Queue Manager: add new tool to assign pick label automatically by parsing "
 #~ "image quality."
-#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie.</p>"
 
 #, fuzzy
 #~ msgid ""
 #~ "Queue Manager: add new tool to assign rating, pick, and color labels in "
 #~ "batch."
-#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie.</p>"
 
 #, fuzzy
 #~ msgid "Queue Manager: add new tool to assign titles and captions in batch."
-#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie.</p>"
 
 #, fuzzy
 #~ msgid "Queue Manager: add new tool to run G'MIC filters in batch."
-#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie.</p>"
 
 #, fuzzy
 #~ msgid ""
 #~ "Queue Manager: add new tool to perform auto-rotation based on content "
 #~ "analysis using DNN."
-#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie."
+#~ msgstr "<p>Touto voľbou zapnete automatické nastavenie orientácie.</p>"
 
 #~ msgid "Pan the image to a region"
 #~ msgstr "Posunúť obrázok na oblasť"

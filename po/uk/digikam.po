@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:41+0000\n"
+"POT-Creation-Date: 2026-05-05 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 08:22+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1045,7 +1045,7 @@ msgstr "Дата:"
 #: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:194
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -5571,15 +5571,15 @@ msgid "Same as input"
 msgstr "Збігається з вхідним"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:98
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -9703,7 +9703,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "Параметри зображення"
@@ -12102,7 +12102,7 @@ msgid "Saving changes -"
 msgstr "Збереження змін —"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -15082,8 +15082,8 @@ msgid "Select here the envelope priority."
 msgstr "Тут ви можете вибрати пріоритет обгортки."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "Формат:"
@@ -18167,49 +18167,49 @@ msgstr "Відкриваємо галерею у типовій програмі
 msgid "Opening gallery with internal browser..."
 msgstr "Відкриваємо галерею у вбудованому засобі перегляду…"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:73
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "Властивості повного зображення:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:78
 #, kde-format
 msgid "Save image"
 msgstr "Зберегти зображення"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPG"
 msgstr "JPG"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:180
 #, kde-format
 msgid "Quality:"
 msgstr "Якість:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:115
 #, kde-format
 msgid "Max size:"
 msgstr "Макс. розмір:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:137
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "Включити повноформатні вихідні зображення для отримання"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:151
 #, kde-format
 msgid "Use original image"
 msgstr "Використовувати вихідне зображення"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:159
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "Властивості мініатюри:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:208
 #, kde-format
 msgid "Square thumbnails"
 msgstr "Квадратні мініатюри"
@@ -18249,19 +18249,19 @@ msgstr "&Виберіть спосіб позначення зображень:"
 msgid "Images"
 msgstr "Зображення"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:67
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "Назва галереї:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:77
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "Тека призначення:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
@@ -18270,31 +18270,31 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "Тека призначення"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "Відкрити у переглядачі:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "Жодного"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "Вбудований"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:95
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "Типовий зі стільниці"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:64
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
@@ -18303,61 +18303,61 @@ msgstr ""
 "На цій сторінці ви можете змінити деякі з параметрів теми. Залежно від теми, "
 "доступними будуть різні групи параметрів."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:142
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1:"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:144
 #, kde-format
 msgid "can be customized"
 msgstr "можна налаштувати"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:145
 #, kde-format
 msgid "no customization available"
 msgstr "немає налаштувань"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:148
 #, kde-format
 msgid "Author: %1<br><br>"
 msgstr "Автор: %1<br><br>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "Створення HTML-галереї"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "Вітаємо у засобі створення галерей HTML"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr "Вибір записів"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Theme Selection"
 msgstr "Вибір теми"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr "Параметри теми"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "Параметри виведення"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, kde-format
 msgid "Generating Gallery"
 msgstr "Створення галереї"
@@ -22011,25 +22011,25 @@ msgstr "Слайд:"
 msgid "Soundtrack:"
 msgstr "Звукова доріжка:"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:179
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 — %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:200
 #, kde-format
 msgid "No detail available"
 msgstr "Немає доступу до подробиць"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 може бути непридатним для відтворення."
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "Цей файл можете бути непридатним для відтворення."

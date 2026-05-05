@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-04 00:41+0000\n"
+"POT-Creation-Date: 2026-05-05 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -998,7 +998,7 @@ msgstr "日期："
 #: core/app/items/utils/tooltipfiller.cpp:96
 #: core/dplugins/bqm/transform/crop/crop.cpp:103
 #: core/dplugins/editor/transform/ratiocrop/ratiocroptool.cpp:304
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:192
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:194
 #: core/showfoto/thumbbar/showfototooltipfiller.cpp:77
 #: core/utilities/import/items/importtooltipfiller.cpp:73
 #, kde-format
@@ -5315,15 +5315,15 @@ msgid "Same as input"
 msgstr "与输入文件一致"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
 #: core/dplugins/bqm/custom/userscript/userscript.cpp:98
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
@@ -9130,7 +9130,7 @@ msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PrintOptionsPage)
 #: core/dplugins/editor/file/print/printoptionspage.ui:14
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
 #, kde-format
 msgid "Image Settings"
 msgstr "图像设置"
@@ -11387,7 +11387,7 @@ msgid "Saving changes -"
 msgstr "正在保存更改 -"
 
 #: core/dplugins/generic/metadata/geolocationedit/dialog/geolocationedit.cpp:975
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:231
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.cpp:382
 #: core/dplugins/generic/webservices/box/boxtalker.cpp:372
 #: core/dplugins/generic/webservices/box/boxwindow.cpp:239
@@ -14245,8 +14245,8 @@ msgid "Select here the envelope priority."
 msgstr "在此选择信封的优先级。"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:82
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:163
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "格式："
@@ -17216,49 +17216,49 @@ msgstr "使用默认桌面浏览器打开相册..."
 msgid "Opening gallery with internal browser..."
 msgstr "使用内建浏览器打开相册..."
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:71
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:73
 #, kde-format
 msgid "Full Image Properties:"
 msgstr "完整图像属性："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:76
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:78
 #, kde-format
 msgid "Save image"
 msgstr "保存图像"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:87
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:168
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:170
 #, kde-format
 msgid "JPG"
 msgstr "JPG"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:97
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:178
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:99
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:180
 #, kde-format
 msgid "Quality:"
 msgstr "画质："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:113
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:115
 #, kde-format
 msgid "Max size:"
 msgstr "最大尺寸："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:135
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:137
 #, kde-format
 msgid "Include full-size original images for download"
 msgstr "包含全尺寸图像以供下载"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:149
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:151
 #, kde-format
 msgid "Use original image"
 msgstr "使用原始图像"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:157
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:159
 #, kde-format
 msgid "Thumbnail Properties:"
 msgstr "缩略图属性："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:206
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:208
 #, kde-format
 msgid "Square thumbnails"
 msgstr "方形缩略图"
@@ -17296,19 +17296,19 @@ msgstr "图像选择方式(&C)："
 msgid "Images"
 msgstr "图像"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:67
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:69
 #, kde-format
 msgctxt "@label"
 msgid "Gallery Title:"
 msgstr "相册标题："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:77
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:79
 #, kde-format
 msgctxt "@label"
 msgid "Destination folder:"
 msgstr "目标文件夹："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:82
 #: core/dplugins/generic/tools/printcreator/wizard/advprintoutputpage.cpp:101
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:272
 #: core/libs/dplugins/iface/dmetainfoiface.cpp:277
@@ -17317,92 +17317,92 @@ msgctxt "@title:window"
 msgid "Destination Folder"
 msgstr "目标文件夹"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:89
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
 #, kde-format
 msgctxt "@label"
 msgid "Open in Browser:"
 msgstr "在浏览器中打开："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:91
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "None"
 msgstr "无"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:92
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:94
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Internal"
 msgstr "内建"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:93
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmloutputpage.cpp:95
 #, kde-format
 msgctxt "@item: open in browser"
 msgid "Default from Desktop"
 msgstr "系统默认浏览器"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:64
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:66
 #, kde-format
 msgid ""
 "In this page, you can change some theme parameters. Depending on the theme, "
 "different parameters are available."
 msgstr "您可以在本页面中更改主题的参数。不同的主题具有不同的参数可供调整。"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:140
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlparameterspage.cpp:142
 #, kde-format
 msgctxt "'%1' is a label for a theme parameter"
 msgid "%1:"
 msgstr "%1："
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:142
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:144
 #, kde-format
 msgid "can be customized"
 msgstr "可自定义"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:143
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:145
 #, kde-format
 msgid "no customization available"
 msgstr "没有可用的自定义选项"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:146
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlthemepage.cpp:148
 #, kde-format
 msgid "Author: %1<br><br>"
 msgstr "作者：%1<br><br>"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:74
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Create HTML Gallery"
 msgstr "创建 HTML 相册"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:79
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
 #, kde-format
 msgid "Welcome to HTML Gallery Tool"
 msgstr "欢迎使用 HTML 相册制作工具"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:80
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumwizard.cpp:77
 #, kde-format
 msgid "Items Selection"
 msgstr "项目选择"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:81
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:83
 #, kde-format
 msgid "Theme Selection"
 msgstr "主题选择"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:82
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
 #, kde-format
 msgid "Theme Parameters"
 msgstr "主题参数"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:84
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:86
 #: core/dplugins/generic/tools/videoslideshow/vidslidewizard.cpp:81
 #, kde-format
 msgid "Output Settings"
 msgstr "输出设置"
 
-#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:85
+#: core/dplugins/generic/tools/htmlgallery/wizard/htmlwizard.cpp:87
 #, kde-format
 msgid "Generating Gallery"
 msgstr "正在生成相册"
@@ -20859,25 +20859,25 @@ msgstr "幻灯片："
 msgid "Soundtrack:"
 msgstr "音轨："
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:178
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:220
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:179
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:221
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:242
 #, kde-format
 msgctxt "artist - title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:199
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:200
 #, kde-format
 msgid "No detail available"
 msgstr "没有可用的详情"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:232
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:233
 #, kde-format
 msgid "%1 may not be playable."
 msgstr "%1 可能无法播放。"
 
-#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:240
+#: core/dplugins/generic/view/presentation/audio/presentationaudiolist.cpp:241
 #, kde-format
 msgid "This file may not be playable."
 msgstr "此文件可能无法播放。"
