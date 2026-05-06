@@ -93,8 +93,6 @@ class GeoDataPolygon;
     coordinates get filtered according to the viewport resolution:
     If the object is much smaller than a pixel then it won't get drawn at all.
 */
-
-
 class DIGIKAM_EXPORT GeoPainter : public ClipPainter
 {
 public:
@@ -106,6 +104,8 @@ public:
     };
 
     Q_DECLARE_FLAGS(Frames, Frame)
+
+public:
 
     /*!
         @brief Creates a new geo painter.

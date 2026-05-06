@@ -37,9 +37,11 @@ class Q_DECL_HIDDEN GeoPainterPrivate
 public:
 
     GeoPainterPrivate(GeoPainter* q, const ViewportParams* viewport, MapQuality mapQuality);
-
     ~GeoPainterPrivate();
 
+    void drawTextRotated(const QPointF& startPoint, qreal angle, const QString& text);
+
+public:
 
     static void createAnnotationLayout(qreal x, qreal y,
                                        const QSizeF& bubbleSize,
@@ -54,8 +56,6 @@ public:
 
     static qreal normalizeAngle(qreal angle);
 
-    void drawTextRotated(const QPointF& startPoint, qreal angle, const QString& text);
-
 public:
 
     const ViewportParams* const m_viewport      = nullptr;
@@ -65,6 +65,12 @@ public:
 private:
 
     GeoPainter* m_parent                        = nullptr;
+
+private:
+
+    GeoPainterPrivate(const GeoPainterPrivate&)            = delete;
+    GeoPainterPrivate& operator=(const GeoPainterPrivate&) = delete;
+
 };
 
 } // namespace Marble
