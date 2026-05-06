@@ -120,7 +120,7 @@ BUGFIXES:
 092 --> 519390 - DB: ImageTagProperties.property should be VARCHAR, not TEXT -- TEXT prevents histogram stats and forces wrong query plans.
 093 --> 519443 - [master Qt6] UpdateSchemaFromV16ToV17 not implemented for QMYSQL / MariaDB.
 094 --> 519650 - The program closes suddenly when opening geotag dialog.
-095 --> 
+095 --> 519854 - Album (sorted by folder)->Refresh does not include sub-folders in specified album.
 096 --> 
 097 --> 
 098 --> 
