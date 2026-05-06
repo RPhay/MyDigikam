@@ -61,7 +61,6 @@ void GeoGraphicsItem::setFlag(GeoGraphicsItemFlag flag, bool enabled)
     {
         d->m_flags = d->m_flags | flag;
     }
-
     else
     {
         d->m_flags = d->m_flags & ~flag;
@@ -84,6 +83,7 @@ void GeoGraphicsItem::setHighlightStyle(const GeoDataStyle::ConstPtr& highlightS
      * Delete any previously set style
      * and assign the new style highlightStyle
      */
+
     d->m_highlightStyle = highlightStyle;
 }
 
@@ -93,6 +93,7 @@ GeoDataStyle::ConstPtr GeoGraphicsItem::style() const
      * m_isHighlight is set true when the item is
      * supposed to be colored highlighted
      */
+
     if (d->m_highlighted && d->m_highlightStyle)
     {
         return d->m_highlightStyle;
@@ -109,13 +110,13 @@ GeoDataStyle::ConstPtr GeoGraphicsItem::style() const
                 if (relation->isVisible())
                 {
                     styling.relation = relation;
+
                     break;
                 }
             }
 
             d->m_style = d->m_styleBuilder->createStyle(styling);
         }
-
         else
         {
             d->m_style = d->m_feature->style();
@@ -133,6 +134,7 @@ void GeoGraphicsItem::setStyleBuilder(const StyleBuilder* styleBuilder)
 void GeoGraphicsItem::resetStyle()
 {
     d->m_style = GeoDataStyle::ConstPtr();
+
     handleRelationUpdate(d->m_relations);
 }
 
@@ -171,7 +173,7 @@ void GeoGraphicsItem::setRenderContext(const RenderContext& renderContext)
     if (renderContext != d->m_renderContext)
     {
         d->m_renderContext = renderContext;
-        d->m_style = GeoDataStyle::ConstPtr();
+        d->m_style         = GeoDataStyle::ConstPtr();
     }
 }
 
@@ -184,11 +186,13 @@ void GeoGraphicsItem::setRelations(const QSet<const GeoDataRelation*>& relations
 {
     d->m_relations.clear();
     std::copy(relations.begin(), relations.end(), std::back_inserter(d->m_relations));
+
     std::sort(d->m_relations.begin(), d->m_relations.end(),
-              [](const GeoDataRelation * a, const GeoDataRelation * b)
-    {
-        return *a < *b;
-    });
+              [](const GeoDataRelation* a, const GeoDataRelation* b)
+        {
+            return (*a < *b);
+        }
+    );
 
     d->m_style = GeoDataStyle::ConstPtr();
     handleRelationUpdate(d->m_relations);
@@ -226,18 +230,18 @@ bool GeoGraphicsItem::zValueAndStyleLessThan(GeoGraphicsItem* one, GeoGraphicsIt
         return reinterpret_cast<quint64>(one->d->m_style.data()) < reinterpret_cast<quint64>(two->d->m_style.data());
     }
 
-    return one->d->m_zValue < two->d->m_zValue;
+    return (one->d->m_zValue < two->d->m_zValue);
 }
 
 
 bool RenderContext::operator==(const RenderContext& other) const
 {
-    return m_tileLevel == other.m_tileLevel;
+    return (m_tileLevel == other.m_tileLevel);
 }
 
 bool RenderContext::operator!=(const RenderContext& other) const
 {
-    return !operator==(other);
+    return (!operator==(other));
 }
 
 int RenderContext::tileLevel() const
@@ -245,8 +249,8 @@ int RenderContext::tileLevel() const
     return m_tileLevel;
 }
 
-RenderContext::RenderContext(int tileLevel) :
-    m_tileLevel(tileLevel)
+RenderContext::RenderContext(int tileLevel)
+    : m_tileLevel(tileLevel)
 {
     // nothing to do
 }

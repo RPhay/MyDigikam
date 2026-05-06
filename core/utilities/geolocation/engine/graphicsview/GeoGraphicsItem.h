@@ -47,15 +47,12 @@ public:
 
 private:
 
-    int m_tileLevel;
+    int m_tileLevel = -1;
 };
 
 class DIGIKAM_EXPORT GeoGraphicsItem
 {
 public:
-
-    explicit GeoGraphicsItem(const GeoDataFeature* feature);
-    virtual ~GeoGraphicsItem();
 
     enum GeoGraphicsItemFlag
     {
@@ -66,7 +63,13 @@ public:
     };
     Q_DECLARE_FLAGS(GeoGraphicsItemFlags, GeoGraphicsItemFlag)
 
-    bool visible() const;
+public:
+
+    explicit GeoGraphicsItem(const GeoDataFeature* feature);
+    virtual ~GeoGraphicsItem();
+
+
+    bool visible()                                                                          const;
 
     void setVisible(bool visible);
 
@@ -74,7 +77,7 @@ public:
      * Get the GeoGraphicItemFlags value that describes which flags are set on
      * this item. @see QFlags
      */
-    GeoGraphicsItemFlags flags() const;
+    GeoGraphicsItemFlags flags()                                                            const;
 
     /**
      * Set or unset a single flag
@@ -92,7 +95,7 @@ public:
     /**
      * Returns the minim zoom level on which item will be active.
      */
-    int minZoomLevel() const;
+    int minZoomLevel()                                                                      const;
 
     /**
      * Sets the minimum zoom level
@@ -102,17 +105,17 @@ public:
     /**
      * Returns the placemark for that item.
      */
-    const GeoDataFeature* feature() const;
+    const GeoDataFeature* feature()                                                         const;
 
     /**
      * Returns the bounding box covered by the item.
      */
-    virtual const GeoDataLatLonAltBox& latLonAltBox() const = 0;
+    virtual const GeoDataLatLonAltBox& latLonAltBox()                                       const = 0;
 
     /**
      * Returns the style of item.
      */
-    GeoDataStyle::ConstPtr style() const;
+    GeoDataStyle::ConstPtr style()                                                          const;
 
     /**
      * Set the style for the item.
@@ -132,7 +135,7 @@ public:
     /**
      * Returns the z value of the item
      */
-    qreal zValue() const;
+    qreal zValue()                                                                          const;
 
     /**
      * Set the z value of the item
@@ -149,25 +152,27 @@ public:
      * Note that depending on the projection and zoom level, the item may be visible more than once,
      * which is taken care of by GeoPainter.
      */
-    virtual void paint(GeoPainter* painter, const ViewportParams* viewport, const QString& layer, int tileZoomLevel) = 0;
+    virtual void paint(GeoPainter* painter,
+                       const ViewportParams* viewport,
+                       const QString& layer,
+                       int tileZoomLevel) = 0;
 
     void setHighlighted(bool highlight);
 
-    bool isHighlighted() const;
+    bool isHighlighted()                                                                    const;
 
-    QStringList paintLayers() const;
+    QStringList paintLayers()                                                               const;
 
     void setPaintLayers(const QStringList& paintLayers);
 
     void setRenderContext(const RenderContext& renderContext);
 
     /**
-     * @brief contains Returns true if the item contains the given coordinates
+     * @brief Returns true if the item contains the given coordinates
      * @param screenPosition
      * @param viewport
-     * @return
      */
-    virtual bool contains(const QPoint& screenPosition, const ViewportParams* viewport) const;
+    virtual bool contains(const QPoint& screenPosition, const ViewportParams* viewport)     const;
 
     void setRelations(const QSet<const GeoDataRelation*>& relations);
 
@@ -178,6 +183,11 @@ protected:
 protected:
 
     GeoGraphicsItemPrivate* const d = nullptr;
+
+private:
+
+    GeoGraphicsItem(const GeoGraphicsItem&)            = delete;
+    GeoGraphicsItem& operator=(const GeoGraphicsItem&) = delete;
 };
 
 } // Namespace Marble

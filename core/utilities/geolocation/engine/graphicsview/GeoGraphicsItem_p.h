@@ -34,11 +34,11 @@ class Q_DECL_HIDDEN GeoGraphicsItemPrivate
 public:
 
     explicit GeoGraphicsItemPrivate(const GeoDataFeature* feature)
-        : m_zValue(0),
+        : m_zValue      (0.0),
           m_minZoomLevel(0),
-          m_feature(feature),
+          m_feature     (feature),
           m_styleBuilder(nullptr),
-          m_highlighted(false)
+          m_highlighted (false)
     {
     }
 
@@ -48,10 +48,10 @@ public:
 
 public:
 
-    qreal                                   m_zValue;
+    qreal                                   m_zValue              = 0.0;
     GeoGraphicsItem::GeoGraphicsItemFlags   m_flags;
 
-    int                                     m_minZoomLevel;
+    int                                     m_minZoomLevel        = 0;
     const GeoDataFeature*                   m_feature             = nullptr;
     RenderContext                           m_renderContext;
     GeoDataStyle::ConstPtr                  m_style;
@@ -61,7 +61,7 @@ public:
     QStringList                             m_paintLayers;
 
     // To highlight a placemark
-    bool                                    m_highlighted;
+    bool                                    m_highlighted         = false;
     GeoDataStyle::ConstPtr                  m_highlightStyle;
 };
 
