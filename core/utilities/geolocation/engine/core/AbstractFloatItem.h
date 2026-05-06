@@ -49,7 +49,8 @@ class AbstractFloatItemPrivate;
  *
  */
 
-class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin, public FrameGraphicsItem
+class DIGIKAM_EXPORT AbstractFloatItem : public RenderPlugin,
+                                         public FrameGraphicsItem
 {
     Q_OBJECT
 

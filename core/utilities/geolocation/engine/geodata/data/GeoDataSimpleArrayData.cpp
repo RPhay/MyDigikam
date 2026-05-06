@@ -31,11 +31,12 @@ namespace Marble
 class Q_DECL_HIDDEN GeoDataSimpleArrayDataPrivate
 {
 public:
+
     GeoDataSimpleArrayDataPrivate()
     {
     }
 
-    QList< QVariant > m_values;
+    QList<QVariant> m_values;
 };
 
 GeoDataSimpleArrayData::GeoDataSimpleArrayData()
@@ -44,13 +45,14 @@ GeoDataSimpleArrayData::GeoDataSimpleArrayData()
 }
 
 GeoDataSimpleArrayData::GeoDataSimpleArrayData(const GeoDataSimpleArrayData& other)
-    : GeoDataObject(other), d(new GeoDataSimpleArrayDataPrivate(*other.d))
+    : GeoDataObject(other),
+      d            (new GeoDataSimpleArrayDataPrivate(*other.d))
 {
 }
 
 bool GeoDataSimpleArrayData::operator==(const GeoDataSimpleArrayData& other) const
 {
-    return equals(other) && d->m_values == other.d->m_values;
+    return (equals(other) && (d->m_values == other.d->m_values));
 }
 
 bool GeoDataSimpleArrayData::operator!=(const GeoDataSimpleArrayData& other) const
@@ -82,7 +84,6 @@ void GeoDataSimpleArrayData::append(const QVariant& value)
 {
     d->m_values.append(value);
 }
-
 
 const char* GeoDataSimpleArrayData::nodeType() const
 {

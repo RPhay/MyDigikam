@@ -108,7 +108,7 @@ public:
 
 private:
 
-    MarbleWidget* const m_widget;
+    MarbleWidget* const m_widget = nullptr;
 };
 
 class Q_DECL_HIDDEN MarbleWidgetPrivate
@@ -116,16 +116,16 @@ class Q_DECL_HIDDEN MarbleWidgetPrivate
 public:
 
     explicit MarbleWidgetPrivate(MarbleWidget* parent)
-        : m_widget(parent),
-          m_model(),
-          m_map(&m_model),
-          m_presenter(&m_map),
-          m_inputhandler(nullptr),
-          m_mapInfoDialog(nullptr),
-          m_customPaintLayer(parent),
-          m_popupmenu(nullptr),
-          m_showFrameRate(false),
-          configGroup(QLatin1String("Marble Settings"))
+        : m_widget                  (parent),
+          m_model                   (),
+          m_map                     (&m_model),
+          m_presenter               (&m_map),
+          m_inputhandler            (nullptr),
+          m_mapInfoDialog           (nullptr),
+          m_customPaintLayer        (parent),
+          m_popupmenu               (nullptr),
+          m_showFrameRate           (false),
+          configGroup               (QLatin1String("Marble Settings"))
     {
     }
 
@@ -133,9 +133,12 @@ public:
     {
         m_map.removeLayer(&m_customPaintLayer);
         m_map.removeLayer(m_mapInfoDialog);
+
         delete m_mapInfoDialog;
         delete m_popupmenu;
     }
+
+public:
 
     void  construct();
 
@@ -151,6 +154,8 @@ public:
       * method sets the widget flags accordingly and triggers a repaint.
       */
     void updateSystemBackgroundAttribute();
+
+public:
 
     MarbleWidget* const             m_widget        = nullptr;
 
@@ -169,15 +174,20 @@ public:
     bool                            m_showFrameRate;
 
     const QString                   configGroup;
+
+private:
+
+    MarbleWidgetPrivate(const MarbleWidgetPrivate&)            = delete;
+    MarbleWidgetPrivate& operator=(const MarbleWidgetPrivate&) = delete;
 };
 
 MarbleWidget::MarbleWidget(QWidget* parent)
     : QWidget(parent),
-      d(new MarbleWidgetPrivate(this))
+      d      (new MarbleWidgetPrivate(this))
 {
     d->construct();
 
-    //    MarbleDirs::debug();
+    //MarbleDirs::debug();
 }
 
 MarbleWidget::~MarbleWidget()
@@ -278,7 +288,7 @@ void MarbleWidgetPrivate::construct()
     m_widget->connect(&m_model, SIGNAL(creatingTilesStart(TileCreator*,QString,QString)),
                       m_widget, SLOT(creatingTilesStart(TileCreator*,QString,QString)));
 
-    m_popupmenu = new MarbleWidgetPopupMenu(m_widget, &m_model);
+    m_popupmenu     = new MarbleWidgetPopupMenu(m_widget, &m_model);
 
     m_mapInfoDialog = new PopupLayer(m_widget, m_widget);
     m_mapInfoDialog->setVisible(false);
@@ -326,7 +336,7 @@ void MarbleWidgetPrivate::updateSystemBackgroundAttribute()
     // We only have to repaint the background every time if the earth
     // doesn't cover the whole image.
 
-    const bool isOn = m_map.viewport()->mapCoversViewport() && !m_model.mapThemeId().isEmpty();
+    const bool isOn = (m_map.viewport()->mapCoversViewport() && !m_model.mapThemeId().isEmpty());
     m_widget->setAttribute(Qt::WA_NoSystemBackground, isOn);
 }
 
@@ -577,7 +587,6 @@ quint64 MarbleWidget::volatileTileCacheLimit() const
     return d->m_map.volatileTileCacheLimit();
 }
 
-
 void MarbleWidget::setZoom(int newZoom, FlyToMode mode)
 {
     d->m_inputhandler->stopInertialEarthRotation();
@@ -761,8 +770,8 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
         // RGB32 as there are no translucent areas involved.
 
         QImage::Format imageFormat = (d->m_map.viewport()->mapCoversViewport())
-                                     ? QImage::Format_RGB32
-                                     : QImage::Format_ARGB32_Premultiplied;
+                                         ? QImage::Format_RGB32
+                                         : QImage::Format_ARGB32_Premultiplied;
 
         // Paint to an intermediate image
 
@@ -789,7 +798,7 @@ void MarbleWidget::paintEvent(QPaintEvent* evt)
         for (int i = 0 ; i < image.width()*image.height() ; ++i, ++pixel)
         {
             int gray = qGray(*pixel);
-            *pixel = qRgb(gray, gray, gray);
+            *pixel   = qRgb(gray, gray, gray);
         }
 
         QPainter widgetPainter(this);
@@ -887,7 +896,9 @@ void MarbleWidget::setShowCityLights(bool visible)
 
 void MarbleWidget::setLockToSubSolarPoint(bool visible)
 {
-    if (d->m_map.isLockedToSubSolarPoint() != visible)     // Toggling input modifies event filters, so avoid that if not needed
+    // Toggling input modifies event filters, so avoid that if not needed
+
+    if (d->m_map.isLockedToSubSolarPoint() != visible)
     {
         d->m_map.setLockToSubSolarPoint(visible);
         setInputEnabled(!d->m_map.isLockedToSubSolarPoint());
@@ -1158,7 +1169,6 @@ void MarbleWidget::setInputEnabled(bool enabled)
         {
             d->setInputHandler();
         }
-
         else
         {
             installEventFilter(d->m_inputhandler);

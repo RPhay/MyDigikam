@@ -64,6 +64,10 @@ public:
 
 private:
 
+    GeoDataSimpleArrayData& operator=(const GeoDataSimpleArrayData&) = delete;
+
+private:
+
     GeoDataSimpleArrayDataPrivate* d = nullptr;
 };
 

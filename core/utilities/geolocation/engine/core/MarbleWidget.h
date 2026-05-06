@@ -64,14 +64,14 @@ class StyleBuilder;
  * @short A widget class that displays a view of the earth.
  *
  * This widget displays a view of the earth or any other globe,
- * depending on which dataset is used.  The user can navigate the
+ * depending on which dataset is used. The user can navigate the
  * globe using either a control widget, e.g. the mouse.
  * The mouse and keyboard control is done through a
  * MarbleWidgetInputHandler. Only some aspects of the widget can be
  * controlled by the mouse and/or keyboard.
  *
  * By clicking on the globe and moving the mouse, the position can be
- * changed.  The user can also zoom by using the scroll wheel of the
+ * changed. The user can also zoom by using the scroll wheel of the
  * mouse in the widget. The zoom value is not tied to any units, but
  * is an abstract value without any physical meaning. A value around
  * 1000 shows the full globe in a normal-sized window. Higher zoom
@@ -153,8 +153,7 @@ public:
      * @param parent the parent widget
      *
      * This constructor should be used when you will only use one
-     * MarbleWidget.  The widget will create its own MarbleModel when
-     * created.
+     * MarbleWidget. The widget will create its own MarbleModel when created.
      */
     explicit MarbleWidget(QWidget* parent = nullptr);
 
@@ -247,9 +246,6 @@ public:
 
     PopupLayer* popupLayer();
 
-    /**
-     * @since 0.26.0
-     */
     const StyleBuilder* styleBuilder() const;
 
     /**
@@ -272,6 +268,7 @@ public:
      * that specifies the theme:
      *
      * Example:
+     *
      *    mapThemeId = "earth/bluemarble/bluemarble.dgml"
      */
     QString mapThemeId() const;
@@ -282,7 +279,7 @@ public:
     QRegion mapRegion() const;
 
     /**
-     * @brief  Return the radius of the globe in pixels.
+     * @brief Return the radius of the globe in pixels.
      */
     int radius() const;
 
@@ -359,7 +356,7 @@ public:
     qreal heading() const;
 
     /**
-     * @brief  Return how much the map will move if one of the move slots are called.
+     * @brief Return how much the map will move if one of the move slots are called.
      * @return The move step.
      */
     qreal moveStep() const;
@@ -423,127 +420,127 @@ public:
     //@{
 
     /**
-     * @brief  Return whether the overview map is visible.
+     * @brief Return whether the overview map is visible.
      * @return The overview map visibility.
      */
     bool showOverviewMap() const;
 
     /**
-     * @brief  Return whether the scale bar is visible.
+     * @brief Return whether the scale bar is visible.
      * @return The scale bar visibility.
      */
     bool showScaleBar() const;
 
     /**
-     * @brief  Return whether the compass bar is visible.
+     * @brief Return whether the compass bar is visible.
      * @return The compass visibility.
      */
     bool showCompass() const;
 
     /**
-     * @brief  Return whether the cloud cover is visible.
+     * @brief Return whether the cloud cover is visible.
      * @return The cloud cover visibility.
      */
     bool showClouds() const;
 
     /**
-     * @brief  Return whether the night shadow is visible.
+     * @brief Return whether the night shadow is visible.
      * @return visibility of night shadow
      */
     bool showSunShading() const;
 
     /**
-     * @brief  Return whether the city lights are shown instead of the night shadow.
+     * @brief Return whether the city lights are shown instead of the night shadow.
      * @return visibility of city lights
      */
     bool showCityLights() const;
 
     /**
-     * @brief  Return whether the globe is locked to the sub solar point
+     * @brief Return whether the globe is locked to the sub solar point
      * @return if globe is locked to sub solar point
      */
     bool isLockedToSubSolarPoint() const;
 
     /**
-     * @brief  Return whether the sun icon is shown in the sub solar point.
+     * @brief Return whether the sun icon is shown in the sub solar point.
      * @return visibility of the sun icon in the sub solar point
      */
     bool isSubSolarPointIconVisible() const;
 
     /**
-     * @brief  Return whether the atmospheric glow is visible.
+     * @brief Return whether the atmospheric glow is visible.
      * @return The cloud cover visibility.
      */
     bool showAtmosphere() const;
 
     /**
-     * @brief  Return whether the crosshairs are visible.
+     * @brief Return whether the crosshairs are visible.
      * @return The crosshairs' visibility.
      */
     bool showCrosshairs() const;
 
     /**
-     * @brief  Return whether the coordinate grid is visible.
+     * @brief Return whether the coordinate grid is visible.
      * @return The coordinate grid visibility.
      */
     bool showGrid() const;
 
     /**
-     * @brief  Return whether the place marks are visible.
+     * @brief Return whether the place marks are visible.
      * @return The place mark visibility.
      */
     bool showPlaces() const;
 
     /**
-     * @brief  Return whether the city place marks are visible.
+     * @brief Return whether the city place marks are visible.
      * @return The city place mark visibility.
      */
     bool showCities() const;
 
     /**
-     * @brief  Return whether the terrain place marks are visible.
+     * @brief Return whether the terrain place marks are visible.
      * @return The terrain place mark visibility.
      */
     bool showTerrain() const;
 
     /**
-     * @brief  Return whether other places are visible.
+     * @brief Return whether other places are visible.
      * @return The visibility of other places.
      */
     bool showOtherPlaces() const;
 
     /**
-     * @brief  Return whether the relief is visible.
+     * @brief Return whether the relief is visible.
      * @return The relief visibility.
      */
     bool showRelief() const;
 
     /**
-     * @brief  Return whether the ice layer is visible.
+     * @brief Return whether the ice layer is visible.
      * @return The ice layer visibility.
      */
     bool showIceLayer() const;
 
     /**
-     * @brief  Return whether the borders are visible.
+     * @brief Return whether the borders are visible.
      * @return The border visibility.
      */
     bool showBorders() const;
 
     /**
-     * @brief  Return whether the rivers are visible.
+     * @brief Return whether the rivers are visible.
      * @return The rivers' visibility.
      */
     bool showRivers() const;
 
     /**
-     * @brief  Return whether the lakes are visible.
+     * @brief Return whether the lakes are visible.
      * @return The lakes' visibility.
      */
     bool showLakes() const;
 
     /**
-     * @brief  Return whether the frame rate gets displayed.
+     * @brief Return whether the frame rate gets displayed.
      * @return the frame rates visibility
      */
     bool showFrameRate() const;
@@ -572,7 +569,7 @@ public:
     //@{
 
     /**
-     * @brief  Returns the limit in kilobytes of the volatile (in RAM) tile cache.
+     * @brief Returns the limit in kilobytes of the volatile (in RAM) tile cache.
      * @return the limit of volatile tile cache
      */
     quint64 volatileTileCacheLimit() const;
@@ -583,7 +580,7 @@ public:
     //@{
 
     /**
-     * @brief  Return a QPixmap with the current contents of the widget.
+     * @brief Return a QPixmap with the current contents of the widget.
      */
     QPixmap mapScreenShot();
 
@@ -591,7 +588,7 @@ public:
 
     /// @todo Enable this instead of the zoomView slot below for proper deprecation warnings
     /// around Marble 1.8
-    // @deprecated Please use setZoom
+    /// @deprecated Please use setZoom
     //( void zoomView( int zoom, FlyToMode mode = Instant ) );
 
     /**
@@ -616,18 +613,18 @@ public Q_SLOTS:
     //@{
 
     /**
-     * @brief  Set the radius of the globe in pixels.
-     * @param  radius  The new globe radius value in pixels.
+     * @brief Set the radius of the globe in pixels.
+     * @param radius The new globe radius value in pixels.
      */
     void setRadius(int radius);
 
     /**
-     * @brief  Zoom the view to a certain zoomlevel
-     * @param  zoom  the new zoom level.
-     * @param  mode  the FlyToMode that will be used.
+     * @brief Zoom the view to a certain zoomlevel
+     * @param zoom the new zoom level.
+     * @param mode the FlyToMode that will be used.
      *
      * The zoom level is an abstract value without physical
-     * interpretation.  A zoom value around 1000 lets the viewer see
+     * interpretation. A zoom value around 1000 lets the viewer see
      * all of the earth in the default window.
      */
     void setZoom(int zoom, FlyToMode mode = Instant);
@@ -638,32 +635,32 @@ public Q_SLOTS:
     void zoomView(int zoom, FlyToMode mode = Instant);
 
     /**
-     * @brief  Zoom the view by a certain step
-     * @param  zoomStep  the difference between the old zoom and the new
-     * @param  mode  the FlyToMode that will be used.
+     * @brief Zoom the view by a certain step
+     * @param zoomStep  the difference between the old zoom and the new
+     * @param mode the FlyToMode that will be used.
      */
     void zoomViewBy(int zoomStep, FlyToMode mode = Instant);
 
     /**
-    * @brief  Zoom in by the amount zoomStep.
+    * @brief Zoom in by the amount zoomStep.
     */
     void zoomIn(FlyToMode mode = Automatic);
     /**
-     * @brief  Zoom out by the amount zoomStep.
+     * @brief Zoom out by the amount zoomStep.
      */
     void zoomOut(FlyToMode mode = Automatic);
 
     /**
-     * @brief  Set the distance of the observer to the globe in km.
-     * @param  distance  The new distance in km.
+     * @brief Set the distance of the observer to the globe in km.
+     * @param distance The new distance in km.
      */
     void setDistance(qreal distance);
 
     /**
-     * @brief  Rotate the view by the two angles phi and theta.
-     * @param  deltaLon  an angle that specifies the change in terms of longitude
-     * @param  deltaLat  an angle that specifies the change in terms of latitude
-     * @param  mode  the FlyToMode that will be used
+     * @brief Rotate the view by the two angles phi and theta.
+     * @param deltaLon an angle that specifies the change in terms of longitude
+     * @param deltaLat an angle that specifies the change in terms of latitude
+     * @param mode the FlyToMode that will be used
      *
      * This function rotates the view by two angles,
      * deltaLon ("theta") and deltaLat ("phi").
@@ -674,17 +671,17 @@ public Q_SLOTS:
     void rotateBy(const qreal deltaLon, const qreal deltaLat, FlyToMode mode = Instant);
 
     /**
-     * @brief  Center the view on a geographical point
-     * @param  lat  an angle in degrees parallel to the latitude lines
-     *              +90(N) - -90(S)
-     * @param  lon  an angle in degrees parallel to the longitude lines
-     *              +180(W) - -180(E)
-     * @param  animated whether to use animation
+     * @brief Center the view on a geographical point
+     * @param lat an angle in degrees parallel to the latitude lines
+     *             +90(N) - -90(S)
+     * @param lon an angle in degrees parallel to the longitude lines
+     *             +180(W) - -180(E)
+     * @param animated whether to use animation
      */
     void centerOn(const qreal lon, const qreal lat, bool animated = false);
 
     /**
-     * @brief  Center the view on a point
+     * @brief Center the view on a point
      * This method centers the Marble map on the point described by the latitude
      * and longitude in the GeoDataCoordinate parameter @c point. It also zooms
      * the map to be at the elevation described by the altitude. If this is
@@ -692,7 +689,7 @@ public Q_SLOTS:
      * then use @see centerOn(qreal, qreal, bool)
      * @param point the point in 3 dimensions above the globe to move the view
      *              to. It will always be looking vertically down.
-     * @param  animated whether to use animation
+     * @param animated whether to use animation
      */
     void centerOn(const GeoDataCoordinates& point, bool animated = false);
 
@@ -702,7 +699,7 @@ public Q_SLOTS:
      * adjusts the zoom of the marble widget so that the LatLon box provided fills
      * the viewport.
      * @param box The GeoDataLatLonBox to zoom and move the MarbleWidget to.
-     * @param  animated whether to use animation.
+     * @param animated whether to use animation.
      */
     void centerOn(const GeoDataLatLonBox& box, bool animated = false);
 
@@ -716,38 +713,38 @@ public Q_SLOTS:
     void centerOn(const GeoDataPlacemark& placemark, bool animated = false);
 
     /**
-     * @brief  Set the latitude for the center point
-     * @param  lat  the new value for the latitude in degree.
-     * @param  mode the FlyToMode that will be used.
+     * @brief Set the latitude for the center point
+     * @param lat  the new value for the latitude in degree.
+     * @param mode the FlyToMode that will be used.
      */
     void setCenterLatitude(qreal lat, FlyToMode mode = Instant);
 
     /**
-     * @brief  Set the longitude for the center point
-     * @param  lon  the new value for the longitude in degree.
-     * @param  mode the FlyToMode that will be used.
+     * @brief Set the longitude for the center point
+     * @param lon  the new value for the longitude in degree.
+     * @param mode the FlyToMode that will be used.
      */
     void setCenterLongitude(qreal lon, FlyToMode mode = Instant);
 
     void setHeading(qreal heading);
 
     /**
-     * @brief  Move left by the moveStep.
+     * @brief Move left by the moveStep.
      */
     void moveLeft(FlyToMode mode = Automatic);
 
     /**
-     * @brief  Move right by the moveStep.
+     * @brief Move right by the moveStep.
      */
     void moveRight(FlyToMode mode = Automatic);
 
     /**
-     * @brief  Move up by the moveStep.
+     * @brief Move up by the moveStep.
      */
     void moveUp(FlyToMode mode = Automatic);
 
     /**
-     * @brief  Move down by the moveStep.
+     * @brief Move down by the moveStep.
      */
     void moveDown(FlyToMode mode = Automatic);
 
@@ -778,8 +775,8 @@ public Q_SLOTS:
     //@{
 
     /**
-     * @brief  Set the Projection used for the map
-     * @param  projection projection type (e.g. Spherical, Equirectangular, Mercator)
+     * @brief Set the Projection used for the map
+     * @param projection projection type (e.g. Spherical, Equirectangular, Mercator)
      */
     void setProjection(int        projection);
     void setProjection(Projection projection);
@@ -791,14 +788,15 @@ public Q_SLOTS:
      * name but the by relative location of the file that specifies the theme:
      *
      * Example:
+     *
      *    maptheme = "earth/bluemarble/bluemarble.dgml"
      */
     void setMapThemeId(const QString& maptheme);
 
     /**
-     * @brief  Sets the value of a map theme property
-     * @param  name   name of the property
-     * @param  value  value of the property (usually: visibility)
+     * @brief Sets the value of a map theme property
+     * @param name name of the property
+     * @param value value of the property (usually: visibility)
      *
      * Later on we might add a setPropertyType and a QVariant
      * if needed.
@@ -806,128 +804,128 @@ public Q_SLOTS:
     void setPropertyValue(const QString& name, bool value);
 
     /**
-     * @brief  Set whether the overview map overlay is visible
-     * @param  visible  visibility of the overview map
+     * @brief Set whether the overview map overlay is visible
+     * @param visible visibility of the overview map
      */
     void setShowOverviewMap(bool visible);
 
     /**
-     * @brief  Set whether the scale bar overlay is visible
-     * @param  visible  visibility of the scale bar
+     * @brief Set whether the scale bar overlay is visible
+     * @param visible visibility of the scale bar
      */
     void setShowScaleBar(bool visible);
 
     /**
-     * @brief  Set whether the compass overlay is visible
-     * @param  visible  visibility of the compass
+     * @brief Set whether the compass overlay is visible
+     * @param visible visibility of the compass
      */
     void setShowCompass(bool visible);
 
     /**
-     * @brief  Set whether the cloud cover is visible
-     * @param  visible  visibility of the cloud cover
+     * @brief Set whether the cloud cover is visible
+     * @param visible visibility of the cloud cover
      */
     void setShowClouds(bool visible);
 
     /**
-     * @brief  Set whether the night shadow is visible.
-     * @param  visible visibility of shadow
+     * @brief Set whether the night shadow is visible.
+     * @param visible visibility of shadow
      */
     void setShowSunShading(bool visible);
 
     /**
-     * @brief  Set whether city lights instead of night shadow are visible.
-     * @param  visible visibility of city lights
+     * @brief Set whether city lights instead of night shadow are visible.
+     * @param visible visibility of city lights
      */
     void setShowCityLights(bool visible);
 
     /**
-     * @brief  Set the globe locked to the sub solar point
-     * @param  visible if globe is locked to the sub solar point
+     * @brief Set the globe locked to the sub solar point
+     * @param visible if globe is locked to the sub solar point
      */
     void setLockToSubSolarPoint(bool visible);
 
     /**
-     * @brief  Set whether the sun icon is shown in the sub solar point
-     * @param  visible if the sun icon is shown in the sub solar point
+     * @brief Set whether the sun icon is shown in the sub solar point
+     * @param visible if the sun icon is shown in the sub solar point
      */
     void setSubSolarPointIconVisible(bool visible);
 
     /**
-     * @brief  Set whether the atmospheric glow is visible
-     * @param  visible  visibility of the atmospheric glow
+     * @brief Set whether the atmospheric glow is visible
+     * @param visible visibility of the atmospheric glow
      */
     void setShowAtmosphere(bool visible);
 
     /**
-     * @brief  Set whether the crosshairs are visible
-     * @param  visible  visibility of the crosshairs
+     * @brief Set whether the crosshairs are visible
+     * @param visible visibility of the crosshairs
      */
     void setShowCrosshairs(bool visible);
 
     /**
-     * @brief  Set whether the coordinate grid overlay is visible
-     * @param  visible  visibility of the coordinate grid
+     * @brief Set whether the coordinate grid overlay is visible
+     * @param visible visibility of the coordinate grid
      */
     void setShowGrid(bool visible);
 
     /**
-     * @brief  Set whether the place mark overlay is visible
-     * @param  visible  visibility of the place marks
+     * @brief Set whether the place mark overlay is visible
+     * @param visible visibility of the place marks
      */
     void setShowPlaces(bool visible);
 
     /**
-     * @brief  Set whether the city place mark overlay is visible
-     * @param  visible  visibility of the city place marks
+     * @brief Set whether the city place mark overlay is visible
+     * @param visible visibility of the city place marks
      */
     void setShowCities(bool visible);
 
     /**
-     * @brief  Set whether the terrain place mark overlay is visible
-     * @param  visible  visibility of the terrain place marks
+     * @brief Set whether the terrain place mark overlay is visible
+     * @param visible visibility of the terrain place marks
      */
     void setShowTerrain(bool visible);
 
     /**
-     * @brief  Set whether the other places overlay is visible
-     * @param  visible  visibility of other places
+     * @brief Set whether the other places overlay is visible
+     * @param visible visibility of other places
      */
     void setShowOtherPlaces(bool visible);
 
     /**
-     * @brief  Set whether the relief is visible
-     * @param  visible  visibility of the relief
+     * @brief Set whether the relief is visible
+     * @param visible visibility of the relief
      */
     void setShowRelief(bool visible);
 
     /**
-     * @brief  Set whether the ice layer is visible
-     * @param  visible  visibility of the ice layer
+     * @brief Set whether the ice layer is visible
+     * @param visible visibility of the ice layer
      */
     void setShowIceLayer(bool visible);
 
     /**
-     * @brief  Set whether the borders visible
-     * @param  visible  visibility of the borders
+     * @brief Set whether the borders visible
+     * @param visible visibility of the borders
      */
     void setShowBorders(bool visible);
 
     /**
-     * @brief  Set whether the rivers are visible
-     * @param  visible  visibility of the rivers
+     * @brief Set whether the rivers are visible
+     * @param visible visibility of the rivers
      */
     void setShowRivers(bool visible);
 
     /**
-     * @brief  Set whether the lakes are visible
-     * @param  visible  visibility of the lakes
+     * @brief Set whether the lakes are visible
+     * @param visible visibility of the lakes
      */
     void setShowLakes(bool visible);
 
     /**
      * @brief Set whether the frame rate gets shown
-     * @param visible  visibility of the frame rate
+     * @param visible visibility of the frame rate
      */
     void setShowFrameRate(bool visible);
 
@@ -1018,8 +1016,8 @@ public Q_SLOTS:
     void clearVolatileTileCache();
 
     /**
-     * @brief  Set the limit of the volatile (in RAM) tile cache.
-     * @param  kiloBytes The limit in kilobytes.
+     * @brief Set the limit of the volatile (in RAM) tile cache.
+     * @param kiloBytes The limit in kilobytes.
      */
     void setVolatileTileCacheLimit(quint64 kiloBytes);
 
@@ -1028,14 +1026,14 @@ public Q_SLOTS:
      * @param creator the tile creator object.
      * @param name  the name of the created theme.
      * @param description  a descriptive text that can be shown in a dialog.
-     * @see    creatingTilesProgress
+     * @see creatingTilesProgress
      *
      * This function is connected to the models signal with the same
      * name.  When the model needs to create a cache of tiles in
      * several different resolutions, it will Q_EMIT creatingTilesStart
      * once with a name of the theme and a descriptive text.  The
      * widget can then pop up a dialog to explain why there is a
-     * delay.  The model will then call creatingTilesProgress several
+     * delay. The model will then call creatingTilesProgress several
      * times until the parameter reaches 100 (100%), after which the
      * creation process is finished.  After this there will be no more
      * calls to creatingTilesProgress, and the poup dialog can then be
@@ -1075,7 +1073,7 @@ Q_SIGNALS:
     /**
      * @brief Signal that the zoom has changed, and to what.
      * @param zoom  The new zoom value.
-     * @see  setZoom()
+     * @see setZoom()
      */
     void zoomChanged(int zoom);
     void distanceChanged(const QString& distanceString);
@@ -1134,6 +1132,7 @@ Q_SIGNALS:
     void propertyValueChanged(const QString& name, bool value);
 
 protected:
+
     /**
      * @brief Reimplementation of the leaveEvent() function in QWidget.
      */

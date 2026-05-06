@@ -41,21 +41,25 @@ namespace Marble
 class Q_DECL_HIDDEN AbstractFloatItemPrivate
 {
 public:
-    AbstractFloatItemPrivate()
-        : m_contextMenu(nullptr)
-    {
-    }
+
+    AbstractFloatItemPrivate() = default;
 
     ~AbstractFloatItemPrivate()
     {
         delete m_contextMenu;
     }
 
+public:
 
     static QPen  s_pen;
     static QFont s_font;
 
-    QMenu*       m_contextMenu;
+    QMenu*       m_contextMenu = nullptr;
+
+private:
+
+    AbstractFloatItemPrivate(const AbstractFloatItemPrivate&)            = delete;
+    AbstractFloatItemPrivate& operator=(const AbstractFloatItemPrivate&) = delete;
 };
 
 QPen  AbstractFloatItemPrivate::s_pen  = QPen(Qt::black);
@@ -71,15 +75,15 @@ QFont AbstractFloatItemPrivate::s_font = QFont(QStringLiteral("Sans Serif"), 8);
 #endif
 
 AbstractFloatItem::AbstractFloatItem(const MarbleModel* marbleModel, const QPointF& point, const QSizeF& size)
-    : RenderPlugin(marbleModel),
+    : RenderPlugin     (marbleModel),
       FrameGraphicsItem(),
-      d(new AbstractFloatItemPrivate())
+      d                (new AbstractFloatItemPrivate())
 {
-    setCacheMode(ItemCoordinateCache);
-    setFrame(RectFrame);
-    setPadding(4.0);
-    setContentSize(size);
-    setPosition(point);
+    setCacheMode    (ItemCoordinateCache);
+    setFrame        (RectFrame);
+    setPadding      (4.0);
+    setContentSize  (size);
+    setPosition     (point);
 }
 
 AbstractFloatItem::~AbstractFloatItem()
@@ -183,6 +187,7 @@ void AbstractFloatItem::setVisible(bool visible)
 {
     // Reimplemented since AbstractFloatItem does multiple inheritance
     // and the (set)Visible() methods are available in both base classes!
+
     RenderPlugin::setVisible(visible);
 }
 
@@ -190,6 +195,7 @@ bool AbstractFloatItem::visible() const
 {
     // Reimplemented since AbstractFloatItem does multiple inheritance
     // and the (set)Visible() methods are available in both base classes!
+
     return RenderPlugin::visible();
 }
 
@@ -212,7 +218,7 @@ void AbstractFloatItem::setPositionLocked(bool lock)
 
 bool AbstractFloatItem::positionLocked() const
 {
-    return (flags() & ScreenGraphicsItem::ItemIsMovable) == 0;
+    return ((flags() & ScreenGraphicsItem::ItemIsMovable) == 0);
 }
 
 bool AbstractFloatItem::eventFilter(QObject* object, QEvent* e)
@@ -222,33 +228,33 @@ bool AbstractFloatItem::eventFilter(QObject* object, QEvent* e)
         return false;
     }
 
-    if (e->type() == QEvent::ContextMenu)
+    if      (e->type() == QEvent::ContextMenu)
     {
-        QWidget* widget = qobject_cast<QWidget*>(object);
+        QWidget* widget              = qobject_cast<QWidget*>(object);
         QContextMenuEvent* menuEvent = dynamic_cast<QContextMenuEvent*>(e);
 
-        if (widget != nullptr && menuEvent != nullptr && contains(menuEvent->pos()))
+        if ((widget != nullptr) && (menuEvent != nullptr && contains(menuEvent->pos())))
         {
             contextMenuEvent(widget, menuEvent);
+
             return true;
         }
 
         return false;
     }
-
     else if (e->type() == QEvent::ToolTip)
     {
         QHelpEvent* helpEvent = dynamic_cast<QHelpEvent*>(e);
 
-        if (helpEvent != nullptr && contains(helpEvent->pos()))
+        if ((helpEvent != nullptr) && contains(helpEvent->pos()))
         {
             toolTipEvent(helpEvent);
+
             return true;
         }
 
         return false;
     }
-
     else
     {
         return ScreenGraphicsItem::eventFilter(object, e);
@@ -290,31 +296,37 @@ QMenu* AbstractFloatItem::contextMenu()
 {
     if (!d->m_contextMenu)
     {
-        d->m_contextMenu = new QMenu;
-
+        d->m_contextMenu    = new QMenu;
         QAction* lockAction = d->m_contextMenu->addAction(QIcon::fromTheme(QStringLiteral("unlock")), i18n("&Lock"));
         lockAction->setCheckable(true);
         lockAction->setChecked(positionLocked());
-        connect(lockAction, SIGNAL(triggered(bool)), this, SLOT(setPositionLocked(bool)));
+
+        connect(lockAction, SIGNAL(triggered(bool)),
+                this, SLOT(setPositionLocked(bool)));
 
         if (!(flags() & ItemIsHideable))
         {
             QAction* hideAction = d->m_contextMenu->addAction(i18n("&Hide"));
-            connect(hideAction, SIGNAL(triggered()), this, SLOT(hide()));
+
+            connect(hideAction, SIGNAL(triggered()),
+                    this, SLOT(hide()));
         }
 
         DialogConfigurationInterface* configInterface = qobject_cast<DialogConfigurationInterface*>(this);
-        QDialog* dialog = configInterface ? configInterface->configDialog() : nullptr;
+        QDialog* dialog                               = configInterface ? configInterface->configDialog() : nullptr;
 
         if (dialog)
         {
             d->m_contextMenu->addSeparator();
             QAction* configAction = d->m_contextMenu->addAction(QIcon::fromTheme(QLatin1String("configure")), i18n("&Configure..."));
-            connect(configAction, SIGNAL(triggered()), dialog, SLOT(exec()));
+
+            connect(configAction, SIGNAL(triggered()),
+                    dialog, SLOT(exec()));
         }
     }
 
     Q_ASSERT(d->m_contextMenu);
+
     return d->m_contextMenu;
 }
 
