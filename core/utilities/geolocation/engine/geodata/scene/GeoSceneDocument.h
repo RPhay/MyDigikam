@@ -38,33 +38,33 @@ class GeoSceneDocumentPrivate;
  * @short A container for features parsed from the DGML file.
  */
 class DIGIKAM_EXPORT GeoSceneDocument : public QObject,
-    public GeoDocument,
-    public GeoNode
+                                        public GeoDocument,
+                                        public GeoNode
 {
     Q_OBJECT
 
 public:
 
     GeoSceneDocument();
-    ~GeoSceneDocument() override;
+    ~GeoSceneDocument()                               override;
 
-    const char* nodeType() const override;
+    const char* nodeType()                      const override;
 
-    bool isGeoSceneDocument() const override
+    bool isGeoSceneDocument()                   const override
     {
         return true;
     }
 
-    const GeoSceneHead* head() const;
+    const GeoSceneHead* head()                  const;
     GeoSceneHead* head();
 
-    const GeoSceneMap* map() const;
+    const GeoSceneMap* map()                    const;
     GeoSceneMap* map();
 
-    const GeoSceneSettings* settings() const;
+    const GeoSceneSettings* settings()          const;
     GeoSceneSettings* settings();
 
-    const GeoSceneLegend* legend() const;
+    const GeoSceneLegend* legend()              const;
     GeoSceneLegend* legend();
 
 Q_SIGNALS:

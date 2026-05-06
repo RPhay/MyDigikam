@@ -31,15 +31,15 @@ class Q_DECL_HIDDEN GeoSceneHeadPrivate
 public:
 
     GeoSceneHeadPrivate()
-        : m_zoom(new GeoSceneZoom),
-          m_icon(new GeoSceneIcon),
-          m_license(new GeoSceneLicense),
-          m_name(),
-          m_target(),
-          m_theme(),
+        : m_zoom       (new GeoSceneZoom),
+          m_icon       (new GeoSceneIcon),
+          m_license    (new GeoSceneLicense),
+          m_name       (),
+          m_target     (),
+          m_theme      (),
           m_description(),
-          m_radius(0.0),
-          m_visible(true)
+          m_radius     (0.0),
+          m_visible    (true)
     {
     }
 
@@ -50,17 +50,24 @@ public:
         delete m_license;
     }
 
-    GeoSceneZoom*       m_zoom;
-    GeoSceneIcon*       m_icon;
-    GeoSceneLicense*    m_license;
+public:
+
+    GeoSceneZoom*       m_zoom          = nullptr;
+    GeoSceneIcon*       m_icon          = nullptr;
+    GeoSceneLicense*    m_license       = nullptr;
 
     QString             m_name;
     QString             m_target;
     QString             m_theme;
     QString             m_description;
-    qreal               m_radius;
+    qreal               m_radius        = 0.0;
 
-    bool                m_visible;
+    bool                m_visible       = true;
+
+private:
+
+    GeoSceneHeadPrivate(const GeoSceneHeadPrivate&)            = delete;
+    GeoSceneHeadPrivate& operator=(const GeoSceneHeadPrivate&) = delete;
 };
 
 GeoSceneHead::GeoSceneHead()
@@ -105,7 +112,7 @@ QString GeoSceneHead::theme() const
 
 QString GeoSceneHead::mapThemeId() const
 {
-    return d->m_target + QLatin1Char('/') + d->m_theme + QLatin1Char('/') + d->m_theme + QLatin1String(".dgml");
+    return (d->m_target + QLatin1Char('/') + d->m_theme + QLatin1Char('/') + d->m_theme + QLatin1String(".dgml"));
 }
 
 void GeoSceneHead::setTheme(const QString& theme)

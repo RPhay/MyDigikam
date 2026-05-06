@@ -43,41 +43,44 @@ class DIGIKAM_EXPORT GeoSceneHead : public GeoNode
 public:
 
     GeoSceneHead();
-    ~GeoSceneHead() override;
+    ~GeoSceneHead()                           override;
 
-    const char* nodeType() const override;
+    const char* nodeType()              const override;
 
-    QString name() const;
+    QString name()                      const;
     void setName(const QString& name);
-    QString target() const;
+    QString target()                    const;
     void setTarget(const QString& target);
-    QString theme() const;
+    QString theme()                     const;
     void setTheme(const QString& theme);
 
-    /** Planet radius, 0.0 if unknown */
-    qreal radius() const;
+    /**
+     * Planet radius, 0.0 if unknown
+     */
+    qreal radius()                      const;
     void setRadius(qreal radius);
 
-    QString mapThemeId() const;
+    QString mapThemeId()                const;
 
-    QString description() const;
+    QString description()               const;
     void setDescription(const QString&);
 
-    bool visible() const;
+    bool visible()                      const;
     void setVisible(bool visible);
 
-    const GeoSceneZoom* zoom() const;
+    const GeoSceneZoom* zoom()          const;
     GeoSceneZoom* zoom();
 
-    const GeoSceneIcon* icon() const;
+    const GeoSceneIcon* icon()          const;
     GeoSceneIcon* icon();
 
-    const GeoSceneLicense* license() const;
+    const GeoSceneLicense* license()    const;
     GeoSceneLicense* license();
 
 private:
 
     Q_DISABLE_COPY(GeoSceneHead)
+
     GeoSceneHeadPrivate* const d = nullptr;
 };
 

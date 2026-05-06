@@ -47,12 +47,18 @@ public:
         delete m_legend;
     }
 
+public:
+
     GeoSceneHead*     m_head        = nullptr;
     GeoSceneMap*      m_map         = nullptr;
     GeoSceneSettings* m_settings    = nullptr;
     GeoSceneLegend*   m_legend      = nullptr;
-};
 
+private:
+
+    GeoSceneDocumentPrivate(const GeoSceneDocumentPrivate&)            = delete;
+    GeoSceneDocumentPrivate& operator=(const GeoSceneDocumentPrivate&) = delete;
+};
 
 GeoSceneDocument::GeoSceneDocument()
     : GeoDocument(),
