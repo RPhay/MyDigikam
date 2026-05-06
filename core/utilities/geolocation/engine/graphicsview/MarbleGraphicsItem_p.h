@@ -1,4 +1,4 @@
-/* ============================================================
+/* @s============================================================
  *
  * This file is a part of digiKam project
  * https://www.digikam.org
@@ -40,12 +40,12 @@ public:
 
     explicit MarbleGraphicsItemPrivate(MarbleGraphicsItem* marbleGraphicsItem,
                                        MarbleGraphicsItem* parent = nullptr)
-        : m_repaintNeeded(true),
-          m_cacheMode(MarbleGraphicsItem::NoCache),
-          m_visibility(true),
-          m_parent(parent),
-          m_children(),
-          m_layout(nullptr),
+        : m_repaintNeeded     (true),
+          m_cacheMode         (MarbleGraphicsItem::NoCache),
+          m_visibility        (true),
+          m_parent            (parent),
+          m_children          (),
+          m_layout            (nullptr),
           m_marbleGraphicsItem(marbleGraphicsItem)
     {
         if (m_parent)
@@ -57,15 +57,18 @@ public:
     virtual ~MarbleGraphicsItemPrivate()
     {
         // Remove from parent
+
         if (m_parent)
         {
             m_parent->d_func()->removeChild(m_marbleGraphicsItem);
         }
 
-        // Delete all children
-        qDeleteAll(m_children.values());   // delete using a copy, since children may invalidate m_children's iterator
+        // Delete all children using a copy, since children may invalidate m_children's iterator
+
+        qDeleteAll(m_children.values());
 
         // Delete Layout
+
         delete m_layout;
     }
 
@@ -93,12 +96,14 @@ public:
     void updateChildPositions()
     {
         // This has to be done recursively because we need a correct size from all children.
+
         for (MarbleGraphicsItem* item : m_children)
         {
             item->d_func()->updateChildPositions();
         }
 
         // Adjust positions
+
         if (m_layout)
         {
             m_layout->updatePositions(m_marbleGraphicsItem);
@@ -109,23 +114,32 @@ public:
 
     QSizeF                          m_size;
 
-    bool                            m_repaintNeeded;
+    bool                            m_repaintNeeded       = true;
 
-    MarbleGraphicsItem::CacheMode   m_cacheMode;
+    MarbleGraphicsItem::CacheMode   m_cacheMode           = MarbleGraphicsItem::NoCache;
 
     QPixmap                         m_pixmap;
 
-    bool                            m_visibility;
+    bool                            m_visibility          = true;
 
     // The parent of the item
+
     MarbleGraphicsItem* const       m_parent              = nullptr;
+
     // The set of children.
+
     QSet<MarbleGraphicsItem*>       m_children;
 
     // The layout handling the positions of the children
+
     AbstractMarbleGraphicsLayout*   m_layout              = nullptr;
 
     MarbleGraphicsItem* const       m_marbleGraphicsItem  = nullptr;
+
+private:
+
+    MarbleGraphicsItemPrivate(const MarbleGraphicsItemPrivate&)            = delete;
+    MarbleGraphicsItemPrivate& operator=(const MarbleGraphicsItemPrivate&) = delete;
 };
 
 } // Namespace Marble

@@ -36,7 +36,7 @@ class DIGIKAM_EXPORT MarbleGraphicsGridLayout : public AbstractMarbleGraphicsLay
 public:
 
     MarbleGraphicsGridLayout(int rows, int columns);
-    ~MarbleGraphicsGridLayout() override;
+    ~MarbleGraphicsGridLayout()                                       override;
 
     void addItem(ScreenGraphicsItem* item, int row, int column);
 
@@ -44,11 +44,11 @@ public:
      * This updates the positions of all items in the layout.
      * Calling this will be done on every repainting, so you won't have to do it yourself.
      */
-    void updatePositions(MarbleGraphicsItem* parent) override;
+    void updatePositions(MarbleGraphicsItem* parent)                  override;
 
-    Qt::Alignment alignment() const;
+    Qt::Alignment alignment()                                   const;
 
-    Qt::Alignment alignment(ScreenGraphicsItem* item) const;
+    Qt::Alignment alignment(ScreenGraphicsItem* item)           const;
 
     void setAlignment(Qt::Alignment align);
 
@@ -57,12 +57,17 @@ public:
     /**
      * Returns the spacing between the items inside the layout.
      */
-    int spacing() const;
+    int spacing()                                               const;
 
     /**
      * Set the spacing between the items inside the layout. By default the spacing is 0.
      */
     void setSpacing(int spacing);
+
+private:
+
+    MarbleGraphicsGridLayout(const MarbleGraphicsGridLayout&)            = delete;
+    MarbleGraphicsGridLayout& operator=(const MarbleGraphicsGridLayout&) = delete;
 
 private:
 

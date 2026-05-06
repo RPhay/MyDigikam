@@ -50,6 +50,8 @@ public:
         DeviceCoordinateCache
     };
 
+public:
+
     virtual ~MarbleGraphicsItem();
 
     /**
@@ -61,12 +63,12 @@ public:
     /**
      * Returns true if the Item contains @p point in parent coordinates.
      */
-    bool contains(const QPointF& point) const;
+    bool contains(const QPointF& point)                         const;
 
     /**
      * Returns the layout of the MarbleGraphicsItem.
      */
-    AbstractMarbleGraphicsLayout* layout() const;
+    AbstractMarbleGraphicsLayout* layout()                      const;
 
     /**
      * Set the layout of the graphics item. The layout will now handle positions of added child
@@ -77,7 +79,7 @@ public:
     /**
      * Returns the cache mode of the item
      */
-    CacheMode cacheMode() const;
+    CacheMode cacheMode()                                       const;
 
     /**
      * Set the cache mode of the item
@@ -87,7 +89,7 @@ public:
     /**
      * Returns if the item is visible.
      */
-    bool visible() const;
+    bool visible()                                              const;
 
     /**
      * Makes the item visible or invisible, depending on @p visible.
@@ -107,7 +109,7 @@ public:
     /**
      * Returns the size of the item
      */
-    QSizeF size() const;
+    QSizeF size()                                               const;
 
     /**
      * Set the size of the item
@@ -118,7 +120,7 @@ public:
      * Returns the size of the content of the MarbleGraphicsItem.
      * This is identical to size() for default MarbleGraphicsItems.
      */
-    virtual QSizeF contentSize() const;
+    virtual QSizeF contentSize()                                const;
 
     /**
      * Set the size of the content of the item.
@@ -128,7 +130,7 @@ public:
     /**
      * Returns the rect of the content in item coordinates.
      */
-    virtual QRectF contentRect() const;
+    virtual QRectF contentRect()                                const;
 
     virtual void setProjection(const ViewportParams* viewport);
 
