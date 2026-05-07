@@ -78,40 +78,39 @@ class DIGIKAM_EXPORT GeoDataLineString : public GeoDataGeometry
 {
 public:
 
-    using Iterator = QVector<GeoDataCoordinates>::Iterator;
-    using ConstIterator = QVector<GeoDataCoordinates>::ConstIterator;
+    using Iterator       = QVector<GeoDataCoordinates>::Iterator;
+    using ConstIterator  = QVector<GeoDataCoordinates>::ConstIterator;
     using const_iterator = QVector<GeoDataCoordinates>::const_iterator;
+
+public:
 
     /*!
      @brief Creates a new LineString.
     */
     explicit GeoDataLineString(TessellationFlags f = NoTessellation);
 
-
     /*!
      @brief Creates a LineString from an existing geometry object.
     */
     explicit GeoDataLineString(const GeoDataGeometry& other);
 
-
     /*!
      @brief Destroys a LineString.
     */
-    ~GeoDataLineString() override;
+    ~GeoDataLineString()                                                      override;
 
-    const char* nodeType() const override;
+    const char* nodeType()                                              const override;
 
-    EnumGeometryId geometryId() const override;
+    EnumGeometryId geometryId()                                         const override;
 
-    GeoDataGeometry* copy() const override;
+    GeoDataGeometry* copy()                                             const override;
 
     /*!
      @brief Returns whether a LineString is a closed polygon.
 
      \return <code>false</code> if the LineString is not a LinearRing.
     */
-    virtual bool isClosed() const;
-
+    virtual bool isClosed()                                             const;
 
     /*!
      @brief Returns whether the LineString follows the earth's surface.
@@ -119,8 +118,7 @@ public:
      \return <code>true</code> if the LineString's line segments follow the
      earth's surface and terrain along great circles.
     */
-    bool tessellate() const;
-
+    bool tessellate()                                                   const;
 
     /*!
      @brief Sets the tessellation property for the LineString.
@@ -132,12 +130,10 @@ public:
     */
     void setTessellate(bool tessellate);
 
-
     /*!
      @brief Returns the tessellation flags for a LineString.
     */
-    TessellationFlags tessellationFlags() const;
-
+    TessellationFlags tessellationFlags()                               const;
 
     /*!
      @brief Sets the given tessellation flags for a LineString.
@@ -153,7 +149,7 @@ public:
      @brief Returns the smallest latLonAltBox that contains the LineString.
      \see GeoDataLatLonAltBox
     */
-    const GeoDataLatLonAltBox& latLonAltBox() const override;
+    const GeoDataLatLonAltBox& latLonAltBox()                           const override;
 
     /**
       * @brief Returns the length of LineString across a sphere starting from a coordinate in LineString
@@ -163,7 +159,7 @@ public:
       * @param planetRadius radius of the sphere
       * @param offset position of coordinate within LineString
       */
-    virtual qreal length(qreal planetRadius, int offset = 0) const;
+    virtual qreal length(qreal planetRadius, int offset = 0)            const;
 
     /*!
      @brief Provides a more generic representation of the LineString.
@@ -172,8 +168,7 @@ public:
 
      Deprecation Warning: This method will likely be removed from the public API.
     */
-    virtual GeoDataLineString toRangeCorrected() const;
-
+    virtual GeoDataLineString toRangeCorrected()                        const;
 
     /*!
      @brief The line string with nodes that have proper longitude/latitude ranges.
@@ -184,8 +179,7 @@ public:
 
      Deprecation Warning: This method will likely be removed from the public API.
     */
-    virtual GeoDataLineString toNormalized() const;
-
+    virtual GeoDataLineString toNormalized()                            const;
 
     /*!
      @brief The line string with more generic pole values.
@@ -196,8 +190,7 @@ public:
 
      Deprecation Warning: This method will likely be removed from the public API.
     */
-    virtual GeoDataLineString toPoleCorrected() const;
-
+    virtual GeoDataLineString toPoleCorrected()                         const;
 
     /*!
      @brief The line string corrected for date line crossing.
@@ -207,9 +200,7 @@ public:
 
      Deprecation Warning: This method will likely be removed from the public API.
     */
-    virtual QVector<GeoDataLineString*> toDateLineCorrected() const;
-
-
+    virtual QVector<GeoDataLineString*> toDateLineCorrected()           const;
 
     // "Reimplementation" of QVector API
     /*!
@@ -217,14 +208,12 @@ public:
 
      \return <code>true</code> if there are no nodes inside the line string.
     */
-    bool isEmpty() const;
-
+    bool isEmpty()                                                      const;
 
     /*!
      @brief Returns the number of nodes in a LineString.
     */
-    int size() const;
-
+    int size()                                                          const;
 
     /*!
      @brief Returns a reference to the coordinates of a node at a given position.
@@ -232,13 +221,11 @@ public:
     */
     GeoDataCoordinates& at(int pos);
 
-
     /*!
      @brief Returns a reference to the coordinates of a node at a given position.
      This method does not detach the returned coordinate object from the line string.
     */
-    const GeoDataCoordinates& at(int pos) const;
-
+    const GeoDataCoordinates& at(int pos)                               const;
 
     /*!
      @brief Returns a reference to the coordinates of a node at a given position.
@@ -246,20 +233,18 @@ public:
     */
     GeoDataCoordinates& operator[](int pos);
 
-
     /**
       Returns a sub-string which contains elements from this vector, starting at position pos. If length is -1
       (the default), all elements after pos are included; otherwise length elements (or all remaining elements if
       there are less than length elements) are included.
      */
-    GeoDataLineString mid(int pos, int length = -1) const;
+    GeoDataLineString mid(int pos, int length = -1)                     const;
 
     /*!
      @brief Returns a reference to the coordinates of a node at a given position.
      This method does not detach the returned coordinate object from the line string.
     */
-    const GeoDataCoordinates& operator[](int pos) const;
-
+    const GeoDataCoordinates& operator[](int pos)                       const;
 
     /*!
      @brief Returns a reference to the first node in the LineString.
@@ -267,13 +252,11 @@ public:
     */
     GeoDataCoordinates& first();
 
-
     /*!
      @brief Returns a reference to the first node in the LineString.
      This method does not detach the returned coordinate object from the line string.
     */
-    const GeoDataCoordinates& first() const;
-
+    const GeoDataCoordinates& first()                                   const;
 
     /*!
      @brief Returns a reference to the last node in the LineString.
@@ -281,13 +264,11 @@ public:
     */
     GeoDataCoordinates& last();
 
-
     /*!
      @brief Returns a reference to the last node in the LineString.
      This method does not detach the returned coordinate object from the line string.
     */
-    const GeoDataCoordinates& last() const;
-
+    const GeoDataCoordinates& last()                                    const;
 
     /*!
      @brief Inserts a new node at the given index.
@@ -304,12 +285,10 @@ public:
     */
     void append(const GeoDataCoordinates& value);
 
-
     /*!
      @brief Appends a given geodesic position as new nodes to the LineString.
     */
     void append(const QVector<GeoDataCoordinates>& values);
-
 
     /*!
      @brief Appends a given geodesic position as a new node to the LineString.
@@ -322,58 +301,49 @@ public:
     */
     GeoDataLineString& operator << (const GeoDataLineString& lineString);
 
-
     /*!
      @brief Returns true/false depending on whether this and other are/are not equal.
     */
-    bool operator==(const GeoDataLineString& other) const;
-    bool operator!=(const GeoDataLineString& other) const;
-
+    bool operator==(const GeoDataLineString& other)                     const;
+    bool operator!=(const GeoDataLineString& other)                     const;
 
     /*!
      @brief Returns an iterator that points to the begin of the LineString.
     */
     QVector<GeoDataCoordinates>::Iterator begin();
-    QVector<GeoDataCoordinates>::ConstIterator begin() const;
-
+    QVector<GeoDataCoordinates>::ConstIterator begin()                  const;
 
     /*!
      @brief Returns an iterator that points to the end of the LineString.
     */
     QVector<GeoDataCoordinates>::Iterator end();
-    QVector<GeoDataCoordinates>::ConstIterator end() const;
-
+    QVector<GeoDataCoordinates>::ConstIterator end()                    const;
 
     /*!
      @brief Returns a const iterator that points to the begin of the LineString.
     */
-    QVector<GeoDataCoordinates>::ConstIterator constBegin() const;
-
+    QVector<GeoDataCoordinates>::ConstIterator constBegin()             const;
 
     /*!
      @brief Returns a const iterator that points to the end of the LineString.
     */
-    QVector<GeoDataCoordinates>::ConstIterator constEnd() const;
-
+    QVector<GeoDataCoordinates>::ConstIterator constEnd()               const;
 
     /*!
      @brief Destroys all nodes in a LineString.
     */
     void clear();
 
-
     /*!
      @brief Removes the node at the given position and returns it.
      */
     QVector<GeoDataCoordinates>::Iterator erase(const QVector<GeoDataCoordinates>::Iterator& position);
-
 
     /*!
      @brief Removes the nodes within the given range and returns them.
     */
     QVector<GeoDataCoordinates>::Iterator erase(const QVector<GeoDataCoordinates>::Iterator& begin,
                                                 const QVector<GeoDataCoordinates>::Iterator& end);
-
 
     /*!
      @brief Removes the node at the given position and destroys it.
@@ -383,25 +353,25 @@ public:
     /*!
      @brief Returns a linestring with detail values assigned to each node.
     */
-    GeoDataLineString optimized() const;
+    GeoDataLineString optimized()                                       const;
 
     /*!
      @brief Returns a javascript-style list (that can be used e.g. with the QML GeoPolyline element).
     */
-    QVariantList toVariantList() const;
+    QVariantList toVariantList()                                        const;
 
     // Serialization
     /*!
      @brief Serialize the LineString to a stream.
      \param stream the stream.
     */
-    void pack(QDataStream& stream) const override;
+    void pack(QDataStream& stream)                                      const override;
 
     /*!
      @brief Unserialize the LineString from a stream.
      \param stream the stream.
     */
-    void unpack(QDataStream& stream) override;
+    void unpack(QDataStream& stream)                                          override;
 
 protected:
 
