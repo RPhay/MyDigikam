@@ -80,6 +80,11 @@ private:
     GeoDataLineStyle*  m_lineStyle          = nullptr;
     GeoDataPolyStyle*  m_polyStyle          = nullptr;
     GeoDataLabelStyle* m_labelStyle         = nullptr;
+
+private:
+
+    JsonParser(const JsonParser&)            = delete;
+    JsonParser& operator=(const JsonParser&) = delete;
 };
 
 } // namespace Marble

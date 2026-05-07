@@ -18,7 +18,6 @@
 
 // Qt includes
 
-#include <QDomDocument>
 #include <QFile>
 #include <QPainter>
 
@@ -30,28 +29,55 @@ namespace Marble
 {
 
 OsmcSymbol::OsmcSymbol(const QString& tag, int size)
-    : m_wayColor(Qt::white)
-    , m_backgroundColor(Qt::black)
-    , m_foreground(nullptr)
-    , m_foreground2(nullptr)
-    , m_textColor(Qt::black)
-    , m_side(size)
+    : m_wayColor        (Qt::white),
+      m_backgroundColor (Qt::black),
+      m_foreground      (nullptr),
+      m_foreground2     (nullptr),
+      m_textColor       (Qt::black),
+      m_side            (size)
 {
     m_backgroundTypes
-            << QString::fromUtf8("round") << QString::fromUtf8("circle") << QString::fromUtf8("frame");
+            << QString::fromUtf8("round")
+            << QString::fromUtf8("circle")
+            << QString::fromUtf8("frame");
 
     m_foregroundTypes
-            << QString::fromUtf8("dot") << QString::fromUtf8("bowl") << QString::fromUtf8("circle") << QString::fromUtf8("bar")
-            << QString::fromUtf8("stripe") << QString::fromUtf8("cross") << QString::fromUtf8("x") << QString::fromUtf8("slash")
-            << QString::fromUtf8("backslash") << QString::fromUtf8("rectangle") << QString::fromUtf8("rectangle_line")
-            << QString::fromUtf8("triangle") << QString::fromUtf8("triangle_turned") << QString::fromUtf8("triangle_line")
-            << QString::fromUtf8("diamond") << QString::fromUtf8("pointer") << QString::fromUtf8("fork") << QString::fromUtf8("arch")
-            << QString::fromUtf8("turned_T") << QString::fromUtf8("L") << QString::fromUtf8("lower") << QString::fromUtf8("corner")
-            << QString::fromUtf8("drop_line") << QString::fromUtf8("horse") << QString::fromUtf8("hiker");
+            << QString::fromUtf8("dot")
+            << QString::fromUtf8("bowl")
+            << QString::fromUtf8("circle")
+            << QString::fromUtf8("bar")
+            << QString::fromUtf8("stripe")
+            << QString::fromUtf8("cross")
+            << QString::fromUtf8("x")
+            << QString::fromUtf8("slash")
+            << QString::fromUtf8("backslash")
+            << QString::fromUtf8("rectangle")
+            << QString::fromUtf8("rectangle_line")
+            << QString::fromUtf8("triangle")
+            << QString::fromUtf8("triangle_turned")
+            << QString::fromUtf8("triangle_line")
+            << QString::fromUtf8("diamond")
+            << QString::fromUtf8("pointer")
+            << QString::fromUtf8("fork")
+            << QString::fromUtf8("arch")
+            << QString::fromUtf8("turned_T")
+            << QString::fromUtf8("L")
+            << QString::fromUtf8("lower")
+            << QString::fromUtf8("corner")
+            << QString::fromUtf8("drop_line")
+            << QString::fromUtf8("horse")
+            << QString::fromUtf8("hiker");
 
     m_precoloredForegroundTypes
-            << QString::fromUtf8("wolfshook") << QString::fromUtf8("shell") << QString::fromUtf8("shell_modern") << QString::fromUtf8("ammonit")
-            << QString::fromUtf8("mine") << QString::fromUtf8("hiker") << QString::fromUtf8("heart") << QString::fromUtf8("tower") << QString::fromUtf8("bridleway");
+            << QString::fromUtf8("wolfshook")
+            << QString::fromUtf8("shell")
+            << QString::fromUtf8("shell_modern")
+            << QString::fromUtf8("ammonit")
+            << QString::fromUtf8("mine")
+            << QString::fromUtf8("hiker")
+            << QString::fromUtf8("heart")
+            << QString::fromUtf8("tower")
+            << QString::fromUtf8("bridleway");
 
     if (parseTag(tag))
     {
@@ -132,12 +158,12 @@ bool OsmcSymbol::parseTag(const QString& tag)
 #endif
 
         {
-            m_text = parts.at(2);
+            m_text      = parts.at(2);
             m_textColor = parts.at(3);
         }
         else
         {
-            m_foreground = parseForeground(parts.at(2));
+            m_foreground  = parseForeground(parts.at(2));
             m_foreground2 = parseForeground(parts.at(3));
         }
     }
@@ -156,7 +182,7 @@ bool OsmcSymbol::parseTag(const QString& tag)
 #endif
 
         {
-            m_text = parts.at(3);
+            m_text      = parts.at(3);
             m_textColor = parts.at(4);
         }
         else
@@ -268,8 +294,6 @@ bool OsmcSymbol::parseBackground(const QString& bg)
     return true;
 }
 
-void setXMLAttribute(QDomElement& elem, const QString& tag, const QString& attr, const QString& attrValue);
-
 QSvgRenderer* OsmcSymbol::parseForeground(const QString& fg)
 {
     if (m_precoloredForegroundTypes.contains(fg))
@@ -333,9 +357,12 @@ void OsmcSymbol::render()
     painter.setRenderHint(QPainter::Antialiasing);
 
     // Default size of background
-    int w = m_side, h = m_side;
+
+    int w = m_side;
+    int h = m_side;
 
     // If there is some text, our background size must be recalculated
+
     if (!m_text.isEmpty())
     {
         QFont font = painter.font();
@@ -351,25 +378,23 @@ void OsmcSymbol::render()
     const QRect bgRect = QRect((m_side - w) / 2, (m_side - h) / 2, w, h);
 
     // Draw symbol's background
-    if (m_backgroundType.isEmpty())
+
+    if      (m_backgroundType.isEmpty())
     {
         painter.fillRect(bgRect, m_backgroundColor);
     }
-
     else if (m_backgroundType == QString::fromUtf8("round"))
     {
         painter.setBrush(m_backgroundColor);
         painter.setPen(m_backgroundColor);
         painter.drawEllipse(bgRect);
     }
-
     else if (m_backgroundType == QString::fromUtf8("circle"))
     {
         painter.setBrush(Qt::white);
         painter.setPen(QPen(m_backgroundColor, m_side / 10));
         painter.drawEllipse(bgRect);
     }
-
     else if (m_backgroundType == QString::fromUtf8("frame"))
     {
         painter.setPen(QPen(m_backgroundColor, m_side / 10));
@@ -380,13 +405,14 @@ void OsmcSymbol::render()
     QPixmap foregrounds(bgRect.size());
     foregrounds.fill(Qt::transparent);
     QPainter fgPainter(&foregrounds);
-    m_foreground ? m_foreground->render(&fgPainter) : void();
+    m_foreground  ? m_foreground->render(&fgPainter)  : void();
     m_foreground2 ? m_foreground2->render(&fgPainter) : void();
     painter.drawPixmap(bgRect, foregrounds);
 
     if (!m_text.isEmpty())
     {
         // Draw text with provided color
+
         painter.setPen(m_textColor);
         painter.drawText(bgRect, Qt::AlignCenter, m_text);
     }
@@ -404,16 +430,18 @@ QColor OsmcSymbol::wayColor() const
     return m_wayColor;
 }
 
-void setXMLAttribute(QDomElement& elem, const QString& tag, const QString& attr, const QString& attrValue)
+void OsmcSymbol::setXMLAttribute(QDomElement& elem, const QString& tag, const QString& attr, const QString& attrValue)
 {
     // If elem's tag is equal to the provided one then overwrite desired attribute
+
     if (elem.tagName() == tag)
     {
         elem.setAttribute(attr, attrValue);
     }
 
     // Do the same for all the child nodes
-    for (int i = 0; i < elem.childNodes().count(); ++i)
+
+    for (int i = 0 ; i < elem.childNodes().count() ; ++i)
     {
         if (!elem.childNodes().at(i).isElement())
         {

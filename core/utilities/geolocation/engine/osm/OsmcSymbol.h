@@ -22,6 +22,7 @@
 #include <QImage>
 #include <QString>
 #include <QSvgRenderer>
+#include <QDomDocument>
 
 namespace Marble
 {
@@ -33,8 +34,8 @@ public:
     explicit OsmcSymbol(const QString& tag, int size = 20);
     ~OsmcSymbol();
 
-    QImage icon() const;
-    QColor wayColor() const;
+    QImage icon()       const;
+    QColor wayColor()   const;
 
 private:
 
@@ -61,9 +62,16 @@ private:
     QStringList     m_precoloredForegroundTypes;
 
     int const       m_side;
-    /*
-        int             m_wayWidth;
-    */
+/*
+    int             m_wayWidth;
+*/
+
+private:
+
+    void setXMLAttribute(QDomElement& elem, const QString& tag, const QString& attr, const QString& attrValue);
+
+    OsmcSymbol(const OsmcSymbol&)            = delete;
+    OsmcSymbol& operator=(const OsmcSymbol&) = delete;
 };
 
 } // namespace Marble

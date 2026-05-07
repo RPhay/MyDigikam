@@ -48,14 +48,21 @@ public:
         delete m_model;
     }
 
+public:
+
     AbstractDataPluginModel* m_model         = nullptr;
     quint32                  m_numberOfItems = 10;
     QTimer                   m_updateTimer;
+
+private:
+
+    AbstractDataPluginPrivate(const AbstractDataPluginPrivate&)            = delete;
+    AbstractDataPluginPrivate& operator=(const AbstractDataPluginPrivate&) = delete;
 };
 
 AbstractDataPlugin::AbstractDataPlugin(const MarbleModel* marbleModel)
     : RenderPlugin(marbleModel),
-      d(new AbstractDataPluginPrivate)
+      d           (new AbstractDataPluginPrivate)
 {
     connect(&d->m_updateTimer, SIGNAL(timeout()),
             this, SIGNAL(repaintNeeded()));
@@ -68,7 +75,7 @@ AbstractDataPlugin::~AbstractDataPlugin()
 
 bool AbstractDataPlugin::isInitialized() const
 {
-    return model() != nullptr;
+    return (model() != nullptr);
 }
 
 QStringList AbstractDataPlugin::backendTypes() const
@@ -96,7 +103,8 @@ bool AbstractDataPlugin::render(GeoPainter* painter, ViewportParams* viewport,
     painter->save();
 
     // Paint the most important item at last
-    for (int i = items.size() - 1; i >= 0; --i)
+
+    for (int i = items.size() - 1 ; i >= 0 ; --i)
     {
         items.at(i)->paintEvent(painter, viewport);
     }
@@ -120,17 +128,22 @@ void AbstractDataPlugin::setModel(AbstractDataPluginModel* model)
 {
     if (d->m_model)
     {
-        disconnect(d->m_model, SIGNAL(itemsUpdated()), this, SLOT(delayedUpdate()));
+        disconnect(d->m_model, SIGNAL(itemsUpdated()),
+                   this, SLOT(delayedUpdate()));
+
         delete d->m_model;
     }
 
     d->m_model = model;
 
-    connect(d->m_model, SIGNAL(itemsUpdated()), this, SLOT(delayedUpdate()));
-    connect(d->m_model, SIGNAL(favoriteItemsChanged(QStringList)), this,
-            SLOT(favoriteItemsChanged(QStringList)));
-    connect(d->m_model, SIGNAL(favoriteItemsOnlyChanged()), this,
-            SIGNAL(favoriteItemsOnlyChanged()));
+    connect(d->m_model, SIGNAL(itemsUpdated()),
+            this, SLOT(delayedUpdate()));
+
+    connect(d->m_model, SIGNAL(favoriteItemsChanged(QStringList)),
+            this, SLOT(favoriteItemsChanged(QStringList)));
+
+    connect(d->m_model, SIGNAL(favoriteItemsOnlyChanged()),
+            this, SIGNAL(favoriteItemsOnlyChanged()));
 
     Q_EMIT favoritesModelChanged();
 }
@@ -142,7 +155,7 @@ quint32 AbstractDataPlugin::numberOfItems() const
 
 void AbstractDataPlugin::setNumberOfItems(quint32 number)
 {
-    bool changed = (number != d->m_numberOfItems);
+    bool changed       = (number != d->m_numberOfItems);
     d->m_numberOfItems = number;
 
     if (changed)
@@ -157,7 +170,6 @@ QList<AbstractDataPluginItem*> AbstractDataPlugin::whichItemAt(const QPoint& cur
     {
         return d->m_model->whichItemAt(curpos);
     }
-
     else
     {
         return QList<AbstractDataPluginItem*>();
@@ -171,7 +183,7 @@ RenderPlugin::RenderType AbstractDataPlugin::renderType() const
 
 void AbstractDataPlugin::setFavoriteItemsOnly(bool favoriteOnly)
 {
-    if (d->m_model && d->m_model->isFavoriteItemsOnly() != favoriteOnly)
+    if (d->m_model && (d->m_model->isFavoriteItemsOnly() != favoriteOnly))
     {
         d->m_model->setFavoriteItemsOnly(favoriteOnly);
     }
@@ -179,12 +191,12 @@ void AbstractDataPlugin::setFavoriteItemsOnly(bool favoriteOnly)
 
 bool AbstractDataPlugin::isFavoriteItemsOnly() const
 {
-    return d->m_model && d->m_model->isFavoriteItemsOnly();
+    return (d->m_model && d->m_model->isFavoriteItemsOnly());
 }
 
 QObject* AbstractDataPlugin::favoritesModel()
 {
-    return d->m_model ? d->m_model->favoritesModel() : nullptr;
+    return (d->m_model ? d->m_model->favoritesModel() : nullptr);
 }
 
 void AbstractDataPlugin::favoriteItemsChanged(const QStringList& favoriteItems)

@@ -97,20 +97,20 @@ public:
      * @param parent the parent widget
      */
     explicit MarbleModel(QObject* parent = nullptr);
-    ~MarbleModel() override;
+    ~MarbleModel()                                            override;
 
     /**
      * @brief Return the list of Placemarks as a QAbstractItemModel *
      * @return a list of all Placemarks in the MarbleModel.
      */
     GeoDataTreeModel* treeModel();
-    const GeoDataTreeModel* treeModel() const;
+    const GeoDataTreeModel* treeModel()                 const;
 
     QAbstractItemModel* groundOverlayModel();
-    const QAbstractItemModel* groundOverlayModel() const;
+    const QAbstractItemModel* groundOverlayModel()      const;
 
     QAbstractItemModel* placemarkModel();
-    const QAbstractItemModel* placemarkModel() const;
+    const QAbstractItemModel* placemarkModel()          const;
 
     QItemSelectionModel* placemarkSelectionModel();
 
@@ -124,10 +124,10 @@ public:
      * Example:
      *    maptheme = "earth/bluemarble/bluemarble.dgml"
      */
-    QString mapThemeId() const;
+    QString mapThemeId()                                const;
 
     GeoSceneDocument* mapTheme();
-    const GeoSceneDocument* mapTheme() const;
+    const GeoSceneDocument* mapTheme()                  const;
     void setMapTheme(GeoSceneDocument* document);
 
     /**
@@ -154,7 +154,7 @@ public:
      * @param  lat  the latitude of the home point.
      * @param  zoom the default zoom level of the home point.
      */
-    void home(qreal& lon, qreal& lat, int& zoom) const;
+    void home(qreal& lon, qreal& lat, int& zoom)        const;
     /**
      * @brief  Set the home point
      * @param  lon  the longitude of the new home point.
@@ -174,7 +174,7 @@ public:
      * @return the HttpDownloadManager instance.
      */
     HttpDownloadManager* downloadManager();
-    const HttpDownloadManager* downloadManager() const;
+    const HttpDownloadManager* downloadManager()        const;
 
     /**
      * @brief Handle file loading into the treeModel
@@ -187,7 +187,8 @@ public:
      * @param data the raw data to load
      * @param key the name to remove this raw data later
      */
-    void addGeoDataString(const QString& data, const QString& key = QLatin1String("data"));
+    void addGeoDataString(const QString& data,
+                          const QString& key = QLatin1String("data"));
 
     /**
      * @brief Remove the file or raw data from the treeModel
@@ -197,29 +198,29 @@ public:
 
     FileManager*          fileManager();
 
-    qreal                 planetRadius()   const;
-    QString               planetName()     const;
-    QString               planetId()       const;
+    qreal                 planetRadius()                const;
+    QString               planetName()                  const;
+    QString               planetId()                    const;
 
     MarbleClock* clock();
-    const MarbleClock* clock() const;
+    const MarbleClock* clock()                          const;
 
     SunLocator* sunLocator();
-    const SunLocator* sunLocator() const;
+    const SunLocator* sunLocator()                      const;
 
     /**
      * @brief  Returns the limit in kilobytes of the persistent (on hard disc) tile cache.
      * @return the limit of persistent tile cache in kilobytes.
      */
-    quint64 persistentTileCacheLimit() const;
+    quint64 persistentTileCacheLimit()                  const;
 
     /**
      * @brief  Returns the limit of the volatile (in RAM) tile cache.
      * @return the cache limit in kilobytes
      */
-    quint64 volatileTileCacheLimit() const;
+    quint64 volatileTileCacheLimit()                    const;
 
-    const PluginManager* pluginManager() const;
+    const PluginManager* pluginManager()                const;
 
     PluginManager* pluginManager();
 
@@ -227,19 +228,16 @@ public:
      * @brief Returns the planet object for the current map.
      * @return the planet object for the current map
      */
-    const Planet* planet() const;
+    const Planet* planet()                              const;
 
     void setClockDateTime(const QDateTime& datetime);
+    QDateTime clockDateTime()                           const;
 
-    QDateTime clockDateTime() const;
-
-    int clockSpeed() const;
-
+    int clockSpeed()                                    const;
     void setClockSpeed(int speed);
 
     void setClockTimezone(int timeInSec);
-
-    int clockTimezone() const;
+    int clockTimezone()                                 const;
 
     QTextDocument* legend();
 
@@ -250,19 +248,18 @@ public:
      */
     void setLegend(QTextDocument* document);
 
-    bool workOffline() const;
-
+    bool workOffline()                                  const;
     void setWorkOffline(bool workOffline);
 
     ElevationModel* elevationModel();
-    const ElevationModel* elevationModel() const;
+    const ElevationModel* elevationModel()              const;
 
     /**
      * Returns the placemark being tracked by this model or 0 if no
      * placemark is currently tracked.
      * @see setTrackedPlacemark(), trackedPlacemarkChanged()
      */
-    const GeoDataPlacemark* trackedPlacemark() const;
+    const GeoDataPlacemark* trackedPlacemark()          const;
 
 public Q_SLOTS:
 
