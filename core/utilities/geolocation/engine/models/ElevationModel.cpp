@@ -45,11 +45,13 @@ class Q_DECL_HIDDEN ElevationModelPrivate
 {
 public:
 
-    ElevationModelPrivate(ElevationModel* _q, HttpDownloadManager* downloadManager, PluginManager* pluginManager)
-        : q(_q),
-          m_tileLoader(downloadManager, pluginManager),
+    ElevationModelPrivate(ElevationModel* _q,
+                          HttpDownloadManager* downloadManager,
+                          PluginManager* pluginManager)
+        : q             (_q),
+          m_tileLoader  (downloadManager, pluginManager),
           m_textureLayer(nullptr),
-          m_srtmTheme(nullptr)
+          m_srtmTheme   (nullptr)
     {
         m_cache.setMaxCost(10);   //keep 10 tiles in memory (~17MB)
 
@@ -58,14 +60,15 @@ public:
         if (!m_srtmTheme)
         {
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "Failed to load map theme earth/srtm2/srtm2.dgml. Check your installation. No elevation will be returned.";
+
             return;
         }
 
-        const GeoSceneHead* head = m_srtmTheme->head();
+        const GeoSceneHead* head        = m_srtmTheme->head();
 
         Q_ASSERT(head);
 
-        const GeoSceneMap* map = m_srtmTheme->map();
+        const GeoSceneMap* map          = m_srtmTheme->map();
 
         Q_ASSERT(map);
 
@@ -79,7 +82,7 @@ public:
 
         Q_ASSERT(sceneLayer);
 
-        m_textureLayer = dynamic_cast<GeoSceneTextureTileDataset*>(sceneLayer->datasets().first());
+        m_textureLayer                  = dynamic_cast<GeoSceneTextureTileDataset*>(sceneLayer->datasets().first());
 
         Q_ASSERT(m_textureLayer);
     }
@@ -104,11 +107,16 @@ public:
     const GeoSceneTextureTileDataset*   m_textureLayer  = nullptr;
     QCache<TileId, const QImage>        m_cache;
     GeoSceneDocument*                   m_srtmTheme     = nullptr;
+
+private:
+
+    ElevationModelPrivate(const ElevationModelPrivate&)            = delete;
+    ElevationModelPrivate& operator=(const ElevationModelPrivate&) = delete;
 };
 
 ElevationModel::ElevationModel(HttpDownloadManager* downloadManager, PluginManager* pluginManager, QObject* parent) :
     QObject(parent),
-    d(new ElevationModelPrivate(this, downloadManager, pluginManager))
+    d      (new ElevationModelPrivate(this, downloadManager, pluginManager))
 {
     connect(&d->m_tileLoader, SIGNAL(tileCompleted(TileId,QImage)),
             this, SLOT(tileCompleted(TileId,QImage)));
@@ -130,11 +138,11 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
 
     Q_ASSERT(tileZoomLevel == 9);
 
-    const int width     = d->m_textureLayer->tileSize().width();
-    const int height    = d->m_textureLayer->tileSize().height();
+    const int width         = d->m_textureLayer->tileSize().width();
+    const int height        = d->m_textureLayer->tileSize().height();
 
-    const int numTilesX = TileLoaderHelper::levelToColumn(d->m_textureLayer->levelZeroColumns(), tileZoomLevel);
-    const int numTilesY = TileLoaderHelper::levelToRow(d->m_textureLayer->levelZeroRows(), tileZoomLevel);
+    const int numTilesX     = TileLoaderHelper::levelToColumn(d->m_textureLayer->levelZeroColumns(), tileZoomLevel);
+    const int numTilesY     = TileLoaderHelper::levelToRow(d->m_textureLayer->levelZeroRows(), tileZoomLevel);
 
     Q_ASSERT(numTilesX > 0);
     Q_ASSERT(numTilesY > 0);
@@ -177,10 +185,10 @@ qreal ElevationModel::height(qreal lon, qreal lat) const
         const qreal dx = (textureX > (qreal)x) ? textureX - (qreal)x : (qreal)x - textureX;
         const qreal dy = (textureY > (qreal)y) ? textureY - (qreal)y : (qreal)y - textureY;
 
-        Q_ASSERT(0 <= dx && dx <= 1);
-        Q_ASSERT(0 <= dy && dy <= 1);
+        Q_ASSERT((0 <= dx) && (dx <= 1));
+        Q_ASSERT((0 <= dy) && (dy <= 1));
 
-        unsigned int pixel = image->pixel(x % width, y % height) & 0xffff;   // 16 valid bits
+        unsigned int pixel  = image->pixel(x % width, y % height) & 0xffff;   // 16 valid bits
         short int elevation = (short int) pixel; // and signed type, so just cast it
 
         //qCDebug(DIGIKAM_GEOENGINE_LOG) << "(1-dx)" << (1-dx) << "(1-dy)" << (1-dy);
@@ -245,7 +253,7 @@ QVector<GeoDataCoordinates> ElevationModel::heightProfile(qreal fromLon, qreal f
 
     QVector<GeoDataCoordinates> ret;
 
-    while (lat * dirLat <= toLat * dirLat && lon * dirLon <= toLon * dirLon)
+    while (((lat * dirLat) <= (toLat * dirLat)) && ((lon * dirLon) <= (toLon * dirLon)))
     {
         //qCDebug(DIGIKAM_GEOENGINE_LOG) << lat << lon;
 

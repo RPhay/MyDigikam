@@ -33,7 +33,7 @@ public:
            m_dirtyRange         (true),
            m_dirtyBox           (true),
            m_tessellationFlags  (f),
-           m_previousResolution (-1),
+           m_previousResolution (-1.0),
            m_level              (-1)
     {
     }
@@ -103,7 +103,7 @@ public:
 
     TessellationFlags           m_tessellationFlags;
     mutable qreal               m_previousResolution = -1.0;
-    mutable quint8              m_level              = -1.0;
+    mutable quint8              m_level              = -1;
 
 private:
 

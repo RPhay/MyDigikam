@@ -43,11 +43,13 @@ public:
 
     SunLocatorPrivate(const MarbleClock* clock, const Planet* planet)
         : m_twilightZone(planet->twilightZone()),
-          m_clock(clock),
-          m_planet(planet)
+          m_clock       (clock),
+          m_planet      (planet)
     {
         planet->sunPosition(m_lon, m_lat, clock->dateTime());
     }
+
+public:
 
     qreal                    m_lon          = 0.0;
     qreal                    m_lat          = 0.0;
@@ -60,7 +62,7 @@ public:
 
 SunLocator::SunLocator(const MarbleClock* clock, const Planet* planet)
     : QObject(),
-      d(new SunLocatorPrivate(clock, planet))
+      d      (new SunLocatorPrivate(clock, planet))
 {
 }
 
@@ -72,9 +74,12 @@ SunLocator::~SunLocator()
 qreal SunLocator::shading(qreal lon, qreal a, qreal c) const
 {
     // haversine formula
+
     qreal b = sin((lon - d->m_lon) / 2.0);
+
     //    qreal g = sin((lat-d->m_lat)/2.0);
     //    qreal h = (g*g)+cos(lat)*cos(d->m_lat)*(b*b);
+
     qreal h = (a * a) + c * (b * b);
 
     /*
@@ -84,18 +89,16 @@ qreal SunLocator::shading(qreal lon, qreal a, qreal c) const
       theta = 2*asin(sqrt(h))
     */
 
-    qreal brightness;
+    qreal brightness = 0.0;
 
-    if (h <= 0.5 - d->m_twilightZone / 2.0)
+    if      (h <= 0.5 - d->m_twilightZone / 2.0)
     {
         brightness = 1.0;
     }
-
     else if (h >= 0.5 + d->m_twilightZone / 2.0)
     {
         brightness = 0.0;
     }
-
     else
     {
         brightness = (0.5 + d->m_twilightZone / 2.0 - h) / d->m_twilightZone;
@@ -107,6 +110,7 @@ qreal SunLocator::shading(qreal lon, qreal a, qreal c) const
 void SunLocator::shadePixel(QRgb& pixcol, qreal brightness)
 {
     // daylight - no change
+
     if (brightness > 0.99999)
     {
         return;
@@ -117,18 +121,20 @@ void SunLocator::shadePixel(QRgb& pixcol, qreal brightness)
         // night
         //      Doing  "pixcol = qRgb(r/2, g/2, b/2);" by shifting some electrons around ;)
         // by shifting some electrons around ;)
+
         pixcol = qRgb(qRed(pixcol) * 0.35, qGreen(pixcol) * 0.35, qBlue(pixcol)  * 0.35);
+
         // pixcol = (pixcol & 0xff000000) | ((pixcol >> 1) & 0x7f7f7f);
     }
-
     else
     {
         // gradual shadowing
-        int r   = qRed(pixcol);
-        int g   = qGreen(pixcol);
-        int b   = qBlue(pixcol);
-        qreal d = 0.65 * brightness + 0.35;
-        pixcol  = qRgb((int)(d * r), (int)(d * g), (int)(d * b));
+
+        int r         = qRed(pixcol);
+        int g         = qGreen(pixcol);
+        int b         = qBlue(pixcol);
+        const qreal d = 0.65 * brightness + 0.35;
+        pixcol        = qRgb((int)(d * r), (int)(d * g), (int)(d * b));
     }
 }
 
@@ -136,6 +142,7 @@ void SunLocator::shadePixelComposite(QRgb& pixcol, const QRgb& dpixcol,
                                      qreal brightness)
 {
     // daylight - no change
+
     if (brightness > 0.99999)
     {
         return;
@@ -144,12 +151,13 @@ void SunLocator::shadePixelComposite(QRgb& pixcol, const QRgb& dpixcol,
     if (brightness < 0.00001)
     {
         // night
+
         pixcol = dpixcol;
     }
-
     else
     {
         // gradual shadowing
+
         qreal& d = brightness;
 
         int r    = qRed(pixcol);
@@ -186,8 +194,9 @@ void SunLocator::setPlanet(const Planet* planet)
     const Planet* previousPlanet = d->m_planet;
 
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "SunLocator::setPlanet(Planet*)";
-    d->m_planet       = planet;
-    d->m_twilightZone = planet->twilightZone();
+
+    d->m_planet                  = planet;
+    d->m_twilightZone            = planet->twilightZone();
     planet->sunPosition(d->m_lon, d->m_lat, d->m_clock->dateTime());
 
     // Initially there might be no planet set.
