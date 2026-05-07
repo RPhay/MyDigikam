@@ -61764,12 +61764,12 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, kde-format
 msgid "Return items with confirmed face regions"
-msgstr ""
+msgstr "返回带有已确认人脸区域的项目"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
 #, kde-format
 msgid "Confirmed Face Regions"
-msgstr ""
+msgstr "已确认的人脸区域"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format

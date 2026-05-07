@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-11 00:41+0000\n"
-"PO-Revision-Date: 2026-03-01 17:16+0100\n"
+"PO-Revision-Date: 2026-05-08 18:37+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -39838,9 +39838,7 @@ msgid "Rating: "
 msgstr "Bewertung: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
 msgstr "Versioniert: "
@@ -39894,38 +39892,29 @@ msgid "File"
 msgstr "Datei"
 
 #: core/libs/properties/itempropertiestab.cpp:486
-#, fuzzy, kde-format
-#| msgctxt "@title: file system tree"
-#| msgid "Folders"
+#, kde-format
 msgid "Folder"
 msgstr "Ordner"
 
 #: core/libs/properties/itempropertiestab.cpp:487
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Symlink: "
+#, kde-format
 msgid "Symlink"
-msgstr "Symb. Verknüpfung: "
+msgstr "Symbolische Verknüpfung"
 
 #: core/libs/properties/itempropertiestab.cpp:488
-#, fuzzy, kde-format
-#| msgid "Modified"
+#, kde-format
 msgid "Modified Date"
-msgstr "Geändert"
+msgstr "Änderungsdatum"
 
 #: core/libs/properties/itempropertiestab.cpp:490
-#, fuzzy, kde-format
-#| msgctxt "Owner of the file"
-#| msgid "Owner"
+#, kde-format
 msgid "Owner"
 msgstr "Eigentümer"
 
 #: core/libs/properties/itempropertiestab.cpp:491
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Permissions: "
+#, kde-format
 msgid "Permissions"
-msgstr "Berechtigungen: "
+msgstr "Berechtigungen"
 
 #: core/libs/properties/itempropertiestab.cpp:493
 #, kde-format
@@ -39933,23 +39922,19 @@ msgid "Mime"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:495
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Ratio"
-msgstr "als Dezimalwert"
+msgstr "Verhältnis"
 
 #: core/libs/properties/itempropertiestab.cpp:496
-#, fuzzy, kde-format
-#| msgid "Bit depth"
+#, kde-format
 msgid "Bit Depth"
-msgstr "Bittiefe"
+msgstr "Bit-Tiefe"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "Farbmodell"
+msgstr "Farbmodus"
 
 #: core/libs/properties/itempropertiestab.cpp:498
 #, fuzzy, kde-format
@@ -39964,30 +39949,22 @@ msgid "Has GPS"
 msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versionned: "
+#, kde-format
 msgid "Versioned"
-msgstr "Versioniert: "
+msgstr "Versioniert"
 
 #: core/libs/properties/itempropertiestab.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Grouped"
-msgstr "Gruppiert: "
+msgstr "Gruppiert"
 
 #: core/libs/properties/itempropertiestab.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgid "Make"
 msgstr "Hersteller"
 
 #: core/libs/properties/itempropertiestab.cpp:504
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "Modell"
 
@@ -40013,16 +39990,12 @@ msgid "Aperture"
 msgstr "Blende"
 
 #: core/libs/properties/itempropertiestab.cpp:508
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Focal Length"
+#, kde-format
 msgid "Focal Length"
 msgstr "Brennweite"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Time"
+#, kde-format
 msgid "Exposure Time"
 msgstr "Belichtungszeit"
 
@@ -40034,15 +40007,12 @@ msgid "Sensitivity"
 msgstr "Empfindlichkeit"
 
 #: core/libs/properties/itempropertiestab.cpp:511
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "Belichtungsmodus"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
 msgstr "Blitz"
 
@@ -40089,23 +40059,17 @@ msgid "Video Audio Codec"
 msgstr "Audio-Codec"
 
 #: core/libs/properties/itempropertiestab.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
 msgstr "Beschriftung"
 
 #: core/libs/properties/itempropertiestab.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
 msgstr "Titel"
 
 #: core/libs/properties/itempropertiestab.cpp:526
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
 msgstr "Personen"
 
@@ -40117,16 +40081,12 @@ msgid "Rights"
 msgstr "Rechte"
 
 #: core/libs/properties/itempropertiestab.cpp:529
-#, fuzzy, kde-format
-#| msgctxt "@title: pick tree"
-#| msgid "Pick"
+#, kde-format
 msgid "Pick"
 msgstr "Auswahl"
 
 #: core/libs/properties/itempropertiestab.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@item: color tree"
-#| msgid "Color"
+#, kde-format
 msgid "Color"
 msgstr "Farbe"
 
@@ -40183,11 +40143,9 @@ msgstr "Größe: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:120
 #: core/libs/properties/itemselectionpropertiestab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Groups: "
-msgstr "Gruppiert: "
+msgstr "Gruppen: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
 #, fuzzy, kde-format
@@ -41821,11 +41779,9 @@ msgid "Tags Manager"
 msgstr "Stichwortverwaltung"
 
 #: core/libs/tags/manager/tagsmanager_gui.cpp:37
-#, fuzzy, kde-format
-#| msgctxt "@label"
-#| msgid "Search in albums:"
+#, kde-format
 msgid "Search for tags..."
-msgstr "Suchen in Alben:"
+msgstr "Nach Stichwörtern suchen …"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:26
 #, fuzzy, kde-format
@@ -41888,10 +41844,9 @@ msgstr "Export zu lokalem Speicher"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:191
 #: core/libs/tags/manager/tagsmanager_io.cpp:309
-#, fuzzy, kde-format
-#| msgid "XMP text Files (*.xmp)"
+#, kde-format
 msgid "Text File (*.txt)"
-msgstr "XMP-Textdateien (*.xmp)"
+msgstr "Textdatei (*.txt)"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:289
 #, fuzzy, kde-format
@@ -41922,16 +41877,13 @@ msgstr[1] ""
 "entfernen?"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Add New Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Add Tag"
-msgstr "Neues Stichwort hinzufügen"
+msgstr "Stichwort hinzufügen"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:93
-#, fuzzy, kde-format
-#| msgid "Remove Tag"
+#, kde-format
 msgctxt "@action: button"
 msgid "Remove Tag"
 msgstr "Stichwort entfernen"
@@ -42940,10 +42892,9 @@ msgid "Show the digiKam item tag names at the bottom of the screen."
 msgstr "Zeigt die digiKam-Stichwörter am unteren Rand des Bildschirms an."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "Nächster Monat"
+msgstr "Schriftart:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
 #, fuzzy, kde-format
@@ -43045,10 +42996,9 @@ msgid "File last modified"
 msgstr "Änderungsdatum der Datei"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:157
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "File created"
-msgstr "Dateidatum"
+msgstr "Datei erstellt"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, kde-format
@@ -44086,11 +44036,9 @@ msgstr "Mit dem Medienspieler ist ein Fehler aufgetreten ..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "No media"
+#, kde-format
 msgid "End of media."
-msgstr "Keine Medien"
+msgstr "Ende des Mediums."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:210
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:305
@@ -44122,16 +44070,14 @@ msgstr "Videobild aufnehmen"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:323
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Nach links drehen"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:225
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:326
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Nach rechts drehen"
@@ -44144,13 +44090,15 @@ msgstr "Abspielen in Endlosschleife"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:910
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:741
-#, fuzzy, kde-format
-#| msgid "Error: %1"
+#, kde-format
 msgid ""
 "%1\n"
 "\n"
 "Error: \"%2\""
-msgstr "Fehler: %1"
+msgstr ""
+"%1\n"
+"\n"
+"Fehler: „%2“"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
@@ -44171,11 +44119,9 @@ msgid "Change video playback rate"
 msgstr "Wiedergabegeschwindigkeit ändern"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "@info: download status"
-#| msgid "Rate:"
+#, kde-format
 msgid "Rate"
-msgstr "Rate:"
+msgstr "Rate"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:339
 #, kde-format
@@ -45068,12 +45014,10 @@ msgstr[1] ""
 "ausgewählte Bilder angewendet"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
-msgstr "Geändert.: %1"
+msgstr "Geänd.: %1"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:422
 #: core/showfoto/main/showfoto.cpp:267
@@ -49195,12 +49139,10 @@ msgid "Macao"
 msgstr "Macau"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "Mazedonien"
+msgstr "Nord-Mazedonien"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
@@ -49299,12 +49241,10 @@ msgid "Mongolia"
 msgstr "Mongolei"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:190
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Montserrat"
+#, kde-format
 msgctxt "@info: country code"
 msgid "Montenegro"
-msgstr "Montserrat"
+msgstr "Montenegro"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:191
 #, kde-format
@@ -53298,11 +53238,9 @@ msgid "First Letter of Each Word Uppercase"
 msgstr "Ersten Buchstaben jedes Wortes groß schreiben"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:34
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Date format:"
+#, kde-format
 msgid "Date Format"
-msgstr "Datumsformat:"
+msgstr "Datumsformat"
 
 #: core/utilities/advancedrename/parser/modifiers/dateformatmodifier.cpp:35
 #, fuzzy, kde-format
@@ -55216,10 +55154,9 @@ msgstr ""
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "&Configure..."
-msgstr "Einrichten ..."
+msgstr "&Einrichten …"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:160
 #, kde-format
@@ -55228,8 +55165,7 @@ msgid "m"
 msgstr "m"
 
 #: core/utilities/geolocation/engine/core/MarbleLocale.cpp:163
-#, fuzzy, kde-format
-#| msgid "mm"
+#, kde-format
 msgctxt "means millimeters"
 msgid "mm"
 msgstr "mm"
@@ -65064,10 +65000,9 @@ msgid "Sublocation shown in the item"
 msgstr "Geben Sie hier den Ort innerhalb der Stadt an."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:795
-#, fuzzy, kde-format
-#| msgid "Place:"
+#, kde-format
 msgid "Place"
-msgstr "Ort:"
+msgstr "Ort"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, fuzzy, kde-format
@@ -65389,30 +65324,22 @@ msgid "Portrait orientation"
 msgstr "Ausrichtung im Hochformat"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
 msgstr "Sekunden"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
 msgstr "Minuten"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
 msgstr "Stunden"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
 msgstr "Tage"
 
