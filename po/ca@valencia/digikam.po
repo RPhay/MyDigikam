@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-07 00:41+0000\n"
 "PO-Revision-Date: 2026-04-07 08:27+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -54466,13 +54466,13 @@ msgid "E"
 msgstr "E"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "N"
 msgstr "N"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:159
 #, kde-format
 msgid "S"
 msgstr "S"
@@ -56479,17 +56479,17 @@ msgstr "Encerclat"
 msgid "German"
 msgstr "Alemany"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:90
 #, kde-format
 msgid "Crosshairs"
 msgstr "Punts de mira"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:95
 #, kde-format
 msgid "Cross&hairs"
 msgstr "Punts de &mira"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:110
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr "Un connector que mostra punts de mira sobre el mapa."
@@ -56584,52 +56584,52 @@ msgstr "&Quadrícula de coordenades"
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr "Un connector que mostra una quadrícula de coordenades sobre el mapa."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:231
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr "Trieu el color de la quadrícula de coordenades."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr "Trieu el color dels cercles dels tròpics."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:257
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr "Trieu el color de la línia de l'equador."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:340
 #, kde-format
 msgid "Equator"
 msgstr "Equador"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:348
 #, kde-format
 msgid "Prime Meridian"
 msgstr "Meridià de Greenwich"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:349
 #, kde-format
 msgid "Antimeridian"
 msgstr "Antimeridià"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:450
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr "Tròpic de Càncer"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:451
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr "Tròpic de Capricorn"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:455
 #, kde-format
 msgid "Arctic Circle"
 msgstr "Cercle polar àrtic"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:456
 #, kde-format
 msgid "Antarctic Circle"
 msgstr "Cercle polar antàrtic"

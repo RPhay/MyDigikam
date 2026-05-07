@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-07 00:41+0000\n"
 "PO-Revision-Date: 2026-03-21 20:25+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -55479,13 +55479,13 @@ msgid "E"
 msgstr "E"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "N"
 msgstr "I"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:159
 #, kde-format
 msgid "S"
 msgstr "H"
@@ -57512,17 +57512,17 @@ msgstr "Zirkulua kanporantz"
 msgid "German"
 msgstr "Alemana"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:90
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:95
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:110
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr ""
@@ -57620,55 +57620,55 @@ msgstr "Koordenatu &sareta"
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:231
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the coordinate grid."
 msgstr "Ezarri bigarren marraren kolorea."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the tropic circles."
 msgstr "Ezarri bigarren marraren kolorea."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:257
 #, fuzzy, kde-format
 #| msgid "Set here the color of the second line."
 msgid "Please choose the color for the equator."
 msgstr "Ezarri bigarren marraren kolorea."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:340
 #, kde-format
 msgid "Equator"
 msgstr "Ekuatorea"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:348
 #, fuzzy, kde-format
 msgid "Prime Meridian"
 msgstr "Gurasoak"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:349
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:450
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:451
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:455
 #, kde-format
 msgid "Arctic Circle"
 msgstr "Zirkulu Artikoa"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:456
 #, kde-format
 msgid "Antarctic Circle"
 msgstr "Zirkulu Antartikoa"

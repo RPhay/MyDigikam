@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-07 00:41+0000\n"
 "PO-Revision-Date: 2026-04-03 00:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -54442,13 +54442,13 @@ msgid "E"
 msgstr "И"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "N"
 msgstr "С"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:159
 #, kde-format
 msgid "S"
 msgstr "Ю"
@@ -56449,17 +56449,17 @@ msgstr "Кръг"
 msgid "German"
 msgstr "Немски"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:90
 #, kde-format
 msgid "Crosshairs"
 msgstr "Кръст"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:95
 #, kde-format
 msgid "Cross&hairs"
 msgstr "&Маркиране на центъра"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:110
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr "Приставка, показваща центъра на картата с кръстче."
@@ -56553,52 +56553,52 @@ msgstr "Координатна &мрежа"
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr "Приставка, показваща координатна мрежа на д картата."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:231
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr "Моля, изберете цвета за координатната мрежа."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr "Моля, изберете цвета за тропическите кръгове."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:257
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr "Моля, изберете цвета за екватора."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:340
 #, kde-format
 msgid "Equator"
 msgstr "Екватор"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:348
 #, kde-format
 msgid "Prime Meridian"
 msgstr "Главен меридиан"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:349
 #, kde-format
 msgid "Antimeridian"
 msgstr "Антимеридиан"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:450
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr "Тропик на Рака"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:451
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr "Тропик на Козирога"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:455
 #, kde-format
 msgid "Arctic Circle"
 msgstr "Северен полярен кръг"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:456
 #, kde-format
 msgid "Antarctic Circle"
 msgstr "Южен полярен кръг"

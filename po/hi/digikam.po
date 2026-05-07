@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-07 00:41+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -53084,7 +53084,7 @@ msgid "E"
 msgstr ""
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, fuzzy, kde-format
 #| msgctxt "Image filter reproducible: No"
 #| msgid "No"
@@ -53092,7 +53092,7 @@ msgid "N"
 msgstr "नहीं"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:159
 #, kde-format
 msgid "S"
 msgstr ""
@@ -55158,17 +55158,17 @@ msgstr "सर्किल आउट"
 msgid "German"
 msgstr "जर्मनी"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:90
 #, kde-format
 msgid "Crosshairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:95
 #, kde-format
 msgid "Cross&hairs"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:110
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr ""
@@ -55265,54 +55265,54 @@ msgstr "घ्रुवीय निर्देशांक"
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:231
 #, fuzzy, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr "<p>द्वितीय लकीर का रंग यहां सेट करें."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, fuzzy, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr "<p>द्वितीय लकीर का रंग यहां सेट करें."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:257
 #, fuzzy, kde-format
 msgid "Please choose the color for the equator."
 msgstr "<p>द्वितीय लकीर का रंग यहां सेट करें."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:340
 #, fuzzy, kde-format
 #| msgid "Calendar"
 msgid "Equator"
 msgstr "कैलेन्डर"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:348
 #, fuzzy, kde-format
 msgid "Prime Meridian"
 msgstr "पैरेन्ट्स"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:349
 #, kde-format
 msgid "Antimeridian"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:450
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:451
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:455
 #, fuzzy, kde-format
 #| msgid "Circle Out"
 msgid "Arctic Circle"
 msgstr "सर्किल आउट"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:456
 #, fuzzy, kde-format
 #| msgid "Antarctica"
 msgid "Antarctic Circle"

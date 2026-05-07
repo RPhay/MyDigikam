@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-05 00:41+0000\n"
+"POT-Creation-Date: 2026-05-07 00:41+0000\n"
 "PO-Revision-Date: 2026-03-13 17:00+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -54839,13 +54839,13 @@ msgid "E"
 msgstr "I"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:157
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
 #, kde-format
 msgid "N"
 msgstr "P"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:794
-#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:158
+#: core/utilities/geolocation/engine/plugins/render/compass/CompassFloatItem.cpp:159
 #, kde-format
 msgid "S"
 msgstr "E"
@@ -56852,17 +56852,17 @@ msgstr "Ympyröity"
 msgid "German"
 msgstr "Saksa"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:88
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:90
 #, kde-format
 msgid "Crosshairs"
 msgstr "Hiusristikko"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:93
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:95
 #, kde-format
 msgid "Cross&hairs"
 msgstr "&Hiusristikko"
 
-#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:108
+#: core/utilities/geolocation/engine/plugins/render/crosshairs/CrosshairsPlugin.cpp:110
 #, kde-format
 msgid "A plugin that shows crosshairs over the map."
 msgstr "Hiusristikon kartalla näyttävä liitännäinen."
@@ -56956,53 +56956,53 @@ msgstr "Koordinaatti&ruudukko"
 msgid "A plugin that shows a coordinate grid over the map."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:230
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:231
 #, kde-format
 msgid "Please choose the color for the coordinate grid."
 msgstr "Valitse koordinaattiruudukon väri."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:242
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:244
 #, kde-format
 msgid "Please choose the color for the tropic circles."
 msgstr "Valitse kääntöpiirien väri."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:254
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:257
 #, kde-format
 msgid "Please choose the color for the equator."
 msgstr "Valitse päiväntasaajan väri."
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:337
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:340
 #, kde-format
 msgid "Equator"
 msgstr "Päiväntasaaja"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:344
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:348
 #, kde-format
 msgid "Prime Meridian"
 msgstr "Nollameridiaani"
 
 # Tälle ei taida olla suomenkielistä nimitystä? Vironkielinen Wikipedia näkyy kääntäneen näin.
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:345
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:349
 #, kde-format
 msgid "Antimeridian"
 msgstr "180° meridiaani"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:440
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:450
 #, kde-format
 msgid "Tropic of Cancer"
 msgstr "Kravun kääntöpiiri"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:441
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:451
 #, kde-format
 msgid "Tropic of Capricorn"
 msgstr "Kauriin kääntöpiiri"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:455
 #, kde-format
 msgid "Arctic Circle"
 msgstr "Pohjoinen napapiiri"
 
-#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:445
+#: core/utilities/geolocation/engine/plugins/render/graticule/GraticulePlugin.cpp:456
 #, kde-format
 msgid "Antarctic Circle"
 msgstr "Eteläinen napapiiri"
