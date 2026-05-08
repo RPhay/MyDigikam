@@ -159,11 +159,21 @@ bool FacePipelineDetectRecognize::finder()
 
         if (!album->isTrashAlbum())
         {
+            QList<qlonglong> imageIds;
+
             // get the image IDs for the album
 
-            QList<qlonglong> imageIds = CoreDbAccess().db()->getImageIds(album->id(),
-                                                                         DatabaseItem::Status::Visible,
-                                                                         (FaceScanSettings::AlreadyScannedHandling::Skip != settings.alreadyScannedHandling));
+            if      (album->type() == Album::PHYSICAL)
+            {
+                imageIds = CoreDbAccess().db()->getImageIds(album->id(),
+                                                            DatabaseItem::Status::Visible,
+                                                            (FaceScanSettings::AlreadyScannedHandling::Skip !=
+                                                             settings.alreadyScannedHandling));
+            }
+            else if (album->type() == Album::TAG)
+            {
+                imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id());
+            }
 
             // iterate over the image IDs and add unique IDs to the queue for processing
 

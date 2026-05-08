@@ -403,7 +403,8 @@ void FacesEngine::slotStart()
 
     if (!d->newPipeline->start())
     {
-        Q_EMIT signalScanNotification(QString(i18n("Error starting face detection.")), DNotificationWidget::Error);
+        Q_EMIT signalScanNotification(QString(i18n("Error starting face detection.")),
+                                      DNotificationWidget::Error);
     }
 }
 
