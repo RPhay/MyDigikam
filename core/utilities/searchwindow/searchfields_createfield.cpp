@@ -1169,6 +1169,15 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
 
         return field;
     }
+    else if (name == QLatin1String("confirmedfaces"))
+    {
+        SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);
+        field->setFieldName(name);
+        field->setText(i18n("Faces"), i18n("Return items with confirmed face regions"));
+        field->setLabel(i18n("Confirmed Face Regions"));
+
+        return field;
+    }
     else if (name == QLatin1String("nofaceregions"))
     {
         SearchFieldCheckBox* const field = new SearchFieldCheckBox(parent);

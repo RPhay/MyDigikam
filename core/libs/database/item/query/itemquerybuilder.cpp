@@ -1433,6 +1433,13 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                          << reader.valueToInt();
         }
     }
+    else if (name == QLatin1String("confirmedfaces"))
+    {
+            reader.readToEndOfElement();
+            sql += QString::fromUtf8(" (Images.id IN (SELECT imageid FROM ImageTagProperties "
+                                     " WHERE property = ? ) ) ");
+            *boundValues << ImageTagPropertyName::tagRegion();
+    }
     else if (name == QLatin1String("nofaceregions"))
     {
             reader.readToEndOfElement();

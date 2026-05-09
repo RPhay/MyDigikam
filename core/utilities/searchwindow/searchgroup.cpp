@@ -212,6 +212,7 @@ void SearchGroup::setup(Type type)
     group->setLabel(label);
 
     group->addField(SearchField::createField(QLatin1String("faceregionscount"), group));
+    group->addField(SearchField::createField(QLatin1String("confirmedfaces"),   group));
     group->addField(SearchField::createField(QLatin1String("nofaceregions"),    group));
 
     m_fieldLabels << label;
