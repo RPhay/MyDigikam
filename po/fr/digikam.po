@@ -68,7 +68,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:41+0000\n"
+"POT-Creation-Date: 2026-05-09 00:41+0000\n"
 "PO-Revision-Date: 2026-02-06 11:53+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -25421,7 +25421,7 @@ msgstr "à partir de l'observation"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -27491,7 +27491,7 @@ msgstr "Rotation automatique : %1\n"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:232
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
@@ -54618,7 +54618,7 @@ msgid "&Hide"
 msgstr "&Masquer"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
 msgstr "&Configurer…"
@@ -56947,50 +56947,50 @@ msgstr "Afficher le rapport d'échelle"
 msgid "Minimize"
 msgstr "Minimiser"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
 #, kde-format
 msgid "Scale Bar"
 msgstr "Barre d'échelle"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
 #, kde-format
 msgid "&Scale Bar"
 msgstr "&Barre d'échelle"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr ""
 "Un module externe affichant un élément flottant fournissant l'échelle de la "
 "carte."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
 #, kde-format
 msgid "Original Developer"
 msgstr "Développeur original"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
 #, kde-format
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
 #, kde-format
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "&Rapport d'échelle"
@@ -62801,42 +62801,42 @@ msgstr "Mise à jour de la base de données des visages."
 msgid "Error starting face detection."
 msgstr "Erreur durant le démarrage de la détection des visages"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:428
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Éléments analysés à la recherche de visages : %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:432
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Élément analysé à la recherche de visages : %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Visages trouvés : %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "Face found: %1"
 msgstr "Visage trouvé : %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Reconnaissance faciale : %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, kde-format
 msgid "Found %1 face."
 msgstr "Un visage %1 a été trouvé."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Found %1 faces."
 msgstr "%1 visages ont été trouvés."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Reconnu : %1"

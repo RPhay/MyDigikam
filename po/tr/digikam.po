@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:41+0000\n"
+"POT-Creation-Date: 2026-05-09 00:41+0000\n"
 "PO-Revision-Date: 2026-05-02 19:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -25089,7 +25089,7 @@ msgstr "gözlemden"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -27117,7 +27117,7 @@ msgstr "Kendiliğinden döndüren: %1\n"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:232
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
@@ -53775,7 +53775,7 @@ msgid "&Hide"
 msgstr "&Gizle"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
 msgstr "&Yapılandır…"
@@ -56095,50 +56095,50 @@ msgstr "Oran Ölçeğini Göster"
 msgid "Minimize"
 msgstr "Küçült"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
 #, kde-format
 msgid "Scale Bar"
 msgstr "Ölçek Çubuğu"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
 #, kde-format
 msgid "&Scale Bar"
 msgstr "Ölçe&k Çubuğu"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr ""
 "Bir harita ölçeği sağlayan bir kayan noktalı ögeyi göstermek için bir "
 "eklenti."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
 #, kde-format
 msgid "Original Developer"
 msgstr "Özgün Geliştirici"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
 #, kde-format
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
 #, kde-format
 msgid "nm"
 msgstr "dm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "&Oran Ölçeği"
@@ -61852,42 +61852,42 @@ msgstr "Yüz veri tabanı güncelleniyor"
 msgid "Error starting face detection."
 msgstr "Yüz algılaması başlatılırken hata."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:428
 #, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "Yüzler için taranan ögeler: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:432
 #, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "Yüzler için taranan öge: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, kde-format
 msgid "Faces found: %1"
 msgstr "Bulunan yüzler: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, kde-format
 msgid "Face found: %1"
 msgstr "Bulunan yüz: %1"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "Yüzleri tara: %1\n"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, kde-format
 msgid "Found %1 face."
 msgstr "%1 yüz bulundu."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Found %1 faces."
 msgstr "%1 yüz bulundu."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, kde-format
 msgid "Recognized: %1"
 msgstr "Tanındı: %1"

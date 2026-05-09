@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:41+0000\n"
+"POT-Creation-Date: 2026-05-09 00:41+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -23994,7 +23994,7 @@ msgstr "з назірання"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -25940,7 +25940,7 @@ msgstr "Рэйтынг: %1\n"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:232
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
@@ -51657,7 +51657,7 @@ msgid "&Hide"
 msgstr "&Схаваць"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
 msgstr "&Наладжванне..."
@@ -53976,48 +53976,48 @@ msgstr ""
 msgid "Minimize"
 msgstr "Згарнуць"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
 #, kde-format
 msgid "Scale Bar"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
 #, kde-format
 msgid "&Scale Bar"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
 #, kde-format
 msgid "Original Developer"
 msgstr "Першапачатковы распрацоўнік"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
 #, kde-format
 msgid "km"
 msgstr "км"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "m"
 msgstr "м"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
 #, kde-format
 msgid "mi"
 msgstr "мілі"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
 #, kde-format
 msgid "nm"
 msgstr "нм"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
 #, kde-format
 msgid "&Ratio Scale"
 msgstr ""
@@ -59435,49 +59435,49 @@ msgstr ""
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:428
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Items scanned for faces: %1\n"
 msgstr "Пошук твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:432
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Item scanned for faces: %1\n"
 msgstr "Пошук твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "У %1 знойдзеныя выявы"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "У %1 знойдзеныя выявы"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, fuzzy, kde-format
 #| msgid "Scan for Faces"
 msgid "Face Scanning: %1\n"
 msgstr "Пошук твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "Found %1 face."
 msgstr "Няма твараў"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, fuzzy, kde-format
 #| msgctxt "@info"
 #| msgid "Icon Size: %1"

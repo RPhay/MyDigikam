@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:41+0000\n"
+"POT-Creation-Date: 2026-05-09 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -25801,7 +25801,7 @@ msgstr "색수차 보정"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -27904,7 +27904,7 @@ msgstr "측광 모드:"
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:232
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
@@ -55388,7 +55388,7 @@ msgid "&Hide"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "&Configure..."
@@ -57912,54 +57912,54 @@ msgstr "이미지 제목 표시"
 msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
 #, fuzzy, kde-format
 #| msgid "Show scale bar"
 msgid "Scale Bar"
 msgstr "축척 표시줄 표시"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "&Scale Bar"
 msgstr "다음으로 크기 조정(&S):"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "This item has geolocation information."
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "이 항목에는 지리적 위치 정보가 있습니다."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
 #, fuzzy, kde-format
 #| msgid "Original Colors:"
 msgid "Original Developer"
 msgstr "원본 색상:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
 #, kde-format
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, fuzzy, kde-format
 #| msgid "cm"
 msgid "m"
 msgstr "cm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
 #, kde-format
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
 #, fuzzy, kde-format
 #| msgctxt "@info: tableview"
 #| msgid "Rational"
@@ -63706,46 +63706,46 @@ msgstr "파일에 메타데이터를 쓰고 있습니다. 기다려 주십시오
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:428
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:432
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Faces found: %1"
 msgstr "%1에서 찾은 이미지"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgid "Images found in %1"
 msgid "Face found: %1"
 msgstr "%1에서 찾은 이미지"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "찾기:"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, fuzzy, kde-format
 #| msgctxt "@item: filter model"
 #| msgid "No face"
 msgid "Found %1 face."
 msgstr "얼굴 없음"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, fuzzy, kde-format
 #| msgid "Icon Size:"
 msgid "Recognized: %1"

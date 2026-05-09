@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:41+0000\n"
+"POT-Creation-Date: 2026-05-09 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -24212,7 +24212,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:756
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
 #| msgid "Not available"
@@ -26192,7 +26192,7 @@ msgstr "गुणवत्ताश्रेणी: "
 #: core/libs/aitoolspipeline/aitoolspipeline.cpp:515
 #: core/libs/tags/autoassignment/autotagsengine.cpp:232
 #: core/utilities/maintenance/tools/duplicates/duplicatesfinder.cpp:189
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:490
 #: core/utilities/maintenance/tools/imgqsort/imagequalitysorter.cpp:236
 #: core/utilities/maintenance/tools/metaremover/metadataremover.cpp:242
 #: core/utilities/maintenance/tools/metasync/metadatasynchronizer.cpp:223
@@ -52817,7 +52817,7 @@ msgid "&Hide"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:437
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, fuzzy, kde-format
 msgid "&Configure..."
 msgstr "संयोजीत करा"
@@ -55235,51 +55235,51 @@ msgstr "क्रियाप्राप्तीचे गुणोत्त�
 msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:85
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
 #, fuzzy, kde-format
 #| msgid "Show scale bar"
 msgid "Scale Bar"
 msgstr "प्रमाण पट्टी दर्शवा"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:90
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "&Scale Bar"
 msgstr "यासाठी प्रमाणमापन करा (&S):"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:105
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
 #, fuzzy, kde-format
 #| msgid "&Fit image to page"
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "पानावर प्रतिमा बसवा (&F)"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:116
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
 #, fuzzy, kde-format
 msgid "Original Developer"
 msgstr "विकासकर्ता"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:270
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
 #, kde-format
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:283
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
 #, kde-format
 msgid "m"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
 #, kde-format
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:306
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:444
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
 #, fuzzy, kde-format
 msgid "&Ratio Scale"
 msgstr "फिरवणे"
@@ -60784,44 +60784,44 @@ msgstr "%1: %2 हे डाउनलोड करण्यास अपयश"
 msgid "Error starting face detection."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:427
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:428
 #, fuzzy, kde-format
 msgid "Items scanned for faces: %1\n"
 msgstr "यामध्ये शोधा '%1'..."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:431
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:432
 #, fuzzy, kde-format
 msgid "Item scanned for faces: %1\n"
 msgstr "यामध्ये शोधा '%1'..."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:436
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:437
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Faces found: %1"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:440
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:441
 #, fuzzy, kde-format
 #| msgid "Remove items"
 msgid "Face found: %1"
 msgstr "घटक काढून टाका"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:488
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, fuzzy, kde-format
 msgid "Face Scanning: %1\n"
 msgstr "यामध्ये शोधा '%1'..."
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:495
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, fuzzy, kde-format
 msgid "Found %1 face."
 msgstr "गाळणी काढून टाका"
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:499
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:500
 #, kde-format
 msgid "Found %1 faces."
 msgstr ""
 
-#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:505
+#: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:506
 #, fuzzy, kde-format
 msgid "Recognized: %1"
 msgstr "आकार :"
