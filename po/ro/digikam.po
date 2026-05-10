@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
 "PO-Revision-Date: 2026-03-18 12:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -25177,7 +25177,7 @@ msgstr "Informații"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
 #| msgid "Not available"
@@ -64686,6 +64686,7 @@ msgstr "Fișiere audio"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "Nu selecta nimic"
@@ -64706,10 +64707,20 @@ msgstr "și"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, fuzzy, kde-format
-msgid "Return items without face regions"
+msgid "Return items with confirmed face regions"
 msgstr "Întoarce fotografiile comentate de"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+msgid "Confirmed Face Regions"
+msgstr "Selecție"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
+#, fuzzy, kde-format
+msgid "Return items without face regions"
+msgstr "Întoarce fotografiile comentate de"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "Selecție"

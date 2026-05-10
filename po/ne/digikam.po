@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -24152,7 +24152,7 @@ msgstr "छवि सूचना"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
 msgid "not available"
@@ -61881,6 +61881,7 @@ msgstr "अडियो फाइल"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, fuzzy, kde-format
 msgid "Faces"
 msgstr "कुनै पनि चयन नगर्नुहोस्"
@@ -61898,10 +61899,20 @@ msgstr "रद्द गर्नुहोस्"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, fuzzy, kde-format
-msgid "Return items without face regions"
+msgid "Return items with confirmed face regions"
 msgstr "प्रकृति"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+msgid "Confirmed Face Regions"
+msgstr "चयन"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
+#, fuzzy, kde-format
+msgid "Return items without face regions"
+msgstr "प्रकृति"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, fuzzy, kde-format
 msgid "No Face Regions"
 msgstr "चयन"

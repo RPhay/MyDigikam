@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
 "PO-Revision-Date: 2026-03-28 21:56+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -23919,7 +23919,7 @@ msgstr ""
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -60836,6 +60836,7 @@ msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Faces"
 msgstr ""
@@ -60852,11 +60853,23 @@ msgid "and"
 msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#, fuzzy, kde-format
+#| msgid "Show images without a face tag."
+msgid "Return items with confirmed face regions"
+msgstr "Vis bilete som manglar ansiktsmerkelappar."
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+#| msgid "Confirm Deletion"
+msgid "Confirmed Face Regions"
+msgstr "Stadfest sletting"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Return items without face regions"
 msgstr ""
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, kde-format
 msgid "No Face Regions"
 msgstr ""

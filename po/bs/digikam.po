@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -26808,7 +26808,7 @@ msgstr "Kromatsko Odstupanje:"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
 #| msgid "Not available"
@@ -68855,6 +68855,7 @@ msgstr "Vrati video kodek"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, fuzzy, kde-format
 #| msgctxt "@option:radio"
 #| msgid "Detect faces"
@@ -68878,10 +68879,22 @@ msgstr "i"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without face regions"
+msgid "Return items with confirmed face regions"
 msgstr "Vratite slike s oznakom"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgid "Confirmed Face Regions"
+msgstr "Prepoznavanje lica"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
+#, fuzzy, kde-format
+#| msgid "Return pictures with tag"
+msgid "Return items without face regions"
+msgstr "Vratite slike s oznakom"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"

@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -25552,7 +25552,7 @@ msgstr "色収差"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, fuzzy, kde-format
 #| msgid "Not available"
@@ -66144,6 +66144,7 @@ msgstr "音声ファイル"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, fuzzy, kde-format
 #| msgctxt "@action: setup"
 #| msgid "By Faces"
@@ -66165,10 +66166,22 @@ msgstr "-"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
 #, fuzzy, kde-format
 #| msgid "Return pictures with tag"
-msgid "Return items without face regions"
+msgid "Return items with confirmed face regions"
 msgstr "次のタグが付けられている画像を探す"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+#| msgid "Face Recognition"
+msgid "Confirmed Face Regions"
+msgstr "顔認識"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
+#, fuzzy, kde-format
+#| msgid "Return pictures with tag"
+msgid "Return items without face regions"
+msgstr "次のタグが付けられている画像を探す"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, fuzzy, kde-format
 #| msgid "Face Recognition"
 msgid "No Face Regions"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
 "PO-Revision-Date: 2026-03-01 17:16+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -25759,7 +25759,7 @@ msgstr "von Beobachtung"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -65320,6 +65320,7 @@ msgstr "Audio-Codec zurückgeben"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Faces"
 msgstr "Gesichter"
@@ -65336,11 +65337,23 @@ msgid "and"
 msgstr "und"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Return items with confirmed face regions"
+msgstr "Einträge ohne Gesichtsregionen zurückgeben"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+#| msgid "No Face Regions"
+msgid "Confirmed Face Regions"
+msgstr "Keine Gesichtsregionen"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Return items without face regions"
 msgstr "Einträge ohne Gesichtsregionen zurückgeben"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, kde-format
 msgid "No Face Regions"
 msgstr "Keine Gesichtsregionen"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-09 00:41+0000\n"
-"PO-Revision-Date: 2026-04-27 12:31+0200\n"
+"POT-Creation-Date: 2026-05-10 00:41+0000\n"
+"PO-Revision-Date: 2026-05-09 07:08+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -8221,6 +8221,8 @@ msgid ""
 "Linear raw scans of film negatives require application of a gamma curve. "
 "Standard values are 1.8 or 2.2."
 msgstr ""
+"ლენტის ნეგატივების წრფივ დაუმუშავებელ სკანირებას გამის მრუდის გამოყენება "
+"სჭირდება. სტანდარტული მნიშვნელობებია 1.8, ან 2.2."
 
 #: core/dplugins/editor/colors/film/filmtool.cpp:649
 #: core/libs/dimg/filters/bw/bwsepiasettings.cpp:360
@@ -8627,6 +8629,8 @@ msgid ""
 "Set this value to determine the matrix radius that determines how much to "
 "blur the background around the subject."
 msgstr ""
+"დააყენეთ ეს მნიშვნელობა, რომ განსაზღვროთ მატრიცის რადიუსი, რომელიც "
+"განსაზღვრავს, რამდენად დაიბინდება ფონი სუბიექტის გარშემო."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:93
 #, kde-format
@@ -8639,6 +8643,8 @@ msgid ""
 "Set this value to apply a variable blur near to far of the subject.This "
 "allow to simulate a depth of field from a lens."
 msgstr ""
+"დააყენეთ ეს მნიშვნელობა, რომ გაატაროთ ცვლადი დაბინდვა სუბიექტის ახლოს, ან "
+"შორს. ეს ლინზიდან ველის სიღრმის სიმულაციის საშუალებას იძლევა."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:102
 #, kde-format
@@ -8651,6 +8657,9 @@ msgid ""
 "Set this value to use a number of iterations used by the segmentation "
 "process to isolate more and less the subject."
 msgstr ""
+"დააყენეთ ეს მნიშვნელობა რიცხვზე, რომელიც წარმოადგენს იტერაციების რაოდენობას, "
+"რომელიც გამოიყენება სეგმენტაციის პროცესის მიერ სუბიექტის მეტად, ან ნაკლებად "
+"იზოლაციისთვის."
 
 #: core/dplugins/editor/enhance/backgroundblur/backgroundblurtool.cpp:111
 #, kde-format
@@ -8973,6 +8982,8 @@ msgid ""
 "This value controls in the same manner as the Main control, but has more "
 "effect at the edges of the image than at the center."
 msgstr ""
+"ეს მნიშვნელობა აკონტროლებს იგივენაირად, როგორც მთავარი კონტროლი, მაგრამ აქვს "
+"მეტი ეფექტი გამოსახულების წიბოებთან, ვიდრე ცენტრთან."
 
 #: core/dplugins/editor/enhance/lensdistortion/lensdistortiontool.cpp:124
 #, kde-format
@@ -10182,6 +10193,8 @@ msgid ""
 "This option allows you to choose a gradient function. This function is used "
 "to determine which pixels should be removed or kept."
 msgstr ""
+"ეს პარამეტრი საშუალებას გაძლევთ, გრადიენტის ფუნქცია აირჩიოთ. ეს ფუნქცია "
+"განსაზღვრავს, რომელი პიქსელის მოცილება მოხდება და რომელი შენარჩუნდება."
 
 #: core/dplugins/editor/transform/contentawareresize/contentawareresizetool.cpp:299
 #, kde-format
@@ -15774,6 +15787,8 @@ msgid ""
 "Enter here the Subject Name. English language is used if you selected a "
 "standard XMP/NAA reference code."
 msgstr ""
+"შეიყვანეთ აქ სუბიექტის სახელი. თუ აირჩიეთ სტანდარტული XMP/NAA მიმართვის "
+"კოდი, გამოიყენება ინგლისური."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:69
 #, kde-format
@@ -15781,6 +15796,8 @@ msgid ""
 "Enter here the Subject Matter Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
+"შეიყვანეთ აქ სუბიექტის აღწერის სახელი. თუ აირჩიეთ სტანდარტული XMP/NAA "
+"მიმართვის კოდი, გამოიყენება ინგლისური."
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpsubjects.cpp:73
 #, kde-format
@@ -15788,6 +15805,8 @@ msgid ""
 "Enter here the Subject Detail Name. English language is used if you selected "
 "a standard XMP/NAA reference code."
 msgstr ""
+"შეიყვანეთ აქ სუბიექტის დეტალის სახელი. თუ აირჩიეთ სტანდარტული XMP/NAA "
+"მიმართვის კოდი, გამოიყენება ინგლისური."
 
 #: core/dplugins/generic/metadata/timeadjust/timeadjustdialog.cpp:96
 #, kde-format
@@ -16025,6 +16044,10 @@ msgid ""
 "This is fully optional. All the events from this calendar will be printed in "
 "green."
 msgstr ""
+"ასეთი კალენდარი შეგიძლიათ, შექმნათ პროგრამით, რომელსაც აქვს <a href="
+"\"https://en.wikipedia.org/wiki/ICalendar\">iCalendar-ის ფორმატის</a> "
+"მხარდაჭერა.\n"
+"ეს სავალდებულო არაა. ამ კალენდრიდან ყველა მოვლენა მწვანედ დაიბეჭდება."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, CalProgress)
 #: core/dplugins/generic/tools/calendar/ui/calprogress.ui:14
@@ -16176,6 +16199,10 @@ msgid ""
 "VCalendar'>vCalendar</a>, and <a href='https://en.wikipedia.org/wiki/"
 "Icalendar'>iCalendar</a> formats.</p>"
 msgstr ""
+"<p>ეს ხელსაწყო ასევე საშუალებას გაძლევთ, დააყენოთ სასურველი თარიღები თქვენს "
+"კალენდარზე გარე მონაცემთა მოვლენის ფაილების გამოყენებით როგორც <a "
+"href='https://en.wikipedia.org/wiki/VCalendar'>vCalendar</a> და <a "
+"href='https://en.wikipedia.org/wiki/Icalendar'>iCalendar</a> ფორმატები.</p>"
 
 #: core/dplugins/generic/tools/calendar/wizard/calwizard.cpp:92
 #, kde-format
@@ -16874,6 +16901,8 @@ msgid ""
 "This assistant will help you to configure how to import images before "
 "merging them to a single one."
 msgstr ""
+"ეს დამხმარე დაგეხმარებათ, მოირგოთ, როგორ მოხდება გამოსახულებების შემოტანა "
+"მათ ერთ გამოსახულებაში შერწყმამდე."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendingintropage.cpp:76
 #, kde-format
@@ -17667,6 +17696,9 @@ msgid ""
 "will guide you to export quickly</p><p></p><p>your images as a jAlbum "
 "project.</p></qt>"
 msgstr ""
+"<qt><p><h1><b>მოგესალმებით jAlbum-ში გატანის პროგრამაში</b></h1></p><p>ეს "
+"დამხმარე დაგეხმარებათ, სწრაფად</p><p></p><p>გაიტანოთ თქვენი სურათები jAlbum-"
+"ის პროექტის სახით.</p></qt>"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumintropage.cpp:99
 #, kde-format
@@ -18088,6 +18120,8 @@ msgid ""
 "An effect is a visual panning or zooming applied while an image is displayed "
 "in MJPEG stream."
 msgstr ""
+"ეს ეფექტი არის ვიზუალური პანინგი, ან გადიდება, რომელიც გამოიყენება, როცა "
+"გამოსახულება MJPEG ნაკადშია ნაჩვენები."
 
 #: core/dplugins/generic/tools/mjpegstream/mjpegstreamdlg_views.cpp:294
 #, kde-format
@@ -18311,6 +18345,9 @@ msgid ""
 "text here. You can review words and fix if necessary. Press the Save button "
 "to record your changes."
 msgstr ""
+"ამოცნობის შემდეგ დააწკაპუნეთ ორჯერ ერთ ელემენტზე ამოცნობილი ტექსტის აქ "
+"საჩვენებლად. შეგიძლიათ, გადახედოთ სიტყვებს და ჩაასწოროთ, თუ ეს საჭიროა. "
+"ცვლილებების ჩასაწერად დააწკაპუნეთ ღილაკზე 'შენახვა'."
 
 #: core/dplugins/generic/tools/ocrtextconverter/textconverterdialog.cpp:215
 #, kde-format
@@ -19126,6 +19163,9 @@ msgid ""
 "image.</p><p>Pressing the <i>Next</i> button will then launch the final "
 "stitching process.</p></qt>"
 msgstr ""
+"<qt><h1>პანორამის გადახედვა</h1><p>დახატეთ მართკუთხედი, თუ გნებავთ, ამოჭრათ "
+"გამოსახულება.</p><p>დაწკაპუნება ღილაკზე <i>შემდეგ</i> საბოლოო აკინძვის "
+"პროცესის დასაწყებად.</p></qt>"
 
 #: core/dplugins/generic/tools/panorama/wizard/panopreviewpage.cpp:485
 #, kde-format
@@ -20191,6 +20231,8 @@ msgid ""
 "If you enable this option, all item properties as Comments, Rating, or Tags, "
 "will be added as an attached file."
 msgstr ""
+"თუ ამ პარამეტრს ჩართავთ, ყველა ელემენტის თვისება, როგორიცაა კომენტარები, "
+"რეიტინგი, ან ჭდეები, დაემატება მიმაგრებულ ფაილს."
 
 #: core/dplugins/generic/tools/sendbymail/wizard/mailsettingspage.cpp:118
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:188
@@ -21743,6 +21785,8 @@ msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the Alt+P key.</b>"
 msgstr ""
+"<b>შენიშვნა: ეს დიალოგის სლაისშოუს პარამეტრებისთვის შეგიძლიათ გაააქტიუროთ "
+"ნებისმიერ დროს ღილაკებით Alt+P.</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -24334,7 +24378,7 @@ msgstr "დაკვირვებიდან"
 
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
-#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:755
+#: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
 #: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
 #, kde-format
 msgid "not available"
@@ -26100,6 +26144,8 @@ msgid ""
 "Error to import RAW image with ART\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
+"RAW გამოსახულების ART-ით შემოტანის შეცდომა\n"
+"დახურეთ ეს დიალოგი RAW გამოსახულების საკუთარი შემოტანის პროგრამით შემოსატანად"
 
 #: core/dplugins/rawimport/art/rawimportartplugin.cpp:248
 #, kde-format
@@ -26308,6 +26354,9 @@ msgid ""
 "Error to import RAW image with RawTherapee\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
+"RAW გამოსახულების RawTherapee-ით შემოტანის შეცდომა\n"
+"დახურეთ ეს დიალოგი და ჩატვირთეთ RAW გამოსახულება პროგრამის შემოტანის "
+"ხელსაწყოთი"
 
 #: core/dplugins/rawimport/rawtherapee/rawimportrawtherapeeplugin.cpp:247
 #, kde-format
@@ -26320,6 +26369,9 @@ msgid ""
 "Error to import RAW image with UFRaw\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
+"RAW გამოსახულების UFRaw-ით შემოტანის შეცდომა\n"
+"დახურეთ ეს დიალოგი და ჩატვირთეთ RAW გამოსახულება პროგრამის შემოტანის "
+"ხელსაწყოთი"
 
 #: core/dplugins/rawimport/ufraw/rawimportufrawplugin.cpp:245
 #, kde-format
@@ -26405,6 +26457,8 @@ msgid ""
 "<p>The album you want to delete contains files (%1) which are not displayed "
 "in digiKam.</p><p>Do you want to continue?</p>"
 msgstr ""
+"<p>ალბომი, რომლის წაშლაც გნებავთ, შეიცავს ფაილებს, (%1) რომლებიც digiKam-ში "
+"ნაჩვენები არაა.</p><p>გააგრძელებთ?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:253
 #, kde-format
@@ -61554,6 +61608,7 @@ msgstr "აუდიოკოდეკის დაბრუნება"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Faces"
 msgstr "სახეები"
@@ -61570,11 +61625,23 @@ msgid "and"
 msgstr "და"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
+#, fuzzy, kde-format
+#| msgid "Return items without face regions"
+msgid "Return items with confirmed face regions"
+msgstr "სახის რეგიონების არმქონე ელემენტების დაბრუნება"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#, fuzzy, kde-format
+#| msgid "No Face Regions"
+msgid "Confirmed Face Regions"
+msgstr "სახის რეგიონების გარეშე"
+
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Return items without face regions"
 msgstr "სახის რეგიონების არმქონე ელემენტების დაბრუნება"
 
-#: core/utilities/searchwindow/searchfields_createfield.cpp:1177
+#: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, kde-format
 msgid "No Face Regions"
 msgstr "სახის რეგიონების გარეშე"
