@@ -7,7 +7,7 @@
 # Fernando Boaglio <fernando@boaglio.com>, 2008.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2008, 2009, 2010, 2011, 2012, 2017, 2019, 2020, 2021, 2023.
-# SPDX-FileCopyrightText: 2010, 2025, 2026 Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2025-2026 Marcus Vinícius de Andrade Gama <marcus.gama@gmail.com>
 # Aracele Torres <araceletorres@gmail.com>, 2010, 2011.
 # Marcus Gama <marcus.gama@gmail.com>, 2011, 2012.
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2019.
@@ -18,16 +18,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:41+0000\n"
-"PO-Revision-Date: 2026-04-07 01:09-0300\n"
-"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
+"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"PO-Revision-Date: 2026-05-10 19:32-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -25214,7 +25214,7 @@ msgstr "da observação"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:703
 #, kde-format
 msgid "not available"
 msgstr "não disponível"
@@ -54086,17 +54086,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Planeta desconhecido"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
 #, kde-format
 msgid "&Lock"
 msgstr "B&loquear"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
 #, kde-format
 msgid "&Hide"
 msgstr "&Ocultar"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
@@ -63953,16 +63953,14 @@ msgid "and"
 msgstr "e"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Retornar itens sem regiões de rosto"
+msgstr "Retornar itens com regiões de rosto confirmadas"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Sem regiões de rosto"
+msgstr "Regiões de rosto confirmadas"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format

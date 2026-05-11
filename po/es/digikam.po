@@ -7,7 +7,7 @@
 # SPDX-FileCopyrightText: 2006, 2007 Pablo de Vicente <pablo.devicente@gmail.com>
 # SPDX-FileCopyrightText: 2007 Alberto Garcia <info@trebol-a.com>
 # SPDX-FileCopyrightText: 2007, 2008 Jaime Robles <jaime@kde.org>
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009-2026 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2013 Aitor Morant <fromhell091@gmail.com>
 # SPDX-FileCopyrightText: 2007, 2008, 2010 Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008, 2010.
@@ -17,15 +17,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:41+0000\n"
-"PO-Revision-Date: 2026-04-07 12:00+0100\n"
+"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"PO-Revision-Date: 2026-05-10 12:09+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:496
@@ -781,7 +781,7 @@ msgid ""
 "Removes the face property from the selected tag and the face region from the "
 "contained images. Can also untag the images if wished."
 msgstr ""
-"Elimina la propiedad de cara de la etiqueta seleccionada y la región de la "
+"Elimina la propiedad de cara de la etiqueta seleccionada y la zona de la "
 "cara de las imágenes contenidas. También puede quitar las etiquetas de las "
 "imágenes, si se desea."
 
@@ -798,9 +798,9 @@ msgid ""
 "Removes the face property from the selected tags and the face region from "
 "the contained images. Can also untag the images if wished."
 msgstr ""
-"Elimina la propiedad de cara de las etiquetas seleccionadas y la región de "
-"la cara de las imágenes contenidas. También puede quitar las etiquetas de "
-"las imágenes, si se desea."
+"Elimina la propiedad de cara de las etiquetas seleccionadas y la zona de la "
+"cara de las imágenes contenidas. También puede quitar las etiquetas de las "
+"imágenes, si se desea."
 
 #: core/app/items/utils/contextmenuhelper_tags.cpp:124
 #, kde-format
@@ -25297,7 +25297,7 @@ msgstr "de la observación"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:703
 #, kde-format
 msgid "not available"
 msgstr "no disponible"
@@ -53323,7 +53323,7 @@ msgstr "Editando etiqueta de cara"
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:260
 #, kde-format
 msgid "Editing face region"
-msgstr "Editando región de cara"
+msgstr "Editando zona de cara"
 
 #: core/utilities/facemanagement/pipelines/edit/facepipelineedit.cpp:310
 #, kde-format
@@ -53367,7 +53367,7 @@ msgstr "Eliminar"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this face region"
-msgstr "Eliminar esta región de cara"
+msgstr "Eliminar esta zona de cara"
 
 #: core/utilities/facemanagement/widgets/assignnamewidget_p.cpp:195
 #, kde-format
@@ -54288,17 +54288,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Planeta desconocido"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
 #, kde-format
 msgid "&Lock"
 msgstr "&Fijar"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
 #, kde-format
 msgid "&Hide"
 msgstr "&Ocultar"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
@@ -64149,7 +64149,7 @@ msgstr "Caras"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1166
 #, kde-format
 msgid "Return items by number of face regions"
-msgstr "Devolver elementos por número de regiones de cara"
+msgstr "Devolver elementos por número de zonas de cara"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1167
 #, kde-format
@@ -64158,26 +64158,24 @@ msgid "and"
 msgstr "y"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Devolver elementos sin regiones de cara"
+msgstr "Devolver elementos con zonas de cara confirmadas"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Sin regiones de cara"
+msgstr "Zonas de cara confirmadas"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
 msgid "Return items without face regions"
-msgstr "Devolver elementos sin regiones de cara"
+msgstr "Devolver elementos sin zonas de cara"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1186
 #, kde-format
 msgid "No Face Regions"
-msgstr "Sin regiones de cara"
+msgstr "Sin zonas de cara"
 
 #: core/utilities/searchwindow/searchfields_monthday.cpp:31
 #, kde-format
@@ -64270,7 +64268,7 @@ msgstr "Posición geográfica"
 #: core/utilities/searchwindow/searchgroup.cpp:210
 #, kde-format
 msgid "Face regions"
-msgstr "Regiones de cara"
+msgstr "Zonas de cara"
 
 #: core/utilities/searchwindow/searchgroup_label.cpp:54
 #, kde-format

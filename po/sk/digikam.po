@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:41+0000\n"
+"POT-Creation-Date: 2026-05-11 00:41+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -24942,7 +24942,7 @@ msgstr "Povoliť opravu chromatickej aberácie"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:703
 #, kde-format
 msgid "not available"
 msgstr "nie je dostupné"
@@ -53569,17 +53569,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Neznámy filter"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
 #, kde-format
 msgid "&Lock"
 msgstr "&Zamknúť"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
 #, kde-format
 msgid "&Hide"
 msgstr "&Skryť"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."

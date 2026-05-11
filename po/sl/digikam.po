@@ -37,8 +37,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:41+0000\n"
-"PO-Revision-Date: 2026-04-15 17:47+0200\n"
+"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"PO-Revision-Date: 2026-05-10 08:04+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -25078,7 +25078,7 @@ msgstr "iz opazovanja"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:703
 #, kde-format
 msgid "not available"
 msgstr "ni na voljo"
@@ -53861,17 +53861,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Neznani planet"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
 #, kde-format
 msgid "&Lock"
 msgstr "Zakleni"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
 #, kde-format
 msgid "&Hide"
 msgstr "Skrij"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
@@ -63711,16 +63711,14 @@ msgid "and"
 msgstr "in"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Vrni postavke brez regij obrazov"
+msgstr "Vrni postavke s potrjenimi območji obraza"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Ni regij obrazov"
+msgstr "Potrjeni območji obraza"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format

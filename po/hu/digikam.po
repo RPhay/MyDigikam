@@ -1,21 +1,55 @@
-# Copyright (C) 2026 This file is copyright:
-# This file is distributed under the same license as the digikam package.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2026 Kristof Kiszel <ulysses@fsf.hu>
+# --- kipiplugin_acquireimages
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# --- kipiplugin_dngconverter
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# --- kipiplugin_metadataedit
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# --- kipiplugin_gpssync
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# --- libkgeomap
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# --- libkexiv2
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Csaba Zakarias <csaba.zakarias@gmail.com>, 2009, 2010.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2012, 2014.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013, 2014.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
+# Balázs Úr <urbalazs@gmail.com>, 2013.
+# Balázs Úr <urbalazs@gmail.com>, 2012, 2014.
+# Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2011, 2016.
+# Balázs Úr <urbalazs@gmail.com>, 2012.
+# Gábor Baráth <dincsi@gmail.com>, 2021.
+# Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017, 2021.
+# SPDX-FileCopyrightText: 2025, 2026 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
-"Project-Id-Version: digikam\n"
+"Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:41+0000\n"
-"PO-Revision-Date: 2026-03-31 22:31+0200\n"
-"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
+"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"PO-Revision-Date: 2026-05-01 19:58+0200\n"
+"Last-Translator: Benedek Péter <benedekppeter@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -3496,18 +3530,15 @@ msgstr ""
 "%1\">400 felhasználói hibajelentés</a> lezárva a bugzillában."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"A belső QtAVPlayer frissítve lett a legújabb, 2026. 01. 24-i verzióra, amely "
-"számos hibajavítást és teljesítménybeli javulást eredményez (csak Qt5-höz)."
+"A belső QtAVPlayer frissült a legfrissebb, 2026.04.05-ös upstream verzióra, "
+"mely számos hibajavítást és teljesítménybeli javulást hoz (kizárólag Qt5-"
+"höz)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
@@ -3837,12 +3868,9 @@ msgstr ""
 "kereséséhez."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
-msgstr ""
-"A belső RAW motor frissítése a legutóbbi, 2026. 03. 26-i Libraw "
-"pillanatképre."
+msgstr "Belső RAW motor frissítése a legutóbbi Libraw 2026.04.06. verzióra."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -3850,16 +3878,13 @@ msgid "New RAW camera supported:"
 msgstr "Új támogatott RAW-fényképezőgépek:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra ;"
+#, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra ;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
@@ -4660,7 +4685,7 @@ msgstr "LibAVUtil"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFMpeg"
-msgstr ""
+msgstr "FFMpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:149
 #: core/app/views/utils/componentsinfodlg.cpp:154
@@ -13759,7 +13784,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:167
 #, kde-format
 msgid "Lens aperture (f-number):"
-msgstr "Objektív rekesznyílás (f-szám):"
+msgstr "Objektív rekesznyílás (f-érték):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:170
 #, kde-format
@@ -13771,7 +13796,7 @@ msgstr ""
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:175
 #, kde-format
 msgid "Max. lens aperture (f-number):"
-msgstr "Objektív max. rekeszérték (f-szám):"
+msgstr "Objektív max. rekeszérték (f-érték):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:178
 #, kde-format
@@ -22374,7 +22399,7 @@ msgid ""
 "Show a progress indicator with pending items to show and time progression."
 msgstr ""
 "Folyamatjelző megjelenítése, mely a még feldolgozandó elemeket és az időbeli "
-"előrehaladást is jelzi."
+"folyamatot is jelzi."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
 #, kde-format
@@ -25080,7 +25105,7 @@ msgstr "megfigyelésből"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:703
 #, kde-format
 msgid "not available"
 msgstr "nem érhető el"
@@ -29156,10 +29181,9 @@ msgid ""
 "registered in a database. Note: this dialog can appear automatically if a "
 "previous scan of collections have not been fully completed."
 msgstr ""
-"Ez mutatja a vizsgálat előrehaladását. A vizsgálat során minden fájl "
-"bejegyzésre kerül az adatbázisba. Megjegyzés: ez a párbeszédablak "
-"automatikusan megjelenhet, ha az előző gyűjteményvizsgálat nem fejeződött be "
-"teljesen."
+"Ez mutatja a vizsgálat folyamatát. A vizsgálat során minden fájl bejegyzésre "
+"kerül az adatbázisba. Megjegyzés: ez a párbeszédablak automatikusan "
+"megjelenhet, ha az előző gyűjteményvizsgálat nem fejeződött be teljesen."
 
 #: core/libs/database/utils/scan/scancontroller.cpp:274
 #, kde-format
@@ -29222,12 +29246,12 @@ msgstr "%p%"
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
 #, kde-format
 msgid "Step progress:"
-msgstr "Előrehaladás:"
+msgstr "Részfolyamat:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
 #, kde-format
 msgid "Overall progress:"
-msgstr "Általános haladás:"
+msgstr "Teljes folyamat:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
@@ -29257,7 +29281,7 @@ msgstr "Az adatbázis konvertálás megszakítva."
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
 #, kde-format
 msgid "Step progress (%1):"
-msgstr "Előrehaladás (%1):"
+msgstr "Részfolyamat (%1):"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
@@ -53822,17 +53846,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Ismeretlen bolygó"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
 #, kde-format
 msgid "&Lock"
 msgstr "&Zárolás"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
 #, kde-format
 msgid "&Hide"
 msgstr "&Rejtett"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
@@ -63163,7 +63187,7 @@ msgstr "Objektív típusa"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:449
 #, kde-format
 msgid "Return items without a camera ..."
-msgstr "Találat kameraadatot nem tartalmazó elemekre..."
+msgstr "Találat ezen kameraadatot nem tartalmazó elemekre..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:452
 #, kde-format
@@ -63186,7 +63210,7 @@ msgstr "Objektív"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:466
 #, kde-format
 msgid "Lens aperture as f-number"
-msgstr "Objektív rekesznyílás f-számmal kifejezve"
+msgstr "Objektív rekesznyílás f-értékkel kifejezve"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:467
 #, kde-format
@@ -63316,7 +63340,7 @@ msgstr "Rögzítési beállítások"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:663
 #, kde-format
 msgid "Return items without selected capture settings ..."
-msgstr "Találat a kiválasztott rögzítési beállítások nélküli elemekre ..."
+msgstr "Találat ezen rögzítési beállítások nélküli elemekre..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
@@ -63369,7 +63393,7 @@ msgstr "Ország"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:732
 #, kde-format
 msgid "Country shown in the item"
-msgstr "Elemen látható ország"
+msgstr "Elemben található országnév"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:748
 #, kde-format
@@ -63384,18 +63408,18 @@ msgstr "Elemben szereplő tartomány"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:764
 #, kde-format
 msgid "City shown in the item"
-msgstr "Elemen látható város"
+msgstr "Elem által tartalmazott városnév"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #: core/utilities/searchwindow/searchfields_createfield.cpp:802
 #, kde-format
 msgid "Sublocation"
-msgstr "Elemen látható városrész"
+msgstr "Városrész"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:780
 #, kde-format
 msgid "Sublocation shown in the item"
-msgstr "Elem tartalmaz városrész adatot"
+msgstr "Elem által tartalmazott városrész adat"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:795
 #, kde-format
@@ -63473,7 +63497,7 @@ msgstr "Szöveg nélkül"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:872
 #, kde-format
 msgid "Return items without text in"
-msgstr "Találat szöveg nélküli elemekre"
+msgstr "Találat elemekre ha nincs szöveget itt"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:874
 #, kde-format
@@ -64042,7 +64066,7 @@ msgstr ""
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:53
 #, kde-format
 msgid "Show digiKam tit&le"
-msgstr "digiKam cím megjelenítése"
+msgstr "őelráehaladsdigiKam cím megjelenítése"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:54
 #, kde-format

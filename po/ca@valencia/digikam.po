@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-10 00:41+0000\n"
-"PO-Revision-Date: 2026-04-07 08:27+0200\n"
+"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"PO-Revision-Date: 2026-05-10 09:54+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/app/date/ddateedit.cpp:496
 #, kde-format
@@ -1899,7 +1899,7 @@ msgstr "Rellig les metadades des dels fitxers seleccionats"
 #, kde-format
 msgctxt "@action: setup"
 msgid "Scan for Faces"
-msgstr "Exploració de cares"
+msgstr "Exploreu les cares"
 
 #: core/app/main/digikamapp_setup.cpp:496
 #, kde-format
@@ -2753,7 +2753,7 @@ msgstr "Detecta i obri automàticament una càmera gphoto2 connectada"
 msgid ""
 "Start digikam with the SQLite database file found in the directory \"dir\""
 msgstr ""
-"Inicia digiKam amb el fitxer de base de dades SQLite trobat a la carpeta "
+"Inicia digiKam amb el fitxer de base de dades SQLite trobat en la carpeta "
 "«dir»"
 
 #: core/app/main/main.cpp:266
@@ -3035,7 +3035,7 @@ msgstr "Rètols"
 #, kde-format
 msgctxt "@label short translated text about the scan for faces"
 msgid "Scan for Faces"
-msgstr "Exploració de cares"
+msgstr "Exploreu les cares"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:127
 #, kde-format
@@ -3872,7 +3872,7 @@ msgstr ""
 #, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
-"Actualitzar el motor RAW intern a l'última instantània de la Libraw "
+"Actualitzar el motor RAW intern a l'última instantània de la LibRaw "
 "2046-04-06."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
@@ -7871,7 +7871,7 @@ msgstr "Carregador de RAW"
 #, kde-format
 msgctxt "@info"
 msgid "An image loader based on Libraw codec"
-msgstr "Un carregador d'imatges basat en el còdec Libraw"
+msgstr "Un carregador d'imatges basat en el còdec LibRaw"
 
 #: core/dplugins/dimg/raw/dimgrawplugin.cpp:63
 #, kde-kuit-format
@@ -7890,7 +7890,7 @@ msgid ""
 "details.</para>"
 msgstr ""
 "<para>Este connector permet als usuaris carregar i guardar imatges "
-"utilitzant el còdec Libraw.</para><para>Un fitxer d'imatge RAW de càmera "
+"utilitzant el còdec LibRaw.</para><para>Un fitxer d'imatge RAW de càmera "
 "conté les dades mínimament processades a partir del sensor d'imatge d'una "
 "càmera digital, un escàner de pel·lícula d'imatges en moviment, o altres "
 "escàners d'imatges. Els fitxers RAW encara no s'han processat i, per tant, "
@@ -19383,13 +19383,13 @@ msgstr ""
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:55
 #, kde-format
 msgid "PTO file already created in the temporary directory."
-msgstr "El fitxer PTO ja s'ha creat a la carpeta temporal."
+msgstr "El fitxer PTO ja s'ha creat en la carpeta temporal."
 
 #: core/dplugins/generic/tools/panorama/tasks/createfinalptotask.cpp:55
 #: core/dplugins/generic/tools/panorama/tasks/createptotask.cpp:63
 #, kde-format
 msgid "PTO file cannot be created in the temporary directory."
-msgstr "El fitxer PTO no s'ha pogut crear a la carpeta temporal."
+msgstr "El fitxer PTO no s'ha pogut crear en la carpeta temporal."
 
 #: core/dplugins/generic/tools/panorama/tasks/createpreviewtask.cpp:49
 #, kde-format
@@ -19676,7 +19676,7 @@ msgstr "Felicitats. Les imatges s'han unit en un panorama."
 #, kde-format
 msgctxt "@info"
 msgid "Your panorama will be created to the directory:"
-msgstr "El panorama es crearà a la carpeta:"
+msgstr "El panorama es crearà en la carpeta:"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:267
 #, kde-format
@@ -25279,7 +25279,7 @@ msgstr "des de l'observació"
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1059
 #: core/dplugins/generic/webservices/inaturalist/inatwindow.cpp:1099
 #: core/utilities/geolocation/engine/core/MarbleInputHandler.cpp:773
-#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:694
+#: core/utilities/geolocation/engine/core/MarbleWidget.cpp:703
 #, kde-format
 msgid "not available"
 msgstr "no disponible"
@@ -27081,14 +27081,14 @@ msgid ""
 "Error to import RAW image with DarkTable\n"
 "Close this dialog to load RAW image with native import tool"
 msgstr ""
-"S'ha produït un error mentre s'importava la imatge RAW amb Darktable\n"
+"S'ha produït un error mentre s'importava la imatge RAW amb darktable\n"
 "Tanqueu este diàleg per a carregar la imatge RAW amb l'eina d'importació "
 "nativa"
 
 #: core/dplugins/rawimport/darktable/rawimportdarktableplugin.cpp:313
 #, kde-format
 msgid "DarkTable Raw Conversion"
-msgstr "Conversió RAW de Darktable"
+msgstr "Conversió RAW de darktable"
 
 #: core/dplugins/rawimport/native/rawimport.cpp:61
 #, kde-format
@@ -27111,12 +27111,12 @@ msgstr "Descodificació RAW"
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:44
 #, kde-format
 msgid "Import Raw Using Libraw"
-msgstr "Importa des de RAW emprant la Libraw"
+msgstr "Importa des de RAW emprant la LibRaw"
 
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:59
 #, kde-format
 msgid "A tool to import Raw images using Libraw engine"
-msgstr "Una eina per a importar imatges RAW emprant el motor de la Libraw"
+msgstr "Una eina per a importar imatges RAW emprant el motor de la LibRaw"
 
 #: core/dplugins/rawimport/native/rawimportnativeplugin.cpp:64
 #, kde-format
@@ -27128,9 +27128,9 @@ msgid ""
 "p>"
 msgstr ""
 "<p>L'eina Editor d'imatges importa les imatges RAW utilitzant el motor "
-"Libraw com a descodificador.</p><p>Esta és l'eina <b>nativa</b> d'importació "
+"LibRaw com a descodificador.</p><p>Esta és l'eina <b>nativa</b> d'importació "
 "RAW inclosa al nucli de l'aplicació. No requerix cap motor extern per a "
-"funcionar.</p><p>Per a més detalls, vegeu el lloc web de la Libraw: <a "
+"funcionar.</p><p>Per a més detalls, vegeu el lloc web de la LibRaw: <a "
 "href='https://www.libraw.org/'>https://www.libraw.org/</a></p>"
 
 #: core/dplugins/rawimport/native/rawpreview.cpp:193
@@ -28111,7 +28111,7 @@ msgstr "Busca els duplicats…"
 #: core/libs/album/treeview/albumselectiontreeview.cpp:216
 #, kde-format
 msgid "Scan for Faces"
-msgstr "Exploració de cares"
+msgstr "Exploreu les cares"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:219
 #, kde-format
@@ -28127,7 +28127,7 @@ msgstr "Actualitza"
 #, kde-format
 msgctxt "@title:window"
 msgid "Scan for Faces"
-msgstr "Exploració de cares"
+msgstr "Exploreu les cares"
 
 #: core/libs/album/treeview/albumselectiontreeview.cpp:292
 #, kde-format
@@ -35346,7 +35346,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Search in"
-msgstr "Busca a"
+msgstr "Busca en"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:105
 #, kde-format
@@ -35389,11 +35389,11 @@ msgstr ""
 "vostres amics en una sèrie de fotos,<br>també podrà reconéixer les persones "
 "que es mostren a les fotos.<p><b>Explora les imatges noves</b> buscarà les "
 "cares i intentarà el reconeixement de les imatges noves trobades als àlbums "
-"seleccionats a la pestanya «Busca a».</p><p><b>Explora totes les imatges</b> "
-"buscarà les cares i intentarà el reconeixement de totes les imatges trobades "
-"als àlbums seleccionats a la pestanya «Busca a».</p><p><b>Reconeix només les "
-"cares</b> intentarà fer coincidir les cares desconegudes amb les cares "
-"confirmades sense explorar cares noves de les imatges.</p>"
+"seleccionats a la pestanya «Busca en».</p><p><b>Explora totes les imatges</"
+"b> buscarà les cares i intentarà el reconeixement de totes les imatges "
+"trobades als àlbums seleccionats a la pestanya «Busca en».</p><p><b>Reconeix "
+"només les cares</b> intentarà fer coincidir les cares desconegudes amb les "
+"cares confirmades sense explorar cares noves de les imatges.</p>"
 
 #: core/libs/facesengine/widgets/facescanwidget.cpp:131
 #, kde-format
@@ -41239,7 +41239,7 @@ msgstr ""
 #: core/libs/tags/manager/tagsmanager_p.cpp:218
 #, kde-format
 msgid "Write Tags from Database to Image"
-msgstr "Escriu les etiquetes de la base de dades a la imatge"
+msgstr "Escriu les etiquetes de la base de dades en la imatge"
 
 #: core/libs/tags/manager/tagsmanager_p.cpp:221
 #, kde-format
@@ -41676,7 +41676,7 @@ msgstr ""
 "cercle complet amb una «c» a dins; no és suficient alguna cosa com (c) a on "
 "els parèntesis formen un cercle parcial. Per a una protecció mundial "
 "addicional, es recomana utilitzar la frase «all rights reserved» (tots els "
-"drets reservats) després de l'avís de més amunt. <br>A Europa heu "
+"drets reservats) després de l'avís de més amunt. <br>En Europa heu "
 "d'utilitzar: Copyright {Any} {Propietari del copyright}, «all rights "
 "reserved». <br>Al Japó, per a una protecció màxima, han d'aparéixer els tres "
 "elements següents en el camp copyright del nucli IPTC: (a) la paraula, "
@@ -52090,7 +52090,7 @@ msgstr "Edita l'element actual des de la llista"
 #, kde-format
 msgctxt "@info: search text bar"
 msgid "Search in Favorites..."
-msgstr "Busca a les preferides…"
+msgstr "Busca en les preferides…"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:354
 #, kde-format
@@ -54311,17 +54311,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Planeta desconegut"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:295
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
 #, kde-format
 msgid "&Lock"
 msgstr "B&loqueja"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:302
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
 #, kde-format
 msgid "&Hide"
 msgstr "&Oculta"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:312
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
@@ -61282,7 +61282,7 @@ msgstr "Avant"
 #, kde-format
 msgctxt "@option:check"
 msgid "Write the document name to EXIF"
-msgstr "Escriu el nom del document a l'Exif"
+msgstr "Escriu el nom del document en l'Exif"
 
 #: core/utilities/import/widgets/advancedsettings.cpp:75
 #, kde-format
@@ -62422,22 +62422,22 @@ msgstr ""
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:257
 #, kde-format
 msgid "Scan for faces in album: %1"
-msgstr "Exploració de cares en l'àlbum: %1"
+msgstr "Exploreu les cares en l'àlbum: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:261
 #, kde-format
 msgid "Scan for faces in %1 albums"
-msgstr "Exploració de cares en %1 àlbums"
+msgstr "Exploreu les cares en %1 àlbums"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:268
 #, kde-format
 msgid "Scan for faces in image: %1"
-msgstr "Exploració de cares en la imatge: %1"
+msgstr "Exploreu les cares en la imatge: %1"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:272
 #, kde-format
 msgid "Scan for faces in %1 images"
-msgstr "Exploració de cares en %1 imatges"
+msgstr "Exploreu les cares en %1 imatges"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:277
 #, kde-format
@@ -62474,7 +62474,7 @@ msgstr "Cara trobada: %1"
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:489
 #, kde-format
 msgid "Face Scanning: %1\n"
-msgstr "Exploració de cares: %1\n"
+msgstr "Exploreu les cares: %1\n"
 
 #: core/utilities/maintenance/tools/facesmanagement/facesengine.cpp:496
 #, kde-format
@@ -64190,16 +64190,14 @@ msgid "and"
 msgstr "i"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Retorna els elements sense regions de cares"
+msgstr "Retorna els elements amb regions de cares confirmades"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Sense regions de cares"
+msgstr "Regions de cares confirmades"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
@@ -65822,8 +65820,8 @@ msgid ""
 "Additional directories to ignore (<a href='image'>Currently ignored "
 "directories</a>):"
 msgstr ""
-"Carpetes addicionals que s'han d'ignorar (<a href='image'>directoris "
-"actualment ignorats</a>):"
+"Carpetes addicionals que s'han d'ignorar (<a href='image'>carpetes "
+"actualment ignorades</a>):"
 
 #: core/utilities/setup/collections/setupcollections.cpp:160
 #, kde-format
@@ -67448,7 +67446,7 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "Baloo Desktop Search"
-msgstr "Busca a l'escriptori de Baloo"
+msgstr "Busca en l'escriptori de Baloo"
 
 #: core/utilities/setup/metadata/setupmetadata_baloo.cpp:35
 #, kde-format
@@ -68079,7 +68077,7 @@ msgid ""
 msgstr ""
 "Establiu esta opció per a crear els fitxers laterals XMP en un format de nom "
 "de fitxer compatible (BASENAME.xmp) utilitzat per molts programes "
-"comercials. No marqueu esta opció per a Darktable."
+"comercials. No marqueu esta opció per a darktable."
 
 #: core/utilities/setup/metadata/setupmetadata_sidecars.cpp:76
 #, kde-format
