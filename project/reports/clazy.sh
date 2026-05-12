@@ -26,7 +26,7 @@ StartScript
 
 # Check run-time dependencies
 
-if [ ! -f /usr/bin/clazy ] ; then
+if [ ! -f /opt/clazy/bin/clazy ] ; then
 
     echo "Clazy static analyzer is not installed in /opt/clazy."
     echo "Please install Clazy from https://github.com/KDE/clazy"
@@ -79,12 +79,18 @@ else
 
 fi
 
+export LLVM_VERSION=20
+
+export PATH=/usr/lib/llvm-$LLVM_VERSION/bin:$PATH
+
 
 $CMAKE_BINARY -G "Unix Makefiles" \
+      -DCMAKE_CXX_COMPILER_LAUNCHER=/opt/clazy/bin/clazy \
+      -DCMAKE_C_COMPILER=clang-$LLVM_VERSION \
+      -DCMAKE_CXX_COMPILER=clang-$LLVM_VERSION \
+      -DLLVM_DIR=/usr/lib/llvm-$LLVM_VERSION/cmake \
+      -DClang_DIR=/usr/lib/llvm-$LLVM_VERSION/cmake \
       -DCMAKE_BUILD_TYPE=Debug \
-      -DCMAKE_CXX_COMPILER_LAUNCHER=clazy \
-      -DCMAKE_C_COMPILER=clang \
-      -DCMAKE_CXX_COMPILER=clang \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
       -DBUILD_TESTING=ON \
