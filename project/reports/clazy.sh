@@ -90,6 +90,8 @@ $CMAKE_BINARY -G "Unix Makefiles" \
       -DCMAKE_CXX_COMPILER=clang-$LLVM_VERSION \
       -DLLVM_DIR=/usr/lib/llvm-$LLVM_VERSION/cmake \
       -DClang_DIR=/usr/lib/llvm-$LLVM_VERSION/cmake \
+      -DCMAKE_EXE_LINKER_FLAGS="-lstdc++" \
+      -DCMAKE_SHARED_LINKER_FLAGS="-lstdc++" \
       -DCMAKE_BUILD_TYPE=Debug \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
@@ -110,8 +112,6 @@ $CMAKE_BINARY -G "Unix Makefiles" \
       -DENABLE_QWEBENGINE=ON \
       -Wno-dev \
       ..
-
- #     -DCMAKE_CXX_FLAGS="-I/usr/lib/llvm-21/lib/clang/21.1.8/include -isystem /usr/include/c++/15 -isystem /usr/include/$(uname -m)-linux-gnu/c++/15" \
 
 make -j$CPU_CORES 2> ${ORIG_WD}/${REPORT_DIR}/trace.log
 
