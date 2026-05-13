@@ -53,6 +53,8 @@ public:
 
     ~ExpoBlendingItemPreprocessedUrls()         = default;
 
+public:
+
     QUrl preprocessedUrl;              ///< Can be original file or aligned version, depending of user choice.
     QUrl previewUrl;                   ///< The JPEG preview version, accordingly of preprocessedUrl constant.
 };
@@ -63,10 +65,12 @@ class ExpoBlendingActionData
 {
 public:
 
-    ExpoBlendingActionData() = default;
+    ExpoBlendingActionData()                    = default;
 
-    bool                    starting    = false;
-    bool                    success     = false;
+public:
+
+    bool                    starting            = false;
+    bool                    success             = false;
 
     QString                 message;
 
@@ -79,7 +83,7 @@ public:
 
     ExpoBlendingItemUrlsMap preProcessedUrlsMap;
 
-    ExpoBlendingAction      action      = EXPOBLENDING_NONE;
+    ExpoBlendingAction      action              = EXPOBLENDING_NONE;
 };
 
 } // namespace DigikamGenericExpoBlendingPlugin

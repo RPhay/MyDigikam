@@ -1541,7 +1541,7 @@ int CalSystem::monthsDifference(const QDate& fromDate, const QDate& toDate) cons
     {
         my = 0;
     }
-    else if (d->hasLeapMonths())
+    else if (d->hasLeapMonths())            // cppcheck-suppress knownConditionTrueFalse
     {
         my = 0;
 
@@ -1729,7 +1729,9 @@ QDate CalSystem::lastDayOfYear(int year) const
 
 QDate CalSystem::firstDayOfMonth(const QDate& dt) const
 {
-    int yr = 0, mnth = 0;
+    int yr   = 0;
+    int mnth = 0;
+
     getDate(dt, &yr, &mnth, nullptr);
 
     return date(yr, mnth, 1);
@@ -1742,7 +1744,9 @@ QDate CalSystem::firstDayOfMonth(int year, int month) const
 
 QDate CalSystem::lastDayOfMonth(const QDate& dt) const
 {
-    int yr = 0, mnth = 0;
+    int yr   = 0;
+    int mnth = 0;
+
     getDate(dt, &yr, &mnth, nullptr);
 
     return date(yr, mnth, daysInMonth(yr, mnth));

@@ -81,7 +81,7 @@ public:
         QList<QUrl>                 urls;
         QUrl                        outputUrl;
         QString                     binaryPath;
-        ExpoBlendingAction          action;
+        ExpoBlendingAction          action          = EXPOBLENDING_NONE;
         EnfuseSettings              enfuseSettings;
     };
 
@@ -991,7 +991,8 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
         return -1;
     }
 
-    long num = 1, den = 1;
+    long num = 1;
+    long den = 1;
 
     // default not valid values
 
@@ -1015,7 +1016,8 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     }
     else if (d->meta.getExifTagRational("Exif.Photo.ShutterSpeedValue", num, den))
     {
-        long   nmr = 1, div = 1;
+        long   nmr = 1;
+        long   div = 1;
         double tmp = 0.0;
 
         if (den)
@@ -1042,7 +1044,8 @@ float ExpoBlendingThread::getAverageSceneLuminance(const QUrl& url)
     }
     else if (getXmpRational("Xmp.exif.ShutterSpeedValue", num, den, &d->meta))
     {
-        long   nmr = 1, div = 1;
+        long   nmr = 1;
+        long   div = 1;
         double tmp = 0.0;
 
         if (den)
