@@ -39,12 +39,12 @@ public:
      * needs this name. Maybe we can rename it to our scheme later on.
      */
     GeoDataCoordinatesPrivate()
-        : m_q(nullptr),
-          m_lon(0),
-          m_lat(0),
+        : m_q       (nullptr),
+          m_lon     (0),
+          m_lat     (0),
           m_altitude(0),
-          m_detail(0),
-          ref(0)
+          m_detail  (0),
+          ref       (0)
     {
     }
 
@@ -58,23 +58,27 @@ public:
     GeoDataCoordinatesPrivate(qreal _lon, qreal _lat, qreal _alt,
                               GeoDataCoordinates::Unit unit,
                               int _detail)
-        : m_q(nullptr),
+        : m_q       (nullptr),
           m_altitude(_alt),
-          m_detail(_detail),
-          ref(0)
+          m_detail  (_detail),
+          ref       (0)
     {
         switch (unit)
         {
             default:
             case GeoDataCoordinates::Radian:
+            {
                 m_lon = _lon;
                 m_lat = _lat;
                 break;
+            }
 
             case GeoDataCoordinates::Degree:
+            {
                 m_lon = _lon * DEG2RAD;
                 m_lat = _lat * DEG2RAD;
                 break;
+            }
         }
     }
 
@@ -83,12 +87,12 @@ public:
      * initialize the reference with the value of the other
      */
     GeoDataCoordinatesPrivate(const GeoDataCoordinatesPrivate& other)
-        : m_q(nullptr),
-          m_lon(other.m_lon),
-          m_lat(other.m_lat),
+        : m_q       (nullptr),
+          m_lon     (other.m_lon),
+          m_lat     (other.m_lat),
           m_altitude(other.m_altitude),
-          m_detail(other.m_detail),
-          ref(0)
+          m_detail  (other.m_detail),
+          ref       (0)
     {
     }
 
@@ -97,18 +101,27 @@ public:
      */
     GeoDataCoordinatesPrivate& operator=(const GeoDataCoordinatesPrivate& other)
     {
-        m_lon = other.m_lon;
-        m_lat = other.m_lat;
-        m_altitude = other.m_altitude;
-        m_detail = other.m_detail;
-        ref = 0;
+        if (this == &other)
+        {
+            return *this;
+        }
+
+        m_lon       = other.m_lon;
+        m_lat       = other.m_lat;
+        m_altitude  = other.m_altitude;
+        m_detail    = other.m_detail;
+        ref         = 0;
+
         delete m_q;
-        m_q = nullptr;
+        m_q         = nullptr;
+
         return *this;
     }
 
     bool operator==(const GeoDataCoordinatesPrivate& rhs) const;
     bool operator!=(const GeoDataCoordinatesPrivate& rhs) const;
+
+public:
 
     static Quaternion basePoint(const Quaternion& q1, const Quaternion& q2, const Quaternion& q3);
 
@@ -214,14 +227,20 @@ public:
      */
     static qreal lonLatToEasting(qreal lon, qreal lat);
 
-    Quaternion* m_q = nullptr;
-    qreal      m_lon;
-    qreal      m_lat;
-    qreal      m_altitude;     // in meters above sea level
-    quint8     m_detail;
-    QAtomicInt ref;
+public:
 
-    /* UTM Ellipsoid model constants (actual values here are for WGS84) */
+    Quaternion* m_q         = nullptr;
+    qreal       m_lon       = 0.0;
+    qreal       m_lat       = 0.0;
+    qreal       m_altitude  = 0.0;     // in meters above sea level
+    quint8      m_detail    = 0;
+    QAtomicInt  ref;
+
+public:
+
+    /**
+     * UTM Ellipsoid model constants (actual values here are for WGS84)
+    */
     static const qreal sm_semiMajorAxis;
     static const qreal sm_semiMinorAxis;
     static const qreal sm_eccentricitySquared;
@@ -232,13 +251,15 @@ inline bool GeoDataCoordinatesPrivate::operator==(const GeoDataCoordinatesPrivat
 {
     // do not compare the m_detail member as it does not really belong to
     // GeoDataCoordinates and should be removed
-    return m_lon == rhs.m_lon && m_lat == rhs.m_lat && m_altitude == rhs.m_altitude;
+
+    return ((m_lon == rhs.m_lon) && (m_lat == rhs.m_lat) && (m_altitude == rhs.m_altitude));
 }
 
 inline bool GeoDataCoordinatesPrivate::operator!=(const GeoDataCoordinatesPrivate& rhs) const
 {
     // do not compare the m_detail member as it does not really belong to
     // GeoDataCoordinates and should be removed
+
     return !(*this == rhs);
 }
 

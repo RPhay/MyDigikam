@@ -40,42 +40,42 @@ public:
 
 public:
 
-    qreal                   m_minRefreshPeriod;
-    qreal                   m_maxSessionLength;
+    qreal                   m_minRefreshPeriod  = 0.0;
+    qreal                   m_maxSessionLength  = 0.0;
     QString                 m_cookie;
     QString                 m_message;
     QString                 m_linkName;
     QString                 m_linkDescription;
     QString                 m_linkSnippet;
-    int                     m_maxLines;
+    int                     m_maxLines          = 2;
     QDateTime               m_expires;
     GeoDataUpdate           m_update;
-    GeoDataAbstractView*    m_abstractView = nullptr;
+    GeoDataAbstractView*    m_abstractView      = nullptr;
 };
 
 GeoDataNetworkLinkControlPrivate::GeoDataNetworkLinkControlPrivate()
     : m_minRefreshPeriod(0.0),
       m_maxSessionLength(0.0),
-      m_maxLines(2),
-      m_expires(),
-      m_update(),
-      m_abstractView(nullptr)
+      m_maxLines        (2),
+      m_expires         (),
+      m_update          (),
+      m_abstractView    (nullptr)
 {
 }
 
 GeoDataNetworkLinkControlPrivate::GeoDataNetworkLinkControlPrivate(const GeoDataNetworkLinkControlPrivate& other)
-    : GeoDataContainerPrivate(other),
-      m_minRefreshPeriod(other.m_minRefreshPeriod),
-      m_maxSessionLength(other.m_maxSessionLength),
-      m_cookie(other.m_cookie),
-      m_message(other.m_message),
-      m_linkName(other.m_linkName),
-      m_linkDescription(other.m_linkDescription),
-      m_linkSnippet(other.m_linkSnippet),
-      m_maxLines(other.m_maxLines),
-      m_expires(other.m_expires),
-      m_update(other.m_update),
-      m_abstractView(other.m_abstractView ? other.m_abstractView->copy() : nullptr)
+    : GeoDataContainerPrivate   (other),
+      m_minRefreshPeriod        (other.m_minRefreshPeriod),
+      m_maxSessionLength        (other.m_maxSessionLength),
+      m_cookie                  (other.m_cookie),
+      m_message                 (other.m_message),
+      m_linkName                (other.m_linkName),
+      m_linkDescription         (other.m_linkDescription),
+      m_linkSnippet             (other.m_linkSnippet),
+      m_maxLines                (other.m_maxLines),
+      m_expires                 (other.m_expires),
+      m_update                  (other.m_update),
+      m_abstractView            (other.m_abstractView ? other.m_abstractView->copy() : nullptr)
 {
 }
 
@@ -86,20 +86,26 @@ GeoDataNetworkLinkControlPrivate::~GeoDataNetworkLinkControlPrivate()
 
 GeoDataNetworkLinkControlPrivate& GeoDataNetworkLinkControlPrivate::operator=(const GeoDataNetworkLinkControlPrivate& other)
 {
+    if (this == &other)
+    {
+        return *this;
+    }
+
     GeoDataContainerPrivate::operator=(other);
-    m_minRefreshPeriod = other.m_minRefreshPeriod;
-    m_maxSessionLength = other.m_maxSessionLength;
-    m_cookie = other.m_cookie;
-    m_message = other.m_message;
-    m_linkName = other.m_linkName;
-    m_linkDescription = other.m_linkDescription;
-    m_linkSnippet = other.m_linkSnippet;
-    m_maxLines = other.m_maxLines;
-    m_expires = other.m_expires;
-    m_update = other.m_update;
+
+    m_minRefreshPeriod  = other.m_minRefreshPeriod;
+    m_maxSessionLength  = other.m_maxSessionLength;
+    m_cookie            = other.m_cookie;
+    m_message           = other.m_message;
+    m_linkName          = other.m_linkName;
+    m_linkDescription   = other.m_linkDescription;
+    m_linkSnippet       = other.m_linkSnippet;
+    m_maxLines          = other.m_maxLines;
+    m_expires           = other.m_expires;
+    m_update            = other.m_update;
 
     delete m_abstractView;
-    m_abstractView = other.m_abstractView ? other.m_abstractView->copy() : nullptr;
+    m_abstractView      = (other.m_abstractView ? other.m_abstractView->copy() : nullptr);
 
     return *this;
 }

@@ -39,14 +39,14 @@ namespace Marble
 
 GeoDataGeometry::GeoDataGeometry(const GeoDataGeometry& other)
     : GeoDataObject(),
-      d_ptr(other.d_ptr)
+      d_ptr        (other.d_ptr)
 {
     d_ptr->ref.ref();
 }
 
 GeoDataGeometry::GeoDataGeometry(GeoDataGeometryPrivate* priv)
     : GeoDataObject(),
-      d_ptr(priv)
+      d_ptr        (priv)
 {
     d_ptr->ref.ref();
 }
@@ -79,6 +79,11 @@ void GeoDataGeometry::detach()
 
 GeoDataGeometry& GeoDataGeometry::operator=(const GeoDataGeometry& other)
 {
+    if (this == &other)
+    {
+        return *this;
+    }
+
     GeoDataObject::operator=(other);
 
     if (!d_ptr->ref.deref())
@@ -99,68 +104,61 @@ bool GeoDataGeometry::operator==(const GeoDataGeometry& other) const
         return false;
     }
 
-    if (nodeType() == GeoDataTypes::GeoDataPolygonType)
+    if      (nodeType() == GeoDataTypes::GeoDataPolygonType)
     {
-        const GeoDataPolygon& thisPoly = static_cast<const GeoDataPolygon&>(*this);
+        const GeoDataPolygon& thisPoly  = static_cast<const GeoDataPolygon&>(*this);
         const GeoDataPolygon& otherPoly = static_cast<const GeoDataPolygon&>(other);
 
-        return thisPoly == otherPoly;
+        return (thisPoly == otherPoly);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataLinearRingType)
     {
-        const GeoDataLinearRing& thisRing = static_cast<const GeoDataLinearRing&>(*this);
+        const GeoDataLinearRing& thisRing  = static_cast<const GeoDataLinearRing&>(*this);
         const GeoDataLinearRing& otherRing = static_cast<const GeoDataLinearRing&>(other);
 
-        return thisRing == otherRing;
+        return (thisRing == otherRing);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataLineStringType)
     {
-        const GeoDataLineString& thisLine = static_cast<const GeoDataLineString&>(*this);
+        const GeoDataLineString& thisLine  = static_cast<const GeoDataLineString&>(*this);
         const GeoDataLineString& otherLine = static_cast<const GeoDataLineString&>(other);
 
-        return thisLine == otherLine;
+        return (thisLine == otherLine);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataModelType)
     {
-        const GeoDataModel& thisModel = static_cast<const GeoDataModel&>(*this);
+        const GeoDataModel& thisModel  = static_cast<const GeoDataModel&>(*this);
         const GeoDataModel& otherModel = static_cast<const GeoDataModel&>(other);
 
-        return thisModel == otherModel;
+        return (thisModel == otherModel);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataMultiGeometryType)
     {
-        const GeoDataMultiGeometry& thisMG = static_cast<const GeoDataMultiGeometry&>(*this);
+        const GeoDataMultiGeometry& thisMG  = static_cast<const GeoDataMultiGeometry&>(*this);
         const GeoDataMultiGeometry& otherMG = static_cast<const GeoDataMultiGeometry&>(other);
 
-        return thisMG == otherMG;
+        return (thisMG == otherMG);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataTrackType)
     {
-        const GeoDataTrack& thisTrack = static_cast<const GeoDataTrack&>(*this);
+        const GeoDataTrack& thisTrack  = static_cast<const GeoDataTrack&>(*this);
         const GeoDataTrack& otherTrack = static_cast<const GeoDataTrack&>(other);
 
-        return thisTrack == otherTrack;
+        return (thisTrack == otherTrack);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataMultiTrackType)
     {
-        const GeoDataMultiTrack& thisMT = static_cast<const GeoDataMultiTrack&>(*this);
+        const GeoDataMultiTrack& thisMT  = static_cast<const GeoDataMultiTrack&>(*this);
         const GeoDataMultiTrack& otherMT = static_cast<const GeoDataMultiTrack&>(other);
 
-        return thisMT == otherMT;
+        return (thisMT == otherMT);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataPointType)
     {
-        const GeoDataPoint& thisPoint = static_cast<const GeoDataPoint&>(*this);
+        const GeoDataPoint& thisPoint  = static_cast<const GeoDataPoint&>(*this);
         const GeoDataPoint& otherPoint = static_cast<const GeoDataPoint&>(other);
 
-        return thisPoint == otherPoint;
+        return (thisPoint == otherPoint);
     }
 
     return false;
@@ -214,9 +212,11 @@ void GeoDataGeometry::unpack(QDataStream& stream)
 
 bool GeoDataGeometry::equals(const GeoDataGeometry& other) const
 {
-    return GeoDataObject::equals(other) &&
-           d_ptr->m_extrude == other.d_ptr->m_extrude &&
-           d_ptr->m_altitudeMode == other.d_ptr->m_altitudeMode;
+    return (
+            GeoDataObject::equals(other) &&
+            (d_ptr->m_extrude      == other.d_ptr->m_extrude) &&
+            (d_ptr->m_altitudeMode == other.d_ptr->m_altitudeMode)
+           );
 }
 
 } // namespace Marble
