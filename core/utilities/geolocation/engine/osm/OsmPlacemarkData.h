@@ -53,14 +53,18 @@ enum class OsmType
 struct OsmIdentifier
 {
     inline OsmIdentifier() = default;
-    inline OsmIdentifier(qint64 _id, OsmType _type) : id(_id), type(_type) {}
+    inline OsmIdentifier(qint64 _id, OsmType _type)
+        : id  (_id),
+          type(_type)
+    {
+    }
 
-    qint64 id = 0;
+    qint64 id    = 0;
     OsmType type = OsmType::Way;
 
     inline bool operator==(OsmIdentifier other) const
     {
-        return id == other.id && type == other.type;
+        return ((id == other.id) && (type == other.type));
     }
 };
 
@@ -95,18 +99,18 @@ class DIGIKAM_EXPORT OsmPlacemarkData: public GeoNode
 public:
 
     OsmPlacemarkData();
-    virtual ~OsmPlacemarkData();
+    virtual ~OsmPlacemarkData()                                                           override;
 
-    qint64 id() const;
-    qint64 oid() const;
-    QString version() const;
-    QString changeset() const;
-    QString uid() const;
-    QString isVisible() const;
-    QString user() const;
-    QString timestamp() const;
-    QString action() const;
-    const char* nodeType() const override;
+    qint64 id()                                                                     const;
+    qint64 oid()                                                                    const;
+    QString version()                                                               const;
+    QString changeset()                                                             const;
+    QString uid()                                                                   const;
+    QString isVisible()                                                             const;
+    QString user()                                                                  const;
+    QString timestamp()                                                             const;
+    QString action()                                                                const;
+    const char* nodeType()                                                          const override;
 
     void setId(qint64 id);
     void setVersion(const QString& version);
@@ -121,7 +125,7 @@ public:
      * @brief tagValue returns the value of the tag that has @p key as key
      * or an empty qstring if there is no such tag
      */
-    QString tagValue(const QString& key) const;
+    QString tagValue(const QString& key)                                            const;
 
     /**
      * @brief addTag this function inserts a string key=value mapping,
@@ -139,31 +143,31 @@ public:
      * @brief containsTag returns true if the tag hash contains an entry with
      * the @p key as key and @p value as value
      */
-    bool containsTag(const QString& key, const QString& value) const;
+    bool containsTag(const QString& key, const QString& value)                      const;
 
     /**
      * @brief containsTagKey returns true if the tag hash contains an entry with
      * the @p key as key
      */
-    bool containsTagKey(const QString& key) const;
+    bool containsTagKey(const QString& key)                                         const;
 
     /**
      * @brief tagValue returns a pointer to the tag that has @p key as key
      * or the end iterator if there is no such tag
      */
-    QHash<QString, QString>::const_iterator findTag(const QString& key) const;
+    QHash<QString, QString>::const_iterator findTag(const QString& key)             const;
 
     /**
      * @brief iterators for the tags hash.
      */
-    QHash< QString, QString >::const_iterator tagsBegin() const;
-    QHash< QString, QString >::const_iterator tagsEnd() const;
+    QHash< QString, QString >::const_iterator tagsBegin()                           const;
+    QHash< QString, QString >::const_iterator tagsEnd()                             const;
 
     /**
      * @brief this function returns the osmData associated with a nd
      */
     OsmPlacemarkData& nodeReference(const GeoDataCoordinates& coordinates);
-    OsmPlacemarkData nodeReference(const GeoDataCoordinates& coordinates) const;
+    OsmPlacemarkData nodeReference(const GeoDataCoordinates& coordinates)           const;
 
     /**
      * @brief addRef this function inserts a GeoDataCoordinates = OsmPlacemarkData
@@ -172,7 +176,7 @@ public:
      */
     void addNodeReference(const GeoDataCoordinates& key, const OsmPlacemarkData& value);
     void removeNodeReference(const GeoDataCoordinates& key);
-    bool containsNodeReference(const GeoDataCoordinates& key) const;
+    bool containsNodeReference(const GeoDataCoordinates& key)                       const;
 
     /**
      * @brief changeNodeReference is a convenience function that allows the quick change of
@@ -187,7 +191,7 @@ public:
      * in the order provided by polygon->innerBoundaries();
      */
     OsmPlacemarkData& memberReference(int key);
-    OsmPlacemarkData memberReference(int key) const;
+    OsmPlacemarkData memberReference(int key)                                       const;
 
     /**
      * @brief addRef this function inserts a int = OsmplacemarkData
@@ -197,7 +201,7 @@ public:
      */
     void addMemberReference(int key, const OsmPlacemarkData& value);
     void removeMemberReference(int key);
-    bool containsMemberReference(int key) const;
+    bool containsMemberReference(int key)                                           const;
 
     /**
      * @brief addRelation calling this makes the osm placemark a member of the relation
@@ -205,21 +209,21 @@ public:
      */
     void addRelation(qint64 id, OsmType type, const QString& role);
     void removeRelation(qint64 id);
-    bool containsRelation(qint64 id) const;
+    bool containsRelation(qint64 id)                                                const;
 
-    QHash< OsmIdentifier, QString >::const_iterator relationReferencesBegin() const;
-    QHash< OsmIdentifier, QString >::const_iterator relationReferencesEnd() const;
+    QHash< OsmIdentifier, QString >::const_iterator relationReferencesBegin()       const;
+    QHash< OsmIdentifier, QString >::const_iterator relationReferencesEnd()         const;
 
     /**
      * @brief isNull returns false if the osmData is loaded from a source
      * or true if its just default constructed
      */
-    bool isNull() const;
+    bool isNull()                                                                   const;
 
     /**
      * @brief isEmpty returns true if no attribute other than the id has been set
      */
-    bool isEmpty() const;
+    bool isEmpty()                                                                  const;
 
     /**
      * @brief fromParserAttributes is a convenience function that parses all osm-related
@@ -231,11 +235,11 @@ public:
     /**
      * Return the insternal instance of the hash-table functions container.
      */
-    OsmPlacemarkDataHashRef* hRef() const;
+    OsmPlacemarkDataHashRef* hRef()                                                 const;
 
 private:
 
-    qint64                                  m_id;
+    qint64                                  m_id                    = 0;
     QHash<QString, QString>                 m_tags;
 
     /**

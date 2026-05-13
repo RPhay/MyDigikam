@@ -29,11 +29,11 @@ namespace Marble
 
 inline uint qHash(Marble::OsmIdentifier ident, uint seed)
 {
-    return ::qHash(ident.id, seed) ^ ::qHash((int)ident.type, seed);
+    return (::qHash(ident.id, seed) ^ ::qHash((int)ident.type, seed));
 }
 
 OsmPlacemarkData::OsmPlacemarkData()
-    : m_id(0),
+    : m_id  (0),
       m_href(new OsmPlacemarkDataHashRef)
 {
     // nothing to do
@@ -57,7 +57,8 @@ qint64 OsmPlacemarkData::id() const
 qint64 OsmPlacemarkData::oid() const
 {
     auto const value = m_tags.value(QStringLiteral("mx:oid")).toLong();
-    return value > 0 ? value : m_id;
+
+    return ((value > 0) ? value : m_id);
 }
 
 QString OsmPlacemarkData::changeset() const
@@ -153,7 +154,8 @@ void OsmPlacemarkData::removeTag(const QString& key)
 bool OsmPlacemarkData::containsTag(const QString& key, const QString& value) const
 {
     auto const iter = m_tags.constFind(key);
-    return iter == m_tags.constEnd() ? false : iter.value() == value;
+
+    return ((iter == m_tags.constEnd()) ? false : (iter.value() == value));
 }
 
 bool OsmPlacemarkData::containsTagKey(const QString& key) const
@@ -178,7 +180,7 @@ QHash< QString, QString >::const_iterator OsmPlacemarkData::tagsEnd() const
 
 OsmPlacemarkData& OsmPlacemarkData::nodeReference(const GeoDataCoordinates& coordinates)
 {
-    return m_href->m_nodeReferences[ coordinates ];
+    return m_href->m_nodeReferences[coordinates];
 }
 
 OsmPlacemarkData OsmPlacemarkData::nodeReference(const GeoDataCoordinates& coordinates) const
@@ -209,7 +211,7 @@ void OsmPlacemarkData::changeNodeReference(const GeoDataCoordinates& oldKey, con
 
 OsmPlacemarkData& OsmPlacemarkData::memberReference(int key)
 {
-    return m_href->m_memberReferences[ key ];
+    return m_href->m_memberReferences[key];
 }
 
 OsmPlacemarkData OsmPlacemarkData::memberReference(int key) const
@@ -226,17 +228,17 @@ void OsmPlacemarkData::removeMemberReference(int key)
 {
     // If an inner boundary is deleted, all indexes higher than the deleted one
     // must be lowered by 1 to keep order.
+
     QHash< int, OsmPlacemarkData > newHash;
-    QHash< int, OsmPlacemarkData >::iterator it = m_href->m_memberReferences.begin();
+    QHash< int, OsmPlacemarkData >::iterator it  = m_href->m_memberReferences.begin();
     QHash< int, OsmPlacemarkData >::iterator end = m_href->m_memberReferences.end();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
-        if (it.key() > key)
+        if      (it.key() > key)
         {
             newHash.insert(it.key() - 1, it.value());
         }
-
         else if (it.key() < key)
         {
             newHash.insert(it.key(), it.value());
@@ -260,6 +262,7 @@ void OsmPlacemarkData::removeRelation(qint64 id)
 {
     /// ### this is wrong and just done this way for backward behavior compatible
     /// ### this method should probably take type as an additional argument
+
     m_relationReferences.remove({ id, OsmType::Node });
     m_relationReferences.remove({ id, OsmType::Way });
     m_relationReferences.remove({ id, OsmType::Relation });
@@ -269,9 +272,12 @@ bool OsmPlacemarkData::containsRelation(qint64 id) const
 {
     /// ### this is wrong and just done this way for backward behavior compatible
     /// ### this method should probably take type as an additional argument
-    return m_relationReferences.contains({ id, OsmType::Node })
-           || m_relationReferences.contains({ id, OsmType::Way })
-           || m_relationReferences.contains({ id, OsmType::Relation });
+
+    return (
+            m_relationReferences.contains({ id, OsmType::Node })
+            || m_relationReferences.contains({ id, OsmType::Way })
+            || m_relationReferences.contains({ id, OsmType::Relation })
+           );
 }
 
 QHash< OsmIdentifier, QString >::const_iterator OsmPlacemarkData::relationReferencesBegin() const
@@ -291,10 +297,12 @@ bool OsmPlacemarkData::isNull() const
 
 bool OsmPlacemarkData::isEmpty() const
 {
-    return m_tags.isEmpty() &&
-           m_href->m_nodeReferences.isEmpty() &&
-           m_href->m_memberReferences.isEmpty() &&
-           m_relationReferences.isEmpty();
+    return (
+            m_tags.isEmpty()                     &&
+            m_href->m_nodeReferences.isEmpty()   &&
+            m_href->m_memberReferences.isEmpty() &&
+            m_relationReferences.isEmpty()
+           );
 }
 
 OsmPlacemarkData OsmPlacemarkData::fromParserAttributes(const QXmlStreamAttributes& attributes)
@@ -308,6 +316,7 @@ OsmPlacemarkData OsmPlacemarkData::fromParserAttributes(const QXmlStreamAttribut
     osmData.setVisible(attributes.value(QLatin1String("visible")).toString());
     osmData.setTimestamp(attributes.value(QLatin1String("timestamp")).toString());
     osmData.setAction(attributes.value(QLatin1String("action")).toString());
+
     return osmData;
 }
 

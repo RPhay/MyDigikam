@@ -44,27 +44,27 @@ public:
                     const PluginManager* pluginManager,
                     GeoDataTreeModel* treeModel);
 
-    ~VectorTileLayer() override;
+    ~VectorTileLayer()                                                        override;
 
-    RenderState renderState() const override;
+    RenderState renderState()                                           const override;
 
-    int tileZoomLevel() const;
-
-    QString runtimeTrace() const override;
+    QString runtimeTrace()                                              const override;
 
     bool render(GeoPainter* painter, ViewportParams* viewport,
                 const QString& renderPos = QLatin1String("NONE"),
-                GeoSceneLayer* layer = nullptr) override;
+                GeoSceneLayer* layer = nullptr)                               override;
 
     void reload();
 
-    QSize tileSize() const;
-    const GeoSceneAbstractTileProjection* tileProjection() const;
+    QSize tileSize()                                                    const override;
+    const GeoSceneAbstractTileProjection* tileProjection()              const override;
 
-    int tileColumnCount(int level) const;
-    int tileRowCount(int level) const;
+    int tileColumnCount(int level)                                      const override;
+    int tileRowCount(int level)                                         const override;
 
-    int layerCount() const;
+    int layerCount()                                                    const override;
+
+    int tileZoomLevel()                                                 const;
 
     void downloadTile(const TileId& stackedTileId);
 
@@ -74,7 +74,8 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void setMapTheme(const QVector<const GeoSceneVectorTileDataset*>& textures, const GeoSceneGroup* textureLayerSettings);
+    void setMapTheme(const QVector<const GeoSceneVectorTileDataset*>& textures,
+                     const GeoSceneGroup* textureLayerSettings);
 
     void reset();
 

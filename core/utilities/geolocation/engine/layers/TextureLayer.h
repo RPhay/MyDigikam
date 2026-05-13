@@ -50,13 +50,11 @@ public:
                  const SunLocator* sunLocator,
                  QAbstractItemModel* groundOverlayModel);
 
-    ~TextureLayer() override;
+    ~TextureLayer()                                                  override;
 
     void addSeaDocument(const GeoDataDocument* seaDocument);
 
     void addLandDocument(const GeoDataDocument* landDocument);
-
-    int layerCount() const;
 
     /**
      * @brief Adds texture sublayer, taking ownership of the object's memory
@@ -73,34 +71,37 @@ public:
      */
     void removeTextureLayer(const QString& key);
 
-    bool showSunShading() const;
-    bool showCityLights() const;
+    bool showSunShading()                                       const;
+    bool showCityLights()                                       const;
 
     /**
      * @brief Return the current tile zoom level. For example for OpenStreetMap
      *        possible values are 1..18, for BlueMarble 0..6.
      */
-    int tileZoomLevel() const;
+    int tileZoomLevel()                                         const;
 
-    QSize tileSize() const;
+    quint64 volatileCacheLimit()                                const;
 
-    const GeoSceneAbstractTileProjection* tileProjection() const;
+    int preferredRadiusCeil(int radius)                         const;
+    int preferredRadiusFloor(int radius)                        const;
 
-    int tileColumnCount(int level) const;
-    int tileRowCount(int level) const;
+    int layerCount()                                            const override;
 
-    quint64 volatileCacheLimit() const;
+    QSize tileSize()                                            const override;
 
-    int preferredRadiusCeil(int radius) const;
-    int preferredRadiusFloor(int radius) const;
+    const GeoSceneAbstractTileProjection* tileProjection()      const override;
 
-    RenderState renderState() const override;
+    int tileColumnCount(int level)                              const override;
+    int tileRowCount(int level)                                 const override;
 
-    QString runtimeTrace() const override;
+
+    RenderState renderState()                                   const override;
+
+    QString runtimeTrace()                                      const override;
 
     bool render(GeoPainter* painter, ViewportParams* viewport,
                 const QString& renderPos = QLatin1String("NONE"),
-                GeoSceneLayer* layer = nullptr) override;
+                GeoSceneLayer* layer = nullptr)                       override;
 
 public Q_SLOTS:
 
@@ -120,7 +121,10 @@ public Q_SLOTS:
 
     void setNeedsUpdate();
 
-    void setMapTheme(const QVector<const GeoSceneTextureTileDataset*>& textures, const GeoSceneGroup* textureLayerSettings, const QString& seaFile, const QString& landFile);
+    void setMapTheme(const QVector<const GeoSceneTextureTileDataset*>& textures,
+                     const GeoSceneGroup* textureLayerSettings,
+                     const QString& seaFile,
+                     const QString& landFile);
 
     void setVolatileCacheLimit(quint64 kilobytes);
 
