@@ -53,11 +53,13 @@ public:
     GeoDataLineStringPrivate& operator=(const GeoDataLineStringPrivate& other)
     {
         GeoDataGeometryPrivate::operator=(other);
-        m_vector            = other.m_vector;
-        m_rangeCorrected    = nullptr;
-        m_dirtyRange        = true;
-        m_dirtyBox          = other.m_dirtyBox;
-        m_tessellationFlags = other.m_tessellationFlags;
+        m_vector             = other.m_vector;
+        m_rangeCorrected     = nullptr;
+        m_dirtyRange         = true;
+        m_dirtyBox           = other.m_dirtyBox;
+        m_tessellationFlags  = other.m_tessellationFlags;
+        m_previousResolution = other.m_previousResolution;
+        m_level              = other.m_level;
 
         return *this;
     }
@@ -86,8 +88,11 @@ public:
                                     int recursionCounter)                               const;
 
     quint8 levelForResolution(qreal resolution)                                         const;
-    static qreal resolutionForLevel(int level);
     void optimize(GeoDataLineString& lineString)                                        const;
+
+public:
+
+    static qreal resolutionForLevel(int level);
 
 public:
 

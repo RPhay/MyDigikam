@@ -39,17 +39,26 @@ class FileLoader : public QThread
 
 public:
 
-    FileLoader(QObject* parent, const PluginManager* pluginManager, bool recenter, const QString& file,
-               const QString& property, const GeoDataStyle::Ptr& style, DocumentRole role, int renderOrder);
-    FileLoader(QObject* parent, const PluginManager* pluginManager,
-               const QString& contents, const QString& name, DocumentRole role);
-    ~FileLoader() override;
+    FileLoader(QObject* parent,
+               const PluginManager* pluginManager,
+               bool recenter,
+               const QString& file,
+               const QString& property,
+               const GeoDataStyle::Ptr& style,
+               DocumentRole role,
+               int renderOrder);
+    FileLoader(QObject* parent,
+               const PluginManager* pluginManager,
+               const QString& contents,
+               const QString& name,
+               DocumentRole role);
+    ~FileLoader()                         override;
 
-    void run() override;
-    bool recenter() const;
-    QString path() const;
+    void run()                            override;
+    bool recenter()                 const;
+    QString path()                  const;
     GeoDataDocument* document();
-    QString error() const;
+    QString error()                 const;
 
 Q_SIGNALS:
 

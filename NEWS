@@ -9,12 +9,12 @@ Bundles component versions:
 
 | Bundles       | Qt         | KDE        | OpenCV   | FFmpeg    | Heif       | ExifTool  | Exiv2      | LibRaw       | QtAvPlayer   | Build Environment   |
 |---------------|------------|------------|----------|-----------|------------|-----------|------------|--------------|--------------|---------------------|
-| Windows Qt5   | 5.15.17    | 5.116      | 4.11     | 7.1.1     | 1.20.2     | 13.55 (*) | 0.28.8 (*) | 20260406 (*) | 20260405 (*) | Windows 10 + VCPKG  |
-| Windows Qt6   | 6.10.2 (*) | 6.25.0 (*) | 4.12 (*) | 8.0.1 (*) | 1.21.2 (*) | 13.55 (*) | 0.28.8 (*) | 20260406 (*) |    -         | Windows 11 + VCPKG  |
-| AppImage Qt5  | 5.15.18    | 5.116      | 4.13 (*) | 8.0.1 (*) | 1.21.2 (*) | 13.55 (*) | 0.28.8 (*) | 20260406 (*) | 20260405 (*) | XUbuntu 20.06       |
-| AppImage Qt6  | 6.11.0 (*) | 6.26.0 (*) | 4.13 (*) | 8.1.1 (*) | 1.21.2 (*) | 13.55 (*) | 0.28.8 (*) | 20260406 (*) |    -         | XUbuntu 22.04       |
-| macOS Qt5     | 5.15.18    | 5.116      | 4.13 (*) | 8.0.1 (*) | 1.20.2     | 13.55 (*) | 0.28.8 (*) | 20260406 (*) | 20260405 (*) | Monterey + Macports |
-| macOS Qt6     | 6.11.0 (*) | 6.25.0 (*) | 4.13 (*) | 8.0.1 (*) | 1.20.2     | 13.55 (*) | 0.28.8 (*) | 20260406 (*) |    -         | Tathoe + Macports   |
+| Windows Qt5   | 5.15.17    | 5.116      | 4.11     | 7.1.1     | 1.20.2     | 13.58 (*) | 0.28.8 (*) | 20260406 (*) | 20260405 (*) | Windows 10 + VCPKG  |
+| Windows Qt6   | 6.10.2 (*) | 6.25.0 (*) | 4.12 (*) | 8.0.1 (*) | 1.21.2 (*) | 13.58 (*) | 0.28.8 (*) | 20260406 (*) |    -         | Windows 11 + VCPKG  |
+| AppImage Qt5  | 5.15.18    | 5.116      | 4.13 (*) | 8.0.1 (*) | 1.21.2 (*) | 13.58 (*) | 0.28.8 (*) | 20260406 (*) | 20260405 (*) | XUbuntu 20.06       |
+| AppImage Qt6  | 6.11.0 (*) | 6.26.0 (*) | 4.13 (*) | 8.1.1 (*) | 1.21.2 (*) | 13.58 (*) | 0.28.8 (*) | 20260406 (*) |    -         | XUbuntu 22.04       |
+| macOS Qt5     | 5.15.18    | 5.116      | 4.13 (*) | 8.0.1 (*) | 1.20.2     | 13.58 (*) | 0.28.8 (*) | 20260406 (*) | 20260405 (*) | Monterey + Macports |
+| macOS Qt6     | 6.11.0 (*) | 6.25.0 (*) | 4.13 (*) | 8.0.1 (*) | 1.20.2     | 13.58 (*) | 0.28.8 (*) | 20260406 (*) |    -         | Tathoe + Macports   |
 
 Import          : USB Mass Storage driver now support video thumbnails.
 
@@ -22,6 +22,8 @@ Advanced Search : Add "Clear All Groups" button in the SearchView interface.
 
 Preview         : Add support for Pixel motion photos, which are short videos embedded in pictures taken on Google Pixel phones.
                   Better support of the audio output selection provided by the video media player.
+
+Database        : Schema updated to support time-Zone with registered item time-stamps.
 
 *****************************************************************************************************
 BUGFIXES:

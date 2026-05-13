@@ -49,14 +49,14 @@ public:
     /**
      * Must return the full size of the source image
      */
-    virtual QSize fullImageSize() const = 0;
+    virtual QSize fullImageSize()                       const = 0;
 
     /**
      * Must return one specific tile
      *
      * tileLevel can be used to calculate the number of tiles in a row or column
      */
-    virtual QImage tile(int n, int m, int tileLevel) = 0;
+    virtual QImage tile(int n, int m, int tileLevel)          = 0;
 };
 
 class DIGIKAM_EXPORT TileCreator : public QThread
@@ -68,8 +68,10 @@ public:
     /**
      * Constructor for standard Image source
      */
-    TileCreator(const QString& sourceDir, const QString& installMap,
-                const QString& dem,       const QString& targetDir = QString());
+    TileCreator(const QString& sourceDir,
+                const QString& installMap,
+                const QString& dem,
+                const QString& targetDir = QString());
 
     /**
      * Constructor for own, custom source class
@@ -78,7 +80,7 @@ public:
      */
     TileCreator(TileCreatorSource* source, const QString& dem, const QString& targetDir);
 
-    ~TileCreator() override;
+    ~TileCreator()                                    override;
 
     void cancelTileCreation();
 
@@ -86,14 +88,14 @@ public:
     void setTileQuality(int quality);
     void setResume(bool resume);
     void setVerifyExactResult(bool verify);
-    QString tileFormat() const;
-    int tileQuality() const;
-    bool resume() const;
-    bool verifyExactResult() const;
+    QString tileFormat()                        const;
+    int tileQuality()                           const;
+    bool resume()                               const;
+    bool verifyExactResult()                    const;
 
 protected:
 
-    void run() override;
+    void run()                                        override;
 
 Q_SIGNALS:
 
