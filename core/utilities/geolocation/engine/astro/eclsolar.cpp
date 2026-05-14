@@ -3072,7 +3072,7 @@ int EclSolar::localStart(int j, double* spt, double* ept, int* spp,
         }
     }
 
-    if (maxp > 0)
+    if (maxp > 0)   // cppcheck-suppress duplicateCondition
     {
         if (eb_lccnt == 1)
         {

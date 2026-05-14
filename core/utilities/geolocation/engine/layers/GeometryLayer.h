@@ -49,17 +49,17 @@ class GeometryLayer : public QObject,
 public:
 
     explicit GeometryLayer(const QAbstractItemModel* model, const StyleBuilder* styleBuilder);
-    ~GeometryLayer() override;
+    ~GeometryLayer()                                                      override;
 
-    QStringList renderPosition() const override;
+    QStringList renderPosition()                                    const override;
 
     bool render(GeoPainter* painter, ViewportParams* viewport,
                 const QString& renderPos = QLatin1String("NONE"),
-                GeoSceneLayer* layer = nullptr) override;
+                GeoSceneLayer* layer = nullptr)                           override;
 
-    RenderState renderState() const override;
+    RenderState renderState()                                       const override;
 
-    QString runtimeTrace() const override;
+    QString runtimeTrace()                                          const override;
 
     bool hasFeatureAt(const QPoint& curpos, const ViewportParams* viewport);
 
@@ -71,11 +71,11 @@ public:
 
     void setLevelTagDebugModeEnabled(bool enabled);
 
-    bool levelTagDebugModeEnabled() const;
+    bool levelTagDebugModeEnabled()                                 const;
 
     void setDebugLevelTag(int level);
 
-    int debugLevelTag() const;
+    int debugLevelTag()                                             const;
 
 public Q_SLOTS:
 

@@ -40,37 +40,41 @@ public:
 
     explicit AtmospherePlugin(const MarbleModel* marbleModel);
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                  const override;
 
-    QString renderPolicy() const override;
+    QString renderPolicy()                      const override;
 
-    QStringList renderPosition() const override;
+    QStringList renderPosition()                const override;
 
-    RenderType renderType() const override;
+    RenderType renderType()                     const override;
 
-    QString name() const override;
+    QString name()                              const override;
 
-    QString guiString() const override;
+    QString guiString()                         const override;
 
-    QString nameId() const override;
+    QString nameId()                            const override;
 
-    QString version() const override;
+    QString version()                           const override;
 
-    QString description() const override;
+    QString description()                       const override;
 
-    QIcon icon() const override;
+    QIcon icon()                                const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                    const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()       const override;
 
-    qreal zValue() const override;
+    qreal zValue()                              const override;
 
-    void initialize() override;
+    void initialize()                                 override;
 
-    bool isInitialized() const override;
+    bool isInitialized()                        const override;
 
-    bool render(GeoPainter* painter, ViewportParams* viewport, const QString& renderPos, GeoSceneLayer* layer = nullptr) override;
+    bool render(GeoPainter* painter,
+                ViewportParams* viewport,
+                const QString& renderPos,
+                GeoSceneLayer* layer = nullptr)       override;
+
     void repaintPixmap(const ViewportParams* viewParams);
 
 public Q_SLOTS:
@@ -81,7 +85,7 @@ private:
 
     QPixmap m_renderPixmap;
     QColor  m_renderColor;
-    int     m_renderRadius;
+    int     m_renderRadius  = -1;
 };
 
 } // namespace Marble

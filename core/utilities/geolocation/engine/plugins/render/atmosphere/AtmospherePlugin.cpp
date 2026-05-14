@@ -35,13 +35,13 @@ namespace Marble
 {
 
 AtmospherePlugin::AtmospherePlugin()
-    : RenderPlugin(nullptr),
+    : RenderPlugin  (nullptr),
       m_renderRadius(-1)
 {
 }
 
 AtmospherePlugin::AtmospherePlugin(const MarbleModel* marbleModel)
-    : RenderPlugin(marbleModel),
+    : RenderPlugin  (marbleModel),
       m_renderRadius(-1)
 {
     connect(marbleModel, SIGNAL(themeChanged(QString)),
@@ -106,12 +106,12 @@ QString AtmospherePlugin::copyrightYears() const
 QVector<PluginAuthor> AtmospherePlugin::pluginAuthors() const
 {
     return QVector<PluginAuthor>()
-           << PluginAuthor(QStringLiteral("Torsten Rahn"), QStringLiteral("tackat@kde.org"))
-           << PluginAuthor(QStringLiteral("Inge Wallin"), QStringLiteral("ingwa@kde.org"))
+           << PluginAuthor(QStringLiteral("Torsten Rahn"),          QStringLiteral("tackat@kde.org"))
+           << PluginAuthor(QStringLiteral("Inge Wallin"),           QStringLiteral("ingwa@kde.org"))
            << PluginAuthor(QStringLiteral("Jens-Michael Hoffmann"), QStringLiteral("jmho@c-xx.com"))
-           << PluginAuthor(QStringLiteral("Patrick Spendrin"), QStringLiteral("ps_ml@gmx.de"))
-           << PluginAuthor(QStringLiteral("Bernhard Beschow"), QStringLiteral("bbeschow@cs.tu-berlin.de"))
-           << PluginAuthor(QStringLiteral("Mohammed Nafees"), QStringLiteral("nafees.technocool@gmail.com"));
+           << PluginAuthor(QStringLiteral("Patrick Spendrin"),      QStringLiteral("ps_ml@gmx.de"))
+           << PluginAuthor(QStringLiteral("Bernhard Beschow"),      QStringLiteral("bbeschow@cs.tu-berlin.de"))
+           << PluginAuthor(QStringLiteral("Mohammed Nafees"),       QStringLiteral("nafees.technocool@gmail.com"));
 }
 
 qreal AtmospherePlugin::zValue() const
@@ -150,26 +150,35 @@ bool AtmospherePlugin::render(GeoPainter* painter,
     }
 
     // Only draw an atmosphere if projection is spherical
-    if (viewParams->projection() != Spherical && viewParams->projection() != VerticalPerspective)
+
+    if (
+        (viewParams->projection() != Spherical) &&
+        (viewParams->projection() != VerticalPerspective)
+       )
     {
         return true;
     }
 
     // No use to draw atmosphere if it's not visible in the area.
+
     if (viewParams->mapCoversViewport())
     {
         return true;
     }
 
     // Gradient should be recalculated only if planet color or size changed
-    if (viewParams->radius() != m_renderRadius || marbleModel()->planet()->atmosphereColor() != m_renderColor)
+
+    if (
+        (viewParams->radius() != m_renderRadius) ||
+        (marbleModel()->planet()->atmosphereColor() != m_renderColor)
+       )
     {
         m_renderRadius = viewParams->radius();
         m_renderColor = marbleModel()->planet()->atmosphereColor();
         repaintPixmap(viewParams);
     }
 
-    int  imageHalfWidth  = viewParams->width() / 2;
+    int  imageHalfWidth  = viewParams->width()  / 2;
     int  imageHalfHeight = viewParams->height() / 2;
     painter->drawPixmap(imageHalfWidth  - (int)((qreal)(viewParams->radius()) * 1.05),
                         imageHalfHeight - (int)((qreal)(viewParams->radius()) * 1.05),
@@ -179,18 +188,19 @@ bool AtmospherePlugin::render(GeoPainter* painter,
 
 void AtmospherePlugin::repaintPixmap(const ViewportParams* viewParams)
 {
-    int  imageHalfWidth  = 1.05 * viewParams->radius();
-    int  imageHalfHeight = 1.05 * viewParams->radius();
+    int  imageHalfWidth  = 1.05 * viewParams->radius();     // cppcheck-suppress duplicateAssignExpression
+    int  imageHalfHeight = 1.05 * viewParams->radius();     // cppcheck-suppress duplicateAssignExpression
 
-    int diameter = (int)(2.1 * (qreal)(viewParams->radius()));
-    m_renderPixmap = QPixmap(diameter, diameter);
+    int diameter         = (int)(2.1 * (qreal)(viewParams->radius()));
+    m_renderPixmap       = QPixmap(diameter, diameter);
     m_renderPixmap.fill(QColor(Qt::transparent));
 
     QPainter renderPainter(&m_renderPixmap);
 
-    QColor color = marbleModel()->planet()->atmosphereColor();
+    QColor color         = marbleModel()->planet()->atmosphereColor();
 
     // Recalculate the atmosphere effect and paint it to canvasImage.
+
     QRadialGradient grad(QPointF(imageHalfWidth, imageHalfHeight),
                          1.05 * viewParams->radius());
     grad.setColorAt(0.91, color);
@@ -202,6 +212,7 @@ void AtmospherePlugin::repaintPixmap(const ViewportParams* viewParams)
     renderPainter.setRenderHint(QPainter::Antialiasing, false);
 
     // Let's paint ellipse we want in this::render(..) on pixmap from point (0;0)
+
     renderPainter.drawEllipse(0, 0, diameter, diameter);
 }
 

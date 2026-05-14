@@ -39,19 +39,28 @@ class DIGIKAM_EXPORT DownloadRegionDialog: public QDialog
 
 public:
 
-    enum SelectionMethod { VisibleRegionMethod, SpecifiedRegionMethod, RouteDownloadMethod };
+    enum SelectionMethod
+    {
+        VisibleRegionMethod,
+        SpecifiedRegionMethod,
+        RouteDownloadMethod
+    };
 
-    explicit DownloadRegionDialog(MarbleWidget* const widget, QWidget* const parent = nullptr,
+public:
+
+    explicit DownloadRegionDialog(MarbleWidget* const widget,
+                                  QWidget* const parent = nullptr,
                                   Qt::WindowFlags const f = Qt::WindowFlags());
-    ~DownloadRegionDialog() override;
+    ~DownloadRegionDialog()                                               override;
+
     void setAllowedTileLevelRange(int const minimumTileLevel,
                                   int const maximumTileLevel);
     void setVisibleTileLevel(int const tileLevel);
     void setSelectionMethod(SelectionMethod const);
 
-    QVector<TileCoordsPyramid> region() const;
+    QVector<TileCoordsPyramid> region()                             const;
 
-    TileType tileType() const;
+    TileType tileType()                                             const;
 
 public Q_SLOTS:
 
@@ -71,8 +80,8 @@ Q_SIGNALS:
 
 protected:
 
-    void hideEvent(QHideEvent* event) override;
-    void showEvent(QShowEvent* event) override;
+    void hideEvent(QHideEvent* event)                                     override;
+    void showEvent(QShowEvent* event)                                     override;
 
 private Q_SLOTS:
 
@@ -88,6 +97,7 @@ private Q_SLOTS:
 private:
 
     Q_DISABLE_COPY(DownloadRegionDialog)
+
     class Private;
     Private* const d = nullptr;
 };
