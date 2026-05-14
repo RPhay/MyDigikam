@@ -37564,18 +37564,18 @@ msgstr[2] "Upravili ste dátum %1 obrázkov. "
 msgctxt "@info"
 msgid "You have edited the pick label of the image. "
 msgid_plural "You have edited the pick label of %1 images. "
-msgstr[0] "<p>Upravili ste metadáta obrázka: </p><p><ul></p></ul>"
-msgstr[1] "Upravili ste dátum %1 obrázkov."
-msgstr[2] "Upravili ste dátum %1 obrázkov."
+msgstr[0] "Upravili ste výberovú značku obrázka. "
+msgstr[1] "Upravili ste výberovú značku %1 obrázkov. "
+msgstr[2] "Upravili ste výberovú značku %1 obrázkov. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:299
 #, kde-format
 msgctxt "@info"
 msgid "You have edited the color label of the image. "
 msgid_plural "You have edited the color label of %1 images. "
-msgstr[0] "<p>Upravili ste metadáta obrázka: </p><p><ul></p></ul>"
-msgstr[1] "Upravili ste dátum %1 obrázkov."
-msgstr[2] "Upravili ste dátum %1 obrázkov."
+msgstr[0] "Upravili ste farebnú značku obrázka. "
+msgstr[1] "Upravili ste farebnú značku %1 obrázkov. "
+msgstr[2] "Upravili ste farebnú značku %1 obrázkov. "
 
 #: core/libs/properties/captions/itemdescedittab.cpp:305
 #, kde-format
@@ -60254,7 +60254,7 @@ msgid ""
 "Camera Folder \"%1\" already contains the item \"%2\".\n"
 "Please enter a new filename (without extension):"
 msgstr ""
-"Priečinok fotoaparátu <resource>%1<resource> už obsahuje položku <resource>"
+"Priečinok fotoaparátu <resource>%1</resource> už obsahuje položku <resource>"
 "%2</resource><nl/>Prosím, zadajte nový názov súboru (bez prípony):"
 
 #: core/utilities/import/main/importui.cpp:1304
@@ -60785,11 +60785,11 @@ msgid ""
 "\"Custom\": use a customized format for date."
 msgstr ""
 "<p>Nastavte uprednostňovaný formát dátumu používaný pri tvorbe nových "
-"albumov. Dostupné voľby sú:</p><p/><b>ISO</b>: formát dátumu v súlade s ISO "
+"albumov. Dostupné voľby sú:</p><p><b>ISO</b>: formát dátumu v súlade s ISO "
 "8601 (YYYY-MM-DD). Napr.: <i>2006-08-24</i></p><p><b>Plný text</b>: formát "
 "dátumu čitateľný pre používateľa. Napr.: <i>štv, 24. aug 14:26:18 2006</i></"
 "p><p><b>Miestne nastavenia</b>: formát dátumu závislý na nastaveniach "
-"ovládacieho panela KDE."
+"ovládacieho panela KDE.</p>"
 
 #: core/utilities/import/widgets/albumcustomizer.cpp:140
 #, kde-format
@@ -63391,16 +63391,14 @@ msgid "and"
 msgstr "a"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Vrátiť položky bez oblastí tváre"
+msgstr "Vrátiť položky s potvrdenými oblasťami tváre"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Žiadne oblasti tvárí"
+msgstr "Potvrdené oblasti tváre"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
