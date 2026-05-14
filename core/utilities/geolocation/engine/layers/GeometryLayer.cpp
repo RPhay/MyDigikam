@@ -130,15 +130,15 @@ public:
 };
 
 GeometryLayerPrivate::GeometryLayerPrivate(const QAbstractItemModel* model, const StyleBuilder* styleBuilder)
-    : m_model(model),
-      m_styleBuilder(styleBuilder),
-      m_tileLevel(0),
-      m_lastFeatureAt(nullptr),
-      m_dirty(true),
-      m_cachedItemCount(0),
-      m_visibleRelationTypes(GeoDataRelation::RouteFerry),
+    : m_model                   (model),
+      m_styleBuilder            (styleBuilder),
+      m_tileLevel               (0),
+      m_lastFeatureAt           (nullptr),
+      m_dirty                   (true),
+      m_cachedItemCount         (0),
+      m_visibleRelationTypes    (GeoDataRelation::RouteFerry),
       m_levelTagDebugModeEnabled(false),
-      m_debugLevelTag(0)
+      m_debugLevelTag           (0)
 {
 }
 
@@ -304,7 +304,7 @@ bool GeometryLayer::render(GeoPainter* painter, ViewportParams* viewport,
 
     for (const QString& layer : d->m_styleBuilder->renderOrder())
     {
-        auto& layerItems                                = d->m_cachedPaintFragments[layer];
+        const auto& layerItems                          = d->m_cachedPaintFragments[layer];
         AbstractGeoPolygonGraphicsItem::s_previousStyle = nullptr;
         GeoLineStringGraphicsItem::s_previousStyle      = nullptr;
 
@@ -373,7 +373,7 @@ bool GeometryLayer::hasFeatureAt(const QPoint& curpos, const ViewportParams* vie
 
     for (int i = renderOrder.size() - 1 ; i >= 0 ; --i)
     {
-        auto& layerItems = d->m_cachedPaintFragments[renderOrder[i]];
+        const auto& layerItems = d->m_cachedPaintFragments[renderOrder[i]];
 
         for (auto item : layerItems)
         {
@@ -560,7 +560,7 @@ void GeometryLayerPrivate::createGraphicsItemFromGeometry(const GeoDataGeometry*
     {
         int rowCount = multigeo->size();
 
-        for (int row = 0; row < rowCount; ++row)
+        for (int row = 0 ; row < rowCount ; ++row)
         {
             createGraphicsItemFromGeometry(multigeo->child(row), placemark, relations);
         }
@@ -569,7 +569,7 @@ void GeometryLayerPrivate::createGraphicsItemFromGeometry(const GeoDataGeometry*
     {
         int rowCount = multitrack->size();
 
-        for (int row = 0; row < rowCount; ++row)
+        for (int row = 0 ; row < rowCount ; ++row)
         {
             createGraphicsItemFromGeometry(multitrack->child(row), placemark, relations);
         }
@@ -808,7 +808,7 @@ void GeometryLayer::handleHighlight(qreal lon, qreal lat, GeoDataCoordinates::Un
     GeoDataCoordinates clickedPoint(lon, lat, 0, unit);
     QVector<GeoDataPlacemark*> selectedPlacemarks;
 
-    for (int i = 0; i < d->m_model->rowCount(); ++i)
+    for (int i = 0 ; i < d->m_model->rowCount() ; ++i)
     {
         QVariant const data   = d->m_model->data(d->m_model->index(i, 0), MarblePlacemarkModel::ObjectPointerRole);
         GeoDataObject* object = qvariant_cast<GeoDataObject*> (data);

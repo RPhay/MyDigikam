@@ -51,10 +51,14 @@ GeoNode* KmlOsmPlacemarkDataTagHandler::parse(GeoParser& parser) const
      *          <mx:OsmPlacemarkData>
      * ...
      */
-    if (parser.parentElement().is<GeoDataExtendedData>() && parser.parentElement(1).is<GeoDataPlacemark>())
+    if (
+        parser.parentElement().is<GeoDataExtendedData>() &&
+        parser.parentElement(1).is<GeoDataPlacemark>()
+       )
     {
         auto placemark = parser.parentElement(1).nodeAs<GeoDataPlacemark>();
         placemark->setOsmData(osmData);
+
         return &placemark->osmData();
     }
 
@@ -66,16 +70,22 @@ GeoNode* KmlOsmPlacemarkDataTagHandler::parse(GeoParser& parser) const
      *                  <mx:OsmPlacemarkData>
      * ...
      */
-    else if (parser.parentElement(1).is<OsmPlacemarkData>() && parser.parentElement().is<GeoDataPoint>())
+    else if (
+             parser.parentElement(1).is<OsmPlacemarkData>() &&
+             parser.parentElement().is<GeoDataPoint>()
+            )
     {
-        OsmPlacemarkData* placemarkOsmData = parser.parentElement(1).nodeAs<OsmPlacemarkData>();
-        GeoDataPoint* point = parser.parentElement().nodeAs<GeoDataPoint>();
-        GeoDataCoordinates coordinates = point->coordinates();
+        OsmPlacemarkData* placemarkOsmData  = parser.parentElement(1).nodeAs<OsmPlacemarkData>();
+        GeoDataPoint* point                 = parser.parentElement().nodeAs<GeoDataPoint>();
+        GeoDataCoordinates coordinates      = point->coordinates();
+
         /* The GeoDataPoint object was only used as GeoNode wrapper for the GeoDataCoordinates
          * and it is no longer needed
          */
         delete point;
+
         placemarkOsmData->addNodeReference(coordinates, osmData);
+
         return &placemarkOsmData->nodeReference(coordinates);
     }
 
@@ -87,13 +97,16 @@ GeoNode* KmlOsmPlacemarkDataTagHandler::parse(GeoParser& parser) const
      *                  <mx:OsmPlacemarkData>
      * ...
      */
-    else if (parser.parentElement(1).is<OsmPlacemarkData>() && parser.parentElement().is<GeoDataLinearRing>()
-             && parser.parentElement(3).is<GeoDataPlacemark>())
+    else if (
+             parser.parentElement(1).is<OsmPlacemarkData>() &&
+             parser.parentElement().is<GeoDataLinearRing>() &&
+             parser.parentElement(3).is<GeoDataPlacemark>()
+            )
     {
         OsmPlacemarkData* placemarkOsmData = parser.parentElement(1).nodeAs<OsmPlacemarkData>();
-        GeoDataPlacemark* placemark = parser.parentElement(3).nodeAs<GeoDataPlacemark>();
-        GeoDataLinearRing& ring = *parser.parentElement().nodeAs<GeoDataLinearRing>();
-        GeoDataPolygon* polygon = geodata_cast<GeoDataPolygon>(placemark->geometry());
+        GeoDataPlacemark* placemark        = parser.parentElement(3).nodeAs<GeoDataPlacemark>();
+        const GeoDataLinearRing& ring      = *parser.parentElement().nodeAs<GeoDataLinearRing>();
+        GeoDataPolygon* polygon            = geodata_cast<GeoDataPolygon>(placemark->geometry());
 
         if (!polygon)
         {
@@ -104,9 +117,10 @@ GeoNode* KmlOsmPlacemarkDataTagHandler::parse(GeoParser& parser) const
          * within the vector if the ring is an innerBoundary;
          * Else it returns -1, meaning it's an outerBoundary
          */
-        int memberIndex = polygon->innerBoundaries().indexOf(ring);
+        int memberIndex                    = polygon->innerBoundaries().indexOf(ring);
 
         placemarkOsmData->addMemberReference(memberIndex, osmData);
+
         return &placemarkOsmData->memberReference(memberIndex);
     }
 
