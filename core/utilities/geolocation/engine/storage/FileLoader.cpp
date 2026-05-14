@@ -56,9 +56,14 @@ class Q_DECL_HIDDEN FileLoaderPrivate
 {
 public:
 
-    FileLoaderPrivate(FileLoader* parent, const PluginManager* pluginManager, bool recenter,
-                      const QString& file, const QString& property, const GeoDataStyle::Ptr& style,
-                      DocumentRole role, int renderOrder)
+    FileLoaderPrivate(FileLoader* parent,
+                      const PluginManager* pluginManager,
+                      bool recenter,
+                      const QString& file,
+                      const QString& property,
+                      const GeoDataStyle::Ptr& style,
+                      DocumentRole role,
+                      int renderOrder)
       : q               (parent),
         m_runner        (pluginManager),
         m_filepath      (file),
@@ -125,15 +130,24 @@ private:
     FileLoaderPrivate& operator=(const FileLoaderPrivate&) = delete;
 };
 
-FileLoader::FileLoader(QObject* parent, const PluginManager* pluginManager, bool recenter, const QString& file,
-                       const QString& property, const GeoDataStyle::Ptr& style, DocumentRole role, int renderOrder)
+FileLoader::FileLoader(QObject* parent,
+                       const PluginManager* pluginManager,
+                       bool recenter,
+                       const QString& file,
+                       const QString& property,
+                       const GeoDataStyle::Ptr& style,
+                       DocumentRole role,
+                       int renderOrder)
     : QThread(parent),
       d      (new FileLoaderPrivate(this, pluginManager, recenter, file, property, style, role, renderOrder))
 {
 }
 
-FileLoader::FileLoader(QObject* parent, const PluginManager* pluginManager,
-                       const QString& contents, const QString& file, DocumentRole role)
+FileLoader::FileLoader(QObject* parent,
+                       const PluginManager* pluginManager,
+                       const QString& contents,
+                       const QString& file,
+                       DocumentRole role)
     : QThread(parent),
       d      (new FileLoaderPrivate(this, pluginManager, contents, file, role))
 {
@@ -317,11 +331,13 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
         {
             createFilterProperties(child);
         }
-        else if (geodata_cast<GeoDataTour>(*i)
+        else if (
+                    geodata_cast<GeoDataTour>(*i)
                  || geodata_cast<GeoDataRelation>(*i)
                  || geodata_cast<GeoDataGroundOverlay>(*i)
                  || geodata_cast<GeoDataPhotoOverlay>(*i)
-                 || geodata_cast<GeoDataScreenOverlay>(*i))
+                 || geodata_cast<GeoDataScreenOverlay>(*i)
+                )
         {
             /** @todo: How to handle this ? */
         }
@@ -329,23 +345,31 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
         {
             const QString placemarkRole = placemark->role();
 
+#ifdef MARBLE_DEBUG
+
             Q_ASSERT(placemark->geometry());
+
+#endif
 
             bool hasPopularity          = false;
 
-            if (!geodata_cast<GeoDataTrack>(placemark->geometry()) &&
-                !geodata_cast<GeoDataPoint>(placemark->geometry())
+            if (
+                   !geodata_cast<GeoDataTrack>(placemark->geometry())
+                && !geodata_cast<GeoDataPoint>(placemark->geometry())
                 && (m_documentRole == MapDocument)
-                && m_style)
+                && m_style
+               )
             {
                 placemark->setStyleUrl(styleUrl);
             }
 
             // Mountain (H), Volcano (V), Shipwreck (W)
 
-            if ((placemarkRole == QLatin1String("H")) ||
+            if (
+                (placemarkRole == QLatin1String("H")) ||
                 (placemarkRole == QLatin1String("V")) ||
-                (placemarkRole == QLatin1String("W")))
+                (placemarkRole == QLatin1String("W"))
+               )
             {
                 qreal altitude = placemark->coordinate().altitude();
 
@@ -542,7 +566,7 @@ void FileLoaderPrivate::createFilterProperties(GeoDataContainer* container)
                 placemark->setVisualCategory(GeoDataPlacemark::Nation);
             }
             else if (
-                     (placemarkRole == QLatin1String("PPL")) ||
+                     (placemarkRole == QLatin1String("PPL"))  ||
                      (placemarkRole == QLatin1String("PPLF")) ||
                      (placemarkRole == QLatin1String("PPLG")) ||
                      (placemarkRole == QLatin1String("PPLL")) ||
