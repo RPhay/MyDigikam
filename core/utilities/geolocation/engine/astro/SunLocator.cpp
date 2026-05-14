@@ -158,19 +158,21 @@ void SunLocator::shadePixelComposite(QRgb& pixcol, const QRgb& dpixcol,
     {
         // gradual shadowing
 
-        qreal& d = brightness;
+        const qreal& d  = brightness;
 
-        int r    = qRed(pixcol);
-        int g    = qGreen(pixcol);
-        int b    = qBlue(pixcol);
+        int r           = qRed(pixcol);
+        int g           = qGreen(pixcol);
+        int b           = qBlue(pixcol);
 
-        int dr   = qRed(dpixcol);
-        int dg   = qGreen(dpixcol);
-        int db   = qBlue(dpixcol);
+        int dr          = qRed(dpixcol);
+        int dg          = qGreen(dpixcol);
+        int db          = qBlue(dpixcol);
 
-        pixcol   = qRgb((int)(d * r + (1 - d) * dr),
-                        (int)(d * g + (1 - d) * dg),
-                        (int)(d * b + (1 - d) * db));
+        pixcol          = qRgb(
+                               (int)(d * r + (1 - d) * dr),
+                               (int)(d * g + (1 - d) * dg),
+                               (int)(d * b + (1 - d) * db)
+                              );
     }
 }
 
@@ -211,12 +213,12 @@ void SunLocator::setPlanet(const Planet* planet)
 
 qreal SunLocator::getLon() const
 {
-    return d->m_lon * RAD2DEG;
+    return (d->m_lon * RAD2DEG);
 }
 
 qreal SunLocator::getLat() const
 {
-    return d->m_lat * RAD2DEG;
+    return (d->m_lat * RAD2DEG);
 }
 
 } // namespace Marble

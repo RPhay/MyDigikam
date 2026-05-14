@@ -41,10 +41,8 @@ class TextureColorizer
 {
 public:
 
-    TextureColorizer(const QString& seafile,
-                     const QString& landfile);
-
-    virtual ~TextureColorizer() {}
+    TextureColorizer(const QString& seafile, const QString& landfile);
+    virtual ~TextureColorizer() = default;
 
     void addSeaDocument(const GeoDataDocument* seaDocument);
 
@@ -67,8 +65,8 @@ private:
     QList<const GeoDataDocument*>   m_seaDocuments;
     QList<const GeoDataDocument*>   m_landDocuments;
     QImage                          m_coastImage;
-    uint                            texturepalette[16][512];
-    bool                            m_showRelief;
+    uint                            texturepalette[16][512] = { 0 };
+    bool                            m_showRelief            = false;
     QRgb                            m_landColor;
     QRgb                            m_seaColor;
 };

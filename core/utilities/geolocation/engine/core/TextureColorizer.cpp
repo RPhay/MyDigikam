@@ -57,7 +57,7 @@ public:
     {
         // return least significant byte as head of queue
 
-        return data & 0x000000FF;
+        return (data & 0x000000FF);
     }
 
     inline void enqueue(uchar value)
@@ -78,14 +78,14 @@ private:
 TextureColorizer::TextureColorizer(const QString& seafile,
                                    const QString& landfile)
     : m_showRelief(false),
-      m_landColor(qRgb(255, 0, 0)),
-      m_seaColor(qRgb(0, 255, 0))
+      m_landColor (qRgb(255, 0, 0)),
+      m_seaColor  (qRgb(0, 255, 0))
 {
     QElapsedTimer t;
     t.start();
 
     QImage   gradientImage(256, 1, QImage::Format_RGB32);
-    QPainter  gradientPainter;
+    QPainter gradientPainter;
     gradientPainter.begin(&gradientImage);
     gradientPainter.setPen(Qt::NoPen);
 
@@ -109,6 +109,7 @@ TextureColorizer::TextureColorizer(const QString& seafile,
         if (!file.open(QIODevice::ReadOnly))
         {
             qCWarning(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Cannot load" << filename;
+
             continue;
         }
 
@@ -183,23 +184,23 @@ void TextureColorizer::setShowRelief(bool show)
     m_showRelief = show;
 }
 
-// This function takes two images, both in viewParams:
-//  - The coast image, which has a number of colors where each color
-//    represents a sort of terrain (ex: land/sea)
-//  - The canvas image, which has a gray scale image, often
-//    representing a height field.
-//
-// It then uses the values of the pixels in the coast image to select
-// a color map.  The value of the pixel in the canvas image is used as
-// an index into the selected color map and the resulting color is
-// written back to the canvas image.  This way we can have different
-// color schemes for land and water.
-//
-// In addition to this, a simple form of bump mapping is performed to
-// increase the illusion of height differences (see the variable
-// showRelief).
-//
-
+/**
+ * This function takes two images, both in viewParams:
+ *   - The coast image, which has a number of colors where each color
+ *     represents a sort of terrain (ex: land/sea)
+ *   - The canvas image, which has a gray scale image, often
+ *     representing a height field.
+ *
+ *  It then uses the values of the pixels in the coast image to select
+ *  a color map.  The value of the pixel in the canvas image is used as
+ *  an index into the selected color map and the resulting color is
+ *  written back to the canvas image.  This way we can have different
+ *  color schemes for land and water.
+ *
+ *  In addition to this, a simple form of bump mapping is performed to
+ *  increase the illusion of height differences (see the variable
+ *  showRelief).
+ */
 void TextureColorizer::drawIndividualDocument(GeoPainter* painter, const GeoDataDocument* document)
 {
     QVector<GeoDataFeature*>::ConstIterator i   = document->constBegin();
@@ -259,7 +260,7 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
 
     m_coastImage.fill(QColor(0, 0, 255, 0).rgb());
 
-    const bool antialiased = (mapQuality == HighQuality) || (mapQuality == PrintQuality);
+    const bool antialiased = ((mapQuality == HighQuality) || (mapQuality == PrintQuality));
 
     GeoPainter painter(&m_coastImage, viewport, mapQuality);
     painter.setRenderHint(QPainter::Antialiasing, antialiased);
@@ -276,8 +277,7 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
     // This variable is not used anywhere.
 
     const int  imgradius = imgrx * imgrx + imgry * imgry;
-
-    int     bump = 8;
+    int        bump      = 8;
 
     if (
         ((radius * radius) > imgradius) ||
@@ -308,15 +308,15 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
             uchar* readDataStart     = origimg->scanLine(y);
             const uchar* readDataEnd = readDataStart + imgwidth * 4;
 
-            EmbossFifo  emboss;
+            EmbossFifo emboss;
 
-            for (uchar* readData = readDataStart;
-                 readData < readDataEnd;
+            for (const uchar* readData = readDataStart ;
+                 readData < readDataEnd ;
                  readData += 4, ++writeData, ++coastData)
             {
                 // Cheap Emboss / Bumpmapping
 
-                uchar&  grey = *readData; // qBlue(*data);
+                const uchar& grey = *readData; // qBlue(*data);
 
                 if (m_showRelief)
                 {
@@ -338,11 +338,10 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
             }
         }
     }
-
     else
     {
-        int yTop          = (imgry - radius < 0) ? 0 : imgry - radius;
-        const int yBottom = (yTop == 0) ? imgheight : imgry + radius;
+        int yTop          = ((imgry - radius) < 0) ? 0         : (imgry - radius);
+        const int yBottom = (yTop == 0)            ? imgheight : (imgry + radius);
 
         EmbossFifo  emboss;
 
@@ -353,7 +352,7 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
             int  xLeft    = 0;
             int  xRight   = imgwidth;
 
-            if (imgrx - rx > 0)
+            if ((imgrx - rx) > 0)
             {
                 xLeft  = imgrx - rx;
                 xRight = imgrx + rx;
@@ -365,14 +364,13 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
             uchar* readDataStart     = origimg->scanLine(y) + xLeft * 4;
             const uchar* readDataEnd = origimg->scanLine(y) + xRight * 4;
 
-
-            for (uchar* readData = readDataStart;
-                 readData < readDataEnd;
+            for (const uchar* readData = readDataStart ;
+                 readData < readDataEnd ;
                  readData += 4, ++writeData, ++coastData)
             {
                 // Cheap Emboss / Bumpmapping
 
-                uchar& grey = *readData; // qBlue(*data);
+                const uchar& grey = *readData; // qBlue(*data);
 
                 if (m_showRelief)
                 {
@@ -400,16 +398,14 @@ void TextureColorizer::setPixel(const QRgb* coastData, QRgb* writeData, int bump
 {
     int alpha = qRed(*coastData);
 
-    if (alpha == 255)
+    if      (alpha == 255)
     {
         *writeData = texturepalette[bump][grey + 0x100];
     }
-
     else if (alpha == 0)
     {
         *writeData = texturepalette[bump][grey];
     }
-
     else
     {
         qreal c = 1.0 / 255.0;
