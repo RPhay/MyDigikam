@@ -34,19 +34,19 @@ public:
 
     explicit WidgetGraphicsItem(MarbleGraphicsItem* parent = nullptr);
 
-    ~WidgetGraphicsItem() override;
+    ~WidgetGraphicsItem()                             override;
 
     void setWidget(QWidget* widget);
-    QWidget* widget() const;
+    QWidget* widget()                           const;
 
 protected:
 
     /**
      * Paints the item in item coordinates.
      */
-    void paint(QPainter* painter) override;
+    void paint(QPainter* painter)                     override;
 
-    bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*)               override;
 
 private:
 
