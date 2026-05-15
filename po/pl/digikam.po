@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"POT-Creation-Date: 2026-05-15 00:42+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -58376,49 +58376,49 @@ msgstr "Metoda wyboru"
 msgid "Number of tiles to download:"
 msgstr "Liczba pól do pobrania:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:263
 #, kde-format
 msgid "Download Region"
 msgstr "Pobierz region"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:265
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Rodzaj kafelki do pobrania:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:267
 #, kde-format
 msgid "Texture tiles"
 msgstr "Pola teksturowane"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:268
 #, kde-format
 msgid "Vector tiles"
 msgstr "Pola wektorowe"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:269
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Zezwala na zaznaczanie pomiędzy rodzajami warstw, które widać, że są w "
 "trakcie wyświetlania."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Ograniczono pobieranie do %1 pól."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Przybliżony rozmiar pól do pobrania"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Szacowany rozmiar do pobrania: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Szacowany rozmiar do pobrania: %1 kB"

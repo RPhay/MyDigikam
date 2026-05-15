@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"POT-Creation-Date: 2026-05-15 00:42+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -57188,47 +57188,47 @@ msgstr "Markeringssätt"
 msgid "Number of tiles to download:"
 msgstr "Antal rutor att ladda ner"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:263
 #, kde-format
 msgid "Download Region"
 msgstr "Ladda ner område"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:265
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Typ av ruta att ladda ner:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:267
 #, kde-format
 msgid "Texture tiles"
 msgstr "Strukturrutor"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:268
 #, kde-format
 msgid "Vector tiles"
 msgstr "Vektorrutor"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:269
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr "Möjliggör val mellan lagertyper som synligt återges."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Det finns en %1 rutors gräns för nerladdning."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Ungefärlig storlek för rutor att ladda ner"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Uppskattad nerladdningsstorlek: %1 MiB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Uppskattad nerladdningsstorlek: %1 KiB"

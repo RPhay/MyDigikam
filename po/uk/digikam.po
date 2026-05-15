@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"POT-Creation-Date: 2026-05-15 00:42+0000\n"
 "PO-Revision-Date: 2026-05-10 17:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -57794,48 +57794,48 @@ msgstr "Спосіб вибору"
 msgid "Number of tiles to download:"
 msgstr "Кількість елементів для отримання:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:263
 #, kde-format
 msgid "Download Region"
 msgstr "Отримання ділянки"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:265
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Тип плиток, які буде отримано:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:267
 #, kde-format
 msgid "Texture tiles"
 msgstr "Плитки текстур"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:268
 #, kde-format
 msgid "Vector tiles"
 msgstr "Векторні плитки"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:269
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Передбачено обмеження отримання даних у %1 плиток."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Приблизний об’єм даних, які доведеться отримати"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Приблизний об’єм отримання: %1 МБ"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Приблизний об’єм отримання: %1 кБ"

@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"POT-Creation-Date: 2026-05-15 00:42+0000\n"
 "PO-Revision-Date: 2026-04-10 08:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -56932,47 +56932,47 @@ msgstr "Aðferð við val"
 msgid "Number of tiles to download:"
 msgstr "Fjöldi tígla sem á að sækja:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:263
 #, kde-format
 msgid "Download Region"
 msgstr "Sækja svæði"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:265
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr "Tegund tígla sem á að sækja:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:267
 #, kde-format
 msgid "Texture tiles"
 msgstr "Áferðartíglar"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:268
 #, kde-format
 msgid "Vector tiles"
 msgstr "Vektortíglar"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:269
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr "Leyfa val á milli þeirra tegunda laga sem sýnilega eru myndgerð."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Takmörk eru við %1 tígla sem hægt er að sækja."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Áætluð stærð tíglanna sem á að sækja"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Áætluð stærð niðurhals: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Áætluð stærð niðurhals: %1 kB"

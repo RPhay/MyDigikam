@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:41+0000\n"
+"POT-Creation-Date: 2026-05-15 00:42+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -55684,50 +55684,50 @@ msgstr "जमावट"
 msgid "Number of tiles to download:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:254
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:263
 #, fuzzy, kde-format
 #| msgid "Caption"
 msgid "Download Region"
 msgstr "अनुशीर्षक"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:256
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:265
 #, kde-format
 msgid "Tile type to be downloaded:"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:258
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:267
 #, fuzzy, kde-format
 #| msgid "Paper Size:"
 msgid "Texture tiles"
 msgstr "पृष्ठ आकार:"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:259
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:268
 #, fuzzy, kde-format
 #| msgid "Video"
 msgid "Vector tiles"
 msgstr "वीडियो"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:260
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:269
 #, kde-format
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:599
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:612
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:617
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""
