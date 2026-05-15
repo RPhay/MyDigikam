@@ -37,14 +37,14 @@
 
 namespace Marble
 {
-MarbleAbstractPresenter::MarbleAbstractPresenter(MarbleMap* map, QObject* parent) :
-    QObject(parent)
-    , m_map(map)
-    , m_physics(this)
-    , m_animationsEnabled(false)
-    , m_logzoom(0)
-    , m_zoomStep(MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen ? 60 : 40)
-    , m_viewAngle(110)
+MarbleAbstractPresenter::MarbleAbstractPresenter(MarbleMap* map, QObject* parent)
+    : QObject               (parent)
+    , m_map                 (map)
+    , m_physics             (this)
+    , m_animationsEnabled   (false)
+    , m_logzoom             (0)
+    , m_zoomStep            (MarbleGlobal::getInstance()->profiles() & MarbleGlobal::SmallScreen ? 60 : 40)
+    , m_viewAngle           (110)
 {
 }
 
@@ -64,11 +64,11 @@ qreal MarbleAbstractPresenter::radius(qreal zoom) const
 
 void MarbleAbstractPresenter::rotateBy(const qreal deltaLon, const qreal deltaLat, FlyToMode mode)
 {
-
-    GeoDataLookAt target = lookAt();
+    GeoDataLookAt target           = lookAt();
     GeoDataCoordinates coords(map()->viewport()->centerLongitude(), map()->viewport()->centerLatitude());
     GeoDataCoordinates movedCoords = coords.moveByBearing(-map()->heading() * DEG2RAD, -deltaLat * DEG2RAD);
-    movedCoords = movedCoords.moveByBearing((-map()->heading() - 90) * DEG2RAD, -deltaLon * DEG2RAD * map()->viewport()->polarity());
+    movedCoords                    = movedCoords.moveByBearing((-map()->heading() - 90) * DEG2RAD,
+                                                               -deltaLon * DEG2RAD * map()->viewport()->polarity());
 
     target.setLongitude(movedCoords.longitude());
     target.setLatitude(movedCoords.latitude());
@@ -78,17 +78,17 @@ void MarbleAbstractPresenter::rotateBy(const qreal deltaLon, const qreal deltaLa
 
 void MarbleAbstractPresenter::flyTo(const GeoDataLookAt& newLookAt, FlyToMode mode)
 {
-    if (!m_animationsEnabled || mode == Instant)
+    if (!m_animationsEnabled || (mode == Instant))
     {
-        const int radius = qRound(radiusFromDistance(newLookAt.range() * METER2KM));
+        const int radius    = qRound(radiusFromDistance(newLookAt.range() * METER2KM));
         qreal const zoomVal = zoom(radius);
 
         // Prevent exceeding zoom range. Note: Bounding to range is not useful here
-        if (qRound(zoomVal) >= minimumZoom() && qRound(zoomVal) <= maximumZoom())
+
+        if ((qRound(zoomVal) >= minimumZoom()) && (qRound(zoomVal) <= maximumZoom()))
         {
             map()->setRadius(radius);
-            m_logzoom = qRound(zoom(radius));
-
+            m_logzoom                    = qRound(zoom(radius));
             GeoDataCoordinates::Unit deg = GeoDataCoordinates::Degree;
             map()->centerOn(newLookAt.longitude(deg), newLookAt.latitude(deg));
 
@@ -96,7 +96,6 @@ void MarbleAbstractPresenter::flyTo(const GeoDataLookAt& newLookAt, FlyToMode mo
             Q_EMIT distanceChanged(distanceString());
         }
     }
-
     else
     {
         m_physics.flyTo(newLookAt, mode);
@@ -106,13 +105,13 @@ void MarbleAbstractPresenter::flyTo(const GeoDataLookAt& newLookAt, FlyToMode mo
 QString MarbleAbstractPresenter::distanceString() const
 {
     // distance() returns data in km, so translating to meters
-    qreal dist = distance() * KM2METER, convertedDistance;
+
+    qreal dist           = distance() * KM2METER, convertedDistance;
 
     MarbleLocale::MeasureUnit unit;
     MarbleLocale* locale = MarbleGlobal::getInstance()->locale();
-    locale->meterToTargetUnit(dist, locale->measurementSystem(),
-                              convertedDistance, unit);
-    QString unitString = locale->unitAbbreviation(unit);
+    locale->meterToTargetUnit(dist, locale->measurementSystem(), convertedDistance, unit);
+    QString unitString   = locale->unitAbbreviation(unit);
 
     return QString::fromUtf8("%L1 %2").arg(convertedDistance, 8, 'f', 1, QLatin1Char(' '))
            .arg(unitString);
@@ -153,8 +152,8 @@ qreal MarbleAbstractPresenter::distanceFromRadius(qreal radius) const
 
 qreal MarbleAbstractPresenter::radiusFromDistance(qreal distance) const
 {
-    return model()->planet()->radius() /
-           (distance * tan(0.5 * m_viewAngle * DEG2RAD) / 0.4);
+    return (model()->planet()->radius() /
+           (distance * tan(0.5 * m_viewAngle * DEG2RAD) / 0.4));
 }
 
 int MarbleAbstractPresenter::polarity() const
@@ -180,20 +179,22 @@ int MarbleAbstractPresenter::maximumZoom() const
 void MarbleAbstractPresenter::setZoom(int newZoom, FlyToMode mode)
 {
     // It won't fly anyway. So we should do everything to keep the zoom value.
-    if (!m_animationsEnabled || mode == Instant)
+
+    if (!m_animationsEnabled || (mode == Instant))
     {
         // Check for under and overflow.
-        if (newZoom < minimumZoom())
+
+        if      (newZoom < minimumZoom())
         {
             newZoom = minimumZoom();
         }
-
         else if (newZoom > maximumZoom())
         {
             newZoom = maximumZoom();
         }
 
         // Prevent infinite loops.
+
         if (newZoom == m_logzoom)
         {
             return;
@@ -205,7 +206,6 @@ void MarbleAbstractPresenter::setZoom(int newZoom, FlyToMode mode)
         Q_EMIT zoomChanged(m_logzoom);
         Q_EMIT distanceChanged(distanceString());
     }
-
     else
     {
         GeoDataLookAt target = lookAt();
@@ -230,11 +230,10 @@ void MarbleAbstractPresenter::zoomIn(FlyToMode mode)
     {
         zoomViewBy(m_zoomStep, mode);
     }
-
     else
     {
-        qreal radiusVal = map()->preferredRadiusCeil(map()->radius() / 0.95);
-        radiusVal = qBound(radius(minimumZoom()), radiusVal, radius(maximumZoom()));
+        qreal radiusVal      = map()->preferredRadiusCeil(map()->radius() / 0.95);
+        radiusVal            = qBound(radius(minimumZoom()), radiusVal, radius(maximumZoom()));
 
         GeoDataLookAt target = lookAt();
         target.setRange(KM2METER * distanceFromRadius(radiusVal));
@@ -249,13 +248,12 @@ void MarbleAbstractPresenter::zoomOut(FlyToMode mode)
     {
         zoomViewBy(-m_zoomStep, mode);
     }
-
     else
     {
-        qreal radiusVal = map()->preferredRadiusFloor(map()->radius() * 0.95);
-        radiusVal = qBound(radius(minimumZoom()), radiusVal, radius(maximumZoom()));
-
+        qreal radiusVal      = map()->preferredRadiusFloor(map()->radius() * 0.95);
+        radiusVal            = qBound(radius(minimumZoom()), radiusVal, radius(maximumZoom()));
         GeoDataLookAt target = lookAt();
+
         target.setRange(KM2METER * distanceFromRadius(radiusVal));
 
         flyTo(target, mode);
@@ -270,7 +268,6 @@ void MarbleAbstractPresenter::zoomAtBy(const QPoint& pos, int zoomStep)
     {
         radiusVal = radius(zoom() + zoomStep);
     }
-
     else
     {
 
@@ -296,7 +293,8 @@ void MarbleAbstractPresenter::goHome(FlyToMode mode)
 {
     qreal homeLon = 0;
     qreal homeLat = 0;
-    int homeZoom = 0;
+    int homeZoom  = 0;
+
     model()->home(homeLon, homeLat, homeZoom);
 
     GeoDataLookAt target;
@@ -310,24 +308,26 @@ void MarbleAbstractPresenter::goHome(FlyToMode mode)
 void MarbleAbstractPresenter::moveByStep(int stepsRight, int stepsDown, FlyToMode mode)
 {
     int polarity = map()->viewport()->polarity();
-    qreal left = polarity * stepsRight * moveStep();
-    qreal down = stepsDown * moveStep();
+    qreal left   = polarity * stepsRight * moveStep();
+    qreal down   = stepsDown * moveStep();
+
     rotateBy(left, down, mode);
 }
 
 qreal MarbleAbstractPresenter::moveStep() const
 {
-    int width = map()->width();
+    int width  = map()->width();
     int height = map()->height();
 
     if (radius() < qSqrt((qreal)(width * width + height * height)))
     {
-        return 180.0 * 0.1;
+        return (180.0 * 0.1);
     }
-
     else
-        return 180.0 * qAtan((qreal)width
-                             / (qreal)(2 * radius())) * 0.2;
+    {
+        return (180.0 * qAtan((qreal)width
+                / (qreal)(2 * radius())) * 0.2);
+    }
 }
 
 int MarbleAbstractPresenter::radius() const
@@ -338,17 +338,17 @@ int MarbleAbstractPresenter::radius() const
 void MarbleAbstractPresenter::setRadius(int radiusVal)
 {
     Q_ASSERT(radiusVal >= 0);
-    bool adjustRadius = radiusVal != map()->radius();
 
+    bool adjustRadius   = radiusVal != map()->radius();
     qreal const zoomVal = zoom(radiusVal);
 
     // Prevent exceeding zoom range
-    if (zoomVal < minimumZoom())
+
+    if      (zoomVal < minimumZoom())
     {
         radiusVal = radius(minimumZoom());
         adjustRadius = true;
     }
-
     else if (zoomVal > maximumZoom())
     {
         radiusVal = radius(maximumZoom());
@@ -365,8 +365,8 @@ void MarbleAbstractPresenter::setRadius(int radiusVal)
     }
 }
 
+// NOTE: Moved from MarbleWidgetInputHandlerPrivate - fits more here now
 
-//Moved from MarbleWidgetInputHandlerPrivate - fits more here now
 void MarbleAbstractPresenter::zoomAt(const QPoint& pos, qreal newDistance)
 {
     Q_ASSERT(newDistance > 0.0);
@@ -379,7 +379,7 @@ void MarbleAbstractPresenter::zoomAt(const QPoint& pos, qreal newDistance)
         return;
     }
 
-    ViewportParams* now = map()->viewport();
+    const ViewportParams* now = map()->viewport();
     qreal x(0), y(0);
 
     if (!now->screenCoordinates(destLon * DEG2RAD, destLat * DEG2RAD, x, y))
@@ -452,20 +452,23 @@ void MarbleAbstractPresenter::centerOn(const GeoDataLatLonBox& box, bool animate
         return;
     }
 
-    int newRadius = radius();
-    ViewportParams* viewparams = map()->viewport();
+    int newRadius                    = radius();
+    const ViewportParams* viewparams = map()->viewport();
 
-    //prevent divide by zero
+    // prevent divide by zero
+
     if (box.height() && box.width())
     {
-        //work out the needed zoom level
+        // work out the needed zoom level
+
         int const horizontalRadius = (0.25 * M_PI) * (viewparams->height() / box.height());
-        int const verticalRadius = (0.25 * M_PI) * (viewparams->width() / box.width());
-        newRadius = qMin<int>(horizontalRadius, verticalRadius);
-        newRadius = qMax<int>(radius(minimumZoom()), qMin<int>(newRadius, radius(maximumZoom())));
+        int const verticalRadius   = (0.25 * M_PI) * (viewparams->width()  / box.width());
+        newRadius                  = qMin<int>(horizontalRadius, verticalRadius);
+        newRadius                  = qMax<int>(radius(minimumZoom()), qMin<int>(newRadius, radius(maximumZoom())));
     }
 
-    //move the map
+    // move the map
+
     GeoDataLookAt target;
     target.setCoordinates(box.center());
     target.setAltitude(box.center().altitude());
@@ -484,14 +487,13 @@ void MarbleAbstractPresenter::centerOn(const GeoDataPlacemark& placemark, bool a
 
     else
     {
-        bool icon;
+        bool icon                 = false;
         GeoDataCoordinates coords = placemark.coordinate(model()->clock()->dateTime(), &icon);
 
         if (icon)
         {
             centerOn(coords, animated);
         }
-
         else
         {
             centerOn(placemark.geometry()->latLonAltBox(), animated);
@@ -601,6 +603,7 @@ void MarbleAbstractPresenter::setDistance(qreal newDistance)
     if (newDistance <= minDistance)
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Invalid distance: 0 m";
+
         newDistance = minDistance;
     }
 
@@ -612,8 +615,9 @@ void MarbleAbstractPresenter::setSelection(const QRect& region)
 {
     QPoint tl = region.topLeft();
     QPoint br = region.bottomRight();
+
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "Selection region: (" << tl.x() << ", " <<  tl.y() << ") ("
-                                << br.x() << ", " << br.y() << ")" << Qt::endl;
+                                   << br.x() << ", " << br.y() << ")" << Qt::endl;
 
     const GeoDataLatLonAltBox box = viewport()->latLonAltBox(region);
 

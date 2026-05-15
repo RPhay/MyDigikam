@@ -56,13 +56,13 @@ public:
 
 private:
 
-    StackedTileLoader* const m_tileLoader;
-    const int m_tileLevel;
-    QImage* const m_canvasImage;
+    StackedTileLoader* const    m_tileLoader = nullptr;
+    const int                   m_tileLevel;
+    QImage* const               m_canvasImage;
     const ViewportParams* const m_viewport;
-    const MapQuality m_mapQuality;
-    const int m_yPaintedTop;
-    const int m_yPaintedBottom;
+    const MapQuality            m_mapQuality;
+    const int                   m_yPaintedTop;
+    const int                   m_yPaintedBottom;
 };
 
 EquirectScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoader,
@@ -72,21 +72,21 @@ EquirectScanlineTextureMapper::RenderJob::RenderJob(StackedTileLoader* tileLoade
                                                     MapQuality mapQuality,
                                                     int yTop,
                                                     int yBottom)
-    : m_tileLoader(tileLoader),
-      m_tileLevel(tileLevel),
-      m_canvasImage(canvasImage),
-      m_viewport(viewport),
-      m_mapQuality(mapQuality),
-      m_yPaintedTop(yTop),
-      m_yPaintedBottom(yBottom)
+    : m_tileLoader      (tileLoader),
+      m_tileLevel       (tileLevel),
+      m_canvasImage     (canvasImage),
+      m_viewport        (viewport),
+      m_mapQuality      (mapQuality),
+      m_yPaintedTop     (yTop),
+      m_yPaintedBottom  (yBottom)
 {
 }
 
 EquirectScanlineTextureMapper::EquirectScanlineTextureMapper(StackedTileLoader* tileLoader)
     : TextureMapperInterface(),
-      m_tileLoader(tileLoader),
-      m_radius(0),
-      m_oldYPaintedTop(0)
+      m_tileLoader          (tileLoader),
+      m_radius              (0),
+      m_oldYPaintedTop      (0)
 {
 }
 
@@ -96,11 +96,11 @@ void EquirectScanlineTextureMapper::mapTexture(GeoPainter* painter,
                                                const QRect& dirtyRect,
                                                TextureColorizer* texColorizer)
 {
-    if (m_canvasImage.size() != viewport->size() || m_radius != viewport->radius())
+    if ((m_canvasImage.size() != viewport->size()) || (m_radius != viewport->radius()))
     {
         const QImage::Format optimalFormat = ScanlineTextureMapperContext::optimalCanvasImageFormat(viewport);
 
-        if (m_canvasImage.size() != viewport->size() || m_canvasImage.format() != optimalFormat)
+        if ((m_canvasImage.size() != viewport->size()) || (m_canvasImage.format() != optimalFormat))
         {
             m_canvasImage = QImage(viewport->size(), optimalFormat);
         }
@@ -110,7 +110,7 @@ void EquirectScanlineTextureMapper::mapTexture(GeoPainter* painter,
             m_canvasImage.fill(0);
         }
 
-        m_radius = viewport->radius();
+        m_radius        = viewport->radius();
         m_repaintNeeded = true;
     }
 
@@ -132,6 +132,7 @@ void EquirectScanlineTextureMapper::mapTexture(GeoPainter* painter,
 void EquirectScanlineTextureMapper::mapTexture(const ViewportParams* viewport, int tileZoomLevel, MapQuality mapQuality)
 {
     // Reset backend
+
     m_tileLoader->resetTilehash();
 
     // Initialize needed constants:
@@ -147,30 +148,31 @@ void EquirectScanlineTextureMapper::mapTexture(const ViewportParams* viewport, i
     viewport->screenCoordinates(yNorth, dummyX, realYTop);
     viewport->screenCoordinates(ySouth, dummyX, realYBottom);
 
-    const int yTop     = qBound(qreal(0.0), realYTop, qreal(imageHeight));
-    int yPaintedTop    = yTop;
-    int yPaintedBottom = qBound(qreal(0.0), realYBottom, qreal(imageHeight));
+    const int yTop       = qBound(qreal(0.0), realYTop, qreal(imageHeight));
+    int yPaintedTop      = yTop;
+    int yPaintedBottom   = qBound(qreal(0.0), realYBottom, qreal(imageHeight));
 
-    yPaintedTop = qBound(0, yPaintedTop, imageHeight);
-    yPaintedBottom = qBound(0, yPaintedBottom, imageHeight);
+    yPaintedTop          = qBound(0, yPaintedTop, imageHeight);
+    yPaintedBottom       = qBound(0, yPaintedBottom, imageHeight);
 
     const int numThreads = m_threadPool.maxThreadCount();
-    const int yStep = (yPaintedBottom - yPaintedTop) / numThreads;
+    const int yStep      = (yPaintedBottom - yPaintedTop) / numThreads;
 
     for (int i = 0; i < numThreads; ++i)
     {
-        const int yStart = yPaintedTop +  i      * yStep;
-        const int yEnd   = (i == numThreads - 1) ? yPaintedBottom : yPaintedTop + (i + 1) * yStep;
+        const int yStart     = yPaintedTop + i * yStep;
+        const int yEnd       = (i == numThreads - 1) ? yPaintedBottom : (yPaintedTop + (i + 1) * yStep);
         QRunnable* const job = new RenderJob(m_tileLoader, tileZoomLevel, &m_canvasImage, viewport, mapQuality, yStart, yEnd);
         m_threadPool.start(job);
     }
 
     // Remove unused lines
-    const int clearStart = (yPaintedTop - m_oldYPaintedTop <= 0) ? yPaintedBottom : 0;
-    const int clearStop  = (yPaintedTop - m_oldYPaintedTop <= 0) ? imageHeight  : yTop;
 
-    QRgb* const itClearBegin = reinterpret_cast<QRgb*>(m_canvasImage.scanLine(clearStart));
-    QRgb* const itClearEnd   = reinterpret_cast<QRgb*>(m_canvasImage.scanLine(clearStop));
+    const int clearStart         = (yPaintedTop - m_oldYPaintedTop <= 0) ? yPaintedBottom : 0;
+    const int clearStop          = (yPaintedTop - m_oldYPaintedTop <= 0) ? imageHeight    : yTop;
+
+    QRgb* const itClearBegin     = reinterpret_cast<QRgb*>(m_canvasImage.scanLine(clearStart));
+    const QRgb* const itClearEnd = reinterpret_cast<QRgb*>(m_canvasImage.scanLine(clearStop));
 
     for (QRgb* it = itClearBegin; it < itClearEnd; ++it)
     {
@@ -190,28 +192,36 @@ void EquirectScanlineTextureMapper::RenderJob::run()
 
     // Scanline based algorithm to do texture mapping
 
-    const int imageHeight = m_canvasImage->height();
-    const int imageWidth  = m_canvasImage->width();
-    const qint64  radius  = m_viewport->radius();
+    const int imageHeight   = m_canvasImage->height();
+    const int imageWidth    = m_canvasImage->width();
+    const qint64  radius    = m_viewport->radius();
+
     // Calculate how many degrees are being represented per pixel.
-    const qreal rad2Pixel = (qreal)(2 * radius) / M_PI;
-    const float pixel2Rad = 1.0 / rad2Pixel; // FIXME changing to qreal may crash Marble when the equator is visible
+
+    const qreal rad2Pixel   = (qreal)(2 * radius) / M_PI;
+    const float pixel2Rad   = 1.0 / rad2Pixel;                // FIXME changing to qreal may crash Marble when the equator is visible
 
     const bool interlaced   = (m_mapQuality == LowQuality);
-    const bool highQuality  = (m_mapQuality == HighQuality
-                               || m_mapQuality == PrintQuality);
+
+    const bool highQuality  = (
+                               (m_mapQuality == HighQuality) ||
+                               (m_mapQuality == PrintQuality)
+                              );
+
     const bool printQuality = (m_mapQuality == PrintQuality);
 
     // Evaluate the degree of interpolation
-    const int n = ScanlineTextureMapperContext::interpolationStep(m_viewport, m_mapQuality);
+
+    const int n             = ScanlineTextureMapperContext::interpolationStep(m_viewport, m_mapQuality);
 
     // Calculate translation of center point
-    const qreal centerLon = m_viewport->centerLongitude();
-    const qreal centerLat = m_viewport->centerLatitude();
+
+    const qreal centerLon   = m_viewport->centerLongitude();
+    const qreal centerLat   = m_viewport->centerLatitude();
 
     const int yCenterOffset = (int)(centerLat * rad2Pixel);
 
-    const int yTop = imageHeight / 2 - radius + yCenterOffset;
+    const int yTop          = imageHeight / 2 - radius + yCenterOffset;
 
     qreal leftLon = + centerLon - (imageWidth / 2 * pixel2Rad);
 
@@ -233,26 +243,26 @@ void EquirectScanlineTextureMapper::RenderJob::run()
 
     // Scanline based algorithm to do texture mapping
 
-    for (int y = m_yPaintedTop; y < m_yPaintedBottom; ++y)
+    for (int y = m_yPaintedTop ; y < m_yPaintedBottom ; ++y)
     {
-        QRgb* scanLine = reinterpret_cast<QRgb*>(m_canvasImage->scanLine(y));
+        QRgb* scanLine  = reinterpret_cast<QRgb*>(m_canvasImage->scanLine(y));
 
-        qreal lon = leftLon;
+        qreal lon       = leftLon;
         const qreal lat = M_PI / 2 - (y - yTop) * pixel2Rad;
 
-        for (int x = 0; x < imageWidth; ++x)
+        for (int x = 0 ; x < imageWidth ; ++x)
         {
 
             // Prepare for interpolation
+
             bool interpolate = false;
 
-            if (x > 0 && x <= maxInterpolationPointX)
+            if ((x > 0) && (x <= maxInterpolationPointX))
             {
-                x += n - 1;
-                lon += (n - 1) * pixel2Rad;
+                x          += n - 1;
+                lon        += (n - 1) * pixel2Rad;
                 interpolate = !printQuality;
             }
-
             else
             {
                 interpolate = false;
@@ -274,7 +284,6 @@ void EquirectScanlineTextureMapper::RenderJob::run()
                 {
                     context.pixelValueApproxF(lon, lat, scanLine, n);
                 }
-
                 else
                 {
                     context.pixelValueApprox(lon, lat, scanLine, n);
@@ -289,7 +298,6 @@ void EquirectScanlineTextureMapper::RenderJob::run()
                 {
                     context.pixelValueF(lon, lat, scanLine);
                 }
-
                 else
                 {
                     context.pixelValue(lon, lat, scanLine);
@@ -301,7 +309,8 @@ void EquirectScanlineTextureMapper::RenderJob::run()
         }
 
         // copy scanline to improve performance
-        if (interlaced && y + 1 < m_yPaintedBottom)
+
+        if ((interlaced && (y + 1)) < m_yPaintedBottom)
         {
 
             const int pixelByteSize = m_canvasImage->bytesPerLine() / imageWidth;
