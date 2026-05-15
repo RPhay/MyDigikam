@@ -41,34 +41,34 @@ public:
 
     CylindricalProjection();
 
-    ~CylindricalProjection() override;
+    ~CylindricalProjection()                                      override;
 
-    bool repeatableX() const override
+    bool repeatableX()                                      const override
     {
         return true;
     };
 
-    bool traversablePoles()  const override
+    bool traversablePoles()                                 const override
     {
         return false;
     }
-    bool traversableDateLine()  const override
+    bool traversableDateLine()                              const override
     {
         return false;
     }
 
-    SurfaceType surfaceType() const override
+    SurfaceType surfaceType()                               const override
     {
         return Cylindrical;
     }
 
     bool screenCoordinates(const GeoDataLineString& lineString,
                            const ViewportParams* viewport,
-                           QVector<QPolygonF*>& polygons) const override;
+                           QVector<QPolygonF*>& polygons)   const override;
 
     using AbstractProjection::screenCoordinates;
 
-    QPainterPath mapShape(const ViewportParams* viewport) const override;
+    QPainterPath mapShape(const ViewportParams* viewport)   const override;
 
 protected:
 

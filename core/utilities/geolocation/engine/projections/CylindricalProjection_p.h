@@ -45,25 +45,25 @@ public:
                               const ViewportParams* viewport,
                               TessellationFlags f = TessellationFlags(),
                               int mirrorCount = 0,
-                              qreal repeatDistance = 0) const;
+                              qreal repeatDistance = 0)                     const;
 
     int processTessellation(const GeoDataCoordinates& previousCoords,
                             const GeoDataCoordinates& currentCoords,
                             int count,
-                            QVector<QPolygonF*>& polygons,
+                            const QVector<QPolygonF*>& polygons,
                             const ViewportParams* viewport,
                             TessellationFlags f = TessellationFlags(),
                             int mirrorCount = 0,
-                            qreal repeatDistance = 0) const;
+                            qreal repeatDistance = 0)                       const;
 
     bool lineStringToPolygon(const GeoDataLineString& lineString,
                              const ViewportParams* viewport,
-                             QVector<QPolygonF*>& polygons) const;
+                             QVector<QPolygonF*>& polygons)                 const;
 
     void repeatPolygons(const ViewportParams* viewport,
-                        QVector<QPolygonF*>& polygons) const;
+                        QVector<QPolygonF*>& polygons)                      const;
 
-    qreal repeatDistance(const ViewportParams* viewport) const;
+    qreal repeatDistance(const ViewportParams* viewport)                    const;
 
 public:
 
