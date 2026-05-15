@@ -31,17 +31,18 @@ public:
 
     explicit CylindricalProjectionPrivate(CylindricalProjection* parent);
 
-    // This method tessellates a line segment in a way that the line segment
-    // follows great circles. The count parameter specifies the
-    // number of nodes generated for the polygon. If the
-    // clampToGround flag is added the polygon contains count + 2
-    // nodes as the clamped down start and end node get added.
-
+    /**
+     * This method tessellates a line segment in a way that the line segment
+     * follows great circles. The count parameter specifies the
+     * number of nodes generated for the polygon. If the
+     * clampToGround flag is added the polygon contains count + 2
+     * nodes as the clamped down start and end node get added.
+     */
     int tessellateLineSegment(const GeoDataCoordinates& aCoords,
                               qreal ax, qreal ay,
                               const GeoDataCoordinates& bCoords,
                               qreal bx, qreal by,
-                              QVector<QPolygonF*>& polygons,
+                              const QVector<QPolygonF*>& polygons,
                               const ViewportParams* viewport,
                               TessellationFlags f = TessellationFlags(),
                               int mirrorCount = 0,

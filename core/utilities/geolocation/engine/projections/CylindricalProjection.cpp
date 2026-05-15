@@ -84,11 +84,10 @@ QPainterPath CylindricalProjection::mapShape(const ViewportParams* viewport) con
     }
 
     QPainterPath mapShape;
-    mapShape.addRect(
-        0,
-        yTop,
-        width,
-        yBottom - yTop);
+    mapShape.addRect(0,
+                     yTop,
+                     width,
+                     yBottom - yTop);
 
     return mapShape;
 }
@@ -120,7 +119,7 @@ int CylindricalProjectionPrivate::tessellateLineSegment(const GeoDataCoordinates
                                                         qreal ax, qreal ay,
                                                         const GeoDataCoordinates& bCoords,
                                                         qreal bx, qreal by,
-                                                        QVector<QPolygonF*>& polygons,
+                                                        const QVector<QPolygonF*>& polygons,
                                                         const ViewportParams* viewport,
                                                         TessellationFlags f,
                                                         int mirrorCount,
@@ -138,6 +137,7 @@ int CylindricalProjectionPrivate::tessellateLineSegment(const GeoDataCoordinates
     // The latter can pretty safely be excluded for most projections if both points
     // are located on the same side relative to the viewport boundaries and if they are
     // located more than half the line segment distance away from the viewport.
+
     const qreal safeDistance = - 0.5 * distance;
 
     if (
@@ -306,10 +306,8 @@ int CylindricalProjectionPrivate::crossDateLine(const GeoDataCoordinates& aCoord
 {
     qreal aLon  = aCoord.longitude();
     qreal aSign = (aLon > 0) ? 1 : -1;
-
     qreal bLon  = bCoord.longitude();
     qreal bSign = (bLon > 0) ? 1 : -1;
-
     qreal delta = 0;
 
     if ((aSign != bSign) && ((fabs(aLon) + fabs(bLon)) > M_PI))
@@ -334,10 +332,8 @@ bool CylindricalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& 
 
     qreal x                   = 0;
     qreal y                   = 0;
-
     qreal previousX           = -1.0;
     qreal previousY           = -1.0;
-
     int mirrorCount           = 0;
     qreal distance            = repeatDistance(viewport);
 
@@ -350,11 +346,11 @@ bool CylindricalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& 
 
     polygons.append(polygon);
 
-    GeoDataLineString::ConstIterator itCoords = lineString.constBegin();
+    GeoDataLineString::ConstIterator itCoords         = lineString.constBegin();
     GeoDataLineString::ConstIterator itPreviousCoords = lineString.constBegin();
 
-    GeoDataLineString::ConstIterator itBegin = lineString.constBegin();
-    GeoDataLineString::ConstIterator itEnd = lineString.constEnd();
+    GeoDataLineString::ConstIterator itBegin          = lineString.constBegin();
+    GeoDataLineString::ConstIterator itEnd            = lineString.constEnd();
 
     bool processingLastNode = false;
 
@@ -443,24 +439,31 @@ bool CylindricalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& 
     // - the first node is located at 180 E
     // - and the last node is located at 180 W
     // TODO: add a similar pattern in the crossDateLine() code.
-    /*
+/*
     GeoDataLatLonAltBox box = lineString.latLonAltBox();
-    if( lineString.isClosed() && box.width() == 2*M_PI ) {
-        QPolygonF *poly = polygons.last();
-        if( box.containsPole( NorthPole ) ) {
+
+    if (lineString.isClosed() && (box.width() == 2*M_PI))
+    {
+        QPolygonF* poly = polygons.last();
+
+        if (box.containsPole(NorthPole))
+        {
             qreal topMargin = 0.0;
-            qreal dummy = 0.0;
+            qreal dummy     = 0.0;
             q_ptr->screenCoordinates(0.0, q_ptr->maxLat(), viewport, topMargin, dummy );
             poly->push_back( QPointF( poly->last().x(), topMargin ) );
             poly->push_back( QPointF( poly->first().x(), topMargin ) );
-        } else {
+        }
+        else
+        {
             qreal bottomMargin = 0.0;
-            qreal dummy = 0.0;
+            qreal dummy        = 0.0;
             q_ptr->screenCoordinates(0.0, q_ptr->minLat(), viewport, bottomMargin, dummy );
             poly->push_back( QPointF( poly->last().x(), bottomMargin ) );
             poly->push_back( QPointF( poly->first().x(), bottomMargin ) );
         }
-    } */
+    }
+*/
 
     repeatPolygons(viewport, polygons);
 
@@ -540,7 +543,7 @@ void CylindricalProjectionPrivate::repeatPolygons(const ViewportParams* viewport
     polygons = repeatedPolygons;
 
     // qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Coordinates: " << xWest << xEast
-    //          << "Repeats: " << repeatsLeft << repeatsRight;
+    //                                << "Repeats: " << repeatsLeft << repeatsRight;
 }
 
 qreal CylindricalProjectionPrivate::repeatDistance(const ViewportParams* viewport) const
