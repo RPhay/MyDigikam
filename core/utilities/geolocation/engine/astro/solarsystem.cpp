@@ -350,7 +350,7 @@ void SolarSystem::setNutation(bool nut)
 
 }
 
-void SolarSystem::setCentralBody(char* const pname)
+void SolarSystem::setCentralBody(const char* const pname)
 {
     ss_central_body = 4;  // default Earth
     getConstEarth();

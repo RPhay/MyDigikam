@@ -434,6 +434,7 @@ void GeometryLayerPrivate::createGraphicsItems(const GeoDataObject* object, Feat
     }
 }
 
+// cppcheck-suppress constParameterPointer
 void GeometryLayerPrivate::updateTiledLineStrings(const GeoDataPlacemark* placemark, GeoLineStringGraphicsItem* lineStringItem)
 {
     if (!placemark->hasOsmData())

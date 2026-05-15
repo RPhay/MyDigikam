@@ -76,7 +76,7 @@ public:
     const GeoSceneFilter* filter()                          const;
     GeoSceneFilter* filter();
     void addFilter(GeoSceneFilter* filter);
-    void removeFilter(GeoSceneFilter* filter);
+    void removeFilter(const GeoSceneFilter* filter);
 
 private:
 

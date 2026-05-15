@@ -47,20 +47,20 @@ public:
      */
     enum ItemDataRole
     {
-        Name = Qt::DisplayRole,          // QString
-        Icon = Qt::DecorationRole,       // QIcon
-        Description = Qt::ToolTipRole,   // QString
-        NameId = Qt::UserRole + 2,       // QString
-        ConfigurationDialogAvailable,    // bool
-        BackendTypes,                    // QStringList
-        Version,                         // QString
-        AboutDataText,                   // QString
-        CopyrightYears                   // QString
+        Name        = Qt::DisplayRole,          // QString
+        Icon        = Qt::DecorationRole,       // QIcon
+        Description = Qt::ToolTipRole,          // QString
+        NameId      = Qt::UserRole + 2,         // QString
+        ConfigurationDialogAvailable,           // bool
+        BackendTypes,                           // QStringList
+        Version,                                // QString
+        AboutDataText,                          // QString
+        CopyrightYears                          // QString
     };
 
     explicit RenderPluginModel(QObject* parent = nullptr);
 
-    ~RenderPluginModel() override;
+    ~RenderPluginModel()                                                                              override;
 
     /**
      * @brief Set the RenderPlugins the model should manage.
@@ -72,7 +72,7 @@ public:
      */
     void setRenderPlugins(const QList<RenderPlugin*>& renderPlugins);
 
-    QVector<PluginAuthor> pluginAuthors(const QModelIndex& index) const;
+    QVector<PluginAuthor> pluginAuthors(const QModelIndex& index)                               const;
 
     DialogConfigurationInterface* pluginDialogConfigurationInterface(const QModelIndex& index);
     RenderPlugin* plugin(const QModelIndex& index);

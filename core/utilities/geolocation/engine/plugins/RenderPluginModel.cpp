@@ -31,11 +31,11 @@ public:
 
     Private();
 
-    static bool renderPluginGuiStringLessThan(RenderPlugin* one, RenderPlugin* two)
+    static bool renderPluginGuiStringLessThan(const RenderPlugin* one, const RenderPlugin* two)
     {
         // Sort by gui string ignoring keyboard accelerators
 
-        return one->guiString().remove(QLatin1Char('&')) < two->guiString().remove(QLatin1Char('&'));
+        return (one->guiString().remove(QLatin1Char('&')) < two->guiString().remove(QLatin1Char('&')));
     }
 
 public:
@@ -50,7 +50,7 @@ RenderPluginModel::Private::Private()
 
 RenderPluginModel::RenderPluginModel(QObject* parent)
     : QStandardItemModel(parent),
-      d(new Private)
+      d                 (new Private)
 {
 }
 

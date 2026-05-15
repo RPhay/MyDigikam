@@ -45,30 +45,34 @@ protected:
 
 public:
 
-    const GeoDataLatLonAltBox& latLonAltBox() const override;
-    void paint(GeoPainter* painter, const ViewportParams* viewport, const QString& layer, int tileZoomLevel) override;
-    bool contains(const QPoint& screenPosition, const ViewportParams* viewport) const override;
+    const GeoDataLatLonAltBox& latLonAltBox()                                   const override;
+    void paint(GeoPainter* painter, const ViewportParams* viewport,
+               const QString& layer, int tileZoomLevel)                               override;
+    bool contains(const QPoint& screenPosition,
+                  const ViewportParams* viewport)                               const override;
 
-    void setLinearRing(GeoDataLinearRing* ring);
-    void setPolygon(GeoDataPolygon* polygon);
+    void setLinearRing(const GeoDataLinearRing* ring);
+    void setPolygon(const GeoDataPolygon* polygon);
+
+public:
 
     static const void* s_previousStyle;
 
 protected:
 
-    bool configurePainter(GeoPainter* painter, const ViewportParams& viewport) const;
-    inline
-    const GeoDataPolygon* polygon() const
+    bool configurePainter(GeoPainter* painter, const ViewportParams& viewport)  const;
+
+    inline const GeoDataPolygon* polygon()                                      const
     {
         return m_polygon;
     }
-    inline
-    const GeoDataLinearRing* ring() const
+
+    inline const GeoDataLinearRing* ring()                                      const
     {
         return m_ring;
     }
-    inline
-    const GeoDataBuilding* building() const
+
+    inline const GeoDataBuilding* building()                                    const
     {
         return m_building;
     }
@@ -77,7 +81,7 @@ protected:
 
 private:
 
-    QPixmap texture(const QString& path, const QColor& color) const;
+    QPixmap texture(const QString& path, const QColor& color)                   const;
 
 private:
 

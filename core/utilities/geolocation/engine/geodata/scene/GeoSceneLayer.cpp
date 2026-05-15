@@ -49,12 +49,12 @@ public:
     bool                                m_tiled  = true;
 };
 
-GeoSceneLayerPrivate::GeoSceneLayerPrivate(const QString& name) :
-    m_filter(nullptr),
-    m_name(name),
-    m_backend(),
-    m_role(),
-    m_tiled(true)
+GeoSceneLayerPrivate::GeoSceneLayerPrivate(const QString& name)
+    : m_filter    (nullptr),
+      m_name      (name),
+      m_backend   (),
+      m_role      (),
+      m_tiled     (true)
 {
 }
 
@@ -63,8 +63,8 @@ GeoSceneLayerPrivate::~GeoSceneLayerPrivate()
     qDeleteAll(m_datasets);
 }
 
-GeoSceneLayer::GeoSceneLayer(const QString& name) :
-    d(new GeoSceneLayerPrivate(name))
+GeoSceneLayer::GeoSceneLayer(const QString& name)
+    : d(new GeoSceneLayerPrivate(name))
 {
 }
 
@@ -81,6 +81,7 @@ const char* GeoSceneLayer::nodeType() const
 void GeoSceneLayer::addDataset(GeoSceneAbstractDataset* dataset)
 {
     // Remove any dataset that has the same name
+
     QVector<GeoSceneAbstractDataset*>::iterator it = d->m_datasets.begin();
 
     while (it != d->m_datasets.end())
@@ -91,6 +92,7 @@ void GeoSceneLayer::addDataset(GeoSceneAbstractDataset* dataset)
         {
             delete currentAbstractDataset;
             d->m_datasets.erase(it);
+
             break;
         }
         else
@@ -112,7 +114,7 @@ const GeoSceneAbstractDataset* GeoSceneLayer::dataset(const QString& name) const
     QVector<GeoSceneAbstractDataset*>::const_iterator it  = d->m_datasets.constBegin();
     QVector<GeoSceneAbstractDataset*>::const_iterator end = d->m_datasets.constEnd();
 
-    for (; it != end; ++it)
+    for ( ; it != end ; ++it)
     {
         if ((*it)->name() == name)
         {
@@ -126,6 +128,7 @@ const GeoSceneAbstractDataset* GeoSceneLayer::dataset(const QString& name) const
 
 // implement non-const method by means of const method,
 // for details, see "Effective C++" (third edition)
+
 GeoSceneAbstractDataset* GeoSceneLayer::dataset(const QString& name)
 {
     return (
@@ -146,6 +149,7 @@ const GeoSceneAbstractDataset* GeoSceneLayer::groundDataset() const
 
 // implement non-const method by means of const method,
 // for details, see "Effective C++" (third edition)
+
 GeoSceneAbstractDataset* GeoSceneLayer::groundDataset()
 {
     return (
@@ -209,7 +213,7 @@ void GeoSceneLayer::addFilter(GeoSceneFilter* filter)
     d->m_filter = filter;
 }
 
-void GeoSceneLayer::removeFilter(GeoSceneFilter* filter)
+void GeoSceneLayer::removeFilter(const GeoSceneFilter* filter)
 {
     if (filter == d->m_filter)
     {

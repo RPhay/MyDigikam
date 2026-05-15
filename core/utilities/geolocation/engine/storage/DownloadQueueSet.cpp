@@ -30,7 +30,7 @@ DownloadQueueSet::DownloadQueueSet(QObject* const parent)
 }
 
 DownloadQueueSet::DownloadQueueSet(DownloadPolicy const& policy, QObject* const parent)
-    : QObject(parent),
+    : QObject         (parent),
       m_downloadPolicy(policy)
 {
 }
@@ -56,27 +56,28 @@ bool DownloadQueueSet::canAcceptJob(const QUrl& sourceUrl,
     if (jobIsQueued(destinationFileName))
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: It's in the queue already:"
-                                    << destinationFileName;
+                                       << destinationFileName;
         return false;
     }
 
     if (jobIsWaitingForRetry(destinationFileName))
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: Will try to download again in some time:"
-                                    << destinationFileName;
+                                       << destinationFileName;
         return false;
     }
 
     if (jobIsActive(destinationFileName))
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: It's being downloaded already:"
-                                    << destinationFileName;
+                                       << destinationFileName;
         return false;
     }
 
     if (jobIsBlackListed(sourceUrl))
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Download rejected: Blacklisted.";
+
         return false;
     }
 
@@ -86,6 +87,7 @@ bool DownloadQueueSet::canAcceptJob(const QUrl& sourceUrl,
 void DownloadQueueSet::addJob(HttpJob* const job)
 {
     m_jobs.push(job);
+
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "addJob: new job queue size:" << m_jobs.count();
 
     Q_EMIT jobAdded();
@@ -97,7 +99,7 @@ void DownloadQueueSet::addJob(HttpJob* const job)
 void DownloadQueueSet::activateJobs()
 {
     while (!m_jobs.isEmpty()
-           && m_activeJobs.count() < m_downloadPolicy.maximumConnections())
+           && (m_activeJobs.count() < m_downloadPolicy.maximumConnections()))
     {
         HttpJob* const job = m_jobs.pop();
         activateJob(job);
@@ -109,6 +111,7 @@ void DownloadQueueSet::retryJobs()
     while (!m_retryQueue.isEmpty())
     {
         HttpJob* const job = m_retryQueue.dequeue();
+
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Requeuing" << job->destinationFileName();
 
         // FIXME: addJob calls activateJobs every time
@@ -180,7 +183,7 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
     if (job->tryAgain())
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Download of %1 to %2 failed, but trying again soon")
-                                    .arg(job->sourceUrl().toString(), job->destinationFileName());
+                                          .arg(job->sourceUrl().toString(), job->destinationFileName());
         m_retryQueue.enqueue(job);
 
         Q_EMIT jobRetry();
@@ -189,13 +192,14 @@ void DownloadQueueSet::retryOrBlacklistJob(HttpJob* job, const int errorCode)
     else
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "JOB-address: " << job
-                                    << "Blacklist-size:" << m_jobBlackList.size()
-                                    << "err:" << errorCode;
+                                       << "Blacklist-size:" << m_jobBlackList.size()
+                                       << "err:" << errorCode;
         m_jobBlackList.insert(job->sourceUrl().toString());
+
         qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("Download of %1 Blacklisted. "
-                                                         "Number of blacklist items: %2")
-                                    .arg(job->destinationFileName())
-                                    .arg(m_jobBlackList.size());
+                                                            "Number of blacklist items: %2")
+                                          .arg(job->destinationFileName())
+                                          .arg(m_jobBlackList.size());
 
         job->deleteLater();
     }
@@ -234,20 +238,20 @@ void DownloadQueueSet::deactivateJob(HttpJob* const job)
 
     Q_ASSERT(disconnected);
 
-    Q_UNUSED(disconnected);   // for Q_ASSERT in release mode
+    Q_UNUSED(disconnected);     // for Q_ASSERT in release mode
 
     const bool removed = m_activeJobs.removeOne(job);
 
     Q_ASSERT(removed);
 
-    Q_UNUSED(removed);   // for Q_ASSERT in release mode
+    Q_UNUSED(removed);          // for Q_ASSERT in release mode
 
     Q_EMIT progressChanged(m_activeJobs.size(), m_jobs.count());
 }
 
 bool DownloadQueueSet::jobIsActive(QString const& destinationFileName) const
 {
-    QList<HttpJob*>::const_iterator pos = m_activeJobs.constBegin();
+    QList<HttpJob*>::const_iterator pos       = m_activeJobs.constBegin();
     QList<HttpJob*>::const_iterator const end = m_activeJobs.constEnd();
 
     for ( ; pos != end ; ++pos)
@@ -268,7 +272,7 @@ inline bool DownloadQueueSet::jobIsQueued(QString const& destinationFileName) co
 
 bool DownloadQueueSet::jobIsWaitingForRetry(QString const& destinationFileName) const
 {
-    QList<HttpJob*>::const_iterator pos = m_retryQueue.constBegin();
+    QList<HttpJob*>::const_iterator pos       = m_retryQueue.constBegin();
     QList<HttpJob*>::const_iterator const end = m_retryQueue.constEnd();
 
     for ( ; pos != end ; ++pos)
@@ -286,7 +290,7 @@ bool DownloadQueueSet::jobIsBlackListed(const QUrl& sourceUrl) const
 {
     QSet<QString>::const_iterator const pos = m_jobBlackList.constFind(sourceUrl.toString());
 
-    return pos != m_jobBlackList.constEnd();
+    return (pos != m_jobBlackList.constEnd());
 }
 
 inline bool DownloadQueueSet::JobStack::contains(const QString& destinationFileName) const
@@ -315,7 +319,7 @@ inline HttpJob* DownloadQueueSet::JobStack::pop()
     return job;
 }
 
-inline void DownloadQueueSet::JobStack::push(HttpJob* const job)
+inline void DownloadQueueSet::JobStack::push(HttpJob* const job)        // cppcheck-suppress constParameterPointer
 {
     m_jobs.push(job);
     m_jobsContent.insert(job->destinationFileName());

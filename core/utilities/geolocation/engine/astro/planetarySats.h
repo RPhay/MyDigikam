@@ -40,9 +40,9 @@ public:
     void setDeltaRT(double drt);
     void setMJD(int year, int month, int day, int hour, int min, double sec);   // set time
     static void getDatefromMJD(double mjd, int& year, int& month, int& day, int& hour, int& min, double& sec);
-    void setSatFile(char* const fname);
-    void setPlanet(char* const pname);
-    int selectSat(char* const sname);
+    void setSatFile(const char* const fname);
+    void setPlanet(const char* const pname);
+    int selectSat(const char* const sname);
     void getSatName(char* sname) const;
     void setStateVector(double mjd, double x, double y, double z, double vx, double vy, double vz);
     int getStateVector(int nsat);
