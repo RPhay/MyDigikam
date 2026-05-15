@@ -59,8 +59,8 @@ public:
     void append(const QVariant& value);
 
     const char* nodeType() const override;
-    void pack(QDataStream& stream) const override;
-    void unpack(QDataStream& stream) override;
+    void pack(QDataStream& stream) const override;      // cppcheck-suppress uselessOverride
+    void unpack(QDataStream& stream) override;          // cppcheck-suppress uselessOverride
 
 private:
 

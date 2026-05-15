@@ -201,8 +201,8 @@ public:
     void setExtendedData(const GeoDataExtendedData& extendedData);
 
     const GeoDataLatLonAltBox& latLonAltBox() const override;
-    void pack(QDataStream& stream) const override;
-    void unpack(QDataStream& stream) override;
+    void pack(QDataStream& stream) const override;              // cppcheck-suppress uselessOverride
+    void unpack(QDataStream& stream) override;                  // cppcheck-suppress uselessOverride
 
 private:
 

@@ -48,13 +48,13 @@ public:
      * @brief Serialize the styleselector to a stream
      * @param  stream  the stream
      */
-    void pack(QDataStream& stream) const override;
+    void pack(QDataStream& stream) const override;          // cppcheck-suppress uselessOverride
 
     /**
      * @brief  Unserialize the styleselector from a stream
      * @param  stream  the stream
      */
-    void unpack(QDataStream& stream) override;
+    void unpack(QDataStream& stream) override;              // cppcheck-suppress uselessOverride
 
     GeoDataTimePrimitive();
     GeoDataTimePrimitive(const GeoDataTimePrimitive& other);
