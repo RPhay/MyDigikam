@@ -98,10 +98,13 @@ public:
     void createGraphicsItemFromOverlay(const GeoDataOverlay* overlay);
     void removeGraphicsItems(const GeoDataFeature* feature);
     void updateTiledLineStrings(const GeoDataPlacemark* placemark, GeoLineStringGraphicsItem* lineStringItem);
-    static void updateTiledLineStrings(OsmLineStringItems& lineStringItems);
     void clearCache();
     bool showRelation(const GeoDataRelation* relation) const;
     void updateRelationVisibility();
+
+public:
+
+    static void updateTiledLineStrings(const OsmLineStringItems& lineStringItems);
 
 public:
 
@@ -450,7 +453,7 @@ void GeometryLayerPrivate::updateTiledLineStrings(const GeoDataPlacemark* placem
     updateTiledLineStrings(lineStringItems);
 }
 
-void GeometryLayerPrivate::updateTiledLineStrings(OsmLineStringItems& lineStringItems)
+void GeometryLayerPrivate::updateTiledLineStrings(const OsmLineStringItems& lineStringItems)
 {
     GeoDataLineString merged;
 

@@ -288,7 +288,7 @@ GeoDataDocument* OsmParser::parseOsmPbf(const QString& filename, QString& error)
     return createDocument(p.m_nodes, p.m_ways, p.m_relations);
 }
 
-GeoDataDocument* OsmParser::createDocument(OsmNodes& nodes, OsmWays& ways, OsmRelations& relations)
+GeoDataDocument* OsmParser::createDocument(OsmNodes& nodes, OsmWays& ways, const OsmRelations& relations)
 {
     GeoDataDocument* document = new GeoDataDocument;
     GeoDataPolyStyle backgroundPolyStyle;

@@ -286,7 +286,7 @@ int CylindricalProjectionPrivate::crossDateLine(const GeoDataCoordinates& aCoord
                                                 const GeoDataCoordinates& bCoord,
                                                 qreal bx,
                                                 qreal by,
-                                                QVector<QPolygonF*>& polygons,
+                                                const QVector<QPolygonF*>& polygons,
                                                 int mirrorCount,
                                                 qreal repeatDistance)
 {

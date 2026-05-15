@@ -56,27 +56,30 @@ public:
                             int mirrorCount = 0,
                             qreal repeatDistance = 0) const;
 
-    static int crossDateLine(const GeoDataCoordinates& aCoord,
-                             const GeoDataCoordinates& bCoord,
-                             qreal bx,
-                             qreal by,
-                             QVector<QPolygonF*>& polygons,
-                             int mirrorCount = 0,
-                             qreal repeatDistance = 0);
-
     bool lineStringToPolygon(const GeoDataLineString& lineString,
                              const ViewportParams* viewport,
                              QVector<QPolygonF*>& polygons) const;
-
-    static void translatePolygons(const QVector<QPolygonF*>& polygons,
-                                  QVector<QPolygonF*>& translatedPolygons,
-                                  qreal xOffset);
 
     void repeatPolygons(const ViewportParams* viewport,
                         QVector<QPolygonF*>& polygons) const;
 
     qreal repeatDistance(const ViewportParams* viewport) const;
 
+public:
+
+    static int crossDateLine(const GeoDataCoordinates& aCoord,
+                             const GeoDataCoordinates& bCoord,
+                             qreal bx,
+                             qreal by,
+                             const QVector<QPolygonF*>& polygons,
+                             int mirrorCount = 0,
+                             qreal repeatDistance = 0);
+
+    static void translatePolygons(const QVector<QPolygonF*>& polygons,
+                                  QVector<QPolygonF*>& translatedPolygons,
+                                  qreal xOffset);
+
+public:
 
     Q_DECLARE_PUBLIC(CylindricalProjection)
 
