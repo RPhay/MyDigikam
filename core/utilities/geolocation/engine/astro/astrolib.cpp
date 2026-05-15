@@ -815,6 +815,7 @@ Mat3 PoleMx(double xp, double yp)
 
 /*---------------- Function aberrat --------------------------------------*/
 
+// cppcheck-suppress constParameterReference
 Vec3 aberrat(double t, Vec3& ve)    //  aberration
 {
     /*

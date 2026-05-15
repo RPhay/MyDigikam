@@ -675,6 +675,7 @@ Mat3 operator / (const Mat3& c1, double r)
     return result;
 }
 
+// cppcheck-suppress constParameterReference
 Vec3 mxvct(const Mat3& m1, Vec3& v1)
 {
     int i, j;
@@ -786,6 +787,7 @@ void gpyr(const Mat3& m1, double& p, double& y, double& r)
     p = atan20(-m1.m[0][2], m1.m[0][0]);
 }
 
+// cppcheck-suppress constParameterReference
 void vcpy(Vec3& v, double& p, double& y)
 {
     // Convert direction given by cartesian vector v into a corresponding
@@ -795,6 +797,7 @@ void vcpy(Vec3& v, double& p, double& y)
     y = atan20(v[1], sqrt(v[0] * v[0] + v[2] * v[2]));
 }
 
+// cppcheck-suppress constParameterReference
 void vcrp(Vec3& v, double& p, double& r)
 {
     // Convert direction given by cartesian vector v into a corresponding
@@ -844,6 +847,7 @@ void mxevc(const Mat3& m, double& a, Vec3& v)
     a = 2.0 * acos(q4);
 }
 
+// cppcheck-suppress constParameterReference
 Mat3 mxrox(double& a, Vec3& v)
 {
     // Convert eigenvalue a (eigen angle in radians) and eigenvector v
