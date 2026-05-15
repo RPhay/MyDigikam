@@ -196,7 +196,7 @@ void PlanetarySats::getDatefromMJD(double mjd, int& year, int& month, int& day, 
     };
 }
 
-void PlanetarySats::setSatFile(char* fname)
+void PlanetarySats::setSatFile(char* const fname)
 {
     strncpy(pls_satelmfl, fname, sizeof(pls_satelmfl));
 }
@@ -394,7 +394,7 @@ int PlanetarySats::getStateVector(int nsat)
     return nst;
 }
 
-void PlanetarySats::setPlanet(char* pname)
+void PlanetarySats::setPlanet(char* const pname)
 {
     pls_moonflg = false;
     strncpy(pls_plntname, pname, sizeof(pls_plntname));
@@ -558,7 +558,7 @@ void PlanetarySats::getKeplerElements(double& perc, double& apoc, double& inc, d
 
 }
 
-int PlanetarySats::selectSat(char* sname)
+int PlanetarySats::selectSat(char* const sname)
 {
     // select specified satellite
     // RETURN 1 if successful, 0 if no suitable satellite found

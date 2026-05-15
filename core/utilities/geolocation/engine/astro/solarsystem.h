@@ -43,7 +43,7 @@ public:
                         int& hour, int& min, double& sec); // convert MJD into date and time
     void setEpoch(double yr);   // set epoch of coordinates
     void setNutation(bool nut);   // specify whether nutation is to be included.
-    void setCentralBody(char* pname);  // select which planet is central body
+    void setCentralBody(char* const pname);  // select which planet is central body
     void includeUser(bool uact);   // activate user defined object
 
     void getSun(double& ra, double& decl);   // RA and Dec for the Sun
