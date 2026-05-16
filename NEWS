@@ -127,7 +127,7 @@ BUGFIXES:
 097 --> 519915 - Face Recognition engine fails to process Tag-only selections and ignores Tag constraints when Albums are selected.
 098 --> 520195 - Error message during reverse geocoding.
 099 --> 520203 - Setting a people (eg. "Mark") through tag manager => htags = "People", "People|Mark" instead of just "People|Mark".
-100 --> 
+100 --> 520290 - digiKam hangs after choosing WebDAVs network share (KDE).
 101 -->
 102 -->
 103 -->
