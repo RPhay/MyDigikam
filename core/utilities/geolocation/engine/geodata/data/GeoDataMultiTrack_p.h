@@ -28,9 +28,7 @@ class Q_DECL_HIDDEN GeoDataMultiTrackPrivate : public GeoDataGeometryPrivate
 {
 public:
 
-    GeoDataMultiTrackPrivate()
-    {
-    }
+    GeoDataMultiTrackPrivate() = default;
 
     ~GeoDataMultiTrackPrivate() override
     {
@@ -46,7 +44,7 @@ public:
 
         m_vector.reserve(other.m_vector.size());
 
-        for (GeoDataTrack* track : other.m_vector)
+        for (const GeoDataTrack* const track : other.m_vector)
         {
             m_vector.append(new GeoDataTrack(*track));
         }
@@ -56,7 +54,7 @@ public:
 
     GeoDataGeometryPrivate* copy() const override
     {
-        GeoDataMultiTrackPrivate* copy = new GeoDataMultiTrackPrivate;
+        GeoDataMultiTrackPrivate* const copy = new GeoDataMultiTrackPrivate;
         *copy = *this;
 
         return copy;

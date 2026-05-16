@@ -28,16 +28,14 @@ class Q_DECL_HIDDEN GeoDataContainerPrivate : public GeoDataFeaturePrivate
 {
 public:
 
-    GeoDataContainerPrivate()
-    {
-    }
+    GeoDataContainerPrivate() = default;
 
     GeoDataContainerPrivate(const GeoDataContainerPrivate& other)
         : GeoDataFeaturePrivate(other)
     {
         m_vector.reserve(other.m_vector.size());
 
-        for (GeoDataFeature* feature : other.m_vector)
+        for (const GeoDataFeature* const feature : other.m_vector)
         {
             m_vector.append(feature->clone());
         }
@@ -55,7 +53,7 @@ public:
         m_vector.clear();
         m_vector.reserve(other.m_vector.size());
 
-        for (GeoDataFeature* feature : other.m_vector)
+        for (const GeoDataFeature* const feature : other.m_vector)
         {
             m_vector.append(feature->clone());
         }
@@ -68,9 +66,9 @@ public:
         return GeoDataFolderId;
     }
 
-    void setParent(GeoDataObject* parent)
+    void setParent(GeoDataObject* const parent)
     {
-        for (GeoDataFeature* feature : m_vector)
+        for (GeoDataFeature* const feature : m_vector)
         {
             feature->setParent(parent);
         }

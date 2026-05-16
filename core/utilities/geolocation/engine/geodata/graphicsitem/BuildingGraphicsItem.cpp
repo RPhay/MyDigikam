@@ -40,10 +40,12 @@ namespace Marble
 BuildingGraphicsItem::BuildingGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataBuilding* building)
     : AbstractGeoPolygonGraphicsItem(placemark, building)
 {
+    // cppcheck-suppress constVariablePointer
     if      (const auto ring = geodata_cast<GeoDataLinearRing>(&building->multiGeometry()->at(0)))
     {
         setLinearRing(ring);
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto poly = geodata_cast<GeoDataPolygon>(&building->multiGeometry()->at(0)))
     {
         setPolygon(poly);
@@ -557,7 +559,7 @@ void BuildingGraphicsItem::paintFrame(GeoPainter* painter, const ViewportParams*
         QVector<QPolygonF*> fillPolygons = painter->createFillPolygons(m_cachedOuterPolygons,
                                                                        m_cachedInnerPolygons);
 
-        for (QPolygonF* fillPolygon : fillPolygons)
+        for (const QPolygonF* const fillPolygon : fillPolygons)
         {
             painter->drawPolygon(*fillPolygon);
         }
@@ -583,7 +585,8 @@ void BuildingGraphicsItem::screenPolygons(const ViewportParams& viewport, const 
 
         innerPolygons.reserve(innerPolygons.size() + innerPolygonsPerBoundary.size());
 
-        for (QPolygonF* innerPolygonPerBoundary : innerPolygonsPerBoundary)
+        // cppcheck-suppress constVariablePointer
+        for (QPolygonF* const innerPolygonPerBoundary : innerPolygonsPerBoundary)
         {
             innerPolygons << innerPolygonPerBoundary;
         }

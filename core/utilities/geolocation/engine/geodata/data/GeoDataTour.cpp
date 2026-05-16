@@ -49,17 +49,16 @@ GeoDataTour& GeoDataTour::operator=(const GeoDataTour& other)
     return *this;
 }
 
-
 bool GeoDataTour::operator==(const GeoDataTour& other) const
 {
     Q_D(const GeoDataTour);
-    return equals(other) &&
-           *d->m_playlist == *other.d_func()->m_playlist;
+
+    return (equals(other) && (*d->m_playlist == *other.d_func()->m_playlist));
 }
 
 bool GeoDataTour::operator!=(const GeoDataTour& other) const
 {
-    return !this->operator==(other);
+    return (!this->operator==(other));
 }
 
 GeoDataFeature* GeoDataTour::clone() const
@@ -67,22 +66,24 @@ GeoDataFeature* GeoDataTour::clone() const
     return new GeoDataTour(*this);
 }
 
-
 GeoDataPlaylist* GeoDataTour::playlist()
 {
-    Q_D(GeoDataTour);
+    Q_D(GeoDataTour);       // cppcheck-suppress constVariablePointer
+
     return d->m_playlist;
 }
 
 const GeoDataPlaylist* GeoDataTour::playlist() const
 {
     Q_D(const GeoDataTour);
+
     return d->m_playlist;
 }
 
 void GeoDataTour::setPlaylist(GeoDataPlaylist* playlist)
 {
     Q_D(GeoDataTour);
+
     d->m_playlist = playlist;
     d->m_playlist->setParent(this);
 }

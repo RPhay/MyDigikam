@@ -107,7 +107,7 @@ bool GeoDataPlacemark::operator==(const GeoDataPlacemark& other) const
     const GeoDataPlacemarkPrivate* const other_d = other.d_func();
 
     if (!equals(other) ||
-        d->m_population != other_d->m_population)
+        (d->m_population != other_d->m_population))
     {
         return false;
     }
@@ -180,7 +180,7 @@ void GeoDataPlacemark::setVisualCategory(GeoDataPlacemark::GeoDataVisualCategory
 
 GeoDataGeometry* GeoDataPlacemark::geometry()
 {
-    Q_D(GeoDataPlacemark);
+    Q_D(GeoDataPlacemark);      // cppcheck-suppress constVariablePointer
     return d->m_geometry;
 }
 
@@ -233,45 +233,47 @@ GeoDataLookAt* GeoDataPlacemark::lookAt()
 
 bool GeoDataPlacemark::placemarkLayoutOrderCompare(const GeoDataPlacemark* left, const GeoDataPlacemark* right)
 {
-    const GeoDataPlacemarkPrivate* const left_d = left->d_func();
+    const GeoDataPlacemarkPrivate* const left_d  = left->d_func();
     const GeoDataPlacemarkPrivate* const right_d = right->d_func();
 
     if (left_d->m_zoomLevel != right_d->m_zoomLevel)
     {
-        return (left_d->m_zoomLevel < right_d->m_zoomLevel); // lower zoom level comes first
+        return (left_d->m_zoomLevel < right_d->m_zoomLevel);    // lower zoom level comes first
     }
 
     if (left_d->m_popularity != right_d->m_popularity)
     {
-        return (left_d->m_popularity > right_d->m_popularity); // higher popularity comes first
+        return (left_d->m_popularity > right_d->m_popularity);  // higher popularity comes first
     }
 
-    return left < right; // lower pointer value comes first
+    return left < right;                                        // lower pointer value comes first
 }
 
 GeoDataCoordinates GeoDataPlacemark::coordinate(const QDateTime& dateTime, bool* iconAtCoordinates) const
 {
     Q_D(const GeoDataPlacemark);
+
     bool hasIcon = false;
     GeoDataCoordinates coord;
 
     if (d->m_geometry)
     {
         // Beware: comparison between pointers, not strings.
-        if (geodata_cast<GeoDataPoint>(d->m_geometry)
-            || geodata_cast<GeoDataPolygon>(d->m_geometry)
-            || geodata_cast<GeoDataLinearRing>(d->m_geometry))
+
+        if      (geodata_cast<GeoDataPoint>(d->m_geometry)
+                 || geodata_cast<GeoDataPolygon>(d->m_geometry)
+                 || geodata_cast<GeoDataLinearRing>(d->m_geometry))
         {
             hasIcon = true;
-            coord = d->m_geometry->latLonAltBox().center();
+            coord   = d->m_geometry->latLonAltBox().center();
         }
-
+        // cppcheck-suppress constVariablePointer
         else if (const auto multiGeometry = geodata_cast<GeoDataMultiGeometry>(d->m_geometry))
         {
-            QVector<GeoDataGeometry*>::ConstIterator it = multiGeometry->constBegin();
+            QVector<GeoDataGeometry*>::ConstIterator it  = multiGeometry->constBegin();
             QVector<GeoDataGeometry*>::ConstIterator end = multiGeometry->constEnd();
 
-            for (; it != end; ++it)
+            for ( ; it != end ; ++it)
             {
                 if (geodata_cast<GeoDataPoint>(*it)
                     || geodata_cast<GeoDataPolygon>(*it)
@@ -284,34 +286,31 @@ GeoDataCoordinates GeoDataPlacemark::coordinate(const QDateTime& dateTime, bool*
 
             coord = d->m_geometry->latLonAltBox().center();
         }
-
+        // cppcheck-suppress constVariablePointer
         else if (const auto track = geodata_cast<GeoDataTrack>(d->m_geometry))
         {
-            hasIcon = track->size() != 0 && track->firstWhen() <= dateTime;
-            coord = track->coordinatesAt(dateTime);
+            hasIcon = (track->size() != 0) && (track->firstWhen() <= dateTime);
+            coord   = track->coordinatesAt(dateTime);
         }
-
         else if (const auto lineString = geodata_cast<GeoDataLineString>(d->m_geometry))
         {
             auto const size = lineString->size();
 
-            if (size == 0)
+            if      (size == 0)
             {
                 return GeoDataCoordinates();
             }
-
             else if (size < 3)
             {
                 // Approximate center if there are just two coordinates
+
                 return lineString->latLonAltBox().center();
             }
-
             else
             {
                 return lineString->at(size / 2);
             }
         }
-
         else
         {
             coord = d->m_geometry->latLonAltBox().center();

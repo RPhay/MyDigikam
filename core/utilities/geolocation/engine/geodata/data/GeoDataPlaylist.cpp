@@ -29,12 +29,11 @@ bool GeoDataPlaylist::operator==(const GeoDataPlaylist& other) const
     {
         return false;
     }
-
     else
     {
         int index = 0;
 
-        for (GeoDataTourPrimitive* m_primitive : m_primitives)
+        for (const GeoDataTourPrimitive* const m_primitive : m_primitives)
         {
             if (*m_primitive != *other.m_primitives.at(index))
             {
@@ -60,7 +59,7 @@ const char* GeoDataPlaylist::nodeType() const
 
 GeoDataTourPrimitive* GeoDataPlaylist::primitive(int id)
 {
-    if (size() <= id || id < 0)
+    if ((size() <= id) || (id < 0))
     {
         return nullptr;
     }
@@ -70,7 +69,7 @@ GeoDataTourPrimitive* GeoDataPlaylist::primitive(int id)
 
 const GeoDataTourPrimitive* GeoDataPlaylist::primitive(int id) const
 {
-    if (size() <= id || id < 0)
+    if ((size() <= id) || (id < 0))
     {
         return nullptr;
     }
@@ -98,7 +97,7 @@ void GeoDataPlaylist::removePrimitiveAt(int position)
 
 void GeoDataPlaylist::swapPrimitives(int positionA, int positionB)
 {
-    if (qMin(positionA, positionB) >= 0 && qMax(positionA, positionB) < m_primitives.size())
+    if ((qMin(positionA, positionB) >= 0) && (qMax(positionA, positionB) < m_primitives.size()))
     {
         m_primitives.swapItemsAt(positionA, positionB);
     }
