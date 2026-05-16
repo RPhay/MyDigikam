@@ -124,22 +124,22 @@ PlacemarkLayout::PlacemarkLayout(QAbstractItemModel* placemarkModel,
                                  MarbleClock* clock,
                                  const StyleBuilder* styleBuilder,
                                  QObject* parent)
-    : QObject(parent),
-      m_placemarkModel(placemarkModel),
-      m_selectionModel(selectionModel),
-      m_clock(clock),
+    : QObject                   (parent),
+      m_placemarkModel          (placemarkModel),
+      m_selectionModel          (selectionModel),
+      m_clock                   (clock),
       m_acceptedVisualCategories(acceptedVisualCategories()),
-      m_showPlaces(false),
-      m_showCities(false),
-      m_showTerrain(false),
-      m_showOtherPlaces(false),
-      m_showLandingSites(false),
-      m_showCraters(false),
-      m_showMaria(false),
-      m_maxLabelHeight(maxLabelHeight()),
-      m_styleResetRequested(true),
-      m_styleBuilder(styleBuilder),
-      m_lastPlacemarkAvailable(false)
+      m_showPlaces              (false),
+      m_showCities              (false),
+      m_showTerrain             (false),
+      m_showOtherPlaces         (false),
+      m_showLandingSites        (false),
+      m_showCraters             (false),
+      m_showMaria               (false),
+      m_maxLabelHeight          (maxLabelHeight()),
+      m_styleResetRequested     (true),
+      m_styleBuilder            (styleBuilder),
+      m_lastPlacemarkAvailable  (false)
 {
     Q_ASSERT(m_placemarkModel);
 
@@ -208,17 +208,17 @@ void PlacemarkLayout::requestStyleReset()
 void PlacemarkLayout::styleReset()
 {
     clearCache();
-    m_maxLabelHeight = maxLabelHeight();
+    m_maxLabelHeight      = maxLabelHeight();
     m_styleResetRequested = false;
 }
 
 void PlacemarkLayout::clearCache()
 {
     m_paintOrder.clear();
-    m_lastPlacemarkAvailable = false;
-    m_lastPlacemarkLabelRect = QRectF();
+    m_lastPlacemarkAvailable  = false;
+    m_lastPlacemarkLabelRect  = QRectF();
     m_lastPlacemarkSymbolRect = QRectF();
-    m_labelArea = 0;
+    m_labelArea               = 0;
     qDeleteAll(m_visiblePlacemarks);
     m_visiblePlacemarks.clear();
 }
@@ -232,7 +232,7 @@ QVector<const GeoDataFeature*> PlacemarkLayout::whichPlacemarkAt(const QPoint& c
 
     QVector<const GeoDataFeature*> ret;
 
-    for (VisiblePlacemark* const mark : std::as_const(m_paintOrder))
+    for (const VisiblePlacemark* const mark : std::as_const(m_paintOrder))
     {
         if (mark->labelRect().contains(curpos) || mark->symbolRect().contains(curpos))
         {
@@ -246,6 +246,7 @@ QVector<const GeoDataFeature*> PlacemarkLayout::whichPlacemarkAt(const QPoint& c
 int PlacemarkLayout::maxLabelHeight()
 {
     QFont const standardFont(QStringLiteral("Sans Serif"));
+
     return QFontMetrics(standardFont).height();
 }
 
@@ -288,7 +289,7 @@ void PlacemarkLayout::addPlacemarks(const QModelIndex& parent, int first, int la
             }
 
             int zoomLevel = placemark->zoomLevel();
-            TileId key = TileId::fromCoordinates(coordinates, zoomLevel);
+            TileId key    = TileId::fromCoordinates(coordinates, zoomLevel);
             m_placemarkCache[key].append(placemark);
         }
     }
@@ -416,6 +417,7 @@ QVector<VisiblePlacemark*> PlacemarkLayout::generateLayout(const ViewportParams*
     if (m_placemarkModel->rowCount() <= 0)
     {
         clearCache();
+
         return QVector<VisiblePlacemark*>();
     }
 
@@ -427,6 +429,7 @@ QVector<VisiblePlacemark*> PlacemarkLayout::generateLayout(const ViewportParams*
     if (m_maxLabelHeight == 0)
     {
         clearCache();
+
         return QVector<VisiblePlacemark*>();
     }
 
@@ -653,6 +656,7 @@ QVector<VisiblePlacemark*> PlacemarkLayout::generateLayout(const ViewportParams*
     while (currentMaxLabelHeight != m_maxLabelHeight);
 
     m_runtimeTrace = QStringLiteral("Placemarks: %1 Drawn: %2").arg(placemarkList.count()).arg(m_paintOrder.size());
+
     return m_paintOrder;
 }
 
@@ -679,13 +683,14 @@ bool PlacemarkLayout::hasPlacemarkAt(const QPoint& pos)
         return true;
     }
 
-    for (VisiblePlacemark* mark : m_paintOrder)
+    for (const VisiblePlacemark* mark : m_paintOrder)
     {
         if (mark->labelRect().contains(pos) || mark->symbolRect().contains(pos))
         {
-            m_lastPlacemarkLabelRect = mark->labelRect();
+            m_lastPlacemarkLabelRect  = mark->labelRect();
             m_lastPlacemarkSymbolRect = mark->symbolRect();
-            m_lastPlacemarkAvailable = true;
+            m_lastPlacemarkAvailable  = true;
+
             return true;
         }
     }
@@ -709,9 +714,8 @@ bool PlacemarkLayout::layoutPlacemark(const GeoDataPlacemark* placemark, const G
         // @todo: Set / adjust to tile level
 
         parameters.placemark = placemark;
-
-        auto style = m_styleBuilder->createStyle(parameters);
-        mark       = new VisiblePlacemark(placemark, coordinates, style);
+        auto style           = m_styleBuilder->createStyle(parameters);
+        mark                 = new VisiblePlacemark(placemark, coordinates, style);
         m_visiblePlacemarks.insert(placemark, mark);
         connect(mark, SIGNAL(updateNeeded()), this, SIGNAL(repaintNeeded()));
     }
@@ -752,14 +756,14 @@ bool PlacemarkLayout::layoutPlacemark(const GeoDataPlacemark* placemark, const G
 
     int idx = y / m_maxLabelHeight;
 
-    if (idx - 1 >= 0)
+    if ((idx - 1) >= 0)
     {
         m_rowsection[ idx - 1 ].append(mark);
     }
 
     m_rowsection[ idx ].append(mark);
 
-    if (idx + 1 < m_rowsection.size())
+    if ((idx + 1) < m_rowsection.size())
     {
         m_rowsection[ idx + 1 ].append(mark);
     }
@@ -769,8 +773,8 @@ bool PlacemarkLayout::layoutPlacemark(const GeoDataPlacemark* placemark, const G
 
     Q_ASSERT(!boundingBox.isEmpty());
 
-    m_labelArea     += boundingBox.width() * boundingBox.height();
-    m_maxLabelHeight = qMax(m_maxLabelHeight, qCeil(boundingBox.height()));
+    m_labelArea             += boundingBox.width() * boundingBox.height();
+    m_maxLabelHeight         = qMax(m_maxLabelHeight, qCeil(boundingBox.height()));
 
     return true;
 }
@@ -783,7 +787,7 @@ GeoDataCoordinates PlacemarkLayout::placemarkIconCoordinates(const GeoDataPlacem
     {
         StyleParameters parameters;
         parameters.placemark = placemark;
-        auto style = m_styleBuilder->createStyle(parameters);
+        auto style           = m_styleBuilder->createStyle(parameters);
 
         if (style->iconStyle().scaledIcon().isNull())
         {
@@ -800,7 +804,7 @@ QRectF PlacemarkLayout::roomForLabel(const GeoDataStyle::ConstPtr& style,
                                      const VisiblePlacemark* placemark) const
 {
     QFont labelFont = style->labelStyle().scaledFont();
-    int textHeight = QFontMetrics(labelFont).height();
+    int textHeight  = QFontMetrics(labelFont).height();
 
     int textWidth;
 
@@ -810,14 +814,13 @@ QRectF PlacemarkLayout::roomForLabel(const GeoDataStyle::ConstPtr& style,
         textWidth = (QFontMetrics(labelFont).horizontalAdvance(labelText)
                      + qRound(2 * s_labelOutlineWidth));
     }
-
     else
     {
         textWidth = (QFontMetrics(labelFont).horizontalAdvance(labelText));
     }
 
     const QVector<VisiblePlacemark*> currentsec = m_rowsection.at(y / m_maxLabelHeight);
-    QRectF const symbolRect = placemark->symbolRect();
+    QRectF const symbolRect                     = placemark->symbolRect();
 
     if (style->labelStyle().alignment() == GeoDataLabelStyle::Corner)
     {
@@ -825,7 +828,7 @@ QRectF PlacemarkLayout::roomForLabel(const GeoDataStyle::ConstPtr& style,
 
         // Check the four possible positions by going through all of them
 
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0 ; i < 4 ; ++i)
         {
             const qreal xPos = (i / 2 == 0) ? x + symbolWidth / 2 + 1 :
                                x - symbolWidth / 2 - 1 - textWidth;
@@ -850,6 +853,7 @@ QRectF PlacemarkLayout::roomForLabel(const GeoDataStyle::ConstPtr& style,
         if (hasRoomFor(currentsec, labelRect.united(symbolRect)))
         {
             // claim the place immediately if it hasn't been used yet
+
             return labelRect;
         }
     }

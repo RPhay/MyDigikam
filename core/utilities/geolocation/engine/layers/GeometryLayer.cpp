@@ -396,6 +396,7 @@ void GeometryLayerPrivate::createGraphicsItems(const GeoDataObject* object, Feat
 {
     clearCache();
 
+    // cppcheck-suppress constVariablePointer
     if (const auto document = geodata_cast<GeoDataDocument>(object))
     {
         for (auto feature : document->featureList())
@@ -513,6 +514,7 @@ void GeometryLayerPrivate::updateRelationVisibility()
         QVariant const data   = m_model->data(m_model->index(i, 0), MarblePlacemarkModel::ObjectPointerRole);
         GeoDataObject* object = qvariant_cast<GeoDataObject*> (data);
 
+        // cppcheck-suppress constVariablePointer
         if (const auto doc = geodata_cast<GeoDataDocument>(object))
         {
             for (auto feature : doc->featureList())
@@ -704,7 +706,6 @@ void GeometryLayer::addPlacemarks(const QModelIndex& parent, int first, int last
     }
 
     Q_EMIT repaintNeeded();
-
 }
 
 void GeometryLayer::removePlacemarks(const QModelIndex& parent, int first, int last)
@@ -864,6 +865,7 @@ void GeometryLayer::handleHighlight(qreal lon, qreal lat, GeoDataCoordinates::Un
                             selectedPlacemarks.push_back(placemark);
                         }
 
+                        // cppcheck-suppress constVariablePointer
                         if (const auto linearRing = geodata_cast<GeoDataLinearRing>(placemark->geometry()))
                         {
                             if (linearRing->contains(clickedPoint))
@@ -887,6 +889,7 @@ void GeometryLayer::handleHighlight(qreal lon, qreal lat, GeoDataCoordinates::Un
                                     break;
                                 }
 
+                                // cppcheck-suppress constVariablePointer
                                 if (const auto linearRing = geodata_cast<GeoDataLinearRing>(*multiIter))
                                 {
                                     if (linearRing->contains(clickedPoint))
