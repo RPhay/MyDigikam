@@ -5,15 +5,20 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-echo "Save M6 VM..."
-VBoxManage controlvm M6 savestate
+echo "Save DK APPIMAGE Qt6..."
+VBoxManage controlvm "DK APPIMAGE Qt6" savestate
 
-echo "Save M7 VM..."
-VBoxManage controlvm M7 savestate
+echo "Save DK APPIMAGE Qt5..."
+VBoxManage controlvm "DK APPIMAGE Qt5" savestate
 
-echo "Save MX VM..."
-VBoxManage controlvm MX savestate
+echo "Save DK WINDOWS 11 QT6..."
+VBoxManage controlvm "DK WINDOWS 11 QT6" savestate
 
-echo "All VM saved."
+echo "Save DK WINDOWS 10 QT5..."
+VBoxManage controlvm "DK WINDOWS 10 QT5" savestate
+
+echo "All VM saved. Halting system now..."
+
+systemctl halt
 
 exit 0
