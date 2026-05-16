@@ -144,22 +144,22 @@ public:
 
 public:
 
-    MarbleMap* const                q       = nullptr;
+    MarbleMap* const                q                               = nullptr;
 
     // The model we are showing.
-    MarbleModel* const              m_model = nullptr;
-    bool                            m_modelIsOwned;
+    MarbleModel* const              m_model                         = nullptr;
+    bool                            m_modelIsOwned                  = false;
 
     // Parameters for the maps appearance.
     ViewParams                      m_viewParams;
     ViewportParams                  m_viewport;
-    bool                            m_showFrameRate;
-    bool                            m_showDebugPolygons;
-    bool                            m_showDebugBatchRender;
-    GeoDataRelation::RelationTypes  m_visibleRelationTypes;
+    bool                            m_showFrameRate                 = false;
+    bool                            m_showDebugPolygons             = false;
+    bool                            m_showDebugBatchRender          = false;
+    GeoDataRelation::RelationTypes  m_visibleRelationTypes          = GeoDataRelation::RouteFerry;
     StyleBuilder                    m_styleBuilder;
 
-    QList<RenderPlugin*>           m_renderPlugins;
+    QList<RenderPlugin*>            m_renderPlugins;
 
     LayerManager                    m_layerManager;
     MarbleSplashLayer               m_marbleSplashLayer;
@@ -172,30 +172,30 @@ public:
     PlacemarkLayer                  m_placemarkLayer;
     VectorTileLayer                 m_vectorTileLayer;
 
-    bool                            m_isLockedToSubSolarPoint;
-    bool                            m_isSubSolarPointIconVisible;
+    bool                            m_isLockedToSubSolarPoint       = false;
+    bool                            m_isSubSolarPointIconVisible    = false;
     RenderState                     m_renderState;
 };
 
 MarbleMapPrivate::MarbleMapPrivate(MarbleMap* parent, MarbleModel* model)
-    : q(parent),
-      m_model(model),
-      m_modelIsOwned(false),
-      m_viewParams(),
-      m_showFrameRate(false),
-      m_showDebugPolygons(false),
-      m_showDebugBatchRender(false),
-      m_visibleRelationTypes(GeoDataRelation::RouteFerry),
-      m_styleBuilder(),
-      m_layerManager(parent),
-      m_customPaintLayer(parent),
-      m_geometryLayer(model->treeModel(), &m_styleBuilder),
-      m_floatItemsLayer(parent),
-      m_textureLayer(model->downloadManager(), model->pluginManager(), model->sunLocator(), model->groundOverlayModel()),
-      m_placemarkLayer(model->placemarkModel(), model->placemarkSelectionModel(), model->clock(), &m_styleBuilder),
-      m_vectorTileLayer(model->downloadManager(), model->pluginManager(), model->treeModel()),
-      m_isLockedToSubSolarPoint(false),
-      m_isSubSolarPointIconVisible(false)
+    : q                             (parent),
+      m_model                       (model),
+      m_modelIsOwned                (false),
+      m_viewParams                  (),
+      m_showFrameRate               (false),
+      m_showDebugPolygons           (false),
+      m_showDebugBatchRender        (false),
+      m_visibleRelationTypes        (GeoDataRelation::RouteFerry),
+      m_styleBuilder                (),
+      m_layerManager                (parent),
+      m_customPaintLayer            (parent),
+      m_geometryLayer               (model->treeModel(), &m_styleBuilder),
+      m_floatItemsLayer             (parent),
+      m_textureLayer                (model->downloadManager(), model->pluginManager(), model->sunLocator(), model->groundOverlayModel()),
+      m_placemarkLayer              (model->placemarkModel(), model->placemarkSelectionModel(), model->clock(), &m_styleBuilder),
+      m_vectorTileLayer             (model->downloadManager(), model->pluginManager(), model->treeModel()),
+      m_isLockedToSubSolarPoint     (false),
+      m_isSubSolarPointIconVisible  (false)
 {
     m_layerManager.addLayer(&m_floatItemsLayer);
     m_layerManager.addLayer(&m_fogLayer);
@@ -385,7 +385,7 @@ MarbleMap::MarbleMap(MarbleModel* model)
 
 MarbleMap::~MarbleMap()
 {
-    MarbleModel* model = d->m_modelIsOwned ? d->m_model : nullptr;
+    MarbleModel* model = (d->m_modelIsOwned ? d->m_model : nullptr);
 
     d->m_layerManager.removeLayer(&d->m_customPaintLayer);
     d->m_layerManager.removeLayer(&d->m_geometryLayer);
@@ -395,8 +395,8 @@ MarbleMap::~MarbleMap()
     d->m_layerManager.removeLayer(&d->m_textureLayer);
     d->m_layerManager.removeLayer(&d->m_groundLayer);
     qDeleteAll(d->m_renderPlugins);
-    delete d;
 
+    delete d;
     delete model;  // delete the model after private data
 }
 
@@ -519,7 +519,12 @@ int MarbleMap::preferredRadiusFloor(int radius) const
 int MarbleMap::tileZoomLevel() const
 {
     auto const tileZoomLevel = qMax(d->m_textureLayer.tileZoomLevel(), d->m_vectorTileLayer.tileZoomLevel());
-    return tileZoomLevel >= 0 ? tileZoomLevel : qMin<int>(qMax<int>(qLn(d->m_viewport.radius() * 4 / 256) / qLn(2.0), 1), d->m_styleBuilder.maximumZoomLevel());
+
+    return (
+            (tileZoomLevel >= 0) ? tileZoomLevel
+                                 : qMin<int>(qMax<int>(qLn(d->m_viewport.radius() * 4 / 256) / qLn(2.0), 1),
+                                             d->m_styleBuilder.maximumZoomLevel())
+           );
 }
 
 qreal MarbleMap::centerLatitude() const
@@ -533,7 +538,7 @@ qreal MarbleMap::centerLatitude() const
 
 bool MarbleMap::hasFeatureAt(const QPoint& position) const
 {
-    return d->m_placemarkLayer.hasPlacemarkAt(position) || d->m_geometryLayer.hasFeatureAt(position, viewport());
+    return (d->m_placemarkLayer.hasPlacemarkAt(position) || d->m_geometryLayer.hasFeatureAt(position, viewport()));
 }
 
 qreal MarbleMap::centerLongitude() const
@@ -610,7 +615,9 @@ void MarbleMap::downloadRegion(QVector<TileCoordsPyramid> const& pyramid)
         for (int i = 0 ; i < pyramid.size() ; ++i)
         {
             QRect const coords = pyramid[i].coords(level);
+
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "MarbleMap::downloadRegion level:" << level << "tile coords:" << coords;
+
             int x1, y1, x2, y2;
             coords.getCoords(&x1, &y1, &x2, &y2);
 
@@ -645,6 +652,7 @@ void MarbleMap::downloadRegion(QVector<TileCoordsPyramid> const& pyramid)
     // Needed for downloading unique tiles only. Much faster than if tiles for each level is downloaded separately
 
     int const elapsedMs = t.elapsed();
+
     qCDebug(DIGIKAM_GEOENGINE_LOG) << "MarbleMap::downloadRegion:" << tilesCount << "tiles, " << elapsedMs << "ms";
 }
 
@@ -661,7 +669,6 @@ bool MarbleMap::propertyValue(const QString& name) const
     {
         d->m_model->mapTheme()->settings()->propertyValue(name, value);
     }
-
     else
     {
         value = false;
@@ -723,10 +730,9 @@ bool MarbleMap::showAtmosphere() const
 
 bool MarbleMap::showCrosshairs() const
 {
-    bool visible = false;
-
-    QList<RenderPlugin*> pluginList = renderPlugins();
-    QList<RenderPlugin*>::const_iterator i = pluginList.constBegin();
+    bool visible                                   = false;
+    QList<RenderPlugin*> pluginList                = renderPlugins();
+    QList<RenderPlugin*>::const_iterator i         = pluginList.constBegin();
     QList<RenderPlugin*>::const_iterator const end = pluginList.constEnd();
 
     for ( ; i != end ; ++i)
@@ -879,8 +885,7 @@ void MarbleMapPrivate::setDocument(const QString& key)
     }
 
     GeoDataDocument* doc = m_model->fileManager()->at(key);
-
-    const auto layers = m_model->mapTheme()->map()->layers();
+    const auto layers    = m_model->mapTheme()->map()->layers();
 
     for (const GeoSceneLayer* layer : layers)
     {
@@ -949,7 +954,6 @@ void MarbleMap::paint(GeoPainter& painter, const QRect& dirtyRect)
         {
             painter.setDebugPolygonsLevel(1);
         }
-
         else
         {
             painter.setDebugPolygonsLevel(2);
@@ -961,7 +965,9 @@ void MarbleMap::paint(GeoPainter& painter, const QRect& dirtyRect)
     if (!d->m_model->mapTheme())
     {
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "No theme yet!";
+
         d->m_marbleSplashLayer.render(&painter, &d->m_viewport);
+
         return;
     }
 
@@ -970,8 +976,8 @@ void MarbleMap::paint(GeoPainter& painter, const QRect& dirtyRect)
 
     RenderStatus const oldRenderStatus = d->m_renderState.status();
     d->m_layerManager.renderLayers(&painter, &d->m_viewport);
-    d->m_renderState = d->m_layerManager.renderState();
-    bool const parsing = d->m_model->fileManager()->pendingFiles() > 0;
+    d->m_renderState                   = d->m_layerManager.renderState();
+    bool const parsing                 = d->m_model->fileManager()->pendingFiles() > 0;
     d->m_renderState.addChild(RenderState(QStringLiteral("Files"), parsing ? WaitingForData : Complete));
     RenderStatus const newRenderStatus = d->m_renderState.status();
 
@@ -1046,7 +1052,7 @@ void MarbleMapPrivate::updateMapTheme()
         QVector<const GeoSceneVectorTileDataset*> vectorTiles;
         const auto lys = m_model->mapTheme()->map()->layers();
 
-        for (GeoSceneLayer* const layer : lys)
+        for (const GeoSceneLayer* const layer : lys)
         {
             if      (layer->backend() == QString::fromUtf8(dgml::dgmlValue_texture))
             {
@@ -1077,9 +1083,12 @@ void MarbleMapPrivate::updateMapTheme()
                                                     << "SourceDir: " << sourceDir << "InstallMap:" << installMap;
 
                         TileCreator* tileCreator = new TileCreator(
-                            sourceDir,
-                            installMap,
-                            (role == QLatin1String("dem")) ? QString::fromUtf8("true") : QString::fromUtf8("false"));
+                                                                   sourceDir,
+                                                                   installMap,
+                                                                   (role == QLatin1String("dem")) ? QString::fromUtf8("true")
+                                                                                                  : QString::fromUtf8("false")
+                                                                  );
+
                         tileCreator->setTileFormat(texture->fileFormat().toLower());
 
                         QPointer<TileCreatorDialog> tileCreatorDlg = new TileCreatorDialog(tileCreator, nullptr);
