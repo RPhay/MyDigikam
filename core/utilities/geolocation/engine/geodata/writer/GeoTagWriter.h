@@ -67,6 +67,7 @@ protected:
 private:
 
     // Only our registrar is allowed to register tag writers.
+
     friend struct GeoTagWriterRegistrar;
     static void registerWriter(const QualifiedName&, const GeoTagWriter*);
     static void unregisterWriter(const QualifiedName&);
@@ -88,12 +89,13 @@ private:
 };
 
 // Helper structure
+
 struct GeoTagWriterRegistrar
 {
 public:
 
-    GeoTagWriterRegistrar(const GeoTagWriter::QualifiedName& name, const GeoTagWriter* writer) :
-        m_name(name)
+    GeoTagWriterRegistrar(const GeoTagWriter::QualifiedName& name, const GeoTagWriter* writer)
+        : m_name(name)
     {
         GeoTagWriter::registerWriter(name, writer);
     }

@@ -79,14 +79,18 @@ bool GeoDataDocument::operator==(const GeoDataDocument& other) const
 
     const GeoDataDocumentPrivate* const other_d = other.d_func();
 
-    if (!(d->m_styleHash.size() == other_d->m_styleHash.size() &&
-          d->m_styleMapHash == other_d->m_styleMapHash &&
-          d->m_schemaHash == other_d->m_schemaHash &&
-          d->m_filename == other_d->m_filename &&
-          d->m_baseUri == other_d->m_baseUri &&
-          d->m_networkLinkControl == other_d->m_networkLinkControl &&
-          d->m_property == other_d->m_property &&
-          d->m_documentRole == other_d->m_documentRole))
+    if (
+        !(
+          (d->m_styleHash.size()   == other_d->m_styleHash.size())      &&
+          (d->m_styleMapHash       == other_d->m_styleMapHash)          &&
+          (d->m_schemaHash         == other_d->m_schemaHash)            &&
+          (d->m_filename           == other_d->m_filename)              &&
+          (d->m_baseUri            == other_d->m_baseUri)               &&
+          (d->m_networkLinkControl == other_d->m_networkLinkControl)    &&
+          (d->m_property           == other_d->m_property)              &&
+          (d->m_documentRole       == other_d->m_documentRole)
+         )
+       )
     {
         return false;
     }
@@ -94,7 +98,7 @@ bool GeoDataDocument::operator==(const GeoDataDocument& other) const
     auto iter      = d->m_styleHash.constBegin();
     auto const end = d->m_styleHash.constEnd();
 
-    for (; iter != end ; ++iter)
+    for ( ; iter != end ; ++iter)
     {
         if (!other_d->m_styleHash.contains(iter.key()))
         {
@@ -112,7 +116,7 @@ bool GeoDataDocument::operator==(const GeoDataDocument& other) const
 
 bool GeoDataDocument::operator!=(const GeoDataDocument& other) const
 {
-    return !this->operator==(other);
+    return (!this->operator==(other));
 }
 
 const char* GeoDataDocument::nodeType() const
@@ -122,7 +126,7 @@ const char* GeoDataDocument::nodeType() const
 
 GeoDataFeature* GeoDataDocument::clone() const
 {
-    return new GeoDataDocument(*this);
+    return (new GeoDataDocument(*this));
 }
 
 DocumentRole GeoDataDocument::documentRole() const
@@ -142,6 +146,7 @@ void GeoDataDocument::setDocumentRole(DocumentRole role)
 QString GeoDataDocument::property() const
 {
     Q_D(const GeoDataDocument);
+
     return d->m_property;
 }
 
@@ -215,7 +220,7 @@ GeoDataStyle::Ptr GeoDataDocument::style(const QString& styleId)
      * FIXME: m_styleHash always should contain at least default
      *        GeoDataStyle element
      */
-    Q_D(GeoDataDocument);
+    Q_D(GeoDataDocument);       // cppcheck-suppress constVariablePointer
 
     return d->m_styleHash[styleId];
 }
@@ -330,9 +335,8 @@ void GeoDataDocument::pack(QDataStream& stream) const
 
     stream << d->m_styleHash.size();
 
-    for (QMap<QString, GeoDataStyle::Ptr>::const_iterator iterator
-         = d->m_styleHash.constBegin();
-         iterator != d->m_styleHash.constEnd();
+    for (QMap<QString, GeoDataStyle::Ptr>::const_iterator iterator = d->m_styleHash.constBegin() ;
+         iterator != d->m_styleHash.constEnd() ;
          ++iterator)
     {
         iterator.value()->pack(stream);

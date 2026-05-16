@@ -82,44 +82,39 @@ GeoNode* DgmlStorageLayoutTagHandler::parse(GeoParser& parser) const
 
     if (parentItem.represents(dgmlTag_Texture) || parentItem.represents(dgmlTag_Vectortile))
     {
-        GeoSceneTileDataset* texture = parentItem.nodeAs<GeoSceneTileDataset>();
+        GeoSceneTileDataset* texture     = parentItem.nodeAs<GeoSceneTileDataset>();
 
         // Attribute mode
-        GeoSceneTileDataset::StorageLayout storageLayout = GeoSceneTileDataset::OpenStreetMap;
-        ServerLayout* serverLayout = nullptr;
-        const QString modeStr = parser.attribute(dgmlAttr_mode).trimmed();
 
-        if (modeStr == QLatin1String("OpenStreetMap"))
+        GeoSceneTileDataset::StorageLayout storageLayout = GeoSceneTileDataset::OpenStreetMap;
+        const ServerLayout* serverLayout = nullptr;
+        const QString modeStr            = parser.attribute(dgmlAttr_mode).trimmed();
+
+        if      (modeStr == QLatin1String("OpenStreetMap"))
         {
             serverLayout = new OsmServerLayout(texture);
         }
-
         else if (modeStr == QLatin1String("Custom"))
         {
             serverLayout = new CustomServerLayout(texture);
         }
-
         else if (modeStr == QLatin1String("WebMapService"))
         {
             serverLayout = new WmsServerLayout(texture);
         }
-
         else if (modeStr == QLatin1String("WebMapTileService"))
         {
             serverLayout = new WmtsServerLayout(texture);
         }
-
         else if (modeStr == QLatin1String("QuadTree"))
         {
             serverLayout = new QuadTreeServerLayout(texture);
         }
-
         else if (modeStr == QLatin1String("TileMapService"))
         {
             storageLayout = GeoSceneTileDataset::TileMapService;
             serverLayout = new TmsServerLayout(texture);
         }
-
         else
         {
             storageLayout = GeoSceneTileDataset::Marble;
