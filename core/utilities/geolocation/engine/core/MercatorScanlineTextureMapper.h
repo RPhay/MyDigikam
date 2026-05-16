@@ -51,10 +51,12 @@ private:
 
     class RenderJob;
 
-    StackedTileLoader* const    m_tileLoader = nullptr;
-    int                         m_radius;
+private:
+
+    StackedTileLoader* const    m_tileLoader        = nullptr;
+    int                         m_radius            = 0;
     QImage                      m_canvasImage;
-    int                         m_oldYPaintedTop;
+    int                         m_oldYPaintedTop    = 0;
     QThreadPool                 m_threadPool;
 };
 

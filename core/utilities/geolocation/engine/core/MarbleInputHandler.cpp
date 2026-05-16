@@ -966,7 +966,7 @@ bool MarbleDefaultInputHandler::handleMouseEvent(QMouseEvent* event)
     {
         const auto floatItems = MarbleInputHandler::d->m_marblePresenter->map()->floatItems();
 
-        for (AbstractFloatItem* const floatItem : floatItems)
+        for (const AbstractFloatItem* const floatItem : floatItems)
         {
             if (
                 floatItem->enabled() &&

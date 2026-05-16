@@ -358,11 +358,11 @@ void TextureColorizer::colorize(QImage* origimg, const ViewportParams* viewport,
                 xRight = imgrx + rx;
             }
 
-            QRgb*  writeData         = reinterpret_cast<QRgb*>(origimg->scanLine(y))     + xLeft;
-            const QRgb* coastData    = reinterpret_cast<QRgb*>(m_coastImage.scanLine(y)) + xLeft;
+            QRgb*  writeData                    = reinterpret_cast<QRgb*>(origimg->scanLine(y))     + xLeft;
+            const QRgb* coastData               = reinterpret_cast<QRgb*>(m_coastImage.scanLine(y)) + xLeft;
 
-            uchar* readDataStart     = origimg->scanLine(y) + xLeft * 4;
-            const uchar* readDataEnd = origimg->scanLine(y) + xRight * 4;
+            const uchar* const readDataStart    = origimg->scanLine(y) + xLeft * 4;
+            const uchar* readDataEnd            = origimg->scanLine(y) + xRight * 4;
 
             for (const uchar* readData = readDataStart ;
                  readData < readDataEnd ;

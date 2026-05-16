@@ -157,7 +157,7 @@ public:
 
 public:
 
-    MarbleWidget* const             m_widget        = nullptr;
+    MarbleWidget* const             m_widget                    = nullptr;
 
     MarbleModel                     m_model;
     MarbleMap                       m_map;
@@ -166,10 +166,10 @@ public:
 
     MarbleWidgetInputHandler*       m_inputhandler;
 
-    PopupLayer*                     m_mapInfoDialog = nullptr;
+    PopupLayer*                     m_mapInfoDialog             = nullptr;
     MarbleWidget::CustomPaintLayer  m_customPaintLayer;
 
-    MarbleWidgetPopupMenu*          m_popupmenu     = nullptr;
+    MarbleWidgetPopupMenu*          m_popupmenu                 = nullptr;
 
     bool                            m_showFrameRate;
 
@@ -177,8 +177,8 @@ public:
 
 private:
 
-    MarbleWidgetPrivate(const MarbleWidgetPrivate&)            = delete;
-    MarbleWidgetPrivate& operator=(const MarbleWidgetPrivate&) = delete;
+    MarbleWidgetPrivate(const MarbleWidgetPrivate&)             = delete;
+    MarbleWidgetPrivate& operator=(const MarbleWidgetPrivate&)  = delete;
 };
 
 MarbleWidget::MarbleWidget(QWidget* parent)
@@ -1219,7 +1219,7 @@ void MarbleWidget::writePluginSettings() const
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     const auto plugs          = renderPlugins();
 
-    for (RenderPlugin* const plugin : plugs)
+    for (const RenderPlugin* const plugin : plugs)
     {
         KConfigGroup group                    = config->group(d->configGroup           +
                                                               QLatin1String("plugin_") +
