@@ -80,6 +80,7 @@ void TimeAdjustTask::run()
 
     Q_EMIT signalProcessStarted(d->url);
 
+    QDateTime originalDateTime;
     int status             = TimeAdjustList::NOPROCESS_ERROR;
     QDateTime org          = d->thread->readTimestamp(d->url);
     QDateTime adj          = asDateTimeLocal(d->settings.calculateAdjustedDate(org, d->thread->indexForUrl(d->url)));
@@ -144,6 +145,8 @@ void TimeAdjustTask::run()
 
         if (meta->load(d->url.toLocalFile()))
         {
+            originalDateTime = meta->getItemDateTime();
+
             for (it = tagsMap.constBegin() ; it != tagsMap.constEnd() ; ++it)
             {
                 if (!it.value())
@@ -266,9 +269,24 @@ void TimeAdjustTask::run()
         }
     }
 
+    QDateTime timeForUrl = adj;
+
+    if (originalDateTime.isValid())
+    {
+        if (
+            !d->settings.updXMPDate  &&
+            !d->settings.updXMPVideo &&
+            !d->settings.updIPTCDate &&
+            !d->settings.updEXIFOriDate
+           )
+        {
+            timeForUrl = originalDateTime;
+        }
+    }
+
     if ((status & TimeAdjustList::META_TIME_ERROR) != TimeAdjustList::META_TIME_ERROR)
     {
-        Q_EMIT signalDateTimeForUrl(d->url, adj, d->settings.updFileModDate);
+        Q_EMIT signalDateTimeForUrl(d->url, timeForUrl, d->settings.updFileModDate);
     }
 
     Q_EMIT signalProcessEnded(d->url, org, adj, status);
