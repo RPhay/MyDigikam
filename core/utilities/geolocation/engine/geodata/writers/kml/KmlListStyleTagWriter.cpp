@@ -30,13 +30,15 @@ static GeoTagWriterRegistrar s_writerListStyle(GeoTagWriter::QualifiedName(QStri
                                                                            QString::fromUtf8(kml::kmlTag_nameSpaceOgc22)),
                                                new KmlListStyleTagWriter());
 
-bool KmlListStyleTagWriter::write(const GeoNode* node,
-                                  GeoWriter& writer) const
+bool KmlListStyleTagWriter::write(const GeoNode* node, GeoWriter& writer) const
 {
     const GeoDataListStyle* listStyle = static_cast<const GeoDataListStyle*>(node);
-    bool const isEmpty = listStyle->listItemType() == GeoDataListStyle::Check &&
-                         listStyle->backgroundColor() == QColor(Qt::white) &&
-                         listStyle->itemIconList().isEmpty();
+
+    bool const isEmpty = (
+                          (listStyle->listItemType()    == GeoDataListStyle::Check) &&
+                          (listStyle->backgroundColor() == QColor(Qt::white))       &&
+                          listStyle->itemIconList().isEmpty()
+                         );
 
     if (isEmpty)
     {
@@ -45,12 +47,12 @@ bool KmlListStyleTagWriter::write(const GeoNode* node,
 
     writer.writeStartElement(QString::fromUtf8(kml::kmlTag_ListStyle));
 
-    QString const itemType = itemTypeToString(listStyle->listItemType());
+    QString const itemType  = itemTypeToString(listStyle->listItemType());
     writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_listItemType), itemType, QString::fromUtf8("check"));
-    QString const color = KmlColorStyleTagWriter::formatColor(listStyle->backgroundColor());
+    QString const color     = KmlColorStyleTagWriter::formatColor(listStyle->backgroundColor());
     writer.writeOptionalElement(QString::fromUtf8(kml::kmlTag_bgColor), color, QString::fromUtf8("ffffffff"));
 
-    for (GeoDataItemIcon* icon : listStyle->itemIconList())
+    for (const GeoDataItemIcon* icon : listStyle->itemIconList())
     {
         writer.writeStartElement(QString::fromUtf8(kml::kmlTag_ItemIcon));
         QString const state = iconStateToString(icon->state());
@@ -60,6 +62,7 @@ bool KmlListStyleTagWriter::write(const GeoNode* node,
     }
 
     writer.writeEndElement();
+
     return true;
 }
 
@@ -68,16 +71,24 @@ QString KmlListStyleTagWriter::itemTypeToString(GeoDataListStyle::ListItemType i
     switch (itemType)
     {
         case GeoDataListStyle::CheckOffOnly:
+        {
             return QString::fromUtf8("checkOffOnly");
+        }
 
         case GeoDataListStyle::CheckHideChildren:
+        {
             return QString::fromUtf8("checkHideChildren");
+        }
 
         case GeoDataListStyle::RadioFolder:
+        {
             return QString::fromUtf8("radioFolder");
+        }
 
         default:
+        {
             return QString::fromUtf8("check");
+        }
     }
 }
 

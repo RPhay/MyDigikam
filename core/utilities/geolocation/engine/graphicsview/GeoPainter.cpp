@@ -986,12 +986,17 @@ void GeoPainter::drawPolygon(const GeoDataPolygon& polygon,
                              Qt::FillRule fillRule)
 {
     // If the object is not visible in the viewport return
-    if (! d->m_viewport->viewLatLonAltBox().intersects(polygon.outerBoundary().latLonAltBox()) ||
+
+    if (
+        ! d->m_viewport->viewLatLonAltBox().intersects(polygon.outerBoundary().latLonAltBox()) ||
+
         // If the size of the object is below the resolution of the viewport then return
+
         ! d->m_viewport->resolves(polygon.outerBoundary().latLonAltBox())
        )
     {
         // qCDebug(DIGIKAM_GEOENGINE_LOG) << "Polygon doesn't get displayed on the viewport";
+
         return;
     }
 
@@ -1025,13 +1030,15 @@ void GeoPainter::drawPolygon(const GeoDataPolygon& polygon,
         if (innerBoundariesOnScreen)
         {
             // Create the inner screen polygons
+
             for (const GeoDataLinearRing& itInnerBoundary : innerBoundaries)
             {
                 QVector<QPolygonF*> innerPolygonsPerBoundary;
 
                 d->m_viewport->screenCoordinates(itInnerBoundary, innerPolygonsPerBoundary);
 
-                for (QPolygonF* innerPolygonPerBoundary : innerPolygonsPerBoundary)
+                // cppcheck-suppress constVariablePointer
+                for (QPolygonF* const innerPolygonPerBoundary : innerPolygonsPerBoundary)
                 {
                     innerPolygons << innerPolygonPerBoundary;
                 }

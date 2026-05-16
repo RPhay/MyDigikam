@@ -45,14 +45,16 @@ public:
         ShadowFrame
     };
 
+public:
+
     explicit FrameGraphicsItem(MarbleGraphicsItem* parent = nullptr);
 
-    ~FrameGraphicsItem() override;
+    ~FrameGraphicsItem()                                      override;
 
     /**
      * Returns the type of the frame.
      */
-    FrameType frame() const;
+    FrameType frame()                                   const;
 
     /**
      * Sets the type of the Frame. Standard is NoFrame.
@@ -63,7 +65,7 @@ public:
      * Returns the margin of the item. This is used for all margins with the value 0.0.
      * The padding is the space outside the painted space.
      */
-    qreal margin() const;
+    qreal margin()                                      const;
 
     /**
      * Sets the margin of the item. This is used for all margins with the value 0.0.
@@ -73,7 +75,7 @@ public:
     /**
      * Returns the top margin of the item.
      */
-    qreal marginTop() const;
+    qreal marginTop()                                   const;
 
     /**
      * Set the top margin of the item.
@@ -83,7 +85,7 @@ public:
     /**
      * Returns the bottom margin of the item.
      */
-    qreal marginBottom() const;
+    qreal marginBottom()                                const;
 
     /**
      * Set the bottom margin of the item.
@@ -93,7 +95,7 @@ public:
     /**
      * Returns the left margin of the item.
      */
-    qreal marginLeft() const;
+    qreal marginLeft()                                  const;
 
     /**
      * Set the left margin of the item.
@@ -103,7 +105,7 @@ public:
     /**
      * Returns the right margin of the item.
      */
-    qreal marginRight() const;
+    qreal marginRight()                                 const;
 
     /**
      * Set the right margin of the item.
@@ -113,7 +115,7 @@ public:
     /**
      * Returns the border width of the item.
      */
-    qreal borderWidth() const;
+    qreal borderWidth()                                 const;
 
     /**
      * Set the border width of the item.
@@ -124,7 +126,7 @@ public:
      * Returns the padding of the item.
      * The padding is the empty space inside the border.
      */
-    qreal padding() const;
+    qreal padding()                                     const;
 
     /**
      * Set the padding of the item.
@@ -134,7 +136,7 @@ public:
     /**
      * Returns the brush of the border.
      */
-    QBrush borderBrush() const;
+    QBrush borderBrush()                                const;
 
     /**
      * Change the brush of the border.
@@ -144,7 +146,7 @@ public:
     /**
      * Returns the style of the border.
      */
-    Qt::PenStyle borderStyle() const;
+    Qt::PenStyle borderStyle()                          const;
 
     /**
      * Change the style of the border.
@@ -154,35 +156,35 @@ public:
     /**
      * Returns the background brush of the item.
      */
-    QBrush background() const;
+    QBrush background()                                 const;
 
     /**
      * Changes the background brush of the item.
      */
     void setBackground(const QBrush& background);
 
-    QRectF paintedRect() const;
+    QRectF paintedRect()                                const;
 
-    QRectF contentRect() const override;
-    QSizeF contentSize() const override;
+    QRectF contentRect()                                const override;
+    QSizeF contentSize()                                const override;
 
     /**
      * Sets the size of the content of the item.
      * @p size is the size required for contents.
      */
-    void setContentSize(const QSizeF& size) override;
+    void setContentSize(const QSizeF& size)                   override;
 
 protected:
 
     /**
      * Returns the shape of the background.
      */
-    virtual QPainterPath backgroundShape() const;
+    virtual QPainterPath backgroundShape()              const;
 
     /**
      * This function won't be reimplemented in most cases.
      */
-    void paint(QPainter* painter) override;
+    void paint(QPainter* painter)                             override;
 
     /**
      * Here the items paint their content.
