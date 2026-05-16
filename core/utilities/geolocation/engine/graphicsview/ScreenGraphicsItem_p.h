@@ -34,32 +34,31 @@ public:
     ScreenGraphicsItemPrivate(ScreenGraphicsItem* screenGraphicsItem,
                               MarbleGraphicsItem* parent)
         : MarbleGraphicsItemPrivate(screenGraphicsItem, parent),
-          m_position(),
-          m_viewportSize(),
-          m_floatItemMoving(false),
-          m_flags(ScreenGraphicsItem::GraphicsItemFlags())
+          m_position        (),
+          m_viewportSize    (),
+          m_floatItemMoving (false),
+          m_flags           (ScreenGraphicsItem::GraphicsItemFlags())
     {
     }
 
-    ~ScreenGraphicsItemPrivate() override
-    {
-    }
+    ~ScreenGraphicsItemPrivate() override = default;
 
     QVector<QPointF> positions() const override
     {
         QVector<QPointF> list;
-
         list.append(positivePosition());
+
         return list;
     }
 
     QPointF positivePosition() const
     {
-        const QSizeF parentSize = m_parent ? m_parent->size() : m_viewportSize;
+        const QSizeF parentSize = (m_parent ? m_parent->size() : m_viewportSize);
 
         if (!parentSize.isValid())
         {
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "Invalid parent size";
+
             return m_position;
         }
 
@@ -82,12 +81,12 @@ public:
 
         QVector<QPointF> parentPositions;
 
-        if (ScreenGraphicsItem* screenItem = dynamic_cast<ScreenGraphicsItem*>(m_parent))
+        if      (const ScreenGraphicsItem* screenItem = dynamic_cast<ScreenGraphicsItem*>(m_parent))
         {
             parentPositions = screenItem->absolutePositions();
         }
 
-        else if (BillboardGraphicsItem* geoLabelItem = dynamic_cast<BillboardGraphicsItem*>(m_parent))
+        else if (const BillboardGraphicsItem* geoLabelItem = dynamic_cast<BillboardGraphicsItem*>(m_parent))
         {
             parentPositions = geoLabelItem->positions();
         }
@@ -108,9 +107,11 @@ public:
     void setProjection(const ViewportParams* viewport) override
     {
         // If we have no parent
+
         if (m_parent == nullptr)
         {
             // Saving the screen size needed for positions()
+
             m_viewportSize = viewport->size();
         }
     }
@@ -123,11 +124,14 @@ public:
 public:
 
     QPointF                                 m_position;
-    // The size of the parent, or if no parent exists the size of the viewport.
+
+    /**
+     * The size of the parent, or if no parent exists the size of the viewport.
+     */
     QSizeF                                  m_viewportSize;
 
     QPoint                                  m_floatItemMoveStartPos;
-    bool                                    m_floatItemMoving;
+    bool                                    m_floatItemMoving           = false;
 
     ScreenGraphicsItem::GraphicsItemFlags   m_flags;
 };

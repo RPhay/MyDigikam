@@ -396,7 +396,7 @@ void GeometryLayerPrivate::createGraphicsItems(const GeoDataObject* object, Feat
 {
     clearCache();
 
-    if (auto document = geodata_cast<GeoDataDocument>(object))
+    if (const auto document = geodata_cast<GeoDataDocument>(object))
     {
         for (auto feature : document->featureList())
         {
@@ -462,7 +462,7 @@ void GeometryLayerPrivate::updateTiledLineStrings(const OsmLineStringItems& line
     {
         QVector<const GeoDataLineString*> lineStrings;
 
-        for (auto item : lineStringItems)
+        for (const auto item : lineStringItems)
         {
             lineStrings << item->lineString();
         }
@@ -513,7 +513,7 @@ void GeometryLayerPrivate::updateRelationVisibility()
         QVariant const data   = m_model->data(m_model->index(i, 0), MarblePlacemarkModel::ObjectPointerRole);
         GeoDataObject* object = qvariant_cast<GeoDataObject*> (data);
 
-        if (auto doc = geodata_cast<GeoDataDocument>(object))
+        if (const auto doc = geodata_cast<GeoDataDocument>(object))
         {
             for (auto feature : doc->featureList())
             {
@@ -537,16 +537,19 @@ void GeometryLayerPrivate::createGraphicsItemFromGeometry(const GeoDataGeometry*
 
     GeoGraphicsItem* item = nullptr;
 
+    // cppcheck-suppress constVariablePointer
     if      (const auto line = geodata_cast<GeoDataLineString>(object))
     {
         auto lineStringItem = new GeoLineStringGraphicsItem(placemark, line);
         item                = lineStringItem;
         updateTiledLineStrings(placemark, lineStringItem);
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto ring = geodata_cast<GeoDataLinearRing>(object))
     {
         item = GeoPolygonGraphicsItem::createGraphicsItem(placemark, ring);
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto poly = geodata_cast<GeoDataPolygon>(object))
     {
         item = GeoPolygonGraphicsItem::createGraphicsItem(placemark, poly);
@@ -556,10 +559,12 @@ void GeometryLayerPrivate::createGraphicsItemFromGeometry(const GeoDataGeometry*
             item->setZValue(poly->renderOrder());
         }
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto building = geodata_cast<GeoDataBuilding>(object))
     {
         item = GeoPolygonGraphicsItem::createGraphicsItem(placemark, building);
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto multigeo = geodata_cast<GeoDataMultiGeometry>(object))
     {
         int rowCount = multigeo->size();
@@ -569,6 +574,7 @@ void GeometryLayerPrivate::createGraphicsItemFromGeometry(const GeoDataGeometry*
             createGraphicsItemFromGeometry(multigeo->child(row), placemark, relations);
         }
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto multitrack = geodata_cast<GeoDataMultiTrack>(object))
     {
         int rowCount = multitrack->size();
@@ -578,6 +584,7 @@ void GeometryLayerPrivate::createGraphicsItemFromGeometry(const GeoDataGeometry*
             createGraphicsItemFromGeometry(multitrack->child(row), placemark, relations);
         }
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto track = geodata_cast<GeoDataTrack>(object))
     {
         item = new GeoTrackGraphicsItem(placemark, track);
@@ -604,12 +611,14 @@ void GeometryLayerPrivate::createGraphicsItemFromOverlay(const GeoDataOverlay* o
 
     GeoGraphicsItem* item = nullptr;
 
+    // cppcheck-suppress constVariablePointer
     if      (const auto photoOverlay = geodata_cast<GeoDataPhotoOverlay>(overlay))
     {
         GeoPhotoGraphicsItem* photoItem = new GeoPhotoGraphicsItem(overlay);
         photoItem->setPoint(photoOverlay->point());
         item                            = photoItem;
     }
+    // cppcheck-suppress constVariablePointer
     else if (const auto screenOverlay = geodata_cast<GeoDataScreenOverlay>(overlay))
     {
         ScreenOverlayGraphicsItem* screenItem = new ScreenOverlayGraphicsItem(screenOverlay);
@@ -848,14 +857,14 @@ void GeometryLayer::handleHighlight(qreal lon, qreal lat, GeoDataCoordinates::Un
                 {
                     if (auto placemark = geodata_cast<GeoDataPlacemark>(*iter))
                     {
-                        GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon*>(placemark->geometry());
+                        const GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon*>(placemark->geometry());
 
                         if (polygon && polygon->contains(clickedPoint))
                         {
                             selectedPlacemarks.push_back(placemark);
                         }
 
-                        if (auto linearRing = geodata_cast<GeoDataLinearRing>(placemark->geometry()))
+                        if (const auto linearRing = geodata_cast<GeoDataLinearRing>(placemark->geometry()))
                         {
                             if (linearRing->contains(clickedPoint))
                             {
@@ -870,7 +879,7 @@ void GeometryLayer::handleHighlight(qreal lon, qreal lat, GeoDataCoordinates::Un
 
                             for ( ; multiIter != multiEnd ; ++multiIter)
                             {
-                                GeoDataPolygon* const poly = dynamic_cast<GeoDataPolygon*>(*multiIter);
+                                const GeoDataPolygon* const poly = dynamic_cast<GeoDataPolygon*>(*multiIter);
 
                                 if (poly && poly->contains(clickedPoint))
                                 {
@@ -878,7 +887,7 @@ void GeometryLayer::handleHighlight(qreal lon, qreal lat, GeoDataCoordinates::Un
                                     break;
                                 }
 
-                                if (auto linearRing = geodata_cast<GeoDataLinearRing>(*multiIter))
+                                if (const auto linearRing = geodata_cast<GeoDataLinearRing>(*multiIter))
                                 {
                                     if (linearRing->contains(clickedPoint))
                                     {

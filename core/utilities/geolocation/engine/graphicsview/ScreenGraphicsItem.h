@@ -36,10 +36,12 @@ public:
 
     enum GraphicsItemFlag
     {
-        ItemIsMovable = 0x1,
+        ItemIsMovable  = 0x1,
         ItemIsHideable = 0x2
     };
     Q_DECLARE_FLAGS(GraphicsItemFlags, GraphicsItemFlag)
+
+public:
 
     explicit ScreenGraphicsItem(MarbleGraphicsItem* parent = nullptr);
 
@@ -66,7 +68,7 @@ public:
      * Positive y-coordinates are counted top-aligned from the top border of the parent item.
      * Negative y-coordinates are counted right-aligned from the bottom border of the parent item.
      */
-    QPointF position() const;
+    QPointF position()                          const;
 
     /**
      * @brief Return the positive position of the ScreenGraphicsItem
@@ -76,7 +78,7 @@ public:
      * Positive x-coordinates are counted left-aligned from the left border of the parent item.
      * Positive y-coordinates are counted top-aligned from the top border of the parent item.
      */
-    QPointF positivePosition() const;
+    QPointF positivePosition()                  const;
 
     /**
      * @brief Return the absolute position of the ScreenGraphicsItem
@@ -87,12 +89,12 @@ public:
      * Positive y-coordinates are counted top-aligned from the top border of the map.
      * @since 0.26.0
      */
-    QVector<QPointF> absolutePositions() const;
+    QVector<QPointF> absolutePositions()        const;
 
     /**
      * Returns the flags of the item.
      */
-    GraphicsItemFlags flags() const;
+    GraphicsItemFlags flags()                   const;
 
     /**
      * Sets the flags to flags. All flags in flags will be enabled and all other flags will

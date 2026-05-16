@@ -50,7 +50,8 @@ struct Fragment
     QPixmap pixmap;
 };
 
-class PlacemarkLayer : public QObject, public LayerInterface
+class PlacemarkLayer : public QObject,
+                       public LayerInterface
 {
     Q_OBJECT
 
@@ -61,28 +62,28 @@ public:
                    MarbleClock* clock,
                    const StyleBuilder* styleBuilder,
                    QObject* parent = nullptr);
-    ~PlacemarkLayer() override;
+    ~PlacemarkLayer()                                                             override;
 
     /**
      * @reimp
      */
-    QStringList renderPosition() const override;
+    QStringList renderPosition()                                            const override;
 
     /**
      * @reimp
      */
-    qreal zValue() const override;
+    qreal zValue()                                                          const override;
 
     /**
      * @reimp
      */
     bool render(GeoPainter* painter, ViewportParams* viewport,
                 const QString& renderPos = QLatin1String("NONE"),
-                GeoSceneLayer* layer = nullptr) override;
+                GeoSceneLayer* layer = nullptr)                                   override;
 
-    RenderState renderState() const override;
+    RenderState renderState()                                               const override;
 
-    QString runtimeTrace() const override;
+    QString runtimeTrace()                                                  const override;
 
     /**
      * Returns a list of model indexes that are at position @p pos.
@@ -91,11 +92,11 @@ public:
 
     bool hasPlacemarkAt(const QPoint& pos);
 
-    bool isDebugModeEnabled() const;
+    bool isDebugModeEnabled()                                               const;
     void setDebugModeEnabled(bool enabled);
 
     void setLevelTagDebugModeEnabled(bool enabled);
-    bool levelTagDebugModeEnabled() const;
+    bool levelTagDebugModeEnabled()                                         const;
     void setDebugLevelTag(int level);
 
 public Q_SLOTS:
@@ -121,15 +122,15 @@ Q_SIGNALS:
 private:
 
     void renderDebug(GeoPainter* painter, ViewportParams* viewport,
-                     const QVector<VisiblePlacemark*>& placemarks) const;
+                     const QVector<VisiblePlacemark*>& placemarks)          const;
 
 private:
 
     PlacemarkLayout m_layout;
-    bool            m_debugModeEnabled;
-    bool            m_levelTagDebugModeEnabled;
-    int             m_tileLevel;
-    int             m_debugLevelTag;
+    bool            m_debugModeEnabled          = false;
+    bool            m_levelTagDebugModeEnabled  = false;
+    int             m_tileLevel                 = 0;
+    int             m_debugLevelTag             = 0;
 };
 
 } // namespace Marble
