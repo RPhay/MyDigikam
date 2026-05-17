@@ -57,19 +57,19 @@ private:
     struct Changing
     {
         QModelIndex parent;
-        int         oldSize;
+        int         oldSize = 0;
         QVariant    last;
         QVariant    next;
     };
 
 private:
 
-    QAbstractItemModel*          model;
+    QAbstractItemModel*          model          = nullptr;
 
     QStack<Changing>             insert;
     QStack<Changing>             remove;
 
-    bool                         fetchingMore;
+    bool                         fetchingMore   = false;
 
     QList<QPersistentModelIndex> changing;
 };

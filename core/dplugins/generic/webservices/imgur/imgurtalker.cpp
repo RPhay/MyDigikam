@@ -278,6 +278,7 @@ void ImgurTalker::slotReplyFinished()
              * and keep the action in the queue for later retries.
              */
             d->auth.refresh();
+
             return;
         }
         else
@@ -303,6 +304,7 @@ void ImgurTalker::timerEvent(QTimerEvent* event)
     if (event->timerId() != d->workTimer)
     {
         QObject::timerEvent(event);
+
         return;
     }
 
@@ -318,7 +320,7 @@ void ImgurTalker::timerEvent(QTimerEvent* event)
 
 void ImgurTalker::startWorkTimer()
 {
-    if (!d->workQueue.isEmpty() && d->workTimer == 0)
+    if (!d->workQueue.isEmpty() && (d->workTimer == 0))
     {
         d->workTimer = QObject::startTimer(0);
 
@@ -363,6 +365,7 @@ void ImgurTalker::doWork()
     if ((work.type != ImgurTalkerActionType::ANON_IMG_UPLOAD) && !d->auth.linked())
     {
         d->auth.link();
+
         return; // Wait for the signalAuthorized() signal.
     }
 

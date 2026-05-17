@@ -33,7 +33,7 @@ class DIGIKAM_EXPORT HotPixelProps
 public:
 
     QRect rect;
-    int   luminosity;
+    int   luminosity = 0;
 
 public:
 

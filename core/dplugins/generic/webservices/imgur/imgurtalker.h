@@ -42,7 +42,7 @@ enum class ImgurTalkerActionType
 
 struct ImgurTalkerAction
 {
-    ImgurTalkerActionType type;
+    ImgurTalkerActionType type  = ImgurTalkerActionType::ACCT_INFO;
 
     struct
     {
@@ -61,7 +61,7 @@ struct ImgurTalkerAction
 
 struct ImgurTalkerResult
 {
-    const ImgurTalkerAction* action;
+    const ImgurTalkerAction* action = nullptr;
 
     struct ImgurImage
     {
@@ -71,14 +71,14 @@ struct ImgurTalkerResult
         QString    deletehash;
         QString    url;
         QString    description;
-        qulonglong datetime;
+        qulonglong datetime     = 0;
         QString    type;
-        bool       animated;
-        uint       width;
-        uint       height;
-        uint       size;
-        uint       views;
-        qulonglong bandwidth;
+        bool       animated     = false;
+        uint       width        = 0;
+        uint       height       = 0;
+        uint       size         = 0;
+        uint       views        = 0;
+        qulonglong bandwidth    = 0;
     }
     image;
 
