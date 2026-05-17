@@ -1319,14 +1319,14 @@ protected:
     public:
 
         template <class GraphType>
-        void shortestPath(const GraphType& graph, const Vertex& v)
+        void shortestPath(const GraphType& _graph, const Vertex& v)
         {
             int weight = 1;
 
             try
             {
                 boost::dag_shortest_paths(
-                                          graph, v,
+                                          _graph, v,
 
                                           /// we provide a constant weight of 1.
 
@@ -1345,14 +1345,14 @@ protected:
         }
 
         template <class GraphType>
-        void longestPath(const GraphType& graph, const Vertex& v)
+        void longestPath(const GraphType& _graph, const Vertex& v)
         {
             int weight = 1;
 
             try
             {
                 boost::dag_shortest_paths(
-                                          graph, v,
+                                          _graph, v,
 
                                           /// We provide a constant weight of 1.
 
@@ -1383,6 +1383,8 @@ protected:
             return (predecessors.value(v, v) != v);
         }
 
+    public:
+
         VertexVertexMap predecessors;
         VertexIntMap    distances;
     };
@@ -1392,17 +1394,17 @@ protected:
     public:
 
         template <class GraphType>
-        void enter(const GraphType& graph, const Vertex& v, MeaningOfDirection direction = ParentToChild)
+        void enter(const GraphType& _graph, const Vertex& v, MeaningOfDirection _direction = ParentToChild)
         {
             try
             {
-                if (direction == ParentToChild)
+                if (_direction == ParentToChild)
                 {
-                    boost::lengauer_tarjan_dominator_tree(graph, v, VertexVertexMapAdaptor(predecessors));
+                    boost::lengauer_tarjan_dominator_tree(_graph, v, VertexVertexMapAdaptor(predecessors));
                 }
                 else
                 {
-                    boost::lengauer_tarjan_dominator_tree(boost::make_reverse_graph(graph), v,
+                    boost::lengauer_tarjan_dominator_tree(boost::make_reverse_graph(_graph), v,
                                                           VertexVertexMapAdaptor(predecessors));
                 }
             }
@@ -1412,6 +1414,8 @@ protected:
             }
         }
 
+    public:
+
         VertexVertexMap predecessors;
     };
 
@@ -1420,7 +1424,7 @@ protected:
     public:
 
         template <class GraphType>
-        void depthFirstSearch(const GraphType& graph, const Vertex& v, bool invertGraph)
+        void depthFirstSearch(const GraphType& _graph, const Vertex& v, bool invertGraph)
         {
             // Remember that the visitor is passed by value.
 
@@ -1430,11 +1434,11 @@ protected:
             {
                 if (invertGraph)
                 {
-                    boost::depth_first_search(boost::make_reverse_graph(graph), visitor(vis).root_vertex(v));
+                    boost::depth_first_search(boost::make_reverse_graph(_graph), visitor(vis).root_vertex(v));
                 }
                 else
                 {
-                    boost::depth_first_search(graph, visitor(vis).root_vertex(v));
+                    boost::depth_first_search(_graph, visitor(vis).root_vertex(v));
                 }
             }
             catch (boost::bad_graph& e)
@@ -1444,24 +1448,26 @@ protected:
         }
 
         template <class GraphType, typename LessThan>
-        void depthFirstSearchSorted(const GraphType& graph, const Vertex& v, bool invertGraph, LessThan lessThan)
+        void depthFirstSearchSorted(const GraphType& _graph, const Vertex& v, bool invertGraph, LessThan lessThan)
         {
             // Remember that the visitor is passed by value.
 
             DepthFirstSearchVisitor vis(this);
-            std::vector<boost::default_color_type> color_vec(boost::num_vertices(graph), boost::white_color);
+            std::vector<boost::default_color_type> color_vec(boost::num_vertices(_graph), boost::white_color);
 
             try
             {
                 if (invertGraph)
                 {
-                    depth_first_search_sorted(boost::make_reverse_graph(graph), v, vis,
-                                make_iterator_property_map(color_vec.begin(), get(boost::vertex_index, graph)), lessThan);
+                    depth_first_search_sorted(boost::make_reverse_graph(_graph), v, vis,
+                                make_iterator_property_map(color_vec.begin(),
+                                get(boost::vertex_index, _graph)), lessThan);
                 }
                 else
                 {
-                    depth_first_search_sorted(graph, v, vis,
-                                make_iterator_property_map(color_vec.begin(), get(boost::vertex_index, graph)), lessThan);
+                    depth_first_search_sorted(_graph, v, vis,
+                                make_iterator_property_map(color_vec.begin(),
+                                get(boost::vertex_index, _graph)), lessThan);
                 }
             }
             catch (boost::bad_graph& e)
@@ -1471,7 +1477,7 @@ protected:
         }
 
         template <class GraphType>
-        void breadthFirstSearch(const GraphType& graph, const Vertex& v, bool invertGraph)
+        void breadthFirstSearch(const GraphType& _graph, const Vertex& v, bool invertGraph)
         {
             BreadthFirstSearchVisitor vis(this);
 
@@ -1479,11 +1485,11 @@ protected:
             {
                 if (invertGraph)
                 {
-                    boost::breadth_first_search(boost::make_reverse_graph(graph), v, visitor(vis));
+                    boost::breadth_first_search(boost::make_reverse_graph(_graph), v, visitor(vis));
                 }
                 else
                 {
-                    boost::breadth_first_search(graph, v, visitor(vis));
+                    boost::breadth_first_search(_graph, v, visitor(vis));
                 }
             }
             catch (boost::bad_graph& e)
@@ -1505,6 +1511,8 @@ protected:
             {
                 q->vertices << v;
             }
+
+        protected:
 
             GraphSearch* const q = nullptr;
         };
@@ -1542,6 +1550,8 @@ protected:
                 this->record(u);
             }
         };
+
+    public:
 
         QList<Vertex> vertices;
 

@@ -377,11 +377,11 @@ void MLPipelineFoundation::slotFinished()
     }
 }
 
-bool MLPipelineFoundation::checkMoreWorkers(int totalItemCount, int currentItemCount, bool useFullCpu)
+bool MLPipelineFoundation::checkMoreWorkers(int _totalItemCount, int currentItemCount, bool useFullCpu)
 {
     if (
         useFullCpu                                 &&
-        ((totalItemCount + currentItemCount) > 25) &&
+        ((_totalItemCount + currentItemCount) > 25) &&
         (QThread::idealThreadCount() > 4)
        )
     {
@@ -675,9 +675,9 @@ void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, 
     performanceProfileList[stage].maxElapsedTime = qMax((qint64)performanceProfileList[stage].maxElapsedTime, elapsedTime);
 }
 
-void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, int totalItemCount, QElapsedTimer& timer)
+void MLPipelineFoundation::pipelinePerformanceEnd(const MLPipelineStage& stage, int _totalItemCount, QElapsedTimer& timer)
 {
-    performanceProfileList[stage].itemCount      = totalItemCount;
+    performanceProfileList[stage].itemCount      = _totalItemCount;
     performanceProfileList[stage].elapsedTime    = timer.elapsed();
     performanceProfileList[stage].maxElapsedTime = performanceProfileList[stage].elapsedTime;
 }
