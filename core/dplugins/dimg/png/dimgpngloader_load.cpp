@@ -78,12 +78,16 @@ typedef png_charp iCCP_data;
 
 bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    png_uint_32  w32, h32;
-    int          width, height;
-    int          bit_depth, color_type, interlace_type;
-    FILE*        f          = nullptr;
-    png_structp  png_ptr    = nullptr;
-    png_infop    info_ptr   = nullptr;
+    png_uint_32  w32            = 0;
+    png_uint_32  h32            = 0;
+    int          width          = 0;
+    int          height         = 0;
+    int          bit_depth      = 0;
+    int          color_type     = 0;
+    int          interlace_type = 0;
+    FILE*        f              = nullptr;
+    png_structp  png_ptr        = nullptr;
+    png_infop    info_ptr       = nullptr;
 
     // To prevent cppcheck warnings.
     (void)f;
@@ -199,9 +203,9 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             lines = l;
         }
 
-        void setFile(FILE* const f)
+        void setFile(FILE* const _f)
         {
-            file = f;
+            file = _f;
         }
 
         void setSize(const QSize& s)
@@ -235,8 +239,8 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         uchar** lines   = { nullptr };
         FILE*   file    = nullptr;
 
-        QSize  size;
-        int    cmod     = 0;
+        QSize   size;
+        int     cmod    = 0;
 
 
     private:
@@ -667,9 +671,9 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     if (m_loadFlags & LoadICCData)
     {
         png_charp   profile_name;
-        iCCP_data   profile_data = nullptr;
-        png_uint_32 profile_size;
-        int         compression_type;
+        iCCP_data   profile_data     = nullptr;
+        png_uint_32 profile_size     = 0;
+        int         compression_type = 0;
 
         png_get_iCCP(png_ptr, info_ptr, &profile_name, &compression_type, &profile_data, &profile_size);
 
@@ -718,9 +722,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         {
             // Check if we have a Raw profile embedded using ImageMagick technique.
 
-            if ((memcmp(text_ptr[i].key, "Raw profile type exif", 21) != 0) ||
+            if (
+                (memcmp(text_ptr[i].key, "Raw profile type exif", 21) != 0) ||
                 (memcmp(text_ptr[i].key, "Raw profile type APP1", 21) != 0) ||
-                (memcmp(text_ptr[i].key, "Raw profile type iptc", 21) != 0))
+                (memcmp(text_ptr[i].key, "Raw profile type iptc", 21) != 0)
+               )
             {
                 imageSetEmbbededText(QLatin1String(text_ptr[i].key), QLatin1String(text_ptr[i].text));
 

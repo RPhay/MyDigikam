@@ -93,9 +93,9 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             line = l;
         }
 
-        void setFile(FILE* const file)
+        void setFile(FILE* const _file)
         {
-            f = file;
+            f = _file;
         }
 
         void deleteLine()
