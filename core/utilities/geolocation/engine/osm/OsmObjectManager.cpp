@@ -40,16 +40,19 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
     {
         // The "--m_minId" assignments mean: assigning an id lower( by 1 ) than the current lowest,
         // and updating the current lowest id.
+
         osmData.setId(--m_minId);
     }
 
     // Assigning osmData to each of the line's nodes ( if they don't already have data )
+
+    // cppcheck-suppress constVariablePointer
     if (const auto lineString = geodata_cast<GeoDataLineString>(placemark->geometry()))
     {
-        QVector<GeoDataCoordinates>::const_iterator it =  lineString->constBegin();
+        QVector<GeoDataCoordinates>::const_iterator it       = lineString->constBegin();
         QVector<GeoDataCoordinates>::ConstIterator const end = lineString->constEnd();
 
-        for (; it != end; ++it)
+        for ( ; it != end ; ++it)
         {
             if (osmData.nodeReference(*it).isNull())
             {
@@ -58,6 +61,7 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
         }
     }
 
+    // cppcheck-suppress constVariablePointer
     const auto building = geodata_cast<GeoDataBuilding>(placemark->geometry());
 
     const GeoDataLinearRing* lineString;
@@ -66,16 +70,16 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
     {
         lineString = geodata_cast<GeoDataLinearRing>(&static_cast<const GeoDataMultiGeometry*>(building->multiGeometry())->at(0));
     }
-
     else
     {
         lineString = geodata_cast<GeoDataLinearRing>(placemark->geometry());
     }
 
     // Assigning osmData to each of the line's nodes ( if they don't already have data )
+
     if (lineString)
     {
-        for (auto it = lineString->constBegin(), end = lineString->constEnd(); it != end; ++it)
+        for (auto it = lineString->constBegin(), end = lineString->constEnd() ; it != end ; ++it)
         {
             if (osmData.nodeReference(*it).isNull())
             {
@@ -90,7 +94,6 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
     {
         polygon = geodata_cast<GeoDataPolygon>(&static_cast<const GeoDataMultiGeometry*>(building->multiGeometry())->at(0));
     }
-
     else
     {
         polygon = geodata_cast<GeoDataPolygon>(placemark->geometry());
@@ -98,10 +101,11 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
 
     // Assigning osmData to each of the polygons boundaries, and to each of the
     // nodes that are part of those boundaries ( if they don't already have data )
+
     if (polygon)
     {
         const GeoDataLinearRing& outerBoundary = polygon->outerBoundary();
-        int index = -1;
+        int index                              = -1;
 
         if (isNull)
         {
@@ -109,6 +113,7 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
         }
 
         // Outer boundary
+
         OsmPlacemarkData& outerBoundaryData = osmData.memberReference(index);
 
         if (outerBoundaryData.isNull())
@@ -117,10 +122,11 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
         }
 
         // Outer boundary nodes
-        QVector<GeoDataCoordinates>::const_iterator it =  outerBoundary.constBegin();
+
+        QVector<GeoDataCoordinates>::const_iterator it       = outerBoundary.constBegin();
         QVector<GeoDataCoordinates>::ConstIterator const end = outerBoundary.constEnd();
 
-        for (; it != end; ++it)
+        for ( ; it != end ; ++it)
         {
             if (outerBoundaryData.nodeReference(*it).isNull())
             {
@@ -129,6 +135,7 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
         }
 
         // Each inner boundary
+
         for (const GeoDataLinearRing& innerRing : polygon->innerBoundaries())
         {
             ++index;
@@ -140,10 +147,11 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
             }
 
             // Inner boundary nodes
-            QVector<GeoDataCoordinates>::const_iterator it =  innerRing.constBegin();
+
+            QVector<GeoDataCoordinates>::const_iterator it       = innerRing.constBegin();
             QVector<GeoDataCoordinates>::ConstIterator const end = innerRing.constEnd();
 
-            for (; it != end; ++it)
+            for ( ; it != end ; ++it)
             {
                 if (innerRingData.nodeReference(*it).isNull())
                 {

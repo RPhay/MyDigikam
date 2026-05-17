@@ -285,7 +285,7 @@ void MarbleModel::setMapTheme(GeoSceneDocument* document)
 
     if (d->m_mapTheme)
     {
-        for (GeoSceneLayer* const layer : d->m_mapTheme->map()->layers())
+        for (const GeoSceneLayer* const layer : d->m_mapTheme->map()->layers())
         {
             if (
                 (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)) &&
@@ -358,7 +358,7 @@ void MarbleModel::setMapTheme(GeoSceneDocument* document)
     QList<GeoDataStyle::Ptr> styleList;
     QList<int> renderOrderList;
 
-    for (GeoSceneLayer* const layer : d->m_mapTheme->map()->layers())
+    for (const GeoSceneLayer* const layer : d->m_mapTheme->map()->layers())
     {
         if (
             (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)) &&
@@ -830,7 +830,7 @@ void MarbleModelPrivate::assignFillColors(const QString& filePath)
 {
     const GeoSceneGeodata* data = nullptr;
 
-    for (auto layer : m_mapTheme->map()->layers())
+    for (const auto layer : m_mapTheme->map()->layers())
     {
         if (
             (layer->backend() != QString::fromUtf8(dgml::dgmlValue_geodata)) &&
@@ -840,7 +840,7 @@ void MarbleModelPrivate::assignFillColors(const QString& filePath)
             continue;
         }
 
-        for (auto dataset : layer->datasets())
+        for (const auto dataset : layer->datasets())
         {
             auto sceneData = dynamic_cast<const GeoSceneGeodata*>(dataset);
 

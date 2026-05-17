@@ -45,25 +45,25 @@ class DIGIKAM_EXPORT AbstractDataPluginItem : public QObject, public BillboardGr
 public:
 
     explicit AbstractDataPluginItem(QObject* parent = nullptr);
-    ~AbstractDataPluginItem() override;
+    ~AbstractDataPluginItem()                                         override;
 
     /**
      * Returns the item's tool tip.
      */
-    QString toolTip() const;
+    QString toolTip()                                           const;
 
     /**
      * Set the tool tip for the item.
      */
     void setToolTip(const QString& toolTip);
 
-    QString id() const;
+    QString id()                                                const;
     void setId(const QString& id);
 
-    bool isFavorite() const;
+    bool isFavorite()                                           const;
     virtual void setFavorite(bool favorite);
 
-    bool isSticky() const;
+    bool isSticky()                                             const;
     void setSticky(bool sticky);
 
     /**
@@ -78,9 +78,10 @@ public:
      */
     virtual QAction* action();
 
-    virtual bool initialized() const = 0;
+    virtual bool initialized()                                  const = 0;
 
-    virtual void addDownloadedFile(const QString& url, const QString& type);
+    virtual void addDownloadedFile(const QString& url,
+                                   const QString& type);
 
     virtual bool operator<(const AbstractDataPluginItem* other) const = 0;
 
@@ -105,7 +106,7 @@ private:
      * Returning the angular resolution of the viewport when the item was added to it the last
      * time.
      */
-    qreal addedAngularResolution() const;
+    qreal addedAngularResolution()                              const;
     void setAddedAngularResolution(qreal resolution);
 
 private:

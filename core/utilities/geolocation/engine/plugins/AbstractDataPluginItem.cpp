@@ -37,25 +37,25 @@ public:
 
     QString m_id;
     QString m_toolTip;
-    bool    m_favorite;
-    bool    m_sticky;
-    qreal   m_addedAngularResolution;
+    bool    m_favorite                  = false;
+    bool    m_sticky                    = false;
+    qreal   m_addedAngularResolution    = 0.0;
 
     AbstractDataPluginItemPrivate();
 };
 
 AbstractDataPluginItemPrivate::AbstractDataPluginItemPrivate()
-    : m_favorite(false),
-      m_sticky(false),
-      m_addedAngularResolution(0)
+    : m_favorite              (false),
+      m_sticky                (false),
+      m_addedAngularResolution(0.0)
 {
     // nothing to do
 }
 
 AbstractDataPluginItem::AbstractDataPluginItem(QObject* parent)
-    : QObject(parent),
+    : QObject              (parent),
       BillboardGraphicsItem(),
-      d(new AbstractDataPluginItemPrivate)
+      d                    (new AbstractDataPluginItemPrivate)
 {
     // nothing to do
 }
@@ -95,6 +95,7 @@ void AbstractDataPluginItem::setFavorite(bool favorite)
     if (isFavorite() != favorite)
     {
         d->m_favorite = favorite;
+
         Q_EMIT favoriteChanged(id(), favorite);
     }
 }
@@ -109,6 +110,7 @@ void AbstractDataPluginItem::setSticky(bool sticky)
     if (d->m_sticky != sticky)
     {
         d->m_sticky = sticky;
+
         Q_EMIT stickyChanged();
     }
 }
@@ -147,6 +149,8 @@ void AbstractDataPluginItem::addDownloadedFile(const QString& url, const QString
 QList<QAction*> AbstractDataPluginItem::actions()
 {
     QList<QAction*> result;
+
+    // cppcheck-suppress constVariablePointer
     QAction* pluginAction = action();
 
     if (pluginAction)

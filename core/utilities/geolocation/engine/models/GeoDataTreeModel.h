@@ -55,31 +55,34 @@ public:
     /**
      * Destroys the GeoDataModel.
      */
-    ~GeoDataTreeModel() override;
+    ~GeoDataTreeModel()                                                   override;
 
     /**
      * Return the number of Items in the Model.
      */
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex())         const override;
 
     QVariant headerData(int section, Qt::Orientation orientation,
-                        int role = Qt::DisplayRole) const override;
+                        int role = Qt::DisplayRole)                 const override;
 
     QHash<int, QByteArray> roleNames() const override;
 
-    QVariant data(const QModelIndex& index, int role) const override;
+    QVariant data(const QModelIndex& index, int role)               const override;
 
-    QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
+    QModelIndex index(int row, int column,
+                      const QModelIndex& parent = QModelIndex())    const override;
 
-    QModelIndex index(const GeoDataObject* object) const;
+    QModelIndex index(const GeoDataObject* object)                  const;
 
-    QModelIndex parent(const QModelIndex& index) const override;
+    QModelIndex parent(const QModelIndex& index)                    const override;
 
-    int columnCount(const QModelIndex& parent = QModelIndex()) const override;
+    int columnCount(const QModelIndex& parent = QModelIndex())      const override;
 
-    Qt::ItemFlags flags(const QModelIndex& index) const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                   const override;
 
-    bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole) override;
+    bool setData(const QModelIndex& index,
+                 const QVariant& value,
+                 int role = Qt::EditRole)                                 override;
 
     QItemSelectionModel* selectionModel();
 
@@ -116,6 +119,7 @@ Q_SIGNALS:
 
     /// insert and remove row don't trigger any signal that proxies forward
     /// this signal will refresh geometry layer and placemark layout
+
     void removed(GeoDataObject* object);
     void added(GeoDataObject* object);
 

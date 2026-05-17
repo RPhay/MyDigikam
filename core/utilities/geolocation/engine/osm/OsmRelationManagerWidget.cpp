@@ -46,8 +46,8 @@ OsmRelationManagerWidget::OsmRelationManagerWidget(GeoDataPlacemark* placemark,
     : QWidget(parent),
       d      (new OsmRelationManagerWidgetPrivate)
 {
-    d->m_placemark    = placemark;
-    d->m_allRelations = relations;
+    d->m_placemark        = placemark;
+    d->m_allRelations     = relations;
     d->setupUi(this);
     d->populateRelationsList();
     d->m_relationDropMenu = new QMenu(d->m_addRelation);
@@ -173,12 +173,13 @@ void OsmRelationManagerWidget::handleRelationContextMenuRequest(const QPoint& po
     QMenu relationEditMenu;
     relationEditMenu.addAction(i18n("Remove"));
     relationEditMenu.addAction(i18n("Edit"));
-    QAction* selectedItem = relationEditMenu.exec(d->m_currentRelations->mapToGlobal(point));
+
+    const QAction* selectedItem = relationEditMenu.exec(d->m_currentRelations->mapToGlobal(point));
 
     if (selectedItem)
     {
         QTreeWidgetItem* requestedItem = d->m_currentRelations->itemAt(point);
-        qint64 id = requestedItem->data(Column::Name, Qt::UserRole).toLongLong();
+        qint64 id                      = requestedItem->data(Column::Name, Qt::UserRole).toLongLong();
 
         if      (selectedItem->text() == i18n("Remove"))
         {
@@ -187,9 +188,9 @@ void OsmRelationManagerWidget::handleRelationContextMenuRequest(const QPoint& po
         }
         else if (selectedItem->text() == i18n("Edit"))
         {
-            OsmPlacemarkData relationData = d->m_allRelations->value(id);
+            OsmPlacemarkData relationData                    = d->m_allRelations->value(id);
             QPointer<OsmRelationEditorDialog> relationEditor = new OsmRelationEditorDialog(&relationData);
-            const int result = relationEditor->exec();
+            const int result                                 = relationEditor->exec();
             delete relationEditor;
 
             if (result == QDialog::Rejected)
