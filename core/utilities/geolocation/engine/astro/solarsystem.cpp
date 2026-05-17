@@ -759,13 +759,13 @@ void SolarSystem::getRaDec(const Vec3& r1, double& ra, double& decl)
 {
     // convert equatorial vector r1 into RA and DEC (in HH.MMSS and DD.MMSS)
 
-    double const degrad = M_PI / 180.0;
+    double const _degrad = M_PI / 180.0;
     Vec3 r2;
 
-    r2 = carpol(r1);
-    decl = r2[2] / degrad;
-    ra = r2[1] / degrad;
-    ra /= 15.0;
+    r2   = carpol(r1);
+    decl = r2[2] / _degrad;
+    ra   = r2[1] / _degrad;
+    ra  /= 15.0;
 
     if (ra < 0)
     {
@@ -773,7 +773,7 @@ void SolarSystem::getRaDec(const Vec3& r1, double& ra, double& decl)
     }
 
     decl = DegFDms(decl);
-    ra = DegFDms(ra);
+    ra   = DegFDms(ra);
 
 }
 
@@ -2117,37 +2117,38 @@ void SolarSystem::MoonLibr(double jd, Vec3 rm, Vec3 sn,                     // c
                            double& lblon, double& lblat, double& termt)
 {
     /*
-       Calculate the librations angles lblon (longitude) and
-       lblat (latitude) for the moon at position rs and time jd.
-       Also calculate the selenographic longitude of the terminator.
-       rm is the position of the Moon from Earth, sn the position
-       of the Sun (also with respect to Earth).
-    */
+     * Calculate the librations angles lblon (longitude) and
+     * lblat (latitude) for the moon at position rs and time jd.
+     * Also calculate the selenographic longitude of the terminator.
+     * rm is the position of the Moon from Earth, sn the position
+     * of the Sun (also with respect to Earth).
+     */
+
     double t, gam, gmp, l, omg, mln;
     double a, b, c, ic, gn, gp, omp;
-    double const degrad = M_PI / 180.0;
+    double const _degrad = M_PI / 180.0;
     Vec3 v1;
     Mat3 m1, m2;
 
-    t = (jd - 15019.5) / 36525.0;
+    t   = (jd - 15019.5) / 36525.0;
     gam = 281.2208333 + ((0.33333333e-5 * t + 0.45277778e-3) * t + 1.7191750) * t;
     gmp = 334.3295556 + ((-0.125e-4 * t - 0.10325e-1) * t + 4069.0340333) * t;
-    l = 279.6966778 + (0.3025e-3 * t + 36000.768925) * t;
+    l   = 279.6966778 + (0.3025e-3 * t + 36000.768925) * t;
     omg = 259.1832750 + ((0.22222222e-5 * t + 0.20777778e-2) * t - 1934.1420083) * t;
-    b = 23.45229444 + ((0.50277778e-6 * t - 0.16388889e-5) * t - 0.130125e-1) * t;
+    b   = 23.45229444 + ((0.50277778e-6 * t - 0.16388889e-5) * t - 0.130125e-1) * t;
     mln = 270.4341639 + ((0.1888889e-5 * t - 0.11333e-2) * t + 481267.8831417) * t;
-    ic = 1.535 * degrad;
-    gn = (l - gam) * degrad;
-    gp = (mln - gmp) * degrad;
-    omp = (gmp - omg) * degrad;
-    a = -107.0 * cos(gp) + 37.0 * cos(gp + 2.0 * omp) - 11.0 * cos(2.0 * (gp + omp));
-    a = a * 0.000277778 * degrad + ic;
-    c = (-109.0 * sin(gp) + 37.0 * sin(gp + 2.0 * omp) - 11.0 * sin(2.0 * (gp + omp))) / sin(ic);
-    c = (c * 0.000277778 + omg) * degrad;
-    gn = -12.0 * sin(gp) + 59.0 * sin(gn) + 18.0 * sin(2.0 * omp);
-    gn = gn * 0.000277778 * degrad; // tau
+    ic  = 1.535 * _degrad;
+    gn  = (l - gam) * _degrad;
+    gp  = (mln - gmp) * _degrad;
+    omp = (gmp - omg) * _degrad;
+    a   = -107.0 * cos(gp) + 37.0 * cos(gp + 2.0 * omp) - 11.0 * cos(2.0 * (gp + omp));
+    a   = a * 0.000277778 * _degrad + ic;
+    c   = (-109.0 * sin(gp) + 37.0 * sin(gp + 2.0 * omp) - 11.0 * sin(2.0 * (gp + omp))) / sin(ic);
+    c   = (c * 0.000277778 + omg) * _degrad;
+    gn  = -12.0 * sin(gp) + 59.0 * sin(gn) + 18.0 * sin(2.0 * omp);
+    gn  = gn * 0.000277778 * _degrad; // tau
 
-    b *= degrad;
+    b  *= _degrad;
     gam = cos(a) * cos(b) + sin(a) * sin(b) * cos(c);
     gmp = gam * gam;
 
@@ -2155,38 +2156,39 @@ void SolarSystem::MoonLibr(double jd, Vec3 rm, Vec3 sn,                     // c
     {
         gmp = 0;
     }
-
     else
     {
         gmp = sqrt(1.0 - gmp);
     }
 
     gam = atan23(gmp, gam); // theta
-    t = cos(a) * sin(b) - sin(a) * sin(b) * cos(c);
-    l = -sin(a) * sin(c);
+    t   = cos(a) * sin(b) - sin(a) * sin(b) * cos(c);
+    l   = -sin(a) * sin(c);
 
     gmp = atan23(l, t); // phi
-    t = sin(a) * cos(b) - cos(a) * sin(b) * cos(c);
-    l = -sin(b) * sin(c);
-    a = atan23(l, t); // delta
-    c = a + mln * degrad + gn - c; // psi
+    t   = sin(a) * cos(b) - cos(a) * sin(b) * cos(c);
+    l   = -sin(b) * sin(c);
+    a   = atan23(l, t); // delta
+    c   = a + mln * _degrad + gn - c; // psi
 
     // libration rotation matrix from Mean equator to true selenographic
-    m1 = zrot(gmp);
-    m2 = xrot(gam);
-    m1 = m2 * m1;
-    m2 = zrot(c);
-    m1 = m2 * m1;
+
+    m1  = zrot(gmp);
+    m2  = xrot(gam);
+    m1  = m2 * m1;
+    m2  = zrot(c);
+    m1  = m2 * m1;
 
     // Earth coordinates
+
     v1[0] = -rm[0];
     v1[1] = -rm[1];
     v1[2] = -rm[2];
 
-    v1 = mxvct(m1, v1);
-    v1 = carpol(v1);
-    lblat = v1[2] / degrad;
-    lblon = v1[1] / degrad;
+    v1    = mxvct(m1, v1);
+    v1    = carpol(v1);
+    lblat = v1[2] / _degrad;
+    lblon = v1[1] / _degrad;
 
     if (lblon > 180.0)
     {
@@ -2194,9 +2196,10 @@ void SolarSystem::MoonLibr(double jd, Vec3 rm, Vec3 sn,                     // c
     }
 
     // terminator
-    v1 = mxvct(m1, sn);
-    v1 = carpol(v1);
-    termt = v1[1] / degrad;
+
+    v1    = mxvct(m1, sn);
+    v1    = carpol(v1);
+    termt = v1[1] / _degrad;
 
     if (termt > 180.0)
     {
@@ -2204,21 +2207,20 @@ void SolarSystem::MoonLibr(double jd, Vec3 rm, Vec3 sn,                     // c
     }
 
     termt -= 90.0;
-    a = 90.0 + lblon;
-    b = lblon - 90;
+    a      = 90.0 + lblon;
+    b      = lblon - 90;
 
     if (termt > a)
     {
         termt -= 180.0;
     }
-
     else
     {
         if (termt < b)
         {
             termt += 180;
         }
-    };
+    }
 }
 
 void SolarSystem::MoonDetails()
@@ -2229,20 +2231,20 @@ void SolarSystem::MoonDetails()
     double jd, t, lblon, lblat, termt, mnmag;
     double dist, ps;
     static double els, elm;
-    double const degrad = M_PI / 180.0;
-    double ae = 23454.77992; // 149597870.0/6378.14 =  1AE -> Earth Radii
-    static Vec3 snc, mnc;   // position of the Sun and the Moon
+    double const _degrad = M_PI / 180.0;
+    double ae            = 23454.77992; // 149597870.0/6378.14 =  1AE -> Earth Radii
+    static Vec3 snc, mnc;               // position of the Sun and the Moon
     Vec3 s, rm, rs, s3;
-    double ep2;    // correction for Apparent Sidereal Time
+    double ep2;                         // correction for Apparent Sidereal Time
 
-    if (ss_central_body != 4)   // calculate only for the Earth as reference
+    if (ss_central_body != 4)           // calculate only for the Earth as reference
     {
         ss_moon_ildisk = 0;
-        ss_moon_phase = 0;
-        ss_moon_lblon = 0;
-        ss_moon_lblat = 0;
-        ss_moon_mag = 0;
-        ss_moon_term = 0;
+        ss_moon_phase  = 0;
+        ss_moon_lblon  = 0;
+        ss_moon_lblat  = 0;
+        ss_moon_mag    = 0;
+        ss_moon_term   = 0;
 
         return;
     };
@@ -2252,34 +2254,31 @@ void SolarSystem::MoonDetails()
         updateSolar();
     }
 
-    ss_moon_called = true;
+    ss_moon_called  = true;
+    jd              = ss_time;
+    rs              = SnPos(ep2, els);
+    rs             *= ae;
+    snc             = rs;
+    rm              = MnPos(ep2, elm);
+    mnc             = rm;
+    s               = snc - rm;
 
-    jd = ss_time;
-
-    rs = SnPos(ep2, els);
-    rs *= ae;
-    snc = rs;
-
-    rm = MnPos(ep2, elm);
-    mnc = rm;
-    s = snc - rm;
-    MoonLibr(jd, rm, s, lblon, lblat, termt);  // librations and terminator
+    MoonLibr(jd, rm, s, lblon, lblat, termt);   // librations and terminator
 
     // calculate apparent magnitude of the Moon
-    mnmag = abs(rm) / 23454.77992;  // distance moon-observer in AU
-    s = vnorm(s);
-    s[0] = -s[0];
-    s[1] = -s[1];
-    s[2] = -s[2];
-    s3 = vnorm(rm);
 
-    dist = dot(s, s3);  // cos of phase angle Sun-Moon-Observer
+    mnmag = abs(rm) / 23454.77992;              // distance moon-observer in AU
+    s     = vnorm(s);
+    s[0]  = -s[0];
+    s[1]  = -s[1];
+    s[2]  = -s[2];
+    s3    = vnorm(rm);
+    dist  = dot(s, s3);                         // cos of phase angle Sun-Moon-Observer
 
     if (fabs(dist) <= 1.0)
     {
-        dist = acos(dist) / degrad;
+        dist = acos(dist) / _degrad;
     }
-
     else
     {
         dist = 180.0;
@@ -2289,27 +2288,24 @@ void SolarSystem::MoonDetails()
     {
         dist = -3.475256769e-2 + 2.75256769e-2 * dist;
     }
-
     else
     {
         if (dist < 115.0)
         {
             dist = 0.6962632 * exp(1.48709985e-2 * dist);
         }
-
         else
         {
             if (dist < 155.0)
             {
                 dist = 0.6531068 * exp(1.49213e-2 * dist);
             }
-
             else
             {
                 dist = 1.00779e-9 * pow(dist, 4.486359);
             }
-        };
-    };
+        }
+    }
 
     if (mnmag <= 0)
     {
@@ -2319,10 +2315,11 @@ void SolarSystem::MoonDetails()
     mnmag = 0.23 + 5.0 * log10(mnmag) + dist; // moon's mag
 
     // illuminated fraction
+
     rs = snc - mnc;
     rs = vnorm(rs);
     rm = vnorm(mnc);
-    t = (1.0 - dot(rs, rm)) * 0.5;
+    t  = (1.0 - dot(rs, rm)) * 0.5;
     ps = elm - els;
 
     if (ps < 0)
@@ -2330,14 +2327,13 @@ void SolarSystem::MoonDetails()
         ps += 2 * M_PI;
     }
 
-    ps = ps / (2.0 * M_PI);
-
-    ss_moon_ildisk = t;
-    ss_moon_phase = ps;
-    ss_moon_lblon = lblon;
-    ss_moon_lblat = lblat;
-    ss_moon_mag = mnmag;
-    ss_moon_term = termt;
+    ps              = ps / (2.0 * M_PI);
+    ss_moon_ildisk  = t;
+    ss_moon_phase   = ps;
+    ss_moon_lblon   = lblon;
+    ss_moon_lblat   = lblat;
+    ss_moon_mag     = mnmag;
+    ss_moon_term    = termt;
 }
 
 void SolarSystem::getConstSun()  // Sun constants
@@ -2680,29 +2676,29 @@ Mat3 SolarSystem::getSelenographic()
 
     double t, gam, gmp, l, omg, mln;
     double a, b, c, ic, gn, gp, omp;
-    double const degrad = M_PI / 180.0;
+    double const _degrad = M_PI / 180.0;
     Vec3 v1;
     Mat3 m1, m2;
 
-    t = (ss_time - 15019.5) / 36525.0;
+    t   = (ss_time - 15019.5) / 36525.0;
     gam = 281.2208333 + ((0.33333333e-5 * t + 0.45277778e-3) * t + 1.7191750) * t;
     gmp = 334.3295556 + ((-0.125e-4 * t - 0.10325e-1) * t + 4069.0340333) * t;
-    l = 279.6966778 + (0.3025e-3 * t + 36000.768925) * t;
+    l   = 279.6966778 + (0.3025e-3 * t + 36000.768925) * t;
     omg = 259.1832750 + ((0.22222222e-5 * t + 0.20777778e-2) * t - 1934.1420083) * t;
-    b = 23.45229444 + ((0.50277778e-6 * t - 0.16388889e-5) * t - 0.130125e-1) * t;
+    b   = 23.45229444 + ((0.50277778e-6 * t - 0.16388889e-5) * t - 0.130125e-1) * t;
     mln = 270.4341639 + ((0.1888889e-5 * t - 0.11333e-2) * t + 481267.8831417) * t;
-    ic = 1.535 * degrad;
-    gn = (l - gam) * degrad;
-    gp = (mln - gmp) * degrad;
-    omp = (gmp - omg) * degrad;
-    a = -107.0 * cos(gp) + 37.0 * cos(gp + 2.0 * omp) - 11.0 * cos(2.0 * (gp + omp));
-    a = a * 0.000277778 * degrad + ic;
-    c = (-109.0 * sin(gp) + 37.0 * sin(gp + 2.0 * omp) - 11.0 * sin(2.0 * (gp + omp))) / sin(ic);
-    c = (c * 0.000277778 + omg) * degrad;
-    gn = -12.0 * sin(gp) + 59.0 * sin(gn) + 18.0 * sin(2.0 * omp);
-    gn = gn * 0.000277778 * degrad; // tau
+    ic  = 1.535 * _degrad;
+    gn  = (l - gam) * _degrad;
+    gp  = (mln - gmp) * _degrad;
+    omp = (gmp - omg) * _degrad;
+    a   = -107.0 * cos(gp) + 37.0 * cos(gp + 2.0 * omp) - 11.0 * cos(2.0 * (gp + omp));
+    a   = a * 0.000277778 * _degrad + ic;
+    c   = (-109.0 * sin(gp) + 37.0 * sin(gp + 2.0 * omp) - 11.0 * sin(2.0 * (gp + omp))) / sin(ic);
+    c   = (c * 0.000277778 + omg) * _degrad;
+    gn  = -12.0 * sin(gp) + 59.0 * sin(gn) + 18.0 * sin(2.0 * omp);
+    gn  = gn * 0.000277778 * _degrad;               // tau
 
-    b *= degrad;
+    b  *= _degrad;
     gam = cos(a) * cos(b) + sin(a) * sin(b) * cos(c);
     gmp = gam * gam;
 
@@ -2710,32 +2706,32 @@ Mat3 SolarSystem::getSelenographic()
     {
         gmp = 0;
     }
-
     else
     {
         gmp = sqrt(1.0 - gmp);
     }
 
-    gam = atan23(gmp, gam); // theta
-    t = cos(a) * sin(b) - sin(a) * sin(b) * cos(c);
-    l = -sin(a) * sin(c);
+    gam = atan23(gmp, gam);                         // theta
+    t   = cos(a) * sin(b) - sin(a) * sin(b) * cos(c);
+    l   = -sin(a) * sin(c);
 
-    gmp = atan23(l, t); // phi
-    t = sin(a) * cos(b) - cos(a) * sin(b) * cos(c);
-    l = -sin(b) * sin(c);
-    a = atan23(l, t); // delta
-    c = a + mln * degrad + gn - c; // psi
+    gmp = atan23(l, t);                             // phi
+    t   = sin(a) * cos(b) - cos(a) * sin(b) * cos(c);
+    l   = -sin(b) * sin(c);
+    a   = atan23(l, t);                             // delta
+    c   = a + mln * degrad + gn - c;                // psi
 
     // libration rotation matrix from Mean equator to true selenographic
-    m1 = zrot(gmp);
-    m2 = xrot(gam);
-    m1 = m2 * m1;
-    m2 = zrot(c);
-    m1 = m2 * m1;
 
-    t = julcent(ss_time + ss_del_tdut / 86400.0);
-    m2 = pmatequ(0, t); // convert from mean of J2000 to mean of epoch
-    m1 = m1 * m2;
+    m1  = zrot(gmp);
+    m2  = xrot(gam);
+    m1  = m2 * m1;
+    m2  = zrot(c);
+    m1  = m2 * m1;
+
+    t   = julcent(ss_time + ss_del_tdut / 86400.0);
+    m2  = pmatequ(0, t);                            // convert from mean of J2000 to mean of epoch
+    m1  = m1 * m2;
 
     return m1;
 }
