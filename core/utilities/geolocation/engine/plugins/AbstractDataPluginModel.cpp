@@ -83,29 +83,29 @@ public:
 
 public:
 
-    AbstractDataPluginModel*                    m_parent            = nullptr;
+    AbstractDataPluginModel*                    m_parent                = nullptr;
     const QString                               m_name;
-    const MarbleModel* const                    m_marbleModel       = nullptr;
+    const MarbleModel* const                    m_marbleModel           = nullptr;
     GeoDataLatLonAltBox                         m_lastBox;
     GeoDataLatLonAltBox                         m_downloadedBox;
-    qint32                                      m_lastNumber;
-    qint32                                      m_downloadedNumber;
+    qint32                                      m_lastNumber            = 0;
+    qint32                                      m_downloadedNumber      = 0;
     QString                                     m_currentPlanetId;
     QList<AbstractDataPluginItem*>              m_itemSet;
     QHash<QString, AbstractDataPluginItem*>     m_downloadingItems;
     QList<AbstractDataPluginItem*>              m_displayedItems;
     QTimer                                      m_downloadTimer;
-    quint32                                     m_descriptionFileNumber;
+    quint32                                     m_descriptionFileNumber = 0;
     QHash<QString, QVariant>                    m_itemSettings;
     QStringList                                 m_favoriteItems;
-    bool                                        m_favoriteItemsOnly;
+    bool                                        m_favoriteItemsOnly     = false;
 
     CacheStoragePolicy                          m_storagePolicy;
     HttpDownloadManager                         m_downloadManager;
-    FavoritesModel*                             m_favoritesModel    = nullptr;
+    FavoritesModel*                             m_favoritesModel        = nullptr;
     QMetaObject                                 m_metaObject;
-    bool                                        m_hasMetaObject;
-    bool                                        m_needsSorting;
+    bool                                        m_hasMetaObject         = false;
+    bool                                        m_needsSorting          = false;
 };
 
 class Q_DECL_HIDDEN FavoritesModel : public QAbstractListModel
@@ -136,23 +136,23 @@ private:
 AbstractDataPluginModelPrivate::AbstractDataPluginModelPrivate(const QString& name,
                                                                const MarbleModel* marbleModel,
                                                                AbstractDataPluginModel* parent)
-    : m_parent(parent),
-      m_name(name),
-      m_marbleModel(marbleModel),
-      m_lastBox(),
-      m_downloadedBox(),
-      m_lastNumber(0),
-      m_downloadedNumber(0),
-      m_currentPlanetId(marbleModel->planetId()),
-      m_downloadTimer(m_parent),
-      m_descriptionFileNumber(0),
-      m_itemSettings(),
-      m_favoriteItemsOnly(false),
-      m_storagePolicy(MarbleDirs::localPath() + QLatin1String("/cache/") + m_name + QLatin1Char('/')),
-      m_downloadManager(&m_storagePolicy),
-      m_favoritesModel(nullptr),
-      m_hasMetaObject(false),
-      m_needsSorting(false)
+    : m_parent                  (parent),
+      m_name                    (name),
+      m_marbleModel             (marbleModel),
+      m_lastBox                 (),
+      m_downloadedBox           (),
+      m_lastNumber              (0),
+      m_downloadedNumber        (0),
+      m_currentPlanetId         (marbleModel->planetId()),
+      m_downloadTimer           (m_parent),
+      m_descriptionFileNumber   (0),
+      m_itemSettings            (),
+      m_favoriteItemsOnly       (false),
+      m_storagePolicy           (MarbleDirs::localPath() + QLatin1String("/cache/") + m_name + QLatin1Char('/')),
+      m_downloadManager         (&m_storagePolicy),
+      m_favoritesModel          (nullptr),
+      m_hasMetaObject           (false),
+      m_needsSorting            (false)
 {
 }
 
@@ -223,7 +223,6 @@ static bool lessThanByPointer(const AbstractDataPluginItem* item1,
             return item1->operator<(item2);
         }
     }
-
     else
     {
         return false;
@@ -256,7 +255,7 @@ int FavoritesModel::rowCount(const QModelIndex& parent) const
 
     int count = 0;
 
-    for (AbstractDataPluginItem* item : d->m_itemSet)
+    for (const AbstractDataPluginItem* item : d->m_itemSet)
     {
         if (item->initialized() && item->isFavorite())
         {
@@ -344,8 +343,8 @@ QList<AbstractDataPluginItem*> AbstractDataPluginModel::items(const ViewportPara
     GeoDataLatLonAltBox currentBox = viewport->viewLatLonAltBox();
     QList<AbstractDataPluginItem*> list;
 
-    Q_ASSERT(!d->m_displayedItems.contains(nullptr) && "Null item in m_displayedItems. Please report a bug to marble-devel@kde.org");
-    Q_ASSERT(!d->m_itemSet.contains(nullptr) && "Null item in m_itemSet. Please report a bug to marble-devel@kde.org");
+    Q_ASSERT(!d->m_displayedItems.contains(nullptr) && "Null item in m_displayedItems. Please report a bug");
+    Q_ASSERT(!d->m_itemSet.contains(nullptr) && "Null item in m_itemSet. Please report a bug");
 
     QList<AbstractDataPluginItem*> candidates = d->m_displayedItems + d->m_itemSet;
 
@@ -355,7 +354,7 @@ QList<AbstractDataPluginItem*> AbstractDataPluginModel::items(const ViewportPara
 
         std::sort(candidates.begin(), candidates.end(), lessThanByPointer);
         std::sort(d->m_itemSet.begin(), d->m_itemSet.end(), lessThanByPointer);
-        d->m_needsSorting =  false;
+        d->m_needsSorting = false;
     }
 
     QList<AbstractDataPluginItem*>::const_iterator i   = candidates.constBegin();
@@ -396,9 +395,13 @@ QList<AbstractDataPluginItem*> AbstractDataPluginModel::items(const ViewportPara
 
         bool const alreadyDisplayed = d->m_displayedItems.contains(*i);
 
-        if (!alreadyDisplayed || (*i)->addedAngularResolution() >= viewport->angularResolution() || (*i)->isSticky())
+        if (
+            !alreadyDisplayed                                                 ||
+            ((*i)->addedAngularResolution() >= viewport->angularResolution()) ||
+            (*i)->isSticky()
+           )
         {
-            bool collides = false;
+            bool collides    = false;
             int const length = list.length();
 
             for (int j = 0 ; !collides && j < length ; ++j)
@@ -629,7 +632,6 @@ void AbstractDataPluginModel::favoriteItemChanged(const QString& id, bool isFavo
             favorites.append(id);
         }
     }
-
     else
     {
         favorites.removeOne(id);
@@ -656,7 +658,12 @@ QString AbstractDataPluginModelPrivate::generateFilename(const QString& id, cons
 
 QString AbstractDataPluginModelPrivate::generateFilepath(const QString& id, const QString& type) const
 {
-    return MarbleDirs::localPath() + QLatin1String("/cache/") + m_name + QLatin1Char('/') + generateFilename(id, type);
+    return (
+            MarbleDirs::localPath()   +
+            QLatin1String("/cache/")  +
+            m_name + QLatin1Char('/') +
+            generateFilename(id, type)
+           );
 }
 
 AbstractDataPluginItem* AbstractDataPluginModel::findItem(const QString& id) const
@@ -691,23 +698,25 @@ void AbstractDataPluginModel::handleChangedViewport()
 
     // All this is to prevent to often downloads
 
-    if (d->m_lastNumber != 0
+    if (
+        (d->m_lastNumber != 0)
 
         // We don't need to download if nothing changed
 
-        && (!(d->m_downloadedBox == d->m_lastBox)
-            || d->m_downloadedNumber != d->m_lastNumber)
+        && (
+            !(d->m_downloadedBox    == d->m_lastBox) ||
+             (d->m_downloadedNumber != d->m_lastNumber)
+           )
 
         // We try to filter little changes of the bounding box
 
-        && (fabs(d->m_downloadedBox.east() - d->m_lastBox.east()) * boxComparisonFactor
-            > d->m_lastBox.width()
-            || fabs(d->m_downloadedBox.south() - d->m_lastBox.south()) * boxComparisonFactor
-            > d->m_lastBox.height()
-            || fabs(d->m_downloadedBox.north() - d->m_lastBox.north()) * boxComparisonFactor
-            > d->m_lastBox.height()
-            || fabs(d->m_downloadedBox.west() - d->m_lastBox.west()) * boxComparisonFactor
-            > d->m_lastBox.width()))
+        && (
+               ((fabs(d->m_downloadedBox.east()  - d->m_lastBox.east())  * boxComparisonFactor) > d->m_lastBox.width())
+            || ((fabs(d->m_downloadedBox.south() - d->m_lastBox.south()) * boxComparisonFactor) > d->m_lastBox.height())
+            || ((fabs(d->m_downloadedBox.north() - d->m_lastBox.north()) * boxComparisonFactor) > d->m_lastBox.height())
+            || ((fabs(d->m_downloadedBox.west()  - d->m_lastBox.west())  * boxComparisonFactor) > d->m_lastBox.width())
+           )
+        )
     {
         // We will wait a little bit longer to start the
         // next download as we will really download something now.
@@ -716,7 +725,7 @@ void AbstractDataPluginModel::handleChangedViewport()
 
         // Save the download parameter
 
-        d->m_downloadedBox = d->m_lastBox;
+        d->m_downloadedBox    = d->m_lastBox;
         d->m_downloadedNumber = d->m_lastNumber;
 
         // Get items
@@ -752,6 +761,7 @@ void AbstractDataPluginModel::processFinishedJob(const QString& relativeUrlStrin
         if (fileInformation.size() < 2)
         {
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "Strange file information " << id;
+
             return;
         }
 
@@ -784,7 +794,7 @@ void AbstractDataPluginModel::removeItem(QObject* item)
     d->m_itemSet.removeAll(pluginItem);
     QHash<QString, AbstractDataPluginItem*>::iterator i;
 
-    for (i = d->m_downloadingItems.begin(); i != d->m_downloadingItems.end(); ++i)
+    for (i = d->m_downloadingItems.begin() ; i != d->m_downloadingItems.end() ; ++i)
     {
         if (*i == pluginItem)
         {
@@ -799,7 +809,7 @@ void AbstractDataPluginModel::clear()
     QList<AbstractDataPluginItem*>::iterator iter      = d->m_itemSet.begin();
     QList<AbstractDataPluginItem*>::iterator const end = d->m_itemSet.end();
 
-    for (; iter != end; ++iter)
+    for ( ; iter != end ; ++iter)
     {
         (*iter)->deleteLater();
     }

@@ -58,10 +58,12 @@ class DIGIKAM_EXPORT AbstractDataPluginModel : public QObject
 
 public:
 
-    explicit AbstractDataPluginModel(const QString& name, const MarbleModel* marbleModel, QObject* parent = nullptr);
-    ~AbstractDataPluginModel() override;
+    explicit AbstractDataPluginModel(const QString& name,
+                                     const MarbleModel* marbleModel,
+                                     QObject* parent = nullptr);
+    ~AbstractDataPluginModel()                                                override;
 
-    const MarbleModel* marbleModel() const;
+    const MarbleModel* marbleModel()                                    const;
 
     /**
      * @brief Get the items on the viewport
@@ -87,10 +89,10 @@ public:
     void setItemSettings(const QHash<QString, QVariant>& itemSettings);
 
     virtual void setFavoriteItems(const QStringList& list);
-    QStringList favoriteItems() const;
+    QStringList favoriteItems()                                         const;
 
     void setFavoriteItemsOnly(bool favoriteOnly);
-    bool isFavoriteItemsOnly() const;
+    bool isFavoriteItemsOnly()                                          const;
 
     QObject* favoritesModel();
 
@@ -98,12 +100,12 @@ public:
      * Finds the item with @p id in the list.
      * @return The pointer to the item or (if no item has been found) 0
      */
-    AbstractDataPluginItem* findItem(const QString& id) const;
+    AbstractDataPluginItem* findItem(const QString& id)                 const;
 
     /**
      * Testing the existence of the item @p id in the list
      */
-    bool itemExists(const QString& id) const;
+    bool itemExists(const QString& id)                                  const;
 
 public Q_SLOTS:
 
