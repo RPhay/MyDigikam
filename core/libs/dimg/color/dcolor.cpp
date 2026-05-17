@@ -96,18 +96,20 @@ void DColor::convertToEightBit()
 
 void DColor::getHSL(int* const h, int* const s, int* const l) const
 {
-    double min;
-    double max;
-    double redv;
-    double greenv;
-    double bluev;
-    double sum;
-    double hue, sat, lig;
+    double min      = 0.0;
+    double max      = 0.0;
+    double redv     = 0.0;
+    double greenv   = 0.0;
+    double bluev    = 0.0;
+    double sum      = 0.0;
+    double hue      = 0.0;
+    double sat      = 0.0;
+    double lig      = 0.0;
 
-    double range = m_sixteenBit ? 65535.0 : 255.0;
-    redv         = m_red   / range;
-    greenv       = m_green / range;
-    bluev        = m_blue  / range;
+    double range    = m_sixteenBit ? 65535.0 : 255.0;
+    redv            = m_red   / range;
+    greenv          = m_green / range;
+    bluev           = m_blue  / range;
 
     if (redv > greenv)
     {
@@ -151,9 +153,9 @@ void DColor::getHSL(int* const h, int* const s, int* const l) const
     }
 
     sum = max + min;
-    lig = sum / 2;
-    sat = 0;
-    hue = 0;
+    lig = sum / 2.0;
+    sat = 0.0;
+    hue = 0.0;
 
     if (max != min)
     {

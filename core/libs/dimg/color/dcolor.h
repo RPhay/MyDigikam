@@ -61,7 +61,7 @@ public:
     /**
      * @brief Read values from QColor, convert to sixteenBit of sixteenBit is true
      */
-    explicit DColor(const QColor& color, bool sixteenBit=false);
+    explicit DColor(const QColor& color, bool sixteenBit = false);
 
     /// @note Use default copy constructor, assignment operator and destructor
 
@@ -79,59 +79,59 @@ public:
      * If @param sixteenBit is true, 8 bytes are written.
      * Inline method.
      */
-    inline void setPixel(uchar* const data) const;
+    inline void setPixel(uchar* const data)                             const;
 
-    int red()                               const
+    int red()                                                           const
     {
         return m_red;
     }
 
-    int green()                             const
+    int green()                                                         const
     {
         return m_green;
     }
 
-    int blue()                              const
+    int blue()                                                          const
     {
         return m_blue;
     }
 
-    int alpha()                             const
+    int alpha()                                                         const
     {
         return m_alpha;
     }
 
-    bool sixteenBit()                       const
+    bool sixteenBit()                                                   const
     {
         return m_sixteenBit;
     }
 
-    void setRed(int red)
+    void setRed(int _red)
     {
-        m_red = red;
+        m_red = _red;
     }
 
-    void setGreen(int green)
+    void setGreen(int _green)
     {
-        m_green = green;
+        m_green = _green;
     }
 
-    void setBlue (int blue)
+    void setBlue (int _blue)
     {
-        m_blue = blue;
+        m_blue = _blue;
     }
 
-    void setAlpha(int alpha)
+    void setAlpha(int _alpha)
     {
-        m_alpha = alpha;
+        m_alpha = _alpha;
     }
 
-    void setSixteenBit(bool sixteenBit)
+    void setSixteenBit(bool _sixteenBit)
     {
-        m_sixteenBit = sixteenBit;
+        m_sixteenBit = _sixteenBit;
     }
 
-    QColor getQColor() const;
+    QColor getQColor()                                                  const;
 
     inline bool isPureGrayValue(int v)
     {
@@ -163,7 +163,7 @@ public:
      * in the HSL color space.
      * Alpha is ignored for the conversion.
      */
-    void getHSL(int* const h, int* const s, int* const l) const;
+    void getHSL(int* const h, int* const s, int* const l)               const;
 
     /**
      * @brief Set the RGB color values of this color
@@ -179,7 +179,7 @@ public:
      * in the YCrCb color space.
      * Alpha is ignored for the conversion.
      */
-    void getYCbCr(double* const y, double* const cb, double* const cr) const;
+    void getYCbCr(double* const y, double* const cb, double* const cr)  const;
 
     /**
      * @brief Set the RGB color values of this color

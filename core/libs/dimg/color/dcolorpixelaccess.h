@@ -23,11 +23,11 @@ namespace Digikam
  * typically in loops iterating the data.
  * Providing them as inline methods allows the compiler to optimize better.
  */
-inline void DColor::setColor(uchar* const data, bool sixteenBit)
+inline void DColor::setColor(uchar* const data, bool _sixteenBit)
 {
-    m_sixteenBit = sixteenBit;
+    m_sixteenBit = _sixteenBit;
 
-    if (!sixteenBit)          // 8 bits image
+    if (!m_sixteenBit)          // 8 bits image
     {
         setBlue (data[0]);
         setGreen(data[1]);
