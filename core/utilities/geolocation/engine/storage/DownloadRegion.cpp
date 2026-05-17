@@ -39,11 +39,11 @@ class Q_DECL_HIDDEN DownloadRegionPrivate
 {
 public:
 
-    MarbleModel*     m_marbleModel = nullptr;
+    MarbleModel*     m_marbleModel      = nullptr;
 
     QPair<int, int>  m_tileLevelRange;
 
-    int              m_visibleTileLevel;
+    int              m_visibleTileLevel = 0;
 
 public:
 
@@ -71,7 +71,9 @@ int DownloadRegionPrivate::rad2PixelX(qreal const lon, const TileLayer* tileLaye
     return static_cast<int>(globalWidth * 0.5 * (1 + lon / M_PI));
 }
 
-// copied from AbstractScanlineTextureMapper and slightly adjusted
+/**
+ * Copied from AbstractScanlineTextureMapper and slightly adjusted.
+ */
 int DownloadRegionPrivate::rad2PixelY(qreal const lat, const TileLayer* tileLayer) const
 {
     if (tileLayer)
@@ -134,11 +136,12 @@ void DownloadRegion::setTileLevelRange(const int minimumTileLevel, const int max
     Q_ASSERT(maximumTileLevel >= 0);
     Q_ASSERT(minimumTileLevel <= maximumTileLevel);
 
-    d->m_tileLevelRange.first = minimumTileLevel;
+    d->m_tileLevelRange.first  = minimumTileLevel;
     d->m_tileLevelRange.second = maximumTileLevel;
 }
 
-QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer, const GeoDataLatLonAltBox& downloadRegion) const
+QVector<TileCoordsPyramid> DownloadRegion::region(const TileLayer* tileLayer,
+                                                  const GeoDataLatLonAltBox& downloadRegion) const
 {
     Q_ASSERT(tileLayer);
 
@@ -307,22 +310,22 @@ QVector<TileCoordsPyramid> DownloadRegion::fromPath(const TileLayer* tileLayer,
 
         // coordinates of the of the vertices of the square(topleft and bottomright) at an offset distance from the waypoint
 
-        qreal latNorth = asin(sin(latCenter) *  cos(radianOffset) +  cos(latCenter) * sin(radianOffset)  * cos(7 * M_PI / 4));
-        qreal dlonWest = atan2(sin(7 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latNorth));
-        qreal lonWest  = fmod(lonCenter - dlonWest + M_PI, 2 * M_PI) - M_PI;
-        qreal latSouth = asin(sin(latCenter) * cos(radianOffset) + cos(latCenter) * sin(radianOffset) * cos(3 * M_PI / 4));
-        qreal dlonEast = atan2(sin(3 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latSouth));
-        qreal lonEast  = fmod(lonCenter - dlonEast + M_PI, 2 * M_PI) - M_PI;
+        qreal latNorth        = asin(sin(latCenter) *  cos(radianOffset) +  cos(latCenter) * sin(radianOffset)  * cos(7 * M_PI / 4));
+        qreal dlonWest        = atan2(sin(7 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latNorth));
+        qreal lonWest         = fmod(lonCenter - dlonWest + M_PI, 2 * M_PI) - M_PI;
+        qreal latSouth        = asin(sin(latCenter) * cos(radianOffset) + cos(latCenter) * sin(radianOffset) * cos(3 * M_PI / 4));
+        qreal dlonEast        = atan2(sin(3 * M_PI / 4) * sin(radianOffset) * cos(latCenter),  cos(radianOffset) -  sin(latCenter) * sin(latSouth));
+        qreal lonEast         = fmod(lonCenter - dlonEast + M_PI, 2 * M_PI) - M_PI;
 
-        int const northY = d->rad2PixelY(latNorth, tileLayer);
-        int const southY = d->rad2PixelY(latSouth, tileLayer);
-        int const eastX  = d->rad2PixelX(lonEast, tileLayer);
-        int const westX  = d->rad2PixelX(lonWest, tileLayer);
+        int const northY      = d->rad2PixelY(latNorth, tileLayer);
+        int const southY      = d->rad2PixelY(latSouth, tileLayer);
+        int const eastX       = d->rad2PixelX(lonEast, tileLayer);
+        int const westX       = d->rad2PixelX(lonWest, tileLayer);
 
-        int const west  = qMin(westX, eastX);
-        int const north = qMin(northY, southY);
-        int const east  = qMax(westX, eastX);
-        int const south = qMax(northY, southY);
+        int const west        = qMin(westX, eastX);
+        int const north       = qMin(northY, southY);
+        int const east        = qMax(westX, eastX);
+        int const south       = qMax(northY, southY);
 
         int bottomLevelTileX1 = 0;
         int bottomLevelTileY1 = 0;
@@ -370,7 +373,7 @@ QVector<int> DownloadRegion::validTileLevels(const TileType tileType) const
 {
     QVector<int> validTileLevels;
 
-    GeoSceneMap* const map         = d->m_marbleModel->mapTheme()->map();
+    const GeoSceneMap* const map   = d->m_marbleModel->mapTheme()->map();
     QVector<GeoSceneLayer*> layers = map->layers();
 
     for (auto layer : std::as_const(layers))
@@ -380,7 +383,7 @@ QVector<int> DownloadRegion::validTileLevels(const TileType tileType) const
             ((layer->backend() == QString::fromUtf8("texture"))    && (tileType == TextureTileType))
            )
         {
-            GeoSceneTileDataset* const dataset = dynamic_cast<GeoSceneTileDataset*>(layer->datasets().first());
+            const GeoSceneTileDataset* const dataset = dynamic_cast<GeoSceneTileDataset*>(layer->datasets().first());
 
             if (dataset)
             {

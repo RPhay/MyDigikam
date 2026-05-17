@@ -56,7 +56,7 @@ bool OsmDocumentTagTranslator::write(const GeoNode* node, GeoWriter& writer) con
     converter.read(document);
     OsmNodeTagWriter::writeAllNodes(converter.nodes(), writer);
 
-    qint64 lastId = 0;
+    qint64 lastId                   = 0;
 
     for (auto const& way : converter.ways())
     {
@@ -71,17 +71,21 @@ bool OsmDocumentTagTranslator::write(const GeoNode* node, GeoWriter& writer) con
     {
         if (auto placemark = geodata_cast<GeoDataPlacemark>(relation.first))
         {
+            // cppcheck-suppress constVariablePointer
             if (const auto building = geodata_cast<GeoDataBuilding>(placemark->geometry()))
             {
                 auto polygon = geodata_cast<GeoDataPolygon>(&building->multiGeometry()->at(0));
+
                 Q_ASSERT(polygon);
+
                 OsmRelationTagWriter::writeMultipolygon(*polygon, relation.second, writer);
             }
-
             else
             {
                 auto polygon = geodata_cast<GeoDataPolygon>(placemark->geometry());
+
                 Q_ASSERT(polygon);
+
                 OsmRelationTagWriter::writeMultipolygon(*polygon, relation.second, writer);
             }
         }

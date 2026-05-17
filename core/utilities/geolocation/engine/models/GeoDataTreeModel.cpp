@@ -313,6 +313,7 @@ QVariant GeoDataTreeModel::data(const QModelIndex& index, int role) const
             }
         }
 
+        // cppcheck-suppress constVariablePointer
         if (const auto feature = dynamic_cast<const GeoDataFeature*>(object))
         {
             if      (index.column() == 0)
@@ -382,6 +383,7 @@ QVariant GeoDataTreeModel::data(const QModelIndex& index, int role) const
 
             return QVariant(Qt::Unchecked);
         }
+        // cppcheck-suppress constVariablePointer
         else if (const auto feature = dynamic_cast<GeoDataContainer*>(object))
         {
             if (auto folder = geodata_cast<GeoDataFolder>(object))
@@ -461,6 +463,7 @@ QVariant GeoDataTreeModel::data(const QModelIndex& index, int role) const
              && (index.column() == 0)
             )
     {
+        // cppcheck-suppress constVariablePointer
         if (const auto feature = dynamic_cast<const GeoDataFeature*>(object))
         {
             if (feature->style()->iconStyle().icon().isNull())
@@ -476,6 +479,7 @@ QVariant GeoDataTreeModel::data(const QModelIndex& index, int role) const
              && (index.column() == 0)
             )
     {
+        // cppcheck-suppress constVariablePointer
         if (const auto feature = dynamic_cast<const GeoDataFeature*>(object))
         {
             return QVariant(feature->description());
@@ -534,6 +538,7 @@ QVariant GeoDataTreeModel::data(const QModelIndex& index, int role) const
     }
     else if (role == MarblePlacemarkModel::IconPathRole)
     {
+        // cppcheck-suppress constVariablePointer
         if (const auto placemark = geodata_cast<GeoDataPlacemark>(object))
         {
             return placemark->style()->iconStyle().iconPath();
