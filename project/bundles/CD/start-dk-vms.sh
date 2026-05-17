@@ -5,14 +5,17 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-echo "Start M6 VM..."
-VBoxManage startvm M6
+echo "Start DK APPIMAGE Qt6..."
+VBoxManage startvm "DK APPIMAGE Qt6"
 
-echo "Start M7 VM..."
-VBoxManage startvm M7
+echo "Start DK APPIMAGE Qt5..."
+VBoxManage startvm "DK APPIMAGE Qt5"
 
-echo "Start MX VM..."
-VBoxManage startvm MX
+echo "Start DK WINDOWS 11 QT6..."
+VBoxManage startvm "DK WINDOWS 11 QT6"
+
+echo "Start DK WINDOWS 10 QT5..."
+VBoxManage startvm "DK WINDOWS 10 QT5"
 
 echo "All VM started."
 
