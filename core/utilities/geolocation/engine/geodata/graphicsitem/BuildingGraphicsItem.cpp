@@ -608,9 +608,9 @@ bool BuildingGraphicsItem::contains(const QPoint& screenPosition, const Viewport
     {
         if (polygon->containsPoint(point, Qt::OddEvenFill))
         {
-            for (auto polygon : m_cachedInnerRoofPolygons)
+            for (auto polygon2 : m_cachedInnerRoofPolygons)
             {
-                if (polygon->containsPoint(point, Qt::OddEvenFill))
+                if (polygon2->containsPoint(point, Qt::OddEvenFill))
                 {
                     return false;
                 }
@@ -624,9 +624,9 @@ bool BuildingGraphicsItem::contains(const QPoint& screenPosition, const Viewport
     {
         if (polygon->containsPoint(point, Qt::OddEvenFill))
         {
-            for (auto polygon : m_cachedInnerPolygons)
+            for (auto polygon2 : m_cachedInnerPolygons)
             {
-                if (polygon->containsPoint(point, Qt::OddEvenFill))
+                if (polygon2->containsPoint(point, Qt::OddEvenFill))
                 {
                     return false;
                 }

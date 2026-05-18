@@ -1137,7 +1137,6 @@ void GeoPainter::drawRect(const GeoDataCoordinates& centerCoordinates,
     }
 }
 
-
 QRegion GeoPainter::regionFromRect(const GeoDataCoordinates& centerCoordinates,
                                    qreal width, qreal height,
                                    bool isGeoProjected,
@@ -1157,33 +1156,33 @@ QRegion GeoPainter::regionFromRect(const GeoDataCoordinates& centerCoordinates,
         if (visible)
         {
             // only a hint, a backend could still ignore it, but we cannot know more
-            const bool antialiased = testRenderHint(QPainter::Antialiasing);
+
+            const bool antialiased      = testRenderHint(QPainter::Antialiasing);
 
             const qreal halfStrokeWidth = strokeWidth / 2.0;
-            const int topY = centerY - height / 2.0;
-            const int startY = antialiased ? (qFloor(topY - halfStrokeWidth)) : (qFloor(topY + 0.5 - halfStrokeWidth));
-            const int endY = antialiased ? (qCeil(topY + height + halfStrokeWidth)) : (qFloor(centerY + 0.5 + height + halfStrokeWidth));
+            const int topY              = centerY - height / 2.0;
+            const int startY            = antialiased ? (qFloor(topY - halfStrokeWidth)) : (qFloor(topY + 0.5 - halfStrokeWidth));
+            const int endY              = antialiased ? (qCeil(topY + height + halfStrokeWidth)) : (qFloor(centerY + 0.5 + height + halfStrokeWidth));
 
             // Draw all the x-repeat-instances of the point on the screen
-            for (int it = 0; it < pointRepeatNum; ++it)
+
+            for (int it = 0 ; it < pointRepeatNum ; ++it)
             {
                 const qreal leftX = d->m_x[it] - width / 2.0;
-                const int startX = antialiased ? (qFloor(leftX - halfStrokeWidth)) : (qFloor(leftX + 0.5 - halfStrokeWidth));
-                const int endX = antialiased ? (qCeil(leftX + width + halfStrokeWidth)) : (qFloor(leftX + 0.5 + width +  halfStrokeWidth));
-                regions += QRegion(startX, startY, endX - startX, endY - startY);
+                const int startX  = antialiased ? (qFloor(leftX - halfStrokeWidth)) : (qFloor(leftX + 0.5 - halfStrokeWidth));
+                const int endX    = antialiased ? (qCeil(leftX + width + halfStrokeWidth)) : (qFloor(leftX + 0.5 + width +  halfStrokeWidth));
+                regions          += QRegion(startX, startY, endX - startX, endY - startY);
             }
         }
 
         return regions;
     }
-
     else
     {
         return regionFromPolygon(d->createLinearRingFromGeoRect(centerCoordinates, width, height),
                                  Qt::OddEvenFill, strokeWidth);
     }
 }
-
 
 void GeoPainter::drawRoundedRect(const GeoDataCoordinates& centerPosition,
                                  qreal width, qreal height,
@@ -1194,14 +1193,16 @@ void GeoPainter::drawRoundedRect(const GeoDataCoordinates& centerPosition,
     bool globeHidesPoint;
 
     // FIXME: Better visibility detection that takes the circle geometry into account
+
     bool visible = d->m_viewport->screenCoordinates(centerPosition, d->m_x, y, pointRepeatNum, QSizeF(width, height), globeHidesPoint);
 
     if (visible)
     {
         // Draw all the x-repeat-instances of the point on the screen
+
         const qreal posY = y - height / 2.0;
 
-        for (int it = 0; it < pointRepeatNum; ++it)
+        for (int it = 0 ; it < pointRepeatNum ; ++it)
         {
             const qreal posX = d->m_x[it] - width / 2.0;
             QPainter::drawRoundedRect(QRectF(posX, posY, width, height), xRnd, yRnd);
@@ -1216,9 +1217,9 @@ void GeoPainter::drawTextFragment(const QPoint& position, const QString& text,
 {
     const QString key = text + QString::fromUtf8(":") + QString::number(static_cast<int>(flags));
 
-    QPixmap pixmap;
+    QPixmap pix;
 
-    if (!QPixmapCache::find(key, &pixmap))
+    if (!QPixmapCache::find(key, &pix))
     {
         const bool hasRoundFrame = flags.testFlag(RoundFrame);
 
@@ -1265,9 +1266,9 @@ void GeoPainter::drawTextFragment(const QPoint& position, const QString& text,
         QPixmapCache::insert(key, pixmap);
     }
 
-    QPainter::drawPixmap(position.x() - pixmap.width() / 2,
-                         position.y() - pixmap.height() / 2,
-                         pixmap);
+    QPainter::drawPixmap(position.x() - pix.width()  / 2,
+                         position.y() - pix.height() / 2,
+                         pix);
 }
 
 } // namespace Marble

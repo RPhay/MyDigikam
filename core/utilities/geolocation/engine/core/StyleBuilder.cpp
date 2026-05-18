@@ -51,6 +51,8 @@ public:
 
     Private();
 
+public:
+
     GeoDataStyle::ConstPtr presetStyle(GeoDataPlacemark::GeoDataVisualCategory visualCategory) const;
 
     static GeoDataStyle::Ptr createStyle(qreal width, qreal realWidth, const QColor& color,
@@ -60,43 +62,54 @@ public:
                                          const QVector< qreal >& dashPattern,
                                          const QFont& font, const QColor& fontColor = Qt::black,
                                          const QString& texturePath = QString());
+
     static GeoDataStyle::Ptr createPOIStyle(const QFont& font, const QString& bitmap,
                                             const QColor& textColor = Qt::black,
                                             const QColor& color = QColor(0xBE, 0xAD, 0xAD),
                                             const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker(),
                                             bool fill = true, bool renderOutline = true);
+
     static GeoDataStyle::Ptr createOsmPOIStyle(const QFont& font, const QString& bitmap,
                                                const QColor& textColor = Qt::black,
                                                const QColor& color = QColor(0xBE, 0xAD, 0xAD),
                                                const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker());
+
     static GeoDataStyle::Ptr createOsmPOIRingStyle(const QFont& font, const QString& bitmap,
                                                    const QColor& textColor = Qt::black,
                                                    const QColor& color = QColor(0xBE, 0xAD, 0xAD),
                                                    const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker());
+
     static GeoDataStyle::Ptr createOsmPOIAreaStyle(const QFont& font, const QString& bitmap,
                                                    const QColor& textColor = Qt::black,
                                                    const QColor& color = QColor(0xBE, 0xAD, 0xAD),
                                                    const QColor& outline = QColor(0xBE, 0xAD, 0xAD).darker());
+
     static GeoDataStyle::Ptr createHighwayStyle(const QColor& color, const QColor& outlineColor, const QFont& font,
                                                 const QColor& fontColor = Qt::black,
                                                 qreal width = 1, qreal realWidth = 0.0,
                                                 Qt::PenStyle penStyle = Qt::SolidLine,
                                                 Qt::PenCapStyle capStyle = Qt::RoundCap,
                                                 bool lineBackground = false);
+
     GeoDataStyle::Ptr createWayStyle(const QColor& color, const QColor& outlineColor,
                                      bool fill = true, bool outline = true,
                                      Qt::BrushStyle brushStyle = Qt::SolidPattern,
                                      const QString& texturePath = QString()) const;
+
     static GeoDataStyle::Ptr createIconWayStyle(const QColor& color, const QFont& font, const QColor& textColor, double lineWidth = 1.0, const QString& iconPath = QString());
 
     GeoDataStyle::ConstPtr createRelationStyle(const StyleParameters& parameters);
+
     GeoDataStyle::ConstPtr createPlacemarkStyle(const StyleParameters& parameters);
+
     GeoDataStyle::ConstPtr adjustPisteStyle(const StyleParameters& parameters, const GeoDataStyle::ConstPtr& style);
+
     static void adjustWayWidth(const StyleParameters& parameters, GeoDataLineStyle& lineStyle);
 
     // Having an outline with the same color as the fill results in degraded
     // performance and degraded display quality for no good reason
     // Q_ASSERT( !(outline && color == outlineColor && brushStyle == Qt::SolidPattern) );
+
     void initializeDefaultStyles();
 
     static QColor effectColor(const QColor& color);
@@ -106,17 +119,21 @@ public:
     static void initializeOsmVisualCategories();
     static void initializeMinimumZoomLevels();
 
-    int m_maximumZoomLevel;
-    QColor m_defaultLabelColor;
-    QFont m_defaultFont;
-    GeoDataStyle::Ptr m_defaultStyle[GeoDataPlacemark::LastIndex];
-    GeoDataStyle::Ptr m_styleTreeAutumn;
-    GeoDataStyle::Ptr m_styleTreeWinter;
-    bool m_defaultStyleInitialized;
+public:
 
-    QHash<QString, GeoDataStyle::Ptr> m_styleCache;
+    int                                                               m_maximumZoomLevel;
+    QColor                                                            m_defaultLabelColor;
+    QFont                                                             m_defaultFont;
+    GeoDataStyle::Ptr                                                 m_defaultStyle[GeoDataPlacemark::LastIndex];
+    GeoDataStyle::Ptr                                                 m_styleTreeAutumn;
+    GeoDataStyle::Ptr                                                 m_styleTreeWinter;
+    bool                                                              m_defaultStyleInitialized;
+
+    QHash<QString, GeoDataStyle::Ptr>                                 m_styleCache;
     QHash<GeoDataPlacemark::GeoDataVisualCategory, GeoDataStyle::Ptr> m_buildingStyles;
-    QSet<QLocale::Country> m_oceanianCountries;
+    QSet<QLocale::Country>                                            m_oceanianCountries;
+
+public:
 
     /**
      * @brief s_visualCategories contains osm tag mappings to GeoDataVisualCategories
@@ -129,18 +146,18 @@ public:
 };
 
 QHash<StyleBuilder::OsmTag, GeoDataPlacemark::GeoDataVisualCategory> StyleBuilder::Private::s_visualCategories;
-int StyleBuilder::Private::s_defaultMinZoomLevels[GeoDataPlacemark::LastIndex];
-bool StyleBuilder::Private::s_defaultMinZoomLevelsInitialized = false;
-QHash<GeoDataPlacemark::GeoDataVisualCategory, qint64> StyleBuilder::Private::s_popularities;
-StyleEffect StyleBuilder::Private::s_styleEffect = NoEffect;
+int                                                                  StyleBuilder::Private::s_defaultMinZoomLevels[GeoDataPlacemark::LastIndex];
+bool                                                                 StyleBuilder::Private::s_defaultMinZoomLevelsInitialized = false;
+QHash<GeoDataPlacemark::GeoDataVisualCategory, qint64>               StyleBuilder::Private::s_popularities;
+StyleEffect                                                          StyleBuilder::Private::s_styleEffect = NoEffect;
 
-StyleBuilder::Private::Private() :
-    m_maximumZoomLevel(15),
-    m_defaultLabelColor(Qt::black),
-    m_defaultFont(QStringLiteral("Sans Serif")),
-    m_defaultStyle(),
-    m_defaultStyleInitialized(false),
-    m_oceanianCountries(
+StyleBuilder::Private::Private()
+    : m_maximumZoomLevel(15),
+      m_defaultLabelColor(Qt::black),
+      m_defaultFont(QStringLiteral("Sans Serif")),
+      m_defaultStyle(),
+      m_defaultStyleInitialized(false),
+      m_oceanianCountries(
 {
     QLocale::Australia, QLocale::NewZealand, QLocale::Fiji,
     QLocale::PapuaNewGuinea, QLocale::NewCaledonia, QLocale::SolomonIslands,
@@ -359,13 +376,12 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
     const GeoDataPlacemark* const placemark = parameters.placemark;
     QString styleCacheKey;
 
-    OsmPlacemarkData const& osmData = placemark->osmData();
-    auto const visualCategory = placemark->visualCategory();
+    OsmPlacemarkData const& osmData         = placemark->osmData();
+    auto const visualCategory               = placemark->visualCategory();
 
     if (visualCategory == GeoDataPlacemark::Building)
     {
-        auto const tagMap = osmTagMapping();
-        auto const& osmData = placemark->osmData();
+        auto const tagMap      = osmTagMapping();
         auto const buildingTag = QStringLiteral("building");
 
         for (auto iter = osmData.tagsBegin(), end = osmData.tagsEnd(); iter != end; ++iter)
@@ -381,7 +397,7 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
 
     GeoDataStyle::ConstPtr style = presetStyle(visualCategory);
 
-    if (geodata_cast<GeoDataPoint>(placemark->geometry()))
+    if      (geodata_cast<GeoDataPoint>(placemark->geometry()))
     {
         if (visualCategory == GeoDataPlacemark::NaturalTree)
         {
@@ -396,12 +412,12 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
 
                 if (southernHemisphere)
                 {
-                    if (month >= 3 && month <= 5)
+                    if      ((month >= 3) && (month <= 5))
                     {
                         style = m_styleTreeAutumn;
                     }
 
-                    else if (month >= 6 && month <= 8)
+                    else if ((month >= 6) && (month <= 8))
                     {
                         style = m_styleTreeWinter;
                     }
@@ -409,12 +425,12 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
 
                 else
                 {
-                    if (month >= 9 && month <= 11)
+                    if      ((month >= 9) && (month <= 11))
                     {
                         style = m_styleTreeAutumn;
                     }
 
-                    else if (month == 12 || month == 1 || month == 2)
+                    else if ((month == 12) || (month == 1) || (month == 2))
                     {
                         style = m_styleTreeWinter;
                     }
@@ -544,6 +560,7 @@ GeoDataStyle::ConstPtr StyleBuilder::Private::createPlacemarkStyle(const StylePa
                  visualCategory == GeoDataPlacemark::TransportAirportRunway)
         {
             // Take cached Style instance if possible
+
             styleCacheKey = QStringLiteral("%1/%2").arg(parameters.tileLevel).arg(visualCategory);
 
             if (m_styleCache.contains(styleCacheKey))

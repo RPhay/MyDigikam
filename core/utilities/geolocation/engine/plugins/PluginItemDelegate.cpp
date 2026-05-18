@@ -58,27 +58,34 @@ void PluginItemDelegate::paint(QPainter* painter,
                                const QModelIndex& index) const
 {
     Q_ASSERT(index.isValid());
-    QRect rect = option.rect;
+
+    QRect rect    = option.rect;
     QStyle* style = QApplication::style();
 
     painter->save();
 
     // Drawing the background
+
     QStyleOption background = option;
     style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter);
-
     painter->translate(rect.topLeft());
 
     // rect is now represented in item coordinates
+
     rect.moveTopLeft(QPoint(0, 0));
+
     // The point at the top left of the available drawing area.
+
     QPoint topLeft(0, 0);
+
     // The point at the top right of the available drawing area.
+
     QPoint topRight(rect.topRight());
 
     QRect nameRect = rect;
 
     // Painting the checkbox
+
     QStyleOptionButton checkBox = checkboxOption(option, index, topLeft.x(), Qt::AlignLeft);
     painter->save();
     style->drawControl(QStyle::CE_CheckBox, &checkBox, painter);
@@ -87,24 +94,27 @@ void PluginItemDelegate::paint(QPainter* painter,
     nameRect.setLeft(checkBox.rect.right() + 1);
 
     // Painting the About Button
+
     QStyleOptionButton button = buttonOption(option, index, PluginItemDelegate::About,
                                              topRight.x(), Qt::AlignRight);
     style->drawControl(QStyle::CE_PushButton, &button, painter);
-    topRight -= QPoint(button.rect.width(), 0);
+    topRight                 -= QPoint(button.rect.width(), 0);
 
     // Painting the Configure Button
+
     if (index.data(RenderPluginModel::ConfigurationDialogAvailable).toBool())
     {
-        QStyleOptionButton button = buttonOption(option, index, PluginItemDelegate::Configure,
-                                                 topRight.x(), Qt::AlignRight);
-        style->drawControl(QStyle::CE_PushButton, &button, painter);
-        topRight -= QPoint(button.rect.width(), 0);
+        QStyleOptionButton button2 = buttonOption(option, index, PluginItemDelegate::Configure,
+                                                  topRight.x(), Qt::AlignRight);
+        style->drawControl(QStyle::CE_PushButton, &button2, painter);
+        topRight                  -= QPoint(button2.rect.width(), 0);
 
-        nameRect.setRight(button.rect.left() - 1);
+        nameRect.setRight(button2.rect.left() - 1);
     }
 
     // Painting the Icon
-    const QIcon icon = index.data(Qt::DecorationRole).value<QIcon>();
+
+    const QIcon icon         = index.data(Qt::DecorationRole).value<QIcon>();
     const QPixmap iconPixmap = icon.pixmap(16, 16);
 
     nameRect.moveBottom(nameRect.bottom() + 5);
@@ -117,6 +127,7 @@ void PluginItemDelegate::paint(QPainter* painter,
     nameRect.moveBottom(nameRect.bottom() - 5);
 
     // Painting the Name string
+
     QString name = index.data(Qt::DisplayRole).toString();
 
     style->drawItemText(painter,

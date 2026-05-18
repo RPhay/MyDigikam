@@ -41,41 +41,35 @@ GeoNode* KmlstateTagHandler::parse(GeoParser& parser) const
 
     if (parentItem.represents(kmlTag_ItemIcon))
     {
-        QString value = parser.readElementText().trimmed();
-        QStringList iconStateTextList = value.split(QLatin1Char(' '));
+        QString eleValue              = parser.readElementText().trimmed();
+        QStringList iconStateTextList = eleValue.split(QLatin1Char(' '));
 
         for (const QString& value : iconStateTextList)
         {
-            if (value == QLatin1String("open"))
+            if      (value == QLatin1String("open"))
             {
                 itemIconState |= GeoDataItemIcon::Open;
             }
-
             else if (value == QLatin1String("closed"))
             {
                 itemIconState |= GeoDataItemIcon::Closed;
             }
-
             else if (value == QLatin1String("error"))
             {
                 itemIconState |= GeoDataItemIcon::Error;
             }
-
             else if (value == QLatin1String("fetching0"))
             {
                 itemIconState |= GeoDataItemIcon::Fetching0;
             }
-
             else if (value == QLatin1String("fetching1"))
             {
                 itemIconState |= GeoDataItemIcon::Fetching1;
             }
-
             else if (value == QLatin1String("fetching2"))
             {
                 itemIconState |= GeoDataItemIcon::Fetching2;
             }
-
             else
             {
                 qCDebug(DIGIKAM_GEOENGINE_LOG) << "Cannot parse state value" << value;

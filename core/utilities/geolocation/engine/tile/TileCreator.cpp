@@ -347,12 +347,12 @@ void TileCreator::run()
 
     // Creating directory structure for the highest level
 
-    QString  dirName(d->m_targetDir
+    QString  _dirName(d->m_targetDir
                      + QString::fromUtf8("%1").arg(maxTileLevel));
 
-    if (!QDir(dirName).exists())
+    if (!QDir(_dirName).exists())
     {
-        (QDir::root()).mkpath(dirName);
+        (QDir::root()).mkpath(_dirName);
     }
 
     for (int n = 0 ; n < nmax ; ++n)

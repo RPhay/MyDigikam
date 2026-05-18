@@ -26,19 +26,19 @@ namespace Marble
 
 GeoDataBuilding::GeoDataBuilding()
     : GeoDataGeometry(new GeoDataBuildingPrivate),
-      d(new GeoDataBuildingPrivate)
+      d              (new GeoDataBuildingPrivate)
 {
 }
 
 GeoDataBuilding::GeoDataBuilding(const GeoDataGeometry& other)
     : GeoDataGeometry(other),
-      d(new GeoDataBuildingPrivate)
+      d              (new GeoDataBuildingPrivate)
 {
 }
 
 GeoDataBuilding::GeoDataBuilding(const GeoDataBuilding& other)
     : GeoDataGeometry(other),
-      d(new GeoDataBuildingPrivate(*other.d))
+      d              (new GeoDataBuildingPrivate(*other.d))
 {
 }
 
@@ -117,7 +117,9 @@ GeoDataMultiGeometry* GeoDataBuilding::multiGeometry() const
 const GeoDataLatLonAltBox& GeoDataBuilding::latLonAltBox() const
 {
     // @todo: This is temporary, for only when we have just one child
+
     Q_ASSERT(d->m_multiGeometry.size() == 1);
+
     return static_cast<const GeoDataMultiGeometry>(d->m_multiGeometry).at(0).latLonAltBox();
 }
 
@@ -143,45 +145,47 @@ void GeoDataBuilding::setEntries(const QVector<GeoDataBuilding::NamedEntry>& ent
 
 double GeoDataBuilding::parseBuildingHeight(const QString& buildingHeight)
 {
-    double height = 8.0;
+    double height          = 8.0;
 
     // check first for unitless value
-    bool converted;
-    double extractedHeight = buildingHeight.toDouble(&converted);
+
+    bool converted         = false;
+    double convertedHeight = buildingHeight.toDouble(&converted);
 
     if (converted)
     {
-        return extractedHeight;
+        return convertedHeight;
     }
 
-    if (buildingHeight.endsWith(QLatin1Char('m')) ||
-        buildingHeight.endsWith(QLatin1String("meter")) ||
+    if (
+        buildingHeight.endsWith(QLatin1Char('m'))        ||
+        buildingHeight.endsWith(QLatin1String("meter"))  ||
         buildingHeight.endsWith(QLatin1String("meters")) ||
-        buildingHeight.endsWith(QLatin1String("metre")) ||
-        buildingHeight.endsWith(QLatin1String("metres")))
+        buildingHeight.endsWith(QLatin1String("metre"))  ||
+        buildingHeight.endsWith(QLatin1String("metres"))
+       )
     {
         QString const heightValue = QString(buildingHeight).remove(QStringLiteral("meters"))
                                     .remove(QStringLiteral("meter")).remove(QStringLiteral("metres"))
                                     .remove(QStringLiteral("metre")).remove(QLatin1Char('m')).trimmed();
-        bool extracted;
-        double extractedHeight = heightValue.toDouble(&extracted);
+        bool extracted            = false;
+        double extractedHeight    = heightValue.toDouble(&extracted);
 
         if (extracted)
         {
             height = extractedHeight;
         }
     }
-
     else     // feet and inches
     {
         double extractedHeight = 0.0; // in inches, converted to meters in the end
 
-        if (buildingHeight.contains(QLatin1Char('\'')))
+        if      (buildingHeight.contains(QLatin1Char('\'')))
         {
-            double heightInches = 0.0;
+            double heightInches          = 0.0;
             QStringList const feetInches = buildingHeight.split(QLatin1Char('\''));
-            bool okFeet;
-            double feet = feetInches[0].trimmed().toDouble(&okFeet);
+            bool okFeet                  = false;
+            double feet                  = feetInches[0].trimmed().toDouble(&okFeet);
 
             if (okFeet)
             {
@@ -190,7 +194,7 @@ double GeoDataBuilding::parseBuildingHeight(const QString& buildingHeight)
 
             if (!feetInches[1].isEmpty())   // has inches as unit as well
             {
-                bool okInches;
+                bool okInches = false;
                 double inches = QString(feetInches[1]).remove(QLatin1Char('\"')).trimmed().toDouble(&okInches);
 
                 if (okInches)
@@ -201,10 +205,9 @@ double GeoDataBuilding::parseBuildingHeight(const QString& buildingHeight)
 
             extractedHeight = heightInches;
         }
-
         else if (buildingHeight.endsWith(QLatin1String("feet")))
         {
-            bool ok;
+            bool ok     = false;
             double feet = QString(buildingHeight).remove(QStringLiteral("feet")).trimmed().toDouble(&ok);
 
             if (ok)

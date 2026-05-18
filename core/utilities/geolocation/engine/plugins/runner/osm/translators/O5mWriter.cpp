@@ -274,8 +274,8 @@ void O5mWriter::writeMultipolygonMembers(const GeoDataPolygon& polygon, qint64(&
     for (int index = 0 ; index < polygon.innerBoundaries().size() ; ++index)
     {
         id                        = osmData.memberReference(index).id();
-        qint64 idDiff             = id - lastId[(int)OsmType::Way];
-        writeSigned(idDiff, stream);
+        qint64 idDiff2            = id - lastId[(int)OsmType::Way];
+        writeSigned(idDiff2, stream);
         writeStringPair(StringPair(QString::fromUtf8("1inner"), QString()), stringTable, stream); // type=way, role=inner
         lastId[(int)OsmType::Way] = id;
     }

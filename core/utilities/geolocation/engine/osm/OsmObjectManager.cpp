@@ -148,14 +148,14 @@ void OsmObjectManager::initializeOsmData(GeoDataPlacemark* placemark)
 
             // Inner boundary nodes
 
-            QVector<GeoDataCoordinates>::const_iterator it       = innerRing.constBegin();
-            QVector<GeoDataCoordinates>::ConstIterator const end = innerRing.constEnd();
+            QVector<GeoDataCoordinates>::const_iterator it2       = innerRing.constBegin();
+            QVector<GeoDataCoordinates>::ConstIterator const end2 = innerRing.constEnd();
 
-            for ( ; it != end ; ++it)
+            for ( ; it2 != end2 ; ++it2)
             {
-                if (innerRingData.nodeReference(*it).isNull())
+                if (innerRingData.nodeReference(*it2).isNull())
                 {
-                    innerRingData.nodeReference(*it).setId(--m_minId);
+                    innerRingData.nodeReference(*it2).setId(--m_minId);
                 }
             }
         }
