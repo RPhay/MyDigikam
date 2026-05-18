@@ -1692,7 +1692,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         setXmpTagString("Xmp.video.MediaCreateDate",
                         QString::number(s_secondsSinceJanuary1904(dt)));
     }
-*/
+
     // --------------
 
     // GPS info as string. ex: "+44.8511-000.6229/"
@@ -1791,7 +1791,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                             getXmpTagString("Xmp.exif.GPSVersionID"));
         }
     }
-
+*/
     avformat_close_input(&fmt_ctx);
 
     QFileInfo fi(filePath);
