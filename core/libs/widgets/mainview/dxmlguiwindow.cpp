@@ -295,7 +295,7 @@ void DXmlGuiWindow::slotRawCameraList()
 void DXmlGuiWindow::slotSolidHardwareList()
 {
     SolidHardwareDlg* const dlg = new SolidHardwareDlg(qApp->activeWindow());
-    (void)dlg->exec();
+    dlg->open();
 }
 
 void DXmlGuiWindow::slotDonateMoney()
