@@ -13,7 +13,7 @@
  *
  * ============================================================ */
 
-#include "videogpsoverwrite_utest.h"
+#include "databasevideogps_utest.h"
 
 // Qt includes
 
@@ -42,9 +42,9 @@ static const double TARGET_LATITUDE  = 59.32694;
 static const double TARGET_LONGITUDE = 18.07167;
 static const double GPS_TOLERANCE    = 0.001;
 
-QTEST_GUILESS_MAIN(VideoGpsOverwriteTest)
+QTEST_GUILESS_MAIN(DatabaseVideoGpsTest)
 
-QString VideoGpsOverwriteTest::tempFileName(const QString& purpose) const
+QString DatabaseVideoGpsTest::tempFileName(const QString& purpose) const
 {
     return QLatin1String("digikamtests-") +
            QLatin1String(metaObject()->className()) +
@@ -52,12 +52,12 @@ QString VideoGpsOverwriteTest::tempFileName(const QString& purpose) const
            QLatin1Char('-') + QTime::currentTime().toString();
 }
 
-QString VideoGpsOverwriteTest::tempFilePath(const QString& purpose) const
+QString DatabaseVideoGpsTest::tempFilePath(const QString& purpose) const
 {
     return QDir::tempPath() + QLatin1Char('/') + tempFileName(purpose);
 }
 
-void VideoGpsOverwriteTest::initTestCase()
+void DatabaseVideoGpsTest::initTestCase()
 {
     MetaEngine::initializeExiv2();
 
@@ -158,13 +158,13 @@ void VideoGpsOverwriteTest::initTestCase()
     qCDebug(DIGIKAM_TESTS_LOG) << "Video image ID:" << ids.first();
 }
 
-void VideoGpsOverwriteTest::cleanupTestCase()
+void DatabaseVideoGpsTest::cleanupTestCase()
 {
     QFile(dbFile).remove();
     QDir(collectionPath).removeRecursively();
 }
 
-void VideoGpsOverwriteTest::cleanup()
+void DatabaseVideoGpsTest::cleanup()
 {
     QFile::remove(sidecarFilePath);
 }
@@ -185,7 +185,7 @@ void VideoGpsOverwriteTest::cleanup()
  * Expected: latitude ~59.327, longitude ~18.072.
  * Actual (bug): latitude and longitude are still 0.
  */
-void VideoGpsOverwriteTest::testVideoGpsSidecarToDatabase()
+void DatabaseVideoGpsTest::testVideoGpsSidecarToDatabase()
 {
     // ---- Step 1: verify original GPS is 0,0 in the database ----
 
@@ -259,4 +259,4 @@ void VideoGpsOverwriteTest::testVideoGpsSidecarToDatabase()
                  .arg(posAfter.longitudeNumber())));
 }
 
-#include "moc_videogpsoverwrite_utest.cpp"
+#include "moc_databasevideogps_utest.cpp"

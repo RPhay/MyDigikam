@@ -13,7 +13,16 @@ include_directories(
     $<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
+
+if(ENABLE_DBUS)
+    include_directories($<TARGET_PROPERTY:Qt${QT_VERSION_MAJOR}::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
+endif()
+
+# Pass the path to the source video file shipped with digiKam.
+
+add_definitions(-DVIDEO_SRC_DIR="${CMAKE_SOURCE_DIR}/core/data/pics/digikam")
 
 if(KF${QT_VERSION_MAJOR}Notifications_FOUND)
     include_directories($<TARGET_PROPERTY:KF${QT_VERSION_MAJOR}::Notifications,INTERFACE_INCLUDE_DIRECTORIES>)
@@ -155,4 +164,20 @@ ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/haariface_utest.cpp
               ${COMMON_TEST_LINK}
 
               GUI
+)
+
+#------------------------------------------------------------------------
+
+ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/databasevideogps_utest.cpp
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+
+              ${COMMON_TEST_LINK}
 )

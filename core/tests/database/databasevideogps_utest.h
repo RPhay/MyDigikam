@@ -19,13 +19,13 @@
 
 #include <QTest>
 
-class VideoGpsOverwriteTest : public QObject
+class DatabaseVideoGpsTest : public QObject
 {
     Q_OBJECT
 
 public:
 
-    explicit VideoGpsOverwriteTest(QObject* const parent = nullptr)
+    explicit DatabaseVideoGpsTest(QObject* const parent = nullptr)
         : QObject(parent)
     {
     }

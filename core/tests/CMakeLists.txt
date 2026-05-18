@@ -161,7 +161,7 @@ add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
 add_subdirectory(widgets)
 add_subdirectory(video)
-add_subdirectory(videogpsoverwrite)
+
 
 if(JXL_FOUND)
 
