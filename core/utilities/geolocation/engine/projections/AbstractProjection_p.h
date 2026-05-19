@@ -40,6 +40,8 @@ public:
     mutable qreal               m_previousResolution = -1;
     mutable qreal               m_level              = -1;
 
+private:
+
     AbstractProjection* const   q_ptr                = nullptr;
 };
 

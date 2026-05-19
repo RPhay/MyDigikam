@@ -107,7 +107,7 @@ public:
 
     Q_DECLARE_PUBLIC(AzimuthalProjection)
 
-public:
+protected:
 
     AzimuthalProjection* const q_ptr = nullptr;
 };

@@ -84,7 +84,7 @@ public:
 
     Q_DECLARE_PUBLIC(CylindricalProjection)
 
-public:
+protected:
 
     CylindricalProjection* const q_ptr = nullptr;
 };
