@@ -38,7 +38,9 @@ class QString;
 namespace Marble
 {
 
-// The manhattan distance in pixels at which extra nodes get created for tessellation.
+/**
+ * The manhattan distance in pixels at which extra nodes get created for tessellation.
+ */
 static const int tessellationPrecision    = 10;
 static const int latLonAltBoxSamplingRate = 4;
 
@@ -73,6 +75,8 @@ public:
         EqualArea
     };
 
+public:
+
     /**
      * @brief Construct a new AbstractProjection.
      */
@@ -80,23 +84,25 @@ public:
 
     virtual ~AbstractProjection();
 
+public:
+
     /**
      * @brief Returns the user-visible name of the projection.
      *
      * Example: "Mercator"
      */
-    virtual QString name() const = 0;
+    virtual QString name()                                          const = 0;
 
     /**
      * @brief Returns a short user description of the projection
      * that can be used in tooltips or dialogs.
      */
-    virtual QString description() const = 0;
+    virtual QString description()                                   const = 0;
 
     /**
      * @brief Returns an icon for the projection.
      */
-    virtual QIcon icon() const = 0;
+    virtual QIcon icon()                                            const = 0;
 
     /**
      * @brief Returns the maximum (northern) latitude that is mathematically defined and reasonable.
@@ -104,14 +110,14 @@ public:
      * Example: For many projections the value will represent +90 degrees in Radian.
      * In the case of Mercator this value will equal +85.05113 degrees in Radian.
      */
-    virtual qreal  maxValidLat() const;
+    virtual qreal  maxValidLat()                                    const;
 
     /**
      * @brief Returns the arbitrarily chosen maximum (northern) latitude.
      * By default this value is equal to the value defined inside maxValidLat().
      * In general this value can only be smaller or equal to maxValidLat().
      */
-    qreal  maxLat()  const;
+    qreal maxLat()                                                  const;
     void setMaxLat(qreal maxLat);
 
     /**
@@ -120,14 +126,14 @@ public:
      * Example: For many projections the value will represent -90 degrees in Radian.
      * In the case of Mercator this value will equal -85.05113 degrees in Radian.
      */
-    virtual qreal  minValidLat() const;
+    virtual qreal minValidLat()                                     const;
 
     /**
      * @brief Returns the arbitrarily chosen minimum (southern) latitude.
      * By default this value is equal to the value defined inside minValidLat().
      * In general this value can only be larger or equal to minValidLat().
      */
-    qreal  minLat()  const;
+    qreal minLat()                                                  const;
     void setMinLat(qreal minLat);
 
     /**
@@ -135,26 +141,26 @@ public:
      *
      * Example: Cylindrical projections allow for repeating.
      */
-    virtual bool   repeatableX() const;
+    virtual bool repeatableX()                                      const;
 
     /**
      * @brief Returns whether the projection allows to navigate seamlessly "over" the pole.
      *
      * Example: Azimuthal projections.
      */
-    virtual bool   traversablePoles()  const;
-    virtual bool   traversableDateLine()  const;
+    virtual bool traversablePoles()                                 const;
+    virtual bool traversableDateLine()                              const;
 
-    virtual SurfaceType surfaceType() const = 0;
+    virtual SurfaceType surfaceType()                               const = 0;
 
-    virtual PreservationType preservationType() const;
+    virtual PreservationType preservationType()                     const;
 
     // The projection surface can have different orientations:
     // - normal: the surface's axis of symmetry matches the Earth's axis
     // - transverse: orthogonally oriented compared to the Earth's axis
     // - oblique: somewhere in between
 
-    virtual bool isOrientedNormal() const;
+    virtual bool isOrientedNormal()                                 const;
 
     /**
      * @brief Defines whether a projection is supposed to be clipped to a certain radius.
@@ -162,9 +168,9 @@ public:
      * Example: The Gnomonic projection is clipped to a circle of a certain clipping radius
      * (although it's mathematically defined beyond that radius).
      */
-    virtual bool isClippedToSphere() const;
+    virtual bool isClippedToSphere()                                const;
 
-    virtual qreal clippingRadius() const;
+    virtual qreal clippingRadius()                                  const;
 
     /**
      * @brief Get the screen coordinates corresponding to geographical coordinates in the map.
@@ -180,7 +186,7 @@ public:
      */
     bool screenCoordinates(const qreal lon, const qreal lat,
                            const ViewportParams* viewport,
-                           qreal& x, qreal& y) const;
+                           qreal& x, qreal& y)                      const;
 
     /**
      * @brief Get the screen coordinates corresponding to geographical coordinates in the map.
@@ -199,12 +205,12 @@ public:
     virtual bool screenCoordinates(const GeoDataCoordinates& geopoint,
                                    const ViewportParams* viewport,
                                    qreal& x, qreal& y,
-                                   bool& globeHidesPoint) const = 0;
+                                   bool& globeHidesPoint)           const = 0;
 
     // Will just call the virtual version with a dummy globeHidesPoint.
     bool screenCoordinates(const GeoDataCoordinates& geopoint,
                            const ViewportParams* viewport,
-                           qreal& x, qreal& y) const;
+                           qreal& x, qreal& y)                      const;
 
     /**
      * @brief Get the coordinates of screen points for geographical coordinates in the map.
@@ -227,11 +233,11 @@ public:
                                    const ViewportParams* viewport,
                                    qreal* x, qreal& y, int& pointRepeatNum,
                                    const QSizeF& size,
-                                   bool& globeHidesPoint) const = 0;
+                                   bool& globeHidesPoint)           const = 0;
 
     virtual bool screenCoordinates(const GeoDataLineString& lineString,
                                    const ViewportParams* viewport,
-                                   QVector<QPolygonF*>& polygons) const = 0;
+                                   QVector<QPolygonF*>& polygons)   const = 0;
 
     /**
      * @brief Get the earth coordinates corresponding to a pixel in the map.
@@ -245,23 +251,23 @@ public:
      *         @c false if the pixel (x, y) is outside the globe, i.e. in space.
      */
     virtual bool geoCoordinates(const int x, const int y,
-                                const ViewportParams* viewport,
-                                qreal& lon, qreal& lat,
-                                GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree) const = 0;
+        const ViewportParams* viewport,
+        qreal& lon, qreal& lat,
+        GeoDataCoordinates::Unit unit = GeoDataCoordinates::Degree) const = 0;
 
 
     /**
      * @brief Returns a GeoDataLatLonAltBox bounding box of the given screenrect inside the given viewport.
      */
     virtual GeoDataLatLonAltBox latLonAltBox(const QRect& screenRect,
-                                             const ViewportParams* viewport) const;
+        const ViewportParams* viewport)                             const;
 
     /**
      * @brief Returns whether the projected data fully obstructs the current viewport.
      * In this case there are no black areas visible around the actual map.
      * This case allows for performance optimizations.
      */
-    virtual bool mapCoversViewport(const ViewportParams* viewport) const = 0;
+    virtual bool mapCoversViewport(const ViewportParams* viewport)  const = 0;
 
     /**
      * @brief Returns the shape/outline of a map projection.
@@ -269,9 +275,9 @@ public:
      *
      * Example: For an azimuthal projection a circle is returned at low zoom values.
      */
-    virtual QPainterPath mapShape(const ViewportParams* viewport) const = 0;
+    virtual QPainterPath mapShape(const ViewportParams* viewport)   const = 0;
 
-    QRegion mapRegion(const ViewportParams* viewport) const;
+    QRegion mapRegion(const ViewportParams* viewport)               const;
 
 protected:
 

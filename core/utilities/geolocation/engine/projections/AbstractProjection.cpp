@@ -48,11 +48,11 @@ AbstractProjection::~AbstractProjection()
 }
 
 AbstractProjectionPrivate::AbstractProjectionPrivate(AbstractProjection* parent)
-    : m_maxLat(0),
-      m_minLat(0),
+    : m_maxLat            (0),
+      m_minLat            (0),
       m_previousResolution(-1),
-      m_level(-1),
-      q_ptr(parent)
+      m_level             (-1),
+      q_ptr               (parent)
 {
 }
 
@@ -65,86 +65,70 @@ int AbstractProjectionPrivate::levelForResolution(qreal resolution) const
 
     m_previousResolution = resolution;
 
-    if (resolution < 0.0000005)
+    if      (resolution < 0.0000005)
     {
         m_level = 17;
     }
-
     else if (resolution < 0.0000010)
     {
         m_level = 16;
     }
-
     else if (resolution < 0.0000020)
     {
         m_level = 15;
     }
-
     else if (resolution < 0.0000040)
     {
         m_level = 14;
     }
-
     else if (resolution < 0.0000080)
     {
         m_level = 13;
     }
-
     else if (resolution < 0.0000160)
     {
         m_level = 12;
     }
-
     else if (resolution < 0.0000320)
     {
         m_level = 11;
     }
-
     else if (resolution < 0.0000640)
     {
         m_level = 10;
     }
-
     else if (resolution < 0.0001280)
     {
         m_level = 9;
     }
-
     else if (resolution < 0.0002560)
     {
         m_level = 8;
     }
-
     else if (resolution < 0.0005120)
     {
         m_level = 7;
     }
-
     else if (resolution < 0.0010240)
     {
         m_level = 6;
     }
-
     else if (resolution < 0.0020480)
     {
         m_level = 5;
     }
-
     else if (resolution < 0.0040960)
     {
         m_level = 4;
     }
-
     else if (resolution < 0.0081920)
     {
         m_level = 3;
     }
-
     else if (resolution < 0.0163840)
     {
         m_level = 2;
     }
-
     else
     {
         m_level =  1;
@@ -155,12 +139,13 @@ int AbstractProjectionPrivate::levelForResolution(qreal resolution) const
 
 qreal AbstractProjection::maxValidLat() const
 {
-    return +90.0 * DEG2RAD;
+    return (+90.0 * DEG2RAD);
 }
 
 qreal AbstractProjection::maxLat() const
 {
     Q_D(const AbstractProjection);
+
     return d->m_maxLat;
 }
 
@@ -175,17 +160,19 @@ void AbstractProjection::setMaxLat(qreal maxLat)
     }
 
     Q_D(AbstractProjection);
+
     d->m_maxLat = maxLat;
 }
 
 qreal AbstractProjection::minValidLat() const
 {
-    return -90.0 * DEG2RAD;
+    return (-90.0 * DEG2RAD);
 }
 
 qreal AbstractProjection::minLat() const
 {
     Q_D(const AbstractProjection);
+
     return d->m_minLat;
 }
 
@@ -193,11 +180,14 @@ void AbstractProjection::setMinLat(qreal minLat)
 {
     if (minLat < minValidLat())
     {
-        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO << "Trying to set minLat to a value that is out of the valid range.";
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << Q_FUNC_INFO
+                                       << "Trying to set minLat to a value "
+                                          "that is out of the valid range.";
         return;
     }
 
     Q_D(AbstractProjection);
+
     d->m_minLat = minLat;
 }
 
@@ -236,13 +226,13 @@ qreal AbstractProjection::clippingRadius() const
     return 0;
 }
 
-
 bool AbstractProjection::screenCoordinates(const qreal lon, const qreal lat,
                                            const ViewportParams* viewport,
                                            qreal& x, qreal& y) const
 {
     bool globeHidesPoint;
     GeoDataCoordinates geopoint(lon, lat);
+
     return screenCoordinates(geopoint, viewport, x, y, globeHidesPoint);
 }
 
@@ -262,14 +252,15 @@ GeoDataLatLonAltBox AbstractProjection::latLonAltBox(const QRect& screenRect,
     // pretty dirty and generic detection algorithm:
 
     // Move along the screenborder and save the highest and lowest lon-lat values.
+
     QRect projectedRect = mapRegion(viewport).boundingRect();
-    QRect mapRect = screenRect.intersected(projectedRect);
+    QRect mapRect       = screenRect.intersected(projectedRect);
 
     GeoDataLineString boundingLineString;
 
     qreal lon, lat;
 
-    for (int x = mapRect.left(); x < mapRect.right(); x += latLonAltBoxSamplingRate)
+    for (int x = mapRect.left() ; x < mapRect.right() ; x += latLonAltBoxSamplingRate)
     {
         if (geoCoordinates(x, mapRect.bottom(), viewport, lon, lat,
                            GeoDataCoordinates::Radian))
@@ -296,7 +287,7 @@ GeoDataLatLonAltBox AbstractProjection::latLonAltBox(const QRect& screenRect,
         boundingLineString << GeoDataCoordinates(lon, lat);
     }
 
-    for (int y = mapRect.bottom(); y < mapRect.top(); y += latLonAltBoxSamplingRate)
+    for (int y = mapRect.bottom() ; y < mapRect.top() ; y += latLonAltBoxSamplingRate)
     {
         if (geoCoordinates(mapRect.left(), y, viewport, lon, lat,
                            GeoDataCoordinates::Radian))
@@ -320,6 +311,7 @@ GeoDataLatLonAltBox AbstractProjection::latLonAltBox(const QRect& screenRect,
 
     // FIXME: Some of the following code can be safely removed as soon as we properly handle
     //        GeoDataLinearRing::latLonAltBox().
+
     qreal averageLongitude = (latLonAltBox.west() + latLonAltBox.east()) / 2.0;
 
     GeoDataCoordinates maxLatPoint(averageLongitude, maxLat(), 0.0, GeoDataCoordinates::Radian);
@@ -327,13 +319,13 @@ GeoDataLatLonAltBox AbstractProjection::latLonAltBox(const QRect& screenRect,
 
     qreal dummyX, dummyY; // not needed
 
-    if (latLonAltBox.north() > maxLat() ||
+    if ((latLonAltBox.north() > maxLat()) ||
         screenCoordinates(maxLatPoint, viewport, dummyX, dummyY))
     {
         latLonAltBox.setNorth(maxLat());
     }
 
-    if (latLonAltBox.north() < minLat() ||
+    if ((latLonAltBox.north() < minLat()) ||
         screenCoordinates(minLatPoint, viewport, dummyX, dummyY))
     {
         latLonAltBox.setSouth(minLat());
