@@ -289,7 +289,7 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
         }
     }
 
-    const Marble::GeoDataLatLonBox latLonBox = Marble::GeoDataLatLonBox::fromLineString(tileString);
+    const Marble::GeoDataLatLonBox latLonBox = Marble::GeoDataLatLonBox::fromLineStringBase(tileString);
 
     /// @todo use a sane zoom level
 
@@ -846,7 +846,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
             }
         }
 
-        Marble::GeoDataLatLonBox latLonBox = Marble::GeoDataLatLonBox::fromLineString(tileString);
+        Marble::GeoDataLatLonBox latLonBox = Marble::GeoDataLatLonBox::fromLineStringBase(tileString);
 
         /// @todo Review this section
 /*

@@ -731,7 +731,7 @@ void GeoDataLatLonBox::unpack(QDataStream& stream)
     stream >> d->m_north >> d->m_south >> d->m_east >> d->m_west >> d->m_rotation;
 }
 
-GeoDataLatLonBox GeoDataLatLonBox::fromLineString(const GeoDataLineString& lineString)
+GeoDataLatLonBox GeoDataLatLonBox::fromLineStringBase(const GeoDataLineString& lineString)
 {
     // If the line string is empty return an empty boundingbox
     if (lineString.isEmpty())

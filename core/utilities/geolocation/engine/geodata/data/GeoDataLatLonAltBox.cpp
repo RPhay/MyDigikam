@@ -240,7 +240,7 @@ bool GeoDataLatLonAltBox::intersects(const GeoDataLatLonAltBox& other) const
     return false;
 }
 
-GeoDataLatLonAltBox GeoDataLatLonAltBox::fromLineString(const GeoDataLineString& lineString)
+GeoDataLatLonAltBox GeoDataLatLonAltBox::fromLineStringWithAlt(const GeoDataLineString& lineString)
 {
     // If the line string is empty return a boundingbox that contains everything
 
@@ -251,7 +251,7 @@ GeoDataLatLonAltBox GeoDataLatLonAltBox::fromLineString(const GeoDataLineString&
 
     const qreal altitude = lineString.first().altitude();
 
-    GeoDataLatLonAltBox temp(GeoDataLatLonBox::fromLineString(lineString), altitude, altitude);
+    GeoDataLatLonAltBox temp(GeoDataLatLonBox::fromLineStringBase(lineString), altitude, altitude);
 
     qreal maxAltitude    = altitude;
     qreal minAltitude    = altitude;

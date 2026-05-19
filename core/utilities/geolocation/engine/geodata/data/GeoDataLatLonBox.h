@@ -191,7 +191,7 @@ public:
      * @brief Create the smallest bounding box from a line string.
      * @return the smallest bounding box that contains the linestring.
      */
-    static GeoDataLatLonBox fromLineString(const GeoDataLineString& lineString);
+    static GeoDataLatLonBox fromLineStringBase(const GeoDataLineString& lineString);
 
     /**
      * @brief Indicates whether the bounding box only contains a single 2D point ("singularity").

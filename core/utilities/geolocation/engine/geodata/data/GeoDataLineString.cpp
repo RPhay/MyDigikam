@@ -1036,7 +1036,7 @@ const GeoDataLatLonAltBox& GeoDataLineString::latLonAltBox() const
 
     if (d->m_dirtyBox)
     {
-        d->m_latLonAltBox = GeoDataLatLonAltBox::fromLineString(*this);
+        d->m_latLonAltBox = GeoDataLatLonAltBox::fromLineStringWithAlt(*this);
         d->m_dirtyBox     = false;
     }
 
