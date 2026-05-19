@@ -69,7 +69,7 @@ public:
 
     void setAltitudeMode(const AltitudeMode altitudeMode);
 
-    GeoDataCoordinates coordinates() const;
+    virtual GeoDataCoordinates coordinates() const;
 
 private:
 

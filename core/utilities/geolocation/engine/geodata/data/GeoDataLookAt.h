@@ -38,12 +38,14 @@ public:
 
     GeoDataLookAt& operator=(const GeoDataLookAt& other);
 
-    bool operator==(const GeoDataLookAt& other) const;
-    bool operator!=(const GeoDataLookAt& other) const;
+    bool operator==(const GeoDataLookAt& other)                                 const;
+    bool operator!=(const GeoDataLookAt& other)                                 const;
 
-    ~GeoDataLookAt() override;
+    ~GeoDataLookAt()                                                                  override;
 
-    GeoDataAbstractView* copy() const override;
+public:
+
+    GeoDataAbstractView* copy()                                                 const override;
 
     /**
      * @brief set the altitude in a GeoDataLookAt object
@@ -56,7 +58,7 @@ public:
      * @brief retrieves the altitude of the GeoDataLookAt object
      * @return latitude
      */
-    qreal altitude() const;
+    qreal altitude()                                                            const;
 
     /**
      * @brief set the latitude in a GeoDataLookAt object
@@ -73,7 +75,7 @@ public:
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      * @return latitude
      */
-    qreal latitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian) const;
+    qreal latitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian)  const;
 
     /**
      * @brief set the longitude in a GeoDataLookAt object
@@ -97,7 +99,7 @@ public:
      * @return GeoDataCoordinates
      * @see longitude latitude altitude
      */
-    GeoDataCoordinates coordinates() const;
+    GeoDataCoordinates coordinates()                                            const override;
 
     /**
       * @brief Change the distance (in meters) between the camera and the object looked at
@@ -109,7 +111,7 @@ public:
       * @brief Retrieve the distance (in meters) between the camera and the object looked at
       * @see setRange
       */
-    qreal range() const;
+    qreal range()                                                               const;
 
     /**
     * @brief set the GeoDataCoordinates object
@@ -119,7 +121,7 @@ public:
     void setCoordinates(const GeoDataCoordinates& coordinates);
 
     /// Provides type information for downcasting a GeoNode
-    const char* nodeType() const override;
+    const char* nodeType()                                                      const override;
 
     void detach();
 

@@ -33,15 +33,15 @@ public:
 
     GeoDataLookAtPrivate()
         : m_coordinates(),
-          m_range(0.0),
-          ref(1)
+          m_range      (0.0),
+          ref          (1)
     {
     }
 
     GeoDataCoordinates m_coordinates;
-    qreal              m_range;
+    qreal              m_range          = 0.0;
 
-    QAtomicInt         ref;
+    QAtomicInt         ref              = 1;
 };
 
 } // namespace Marble
