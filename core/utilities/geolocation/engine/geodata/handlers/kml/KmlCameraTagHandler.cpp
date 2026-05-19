@@ -45,7 +45,7 @@ GeoNode* KmlCameraTagHandler::parse(GeoParser& parser) const
     {
         camera = new GeoDataCamera;
         KmlObjectTagHandler::parseIdentifiers(parser, camera);
-        parentItem.nodeAs<GeoDataFeature>()->setAbstractView(camera);
+        parentItem.nodeAs<GeoDataFeature>()->setAbstractViewBase(camera);
     }
 
     if (parentItem.is<GeoDataFlyTo>())

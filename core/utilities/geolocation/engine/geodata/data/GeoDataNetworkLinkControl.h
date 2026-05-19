@@ -80,11 +80,11 @@ public:
     const GeoDataUpdate& update() const;
     void setUpdate(const GeoDataUpdate& update);
 
-    GeoDataAbstractView* abstractView() const;
+    GeoDataAbstractView* networkAbstractView() const;
     /**
      * Sets the abstract view and takes control of this pointer.
      */
-    void setAbstractView(GeoDataAbstractView* abstractView);
+    void setNetworkAbstractView(GeoDataAbstractView* abstractView);
 
 private:
 

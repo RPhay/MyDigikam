@@ -223,12 +223,12 @@ void GeoDataPlacemark::clearOsmData()
 
 const GeoDataLookAt* GeoDataPlacemark::lookAt() const
 {
-    return dynamic_cast<const GeoDataLookAt*>(abstractView());
+    return dynamic_cast<const GeoDataLookAt*>(abstractViewBase());
 }
 
 GeoDataLookAt* GeoDataPlacemark::lookAt()
 {
-    return dynamic_cast<GeoDataLookAt*>(abstractView());
+    return dynamic_cast<GeoDataLookAt*>(abstractViewBase());
 }
 
 bool GeoDataPlacemark::placemarkLayoutOrderCompare(const GeoDataPlacemark* left, const GeoDataPlacemark* right)

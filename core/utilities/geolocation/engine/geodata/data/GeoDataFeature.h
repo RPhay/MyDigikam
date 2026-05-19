@@ -124,10 +124,10 @@ public:
     void setDescriptionCDATA(bool cdata);
 
     /// Get the Abstract view of the feature
-    const GeoDataAbstractView* abstractView() const;
-    GeoDataAbstractView* abstractView();
+    const GeoDataAbstractView* abstractViewBase() const;
+    GeoDataAbstractView* abstractViewBase();
     /// Set the abstract view of the feature
-    void setAbstractView(GeoDataAbstractView* abstractView);
+    void setAbstractViewBase(GeoDataAbstractView* abstractView);
 
     /// Return the styleUrl of the feature.
     QString styleUrl() const;

@@ -233,15 +233,17 @@ void GeoDataNetworkLinkControl::setUpdate(const GeoDataUpdate& update)
     d->m_update = update;
 }
 
-GeoDataAbstractView* GeoDataNetworkLinkControl::abstractView() const
+GeoDataAbstractView* GeoDataNetworkLinkControl::networkAbstractView() const
 {
     Q_D(const GeoDataNetworkLinkControl);
+
     return d->m_abstractView;
 }
 
-void GeoDataNetworkLinkControl::setAbstractView(GeoDataAbstractView* abstractView)
+void GeoDataNetworkLinkControl::setNetworkAbstractView(GeoDataAbstractView* abstractView)
 {
     Q_D(GeoDataNetworkLinkControl);
+
     d->m_abstractView = abstractView;
     d->m_abstractView->setParent(this);
 }

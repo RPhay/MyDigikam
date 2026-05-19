@@ -95,14 +95,14 @@ bool KmlFeatureTagWriter::write(const Marble::GeoNode* node, GeoWriter& writer) 
         writer.writeEndElement();
     }
 
-    GeoDataLookAt const* lookAt = dynamic_cast<const GeoDataLookAt*>(feature->abstractView());
+    GeoDataLookAt const* lookAt = dynamic_cast<const GeoDataLookAt*>(feature->abstractViewBase());
 
     if (lookAt)
     {
         writeElement(lookAt, writer);
     }
 
-    GeoDataCamera const* camera = dynamic_cast<const GeoDataCamera*>(feature->abstractView());
+    GeoDataCamera const* camera = dynamic_cast<const GeoDataCamera*>(feature->abstractViewBase());
 
     if (camera)
     {

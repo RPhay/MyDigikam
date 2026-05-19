@@ -43,7 +43,7 @@ GeoNode* KmlLookAtTagHandler::parse(GeoParser& parser) const
     if (parentItem.is<GeoDataFeature>())
     {
         GeoDataFeature* feature = parentItem.nodeAs<GeoDataFeature>();
-        feature->setAbstractView(lookAt);
+        feature->setAbstractViewBase(lookAt);
         return lookAt;
     }
 

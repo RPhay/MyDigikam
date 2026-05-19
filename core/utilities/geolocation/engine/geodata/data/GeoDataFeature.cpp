@@ -337,7 +337,7 @@ void GeoDataFeature::setDescriptionCDATA(bool cdata)
     d->featureExtendedData().m_descriptionCDATA = cdata;
 }
 
-const GeoDataAbstractView* GeoDataFeature::abstractView() const
+const GeoDataAbstractView* GeoDataFeature::abstractViewBase() const
 {
     Q_D(const GeoDataFeature);
 
@@ -349,7 +349,7 @@ const GeoDataAbstractView* GeoDataFeature::abstractView() const
     return d->featureExtendedData().m_abstractView;
 }
 
-GeoDataAbstractView* GeoDataFeature::abstractView()
+GeoDataAbstractView* GeoDataFeature::abstractViewBase()
 {
     // FIXME: Calling detach() doesn't help at all because the m_abstractView
     // object isn't actually copied in the Private class as well.
@@ -359,7 +359,7 @@ GeoDataAbstractView* GeoDataFeature::abstractView()
     return d->featureExtendedData().m_abstractView;
 }
 
-void GeoDataFeature::setAbstractView(GeoDataAbstractView* abstractView)
+void GeoDataFeature::setAbstractViewBase(GeoDataAbstractView* abstractView)
 {
     Q_D(GeoDataFeature);
 
