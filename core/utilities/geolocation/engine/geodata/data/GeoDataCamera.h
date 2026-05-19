@@ -38,12 +38,14 @@ public:
     GeoDataCamera(const GeoDataCamera& other);
 
     GeoDataCamera& operator=(const GeoDataCamera& other);
-    bool operator==(const GeoDataCamera& other) const;
-    bool operator!=(const GeoDataCamera& other) const;
+    bool operator==(const GeoDataCamera& other)                                 const;
+    bool operator!=(const GeoDataCamera& other)                                 const;
 
-    ~GeoDataCamera() override;
+    ~GeoDataCamera()                                                                  override;
 
-    GeoDataAbstractView* copy() const override;
+public:
+
+    GeoDataAbstractView* copy()                                                 const override;
 
     /**
      * @brief set the altitude in a GeoDataCamera object
@@ -56,7 +58,7 @@ public:
      * @brief retrieves the altitude of the GeoDataCamera object
      * @return latitude
      */
-    qreal altitude() const;
+    qreal altitude()                                                            const;
 
     /**
      * @brief set the latitude in a GeoDataCamera object
@@ -73,7 +75,7 @@ public:
      * (default for Radian: north pole at pi/2, southpole at -pi/2)
      * @return latitude
      */
-    qreal latitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian) const;
+    qreal latitude(GeoDataCoordinates::Unit unit = GeoDataCoordinates::Radian)  const;
 
     /**
      * @brief set the longitude in a GeoDataCamera object
@@ -97,24 +99,26 @@ public:
      * @return GeoDataCoordinates
      * @see longitude latitude altitude
      */
-    GeoDataCoordinates coordinates() const;
+    GeoDataCoordinates coordinates()                                            const override;
 
     void setRoll(qreal roll);
 
-    qreal roll() const;
+    qreal roll()                                                                const;
 
-    qreal heading() const;
+    qreal heading()                                                             const;
 
     void setHeading(qreal heading);
 
-    qreal tilt() const;
+    qreal tilt()                                                                const;
 
     void setTilt(qreal tilt);
 
     void setCoordinates(const GeoDataCoordinates& coordinates);
 
-    /// Provides type information for downcasting a GeoNode
-    const char* nodeType() const override;
+    /**
+     * Provides type information for downcasting a GeoNode
+     */
+    const char* nodeType()                                                      const override;
 
     void detach();
 

@@ -32,20 +32,20 @@ class Q_DECL_HIDDEN GeoDataCameraPrivate
 public:
 
     GeoDataCameraPrivate()
-        : m_coordinates(),
-          m_roll(0.0),
-          m_heading(0.0),
-          m_tilt(0.0),
-          ref(1)
+        : m_coordinates (),
+          m_roll        (0.0),
+          m_heading     (0.0),
+          m_tilt        (0.0),
+          ref           (1)
     {
     }
 
     GeoDataCoordinates  m_coordinates;
-    qreal               m_roll;
-    qreal               m_heading;
-    qreal               m_tilt;
+    qreal               m_roll          = 0.0;
+    qreal               m_heading       = 0.0;
+    qreal               m_tilt          = 0.0;
 
-    QAtomicInt          ref;
+    QAtomicInt          ref             = 1;
 };
 
 } // namespace Marble

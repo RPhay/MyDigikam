@@ -33,15 +33,17 @@ public:
 
     GeoDataAbstractViewPrivate();
 
+public:
+
     GeoDataTimeSpan  m_timeSpan;
     GeoDataTimeStamp m_timeStamp;
     AltitudeMode     m_altitudeMode;
 };
 
 GeoDataAbstractViewPrivate::GeoDataAbstractViewPrivate() :
-    m_timeSpan(),
-    m_timeStamp(),
-    m_altitudeMode(ClampToGround)
+    m_timeSpan      (),
+    m_timeStamp     (),
+    m_altitudeMode  (ClampToGround)
 {
     // do nothing
 }
@@ -59,7 +61,7 @@ GeoDataAbstractView::~GeoDataAbstractView()
 
 GeoDataAbstractView::GeoDataAbstractView(const GeoDataAbstractView& other) :
     GeoDataObject(other),
-    d(new GeoDataAbstractViewPrivate(*other.d))
+    d            (new GeoDataAbstractViewPrivate(*other.d))
 {
     // nothing to do
 }
@@ -68,6 +70,7 @@ GeoDataAbstractView& GeoDataAbstractView::operator =(const GeoDataAbstractView& 
 {
     GeoDataObject::operator=(other);
     *d = *other.d;
+
     return *this;
 }
 
@@ -78,20 +81,19 @@ bool GeoDataAbstractView::operator==(const GeoDataAbstractView& other) const
         return false;
     }
 
-    if (nodeType() == GeoDataTypes::GeoDataCameraType)
+    if      (nodeType() == GeoDataTypes::GeoDataCameraType)
     {
-        const GeoDataCamera& thisCam = static_cast<const GeoDataCamera&>(*this);
+        const GeoDataCamera& thisCam  = static_cast<const GeoDataCamera&>(*this);
         const GeoDataCamera& otherCam = static_cast<const GeoDataCamera&>(other);
 
-        return thisCam == otherCam;
+        return (thisCam == otherCam);
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataLookAtType)
     {
-        const GeoDataLookAt& thisLookAt = static_cast<const GeoDataLookAt&>(*this);
+        const GeoDataLookAt& thisLookAt  = static_cast<const GeoDataLookAt&>(*this);
         const GeoDataLookAt& otherLookAt = static_cast<const GeoDataLookAt&>(other);
 
-        return thisLookAt == otherLookAt;
+        return (thisLookAt == otherLookAt);
     }
 
     return false;
@@ -99,7 +101,7 @@ bool GeoDataAbstractView::operator==(const GeoDataAbstractView& other) const
 
 GeoDataCoordinates GeoDataAbstractView::coordinates() const
 {
-    if (nodeType() == GeoDataTypes::GeoDataLookAtType)
+    if      (nodeType() == GeoDataTypes::GeoDataLookAtType)
     {
         const GeoDataLookAt* lookAt = static_cast<const GeoDataLookAt*>(this);
 
@@ -108,7 +110,6 @@ GeoDataCoordinates GeoDataAbstractView::coordinates() const
             return lookAt->coordinates();
         }
     }
-
     else if (nodeType() == GeoDataTypes::GeoDataCameraType)
     {
         const GeoDataCamera* camera = static_cast<const GeoDataCamera*>(this);
@@ -122,13 +123,14 @@ GeoDataCoordinates GeoDataAbstractView::coordinates() const
     return GeoDataCoordinates();
 }
 
-
 bool GeoDataAbstractView::equals(const GeoDataAbstractView& other) const
 {
-    return GeoDataObject::equals(other) &&
-           d->m_timeSpan == other.d->m_timeSpan &&
-           d->m_timeStamp == other.d->m_timeStamp &&
-           d->m_altitudeMode == other.d->m_altitudeMode;
+    return (
+            GeoDataObject::equals(other)                    &&
+            (d->m_timeSpan      == other.d->m_timeSpan)     &&
+            (d->m_timeStamp     == other.d->m_timeStamp)    &&
+            (d->m_altitudeMode  == other.d->m_altitudeMode)
+           );
 }
 
 const GeoDataTimeSpan& GeoDataAbstractView::timeSpan() const

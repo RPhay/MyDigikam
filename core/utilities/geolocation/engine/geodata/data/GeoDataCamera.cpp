@@ -30,13 +30,13 @@ namespace Marble
 
 GeoDataCamera::GeoDataCamera()
     : GeoDataAbstractView(),
-      d(new GeoDataCameraPrivate)
+      d                  (new GeoDataCameraPrivate)
 {
 }
 
 GeoDataCamera::GeoDataCamera(const GeoDataCamera& other)
     : GeoDataAbstractView(),
-      d(other.d)
+      d                  (other.d)
 {
     d->ref.ref();
 }
@@ -45,22 +45,25 @@ GeoDataCamera& GeoDataCamera::operator=(const GeoDataCamera& other)
 {
     GeoDataAbstractView::operator=(other);
     qAtomicAssign(d, other.d);
+
     return *this;
 }
 
 bool GeoDataCamera::operator==(const GeoDataCamera& other) const
 {
-    return equals(other) &&
-           d->m_coordinates == other.d->m_coordinates &&
-           d->m_roll == other.d->m_roll &&
-           d->m_heading == other.d->m_heading &&
-           d->m_tilt == other.d->m_tilt &&
-           altitudeMode() == other.altitudeMode();
+    return (
+            equals(other)                                   &&
+            (d->m_coordinates   == other.d->m_coordinates)  &&
+            (d->m_roll          == other.d->m_roll)         &&
+            (d->m_heading       == other.d->m_heading)      &&
+            (d->m_tilt          == other.d->m_tilt)         &&
+            (altitudeMode()     == other.altitudeMode())
+           );
 }
 
 bool GeoDataCamera::operator!=(const GeoDataCamera& other) const
 {
-    return !this->operator==(other);
+    return (!this->operator==(other));
 }
 
 GeoDataCamera::~GeoDataCamera()

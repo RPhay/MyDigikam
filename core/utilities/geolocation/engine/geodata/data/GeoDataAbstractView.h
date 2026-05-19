@@ -39,21 +39,23 @@ public:
 
     GeoDataAbstractView();
 
-    ~GeoDataAbstractView() override;
+    ~GeoDataAbstractView()                                                    override;
 
     GeoDataAbstractView(const GeoDataAbstractView& other);
 
     GeoDataAbstractView& operator=(const GeoDataAbstractView& other);
 
-    bool operator==(const GeoDataAbstractView& other) const;
-    inline bool operator!=(const GeoDataAbstractView& other) const
+    bool operator==(const GeoDataAbstractView& other)                   const;
+    inline bool operator!=(const GeoDataAbstractView& other)            const
     {
         return !(*this == other);
     }
 
-    virtual GeoDataAbstractView* copy() const = 0;
+public:
 
-    const GeoDataTimeSpan& timeSpan() const;
+    virtual GeoDataAbstractView* copy()                                 const = 0;
+
+    const GeoDataTimeSpan& timeSpan()                                   const;
 
     GeoDataTimeSpan& timeSpan();
 
@@ -61,15 +63,15 @@ public:
 
     GeoDataTimeStamp& timeStamp();
 
-    const GeoDataTimeStamp& timeStamp() const;
+    const GeoDataTimeStamp& timeStamp()                                 const;
 
     void setTimeStamp(const GeoDataTimeStamp& timeStamp);
 
-    AltitudeMode altitudeMode() const;
+    AltitudeMode altitudeMode()                                         const;
 
     void setAltitudeMode(const AltitudeMode altitudeMode);
 
-    virtual GeoDataCoordinates coordinates() const;
+    virtual GeoDataCoordinates coordinates()                            const;
 
 private:
 
@@ -77,7 +79,7 @@ private:
 
 protected:
 
-    bool equals(const GeoDataAbstractView& other) const;
+    bool equals(const GeoDataAbstractView& other)                       const;
 
     using GeoDataObject::equals;
 };
