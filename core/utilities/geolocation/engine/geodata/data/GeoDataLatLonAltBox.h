@@ -113,7 +113,7 @@ public:
      * @brief Create the smallest bounding box from a line string.
      * @return the smallest bounding box that contains the linestring.
      */
-    static GeoDataLatLonAltBox fromLineStringWithAlt(const GeoDataLineString& lineString);     // cppcheck-suppress duplInheritedMember
+    static GeoDataLatLonAltBox fromLineStringWithAlt(const GeoDataLineString& lineString);
 
     /**
      * @brief Indicates whether the bounding box only contains a single 2D point ("singularity").
