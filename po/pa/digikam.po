@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -4540,7 +4540,7 @@ msgstr "ਰੰਗ ਮੋਡ: "
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:78
 #: core/app/views/tableview/tableview_column_item.cpp:123
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:227
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:249
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -20340,7 +20340,7 @@ msgstr "ਫਿਲਮ ਗਰੇਨ ਸ਼ਾਮਲ..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:184
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, fuzzy, kde-format
 msgid "Remove"
@@ -56597,7 +56597,7 @@ msgid "This is an Invalid File"
 msgstr "ਪਰੋਫਾਇਲ ਦਿਓ"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:224
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:244
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:455
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:52
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -56606,13 +56606,13 @@ msgstr "ਪਰੋਫਾਇਲ ਦਿਓ"
 msgid "Name"
 msgstr "ਨਾਂ"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:230
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:254
 #, fuzzy, kde-format
 #| msgid "Regularity:"
 msgid "Popularity"
 msgstr "ਨਿਯਮਿਤ:"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:233
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:259
 #, fuzzy, kde-format
 #| msgctxt "Color Model: Indexed"
 #| msgid "Indexed"
@@ -56620,7 +56620,7 @@ msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "ਇੰਡੈਕਸਡ"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:314
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:340
 #, fuzzy, kde-format
 msgid "Playlist"
 msgstr "ਸਭ ਸਾਫ਼"
@@ -56655,7 +56655,7 @@ msgid "New Relation"
 msgstr "ਨਿਊਜ਼ੀਲੈਂਡ"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:189
 #: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432

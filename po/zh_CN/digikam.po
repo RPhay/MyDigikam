@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -4233,7 +4233,7 @@ msgstr "色彩模型"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:78
 #: core/app/views/tableview/tableview_column_item.cpp:123
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:227
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:249
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -19630,7 +19630,7 @@ msgstr "再次添加"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:184
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, kde-format
 msgid "Remove"
@@ -54068,7 +54068,7 @@ msgid "This is an Invalid File"
 msgstr "这是一个无效文件"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:224
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:244
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:455
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:52
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -54076,18 +54076,18 @@ msgstr "这是一个无效文件"
 msgid "Name"
 msgstr "名称"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:230
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:254
 #, kde-format
 msgid "Popularity"
 msgstr "人气"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:233
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:259
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "人气指数"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:314
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:340
 #, kde-format
 msgid "Playlist"
 msgstr "播放列表"
@@ -54119,7 +54119,7 @@ msgid "New Relation"
 msgstr "新建关系"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:189
 #: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432

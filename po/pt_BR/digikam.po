@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2026-05-10 19:32-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -4386,7 +4386,7 @@ msgstr "Modo de cores"
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:78
 #: core/app/views/tableview/tableview_column_item.cpp:123
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:227
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:249
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -20527,7 +20527,7 @@ msgstr "Adicionar novamente"
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:184
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, kde-format
 msgid "Remove"
@@ -56024,7 +56024,7 @@ msgid "This is an Invalid File"
 msgstr "Este arquivo é inválido"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:224
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:244
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:455
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:52
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -56032,18 +56032,18 @@ msgstr "Este arquivo é inválido"
 msgid "Name"
 msgstr "Nome"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:230
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:254
 #, kde-format
 msgid "Popularity"
 msgstr "Popularidade"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:233
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:259
 #, kde-format
 msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Índice de popularidade"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:314
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:340
 #, kde-format
 msgid "Playlist"
 msgstr "Lista de reprodução"
@@ -56075,7 +56075,7 @@ msgid "New Relation"
 msgstr "Nova relação"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:189
 #: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432

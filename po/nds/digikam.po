@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-18 00:41+0000\n"
+"POT-Creation-Date: 2026-05-19 00:42+0000\n"
 "PO-Revision-Date: 2011-12-01 13:09+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -4552,7 +4552,7 @@ msgstr "Klöörbedrief: "
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
 #: core/app/views/tableview/tableview_column_item.cpp:78
 #: core/app/views/tableview/tableview_column_item.cpp:123
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:227
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:249
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:39
 #, kde-format
 msgid "Type"
@@ -21156,7 +21156,7 @@ msgstr "Filmköörn tofögen..."
 
 #: core/dplugins/generic/tools/printcreator/wizard/advprintphotopage.cpp:522
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:174
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:183
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:184
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:372
 #, fuzzy, kde-format
 msgid "Remove"
@@ -58215,7 +58215,7 @@ msgid "This is an Invalid File"
 msgstr "Profil towiesen"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, m_currentRelations)
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:224
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:244
 #: core/utilities/geolocation/engine/models/MapThemeManager.cpp:455
 #: core/utilities/geolocation/engine/osm/OsmRelationEditorDialog.cpp:52
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.ui:34
@@ -58224,13 +58224,13 @@ msgstr "Profil towiesen"
 msgid "Name"
 msgstr "Naam"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:230
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:254
 #, fuzzy, kde-format
 #| msgid "Regularity:"
 msgid "Popularity"
 msgstr "Evenheit:"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:233
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:259
 #, fuzzy, kde-format
 #| msgctxt "Color Model: Indexed"
 #| msgid "Indexed"
@@ -58238,7 +58238,7 @@ msgctxt "Popularity index"
 msgid "PopIndex"
 msgstr "Indizeert"
 
-#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:314
+#: core/utilities/geolocation/engine/models/GeoDataTreeModel.cpp:340
 #, fuzzy, kde-format
 msgid "Playlist"
 msgstr "All leddig maken"
@@ -58273,7 +58273,7 @@ msgid "New Relation"
 msgstr "Niegseeland"
 
 #: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:175
-#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:188
+#: core/utilities/geolocation/engine/osm/OsmRelationManagerWidget.cpp:189
 #: core/utilities/lighttable/lighttablethumbbar.cpp:141
 #: core/utilities/lighttable/lighttablewindow_setup.cpp:61
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:432
