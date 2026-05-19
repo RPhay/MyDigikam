@@ -45,33 +45,33 @@ class ProgressFloatItem  : public AbstractFloatItem
 public:
 
     explicit ProgressFloatItem(const MarbleModel* marbleModel = nullptr);
-    ~ProgressFloatItem() override;
+    ~ProgressFloatItem()                                  override;
 
-    QStringList backendTypes() const override;
+    QStringList backendTypes()                      const override;
 
-    QString name() const override;
+    QString name()                                  const override;
 
-    QString guiString() const override;
+    QString guiString()                             const override;
 
-    QString nameId() const override;
+    QString nameId()                                const override;
 
-    QString version() const override;
+    QString version()                               const override;
 
-    QString description() const override;
+    QString description()                           const override;
 
-    QString copyrightYears() const override;
+    QString copyrightYears()                        const override;
 
-    QVector<PluginAuthor> pluginAuthors() const override;
+    QVector<PluginAuthor> pluginAuthors()           const override;
 
-    QIcon icon() const override;
+    QIcon icon()                                    const override;
 
-    void initialize() override;
+    void initialize()                                     override;
 
-    bool isInitialized() const override;
+    bool isInitialized()                            const override;
 
-    QPainterPath backgroundShape() const override;
+    QPainterPath backgroundShape()                  const override;
 
-    void paintContent(QPainter* painter) override;
+    void paintContent(QPainter* painter)                  override;
 
 private Q_SLOTS:
 
@@ -95,13 +95,13 @@ private:
 
 private:
 
-    bool    m_isInitialized;
+    bool    m_isInitialized     = false;
 
-    int     m_totalJobs;
+    int     m_totalJobs         = 0;
 
-    int     m_completedJobs;
+    int     m_completedJobs     = 0;
 
-    qreal   m_completed;
+    qreal   m_completed         = 1.0;
 
     QTimer  m_progressHideTimer;
 
@@ -109,9 +109,9 @@ private:
 
     QMutex  m_jobMutex;
 
-    bool    m_active;
+    bool    m_active            = false;
 
-    int     m_fontSize;
+    int     m_fontSize          = 0;
 
     QTimer  m_repaintTimer;
 };

@@ -42,16 +42,16 @@ namespace Marble
 {
 
 ProgressFloatItem::ProgressFloatItem(const MarbleModel* marbleModel)
-    : AbstractFloatItem(marbleModel, QPointF(-10.5, -150.5), QSizeF(40.0, 40.0)),
-      m_isInitialized(false),
-      m_totalJobs(0),
-      m_completedJobs(0),
-      m_completed(1),
+    : AbstractFloatItem  (marbleModel, QPointF(-10.5, -150.5), QSizeF(40.0, 40.0)),
+      m_isInitialized    (false),
+      m_totalJobs        (0),
+      m_completedJobs    (0),
+      m_completed        (1.0),
       m_progressHideTimer(),
       m_progressShowTimer(),
-      m_active(false),
-      m_fontSize(0),
-      m_repaintTimer()
+      m_active           (false),
+      m_fontSize         (0),
+      m_repaintTimer     ()
 {
     // This timer is responsible to activate the automatic display with a small delay
 
@@ -154,17 +154,17 @@ void ProgressFloatItem::initialize()
 
     // Calculate font size
 
-    QFont myFont = font();
+    QFont myFont       = font();
     const QString text = QLatin1String("100%");
-    int fontSize = myFont.pointSize();
+    int fontSize       = myFont.pointSize();
 
-    while (QFontMetrics(myFont).boundingRect(text).width() < contentRect().width() - 2)
+    while (QFontMetrics(myFont).boundingRect(text).width() < (contentRect().width() - 2))
     {
         ++fontSize;
         myFont.setPointSize(fontSize);
     }
 
-    m_fontSize = fontSize - 1;
+    m_fontSize      = fontSize - 1;
 
     m_isInitialized = true;
 }
@@ -225,10 +225,10 @@ void ProgressFloatItem::paintContent(QPainter* painter)
 
     // Paint progress label
 
-    QFont myFont = font();
+    QFont myFont       = font();
     myFont.setPointSize(m_fontSize);
     const QString done = QString::number((int)(m_completed * 100)) + QLatin1Char('%');
-    int fontWidth = QFontMetrics(myFont).boundingRect(done).width();
+    int fontWidth      = QFontMetrics(myFont).boundingRect(done).width();
     QPointF baseline(padding() + 0.5 * (rect.width() - fontWidth), 0.75 * rect.height());
     QPainterPath path;
     path.addText(baseline, myFont, done);
@@ -268,7 +268,7 @@ void ProgressFloatItem::handleProgress(int current, int queued)
 
     if (current < 1)
     {
-        m_totalJobs = 0;
+        m_totalJobs     = 0;
         m_completedJobs = 0;
     }
     else
@@ -280,14 +280,14 @@ void ProgressFloatItem::handleProgress(int current, int queued)
 
     if (enabled())
     {
-        if      (!active() && !m_progressShowTimer.isActive() && m_totalJobs > 0)
+        if      (!active() && !m_progressShowTimer.isActive() && (m_totalJobs > 0))
         {
             m_progressShowTimer.start();
             m_progressHideTimer.stop();
         }
         else if (active())
         {
-            if (m_totalJobs < 1 || m_completedJobs == m_totalJobs)
+            if ((m_totalJobs < 1) || (m_completedJobs == m_totalJobs))
             {
                 m_progressShowTimer.stop();
                 m_progressHideTimer.start();
@@ -299,7 +299,7 @@ void ProgressFloatItem::handleProgress(int current, int queued)
 
         m_completed = 1.0;
 
-        if (m_totalJobs && m_completedJobs <= m_totalJobs)
+        if (m_totalJobs && (m_completedJobs <= m_totalJobs))
         {
             m_completed = (qreal) m_completedJobs / (qreal) m_totalJobs;
         }
@@ -329,6 +329,7 @@ void ProgressFloatItem::setActive(bool active)
     update();
 }
 
+// cppcheck-suppress duplInheritedMember
 void ProgressFloatItem::show()
 {
     setActive(true);
