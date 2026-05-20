@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-21 00:42+0000\n"
+"POT-Creation-Date: 2026-05-23 00:41+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -55461,17 +55461,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr "Título desconhecido"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:304
 #, kde-format
 msgid "&Lock"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:313
 #, kde-format
 msgid "&Hide"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, fuzzy, kde-format
 #| msgid "Configure..."
