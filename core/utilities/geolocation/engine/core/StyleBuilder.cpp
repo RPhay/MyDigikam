@@ -906,7 +906,7 @@ GeoDataStyle::Ptr StyleBuilder::Private::createStyle(qreal width, qreal realWidt
                                                      Qt::PenCapStyle capStyle, bool lineBackground, const QVector< qreal >& dashPattern,
                                                      const QFont& font, const QColor& fontColor, const QString& texturePath)
 {
-    GeoDataStyle* style = new GeoDataStyle;
+    GeoDataStyle* const style = new GeoDataStyle;
     GeoDataLineStyle lineStyle(effectColor(outlineColor));
     lineStyle.setCapStyle(capStyle);
     lineStyle.setPenStyle(penStyle);
@@ -923,6 +923,7 @@ GeoDataStyle::Ptr StyleBuilder::Private::createStyle(qreal width, qreal realWidt
     style->setLineStyle(lineStyle);
     style->setPolyStyle(polyStyle);
     style->setLabelStyle(labelStyle);
+
     return GeoDataStyle::Ptr(style);
 }
 
@@ -938,13 +939,16 @@ void StyleBuilder::Private::initializeDefaultStyles()
     }
 
     m_defaultStyleInitialized = true;
-
-    QString defaultFamily = m_defaultFont.family();
+    QString defaultFamily     = m_defaultFont.family();
 
 #ifdef Q_OS_MACOS
+
     int defaultSize = 10;
+
 #else
+
     int defaultSize = 8;
+
 #endif
 
     QColor const defaultLabelColor = effectColor(m_defaultLabelColor);
@@ -1029,35 +1033,39 @@ void StyleBuilder::Private::initializeDefaultStyles()
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
                                              QFont(defaultFamily, int(defaultSize * 1.5), 75, false), QColor("#404040")));
     // Align area labels centered
+
     m_defaultStyle[GeoDataPlacemark::Nation]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
-    QFont osmCityFont = QFont(defaultFamily, int(defaultSize * 1.5), 75, false);
-    m_defaultStyle[GeoDataPlacemark::PlaceCity] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#202020"));
-    m_defaultStyle[GeoDataPlacemark::PlaceCityCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#202020"));
-    m_defaultStyle[GeoDataPlacemark::PlaceCityNationalCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-adminlevel2"), QColor("#202020"));
-    m_defaultStyle[GeoDataPlacemark::PlaceSuburb] = createOsmPOIStyle(osmCityFont, QString(), QColor("#707070"));
-    m_defaultStyle[GeoDataPlacemark::PlaceHamlet] = createOsmPOIStyle(osmCityFont, QString(), QColor("#707070"));
-    QFont localityFont = osmCityFont;
+    QFont osmCityFont                                             = QFont(defaultFamily, int(defaultSize * 1.5), 75, false);
+    m_defaultStyle[GeoDataPlacemark::PlaceCity]                   = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#202020"));
+    m_defaultStyle[GeoDataPlacemark::PlaceCityCapital]            = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#202020"));
+    m_defaultStyle[GeoDataPlacemark::PlaceCityNationalCapital]    = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-adminlevel2"), QColor("#202020"));
+    m_defaultStyle[GeoDataPlacemark::PlaceSuburb]                 = createOsmPOIStyle(osmCityFont, QString(), QColor("#707070"));
+    m_defaultStyle[GeoDataPlacemark::PlaceHamlet]                 = createOsmPOIStyle(osmCityFont, QString(), QColor("#707070"));
+    QFont localityFont                                            = osmCityFont;
     localityFont.setPointSize(defaultSize);
-    m_defaultStyle[GeoDataPlacemark::PlaceLocality] = createOsmPOIStyle(localityFont, QString(), QColor("#707070"));
-    m_defaultStyle[GeoDataPlacemark::PlaceTown] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#404040"));
-    m_defaultStyle[GeoDataPlacemark::PlaceTownCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#404040"));
-    m_defaultStyle[GeoDataPlacemark::PlaceTownNationalCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-adminlevel2"), QColor("#404040"));
-    m_defaultStyle[GeoDataPlacemark::PlaceVillage] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#505050"));
-    m_defaultStyle[GeoDataPlacemark::PlaceVillageCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#505050"));
+    m_defaultStyle[GeoDataPlacemark::PlaceLocality]               = createOsmPOIStyle(localityFont, QString(), QColor("#707070"));
+    m_defaultStyle[GeoDataPlacemark::PlaceTown]                   = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#404040"));
+    m_defaultStyle[GeoDataPlacemark::PlaceTownCapital]            = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#404040"));
+    m_defaultStyle[GeoDataPlacemark::PlaceTownNationalCapital]    = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-adminlevel2"), QColor("#404040"));
+    m_defaultStyle[GeoDataPlacemark::PlaceVillage]                = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-6"), QColor("#505050"));
+    m_defaultStyle[GeoDataPlacemark::PlaceVillageCapital]         = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-6"), QColor("#505050"));
     m_defaultStyle[GeoDataPlacemark::PlaceVillageNationalCapital] = createOsmPOIStyle(osmCityFont, QString::fromUtf8("place/place-capital-adminlevel2"), QColor("#505050"));
 
-    for (int i = GeoDataPlacemark::PlaceCity; i <= GeoDataPlacemark::PlaceVillageCapital; ++i)
+    for (int i = GeoDataPlacemark::PlaceCity ; i <= GeoDataPlacemark::PlaceVillageCapital ; ++i)
     {
         m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->polyStyle().setFill(false);
         m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->polyStyle().setOutline(false);
         m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
-        if (i == GeoDataPlacemark::PlaceCityNationalCapital || i == GeoDataPlacemark::PlaceTownNationalCapital || i == GeoDataPlacemark::PlaceVillageNationalCapital)
+        if (
+            (i == GeoDataPlacemark::PlaceCityNationalCapital)    ||
+            (i == GeoDataPlacemark::PlaceTownNationalCapital)    ||
+            (i == GeoDataPlacemark::PlaceVillageNationalCapital) // cppcheck-suppress knownConditionTrueFalse
+           )
         {
             m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->iconStyle().setScale(0.55f);
         }
-
         else
         {
             m_defaultStyle[GeoDataPlacemark::GeoDataVisualCategory(i)]->iconStyle().setScale(0.25);
@@ -1084,12 +1092,14 @@ void StyleBuilder::Private::initializeDefaultStyles()
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
                                              QFont(defaultFamily, int(defaultSize * 1.7), 50, false), QColor("#bf0303")));
     // Align area labels centered
+
     m_defaultStyle[GeoDataPlacemark::Continent]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
     m_defaultStyle[GeoDataPlacemark::Ocean]
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
                                              QFont(defaultFamily, int(defaultSize * 1.7), 50, true), QColor("#2c72c7")));
     // Align area labels centered
+
     m_defaultStyle[GeoDataPlacemark::Ocean]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
     m_defaultStyle[GeoDataPlacemark::OtherTerrain]
@@ -1104,6 +1114,7 @@ void StyleBuilder::Private::initializeDefaultStyles()
         = GeoDataStyle::Ptr(new GeoDataStyle(QString(),
                                              QFont(defaultFamily, int(defaultSize * 1.7), 50, false), QColor("#bf0303")));
     // Align area labels centered
+
     m_defaultStyle[GeoDataPlacemark::Mare]->labelStyle().setAlignment(GeoDataLabelStyle::Center);
 
     m_defaultStyle[GeoDataPlacemark::GeographicPole]
@@ -1159,376 +1170,379 @@ void StyleBuilder::Private::initializeDefaultStyles()
     QColor const educationalAreasAndHospital("#f0f0d8");
     QColor const buildingColor("#beadad");
     QColor const waterColor("#b5d0d0");
+
     // Allows to visualize multiple repaints of buildings
-    //    QColor const buildingColor(0, 255, 0, 64);
+    // QColor const buildingColor(0, 255, 0, 64);
 
     QFont const osmFont(defaultFamily, 10, 50, false);
-    m_defaultStyle[GeoDataPlacemark::AccomodationCamping]      = createOsmPOIRingStyle(osmFont, QString::fromUtf8("transportation/camping.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AccomodationHostel]       = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/hostel.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AccomodationHotel]        = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/hotel.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AccomodationMotel]        = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/motel.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AccomodationYouthHostel]  = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/hostel.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AccomodationGuestHouse]   = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/guest_house.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityLibrary]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/library.20"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityKindergarten]      = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
-    m_defaultStyle[GeoDataPlacemark::EducationCollege]         = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
-    m_defaultStyle[GeoDataPlacemark::EducationSchool]          = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
-    m_defaultStyle[GeoDataPlacemark::EducationUniversity]      = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
-    m_defaultStyle[GeoDataPlacemark::FoodBar]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/bar.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::FoodBiergarten]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/biergarten.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::FoodCafe]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/cafe.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::FoodFastFood]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/fast_food.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::FoodPub]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/pub.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::FoodRestaurant]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/restaurant.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AccomodationCamping]        = createOsmPOIRingStyle(osmFont, QString::fromUtf8("transportation/camping.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AccomodationHostel]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/hostel.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AccomodationHotel]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/hotel.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AccomodationMotel]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/motel.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AccomodationYouthHostel]    = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/hostel.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AccomodationGuestHouse]     = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/guest_house.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityLibrary]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/library.20"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityKindergarten]        = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
+    m_defaultStyle[GeoDataPlacemark::EducationCollege]           = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
+    m_defaultStyle[GeoDataPlacemark::EducationSchool]            = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
+    m_defaultStyle[GeoDataPlacemark::EducationUniversity]        = createOsmPOIAreaStyle(osmFont, QString(), amenityColor, educationalAreasAndHospital, amenityColor);
+    m_defaultStyle[GeoDataPlacemark::FoodBar]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/bar.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::FoodBiergarten]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/biergarten.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::FoodCafe]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/cafe.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::FoodFastFood]               = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/fast_food.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::FoodPub]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/pub.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::FoodRestaurant]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/restaurant.16"), amenityColor);
 
-    m_defaultStyle[GeoDataPlacemark::HealthDentist]            = createOsmPOIStyle(osmFont, QString::fromUtf8("health/dentist.16"), healthColor);
-    m_defaultStyle[GeoDataPlacemark::HealthDoctors]            = createOsmPOIStyle(osmFont, QString::fromUtf8("health/doctors.16"), healthColor);
-    m_defaultStyle[GeoDataPlacemark::HealthHospital]           = createOsmPOIStyle(osmFont, QString::fromUtf8("health/hospital.16"), healthColor, educationalAreasAndHospital, amenityColor);
-    m_defaultStyle[GeoDataPlacemark::HealthPharmacy]           = createOsmPOIStyle(osmFont, QString::fromUtf8("health/pharmacy.16"), healthColor);
-    m_defaultStyle[GeoDataPlacemark::HealthVeterinary]         = createOsmPOIStyle(osmFont, QString::fromUtf8("health/veterinary-14"), healthColor);
+    m_defaultStyle[GeoDataPlacemark::HealthDentist]              = createOsmPOIStyle(osmFont, QString::fromUtf8("health/dentist.16"), healthColor);
+    m_defaultStyle[GeoDataPlacemark::HealthDoctors]              = createOsmPOIStyle(osmFont, QString::fromUtf8("health/doctors.16"), healthColor);
+    m_defaultStyle[GeoDataPlacemark::HealthHospital]             = createOsmPOIStyle(osmFont, QString::fromUtf8("health/hospital.16"), healthColor, educationalAreasAndHospital, amenityColor);
+    m_defaultStyle[GeoDataPlacemark::HealthPharmacy]             = createOsmPOIStyle(osmFont, QString::fromUtf8("health/pharmacy.16"), healthColor);
+    m_defaultStyle[GeoDataPlacemark::HealthVeterinary]           = createOsmPOIStyle(osmFont, QString::fromUtf8("health/veterinary-14"), healthColor);
 
-    m_defaultStyle[GeoDataPlacemark::MoneyAtm]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/atm.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::MoneyBank]                = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/bank.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::MoneyAtm]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/atm.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::MoneyBank]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/bank.16"), amenityColor);
 
     m_defaultStyle[GeoDataPlacemark::HistoricArchaeologicalSite] = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("amenity/archaeological_site.16"), amenityColor, Qt::transparent);
-    m_defaultStyle[GeoDataPlacemark::AmenityEmbassy]           = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/embassy.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityEmergencyPhone]    = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/emergency_phone.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityMountainRescue]    = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/mountain_rescue.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::LeisureWaterPark]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/water_park.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityCommunityCentre]   = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/community_centre-14"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityFountain]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/fountain-14"), QColor("#7989de"), waterColor, waterColor.darker(150));
-    m_defaultStyle[GeoDataPlacemark::AmenityNightClub]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/nightclub.18"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityBench]             = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/bench.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityCourtHouse]        = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/courthouse-16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityFireStation]       = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/firestation.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityHuntingStand]      = createOsmPOIStyle(osmFont, QString::fromUtf8("manmade/hunting-stand.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityPolice]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/police.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityPostBox]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/post_box-12"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityPostOffice]        = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/post_office-14"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityPrison]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/prison.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityRecycling]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/recycling.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityShelter]           = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/shelter"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityTelephone]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/telephone.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityToilets]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/toilets.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityTownHall]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/town_hall.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityWasteBasket]       = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/waste_basket.10"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityEmbassy]             = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/embassy.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityEmergencyPhone]      = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/emergency_phone.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityMountainRescue]      = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/mountain_rescue.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::LeisureWaterPark]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/water_park.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityCommunityCentre]     = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/community_centre-14"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityFountain]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/fountain-14"), QColor("#7989de"), waterColor, waterColor.darker(150));
+    m_defaultStyle[GeoDataPlacemark::AmenityNightClub]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/nightclub.18"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityBench]               = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/bench.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityCourtHouse]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/courthouse-16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityFireStation]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/firestation.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityHuntingStand]        = createOsmPOIStyle(osmFont, QString::fromUtf8("manmade/hunting-stand.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityPolice]              = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/police.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityPostBox]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/post_box-12"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityPostOffice]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/post_office-14"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityPrison]              = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/prison.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityRecycling]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/recycling.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityShelter]             = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/shelter"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityTelephone]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/telephone.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityToilets]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/toilets.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityTownHall]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/town_hall.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityWasteBasket]         = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/waste_basket.10"), amenityColor);
     m_defaultStyle[GeoDataPlacemark::AmenityWasteBasket]->iconStyle().setScale(0.75);
-    m_defaultStyle[GeoDataPlacemark::AmenityChargingStation]   = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/charging_station"));
-    m_defaultStyle[GeoDataPlacemark::AmenityCarWash]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/car_wash"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenitySocialFacility]    = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/social_facility"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityChargingStation]     = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/charging_station"));
+    m_defaultStyle[GeoDataPlacemark::AmenityCarWash]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/car_wash"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenitySocialFacility]      = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/social_facility"), amenityColor);
 
-    m_defaultStyle[GeoDataPlacemark::AmenityDrinkingWater]     = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/drinking_water.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityDrinkingWater]       = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/drinking_water.16"), amenityColor);
 
-    m_defaultStyle[GeoDataPlacemark::NaturalPeak]              = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/peak"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::NaturalPeak]                = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/peak"), amenityColor);
     m_defaultStyle[GeoDataPlacemark::NaturalPeak]->iconStyle().setScale(0.33f);
-    m_defaultStyle[GeoDataPlacemark::NaturalVolcano]           = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/volcano"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::NaturalVolcano]             = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/volcano"), amenityColor);
     m_defaultStyle[GeoDataPlacemark::NaturalVolcano]->iconStyle().setScale(0.33f);
-    m_defaultStyle[GeoDataPlacemark::NaturalTree]              = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/tree-29"), amenityColor); // tree-16 provides the official icon
-    m_styleTreeAutumn                                          = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/tree-29-autumn"), amenityColor);
-    m_styleTreeWinter                                          = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/tree-29-winter"), amenityColor);
-    qreal const treeIconScale = 0.75;
+    m_defaultStyle[GeoDataPlacemark::NaturalTree]                = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/tree-29"), amenityColor); // tree-16 provides the official icon
+    m_styleTreeAutumn                                            = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/tree-29-autumn"), amenityColor);
+    m_styleTreeWinter                                            = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/tree-29-winter"), amenityColor);
+    qreal const treeIconScale                                    = 0.75;
     m_defaultStyle[GeoDataPlacemark::NaturalTree]->iconStyle().setScale(treeIconScale);
     m_styleTreeAutumn->iconStyle().setScale(treeIconScale);
     m_styleTreeWinter->iconStyle().setScale(treeIconScale);
 
-    m_defaultStyle[GeoDataPlacemark::ShopBeverages]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/beverages-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopHifi]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/hifi-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopSupermarket]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_supermarket"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopAlcohol]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_alcohol.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopBakery]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_bakery.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopButcher]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/butcher-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopConfectionery]        = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/confectionery.14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopConvenience]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_convenience"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopGreengrocer]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/greengrocer-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopSeafood]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/seafood-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopDepartmentStore]      = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/department_store-16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopKiosk]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/kiosk-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopBag]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/bag-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopClothes]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_clothes.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopFashion]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_clothes.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopJewelry]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_jewelry.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopShoes]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_shoes.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopVarietyStore]         = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/variety_store-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopBeauty]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/beauty-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopChemist]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/chemist-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopCosmetics]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/perfumery-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopHairdresser]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_hairdresser.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopOptician]             = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_optician.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopPerfumery]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/perfumery-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopDoitYourself]         = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_diy.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopFlorist]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/florist.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopHardware]             = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_diy.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopFurniture]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_furniture.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopElectronics]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_electronics.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopMobilePhone]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_mobile_phone.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopBicycle]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_bicycle.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopCar]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_car"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopCarRepair]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shopping_car_repair.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopCarParts]             = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/car_parts-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopMotorcycle]           = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/motorcycle-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopOutdoor]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/outdoor-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopSports]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/sports"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopCopy]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/copyshop"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopArt]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/art"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopMusicalInstrument]    = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/musical_instrument-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopPhoto]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/photo-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopBook]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_books.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopGift]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_gift.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopStationery]           = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/stationery-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopLaundry]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/laundry-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopPet]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_pet.16"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopToys]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/toys-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopTravelAgency]         = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/travel_agency-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopDeli]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/deli"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopTobacco]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/tobacco"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopTea]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/tea"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopComputer]             = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/computer-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::ShopGardenCentre]         = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/garden_centre-14"), shopColor);
-    m_defaultStyle[GeoDataPlacemark::Shop]                     = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopBeverages]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/beverages-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopHifi]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/hifi-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopSupermarket]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_supermarket"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopAlcohol]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_alcohol.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopBakery]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_bakery.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopButcher]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/butcher-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopConfectionery]          = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/confectionery.14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopConvenience]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_convenience"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopGreengrocer]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/greengrocer-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopSeafood]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/seafood-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopDepartmentStore]        = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/department_store-16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopKiosk]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/kiosk-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopBag]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/bag-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopClothes]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_clothes.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopFashion]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_clothes.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopJewelry]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_jewelry.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopShoes]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_shoes.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopVarietyStore]           = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/variety_store-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopBeauty]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/beauty-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopChemist]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/chemist-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopCosmetics]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/perfumery-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopHairdresser]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_hairdresser.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopOptician]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_optician.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopPerfumery]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/perfumery-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopDoitYourself]           = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_diy.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopFlorist]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/florist.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopHardware]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_diy.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopFurniture]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_furniture.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopElectronics]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_electronics.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopMobilePhone]            = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_mobile_phone.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopBicycle]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_bicycle.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopCar]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_car"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopCarRepair]              = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shopping_car_repair.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopCarParts]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/car_parts-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopMotorcycle]             = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/motorcycle-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopOutdoor]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/outdoor-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopSports]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/sports"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopCopy]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/copyshop"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopArt]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/art"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopMusicalInstrument]      = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/musical_instrument-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopPhoto]                  = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/photo-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopBook]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_books.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopGift]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_gift.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopStationery]             = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/stationery-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopLaundry]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/laundry-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopPet]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop_pet.16"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopToys]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/toys-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopTravelAgency]           = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/travel_agency-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopDeli]                   = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/deli"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopTobacco]                = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/tobacco"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopTea]                    = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/tea"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopComputer]               = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/computer-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::ShopGardenCentre]           = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/garden_centre-14"), shopColor);
+    m_defaultStyle[GeoDataPlacemark::Shop]                       = createOsmPOIStyle(osmFont, QString::fromUtf8("shop/shop-14"), shopColor);
 
-    m_defaultStyle[GeoDataPlacemark::ManmadeBridge]            = createWayStyle(QColor("#b8b8b8"), Qt::transparent, true, true);
-    m_defaultStyle[GeoDataPlacemark::ManmadeLighthouse]        = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/lighthouse.16"), transportationColor, "#f2efe9", QColor("#f2efe9").darker());
-    m_defaultStyle[GeoDataPlacemark::ManmadePier]              = createStyle(0.0, 3.0, "#f2efe9", "#f2efe9", true, false, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont);
-    m_defaultStyle[GeoDataPlacemark::ManmadeWaterTower]        = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/water_tower.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::ManmadeWindMill]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/windmill.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::ManmadeBridge]              = createWayStyle(QColor("#b8b8b8"), Qt::transparent, true, true);
+    m_defaultStyle[GeoDataPlacemark::ManmadeLighthouse]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/lighthouse.16"), transportationColor, "#f2efe9", QColor("#f2efe9").darker());
+    m_defaultStyle[GeoDataPlacemark::ManmadePier]                = createStyle(0.0, 3.0, "#f2efe9", "#f2efe9", true, false, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont);
+    m_defaultStyle[GeoDataPlacemark::ManmadeWaterTower]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/water_tower.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::ManmadeWindMill]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/windmill.16"), amenityColor);
     m_defaultStyle[GeoDataPlacemark::ManmadeCommunicationsTower] = createOsmPOIStyle(osmFont, QString::fromUtf8("manmade/communications.16"), amenityColor);
 
-    m_defaultStyle[GeoDataPlacemark::HistoricCastle]           = createOsmPOIRingStyle(osmFont, QString::fromUtf8("amenity/cinema.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::HistoricMemorial]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/tourist_memorial.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::HistoricMonument]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/monument.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::HistoricRuins]             = createOsmPOIRingStyle(osmFont, QString(), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::HistoricCastle]             = createOsmPOIRingStyle(osmFont, QString::fromUtf8("amenity/cinema.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::HistoricMemorial]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/tourist_memorial.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::HistoricMonument]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/monument.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::HistoricRuins]              = createOsmPOIRingStyle(osmFont, QString(), amenityColor);
 
-    m_defaultStyle[GeoDataPlacemark::TourismAttraction]        = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/tourist_memorial.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::TourismArtwork]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/artwork"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityCinema]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/cinema.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::TourismInformation]       = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/information.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::TourismMuseum]            = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/museum.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::AmenityTheatre]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/theatre.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::TourismThemePark]         = createOsmPOIStyle(osmFont, QString(), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::TourismViewPoint]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/viewpoint.16"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::TourismZoo]               = createOsmPOIRingStyle(osmFont, QString(), amenityColor, Qt::transparent);
-    m_defaultStyle[GeoDataPlacemark::TourismAlpineHut]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/alpinehut.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TourismWildernessHut]     = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/wilderness_hut"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportAerodrome]       = createOsmPOIStyle(osmFont, QString::fromUtf8("airtransport/aerodrome"), airTransportColor);
-    m_defaultStyle[GeoDataPlacemark::TransportHelipad]         = createOsmPOIStyle(osmFont, QString::fromUtf8("airtransport/helipad"), airTransportColor);
-    m_defaultStyle[GeoDataPlacemark::TransportAirportTerminal] = createOsmPOIAreaStyle(osmFont, QString(), airTransportColor);
-    m_defaultStyle[GeoDataPlacemark::TransportAirportGate]     = createOsmPOIAreaStyle(osmFont, QString(), airTransportColor);
-    m_defaultStyle[GeoDataPlacemark::TransportBusStation]      = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/bus_station.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportBusStop]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/bus_stop.12"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportCarShare]        = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/car_share.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportFuel]            = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/fuel.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportParking]         = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("transportation/parking"), transportationColor, "#F6EEB6", QColor("#F6EEB6").darker());
-    m_defaultStyle[GeoDataPlacemark::TransportBicycleParking]  = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("transportation/bicycle_parking.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TourismAttraction]          = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/tourist_memorial.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::TourismArtwork]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/artwork"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityCinema]              = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/cinema.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::TourismInformation]         = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/information.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::TourismMuseum]              = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/museum.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::AmenityTheatre]             = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/theatre.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::TourismThemePark]           = createOsmPOIStyle(osmFont, QString(), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::TourismViewPoint]           = createOsmPOIStyle(osmFont, QString::fromUtf8("amenity/viewpoint.16"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::TourismZoo]                 = createOsmPOIRingStyle(osmFont, QString(), amenityColor, Qt::transparent);
+    m_defaultStyle[GeoDataPlacemark::TourismAlpineHut]           = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/alpinehut.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TourismWildernessHut]       = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/wilderness_hut"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportAerodrome]         = createOsmPOIStyle(osmFont, QString::fromUtf8("airtransport/aerodrome"), airTransportColor);
+    m_defaultStyle[GeoDataPlacemark::TransportHelipad]           = createOsmPOIStyle(osmFont, QString::fromUtf8("airtransport/helipad"), airTransportColor);
+    m_defaultStyle[GeoDataPlacemark::TransportAirportTerminal]   = createOsmPOIAreaStyle(osmFont, QString(), airTransportColor);
+    m_defaultStyle[GeoDataPlacemark::TransportAirportGate]       = createOsmPOIAreaStyle(osmFont, QString(), airTransportColor);
+    m_defaultStyle[GeoDataPlacemark::TransportBusStation]        = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/bus_station.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportBusStop]           = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/bus_stop.12"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportCarShare]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/car_share.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportFuel]              = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/fuel.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportParking]           = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("transportation/parking"), transportationColor, "#F6EEB6", QColor("#F6EEB6").darker());
+    m_defaultStyle[GeoDataPlacemark::TransportBicycleParking]    = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("transportation/bicycle_parking.16"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::TransportMotorcycleParking] = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("transportation/motorcycle_parking.16"), transportationColor);
-    qreal const parkingIconScale = 0.75;
+    qreal const parkingIconScale                                 = 0.75;
     m_defaultStyle[GeoDataPlacemark::TransportParking]->iconStyle().setScale(parkingIconScale);
     m_defaultStyle[GeoDataPlacemark::TransportBicycleParking]->iconStyle().setScale(parkingIconScale);
     m_defaultStyle[GeoDataPlacemark::TransportMotorcycleParking]->iconStyle().setScale(parkingIconScale);
-    m_defaultStyle[GeoDataPlacemark::TransportParkingSpace]    = createWayStyle("#F6EEB6", QColor("#F6EEB6").darker(), true, true);
-    m_defaultStyle[GeoDataPlacemark::TransportPlatform]        = createWayStyle("#bbbbbb", Qt::transparent, true, false);
-    m_defaultStyle[GeoDataPlacemark::TransportTrainStation]    = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/railway_station"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportParkingSpace]      = createWayStyle("#F6EEB6", QColor("#F6EEB6").darker(), true, true);
+    m_defaultStyle[GeoDataPlacemark::TransportPlatform]          = createWayStyle("#bbbbbb", Qt::transparent, true, false);
+    m_defaultStyle[GeoDataPlacemark::TransportTrainStation]      = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/railway_station"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::TransportTrainStation]->iconStyle().setScale(0.5);
-    m_defaultStyle[GeoDataPlacemark::TransportTramStop]        = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/railway_station"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportTramStop]          = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/railway_station"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::TransportTramStop]->iconStyle().setScale(0.33f);
-    m_defaultStyle[GeoDataPlacemark::TransportRentalBicycle]   = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/rental_bicycle.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportRentalCar]       = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/rental_car.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportRentalSki]       = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/rental_ski.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportTaxiRank]        = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/taxi.16"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::TransportSubwayEntrance]  = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/subway_entrance"), transportationColor);
-    m_defaultStyle[GeoDataPlacemark::ReligionPlaceOfWorship]   = createOsmPOIStyle(osmFont, QString::fromUtf8("black/place_of_worship.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionBahai]            = createOsmPOIStyle(osmFont, QString());
-    m_defaultStyle[GeoDataPlacemark::ReligionBuddhist]         = createOsmPOIStyle(osmFont, QString::fromUtf8("black/buddhist.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionChristian]        = createOsmPOIStyle(osmFont, QString::fromUtf8("black/christian.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionMuslim]           = createOsmPOIStyle(osmFont, QString::fromUtf8("black/muslim.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionHindu]            = createOsmPOIStyle(osmFont, QString::fromUtf8("black/hinduist.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionJain]             = createOsmPOIStyle(osmFont, QString());
-    m_defaultStyle[GeoDataPlacemark::ReligionJewish]           = createOsmPOIStyle(osmFont, QString::fromUtf8("black/jewish.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionShinto]           = createOsmPOIStyle(osmFont, QString::fromUtf8("black/shintoist.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionSikh]             = createOsmPOIStyle(osmFont, QString::fromUtf8("black/sikhist.16"));
-    m_defaultStyle[GeoDataPlacemark::ReligionTaoist]           = createOsmPOIStyle(osmFont, QString::fromUtf8("black/taoist.16"));
+    m_defaultStyle[GeoDataPlacemark::TransportRentalBicycle]     = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/rental_bicycle.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportRentalCar]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/rental_car.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportRentalSki]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/rental_ski.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportTaxiRank]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/taxi.16"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::TransportSubwayEntrance]    = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/subway_entrance"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::ReligionPlaceOfWorship]     = createOsmPOIStyle(osmFont, QString::fromUtf8("black/place_of_worship.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionBahai]              = createOsmPOIStyle(osmFont, QString());
+    m_defaultStyle[GeoDataPlacemark::ReligionBuddhist]           = createOsmPOIStyle(osmFont, QString::fromUtf8("black/buddhist.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionChristian]          = createOsmPOIStyle(osmFont, QString::fromUtf8("black/christian.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionMuslim]             = createOsmPOIStyle(osmFont, QString::fromUtf8("black/muslim.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionHindu]              = createOsmPOIStyle(osmFont, QString::fromUtf8("black/hinduist.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionJain]               = createOsmPOIStyle(osmFont, QString());
+    m_defaultStyle[GeoDataPlacemark::ReligionJewish]             = createOsmPOIStyle(osmFont, QString::fromUtf8("black/jewish.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionShinto]             = createOsmPOIStyle(osmFont, QString::fromUtf8("black/shintoist.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionSikh]               = createOsmPOIStyle(osmFont, QString::fromUtf8("black/sikhist.16"));
+    m_defaultStyle[GeoDataPlacemark::ReligionTaoist]             = createOsmPOIStyle(osmFont, QString::fromUtf8("black/taoist.16"));
 
-    m_defaultStyle[GeoDataPlacemark::IndoorDoor]               = createOsmPOIRingStyle(osmFont, QString::fromUtf8("indoor/door_b.16"));
-    m_defaultStyle[GeoDataPlacemark::IndoorWall]               = createOsmPOIStyle(osmFont, QString());
-    m_defaultStyle[GeoDataPlacemark::IndoorRoom]               = createWayStyle(buildingColor.darker(), QColor(Qt::black));
+    m_defaultStyle[GeoDataPlacemark::IndoorDoor]                 = createOsmPOIRingStyle(osmFont, QString::fromUtf8("indoor/door_b.16"));
+    m_defaultStyle[GeoDataPlacemark::IndoorWall]                 = createOsmPOIStyle(osmFont, QString());
+    m_defaultStyle[GeoDataPlacemark::IndoorRoom]                 = createWayStyle(buildingColor.darker(), QColor(Qt::black));
 
-    m_defaultStyle[GeoDataPlacemark::HighwayTrafficSignals]    = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/traffic_light"));
+    m_defaultStyle[GeoDataPlacemark::HighwayTrafficSignals]      = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/traffic_light"));
     m_defaultStyle[GeoDataPlacemark::HighwayTrafficSignals]->iconStyle().setScale(0.75);
 
-    m_defaultStyle[GeoDataPlacemark::HighwayElevator]    = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/elevator-12"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::HighwayElevator]            = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/elevator-12"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::HighwayElevator]->iconStyle().setScale(0.75);
 
-    m_defaultStyle[GeoDataPlacemark::PowerTower]               = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/power_tower"), QColor("#888888"));
+    m_defaultStyle[GeoDataPlacemark::PowerTower]                 = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/power_tower"), QColor("#888888"));
     m_defaultStyle[GeoDataPlacemark::PowerTower]->iconStyle().setScale(0.6f);
 
-    m_defaultStyle[GeoDataPlacemark::BarrierCityWall]          = createStyle(6.0, 3.0, "#787878", Qt::transparent, true, false, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, Qt::transparent);
-    m_defaultStyle[GeoDataPlacemark::BarrierGate]              = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/gate"));
+    m_defaultStyle[GeoDataPlacemark::BarrierCityWall]            = createStyle(6.0, 3.0, "#787878", Qt::transparent, true, false, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, Qt::transparent);
+    m_defaultStyle[GeoDataPlacemark::BarrierGate]                = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/gate"));
     m_defaultStyle[GeoDataPlacemark::BarrierGate]->iconStyle().setScale(0.75);
-    m_defaultStyle[GeoDataPlacemark::BarrierLiftGate]          = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/liftgate"));
+    m_defaultStyle[GeoDataPlacemark::BarrierLiftGate]            = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/liftgate"));
     m_defaultStyle[GeoDataPlacemark::BarrierLiftGate]->iconStyle().setScale(0.75);
-    m_defaultStyle[GeoDataPlacemark::BarrierWall]              = createStyle(2.0, 0.0, "#787878", Qt::transparent, true, false, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, Qt::transparent);
+    m_defaultStyle[GeoDataPlacemark::BarrierWall]                = createStyle(2.0, 0.0, "#787878", Qt::transparent, true, false, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, Qt::transparent);
 
-    m_defaultStyle[GeoDataPlacemark::HighwaySteps]             = createStyle(0.0, 2.0, "#fa8072", QColor(Qt::white), true, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::HighwayUnknown]           = createHighwayStyle("#dddddd", "#bbbbbb", osmFont, "000000", 0, 1);
-    m_defaultStyle[GeoDataPlacemark::HighwayPath]              = createHighwayStyle("#dddde8", "#999999", osmFont, "000000", 0, 1, Qt::DotLine, Qt::SquareCap, true);
-    m_defaultStyle[GeoDataPlacemark::HighwayTrack]             = createHighwayStyle("#996600", QColor(Qt::white), osmFont, QColor(Qt::transparent), 1, 1, Qt::DashLine, Qt::SquareCap, true);
-    m_defaultStyle[GeoDataPlacemark::HighwayPedestrian]        = createHighwayStyle("#dddde8", "#999999", osmFont, "000000", 0, 2);
+    m_defaultStyle[GeoDataPlacemark::HighwaySteps]               = createStyle(0.0, 2.0, "#fa8072", QColor(Qt::white), true, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::HighwayUnknown]             = createHighwayStyle("#dddddd", "#bbbbbb", osmFont, "000000", 0, 1);
+    m_defaultStyle[GeoDataPlacemark::HighwayPath]                = createHighwayStyle("#dddde8", "#999999", osmFont, "000000", 0, 1, Qt::DotLine, Qt::SquareCap, true);
+    m_defaultStyle[GeoDataPlacemark::HighwayTrack]               = createHighwayStyle("#996600", QColor(Qt::white), osmFont, QColor(Qt::transparent), 1, 1, Qt::DashLine, Qt::SquareCap, true);
+    m_defaultStyle[GeoDataPlacemark::HighwayPedestrian]          = createHighwayStyle("#dddde8", "#999999", osmFont, "000000", 0, 2);
     m_defaultStyle[GeoDataPlacemark::HighwayPedestrian]->polyStyle().setOutline(false);
-    m_defaultStyle[GeoDataPlacemark::HighwayFootway]           = createHighwayStyle("#fa8072", QColor(Qt::white), osmFont, "000000", 0, 2, Qt::DotLine, Qt::SquareCap, true);
-    m_defaultStyle[GeoDataPlacemark::HighwayCycleway]          = createHighwayStyle(QColor(Qt::blue), QColor(Qt::white), osmFont, "000000", 0, 2, Qt::DotLine, Qt::SquareCap, true);
-    m_defaultStyle[GeoDataPlacemark::HighwayService]           = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 1, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayResidential]       = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 3, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayLivingStreet]      = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 3, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayRoad]              = createHighwayStyle("#dddddd", "#bbbbbb", osmFont, "000000", 3, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayUnclassified]      = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 3, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayTertiary]          = createHighwayStyle("#ffffff", "#8f8f8f", osmFont, "000000", 6, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayTertiaryLink]      = createHighwayStyle("#ffffff", "#8f8f8f", osmFont, "000000", 6, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwaySecondary]         = createHighwayStyle("#f7fabf", "#707d05", osmFont, "000000", 6, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwaySecondaryLink]     = createHighwayStyle("#f7fabf", "#707d05", osmFont, "000000", 6, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayPrimary]           = createHighwayStyle("#fcd6a4", "#a06b00", osmFont, "000000", 9, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayPrimaryLink]       = createHighwayStyle("#fcd6a4", "#a06b00", osmFont, "000000", 6, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayRaceway]           = createHighwayStyle("#ffc0cb", "#ffc0cb", osmFont, "000000", 1, 5);
-    m_defaultStyle[GeoDataPlacemark::HighwayTrunk]             = createHighwayStyle("#f9b29c", "#c84e2f", osmFont, "000000", 9, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayTrunkLink]         = createHighwayStyle("#f9b29c", "#c84e2f", osmFont, "000000", 9, 6);
-    m_defaultStyle[GeoDataPlacemark::HighwayMotorway]          = createHighwayStyle("#e892a2", "#dc2a67", osmFont, "000000", 9, 10);
-    m_defaultStyle[GeoDataPlacemark::HighwayMotorwayLink]      = createHighwayStyle("#e892a2", "#dc2a67", osmFont, "000000", 9, 10);
-    m_defaultStyle[GeoDataPlacemark::HighwayCorridor]          = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 1, 3);
-    m_defaultStyle[GeoDataPlacemark::TransportAirportRunway]   = createHighwayStyle("#bbbbcc", "#bbbbcc", osmFont, "000000", 0, 1, Qt::NoPen);
-    m_defaultStyle[GeoDataPlacemark::TransportAirportTaxiway]  = createHighwayStyle("#bbbbcc", "#bbbbcc", osmFont, "000000", 0, 1, Qt::NoPen);
-    m_defaultStyle[GeoDataPlacemark::TransportAirportApron]    = createWayStyle("#e9d1ff", Qt::transparent, true, false);
-    m_defaultStyle[GeoDataPlacemark::TransportSpeedCamera]     = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/speedcamera"));
+    m_defaultStyle[GeoDataPlacemark::HighwayFootway]             = createHighwayStyle("#fa8072", QColor(Qt::white), osmFont, "000000", 0, 2, Qt::DotLine, Qt::SquareCap, true);
+    m_defaultStyle[GeoDataPlacemark::HighwayCycleway]            = createHighwayStyle(QColor(Qt::blue), QColor(Qt::white), osmFont, "000000", 0, 2, Qt::DotLine, Qt::SquareCap, true);
+    m_defaultStyle[GeoDataPlacemark::HighwayService]             = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 1, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayResidential]         = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 3, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayLivingStreet]        = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 3, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayRoad]                = createHighwayStyle("#dddddd", "#bbbbbb", osmFont, "000000", 3, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayUnclassified]        = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 3, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayTertiary]            = createHighwayStyle("#ffffff", "#8f8f8f", osmFont, "000000", 6, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayTertiaryLink]        = createHighwayStyle("#ffffff", "#8f8f8f", osmFont, "000000", 6, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwaySecondary]           = createHighwayStyle("#f7fabf", "#707d05", osmFont, "000000", 6, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwaySecondaryLink]       = createHighwayStyle("#f7fabf", "#707d05", osmFont, "000000", 6, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayPrimary]             = createHighwayStyle("#fcd6a4", "#a06b00", osmFont, "000000", 9, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayPrimaryLink]         = createHighwayStyle("#fcd6a4", "#a06b00", osmFont, "000000", 6, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayRaceway]             = createHighwayStyle("#ffc0cb", "#ffc0cb", osmFont, "000000", 1, 5);
+    m_defaultStyle[GeoDataPlacemark::HighwayTrunk]               = createHighwayStyle("#f9b29c", "#c84e2f", osmFont, "000000", 9, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayTrunkLink]           = createHighwayStyle("#f9b29c", "#c84e2f", osmFont, "000000", 9, 6);
+    m_defaultStyle[GeoDataPlacemark::HighwayMotorway]            = createHighwayStyle("#e892a2", "#dc2a67", osmFont, "000000", 9, 10);
+    m_defaultStyle[GeoDataPlacemark::HighwayMotorwayLink]        = createHighwayStyle("#e892a2", "#dc2a67", osmFont, "000000", 9, 10);
+    m_defaultStyle[GeoDataPlacemark::HighwayCorridor]            = createHighwayStyle("#ffffff", "#bbbbbb", osmFont, "000000", 1, 3);
+    m_defaultStyle[GeoDataPlacemark::TransportAirportRunway]     = createHighwayStyle("#bbbbcc", "#bbbbcc", osmFont, "000000", 0, 1, Qt::NoPen);
+    m_defaultStyle[GeoDataPlacemark::TransportAirportTaxiway]    = createHighwayStyle("#bbbbcc", "#bbbbcc", osmFont, "000000", 0, 1, Qt::NoPen);
+    m_defaultStyle[GeoDataPlacemark::TransportAirportApron]      = createWayStyle("#e9d1ff", Qt::transparent, true, false);
+    m_defaultStyle[GeoDataPlacemark::TransportSpeedCamera]       = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/speedcamera"));
 
-    m_defaultStyle[GeoDataPlacemark::NaturalWater]             = createStyle(4, 0, waterColor, waterColor, true, false,
-                                                                             Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
-                                                                             osmFont, waterColor.darker(150));
-    m_defaultStyle[GeoDataPlacemark::WaterwayRiver]            = createStyle(4, 0, waterColor, waterColor, true, false,
-                                                                             Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
-                                                                             osmFont, waterColor.darker(150));
-    m_defaultStyle[GeoDataPlacemark::WaterwayCanal]           = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
-    m_defaultStyle[GeoDataPlacemark::WaterwayDitch]           = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
-    m_defaultStyle[GeoDataPlacemark::WaterwayDrain]           = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
-    m_defaultStyle[GeoDataPlacemark::WaterwayStream]          = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
-    m_defaultStyle[GeoDataPlacemark::WaterwayWeir]            = createStyle(4, 0, "#ffffff", "#87939b", true, false,
-                                                                            Qt::SolidPattern, Qt::DotLine, Qt::RoundCap, true, QVector< qreal >(),
-                                                                            osmFont, waterColor.darker(150));
+    m_defaultStyle[GeoDataPlacemark::NaturalWater]               = createStyle(4, 0, waterColor, waterColor, true, false,
+                                                                               Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
+                                                                               osmFont, waterColor.darker(150));
+    m_defaultStyle[GeoDataPlacemark::WaterwayRiver]              = createStyle(4, 0, waterColor, waterColor, true, false,
+                                                                               Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(),
+                                                                               osmFont, waterColor.darker(150));
+    m_defaultStyle[GeoDataPlacemark::WaterwayCanal]              = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
+    m_defaultStyle[GeoDataPlacemark::WaterwayDitch]              = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
+    m_defaultStyle[GeoDataPlacemark::WaterwayDrain]              = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
+    m_defaultStyle[GeoDataPlacemark::WaterwayStream]             = m_defaultStyle[GeoDataPlacemark::WaterwayRiver];
+    m_defaultStyle[GeoDataPlacemark::WaterwayWeir]               = createStyle(4, 0, "#ffffff", "#87939b", true, false,
+                                                                              Qt::SolidPattern, Qt::DotLine, Qt::RoundCap, true, QVector< qreal >(),
+                                                                              osmFont, waterColor.darker(150));
 
-    m_defaultStyle[GeoDataPlacemark::CrossingIsland]          = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/zebra_crossing"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::CrossingIsland]             = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/zebra_crossing"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::CrossingIsland]->iconStyle().setScale(0.75);
-    m_defaultStyle[GeoDataPlacemark::CrossingRailway]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/railway_crossing"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::CrossingRailway]            = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/railway_crossing"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::CrossingRailway]->iconStyle().setScale(0.5);
-    m_defaultStyle[GeoDataPlacemark::CrossingSignals]         = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/traffic_light_crossing"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::CrossingSignals]            = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/traffic_light_crossing"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::CrossingSignals]->iconStyle().setScale(0.75);
-    m_defaultStyle[GeoDataPlacemark::CrossingZebra]           = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/zebra_crossing"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::CrossingZebra]              = createOsmPOIStyle(osmFont, QString::fromUtf8("transportation/zebra_crossing"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::CrossingZebra]->iconStyle().setScale(0.75);
 
-    m_defaultStyle[GeoDataPlacemark::NaturalReef]              = createStyle(5.5, 0, "#36677c", "#36677c", true, false,
-                                                                             Qt::Dense7Pattern, Qt::DotLine, Qt::RoundCap, false, QVector< qreal >(),
-                                                                             osmFont, waterColor.darker(150));
+    m_defaultStyle[GeoDataPlacemark::NaturalReef]                = createStyle(5.5, 0, "#36677c", "#36677c", true, false,
+                                                                               Qt::Dense7Pattern, Qt::DotLine, Qt::RoundCap, false, QVector< qreal >(),
+                                                                               osmFont, waterColor.darker(150));
 
-    m_defaultStyle[GeoDataPlacemark::AmenityGraveyard]         = createWayStyle("#AACBAF", "#AACBAF", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_generic.png")));
+    m_defaultStyle[GeoDataPlacemark::AmenityGraveyard]           = createWayStyle("#AACBAF", "#AACBAF", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_generic.png")));
 
-    m_defaultStyle[GeoDataPlacemark::NaturalWood]              = createWayStyle("#8DC46C", "#8DC46C", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/forest.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalBeach]             = createWayStyle("#FFF1BA", "#FFF1BA", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/beach.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalWetland]           = createWayStyle("#DDECEC", "#DDECEC", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/wetland.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalGlacier]           = createWayStyle("#DDECEC", "#DDECEC", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/glacier.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalIceShelf]          = createWayStyle("#8ebebe", "#8ebebe", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/glacier.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalScrub]             = createWayStyle("#B5E3B5", "#B5E3B5", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/scrub.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalCliff]             = createWayStyle(Qt::transparent, Qt::transparent, true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/cliff2.png")));
-    m_defaultStyle[GeoDataPlacemark::NaturalCave]              = createOsmPOIStyle(osmFont, QString::fromUtf8("amenities/cave"), amenityColor);
-    m_defaultStyle[GeoDataPlacemark::NaturalHeath]             = createWayStyle("#d6d99f", QColor("#d6d99f").darker(150), true, false);
+    m_defaultStyle[GeoDataPlacemark::NaturalWood]                = createWayStyle("#8DC46C", "#8DC46C", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/forest.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalBeach]               = createWayStyle("#FFF1BA", "#FFF1BA", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/beach.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalWetland]             = createWayStyle("#DDECEC", "#DDECEC", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/wetland.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalGlacier]             = createWayStyle("#DDECEC", "#DDECEC", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/glacier.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalIceShelf]            = createWayStyle("#8ebebe", "#8ebebe", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/glacier.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalScrub]               = createWayStyle("#B5E3B5", "#B5E3B5", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/scrub.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalCliff]               = createWayStyle(Qt::transparent, Qt::transparent, true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/cliff2.png")));
+    m_defaultStyle[GeoDataPlacemark::NaturalCave]                = createOsmPOIStyle(osmFont, QString::fromUtf8("amenities/cave"), amenityColor);
+    m_defaultStyle[GeoDataPlacemark::NaturalHeath]               = createWayStyle("#d6d99f", QColor("#d6d99f").darker(150), true, false);
 
-    m_defaultStyle[GeoDataPlacemark::LeisureGolfCourse]        = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("leisure/golf"), "#39ac39", "#b5e3b5", QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::LeisureMinigolfCourse]    = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("leisure/miniature_golf"), "#39ac39", "#b5e3b5", QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::LeisureMarina]            = createOsmPOIStyle(osmFont, QString(), QColor("#95abd5"), QColor("#aec8d1"), QColor("#95abd5").darker(150));
-    m_defaultStyle[GeoDataPlacemark::LeisurePark]              = createWayStyle(QColor("#c8facc"), QColor("#c8facc").darker(150), true, true);
-    m_defaultStyle[GeoDataPlacemark::LeisurePlayground]        = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("amenity/playground.16"), amenityColor, "#CCFFF1", "#BDFFED");
-    m_defaultStyle[GeoDataPlacemark::LeisurePitch]             = createWayStyle("#8ad3af", QColor("#8ad3af").darker(150), true, true);
-    m_defaultStyle[GeoDataPlacemark::LeisureSportsCentre]      = createWayStyle("#33cc99", QColor("#33cc99").darker(150), true, true);
-    m_defaultStyle[GeoDataPlacemark::LeisureStadium]           = createWayStyle("#33cc99", QColor("#33cc99").darker(150), true, true);
-    m_defaultStyle[GeoDataPlacemark::LeisureTrack]             = createWayStyle("#74dcba", QColor("#74dcba").darker(150), true, true);
-    m_defaultStyle[GeoDataPlacemark::LeisureSwimmingPool]      = createWayStyle(waterColor, waterColor.darker(150), true, true);
+    m_defaultStyle[GeoDataPlacemark::LeisureGolfCourse]          = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("leisure/golf"), "#39ac39", "#b5e3b5", QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::LeisureMinigolfCourse]      = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("leisure/miniature_golf"), "#39ac39", "#b5e3b5", QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::LeisureMarina]              = createOsmPOIStyle(osmFont, QString(), QColor("#95abd5"), QColor("#aec8d1"), QColor("#95abd5").darker(150));
+    m_defaultStyle[GeoDataPlacemark::LeisurePark]                = createWayStyle(QColor("#c8facc"), QColor("#c8facc").darker(150), true, true);
+    m_defaultStyle[GeoDataPlacemark::LeisurePlayground]          = createOsmPOIAreaStyle(osmFont, QString::fromUtf8("amenity/playground.16"), amenityColor, "#CCFFF1", "#BDFFED");
+    m_defaultStyle[GeoDataPlacemark::LeisurePitch]               = createWayStyle("#8ad3af", QColor("#8ad3af").darker(150), true, true);
+    m_defaultStyle[GeoDataPlacemark::LeisureSportsCentre]        = createWayStyle("#33cc99", QColor("#33cc99").darker(150), true, true);
+    m_defaultStyle[GeoDataPlacemark::LeisureStadium]             = createWayStyle("#33cc99", QColor("#33cc99").darker(150), true, true);
+    m_defaultStyle[GeoDataPlacemark::LeisureTrack]               = createWayStyle("#74dcba", QColor("#74dcba").darker(150), true, true);
+    m_defaultStyle[GeoDataPlacemark::LeisureSwimmingPool]        = createWayStyle(waterColor, waterColor.darker(150), true, true);
 
-    m_defaultStyle[GeoDataPlacemark::LanduseAllotments]        = createWayStyle("#E4C6AA", "#E4C6AA", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/allotments.png")));
-    m_defaultStyle[GeoDataPlacemark::LanduseBasin]             = createWayStyle(QColor(0xB5, 0xD0, 0xD0, 0x80), QColor(0xB5, 0xD0, 0xD0));
-    m_defaultStyle[GeoDataPlacemark::LanduseCemetery]          = createWayStyle("#AACBAF", "#AACBAF", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_generic.png")));
-    m_defaultStyle[GeoDataPlacemark::LanduseCommercial]        = createWayStyle("#F2DAD9", "#D1B2B0", true, true);
-    m_defaultStyle[GeoDataPlacemark::LanduseConstruction]      = createWayStyle("#b6b592", "#b6b592", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseFarmland]          = createWayStyle("#EDDDC9", "#C8B69E", true, true);
-    m_defaultStyle[GeoDataPlacemark::LanduseFarmyard]          = createWayStyle("#EFD6B5", "#D1B48C", true, true);
-    m_defaultStyle[GeoDataPlacemark::LanduseGarages]           = createWayStyle("#E0DDCD", "#E0DDCD", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseGrass]             = createWayStyle("#A8C8A5", "#A8C8A5", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseIndustrial]        = createWayStyle("#DED0D5", "#DED0D5", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseLandfill]          = createWayStyle("#b6b592", "#b6b592", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseMeadow]            = createWayStyle("#cdebb0", "#cdebb0", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseMilitary]          = createWayStyle("#F3D8D2", "#F3D8D2", true, true, Qt::BDiagPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/military_red_hatch.png")));
-    m_defaultStyle[GeoDataPlacemark::LanduseQuarry]            = createWayStyle("#C4C2C2", "#C4C2C2", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/quarry.png")));
-    m_defaultStyle[GeoDataPlacemark::LanduseRailway]           = createWayStyle("#DED0D5", "#DED0D5", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseReservoir]         = createWayStyle(waterColor, waterColor, true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseResidential]       = createWayStyle("#DCDCDC", "#DCDCDC", true, false);
-    m_defaultStyle[GeoDataPlacemark::LanduseRetail]            = createWayStyle("#FFD6D1", "#D99C95", true, true);
-    m_defaultStyle[GeoDataPlacemark::LanduseOrchard]           = createWayStyle("#AEDFA3", "#AEDFA3", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/orchard.png")));
-    m_defaultStyle[GeoDataPlacemark::LanduseVineyard]          = createWayStyle("#AEDFA3", "#AEDFA3", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/vineyard.png")));
+    m_defaultStyle[GeoDataPlacemark::LanduseAllotments]          = createWayStyle("#E4C6AA", "#E4C6AA", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/allotments.png")));
+    m_defaultStyle[GeoDataPlacemark::LanduseBasin]               = createWayStyle(QColor(0xB5, 0xD0, 0xD0, 0x80), QColor(0xB5, 0xD0, 0xD0));
+    m_defaultStyle[GeoDataPlacemark::LanduseCemetery]            = createWayStyle("#AACBAF", "#AACBAF", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/grave_yard_generic.png")));
+    m_defaultStyle[GeoDataPlacemark::LanduseCommercial]          = createWayStyle("#F2DAD9", "#D1B2B0", true, true);
+    m_defaultStyle[GeoDataPlacemark::LanduseConstruction]        = createWayStyle("#b6b592", "#b6b592", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseFarmland]            = createWayStyle("#EDDDC9", "#C8B69E", true, true);
+    m_defaultStyle[GeoDataPlacemark::LanduseFarmyard]            = createWayStyle("#EFD6B5", "#D1B48C", true, true);
+    m_defaultStyle[GeoDataPlacemark::LanduseGarages]             = createWayStyle("#E0DDCD", "#E0DDCD", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseGrass]               = createWayStyle("#A8C8A5", "#A8C8A5", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseIndustrial]          = createWayStyle("#DED0D5", "#DED0D5", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseLandfill]            = createWayStyle("#b6b592", "#b6b592", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseMeadow]              = createWayStyle("#cdebb0", "#cdebb0", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseMilitary]            = createWayStyle("#F3D8D2", "#F3D8D2", true, true, Qt::BDiagPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/military_red_hatch.png")));
+    m_defaultStyle[GeoDataPlacemark::LanduseQuarry]              = createWayStyle("#C4C2C2", "#C4C2C2", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/quarry.png")));
+    m_defaultStyle[GeoDataPlacemark::LanduseRailway]             = createWayStyle("#DED0D5", "#DED0D5", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseReservoir]           = createWayStyle(waterColor, waterColor, true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseResidential]         = createWayStyle("#DCDCDC", "#DCDCDC", true, false);
+    m_defaultStyle[GeoDataPlacemark::LanduseRetail]              = createWayStyle("#FFD6D1", "#D99C95", true, true);
+    m_defaultStyle[GeoDataPlacemark::LanduseOrchard]             = createWayStyle("#AEDFA3", "#AEDFA3", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/orchard.png")));
+    m_defaultStyle[GeoDataPlacemark::LanduseVineyard]            = createWayStyle("#AEDFA3", "#AEDFA3", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/vineyard.png")));
 
-    m_defaultStyle[GeoDataPlacemark::MilitaryDangerArea]       = createWayStyle("#FFC0CB", "#FFC0CB", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/danger.png")));
+    m_defaultStyle[GeoDataPlacemark::MilitaryDangerArea]         = createWayStyle("#FFC0CB", "#FFC0CB", true, false, Qt::SolidPattern, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/danger.png")));
 
-    m_defaultStyle[GeoDataPlacemark::RailwayRail]              = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", true, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, true, QVector< qreal >() << 2 << 3, osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayNarrowGauge]       = createStyle(2.0, 1.0, "#706E70", "#EEEEEE", true, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, true, QVector< qreal >() << 2 << 3, osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayRail]                = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", true, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, true, QVector< qreal >() << 2 << 3, osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayNarrowGauge]         = createStyle(2.0, 1.0, "#706E70", "#EEEEEE", true, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, true, QVector< qreal >() << 2 << 3, osmFont, QColor(Qt::transparent));
+
     // FIXME: the tram is currently being rendered as a polygon.
-    m_defaultStyle[GeoDataPlacemark::RailwayTram]              = createStyle(2.0, 1.435, "#706E70", "#B7B6B7", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayLightRail]         = createStyle(2.0, 1.435, "#706E70", "#706E70", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayAbandoned]         = createStyle(2.0, 1.435, Qt::transparent, "#706E70", false, false, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwaySubway]            = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayPreserved]         = createStyle(2.0, 1.435, "#EEEEEE", "#706E70", true, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, true, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayMiniature]         = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayConstruction]      = createStyle(2.0, 1.435, "#EEEEEE", "#706E70", true, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, true, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayMonorail]          = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
-    m_defaultStyle[GeoDataPlacemark::RailwayFunicular]         = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
 
-    m_defaultStyle[GeoDataPlacemark::Landmass]                 = createWayStyle("#F1EEE8", "#F1EEE8", true, false);
-    m_defaultStyle[GeoDataPlacemark::UrbanArea]                = createWayStyle("#E6E3DD", "#E6E3DD", true, false);
-    m_defaultStyle[GeoDataPlacemark::InternationalDateLine]    = createStyle(1.0, 0.0, "#000000", "#000000", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont);
-    m_defaultStyle[GeoDataPlacemark::Bathymetry]               = createWayStyle("#a5c9c9", "#a5c9c9", true, false);
+    m_defaultStyle[GeoDataPlacemark::RailwayTram]                = createStyle(2.0, 1.435, "#706E70", "#B7B6B7", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayLightRail]           = createStyle(2.0, 1.435, "#706E70", "#706E70", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayAbandoned]           = createStyle(2.0, 1.435, Qt::transparent, "#706E70", false, false, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwaySubway]              = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayPreserved]           = createStyle(2.0, 1.435, "#EEEEEE", "#706E70", true, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, true, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayMiniature]           = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayConstruction]        = createStyle(2.0, 1.435, "#EEEEEE", "#706E70", true, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, true, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayMonorail]            = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
+    m_defaultStyle[GeoDataPlacemark::RailwayFunicular]           = createStyle(2.0, 1.435, "#706E70", "#EEEEEE", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont, QColor(Qt::transparent));
 
-    m_defaultStyle[GeoDataPlacemark::AerialwayStation]         = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/railway_station"), transportationColor);
+    m_defaultStyle[GeoDataPlacemark::Landmass]                   = createWayStyle("#F1EEE8", "#F1EEE8", true, false);
+    m_defaultStyle[GeoDataPlacemark::UrbanArea]                  = createWayStyle("#E6E3DD", "#E6E3DD", true, false);
+    m_defaultStyle[GeoDataPlacemark::InternationalDateLine]      = createStyle(1.0, 0.0, "#000000", "#000000", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont);
+    m_defaultStyle[GeoDataPlacemark::Bathymetry]                 = createWayStyle("#a5c9c9", "#a5c9c9", true, false);
+
+    m_defaultStyle[GeoDataPlacemark::AerialwayStation]           = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/railway_station"), transportationColor);
     m_defaultStyle[GeoDataPlacemark::AerialwayStation]->iconStyle().setScale(0.33f);
-    m_defaultStyle[GeoDataPlacemark::AerialwayPylon]           = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/pylon"), QColor("#dddddd"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayPylon]             = createOsmPOIStyle(osmFont, QString::fromUtf8("individual/pylon"), QColor("#dddddd"));
     m_defaultStyle[GeoDataPlacemark::AerialwayPylon]->iconStyle().setScale(0.33f);
-    m_defaultStyle[GeoDataPlacemark::AerialwayCableCar]        = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-583813-cable-car.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayGondola]         = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-21636-gondola.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayChairLift]       = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-231-chair-lift.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayMixedLift]       = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AerialwayDragLift]        = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayTBar]            = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayJBar]            = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayPlatter]         = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
-    m_defaultStyle[GeoDataPlacemark::AerialwayRopeTow]         = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AerialwayMagicCarpet]     = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AerialwayZipLine]         = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
-    m_defaultStyle[GeoDataPlacemark::AerialwayGoods]           = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AerialwayCableCar]          = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-583813-cable-car.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayGondola]           = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-21636-gondola.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayChairLift]         = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-231-chair-lift.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayMixedLift]         = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AerialwayDragLift]          = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayTBar]              = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayJBar]              = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayPlatter]           = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/transportation-8803-platter-lift.svg"));
+    m_defaultStyle[GeoDataPlacemark::AerialwayRopeTow]           = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AerialwayMagicCarpet]       = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AerialwayZipLine]           = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
+    m_defaultStyle[GeoDataPlacemark::AerialwayGoods]             = createIconWayStyle("#bbbbbb", osmFont, transportationColor);
 
-    m_defaultStyle[GeoDataPlacemark::PisteDownhill]            = createStyle(9, 0.0, "#dddddd", Qt::transparent, true, false, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(), osmFont, Qt::transparent);
-    m_defaultStyle[GeoDataPlacemark::PisteNordic]              = createStyle(3, 0.0, "#fffafa", "#006666", true, false, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(), osmFont, Qt::transparent, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/ice.png")));
-    m_defaultStyle[GeoDataPlacemark::PisteSkitour]             = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PisteSled]                = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PisteHike]                = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PisteSleigh]              = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PisteIceSkate]            = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PisteSnowPark]            = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PistePlayground]          = m_defaultStyle[GeoDataPlacemark::PisteNordic];
-    m_defaultStyle[GeoDataPlacemark::PisteSkiJump]             = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/sports-245-ski-jump.svg"));
+    m_defaultStyle[GeoDataPlacemark::PisteDownhill]              = createStyle(9, 0.0, "#dddddd", Qt::transparent, true, false, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(), osmFont, Qt::transparent);
+    m_defaultStyle[GeoDataPlacemark::PisteNordic]                = createStyle(3, 0.0, "#fffafa", "#006666", true, false, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector< qreal >(), osmFont, Qt::transparent, MarbleDirs::path(QString::fromUtf8("bitmaps/osmcarto/patterns/ice.png")));
+    m_defaultStyle[GeoDataPlacemark::PisteSkitour]               = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PisteSled]                  = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PisteHike]                  = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PisteSleigh]                = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PisteIceSkate]              = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PisteSnowPark]              = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PistePlayground]            = m_defaultStyle[GeoDataPlacemark::PisteNordic];
+    m_defaultStyle[GeoDataPlacemark::PisteSkiJump]               = createIconWayStyle("#bbbbbb", osmFont, transportationColor, 1.0, QStringLiteral("svg/thenounproject/sports-245-ski-jump.svg"));
 
-    m_defaultStyle[GeoDataPlacemark::AdminLevel1]              = createStyle(0.0, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel2]              = createStyle(2.0, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel3]              = createStyle(1.8, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel4]              = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel5]              = createStyle(1.25, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashDotDotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel6]              = createStyle(1, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashDotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel7]              = createStyle(1, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel8]              = createStyle(1, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel9]              = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel10]             = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
-    m_defaultStyle[GeoDataPlacemark::AdminLevel11]             = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel1]                = createStyle(0.0, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::CustomDashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel2]                = createStyle(2.0, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel3]                = createStyle(1.8, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel4]                = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel5]                = createStyle(1.25, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashDotDotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel6]                = createStyle(1, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashDotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel7]                = createStyle(1, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel8]                = createStyle(1, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DashLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel9]                = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel10]               = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
+    m_defaultStyle[GeoDataPlacemark::AdminLevel11]               = createStyle(1.5, 0.0, "#DF9CCF", "#DF9CCF", false, true, Qt::SolidPattern, Qt::DotLine, Qt::FlatCap, false, QVector< qreal >() << 0.3 << 0.3, osmFont);
 
-    m_defaultStyle[GeoDataPlacemark::BoundaryMaritime]         = createStyle(2.0, 0.0, "#88b3bf", "#88b3bf", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont);
+    m_defaultStyle[GeoDataPlacemark::BoundaryMaritime]           = createStyle(2.0, 0.0, "#88b3bf", "#88b3bf", false, true, Qt::SolidPattern, Qt::SolidLine, Qt::FlatCap, false, QVector<qreal>(), osmFont);
 
     m_defaultStyle[GeoDataPlacemark::Satellite]
         = GeoDataStyle::Ptr(new GeoDataStyle(MarbleDirs::path(QString::fromUtf8("bitmaps/satellite.png")),
@@ -1537,6 +1551,7 @@ void StyleBuilder::Private::initializeDefaultStyles()
     QFont tmp;
 
     // Fonts for areas ...
+
     tmp = m_defaultStyle[GeoDataPlacemark::Continent]->labelStyle().font();
     tmp.setLetterSpacing(QFont::AbsoluteSpacing, 2);
     tmp.setCapitalization(QFont::AllUppercase);
@@ -1544,6 +1559,7 @@ void StyleBuilder::Private::initializeDefaultStyles()
     m_defaultStyle[GeoDataPlacemark::Continent]->labelStyle().setFont(tmp);
 
     // Fonts for areas ...
+
     tmp = m_defaultStyle[GeoDataPlacemark::Mare]->labelStyle().font();
     tmp.setLetterSpacing(QFont::AbsoluteSpacing, 2);
     tmp.setCapitalization(QFont::AllUppercase);
@@ -1569,16 +1585,17 @@ void StyleBuilder::Private::initializeDefaultStyles()
     m_defaultStyle[GeoDataPlacemark::LargeNationCapital]->labelStyle().setFont(tmp);
 
     // Buildings
+
     m_defaultStyle[GeoDataPlacemark::Building] = createStyle(1, 0, buildingColor, buildingColor.darker(),
                                                              true, true, Qt::SolidPattern, Qt::SolidLine, Qt::RoundCap, false, QVector<qreal>(), osmFont);
 
-    for (int i = 0; i < GeoDataPlacemark::LastIndex; ++i)
+    for (int i = 0 ; i < GeoDataPlacemark::LastIndex ; ++i)
     {
         if (m_defaultStyle[i] && !m_defaultStyle[i]->iconStyle().iconPath().isEmpty())
         {
-            auto const category = GeoDataPlacemark::GeoDataVisualCategory(i);
-            m_buildingStyles[category] = GeoDataStyle::Ptr(new GeoDataStyle(*m_defaultStyle[GeoDataPlacemark::Building]));
-            m_buildingStyles[category]->iconStyle() = m_defaultStyle[i]->iconStyle();
+            auto const category                      = GeoDataPlacemark::GeoDataVisualCategory(i);
+            m_buildingStyles[category]               = GeoDataStyle::Ptr(new GeoDataStyle(*m_defaultStyle[GeoDataPlacemark::Building]));
+            m_buildingStyles[category]->iconStyle()  = m_defaultStyle[i]->iconStyle();
             m_buildingStyles[category]->labelStyle() = m_defaultStyle[i]->labelStyle();
         }
     }

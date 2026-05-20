@@ -43,8 +43,8 @@ public:
     explicit StyleParameters(const GeoDataPlacemark* placemark_ = nullptr, int tileLevel = 0);
 
     const GeoDataPlacemark* placemark;
-    int tileLevel;
-    const GeoDataRelation* relation;
+    int                     tileLevel = 0;
+    const GeoDataRelation*  relation;
 };
 
 enum StyleEffect
@@ -61,25 +61,29 @@ public:
 
     typedef QPair<QString, QString> OsmTag;
 
+public:
+
     StyleBuilder();
     ~StyleBuilder();
+
+public:
 
     /**
      * Return the label font of the placemark.
      */
-    QFont defaultFont() const;
+    QFont defaultFont()                                                     const;
     void setDefaultFont(const QFont& font);
 
-    QColor defaultLabelColor() const;
+    QColor defaultLabelColor()                                              const;
     void setDefaultLabelColor(const QColor& color);
 
-    GeoDataStyle::ConstPtr createStyle(const StyleParameters& parameters) const;
+    GeoDataStyle::ConstPtr createStyle(const StyleParameters& parameters)   const;
 
     /**
      * @brief Returns the order in which the visual categories used in the theme shall be painted on the map.
      * @return order in which the visual categories shall be painted on the map
      */
-    QStringList renderOrder() const;
+    QStringList renderOrder()                                               const;
 
     void reset();
 
@@ -88,7 +92,7 @@ public:
      * @param placemark the placemark for which the minimum zoom level shall be returned
      * @return zoom level from which on the given visual category will be visible
      */
-    int minimumZoomLevel(const GeoDataPlacemark& placemark) const;
+    int minimumZoomLevel(const GeoDataPlacemark& placemark)                 const;
 
     static int minimumZoomLevel(const GeoDataPlacemark::GeoDataVisualCategory& visualCategory);
 
@@ -98,7 +102,7 @@ public:
      * @brief Returns the maximum zoom level in the theme.
      * @return maximum zoom level in the theme
      */
-    int maximumZoomLevel() const;
+    int maximumZoomLevel()                                                  const;
 
     static QString visualCategoryName(GeoDataPlacemark::GeoDataVisualCategory category);
 
