@@ -34,8 +34,9 @@ class SunLightBlending: public Blending
 public:
 
     explicit SunLightBlending(const SunLocator* sunLocator);
-    ~SunLightBlending() override;
-    void blend(QImage* const bottom, TextureTile const* const top) const override;
+    ~SunLightBlending()                                                   override;
+
+    void blend(QImage* const bottom, TextureTile const* const top)  const override;
 
     void setLevelZeroLayout(int levelZeroColumns, int levelZeroRows);
 
@@ -45,9 +46,9 @@ private:
 
 private:
 
-    const SunLocator* const m_sunLocator = nullptr;
-    int                     m_levelZeroColumns;
-    int                     m_levelZeroRows;
+    const SunLocator* const m_sunLocator       = nullptr;
+    int                     m_levelZeroColumns = 0;
+    int                     m_levelZeroRows    = 0;
 };
 
 } // Namespace Marble
