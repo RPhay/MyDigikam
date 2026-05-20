@@ -39,15 +39,28 @@ class DIGIKAM_EXPORT MarbleZipReader
 {
 public:
 
+    enum Status
+    {
+        NoError,
+        FileReadError,
+        FileOpenError,
+        FilePermissionsError,
+        FileError
+    };
+
+public:
+
     explicit MarbleZipReader(const QString& fileName, QIODevice::OpenMode mode = QIODevice::ReadOnly);
 
     explicit MarbleZipReader(QIODevice* device);
     ~MarbleZipReader();
 
-    QIODevice* device() const;
+public:
 
-    bool isReadable() const;
-    bool exists() const;
+    QIODevice* device()                             const;
+
+    bool isReadable()                               const;
+    bool exists()                                   const;
 
     struct DIGIKAM_EXPORT FileInfo
     {
@@ -55,7 +68,7 @@ public:
         FileInfo(const FileInfo& other);
         ~FileInfo();
         FileInfo& operator=(const FileInfo& other);
-        bool isValid() const;
+        bool isValid()                              const;
 
         QString filePath;
         uint isDir                      = false;
@@ -68,23 +81,14 @@ public:
         void*              d            = nullptr;
     };
 
-    QList<FileInfo> fileInfoList() const;
-    int count() const;
+    QList<FileInfo> fileInfoList()                  const;
+    int count()                                     const;
 
-    FileInfo entryInfoAt(int index) const;
-    QByteArray fileData(const QString& fileName) const;
-    bool extractAll(const QString& destinationDir) const;
+    FileInfo entryInfoAt(int index)                 const;
+    QByteArray fileData(const QString& fileName)    const;
+    bool extractAll(const QString& destinationDir)  const;
 
-    enum Status
-    {
-        NoError,
-        FileReadError,
-        FileOpenError,
-        FilePermissionsError,
-        FileError
-    };
-
-    Status status() const;
+    Status status()                                 const;
 
     void close();
 

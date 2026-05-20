@@ -37,19 +37,19 @@ public:
 
     GeoDataTimeSpan  m_timeSpan;
     GeoDataTimeStamp m_timeStamp;
-    AltitudeMode     m_altitudeMode;
+    AltitudeMode     m_altitudeMode = ClampToGround;
 };
 
-GeoDataAbstractViewPrivate::GeoDataAbstractViewPrivate() :
-    m_timeSpan      (),
-    m_timeStamp     (),
-    m_altitudeMode  (ClampToGround)
+GeoDataAbstractViewPrivate::GeoDataAbstractViewPrivate()
+    : m_timeSpan      (),
+      m_timeStamp     (),
+      m_altitudeMode  (ClampToGround)
 {
     // do nothing
 }
 
-GeoDataAbstractView::GeoDataAbstractView() :
-    d(new GeoDataAbstractViewPrivate())
+GeoDataAbstractView::GeoDataAbstractView()
+    : d(new GeoDataAbstractViewPrivate())
 {
     // do nothing
 }
@@ -59,9 +59,9 @@ GeoDataAbstractView::~GeoDataAbstractView()
     delete d;
 }
 
-GeoDataAbstractView::GeoDataAbstractView(const GeoDataAbstractView& other) :
-    GeoDataObject(other),
-    d            (new GeoDataAbstractViewPrivate(*other.d))
+GeoDataAbstractView::GeoDataAbstractView(const GeoDataAbstractView& other)
+    : GeoDataObject(other),
+      d            (new GeoDataAbstractViewPrivate(*other.d))
 {
     // nothing to do
 }
@@ -103,7 +103,7 @@ GeoDataCoordinates GeoDataAbstractView::coordinates() const
 {
     if      (nodeType() == GeoDataTypes::GeoDataLookAtType)
     {
-        const GeoDataLookAt* lookAt = static_cast<const GeoDataLookAt*>(this);
+        const GeoDataLookAt* lookAt = dynamic_cast<const GeoDataLookAt*>(this);
 
         if (lookAt)
         {
@@ -112,7 +112,7 @@ GeoDataCoordinates GeoDataAbstractView::coordinates() const
     }
     else if (nodeType() == GeoDataTypes::GeoDataCameraType)
     {
-        const GeoDataCamera* camera = static_cast<const GeoDataCamera*>(this);
+        const GeoDataCamera* camera = dynamic_cast<const GeoDataCamera*>(this);
 
         if (camera)
         {
@@ -143,9 +143,9 @@ GeoDataTimeSpan& GeoDataAbstractView::timeSpan()
     return d->m_timeSpan;
 }
 
-void GeoDataAbstractView::setTimeSpan(const GeoDataTimeSpan& timeSpan)
+void GeoDataAbstractView::setTimeSpan(const GeoDataTimeSpan& _timeSpan)
 {
-    d->m_timeSpan = timeSpan;
+    d->m_timeSpan = _timeSpan;
 }
 
 GeoDataTimeStamp& GeoDataAbstractView::timeStamp()
@@ -158,9 +158,9 @@ const GeoDataTimeStamp& GeoDataAbstractView::timeStamp() const
     return d->m_timeStamp;
 }
 
-void GeoDataAbstractView::setTimeStamp(const GeoDataTimeStamp& timeStamp)
+void GeoDataAbstractView::setTimeStamp(const GeoDataTimeStamp& _timeStamp)
 {
-    d->m_timeStamp = timeStamp;
+    d->m_timeStamp = _timeStamp;
 }
 
 AltitudeMode GeoDataAbstractView::altitudeMode() const
@@ -168,9 +168,9 @@ AltitudeMode GeoDataAbstractView::altitudeMode() const
     return d->m_altitudeMode;
 }
 
-void GeoDataAbstractView::setAltitudeMode(const AltitudeMode altitudeMode)
+void GeoDataAbstractView::setAltitudeMode(const AltitudeMode _altitudeMode)
 {
-    d->m_altitudeMode = altitudeMode;
+    d->m_altitudeMode = _altitudeMode;
 }
 
 } // namespace Marble

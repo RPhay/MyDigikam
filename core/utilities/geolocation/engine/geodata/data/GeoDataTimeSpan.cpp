@@ -74,7 +74,11 @@ bool GeoDataTimeSpan::isValid() const
         return true;
     }
 
-    return d->m_begin.when().isValid() && d->m_end.when().isValid() && d->m_begin.when() <= d->m_end.when();
+    return (
+            d->m_begin.when().isValid() &&          // cppcheck-suppress knownConditionTrueFalse
+            d->m_end.when().isValid()   &&
+            (d->m_begin.when() <= d->m_end.when())
+           );
 }
 
 const GeoDataTimeStamp& GeoDataTimeSpan::begin() const
@@ -96,19 +100,22 @@ GeoDataTimeSpan& GeoDataTimeSpan::operator=(const GeoDataTimeSpan& other)
 {
     GeoDataTimePrimitive::operator=(other);
     *d = *other.d;
+
     return *this;
 }
 
 bool GeoDataTimeSpan::operator==(const GeoDataTimeSpan& other) const
 {
-    return equals(other) &&
-           d->m_begin == other.d->m_begin &&
-           d->m_end == other.d->m_end;
+    return (
+            equals(other)                    &&
+            (d->m_begin == other.d->m_begin) &&
+            (d->m_end == other.d->m_end)
+           );
 }
 
 bool GeoDataTimeSpan::operator!=(const GeoDataTimeSpan& other) const
 {
-    return !this->operator==(other);
+    return (!this->operator==(other));
 }
 
 void GeoDataTimeSpan::pack(QDataStream& stream) const

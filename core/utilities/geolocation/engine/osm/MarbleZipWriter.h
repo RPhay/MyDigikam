@@ -38,16 +38,6 @@ class DIGIKAM_EXPORT MarbleZipWriter
 {
 public:
 
-    explicit MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate));
-
-    explicit MarbleZipWriter(QIODevice* device);
-    ~MarbleZipWriter();
-
-    QIODevice* device() const;
-
-    bool isWritable() const;
-    bool exists() const;
-
     enum Status
     {
         NoError,
@@ -57,8 +47,6 @@ public:
         FileError
     };
 
-    Status status() const;
-
     enum CompressionPolicy
     {
         AlwaysCompress,
@@ -66,11 +54,28 @@ public:
         AutoCompress
     };
 
+public:
+
+    explicit MarbleZipWriter(const QString& fileName,
+                             QIODevice::OpenMode mode = (QIODevice::WriteOnly | QIODevice::Truncate));
+
+    explicit MarbleZipWriter(QIODevice* device);
+    ~MarbleZipWriter();
+
+public:
+
+    QIODevice* device()                             const;
+
+    bool isWritable()                               const;
+    bool exists()                                   const;
+
+    Status status()                                 const;
+
     void setCompressionPolicy(CompressionPolicy policy);
-    CompressionPolicy compressionPolicy() const;
+    CompressionPolicy compressionPolicy()           const;
 
     void setCreationPermissions(QFile::Permissions permissions);
-    QFile::Permissions creationPermissions() const;
+    QFile::Permissions creationPermissions()        const;
 
     void addFile(const QString& fileName, const QByteArray& data);
 

@@ -41,7 +41,7 @@ protected:
     AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataPolygon* polygon);
     AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLinearRing* ring);
     AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataBuilding* building);
-    ~AbstractGeoPolygonGraphicsItem() override;
+    ~AbstractGeoPolygonGraphicsItem()                                                 override;
 
 public:
 

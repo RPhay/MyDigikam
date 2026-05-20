@@ -89,12 +89,14 @@ public:
     void setSourceModel(QAbstractItemModel* model)                            override;
 
 #if 0
+
     /**
      * @deprecated
      *
      * This method does nothing.
      */
     void setRootIndex(const QModelIndex& index);
+
 #endif
 
     /**

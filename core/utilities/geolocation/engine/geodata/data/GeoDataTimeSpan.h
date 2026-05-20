@@ -33,7 +33,7 @@ public:
 
     GeoDataTimeSpan();
     GeoDataTimeSpan(const GeoDataTimeSpan& other);
-    ~GeoDataTimeSpan() override;
+    ~GeoDataTimeSpan()                                        override;
 
     /**
      * @brief assignment operator
@@ -43,16 +43,18 @@ public:
     /**
       * @brief equality operators
       */
-    bool operator==(const GeoDataTimeSpan& other) const;
-    bool operator!=(const GeoDataTimeSpan& other) const;
+    bool operator==(const GeoDataTimeSpan& other)       const;
+    bool operator!=(const GeoDataTimeSpan& other)       const;
+
+public:
 
     /// Provides type information for downcasting a GeoNode
-    const char* nodeType() const override;
+    const char* nodeType()                              const override;
 
     /**
      * @brief return the beginning instant of a timespan
      */
-    const GeoDataTimeStamp& begin() const;
+    const GeoDataTimeStamp& begin()                     const;
     GeoDataTimeStamp& begin();
 
     /**
@@ -64,7 +66,7 @@ public:
     /**
      * @brief return the ending instant of a timespan
      */
-    const GeoDataTimeStamp& end() const;
+    const GeoDataTimeStamp& end()                       const;
     GeoDataTimeStamp& end();
 
     /**
@@ -76,19 +78,19 @@ public:
     /**
      * @return True iff either of begin or end is valid, or if begin and end are both valid and begin is <= end
      */
-    bool isValid() const;
+    bool isValid()                                      const;
 
     /**
      * @brief Serialize the timespan to a stream
      * @param  stream  the stream
      */
-    void pack(QDataStream& stream) const override;
+    void pack(QDataStream& stream)                      const override;
 
     /**
      * @brief  Unserialize the timespan from a stream
      * @param  stream  the stream
      */
-    void unpack(QDataStream& stream) override;
+    void unpack(QDataStream& stream)                          override;
 
 private:
 

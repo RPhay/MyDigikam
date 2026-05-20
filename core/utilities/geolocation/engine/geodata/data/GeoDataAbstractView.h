@@ -73,15 +73,15 @@ public:
 
     virtual GeoDataCoordinates coordinates()                            const;
 
-private:
-
-    GeoDataAbstractViewPrivate* const d = nullptr;
-
 protected:
 
     bool equals(const GeoDataAbstractView& other)                       const;
 
     using GeoDataObject::equals;
+
+private:
+
+    GeoDataAbstractViewPrivate* const d = nullptr;
 };
 
 } // namespace Marble

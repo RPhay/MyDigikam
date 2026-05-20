@@ -127,17 +127,17 @@ static void writeMSDosDate(uchar* dest, const QDateTime& dt)
     if (dt.isValid())
     {
         quint16 time =
-            (dt.time().hour() << 11)         // 5 bit hour
-            | (dt.time().minute() << 5)      // 6 bit minute
-            | (dt.time().second() >> 1);     // 5 bit double seconds
+              (dt.time().hour()   << 11)       // 5 bit hour
+            | (dt.time().minute() << 5)        // 6 bit minute
+            | (dt.time().second() >> 1);       // 5 bit double seconds
 
         dest[0] = time & 0xff;
         dest[1] = time >> 8;
 
         quint16 date =
-            ((dt.date().year() - 1980) << 9) // 7 bit year 1980-based
-            | (dt.date().month() << 5)       // 4 bit month
-            | (dt.date().day());             // 5 bit day
+              ((dt.date().year() - 1980) << 9) // 7 bit year 1980-based
+            | (dt.date().month() << 5)         // 4 bit month
+            | (dt.date().day());               // 5 bit day
 
         dest[2] = char(date);
         dest[3] = char(date >> 8);
@@ -678,7 +678,7 @@ void MarbleZipReaderPrivate::scanFiles()
     int num_dir_entries    = 0;
     EndOfDirectory eod;
 
-    // // cppcheck-suppress knownConditionTrueFalse
+    // cppcheck-suppress knownConditionTrueFalse
     while (start_of_directory == -1)
     {
         int pos = device->size() - sizeof(EndOfDirectory) - i;
@@ -754,7 +754,7 @@ void MarbleZipReaderPrivate::scanFiles()
             break;
         }
 
-        l = readUShort(header.h.file_comment_length);
+        l                   = readUShort(header.h.file_comment_length);
         header.file_comment = device->read(l);
 
         if (header.file_comment.length() != l)
@@ -780,7 +780,9 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
         "symlink  "
     };
 
-    qCDebug(DIGIKAM_GEOENGINE_LOG) << "adding" << entryTypes[type] << ":" << fileName.toUtf8().data() << (type == 2 ? QByteArray(" -> " + contents).constData() : "");
+    qCDebug(DIGIKAM_GEOENGINE_LOG) << "adding" << entryTypes[type]
+                                   << ":" << fileName.toUtf8().data()
+                                   << (type == 2 ? QByteArray(" -> " + contents).constData() : "");
 
 #endif
 
@@ -809,7 +811,7 @@ void MarbleZipWriterPrivate::addEntry(EntryType type, const QString& fileName, c
     }
 
     FileHeader header;
-    header.h = CentralFileHeader();
+    header.h        = CentralFileHeader();
     writeUInt(header.h.signature, 0x02014b50);
 
     writeUShort(header.h.version_needed, 0x14);
@@ -1036,7 +1038,7 @@ MarbleZipReader::MarbleZipReader(QIODevice* device)
 
 /*!
     Destructor
-*/
+ */
 MarbleZipReader::~MarbleZipReader()
 {
     close();
@@ -1045,7 +1047,7 @@ MarbleZipReader::~MarbleZipReader()
 
 /*!
     Returns device used for reading zip archive.
-*/
+ */
 QIODevice* MarbleZipReader::device() const
 {
     return d->device;
@@ -1053,7 +1055,7 @@ QIODevice* MarbleZipReader::device() const
 
 /*!
     Returns true if the user can read the file; otherwise returns false.
-*/
+ */
 bool MarbleZipReader::isReadable() const
 {
     return d->device->isReadable();
@@ -1061,7 +1063,7 @@ bool MarbleZipReader::isReadable() const
 
 /*!
     Returns true if the file exists; otherwise returns false.
-*/
+ */
 bool MarbleZipReader::exists() const
 {
     QFile* f = qobject_cast<QFile*> (d->device);
@@ -1076,7 +1078,7 @@ bool MarbleZipReader::exists() const
 
 /*!
     Returns the list of files the archive contains.
-*/
+ */
 QList<MarbleZipReader::FileInfo> MarbleZipReader::fileInfoList() const
 {
     d->scanFiles();
@@ -1094,7 +1096,7 @@ QList<MarbleZipReader::FileInfo> MarbleZipReader::fileInfoList() const
 
 /*!
     Return the number of items in the zip archive.
-*/
+ */
 int MarbleZipReader::count() const
 {
     d->scanFiles();
@@ -1108,7 +1110,7 @@ int MarbleZipReader::count() const
     Returns an invalid FileInfo if \a index is out of boundaries.
 
     \sa fileInfoList()
-*/
+ */
 MarbleZipReader::FileInfo MarbleZipReader::entryInfoAt(int index) const
 {
     d->scanFiles();
@@ -1124,7 +1126,7 @@ MarbleZipReader::FileInfo MarbleZipReader::entryInfoAt(int index) const
 
 /*!
     Fetch the file contents from the zip archive and return the uncompressed bytes.
-*/
+ */
 QByteArray MarbleZipReader::fileData(const QString& fileName) const
 {
     d->scanFiles();
@@ -1143,17 +1145,17 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
         return QByteArray();
     }
 
-    FileHeader header     = d->fileHeaders.at(i);
-    int compressed_size   = readUInt(header.h.compressed_size);
-    int uncompressed_size = readUInt(header.h.uncompressed_size);
-    int start             = readUInt(header.h.offset_local_header);
+    FileHeader header      = d->fileHeaders.at(i);
+    int compressed_size    = readUInt(header.h.compressed_size);
+    int uncompressed_size  = readUInt(header.h.uncompressed_size);
+    int start              = readUInt(header.h.offset_local_header);
 
     //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("uncompressing file %d: local header at %d", i, start);
 
     d->device->seek(start);
     LocalFileHeader lh;
     d->device->read(reinterpret_cast<char*>(&lh), sizeof(LocalFileHeader));
-    uint skip = readUShort(lh.file_name_length) + readUShort(lh.extra_field_length);
+    uint skip              = readUShort(lh.file_name_length) + readUShort(lh.extra_field_length);
     d->device->seek(d->device->pos() + skip);
 
     int compression_method = readUShort(lh.compression_method);
@@ -1162,7 +1164,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
 
     //qCDebug(DIGIKAM_GEOENGINE_LOG) << QString::fromUtf8("file at %lld", d->device->pos());
 
-    QByteArray compressed = d->device->read(compressed_size);
+    QByteArray compressed  = d->device->read(compressed_size);
 
     if      (compression_method == 0)
     {
@@ -1233,7 +1235,7 @@ QByteArray MarbleZipReader::fileData(const QString& fileName) const
     Extracts the full contents of the zip file into \a destinationDir on
     the local filesystem.
     In case writing or linking a file fails, the extraction will be aborted.
-*/
+ */
 bool MarbleZipReader::extractAll(const QString& destinationDir) const
 {
     QDir baseDir(destinationDir);
@@ -1327,12 +1329,12 @@ bool MarbleZipReader::extractAll(const QString& destinationDir) const
     \value FileOpenError    The file could not be opened.
     \value FilePermissionsError The file could not be accessed.
     \value FileError        Another file error occurred.
-*/
+ */
 
 /*!
     Returns a status code indicating the first error that was met by QZipReader,
     or QZipReader::NoError if no error occurred.
-*/
+ */
 MarbleZipReader::Status MarbleZipReader::status() const
 {
     return d->status;
@@ -1340,7 +1342,7 @@ MarbleZipReader::Status MarbleZipReader::status() const
 
 /*!
     Close the zip file.
-*/
+ */
 void MarbleZipReader::close()
 {
     d->device->close();
@@ -1358,14 +1360,14 @@ void MarbleZipReader::close()
     QZipWriter can be used to create a zip archive containing any number of files
     and directories. The files in the archive will be compressed in a way that is
     compatible with common zip reader applications.
-*/
+ */
 
 
 /*!
     Create a new zip archive that operates on the \a archive filename.  The file will
     be opened with the \a mode.
     \sa isValid()
-*/
+ */
 MarbleZipWriter::MarbleZipWriter(const QString& fileName, QIODevice::OpenMode mode)
 {
     std::unique_ptr<QFile> f(new QFile(fileName));
@@ -1420,7 +1422,7 @@ MarbleZipWriter::~MarbleZipWriter()
 
 /*!
     Returns device used for writing zip archive.
-*/
+ */
 QIODevice* MarbleZipWriter::device() const
 {
     return d->device;
@@ -1428,7 +1430,7 @@ QIODevice* MarbleZipWriter::device() const
 
 /*!
     Returns true if the user can write to the archive; otherwise returns false.
-*/
+ */
 bool MarbleZipWriter::isWritable() const
 {
     return d->device->isWritable();
@@ -1436,10 +1438,10 @@ bool MarbleZipWriter::isWritable() const
 
 /*!
     Returns true if the file exists; otherwise returns false.
-*/
+ */
 bool MarbleZipWriter::exists() const
 {
-    QFile* f = qobject_cast<QFile*> (d->device);
+    QFile* const f = qobject_cast<QFile*> (d->device);
 
     if (f == nullptr)
     {
@@ -1464,12 +1466,12 @@ bool MarbleZipWriter::exists() const
     The file could not be accessed.
     \var FileError
     Another file error occurred.
-*/
+ */
 
 /*!
     Returns a status code indicating the first error that was met by QZipWriter,
     or QZipWriter::NoError if no error occurred.
-*/
+ */
 MarbleZipWriter::Status MarbleZipWriter::status() const
 {
     return d->status;
@@ -1484,7 +1486,7 @@ MarbleZipWriter::Status MarbleZipWriter::status() const
     A file that is added will be stored without changes.
     \var AutoCompress
     A file that is added will be compressed only if that will give a smaller file.
-*/
+ */
 
 /*!
      Sets the policy for compressing newly added files to the new \a policy.
@@ -1493,7 +1495,7 @@ MarbleZipWriter::Status MarbleZipWriter::status() const
 
     \sa compressionPolicy()
     \sa addFile()
-*/
+ */
 void MarbleZipWriter::setCompressionPolicy(CompressionPolicy policy)
 {
     d->compressionPolicy = policy;
@@ -1503,7 +1505,7 @@ void MarbleZipWriter::setCompressionPolicy(CompressionPolicy policy)
      Returns the currently set compression policy.
     \sa setCompressionPolicy()
     \sa addFile()
-*/
+ */
 MarbleZipWriter::CompressionPolicy MarbleZipWriter::compressionPolicy() const
 {
     return d->compressionPolicy;
@@ -1516,7 +1518,7 @@ MarbleZipWriter::CompressionPolicy MarbleZipWriter::compressionPolicy() const
 
     \sa creationPermissions()
     \sa addFile()
-*/
+ */
 void MarbleZipWriter::setCreationPermissions(QFile::Permissions permissions)
 {
     d->permissions = permissions;
@@ -1527,7 +1529,7 @@ void MarbleZipWriter::setCreationPermissions(QFile::Permissions permissions)
 
     \sa setCreationPermissions()
     \sa addFile()
-*/
+ */
 QFile::Permissions MarbleZipWriter::creationPermissions() const
 {
     return d->permissions;
@@ -1544,7 +1546,7 @@ QFile::Permissions MarbleZipWriter::creationPermissions() const
 
     \sa setCreationPermissions()
     \sa setCompressionPolicy()
-*/
+ */
 void MarbleZipWriter::addFile(const QString& fileName, const QByteArray& data)
 {
     d->addEntry(MarbleZipWriterPrivate::File, QDir::fromNativeSeparators(fileName), data);
@@ -1556,7 +1558,7 @@ void MarbleZipWriter::addFile(const QString& fileName, const QByteArray& data)
     filedata.
     The file will be stored in the archive using the \a fileName which
     includes the full path in the archive.
-*/
+ */
 void MarbleZipWriter::addFile(const QString& fileName, QIODevice* device)
 {
     Q_ASSERT(device);
@@ -1567,7 +1569,7 @@ void MarbleZipWriter::addFile(const QString& fileName, QIODevice* device)
     {
         opened = true;
 
-        if (! device->open(QIODevice::ReadOnly))
+        if (!device->open(QIODevice::ReadOnly))
         {
             d->status = FileOpenError;
 
@@ -1586,7 +1588,7 @@ void MarbleZipWriter::addFile(const QString& fileName, QIODevice* device)
 /*!
     Create a new directory in the archive with the specified \a dirName and
     the \a permissions;
-*/
+ */
 void MarbleZipWriter::addDirectory(const QString& dirName)
 {
     QString name(QDir::fromNativeSeparators(dirName));
@@ -1605,7 +1607,7 @@ void MarbleZipWriter::addDirectory(const QString& dirName)
     Create a new symbolic link in the archive with the specified \a dirName
     and the \a permissions;
     A symbolic link contains the destination (relative) path and name.
-*/
+ */
 void MarbleZipWriter::addSymLink(const QString& fileName, const QString& destination)
 {
     d->addEntry(MarbleZipWriterPrivate::Symlink, QDir::fromNativeSeparators(fileName), QFile::encodeName(destination));
@@ -1613,7 +1615,7 @@ void MarbleZipWriter::addSymLink(const QString& fileName, const QString& destina
 
 /*!
    Closes the zip file.
-*/
+ */
 void MarbleZipWriter::close()
 {
     if (!(d->device->openMode() & QIODevice::WriteOnly))

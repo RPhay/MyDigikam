@@ -53,12 +53,12 @@ public:
 
 public:
 
-    bool                                        m_pluginsLoaded = false;
+    bool                                        m_pluginsLoaded                 = false;
     QList<const RenderPlugin*>                  m_renderPluginTemplates;
     QList<const SearchRunnerPlugin*>            m_searchRunnerPlugins;
     QList<const ReverseGeocodingRunnerPlugin*>  m_reverseGeocodingRunnerPlugins;
     QList<const ParseRunnerPlugin*>             m_parsingRunnerPlugins;
-    PluginManager*                              m_parent        = nullptr;
+    PluginManager*                              m_parent                        = nullptr;
     static QStringList                          m_blacklist;
     static QStringList                          m_whitelist;
 
@@ -197,9 +197,9 @@ bool appendPlugin(QObject* const obj, const QPluginLoader* const loader, QList<P
     {
         Q_ASSERT(obj->metaObject()->superClass());   // all our plugins have a super class
 
-        qCDebug(DIGIKAM_GEOENGINE_LOG) <<  obj->metaObject()->superClass()->className()
-                                    << "plugin loaded from"
-                                    << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
+        qCDebug(DIGIKAM_GEOENGINE_LOG) << obj->metaObject()->superClass()->className()
+                                       << "plugin loaded from"
+                                       << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
 
         auto plugin = qobject_cast<Plugin>(obj);
 
@@ -228,12 +228,13 @@ bool PluginManagerPrivate::addPlugin(QObject* const obj, const QPluginLoader* co
     if (!isPlugin)
     {
         qCWarning(DIGIKAM_GEOENGINE_LOG) << "Ignoring the following plugin since it couldn't be loaded:"
-                                      << (loader ? loader->fileName() : QString::fromUtf8("<static>"));
+                                         << loader->fileName();
 
         qCDebug(DIGIKAM_GEOENGINE_LOG) << "Plugin failure:"
-                                    << (loader ? loader->fileName() : QString::fromUtf8("<static>"))
-                                    << "is a plugin, but it does not implement the "
-                                    << "right interfaces or it was compiled against an old version of Marble. Ignoring it.";
+                                       << loader->fileName()
+                                       << "is a plugin, but it does not implement the "
+                                          "right interfaces or it was compiled against "
+                                          "an old version of Marble. Ignoring it.";
     }
 
     return isPlugin;
@@ -263,7 +264,7 @@ void PluginManagerPrivate::loadPlugins()
 
     for (const QString& fileName : std::as_const(pluginFileNameList))
     {
-        QString const baseName = QFileInfo(fileName).baseName();
+        QString const baseName    = QFileInfo(fileName).baseName();
 
 #if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 
@@ -304,8 +305,9 @@ void PluginManagerPrivate::loadPlugins()
         if (!m_pluginPaths.contains(targetFile.canonicalFilePath()))
         {
             // @todo Delete the file here?
+
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "Ignoring file " << path
-                                        << " which is not among the currently installed plugins";
+                                           << " which is not among the currently installed plugins";
 
             continue;
         }
@@ -331,9 +333,10 @@ void PluginManagerPrivate::loadPlugins()
 
         else
         {
-            qCWarning(DIGIKAM_GEOENGINE_LOG) << "Ignoring to load the following file since it doesn't look like a valid Marble plugin:"
-                                          << path << Qt::endl
-                                          << "Reason:" << loader->errorString();
+            qCWarning(DIGIKAM_GEOENGINE_LOG) << "Ignoring to load the following file since it "
+                                                "doesn't look like a valid Marble plugin:"
+                                             << path << Qt::endl
+                                             << "Reason:" << loader->errorString();
             delete loader;
         }
     }
@@ -342,6 +345,7 @@ void PluginManagerPrivate::loadPlugins()
 
     for (auto obj : staticPlugins)
     {
+        // cppcheck-suppress knownConditionTrueFalse
         if (addPlugin(obj, nullptr))
         {
             foundPlugin = true;
@@ -350,8 +354,9 @@ void PluginManagerPrivate::loadPlugins()
 
     if (!foundPlugin)
     {
-        qCWarning(DIGIKAM_GEOENGINE_LOG) << "No plugins loaded. Please check if the plugins were installed in the correct path,"
-                                      << "or if any errors occurred while loading plugins.";
+        qCWarning(DIGIKAM_GEOENGINE_LOG) << "No plugins loaded. Please check if the plugins "
+                                            "were installed in the correct path, "
+                                            "or if any errors occurred while loading plugins.";
     }
 
     m_pluginsLoaded = true;
@@ -364,7 +369,7 @@ void PluginManagerPrivate::loadPlugins()
 void PluginManager::installPluginsFromAssets() const
 {
     d->m_pluginPaths.clear();
-    QStringList copyList = MarbleDirs::pluginEntryList(QString());
+    QStringList copyList              = MarbleDirs::pluginEntryList(QString());
     QDir pluginHome(MarbleDirs::localPath());
     pluginHome.mkpath(MarbleDirs::pluginLocalPath());
     pluginHome.setCurrent(MarbleDirs::pluginLocalPath());

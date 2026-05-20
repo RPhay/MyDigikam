@@ -1036,16 +1036,19 @@ GeoDataCoordinates GeoDataCoordinates::nlerp(const GeoDataCoordinates& target, d
 
 GeoDataCoordinates GeoDataCoordinates::interpolate(const GeoDataCoordinates& before, const GeoDataCoordinates& target, const GeoDataCoordinates& after, double t_) const
 {
-    double const t = qBound(0.0, t_, 1.0);
+    double const t      = qBound(0.0, t_, 1.0);
     Quaternion const b1 = GeoDataCoordinatesPrivate::basePoint(before.quaternion(), quaternion(), target.quaternion());
     Quaternion const a2 = GeoDataCoordinatesPrivate::basePoint(quaternion(), target.quaternion(), after.quaternion());
-    Quaternion const a = Quaternion::slerp(quaternion(), target.quaternion(), t);
-    Quaternion const b = Quaternion::slerp(b1, a2, t);
-    Quaternion c = Quaternion::slerp(a, b, 2 * t * (1.0 - t));
+    Quaternion const a  = Quaternion::slerp(quaternion(), target.quaternion(), t);
+    Quaternion const b  = Quaternion::slerp(b1, a2, t);
+    Quaternion c        = Quaternion::slerp(a, b, 2 * t * (1.0 - t));
     qreal lon, lat;
     c.getSpherical(lon, lat);
+
     // @todo spline interpolation of altitude?
+
     double const alt = (1.0 - t) * d->m_altitude + t * target.d->m_altitude;
+
     return GeoDataCoordinates(lon, lat, alt);
 }
 
@@ -1054,16 +1057,17 @@ bool GeoDataCoordinates::isPole(Pole pole) const
     // Evaluate the most likely case first:
     // The case where we haven't hit the pole and where our latitude is normalized
     // to the range of 90 deg S ... 90 deg N
+
     if (fabs((qreal) 2.0 * d->m_lat) < M_PI)
     {
         return false;
     }
-
     else
     {
         if (fabs((qreal) 2.0 * d->m_lat) == M_PI)
         {
             // Ok, we have hit a pole. Now let's check whether it's the one we've asked for:
+
             if (pole == AnyPole)
             {
                 return true;
@@ -1084,23 +1088,22 @@ bool GeoDataCoordinates::isPole(Pole pole) const
                 return false;
             }
         }
-
-        //
         else
         {
             // FIXME: Should we just normalize latitude and longitude and be done?
             //        While this might work well for persistent data it would create some
             //        possible overhead for temporary data, so this needs careful thinking.
+
             qCDebug(DIGIKAM_GEOENGINE_LOG) << "GeoDataCoordinates not normalized!";
 
             // Only as a last resort we cover the unlikely case where
             // the latitude is not normalized to the range of
             // 90 deg S ... 90 deg N
+
             if (fabs((qreal) 2.0 * normalizeLat(d->m_lat)) < M_PI)
             {
                 return false;
             }
-
             else
             {
                 // Ok, we have hit a pole. Now let's check whether it's the one we've asked for:
@@ -1141,6 +1144,7 @@ qreal GeoDataCoordinates::sphericalDistanceTo(const GeoDataCoordinates& other) c
 GeoDataCoordinates& GeoDataCoordinates::operator=(const GeoDataCoordinates& other)
 {
     qAtomicAssign(d, other.d);
+
     return *this;
 }
 
@@ -1154,6 +1158,7 @@ void GeoDataCoordinates::pack(QDataStream& stream) const
 void GeoDataCoordinates::unpack(QDataStream& stream)
 {
     // call detach even though it shouldn't be needed - one never knows
+
     detach();
     stream >> d->m_lon;
     stream >> d->m_lat;
@@ -1164,85 +1169,99 @@ Quaternion GeoDataCoordinatesPrivate::basePoint(const Quaternion& q1, const Quat
 {
     Quaternion const a = (q2.inverse() * q3).log();
     Quaternion const b = (q2.inverse() * q1).log();
-    return q2 * ((a + b) * -0.25).exp();
+
+    return (q2 * ((a + b) * -0.25).exp());
 }
-
-
 
 qreal GeoDataCoordinatesPrivate::arcLengthOfMeridian(qreal phi)
 {
     // Precalculate n
+
     qreal const n = (GeoDataCoordinatesPrivate::sm_semiMajorAxis - GeoDataCoordinatesPrivate::sm_semiMinorAxis)
                     / (GeoDataCoordinatesPrivate::sm_semiMajorAxis + GeoDataCoordinatesPrivate::sm_semiMinorAxis);
 
     // Precalculate alpha
+
     qreal const alpha = ((GeoDataCoordinatesPrivate::sm_semiMajorAxis + GeoDataCoordinatesPrivate::sm_semiMinorAxis) / 2.0)
                         * (1.0 + (qPow(n, 2.0) / 4.0) + (qPow(n, 4.0) / 64.0));
 
     // Precalculate beta
+
     qreal const beta = (-3.0 * n / 2.0)
                        + (9.0 * qPow(n, 3.0) / 16.0)
                        + (-3.0 * qPow(n, 5.0) / 32.0);
 
     // Precalculate gamma
+
     qreal const gamma = (15.0 * qPow(n, 2.0) / 16.0)
                         + (-15.0 * qPow(n, 4.0) / 32.0);
 
     // Precalculate delta
+
     qreal const delta = (-35.0 * qPow(n, 3.0) / 48.0)
                         + (105.0 * qPow(n, 5.0) / 256.0);
 
     // Precalculate epsilon
+
     qreal const epsilon = (315.0 * qPow(n, 4.0) / 512.0);
 
     // Now calculate the sum of the series and return
-    qreal const result = alpha * (phi + (beta * qSin(2.0 * phi))
-                                  + (gamma * qSin(4.0 * phi))
-                                  + (delta * qSin(6.0 * phi))
-                                  + (epsilon * qSin(8.0 * phi)));
+
+    qreal const result  = alpha * (phi + (beta * qSin(2.0 * phi))
+                                + (gamma * qSin(4.0 * phi))
+                                + (delta * qSin(6.0 * phi))
+                                + (epsilon * qSin(8.0 * phi)));
 
     return result;
 }
 
 qreal GeoDataCoordinatesPrivate::centralMeridianUTM(qreal zone)
 {
-    return DEG2RAD * (-183.0 + (zone * 6.0));
+    return (DEG2RAD * (-183.0 + (zone * 6.0)));
 }
 
 qreal GeoDataCoordinatesPrivate::footpointLatitude(qreal northing)
 {
     // Precalculate n (Eq. 10.18)
-    qreal const n = (GeoDataCoordinatesPrivate::sm_semiMajorAxis - GeoDataCoordinatesPrivate::sm_semiMinorAxis)
-                    / (GeoDataCoordinatesPrivate::sm_semiMajorAxis + GeoDataCoordinatesPrivate::sm_semiMinorAxis);
+
+    qreal const n     =   (GeoDataCoordinatesPrivate::sm_semiMajorAxis - GeoDataCoordinatesPrivate::sm_semiMinorAxis)
+                        / (GeoDataCoordinatesPrivate::sm_semiMajorAxis + GeoDataCoordinatesPrivate::sm_semiMinorAxis);
 
     // Precalculate alpha (Eq. 10.22)
     // (Same as alpha in Eq. 10.17)
-    qreal const alpha = ((GeoDataCoordinatesPrivate::sm_semiMajorAxis + GeoDataCoordinatesPrivate::sm_semiMinorAxis) / 2.0)
+
+    qreal const alpha =   ((GeoDataCoordinatesPrivate::sm_semiMajorAxis + GeoDataCoordinatesPrivate::sm_semiMinorAxis) / 2.0)
                         * (1 + (qPow(n, 2.0) / 4) + (qPow(n, 4.0) / 64));
 
     // Precalculate y (Eq. 10.23)
-    qreal const y = northing / alpha;
+
+    qreal const y     = northing / alpha;
 
     // Precalculate beta (Eq. 10.22)
-    qreal const beta = (3.0 * n / 2.0) + (-27.0 * qPow(n, 3.0) / 32.0)
-                       + (269.0 * qPow(n, 5.0) / 512.0);
+
+    qreal const beta  =   (3.0 * n / 2.0) + (-27.0 * qPow(n, 3.0) / 32.0)
+                        + (269.0 * qPow(n, 5.0) / 512.0);
 
     // Precalculate gamma (Eq. 10.22)
-    qreal const gamma = (21.0 * qPow(n, 2.0) / 16.0)
+
+    qreal const gamma =   (21.0 * qPow(n, 2.0) / 16.0)
                         + (-55.0 * qPow(n, 4.0) / 32.0);
 
     // Precalculate delta (Eq. 10.22)
-    qreal const delta = (151.0 * qPow(n, 3.0) / 96.0)
+
+    qreal const delta =   (151.0 * qPow(n, 3.0) / 96.0)
                         + (-417.0 * qPow(n, 5.0) / 128.0);
 
     // Precalculate epsilon (Eq. 10.22)
+
     qreal const epsilon = (1097.0 * qPow(n, 4.0) / 512.0);
 
     // Now calculate the sum of the series (Eq. 10.21)
+
     qreal const result = y + (beta * qSin(2.0 * y))
-                         + (gamma * qSin(4.0 * y))
-                         + (delta * qSin(6.0 * y))
-                         + (epsilon * qSin(8.0 * y));
+                           + (gamma * qSin(4.0 * y))
+                           + (delta * qSin(6.0 * y))
+                           + (epsilon * qSin(8.0 * y));
 
     return result;
 }
@@ -1252,21 +1271,26 @@ QPointF GeoDataCoordinatesPrivate::mapLonLatToXY(qreal lambda, qreal phi, qreal 
     // Equation (10.15)
 
     // Precalculate second numerical eccentricity
+
     const qreal ep2 = (qPow(GeoDataCoordinatesPrivate::sm_semiMajorAxis, 2.0) - qPow(GeoDataCoordinatesPrivate::sm_semiMinorAxis, 2.0))
                       / qPow(GeoDataCoordinatesPrivate::sm_semiMinorAxis, 2.0);
 
     // Precalculate the square of nu, just an auxilar quantity
+
     const qreal nu2 = ep2 * qPow(qCos(phi), 2.0);
 
     // Precalculate the radius of curvature in prime vertical
-    const qreal N = qPow(GeoDataCoordinatesPrivate::sm_semiMajorAxis, 2.0) / (GeoDataCoordinatesPrivate::sm_semiMinorAxis * qSqrt(1 + nu2));
+
+    const qreal N   = qPow(GeoDataCoordinatesPrivate::sm_semiMajorAxis, 2.0) / (GeoDataCoordinatesPrivate::sm_semiMinorAxis * qSqrt(1 + nu2));
 
     // Precalculate the tangent of phi and its square
-    const qreal t = qTan(phi);
-    const qreal t2 = t * t;
+
+    const qreal t   = qTan(phi);
+    const qreal t2  = t * t;
 
     // Precalculate longitude difference
-    const qreal l = lambda - lambda0;
+
+    const qreal l   = lambda - lambda0;
 
     /*
      * Precalculate coefficients for l**n in the equations below
@@ -1289,16 +1313,18 @@ QPointF GeoDataCoordinatesPrivate::mapLonLatToXY(qreal lambda, qreal phi, qreal 
     const qreal coef8 = 1385.0 - 3111.0 * t2 + 543.0 * (t2 * t2) - (t2 * t2 * t2);
 
     // Calculate easting (x)
-    const qreal easting = N * qCos(phi) * coef1 * l
-                          + (N / 6.0 * qPow(qCos(phi), 3.0) * coef3 * qPow(l, 3.0))
-                          + (N / 120.0 * qPow(qCos(phi), 5.0) * coef5 * qPow(l, 5.0))
+
+    const qreal easting =   N * qCos(phi) * coef1 * l
+                          + (N / 6.0    * qPow(qCos(phi), 3.0) * coef3 * qPow(l, 3.0))
+                          + (N / 120.0  * qPow(qCos(phi), 5.0) * coef5 * qPow(l, 5.0))
                           + (N / 5040.0 * qPow(qCos(phi), 7.0) * coef7 * qPow(l, 7.0));
 
     // Calculate northing (y)
-    const qreal northing = arcLengthOfMeridian(phi)
-                           + (t / 2.0 * N * qPow(qCos(phi), 2.0) * coef2 * qPow(l, 2.0))
-                           + (t / 24.0 * N * qPow(qCos(phi), 4.0) * coef4 * qPow(l, 4.0))
-                           + (t / 720.0 * N * qPow(qCos(phi), 6.0) * coef6 * qPow(l, 6.0))
+
+    const qreal northing =   arcLengthOfMeridian(phi)
+                           + (t / 2.0     * N * qPow(qCos(phi), 2.0) * coef2 * qPow(l, 2.0))
+                           + (t / 24.0    * N * qPow(qCos(phi), 4.0) * coef4 * qPow(l, 4.0))
+                           + (t / 720.0   * N * qPow(qCos(phi), 6.0) * coef6 * qPow(l, 6.0))
                            + (t / 40320.0 * N * qPow(qCos(phi), 8.0) * coef8 * qPow(l, 8.0));
 
     return QPointF(easting, northing);
@@ -1307,6 +1333,7 @@ QPointF GeoDataCoordinatesPrivate::mapLonLatToXY(qreal lambda, qreal phi, qreal 
 int GeoDataCoordinatesPrivate::lonLatToZone(qreal lon, qreal lat)
 {
     // Converts lon and lat to degrees
+
     qreal lonDeg = lon * RAD2DEG;
     qreal latDeg = lat * RAD2DEG;
 
@@ -1318,6 +1345,7 @@ int GeoDataCoordinatesPrivate::lonLatToZone(qreal lon, qreal lat)
      * lonLatToZone(114,0) is 11 instead of 12, as the function actually receives
      * -114.0000000001, which is in the interval [-120,-114[, associated to zone 11
      */
+
     qreal precision = 0.0000001;
 
     if (qAbs(lonDeg - qFloor(lonDeg)) < precision || qAbs(lonDeg - qCeil(lonDeg)) < precision)
@@ -1326,7 +1354,8 @@ int GeoDataCoordinatesPrivate::lonLatToZone(qreal lon, qreal lat)
     }
 
     // There is no numbering associated to the poles, special value 0 is returned.
-    if (latDeg < -80 || latDeg > 84)
+
+    if ((latDeg < -80) || (latDeg > 84))
     {
         return 0;
     }
@@ -1336,33 +1365,36 @@ int GeoDataCoordinatesPrivate::lonLatToZone(qreal lon, qreal lat)
     // See solution: https://gis.stackexchange.com/questions/13291/computing-utm-zone-from-lat-long-point
 
     // General
+
     int zoneNumber = static_cast<int>((lonDeg + 180) / 6.0) + 1;
 
     // Southwest Norway
-    if (latDeg >= 56 && latDeg < 64 && lonDeg >= 3 && lonDeg < 12)
+
+    if ((latDeg >= 56) && (latDeg < 64) && (lonDeg >= 3) && (lonDeg < 12))
     {
         zoneNumber = 32;
     }
 
     // Svalbard
-    if (latDeg >= 72 && latDeg < 84)
+
+    if ((latDeg >= 72) && (latDeg < 84))
     {
-        if (lonDeg >= 0 && lonDeg < 9)
+        if      ((lonDeg >= 0) && (lonDeg < 9))
         {
             zoneNumber = 31;
         }
 
-        else if (lonDeg >= 9 && lonDeg < 21)
+        else if ((lonDeg >= 9) && (lonDeg < 21))
         {
             zoneNumber = 33;
         }
 
-        else if (lonDeg >= 21 && lonDeg < 33)
+        else if ((lonDeg >= 21) && (lonDeg < 33))
         {
             zoneNumber = 35;
         }
 
-        else if (lonDeg >= 33 && lonDeg < 42)
+        else if ((lonDeg >= 33) && (lonDeg < 42))
         {
             zoneNumber = 37;
         }
@@ -1373,18 +1405,19 @@ int GeoDataCoordinatesPrivate::lonLatToZone(qreal lon, qreal lat)
 
 qreal GeoDataCoordinatesPrivate::lonLatToEasting(qreal lon, qreal lat)
 {
-    int zoneNumber = lonLatToZone(lon, lat);
+    int zoneNumber      = lonLatToZone(lon, lat);
 
     if (zoneNumber == 0)
     {
         qreal lonDeg = lon * RAD2DEG;
-        zoneNumber = static_cast<int>((lonDeg + 180) / 6.0) + 1;
+        zoneNumber   = static_cast<int>((lonDeg + 180) / 6.0) + 1;
     }
 
     QPointF coordinates = GeoDataCoordinatesPrivate::mapLonLatToXY(lon, lat, GeoDataCoordinatesPrivate::centralMeridianUTM(zoneNumber));
 
     // Adjust easting and northing for UTM system
-    qreal easting = coordinates.x() * GeoDataCoordinatesPrivate::sm_utmScaleFactor + 500000.0;
+
+    qreal easting       = coordinates.x() * GeoDataCoordinatesPrivate::sm_utmScaleFactor + 500000.0;
 
     return easting;
 }
@@ -1394,33 +1427,40 @@ QString GeoDataCoordinatesPrivate::lonLatToLatitudeBand(qreal lon, qreal lat)
     // Obtains the latitude bands handling all the so called "exceptions"
 
     // Converts lon and lat to degrees
+
     qreal lonDeg = lon * RAD2DEG;
     qreal latDeg = lat * RAD2DEG;
 
     // Regular latitude bands between 80 S and 80 N (that is, between 10 and 170 in the [0,180] interval)
+
     int bandLetterIndex = 24; //Avoids "may be used uninitialized" warning
 
     if (latDeg < -80)
     {
         // South pole (A for zones 1-30, B for zones 31-60)
+
         bandLetterIndex = ((lonDeg + 180) < 6 * 31) ? 0 : 1;
     }
 
-    else if (latDeg >= -80 && latDeg <= 80)
+    // cppcheck-suppress knownConditionTrueFalse
+    else if ((latDeg >= -80) && (latDeg <= 80))
     {
         // General (+2 because the general lettering starts in C)
+
         bandLetterIndex = static_cast<int>((latDeg + 80.0) / 8.0) + 2;
     }
 
-    else if (latDeg >= 80 && latDeg < 84)
+    else if ((latDeg >= 80) && (latDeg < 84))
     {
         // Band X is extended 4 more degrees
+
         bandLetterIndex = 21;
     }
 
     else if (latDeg >= 84)
     {
         // North pole (Y for zones 1-30, Z for zones 31-60)
+
         bandLetterIndex = ((lonDeg + 180) < 6 * 31) ? 22 : 23;
     }
 
@@ -1434,12 +1474,11 @@ qreal GeoDataCoordinatesPrivate::lonLatToNorthing(qreal lon, qreal lat)
     if (zoneNumber == 0)
     {
         qreal lonDeg = lon * RAD2DEG;
-        zoneNumber = static_cast<int>((lonDeg + 180) / 6.0) + 1;
+        zoneNumber   = static_cast<int>((lonDeg + 180) / 6.0) + 1;
     }
 
     QPointF coordinates = GeoDataCoordinatesPrivate::mapLonLatToXY(lon, lat, GeoDataCoordinatesPrivate::centralMeridianUTM(zoneNumber));
-
-    qreal northing = coordinates.y() * GeoDataCoordinatesPrivate::sm_utmScaleFactor;
+    qreal northing      = coordinates.y() * GeoDataCoordinatesPrivate::sm_utmScaleFactor;
 
     if (northing < 0.0)
     {
@@ -1452,9 +1491,9 @@ qreal GeoDataCoordinatesPrivate::lonLatToNorthing(qreal lon, qreal lat)
 size_t qHash(const GeoDataCoordinates& coordinates)
 {
     uint seed = ::qHash(coordinates.altitude());
-    seed = ::qHash(coordinates.latitude(), seed);
+    seed      = ::qHash(coordinates.latitude(), seed);
 
-    return ::qHash(coordinates.longitude(), seed);
+    return (::qHash(coordinates.longitude(), seed));
 }
 
 } // namespace Marble

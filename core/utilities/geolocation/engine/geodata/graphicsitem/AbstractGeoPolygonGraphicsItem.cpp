@@ -43,7 +43,8 @@ namespace Marble
 
 const void* AbstractGeoPolygonGraphicsItem::s_previousStyle = nullptr;
 
-AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataPolygon* polygon)
+AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark,
+                                                               const GeoDataPolygon* polygon)
     : GeoGraphicsItem(placemark),
       m_polygon      (polygon),
       m_ring         (nullptr),
@@ -51,7 +52,8 @@ AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlac
 {
 }
 
-AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataLinearRing* ring)
+AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark,
+                                                               const GeoDataLinearRing* ring)
     : GeoGraphicsItem(placemark),
       m_polygon      (nullptr),
       m_ring         (ring),
@@ -59,7 +61,8 @@ AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlac
 {
 }
 
-AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark, const GeoDataBuilding* building)
+AbstractGeoPolygonGraphicsItem::AbstractGeoPolygonGraphicsItem(const GeoDataPlacemark* placemark,
+                                                               const GeoDataBuilding* building)
     : GeoGraphicsItem(placemark),
       m_polygon      (nullptr),
       m_ring         (nullptr),
@@ -85,7 +88,8 @@ const GeoDataLatLonAltBox& AbstractGeoPolygonGraphicsItem::latLonAltBox() const
     return m_building->latLonAltBox();
 }
 
-void AbstractGeoPolygonGraphicsItem::paint(GeoPainter* painter, const ViewportParams* viewport, const QString& layer, int tileZoomLevel)
+void AbstractGeoPolygonGraphicsItem::paint(GeoPainter* painter, const ViewportParams* viewport,
+                                           const QString& layer, int tileZoomLevel)
 {
     Q_UNUSED(layer);
     Q_UNUSED(tileZoomLevel);
@@ -94,11 +98,13 @@ void AbstractGeoPolygonGraphicsItem::paint(GeoPainter* painter, const ViewportPa
 
     if (s_previousStyle != style().data())
     {
+        // cppcheck-suppress knownConditionTrueFalse
         isValid = configurePainter(painter, *viewport);
     }
 
     s_previousStyle = style().data();
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (!isValid)
     {
         return;
@@ -139,7 +145,10 @@ bool AbstractGeoPolygonGraphicsItem::contains(const QPoint& screenPosition, cons
     if (
         (visualCategory == GeoDataPlacemark::Landmass)  ||
         (visualCategory == GeoDataPlacemark::UrbanArea) ||
-        ((visualCategory >= GeoDataPlacemark::LanduseAllotments) && (visualCategory <= GeoDataPlacemark::LanduseVineyard))
+        (
+         (visualCategory >= GeoDataPlacemark::LanduseAllotments) &&
+         (visualCategory <= GeoDataPlacemark::LanduseVineyard)
+        )
        )
     {
         return false;

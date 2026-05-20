@@ -51,6 +51,8 @@ public:
 
     Q_DECLARE_PUBLIC(KDescendantsProxyModel)
 
+public:
+
     void scheduleProcessPendingParents() const;
     void processPendingParents();
 
@@ -75,21 +77,21 @@ public:
 
 public:
 
-    KDescendantsProxyModel* const           q_ptr = nullptr;
+    KDescendantsProxyModel* const           q_ptr                               = nullptr;
 
     mutable QVector<QPersistentModelIndex>  m_pendingParents;
 
     Mapping                                 m_mapping;
-    int                                     m_rowCount;
+    int                                     m_rowCount                          = 0;
     QPair<int, int>                         m_removePair;
     QPair<int, int>                         m_insertPair;
 
-    bool                                    m_ignoreNextLayoutAboutToBeChanged;
-    bool                                    m_ignoreNextLayoutChanged;
-    bool                                    m_relayouting;
+    bool                                    m_ignoreNextLayoutAboutToBeChanged  = false;
+    bool                                    m_ignoreNextLayoutChanged           = false;
+    bool                                    m_relayouting                       = false;
 
-    bool                                    m_displayAncestorData;
-    QString                                 m_ancestorSeparator;
+    bool                                    m_displayAncestorData               = false;
+    QString                                 m_ancestorSeparator                 = QStringLiteral(" / ");
 
     QList<QPersistentModelIndex>            m_layoutChangePersistentIndexes;
     QModelIndexList                         m_proxyIndexes;
@@ -135,6 +137,7 @@ void KDescendantsProxyModelPrivate::processPendingParents()
     const QVector<QPersistentModelIndex>::iterator end   = m_pendingParents.end();
     QVector<QPersistentModelIndex> newPendingParents;
 
+    // cppcheck-suppress knownConditionTrueFalse
     while ((it != end) && (it != m_pendingParents.end()))
     {
         const QModelIndex sourceParent = *it;

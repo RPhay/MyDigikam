@@ -49,42 +49,46 @@ public:
     MergedLayerDecorator(TileLoader* const tileLoader, const SunLocator* sunLocator);
     virtual ~MergedLayerDecorator();
 
+public:
+
     void setTextureLayers(const QVector<const GeoSceneTextureTileDataset*>& textureLayers);
     void updateGroundOverlays(const QList<const GeoDataGroundOverlay*>& groundOverlays);
 
-    int textureLayersSize() const;
+    int textureLayersSize()                                 const;
 
     /**
      * Returns the highest level in which some tiles are theoretically
      * available for the current texture layers.
      */
-    int maximumTileLevel() const;
+    int maximumTileLevel()                                  const;
 
-    int tileColumnCount(int level) const;
+    int tileColumnCount(int level)                          const;
 
-    int tileRowCount(int level) const;
+    int tileRowCount(int level)                             const;
 
-    const GeoSceneAbstractTileProjection* tileProjection() const;
+    const GeoSceneAbstractTileProjection* tileProjection()  const;
 
-    QSize tileSize() const;
+    QSize tileSize()                                        const;
 
     StackedTile* loadTile(const TileId& id);
 
-    StackedTile* updateTile(const StackedTile& stackedTile, const TileId& tileId, const QImage& tileImage);
+    StackedTile* updateTile(const StackedTile& stackedTile,
+                            const TileId& tileId,
+                            const QImage& tileImage);
 
     void downloadStackedTile(const TileId& id, DownloadUsage usage);
 
     void setShowSunShading(bool show);
-    bool showSunShading() const;
+    bool showSunShading()                                   const;
 
     void setShowCityLights(bool show);
-    bool showCityLights() const;
+    bool showCityLights()                                   const;
 
     void setShowTileId(bool show);
 
-    RenderState renderState(const TileId& stackedTileId) const;
+    RenderState renderState(const TileId& stackedTileId)    const;
 
-    bool hasTextureLayer() const;
+    bool hasTextureLayer()                                  const;
 
 protected:
 

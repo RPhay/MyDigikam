@@ -906,18 +906,20 @@ QRegion GeoPainter::regionFromPolyline(const GeoDataLineString& lineString,
     return QRegion(strokePath.toFillPolygon().toPolygon(), Qt::WindingFill);
 }
 
-
 void GeoPainter::drawPolygon(const GeoDataLinearRing& linearRing,
                              Qt::FillRule fillRule)
 {
     // Immediately leave this method now if:
     // - the object is not visible in the viewport or if
     // - the size of the object is below the resolution of the viewport
-    if (! d->m_viewport->viewLatLonAltBox().intersects(linearRing.latLonAltBox()) ||
+
+    if (
+        ! d->m_viewport->viewLatLonAltBox().intersects(linearRing.latLonAltBox()) ||
         ! d->m_viewport->resolves(linearRing.latLonAltBox())
        )
     {
         // qCDebug(DIGIKAM_GEOENGINE_LOG) << "Polygon doesn't get displayed on the viewport";
+
         return;
     }
 
@@ -932,14 +934,15 @@ void GeoPainter::drawPolygon(const GeoDataLinearRing& linearRing,
     qDeleteAll(polygons);
 }
 
-
 QRegion GeoPainter::regionFromPolygon(const GeoDataLinearRing& linearRing,
                                       Qt::FillRule fillRule, qreal strokeWidth) const
 {
     // Immediately leave this method now if:
     // - the object is not visible in the viewport or if
     // - the size of the object is below the resolution of the viewport
-    if (! d->m_viewport->viewLatLonAltBox().intersects(linearRing.latLonAltBox()) ||
+
+    if (
+        ! d->m_viewport->viewLatLonAltBox().intersects(linearRing.latLonAltBox()) ||
         ! d->m_viewport->resolves(linearRing.latLonAltBox())
        )
     {
@@ -954,6 +957,7 @@ QRegion GeoPainter::regionFromPolygon(const GeoDataLinearRing& linearRing,
     if (strokeWidth == 0)
     {
         // This is the faster way
+
         for (QPolygonF* itPolygon : polygons)
         {
             regions += QRegion((*itPolygon).toPolygon(), fillRule);
@@ -972,15 +976,14 @@ QRegion GeoPainter::regionFromPolygon(const GeoDataLinearRing& linearRing,
         QPainterPathStroker stroker;
         stroker.setWidth(strokeWidth);
         QPainterPath strokePath = stroker.createStroke(painterPath);
-        painterPath = painterPath.united(strokePath);
-        regions = QRegion(painterPath.toFillPolygon().toPolygon());
+        painterPath             = painterPath.united(strokePath);
+        regions                 = QRegion(painterPath.toFillPolygon().toPolygon());
     }
 
     qDeleteAll(polygons);
 
     return regions;
 }
-
 
 void GeoPainter::drawPolygon(const GeoDataPolygon& polygon,
                              Qt::FillRule fillRule)
@@ -1006,10 +1009,9 @@ void GeoPainter::drawPolygon(const GeoDataPolygon& polygon,
     QVector<QPolygonF*> innerPolygons;
     d->m_viewport->screenCoordinates(polygon.outerBoundary(), outerPolygons);
 
-    QPen const currentPen = pen();
-
+    QPen const currentPen         = pen();
     bool const hasInnerBoundaries = !polygon.innerBoundaries().isEmpty();
-    bool innerBoundariesOnScreen = false;
+    bool innerBoundariesOnScreen  = false;
 
     if (hasInnerBoundaries)
     {
@@ -1069,6 +1071,7 @@ void GeoPainter::drawPolygon(const GeoDataPolygon& polygon,
         }
     }
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (!hasInnerBoundaries || !innerBoundariesOnScreen)
     {
         drawPolygon(polygon.outerBoundary(), fillRule);
@@ -1103,7 +1106,6 @@ QVector<QPolygonF*> GeoPainter::createFillPolygons(const QVector<QPolygonF*>& ou
     return fillPolygons;
 }
 
-
 void GeoPainter::drawRect(const GeoDataCoordinates& centerCoordinates,
                           qreal width, qreal height,
                           bool isGeoProjected)
@@ -1120,16 +1122,16 @@ void GeoPainter::drawRect(const GeoDataCoordinates& centerCoordinates,
         if (visible)
         {
             // Draw all the x-repeat-instances of the point on the screen
+
             const qreal posY = y - height / 2.0;
 
-            for (int it = 0; it < pointRepeatNum; ++it)
+            for (int it = 0 ; it < pointRepeatNum ; ++it)
             {
                 const qreal posX = d->m_x[it] - width / 2.0;
                 QPainter::drawRect(QRectF(posX, posY, width, height));
             }
         }
     }
-
     else
     {
         drawPolygon(d->createLinearRingFromGeoRect(centerCoordinates, width, height),
