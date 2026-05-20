@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-21 00:42+0000\n"
-"PO-Revision-Date: 2026-04-09 11:04+0400\n"
+"PO-Revision-Date: 2026-05-21 11:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -63061,16 +63061,14 @@ msgid "and"
 msgstr "و"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "أعد العناصر بلا مناطق وجه"
+msgstr "أرجع العناصر مع مناطق الوجه المؤكدة"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "لا مناطق وجه"
+msgstr "مناطق الوجه المؤكدة"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
