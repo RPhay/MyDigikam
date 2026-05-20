@@ -59,18 +59,18 @@ public:
     explicit AbstractFloatItem(const MarbleModel* marbleModel,
                                const QPointF& point = QPointF(10.0, 10.0),
                                const QSizeF& size = QSizeF(150.0, 50.0));
-    ~AbstractFloatItem() override;
+    ~AbstractFloatItem()                                                      override;
 
-    QHash<QString, QVariant> settings() const override;
-    void setSettings(const QHash<QString, QVariant>& settings) override;
+    QHash<QString, QVariant> settings()                                 const override;
+    void setSettings(const QHash<QString, QVariant>& settings)                override;
 
-    RenderType renderType() const override;
+    RenderType renderType()                                             const override;
 
     /**
      * @brief current pen for rendering
      * @return pen
      */
-    QPen pen() const;
+    QPen pen()                                                          const;
 
     /**
      * @brief setting current pen for rendering
@@ -82,7 +82,7 @@ public:
      * @brief current font for rendering
      * @return font
      */
-    QFont font() const;
+    QFont font()                                                        const;
 
     /**
      * @brief setting current font for rendering
@@ -97,16 +97,16 @@ public:
      */
     bool render(GeoPainter* painter, ViewportParams* viewport,
                 const QString& renderPos = QLatin1String("FLOAT_ITEM"),
-                GeoSceneLayer* layer = nullptr) override;
+                GeoSceneLayer* layer = nullptr)                               override;
 
-    QString renderPolicy() const override;
+    QString renderPolicy()                                              const override;
 
     /**
      * @brief Returns the rendering position of this float item.
      * @deprecated The return value of method is ignored. The float item's rendering position
      *             will always be "FLOAT_ITEM".
      */
-    QStringList renderPosition() const override;
+    QStringList renderPosition()                                        const override;
 
     /**
      * @brief Set visibility of the float item
@@ -116,7 +116,8 @@ public:
      *
      * @param visible visibility of the item
      */
-    void setVisible(bool visible);      // cppcheck-suppress duplInheritedMember
+    // cppcheck-suppress duplInheritedMember
+    void setVisible(bool visible);
 
     /**
      * @brief Check visibility of the float item
@@ -126,7 +127,8 @@ public:
      *
      * @return visible or not
      */
-    bool visible() const;               // cppcheck-suppress duplInheritedMember
+    // cppcheck-suppress duplInheritedMember
+    bool visible()                                                      const;
 
     /**
      * @brief Check is position locked
@@ -138,7 +140,7 @@ public:
      *
      * @return position locked or not
      */
-    bool positionLocked() const;
+    bool positionLocked()                                               const;
 
 public Q_SLOTS:
 
@@ -172,7 +174,7 @@ public Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject* object, QEvent* e) override;
+    bool eventFilter(QObject* object, QEvent* e)                              override;
     virtual void contextMenuEvent(QWidget* w, QContextMenuEvent* e);
     virtual void toolTipEvent(QHelpEvent* e);
     QMenu* contextMenu();

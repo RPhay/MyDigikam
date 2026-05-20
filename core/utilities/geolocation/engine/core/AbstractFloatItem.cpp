@@ -131,13 +131,13 @@ void AbstractFloatItem::setSettings(const QHash<QString, QVariant>& settings)
 
         // work around KConfig turning QPointFs into QStrings
 
-        const QStringList coordinates = settings.value(QStringLiteral("position")).toString().split(QLatin1Char(','));
+        const QStringList coordinates = settings.value(QStringLiteral("position"))
+                                                       .toString().split(QLatin1Char(','));
         setPosition(QPointF(coordinates.at(0).toFloat(), coordinates.at(1).toFloat()));
 
 #endif
 
     }
-
     else
     {
         setPosition(settings.value(QStringLiteral("position"), position()).toPointF());
@@ -183,6 +183,7 @@ QStringList AbstractFloatItem::renderPosition() const
     return QStringList(QStringLiteral("FLOAT_ITEM"));
 }
 
+// cppcheck-suppress duplInheritedMember
 void AbstractFloatItem::setVisible(bool visible)
 {
     // Reimplemented since AbstractFloatItem does multiple inheritance
@@ -191,6 +192,7 @@ void AbstractFloatItem::setVisible(bool visible)
     RenderPlugin::setVisible(visible);
 }
 
+// cppcheck-suppress duplInheritedMember
 bool AbstractFloatItem::visible() const
 {
     // Reimplemented since AbstractFloatItem does multiple inheritance
@@ -207,7 +209,6 @@ void AbstractFloatItem::setPositionLocked(bool lock)
     {
         flags &= ~ScreenGraphicsItem::ItemIsMovable;
     }
-
     else
     {
         flags |= ScreenGraphicsItem::ItemIsMovable;
@@ -230,8 +231,8 @@ bool AbstractFloatItem::eventFilter(QObject* object, QEvent* e)
 
     if      (e->type() == QEvent::ContextMenu)
     {
-        QWidget* widget              = qobject_cast<QWidget*>(object);
-        QContextMenuEvent* menuEvent = dynamic_cast<QContextMenuEvent*>(e);
+        QWidget* const widget              = qobject_cast<QWidget*>(object);
+        QContextMenuEvent* const menuEvent = dynamic_cast<QContextMenuEvent*>(e);
 
         if ((widget != nullptr) && (menuEvent != nullptr && contains(menuEvent->pos())))
         {
@@ -282,11 +283,13 @@ bool AbstractFloatItem::render(GeoPainter* painter, ViewportParams* viewport,
     return true;
 }
 
+// cppcheck-suppress duplInheritedMember
 void AbstractFloatItem::show()
 {
     setVisible(true);
 }
 
+// cppcheck-suppress duplInheritedMember
 void AbstractFloatItem::hide()
 {
     setVisible(false);
@@ -297,7 +300,8 @@ QMenu* AbstractFloatItem::contextMenu()
     if (!d->m_contextMenu)
     {
         d->m_contextMenu    = new QMenu;
-        QAction* lockAction = d->m_contextMenu->addAction(QIcon::fromTheme(QStringLiteral("unlock")), i18n("&Lock"));
+        QAction* const lockAction = d->m_contextMenu->addAction(QIcon::fromTheme(QStringLiteral("unlock")),
+                                                                i18n("&Lock"));
         lockAction->setCheckable(true);
         lockAction->setChecked(positionLocked());
 
@@ -306,19 +310,21 @@ QMenu* AbstractFloatItem::contextMenu()
 
         if (!(flags() & ItemIsHideable))
         {
-            QAction* hideAction = d->m_contextMenu->addAction(i18n("&Hide"));
+            QAction* const hideAction = d->m_contextMenu->addAction(i18n("&Hide"));
 
             connect(hideAction, SIGNAL(triggered()),
                     this, SLOT(hide()));
         }
 
-        DialogConfigurationInterface* configInterface = qobject_cast<DialogConfigurationInterface*>(this);
-        QDialog* dialog                               = configInterface ? configInterface->configDialog() : nullptr;
+        DialogConfigurationInterface* const configInterface = qobject_cast<DialogConfigurationInterface*>(this);
+        QDialog* const dialog                               = configInterface ? configInterface->configDialog()
+                                                                              : nullptr;
 
         if (dialog)
         {
             d->m_contextMenu->addSeparator();
-            QAction* configAction = d->m_contextMenu->addAction(QIcon::fromTheme(QLatin1String("configure")), i18n("&Configure..."));
+            QAction* const configAction = d->m_contextMenu->addAction(QIcon::fromTheme(QLatin1String("configure")),
+                                                                      i18n("&Configure..."));
 
             connect(configAction, SIGNAL(triggered()),
                     dialog, SLOT(exec()));
