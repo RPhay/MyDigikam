@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:42+0000\n"
 "PO-Revision-Date: 2021-09-17 20:07+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -23676,7 +23676,7 @@ msgstr "निर्यात"
 msgid "Could not authorize"
 msgstr "'%1 बनाया नहीं जा सका"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:396
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, fuzzy, kde-format
 msgid "Could not open file"

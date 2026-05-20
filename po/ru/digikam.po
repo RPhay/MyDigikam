@@ -56,7 +56,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:42+0000\n"
 "PO-Revision-Date: 2026-04-03 19:52+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -24791,7 +24791,7 @@ msgstr "Экспорт в &Imgur..."
 msgid "Could not authorize"
 msgstr "Не удалось войти в систему"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:396
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"

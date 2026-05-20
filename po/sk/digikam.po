@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:42+0000\n"
 "PO-Revision-Date: 2026-01-04 22:32+0100\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -24402,7 +24402,7 @@ msgstr "Exportovať na &Imgur..."
 msgid "Could not authorize"
 msgstr "Nepodarilo sa prihlásiť"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:396
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"

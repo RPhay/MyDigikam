@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:42+0000\n"
 "PO-Revision-Date: 2026-05-16 05:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -23847,7 +23847,7 @@ msgstr "&Imgur-ზე გატანა..."
 msgid "Could not authorize"
 msgstr "ავტორიზაციის შეცდომა"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:396
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"

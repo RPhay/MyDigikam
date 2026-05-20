@@ -38,7 +38,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-19 00:42+0000\n"
+"POT-Creation-Date: 2026-05-20 00:42+0000\n"
 "PO-Revision-Date: 2026-03-18 12:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -24609,7 +24609,7 @@ msgstr "Exportă"
 msgid "Could not authorize"
 msgstr "Eșec la salvarea fișierului: %1"
 
-#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:393
+#: core/dplugins/generic/webservices/imgur/imgurtalker.cpp:396
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, fuzzy, kde-format
 #| msgid "Failed to delete file \"%1\"."
