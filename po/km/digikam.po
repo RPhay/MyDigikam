@@ -47,7 +47,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:42+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2010-06-23 14:54+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -3692,7 +3692,7 @@ msgid "New Features"
 msgstr "លក្ខណៈ​ពិសេស​​"
 
 #: core/app/views/stack/welcomepageview.cpp:106
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:437
 #, fuzzy, kde-format
 msgid "About"
 msgstr "ជីប៊ូទី"
@@ -57311,7 +57311,7 @@ msgstr "រូបភាព​ដែល​ទាក់ទង"
 msgid "Add custom tag..."
 msgstr "បន្ថែម​ស្លាក​ប្រទេស​"
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:458
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure"

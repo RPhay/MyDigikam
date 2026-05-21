@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:42+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -3415,7 +3415,7 @@ msgid "New Features"
 msgstr "प्रकृति"
 
 #: core/app/views/stack/welcomepageview.cpp:106
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:437
 #, fuzzy, kde-format
 msgid "About"
 msgstr "परित्याग गर्नुहोस्"
@@ -54227,7 +54227,7 @@ msgstr "छवि बचत गर्नुहोस्"
 msgid "Add custom tag..."
 msgstr "मेरो ट्याग"
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:458
 #, fuzzy, kde-format
 msgid "Configure"
 msgstr "क्यामेरा कन्फिगरेसन"

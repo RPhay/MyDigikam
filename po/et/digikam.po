@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:42+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2020-05-15 08:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -3727,7 +3727,7 @@ msgid "New Features"
 msgstr "Uued omadused"
 
 #: core/app/views/stack/welcomepageview.cpp:106
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:437
 #, kde-format
 msgid "About"
 msgstr "Teave"
@@ -60519,7 +60519,7 @@ msgstr "Seotud pildid"
 msgid "Add custom tag..."
 msgstr "Lisa valla silt"
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:458
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "Configure"

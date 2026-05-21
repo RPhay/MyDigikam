@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:42+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -3492,7 +3492,7 @@ msgid "New Features"
 msgstr "गुणविशेष"
 
 #: core/app/views/stack/welcomepageview.cpp:106
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:437
 #, fuzzy, kde-format
 msgid "About"
 msgstr "विषयी"
@@ -54945,7 +54945,7 @@ msgstr "टॅग काढून टाका"
 msgid "Add custom tag..."
 msgstr "ओळखचिन्हे"
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:458
 #, fuzzy, kde-format
 msgid "Configure"
 msgstr "संयोजीत करा"

@@ -62,7 +62,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:42+0000\n"
+"POT-Creation-Date: 2026-05-21 00:42+0000\n"
 "PO-Revision-Date: 2026-05-10 18:04+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3469,7 +3469,7 @@ msgid "New Features"
 msgstr "Nieuwe mogelijkheden"
 
 #: core/app/views/stack/welcomepageview.cpp:106
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:426
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:437
 #, kde-format
 msgid "About"
 msgstr "Info over"
@@ -56255,7 +56255,7 @@ msgstr "Gerelateerde tags"
 msgid "Add custom tag..."
 msgstr "Eigen tag toevoegen..."
 
-#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:447
+#: core/utilities/geolocation/engine/plugins/PluginItemDelegate.cpp:458
 #, kde-format
 msgid "Configure"
 msgstr "Configureren"
