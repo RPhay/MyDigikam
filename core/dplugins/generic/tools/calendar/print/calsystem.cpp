@@ -568,7 +568,7 @@ bool CalSystemPrivate::isLeapYear(int year) const
 {
     // Adjust the year with the offset
 
-    int64_t adjustedYear = static_cast<int64_t>(year) + yearOffset();
+    qint64 adjustedYear = static_cast<qint64>(year) + yearOffset();
 
     // Check if the year is valid
 
