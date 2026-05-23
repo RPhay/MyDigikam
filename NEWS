@@ -129,7 +129,7 @@ BUGFIXES:
 099 --> 520203 - Setting a people (eg. "Mark") through tag manager => htags = "People", "People|Mark" instead of just "People|Mark".
 100 --> 520290 - digiKam hangs after choosing WebDAVs network share (KDE).
 101 --> 520333 - GPS coordinates for video file is not upfdated in ImagePositions table.
-102 -->
+102 --> 520577 - Navigating in thumbnails/preview uses 100% of main thread for 10-15 seconds on each selection change.
 103 -->
 104 -->
 104 -->
