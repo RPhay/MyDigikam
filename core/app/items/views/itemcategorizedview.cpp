@@ -139,7 +139,7 @@ void ItemCategorizedView::installDefaultModels()
     setModels(aModel, fModel);
 }
 
-void ItemCategorizedView::setModels(ItemModel* model, ImageSortFilterModel* filterModel)
+void ItemCategorizedView::setModels(ItemModel* model, ImageSortFilterModel* fModel)
 {
     if (d->delegate)
     {
@@ -162,7 +162,7 @@ void ItemCategorizedView::setModels(ItemModel* model, ImageSortFilterModel* filt
     }
 
     d->model       = model;
-    d->filterModel = filterModel;
+    d->filterModel = fModel;
 
     setModel(d->filterModel);
 
@@ -672,7 +672,8 @@ void ItemCategorizedView::currentChanged(const QModelIndex& index, const QModelI
     Q_EMIT currentInfoChanged(imageInfo(index));
 }
 
-void ItemCategorizedView::selectionChanged(const QItemSelection& selectedItems, const QItemSelection& deselectedItems)
+void ItemCategorizedView::selectionChanged(const QItemSelection& selectedItems,
+                                           const QItemSelection& deselectedItems)
 {
     ItemViewCategorized::selectionChanged(selectedItems, deselectedItems);
 
