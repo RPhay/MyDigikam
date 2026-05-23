@@ -40,9 +40,9 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
     // Get the handle for the wanted screen device.
 
     POINT pt;
-    pt.x = screenNumber * GetSystemMetrics(SM_CXSCREEN);
-    pt.y = 0;
-    HMONITOR hMonitor = MonitorFromPoint(pt, MONITOR_DEFAULTTONEAREST);
+    pt.x               = screenNumber * GetSystemMetrics(SM_CXSCREEN);
+    pt.y               = 0;
+    HMONITOR hMonitor  = MonitorFromPoint(pt, MONITOR_DEFAULTTONEAREST);
 
     MONITORINFOEX monitorInfo;
     monitorInfo.cbSize = sizeof(MONITORINFOEX);
@@ -54,9 +54,9 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
         return false;
     }
 
-    HDC hdcScreen      = CreateDC(NULL, monitorInfo.szDevice, NULL, NULL);
+    HDC hdcScreen      = CreateDC(NULL, monitorInfo.szDevice, NULL, NULL);      // krazy:exclude=null
 
-    if (hdcScreen == NULL)
+    if (hdcScreen == NULL)        // krazy:exclude=null
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot get the screen handle";
 
@@ -81,7 +81,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
        )
     {
             qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot get the screen profile path";
-            ReleaseDC(NULL, hdcScreen);
+            ReleaseDC(NULL, hdcScreen);      // krazy:exclude=null
 
             return false;
     }
@@ -95,7 +95,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
     if (!profileFile.open(QIODevice::ReadOnly))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "ICM Windows: cannot open the screen profile file";
-        ReleaseDC(NULL, hdcScreen);
+        ReleaseDC(NULL, hdcScreen);      // krazy:exclude=null
 
         return false;
     }
@@ -113,7 +113,7 @@ bool IccSettings::Private::profileFromWindows(QScreen* const screen,
 
     // Free the memory
 
-    ReleaseDC(NULL, hdcScreen);
+    ReleaseDC(NULL, hdcScreen);      // krazy:exclude=null
 
     return true;
 
