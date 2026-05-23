@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 419becc411b1975c6ff59e83aaa138bc\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-21 00:42+0000\n"
+"POT-Creation-Date: 2026-05-23 00:41+0000\n"
 "PO-Revision-Date: 2024-06-19 17:20\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -51646,17 +51646,17 @@ msgctxt "a planet without data"
 msgid "Unknown Planet"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:300
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:304
 #, kde-format
 msgid "&Lock"
 msgstr ""
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:309
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:313
 #, kde-format
 msgid "&Hide"
 msgstr "&Схаваць"
 
-#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:321
+#: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
 #, kde-format
 msgid "&Configure..."
