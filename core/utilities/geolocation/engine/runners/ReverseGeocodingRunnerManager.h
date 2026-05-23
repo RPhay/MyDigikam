@@ -63,9 +63,9 @@ Q_SIGNALS:
 
     /**
      * The reverse geocoding request is finished, the result is stored
-     * in the given placemark. This signal is Q_EMITted when the first
+     * in the given placemark. This signal is emitted when the first
      * runner found a result, subsequent results are discarded and do not
-     * Q_EMIT further signals. If no result is found, this signal is Q_EMITted
+     * Emit further signals. If no result is found, this signal is Q_EMITted
      * with an empty (default constructed) placemark.
      */
     void reverseGeocodingFinished(const GeoDataCoordinates& coordinates, const GeoDataPlacemark& placemark);

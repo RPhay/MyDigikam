@@ -67,7 +67,7 @@ Q_SIGNALS:
     void renderPluginInitialized(RenderPlugin* renderPlugin);
 
     /**
-     * This signal is Q_EMITted when the repaint of the view was requested by a plugin.
+     * This signal is emitted when the repaint of the view was requested by a plugin.
      * If available with the @p dirtyRegion which is the region the view will change in.
      * If dirtyRegion.isEmpty() returns true, the whole viewport has to be repainted.
      */

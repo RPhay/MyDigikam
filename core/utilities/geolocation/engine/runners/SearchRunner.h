@@ -56,7 +56,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * This is Q_EMITted to indicate that the runner has finished the placemark search.
+     * This is emitted to indicate that the runner has finished the placemark search.
      * @param result the result of the search.
      */
     void searchFinished(const QVector<GeoDataPlacemark*>& result);

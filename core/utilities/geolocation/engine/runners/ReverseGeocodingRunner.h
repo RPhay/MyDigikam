@@ -56,7 +56,7 @@ Q_SIGNALS:
 
     /**
      * Reverse geocoding is finished, result in the given placemark.
-     * To be Q_EMITted by runners after a @see reverseGeocoding call.
+     * To be emitted by runners after a @see reverseGeocoding call.
      */
     void reverseGeocodingFinished(const GeoDataCoordinates& coordinates, const GeoDataPlacemark& placemark);
 

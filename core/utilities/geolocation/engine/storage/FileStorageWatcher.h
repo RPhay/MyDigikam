@@ -42,7 +42,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * Is Q_EMITted when a variable has changed.
+     * Is emitted when a variable has changed.
      */
     void variableChanged();
 

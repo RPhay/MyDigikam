@@ -104,7 +104,7 @@ public:
 Q_SIGNALS:
 
     /**
-     * @brief This signal will be Q_EMITted, when the themes change.
+     * @brief This signal will be emitted, when the themes change.
      */
     void themesChanged();
 
