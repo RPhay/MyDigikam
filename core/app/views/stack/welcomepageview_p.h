@@ -15,6 +15,8 @@
  *
  * ============================================================ */
 
+#pragma once
+
 #include "welcomepageview.h"
 
 // Qt includes

@@ -13,6 +13,8 @@
  *
  * ============================================================ */
 
+#pragma once
+
 #include "setupalbumview.h"
 
 // Qt includes
