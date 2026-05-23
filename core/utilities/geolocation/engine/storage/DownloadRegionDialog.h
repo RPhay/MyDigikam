@@ -71,13 +71,13 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    /// This signal is Q_EMITted when the "Apply" button is pressed.
+    /// This signal is emitted when the "Apply" button is pressed.
     void applied();
 
-    /// This signal is Q_EMITted when the dialog receives a QHideEvent.
+    /// This signal is emitted when the dialog receives a QHideEvent.
     void hidden();
 
-    /// This signal is Q_EMITted when the dialog receives a QShowEvent
+    /// This signal is emitted when the dialog receives a QShowEvent
     void shown();
 
 protected:

@@ -744,14 +744,14 @@ Q_SIGNALS:
     void framesPerSecond(qreal fps);
 
     /**
-     * This signal is Q_EMITted when the repaint of the view was requested.
+     * This signal is emitted when the repaint of the view was requested.
      * If available with the @p dirtyRegion which is the region the view will change in.
      * If dirtyRegion.isEmpty() returns true, the whole viewport has to be repainted.
      */
     void repaintNeeded(const QRegion& dirtyRegion = QRegion());
 
     /**
-     * This signal is Q_EMITted when the visible region of the map changes. This typically happens
+     * This signal is emitted when the visible region of the map changes. This typically happens
      * when the user moves the map around or zooms.
      */
     void visibleLatLonAltBoxChanged(const GeoDataLatLonAltBox& visibleLatLonAltBox);
