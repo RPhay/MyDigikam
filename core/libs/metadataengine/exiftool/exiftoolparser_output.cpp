@@ -24,7 +24,7 @@ void ExifToolParser::printExifToolOutput(const QByteArray& stdOut)
     qCDebug(DIGIKAM_METAENGINE_LOG).noquote() << stdOut;
     qCDebug(DIGIKAM_METAENGINE_LOG) << "---";
 
-    d->error = stdOut.contains(QByteArray("1 files weren't updated due to errors"));
+    d->error = stdOut.contains(QByteArray("1 files were not updated due to errors"));
 }
 
 void ExifToolParser::cmdCompleted(const ExifToolProcess::Result& result)
