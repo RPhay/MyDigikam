@@ -18,11 +18,11 @@
 
 // Qt includes
 
-#include <QLocale>
 #include <QHeaderView>
 
 // KDE includes
 
+#include "digikam_globals.h"
 #include <klocalizedstring.h>
 
 namespace DigikamGenericTimeAdjustPlugin
@@ -52,16 +52,6 @@ void TimeAdjustList::setStatus(const QUrl& url,
                                const QDateTime& org,
                                const QDateTime& adj, int status)
 {
-    QString dateTimeFormat = QLocale().dateFormat(QLocale::ShortFormat);
-
-    if (!dateTimeFormat.contains(QLatin1String("yyyy")))
-    {
-        dateTimeFormat.replace(QLatin1String("yy"),
-                               QLatin1String("yyyy"));
-    }
-
-    dateTimeFormat.append(QLatin1String(" hh:mm:ss"));
-
     DItemsListViewItem* const item = listView()->findItem(url);
 
     if (item)
@@ -99,7 +89,7 @@ void TimeAdjustList::setStatus(const QUrl& url,
 
         if (org.isValid())
         {
-            item->setText(TIMESTAMP_USED, org.toString(dateTimeFormat));
+            item->setText(TIMESTAMP_USED, asUserDateTime(org));
         }
         else
         {
@@ -108,7 +98,7 @@ void TimeAdjustList::setStatus(const QUrl& url,
 
         if (adj.isValid())
         {
-            item->setText(TIMESTAMP_UPDATED, adj.toString(dateTimeFormat));
+            item->setText(TIMESTAMP_UPDATED, asUserDateTime(adj));
         }
         else
         {

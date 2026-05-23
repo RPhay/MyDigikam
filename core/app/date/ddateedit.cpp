@@ -35,6 +35,7 @@
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "ddatepickerpopup.h"
 
 namespace Digikam
@@ -121,15 +122,7 @@ DDateEdit::DDateEdit(QWidget* const parent, const QString& name)
     setEditable(true);
 
     d->date       = QDate::currentDate();
-
-    d->dateFormat = QLocale().dateFormat(QLocale::ShortFormat);
-
-    if (!d->dateFormat.contains(QLatin1String("yyyy")))
-    {
-        d->dateFormat.replace(QLatin1String("yy"),
-                              QLatin1String("yyyy"));
-    }
-
+    d->dateFormat = getUserDateFormatString();
     QString today = d->date.toString(d->dateFormat);
 
     addItem(today);

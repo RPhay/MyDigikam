@@ -30,6 +30,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "thumbnailsize.h"
 #include "iojobsmanager.h"
 
@@ -172,15 +173,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
         case DTrashTimeStamp:
         {
-            QString dateTimeFormat = QLocale().dateTimeFormat();
-
-            if (!dateTimeFormat.contains(QLatin1String("yyyy")))
-            {
-                dateTimeFormat.replace(QLatin1String("yy"),
-                                       QLatin1String("yyyy"));
-            }
-
-            return (item.deletionTimestamp.toString(dateTimeFormat));
+            return (item.deletionTimestamp.toString(DATETIMEFORMATSTRING));
         }
 
         default:

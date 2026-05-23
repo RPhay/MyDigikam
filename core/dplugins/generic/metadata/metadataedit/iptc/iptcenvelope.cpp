@@ -134,15 +134,8 @@ IPTCEnvelope::IPTCEnvelope(QWidget* const parent)
       d               (new Private)
 {
     QGridLayout* const grid = new QGridLayout(widget());
-    QString dateFormat      = QLocale().dateFormat(QLocale::ShortFormat);
-
-    if (!dateFormat.contains(QLatin1String("yyyy")))
-    {
-        dateFormat.replace(QLatin1String("yy"),
-                           QLatin1String("yyyy"));
-    }
-
-    QString timeFormat = QLatin1String("hh:mm:ss");
+    QString dateFormat      = getUserDateFormatString();
+    QString timeFormat      = QLatin1String("hh:mm:ss");
 
     // --------------------------------------------------------
 

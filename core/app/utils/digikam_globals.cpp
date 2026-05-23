@@ -314,6 +314,39 @@ QString asUserDateTime(const QDateTime& dt)
     return dt.toString(DATETIMEFORMATSTRING);
 }
 
+QString getUserDateFormatString()
+{
+    QString userFormat = DATETIMEFORMATSTRING;
+    QString dateFormat = QLocale().dateFormat(QLocale::ShortFormat);
+
+    int spos           = userFormat.indexOf(QLatin1Char(' '));
+    int dpos           = userFormat.indexOf(QLatin1Char('d'));
+    int mpos           = userFormat.indexOf(QLatin1Char('M'));
+    int ypos           = userFormat.indexOf(QLatin1Char('y'));
+
+    if ((dpos < spos) && (mpos < spos) && (ypos < spos))
+    {
+        userFormat = userFormat.left(spos);
+
+        if (
+            userFormat.contains(QLatin1Char('.')) ||
+            userFormat.contains(QLatin1Char('-')) ||
+            userFormat.contains(QLatin1Char('/'))
+           )
+        {
+            dateFormat = userFormat;
+        }
+    }
+
+    if (!dateFormat.contains(QLatin1String("yyyy")))
+    {
+        dateFormat.replace(QLatin1String("yy"),
+                           QLatin1String("yyyy"));
+    }
+
+    return dateFormat;
+}
+
 QString getDateFormatLinkText()
 {
     const QString dateFormatLink      = QString::fromUtf8("<a href='https://doc.qt.io/qt-6/qdatetime.html#toString'>%1</a>");
