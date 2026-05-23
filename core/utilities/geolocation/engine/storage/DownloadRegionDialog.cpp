@@ -556,6 +556,7 @@ void DownloadRegionDialog::updateTileType()
     {
         d->m_layerComboBox->setCurrentIndex(1);
     }
+    // cppcheck-suppress knownConditionTrueFalse
     else if (hasVisibleTextureLayers && !hasVisibleVectorLayers)
     {
         d->m_layerComboBox->setCurrentIndex(0);
@@ -569,7 +570,7 @@ void DownloadRegionDialog::updateTileCount()
         return;
     }
 
-    qint64 tilesCount = 0;
+    qint64 tilesCount                        = 0;
     QString themeId(d->m_model->mapThemeId());
     QVector<TileCoordsPyramid> const pyramid = region();
 

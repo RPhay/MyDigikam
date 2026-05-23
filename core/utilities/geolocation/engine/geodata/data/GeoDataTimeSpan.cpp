@@ -32,13 +32,13 @@ namespace Marble
 
 GeoDataTimeSpan::GeoDataTimeSpan()
     : GeoDataTimePrimitive(),
-      d(new GeoDataTimeSpanPrivate)
+      d                   (new GeoDataTimeSpanPrivate)
 {
 }
 
 GeoDataTimeSpan::GeoDataTimeSpan(const GeoDataTimeSpan& other)
     : GeoDataTimePrimitive(other),
-      d(new GeoDataTimeSpanPrivate(*other.d))
+      d                   (new GeoDataTimeSpanPrivate(*other.d))
 {
 }
 
@@ -75,8 +75,8 @@ bool GeoDataTimeSpan::isValid() const
     }
 
     return (
-            d->m_begin.when().isValid() &&          // cppcheck-suppress knownConditionTrueFalse
-            d->m_end.when().isValid()   &&
+            d->m_begin.when().isValid() &&
+            d->m_end.when().isValid()   &&          // cppcheck-suppress knownConditionTrueFalse
             (d->m_begin.when() <= d->m_end.when())
            );
 }

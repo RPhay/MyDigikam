@@ -95,33 +95,33 @@ private:
     QDialog*                    m_configDialog      = nullptr;
     Ui::MapScaleConfigWidget*   ui_configWidget     = nullptr;
 
-    int                         m_radius;
+    int                         m_radius            = 0;
 
     QString                     m_target;
 
-    int                         m_leftBarMargin;
-    int                         m_rightBarMargin;
-    int                         m_scaleBarWidth;
-    int                         m_viewportWidth;
-    int                         m_scaleBarHeight;
-    qreal                       m_scaleBarDistance;
+    int                         m_leftBarMargin     = 0;
+    int                         m_rightBarMargin    = 0;
+    int                         m_scaleBarWidth     = 0;
+    int                         m_viewportWidth     = 0;
+    int                         m_scaleBarHeight    = 5;
+    qreal                       m_scaleBarDistance  = 0.0;
 
-    qreal                       m_pixel2Length;
-    int                         m_bestDivisor;
-    int                         m_pixelInterval;
-    int                         m_valueInterval;
+    qreal                       m_pixel2Length      = 0.0;
+    int                         m_bestDivisor       = 0;
+    int                         m_pixelInterval     = 0;
+    int                         m_valueInterval     = 0;
 
     QString                     m_ratioString;
 
-    bool                        m_scaleInitDone;
+    bool                        m_scaleInitDone     = false;
 
-    bool                        m_showRatioScale;
+    bool                        m_showRatioScale    = false;
 
     QMenu*                      m_contextMenu       = nullptr;
 
     QAction*                    m_minimizeAction    = nullptr;
-    bool                        m_minimized;
-    int                         m_widthScaleFactor;
+    bool                        m_minimized         = false;
+    int                         m_widthScaleFactor  = 2;
 };
 
 } // namespace Marble

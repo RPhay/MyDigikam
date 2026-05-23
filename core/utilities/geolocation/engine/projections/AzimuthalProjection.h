@@ -40,48 +40,50 @@ public:
 
     AzimuthalProjection();
 
-    ~AzimuthalProjection() override;
+    ~AzimuthalProjection()                                                    override;
 
-    bool repeatableX() const override
+public:
+
+    bool repeatableX()                                                  const override
     {
         return false;
     }
 
-    bool traversablePoles()  const override
+    bool traversablePoles()                                             const override
     {
         return true;
     }
-    bool traversableDateLine()  const override
+    bool traversableDateLine()                                          const override
     {
         return true;
     }
 
-    SurfaceType surfaceType() const override
+    SurfaceType surfaceType()                                           const override
     {
         return Azimuthal;
     }
 
-    PreservationType preservationType() const override
+    PreservationType preservationType()                                 const override
     {
         return NoPreservation;
     }
 
-    bool isClippedToSphere() const override;
+    bool isClippedToSphere()                                            const override;
 
-    qreal clippingRadius() const override;
+    qreal clippingRadius()                                              const override;
 
-    bool  mapCoversViewport(const ViewportParams* viewport) const override;
+    bool  mapCoversViewport(const ViewportParams* viewport)             const override;
 
     bool screenCoordinates(const GeoDataLineString& lineString,
                            const ViewportParams* viewport,
-                           QVector<QPolygonF*>& polygons) const override;
+                           QVector<QPolygonF*>& polygons)               const override;
 
     using AbstractProjection::screenCoordinates;
 
-    QPainterPath mapShape(const ViewportParams* viewport) const override;
+    QPainterPath mapShape(const ViewportParams* viewport)               const override;
 
     GeoDataLatLonAltBox latLonAltBox(const QRect& screenRect,
-                                     const ViewportParams* viewport) const override;
+                                     const ViewportParams* viewport)    const override;
 
 protected:
 

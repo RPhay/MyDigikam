@@ -54,11 +54,12 @@ bool AzimuthalProjection::screenCoordinates(const GeoDataLineString& lineString,
 
     if (!viewport->resolves(lineString.latLonAltBox()))
     {
-        //      qCDebug(DIGIKAM_GEOENGINE_LOG) << "Object too small to be resolved";
+        //qCDebug(DIGIKAM_GEOENGINE_LOG) << "Object too small to be resolved";
         return false;
     }
 
     d->lineStringToPolygon(lineString, viewport, polygons);
+
     return true;
 }
 
@@ -70,14 +71,16 @@ bool AzimuthalProjection::mapCoversViewport(const ViewportParams* viewport) cons
 
     // This first test is a quick one that will catch all really big
     // radii and prevent overflow in the real test.
-    if (radius > width + height)
+
+    if (radius > (width + height))
     {
         return true;
     }
 
     // This is the real test.  The 4 is because we are really
     // comparing to width/2 and height/2.
-    if (4 * radius * radius >= width * width + height * height)
+
+    if ((4 * radius * radius) >= (width * width + height * height))
     {
         return true;
     }
@@ -90,18 +93,23 @@ GeoDataLatLonAltBox AzimuthalProjection::latLonAltBox(const QRect& screenRect,
 {
     // For the case where the whole viewport gets covered there is a
     // pretty dirty and generic detection algorithm:
+
     GeoDataLatLonAltBox latLonAltBox = AbstractProjection::latLonAltBox(screenRect, viewport);
 
     // If the whole globe is visible we can easily calculate
     // analytically the lon-/lat- range.
-    qreal pitch = GeoDataCoordinates::normalizeLat(viewport->planetAxis().pitch());
 
-    if (2.0 * viewport->radius() <= viewport->height()
-        &&  2.0 * viewport->radius() <= viewport->width())
+    qreal pitch                      = GeoDataCoordinates::normalizeLat(viewport->planetAxis().pitch());
+
+    if (
+           ((2.0 * viewport->radius()) <= viewport->height())
+        && ((2.0 * viewport->radius()) <= viewport->width())
+       )
     {
         // Unless the planetaxis is in the screen plane the allowed longitude range
         // covers full -180 deg to +180 deg:
-        if (pitch > 0.0 && pitch < +M_PI)
+
+        if ((pitch > 0.0) && (pitch < +M_PI))
         {
             latLonAltBox.setWest(-M_PI);
             latLonAltBox.setEast(+M_PI);
@@ -109,7 +117,7 @@ GeoDataLatLonAltBox AzimuthalProjection::latLonAltBox(const QRect& screenRect,
             latLonAltBox.setSouth(-M_PI / 2.0);
         }
 
-        if (pitch < 0.0 && pitch > -M_PI)
+        if ((pitch < 0.0) && (pitch > -M_PI))
         {
             latLonAltBox.setWest(-M_PI);
             latLonAltBox.setEast(+M_PI);
@@ -120,7 +128,8 @@ GeoDataLatLonAltBox AzimuthalProjection::latLonAltBox(const QRect& screenRect,
         // Last but not least we deal with the rare case where the
         // globe is fully visible and pitch = 0.0 or pitch = -M_PI or
         // pitch = +M_PI
-        if (pitch == 0.0 || pitch == -M_PI || pitch == +M_PI)
+
+        if ((pitch == 0.0) || (pitch == -M_PI) || (pitch == +M_PI))
         {
             qreal yaw = viewport->planetAxis().yaw();
             latLonAltBox.setWest(GeoDataCoordinates::normalizeLon(yaw - M_PI / 2.0));
@@ -136,6 +145,7 @@ GeoDataLatLonAltBox AzimuthalProjection::latLonAltBox(const QRect& screenRect,
     // inside the viewport to get more accurate values for east and west.
 
     // We need a point on the screen at maxLat that definitely gets displayed:
+
     qreal averageLongitude = (latLonAltBox.west() + latLonAltBox.east()) / 2.0;
 
     GeoDataCoordinates maxLatPoint(averageLongitude, maxLat(), 0.0, GeoDataCoordinates::Radian);
@@ -171,10 +181,12 @@ QPainterPath AzimuthalProjection::mapShape(const ViewportParams* viewport) const
     {
         QPainterPath mapShape;
         mapShape.addEllipse(
-            imgWidth  / 2 - radius,
-            imgHeight / 2 - radius,
-            2 * radius,
-            2 * radius);
+                            imgWidth  / 2 - radius,
+                            imgHeight / 2 - radius,
+                            2 * radius,
+                            2 * radius
+                           );
+
         return mapShape.intersected(fullRect);
     }
 
@@ -201,6 +213,7 @@ void AzimuthalProjectionPrivate::tessellateLineSegment(const GeoDataCoordinates&
 {
     // We take the manhattan length as a distance approximation
     // that can be too big by a factor of sqrt(2)
+
     qreal distance = fabs((bx - ax)) + fabs((by - ay));
 
 #ifdef SAFE_DISTANCE
@@ -210,20 +223,20 @@ void AzimuthalProjectionPrivate::tessellateLineSegment(const GeoDataCoordinates&
     // The latter can pretty safely be excluded for most projections if both points
     // are located on the same side relative to the viewport boundaries and if they are
     // located more than half the line segment distance away from the viewport.
+
     const qreal safeDistance = - 0.5 * distance;
 
-    if (!(bx < safeDistance && ax < safeDistance)
-        || !(by < safeDistance && ay < safeDistance)
-        || !(bx + safeDistance > viewport->width()
-             && ax + safeDistance > viewport->width())
-        || !(by + safeDistance > viewport->height()
-             && ay + safeDistance > viewport->height())
+    if (
+           !((bx < safeDistance) && (ax < safeDistance))
+        || !((by < safeDistance) && (ay < safeDistance))
+        || !(((bx + safeDistance) > viewport->width())  && ((ax + safeDistance) > viewport->width()))
+        || !(((by + safeDistance) > viewport->height()) && ((ay + safeDistance) > viewport->height()))
        )
     {
 
 #endif
 
-        int maxTessellationFactor = viewport->radius() < 20000 ? 10 : 20;
+        int maxTessellationFactor            = (viewport->radius() < 20000 ? 10 : 20);
         int const finalTessellationPrecision = qBound(2, viewport->radius() / 200, maxTessellationFactor) * tessellationPrecision;
 
         // Let the line segment follow the spherical surface
@@ -264,41 +277,43 @@ void AzimuthalProjectionPrivate::processTessellation(const GeoDataCoordinates& p
                                                      bool allowLatePolygonCut) const
 {
 
-    const bool clampToGround = f.testFlag(FollowGround);
+    const bool clampToGround        = f.testFlag(FollowGround);
     const bool followLatitudeCircle = f.testFlag(RespectLatitudeCircle)
-                                      && previousCoords.latitude() == currentCoords.latitude();
+                                      && (previousCoords.latitude() == currentCoords.latitude());
 
     // Calculate steps for tessellation: lonDiff and altDiff
+
     qreal lonDiff = 0.0;
 
     if (followLatitudeCircle)
     {
-        const int previousSign = previousCoords.longitude() > 0 ? 1 : -1;
-        const int currentSign = currentCoords.longitude() > 0 ? 1 : -1;
+        const int previousSign = (previousCoords.longitude() > 0 ? 1 : -1);
+        const int currentSign  = (currentCoords.longitude()  > 0 ? 1 : -1);
+        lonDiff                = currentCoords.longitude() - previousCoords.longitude();
 
-        lonDiff = currentCoords.longitude() - previousCoords.longitude();
-
-        if (previousSign != currentSign
-            && fabs(previousCoords.longitude()) + fabs(currentCoords.longitude()) > M_PI)
+        if (   (previousSign != currentSign)
+            && (fabs(previousCoords.longitude()) + fabs(currentCoords.longitude()) > M_PI))
         {
             if (previousSign > currentSign)
             {
                 // going eastwards ->
+
                 lonDiff += 2 * M_PI ;
             }
-
             else
             {
                 // going westwards ->
+
                 lonDiff -= 2 * M_PI;
             }
         }
     }
 
     // Create the tessellation nodes.
+
     GeoDataCoordinates previousTessellatedCoords = previousCoords;
 
-    for (int i = 1; i <= tessellatedNodes; ++i)
+    for (int i = 1 ; i <= tessellatedNodes ; ++i)
     {
         const qreal t = (qreal)(i) / (qreal)(tessellatedNodes + 1);
 
@@ -308,18 +323,18 @@ void AzimuthalProjectionPrivate::processTessellation(const GeoDataCoordinates& p
         {
             // To tessellate along latitude circles use the
             // linear interpolation of the longitude.
-            const qreal altDiff = currentCoords.altitude() - previousCoords.altitude();
-            const qreal altitude = altDiff * t + previousCoords.altitude();
-            const qreal lon = lonDiff * t + previousCoords.longitude();
-            const qreal lat = previousTessellatedCoords.latitude();
 
+            const qreal altDiff      = currentCoords.altitude() - previousCoords.altitude();
+            const qreal altitude     = altDiff * t + previousCoords.altitude();
+            const qreal lon          = lonDiff * t + previousCoords.longitude();
+            const qreal lat          = previousTessellatedCoords.latitude();
             currentTessellatedCoords = GeoDataCoordinates(lon, lat, altitude);
         }
-
         else
         {
             // To tessellate along great circles use the
             // normalized linear interpolation ("NLERP") for latitude and longitude.
+
             currentTessellatedCoords = previousCoords.nlerp(currentCoords, t);
         }
 
@@ -333,6 +348,7 @@ void AzimuthalProjectionPrivate::processTessellation(const GeoDataCoordinates& p
     }
 
     // For the clampToGround case add the "current" coordinate after adding all other nodes.
+
     GeoDataCoordinates currentModifiedCoords(currentCoords);
 
     if (clampToGround)
@@ -346,8 +362,7 @@ void AzimuthalProjectionPrivate::processTessellation(const GeoDataCoordinates& p
 void AzimuthalProjectionPrivate::crossHorizon(const GeoDataCoordinates& bCoord,
                                               QVector<QPolygonF*>& polygons,
                                               const ViewportParams* viewport,
-                                              bool allowLatePolygonCut
-                                             ) const
+                                              bool allowLatePolygonCut) const
 {
     qreal x, y;
     bool globeHidesPoint;
@@ -377,23 +392,18 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
 {
     Q_Q(const AzimuthalProjection);
 
-    const TessellationFlags f = lineString.tessellationFlags();
-    bool const tessellate = lineString.tessellate();
-    const bool noFilter = f.testFlag(PreventNodeFiltering);
-
-
-    qreal x = 0;
-    qreal y = 0;
-    bool globeHidesPoint = false;
-
-    qreal previousX = -1.0;
-    qreal previousY = -1.0;
+    const TessellationFlags f    = lineString.tessellationFlags();
+    bool const tessellate        = lineString.tessellate();
+    const bool noFilter          = f.testFlag(PreventNodeFiltering);
+    qreal x                      = 0;
+    qreal y                      = 0;
+    bool globeHidesPoint         = false;
+    qreal previousX              = -1.0;
+    qreal previousY              = -1.0;
     bool previousGlobeHidesPoint = false;
-
-    qreal horizonX = -1.0;
-    qreal horizonY = -1.0;
-
-    QPolygonF* polygon = new QPolygonF;
+    qreal horizonX               = -1.0;
+    qreal horizonY               = -1.0;
+    QPolygonF* const polygon     = new QPolygonF;
 
     if (!tessellate)
     {
@@ -402,7 +412,7 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
 
     polygons.append(polygon);
 
-    GeoDataLineString::ConstIterator itCoords = lineString.constBegin();
+    GeoDataLineString::ConstIterator itCoords         = lineString.constBegin();
     GeoDataLineString::ConstIterator itPreviousCoords = lineString.constBegin();
 
     // Some projections display the earth in a way so that there is a
@@ -416,18 +426,20 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
     // and where horizonPair is set to true.
     // The second one describes the point where the line string reappears.
     // In this case the two points are connected and horizonPair is set to false again.
-    bool horizonPair = false;
+
+    bool horizonPair        = false;
     GeoDataCoordinates horizonDisappearCoords;
 
     // If the first horizon crossing in a line string describes the appearance of
     // a line string then we call it a "horizon orphan" and horizonOrphan is set to true.
     // In this case once the last horizon crossing in the line string is reached
     // it needs to be connected to the orphan.
-    bool horizonOrphan = false;
+
+    bool horizonOrphan      = false;
     GeoDataCoordinates horizonOrphanCoords;
 
     GeoDataLineString::ConstIterator itBegin = lineString.constBegin();
-    GeoDataLineString::ConstIterator itEnd = lineString.constEnd();
+    GeoDataLineString::ConstIterator itEnd   = lineString.constEnd();
 
     bool processingLastNode = false;
 
@@ -435,39 +447,51 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
     // Linear rings require to tessellate the path from the last node to the first node
     // which isn't really convenient to achieve with a for loop ...
 
-    const bool isLong = lineString.size() > 10;
+    const bool isLong       = (lineString.size() > 10);
     const int maximumDetail = levelForResolution(viewport->angularResolution());
+
     // The first node of optimized linestrings has a non-zero detail value.
-    const bool hasDetail = itBegin->detail() != 0;
+
+    const bool hasDetail    = itBegin->detail() != 0;
 
     while (itCoords != itEnd)
     {
         // Optimization for line strings with a big amount of nodes
-        bool skipNode = (hasDetail ? itCoords->detail() > maximumDetail
-                         : itCoords != itBegin && isLong && !processingLastNode &&
-                         !viewport->resolves(*itPreviousCoords, *itCoords));
+
+        bool skipNode = (
+                         hasDetail ? (itCoords->detail() > maximumDetail)
+                                   : (
+                                      (itCoords != itBegin && isLong) &&
+                                      !processingLastNode             &&
+                                      !viewport->resolves(*itPreviousCoords, *itCoords)
+                                     )
+                        );
 
         if (!skipNode || noFilter)
         {
-
             q->screenCoordinates(*itCoords, viewport, x, y, globeHidesPoint);
 
             // Initializing variables that store the values of the previous iteration
-            if (!processingLastNode && itCoords == itBegin)
+
+            if (!processingLastNode && (itCoords == itBegin))
             {
                 previousGlobeHidesPoint = globeHidesPoint;
-                itPreviousCoords = itCoords;
-                previousX = x;
-                previousY = y;
+                itPreviousCoords        = itCoords;
+                previousX               = x;
+                previousY               = y;
             }
 
             // Check for the "horizon case" (which is present e.g. for the spherical projection
-            const bool isAtHorizon = (globeHidesPoint || previousGlobeHidesPoint) &&
-                                     (globeHidesPoint !=  previousGlobeHidesPoint);
+
+            const bool isAtHorizon = (
+                                      (globeHidesPoint || previousGlobeHidesPoint) &&
+                                      (globeHidesPoint != previousGlobeHidesPoint)
+                                     );
 
             if (isAtHorizon)
             {
                 // Handle the "horizon case"
+
                 horizonCoords = findHorizon(*itPreviousCoords, *itCoords, viewport, f);
 
                 if (lineString.isClosed())
@@ -477,19 +501,17 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
                         horizonToPolygon(viewport, horizonDisappearCoords, horizonCoords, polygons.last());
                         horizonPair = false;
                     }
-
                     else
                     {
                         if (globeHidesPoint)
                         {
                             horizonDisappearCoords = horizonCoords;
-                            horizonPair = true;
+                            horizonPair            = true;
                         }
-
                         else
                         {
                             horizonOrphanCoords = horizonCoords;
-                            horizonOrphan = true;
+                            horizonOrphan       = true;
                         }
                     }
                 }
@@ -498,6 +520,7 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
 
                 // If the line appears on the visible half we need
                 // to add an interpolated point at the horizon as the previous point.
+
                 if (previousGlobeHidesPoint)
                 {
                     *polygons.last() << QPointF(horizonX, horizonY);
@@ -510,21 +533,18 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
 
             if (lineString.tessellate() /* && ( isVisible || previousIsVisible ) */)
             {
-
                 if (!isAtHorizon)
                 {
-
                     tessellateLineSegment(*itPreviousCoords, previousX, previousY,
                                           *itCoords, x, y,
                                           polygons, viewport,
                                           f, !lineString.isClosed());
-
                 }
-
                 else
                 {
                     // Connect the interpolated  point at the horizon with the
                     // current or previous point in the line.
+
                     if (previousGlobeHidesPoint)
                     {
                         tessellateLineSegment(horizonCoords, horizonX, horizonY,
@@ -532,7 +552,6 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
                                               polygons, viewport,
                                               f, !lineString.isClosed());
                     }
-
                     else
                     {
                         tessellateLineSegment(*itPreviousCoords, previousX, previousY,
@@ -542,16 +561,15 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
                     }
                 }
             }
-
             else
             {
                 if (!globeHidesPoint)
                 {
                     *polygons.last() << QPointF(x, y);
                 }
-
                 else
                 {
+                    // cppcheck-suppress knownConditionTrueFalse
                     if (!previousGlobeHidesPoint && isAtHorizon)
                     {
                         *polygons.last() << QPointF(horizonX, horizonY);
@@ -561,18 +579,16 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
 
             if (globeHidesPoint)
             {
-                if (!previousGlobeHidesPoint
-                    && !lineString.isClosed()
-                   )
+                if (!previousGlobeHidesPoint && !lineString.isClosed())
                 {
                     polygons.append(new QPolygonF);
                 }
             }
 
             previousGlobeHidesPoint = globeHidesPoint;
-            itPreviousCoords = itCoords;
-            previousX = x;
-            previousY = y;
+            itPreviousCoords        = itCoords;
+            previousX               = x;
+            previousY               = y;
         }
 
         // Here we modify the condition to be able to process the
@@ -585,15 +601,16 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
 
         ++itCoords;
 
-        if (itCoords == itEnd  && lineString.isClosed())
+        if ((itCoords == itEnd) && lineString.isClosed())
         {
-            itCoords = itBegin;
+            itCoords           = itBegin;
             processingLastNode = true;
         }
     }
 
     // In case of horizon crossings, make sure that we always get a
     // polygon closed correctly.
+
     if (horizonOrphan && lineString.isClosed())
     {
         horizonToPolygon(viewport, horizonCoords, horizonOrphanCoords, polygons.last());
@@ -602,7 +619,7 @@ bool AzimuthalProjectionPrivate::lineStringToPolygon(const GeoDataLineString& li
     if (polygons.last()->size() <= 1)
     {
         delete polygons.last();
-        polygons.pop_back(); // Clean up "unused" empty polygon instances
+        polygons.pop_back();    // Clean up "unused" empty polygon instances
     }
 
     return polygons.isEmpty();
@@ -615,41 +632,41 @@ void AzimuthalProjectionPrivate::horizonToPolygon(const ViewportParams* viewport
 {
     qreal x, y;
 
-    const qreal imageHalfWidth  = viewport->width() / 2;
+    const qreal imageHalfWidth  = viewport->width()  / 2;
     const qreal imageHalfHeight = viewport->height() / 2;
-
-    bool dummyGlobeHidesPoint = false;
+    bool dummyGlobeHidesPoint   = false;
 
     Q_Q(const AzimuthalProjection);
+
     // Calculate the angle of the position vectors of both coordinates
+
     q->screenCoordinates(disappearCoords, viewport, x, y, dummyGlobeHidesPoint);
     qreal alpha = atan2(y - imageHalfHeight,
                         x - imageHalfWidth);
 
     q->screenCoordinates(reappearCoords, viewport, x, y, dummyGlobeHidesPoint);
-    qreal beta =  atan2(y - imageHalfHeight,
+    qreal beta  = atan2(y - imageHalfHeight,
                         x - imageHalfWidth);
 
     // Calculate the difference between both
-    qreal diff = GeoDataCoordinates::normalizeLon(beta - alpha);
 
-    qreal sgndiff = diff < 0 ? -1 : 1;
-
-    const qreal arcradius = q->clippingRadius() * viewport->radius();
-    const int itEnd = fabs(diff * RAD2DEG);
+    qreal diff              = GeoDataCoordinates::normalizeLon(beta - alpha);
+    qreal sgndiff           = ((diff < 0) ? -1 : 1);
+    const qreal arcradius   = q->clippingRadius() * viewport->radius();
+    const int itEnd         = fabs(diff * RAD2DEG);
 
     // Create a polygon that resembles an arc between the two position vectors
+
     polygon->reserve(polygon->size() + itEnd);
 
-    for (int it = 1; it <= itEnd; ++it)
+    for (int it = 1 ; it <= itEnd ; ++it)
     {
         const qreal angle = alpha + DEG2RAD * sgndiff * it;
-        const qreal itx = imageHalfWidth  +  arcradius * cos(angle);
-        const qreal ity = imageHalfHeight +  arcradius * sin(angle);
+        const qreal itx   = imageHalfWidth  +  arcradius * cos(angle);
+        const qreal ity   = imageHalfHeight +  arcradius * sin(angle);
         *polygon << QPointF(itx, ity);
     }
 }
-
 
 GeoDataCoordinates AzimuthalProjectionPrivate::findHorizon(const GeoDataCoordinates& previousCoords,
                                                            const GeoDataCoordinates& currentCoords,
@@ -671,7 +688,7 @@ GeoDataCoordinates AzimuthalProjectionPrivate::doFindHorizon(const GeoDataCoordi
 {
     if (recursionCounter > 20)
     {
-        return currentHide ? previousCoords : currentCoords;
+        return (currentHide ? previousCoords : currentCoords);
     }
 
     ++recursionCounter;
@@ -679,47 +696,45 @@ GeoDataCoordinates AzimuthalProjectionPrivate::doFindHorizon(const GeoDataCoordi
     bool followLatitudeCircle = false;
 
     // Calculate steps for tessellation: lonDiff and altDiff
-    qreal lonDiff = 0.0;
-    qreal previousLongitude = 0.0;
-    qreal previousLatitude = 0.0;
+
+    qreal lonDiff             = 0.0;
+    qreal previousLongitude   = 0.0;
+    qreal previousLatitude    = 0.0;
 
     if (f.testFlag(RespectLatitudeCircle))
     {
         previousCoords.geoCoordinates(previousLongitude, previousLatitude);
-        qreal previousSign = previousLongitude > 0 ? 1 : -1;
-
+        qreal previousSign     = (previousLongitude > 0 ? 1 : -1);
         qreal currentLongitude = 0.0;
-        qreal currentLatitude = 0.0;
+        qreal currentLatitude  = 0.0;
         currentCoords.geoCoordinates(currentLongitude, currentLatitude);
-        qreal currentSign = currentLongitude > 0 ? 1 : -1;
+        qreal currentSign      = (currentLongitude > 0 ? 1 : -1);
 
         if (previousLatitude == currentLatitude)
         {
             followLatitudeCircle = true;
+            lonDiff              = currentLongitude - previousLongitude;
 
-            lonDiff = currentLongitude - previousLongitude;
-
-            if (previousSign != currentSign
-                && fabs(previousLongitude) + fabs(currentLongitude) > M_PI)
+            if (   (previousSign != currentSign)
+                && (fabs(previousLongitude) + fabs(currentLongitude) > M_PI))
             {
                 if (previousSign > currentSign)
                 {
                     // going eastwards ->
+
                     lonDiff += 2 * M_PI ;
                 }
-
                 else
                 {
                     // going westwards ->
+
                     lonDiff -= 2 * M_PI;
                 }
             }
-
         }
-
         else
         {
-            //            qCDebug(DIGIKAM_GEOENGINE_LOG) << "Don't FollowLatitudeCircle";
+            //qCDebug(DIGIKAM_GEOENGINE_LOG) << "Don't FollowLatitudeCircle";
         }
     }
 
@@ -729,18 +744,18 @@ GeoDataCoordinates AzimuthalProjectionPrivate::doFindHorizon(const GeoDataCoordi
     {
         // To tessellate along latitude circles use the
         // linear interpolation of the longitude.
-        const qreal altDiff = currentCoords.altitude() - previousCoords.altitude();
+
+        const qreal altDiff  = currentCoords.altitude() - previousCoords.altitude();
         const qreal altitude = previousCoords.altitude() + 0.5 * altDiff;
-        const qreal lon = lonDiff * 0.5 + previousLongitude;
-        const qreal lat = previousLatitude;
-
-        horizonCoords = GeoDataCoordinates(lon, lat, altitude);
+        const qreal lon      = lonDiff * 0.5 + previousLongitude;
+        const qreal lat      = previousLatitude;
+        horizonCoords        = GeoDataCoordinates(lon, lat, altitude);
     }
-
     else
     {
         // To tessellate along great circles use the
         // normalized linear interpolation ("NLERP") for latitude and longitude.
+
         horizonCoords = previousCoords.nlerp(currentCoords, 0.5);
     }
 
@@ -762,7 +777,9 @@ bool AzimuthalProjectionPrivate::globeHidesPoint(const GeoDataCoordinates& coord
     qreal dummyX, dummyY;
 
     Q_Q(const AzimuthalProjection);
+
     q->screenCoordinates(coordinates, viewport, dummyX, dummyY, globeHidesPoint);
+
     return globeHidesPoint;
 }
 

@@ -73,8 +73,10 @@ Q_SIGNALS:
 
     /// This signal is Q_EMITted when the "Apply" button is pressed.
     void applied();
+
     /// This signal is Q_EMITted when the dialog receives a QHideEvent.
     void hidden();
+
     /// This signal is Q_EMITted when the dialog receives a QShowEvent
     void shown();
 
@@ -91,6 +93,7 @@ private Q_SLOTS:
 
     /// This slot is called upon to update the route download UI when a route exists
     void updateRouteDialog();
+
     /// This slot sets the unit of the offset(m or km) in the spinbox
     void setOffsetUnit();
 

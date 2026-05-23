@@ -56,6 +56,7 @@ MapScaleFloatItem::MapScaleFloatItem(const MarbleModel* marbleModel)
       m_viewportWidth   (0),
       m_scaleBarHeight  (5),
       m_scaleBarDistance(0.0),
+      m_pixel2Length    (0.0),
       m_bestDivisor     (0),
       m_pixelInterval   (0),
       m_valueInterval   (0),
@@ -125,7 +126,6 @@ QIcon MapScaleFloatItem::icon() const
     return QIcon::fromTheme(QStringLiteral("transform-scale-vertical"));
 }
 
-
 void MapScaleFloatItem::initialize()
 {
 }
@@ -194,7 +194,7 @@ void MapScaleFloatItem::setProjection(const ViewportParams* viewport)
         {
             m_scaleBarDistance *= KM2MI;
         }
-        else if (measurementSystem == MarbleLocale::NauticalSystem)
+        else if (measurementSystem == MarbleLocale::NauticalSystem)     // cppcheck-suppress knownConditionTrueFalse
         {
             m_scaleBarDistance *= KM2NM;
         }
@@ -222,6 +222,7 @@ void MapScaleFloatItem::paintContent(QPainter* painter)
 
     //round ratio to 3 most significant digits, assume that ratio >= 1, otherwise it may display "1 : 0"
     //i made this assumption because as the primary use case we do not need to zoom in that much
+
     qreal power             = 1;
     int iRatio              = (int)(ratio + 0.5); //round ratio to the nearest integer
 
@@ -366,12 +367,12 @@ void MapScaleFloatItem::paintContent(QPainter* painter)
 
 void MapScaleFloatItem::calcScaleBar()
 {
-    qreal  magnitude = 1;
+    qreal magnitude  = 1;
 
     // First we calculate the exact length of the whole area that is possibly
     // available to the scalebar in kilometers
 
-    int  magValue    = (int)(m_scaleBarDistance);
+    int magValue     = (int)(m_scaleBarDistance);
 
     // We calculate the two most significant digits of the km-scalebar-length
     // and store them in magValue.
