@@ -71,7 +71,7 @@ Q_SIGNALS:
     void redirected(HttpJob* job, const QUrl& redirectionTarget);
 
     /**
-     * This signal is Q_EMITted if the data was successfully received and
+     * This signal is emitted if the data was successfully received and
      * the argument data contains completely the downloaded content.
      */
     void dataReceived(HttpJob* job, const QByteArray& data);

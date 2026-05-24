@@ -40,7 +40,7 @@ class HttpJob;
    =================
    - Job is added to the QueueSet (by calling addJob() )
      the HttpJob is put into the m_jobQueue where it waits for "activation"
-     signal jobAdded is Q_EMITted
+     signal jobAdded is emitted
    - Job is activated
      Job is moved from m_jobQueue to m_activeJobs and signals of the job
      are connected to slots (local or HttpDownloadManager)
@@ -49,18 +49,18 @@ class HttpJob;
    now there are different possibilities:
    1) Job Q_EMITs jobDone (some error occurred, or canceled (kio))
       Job is disconnected
-      signal jobRemoved is Q_EMITted
+      signal jobRemoved is emitted
       Job is either moved from m_activeJobs to m_retryQueue
         or destroyed and blacklisted
 
    2) Job Q_EMITs redirected
       Job is removed from m_activeJobs, disconnected and destroyed
-      signal jobRemoved is Q_EMITted
+      signal jobRemoved is emitted
       (HttpDownloadManager creates new Job with new source url)
 
    3) Job Q_EMITs dataReceived
       Job is removed from m_activeJobs, disconnected and destroyed
-      signal jobRemoved is Q_EMITted
+      signal jobRemoved is emitted
 
    so we can conclude following rules:
    - Job is only connected to signals when in "active" state

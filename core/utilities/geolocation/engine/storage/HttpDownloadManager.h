@@ -88,19 +88,19 @@ Q_SIGNALS:
     void downloadComplete(const QString&, const QString&);
 
     /**
-     * This signal is Q_EMITted if a file is downloaded and the data argument
+     * This signal is emitted if a file is downloaded and the data argument
      * contains the files content. The HttpDownloadManager takes care to save
      * it using the given storage policy.
      */
     void downloadComplete(const QByteArray& data, const QString& initiatorId);
 
     /**
-     * Signal is Q_EMITted when a new job is added to the queue.
+     * Signal is emitted when a new job is added to the queue.
      */
     void jobAdded();
 
     /**
-     * Signal is Q_EMITted when a job is removed from the queue.
+     * Signal is emitted when a job is removed from the queue.
      * The job might be completed or blacklisted.
      */
     void jobRemoved();

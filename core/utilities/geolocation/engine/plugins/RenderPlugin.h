@@ -298,33 +298,33 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * This signal is Q_EMITted if the visibility is changed with @see setVisible
+     * This signal is emitted if the visibility is changed with @see setVisible
      */
     void visibilityChanged(bool visible, const QString& nameId);
 
     /**
-     * This signal is Q_EMITted if the enabled property is changed with @see setEnabled
+     * This signal is emitted if the enabled property is changed with @see setEnabled
      */
     void enabledChanged(bool enable);
 
     /**
-     * This signal is Q_EMITted if the user checkable property is changed with @see setUserCheckable
+     * This signal is emitted if the user checkable property is changed with @see setUserCheckable
      */
     void userCheckableChanged(bool isUserCheckable);
 
     /**
-     * This signal is Q_EMITted if the settings of the RenderPlugin changed.
+     * This signal is emitted if the settings of the RenderPlugin changed.
      */
     void settingsChanged(const QString& nameId);
 
     /**
-     * This signal is Q_EMITted if the actions that the plugin supports change in
+     * This signal is emitted if the actions that the plugin supports change in
      * any way
      */
     void actionGroupsChanged();
 
     /**
-     * This signal is Q_EMITted if an update of the view is needed. If available with the
+     * This signal is emitted if an update of the view is needed. If available with the
      * @p dirtyRegion which is the region the view will change in. If dirtyRegion.isEmpty() returns
      * true, the whole viewport has to be repainted.
      */

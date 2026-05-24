@@ -74,14 +74,14 @@ public:
     QDateTime dateTime() const;
 
     /**
-     * @brief Set the interval at which dateTime() is updated and timeChanged() is Q_EMITted.
+     * @brief Set the interval at which dateTime() is updated and timeChanged() is emitted.
      * @param seconds The interval in seconds
      * @see updateInterval
      */
     void setUpdateInterval(int seconds);
 
     /**
-     * @brief Returns the interval at which dateTime() is updated and timeChanged() is Q_EMITted,
+     * @brief Returns the interval at which dateTime() is updated and timeChanged() is emitted,
      * The default is 60 seconds.
      * @return The interval in seconds.
      * @see setUpdateInterval
