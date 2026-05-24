@@ -52,10 +52,9 @@ void TimeAdjustList::setStatus(const QUrl& url,
                                const QDateTime& org,
                                const QDateTime& adj, int status)
 {
-    QString dateTimeFormat = getUserDateFormatString();
-    dateTimeFormat.append(QLatin1String(" hh:mm:ss"));
-
     DItemsListViewItem* const item = listView()->findItem(url);
+    QString dateTimeFormat         = getUserDateFormatString();
+    dateTimeFormat.append(QLatin1String(" hh:mm:ss"));
 
     if (item)
     {
