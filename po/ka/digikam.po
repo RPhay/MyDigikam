@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-24 00:42+0000\n"
 "PO-Revision-Date: 2026-05-16 05:03+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -52095,7 +52095,7 @@ msgid "&Hide"
 msgstr "&დამალვა"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:456
 #, kde-format
 msgid "&Configure..."
 msgstr "&მორგება..."
@@ -54414,54 +54414,54 @@ msgstr "მასშტაბის კოეფიციენტის ჩვ�
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
 #, kde-format
 msgid "Minimize"
 msgstr "ჩაკეცვა"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:88
 #, kde-format
 msgid "Scale Bar"
 msgstr "მასშტაბის ზოლი"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:93
 #, kde-format
 msgid "&Scale Bar"
 msgstr "&მასშტაბის ზოლი"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:108
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr ""
 "ეს დამატება აჩვენებს მცურავმძიმიან ჩანაწერის, რომელიც რუკის მასშტაბს შეიცავს."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:119
 #, kde-format
 msgid "Original Developer"
 msgstr "საწყისი ავტორი"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:278
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:286
 #, kde-format
 msgid "km"
 msgstr "კმ"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:291
 #, kde-format
 msgid "m"
 msgstr "მ"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:300
 #, kde-format
 msgid "mi"
 msgstr "მი"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:317
 #, kde-format
 msgid "nm"
 msgstr "ნმ"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:463
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "&მასშტაბის კოეფიციენტი"
@@ -55377,22 +55377,22 @@ msgstr "ვექტორული ფილები"
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr "დაუშვებს არჩევანს ფენის ტიპებს შორის, რომლებიც ხილულად რენდერდება."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:622
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "არსებობს გადმოწერის ზღვარი: %1 ფილა."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:637
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "გადმოსაწერი ფილების დაახლოებითი ზომა"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:642
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "ჩამოტვირთვის სავარაუდო ზომა: %1 მბ"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:646
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "ჩამოტვირთვის სავარაუდო ზომა: %1 კბ"

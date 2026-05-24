@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-24 00:42+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -55243,7 +55243,7 @@ msgid "&Hide"
 msgstr ""
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:456
 #, fuzzy, kde-format
 #| msgid "Configure"
 msgid "&Configure..."
@@ -57690,55 +57690,55 @@ msgstr "แสดงประเภทรูปแบบของภาพ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
 #, kde-format
 msgid "Minimize"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:88
 #, fuzzy, kde-format
 msgid "Scale Bar"
 msgstr "แสดงวันที่ของกล้อง"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:93
 #, fuzzy, kde-format
 #| msgid "&Scale to:"
 msgid "&Scale Bar"
 msgstr "ปรับข&ยายเป็น:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:108
 #, fuzzy, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "แก้ไขคุณสมบัติของอัลบั้มและข้อมูลรายละเอียดของคลังภาพ"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:119
 #, fuzzy, kde-format
 #| msgid "Original Colors:"
 msgid "Original Developer"
 msgstr "สีต่าง ๆ ของต้นฉบับ:"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:278
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:286
 #, kde-format
 msgid "km"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:291
 #, kde-format
 msgid "m"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:300
 #, kde-format
 msgid "mi"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:317
 #, kde-format
 msgid "nm"
 msgstr ""
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:463
 #, fuzzy, kde-format
 msgid "&Ratio Scale"
 msgstr "การหมุน:"
@@ -58700,22 +58700,22 @@ msgstr "แฟ้มเสียง"
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:622
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:637
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:642
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr ""
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:646
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr ""

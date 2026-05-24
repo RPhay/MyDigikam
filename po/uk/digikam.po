@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-24 00:42+0000\n"
 "PO-Revision-Date: 2026-05-10 17:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -54483,7 +54483,7 @@ msgid "&Hide"
 msgstr "С&ховати"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:456
 #, kde-format
 msgid "&Configure..."
 msgstr "&Налаштувати…"
@@ -56804,53 +56804,53 @@ msgstr "Показувати коефіцієнт масштабування"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
 #, kde-format
 msgid "Minimize"
 msgstr "Мінімізувати"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:88
 #, kde-format
 msgid "Scale Bar"
 msgstr "Шкала масштабу"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:93
 #, kde-format
 msgid "&Scale Bar"
 msgstr "Панель &масштабу"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:108
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "Додаток для показу над картою рухомого елемента зі шкалою масштабу."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:119
 #, kde-format
 msgid "Original Developer"
 msgstr "Перший розробник"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:278
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:286
 #, kde-format
 msgid "km"
 msgstr "км"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:291
 #, kde-format
 msgid "m"
 msgstr "м"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:300
 #, kde-format
 msgid "mi"
 msgstr "милі"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:317
 #, kde-format
 msgid "nm"
 msgstr "мор. миля"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:463
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "&Коефіцієнт масштабування"
@@ -57820,22 +57820,22 @@ msgid "Allows selection between layer types that are visibly being rendered."
 msgstr ""
 "Надає змогу вибирати тип шарів, які буде показано під час обробки зображення."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:622
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Передбачено обмеження отримання даних у %1 плиток."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:637
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Приблизний об’єм даних, які доведеться отримати"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:642
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Приблизний об’єм отримання: %1 МБ"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:646
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Приблизний об’єм отримання: %1 кБ"

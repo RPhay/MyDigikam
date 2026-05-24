@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-24 00:42+0000\n"
 "PO-Revision-Date: 2026-05-10 12:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -53775,7 +53775,7 @@ msgid "&Hide"
 msgstr "&Gizle"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:456
 #, kde-format
 msgid "&Configure..."
 msgstr "&Yapılandır…"
@@ -56090,55 +56090,55 @@ msgstr "Oran Ölçeğini Göster"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
 #, kde-format
 msgid "Minimize"
 msgstr "Küçült"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:88
 #, kde-format
 msgid "Scale Bar"
 msgstr "Ölçek Çubuğu"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:93
 #, kde-format
 msgid "&Scale Bar"
 msgstr "Ölçe&k Çubuğu"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:108
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr ""
 "Bir harita ölçeği sağlayan bir kayan noktalı ögeyi göstermek için bir "
 "eklenti."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:119
 #, kde-format
 msgid "Original Developer"
 msgstr "Özgün Geliştirici"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:278
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:286
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:291
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:300
 #, kde-format
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:317
 #, kde-format
 msgid "nm"
 msgstr "dm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:463
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "&Oran Ölçeği"
@@ -57099,22 +57099,22 @@ msgstr ""
 "Görünür şekilde oluşturulan katman türleri arasında seçim yapılmasına olanak "
 "tanır."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:622
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "%1 karoluk bir indirme sınırı vardır."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:637
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "İndirilecek karoların tahmini boyutu"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:642
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Tahmini indirme boyutu: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:646
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Tahmini indirme boyutu: %1 kB"

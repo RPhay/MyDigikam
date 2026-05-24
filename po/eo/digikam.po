@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-23 00:41+0000\n"
+"POT-Creation-Date: 2026-05-24 00:42+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -54571,7 +54571,7 @@ msgid "&Hide"
 msgstr "&Kaŝi"
 
 #: core/utilities/geolocation/engine/core/AbstractFloatItem.cpp:327
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:455
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:456
 #, kde-format
 msgid "&Configure..."
 msgstr "&Agordi..."
@@ -56888,53 +56888,53 @@ msgstr "Montri Proprocioskalon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_minimizeCheckBox)
 #: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleConfigWidget.ui:30
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:68
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:69
 #, kde-format
 msgid "Minimize"
 msgstr "Minimumigi"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:87
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:88
 #, kde-format
 msgid "Scale Bar"
 msgstr "Skalobreto"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:92
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:93
 #, kde-format
 msgid "&Scale Bar"
 msgstr "&Skalbreto"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:107
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:108
 #, kde-format
 msgid "A plugin to show a float item that provides a map scale."
 msgstr "Kromprogramo por montri glitan objekton, kiu provizas mapskalon."
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:118
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:119
 #, kde-format
 msgid "Original Developer"
 msgstr "Origina Evoluisto"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:277
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:285
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:278
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:286
 #, kde-format
 msgid "km"
 msgstr "km"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:290
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:291
 #, kde-format
 msgid "m"
 msgstr "m"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:299
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:300
 #, kde-format
 msgid "mi"
 msgstr "mi"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:316
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:317
 #, kde-format
 msgid "nm"
 msgstr "nm"
 
-#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:462
+#: core/utilities/geolocation/engine/plugins/render/mapscale/MapScaleFloatItem.cpp:463
 #, kde-format
 msgid "&Ratio Scale"
 msgstr "P&roporcia Skalo"
@@ -57896,22 +57896,22 @@ msgstr "Vektoraj kaheloj"
 msgid "Allows selection between layer types that are visibly being rendered."
 msgstr "Permesas elekton inter tavolspecoj, kiuj estas videble prezentitaj."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:621
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:622
 #, kde-format
 msgid "There is a limit of %1 tile(s) to download."
 msgstr "Estas limo de %1 kahelo(j) por elŝuti."
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:636
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:637
 #, kde-format
 msgid "Approximate size of the tiles to be downloaded"
 msgstr "Proksimuma grandeco de la kaheloj elŝutotaj"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:641
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:642
 #, kde-format
 msgid "Estimated download size: %1 MB"
 msgstr "Laŭtaksa elŝuta grandeco: %1 MB"
 
-#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:645
+#: core/utilities/geolocation/engine/storage/DownloadRegionDialog.cpp:646
 #, kde-format
 msgid "Estimated download size: %1 kB"
 msgstr "Laŭtaksa elŝuta grandeco: %1 kB"
