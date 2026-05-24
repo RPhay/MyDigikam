@@ -52,6 +52,9 @@ void TimeAdjustList::setStatus(const QUrl& url,
                                const QDateTime& org,
                                const QDateTime& adj, int status)
 {
+    QString dateTimeFormat = getUserDateFormatString();
+    dateTimeFormat.append(QLatin1String(" hh:mm:ss"));
+
     DItemsListViewItem* const item = listView()->findItem(url);
 
     if (item)
@@ -89,7 +92,7 @@ void TimeAdjustList::setStatus(const QUrl& url,
 
         if (org.isValid())
         {
-            item->setText(TIMESTAMP_USED, asUserDateTime(org));
+            item->setText(TIMESTAMP_USED, org.toString(dateTimeFormat));
         }
         else
         {
@@ -98,7 +101,7 @@ void TimeAdjustList::setStatus(const QUrl& url,
 
         if (adj.isValid())
         {
-            item->setText(TIMESTAMP_UPDATED, asUserDateTime(adj));
+            item->setText(TIMESTAMP_UPDATED, adj.toString(dateTimeFormat));
         }
         else
         {
