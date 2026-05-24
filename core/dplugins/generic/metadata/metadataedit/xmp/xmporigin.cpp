@@ -86,19 +86,8 @@ XMPOrigin::XMPOrigin(QWidget* const parent)
 {
     QGridLayout* const grid = new QGridLayout(widget());
 
-    QString dateTimeFormat  = QLocale().dateTimeFormat(QLocale::ShortFormat);
-
-    if (!dateTimeFormat.contains(QLatin1String("yyyy")))
-    {
-        dateTimeFormat.replace(QLatin1String("yy"),
-                               QLatin1String("yyyy"));
-    }
-
-    if (!dateTimeFormat.contains(QLatin1String("ss")))
-    {
-        dateTimeFormat.replace(QLatin1String("mm"),
-                               QLatin1String("mm:ss"));
-    }
+    QString dateTimeFormat  = getUserDateFormatString();
+    dateTimeFormat.append(QLatin1String(" hh:mm:ss"));
 
     // --------------------------------------------------------
 
