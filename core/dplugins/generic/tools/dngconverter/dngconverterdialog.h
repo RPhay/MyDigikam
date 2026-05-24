@@ -52,7 +52,7 @@ private:
     void readSettings();
     void saveSettings();
 
-    void busy(bool busy);
+    void setBusy(bool busy);
 
     void processAll();
     void processed(const QUrl& url, const QString& tmpFile);

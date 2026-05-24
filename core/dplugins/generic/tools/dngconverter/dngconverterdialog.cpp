@@ -169,7 +169,7 @@ DNGConverterDialog::DNGConverterDialog(QWidget* const parent, DInfoInterface* co
     d->listView->setIface(d->iface);
     d->listView->loadImagesFromCurrentSelection();
 
-    busy(false);
+    setBusy(false);
     readSettings();
 }
 
@@ -279,7 +279,7 @@ void DNGConverterDialog::slotStartStop()
         if (d->fileList.empty())
         {
             QMessageBox::information(this, i18nc("@title:window", "DNG Converter"), i18n("The list does not contain any Raw files to process."));
-            busy(false);
+            setBusy(false);
             slotAborted();
             return;
         }
@@ -296,7 +296,7 @@ void DNGConverterDialog::slotStartStop()
     {
         d->fileList.clear();
         d->thread->cancel();
-        busy(false);
+        setBusy(false);
 
         d->listView->cancelProcess();
 
@@ -407,11 +407,11 @@ void DNGConverterDialog::processAll()
 
 void DNGConverterDialog::slotThreadFinished()
 {
-    busy(false);
+    setBusy(false);
     slotAborted();
 }
 
-void DNGConverterDialog::busy(bool busy)
+void DNGConverterDialog::setBusy(bool busy)
 {
     d->busy = busy;
 
@@ -535,7 +535,7 @@ void DNGConverterDialog::slotDNGConverterAction(const DigikamGenericDNGConverter
 
             case PROCESS:
             {
-                busy(true);
+                setBusy(true);
                 d->listView->processing(ad.fileUrl);
                 d->progressBar->progressStatusChanged(i18n("Processing %1", ad.fileUrl.fileName()));
                 break;
