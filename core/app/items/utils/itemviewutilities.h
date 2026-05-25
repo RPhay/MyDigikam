@@ -78,7 +78,8 @@ Q_SIGNALS:
 
 protected:
 
-    QWidget* m_widget = nullptr;
+    QWidget* m_widget      = nullptr;
+    int      m_lastAlbumId = -1;
 };
 
 } // namespace Digikam

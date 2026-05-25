@@ -132,7 +132,7 @@ BUGFIXES:
 102 --> 520577 - Navigating in thumbnails/preview uses 100% of main thread for 10-15 seconds on each selection change.
 103 --> 520510 - Date Format is inconsistent with settings.
 104 --> 514723 - File rename seems to be unable to detect existing files with name it wishes to assign, and that generates a conflict.
-104 -->
+104 --> 506349 - "Move To Album" default album.
 105 -->
 106 -->
 107 -->

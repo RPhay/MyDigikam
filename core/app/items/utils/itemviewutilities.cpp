@@ -229,7 +229,14 @@ void ItemViewUtilities::createNewAlbumForInfos(const QList<ItemInfo>& infos,
     QString header(i18n("<p>Please select the destination album from the digiKam library to "
                         "move the selected images into.</p>"));
 
-    Album* const album = AlbumSelectDialog::selectAlbum(m_widget, dynamic_cast<PAlbum*>(currentAlbum), header);
+    Album* select = AlbumManager::instance()->findAlbum(m_lastAlbumId);
+
+    if (select && (select->type() != Album::PHYSICAL))
+    {
+        select = currentAlbum;
+    }
+
+    Album* const album = AlbumSelectDialog::selectAlbum(m_widget, dynamic_cast<PAlbum*>(select), header);
 
     if (!album)
     {
@@ -242,6 +249,8 @@ void ItemViewUtilities::createNewAlbumForInfos(const QList<ItemInfo>& infos,
     {
         return;
     }
+
+    m_lastAlbumId = palbum->globalID();
 
     DIO::move(infos, palbum);
 }
