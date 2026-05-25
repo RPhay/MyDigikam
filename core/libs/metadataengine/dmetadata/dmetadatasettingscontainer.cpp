@@ -31,7 +31,7 @@ namespace Digikam
 
 static const struct NameSpaceDefinition
 {
-    NamespaceEntry::NamespaceType type;
+    NamespaceEntry::NamespaceType type    = NamespaceEntry::TAGS;
 
 #if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
 
