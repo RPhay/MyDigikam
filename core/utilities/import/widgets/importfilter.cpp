@@ -85,15 +85,15 @@ const QRegularExpression& Filter::regexp(const QString& wildcard)
     return filterHash[wildcard];
 }
 
-bool Filter::match(const QStringList& wildcards, const QString& name)
+bool Filter::match(const QStringList& wildcards, const QString& _name)
 {
     bool match = false;
 
     for (const QString& wildcard : std::as_const(wildcards))
     {
-        match = regexp(wildcard).match(name).hasMatch();
+        match = regexp(wildcard).match(_name).hasMatch();
 /*
-        qCDebug(DIGIKAM_IMPORTUI_LOG) << "**" << wildcard << name << match;
+        qCDebug(DIGIKAM_IMPORTUI_LOG) << "**" << wildcard << _name << match;
 */
         if (match)
         {

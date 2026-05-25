@@ -404,7 +404,7 @@ void BdEngineBackendPrivate::transactionFinished()
 /**
  * Set the wait flag to queryStatus. Typically, call this with Wait.
  */
-void BdEngineBackendPrivate::setQueryOperationFlag(BdEngineBackend::QueryOperationStatus status)
+void BdEngineBackendPrivate::setQueryOperationFlag(BdEngineBackend::QueryOperationStatus _status)
 {
     // Enforce lock order (first main mutex, second error lock mutex)
 
@@ -412,19 +412,19 @@ void BdEngineBackendPrivate::setQueryOperationFlag(BdEngineBackend::QueryOperati
 
     // this change must be done under errorLockMutex lock
 
-    errorLockOperationStatus = status;
-    operationStatus          = status;
+    errorLockOperationStatus = _status;
+    operationStatus          = _status;
 }
 
 /**
  * Set the wait flag to queryStatus and wake all waiting threads.
  * Typically, call wakeAll with status ExecuteNormal or AbortQueries.
  */
-void BdEngineBackendPrivate::queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status)
+void BdEngineBackendPrivate::queryOperationWakeAll(BdEngineBackend::QueryOperationStatus _status)
 {
     QMutexLocker l(&errorLockMutex);
-    operationStatus          = status;
-    errorLockOperationStatus = status;
+    operationStatus          = _status;
+    errorLockOperationStatus = _status;
     errorLockCondVar.wakeAll();
 }
 

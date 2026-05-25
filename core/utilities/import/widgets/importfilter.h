@@ -37,9 +37,11 @@ public:
     Filter()  = default;
     ~Filter() = default;
 
+public:
+
     QString toString();
     void    fromString(const QString& filter);
-    bool    match(const QStringList& wildcards, const QString& name);
+    bool    match(const QStringList& wildcards, const QString& _name);
     const   QRegularExpression& regexp(const QString& wildcard);
     const   QStringList& mimeWildcards(const QString& mime);
     bool    matchesCurrentFilter(const CamItemInfo& item);
@@ -47,7 +49,7 @@ public:
 public:
 
     QString                            name;
-    bool                               onlyNew  = false;
+    bool                               onlyNew              = false;
     QStringList                        fileFilter;
     QStringList                        pathFilter;
     QStringList                        ignoreNames;

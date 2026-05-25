@@ -95,8 +95,8 @@ public:
     bool checkRetrySQLiteLockError(int retries);
     bool checkOperationStatus();
     bool handleWithErrorHandler(const QSqlQuery* const query);
-    void setQueryOperationFlag(BdEngineBackend::QueryOperationStatus status);
-    void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus status);
+    void setQueryOperationFlag(BdEngineBackend::QueryOperationStatus _status);
+    void queryOperationWakeAll(BdEngineBackend::QueryOperationStatus _status);
 
     /**
      * called by DbEngineErrorHandler, implementing DbEngineErrorAnswer.
