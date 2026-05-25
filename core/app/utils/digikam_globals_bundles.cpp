@@ -188,6 +188,7 @@ QProcessEnvironment adjustedEnvironmentForAppImage()
     }
     else
     {
+        // cppcheck-suppress knownConditionTrueFalse
         if (isRunningOnMacOS())
         {
 
@@ -554,6 +555,7 @@ void setMacOSEnvironment()
 {
     // Safety check
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (isRunningOnMacOS())
     {
 

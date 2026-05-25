@@ -335,6 +335,7 @@ bool BdEngineBackendPrivate::needToConsultUserForError(const QSqlQuery&) const
 
 bool BdEngineBackendPrivate::needToHandleWithErrorHandler(const QSqlQuery& query) const
 {
+    // cppcheck-suppress knownConditionTrueFalse
     return (isConnectionError(query) || needToConsultUserForError(query));
 }
 
@@ -470,6 +471,7 @@ bool BdEngineBackendPrivate::handleWithErrorHandler(const QSqlQuery* const query
                                                Q_ARG(QSqlError, lastError),
                                                Q_ARG(QString, lastQuery));
         }
+        // cppcheck-suppress knownConditionTrueFalse
         else if (needToConsultUserForError(*query))
         {
             called = QMetaObject::invokeMethod(errorHandler, "consultUserForError",
