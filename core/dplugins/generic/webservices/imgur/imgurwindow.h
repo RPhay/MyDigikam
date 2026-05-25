@@ -61,7 +61,7 @@ public Q_SLOTS:
 
     // ImgurTalker callbacks
 
-    void slotApiAuthorized(bool success, const QString& username);
+    void slotApiAuthorized(bool success, const QString& userName);
     void slotApiAuthError(const QString& msg);
     void slotApiProgress(unsigned int percent, const ImgurTalkerAction& action);
     void slotApiRequestPin(const QUrl& url);

@@ -36,20 +36,20 @@ class BracketStackItem : public QTreeWidgetItem
 public:
 
     explicit BracketStackItem(QTreeWidget* const parent);
-    ~BracketStackItem()                                 override = default;
+    ~BracketStackItem()                                   override = default;
 
-    void setUrl(const QUrl& url);
-    const QUrl& url() const;
+    void setUrl(const QUrl& _url);
+    const QUrl& url()                               const;
 
     void setOn(bool b);
-    bool isOn() const;
+    bool isOn()                                     const;
 
     void setThumbnail(const QPixmap& pix);
     void setExposure(const QString& exp);
 
 private:
 
-    bool operator< (const QTreeWidgetItem& other) const override;
+    bool operator< (const QTreeWidgetItem& other)   const override;
 
 private:
 

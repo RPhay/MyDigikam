@@ -45,6 +45,8 @@ public:
 
     Private() = default;
 
+public:
+
     ImgurImagesList* list               = nullptr;
     ImgurTalker*     api                = nullptr;
     QPushButton*     forgetButton       = nullptr;
@@ -221,13 +223,14 @@ void ImgurWindow::slotCancel()
     d->api->cancelAllWork();
 }
 
-void ImgurWindow::slotApiAuthorized(bool success, const QString& username)
+void ImgurWindow::slotApiAuthorized(bool success, const QString& userName)
 {
     if (success)
     {
-        d->username = username;
+        d->username = userName;
         d->userLabel->setText(d->username);
         d->forgetButton->setEnabled(true);
+
         return;
     }
 

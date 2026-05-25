@@ -38,12 +38,13 @@ BracketStackItem::BracketStackItem(QTreeWidget* const parent)
 {
     setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
     setCheckState(0, Qt::Unchecked);
-    setThumbnail(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(treeWidget()->iconSize().width(), QIcon::Disabled));
+    setThumbnail(QIcon::fromTheme(QLatin1String("view-preview"))
+                 .pixmap(treeWidget()->iconSize().width(), QIcon::Disabled));
 }
 
-void BracketStackItem::setUrl(const QUrl& url)
+void BracketStackItem::setUrl(const QUrl& _url)
 {
-    m_url = url;
+    m_url = _url;
     setText(1, m_url.fileName());
 }
 
@@ -215,7 +216,8 @@ void BracketStackList::slotThumbnail(const LoadingDescription& desc, const QPixm
         {
             if (pix.isNull())
             {
-                item->setThumbnail(QIcon::fromTheme(QLatin1String("view-preview")).pixmap(iconSize().width(), QIcon::Disabled));
+                item->setThumbnail(QIcon::fromTheme(QLatin1String("view-preview"))
+                                   .pixmap(iconSize().width(), QIcon::Disabled));
             }
             else
             {

@@ -40,6 +40,8 @@ public:
 
     Private() = default;
 
+public:
+
     Qt::CheckState          isPublic        = Qt::Unchecked;
     Qt::CheckState          isFamily        = Qt::Unchecked;
     Qt::CheckState          isFriends       = Qt::Unchecked;
@@ -451,6 +453,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                    isPublic        = true;
     bool                    isFamily        = true;
     bool                    isFriends       = true;
@@ -562,12 +566,12 @@ void FlickrListViewItem::toggled()
     setPublic(checkState(static_cast<DItemsListView::ColumnType>(FlickrList::PUBLIC)));
 }
 
+/**
+ * Set the public status of the entry. If public is true, hide the
+ * family and friends checkboxes, otherwise, make them appear.
+ */
 void FlickrListViewItem::setPublic(bool status)
 {
-    /*
-     * Set the public status of the entry. If public is true, hide the
-     * family and friends checkboxes, otherwise, make them appear.
-     */
 
     // Set the status.
 
@@ -607,10 +611,11 @@ void FlickrListViewItem::setPublic(bool status)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Public status set to" << d->isPublic;
 }
 
+/**
+ * Set the family status.
+ */
 void FlickrListViewItem::setFamily(bool status)
 {
-    /* Set the family status. */
-
     d->isFamily = status;
 
     if (data(FlickrList::FAMILY, Qt::CheckStateRole) != QVariant())
@@ -621,10 +626,11 @@ void FlickrListViewItem::setFamily(bool status)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Family status set to" << d->isFamily;
 }
 
+/**
+ * Set the friend status.
+ */
 void FlickrListViewItem::setFriends(bool status)
 {
-    /* Set the family status. */
-
     d->isFriends = status;
 
     if (data(FlickrList::FRIENDS, Qt::CheckStateRole) != QVariant())
@@ -635,37 +641,41 @@ void FlickrListViewItem::setFriends(bool status)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Friends status set to" << d->isFriends;
 }
 
-void FlickrListViewItem::setSafetyLevel(FlickrList::SafetyLevel safetyLevel)
+void FlickrListViewItem::setSafetyLevel(FlickrList::SafetyLevel _safetyLevel)
 {
-    d->safetyLevel = safetyLevel;
-    setData(FlickrList::SAFETYLEVEL, Qt::DisplayRole, QVariant(safetyLevel));
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Safety level set to" << safetyLevel;
+    d->safetyLevel = _safetyLevel;
+    setData(FlickrList::SAFETYLEVEL, Qt::DisplayRole, QVariant(_safetyLevel));
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Safety level set to" << _safetyLevel;
 }
 
-void FlickrListViewItem::setContentType(FlickrList::ContentType contentType)
+void FlickrListViewItem::setContentType(FlickrList::ContentType _contentType)
 {
-    d->contentType = contentType;
-    setData(FlickrList::CONTENTTYPE, Qt::DisplayRole, QVariant(contentType));
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Content type set to" << contentType;
+    d->contentType = _contentType;
+    setData(FlickrList::CONTENTTYPE, Qt::DisplayRole, QVariant(_contentType));
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Content type set to" << _contentType;
 }
 
+/**
+ * Return whether the photo is public.
+ */
 bool FlickrListViewItem::isPublic() const
 {
-    /* Return whether the photo is public. */
-
     return d->isPublic;
 }
 
+/**
+ * Return whether the photo is accessible for family.
+ */
 bool FlickrListViewItem::isFamily() const
 {
-    /* Return whether the photo is accessible for family. */
-
     return d->isFamily;
 }
 
+/**
+ * Return whether the photo is accessible for friends.
+ */
 bool FlickrListViewItem::isFriends() const
 {
-    /* Return whether the photo is accessible for friends. */
 
     return d->isFriends;
 }
