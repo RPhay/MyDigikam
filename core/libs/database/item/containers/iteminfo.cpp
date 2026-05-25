@@ -183,9 +183,9 @@ ItemInfo ItemInfo::fromLocalFile(const QString& path)
     return fromLocationAlbumAndName(location.id(), _album, _name);
 }
 
-ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album, const QString& name)
+ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album, const QString& _name)
 {
-    if (!locationId || album.isEmpty() || name.isEmpty())
+    if (!locationId || album.isEmpty() || _name.isEmpty())
     {
         return ItemInfo();
     }
@@ -193,7 +193,8 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
     ItemInfo info;
 
     // Cached ?
-    info.m_data = ItemInfoStatic::cache()->infoForPath(locationId, album, name);
+
+    info.m_data = ItemInfoStatic::cache()->infoForPath(locationId, album, _name);
 
     if (info.m_data && info.m_data->statusChanged)
     {
@@ -203,11 +204,11 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
     if (!info.m_data)
     {
 
-        ItemShortInfo shortInfo  = CoreDbAccess().db()->getItemShortInfo(locationId, album, name);
+        ItemShortInfo shortInfo  = CoreDbAccess().db()->getItemShortInfo(locationId, album, _name);
 
         if (!shortInfo.id)
         {
-            qCWarning(DIGIKAM_DATABASE_LOG) << "No itemShortInfo could be retrieved from the database for image" << name;
+            qCWarning(DIGIKAM_DATABASE_LOG) << "No itemShortInfo could be retrieved from the database for image" << _name;
 
             return info;
         }

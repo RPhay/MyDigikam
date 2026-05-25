@@ -62,14 +62,14 @@ QString ItemInfo::uuid() const
     return CoreDbAccess().db()->getImageUuid(m_data->id);
 }
 
-void ItemInfo::setUuid(const QString& uuid)
+void ItemInfo::setUuid(const QString& _uuid)
 {
     if (!m_data)
     {
         return;
     }
 
-    CoreDbAccess().db()->setImageUuid(m_data->id, uuid);
+    CoreDbAccess().db()->setImageUuid(m_data->id, _uuid);
 }
 
 HistoryImageId ItemInfo::historyImageId() const

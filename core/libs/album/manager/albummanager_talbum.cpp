@@ -339,11 +339,11 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
     return album;
 }
 
-AlbumList AlbumManager::findOrCreateTAlbums(const QStringList& tagPaths)
+AlbumList AlbumManager::findOrCreateTAlbums(const QStringList& _tagPaths)
 {
     // find tag ids for tag paths in list, create if they don't exist
 
-    QList<int> tagIDs = TagsCache::instance()->getOrCreateTags(tagPaths);
+    QList<int> tagIDs = TagsCache::instance()->getOrCreateTags(_tagPaths);
 
     // create TAlbum objects for the newly created tags
 

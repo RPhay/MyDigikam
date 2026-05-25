@@ -363,7 +363,7 @@ bool ItemInfo::isRemoved() const
     return false;
 }
 
-void ItemInfo::setVisible(bool isVisible)
+void ItemInfo::setVisible(bool _isVisible)
 {
     if (!m_data)
     {
@@ -376,7 +376,7 @@ void ItemInfo::setVisible(bool isVisible)
         return;
     }
 
-    CoreDbAccess().db()->setItemStatus(m_data->id, isVisible ? DatabaseItem::Visible : DatabaseItem::Hidden);
+    CoreDbAccess().db()->setItemStatus(m_data->id, _isVisible ? DatabaseItem::Visible : DatabaseItem::Hidden);
 }
 
 void ItemInfo::setManualOrder(qlonglong value)
@@ -427,36 +427,36 @@ void ItemInfo::setName(const QString& newName)
     CoreDbAccess().db()->renameItem(m_data->id, newName);
 }
 
-void ItemInfo::setDateTime(const QDateTime& dateTime)
+void ItemInfo::setDateTime(const QDateTime& _dateTime)
 {
-    if (!m_data || !dateTime.isValid())
+    if (!m_data || !_dateTime.isValid())
     {
         return;
     }
 
     {
         ItemInfoWriteLocker lock;
-        m_data->creationDate       = dateTime;
+        m_data->creationDate       = _dateTime;
         m_data->creationDateCached = true;
     }
 
-    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << dateTime, DatabaseFields::CreationDate);
+    CoreDbAccess().db()->changeItemInformation(m_data->id, QVariantList() << _dateTime, DatabaseFields::CreationDate);
 }
 
-void ItemInfo::setModDateTime(const QDateTime& dateTime)
+void ItemInfo::setModDateTime(const QDateTime& _dateTime)
 {
-    if (!m_data || !dateTime.isValid())
+    if (!m_data || !_dateTime.isValid())
     {
         return;
     }
 
     {
         ItemInfoWriteLocker lock;
-        m_data->modificationDate       = dateTime;
+        m_data->modificationDate       = _dateTime;
         m_data->modificationDateCached = true;
     }
 
-    CoreDbAccess().db()->setItemModificationDate(m_data->id, dateTime);
+    CoreDbAccess().db()->setItemModificationDate(m_data->id, _dateTime);
 }
 
 ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const

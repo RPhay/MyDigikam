@@ -110,7 +110,7 @@ public:
      * @brief Create an ItemInfo object from the given combination, which
      * must be cleaned and corresponding to the values in the database
      */
-    static ItemInfo fromLocationAlbumAndName(int locationId, const QString& album, const QString& name);
+    static ItemInfo fromLocationAlbumAndName(int locationId, const QString& album, const QString& _name);
 
     ItemInfo& operator=(const ItemInfo& info);
 
@@ -278,7 +278,7 @@ public:
      * @brief Set the date and time (write it to database)
      * @param dateTime the new date and time.
      */
-    void setDateTime(const QDateTime& dateTime);
+    void setDateTime(const QDateTime& _dateTime);
 
     /**
      * @brief Set the modification date and time (write it to database)
@@ -299,7 +299,7 @@ public:
     /**
      * @brief Set the visibility flag - triggers between Visible and Hidden
      */
-    void setVisible(bool isVisible);
+    void setVisible(bool _isVisible);
 
     /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
@@ -358,7 +358,7 @@ public:
      * @brief Retrieves and sets this' item UUID
      */
     QString uuid()                                                                      const;
-    void setUuid(const QString& uuid);
+    void setUuid(const QString& _uuid);
 
     /**
      * @brief Constructs a HistoryImageId with all available information for this item.

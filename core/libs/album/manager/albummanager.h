@@ -573,10 +573,10 @@ public:
      * A list of tag paths is supplied.
      * If no corresponding TAlbum exists, a new one will be created.
      *
-     * @param tagPaths A list of tag paths
+     * @param _tagPaths A list of tag paths
      * @returns A list of all TAlbums for the list (already existing or newly created)
      */
-    AlbumList findOrCreateTAlbums(const QStringList& tagPaths);
+    AlbumList findOrCreateTAlbums(const QStringList& _tagPaths);
 
     /**
      * Delete a TAlbum.

@@ -94,9 +94,9 @@ public:
      */
     void setCreator(const QString& creator, ReplaceMode mode = ReplaceAllEntries);
 
-    void setAuthor(const QString& author, ReplaceMode mode = ReplaceAllEntries)
+    void setAuthor(const QString& _author, ReplaceMode mode = ReplaceAllEntries)
     {
-        setCreator(author, mode);
+        setCreator(_author, mode);
     }
 
     void setByLine(const QString& byline, ReplaceMode mode = ReplaceAllEntries)
@@ -122,9 +122,9 @@ public:
 
     void setProvider(const QString& provider);
 
-    void setCredit(const QString& credit)
+    void setCredit(const QString& _credit)
     {
-        setProvider(credit);
+        setProvider(_credit);
     }
 
     void removeProvider();

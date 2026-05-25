@@ -1133,15 +1133,15 @@ protected:
     }
 
     void treeFromPredecessorsRecursive(const Vertex& v,
-                                       QList<Vertex>& vertices,
+                                       QList<Vertex>& _vertices,
                                        const VertexVertexMap& predecessors) const
     {
         QList<Vertex> children = predecessors.keys(v);
-        vertices << children;
+        _vertices << children;
 
         for (const Vertex& child : std::as_const(children))
         {
-            treeFromPredecessorsRecursive(child, vertices, predecessors);
+            treeFromPredecessorsRecursive(child, _vertices, predecessors);
         }
     }
 
@@ -1686,13 +1686,13 @@ protected:
      *  Depending on MeaningOfDirection, the ids are listed inverted, from target to root.
      */
     QList<Vertex> listPath(const Vertex& root,
-                           const Vertex& target,
+                           const Vertex& _target,
                            const VertexVertexMap& predecessors,
                            MeaningOfDirection dir = ParentToChild) const
     {
         QList<Vertex> verticesLst;
 
-        for (Vertex v = root ; v != target ; v = predecessors.value(v))
+        for (Vertex v = root ; v != _target ; v = predecessors.value(v))
         {
 /*
             qDebug() << "Adding waypoint" << id(v);
