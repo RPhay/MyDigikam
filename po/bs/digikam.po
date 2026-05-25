@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-24 00:42+0000\n"
+"POT-Creation-Date: 2026-05-25 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -59,21 +59,21 @@ msgstr ""
 "X-Generator: Launchpad (build 17341)\n"
 "X-Launchpad-Export-Date: 2015-02-15 06:10+0000\n"
 
-#: core/app/date/ddateedit.cpp:496
+#: core/app/date/ddateedit.cpp:489
 #, fuzzy, kde-format
 #| msgid "tomorrow"
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "sutra"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:490
 #, fuzzy, kde-format
 #| msgid "today"
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "danas"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:491
 #, fuzzy, kde-format
 #| msgid "yesterday"
 msgctxt "@item: date keyword"
@@ -124,7 +124,7 @@ msgstr "Odaberi stavku"
 msgid "Select the current day"
 msgstr "Počni sa trenutnom slikom"
 
-#: core/app/date/ddatepicker.cpp:574
+#: core/app/date/ddatepicker.cpp:560
 #, fuzzy, kde-format
 #| msgid "Close-up"
 msgctxt "@action:button"
@@ -1192,7 +1192,7 @@ msgstr "%1 (%2)"
 #: core/app/items/utils/tooltipfiller.cpp:104
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
@@ -3196,7 +3196,7 @@ msgstr "Sirove slike:"
 msgid "All supported files (%1)"
 msgstr "RAW  fajl slike (%1)"
 
-#: core/app/utils/digikam_globals.cpp:320
+#: core/app/utils/digikam_globals.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "date format settings"
 #| msgid "format settings"
@@ -3861,7 +3861,7 @@ msgid "Author:"
 msgstr "Autor"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:53
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
 #, kde-format
 msgid "Location:"
 msgstr "Lokacija:"
@@ -4946,7 +4946,7 @@ msgstr "Jedinica"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:258
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
@@ -13368,8 +13368,8 @@ msgstr[2] "<p>%1 znakova.</p>"
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:339
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:423
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:408
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:386
 #: core/libs/widgets/text/dtextedit.cpp:398
@@ -13870,34 +13870,34 @@ msgstr ""
 "b>oznake teksta označene sa (*) samo podržava printanje <b><a href='http://"
 "en.wikipedia.org/wiki/Ascii'>ASCII</a></b> znakovi.</b>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:79
 #, kde-format
 msgid "Creation date and time"
 msgstr "Datum i vrijeme stvaranja"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:80
 #, kde-format
 msgid "Creation sub-second"
 msgstr "Kreiranje sub-drugog"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "Sinhronizuj XMP datum kreiranja"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:92
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "Sinhronizuj IPTC datum stvaranja"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:107
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:123
 #, kde-format
 msgid "Set creation date to today"
 msgstr "Postavi datum kreiranja na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
@@ -13906,29 +13906,29 @@ msgstr ""
 "Postavite ovdje datum i vrijeme kreiranja slike. U ovom standardu to je "
 "datum i vrijeme kada je datoteka izmjenjena."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:105
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr ""
 "Postavite ovdje frakcije u sekundama za datum i vrijeme kreiranja slike."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:112
 #, kde-format
 msgid "Original date and time"
 msgstr "Originalni datum i vrijeme"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, kde-format
 msgid "Original sub-second"
 msgstr "Originalni sub-drugi"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:126
 #, kde-format
 msgid "Set original date to today"
 msgstr "Postavi originalni datum na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:128
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -13937,7 +13937,7 @@ msgstr ""
 "Postavite ovdje datum i vrijeme kad su podaci originalne slike generirani. "
 "Kod digitalne kamere datum i vrijeme slikanja su snimljeni."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:131
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
@@ -13946,24 +13946,24 @@ msgstr ""
 "Postavite ovdje frakcije sekundi za datum i vrijeme kada su originalni "
 "podaci slike generirani."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid "Digitization date and time"
 msgstr "Datum i vrijeme digitalizacije"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:139
 #, kde-format
 msgid "Digitization sub-second"
 msgstr "Digitalizacija sub-drugi"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:163
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:117
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:102
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "Postavi datum digitalizacije na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:154
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -13976,7 +13976,7 @@ msgstr ""
 "vrijeme i datoteka snimljena, Originalni i Digitalizacioni datum i vrijeme "
 "će imati isti sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:159
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
@@ -14986,10 +14986,10 @@ msgstr "&Zamijeni"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:113
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:257
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:90
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:103
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, fuzzy, kde-format
@@ -15593,18 +15593,18 @@ msgstr "Ritzaus Bureau NITF version (RBNITF DTD)"
 msgid "Corel Draw [*.CDR]"
 msgstr "Corel Draw [*.CDR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:143
 #, kde-format
 msgid "Destination:"
 msgstr "Odredište:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:149
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope destination"
 msgstr "Odaberite ovdje prioritet koverte."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the envelope destination. This field is limited to 1024 ASCII "
@@ -15614,12 +15614,12 @@ msgid ""
 msgstr ""
 "Unesite odredište koverte. Ovo polje je ograničeno sa 1024 ASCII znakova."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:155
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "U.N.O ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -15629,7 +15629,7 @@ msgstr ""
 "Postavite ovdje Jedinstveno Ime od Objekta Identifikatora. Ovo polje je "
 "ograničeno sa 80 ASCII znakova."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:160
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -15641,18 +15641,18 @@ msgstr ""
 "Postavite ovdje Jedinstveno Ime od Objekta Identifikatora. Ovo polje je "
 "ograničeno sa 80 ASCII znakova."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:165
 #, kde-format
 msgid "Product ID:"
 msgstr "Identifikacijski broj produkta:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the product identifier"
 msgstr "Postavi ovdje provajdera sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the product identifier. This field is limited to 32 ASCII "
@@ -15663,18 +15663,18 @@ msgstr ""
 "Postavite ovdje identifikator produkta. Ovo polje je ograničeno sa 32 ASCII "
 "znakova."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
 #, kde-format
 msgid "Service ID:"
 msgstr "Identifikacijski broj servisa:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, fuzzy, kde-format
 #| msgid "Set here the new image width in pixels."
 msgid "Set here the service identifier"
 msgstr "Postavite ovdje novu širinu slike u pikselima."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the service identifier. This field is limited to 10 ASCII "
@@ -15685,18 +15685,18 @@ msgstr ""
 "Postavite ovdje identifikator servisa. Ovo polje je ograničeno sa 10 ASCII "
 "znakova."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
 #, kde-format
 msgid "Envelope ID:"
 msgstr "Identifikacijski broj konverte:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope identifier"
 msgstr "Odaberite ovdje prioritet koverte."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the envelope identifier. This field is limited to 8 ASCII "
@@ -15707,86 +15707,86 @@ msgstr ""
 "Postavite ovdje identifikator koverte. Ovo polje je ograničeno sa 8 ASCII "
 "znakova."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:163
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritet:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "0: Nikakav"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:198
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "1: Visoko"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "5: Normalno"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr "8: Nisko"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: Korisnički definisano"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:207
 #, kde-format
 msgid "Select here the envelope priority."
 msgstr "Odaberite ovdje prioritet koverte."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "Format:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "Odaberite ovdje format datoteke koverte."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Sent date:"
 msgstr "Datum slanja:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:229
 #, kde-format
 msgid "Sent time:"
 msgstr "Datum slanja:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:240
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "Postavi datum slanja koverte na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:242
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "Postavite ovdje datum kad je servis poslao materijal."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:243
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "Postavite ovdje vrijeme kad je servis poslao materijal."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, fuzzy, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "Postavite ovdje vrijeme kad je servis poslao materijal."
@@ -15811,78 +15811,78 @@ msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr ""
 "Unesite ovdje novu ključnu riječ. Ovo polje je ograničeno sa 64 ASCII znaka."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:94
 #, kde-format
 msgid "Digitization date"
 msgstr "Datum digitalizacije"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:99
 #, kde-format
 msgid "Digitization time"
 msgstr "Vrijeme digitalizacije"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:119
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:104
 #, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "Postavi ovdje datum kreiranja digitalnog prikaza."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:114
 #, kde-format
 msgid "Set here the creation time of digital representation."
 msgstr "Postavi ovdje vrijeme kreiranja digitalnog prikaza."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:106
 #, fuzzy, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "Postavi ovdje vrijeme kreiranja digitalnog prikaza."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
 #, kde-format
 msgid "Creation date"
 msgstr "Datum stvaranja"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:124
 #, kde-format
 msgid "Creation time"
 msgstr "Vrijeme stvaranja"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:119
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif creation date"
 msgstr "Sinhronizuj EXIF datum stvaranja"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
 #, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "Postavi datum kreiranja intelektualnog sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:141
 #, kde-format
 msgid "Set here the creation time of intellectual content."
 msgstr "Postavi vrijeme kreiranja intelektualnog sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:138
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:146
 #, fuzzy, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "Postavi vrijeme kreiranja intelektualnog sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:151
 #, kde-format
 msgid "Set here the full country name referenced by the content."
 msgstr "Postavi ovdje puno ime države na koje upućuje sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:155
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:125
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
 #: core/libs/template/templatepanel.cpp:217
 #: core/libs/template/templatepanel.cpp:281
 #: core/libs/template/templateviewer.cpp:132
@@ -15891,13 +15891,13 @@ msgstr "Postavi ovdje puno ime države na koje upućuje sadržaj."
 msgid "City:"
 msgstr "Grad:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:159
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the city of the content"
 msgstr "Odaberite ovdje tip scene za ovaj sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:160
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the city of content origin. This field is limited to 32 ASCII "
@@ -15908,21 +15908,21 @@ msgstr ""
 "Postavi ovdje grad gdje je ovaj sadržaj nastao. Ovo polje je ograničeno sa "
 "32 ASCII znaka."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:172
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:160
 #: core/libs/template/templatepanel.cpp:227
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "Podlokacija:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content location"
 msgstr "Postavi ovdje provajdera sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the content location within city. This field is limited to 32 "
@@ -15934,9 +15934,9 @@ msgstr ""
 "Postavi ovdje sadržaj lokacije unutar grada. Ovo polje je ograničeno sa 32 "
 "ASCII znaka."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
 #: core/libs/template/templatepanel.cpp:237
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -15944,13 +15944,13 @@ msgstr ""
 msgid "State/Province:"
 msgstr "Država/provincija:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:179
 #, fuzzy, kde-format
 #| msgid "Select here the scene type of the content."
 msgid "Set here the Province or State of the content"
 msgstr "Odaberite ovdje tip scene za ovaj sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Province or State of content origin. This field is limited "
@@ -15962,9 +15962,9 @@ msgstr ""
 "Postavite ovdje Pokrajinu ili Državu iz koje je sadržaj. Ovo polje je "
 "oganičeno sa 32 ASCII znaka."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:135
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
 #: core/libs/template/templatepanel.cpp:247
 #: core/libs/template/templatepanel.cpp:291
 #: core/libs/template/templateviewer.cpp:138
@@ -15973,42 +15973,42 @@ msgstr ""
 msgid "Country:"
 msgstr "Država:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:194
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:176
 #, kde-format
 msgid "Select here country name of content origin."
 msgstr "Postavite ovdje ime države iz koje je sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:99
 #, kde-format
 msgid "Release date"
 msgstr "Datum izdavanja"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:100
 #, kde-format
 msgid "Release time"
 msgstr "Vrijeme izdavanja"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:111
 #, kde-format
 msgid "Set release date to today"
 msgstr "Postavite datum izdavanja na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:113
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr ""
 "Postavite ovdje najranije namjenjen upotrebljiv datum intelektualnog "
 "sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:115
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr ""
 "Postavite ovdje najranije namjenjeno upotrebljivo vrijeme intelektualnog "
 "sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:117
 #, fuzzy, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
@@ -16016,139 +16016,139 @@ msgstr ""
 "Postavite ovdje najranije namjenjeno upotrebljivo vrijeme intelektualnog "
 "sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
 #, kde-format
 msgid "Expiration date"
 msgstr "Datum isteka"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:125
 #, kde-format
 msgid "Expiration time"
 msgstr "Vrijeme isteka"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:136
 #, kde-format
 msgid "Set expiration date to today"
 msgstr "Postavi datum isteka na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:138
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr "Postavite ovdje najkasnije namjenjen datum intelektualnog sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:140
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
 msgstr ""
 "Postavite ovdje najkasnije namjenjeno upotrebljivo vrijeme intelektualnog "
 "sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:142
 #, fuzzy, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr ""
 "Postavite ovdje najkasnije namjenjeno upotrebljivo vrijeme intelektualnog "
 "sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
 #, kde-format
 msgid "Language:"
 msgstr "Jezik:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:159
 #, kde-format
 msgid "Select here the language of content."
 msgstr "Odaberite ovdje jezik sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:165
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
 msgstr "0: Nikakav"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:166
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "1: High"
 msgstr "1: Visoko"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "5: Normal"
 msgstr "5: Normalno"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:173
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "8: Low"
 msgstr "8: Nisko"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:175
 #, kde-format
 msgid "Select here the editorial urgency of content."
 msgstr "Postavite ovdje editorijalnu hitnost sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
 msgid "Cycle:"
 msgstr "Ciklus:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, fuzzy, kde-format
 #| msgid "Morning"
 msgctxt "@item: object cycle"
 msgid "Morning"
 msgstr "Jutro"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
 #, fuzzy, kde-format
 #| msgid "Afternoon"
 msgctxt "@item: object cycle"
 msgid "Afternoon"
 msgstr "Popodne"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:183
 #, fuzzy, kde-format
 #| msgid "Evening"
 msgctxt "@item: object cycle"
 msgid "Evening"
 msgstr "Veče"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:184
 #, fuzzy, kde-format
 #| msgid "Select here the editorial cycle of content."
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
 msgstr "Postavite ovdje editorijalni ciklus sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content type"
 msgstr "Postavi ovdje provajdera sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:194
 #, kde-format
 msgid "News"
 msgstr "Novosti"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Data"
 msgstr "Podaci"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:196
 #, kde-format
 msgid "Advisory"
 msgstr "Savjeti"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, kde-format
 msgid "Select here the editorial type of content."
 msgstr "Postavite ovdje editorijalni tip sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the editorial type description of content. This field is limited "
@@ -16160,18 +16160,18 @@ msgstr ""
 "Postavite ovdje editorijalni tip opisa sadržaja. Ovo polje je ograničeno sa "
 "64 ASCII znaka."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
 #, kde-format
 msgid "Reference:"
 msgstr "Referenca:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:210
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content reference"
 msgstr "Postavi ovdje provajdera sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the original content transmission reference. This field is "
@@ -16622,35 +16622,35 @@ msgstr "Svojstva"
 msgid "Set here a new keyword"
 msgstr "Unesite ovdje novu ključnu riječ."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgid "Video date"
 msgstr "Video kodek"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:142
 #, fuzzy, kde-format
 #| msgid "Set creation date to today"
 msgid "Set video date to today"
 msgstr "Postavi datum kreiranja na danas"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
 #, fuzzy, kde-format
 #| msgid "Set here the creation date of intellectual content."
 msgid "Set here the video date of intellectual content."
 msgstr "Postavi datum kreiranja intelektualnog sadržaja."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
 #, kde-format
 msgid "Set here the content's city of origin."
 msgstr "Postavite ovdje grad odakle je sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:163
 #, kde-format
 msgid "Set here the content's location within the city."
 msgstr "Postavite ovdje lokaciju iz grada odakle je sadržaj."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:170
 #, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr "Postavite ovdje Pokrajinu ili Državu odakle je sadržaj."
@@ -17432,38 +17432,38 @@ msgstr "Vremenske oznake"
 msgid "Status"
 msgstr "Status"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:65
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to update metadata timestamp"
 msgstr "Neuspjelo snimanje oznaka na dokumentu."
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:70
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to update file timestamp"
 msgstr "Neuspjelo spremanje datoteke: %1"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:75
 #, fuzzy, kde-format
 #| msgid "Apply Metadata Template"
 msgid "ExifTool reported an error"
 msgstr "Primijenite predložak metapodataka"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:85
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
 #, fuzzy, kde-format
 #| msgid "Quick Access List"
 msgid "Success"
 msgstr "Lista brzog pristupa"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:98
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:107
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:122
 #, kde-format
 msgid "Please wait ..."
 msgstr ""
@@ -37375,12 +37375,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "&Pomoć"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:263
 #, fuzzy, kde-format
 msgid "Relative Path"
 msgstr "Parket"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:268
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "Izbriši datoteku"

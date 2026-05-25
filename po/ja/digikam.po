@@ -31,7 +31,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-24 00:42+0000\n"
+"POT-Creation-Date: 2026-05-25 00:41+0000\n"
 "PO-Revision-Date: 2024-02-02 14:56-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -44,19 +44,19 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: core/app/date/ddateedit.cpp:496
+#: core/app/date/ddateedit.cpp:489
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "明日"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:490
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "今日"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:491
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "yesterday"
@@ -102,7 +102,7 @@ msgstr "年を選択"
 msgid "Select the current day"
 msgstr "現在の日付を選択"
 
-#: core/app/date/ddatepicker.cpp:574
+#: core/app/date/ddatepicker.cpp:560
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -1063,7 +1063,7 @@ msgstr "%1 (%2)"
 #: core/app/items/utils/tooltipfiller.cpp:104
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
@@ -2845,7 +2845,7 @@ msgstr "RAW 画像 (%1)"
 msgid "All supported files (%1)"
 msgstr "サポートされた全ファイル (%1)"
 
-#: core/app/utils/digikam_globals.cpp:320
+#: core/app/utils/digikam_globals.cpp:353
 #, fuzzy, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"
@@ -3495,7 +3495,7 @@ msgid "Author:"
 msgstr "作者"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:53
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
 #, kde-format
 msgid "Location:"
 msgstr "場所:"
@@ -4525,7 +4525,7 @@ msgstr "単位"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:258
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
@@ -12616,8 +12616,8 @@ msgstr[0] ""
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:339
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:423
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:408
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:386
 #: core/libs/widgets/text/dtextedit.cpp:398
@@ -13103,34 +13103,34 @@ msgstr ""
 "en.wikipedia.org/wiki/Ascii'>ASCII</a></b> 文字セットしか使えず、文字数にも制"
 "限があります。詳しくは各項目のヘルプを参照してください。</note></p>"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:79
 #, kde-format
 msgid "Creation date and time"
 msgstr "画像の作成日時"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:80
 #, fuzzy, kde-format
 msgid "Creation sub-second"
 msgstr "作成時刻のサブセック"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "XMP 作成日を同期"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:92
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "IPTC 作成日を同期"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:107
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:123
 #, kde-format
 msgid "Set creation date to today"
 msgstr "作成日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
@@ -13139,28 +13139,28 @@ msgstr ""
 "画像が作成された日時を設定します。この規格では、これはファイルが変更された日"
 "時になります。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:105
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr "画像が作成された時刻を秒単位まで設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:112
 #, kde-format
 msgid "Original date and time"
 msgstr "原画像の生成日時"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, fuzzy, kde-format
 msgid "Original sub-second"
 msgstr "原画像生成時刻のサブセック"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:126
 #, kde-format
 msgid "Set original date to today"
 msgstr "原画像の生成日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:128
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -13169,31 +13169,31 @@ msgstr ""
 "原画像データが生成された日時を設定します。デジタルスチルカメラの場合、これは"
 "写真が撮影された日時になります。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:131
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
 "image data was generated."
 msgstr "原画像が生成された時刻を秒単位まで設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid "Digitization date and time"
 msgstr "デジタルデータの作成日時"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:139
 #, fuzzy, kde-format
 msgid "Digitization sub-second"
 msgstr "デジタルデータ作成時刻のサブセック"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:163
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:117
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:102
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "デジタル化された日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:154
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -13205,7 +13205,7 @@ msgstr ""
 "メラで撮影され、同時にファイルに記録された場合、原画像の生成日時とデジタル"
 "データの作成日時は同じになります。"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:159
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
@@ -14185,10 +14185,10 @@ msgstr "置換(&R)"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:113
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:257
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:90
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:103
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, fuzzy, kde-format
@@ -14794,18 +14794,18 @@ msgstr "Ritzaus Bureau NITF version (RBNITF DTD)"
 msgid "Corel Draw [*.CDR]"
 msgstr "Corel Draw [*.CDR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:143
 #, kde-format
 msgid "Destination:"
 msgstr "送り先:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:149
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope destination"
 msgstr "エンベロープの優先度を選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter the envelope destination. This field is limited to 1024 ASCII "
@@ -14816,12 +14816,12 @@ msgstr ""
 "エンベロープの送り先を入力します。このフィールドは ASCII 文字に限ります "
 "(1024 文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:155
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "U.N.O ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -14831,7 +14831,7 @@ msgstr ""
 "オブジェクト識別子の一意名を設定します。このフィールドは ASCII 文字に限りま"
 "す (80 文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:160
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Unique Name of Object identifier. This field is limited to "
@@ -14843,18 +14843,18 @@ msgstr ""
 "オブジェクト識別子の一意名を設定します。このフィールドは ASCII 文字に限りま"
 "す (80 文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:165
 #, kde-format
 msgid "Product ID:"
 msgstr "プロダクト ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the product identifier"
 msgstr "コンテンツのプロバイダを設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the product identifier. This field is limited to 32 ASCII "
@@ -14865,18 +14865,18 @@ msgstr ""
 "プロダクトの識別子を設定します。このフィールドは ASCII 文字に限ります (32 文"
 "字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
 #, kde-format
 msgid "Service ID:"
 msgstr "サービス ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, fuzzy, kde-format
 #| msgid "Set here the new image width in pixels."
 msgid "Set here the service identifier"
 msgstr "画像の新しい幅をピクセル数で設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the service identifier. This field is limited to 10 ASCII "
@@ -14887,18 +14887,18 @@ msgstr ""
 "サービスの識別子を設定します。このフィールドは ASCII 文字に限ります (10 文字"
 "まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
 #, kde-format
 msgid "Envelope ID:"
 msgstr "エンベロープ ID:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, fuzzy, kde-format
 #| msgid "Select here the envelope priority."
 msgid "Set here the envelope identifier"
 msgstr "エンベロープの優先度を選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:190
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the envelope identifier. This field is limited to 8 ASCII "
@@ -14909,86 +14909,86 @@ msgstr ""
 "エンベロープの識別子を設定します。このフィールドは ASCII 文字に限ります (8 文"
 "字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:163
 #, kde-format
 msgid "Priority:"
 msgstr "優先度:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:198
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
 #, fuzzy, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "定義なし"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:207
 #, kde-format
 msgid "Select here the envelope priority."
 msgstr "エンベロープの優先度を選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "フォーマット:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "エンベロープのファイルフォーマットを選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Sent date:"
 msgstr "送信日付:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:229
 #, kde-format
 msgid "Sent time:"
 msgstr "送信時間:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:240
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "エンベロープの送信日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:242
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "サービスがマテリアルを送信した日を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:243
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "サービスがマテリアルを送信した時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, fuzzy, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "サービスがマテリアルを送信した時間を設定します。"
@@ -15014,78 +15014,78 @@ msgstr ""
 "新しいキーワードを入力します。このフィールドは ASCII 文字に限ります (64 文字"
 "まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:94
 #, kde-format
 msgid "Digitization date"
 msgstr "デジタル化された日"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:99
 #, kde-format
 msgid "Digitization time"
 msgstr "デジタル化された時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:119
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:104
 #, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "コンテンツがデジタル化された日付を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:114
 #, kde-format
 msgid "Set here the creation time of digital representation."
 msgstr "コンテンツがデジタル化された時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:106
 #, fuzzy, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "コンテンツがデジタル化された時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
 #, kde-format
 msgid "Creation date"
 msgstr "作成日"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:124
 #, kde-format
 msgid "Creation time"
 msgstr "作成時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:119
 #, fuzzy, kde-format
 #| msgid "Sync EXIF creation date"
 msgid "Sync Exif creation date"
 msgstr "Exif 作成日を同期"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
 #, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "知的コンテンツの作成日を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:141
 #, kde-format
 msgid "Set here the creation time of intellectual content."
 msgstr "知的コンテンツの作成時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:138
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:146
 #, fuzzy, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "知的コンテンツの作成時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:151
 #, kde-format
 msgid "Set here the full country name referenced by the content."
 msgstr "コンテンツが対象とする国の完全な名前を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:155
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:125
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
 #: core/libs/template/templatepanel.cpp:217
 #: core/libs/template/templatepanel.cpp:281
 #: core/libs/template/templateviewer.cpp:132
@@ -15094,13 +15094,13 @@ msgstr "コンテンツが対象とする国の完全な名前を設定します
 msgid "City:"
 msgstr "市:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:159
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of content."
 msgid "Set here the city of the content"
 msgstr "コンテンツの編集上のタイプを選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:160
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the city of content origin. This field is limited to 32 ASCII "
@@ -15111,21 +15111,21 @@ msgstr ""
 "コンテンツの起源の市を設定します。このフィールドは ASCII 文字に限ります (32 "
 "文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:172
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:160
 #: core/libs/template/templatepanel.cpp:227
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "町名:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content location"
 msgstr "コンテンツのプロバイダを設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:170
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the content location within city. This field is limited to 32 "
@@ -15137,9 +15137,9 @@ msgstr ""
 "コンテンツの起源の市の中の場所を設定します。このフィールドは ASCII 文字に限り"
 "ます (32 文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
 #: core/libs/template/templatepanel.cpp:237
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -15147,13 +15147,13 @@ msgstr ""
 msgid "State/Province:"
 msgstr "州 / 県:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:179
 #, fuzzy, kde-format
 #| msgid "Select here the editorial type of content."
 msgid "Set here the Province or State of the content"
 msgstr "コンテンツの編集上のタイプを選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the Province or State of content origin. This field is limited "
@@ -15165,9 +15165,9 @@ msgstr ""
 "コンテンツの起源の州または県を設定します。このフィールドは ASCII 文字に限りま"
 "す (32 文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:135
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
 #: core/libs/template/templatepanel.cpp:247
 #: core/libs/template/templatepanel.cpp:291
 #: core/libs/template/templateviewer.cpp:138
@@ -15176,172 +15176,172 @@ msgstr ""
 msgid "Country:"
 msgstr "国:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:194
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:176
 #, kde-format
 msgid "Select here country name of content origin."
 msgstr "コンテンツの起源の国を選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:99
 #, kde-format
 msgid "Release date"
 msgstr "公開日"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:100
 #, kde-format
 msgid "Release time"
 msgstr "公開時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:111
 #, kde-format
 msgid "Set release date to today"
 msgstr "公開日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:113
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr "知的コンテンツの使用を許可する期間の開始日を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:115
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr "知的コンテンツの使用を許可する期間の開始時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:117
 #, fuzzy, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr "知的コンテンツの使用を許可する期間の開始時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
 #, kde-format
 msgid "Expiration date"
 msgstr "失効日"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:125
 #, kde-format
 msgid "Expiration time"
 msgstr "失効時間"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:136
 #, kde-format
 msgid "Set expiration date to today"
 msgstr "失効日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:138
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr "知的コンテンツの使用を許可する期間の終了日を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:140
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
 msgstr "知的コンテンツの使用を許可する期間の終了時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:142
 #, fuzzy, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr "知的コンテンツの使用を許可する期間の終了時間を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
 #, kde-format
 msgid "Language:"
 msgstr "言語:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:159
 #, kde-format
 msgid "Select here the language of content."
 msgstr "コンテンツの言語を選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:165
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:166
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "1: High"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "5: Normal"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:173
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "8: Low"
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:175
 #, kde-format
 msgid "Select here the editorial urgency of content."
 msgstr "コンテンツの編集上の緊急度を選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
 msgid "Cycle:"
 msgstr "サイクル:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, fuzzy, kde-format
 #| msgid "Morning"
 msgctxt "@item: object cycle"
 msgid "Morning"
 msgstr "午前"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
 #, fuzzy, kde-format
 #| msgid "Afternoon"
 msgctxt "@item: object cycle"
 msgid "Afternoon"
 msgstr "午後"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:183
 #, fuzzy, kde-format
 #| msgid "Evening"
 msgctxt "@item: object cycle"
 msgid "Evening"
 msgstr "夜"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:184
 #, fuzzy, kde-format
 #| msgid "Select here the editorial cycle of content."
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
 msgstr "コンテンツの編集上のサイクルを選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content type"
 msgstr "コンテンツのプロバイダを設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:194
 #, kde-format
 msgid "News"
 msgstr "ニュース"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Data"
 msgstr "データ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:196
 #, kde-format
 msgid "Advisory"
 msgstr "アドバイザリ"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, kde-format
 msgid "Select here the editorial type of content."
 msgstr "コンテンツの編集上のタイプを選択します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the editorial type description of content. This field is limited "
@@ -15353,18 +15353,18 @@ msgstr ""
 "コンテンツの編集上のタイプの説明を設定します。このフィールドは ASCII 文字に限"
 "ります (64 文字まで)。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
 #, kde-format
 msgid "Reference:"
 msgstr "リファレンス:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:210
 #, fuzzy, kde-format
 #| msgid "Set here the content provider."
 msgid "Set here the content reference"
 msgstr "コンテンツのプロバイダを設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:212
 #, fuzzy, kde-format
 #| msgid ""
 #| "Set here the original owner of content. This field is limited to 32 ASCII "
@@ -15810,35 +15810,35 @@ msgstr "プロパティ"
 msgid "Set here a new keyword"
 msgstr "新しいキーワードを入力します。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
 #, fuzzy, kde-format
 #| msgid "Video codec"
 msgid "Video date"
 msgstr "動画コーデック"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:142
 #, fuzzy, kde-format
 #| msgid "Set creation date to today"
 msgid "Set video date to today"
 msgstr "作成日を今日に設定"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
 #, fuzzy, kde-format
 #| msgid "Set here the creation date of intellectual content."
 msgid "Set here the video date of intellectual content."
 msgstr "知的コンテンツの作成日を設定します。"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
 #, kde-format
 msgid "Set here the content's city of origin."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:163
 #, kde-format
 msgid "Set here the content's location within the city."
 msgstr ""
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:170
 #, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr ""
@@ -16586,37 +16586,37 @@ msgstr "タイムスタンプ"
 msgid "Status"
 msgstr "状態"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:65
 #, fuzzy, kde-format
 #| msgid "Failed to save tags to file."
 msgid "Failed to update metadata timestamp"
 msgstr "タグをファイルに保存できませんでした。"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:70
 #, fuzzy, kde-format
 #| msgid "Failed to save file: %1"
 msgid "Failed to update file timestamp"
 msgstr "ファイルの保存に失敗: %1"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:75
 #, fuzzy, kde-format
 #| msgid "Apply Metadata Template"
 msgid "ExifTool reported an error"
 msgstr "メタデータのテンプレートを適用"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:85
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
 #, kde-format
 msgid "Success"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:98
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:107
 #, kde-format
 msgid "not valid"
 msgstr ""
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:122
 #, kde-format
 msgid "Please wait ..."
 msgstr ""
@@ -35730,12 +35730,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "ヘルプ(&H)"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:263
 #, fuzzy, kde-format
 msgid "Relative Path"
 msgstr "寄木"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:268
 #, fuzzy, kde-format
 msgid "Deletion Time"
 msgstr "作成時間"

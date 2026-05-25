@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-24 00:42+0000\n"
+"POT-Creation-Date: 2026-05-25 00:41+0000\n"
 "PO-Revision-Date: 2026-05-10 19:32-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -29,19 +29,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 26.04.1\n"
 
-#: core/app/date/ddateedit.cpp:496
+#: core/app/date/ddateedit.cpp:489
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "tomorrow"
 msgstr "amanhã"
 
-#: core/app/date/ddateedit.cpp:497
+#: core/app/date/ddateedit.cpp:490
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "today"
 msgstr "hoje"
 
-#: core/app/date/ddateedit.cpp:498
+#: core/app/date/ddateedit.cpp:491
 #, kde-format
 msgctxt "@item: date keyword"
 msgid "yesterday"
@@ -87,7 +87,7 @@ msgstr "Selecione um ano"
 msgid "Select the current day"
 msgstr "Selecionar o dia atual"
 
-#: core/app/date/ddatepicker.cpp:574
+#: core/app/date/ddatepicker.cpp:560
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
@@ -1048,7 +1048,7 @@ msgstr "%1 (%2)"
 #: core/app/items/utils/tooltipfiller.cpp:104
 #: core/dplugins/editor/filters/blurfx/blurfxtool.cpp:92
 #: core/dplugins/editor/filters/distortionfx/distortionfxtool.cpp:95
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:172
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:208
 #: core/libs/dimg/filters/decorate/bordersettings.cpp:98
@@ -2836,7 +2836,7 @@ msgstr "Imagens RAW (%1)"
 msgid "All supported files (%1)"
 msgstr "Todos os arquivos suportados (%1)"
 
-#: core/app/utils/digikam_globals.cpp:320
+#: core/app/utils/digikam_globals.cpp:353
 #, kde-format
 msgctxt "@info: date format settings"
 msgid "format settings"
@@ -3474,7 +3474,7 @@ msgid "Author:"
 msgstr "Autor:"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:53
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
 #, kde-format
 msgid "Location:"
 msgstr "Localização:"
@@ -4569,7 +4569,7 @@ msgstr "Unidade"
 #: core/app/views/tableview/tableview_column_thumbnail.cpp:84
 #: core/dplugins/generic/webservices/imgur/imgurimageslist.cpp:53
 #: core/dplugins/generic/webservices/ipfs/ipfsimageslist.cpp:45
-#: core/libs/dtrash/dtrashitemmodel.cpp:265
+#: core/libs/dtrash/dtrashitemmodel.cpp:258
 #: core/utilities/geolocation/geoiface/items/gpsitemcontainer.cpp:677
 #, kde-format
 msgid "Thumbnail"
@@ -12719,8 +12719,8 @@ msgstr[1] "<p>%1 caracteres.</p>"
 #: core/dplugins/generic/metadata/metadataedit/dialog/multistringsedit.cpp:283
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:339
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:272
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:430
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:415
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:423
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:408
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:128
 #: core/libs/widgets/text/dplaintextedit.cpp:386
 #: core/libs/widgets/text/dtextedit.cpp:398
@@ -13203,34 +13203,34 @@ msgstr ""
 "org/wiki/EXIF'>Exif</a></b> marcadas com (*) somente suportam caracteres "
 "<b><a href='https://en.wikipedia.org/wiki/EXIF'>ASCII</a></b> imprimíveis."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:90
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:79
 #, kde-format
 msgid "Creation date and time"
 msgstr "Data e hora de criação"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:80
 #, kde-format
 msgid "Creation sub-second"
 msgstr "Subsegundo de criação"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:102
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:91
 #, kde-format
 msgid "Sync XMP creation date"
 msgstr "Sincronizar com a data de criação do XMP"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:92
 #, kde-format
 msgid "Sync IPTC creation date"
 msgstr "Sincronizar com a data de criação do IPTC"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:107
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:144
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:96
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:123
 #, kde-format
 msgid "Set creation date to today"
 msgstr "Sincronizar a data de criação como hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:114
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:103
 #, kde-format
 msgid ""
 "Set here the date and time of image creation. In this standard it is the "
@@ -13239,29 +13239,29 @@ msgstr ""
 "Defina aqui a data e hora de criação da imagem. Neste padrão, é a data e "
 "hora em que o arquivo foi alterado."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:105
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time of image creation."
 msgstr ""
 "Defina aqui as frações de segundos da data e hora de criação da imagem."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:112
 #, kde-format
 msgid "Original date and time"
 msgstr "Data e hora do original"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:113
 #, kde-format
 msgid "Original sub-second"
 msgstr "Subsegundo do original"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:137
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:126
 #, kde-format
 msgid "Set original date to today"
 msgstr "Definir a data original como hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:128
 #, kde-format
 msgid ""
 "Set here the date and time when the original image data was generated. For a "
@@ -13271,7 +13271,7 @@ msgstr ""
 "Para uma câmera digital, é a data e hora em os dados da imagem foram "
 "gravados."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:142
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:131
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the original "
@@ -13280,24 +13280,24 @@ msgstr ""
 "Defina aqui as frações de segundos para a data e hora em que os dados da "
 "imagem original foram gerados."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:138
 #, kde-format
 msgid "Digitization date and time"
 msgstr "Data e hora da digitalização"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:139
 #, kde-format
 msgid "Digitization sub-second"
 msgstr "Subsegundo da digitalização"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:163
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:117
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:152
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:110
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:102
 #, kde-format
 msgid "Set digitization date to today"
 msgstr "Definir a data da digitalização como hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:154
 #, kde-format
 msgid ""
 "Set here the date and time when the image was stored as digital data. If, "
@@ -13310,7 +13310,7 @@ msgstr ""
 "e o arquivo foi gravado ao mesmo tempo, então a data e hora do original e da "
 "digitalização terão o mesmo conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:159
 #, kde-format
 msgid ""
 "Set here the fractions of seconds for the date and time when the image was "
@@ -14265,10 +14265,10 @@ msgstr "Substitui&r"
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:102
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccontent.cpp:100
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccredits.cpp:113
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:257
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:90
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:212
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:224
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcstatus.cpp:103
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcsubjects.cpp:75
 #, kde-format
@@ -14795,33 +14795,33 @@ msgstr "Ritzaus Bureau NITF versão (RBNITF DTD)"
 msgid "Corel Draw [*.CDR]"
 msgstr "Corel Draw [*.CDR]"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:143
 #, kde-format
 msgid "Destination:"
 msgstr "Destino:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:149
 #, kde-format
 msgid "Set here the envelope destination"
 msgstr "Digite aqui o destino do envelope"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:150
 #, kde-format
 msgid ""
 "Enter the envelope destination. This field is limited to 1024 characters."
 msgstr "Digite o destino do envelope. Este campo é limitado a 1024 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:155
 #, kde-format
 msgid "U.N.O ID:"
 msgstr "ID do N.U.O:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:159
 #, kde-format
 msgid "Set here the Unique Name of Object identifier"
 msgstr "Digite aqui o identificador de Nome Único de Objeto (N.U.O.)"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:160
 #, kde-format
 msgid ""
 "Set here the Unique Name of Object identifier. This field is limited to 80 "
@@ -14830,17 +14830,17 @@ msgstr ""
 "Digite aqui o identificador de Nome Único de Objeto (N.U.O.). Este campo é "
 "limitado a 80 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:165
 #, kde-format
 msgid "Product ID:"
 msgstr "ID do produto:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:169
 #, kde-format
 msgid "Set here the product identifier"
 msgstr "Digite aqui o identificador do produto"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:170
 #, kde-format
 msgid ""
 "Set here the product identifier. This field is limited to 32 characters."
@@ -14848,17 +14848,17 @@ msgstr ""
 "Digite aqui o identificador do produto. Este campo é limitado a 32 "
 "caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:175
 #, kde-format
 msgid "Service ID:"
 msgstr "ID do serviço:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:179
 #, kde-format
 msgid "Set here the service identifier"
 msgstr "Digite aqui o identificador de serviço"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:180
 #, kde-format
 msgid ""
 "Set here the service identifier. This field is limited to 10 characters."
@@ -14866,17 +14866,17 @@ msgstr ""
 "Digite aqui o identificador do serviço. Este campo é limitado a 10 "
 "caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
 #, kde-format
 msgid "Envelope ID:"
 msgstr "ID do envelope:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:196
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, kde-format
 msgid "Set here the envelope identifier"
 msgstr "Digite aqui o identificador do envelope"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:190
 #, kde-format
 msgid ""
 "Set here the envelope identifier. This field is limited to 8 characters."
@@ -14884,86 +14884,86 @@ msgstr ""
 "Digite aqui o identificador do envelope. Este campo é limitado a 8 "
 "caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:195
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:163
 #, kde-format
 msgid "Priority:"
 msgstr "Prioridade:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:197
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "0: None"
 msgstr "0: Nenhuma"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:198
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "1: High"
 msgstr "1: Alta"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:209
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:202
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "5: Normal"
 msgstr "5: Normal"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:212
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:205
 #, kde-format
 msgctxt "priority for the envelope"
 msgid "8: Low"
 msgstr "8: Baixa"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:213
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:206
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:174
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "9: User-defined"
 msgstr "9: Definida pelo usuário"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:207
 #, kde-format
 msgid "Select here the envelope priority."
 msgstr "Selecione aqui a prioridade do envelope."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:218
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:211
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:84
 #: core/dplugins/generic/tools/htmlgallery/wizard/htmlimagesettingspage.cpp:165
 #, kde-format
 msgid "Format:"
 msgstr "Formato:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:231
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:224
 #, kde-format
 msgid "Select here envelope file format."
 msgstr "Selecione aqui o formato do arquivo de envelope."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:235
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:228
 #, kde-format
 msgid "Sent date:"
 msgstr "Data de envio:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:236
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:229
 #, kde-format
 msgid "Sent time:"
 msgstr "Hora do envio:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:247
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:240
 #, kde-format
 msgid "Set envelope sent date to today"
 msgstr "Defina a data de envio do envelope para hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:249
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:242
 #, kde-format
 msgid "Set here the date when the service sent the material."
 msgstr "Defina aqui a data em que o serviço enviou o material."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:250
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:243
 #, kde-format
 msgid "Set here the time when the service sent the material."
 msgstr "Defina aqui a hora em que o serviço enviou o material."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:251
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:244
 #, kde-format
 msgid "Set here the time zone when the service sent the material."
 msgstr "Defina aqui o fuso horário em que o serviço enviou o material."
@@ -14985,77 +14985,77 @@ msgid "Enter here a new keyword. This field is limited to 64 characters."
 msgstr ""
 "Digite aqui uma nova palavra-chave. Este campo é limitado a 64 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:105
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:105
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:98
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:94
 #, kde-format
 msgid "Digitization date"
 msgstr "Data da digitalização"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:99
 #, kde-format
 msgid "Digitization time"
 msgstr "Hora da digitalização"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:119
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:115
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:112
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:104
 #, kde-format
 msgid "Set here the creation date of digital representation."
 msgstr "Defina aqui a data de criação do conteúdo digital."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:121
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:114
 #, kde-format
 msgid "Set here the creation time of digital representation."
 msgstr "Defina aqui a hora de criação do conteúdo digital."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:117
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:116
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:106
 #, kde-format
 msgid "Set here the time zone of digital representation."
 msgstr "Defina aqui o fuso horário do conteúdo digital."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:123
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:113
 #, kde-format
 msgid "Creation date"
 msgstr "Data de criação"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:124
 #, kde-format
 msgid "Creation time"
 msgstr "Hora de criação"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:140
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:130
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:133
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:119
 #, kde-format
 msgid "Sync Exif creation date"
 msgstr "Sincronizar com a data de criação do Exif"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:146
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:136
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:139
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:125
 #, kde-format
 msgid "Set here the creation date of intellectual content."
 msgstr "Defina aqui a data de criação do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:148
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:141
 #, kde-format
 msgid "Set here the creation time of intellectual content."
 msgstr "Defina aqui a hora de criação do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:150
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:138
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:157
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:127
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:146
 #, kde-format
 msgid "Set here the time zone of intellectual content."
 msgstr "Defina aqui o fuso horário do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:158
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:151
 #, kde-format
 msgid "Set here the full country name referenced by the content."
 msgstr "Digite aqui o nome completo do país referenciado pelo conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:162
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:155
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:125
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:164
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
 #: core/libs/template/templatepanel.cpp:217
 #: core/libs/template/templatepanel.cpp:281
 #: core/libs/template/templateviewer.cpp:132
@@ -15064,12 +15064,12 @@ msgstr "Digite aqui o nome completo do país referenciado pelo conteúdo."
 msgid "City:"
 msgstr "Cidade:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:159
 #, kde-format
 msgid "Set here the city of the content"
 msgstr "Selecione aqui a cidade do conteúdo"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:160
 #, kde-format
 msgid ""
 "Set here the city of content origin. This field is limited to 32 characters."
@@ -15077,20 +15077,20 @@ msgstr ""
 "Digite aqui a cidade de origem do conteúdo. Este campo é limitado a 32 "
 "caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:172
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:171
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:165
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:160
 #: core/libs/template/templatepanel.cpp:227
 #: core/libs/template/templateviewer.cpp:134
 #, kde-format
 msgid "Sublocation:"
 msgstr "Sublocalização:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:176
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:169
 #, kde-format
 msgid "Set here the content location"
 msgstr "Defina aqui a localização de conteúdo"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:170
 #, kde-format
 msgid ""
 "Set here the content location within city. This field is limited to 32 "
@@ -15099,9 +15099,9 @@ msgstr ""
 "Defina aqui a localização do conteúdo dentro da cidade. Este campo é "
 "limitado a 32 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:130
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:178
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
 #: core/libs/template/templatepanel.cpp:237
 #: core/libs/template/templateviewer.cpp:136
 #: core/libs/template/templateviewer.cpp:158
@@ -15109,12 +15109,12 @@ msgstr ""
 msgid "State/Province:"
 msgstr "Estado/Província:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:179
 #, kde-format
 msgid "Set here the Province or State of the content"
 msgstr "Defina aqui a Província ou Estado do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
 msgid ""
 "Set here the Province or State of content origin. This field is limited to "
@@ -15123,9 +15123,9 @@ msgstr ""
 "Digite aqui o Estado ou a Província de origem do conteúdo. Este campo é "
 "limitado a 32 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:192
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:185
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:135
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:185
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
 #: core/libs/template/templatepanel.cpp:247
 #: core/libs/template/templatepanel.cpp:291
 #: core/libs/template/templateviewer.cpp:138
@@ -15134,169 +15134,169 @@ msgstr ""
 msgid "Country:"
 msgstr "País:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:194
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:176
 #, kde-format
 msgid "Select here country name of content origin."
 msgstr "Selecione aqui o nome do país da origem do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:106
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:99
 #, kde-format
 msgid "Release date"
 msgstr "Data de lançamento"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:107
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:100
 #, kde-format
 msgid "Release time"
 msgstr "Hora do lançamento"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:118
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:111
 #, kde-format
 msgid "Set release date to today"
 msgstr "Definir a data de lançamento para hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:120
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:113
 #, kde-format
 msgid "Set here the earliest intended usable date of intellectual content."
 msgstr "Defina aqui a primeira data de utilização do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:122
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:115
 #, kde-format
 msgid "Set here the earliest intended usable time of intellectual content."
 msgstr "Defina aqui a primeira hora de utilização do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:117
 #, kde-format
 msgid ""
 "Set here the earliest intended usable time zone of intellectual content."
 msgstr ""
 "Defina aqui o primeiro fuso horário de utilização do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:131
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:124
 #, kde-format
 msgid "Expiration date"
 msgstr "Data de expiração"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:132
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:125
 #, kde-format
 msgid "Expiration time"
 msgstr "Hora de expiração"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:143
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:136
 #, kde-format
 msgid "Set expiration date to today"
 msgstr "Definir a data de expiração para hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:138
 #, kde-format
 msgid "Set here the latest intended usable date of intellectual content."
 msgstr "Defina aqui a última data de utilização do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:147
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:140
 #, kde-format
 msgid "Set here the latest intended usable time of intellectual content."
 msgstr "Defina aqui a última hora de utilização do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:142
 #, kde-format
 msgid "Set here the latest intended usable time zone of intellectual content."
 msgstr ""
 "Defina aqui o último fuso horário de utilização do conteúdo intelectual."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:156
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:149
 #, kde-format
 msgid "Language:"
 msgstr "Idioma:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:166
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:159
 #, kde-format
 msgid "Select here the language of content."
 msgstr "Selecione aqui o idioma do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:172
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:165
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "0: None"
 msgstr "0: Nenhuma"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:173
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:166
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "1: High"
 msgstr "1: Alta"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:177
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:170
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "5: Normal"
 msgstr "5: Normal"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:180
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:173
 #, kde-format
 msgctxt "editorial urgency of content"
 msgid "8: Low"
 msgstr "8: Baixa"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:175
 #, kde-format
 msgid "Select here the editorial urgency of content."
 msgstr "Selecione aqui a urgência do editorial do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:186
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
 msgid "Cycle:"
 msgstr "Ciclo:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:188
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:181
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Morning"
 msgstr "Manhã"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:189
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:182
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Afternoon"
 msgstr "Tarde"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:190
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:183
 #, kde-format
 msgctxt "@item: object cycle"
 msgid "Evening"
 msgstr "Noite"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:184
 #, kde-format
 msgctxt "@info"
 msgid "Select here the editorial cycle of content."
 msgstr "Selecione aqui o ciclo editoral do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:191
 #, kde-format
 msgid "Set here the content type"
 msgstr "Defina aqui o tipo de conteúdo"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:201
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:194
 #, kde-format
 msgid "News"
 msgstr "Notícias"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:202
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:195
 #, kde-format
 msgid "Data"
 msgstr "Dados"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:203
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:196
 #, kde-format
 msgid "Advisory"
 msgstr "Consultoria"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:204
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:197
 #, kde-format
 msgid "Select here the editorial type of content."
 msgstr "Selecione aqui o tipo editorial do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:205
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:198
 #, kde-format
 msgid ""
 "Set here the editorial type description of content. This field is limited to "
@@ -15305,17 +15305,17 @@ msgstr ""
 "Digite aqui a descrição do tipo editorial do conteúdo. Este campo é limitado "
 "a 64 caracteres."
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:214
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:207
 #, kde-format
 msgid "Reference:"
 msgstr "Referência:"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:217
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:210
 #, kde-format
 msgid "Set here the content reference"
 msgstr "Digite aqui a referência do conteúdo"
 
-#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:219
+#: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:212
 #, kde-format
 msgid ""
 "Set here the original content transmission reference. This field is limited "
@@ -15707,32 +15707,32 @@ msgstr "Propriedades"
 msgid "Set here a new keyword"
 msgstr "Digite aqui uma nova palavra-chave"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:145
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:134
 #, kde-format
 msgid "Video date"
 msgstr "Data do vídeo"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:153
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:142
 #, kde-format
 msgid "Set video date to today"
 msgstr "Definir a data do vídeo para hoje"
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:155
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:144
 #, kde-format
 msgid "Set here the video date of intellectual content."
 msgstr "Defina aqui a data do conteúdo intelectual do vídeo."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:167
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:156
 #, kde-format
 msgid "Set here the content's city of origin."
 msgstr "Digite aqui a cidade da origem do conteúdo."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:174
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:163
 #, kde-format
 msgid "Set here the content's location within the city."
 msgstr "Defina aqui a localização do conteúdo na cidade."
 
-#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:181
+#: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:170
 #, kde-format
 msgid "Set here the content's Province or State of origin."
 msgstr "Digite aqui o Estado ou a Província da origem do conteúdo."
@@ -16394,34 +16394,34 @@ msgstr "Data e hora atualizada"
 msgid "Status"
 msgstr "Status"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:73
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:65
 #, kde-format
 msgid "Failed to update metadata timestamp"
 msgstr "Falha ao atualizar os metadados de data e hora"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:78
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:70
 #, kde-format
 msgid "Failed to update file timestamp"
 msgstr "Falha ao atualizar a data e hora do arquivo"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:83
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:75
 #, kde-format
 msgid "ExifTool reported an error"
 msgstr "O ExifTool reportou um erro"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:93
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:85
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:474
 #, kde-format
 msgid "Success"
 msgstr "Sucesso"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:106
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:115
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:98
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:107
 #, kde-format
 msgid "not valid"
 msgstr "não é válido"
 
-#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:130
+#: core/dplugins/generic/metadata/timeadjust/timeadjustlist.cpp:122
 #, kde-format
 msgid "Please wait ..."
 msgstr "Aguarde..."
@@ -35171,12 +35171,12 @@ msgctxt "@action:button"
 msgid "Help"
 msgstr "Ajuda"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:270
+#: core/libs/dtrash/dtrashitemmodel.cpp:263
 #, kde-format
 msgid "Relative Path"
 msgstr "Caminho relativo"
 
-#: core/libs/dtrash/dtrashitemmodel.cpp:275
+#: core/libs/dtrash/dtrashitemmodel.cpp:268
 #, kde-format
 msgid "Deletion Time"
 msgstr "Hora de exclusão"
