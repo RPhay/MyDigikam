@@ -61,21 +61,21 @@ int WorkflowItem::count() const
     return text(1).toInt();
 }
 
-void WorkflowItem::setItem(const QString& title, const QString& desc, int count)
+void WorkflowItem::setItem(const QString& _title, const QString& _desc, int _count)
 {
-    if (!title.isEmpty())
+    if (!_title.isEmpty())
     {
-        setText(0, title);
+        setText(0, _title);
     }
 
-    if (!desc.isEmpty())
+    if (!_desc.isEmpty())
     {
-        setText(2, desc);
+        setText(2, _desc);
     }
 
-    if (count > 0)
+    if (_count > 0)
     {
-        setText(1, QString::number(count));
+        setText(1, QString::number(_count));
     }
 }
 
@@ -112,7 +112,7 @@ WorkflowList::WorkflowList(QWidget* const parent)
     WorkflowManager* const mngr = WorkflowManager::instance();
     QStringList failed;
     mngr->load(failed);
-    const auto qs = mngr->queueSettingsList();
+    const auto qs               = mngr->queueSettingsList();
 
     for (const Workflow& q : qs)
     {
@@ -194,7 +194,7 @@ void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
         p.setPen(QPen(Qt::black, 1));
         p.drawRect(0, 0, pix.width() - 1, pix.height() - 1);
         p.drawPixmap(2, 2, icon);
-        QRect r = p.boundingRect(2, 2, w, h, Qt::AlignLeft | Qt::AlignTop, text);
+        QRect r           = p.boundingRect(2, 2, w, h, Qt::AlignLeft | Qt::AlignTop, text);
         r.setWidth(qMax(r.width(), r.height()));
         r.setHeight(qMax(r.width(), r.height()));
         p.fillRect(r, QColor(0, 80, 0));
@@ -219,7 +219,7 @@ void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
 
 QStringList WorkflowList::mimeTypes() const
 {
-    return QStringList() << QLatin1String("digikam/workflow");
+    return (QStringList() << QLatin1String("digikam/workflow"));
 }
 
 void WorkflowList::mouseDoubleClickEvent(QMouseEvent*)

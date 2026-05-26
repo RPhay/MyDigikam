@@ -32,6 +32,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool               valid            = false;
 
     int                startingNumber   = 1;
@@ -98,24 +100,24 @@ CameraType& CameraType::operator=(const CameraType& ctype)
     return *this;
 }
 
-void CameraType::setTitle(const QString& title)
+void CameraType::setTitle(const QString& _title)
 {
-    d->title = title;
+    d->title = _title;
 }
 
-void CameraType::setModel(const QString& model)
+void CameraType::setModel(const QString& _model)
 {
-    d->model = model;
+    d->model = _model;
 }
 
-void CameraType::setPort(const QString& port)
+void CameraType::setPort(const QString& _port)
 {
-    d->port = port;
+    d->port = _port;
 }
 
-void CameraType::setPath(const QString& path)
+void CameraType::setPath(const QString& _path)
 {
-    d->path = path;
+    d->path = _path;
 }
 
 void CameraType::setStartingNumber(int sn)
@@ -123,14 +125,14 @@ void CameraType::setStartingNumber(int sn)
     d->startingNumber = sn;
 }
 
-void CameraType::setAction(QAction* const action)
+void CameraType::setAction(QAction* const _action)
 {
-    d->action = action;
+    d->action = _action;
 }
 
-void CameraType::setValid(bool valid)
+void CameraType::setValid(bool _valid)
 {
-    d->valid = valid;
+    d->valid = _valid;
 }
 
 void CameraType::setCurrentImportUI(ImportUI* const importui)

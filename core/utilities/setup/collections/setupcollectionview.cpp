@@ -912,22 +912,22 @@ void SetupCollectionModel::deleteCollection(int internalId)
     }
 }
 
-QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
+QVariant SetupCollectionModel::data(const QModelIndex& _index, int _role) const
 {
-    if (!index.isValid())
+    if (!_index.isValid())
     {
         return QVariant();
     }
 
-    if (index.internalId() == INTERNALID)
+    if (_index.internalId() == INTERNALID)
     {
-        if (index.column() == 0)
+        if (_index.column() == 0)
         {
-            switch (role)
+            switch (_role)
             {
                 case Qt::DisplayRole:
                 {
-                    switch (index.row())
+                    switch (_index.row())
                     {
                         case CategoryLocal:
                         {
@@ -950,7 +950,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                 case Qt::DecorationRole:
                 {
-                    switch (index.row())
+                    switch (_index.row())
                     {
                         case CategoryLocal:
                         {
@@ -983,7 +983,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                 case CategoryButtonMapId:
                 {
-                    return categoryButtonMapId(index);
+                    return categoryButtonMapId(_index);
                 }
 
                 default:
@@ -995,18 +995,18 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
     }
     else
     {
-        const Item& item = m_collections.at(index.internalId());
+        const Item& item = m_collections.at(_index.internalId());
 
-        if ((role == Qt::BackgroundRole) && item.appended)
+        if ((_role == Qt::BackgroundRole) && item.appended)
         {
              return QPalette().alternateBase();
         }
 
-        switch (index.column())
+        switch (_index.column())
         {
             case ColumnName:
             {
-                if ((role == Qt::DisplayRole) || (role == Qt::EditRole))
+                if ((_role == Qt::DisplayRole) || (_role == Qt::EditRole))
                 {
                     if (item.appended)
                     {
@@ -1028,7 +1028,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                         return item.location.label();
                     }
 
-                    return i18n("Col. %1", index.row());
+                    return i18n("Col. %1", _index.row());
                 }
 
                 break;
@@ -1036,7 +1036,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
             case ColumnPath:
             {
-                if ((role == Qt::DisplayRole) || (role == Qt::ToolTipRole))
+                if ((_role == Qt::DisplayRole) || (_role == Qt::ToolTipRole))
                 {
                     if (!item.path.isNull())
                     {
@@ -1054,7 +1054,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
             case ColumnStatus:
             {
-                if (role == Qt::DecorationRole)
+                if (_role == Qt::DecorationRole)
                 {
                     if (item.updated)
                     {
@@ -1118,7 +1118,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
                         }
                     }
                 }
-                else if (role == Qt::ToolTipRole)
+                else if (_role == Qt::ToolTipRole)
                 {
                     switch (item.location.status())
                     {
@@ -1149,7 +1149,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
             case ColumnAppendButton:
             {
-                switch (role)
+                switch (_role)
                 {
                     case Qt::ToolTipRole:
                     {
@@ -1168,7 +1168,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                     case AppendMapId:
                     {
-                        return buttonMapId(index);
+                        return buttonMapId(_index);
                     }
                 }
 
@@ -1177,7 +1177,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
             case ColumnUpdateButton:
             {
-                switch (role)
+                switch (_role)
                 {
                     case Qt::ToolTipRole:
                     {
@@ -1196,7 +1196,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                     case UpdateMapId:
                     {
-                        return buttonMapId(index);
+                        return buttonMapId(_index);
                     }
                 }
 
@@ -1205,7 +1205,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
             case ColumnDeleteButton:
             {
-                switch (role)
+                switch (_role)
                 {
                     case Qt::ToolTipRole:
                     {
@@ -1224,7 +1224,7 @@ QVariant SetupCollectionModel::data(const QModelIndex& index, int role) const
 
                     case DeleteMapId:
                     {
-                        return buttonMapId(index);
+                        return buttonMapId(_index);
                     }
                 }
 
@@ -1277,26 +1277,26 @@ QVariant SetupCollectionModel::headerData(int section, Qt::Orientation orientati
     return QVariant();
 }
 
-int SetupCollectionModel::rowCount(const QModelIndex& parent) const
+int SetupCollectionModel::rowCount(const QModelIndex& _parent) const
 {
-    if (!parent.isValid())
+    if (!_parent.isValid())
     {
         return NumberOfCategories;    // Level 0: the three top level items
     }
 
-    if (parent.column() != 0)
+    if (_parent.column() != 0)
     {
         return 0;
     }
 
-    if (parent.internalId() != INTERNALID)
+    if (_parent.internalId() != INTERNALID)
     {
         return 0;                     // Level 2: no children
     }
 
     // Level 1: item children count
 
-    int parentId = parent.row();
+    int parentId = _parent.row();
     int rowCount = 0;
 
     for (const Item& item : std::as_const(m_collections))
@@ -1310,19 +1310,19 @@ int SetupCollectionModel::rowCount(const QModelIndex& parent) const
     return rowCount;
 }
 
-int SetupCollectionModel::columnCount(const QModelIndex& /*parent*/) const
+int SetupCollectionModel::columnCount(const QModelIndex& /*_parent*/) const
 {
     return NumberOfColumns;
 }
 
-Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
+Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& _index) const
 {
-    if (!index.isValid())
+    if (!_index.isValid())
     {
         return Qt::NoItemFlags;
     }
 
-    if (index.internalId() == INTERNALID)
+    if (_index.internalId() == INTERNALID)
     {
         return Qt::ItemIsEnabled;
     }
@@ -1330,11 +1330,11 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
     {
         Qt::ItemFlags flgs(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 
-        switch (index.column())
+        switch (_index.column())
         {
             case ColumnName:
             {
-                const Item& item = m_collections.at(index.internalId());
+                const Item& item = m_collections.at(_index.internalId());
 
                 if (item.appended)
                 {
@@ -1352,41 +1352,41 @@ Qt::ItemFlags SetupCollectionModel::flags(const QModelIndex& index) const
     }
 }
 
-bool SetupCollectionModel::setData(const QModelIndex& index, const QVariant& value, int role)
+bool SetupCollectionModel::setData(const QModelIndex& _index, const QVariant& _value, int _role)
 {
     // only editable in one case
 
     if (
-        index.isValid()                    &&
-        (index.internalId() != INTERNALID) &&
-        (index.column() == ColumnName)     &&
-        (role == Qt::EditRole)
+        _index.isValid()                    &&
+        (_index.internalId() != INTERNALID) &&
+        (_index.column() == ColumnName)     &&
+        (_role == Qt::EditRole)
        )
     {
-        Item& item = m_collections[index.internalId()];
-        item.label = value.toString();
+        Item& item = m_collections[_index.internalId()];
+        item.label = _value.toString();
 
-        Q_EMIT dataChanged(index, index);
+        Q_EMIT dataChanged(_index, _index);
     }
 
     return false;
 }
 
-QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& parent) const
+QModelIndex SetupCollectionModel::index(int _row, int _column, const QModelIndex& _parent) const
 {
-    if      (!parent.isValid())
+    if      (!_parent.isValid())
     {
-        if ((row < NumberOfCategories) && (row >= 0) && (column == 0))
+        if ((_row < NumberOfCategories) && (_row >= 0) && (_column == 0))
         {
-            return createIndex(row, 0, INTERNALID);
+            return createIndex(_row, 0, INTERNALID);
         }
     }
-    else if ((row >= 0) && (column < NumberOfColumns))
+    else if ((_row >= 0) && (_column < NumberOfColumns))
     {
         // m_collections is a flat list with all entries, of all categories and also deleted entries.
         // The model indices contain as internal id the index to this list.
 
-        int parentId = parent.row();
+        int parentId = _parent.row();
         int rowCnt   = 0;
 
         for (int i = 0 ; i < m_collections.count() ; ++i)
@@ -1395,9 +1395,9 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
 
             if (!item.deleted && (item.parentId == parentId))
             {
-                if (rowCnt == row)
+                if (rowCnt == _row)
                 {
-                    return createIndex(row, column, i);
+                    return createIndex(_row, _column, i);
                 }
 
                 ++rowCnt;
@@ -1408,19 +1408,19 @@ QModelIndex SetupCollectionModel::index(int row, int column, const QModelIndex& 
     return QModelIndex();
 }
 
-QModelIndex SetupCollectionModel::parent(const QModelIndex& index) const
+QModelIndex SetupCollectionModel::parent(const QModelIndex& _index) const
 {
-    if (!index.isValid())
+    if (!_index.isValid())
     {
         return QModelIndex();
     }
 
-    if (index.internalId() == INTERNALID)
+    if (_index.internalId() == INTERNALID)
     {
         return QModelIndex();    // one of the three toplevel items
     }
 
-    const Item& item = m_collections.at(index.internalId());
+    const Item& item = m_collections.at(_index.internalId());
 
     return createIndex(item.parentId, 0, INTERNALID);
 }
@@ -1774,24 +1774,24 @@ bool SetupCollectionModel::askForNewCollectionCategory(int* const category)
     return false;
 }
 
-int SetupCollectionModel::categoryButtonMapId(const QModelIndex& index) const
+int SetupCollectionModel::categoryButtonMapId(const QModelIndex& _index) const
 {
-    if (!index.isValid() || index.parent().isValid())
+    if (!_index.isValid() || _index.parent().isValid())
     {
         return INTERNALID;
     }
 
-    return index.row();
+    return _index.row();
 }
 
-int SetupCollectionModel::buttonMapId(const QModelIndex& index) const
+int SetupCollectionModel::buttonMapId(const QModelIndex& _index) const
 {
-    if (!index.isValid() || (index.internalId() == INTERNALID))
+    if (!_index.isValid() || (_index.internalId() == INTERNALID))
     {
         return INTERNALID;
     }
 
-    return index.internalId();
+    return _index.internalId();
 }
 
 void SetupCollectionModel::slotHelp()

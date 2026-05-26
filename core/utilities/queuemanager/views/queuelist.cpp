@@ -78,6 +78,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool           isBusy           = false;
     bool           done             = false;
     bool           hasThumb         = false;
@@ -112,9 +114,9 @@ bool QueueListViewItem::hasValidThumbnail() const
     return d->hasThumb;
 }
 
-void QueueListViewItem::setInfo(const ItemInfo& info)
+void QueueListViewItem::setInfo(const ItemInfo& _info)
 {
-    d->info = info;
+    d->info = _info;
     setText(1, d->info.name());
 }
 
@@ -144,7 +146,11 @@ void QueueListViewItem::setThumb(const QPixmap& pix, bool hasThumb)
     QPixmap pixmap(iSize.width() + 2, iSize.height() + 2);
     pixmap.fill(Qt::transparent);
     QPainter p(&pixmap);
-    p.drawPixmap((pixmap.width() / 2) - (pix.width() / 2), (pixmap.height() / 2) - (pix.height() / 2), pix);
+    p.drawPixmap(
+                 (pixmap.width()  / 2) - (pix.width()  / 2),
+                 (pixmap.height() / 2) - (pix.height() / 2),
+                 pix
+                );
     d->preview  = pixmap;
     setPixmap(d->preview);
     d->hasThumb = hasThumb;
@@ -165,7 +171,11 @@ void QueueListViewItem::animProgress()
     mask.fill(QColor(128, 128, 128, 192));
     QPainter p(&preview);
     p.drawPixmap(0, 0, mask);
-    p.drawPixmap((preview.width() / 2) - (icon.width() / 2), (preview.height() / 2) - (icon.height() / 2), icon);
+    p.drawPixmap(
+                 (preview.width()  / 2) - (icon.width()  / 2),
+                 (preview.height() / 2) - (icon.height() / 2),
+                 icon
+                );
     setPixmap(preview);
 }
 
@@ -262,6 +272,8 @@ public:
 public:
 
     Private() = default;
+
+public:
 
     bool                        showTips        = false;
 
@@ -403,8 +415,8 @@ void QueueListView::startDrag(Qt::DropActions /*supportedActions*/)
     }
 
     QPixmap icon(QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(48));
-    int w = icon.width();
-    int h = icon.height();
+    int w   = icon.width();
+    int h   = icon.height();
 
     QPixmap pix(w + 4, h + 4);
     QString text(QString::number(items.count()));
@@ -469,6 +481,7 @@ void QueueListView::dragMoveEvent(QDragMoveEvent* e)
             {
                 QTreeWidget::dragMoveEvent(e);
                 e->accept();
+
                 return;
             }
         }
@@ -477,6 +490,7 @@ void QueueListView::dragMoveEvent(QDragMoveEvent* e)
     {
         QTreeWidget::dragMoveEvent(e);
         e->accept();
+
         return;
     }
 
@@ -512,7 +526,7 @@ void QueueListView::dropEvent(QDropEvent* e)
 
             QueueListView* const vitem = dynamic_cast<QueueListView*>(e->source());
 
-            if (vitem && vitem != this)
+            if (vitem && (vitem != this))
             {
                 for (const ItemInfo& info : std::as_const(imageInfoList))
                 {
@@ -637,6 +651,7 @@ void QueueListView::mouseMoveEvent(QMouseEvent* e)
             if (!isActiveWindow())
             {
                 hideToolTip();
+
                 return;
             }
 
@@ -835,6 +850,7 @@ void QueueListView::removeItems(int removeType)
                     {
                         delete item;
                         find = true;
+
                         break;
                     }
                 }
@@ -872,6 +888,7 @@ void QueueListView::removeItemById(qlonglong id)
             {
                 delete item;
                 find = true;
+
                 break;
             }
 
@@ -999,6 +1016,7 @@ ItemInfoList QueueListView::itemsList(ItemListType type)
                 default:    // All
                 {
                     list.append(item->info());
+
                     break;
                 }
             }
@@ -1035,9 +1053,9 @@ int QueueListView::pendingTasksCount()
     return count;
 }
 
-void QueueListView::setSettings(const QueueSettings& settings)
+void QueueListView::setSettings(const QueueSettings& _settings)
 {
-    d->settings = settings;
+    d->settings = _settings;
     resetQueue();
     updateDestFileNames();
 }

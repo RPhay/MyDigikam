@@ -40,13 +40,13 @@ public:
     CameraType(const CameraType& ctype);
     CameraType& operator=(const CameraType& type);
 
-    void setTitle(const QString& title);
-    void setModel(const QString& model);
-    void setPort(const QString& port);
-    void setPath(const QString& path);
+    void setTitle(const QString& _title);
+    void setModel(const QString& _model);
+    void setPort(const QString& _port);
+    void setPath(const QString& _path);
     void setStartingNumber(int sn);
-    void setAction(QAction* const action);
-    void setValid(bool valid);
+    void setAction(QAction* const _action);
+    void setValid(bool _valid);
     void setCurrentImportUI(ImportUI* const importui);
 
     QString   title()           const;

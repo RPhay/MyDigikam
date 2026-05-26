@@ -66,7 +66,7 @@ public:
     explicit RatingComboBox(QWidget* const parent = nullptr);
 
     void setRatingValue(RatingValue value);
-    RatingValue ratingValue() const;
+    RatingValue ratingValue()                                                                   const;
 
 Q_SIGNALS:
 
@@ -95,7 +95,9 @@ public:
 
     RatingStarDrawer() = default;
 
-    QRect drawStarPolygons(QPainter* p, int numberOfStars) const;
+public:
+
+    QRect drawStarPolygons(QPainter* p, int numberOfStars)                                      const;
 
 protected:
 
@@ -118,7 +120,9 @@ public:
      */
     explicit RatingComboBoxWidget(QWidget* const parent = nullptr);
 
-    RatingComboBox::RatingValue ratingValue() const;
+public:
+
+    RatingComboBox::RatingValue ratingValue()                                                   const;
     void setRatingValue(RatingComboBox::RatingValue value);
 
 Q_SIGNALS:
@@ -131,7 +135,7 @@ protected Q_SLOTS:
 
 protected:
 
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)                                                                     override;
 
 protected:
 
@@ -155,15 +159,15 @@ public:
 
     explicit RatingComboBoxModel(QObject* const parent = nullptr);
 
-    QModelIndex indexForRatingValue(RatingComboBox::RatingValue value)                    const;
+    QModelIndex indexForRatingValue(RatingComboBox::RatingValue value)                          const;
 
-    int rowCount(const QModelIndex& parent)                                               const override;
-    QVariant data(const QModelIndex& index, int role)                                     const override;
-    QModelIndex index(int row, int column = 0, const QModelIndex& parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex& parent)                                                     const override;
+    QVariant data(const QModelIndex& index, int role)                                           const override;
+    QModelIndex index(int row, int column = 0, const QModelIndex& parent = QModelIndex())       const override;
 
 protected:
 
-    QVariant ratingValueToDisplay(RatingComboBox::RatingValue value)                      const;
+    QVariant ratingValueToDisplay(RatingComboBox::RatingValue value)                            const;
 
 protected:
 

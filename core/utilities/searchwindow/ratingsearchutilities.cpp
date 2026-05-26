@@ -173,17 +173,17 @@ int RatingComboBoxModel::rowCount(const QModelIndex& parent) const
     return m_entries.size();
 }
 
-QVariant RatingComboBoxModel::data(const QModelIndex& index, int role) const
+QVariant RatingComboBoxModel::data(const QModelIndex& _index, int _role) const
 {
-    if (index.isValid())
+    if (_index.isValid())
     {
-        RatingComboBox::RatingValue value = (RatingComboBox::RatingValue)index.internalId();
+        RatingComboBox::RatingValue value = (RatingComboBox::RatingValue)_index.internalId();
 
-        if      (role == Qt::DisplayRole)
+        if      (_role == Qt::DisplayRole)
         {
             return ratingValueToDisplay(value);
         }
-        else if (role == RatingRole)
+        else if (_role == RatingRole)
         {
             return (int)value;
         }
@@ -381,18 +381,18 @@ RatingComboBox::RatingComboBox(QWidget* const parent)
 {
     // create a custom model that contains the rating values
 
-    m_model   = new RatingComboBoxModel(this);
+    m_model                                = new RatingComboBoxModel(this);
     setModel(m_model);
 
     // set a custom delegate which draws rating stars
 
-    RatingComboBoxDelegate* delegate = new RatingComboBoxDelegate(this);
+    RatingComboBoxDelegate* const delegate = new RatingComboBoxDelegate(this);
     view()->setItemDelegate(delegate);
 
     // set a line edit that carries a RatingWidget
 
-    ProxyLineEdit* const lineEdit = new ProxyLineEdit;
-    m_ratingWidget                = new RatingComboBoxWidget;
+    ProxyLineEdit* const lineEdit          = new ProxyLineEdit;
+    m_ratingWidget                         = new RatingComboBoxWidget;
     lineEdit->setWidget(m_ratingWidget);
     setLineEdit(lineEdit);
 
@@ -419,7 +419,7 @@ void RatingComboBox::setRatingValue(RatingComboBox::RatingValue value)
 
 RatingComboBox::RatingValue RatingComboBox::ratingValue() const
 {
-    return (RatingValue)view()->currentIndex().data(RatingComboBoxModel::RatingRole).toInt();
+    return (RatingValue)(view()->currentIndex().data(RatingComboBoxModel::RatingRole).toInt());
 }
 
 void RatingComboBox::currentValueChanged(const QModelIndex& current, const QModelIndex&)

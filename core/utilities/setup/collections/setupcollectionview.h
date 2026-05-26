@@ -102,6 +102,8 @@ public:
     explicit SetupCollectionModel(QObject* const parent = nullptr);
     ~SetupCollectionModel()                                                                         override;
 
+public:
+
     /// Read collections from CollectionManager
     void loadCollections();
 
@@ -229,7 +231,7 @@ protected Q_SLOTS:
 
 private:
 
-    void setModel(QAbstractItemModel* model) override
+    void setModel(QAbstractItemModel* model)                                      override
     {
         setModel(static_cast<SetupCollectionModel*>(model));
     }
