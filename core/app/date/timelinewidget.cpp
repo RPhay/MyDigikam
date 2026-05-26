@@ -54,6 +54,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                         validMouseEvent    = false;   ///< Current mouse enter event is valid to set cursor position or selection.
     bool                         selMouseEvent      = false;   ///< Current mouse enter event is about to make a selection.
 
@@ -100,7 +102,7 @@ TimeLineWidget::TimeLineWidget(QWidget* const parent)
     setMinimumWidth(256);
     setMinimumHeight(192);
 
-    QDateTime ref = QDateTime::currentDateTime();
+    QDateTime ref        = QDateTime::currentDateTime();
     setCursorDateTime(ref);
     setRefDateTime(ref);
 
@@ -125,9 +127,9 @@ TimeLineWidget::~TimeLineWidget()
     delete d;
 }
 
-void TimeLineWidget::setTimeUnit(TimeUnit timeUnit)
+void TimeLineWidget::setTimeUnit(TimeUnit _timeUnit)
 {
-    d->timeUnit = timeUnit;
+    d->timeUnit = _timeUnit;
     setCursorDateTime(cursorDateTime());
     setRefDateTime(cursorDateTime());
 }
@@ -137,9 +139,9 @@ TimeLineWidget::TimeUnit TimeLineWidget::timeUnit() const
     return d->timeUnit;
 }
 
-void TimeLineWidget::setScaleMode(ScaleMode scaleMode)
+void TimeLineWidget::setScaleMode(ScaleMode _scaleMode)
 {
-    d->scaleMode = scaleMode;
+    d->scaleMode = _scaleMode;
     update();
 }
 
@@ -165,7 +167,7 @@ int TimeLineWidget::indexForDateTime(const QDateTime& date) const
         return 0;
     }
 
-    return qRound(d->minDateTime.daysTo(date) / daysOfTimeUnit());
+    return (qRound(d->minDateTime.daysTo(date) / daysOfTimeUnit()));
 }
 
 int TimeLineWidget::indexForRefDateTime() const
@@ -840,7 +842,7 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
         {
             p.setPen(dateColor);
 
-            if      (ref.date().year() % 10 == 0)
+            if      ((ref.date().year() % 10) == 0)
             {
                 p.drawLine(barRect.left(), barRect.bottom(),
                            barRect.left(), barRect.bottom() + d->bottomMargin / 2);
@@ -848,7 +850,7 @@ void TimeLineWidget::paintItem(QPainter& p, const QRect& barRect,
                 QRect br    = p.fontMetrics().boundingRect(0, 0, width(), height(), 0, txt);
                 p.drawText(barRect.left() - br.width() / 2, barRect.bottom() + d->bottomMargin, txt);
             }
-            else if (ref.date().year() % 5 == 0)
+            else if ((ref.date().year() % 5) == 0)
             {
                 p.drawLine(separatorPosition, barRect.bottom(),
                            separatorPosition, barRect.bottom() + d->bottomMargin / 4);
@@ -891,7 +893,7 @@ void TimeLineWidget::keyPressEvent(QKeyEvent *e)
             isScrollNext = false;
             keyScroll(isScrollNext);
 
-            ref = nextDateTime(ref);
+            ref          = nextDateTime(ref);
 
             if (!dt.isNull())
             {
@@ -963,10 +965,10 @@ void TimeLineWidget::keyScroll(bool isScrollNext)
 
         for (int i = 0 ; i < items ; ++i)
         {
-            barRect.setLeft(d->startPos + i * d->barWidth);
-            barRect.setRight(d->startPos + (i + 1)*d->barWidth);
+            barRect.setLeft(d->startPos  + i       * d->barWidth);
+            barRect.setRight(d->startPos + (i + 1) * d->barWidth);
 
-            if (barRect.intersects(d->focusRect) && i >= d->nbItems)
+            if (barRect.intersects(d->focusRect) && (i >= d->nbItems))
             {
                 // Scroll to the next item. Because the focus rect is outside the visible area.
 
@@ -982,8 +984,8 @@ void TimeLineWidget::keyScroll(bool isScrollNext)
 
         for (int i = 0 ; i < items ; ++i)
         {
-            barRect.setRight(d->startPos - i * d->barWidth);
-            barRect.setLeft(d->startPos - (i + 1)*d->barWidth);
+            barRect.setRight(d->startPos - i       * d->barWidth);
+            barRect.setLeft(d->startPos  - (i + 1) * d->barWidth);
 
             if (barRect.intersects(d->focusRect) && (i >= (d->nbItems - 1)))
             {
@@ -1877,7 +1879,7 @@ void TimeLineWidget::mousePressEvent(QMouseEvent* e)
 
 void TimeLineWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    // set cursor shape to indicate selection area
+    // Set cursor shape to indicate selection area
 
     QRect selectionArea;
     selectionArea.setTop(d->topMargin);
@@ -1961,10 +1963,10 @@ QDateTime TimeLineWidget::dateTimeForPoint(const QPoint& pt, bool& isOnSelection
 
     // Check on the right of reference date.
 
-    QDateTime ref = d->refDateTime;
+    QDateTime ref     = d->refDateTime;
     ref.setTime(QTime(0, 0, 0, 0));
 
-    QScreen* screen = qApp->primaryScreen();
+    QScreen* screen   = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
     {

@@ -70,7 +70,7 @@ AlbumSelectComboBox::AlbumSelectComboBox(QWidget* const parent)
 
     // Workaround for QLineEdit text when QComboBox loses focus
 
-    // --- NOTE: use dynamic binding as updateText() is a virtual slot which can be re-implemented in derived classes.
+    /// @note use dynamic binding as updateText() is a virtual slot which can be re-implemented in derived classes.
 
     connect(this, &AlbumSelectComboBox::editTextChanged,
             this, &AlbumSelectComboBox::updateText);
@@ -94,14 +94,14 @@ void AlbumSelectComboBox::setDefaultTagModel()
     setAlbumModels(new TagModel(AlbumModel::IgnoreRootAlbum, this));
 }
 
-void AlbumSelectComboBox::setAlbumModels(AbstractCheckableAlbumModel* model, AlbumFilterModel* filterModel)
+void AlbumSelectComboBox::setAlbumModels(AbstractCheckableAlbumModel* _model, AlbumFilterModel* _filterModel)
 {
-    d->model = model;
+    d->model = _model;
     d->model->setRecursive(d->recursive);
 
-    if (filterModel)
+    if (_filterModel)
     {
-        d->filterModel = filterModel;
+        d->filterModel = _filterModel;
     }
     else
     {

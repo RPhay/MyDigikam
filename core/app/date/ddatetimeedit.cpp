@@ -33,6 +33,8 @@ public:
 
     Private() = default;
 
+public:
+
     QTimeEdit* timePopUp = nullptr;
     DDateEdit* datePopUp = nullptr;
 };
@@ -73,10 +75,10 @@ QDateTime DDateTimeEdit::dateTime() const
     return asDateTimeUTC(dateTime);
 }
 
-void DDateTimeEdit::setDateTime(const QDateTime& dateTime)
+void DDateTimeEdit::setDateTime(const QDateTime& _dateTime)
 {
-    d->datePopUp->setDate(dateTime.date());
-    d->timePopUp->setTime(dateTime.time());
+    d->datePopUp->setDate(_dateTime.date());
+    d->timePopUp->setTime(_dateTime.time());
 }
 
 void DDateTimeEdit::slotDateTimeChanged()

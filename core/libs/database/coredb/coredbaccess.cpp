@@ -185,9 +185,9 @@ DbEngineParameters CoreDbAccess::parameters()
     return DbEngineParameters();
 }
 
-void CoreDbAccess::setParameters(const DbEngineParameters& parameters)
+void CoreDbAccess::setParameters(const DbEngineParameters& _parameters)
 {
-    setParameters(parameters, DatabaseSlave);
+    setParameters(_parameters, DatabaseSlave);
 
     if (d->databaseWatch)
     {
@@ -195,7 +195,7 @@ void CoreDbAccess::setParameters(const DbEngineParameters& parameters)
     }
 }
 
-void CoreDbAccess::setParameters(const DbEngineParameters& parameters, ApplicationStatus status)
+void CoreDbAccess::setParameters(const DbEngineParameters& _parameters, ApplicationStatus _status)
 {
     if (!d)
     {
@@ -204,7 +204,7 @@ void CoreDbAccess::setParameters(const DbEngineParameters& parameters, Applicati
 
     CoreDbAccessMutexLocker lock(d);
 
-    if (d->parameters == parameters)
+    if (d->parameters == _parameters)
     {
         return;
     }
@@ -221,14 +221,14 @@ void CoreDbAccess::setParameters(const DbEngineParameters& parameters, Applicati
         d->backend->setDbEngineErrorHandler(nullptr);
     }
 
-    d->parameters = parameters;
+    d->parameters = _parameters;
 
     if (!d->databaseWatch)
     {
         d->databaseWatch = new CoreDbWatch();
         d->databaseWatch->setApplicationIdentifier(d->applicationIdentifier.toString());
 
-        if (status == MainApplication)
+        if (_status == MainApplication)
         {
             d->databaseWatch->initializeRemote(CoreDbWatch::DatabaseMaster);
         }
@@ -240,7 +240,7 @@ void CoreDbAccess::setParameters(const DbEngineParameters& parameters, Applicati
 
     ItemInfoStatic::create();
 
-    if (!d->backend || !d->backend->isCompatible(parameters))
+    if (!d->backend || !d->backend->isCompatible(_parameters))
     {
         delete d->db;
         delete d->backend;

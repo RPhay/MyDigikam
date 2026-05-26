@@ -48,12 +48,12 @@ Album::~Album()
     AlbumManager::instance()->notifyAlbumDeletion(this);
 }
 
-void Album::setParent(Album* const parent)
+void Album::setParent(Album* const _parent)
 {
-    if (parent)
+    if (_parent)
     {
-        m_parent = parent;
-        parent->insertChild(this);
+        m_parent = _parent;
+        m_parent->insertChild(this);
     }
 }
 
@@ -233,40 +233,41 @@ int Album::globalID() const
     return globalID(m_type, m_id);
 }
 
-int Album::globalID(Type type, int id)
+int Album::globalID(Type _type, int _id)
 {
-    switch (type)
+    switch (_type)
     {
         // Use the upper bits to create unique ids.
 
         case (PHYSICAL):
         {
-            return id;
+            return _id;
         }
 
         case (TAG):
         {
-            return (id | (1 << 27));
+            return (_id | (1 << 27));
         }
 
         case (DATE):
         {
-            return (id | (1 << 28));
+            return (_id | (1 << 28));
         }
 
         case (SEARCH):
         {
-            return (id | (1 << 29));
+            return (_id | (1 << 29));
         }
 
         case (FACE):
         {
-            return (id | (1 << 30));
+            return (_id | (1 << 30));
         }
 
         default:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unknown album type";
+
             return -1;
         }
     }
@@ -289,9 +290,9 @@ int Album::rowFromAlbum() const
     return m_row;
 }
 
-void Album::setTitle(const QString& title)
+void Album::setTitle(const QString& _title)
 {
-    m_title = title;
+    m_title = _title;
 }
 
 QString Album::title() const
@@ -422,25 +423,25 @@ bool PAlbum::isAlbumRoot() const
     return m_isAlbumRootAlbum;
 }
 
-void PAlbum::setCaption(const QString& caption)
+void PAlbum::setCaption(const QString& _caption)
 {
-    m_caption = caption;
+    m_caption = _caption;
 
     CoreDbAccess access;
     access.db()->setAlbumCaption(id(), m_caption);
 }
 
-void PAlbum::setCategory(const QString& category)
+void PAlbum::setCategory(const QString& _category)
 {
-    m_category = category;
+    m_category = _category;
 
     CoreDbAccess access;
     access.db()->setAlbumCategory(id(), m_category);
 }
 
-void PAlbum::setDate(const QDate& date)
+void PAlbum::setDate(const QDate& _date)
 {
-    m_date = date;
+    m_date = _date;
 
     CoreDbAccess access;
     access.db()->setAlbumDate(id(), m_date);
@@ -663,10 +664,10 @@ SAlbum::SAlbum(const QString& title, int id, bool root)
     setTitle(title);
 }
 
-void SAlbum::setSearch(DatabaseSearch::Type type, const QString& query)
+void SAlbum::setSearch(DatabaseSearch::Type _type, const QString& _query)
 {
-    m_searchType = type;
-    m_query      = query;
+    m_searchType = _type;
+    m_query      = _query;
 }
 
 CoreDbUrl SAlbum::databaseUrl() const
@@ -831,6 +832,7 @@ QString SAlbum::getTemporaryTitle(DatabaseSearch::Type type, DatabaseSearch::Haa
         default:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated temporary search type " << type;
+
             return QLatin1String("_Current_Unknown_Search_");
         }
     }
@@ -853,6 +855,7 @@ QString SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSearchType haarType)
         default:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated temporary haar search type " << haarType;
+
             return QLatin1String("_Current_Unknown_Haar_Search_");
         }
     }

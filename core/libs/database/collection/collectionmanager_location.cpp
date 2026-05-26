@@ -717,15 +717,15 @@ CollectionLocation CollectionManager::locationForAlbumRoot(const QUrl& fileUrl)
     return locationForAlbumRootPath(fileUrl.adjusted(QUrl::StripTrailingSlash).toLocalFile());
 }
 
-CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& albumRootPath)
+CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& _albumRootPath)
 {
     // This function is used when an album is created or an external scan is
     // initiated by the AlbumWatcher. We check if there is an entry because
     // the mount path of a network share may not be available.
 
-    if (!QDirIterator(albumRootPath, QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).hasNext())
+    if (!QDirIterator(_albumRootPath, QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).hasNext())
     {
-        qCWarning(DIGIKAM_DATABASE_LOG) << "Album root path not exist" << albumRootPath;
+        qCWarning(DIGIKAM_DATABASE_LOG) << "Album root path not exist" << _albumRootPath;
         qCWarning(DIGIKAM_DATABASE_LOG) << "Drive or network connection broken?";
 
         updateLocations();
@@ -735,7 +735,7 @@ CollectionLocation CollectionManager::locationForAlbumRootPath(const QString& al
 
     for (const AlbumRootLocation* const location : std::as_const(d->locations))
     {
-        if (location->albumRootPath() == albumRootPath)
+        if (location->albumRootPath() == _albumRootPath)
         {   // cppcheck-suppress useStlAlgorithm
             return *location;
         }

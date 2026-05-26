@@ -161,9 +161,9 @@ DDateEdit::~DDateEdit()
     delete d;
 }
 
-void DDateEdit::setDate(const QDate& date)
+void DDateEdit::setDate(const QDate& _date)
 {
-    assignDate(date);
+    assignDate(_date);
     updateView();
 }
 
@@ -261,30 +261,30 @@ void DDateEdit::showPopup()
     }
 }
 
-void DDateEdit::dateSelected(const QDate& date)
+void DDateEdit::dateSelected(const QDate& _date)
 {
-    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    /// @note: use dynamic binding as this virtual method can be re-implemented in derived classes.
 
-    if (this->assignDate(date))
+    if (this->assignDate(_date))
     {
         updateView();
 
-        Q_EMIT dateChanged(date);
+        Q_EMIT dateChanged(_date);
 
-        if (date.isValid())
+        if (_date.isValid())
         {
             d->popup->hide();
         }
     }
 }
 
-void DDateEdit::dateEntered(const QDate& date)
+void DDateEdit::dateEntered(const QDate& _date)
 {
-    if (assignDate(date))
+    if (assignDate(_date))
     {
         updateView();
 
-        Q_EMIT dateChanged(date);
+        Q_EMIT dateChanged(_date);
     }
 }
 
@@ -499,9 +499,9 @@ void DDateEdit::setupKeywords()
     }
 }
 
-bool DDateEdit::assignDate(const QDate& date)
+bool DDateEdit::assignDate(const QDate& _date)
 {
-    d->date        = date;
+    d->date        = _date;
     d->textChanged = false;
 
     return true;

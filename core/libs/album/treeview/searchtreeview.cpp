@@ -56,10 +56,10 @@ SearchModel* SearchTreeView::salbumModel() const
     return static_cast<SearchModel*>(m_albumModel);
 }
 
-void SearchTreeView::setSAlbumFilterModel(SearchFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel)
+void SearchTreeView::setSAlbumFilterModel(SearchFilterModel* const _filteredModel, CheckableAlbumFilterModel* const _filterModel)
 {
-    m_filteredModel = filteredModel;
-    AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);
+    m_filteredModel = _filteredModel;
+    AbstractCheckableAlbumTreeView::setAlbumFilterModel(_filterModel);
 
     // hook in: source album model -> filtered model -> album filter model
 

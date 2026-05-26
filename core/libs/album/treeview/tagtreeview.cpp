@@ -47,10 +47,10 @@ TagTreeView::TagTreeView(QWidget* const parent, Flags flags)
     }
 }
 
-void TagTreeView::setTAlbumFilterModel(TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel)
+void TagTreeView::setTAlbumFilterModel(TagPropertiesFilterModel* const _filteredModel, CheckableAlbumFilterModel* const _filterModel)
 {
-    m_filteredModel = filteredModel;
-    AbstractCheckableAlbumTreeView::setAlbumFilterModel(filterModel);
+    m_filteredModel = _filteredModel;
+    AbstractCheckableAlbumTreeView::setAlbumFilterModel(_filterModel);
 
     // hook in: source album model -> filtered model -> album filter model
 
