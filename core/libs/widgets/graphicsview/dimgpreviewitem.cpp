@@ -58,16 +58,20 @@ void DImgPreviewItem::DImgPreviewItemPrivate::init(DImgPreviewItem* const q)
     preloadThread->setPriority(QThread::LowPriority);
 
     QObject::connect(previewThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
-                     q, SLOT(slotGotImagePreview(LoadingDescription,DImg)));
+                     q, SLOT(slotGotImagePreview(LoadingDescription,DImg)),
+                     Qt::QueuedConnection);
 
     QObject::connect(previewThread, SIGNAL(signalImageStartedLoading(LoadingDescription)),
-                     q, SIGNAL(signalStartedLoading()));
+                     q, SIGNAL(signalStartedLoading()),
+                     Qt::QueuedConnection);
 
     QObject::connect(previewThread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
-                     q, SLOT(slotLoadingProgress(LoadingDescription,float)));
+                     q, SLOT(slotLoadingProgress(LoadingDescription,float)),
+                     Qt::QueuedConnection);
 
     QObject::connect(preloadThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
-                     q, SLOT(preloadNext()));
+                     q, SLOT(preloadNext()),
+                     Qt::QueuedConnection);
 
     // get preview size from screen size, but limit from VGA to WQXGA
 
