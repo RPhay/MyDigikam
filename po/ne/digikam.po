@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-25 00:41+0000\n"
+"POT-Creation-Date: 2026-05-26 00:42+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1004,7 +1004,7 @@ msgid ""
 msgstr ""
 "<p>क्यामेरा तस्विर आयात गर्न कृपया डिजिक्याम लाइब्रेरीबाट गन्तव्य एल्बम चयन गर्नुहोस् ।</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:354
+#: core/app/items/utils/itemviewutilities.cpp:363
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -16242,19 +16242,19 @@ msgstr ""
 "तस्विर प्रर्दशन गर्न सकिदैन\n"
 "\"%1\""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
 #, kde-format
 msgctxt "@title:column Processing checkbox"
 msgid "Include for Enfuse"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
 #, fuzzy, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "नयाँ छवि फाइलनाम"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
@@ -21817,8 +21817,8 @@ msgstr "अनुक्रमणिका सुरु गर्नुहोस�
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:273
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:280
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:231
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
@@ -22470,48 +22470,48 @@ msgctxt "@action"
 msgid "Import from Remote Storage..."
 msgstr "टिप्पणी:"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:499
 #, kde-format
 msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:498
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:502
 #, kde-format
 msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:501
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
 msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
 "specify this for all images"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:504
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
 #, kde-format
 msgid ""
 "Indicate the safety level for the photo or use Upload Options tab to specify "
 "this for all images"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:507
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
 #, kde-format
 msgid ""
 "Indicate what kind of image this is or use Upload Options tab to specify "
 "this for all images"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:522
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:526
 #, kde-format
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:537
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:541
 #, kde-format
 msgid "Enter extra tags, separated by commas."
 msgstr ""
@@ -23499,7 +23499,7 @@ msgid "Export to ImageShack"
 msgstr "निर्यात"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:150
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, fuzzy, kde-format
 msgctxt "@action:button"
@@ -23613,57 +23613,57 @@ msgstr "रङ गहिराइ:"
 msgid "Could not open file"
 msgstr "रङ गहिराइ:"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:106
 #, kde-format
 msgid "Logged in as:"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:116
 #, fuzzy, kde-format
 #| msgid "Target"
 msgid "Forget"
 msgstr "लक्ष्य"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:125
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:127
 #, kde-format
 msgid "Upload Anonymously"
 msgstr ""
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:147
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "निर्यात"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:149
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:151
 #, fuzzy, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "अपलोड गर्ने छवि चयन गर्नुहोस्"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:238
 #, fuzzy, kde-format
 #| msgid "Not Tagged"
 msgid "<i>Not logged in</i>"
 msgstr "ट्याग गरेको छैन"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:242
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:245
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "जडान असफल भयो"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:246
 #, fuzzy, kde-format
 msgid "Failed to log into Imgur: %1\n"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:274
 #, fuzzy, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
 msgstr "\"%1\" छवि लोड गर्न असफल"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:281
 #, fuzzy, kde-format
 msgid ""
 "Failed to upload photo to Imgur: %1\n"

@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-25 00:41+0000\n"
+"POT-Creation-Date: 2026-05-26 00:42+0000\n"
 "PO-Revision-Date: 2026-05-01 19:58+0200\n"
 "Last-Translator: Benedek Péter <benedekppeter@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1012,7 +1012,7 @@ msgstr ""
 "<p>Válassza ki a célalbumot a digiKam könyvtárból, ahová a kijelölt képeket "
 "át szeretné helyezni.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:354
+#: core/app/items/utils/itemviewutilities.cpp:363
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -16879,19 +16879,19 @@ msgstr "DNG konverter..."
 msgid "Cannot identify Raw image"
 msgstr "Nem lehet azonosítani a nyers képet"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
 #, kde-format
 msgctxt "@title:column Processing checkbox"
 msgid "Include for Enfuse"
 msgstr "Tartalmazza az Enfuse számára"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
 #, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "Fájlnév"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:110
 #, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
@@ -22750,8 +22750,8 @@ msgstr "Exportálás Boxba"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:273
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:280
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:231
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
@@ -23419,7 +23419,7 @@ msgctxt "@action"
 msgid "Import from Remote Storage..."
 msgstr "Importálás távoli tárhelyről..."
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:499
 #, kde-format
 msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
@@ -23428,7 +23428,7 @@ msgstr ""
 "Engedélyezze, hogy a kép nyilvánosan látható legyen, vagy használja a "
 "feltöltési beállítások fület az összes kép beállításához"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:498
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:502
 #, kde-format
 msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
@@ -23437,7 +23437,7 @@ msgstr ""
 "Engedélyezze, hogy a kép látható legyen a család számára, vagy használja a "
 "feltöltési beállítások fület az összes kép beállításához"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:501
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
 msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
@@ -23446,7 +23446,7 @@ msgstr ""
 "Engedélyezze, hogy a kép látható legyen a barátok számára, vagy használja a "
 "feltöltési beállítások fület az összes kép beállításához"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:504
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
 #, kde-format
 msgid ""
 "Indicate the safety level for the photo or use Upload Options tab to specify "
@@ -23455,7 +23455,7 @@ msgstr ""
 "Állítsa be a biztonsági szintet ehhez a képhez, vagy használja a feltöltési "
 "beállítások fület ennek megadásához minden képnél"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:507
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
 #, kde-format
 msgid ""
 "Indicate what kind of image this is or use Upload Options tab to specify "
@@ -23464,7 +23464,7 @@ msgstr ""
 "Adja meg a kép típusát, vagy használja a feltöltési beállítások fület az "
 "összes kép beállításához"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:522
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:526
 #, kde-format
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
@@ -23472,7 +23472,7 @@ msgstr ""
 "Képenként további címkék hozzáadása, vagy használja a feltöltési beállítások "
 "fület minden kép címkézéséhez"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:537
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:541
 #, kde-format
 msgid "Enter extra tags, separated by commas."
 msgstr "További címkék hozzáadása, vesszővel elválasztva."
@@ -24461,7 +24461,7 @@ msgid "Export to ImageShack"
 msgstr "Exportálás &ImageShack-re"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:150
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, kde-format
 msgctxt "@action:button"
@@ -24571,55 +24571,55 @@ msgstr "Nem sikerült engedélyezni"
 msgid "Could not open file"
 msgstr "A fájl nem nyitható meg"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:106
 #, kde-format
 msgid "Logged in as:"
 msgstr "Bejelentkezve mint:"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:116
 #, kde-format
 msgid "Forget"
 msgstr "Elfelejt"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:125
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:127
 #, kde-format
 msgid "Upload Anonymously"
 msgstr "Feltöltés névtelenül"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:147
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "Exportálás imgur.com-ra"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:149
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:151
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Feltöltés indítása az Imgur-ra"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:238
 #, kde-format
 msgid "<i>Not logged in</i>"
 msgstr "<i>Nincs bejelentkezve</i>"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:242
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:245
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "A hitelesítés sikertelen"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:246
 #, kde-format
 msgid "Failed to log into Imgur: %1\n"
 msgstr "Sikertelen bejelentkezés az Imgur-ra: %1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:274
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
 msgstr "Nem sikerült feltölteni a fotót az Imgur-ra: %1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:281
 #, kde-format
 msgid ""
 "Failed to upload photo to Imgur: %1\n"

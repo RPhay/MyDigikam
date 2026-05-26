@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-25 00:41+0000\n"
+"POT-Creation-Date: 2026-05-26 00:42+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -962,7 +962,7 @@ msgid ""
 "selected images into.</p>"
 msgstr "<p>请从 digiKam 数据库中选择目标相册以移动所选图像。</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:354
+#: core/app/items/utils/itemviewutilities.cpp:363
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -16215,19 +16215,19 @@ msgstr "DNG 转换..."
 msgid "Cannot identify Raw image"
 msgstr "无法识别 RAW 图像"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
 #, kde-format
 msgctxt "@title:column Processing checkbox"
 msgid "Include for Enfuse"
 msgstr "包含 Enfuse"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
 #, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "文件名"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:110
 #, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
@@ -21868,8 +21868,8 @@ msgstr "Box 导出"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:273
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:280
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:231
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
@@ -22517,7 +22517,7 @@ msgctxt "@action"
 msgid "Import from Remote Storage..."
 msgstr "从远程存储中导入..."
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:499
 #, kde-format
 msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
@@ -22526,7 +22526,7 @@ msgstr ""
 "勾选此项后，照片将被设为公开可见，您也可以使用上传标签页来指定此选项到所有图"
 "像。"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:498
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:502
 #, kde-format
 msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
@@ -22535,7 +22535,7 @@ msgstr ""
 "勾选此项后，照片将被设为家庭成员可见，您也可以使用上传标签页来指定此选项到所"
 "有图像。"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:501
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
 msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
@@ -22544,27 +22544,27 @@ msgstr ""
 "勾选此项后，照片将被设为好友可见，您也可以使用上传标签页来指定此选项到所有图"
 "像。"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:504
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
 #, kde-format
 msgid ""
 "Indicate the safety level for the photo or use Upload Options tab to specify "
 "this for all images"
 msgstr "指定照片的安全级别，您也可以使用上传标签页来指定此选项到所有图像。"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:507
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
 #, kde-format
 msgid ""
 "Indicate what kind of image this is or use Upload Options tab to specify "
 "this for all images"
 msgstr "指定照片的类型，您也可以使用上传标签页来指定此选项到所有图像。"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:522
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:526
 #, kde-format
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
 msgstr "添加额外标签到每张图像，您也可以使用上传标签页来添加标签到所有图像。"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:537
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:541
 #, kde-format
 msgid "Enter extra tags, separated by commas."
 msgstr "输入额外标签，以半角逗号分隔。"
@@ -23537,7 +23537,7 @@ msgid "Export to ImageShack"
 msgstr "导出到 ImageShack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:150
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, kde-format
 msgctxt "@action:button"
@@ -23646,55 +23646,55 @@ msgstr "无法验证身份"
 msgid "Could not open file"
 msgstr "无法打开文件"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:106
 #, kde-format
 msgid "Logged in as:"
 msgstr "登录为："
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:116
 #, kde-format
 msgid "Forget"
 msgstr "忘记"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:125
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:127
 #, kde-format
 msgid "Upload Anonymously"
 msgstr "匿名上传"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:147
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "导出到 imgur.com"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:149
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:151
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "开始上传到 Imgur"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:238
 #, kde-format
 msgid "<i>Not logged in</i>"
 msgstr "<b>未登录</b>"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:242
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:245
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "身份验证失败"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:246
 #, kde-format
 msgid "Failed to log into Imgur: %1\n"
 msgstr "无法登录到 Imgur：%1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:274
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
 msgstr "无法上传照片到 Imagur：%1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:281
 #, kde-format
 msgid ""
 "Failed to upload photo to Imgur: %1\n"

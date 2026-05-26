@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-25 00:41+0000\n"
+"POT-Creation-Date: 2026-05-26 00:42+0000\n"
 "PO-Revision-Date: 2024-09-23 13:12+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -998,7 +998,7 @@ msgstr ""
 "<p>Vyberte prosím cílové album z knihovny digiKamu, do něhož se mají "
 "přesunout vybrané obrázky.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:354
+#: core/app/items/utils/itemviewutilities.cpp:363
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -16241,19 +16241,19 @@ msgstr ""
 msgid "Cannot identify Raw image"
 msgstr "Obrázek Raw nelze identifikovat"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
 #, kde-format
 msgctxt "@title:column Processing checkbox"
 msgid "Include for Enfuse"
 msgstr ""
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
 #, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "Název souboru"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:110
 #, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
@@ -21786,8 +21786,8 @@ msgstr "Export do Boxu"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:273
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:280
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:231
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
@@ -22422,7 +22422,7 @@ msgctxt "@action"
 msgid "Import from Remote Storage..."
 msgstr ""
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:499
 #, kde-format
 msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
@@ -22431,7 +22431,7 @@ msgstr ""
 "Zaškrtněte, pokud má být fotografie veřejná, nebo nastavte tuto možnost pro "
 "všechny na kartě Možnosti odeslání"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:498
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:502
 #, kde-format
 msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
@@ -22440,7 +22440,7 @@ msgstr ""
 "Zaškrtněte, pokud má být fotografie viditelná pro rodinu, nebo nastavte tuto "
 "možnost pro všechny na kartě Možnosti odeslání"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:501
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
 msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
@@ -22449,7 +22449,7 @@ msgstr ""
 "Zaškrtněte, pokud má být fotografie viditelná pro přátele, nebo nastavte "
 "tuto možnost pro všechny na kartě Možnosti odeslání"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:504
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
 #, kde-format
 msgid ""
 "Indicate the safety level for the photo or use Upload Options tab to specify "
@@ -22458,7 +22458,7 @@ msgstr ""
 "Označte úroveň zabezpečení fotografie, nebo nastavte tuto možnost pro "
 "všechny na kartě Možnosti odeslání"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:507
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
 #, kde-format
 msgid ""
 "Indicate what kind of image this is or use Upload Options tab to specify "
@@ -22467,7 +22467,7 @@ msgstr ""
 "Označte druh fotografie, nebo nastavte tuto možnost pro všechny na kartě "
 "Možnosti odeslání"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:522
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:526
 #, kde-format
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
@@ -22475,7 +22475,7 @@ msgstr ""
 "Přidat obrázku dodatečné značky, nebo pro přidání značek ke všem obrázkům "
 "použít kartu Možnosti odeslání"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:537
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:541
 #, kde-format
 msgid "Enter extra tags, separated by commas."
 msgstr "Zadejte dodatečné značky oddělené mezerou."
@@ -23446,7 +23446,7 @@ msgid "Export to ImageShack"
 msgstr "Exportovat do ImageShacku"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:150
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, kde-format
 msgctxt "@action:button"
@@ -23553,55 +23553,55 @@ msgstr "Nelze ověřit"
 msgid "Could not open file"
 msgstr "Nelze otevřít soubor"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:106
 #, kde-format
 msgid "Logged in as:"
 msgstr "Přihlášen jako:"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:116
 #, kde-format
 msgid "Forget"
 msgstr "Zapomenout"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:125
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:127
 #, kde-format
 msgid "Upload Anonymously"
 msgstr "Odeslat anonymně"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:147
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "Exportovat do Imgur.com"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:149
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:151
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Spustit odesílání do Imgur"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:238
 #, kde-format
 msgid "<i>Not logged in</i>"
 msgstr "<i>Nepřihlášen</i>"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:242
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:245
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "Ověření selhalo"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:246
 #, kde-format
 msgid "Failed to log into Imgur: %1\n"
 msgstr "Selhalo přihlášeni Imguru: %1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:274
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
 msgstr "Odeslání fotografie do Imguru selhalo: %1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:281
 #, kde-format
 msgid ""
 "Failed to upload photo to Imgur: %1\n"

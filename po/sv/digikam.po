@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-25 00:41+0000\n"
+"POT-Creation-Date: 2026-05-26 00:42+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1025,7 +1025,7 @@ msgstr ""
 "<p>Välj destinationsalbum från Digikams bibliotek att flytta valda bilder "
 "till.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:354
+#: core/app/items/utils/itemviewutilities.cpp:363
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
@@ -16808,19 +16808,19 @@ msgstr "DNG-konvertering..."
 msgid "Cannot identify Raw image"
 msgstr "Kan inte identifiera obehandlad bild"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:107
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
 #, kde-format
 msgctxt "@title:column Processing checkbox"
 msgid "Include for Enfuse"
 msgstr "Inkludera för Enfuse"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:108
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
 #, kde-format
 msgctxt "@title:column Input file name"
 msgid "File Name"
 msgstr "Filnamn"
 
-#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:109
+#: core/dplugins/generic/tools/expoblending/blendingdlg/bracketstack.cpp:110
 #, kde-format
 msgctxt "@title:column Input image exposure"
 msgid "Exposure (EV)"
@@ -22703,8 +22703,8 @@ msgstr "Export till Box"
 #: core/dplugins/generic/webservices/dropbox/dbwindow.cpp:310
 #: core/dplugins/generic/webservices/facebook/fbwindow.cpp:619
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:416
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:270
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:277
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:273
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:280
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:225
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:231
 #: core/dplugins/generic/webservices/onedrive/odwindow.cpp:319
@@ -23385,7 +23385,7 @@ msgctxt "@action"
 msgid "Import from Remote Storage..."
 msgstr "Importera från annan dator"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:495
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:499
 #, kde-format
 msgid ""
 "Check if photo should be publicly visible or use Upload Options tab to "
@@ -23394,7 +23394,7 @@ msgstr ""
 "Markera om fotot ska vara öppet synligt eller använd fliken "
 "uppladdningsalternativ för att ange det för alla bilder"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:498
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:502
 #, kde-format
 msgid ""
 "Check if photo should be visible to family or use Upload Options tab to "
@@ -23403,7 +23403,7 @@ msgstr ""
 "Markera om fotot ska vara synligt för familjen eller använd fliken "
 "uppladdningsalternativ för att ange det för alla bilder"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:501
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:505
 #, kde-format
 msgid ""
 "Check if photo should be visible to friends or use Upload Options tab to "
@@ -23412,7 +23412,7 @@ msgstr ""
 "Markera om fotot ska vara synligt för vänner eller använd fliken "
 "uppladdningsalternativ för att ange det för alla bilder"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:504
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:508
 #, kde-format
 msgid ""
 "Indicate the safety level for the photo or use Upload Options tab to specify "
@@ -23421,7 +23421,7 @@ msgstr ""
 "Ange fotots säkerhetsnivå eller använd fliken uppladdningsalternativ för att "
 "ange den för alla bilder"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:507
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:511
 #, kde-format
 msgid ""
 "Indicate what kind of image this is or use Upload Options tab to specify "
@@ -23430,7 +23430,7 @@ msgstr ""
 "Ange vilken sorts bild det här är eller använd fliken uppladdningsalternativ "
 "för att ange det för alla bilder"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:522
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:526
 #, kde-format
 msgid ""
 "Add extra tags per image or use Upload Options tab to add tags for all images"
@@ -23438,7 +23438,7 @@ msgstr ""
 "Lägg till extraetiketter per bild eller använd fliken uppladdningsalternativ "
 "för att lägga till etiketter för alla bilder"
 
-#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:537
+#: core/dplugins/generic/webservices/flickr/flickrlist.cpp:541
 #, kde-format
 msgid "Enter extra tags, separated by commas."
 msgstr "Ange extraetiketter, åtskilda av kommatecken."
@@ -24422,7 +24422,7 @@ msgid "Export to ImageShack"
 msgstr "Exportera till Imageshack"
 
 #: core/dplugins/generic/webservices/imageshack/imageshackwindow.cpp:105
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:148
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:150
 #: core/dplugins/generic/webservices/ipfs/ipfswindow.cpp:122
 #, kde-format
 msgctxt "@action:button"
@@ -24532,55 +24532,55 @@ msgstr "Kunde inte ge behörighet"
 msgid "Could not open file"
 msgstr "Kunde inte öppna fil"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:104
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:106
 #, kde-format
 msgid "Logged in as:"
 msgstr "Inloggad som:"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:114
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:116
 #, kde-format
 msgid "Forget"
 msgstr "Glöm"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:125
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:127
 #, kde-format
 msgid "Upload Anonymously"
 msgstr "Ladda upp anonymt"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:145
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:147
 #, kde-format
 msgctxt "@title:window"
 msgid "Export to imgur.com"
 msgstr "Exportera till imgur.com"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:149
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:151
 #, kde-format
 msgctxt "@info:tooltip, button"
 msgid "Start upload to Imgur"
 msgstr "Starta uppladdning till Imgur"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:235
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:238
 #, kde-format
 msgid "<i>Not logged in</i>"
 msgstr "<i>Inte inloggad</i>"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:242
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:245
 #, kde-format
 msgctxt "@title:window"
 msgid "Authorization Failed"
 msgstr "Behörighetskontroll misslyckades"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:243
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:246
 #, kde-format
 msgid "Failed to log into Imgur: %1\n"
 msgstr "Misslyckades logga in på Imgur: %1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:271
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:274
 #, kde-format
 msgid "Failed to upload photo to Imgur: %1\n"
 msgstr "Misslyckades ladda upp foto till Imgur: %1\n"
 
-#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:278
+#: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:281
 #, kde-format
 msgid ""
 "Failed to upload photo to Imgur: %1\n"
