@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:42+0000\n"
 "PO-Revision-Date: 2023-07-03 01:05+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-doc@kde.org>\n"
@@ -44785,27 +44785,27 @@ msgstr "Escolher..."
 msgid "Select a Font"
 msgstr "Escolha um mês"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:193
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:197
 #, kde-format
 msgid "Loading..."
 msgstr "A carregar..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:202
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:206
 #, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "Antevisão Incorporada do JPEG"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:210
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:214
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr "Antevisão de Tamanho Reduzido do RAW"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:226
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr "Antevisão de Tamanho Reduzido"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:239
 #, kde-format
 msgid "Failed to load image"
 msgstr "Não foi possível carregar a imagem"

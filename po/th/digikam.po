@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:42+0000\n"
 "PO-Revision-Date: 2010-03-28 14:17+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -43643,27 +43643,27 @@ msgstr "เลือก..."
 msgid "Select a Font"
 msgstr "ไม่เลือกเลย"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:193
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:197
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "โหลด..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:202
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:206
 #, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "แสดงภาพตัวอย่างแบบ JPEG ที่ฝังอยู่"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:210
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:214
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr "ดูตัวอย่างแบบครึ่งหนึ่งของภาพขนาดเต็ม"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:226
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr "ดูตัวอย่างแบบลดขนาดภาพ"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:239
 #, fuzzy, kde-format
 msgid "Failed to load image"
 msgstr ""

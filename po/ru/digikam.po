@@ -56,7 +56,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:42+0000\n"
 "PO-Revision-Date: 2026-04-03 19:52+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -43707,27 +43707,27 @@ msgstr "Выбрать..."
 msgid "Select a Font"
 msgstr "Выбор шрифта"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:193
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:197
 #, kde-format
 msgid "Loading..."
 msgstr "Загрузка..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:202
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:206
 #, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "Встроенный предпросмотр файлов JPEG"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:210
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:214
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr "RAW-изображение половинного размера"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:226
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr "Изображение уменьшенного размера"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:239
 #, kde-format
 msgid "Failed to load image"
 msgstr "Не удалось загрузить изображение"

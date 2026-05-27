@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-26 00:42+0000\n"
+"POT-Creation-Date: 2026-05-27 00:42+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -41615,27 +41615,27 @@ msgstr ""
 msgid "Select a Font"
 msgstr "कुनै पनि चयन नगर्नुहोस्"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:193
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:197
 #, fuzzy, kde-format
 msgid "Loading..."
 msgstr "लोड गर्नुहोस्..."
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:202
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:206
 #, fuzzy, kde-format
 msgid "Embedded JPEG Preview"
 msgstr "सम्मिलित पूर्वावलोकन देखाउनुहोस्"
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:210
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:214
 #, kde-format
 msgid "Half Size Raw Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:222
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:226
 #, kde-format
 msgid "Reduced Size Preview"
 msgstr ""
 
-#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:235
+#: core/libs/widgets/graphicsview/dimgpreviewitem.cpp:239
 #, fuzzy, kde-format
 msgid "Failed to load image"
 msgstr "\"%1\" छवि लोड गर्न असफल"
