@@ -48,14 +48,14 @@ EditorStackView::~EditorStackView()
     delete d;
 }
 
-void EditorStackView::setCanvas(Canvas* const canvas)
+void EditorStackView::setCanvas(Canvas* const _canvas)
 {
     if (d->canvas)
     {
         return;
     }
 
-    d->canvas = canvas;
+    d->canvas = _canvas;
     insertWidget(CanvasMode, d->canvas);
 
     connect(d->canvas, SIGNAL(signalZoomChanged(double)),

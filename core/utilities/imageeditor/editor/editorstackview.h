@@ -45,7 +45,7 @@ public:
     explicit EditorStackView(QWidget* const parent = nullptr);
     ~EditorStackView()                                    override;
 
-    void     setCanvas(Canvas* const canvas);
+    void     setCanvas(Canvas* const _canvas);
     Canvas*  canvas()                               const;
 
     void     setToolView(QWidget* const view);

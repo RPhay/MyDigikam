@@ -45,7 +45,7 @@ public:
     explicit EditorTool(QObject* const parent);
     ~EditorTool()                               override;
 
-    void setPlugin(DPlugin* const plugin);
+    void setPlugin(DPlugin* const _plugin);
     DPlugin* plugin()                     const;
 
     /**
@@ -161,13 +161,13 @@ protected:
      * Manage filter instance plugged in tool interface
      */
     DImgThreadedFilter* filter()                        const;
-    void setFilter(DImgThreadedFilter* const filter);
+    void setFilter(DImgThreadedFilter* const _filter);
 
     /**
      * Manage analyser instance plugged in tool interface
      */
     DImgThreadedAnalyser* analyser()                    const;
-    void setAnalyser(DImgThreadedAnalyser* const analyser);
+    void setAnalyser(DImgThreadedAnalyser* const _analyser);
 
     /**
      * If true, delete filter instance when preview or final rendering is processed.

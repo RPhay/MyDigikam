@@ -771,9 +771,9 @@ int TileCreator::tileQuality() const
     return d->m_tileQuality;
 }
 
-void TileCreator::setResume(bool resume)
+void TileCreator::setResume(bool _resume)
 {
-    d->m_resume = resume;
+    d->m_resume = _resume;
 }
 
 bool TileCreator::resume() const

@@ -93,9 +93,9 @@ EditorTool::~EditorTool()
     delete d;
 }
 
-void EditorTool::setPlugin(DPlugin* const plugin)
+void EditorTool::setPlugin(DPlugin* const _plugin)
 {
-    d->plugin = plugin;
+    d->plugin = _plugin;
     setToolName(d->plugin->name());
     setToolIcon(d->plugin->icon());
     d->settings->setTool(this);
@@ -478,10 +478,10 @@ void EditorToolThreaded::slotInit()
     }
 }
 
-void EditorToolThreaded::setFilter(DImgThreadedFilter* const filter)
+void EditorToolThreaded::setFilter(DImgThreadedFilter* const _filter)
 {
     delete d->threadedFilter;
-    d->threadedFilter = filter;
+    d->threadedFilter = _filter;
 
     connect(d->threadedFilter, SIGNAL(signalStarted()),
             this, SLOT(slotFilterStarted()));
@@ -500,7 +500,7 @@ DImgThreadedAnalyser* EditorToolThreaded::analyser() const
     return d->threadedAnalyser;
 }
 
-void EditorToolThreaded::setAnalyser(DImgThreadedAnalyser* const analyser)
+void EditorToolThreaded::setAnalyser(DImgThreadedAnalyser* const _analyser)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Analys " << toolName() << " started...";
 
@@ -515,7 +515,7 @@ void EditorToolThreaded::setAnalyser(DImgThreadedAnalyser* const analyser)
     qApp->setOverrideCursor(Qt::WaitCursor);
 
     delete d->threadedAnalyser;
-    d->threadedAnalyser = analyser;
+    d->threadedAnalyser = _analyser;
 
     connect(d->threadedAnalyser, SIGNAL(signalStarted()),
             this, SLOT(slotAnalyserStarted()));

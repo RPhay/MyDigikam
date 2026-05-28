@@ -86,7 +86,7 @@ public:
 
     void setTileFormat(const QString& format);
     void setTileQuality(int quality);
-    void setResume(bool resume);
+    void setResume(bool _resume);
     void setVerifyExactResult(bool verify);
     QString tileFormat()                        const;
     int tileQuality()                           const;

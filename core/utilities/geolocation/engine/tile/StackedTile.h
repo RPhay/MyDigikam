@@ -62,7 +62,8 @@ class StackedTile : public Tile
 {
 public:
 
-    explicit StackedTile(TileId const& id, QImage const& resultImage, QVector<QSharedPointer<TextureTile> > const& tiles);
+    explicit StackedTile(TileId const& id, QImage const& resultImage,
+                         QVector<QSharedPointer<TextureTile> > const& tiles);
     ~StackedTile() override;
 
     void setUsed(bool used);
@@ -121,7 +122,7 @@ private:
     const uchar** const                         jumpTable8;
     const uint** const                          jumpTable32;
     const int                                   m_byteCount;
-    bool                                        m_isUsed;
+    bool                                        m_isUsed       = false;
 };
 
 } // namespace Marble

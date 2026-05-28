@@ -25,41 +25,52 @@ namespace Marble
 {
 
 TileId::TileId(QString const& mapThemeId, int zoomLevel, int tileX, int tileY)
-    : m_mapThemeIdHash(qHash(mapThemeId)), m_zoomLevel(zoomLevel), m_tileX(tileX), m_tileY(tileY)
+    : m_mapThemeIdHash(qHash(mapThemeId)),
+      m_zoomLevel     (zoomLevel),
+      m_tileX         (tileX),
+      m_tileY         (tileY)
 {
 }
 
 TileId::TileId(uint mapThemeIdHash, int zoomLevel, int tileX, int tileY)
-    : m_mapThemeIdHash(mapThemeIdHash), m_zoomLevel(zoomLevel), m_tileX(tileX), m_tileY(tileY)
+    : m_mapThemeIdHash(mapThemeIdHash),
+      m_zoomLevel     (zoomLevel),
+      m_tileX         (tileX),
+      m_tileY         (tileY)
 {
 }
 
 TileId::TileId()
-    : m_mapThemeIdHash(0), m_zoomLevel(0), m_tileX(0), m_tileY(0)
+    : m_mapThemeIdHash(0),
+      m_zoomLevel     (0),
+      m_tileX         (0),
+      m_tileY         (0)
 {
 }
 
-TileId TileId::fromCoordinates(const GeoDataCoordinates& coords, int zoomLevel)
+TileId TileId::fromCoordinates(const GeoDataCoordinates& _coords, int _zoomLevel)
 {
-    if (zoomLevel < 0)
+    if (_zoomLevel < 0)
     {
         return TileId();
     }
 
-    const int maxLat = 90 * 1000000;
+    const int maxLat = 90  * 1000000;
     const int maxLon = 180 * 1000000;
-    int lat = GeoDataCoordinates::normalizeLat(coords.latitude(GeoDataCoordinates::Degree), GeoDataCoordinates::Degree) * 1000000;
-    int lon = GeoDataCoordinates::normalizeLon(coords.longitude(GeoDataCoordinates::Degree), GeoDataCoordinates::Degree) * 1000000;
-    int x = 0;
-    int y = 0;
+    int lat          = GeoDataCoordinates::normalizeLat(_coords.latitude(GeoDataCoordinates::Degree),
+                                                        GeoDataCoordinates::Degree) * 1000000;
+    int lon          = GeoDataCoordinates::normalizeLon(_coords.longitude(GeoDataCoordinates::Degree),
+                                                        GeoDataCoordinates::Degree) * 1000000;
+    int x            = 0;
+    int y            = 0;
 
-    for (int i = 0; i < zoomLevel; ++i)
+    for (int i = 0 ; i < _zoomLevel ; ++i)
     {
         const int deltaLat = maxLat >> i;
 
         if (lat <= (maxLat - deltaLat))
         {
-            y += 1 << (zoomLevel - i - 1);
+            y   += 1 << (_zoomLevel - i - 1);
             lat += deltaLat;
         }
 
@@ -67,21 +78,21 @@ TileId TileId::fromCoordinates(const GeoDataCoordinates& coords, int zoomLevel)
 
         if (lon >= (maxLon - deltaLon))
         {
-            x += 1 << (zoomLevel - i - 1);
+            x += 1 << (_zoomLevel - i - 1);
         }
-
         else
         {
             lon += deltaLon;
         }
     }
 
-    return TileId(0, zoomLevel, x, y);
+    return TileId(0, _zoomLevel, x, y);
 }
 
 } // namespace Marble
 
 #ifndef QT_NO_DEBUG_STREAM
+
 QDebug operator<<(QDebug dbg, const Marble::TileId& id)
 {
     return dbg << QString::fromUtf8("Marble::TileId(%1, %2, %3, %4)").arg(id.mapThemeIdHash())
@@ -89,4 +100,5 @@ QDebug operator<<(QDebug dbg, const Marble::TileId& id)
            .arg(id.x())
            .arg(id.y());
 }
+
 #endif
