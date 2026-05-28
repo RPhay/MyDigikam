@@ -54,6 +54,8 @@ public:
 
     Private() = default;
 
+public:
+
     int                    startIndex               = 1;
 
     QButtonGroup*          buttonGroup              = nullptr;
@@ -205,10 +207,10 @@ int RenameCustomizer::startIndex() const
     return d->startIndex;
 }
 
-void RenameCustomizer::setStartIndex(int startIndex)
+void RenameCustomizer::setStartIndex(int index)
 {
-    d->startIndex = startIndex;
-    d->advancedRenameManager->setStartIndex(startIndex);
+    d->startIndex = index;
+    d->advancedRenameManager->setStartIndex(d->startIndex);
 }
 
 void RenameCustomizer::reset()
@@ -251,7 +253,7 @@ QString RenameCustomizer::newName(const QString& fileName) const
 
 RenameCustomizer::Case RenameCustomizer::changeCase() const
 {
-    return static_cast<Case>(d->renameDefaultCaseType->currentIndex());
+    return (static_cast<Case>(d->renameDefaultCaseType->currentIndex()));
 }
 
 void RenameCustomizer::setChangeCase(RenameCustomizer::Case val)

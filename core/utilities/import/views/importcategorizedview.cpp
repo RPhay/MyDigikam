@@ -47,7 +47,7 @@ public:
 
     ImportCategorizedView* view() const override
     {
-        return static_cast<ImportCategorizedView*>(ItemViewToolTip::view());
+        return (static_cast<ImportCategorizedView*>(ItemViewToolTip::view()));
     }
 
 protected:
@@ -107,7 +107,7 @@ ImportCategorizedView::~ImportCategorizedView()
     delete d;
 }
 
-void ImportCategorizedView::setModels(ImportItemModel* model, ImportSortFilterModel* filterModel)
+void ImportCategorizedView::setModels(ImportItemModel* _model, ImportSortFilterModel* _filterModel)
 {
     if (d->delegate)
     {
@@ -129,8 +129,8 @@ void ImportCategorizedView::setModels(ImportItemModel* model, ImportSortFilterMo
                    this, SLOT(slotCamItemInfosAdded()));
     }
 
-    d->model       = model;
-    d->filterModel = filterModel;
+    d->model       = _model;
+    d->filterModel = _filterModel;
 
     setModel(d->filterModel);
 

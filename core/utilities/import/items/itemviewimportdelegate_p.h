@@ -44,6 +44,8 @@ public:
     ItemViewImportDelegatePrivate();
     virtual ~ItemViewImportDelegatePrivate() = default;
 
+public:
+
     void init(ItemViewImportDelegate* const _q, QWidget* const _widget);
 
     void makeStarPolygon();

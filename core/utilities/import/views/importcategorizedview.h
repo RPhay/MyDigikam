@@ -39,8 +39,8 @@ public:
     explicit ImportCategorizedView(QWidget* const parent = nullptr);
     ~ImportCategorizedView()                                        override;
 
-    void setModels(ImportItemModel* model,
-                   ImportSortFilterModel* filterModel);
+    void setModels(ImportItemModel* _model,
+                   ImportSortFilterModel* _filterModel);
 
     ImportItemModel*       importItemModel()                  const;
     ImportSortFilterModel* importSortFilterModel()            const;

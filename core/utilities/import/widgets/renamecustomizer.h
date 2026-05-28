@@ -56,7 +56,7 @@ public:
     void    setChangeCase(Case val);
 
     int     startIndex() const;
-    void    setStartIndex(int startIndex);
+    void    setStartIndex(int index);
     void    reset();
 
     void    setPreviewText(const QString& txt);

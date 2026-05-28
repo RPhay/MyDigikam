@@ -42,6 +42,8 @@ public:
     explicit ItemViewImportDelegate(QWidget* const parent);
     ~ItemViewImportDelegate() override;
 
+public:
+
     ThumbnailSize thumbnailSize()                                                     const;
     double        displayRatio()                                                      const;
     int           spacing()                                                           const;
@@ -53,7 +55,7 @@ public:
     /// reimplemented from DItemDelegate
 
     void setThumbnailSize(const ThumbnailSize& thumbSize)                                   override;
-    void setSpacing(int spacing)                                                            override;
+    void setSpacing(int _spacing)                                                           override;
     void setDefaultViewOptions(const QStyleOptionViewItem& option)                          override;
     bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                         const QModelIndex& index, QRect* tooltipRect = nullptr)       const override;
@@ -105,7 +107,8 @@ protected:
 
     /// Use the tool methods for painting in subclasses
     QRect drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background, const QPixmap& thumbnail) const;
-    void drawRating(QPainter* p, const QModelIndex& index, const QRect& ratingRect, int rating, bool isSelected)  const;
+    void drawRating(QPainter* _painter, const QModelIndex& _index,
+                    const QRect& _ratingRect, int _rating, bool _isSelected)                                      const;
     void drawName(QPainter* p,const QRect& nameRect, const QString& name)                                         const;
     void drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date)                              const;
     void drawImageSize(QPainter* p, const QRect& dimsRect, const QSize& dims)                                     const;

@@ -72,6 +72,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool                            isValid     = false;
 
     int                             percentUsed = -1;
@@ -152,28 +154,28 @@ void FreeSpaceWidget::refresh()
     d->timer->start(10000);
 }
 
-void FreeSpaceWidget::addInformation(qint64 bytesSize,
-                                     qint64 bytesUsed,
-                                     qint64 bytesAvail,
-                                     const QString& mountPoint)
+void FreeSpaceWidget::addInformation(qint64 _bytesSize,
+                                     qint64 _bytesUsed,
+                                     qint64 _bytesAvail,
+                                     const QString& _mountPoint)
 {
     MountPointInfo inf;
 
-    inf.mountPoint = mountPoint;
-    inf.bytesSize  = bytesSize;
-    inf.bytesUsed  = bytesUsed;
-    inf.bytesAvail = bytesAvail;
-    inf.isValid    = (bytesSize > 0);
+    inf.mountPoint        = _mountPoint;
+    inf.bytesSize         = _bytesSize;
+    inf.bytesUsed         = _bytesUsed;
+    inf.bytesAvail        = _bytesAvail;
+    inf.isValid           = (_bytesSize > 0);
 
-    d->infos[mountPoint] = inf;
+    d->infos[_mountPoint] = inf;
 
-    // update cumulative data
+    // Update cumulative data
 
-    d->bytesSize   = 0;
-    d->bytesUsed   = 0;
-    d->bytesAvail  = 0;
-    d->isValid     = false;
-    d->percentUsed = -1;
+    d->bytesSize          = 0;
+    d->bytesUsed          = 0;
+    d->bytesAvail         = 0;
+    d->isValid            = false;
+    d->percentUsed        = -1;
 
     for (const MountPointInfo& info : std::as_const(d->infos))
     {
@@ -186,9 +188,9 @@ void FreeSpaceWidget::addInformation(qint64 bytesSize,
         }
     }
 
-    if (bytesSize > 0)
+    if (_bytesSize > 0)
     {
-        d->percentUsed = lround(100.0 - (100.0 * bytesAvail / bytesSize));
+        d->percentUsed = lround(100.0 - (100.0 * _bytesAvail / _bytesSize));
     }
 
     updateToolTip();
@@ -367,12 +369,14 @@ void FreeSpaceWidget::enterEvent(QEvent* e)
 
 {
     Q_UNUSED(e)
+
     d->toolTip->show();
 }
 
 void FreeSpaceWidget::leaveEvent(QEvent* e)
 {
     Q_UNUSED(e)
+
     d->toolTip->hide();
 }
 

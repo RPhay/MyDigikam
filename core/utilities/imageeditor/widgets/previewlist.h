@@ -74,7 +74,7 @@ public:
 
     void setPixmap(const QPixmap& pix);
 
-    void setId(int id);
+    void setId(int _id);
     int  id()       const;
 
     void setBusy(bool b);

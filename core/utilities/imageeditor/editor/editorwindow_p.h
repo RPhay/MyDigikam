@@ -154,6 +154,8 @@ public:
     Private()  = default;
     ~Private() = default;
 
+public:
+
     void plugNewVersionInFormatAction(EditorWindow* const q,
                                       QMenu* const menuAction,
                                       const QString& text,

@@ -116,16 +116,16 @@ void ItemViewImportDelegate::setThumbnailSize(const ThumbnailSize& thumbSize)
     }
 }
 
-void ItemViewImportDelegate::setSpacing(int spacing)
+void ItemViewImportDelegate::setSpacing(int _spacing)
 {
     Q_D(ItemViewImportDelegate);
 
-    if (d->spacing == spacing)
+    if (d->spacing == _spacing)
     {
         return;
     }
 
-    d->spacing = spacing;
+    d->spacing = _spacing;
     invalidatePaintingCache();
 }
 
@@ -268,10 +268,10 @@ QRect ItemViewImportDelegate::drawThumbnail(QPainter* p,
         return QRect();
     }
 
-    QRect r    = thumbRect;
-    double dpr =  thumbnail.devicePixelRatio();
-    int thumbW = qRound((double)thumbnail.width()  / dpr);
-    int thumbH = qRound((double)thumbnail.height() / dpr);
+    QRect r           = thumbRect;
+    double dpr        =  thumbnail.devicePixelRatio();
+    int thumbW        = qRound((double)thumbnail.width()  / dpr);
+    int thumbH        = qRound((double)thumbnail.height() / dpr);
 
     QRect actualPixmapRect(r.x() + (r.width()  - thumbW) / 2,
                            r.y() + (r.height() - thumbH) / 2,
@@ -289,17 +289,17 @@ QRect ItemViewImportDelegate::drawThumbnail(QPainter* p,
     return actualPixmapRect;
 }
 
-void ItemViewImportDelegate::drawRating(QPainter* p,
-                                        const QModelIndex& index,
-                                        const QRect& ratingRect,
-                                        int rating,
-                                        bool isSelected) const
+void ItemViewImportDelegate::drawRating(QPainter* _painter,
+                                        const QModelIndex& _index,
+                                        const QRect& _ratingRect,
+                                        int _rating,
+                                        bool _isSelected) const
 {
     Q_D(const ItemViewImportDelegate);
 
-    if (d->editingRating != index)
+    if (d->editingRating != _index)
     {
-        p->drawPixmap(ratingRect, ratingPixmap(rating, isSelected));
+        _painter->drawPixmap(_ratingRect, ratingPixmap(_rating, _isSelected));
     }
 }
 

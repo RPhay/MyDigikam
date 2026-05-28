@@ -149,6 +149,8 @@ public:
 
     Private() = default;
 
+public:
+
     bool busy = false;
     int  id   = 0;
 };
@@ -179,9 +181,9 @@ void PreviewListItem::setPixmap(const QPixmap& pix)
     setIcon(icon);
 }
 
-void PreviewListItem::setId(int id)
+void PreviewListItem::setId(int _id)
 {
-    d->id = id;
+    d->id = _id;
 }
 
 int PreviewListItem::id() const

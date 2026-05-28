@@ -2207,10 +2207,10 @@ VersionFileOperation EditorWindow::saveInFormatVersionFileOperation(const QUrl& 
     return versionManager()->operationNewVersionInFormat(currentName, format, resolvedHistory, history);
 }
 
-bool EditorWindow::startingSaveVersion(const QUrl& url, bool fork, bool saveAs, const QString& format)
+bool EditorWindow::startingSaveVersion(const QUrl& url, bool fork, bool saveas, const QString& format)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Saving image" << url << "non-destructive, new version:"
-                                 << fork << ", saveAs:" << saveAs << "format:" << format;
+                                 << fork << ", saveas:" << saveas << "format:" << format;
 
     if (m_savingContext.savingState != SavingContext::SavingStateNone)
     {
@@ -2221,7 +2221,7 @@ bool EditorWindow::startingSaveVersion(const QUrl& url, bool fork, bool saveAs, 
     m_savingContext.versionFileOperation = saveVersionFileOperation(url, fork);
     m_canvas->interface()->setHistoryIsBranch(fork);
 
-    if (saveAs)
+    if      (saveas)
     {
         QUrl suggested = m_savingContext.versionFileOperation.saveFile.fileUrl();
         QUrl selectedUrl;
@@ -2268,17 +2268,19 @@ bool EditorWindow::startingSaveVersion(const QUrl& url, bool fork, bool saveAs, 
         QUrl currURL(m_savingContext.srcURL);
         currURL.cleanPath();
         newURL.cleanPath();
+
         if (currURL.equals(newURL))
         {
             ...
             return false;
         }
 */
-
         // check for overwrite, unless the operation explicitly tells us to overwrite
 
-        if (!(m_savingContext.versionFileOperation.tasks & VersionFileOperation::Replace) &&
-            !checkOverwrite(newURL))
+        if (
+            !(m_savingContext.versionFileOperation.tasks & VersionFileOperation::Replace) &&
+            !checkOverwrite(newURL)
+           )
         {
             return false;
         }

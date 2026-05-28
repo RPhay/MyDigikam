@@ -86,6 +86,8 @@ public:
     explicit EditorWindow(const QString& name, QWidget* const parent = nullptr);
     ~EditorWindow()                                       override;
 
+public:
+
     void registerExtraPluginsActions(QString& dom)        override;
     void loadTool(EditorTool* const tool);
     bool actionEnabledState()                       const;
@@ -348,7 +350,7 @@ private:
 
     void setToolInfoMessage(const QString& txt);
 
-    bool startingSaveVersion(const QUrl& url, bool subversion, bool saveAs, const QString& format);
+    bool startingSaveVersion(const QUrl& url, bool subversion, bool saveas, const QString& format);
 
     void setPreviewModeMask(int mask);
     PreviewToolBar::PreviewMode previewMode()       const;
