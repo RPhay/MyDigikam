@@ -28,13 +28,13 @@
 # Yasen Pramatarov <yasen@lindeas.com>, 2009, 2010, 2011.
 # Yasen Pramatarov <yasen@lindeas.com>, 2011, 2015.
 # Yasen Pramatarov <yasen@lindeas.com>, 2005, 2006, 2009, 2010, 2011, 2012, 2021.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022-2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:42+0000\n"
-"PO-Revision-Date: 2026-04-03 00:34+0200\n"
+"POT-Creation-Date: 2026-05-29 00:41+0000\n"
+"PO-Revision-Date: 2026-05-28 20:46+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: core/app/date/ddateedit.cpp:489
 #, kde-format
@@ -173,7 +173,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Без дата"
 
-#: core/app/date/timelinewidget.cpp:269
+#: core/app/date/timelinewidget.cpp:271
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -185,19 +185,19 @@ msgstr ""
 "Седмица #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:273
+#: core/app/date/timelinewidget.cpp:275
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Начало: "
 
-#: core/app/date/timelinewidget.cpp:274
+#: core/app/date/timelinewidget.cpp:276
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Край: "
 
-#: core/app/date/timelinewidget.cpp:281
+#: core/app/date/timelinewidget.cpp:283
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -2989,7 +2989,7 @@ msgstr "Показване на лупа (x%1)"
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:492
+#: core/libs/album/engine/album.cpp:493
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3136,7 +3136,7 @@ msgid "No Tags Album"
 msgstr "Албум без етикети"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -3529,17 +3529,13 @@ msgstr ""
 "%1\">400 потребителски доклада</a> затворени в bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Вътрешният QtAVPlayer е актуализиран до най-новата версия 2026-01-24, която "
+"Вътрешният QtAVPlayer е актуализиран до най-новата версия 2026-04-05, която "
 "носи със себе си различни корекции на грешки и подобрения на "
 "производителността (само Qt5)."
 
@@ -3885,12 +3881,11 @@ msgstr ""
 "Добавена е поддръжка за търсене на наскоро променени елементи в базата данни."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
 "Актуализиран е вътрешния RAW енджин до последната Libraw snapshot от "
-"26.03.2026 г."
+"06.04.2026 г."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -3898,16 +3893,13 @@ msgid "New RAW camera supported:"
 msgstr "Поддържа се нова RAW камера:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra ;"
+#, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra;"
+"R100, EOS Ra Canon EOS Kiss M2;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
@@ -4708,7 +4700,7 @@ msgstr "LibAVUtil"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFMpeg"
-msgstr ""
+msgstr "FFMpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:149
 #: core/app/views/utils/componentsinfodlg.cpp:154
@@ -27405,38 +27397,38 @@ msgstr "Ротация: %1\n"
 msgid "Skipped"
 msgstr "Пропуснато"
 
-#: core/libs/album/engine/album.cpp:417
+#: core/libs/album/engine/album.cpp:418
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr "Кошче"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Текущо търсене по период от време"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Текущо ориентировъчно търсене по изображение"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Текущо ориентировъчно търсене по скица"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "Текущо търсене по карта"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Текущо търсене"
 
-#: core/libs/album/engine/album.cpp:787
+#: core/libs/album/engine/album.cpp:788
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Текущо търсене на дубликати"
@@ -62939,25 +62931,25 @@ msgstr "Няма налични настройки"
 msgid "This is the list of batch tools assigned."
 msgstr "Това е списък на зададените инструменти за пакетна обработка."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:292
+#: core/utilities/queuemanager/views/queuelist.cpp:304
 #, kde-format
 msgctxt "@info"
 msgid "This is the list of images to batch process."
 msgstr "Това е списъкът с изображения за пакетна обработка."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:310
+#: core/utilities/queuemanager/views/queuelist.cpp:322
 #, kde-format
 msgctxt "@title: preview item"
 msgid "Thumbnail"
 msgstr "Миниатюра"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:311
+#: core/utilities/queuemanager/views/queuelist.cpp:323
 #, kde-format
 msgctxt "@title: original item name"
 msgid "Original"
 msgstr "Оригинал"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:312
+#: core/utilities/queuemanager/views/queuelist.cpp:324
 #, kde-format
 msgctxt "@title: target item name"
 msgid "Target"
@@ -64154,16 +64146,14 @@ msgid "and"
 msgstr "и"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Връщане на елементи без области на лицето"
+msgstr "Връщане на елементи с потвърдени зони за лице"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Няма области с лица"
+msgstr "Потвърдени лицеви области"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format

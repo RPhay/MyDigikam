@@ -132,7 +132,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:42+0000\n"
+"POT-Creation-Date: 2026-05-29 00:41+0000\n"
 "PO-Revision-Date: 2024-08-14 00:43+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
@@ -531,7 +531,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "بدون تاریخ"
 
-#: core/app/date/timelinewidget.cpp:269
+#: core/app/date/timelinewidget.cpp:271
 #, fuzzy, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -541,19 +541,19 @@ msgid ""
 "%4\t%5"
 msgstr "&هفته‌"
 
-#: core/app/date/timelinewidget.cpp:273
+#: core/app/date/timelinewidget.cpp:275
 #, fuzzy, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "آغاز"
 
-#: core/app/date/timelinewidget.cpp:274
+#: core/app/date/timelinewidget.cpp:276
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr ""
 
-#: core/app/date/timelinewidget.cpp:281
+#: core/app/date/timelinewidget.cpp:283
 #, fuzzy, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -3406,7 +3406,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:492
+#: core/libs/album/engine/album.cpp:493
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3546,7 +3546,7 @@ msgid "No Tags Album"
 msgstr "آلبومهای من"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -26981,38 +26981,38 @@ msgstr "چرخش:"
 msgid "Skipped"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:417
+#: core/libs/album/engine/album.cpp:418
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:757
 #, fuzzy, kde-format
 msgid "Current Timeline Search"
 msgstr "حذف جستجو"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, fuzzy, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "حذف جستجو"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, fuzzy, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "حذف جستجو"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, fuzzy, kde-format
 msgid "Current Map Search"
 msgstr "حذف جستجو"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, fuzzy, kde-format
 msgid "Current Search"
 msgstr "حذف جستجو"
 
-#: core/libs/album/engine/album.cpp:787
+#: core/libs/album/engine/album.cpp:788
 #, fuzzy, kde-format
 msgid "Current Duplicates Search"
 msgstr "حذف جستجو"
@@ -61972,26 +61972,26 @@ msgstr "گزینه‌ای موجود نیست"
 msgid "This is the list of batch tools assigned."
 msgstr "این فهرست فقره‌هایی است که در شرف حذف هستند."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:292
+#: core/utilities/queuemanager/views/queuelist.cpp:304
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "This is the list of images to batch process."
 msgstr "این فهرست فقره‌هایی است که در شرف حذف هستند."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:310
+#: core/utilities/queuemanager/views/queuelist.cpp:322
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgctxt "@title: preview item"
 msgid "Thumbnail"
 msgstr "ریزنقش"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:311
+#: core/utilities/queuemanager/views/queuelist.cpp:323
 #, fuzzy, kde-format
 msgctxt "@title: original item name"
 msgid "Original"
 msgstr "اصلی"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:312
+#: core/utilities/queuemanager/views/queuelist.cpp:324
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@title: target item name"

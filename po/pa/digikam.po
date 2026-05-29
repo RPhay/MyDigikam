@@ -40,7 +40,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:42+0000\n"
+"POT-Creation-Date: 2026-05-29 00:41+0000\n"
 "PO-Revision-Date: 2019-02-10 09:20-0800\n"
 "Last-Translator: A S Alam <alam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -193,7 +193,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "ਮਿਤੀ ਨਹੀਂ"
 
-#: core/app/date/timelinewidget.cpp:269
+#: core/app/date/timelinewidget.cpp:271
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "Week #weeknumber - month name - year string\n"
@@ -211,21 +211,21 @@ msgstr ""
 "ਹਫ਼ਤਾ #%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:273
+#: core/app/date/timelinewidget.cpp:275
 #, fuzzy, kde-format
 #| msgid "Start: "
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "ਸ਼ੁਰੂ:"
 
-#: core/app/date/timelinewidget.cpp:274
+#: core/app/date/timelinewidget.cpp:276
 #, fuzzy, kde-format
 #| msgid "End: "
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "ਅੰਤ:"
 
-#: core/app/date/timelinewidget.cpp:281
+#: core/app/date/timelinewidget.cpp:283
 #, fuzzy, kde-format
 #| msgctxt "month-name year-string"
 #| msgid "%1 %2"
@@ -3203,7 +3203,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:492
+#: core/libs/album/engine/album.cpp:493
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3345,7 +3345,7 @@ msgid "No Tags Album"
 msgstr "ਐਲਬਮ ਉੱਤੇ ਜਾਓ"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -27152,38 +27152,38 @@ msgstr "ਘੁੰਮਾਉ:"
 msgid "Skipped"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:417
+#: core/libs/album/engine/album.cpp:418
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr ""
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "ਮੌਜੂਦਾ ਟਾਈਮ-ਲਾਈਨ ਖੋਜ"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, fuzzy, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "ਖੋਜ ਹਟਾਓ"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, fuzzy, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "ਖੋਜ ਹਟਾਓ"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "ਮੌਜੂਦਾ ਨਕਸ਼ਾ ਖੋਜ"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "ਮੌਜੂਦਾ ਖੋਜ"
 
-#: core/libs/album/engine/album.cpp:787
+#: core/libs/album/engine/album.cpp:788
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "ਮੌਜੂਦਾ ਡੁਪਲੀਕੇਟ ਖੋਜ"
@@ -63308,27 +63308,27 @@ msgstr "ਕੋਈ ਸੈਟਿੰਗ ਉਪਲੱਬਧ ਨਹੀਂ"
 msgid "This is the list of batch tools assigned."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:292
+#: core/utilities/queuemanager/views/queuelist.cpp:304
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "This is the list of images to batch process."
 msgstr "ਇਹ ਉਹਨਾਂ ਆਈਟਮਾਂ ਦੀ ਲਿਸਟ ਹੈ, ਜਿੰਨ੍ਹਾਂ ਨੂੰ ਹਟਾਇਆ ਜਾਣਾ ਹੈ।"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:310
+#: core/utilities/queuemanager/views/queuelist.cpp:322
 #, fuzzy, kde-format
 #| msgid "Thumbnail"
 msgctxt "@title: preview item"
 msgid "Thumbnail"
 msgstr "ਥੰਮਨੇਲ"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:311
+#: core/utilities/queuemanager/views/queuelist.cpp:323
 #, fuzzy, kde-format
 #| msgid "Original"
 msgctxt "@title: original item name"
 msgid "Original"
 msgstr "ਅਸਲੀ"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:312
+#: core/utilities/queuemanager/views/queuelist.cpp:324
 #, fuzzy, kde-format
 #| msgid "Target"
 msgctxt "@title: target item name"

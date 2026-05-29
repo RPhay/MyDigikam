@@ -59,7 +59,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:42+0000\n"
+"POT-Creation-Date: 2026-05-29 00:41+0000\n"
 "PO-Revision-Date: 2024-08-24 11:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -199,7 +199,7 @@ msgctxt "@item: date menu"
 msgid "No Date"
 msgstr "Bez daty"
 
-#: core/app/date/timelinewidget.cpp:269
+#: core/app/date/timelinewidget.cpp:271
 #, kde-format
 msgctxt ""
 "@info: week #weeknumber - month name - year string\n"
@@ -211,19 +211,19 @@ msgstr ""
 "Tydzień#%1 - %2 %3\n"
 "%4\t%5"
 
-#: core/app/date/timelinewidget.cpp:273
+#: core/app/date/timelinewidget.cpp:275
 #, kde-format
 msgctxt "@info: week properties"
 msgid "Start: "
 msgstr "Początek: "
 
-#: core/app/date/timelinewidget.cpp:274
+#: core/app/date/timelinewidget.cpp:276
 #, kde-format
 msgctxt "@info: week properties"
 msgid "End: "
 msgstr "Koniec: "
 
-#: core/app/date/timelinewidget.cpp:281
+#: core/app/date/timelinewidget.cpp:283
 #, kde-format
 msgctxt "@info: month-name year-string"
 msgid "%1 %2"
@@ -3073,7 +3073,7 @@ msgstr ""
 #: core/dplugins/generic/tools/printcreator/wizard/advprintintropage.cpp:86
 #: core/dplugins/generic/tools/sendbymail/wizard/mailintropage.cpp:104
 #: core/dplugins/generic/tools/videoslideshow/vidslideintropage.cpp:93
-#: core/libs/album/engine/album.cpp:492
+#: core/libs/album/engine/album.cpp:493
 #: core/libs/album/manager/albummanager.cpp:178
 #: core/libs/album/treeview/albumselectiontreeview.cpp:251
 #: core/libs/album/widgets/albumselecttabs.cpp:179
@@ -3234,7 +3234,7 @@ msgid "No Tags Album"
 msgstr "Brak albumu znaczników"
 
 #: core/app/views/sidebar/tagviewsidebarwidget.cpp:353
-#: core/libs/album/engine/album.cpp:559
+#: core/libs/album/engine/album.cpp:560
 #: core/libs/album/manager/albummanager.cpp:181
 #: core/libs/album/widgets/albumselecttabs.cpp:180
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:70
@@ -27829,38 +27829,38 @@ msgstr "Obrót: "
 msgid "Skipped"
 msgstr "&Pomiń"
 
-#: core/libs/album/engine/album.cpp:417
+#: core/libs/album/engine/album.cpp:418
 #: core/libs/database/utils/ifaces/dio.cpp:960
 #, kde-format
 msgid "Trash"
 msgstr "Kosz"
 
-#: core/libs/album/engine/album.cpp:756
+#: core/libs/album/engine/album.cpp:757
 #, kde-format
 msgid "Current Timeline Search"
 msgstr "Bieżące wyszukiwanie osi czasu"
 
-#: core/libs/album/engine/album.cpp:763
+#: core/libs/album/engine/album.cpp:764
 #, kde-format
 msgid "Current Fuzzy Image Search"
 msgstr "Bieżące wyszukiwanie rozmyte"
 
-#: core/libs/album/engine/album.cpp:767
+#: core/libs/album/engine/album.cpp:768
 #, kde-format
 msgid "Current Fuzzy Sketch Search"
 msgstr "Bieżące wyszukiwanie rozmyte wg szkicu"
 
-#: core/libs/album/engine/album.cpp:775
+#: core/libs/album/engine/album.cpp:776
 #, kde-format
 msgid "Current Map Search"
 msgstr "Bieżące wyszukiwanie geograficzne"
 
-#: core/libs/album/engine/album.cpp:782
+#: core/libs/album/engine/album.cpp:783
 #, kde-format
 msgid "Current Search"
 msgstr "Bieżące wyszukiwanie"
 
-#: core/libs/album/engine/album.cpp:787
+#: core/libs/album/engine/album.cpp:788
 #, kde-format
 msgid "Current Duplicates Search"
 msgstr "Bieżące wyszukiwanie powieleń"
@@ -63854,25 +63854,25 @@ msgstr "Nie ma dostępnego żadnego ustawienia"
 msgid "This is the list of batch tools assigned."
 msgstr "Lista przydzielonych narzędzi wsadowych."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:292
+#: core/utilities/queuemanager/views/queuelist.cpp:304
 #, kde-format
 msgctxt "@info"
 msgid "This is the list of images to batch process."
 msgstr "Lista obrazów do przetwarzania wsadowego."
 
-#: core/utilities/queuemanager/views/queuelist.cpp:310
+#: core/utilities/queuemanager/views/queuelist.cpp:322
 #, kde-format
 msgctxt "@title: preview item"
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:311
+#: core/utilities/queuemanager/views/queuelist.cpp:323
 #, kde-format
 msgctxt "@title: original item name"
 msgid "Original"
 msgstr "Źródłowy"
 
-#: core/utilities/queuemanager/views/queuelist.cpp:312
+#: core/utilities/queuemanager/views/queuelist.cpp:324
 #, kde-format
 msgctxt "@title: target item name"
 msgid "Target"
