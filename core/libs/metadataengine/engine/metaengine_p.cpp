@@ -670,7 +670,11 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
             for (int i = 0 ; i < rawComment.mid(8).size() ; ++i)
             {
-                if (rawComment.mid(8).at(i) == '\0')
+                if (
+                    (rawComment.mid(8).at(i) == '\0')       ||
+                    ((rawComment.mid(8).at(i) - '\0') < 32) ||
+                    ((rawComment.mid(8).at(i) - '\0') > 127)
+                   )
                 {
                     break;
                 }

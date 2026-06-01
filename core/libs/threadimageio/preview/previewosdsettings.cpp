@@ -152,6 +152,13 @@ void PreviewOsdSettings::printComments(QPainter& p, int& offset, const QString& 
                 {
                     --commentsIndex;
                 }
+                else
+                {
+                    // No space found, cut hard.
+
+                    commentsIndex = currIndex;
+                    break;
+                }
             }
         }
 
