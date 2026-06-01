@@ -140,7 +140,8 @@ void PreviewOsdSettings::printComments(QPainter& p, int& offset, const QString& 
             }
         }
 
-        commentsIndex = currIndex; // The line is ended
+        commentsIndex   = currIndex; // The line is ended
+        QString tmpLine = newLine;
 
         if (commentsIndex != (uint)comments.length())
         {
@@ -157,6 +158,7 @@ void PreviewOsdSettings::printComments(QPainter& p, int& offset, const QString& 
                     // No space found, cut hard.
 
                     commentsIndex = currIndex;
+                    newLine       = tmpLine;
                     break;
                 }
             }
