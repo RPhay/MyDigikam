@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:41+0000\n"
+"POT-Creation-Date: 2026-06-01 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2529,21 +2529,21 @@ msgid "Main Tools"
 msgstr "主要工具"
 
 #: core/app/main/digikamapp_tools.cpp:39
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2669
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "后期处理"
 
 #: core/app/main/digikamapp_tools.cpp:59
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2696
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2698
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "导出"
 
 #: core/app/main/digikamapp_tools.cpp:70
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2707
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2709
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11220,8 +11220,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2322
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2341
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -31270,7 +31270,7 @@ msgid "Loading Frame"
 msgstr "正在加载黑帧"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
-#: core/utilities/import/widgets/freespacewidget.cpp:301
+#: core/utilities/import/widgets/freespacewidget.cpp:303
 #, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
@@ -48839,7 +48839,7 @@ msgid "Delete File"
 msgstr "删除文件"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2368
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -57578,7 +57578,7 @@ msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr "无法保存文件“%1”到建议的版本文件名“%2”"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2325
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57586,32 +57586,32 @@ msgid ""
 "you want to overwrite it?"
 msgstr "您不具备文件“%1”的写入权限。您确定要覆盖它吗？"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #, kde-format
 msgctxt "@info"
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "已经存在同名的文件“%1”，您确定要覆盖它吗？"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2371
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "无法覆盖原始文件"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2450
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "色彩管理显示已启用。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2454
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "色彩管理显示已禁用。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -57619,74 +57619,74 @@ msgid ""
 "available."
 msgstr "尚未配置色彩管理功能，色彩管理显示因此不可用。"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2493
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "曝光不足指示色已启用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2496
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "曝光不足指示色已禁用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2508
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "曝光过度指示色已启用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2511
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "曝光过度指示色已禁用"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2602
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "变形"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2623
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2625
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "装饰"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "特效"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2647
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "颜色"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2656
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2658
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "增强"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2846
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2897
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2848
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2899
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "打开方式"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2858
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2860
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "其他..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2867
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2869
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -59263,33 +59263,33 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "勾选此项后，RAW 图像将被自动转换为 DNG 格式图像。"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:316
+#: core/utilities/import/widgets/freespacewidget.cpp:318
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "相机存储器"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:320
+#: core/utilities/import/widgets/freespacewidget.cpp:322
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "相册库"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
-#: core/utilities/import/widgets/freespacewidget.cpp:341
+#: core/utilities/import/widgets/freespacewidget.cpp:332
+#: core/utilities/import/widgets/freespacewidget.cpp:343
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "容量："
 
-#: core/utilities/import/widgets/freespacewidget.cpp:333
-#: core/utilities/import/widgets/freespacewidget.cpp:344
+#: core/utilities/import/widgets/freespacewidget.cpp:335
+#: core/utilities/import/widgets/freespacewidget.cpp:346
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "可用："
 
-#: core/utilities/import/widgets/freespacewidget.cpp:336
+#: core/utilities/import/widgets/freespacewidget.cpp:338
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -59331,47 +59331,47 @@ msgctxt "@item:inlistbox"
 msgid "Video Files"
 msgstr "视频文件"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:98
+#: core/utilities/import/widgets/renamecustomizer.cpp:100
 #, kde-format
 msgid "Camera filenames"
 msgstr "相机文件名"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:100
+#: core/utilities/import/widgets/renamecustomizer.cpp:102
 #, kde-format
 msgid ""
 "Turn on this option to use the camera provided image filenames without "
 "modifications."
 msgstr "勾选此项后，将直接使用相机提供的图像文件名而不进行修改。"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:106
+#: core/utilities/import/widgets/renamecustomizer.cpp:108
 #, kde-format
 msgid "Change case to:"
 msgstr "更改大小写："
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:110
+#: core/utilities/import/widgets/renamecustomizer.cpp:112
 #, kde-format
 msgctxt "Leave filename as it is"
 msgid "Leave as-is"
 msgstr "维持原样"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:111
+#: core/utilities/import/widgets/renamecustomizer.cpp:113
 #, kde-format
 msgctxt "Filename to uppercase"
 msgid "Upper"
 msgstr "大写"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:112
+#: core/utilities/import/widgets/renamecustomizer.cpp:114
 #, kde-format
 msgctxt "Filename to lowercase"
 msgid "Lower"
 msgstr "小写"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:114
+#: core/utilities/import/widgets/renamecustomizer.cpp:116
 #, kde-format
 msgid "Set the method to use to change the case of the image filenames."
 msgstr "设置更改图像文件名大小写的方式。"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:125
+#: core/utilities/import/widgets/renamecustomizer.cpp:127
 #, kde-format
 msgctxt "Custom Image Renaming"
 msgid "Customize"

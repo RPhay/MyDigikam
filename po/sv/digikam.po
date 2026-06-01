@@ -43,7 +43,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:41+0000\n"
+"POT-Creation-Date: 2026-06-01 00:41+0000\n"
 "PO-Revision-Date: 2026-01-20 20:24+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2615,21 +2615,21 @@ msgid "Main Tools"
 msgstr "Huvudverktyg"
 
 #: core/app/main/digikamapp_tools.cpp:39
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2669
 #, kde-format
 msgctxt "@title Post Processing Tools"
 msgid "Post-Processing"
 msgstr "Efterbehandling"
 
 #: core/app/main/digikamapp_tools.cpp:59
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2696
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2698
 #, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "Export"
 
 #: core/app/main/digikamapp_tools.cpp:70
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2707
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2709
 #, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11685,8 +11685,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2322
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2341
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -32440,7 +32440,7 @@ msgid "Loading Frame"
 msgstr "Läser in bildruta"
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
-#: core/utilities/import/widgets/freespacewidget.cpp:301
+#: core/utilities/import/widgets/freespacewidget.cpp:303
 #, kde-format
 msgctxt "%1 is the percent value, % is the percent sign"
 msgid "%1%"
@@ -50432,7 +50432,7 @@ msgid "Delete File"
 msgstr "Ta bort fil"
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2368
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, kde-format
 msgctxt "@title:window"
 msgid "Error Saving File"
@@ -59410,7 +59410,7 @@ msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 "Kan inte spara filen \"%1\" till den föreslagna versionens filnamn \"%2\""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2325
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59420,7 +59420,7 @@ msgstr ""
 "Du har inte skrivrättigheter för filen med namnet \"%1\". Är du säker på att "
 "du vill skriva över den?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59429,25 +59429,25 @@ msgstr ""
 "En fil med namnet \"%1\" finns redan. Är du säker på att du vill skriva över "
 "den?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2371
 #, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "Misslyckades skriva över originalfilen"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2450
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr "Färghanterad vy är aktiv."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2454
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr "Färghanterad vy är inaktiv."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -59456,74 +59456,74 @@ msgid ""
 msgstr ""
 "Färghantering är inte inställd, alltså är inte färghanterad vy tillgänglig."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2493
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr "Indikering av underexponering är aktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2496
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr "Indikering av underexponering är inaktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2508
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr "Indikering av överexponering är aktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2511
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr "Indikering av överexponering är inaktiv"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2602
 #, kde-format
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "Transformera"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2623
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2625
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr "Dekorera"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr "Effekter"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2647
 #, kde-format
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "Färger"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2656
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2658
 #, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "Förbättra"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2846
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2897
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2848
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2899
 #, kde-format
 msgctxt "@action"
 msgid "Open With"
 msgstr "Öppna med"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2858
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2860
 #, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "Annat..."
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2867
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2869
 #, kde-format
 msgctxt "@action: open with desktop application"
 msgid "Open With..."
@@ -61154,33 +61154,33 @@ msgstr ""
 "Aktivera alternativet för att automatiskt konvertera obehandlade bilder till "
 "DNG-behållare."
 
-#: core/utilities/import/widgets/freespacewidget.cpp:316
+#: core/utilities/import/widgets/freespacewidget.cpp:318
 #, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "Kameramedia"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:320
+#: core/utilities/import/widgets/freespacewidget.cpp:322
 #, kde-format
 msgctxt "@title"
 msgid "Album Library"
 msgstr "Albumbibliotek"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
-#: core/utilities/import/widgets/freespacewidget.cpp:341
+#: core/utilities/import/widgets/freespacewidget.cpp:332
+#: core/utilities/import/widgets/freespacewidget.cpp:343
 #, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "Kapacitet:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:333
-#: core/utilities/import/widgets/freespacewidget.cpp:344
+#: core/utilities/import/widgets/freespacewidget.cpp:335
+#: core/utilities/import/widgets/freespacewidget.cpp:346
 #, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "Tillgänglig:"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:336
+#: core/utilities/import/widgets/freespacewidget.cpp:338
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -61222,12 +61222,12 @@ msgctxt "@item:inlistbox"
 msgid "Video Files"
 msgstr "Videofiler"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:98
+#: core/utilities/import/widgets/renamecustomizer.cpp:100
 #, kde-format
 msgid "Camera filenames"
 msgstr "Kamerafilnamn"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:100
+#: core/utilities/import/widgets/renamecustomizer.cpp:102
 #, kde-format
 msgid ""
 "Turn on this option to use the camera provided image filenames without "
@@ -61236,35 +61236,35 @@ msgstr ""
 "Aktivera alternativet för att använda bildfilnamn som tillhandahålls av "
 "kameran utan ändringar."
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:106
+#: core/utilities/import/widgets/renamecustomizer.cpp:108
 #, kde-format
 msgid "Change case to:"
 msgstr "Ändra skiftläge till:"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:110
+#: core/utilities/import/widgets/renamecustomizer.cpp:112
 #, kde-format
 msgctxt "Leave filename as it is"
 msgid "Leave as-is"
 msgstr "Lämna som det är"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:111
+#: core/utilities/import/widgets/renamecustomizer.cpp:113
 #, kde-format
 msgctxt "Filename to uppercase"
 msgid "Upper"
 msgstr "Stora bokstäver"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:112
+#: core/utilities/import/widgets/renamecustomizer.cpp:114
 #, kde-format
 msgctxt "Filename to lowercase"
 msgid "Lower"
 msgstr "Små bokstäver"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:114
+#: core/utilities/import/widgets/renamecustomizer.cpp:116
 #, kde-format
 msgid "Set the method to use to change the case of the image filenames."
 msgstr "Ställ in metoden som används för att ändra filnamnens skiftläge."
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:125
+#: core/utilities/import/widgets/renamecustomizer.cpp:127
 #, kde-format
 msgctxt "Custom Image Renaming"
 msgid "Customize"

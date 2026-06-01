@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:41+0000\n"
+"POT-Creation-Date: 2026-06-01 00:41+0000\n"
 "PO-Revision-Date: 2013-03-28 14:37+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -2676,7 +2676,7 @@ msgid "Main Tools"
 msgstr "मुख्य साधनपट्टी"
 
 #: core/app/main/digikamapp_tools.cpp:39
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2667
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2669
 #, fuzzy, kde-format
 #| msgid "Print Image"
 msgctxt "@title Post Processing Tools"
@@ -2684,14 +2684,14 @@ msgid "Post-Processing"
 msgstr "प्रतिमा छापा"
 
 #: core/app/main/digikamapp_tools.cpp:59
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2696
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2698
 #, fuzzy, kde-format
 msgctxt "@title Export Tools"
 msgid "Export"
 msgstr "निर्यात"
 
 #: core/app/main/digikamapp_tools.cpp:70
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2707
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2709
 #, fuzzy, kde-format
 msgctxt "@title Import Tools"
 msgid "Import"
@@ -11177,8 +11177,8 @@ msgstr ""
 
 #: core/dplugins/generic/import/dscanner/scandialog.cpp:249
 #: core/utilities/geolocation/geoiface/backends/mapbackend.cpp:177
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2322
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2341
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2324
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2343
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
@@ -31142,7 +31142,7 @@ msgid "Loading Frame"
 msgstr "दाखल करत आहे..."
 
 #: core/libs/dimg/filters/hotpixels/blackframelistviewitem.cpp:97
-#: core/utilities/import/widgets/freespacewidget.cpp:301
+#: core/utilities/import/widgets/freespacewidget.cpp:303
 #, fuzzy, kde-format
 #| msgid "%1d"
 msgctxt "%1 is the percent value, % is the percent sign"
@@ -49547,7 +49547,7 @@ msgid "Delete File"
 msgstr ""
 
 #: core/showfoto/main/showfoto_iofiles.cpp:78
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2368
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2370
 #, fuzzy, kde-format
 #| msgid "Select images"
 msgctxt "@title:window"
@@ -58357,7 +58357,7 @@ msgctxt "@info"
 msgid "Cannot save file \"%1\" to the suggested version file name \"%2\""
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2323
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2325
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58366,7 +58366,7 @@ msgid ""
 msgstr ""
 "\"%1\" नावाची फाईल आधीपासूनच अस्तित्वात आहे. तुम्हाला ती खोडून पुन्हा लिहायची आहे का?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2342
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2344
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -58374,25 +58374,25 @@ msgid ""
 msgstr ""
 "\"%1\" नावाची फाईल आधीपासूनच अस्तित्वात आहे. तुम्हाला ती खोडून पुन्हा लिहायची आहे का?"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2369
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2371
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to overwrite original file"
 msgstr "उघडणे शक्य झाले नाही : %1"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2448
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2450
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is enabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2452
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2454
 #, kde-format
 msgctxt "@info"
 msgid "Color-Managed View is disabled."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2457
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2459
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -58400,77 +58400,77 @@ msgid ""
 "available."
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2493
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2495
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2494
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2496
 #, kde-format
 msgctxt "@info"
 msgid "Under-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2508
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2510
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is enabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2509
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2511
 #, kde-format
 msgctxt "@info"
 msgid "Over-Exposure indicator is disabled"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2600
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2602
 #, fuzzy, kde-format
 #| msgid "Transform"
 msgctxt "@title Image Transform"
 msgid "Transform"
 msgstr "स्वरूप बदला"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2623
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2625
 #, kde-format
 msgctxt "@title Image Decorate"
 msgid "Decorate"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2634
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2636
 #, kde-format
 msgctxt "@title Image Effect"
 msgid "Effects"
 msgstr ""
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2645
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2647
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgctxt "@title Image Colors"
 msgid "Colors"
 msgstr "रंग"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2656
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2658
 #, fuzzy, kde-format
 msgctxt "@title Image Enhance"
 msgid "Enhance"
 msgstr "गाळणी"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2846
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2897
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2848
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2899
 #, fuzzy, kde-format
 #| msgid "Open With"
 msgctxt "@action"
 msgid "Open With"
 msgstr "यामध्ये उघडा"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2858
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2860
 #, fuzzy, kde-format
 msgctxt "@action: open with other application"
 msgid "Other..."
 msgstr "इतर"
 
-#: core/utilities/imageeditor/editor/editorwindow.cpp:2867
+#: core/utilities/imageeditor/editor/editorwindow.cpp:2869
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgctxt "@action: open with desktop application"
@@ -59998,34 +59998,34 @@ msgid ""
 "Enable this option to convert RAW images to DNG container automatically."
 msgstr "यात रूपांतरीत करा"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:316
+#: core/utilities/import/widgets/freespacewidget.cpp:318
 #, fuzzy, kde-format
 msgctxt "@title"
 msgid "Camera Media"
 msgstr "कॅमेरा"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:320
+#: core/utilities/import/widgets/freespacewidget.cpp:322
 #, fuzzy, kde-format
 #| msgid "Gibraltar"
 msgctxt "@title"
 msgid "Album Library"
 msgstr "जिब्राल्टर"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:330
-#: core/utilities/import/widgets/freespacewidget.cpp:341
+#: core/utilities/import/widgets/freespacewidget.cpp:332
+#: core/utilities/import/widgets/freespacewidget.cpp:343
 #, fuzzy, kde-format
 msgctxt "@info Storage"
 msgid "Capacity:"
 msgstr "क्षमता :"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:333
-#: core/utilities/import/widgets/freespacewidget.cpp:344
+#: core/utilities/import/widgets/freespacewidget.cpp:335
+#: core/utilities/import/widgets/freespacewidget.cpp:346
 #, fuzzy, kde-format
 msgctxt "@info Storage"
 msgid "Available:"
 msgstr "उपलब्ध :"
 
-#: core/utilities/import/widgets/freespacewidget.cpp:336
+#: core/utilities/import/widgets/freespacewidget.cpp:338
 #, kde-format
 msgctxt "@info Storage"
 msgid "Require:"
@@ -60068,47 +60068,47 @@ msgctxt "@item:inlistbox"
 msgid "Video Files"
 msgstr "ऑडिओ फाईल्स"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:98
+#: core/utilities/import/widgets/renamecustomizer.cpp:100
 #, kde-format
 msgid "Camera filenames"
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:100
+#: core/utilities/import/widgets/renamecustomizer.cpp:102
 #, kde-format
 msgid ""
 "Turn on this option to use the camera provided image filenames without "
 "modifications."
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:106
+#: core/utilities/import/widgets/renamecustomizer.cpp:108
 #, kde-format
 msgid "Change case to:"
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:110
+#: core/utilities/import/widgets/renamecustomizer.cpp:112
 #, kde-format
 msgctxt "Leave filename as it is"
 msgid "Leave as-is"
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:111
+#: core/utilities/import/widgets/renamecustomizer.cpp:113
 #, kde-format
 msgctxt "Filename to uppercase"
 msgid "Upper"
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:112
+#: core/utilities/import/widgets/renamecustomizer.cpp:114
 #, kde-format
 msgctxt "Filename to lowercase"
 msgid "Lower"
 msgstr "खाली घ्या"
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:114
+#: core/utilities/import/widgets/renamecustomizer.cpp:116
 #, kde-format
 msgid "Set the method to use to change the case of the image filenames."
 msgstr ""
 
-#: core/utilities/import/widgets/renamecustomizer.cpp:125
+#: core/utilities/import/widgets/renamecustomizer.cpp:127
 #, kde-format
 msgctxt "Custom Image Renaming"
 msgid "Customize"
