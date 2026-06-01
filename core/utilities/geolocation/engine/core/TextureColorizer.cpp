@@ -53,6 +53,9 @@ public:
     {
     }
 
+public:
+
+
     inline uchar head() const
     {
         // return least significant byte as head of queue
@@ -97,14 +100,13 @@ TextureColorizer::TextureColorizer(const QString& seafile,
 
     int offset       = 0;
 
-    QStringList  filelist;
+    QStringList filelist;
     filelist << seafile << landfile;
 
     for (const QString& filename : filelist)
     {
-        QLinearGradient  gradient(0, 0, 256, 0);
-
-        QFile  file(filename);
+        QLinearGradient gradient(0, 0, 256, 0);
+        QFile file(filename);
 
         if (!file.open(QIODevice::ReadOnly))
         {
@@ -113,9 +115,8 @@ TextureColorizer::TextureColorizer(const QString& seafile,
             continue;
         }
 
-        QTextStream  stream(&file);    // read the data from the file
-
-        QString      evalstrg;
+        QTextStream stream(&file);    // read the data from the file
+        QString evalstrg;
 
         while (!stream.atEnd())
         {

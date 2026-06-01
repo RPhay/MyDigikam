@@ -121,7 +121,7 @@ public:
     GeoGraphicsItem*                            m_lastFeatureAt             = nullptr;
 
     bool                                        m_dirty                     = true;
-    int                                         m_cachedItemCount           = 0;;
+    int                                         m_cachedItemCount           = 0;
     QHash<QString, GeoGraphicItems>             m_cachedPaintFragments;
     QList<LayerItem>                            m_cachedDefaultLayer;
     QDateTime                                   m_cachedDateTime;

@@ -51,6 +51,8 @@ public:
     explicit GeometryLayer(const QAbstractItemModel* model, const StyleBuilder* styleBuilder);
     ~GeometryLayer()                                                      override;
 
+public:
+
     QStringList renderPosition()                                    const override;
 
     bool render(GeoPainter* painter, ViewportParams* viewport,
