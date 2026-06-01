@@ -670,10 +670,12 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
             for (int i = 0 ; i < rawComment.mid(8).size() ; ++i)
             {
-                if (rawComment.mid(8).at(i) != '\0')
+                if (rawComment.mid(8).at(i) == '\0')
                 {
-                    tmpComment.append(rawComment.mid(8).at(i));
+                    break;
                 }
+
+                tmpComment.append(rawComment.mid(8).at(i));
             }
 
             return QString::fromLatin1(tmpComment);
