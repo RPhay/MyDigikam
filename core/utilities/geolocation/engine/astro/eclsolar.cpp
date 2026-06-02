@@ -270,7 +270,7 @@ int EclSolar::getLocalVisibility(double& mjd_start, double& mjd_stop)
 
     if (!eb_local_called)
     {
-        getLocalDetails(wbuf);
+        getLocalDetails(wbuf, sizeof(wbuf));
     }
 
     mjd_start = eb_lcb1;
@@ -289,7 +289,7 @@ int EclSolar::getLocalTotal(double& mjd_start, double& mjd_stop)
 
     if (!eb_local_called)
     {
-        getLocalDetails(wbuf);
+        getLocalDetails(wbuf, sizeof(wbuf));
     }
 
     mjd_start = 0;
@@ -560,12 +560,11 @@ void EclSolar::getDatefromMJD(double mjd, int& year, int& month, int& day, int& 
         hour++;
         min = 0;
     };
-
 }
 
 //---------------------- getEclYearInfo--------------------------------
 
-void EclSolar::getEclYearInfo(char* wbuf)
+void EclSolar::getEclYearInfo(char* wbuf, size_t bufferSize)
 {
     // output the eclipse dates in buffer wbuf accurate to the minute.
 
@@ -579,7 +578,7 @@ void EclSolar::getEclYearInfo(char* wbuf)
         moonph();    // calculate the eclipses of the year
     }
 
-    snprintf(wbuf, sizeof(wbuf), "Solar Eclipses for %4i  UTC +%4.1f", eb_year, eb_tzone);
+    snprintf(wbuf, bufferSize, "Solar Eclipses for %4i  UTC +%4.1f", eb_year, eb_tzone);
 
     kecl = 1;
 
@@ -1612,7 +1611,7 @@ void EclSolar::moonph()
             eb_geolong = lng;
             eb_geoheight = 0;
 
-            getLocalDetails(wbuf);
+            getLocalDetails(wbuf, sizeof(wbuf));
 
             if ((eb_spp[0] == 2) || (eb_spp[1] == 2))
             {
@@ -3174,7 +3173,7 @@ int EclSolar::localStart(int j, double* spt, double* ept, int* spp,
 }
 
 
-void EclSolar::getLocalDetails(char* otxt)
+void EclSolar::getLocalDetails(char* otxt, size_t bufferSize)
 {
     /*
      * Get the details of the eclipse selected in eclbuf.select
@@ -3201,7 +3200,7 @@ void EclSolar::getLocalDetails(char* otxt)
     p = eb_phase[j];
 
     ecloutbn = 3;
-    snprintf(otxt, sizeof(otxt), "+++ Timezone: %g +++  TT - UTC: %g (sec) +++ Year: %5i +++\n\n", eb_tzone, eb_del_tdut, eb_year);
+    snprintf(otxt, bufferSize, "+++ Timezone: %g +++  TT - UTC: %g (sec) +++ Year: %5i +++\n\n", eb_tzone, eb_del_tdut, eb_year);
 
     switch (p)
     {

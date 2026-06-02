@@ -47,7 +47,7 @@ public:
     void setDeltaTAI_UTC(double d);  // set IERS Parameter TAI - UTC
     void setAutoTAI_UTC();  // IERS Parameter TAI - UTC to auto
     void setLocalPos(double lat, double lng, double hgt); // set local geographic coordinates
-    void getLocalDetails(char* otxt);  // provide eclipse details for local position
+    void getLocalDetails(char* otxt, size_t bufferSize);  // provide eclipse details for local position
     void setCurrentMJD(int year, int month, int day, int hour, int min, double sec); // set current time
     void getDatefromMJD(double mjd, int& year, int& month, int& day,
                         int& hour, int& min, double& sec) const; // convert MJD into date and time
@@ -57,7 +57,7 @@ public:
     int getPenumbra(double& mjd_start, double& mjd_stop);  // start and stop times for penumbral eclipse of Moon
     int getPartial(double& mjd_start, double& mjd_stop);  // (global) start and stop times for partial phase
     int getTotal(double& mjd_start, double& mjd_stop);   // (global) start and stop times for totality/annularity
-    void getEclYearInfo(char* wbuf);  // list of eclipses of the year
+    void getEclYearInfo(char* wbuf, size_t bufferSize);  // list of eclipses of the year
     int getEclYearInfo(int k, int& yr, int& month, int& day,
                        int& hour, int& min, double& sec, double& tzone, double& magn);
     int getEclTxt(int j, char* jtxt);   // get text for j-th eclipse
