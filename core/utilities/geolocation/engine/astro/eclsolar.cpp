@@ -266,7 +266,7 @@ int EclSolar::getLocalVisibility(double& mjd_start, double& mjd_stop)
     // local start and stop times (MJD) for eclipse
     // RETURN 0 if not locally visible
 
-    char wbuf[700];
+    char wbuf[1024];
 
     if (!eb_local_called)
     {
@@ -285,7 +285,7 @@ int EclSolar::getLocalTotal(double& mjd_start, double& mjd_stop)
     // RETURN 0 if not locally visible
 
     int k, j;
-    char wbuf[700];
+    char wbuf[1024];
 
     if (!eb_local_called)
     {
@@ -569,7 +569,7 @@ void EclSolar::getEclYearInfo(char* wbuf)
 {
     // output the eclipse dates in buffer wbuf accurate to the minute.
 
-    char dts[15];
+    char dts[32];
     char outbuf[127];
     char magbuf[30];
     int j, p, kecl;
@@ -750,7 +750,7 @@ int EclSolar::getEclTxt(int k, char* jtxt)
     // RETURN : the phase of the eclipse. 0 if no j-th eclipse
 
     int p, j;
-    char dts[13];
+    char dts[32];
 
     if (!eb_moonph_called)
     {
@@ -769,7 +769,7 @@ int EclSolar::getEclTxt(int k, char* jtxt)
 
     j = k - 1;
 
-    snprintf(jtxt, sizeof(jtxt), "%2i :", (j + 1));
+    snprintf(jtxt, 32, "%2i :", (j + 1));
     snprintf(dts, sizeof(dts), "%5i ", eb_year);
     strcat(jtxt, dts);
     dtmstr((eb_eclmjd[j] + eb_tzone / 24.0), dts);
@@ -1535,7 +1535,7 @@ void EclSolar::dtmstr(double jdmoon, char* dts)
 
     dts[3] = ' ';
 
-    snprintf(&dts[4], sizeof(dts) - 4, "%2i %2i:%02i", dd, deg, mnt);
+    snprintf(&dts[4], 28, "%2i %2i:%02i", dd, deg, mnt);
 
     dts[12] = ' ';
 }
@@ -3187,7 +3187,7 @@ void EclSolar::getLocalDetails(char* otxt)
     int spp[4]     = { 0 }, nump;
     double spt[4]  = { 0.0 }, ept[4] = { 0.0 };
     double jd      = 0.0, jdf = 0.0;
-    char dts[13]   = { 0 };
+    char dts[32]   = { 0 };
     char outb[127] = { 0 };
 
     if (!eb_start_called)
