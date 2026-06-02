@@ -51,7 +51,6 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
     if (suffix.isEmpty())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Suffix is empty";
-
         return appUrls;
     }
 
@@ -59,35 +58,15 @@ QList<QUrl> DServiceMenu::MacApplicationForFileExtension(const QString& suffix)
 
     CFArrayRef  bundleIDs             = nullptr;
     CFStringRef extensionRef          = suffix.toCFString();
-    CFStringRef uniformTypeIdentifier = nullptr;
-
-    // Check minimal version of target macOS
-
-#if __MAC_OS_X_VERSION_MIN_REQUIRED >= 120000  // macOS 12.0+
-
-        // Uses new API for macOS 12.0+
-
-        uniformTypeIdentifier = UTTypeCopyPreferredTagWithClass(
-            extensionRef,
-            UTTagClassFilenameExtension
-        );
-
-#else
-
-        // Uses old API for macOS < 12.0
-
-        uniformTypeIdentifier = UTTypeCreatePreferredIdentifierForTag(
-            kUTTagClassFilenameExtension,
-            extensionRef,
-            nullptr
-        );
-
-#endif
+    CFStringRef uniformTypeIdentifier = UTTypeCreatePreferredIdentifierForTag(
+                                                                              kUTTagClassFilenameExtension,
+                                                                              extensionRef,
+                                                                              nullptr
+                                                                             );
 
     if (!uniformTypeIdentifier)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot get the Uniform Type Identifier for" << suffix;
-        CFRelease(extensionRef);
 
         return appUrls;
     }
