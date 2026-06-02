@@ -47,11 +47,6 @@ using namespace std;
 
 #include "astrolib.h"
 
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif
-
 namespace Marble
 {
 
@@ -584,7 +579,7 @@ void EclSolar::getEclYearInfo(char* wbuf)
         moonph();    // calculate the eclipses of the year
     }
 
-    sprintf(wbuf, "Solar Eclipses for %4i  UTC +%4.1f", eb_year, eb_tzone);
+    snprintf(wbuf, sizeof(wbuf), "Solar Eclipses for %4i  UTC +%4.1f", eb_year, eb_tzone);
 
     kecl = 1;
 
@@ -774,7 +769,7 @@ int EclSolar::getEclTxt(int k, char* jtxt)
 
     j = k - 1;
 
-    sprintf(jtxt, "%2i :", (j + 1));
+    snprintf(jtxt, sizeof(jtxt), "%2i :", (j + 1));
     snprintf(dts, sizeof(dts), "%5i ", eb_year);
     strcat(jtxt, dts);
     dtmstr((eb_eclmjd[j] + eb_tzone / 24.0), dts);
@@ -1540,7 +1535,7 @@ void EclSolar::dtmstr(double jdmoon, char* dts)
 
     dts[3] = ' ';
 
-    sprintf(&dts[4], "%2i %2i:%02i", dd, deg, mnt);
+    snprintf(&dts[4], sizeof(dts) - 4, "%2i %2i:%02i", dd, deg, mnt);
 
     dts[12] = ' ';
 }
@@ -3206,7 +3201,7 @@ void EclSolar::getLocalDetails(char* otxt)
     p = eb_phase[j];
 
     ecloutbn = 3;
-    sprintf(otxt, "+++ Timezone: %g +++  TT - UTC: %g (sec) +++ Year: %5i +++\n\n", eb_tzone, eb_del_tdut, eb_year);
+    snprintf(otxt, sizeof(otxt), "+++ Timezone: %g +++  TT - UTC: %g (sec) +++ Year: %5i +++\n\n", eb_tzone, eb_del_tdut, eb_year);
 
     switch (p)
     {
@@ -3992,7 +3987,3 @@ void EclSolar::getShadowCone(double mjd, bool umbra, int numpts, double* lat, do
 }
 
 } // namespace Marble
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
