@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-01 00:41+0000\n"
-"PO-Revision-Date: 2026-04-10 08:51+0000\n"
+"PO-Revision-Date: 2026-06-01 09:42+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -63440,16 +63440,14 @@ msgid "and"
 msgstr "og"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Finna atriði án andlitasvæða"
+msgstr "Finna atriði með staðfestum andlitasvæðum"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Engin andlitasvæði"
+msgstr "Staðfest andlitasvæði"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format

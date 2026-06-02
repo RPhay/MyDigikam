@@ -44,7 +44,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-01 00:41+0000\n"
-"PO-Revision-Date: 2026-05-19 10:39-0400\n"
+"PO-Revision-Date: 2026-05-29 17:21-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
@@ -468,7 +468,7 @@ msgstr "ئوچۇق"
 #, kde-format
 msgctxt "@action: tag filter"
 msgid "Off"
-msgstr "تاقا"
+msgstr "تاقاق"
 
 #: core/app/filters/tagfilterview.cpp:68
 #, kde-format
@@ -2607,7 +2607,7 @@ msgstr "كۆز يۈگۈرت(&B)"
 #: core/app/main/digikamui5.rc:25
 #, kde-format
 msgid "&Album"
-msgstr "ئالبوم(&A)"
+msgstr "ناخشا توپلىمى(&A)"
 
 #. i18n: ectx: Menu (Tag)
 #: core/app/main/digikamui5.rc:38
@@ -3004,7 +3004,7 @@ msgstr "ياردەم"
 #: core/utilities/searchwindow/searchfields_createfield.cpp:153
 #, kde-format
 msgid "Labels"
-msgstr "ئەنلەر"
+msgstr "ئەن"
 
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:114
 #: core/app/views/sidebar/peoplesidebarwidget.cpp:125
@@ -3830,7 +3830,7 @@ msgstr ""
 #: core/utilities/setup/tooltip/setuptooltip_icon.cpp:147
 #, kde-format
 msgid "Audio Codec"
-msgstr ""
+msgstr "ئۈن كودلىغۇچ"
 
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:69
 #: core/app/views/tableview/tableview_column_audiovideo.cpp:97
@@ -6210,7 +6210,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Assign Tags"
-msgstr ""
+msgstr "بەلگە تەقسىملە"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:63
 #, kde-format
@@ -11864,7 +11864,7 @@ msgstr ""
 #, kde-format
 msgctxt "Content type"
 msgid "Summary"
-msgstr "ئۈزۈندى"
+msgstr "ئۈزۈندە"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:112
 #, kde-format
@@ -11894,7 +11894,7 @@ msgstr ""
 #, kde-format
 msgctxt "Content type"
 msgid "Statistics"
-msgstr "ستاتىستىكا"
+msgstr "ئىستاتىستىكا"
 
 #: core/dplugins/generic/metadata/metadataedit/dialog/objectattributesedit.cpp:117
 #, kde-format
@@ -13390,7 +13390,7 @@ msgstr "مەزمۇن"
 #, kde-format
 msgctxt "@item: iptc"
 msgid "Origin"
-msgstr ""
+msgstr "مەنبە"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptceditwidget.cpp:101
 #, kde-format
@@ -14552,7 +14552,7 @@ msgstr "مەزمۇن"
 #, kde-format
 msgctxt "@item"
 msgid "Origin"
-msgstr ""
+msgstr "مەنبە"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpeditwidget.cpp:102
 #, kde-format
@@ -15032,7 +15032,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Summary"
-msgstr "ئۈزۈندى"
+msgstr "ئۈزۈندە"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:220
 #, kde-format
@@ -15062,7 +15062,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: editorial content attribute"
 msgid "Statistics"
-msgstr "ستاتىستىكا"
+msgstr "ئىستاتىستىكا"
 
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpproperties.cpp:225
 #, kde-format
@@ -15694,7 +15694,7 @@ msgstr ""
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:467
 #, kde-format
 msgid "Failed to save image."
-msgstr ""
+msgstr "سۈرەتنى ساقلىيالمىدى."
 
 #: core/dplugins/generic/tools/dngconverter/dngconverterdialog.cpp:499
 #, kde-format
@@ -16079,7 +16079,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Details..."
-msgstr "تەپسىلاتلار…"
+msgstr "تەپسىلاتى…"
 
 #: core/dplugins/generic/tools/expoblending/blendingdlg/expoblendingdlg.cpp:162
 #, kde-format
@@ -16562,7 +16562,7 @@ msgstr "ياسا"
 #, kde-format
 msgctxt "@info: Camera Model"
 msgid "Model"
-msgstr ""
+msgstr "ئەندىزە"
 
 #: core/dplugins/generic/tools/htmlgallery/generator/gallerygenerator.cpp:477
 #, kde-format
@@ -17034,7 +17034,7 @@ msgstr ""
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:79
 #, kde-format
 msgid "Projects folder:"
-msgstr ""
+msgstr "قۇرۇلۇش قىسقۇچى:"
 
 #: core/dplugins/generic/tools/jalbum/wizard/jalbumoutputpage.cpp:82
 #, kde-format
@@ -18145,7 +18145,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:group"
 msgid "Save Settings"
-msgstr ""
+msgstr "ساقلاش تەڭشىكى"
 
 #: core/dplugins/generic/tools/panorama/wizard/panolastpage.cpp:88
 #, kde-format
@@ -20490,7 +20490,7 @@ msgstr ""
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
 #, kde-format
 msgid "Playback"
-msgstr "قويۇش"
+msgstr "ياڭرات"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_shuffleCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:137
@@ -22906,7 +22906,7 @@ msgstr ""
 #: core/dplugins/generic/webservices/ipfs/ipfstalker.cpp:274
 #, kde-format
 msgid "Could not open file"
-msgstr ""
+msgstr "ھۆججەتنى ئاچالمايدۇ"
 
 #: core/dplugins/generic/webservices/imgur/imgurwindow.cpp:106
 #, kde-format
@@ -26098,7 +26098,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title"
 msgid "Labels"
-msgstr "ئەنلەر"
+msgstr "ئەن"
 
 #: core/libs/album/treeview/labelstreeview_init.cpp:38
 #, kde-format
@@ -31884,7 +31884,7 @@ msgstr "چۈشەندۈرۈش"
 #, kde-format
 msgctxt "@title: DPlugin properties"
 msgid "Read"
-msgstr "ئوقۇ"
+msgstr "ئوقۇلغان"
 
 #: core/libs/dplugins/core/dplugindimg.cpp:85
 #, kde-format
@@ -32188,7 +32188,7 @@ msgstr ""
 #, kde-format
 msgctxt "Web Service: GDRIVE"
 msgid "Google Drive"
-msgstr ""
+msgstr "Google تور دىسكىسى"
 
 #: core/libs/dplugins/webservices/wssettings.cpp:108
 #, kde-format
@@ -33644,7 +33644,7 @@ msgstr "يوچۇن"
 #, kde-format
 msgctxt "@info: Temperature in Kelvin"
 msgid "%1 K"
-msgstr ""
+msgstr "%1 K"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1017
 #: core/libs/metadataengine/dmetadata/dmetadata_generic.cpp:1033
@@ -35542,7 +35542,7 @@ msgstr "تەپسىلىي ئۇچۇر"
 #: core/libs/properties/import/importitempropertiessidebar.cpp:83
 #, kde-format
 msgid "Geolocation"
-msgstr "جۇغراپىيىلىك ئورۇن"
+msgstr "جۇغراپىيەلىك ئورۇن"
 
 #: core/libs/properties/import/importitempropertiestab.cpp:128
 #, kde-format
@@ -35826,7 +35826,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: color properties"
 msgid "Statistics"
-msgstr "ستاتىستىكا"
+msgstr "ئىستاتىستىكا"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:154
 #, kde-format
@@ -35876,7 +35876,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label: color properties"
 msgid "Color depth: "
-msgstr ""
+msgstr "رەڭ چوڭقۇرلۇقى: "
 
 #: core/libs/properties/itempropertiescolorstab.cpp:180
 #, kde-format
@@ -36300,7 +36300,7 @@ msgstr "ياسا"
 #: core/libs/properties/itempropertiestab.cpp:504
 #, kde-format
 msgid "Model"
-msgstr ""
+msgstr "ئەندىزە"
 
 #: core/libs/properties/itempropertiestab.cpp:505
 #, kde-format
@@ -37570,7 +37570,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Translate"
-msgstr "تەرجىمە قىلىڭ"
+msgstr "تەرجىمە"
 
 #: core/libs/tags/engine/taggingactionfactory.cpp:374
 #, kde-format
@@ -38804,7 +38804,7 @@ msgstr ""
 #: core/libs/threadimageio/thumb/thumbnailloadthread.cpp:170
 #, kde-format
 msgid "Error message: %1"
-msgstr ""
+msgstr "خاتالىق ئۇچۇرى: %1"
 
 #: core/libs/timeadjust/clockphotodialog.cpp:79
 #, kde-format
@@ -40149,8 +40149,7 @@ msgstr "خەت نۇسخا"
 #, kde-format
 msgctxt "@info: font properties"
 msgid "Enable this checkbox to change the font family settings."
-msgstr ""
-"خەت نۇسخىسىنى ئۆزگەرتىش ئۈچۈن بۇ كۆپ تاللاش رامكىسىنى ئىناۋەتلىك قىلىڭ."
+msgstr "خەت نۇسخىسىنى ئۆزگەرتىش ئۈچۈن بۇ كۆپ تاللاش رامكىسىنى قوزغىتىڭ."
 
 #: core/libs/widgets/fonts/dfontproperties.cpp:268
 #, kde-format
@@ -40509,7 +40508,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: icc profile properties"
 msgid "Model"
-msgstr ""
+msgstr "ئەندىزە"
 
 #: core/libs/widgets/iccprofiles/iccprofilewidget.cpp:132
 #, kde-format
@@ -41383,7 +41382,7 @@ msgstr "كېڭەيتىلمە"
 #, kde-format
 msgctxt "@title: column"
 msgid "Read"
-msgstr "ئوقۇ"
+msgstr "ئوقۇلغان"
 
 #: core/libs/widgets/metadata/exiftool/exiftoolconfpanel.cpp:97
 #, kde-format
@@ -42343,7 +42342,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info"
 msgid "Error message: %1"
-msgstr ""
+msgstr "خاتالىق ئۇچۇرى: %1"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:39
 msgctxt "@info: country code"
@@ -47046,7 +47045,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item: filter type mime"
 msgid "All supported files"
-msgstr ""
+msgstr "قوللايدىغان بارلىق ھۆججەت"
 
 #: core/showfoto/folderview/showfotofolderviewbar.cpp:442
 #, kde-format
@@ -47463,7 +47462,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Geolocation"
-msgstr "جۇغراپىيىلىك ئورۇن"
+msgstr "جۇغراپىيەلىك ئورۇن"
 
 #: core/showfoto/setup/showfotosetup.cpp:146 core/utilities/setup/setup.cpp:92
 #, kde-format
@@ -48858,7 +48857,7 @@ msgstr ""
 #, kde-format
 msgctxt "start of the range"
 msgid "From:"
-msgstr "ئەۋەتكۈچى:"
+msgstr "كىمدىن:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, toTheEndCheckBox)
 #: core/utilities/advancedrename/parser/modifiers/rangemodifierdialogwidget.ui:33
@@ -50442,7 +50441,7 @@ msgstr "ي"
 #, kde-format
 msgctxt "the earth's moon"
 msgid "Moon"
-msgstr ""
+msgstr "ئاي"
 
 #: core/utilities/geolocation/engine/astro/PlanetFactory.cpp:339
 #, kde-format
@@ -50602,7 +50601,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
 msgid "W"
-msgstr "غەرب"
+msgstr "W"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataCoordinates.cpp:571
 #, kde-format
@@ -51013,7 +51012,7 @@ msgstr "ئالىي مەكتەپ"
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:684
 #, kde-format
 msgid "Bar"
-msgstr "تۈۋرۈكسىمان دىئاگرامما"
+msgstr "تۈۋرۈكسىمان دىياگرامما"
 
 #: core/utilities/geolocation/engine/geodata/data/GeoDataPlacemark.cpp:687
 #, kde-format
@@ -53488,7 +53487,7 @@ msgstr ""
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:176
 #, kde-format
 msgid "Cache"
-msgstr ""
+msgstr "غەملەك"
 
 #: core/utilities/geolocation/engine/settings/MarbleConfigView.cpp:177
 #, kde-format
@@ -53906,7 +53905,7 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:293
 #, kde-format
 msgid "OpenStreetMap"
-msgstr ""
+msgstr "OpenStreetMap ئوچۇق كوچا خەرىتىسى"
 
 #: core/utilities/geolocation/geoiface/backends/backendmarble.cpp:294
 #, kde-format
@@ -54015,7 +54014,7 @@ msgstr "چىقىرىۋەت(&R)"
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:228
 #, kde-format
 msgid "Add Folder"
-msgstr "قىسقۇچ قوشۇش"
+msgstr "قىسقۇچ قوش"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksdlg.cpp:431
 #, kde-format
@@ -54107,7 +54106,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save File"
-msgstr "ھۆججەت ساقلاش"
+msgstr "ھۆججەت ساقلا"
 
 #: core/utilities/geolocation/geoiface/bookmark/bookmarksmngr.cpp:964
 #, kde-format
@@ -54770,12 +54769,12 @@ msgstr ""
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:248
 #, kde-format
 msgid "Could not open: %1"
-msgstr ""
+msgstr "ئاچالمىدى: %1"
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:255
 #, kde-format
 msgid "File is empty."
-msgstr ""
+msgstr "ھۆججەت بوش."
 
 #: core/utilities/geolocation/geoiface/tracks/trackreader.cpp:287
 #, kde-format
@@ -56626,7 +56625,7 @@ msgstr "ئۆچۈر"
 #, kde-format
 msgctxt "@action:inmenu delete item"
 msgid "Delete Selected"
-msgstr "تاللانغاننى ئۆچۈرۈش"
+msgstr "تاللانغاننى ئۆچۈر"
 
 #: core/utilities/import/main/importui.cpp:360
 #, kde-format
@@ -59380,7 +59379,7 @@ msgstr "ياسا"
 #, kde-format
 msgctxt "Camera"
 msgid "Model"
-msgstr ""
+msgstr "ئەندىزە"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:454
 #, kde-format
@@ -59806,7 +59805,7 @@ msgstr "ۋە"
 #, kde-format
 msgctxt "Bits per Second"
 msgid "bps"
-msgstr ""
+msgstr "bps"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1048
 #, kde-format
@@ -59873,17 +59872,14 @@ msgid "and"
 msgstr "ۋە"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without a lens type"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "ئىزدەش مەغلۇپ بولدى"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgctxt "@title: window"
-#| msgid "Confirm Favorite Deletion"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "تاللانمىدى"
+msgstr ""
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
@@ -60944,7 +60940,7 @@ msgstr ""
 #: core/utilities/setup/camera/importfilterdlg.cpp:210
 #, kde-format
 msgid "Select Mime Types"
-msgstr "MIME تىپىنى تاللا"
+msgstr "Mime تۈرىنى تاللا"
 
 #: core/utilities/setup/camera/setupcamera.cpp:252
 #, kde-format
@@ -60963,7 +60959,7 @@ msgstr "ماۋزۇ"
 #, kde-format
 msgctxt "@title: camera model"
 msgid "Model"
-msgstr ""
+msgstr "ئەندىزە"
 
 #: core/utilities/setup/camera/setupcamera.cpp:258
 #, kde-format
@@ -61640,7 +61636,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab"
 msgid "Save Settings"
-msgstr ""
+msgstr "ساقلاش تەڭشىكى"
 
 #: core/utilities/setup/editor/setupeditoriface.cpp:104
 #: core/utilities/setup/setuplighttable.cpp:78
@@ -62465,7 +62461,7 @@ msgstr ""
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:450
 #, kde-format
 msgid "Save Profile"
-msgstr ""
+msgstr "سەپلىمە ھۆججەتنى ساقلا"
 
 #: core/utilities/setup/metadata/advancedmetadatatab.cpp:453
 #, kde-format
@@ -63863,7 +63859,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title: settings section"
 msgid "Collections"
-msgstr "توپلاملار"
+msgstr "توپلام"
 
 #: core/utilities/setup/setup.cpp:45
 #, kde-format
