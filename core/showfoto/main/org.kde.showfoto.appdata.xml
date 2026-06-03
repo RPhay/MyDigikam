@@ -81,6 +81,7 @@
   <summary xml:lang="sl">Urejevalnik slik</summary>
   <summary xml:lang="sv">Bildeditor</summary>
   <summary xml:lang="tr">Görsel Düzenleyici</summary>
+  <summary xml:lang="ug">سۈرەت تەھرىرلىگۈچ</summary>
   <summary xml:lang="uk">Редактор зображень</summary>
   <summary xml:lang="zh-CN">图像编辑器</summary>
   <summary xml:lang="zh-TW">影像編輯工具</summary>
@@ -109,7 +110,7 @@
     <p xml:lang="gl">Showfoto é un editor de imaxes rápido con potentes ferramentas de edición. Pode usalo para ver as súas fotografías e melloralas. Showfoto é o editor de imaxes independente do proxecto digiKam.</p>
     <p xml:lang="he">Showfoto הוא עורך תמונות מהיר עם כלים עוצמתיים לעריכת תמונות. אפשר להשתמש בו כדי לצפות בתמונות שלך ולשפר אותן. Showfoto הוא עורך התמונות העצמאי של מיזם digiKam.</p>
     <p xml:lang="hi">शोफोटो शक्तिशाली छवि संपादन के साधनों के साथ एक तेज़ छवि संपादक है। आप इसका उपयोग अपनी तस्वीरों को देखने और उन्हें बेहतर बनाने के लिए कर सकते हैं। शोफोटो डिजीकैम प्रोजेक्ट का स्वतंत्र छवि संपादक है।</p>
-    <p xml:lang="hu">A Showfoto egy gyors képszerkesztő hatékony szerkesztőeszközökkel. A használatával megnézheti és javíthatja a fényképeit. A Showfoto a digiKam projekt önálló képszerkesztője.</p>
+    <p xml:lang="hu">A Showfoto egy gyors képszerkesztő hatékony szerkesztőeszközökkel. Használatával megtekintheti és javíthatja fényképeit. A Showfoto a digiKam projekt önálló képszerkesztője.</p>
     <p xml:lang="id">Showfoto adalah sebuah Editor Citra yang cepat dengan peralatan pengeditan citra yang unggul. Anda dapat menggunakannya untuk menampilkan fotografik Anda dan memperbaikinya. Showfoto adalah sebuah editor citra yang mandiri dari projek digiKam.</p>
     <p xml:lang="is">Showfoto er hraðvirkt myndvinnsluforrit með ýmsum öflugum verkfærum. Það má nota til að skoða myndir og bæta þær. Showfoto er sjálfstæður myndvinnsluritinn innan digiKam verkefnisins.</p>
     <p xml:lang="it">Showfoto è un editor di immagini veloce, con strumenti di modifica potenti. Puoi usarlo per visualizzare le tue fotografie e migliorarle. Showfoto è un editor di immagini autonomo all'interno del progetto digiKam.</p>
@@ -155,7 +156,7 @@
       <caption xml:lang="gl">Editando unha foto en Showfoto.</caption>
       <caption xml:lang="he">עריכת תמונות ב־Showfoo</caption>
       <caption xml:lang="hi">शोफोटो में फोटो का संपादन</caption>
-      <caption xml:lang="hu">Fénykép szerkesztése Showfotoval</caption>
+      <caption xml:lang="hu">Fotó szerkesztése Showfoto-val</caption>
       <caption xml:lang="id">Pengeditan foto di Showfoto</caption>
       <caption xml:lang="is">Breytingar mynda í Showfoto</caption>
       <caption xml:lang="it">Modifica di fotografie in Showfoto</caption>
