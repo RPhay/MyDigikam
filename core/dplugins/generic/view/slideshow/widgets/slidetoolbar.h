@@ -48,6 +48,7 @@ public:
     void setEnabledPlay(bool val);
     void setEnabledNext(bool val);
     void setEnabledPrev(bool val);
+    void setEnabledDelete(bool val);
 
 protected:
 

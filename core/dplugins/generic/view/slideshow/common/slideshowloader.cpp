@@ -381,6 +381,8 @@ void SlideShowLoader::loadCurrentItem()
         d->osd->toolBar()->setEnabledNext(d->fileIndex < (num - 1));
     }
 
+    d->osd->toolBar()->setEnabledDelete((d->fileIndex >= 0) && (d->fileIndex < num));
+
     if ((d->fileIndex >= 0) && (d->fileIndex < num))
     {
 
@@ -509,6 +511,7 @@ void SlideShowLoader::endOfSlide()
     d->osd->toolBar()->setEnabledPlay(false);
     d->osd->toolBar()->setEnabledNext(false);
     d->osd->toolBar()->setEnabledPrev(false);
+    d->osd->toolBar()->setEnabledDelete(false);
 }
 
 void SlideShowLoader::preloadNextItem()

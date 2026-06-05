@@ -212,6 +212,11 @@ void SlideToolBar::setEnabledPrev(bool val)
     d->prevBtn->setEnabled(val);
 }
 
+void SlideToolBar::setEnabledDelete(bool val)
+{
+    d->deleteBtn->setEnabled(val);
+}
+
 void SlideToolBar::slotPlayBtnToggled()
 {
     if (d->playBtn->isChecked())
@@ -372,6 +377,14 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
         if (d->nextBtn->isEnabled())
         {
             d->nextBtn->animateClick();
+        }
+    }
+    else if ( (e->key() == Qt::Key_Delete) &&
+              (e->modifiers() == Qt::NoModifier) )
+    {
+        if (d->deleteBtn->isEnabled())
+        {
+            d->deleteBtn->animateClick();
         }
     }
     else if (e->key() == Qt::Key_Escape)
