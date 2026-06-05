@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-01 00:41+0000\n"
-"PO-Revision-Date: 2026-05-10 12:40+0300\n"
+"PO-Revision-Date: 2026-06-04 14:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -23126,7 +23126,7 @@ msgstr "Tüm ögelere sepet üst verisini yaz"
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:106
 #, kde-format
 msgid "Use the album path of the items in the target"
-msgstr "Hedefteki öğelerin albüm yolunu kullan"
+msgstr "Hedefteki ögelerin albüm yolunu kullan"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
 #, kde-format
@@ -23382,7 +23382,7 @@ msgstr "Dosya Aktarımı"
 #, kde-format
 msgctxt "@info"
 msgid "A tool to export and import items with a remote location"
-msgstr "Öğeleri uzak bir konumla içe ve dışa aktarmak için bir araç"
+msgstr "Ögeleri uzak bir konumla içe ve dışa aktarmak için bir araç"
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:66
 #, kde-format
@@ -23391,7 +23391,7 @@ msgid ""
 "This tool allows users to export and import items with a remote location."
 "<br><br>Many protocols can be used, as FTP, SFTP, SAMBA, etc."
 msgstr ""
-"Bu araç, kullanıcıların öğeleri uzak bir konumla içe ve dışa aktarmasına "
+"Bu araç, kullanıcıların ögeleri uzak bir konumla içe ve dışa aktarmasına "
 "olanak tanır.<br><br>FTP, SFTP, SAMBA vb. gibi birçok protokol "
 "kullanılabilir."
 
@@ -30072,7 +30072,7 @@ msgstr ""
 #: core/libs/dialogs/deletedialog.cpp:385
 #, kde-format
 msgid "These items will be <b>permanently deleted</b> from your hard disk."
-msgstr "Bu öğeler sabit diskinizden <b>kalıcı olarak</b> silinecekler."
+msgstr "Bu ögeler sabit diskinizden <b>kalıcı olarak</b> silinecekler."
 
 #: core/libs/dialogs/deletedialog.cpp:391
 #, kde-format
@@ -51586,7 +51586,7 @@ msgid ""
 "Are you sure you want to remove the item \"%1\"\n"
 "and all nested items if any?"
 msgstr ""
-"“%1” ögesini ve varsa tüm iç içe geçmiş öğelerini\n"
+"“%1” ögesini ve varsa tüm iç içe geçmiş ögelerini\n"
 "kaldırmak istediğinizden emin misiniz?"
 
 #: core/showfoto/stackview/showfotostackviewfavorites.cpp:669
@@ -68007,7 +68007,7 @@ msgid ""
 "operation is executed."
 msgstr ""
 "Görseller gruplandırıldığında, aşağıdaki işlemler<br>yalnızca görüntülenen "
-"ögede (Hayır)<br>veya gruptaki tüm gizli öğelerde de (Evet) gerçekleştirilir."
+"ögede (Hayır)<br>veya gruptaki tüm gizli ögelerde de (Evet) gerçekleştirilir."
 "<br>Eğer Sor seçilirse bu işlem her yürütüldüğünde<br>bir uyarı verilir."
 
 #: core/utilities/setup/misc/setupmisc_grouping.cpp:36
