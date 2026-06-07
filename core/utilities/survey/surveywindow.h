@@ -95,10 +95,6 @@ private Q_SLOTS:
     void slotZoomFactorChanged(double);
 
     void slotDeleteItem();
-    void slotDeleteItem(const ItemInfo&);
-
-    void slotDeleteFinalItem();
-    void slotDeleteFinalItem(const ItemInfo&);
 
     void slotItemSelected();
 

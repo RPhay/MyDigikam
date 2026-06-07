@@ -134,7 +134,7 @@ BUGFIXES:
 104 --> 514723 - File rename seems to be unable to detect existing files with name it wishes to assign, and that generates a conflict.
 104 --> 506349 - "Move To Album" default album.
 105 --> 520901 - Slideshow freezes and stops responding when encountering JPEG with 0xDEADBEEF marker in EXIF UserComment field.
-106 -->
+106 --> 520697 - Grouped Image in Survey is not deleted.
 107 -->
 108 -->
 109 -->

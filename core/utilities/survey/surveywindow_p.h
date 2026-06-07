@@ -58,6 +58,7 @@
 
 // Local includes
 
+#include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "itemthumbnailbar.h"
 #include "itempropertiessidebardb.h"
@@ -66,19 +67,15 @@
 #include "surveystack.h"
 #include "thumbbardock.h"
 #include "drawdecoder.h"
-#include "digikam_debug.h"
 #include "componentsinfodlg.h"
 #include "digikamapp.h"
 #include "thememanager.h"
 #include "dimg.h"
-#include "dio.h"
 #include "dmetadata.h"
 #include "dfileoperations.h"
 #include "metaenginesettings.h"
 #include "applicationsettings.h"
-#include "albummanager.h"
 #include "loadingcacheinterface.h"
-#include "deletedialog.h"
 #include "iccsettings.h"
 #include "imagewindow.h"
 #include "itempreviewview.h"

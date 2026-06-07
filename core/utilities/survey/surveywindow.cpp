@@ -253,61 +253,7 @@ void SurveyWindow::slotItemSelected()
 
 void SurveyWindow::slotDeleteItem()
 {
-    deleteItem(false);
-}
-
-void SurveyWindow::slotDeleteItem(const ItemInfo& info)
-{
-    deleteItem(info, false);
-}
-
-void SurveyWindow::slotDeleteFinalItem()
-{
-    deleteItem(true);
-}
-
-void SurveyWindow::slotDeleteFinalItem(const ItemInfo& info)
-{
-    deleteItem(info, true);
-}
-
-void SurveyWindow::deleteItem(bool permanently)
-{
-    if (!d->stack->thumbBar()->currentInfo().isNull())
-    {
-        deleteItem(d->stack->thumbBar()->currentInfo(), permanently);
-    }
-}
-
-void SurveyWindow::deleteItem(const ItemInfo& info, bool permanently)
-{
-    QUrl u               = info.fileUrl();
-    const PAlbum* const palbum = AlbumManager::instance()->findPAlbum(u.adjusted(QUrl::RemoveFilename));
-
-    if (!palbum)
-    {
-        return;
-    }
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Item to delete: " << u;
-
-    bool useTrash;
-    bool preselectDeletePermanently = permanently;
-
-    DeleteDialog dialog(this);
-
-    QList<QUrl> urlList;
-    urlList.append(u);
-
-    if (!dialog.confirmDeleteList(urlList, DeleteDialogMode::Files, preselectDeletePermanently ?
-                                  DeleteDialogMode::NoChoiceDeletePermanently : DeleteDialogMode::NoChoiceTrash))
-    {
-        return;
-    }
-
-    useTrash = !dialog.shouldDelete();
-
-    DIO::del(info, useTrash);
+    Q_EMIT d->stack->imagePreviewView()->signalDeleteItem();
 }
 
 void SurveyWindow::slotZoomFactorChanged(double zoom)
