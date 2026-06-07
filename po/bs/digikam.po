@@ -46,7 +46,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-01 00:41+0000\n"
+"POT-Creation-Date: 2026-06-07 00:41+0000\n"
 "PO-Revision-Date: 2015-02-26 21:39+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -23678,7 +23678,7 @@ msgid "Presentation..."
 msgstr "Slobodna rotacija..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:247
 #, fuzzy, kde-format
 #| msgid "Ignore grouping"
 msgctxt "@title:window"
@@ -23686,13 +23686,13 @@ msgid "Specify Delay for Slide Show"
 msgstr "Zanemari grupiranje"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:243
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, kde-format
 msgid "Delay:"
 msgstr ""
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:423
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:436
 #, fuzzy, kde-format
 #| msgid "Delete Tag"
 msgctxt "@title:window"
@@ -23701,7 +23701,7 @@ msgstr "Izbriši oznaku"
 
 #         translations.
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:424
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:437
 #, fuzzy, kde-format
 #| msgid "Do you really want to remove the selected tag from all images?"
 #| msgid_plural ""
@@ -23793,8 +23793,8 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Slajd-šou"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:699
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:711
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:702
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:714
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -24011,10 +24011,11 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
-"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
-"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Delete (to trash):</"
+"td><td><i>Delete</i> key</td></tr><tr><td>Video forward:</td><td><i>Ctrl"
+"+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl+Left</i> "
+"key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</td></"
+"tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
 "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
 "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
@@ -24043,32 +24044,32 @@ msgstr ""
 "\"2\"><nobr><center><b><h1>Ostalo</h1></b></center></nobr></td></"
 "tr><tr><td>Prikaži ovu pomoć:</td><td><i>F1</i> taster</td></tr></table></qt>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
 #, fuzzy, kde-format
 #| msgid "Slideshow"
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Slajd-šou"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:169
 #: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Slajd-šou"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
 #, fuzzy, kde-format
 #| msgid "Clear All"
 msgid "Play All"
 msgstr "Očisti Sve"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:184
 #, fuzzy, kde-format
 #| msgid "Selection"
 msgid "Play Selection"
 msgstr "Izbor"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:193
 #, fuzzy, kde-format
 #| msgid "With All Sub-Albums"
 msgid "Play With Sub-Albums"

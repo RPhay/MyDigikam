@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-01 00:41+0000\n"
+"POT-Creation-Date: 2026-06-07 00:41+0000\n"
 "PO-Revision-Date: 2026-05-10 19:32-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -22326,27 +22326,27 @@ msgid "Presentation..."
 msgstr "Apresentação..."
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:224
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:242
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "Specify Delay for Slide Show"
 msgstr "Especificar atraso para apresentação de slides"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:225
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:243
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:248
 #, kde-format
 msgid "Delay:"
 msgstr "Atraso:"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:250
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:423
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:436
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Image"
 msgstr "Excluir imagem"
 
 #: core/dplugins/generic/view/presentation/widgets/presentationctrlwidget.cpp:251
-#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:424
+#: core/dplugins/generic/view/slideshow/widgets/slidetoolbar.cpp:437
 #, kde-format
 msgid "Do you want to move this image to the trash?"
 msgstr "Deseja mover esta imagem para a lixeira?"
@@ -22429,8 +22429,8 @@ msgctxt "@title:window"
 msgid "Slideshow"
 msgstr "Apresentação de slides"
 
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:699
-#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:711
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:702
+#: core/dplugins/generic/view/slideshow/common/slideshowloader.cpp:714
 #, kde-format
 msgctxt ""
 "Reason for inhibiting the screensaver activation, when the presentation mode "
@@ -22597,7 +22597,33 @@ msgid "A tool to render slideshow"
 msgstr "Uma ferramenta para renderizar uma apresentação de slides"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<p>This tool render a series of items as a simple slide-show.</"
+#| "p><p>Plenty of items properties can be displayed as overlay while running."
+#| "</p><p>This tool can play album contents in recursive mode with children "
+#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
+#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
+#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
+#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
+#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
+#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
+#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
+#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
+#| "i> key</td></tr><tr><td>Video forward:</td><td><i>Ctrl+Right</i> key</"
+#| "td></tr><tr><td>Video backward:</td><td><i>Ctrl+Left</i> key</td></"
+#| "tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</td></"
+#| "tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
+#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
+#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
+#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
+#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
+#| "keyboard shortcuts</td></tr><tr><td colspan="
+#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
+#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22610,10 +22636,11 @@ msgid ""
 "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
 "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse wheel "
 "down</td></tr><tr><td></td><td>Right mouse button</td></tr><tr><td>Pause/"
-"Start:</td><td><i>Space</i> key</td></tr><tr><td>Video forward:</"
-"td><td><i>Ctrl+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl"
-"+Left</i> key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</"
-"td></tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
+"Start:</td><td><i>Space</i> key</td></tr><tr><td>Delete (to trash):</"
+"td><td><i>Delete</i> key</td></tr><tr><td>Video forward:</td><td><i>Ctrl"
+"+Right</i> key</td></tr><tr><td>Video backward:</td><td><i>Ctrl+Left</i> "
+"key</td></tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</td></"
+"tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
 "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
 "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
 "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
@@ -22653,29 +22680,29 @@ msgstr ""
 "\"2\"><nobr><center><b><h1>Outros</h1></b></center></nobr></td></"
 "tr><tr><td>Exibir esta ajuda:</td><td><i>tecla F1</i></td></tr></table>"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:159
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
 #, kde-format
 msgctxt "@action"
 msgid "Slideshow"
 msgstr "Apresentação de slides"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:168
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:169
 #: core/libs/settings/applicationsettings_miscs.cpp:458
 #, kde-format
 msgid "Slideshow"
 msgstr "Apresentação de slides"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:174
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:175
 #, kde-format
 msgid "Play All"
 msgstr "Reproduzir tudo"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:183
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:184
 #, kde-format
 msgid "Play Selection"
 msgstr "Reproduzir seleção"
 
-#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:192
+#: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:193
 #, kde-format
 msgid "Play With Sub-Albums"
 msgstr "Reproduzir com os sub-álbuns"
