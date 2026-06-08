@@ -200,7 +200,7 @@ bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QStr
 
     if (isCacheable(img))
     {
-        int cost   = img.numBytes() / 1024;
+        int cost   = img.memorySize() / 1024;
         isInserted = d->imageCache.insert(cacheKey, new DImg(img), cost);
 
         if (isInserted && !filePath.isEmpty())
@@ -227,7 +227,7 @@ bool LoadingCache::isCacheable(const DImg& img) const
 {
     // return whether image fits in cache
 
-    return ((quint64)d->imageCache.maxCost() >= (img.numBytes() / 1024));
+    return ((quint64)d->imageCache.maxCost() >= (img.memorySize() / 1024));
 }
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)

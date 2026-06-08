@@ -58,4 +58,85 @@ void MetaEngineData::Private::clear()
 
 }
 
+int MetaEngineData::Private::size() const
+{
+    QMutexLocker lock(&s_metaEngineMutex);
+
+    int metaSize = 0;
+
+    try
+    {
+        Exiv2::ExifData::const_iterator it1 = exifMetadata.begin();
+
+        for ( ; it1 != exifMetadata.end() ; ++it1)
+        {
+
+#if EXIV2_TEST_VERSION(0,27,99)
+
+            metaSize += it1->size();
+
+#else
+
+            metaSize += it1->size_;
+
+#endif
+
+        }
+
+        Exiv2::IptcData::const_iterator it2 = iptcMetadata.begin();
+
+        for ( ; it2 != iptcMetadata.end() ; ++it2)
+        {
+
+#if EXIV2_TEST_VERSION(0,27,99)
+
+            metaSize += it2->size();
+
+#else
+
+            metaSize += it2->size_;
+
+#endif
+
+        }
+
+#ifdef _XMP_SUPPORT_
+
+        Exiv2::XmpData::const_iterator it3 = xmpMetadata.begin();
+
+        for ( ; it3 != xmpMetadata.end() ; ++it3)
+        {
+
+#if EXIV2_TEST_VERSION(0,27,99)
+
+            metaSize += it3->size();
+
+#else
+
+            metaSize += it3->size_;
+
+#endif
+
+        }
+
+#endif // _XMP_SUPPORT_
+
+        metaSize += imageComments.capacity();
+        metaSize += iccProfileBuf.size();
+    }
+    catch (Exiv2::AnyError& e)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot get size of data container with Exiv2 "
+                                           << "(Error #" << (int)e.code() << ": "
+                                           << QString::fromStdString(e.what())
+                                           << ")";
+    }
+    catch (...)
+    {
+        qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+    }
+
+    return metaSize;
+}
+
 } // namespace Digikam

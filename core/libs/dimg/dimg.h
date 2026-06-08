@@ -250,6 +250,7 @@ public:
     bool        sixteenBit()     const;
     quint64     numBytes()       const;
     quint64     numPixels()      const;
+    quint64     memorySize()     const;
 
     /**
      * @return The number of bytes depth of one pixel : 4 (non sixteenBit) or 8 (sixteen)

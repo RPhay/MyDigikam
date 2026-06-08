@@ -35,6 +35,8 @@ public:
     MetaEngineData(const MetaEngineData&);
     ~MetaEngineData();
 
+    int size() const;
+
     MetaEngineData& operator=(const MetaEngineData&);
 
 public:

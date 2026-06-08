@@ -182,15 +182,31 @@ void DImg::setMetadata(const MetaEngineData& data)
 
 quint64 DImg::numBytes() const
 {
-    return ((quint64)width()  *
+    return (
+            (quint64)width()  *
             (quint64)height() *
-            (quint64)bytesDepth());
+            (quint64)bytesDepth()
+           );
 }
 
 quint64 DImg::numPixels() const
 {
-    return ((quint64)width() *
-            (quint64)height());
+    return (
+            (quint64)width() *
+            (quint64)height()
+           );
+}
+
+quint64 DImg::memorySize() const
+{
+    // This calculation of the memory size used by DImg is not perfect,
+    // but it is better than using only the size of the raw pixel data.
+
+    return (
+            numBytes()                       +
+            (quint64)m_priv->metaData.size() +
+            (quint64)m_priv->iccProfile.data().size()
+           );
 }
 
 int DImg::bytesDepth() const

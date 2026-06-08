@@ -37,6 +37,16 @@ MetaEngineData::~MetaEngineData()
 {
 }
 
+int MetaEngineData::size() const
+{
+    if (d)
+    {
+        return d->size();
+    }
+
+    return 0;
+}
+
 MetaEngineData& MetaEngineData::operator=(const MetaEngineData& other)
 {
     d = other.d;

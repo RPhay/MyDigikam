@@ -26,6 +26,7 @@ class Q_DECL_HIDDEN MetaEngineData::Private : public QSharedData
 public:
 
     void clear();
+    int  size() const;
 
 public:
 
