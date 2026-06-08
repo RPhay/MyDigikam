@@ -331,7 +331,8 @@ void TagsActionMngr::slotAssignFromShortcut()
 
         if      (action->objectName().startsWith(d->ratingShortcutPrefix))
         {
-            svw->slotAssignRating(val);
+            bool toggle = !action->objectName().contains(d->noToggleShortcutPrefix);
+            svw->slotAssignRating(val, toggle);
         }
         else if (action->objectName().startsWith(d->pickShortcutPrefix))
         {

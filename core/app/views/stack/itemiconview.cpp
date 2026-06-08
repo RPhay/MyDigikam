@@ -517,6 +517,19 @@ void ItemIconView::setupConnections()
 
     connect(d->rightSideBar->getFiltersHistoryTab(), SIGNAL(actionTriggered(ItemInfo)),
             this, SLOT(slotGotoAlbumAndItem(ItemInfo)));
+
+    // -- Survey view -------------------
+
+    const SurveyWindow* const svw = SurveyWindow::surveyWindow();
+
+    connect(svw, SIGNAL(signalAssignPickLabel(int)),
+            this, SLOT(slotAssignPickLabel(int)));
+
+    connect(svw, SIGNAL(signalAssignColorLabel(int)),
+            this, SLOT(slotAssignColorLabel(int)));
+
+    connect(svw, SIGNAL(signalAssignRating(int,bool)),
+            this, SLOT(slotAssignRating(int,bool)));
 }
 
 void ItemIconView::loadViewState()

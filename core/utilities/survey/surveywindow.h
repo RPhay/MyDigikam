@@ -57,12 +57,15 @@ public:
 Q_SIGNALS:
 
     void signalWindowHasMoved();
+    void signalAssignPickLabel(int pickId);
+    void signalAssignColorLabel(int colorId);
+    void signalAssignRating(int rating, bool toggle);
 
 public Q_SLOTS:
 
     void slotAssignPickLabel(int pickId);
     void slotAssignColorLabel(int colorId);
-    void slotAssignRating(int rating);
+    void slotAssignRating(int rating, bool toggle);
 
 protected:
 

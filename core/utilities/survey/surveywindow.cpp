@@ -193,21 +193,17 @@ void SurveyWindow::toggleTag(int tagID)
 
 void SurveyWindow::slotAssignPickLabel(int pickId)
 {
-    ItemInfo info = d->stack->thumbBar()->currentInfo();
-    FileActionMngr::instance()->assignPickLabel(info, pickId);
+    Q_EMIT signalAssignPickLabel(pickId);
 }
 
 void SurveyWindow::slotAssignColorLabel(int colorId)
 {
-    ItemInfo info = d->stack->thumbBar()->currentInfo();
-    FileActionMngr::instance()->assignColorLabel(info, colorId);
+    Q_EMIT signalAssignColorLabel(colorId);
 }
 
-void SurveyWindow::slotAssignRating(int rating)
+void SurveyWindow::slotAssignRating(int rating, bool toggle)
 {
-    ItemInfo info = d->stack->thumbBar()->currentInfo();
-    rating        = qMin(RatingMax, qMax(RatingMin, rating));
-    FileActionMngr::instance()->assignRating(info, rating);
+    Q_EMIT signalAssignRating(rating, toggle);
 }
 
 void SurveyWindow::slotItemSelected()
