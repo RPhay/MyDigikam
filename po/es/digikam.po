@@ -2,30 +2,30 @@
 # Copyright (C) 2003-2026 This file is copyright:
 # This file is distributed under the same license as the digikam package.
 #
-# SPDX-FileCopyrightText: 2003, 2004, 2005, 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
-# SPDX-FileCopyrightText: 2005, 2006, 2007, 2008, 2009, 2010, 2011 Pablo Pita Leira <pablo.pita@gmail.com>
-# SPDX-FileCopyrightText: 2006, 2007 Pablo de Vicente <pablo.devicente@gmail.com>
+# SPDX-FileCopyrightText: 2003-2005, 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2005-2011 Pablo Pita Leira <pablo.pita@gmail.com>
+# SPDX-FileCopyrightText: 2006-2007 Pablo de Vicente <pablo.devicente@gmail.com>
 # SPDX-FileCopyrightText: 2007 Alberto Garcia <info@trebol-a.com>
-# SPDX-FileCopyrightText: 2007, 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2007-2008 Jaime Robles <jaime@kde.org>
 # SPDX-FileCopyrightText: 2009-2026 Eloy Cuadra <ecuadra@eloihr.net>
 # SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
 # SPDX-FileCopyrightText: 2013 Aitor Morant <fromhell091@gmail.com>
 # SPDX-FileCopyrightText: 2007, 2008, 2010 Santiago Fernández Sancho <santi@kde-es.org>, 2007, 2008, 2010.
 # SPDX-FileCopyrightText: 2013 Hector Wilvert Ivan Valdez Reza <ranmaru.hibikiya@gmail.com>
-# SPDX-FileCopyrightText: 2010, 2011 Kira J. Fernandez <kirajfdez@gmail.com>
+# SPDX-FileCopyrightText: 2010-2011 Kira J. Fernandez <kirajfdez@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-07 00:41+0000\n"
-"PO-Revision-Date: 2026-05-10 12:09+0100\n"
+"PO-Revision-Date: 2026-06-07 16:31+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:489
@@ -22667,33 +22667,7 @@ msgid "A tool to render slideshow"
 msgstr "Herramienta para visualizar una presentación"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Video forward:</td><td><i>Ctrl+Right</i> key</"
-#| "td></tr><tr><td>Video backward:</td><td><i>Ctrl+Left</i> key</td></"
-#| "tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22735,6 +22709,7 @@ msgstr ""
 "tr><tr><td></td><td>Tecla <i>Derecha</i></td></tr><tr><td></td><td>Rueda del "
 "ratón hacia abajo</td></tr><tr><td></td><td>Botón derecho del ratón</td></"
 "tr><tr><td>Pausa/inicio:</td><td>Tecla <i>Espacio</i></td></"
+"tr><tr><td>Borrar (a la papelera):</td><td>Tecla <i>Supr</i></td></"
 "tr><tr><td>Avance de. vídeo:</td><td>Tecla <i>Ctrl+Derecha</i></td></"
 "tr><tr><td>Retroceso del vídeo:</td><td>Tecla <i>Ctrl+Izquierda</i></td></"
 "tr><tr><td>Preferencias de la presentación:</td><td>Tecla <i>Alt+P</i></td></"
