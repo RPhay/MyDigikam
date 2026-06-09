@@ -20,7 +20,7 @@ Bundles component versions:
 BUGFIXES:
 
 001 --> 521193 - Survey tool shortcuts do not toggle labels with keyboard shorcuts.
-002 --> 
+002 --> 518911 - digiKam terminates abnormally with signal 6/ABRT.
 003 --> 
 004 --> 
 005 --> 
