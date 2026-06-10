@@ -33,32 +33,34 @@ class Q_DECL_HIDDEN GeoDataSimpleFieldPrivate
 public:
 
     QString                             m_name;
-    GeoDataSimpleField::SimpleFieldType m_type;
+    GeoDataSimpleField::SimpleFieldType m_type = GeoDataSimpleField::String;
     QString                             m_displayName;
 };
 
 GeoDataSimpleField::GeoDataSimpleField()
     : GeoNode(),
-      d(new GeoDataSimpleFieldPrivate)
+      d      (new GeoDataSimpleFieldPrivate)
 {
 }
 
 GeoDataSimpleField::GeoDataSimpleField(const GeoDataSimpleField& other)
     : GeoNode(),
-      d(new GeoDataSimpleFieldPrivate(*other.d))
+      d      (new GeoDataSimpleFieldPrivate(*other.d))
 {
 }
 
 bool GeoDataSimpleField::operator==(const GeoDataSimpleField& other) const
 {
-    return d->m_name == other.d->m_name &&
-           d->m_type == other.d->m_type &&
-           d->m_displayName == other.d->m_displayName;
+    return (
+            (d->m_name == other.d->m_name) &&
+            (d->m_type == other.d->m_type) &&
+            (d->m_displayName == other.d->m_displayName)
+           );
 }
 
 bool GeoDataSimpleField::operator!=(const GeoDataSimpleField& other) const
 {
-    return !this->operator==(other);
+    return (!this->operator==(other));
 }
 
 GeoDataSimpleField::~GeoDataSimpleField()
@@ -99,6 +101,7 @@ void GeoDataSimpleField::setDisplayName(const QString& displayName)
 GeoDataSimpleField& GeoDataSimpleField::operator=(const GeoDataSimpleField& other)
 {
     *d = *other.d;
+
     return *this;
 }
 

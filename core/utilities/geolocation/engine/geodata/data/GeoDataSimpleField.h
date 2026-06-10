@@ -35,8 +35,8 @@ public:
 
     GeoDataSimpleField();
     GeoDataSimpleField(const GeoDataSimpleField& other);
-    bool operator==(const GeoDataSimpleField& other) const;
-    bool operator!=(const GeoDataSimpleField& other) const;
+    bool operator==(const GeoDataSimpleField& other)    const;
+    bool operator!=(const GeoDataSimpleField& other)    const;
     ~GeoDataSimpleField() override;
 
     /*
@@ -57,7 +57,7 @@ public:
     /*
      * @brief Return the value of type attribute of simple field
      */
-    SimpleFieldType type() const;
+    SimpleFieldType type()                              const;
 
     /*
      * @brief Sets the value of type attribute
@@ -68,7 +68,7 @@ public:
     /*
      * @brief Returns the value of name attribute of simple field
      */
-    QString name() const;
+    QString name()                                      const;
 
     /*
      * @brief Set the value of name attribute of SimpleField
@@ -79,7 +79,7 @@ public:
     /*
      * @brief Returns the value of displayField child element of SimpleField tag
      */
-    QString displayName() const;
+    QString displayName()                               const;
 
     /*
      * @brief Set the value for displayName tag
@@ -96,13 +96,13 @@ public:
     /*
      * @brief Provides information for downcasting a GeoNode
      */
-    const char* nodeType() const override;
+    const char* nodeType()                              const override;
 
     /*
      * @brief Serialize SimpleField to a stream
      * @param stream  The stream
      */
-    virtual void pack(QDataStream& stream) const;
+    virtual void pack(QDataStream& stream)              const;
 
     /*
      * @brief Unserialize SimpleField from a stream
