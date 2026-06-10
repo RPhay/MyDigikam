@@ -41,7 +41,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.3\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-07 00:41+0000\n"
-"PO-Revision-Date: 2026-06-07 10:29+0200\n"
+"PO-Revision-Date: 2026-06-09 07:47+0200\n"
 "Last-Translator: Benedek Péter <benedekppeter@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -68064,7 +68064,7 @@ msgstr "A mappa dátuma alapján"
 #, kde-format
 msgctxt "method to get the album date"
 msgid "No Change Of Date"
-msgstr "A dátum nem változott"
+msgstr "Nincs dátumváltozás"
 
 #: core/utilities/setup/misc/setupmisc_behavior.cpp:91
 #, kde-format

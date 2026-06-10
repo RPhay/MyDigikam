@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-07 00:41+0000\n"
-"PO-Revision-Date: 2026-06-06 08:18+0300\n"
+"PO-Revision-Date: 2026-06-09 09:02+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -5783,9 +5783,9 @@ msgid "Size (%): "
 msgstr "גודל (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:399
-#, fuzzy, kde-format
+#, kde-format
 msgid "Margin from edge in X direction, as a percentage of the marked image."
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "מרחק מהקצה בכיוון X, כאחוז מהתמונה המסומנת."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:400
 #, kde-format
@@ -5793,9 +5793,9 @@ msgid "X margin (%): "
 msgstr "שול ב־X (%): "
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:407
-#, fuzzy, kde-format
+#, kde-format
 msgid "Margin from edge in Y direction, as a percentage of the marked image."
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "מרחק מהקצה בכיוון Y, כאחוז מהתמונה המסומנת."
 
 #: core/dplugins/bqm/decorate/watermark/watermark.cpp:408
 #, kde-format
@@ -5829,10 +5829,10 @@ msgid "Anti-Vignetting"
 msgstr "תיקון עיוות עדשה"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to adjust vignetting to photograph"
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי לכוונון עיוות עדשה של צילום"
 
 #: core/dplugins/bqm/enhance/antivignetting/antivignettingplugin.cpp:62
 #, fuzzy, kde-kuit-format
@@ -5872,10 +5872,10 @@ msgid "A tool to blur images"
 msgstr "כלי לטשטוש תמונות"
 
 #: core/dplugins/bqm/enhance/blur/blurplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can blur images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr "<para>כלי מנהל התור הריכוזי הזה יכול לטשטש תמונות.</para>"
 
 #: core/dplugins/bqm/enhance/hotpixels/hotpixelsplugin.cpp:42
 #: core/dplugins/editor/enhance/hotpixels/hotpixelstoolplugin.cpp:40
@@ -5907,9 +5907,9 @@ msgid "Lens Auto-Correction"
 msgstr "תיקון עדשה אוטומטי"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgid "Fix automatically lens distortions"
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "תיקון עיוותי עדשות אוטומטית"
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofix.cpp:78
 #, kde-format
@@ -5938,12 +5938,12 @@ msgid "A tool to fix automatically lens artifacts"
 msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
 
 #: core/dplugins/bqm/enhance/lensautofix/lensautofixplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can fix automatically lens artifacts "
 "over images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:42
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:40
@@ -5954,18 +5954,18 @@ msgstr "ניגודיות מקומית"
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:57
 #: core/dplugins/editor/enhance/localcontrast/localcontrasttoolplugin.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to emulate tone mapping"
-msgstr "איזון-לובן ידני או אוטומטי"
+msgstr ""
 
 #: core/dplugins/bqm/enhance/localcontrast/localcontrastplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can emulate tone mapping over images.</"
 "para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:42
 #: core/dplugins/editor/enhance/noisereduction/noisereductiontoolplugin.cpp:40
@@ -5982,10 +5982,10 @@ msgid "A tool to remove photograph noise using wavelets"
 msgstr "כלי להסרת רעש בצילום באמצעות אדוות (wavelets)"
 
 #: core/dplugins/bqm/enhance/noisereduction/noisereductionplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can reduce noise in images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:42
 #, kde-format
@@ -5995,18 +5995,20 @@ msgstr "תיקון עיניים אדומות"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:57
 #: core/dplugins/editor/enhance/redeye/redeyetoolplugin.cpp:55
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically detect and correct red eye effect"
-msgstr "זיהוי אוטומטי ופתיחת מצלמה"
+msgstr "כלי לזיהוי ותיקון אפקט של עיניים אדומות אוטומטית"
 
 #: core/dplugins/bqm/enhance/redeyecorrection/redeyecorrectionplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can reduce red eye effect on images.</"
 "para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
+"<para>כלי מנהל התור הריכוזי הזה יכול להפחית אפקט של עיניים אדומות בתמונות.</"
+"para>"
 
 #: core/dplugins/bqm/enhance/restoration/restoration.cpp:54
 #: core/dplugins/editor/enhance/restoration/restorationtool.cpp:121
@@ -6058,12 +6060,12 @@ msgid "A tool to restore images using Greystoration algorithm"
 msgstr "כלי לשחזור תמונות באמצעות אלגוריתם Greystoration (שחזור אפור)"
 
 #: core/dplugins/bqm/enhance/restoration/restorationplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can restore images using Greystoration "
 "algorithm.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:42
 #, kde-format
@@ -6078,10 +6080,10 @@ msgid "A tool to sharp images"
 msgstr "כלי לחידוד תמונות"
 
 #: core/dplugins/bqm/enhance/sharpen/sharpenplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid "<para>This Batch Queue Manager tool can sharp images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:42
 #: core/dplugins/editor/filters/colorfx/colorfxtoolplugin.cpp:40
@@ -6097,12 +6099,12 @@ msgid "A tool to apply color effects"
 msgstr "כלי להחלת אפקטי צבע"
 
 #: core/dplugins/bqm/filters/colorfx/colorfxplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply color effects over images.</"
 "para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:42
 #: core/dplugins/editor/filters/filmgrain/filmgraintoolplugin.cpp:40
@@ -6118,11 +6120,11 @@ msgid "A tool to add film grain"
 msgstr "כלי להוספת גרגירי סרט"
 
 #: core/dplugins/bqm/filters/filmgrain/filmgrainplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can add film grain over images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadata.cpp:82
 #, kde-format
@@ -6165,18 +6167,18 @@ msgid "Apply Metadata"
 msgstr "החלת נתוני על"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to apply metadata from a image or JSON file with ExifTool"
-msgstr "שמירת תוויות מידע-נוסף בקובץ %1..."
+msgstr "כלי להחלת נתוני על מתמונה או מקובץ JSON עם ExifTool"
 
 #: core/dplugins/bqm/metadata/applymetadata/applymetadataplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool can apply metadata from a image or JSON "
 "file with ExifTool.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptions.cpp:94
 #, kde-format
@@ -6236,12 +6238,12 @@ msgid "A tool to assign captions metadata to images"
 msgstr "כלי להקצאת נתוני על של כיתובים על תמונות"
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign title and description "
 "metadata alternative values to images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabels.cpp:89
 #, kde-format
@@ -6271,12 +6273,12 @@ msgid "A tool to assign labels metadata to images"
 msgstr "כלי להקצאת נתוני על של תוויות על תמונות"
 
 #: core/dplugins/bqm/metadata/assignlabels/assignlabelsplugin.cpp:62
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will assign rating, or color, or pick "
 "label metadata values to images.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:48
 #, kde-format
@@ -6291,12 +6293,12 @@ msgid "A tool to automatically assign tags to images"
 msgstr "כלי להקצאת תגיות לתמונות אוטומטית"
 
 #: core/dplugins/bqm/metadata/assigntags/assigntagsplugin.cpp:68
-#, fuzzy, kde-kuit-format
+#, kde-kuit-format
 msgctxt "@info"
 msgid ""
 "<para>This Batch Queue Manager tool will automatically assign keyword "
 "hierarchies metadata values to images using AI deep-learning models.</para>"
-msgstr "זוהי רשימת הפריטים שאמורים להימחק."
+msgstr ""
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
 #, kde-format
@@ -6326,10 +6328,10 @@ msgid "Image Quality Scan"
 msgstr "סריקת איכות תמונה"
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "A tool to assign pick label metadata by image quality"
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr ""
 
 #: core/dplugins/bqm/metadata/qualitysort/qualitysortplugin.cpp:62
 #, fuzzy, kde-kuit-format
@@ -7507,10 +7509,10 @@ msgid "Adjust Curves"
 msgstr "כיוון עקומה"
 
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:60
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "This Image Editor tool can adjust the color curves from image."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כלי עריכת התמונות הזה יכול לכוון את עקומות הצבע מתמונה."
 
 #: core/dplugins/editor/colors/adjustcurves/adjustcurvestoolplugin.cpp:91
 #, kde-format
@@ -7532,29 +7534,29 @@ msgid "Select the input intensity of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:173
-#, fuzzy, kde-format
+#, kde-format
 msgid "Input intensity."
-msgstr "ערך מרבי של עוצמת קלט."
+msgstr "עוצמת קלט."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:180
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the output intensity of the histogram here."
-msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
+msgstr "כאן אפשר להגדיר את עוצמת הפלט של ההיסטוגרמה."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:181
-#, fuzzy, kde-format
+#, kde-format
 msgid "Output intensity."
-msgstr "אמצעי פלט"
+msgstr "עוצמת פלט."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:187
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the minimal input intensity value of the histogram here."
-msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
+msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgid "Minimal input intensity."
-msgstr "ערך עוצמת פלט מזערי"
+msgstr "עוצמת קלט מזערית."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:194
 #: core/dplugins/editor/colors/film/filmtool.cpp:249
@@ -7563,24 +7565,24 @@ msgid "Gamma input value."
 msgstr "ערך קלט גאמה."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:195
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the gamma input value here."
-msgstr "ערך קלט גאמה."
+msgstr "כאן אפשר להגדיר את ערך קלט הגאמה."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:200
-#, fuzzy, kde-format
+#, kde-format
 msgid "Maximal input intensity."
-msgstr "ערך מרבי של עוצמת קלט."
+msgstr "עוצמת קלט מרבית."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:201
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the maximal input intensity value of the histogram here."
-msgstr "<p>סמנו את הערכי העצמה הגבוהים ביותר להיסתוגרמה שנבחרה"
+msgstr ""
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:206
-#, fuzzy, kde-format
+#, kde-format
 msgid "Minimal output intensity."
-msgstr "ערך עוצמת פלט מזערי"
+msgstr "עוצמת פלט מזערית."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:207
 #, fuzzy, kde-format
@@ -7588,9 +7590,9 @@ msgid "Select the minimal output intensity value of the histogram here."
 msgstr "<p>סמנו את הערכי העצמה הנמוכים ביותר להיסתוגרמה שנבחרה"
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:212
-#, fuzzy, kde-format
+#, kde-format
 msgid "Maximal output intensity."
-msgstr "ערך מרבי של עוצמת קלט."
+msgstr "עוצמת פלט מרבית."
 
 #: core/dplugins/editor/colors/adjustlevels/adjustlevelstool.cpp:213
 #, fuzzy, kde-format
@@ -12816,10 +12818,10 @@ msgid "Select here the type of scene used by the camera to take the picture."
 msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:279
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@option"
 msgid "Subject distance type:"
-msgstr "מרחק הנושא:"
+msgstr "סוג מרחק מעצם:"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdevice.cpp:281
 #, kde-format
@@ -12896,11 +12898,10 @@ msgid "Caption Information"
 msgstr "פרטי כיתוב"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:168
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgctxt "@title"
 msgid "Record technical descriptions"
-msgstr "תיאור"
+msgstr "תיעוד תיאורים טכניים"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:172
 #, kde-format
@@ -12909,10 +12910,10 @@ msgid "Date and Time Information"
 msgstr "פרטי תאריך ושעה"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:173
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Record camera time-stamp properties"
-msgstr "מאפייני הקובץ"
+msgstr "תיעוד מאפייני חותמת הזמן של המצלמה"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:177
 #, kde-format
@@ -12933,10 +12934,10 @@ msgid "Capture Device Settings"
 msgstr "הגדרות התקן צילום"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:183
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Record shot conditions used by camera"
-msgstr "<qt>מאפיינים כלליים<br/><i>התאמה אישית של התנהגות כללית</i></qt>"
+msgstr "תיעוד תנאי צילום ששימשו את המצלמה"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:187
 #, kde-format
@@ -12951,10 +12952,10 @@ msgid "Record ambient condition captured by camera"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:192
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title"
 msgid "Pictures Adjustments"
-msgstr "תיקוניי תאורה"
+msgstr "כוונוני תמונות"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifeditwidget.cpp:193
 #, kde-format
@@ -12975,9 +12976,9 @@ msgid ""
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:144
-#, fuzzy, kde-format
+#, kde-format
 msgid "Focal length in 35mm film (mm):"
-msgstr "אורך מוקד:"
+msgstr "אורך מוקד בסרט 35 מ״מ (במ״מ):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:150
 #, kde-format
@@ -12997,9 +12998,9 @@ msgid "Set here the digital zoom ratio used by camera to take the picture."
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:167
-#, fuzzy, kde-format
+#, kde-format
 msgid "Lens aperture (f-number):"
-msgstr "פתיחת צמצם הנמדדת כמספר F"
+msgstr "מפתח צמצם (מספר f):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:170
 #, kde-format
@@ -13007,9 +13008,9 @@ msgid "Select here the lens aperture used by camera to take the picture."
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgid "Max. lens aperture (f-number):"
-msgstr "פתיחת צמצם הנמדדת כמספר F"
+msgstr "מפתח צמצם מרבי (מספר f):"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflens.cpp:178
 #, kde-format
@@ -13260,9 +13261,9 @@ msgid "Other light source"
 msgstr ""
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here the kind of light source used to take the picture."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "נא לבחור כאן את סוג מקור האור ששימש לצילום התמונה."
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:157
 #, kde-format
@@ -13307,12 +13308,12 @@ msgid "Manual"
 msgstr "ידני"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exiflight.cpp:188
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "Select here the white balance mode set by the camera when the picture was "
 "taken."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר לבחור את מצב איזון הלובן שהוגדר על ידי המצלמה כשהתמונה צולמה."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:71
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcategories.cpp:69
@@ -13346,11 +13347,11 @@ msgid "Set here the extra category"
 msgstr "כאן אפשר להגדיר את הקטגוריה הנוספת"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enter here a new supplemental category of content. This field is limited to "
 "32 characters."
-msgstr "פתיחה במנהל-הקבצים"
+msgstr "נא למלא כאן קטגוריית תוכן משלימה חדשה. השדה הזה מוגבל ל־32 תווים."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptccategories.cpp:91
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptckeywords.cpp:79
@@ -13965,9 +13966,9 @@ msgid ""
 msgstr "כאן אפשר להגדיר את מזהה השירות. השדה הזה מוגבל ל־10 תווים."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgid "Envelope ID:"
-msgstr "מעטפת IIM"
+msgstr "מזהה מעטפה:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcenvelope.cpp:189
 #, kde-format
@@ -14184,11 +14185,11 @@ msgid "Set here the content location"
 msgstr "כאן אפשר להגדיר את מקום תוכן"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:170
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Set here the content location within city. This field is limited to 32 "
 "characters."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר להגדיר את מקום התוכן בתוך עיר. השדה הזה מוגבל ל־32 תווים."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:175
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmpcredits.cpp:130
@@ -14201,9 +14202,9 @@ msgid "State/Province:"
 msgstr "מדינה/מחוז:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:179
-#, fuzzy, kde-format
+#, kde-format
 msgid "Set here the Province or State of the content"
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר להגדיר את המחוז או המדינה של התוכן"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:180
 #, kde-format
@@ -14225,9 +14226,9 @@ msgstr "מדינה:"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcorigin.cpp:187
 #: core/dplugins/generic/metadata/metadataedit/xmp/xmporigin.cpp:176
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here country name of content origin."
-msgstr "<p>קבעו כאן את רוחב קו ההנחייה בנקודות."
+msgstr "כאן אפשר לבחור את שם ארץ מקור התוכן."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:99
 #, kde-format
@@ -14325,9 +14326,9 @@ msgid "8: Low"
 msgstr "8: נמוכה"
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:175
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select here the editorial urgency of content."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "כאן אפשר לבחור את דחיפות העריכה של התוכן."
 
 #: core/dplugins/generic/metadata/metadataedit/iptc/iptcproperties.cpp:179
 #, kde-format
@@ -16474,10 +16475,10 @@ msgid "Congratulations. Your images are ready to be fused."
 msgstr ""
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid "To perform this operation, Enblend program will be used."
-msgstr ", תציג את התמונה המעובדת.<p>בחירה באפשרות זו "
+msgstr "כדי לבצע את הפעולה הזאת ייעשה שימוש בתוכנית Enblend."
 
 #: core/dplugins/generic/tools/expoblending/wizard/expoblendinglastpage.cpp:67
 #, kde-format
@@ -20560,9 +20561,9 @@ msgstr "השבתת &עמעום פנימה/החוצה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_kbDisableCrossfadeCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:123
-#, fuzzy, kde-format
+#, kde-format
 msgid "Disable &cross-fade"
-msgstr "ניהול צבעים..."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_enableKenBurnsSameSpeed)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_advpage.ui:130
@@ -20685,9 +20686,9 @@ msgstr "מספר התמונות הכולל בתיק ומשך הרצף."
 
 #. i18n: ectx: property (whatsThis), widget (QLabel, m_label7)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:106
-#, fuzzy, kde-format
+#, kde-format
 msgid "Currently selected image in the portfolio list."
-msgstr "למחוק מסומנים"
+msgstr "התמונה הנוכחית שנבחרה ברשימת תיק העבודות."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:124
@@ -22256,9 +22257,9 @@ msgstr ""
 "לא ניתן להמשיך מעבר לכך."
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1018
-#, fuzzy, kde-format
+#, kde-format
 msgid "PhotoSet creation failed: "
-msgstr "חיבור כשל"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrtalker.cpp:1114
 #, kde-format
@@ -22493,9 +22494,9 @@ msgid "Flickr Export"
 msgstr "ייצוא ל־Flickr"
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:814
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to Fetch Photoset information from %1. %2\n"
-msgstr "מידע קובץ/תמונה"
+msgstr ""
 
 #: core/dplugins/generic/webservices/flickr/flickrwindow.cpp:821
 #, kde-format
@@ -22628,13 +22629,16 @@ msgid "A tool to export and import items with Google web-service"
 msgstr "כלי לייצוא וייבוא פריטים מול השירות של Google"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:66
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export and import items with Google web-services."
 "<br><br>Google Photos and Google Drive web services are supported."
 "<br><br>See Google web sites for details: %1"
-msgstr "הדרוגים יובאו"
+msgstr ""
+"הכלי הזה מאפשר לייבא ולייצא פריטים מול השירותים של Google.<br><br>השירותים "
+"המקוונים Google Photos ו־Google Drive נתמכים.<br><br>יש מידע נוסף באתרים של "
+"Google‏: %1"
 
 #: core/dplugins/generic/webservices/google/gsplugin.cpp:104
 #, kde-format
@@ -25779,11 +25783,11 @@ msgstr ""
 "p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:253
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "<p>The album you want to delete is not empty.</p><p>Do you want to continue?"
 "</p>"
-msgstr "מיקום-גאוגרפי על ידי תוכנת Marble לא זמין"
+msgstr "<p>האלבום שרצית למחוק לא ריק.</p><p>להמשיך?</p>"
 
 #: core/libs/album/engine/albummodificationhelper.cpp:285
 #: core/utilities/searchwindow/searchmodificationhelper.cpp:143
@@ -27067,14 +27071,14 @@ msgid "Updated schema to version %1."
 msgstr "הסכמה עודכנה לגרסה %1."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:875
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Failed to copy the old database file (\"%1\") to its new location (\"%2\"). "
 "Error message: \"%3\". Please make sure that the file can be copied, or "
 "delete it."
 msgstr ""
-"נכשלה פעולת העתקה של קובץ מסד הנתונים הישן (\"%1\") למיקומו החדש (\"%2\"). "
-"אנא התחילו עם מסד נתונים חדש."
+"העתקת קובץ מסד הנתונים הישן („%1”) למקומו החדש („%2”) נכשלה. הודעה השגיאה "
+"היא: „%3”. נא לוודא שאפשר להעתיק את הקובץ או למחוק אותו."
 
 #: core/libs/database/coredb/coredbschemaupdater.cpp:897
 #, kde-format
@@ -27476,16 +27480,16 @@ msgid "Unknown"
 msgstr "לא ידוע"
 
 #: core/libs/database/tags/facetags.cpp:499
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "The list of recognized faces from the collections but not confirmed"
 msgid "Unconfirmed"
-msgstr "הגדרות"
+msgstr "לא מאומת"
 
 #: core/libs/database/tags/facetags.cpp:521
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "List of detected faces that need not be recognized"
 msgid "Ignored"
-msgstr "צג:"
+msgstr "נפסח"
 
 #: core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp:138
 #, kde-format
@@ -28594,11 +28598,10 @@ msgid "<i>VideoCodec:</i>"
 msgstr "<i>מפענח וידאו:</i>"
 
 #: core/libs/dialogs/infodlg.cpp:64 core/libs/dialogs/libsinfodlg.cpp:24
-#, fuzzy, kde-format
-#| msgid "Shared Libraries and Components Information"
+#, kde-format
 msgctxt "@title:window"
 msgid "Shared Libraries and Components Information"
-msgstr "ספריות משותפות ומידע על רכיבים"
+msgstr "פרטי ספריות ורכיבים משותפים"
 
 #: core/libs/dialogs/infodlg.cpp:70
 #: core/libs/progressmanager/dhistoryview.cpp:145
@@ -30808,9 +30811,9 @@ msgid "Convert to:"
 msgstr "המרה אל:"
 
 #: core/libs/dimg/filters/icc/iccprofilesettings.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the profile of the color space to convert to."
-msgstr "<p>קבעו כאן את צבע קווי ההנחייה המקווקוים."
+msgstr "נא לבחור את פרופיל מרחב הצבע להמיר אליו."
 
 #: core/libs/dimg/filters/icc/icctransformfilter.cpp:110
 #, kde-format
@@ -30954,10 +30957,10 @@ msgid "Stage 4"
 msgstr "שלב 4"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:595
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Load"
-msgstr "פתיחת קובץ מאפייני שחזור תמונה"
+msgstr "קובץ הגדרות ניגודיות מקומית לצילום לטעינה"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:613
 #, fuzzy, kde-format
@@ -30965,20 +30968,20 @@ msgid "\"%1\" is not a Photograph Local Contrast settings text file."
 msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:641
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot load settings from the Photograph Local Contrast text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "לא ניתן לטעון את ההגדרות מקובץ הטקסט לניגודיות מקומית לצילום."
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:649
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Photograph Local Contrast Settings File to Save"
-msgstr "שמירת קובץ מאפייני רעש של תמונה"
+msgstr "קובץ הגדרות ניגודיות מקומית לצילום לשמירה"
 
 #: core/libs/dimg/filters/lc/localcontrastsettings.cpp:685
-#, fuzzy, kde-format
+#, kde-format
 msgid "Cannot save settings to the Photograph Local Contrast text file."
-msgstr "\"%1\" הוא לא קובץ הגדרות הגדלת תמונה."
+msgstr "לא ניתן לשמור את ההגדרות לקובץ הטקסט לניגודיות מקומית לצילום."
 
 #: core/libs/dimg/filters/lens/antivignettingfilter.cpp:58
 #, kde-format
@@ -36393,18 +36396,16 @@ msgid "Range:"
 msgstr "טווח:"
 
 #: core/libs/properties/itempropertiescolorstab.cpp:139
-#, fuzzy, kde-format
-#| msgid "Select the minimal intensity value of the histogram selection here."
+#, kde-format
 msgctxt "@info: color properties"
 msgid "Select the minimal intensity value of the histogram selection here."
-msgstr "סמנו את הערכי העצמה הנמוכים ביותר להיסטוגרמה שנבחרה"
+msgstr "נא לבחור כאן את ערך העוצמה המזערי של בחירת ההיסטוגרמה."
 
 #: core/libs/properties/itempropertiescolorstab.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select the maximal intensity value of the histogram selection here."
+#, kde-format
 msgctxt "@info: color properties"
 msgid "Select the maximal intensity value of the histogram selection here."
-msgstr "סמנו את הערכי העצמה הגבוהים ביותר להיסטוגרמה שנבחרה"
+msgstr "נא לבחור כאן את ערך העוצמה המרבי של בחירת ההיסטוגרמה."
 
 #: core/libs/properties/itempropertiescolorstab.cpp:153
 #, kde-format
@@ -36759,10 +36760,10 @@ msgid "Rating: "
 msgstr "דירוג: "
 
 #: core/libs/properties/itempropertiestab.cpp:244
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label: item properties"
 msgid "Versioned: "
-msgstr "הרשאות:"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:245
 #, kde-format
@@ -36868,9 +36869,9 @@ msgid "Has GPS"
 msgstr "יש GPS"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
+#, kde-format
 msgid "Versioned"
-msgstr "הרשאות:"
+msgstr ""
 
 #: core/libs/properties/itempropertiestab.cpp:501
 #, kde-format
@@ -37863,14 +37864,14 @@ msgid "Canon Digital Camera RAW Image Format version 3.0"
 msgstr ""
 
 #: core/libs/rawengine/drawfiles.cpp:148 core/libs/rawengine/drawfiles.cpp:154
-#, fuzzy, kde-format
+#, kde-format
 msgid "Phase One Digital Camera Raw Image Format"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "תסדיר תמונה גולמית ממצלמה דיגיטלית של Phase One"
 
 #: core/libs/rawengine/drawfiles.cpp:153
-#, fuzzy, kde-format
+#, kde-format
 msgid "Arriflex Camera Raw Image Format"
-msgstr "תצורה חדשה לתמונה:"
+msgstr "תסדיר תמונה גולמית ממצלמת Arriflex"
 
 #: core/libs/settings/applicationsettings_miscs.cpp:412
 #, kde-format
@@ -38546,10 +38547,10 @@ msgid "Selected tag is not a base tag at the top of the hierarchy."
 msgstr "התגית הנבחרת איננה תגית בסיס בראש ההיררכיה."
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:190
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Controlled Vocabulary Tag File"
-msgstr "מידע על הרכיב"
+msgstr "ייצוא קובץ תיוג מילון מונחים מבוקר"
 
 #: core/libs/tags/manager/tagsmanager_io.cpp:191
 #: core/libs/tags/manager/tagsmanager_io.cpp:309
@@ -41618,12 +41619,12 @@ msgstr ""
 "מנוע הקצאת תגיות אוטומטית"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:181
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Face workflow Clustering support,\n"
 "improvement for Face Engine,\n"
 "Port Slideshow tool to plugins interface"
-msgstr "מצגת-שקפים"
+msgstr ""
 
 #: core/libs/widgets/mainview/daboutdata.cpp:189
 #, kde-format
