@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2026 by Srirupa Datta <srirupa dot sps at gmail dot com>
+ * SPDX-FileCopyrightText: 2026      by Srirupa Datta <srirupa dot sps at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -50,7 +50,7 @@ public:
 
 public:
 
-    QString prepareForLike(const QString& str) const;
+    QString prepareForLike(const QString& str)                  const;
 
     void addIntField(const QString& name);
     void addLongField(const QString& name);
@@ -63,7 +63,8 @@ public:
     void addIntBitmaskField(const QString& name);
     void addChoiceStringField(const QString& name);
     void addPosition();
-    void addRectanglePositionSearch(double lon1, double lat1, double lon2, double lat2) const;
+    void addRectanglePositionSearch(double lon1, double lat1,
+                                    double lon2, double lat2)   const;
 };
 
 } // namespace Digikam

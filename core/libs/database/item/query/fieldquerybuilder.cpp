@@ -8,7 +8,7 @@
  *
  * SPDX-FileCopyrightText: 2007-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * SPDX-FileCopyrightText: 2012-2026 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * SPDX-FileCopyrightText: 2026 by Srirupa Datta <srirupa dot sps at gmail dot com>
+ * SPDX-FileCopyrightText: 2026      by Srirupa Datta <srirupa dot sps at gmail dot com>
  *
  * SPDX-License-Identifier: GPL-2.0-or-later
  *
@@ -589,11 +589,12 @@ void FieldQueryBuilder::addPosition()
             {
             public:
 
-                HaversinePostHook(double lat1Deg, double lon1Deg, double radiusOfCurvature, double distance)
+                HaversinePostHook(double _lat1Deg, double _lon1Deg,
+                                  double _radiusOfCurvature, double _distance)
                 {
-                    lat1              = Coordinates::toRadians(lat1Deg);
-                    lon1              = Coordinates::toRadians(lon1Deg);
-                    distanceInRadians = distance / radiusOfCurvature;
+                    lat1              = Coordinates::toRadians(_lat1Deg);
+                    lon1              = Coordinates::toRadians(_lon1Deg);
+                    distanceInRadians = _distance / _radiusOfCurvature;
                     cosLat1           = cos(lat1);
                 }
 
