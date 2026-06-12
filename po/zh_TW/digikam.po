@@ -28,13 +28,13 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006, 2008, 2009, 2010.
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
-# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-07 00:41+0000\n"
-"PO-Revision-Date: 2026-02-12 16:16+0900\n"
+"PO-Revision-Date: 2026-06-11 17:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #: core/app/date/ddateedit.cpp:489
 #, kde-format
@@ -12797,7 +12797,7 @@ msgid ""
 msgstr ""
 "<b>備註：</b>以 (*) 標記的 <b><a href='https://zh.wikipedia.org/zh-tw/"
 "EXIF'>EXIF</a></b> 文字標籤只支援可列印的 <b><a href='zh.wikipedia.org/zh-tw/"
-"ASCII'>ASCII</a></b> 字元。</b>"
+"ASCII'>ASCII</a></b> 字元。"
 
 #: core/dplugins/generic/metadata/metadataedit/exif/exifdatetime.cpp:79
 #, kde-format
@@ -58862,7 +58862,7 @@ msgstr ""
 msgid ""
 "<p>Press this button to get detailed information about the selected proofing "
 "profile.</p>"
-msgstr "按這個按鈕可獲得關於選擇的螢幕校樣描述檔的詳細資訊。</p>"
+msgstr "<p>按這個按鈕可獲得關於選擇的螢幕校樣描述檔的詳細資訊。</p>"
 
 #: core/utilities/imageeditor/dialogs/softproofdialog.cpp:117
 #, kde-format

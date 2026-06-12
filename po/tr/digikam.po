@@ -52,7 +52,7 @@ msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-07 00:41+0000\n"
-"PO-Revision-Date: 2026-06-07 20:11+0300\n"
+"PO-Revision-Date: 2026-06-11 21:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -36288,7 +36288,7 @@ msgstr "Bihari Dili"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Bislama"
-msgstr "Bislama Dili"
+msgstr "Bislama Kreolü"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:414
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:562
@@ -36491,7 +36491,7 @@ msgstr "Hausaca"
 #, kde-format
 msgctxt "@info: country code"
 msgid "Hebrew"
-msgstr "İbranice"
+msgstr "İbrânîce"
 
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:443
 #: core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp:591
@@ -46441,7 +46441,7 @@ msgstr "Havaice (Havai Eyaleti)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:258
 msgctxt "@info: country code"
 msgid "Modern Hebrew (Israel)"
-msgstr "Çağdaş İbranice (İsrail)"
+msgstr "Çağdaş İbrânîce (İsrail)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:259
 msgctxt "@info: country code"
@@ -46531,7 +46531,7 @@ msgstr "İtalyanca (San Marino)"
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:276
 msgctxt "@info: country code"
 msgid "Hebrew (Israel)"
-msgstr "İbranice (İsrail)"
+msgstr "İbrânîce (İsrail)"
 
 #: core/libs/widgets/metadata/utils/altlangstredit_p.cpp:277
 msgctxt "@info: country code"
@@ -49060,7 +49060,7 @@ msgstr "Havaice"
 #, kde-format
 msgctxt "@info: language name"
 msgid "Hebrew"
-msgstr "İbranice"
+msgstr "İbrânîce"
 
 #: core/libs/widgets/text/donlinetranslator_tables.cpp:223
 #, kde-format
