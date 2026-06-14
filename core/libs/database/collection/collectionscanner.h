@@ -263,6 +263,13 @@ Q_SIGNALS:
      */
     void totalFilesToScan(int count);
 
+    /**
+     * Always emitted once in partialScan().
+     * Gives the number of the files that need to be scanned.
+     */
+    void partialFilesToScan(int count);
+
+
     //@{
     /**
      * Notifies the begin of the scanning of the specified album root,

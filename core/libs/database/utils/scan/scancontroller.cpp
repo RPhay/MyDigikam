@@ -293,11 +293,11 @@ void ScanController::run()
         {
             CollectionScanner scanner;
             scanner.setHintContainer(d->hints);
-/*
             connectCollectionScanner(&scanner);
-*/
+
             SimpleCollectionScannerObserver observer(&d->continuePartialScan);
             scanner.setObserver(&observer);
+
             scanner.partialScan(task);
 
             Q_EMIT partialScanDone(task);
@@ -327,6 +327,9 @@ void ScanController::connectCollectionScanner(CollectionScanner* const scanner)
 
     connect(scanner, SIGNAL(totalFilesToScan(int)),
             this, SLOT(slotTotalFilesToScan(int)));
+
+    connect(scanner, SIGNAL(partialFilesToScan(int)),
+            this, SIGNAL(totalFilesToScan(int)));
 
     connect(scanner, SIGNAL(startScanningAlbum(QString,QString)),
             this, SLOT(slotStartScanningAlbum(QString,QString)));

@@ -20,6 +20,7 @@
 #include <QApplication>
 #include <QTimer>
 #include <QIcon>
+#include <QDir>
 
 // KDE includes
 
@@ -29,6 +30,8 @@
 
 #include "digikam_debug.h"
 #include "scancontroller.h"
+#include "collectionmanager.h"
+#include "collectionlocation.h"
 
 namespace Digikam
 {
@@ -41,9 +44,9 @@ public:
 
 public:
 
-    FinderMode  mode    = CompleteCollectionScan;
+    FinderMode  mode   = CompleteCollectionScan;
 
-    bool        cancel  = false;
+    bool        cancel = false;
 
     QStringList foldersToScan;
     QStringList foldersScanned;
@@ -106,7 +109,48 @@ void NewItemsFinder::slotStart()
 
         case ScheduleCollectionScan:
         {
+            connectToScanController();
+
             d->foldersScanned.clear();
+
+            QStringList folderList;
+
+            // We scan recursively. Remove all folders
+            // that are recursively contained in the list.
+
+            for (const QString& src : std::as_const(d->foldersToScan))
+            {
+                CollectionLocation location = CollectionManager::instance()->locationForPath(src);
+
+                if (!location.isAvailable())
+                {
+                    continue;
+                }
+
+                QString srcFolder = QDir::cleanPath(src) + QLatin1Char('/');
+                bool foundFolder  = false;
+
+                for (const QString& dst : std::as_const(folderList))
+                {
+                    QString dstFolder = dst + QLatin1Char('/');
+
+                    if (
+                         dstFolder.startsWith(srcFolder) ||
+                         srcFolder.startsWith(dstFolder)
+                       )
+                    {
+                        foundFolder = true;
+                        break;
+                    }
+                }
+
+                if (!foundFolder)
+                {
+                    folderList << srcFolder.chopped(1);
+                }
+            }
+
+            d->foldersToScan = folderList;
 
             // If we are scanning for newly imported files, we need to have the folders for scanning...
 
@@ -123,8 +167,6 @@ void NewItemsFinder::slotStart()
 
             connect(ScanController::instance(), SIGNAL(partialScanDone(QString)),
                     this, SLOT(slotPartialScanDone(QString)));
-
-            setTotalItems(d->foldersToScan.count());
 
             for (const QString& folder : std::as_const(d->foldersToScan))
             {
@@ -169,8 +211,8 @@ void NewItemsFinder::slotScanStarted(const QString& info)
 
 void NewItemsFinder::slotTotalFilesToScan(int t)
 {
-    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "total scan value : " << t;
-    setTotalItems(t);
+    qCDebug(DIGIKAM_MAINTENANCE_LOG) << "increment scan value : " << t;
+    incTotalItems(t);
 }
 
 void NewItemsFinder::slotStartScanningAlbum(const QString& albumRoot, const QString& album)
@@ -207,8 +249,6 @@ void NewItemsFinder::slotPartialScanDone(const QString& path)
 
         QString lbl = i18n("Scanned:\n%1", path);
         setLabel(lbl);
-
-        advance(1);
 
         // Check if all planned scanning is done
 

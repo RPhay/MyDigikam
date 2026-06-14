@@ -304,9 +304,11 @@ void CollectionScanner::partialScan(const QString& albumRoot, const QString& alb
         return;
     }
 
-    // create album date cache
+    // count for progress info and create album date cache
 
-    createAlbumDateCache(location, album);
+    int count = createAlbumDateCache(location, album);
+
+    Q_EMIT partialFilesToScan(count);
 
     if (!d->checkObserver())
     {
