@@ -145,7 +145,7 @@ public:
 
 Q_SIGNALS:
 
-    void foldersData(const QHash<QDateTime, int>&);
+    void foldersData(const QMap<QDateTime, int>&);
 };
 
 // ---------------------------------------------
