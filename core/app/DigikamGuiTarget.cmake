@@ -63,6 +63,7 @@ set(libdigikamgui_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/items/overlays/itemrotationoverlay.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/overlays/itemcoordinatesoverlay.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/overlays/itemselectionoverlay.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/timelapsefilenamematch.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/itemviewutilities.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/tooltipfiller.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/items/utils/contextmenuhelper.cpp
