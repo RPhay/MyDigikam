@@ -64,7 +64,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2025-06-21 12:28+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -63181,22 +63181,22 @@ msgstr "Base de datos de recoñecemento facial"
 msgid "Similarity DB"
 msgstr "Base de datos de semellanzas"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr "Atopar elementos novos"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "Examinando: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, kde-format
 msgid "Album Root: %1"
 msgstr "Raíz do álbum: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -63205,12 +63205,12 @@ msgstr ""
 "Resultado do escaneamento:\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Elementos escaneados para catalogar: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Elemento escaneado para catalogar: %1"

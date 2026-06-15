@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -62776,24 +62776,24 @@ msgstr "Face Recognition DB"
 msgid "Similarity DB"
 msgstr "Similarity DB"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr "Find new items"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, fuzzy, kde-format
 #| msgid "Scanning from: %1\n"
 msgid "Scanning: %1\n"
 msgstr "Scanning from: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, fuzzy, kde-format
 #| msgid "Album: %1"
 msgid "Album Root: %1"
 msgstr "Album: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -62802,12 +62802,12 @@ msgstr ""
 "Scanned:\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Items scanned for cataloguing: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Item scanned for cataloguing: %1"

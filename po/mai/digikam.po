@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kipiplugin_advancedslideshow\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2009-04-21 23:36+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -60215,24 +60215,24 @@ msgstr ""
 msgid "Similarity DB"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Scanning: %1\n"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, fuzzy, kde-format
 #| msgid "Options"
 msgid "Album Root: %1"
 msgstr "विकल्प"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid ""
@@ -60240,13 +60240,13 @@ msgid ""
 "%1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Items scanned for cataloging: %1"
 msgstr "रँग"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, fuzzy, kde-format
 #| msgid "Colors"
 msgid "Item scanned for cataloging: %1"

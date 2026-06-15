@@ -32,7 +32,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2023-12-13 03:27-0500\n"
 "Last-Translator: Agron Selimaj <as9902613@gmail.com>\n"
 "Language-Team: sq\n"
@@ -60416,35 +60416,35 @@ msgstr "Përzgjedhje"
 msgid "Similarity DB"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr ""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, fuzzy, kde-format
 msgid "Scanning: %1\n"
 msgstr "Kërkime"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, fuzzy, kde-format
 #| msgid "Album:"
 msgid "Album Root: %1"
 msgstr "Albumi:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, fuzzy, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
 msgstr "Kërkime"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, fuzzy, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Kërkime"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, fuzzy, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Kërkime"

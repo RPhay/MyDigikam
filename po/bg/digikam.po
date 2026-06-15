@@ -33,7 +33,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2026-05-28 20:46+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -62323,22 +62323,22 @@ msgstr "База данни за разпознаване на лица"
 msgid "Similarity DB"
 msgstr "База данни за дубликати"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr "Намиране на нови елементи"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "Сканиране: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, kde-format
 msgid "Album Root: %1"
 msgstr "Корен на албума: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -62347,12 +62347,12 @@ msgstr ""
 "Сканиране:\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Обекти, сканирани за каталогизиране: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Обекти, сканирани за каталогизиране: %1"

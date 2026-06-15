@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2026-06-11 21:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -61737,22 +61737,22 @@ msgstr "Yüz Tanıma Veri Tabanı"
 msgid "Similarity DB"
 msgstr "Benzerlik Veri Tabanı"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr "Yeni ögeler bul"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "Taranıyor: %1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, kde-format
 msgid "Album Root: %1"
 msgstr "Albüm kökü: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -61761,12 +61761,12 @@ msgstr ""
 "Tarandı:\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "Kataloglama için taranan ögeler: %1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "Kataloglama için taranan öge: %1"

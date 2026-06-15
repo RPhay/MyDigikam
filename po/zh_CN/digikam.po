@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2024-04-23 11:20\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -51803,7 +51803,7 @@ msgid ""
 "\"Tags but not albums\": images must be in the selected tags but not albums."
 msgstr ""
 "选择扫描时所选相册和所选标签的条件关系。\n"
-"仅选中的选项卡：图像仅在选中的标签页的条件内。\n"
+"仅选中的标签页：图像仅在选中的标签页的条件内。\n"
 "任一皆可：图像可以在所选相册内，也可以在所选标签内。\n"
 "二者皆有：图像必须同时存在于所选相册和标签之内。\n"
 "相册有，标签无：图像必须在所选相册内，但不能在所选标签内。\n"
@@ -59942,22 +59942,22 @@ msgstr "人脸识别数据库"
 msgid "Similarity DB"
 msgstr "相似性数据库"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, kde-format
 msgid "Find new items"
 msgstr "查找新增项目"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, kde-format
 msgid "Scanning: %1\n"
 msgstr "正在扫描：%1\n"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, kde-format
 msgid "Album Root: %1"
 msgstr "相册根目录：%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, kde-format
 msgid ""
 "Scanned:\n"
@@ -59966,12 +59966,12 @@ msgstr ""
 "已扫描：\n"
 "%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "已扫描编目的项目：%1"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "已扫描编目的项目：%1"

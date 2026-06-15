@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-07 00:41+0000\n"
+"POT-Creation-Date: 2026-06-15 00:41+0000\n"
 "PO-Revision-Date: 2007-08-19 14:42+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -60039,35 +60039,35 @@ msgstr "चयन"
 msgid "Similarity DB"
 msgstr "गुणस्तर:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:73
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:76
 #, fuzzy, kde-format
 msgid "Find new items"
 msgstr "सङ्कलनद्वारा"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:178
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:220
 #, fuzzy, kde-format
 msgid "Scanning: %1\n"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:179
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:221
 #, fuzzy, kde-format
 #| msgid "Album \"%1\""
 msgid "Album Root: %1"
 msgstr "एल्बम \"%1\""
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:208
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:250
 #, fuzzy, kde-format
 msgid ""
 "Scanned:\n"
 "%1"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:230
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:270
 #, fuzzy, kde-format
 msgid "Items scanned for cataloging: %1"
 msgstr "खोजी:"
 
-#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:234
+#: core/utilities/maintenance/tools/dbscan/newitemsfinder.cpp:274
 #, fuzzy, kde-format
 msgid "Item scanned for cataloging: %1"
 msgstr "खोजी:"
