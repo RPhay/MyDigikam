@@ -93,7 +93,7 @@ protected:
 
 Q_SIGNALS:
 
-    void foldersData(const QHash<QDateTime, int>& datesStatMap);
+    void foldersData(const QMap<QDateTime, int>& datesStatMap);
 
 private:
 

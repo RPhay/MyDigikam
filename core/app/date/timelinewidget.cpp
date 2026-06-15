@@ -508,7 +508,7 @@ DateRangeList TimeLineWidget::selectedDateRange(int& totalCount) const
     return list2;
 }
 
-void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
+void TimeLineWidget::slotDatesMap(const QMap<QDateTime, int>& datesStatMap)
 {
     // Clear all counts in all stats maps before to update it. Do not clear selections.
 
@@ -539,20 +539,20 @@ void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
     // Parse all new Date stamp and store histogram stats relevant in maps.
 
     int count;
-    QHash<QDateTime, int>::const_iterator it;
+    QMap<QDateTime, int>::const_iterator it;
 
-    if (datesStatHash.isEmpty())
+    if (datesStatMap.isEmpty())
     {
         d->minDateTime = QDateTime();
         d->maxDateTime = QDateTime();
     }
     else
     {
-        d->minDateTime = datesStatHash.begin().key();
-        d->maxDateTime = datesStatHash.begin().key();
+        d->minDateTime = datesStatMap.begin().key();
+        d->maxDateTime = datesStatMap.begin().key();
     }
 
-    for (it = datesStatHash.begin(); it != datesStatHash.end() ; ++it)
+    for (it = datesStatMap.begin(); it != datesStatMap.end() ; ++it)
     {
         if (it.key() > d->maxDateTime)
         {
@@ -655,7 +655,7 @@ void TimeLineWidget::slotDatesHash(const QHash<QDateTime, int>& datesStatHash)
         }
     }
 
-    if (!datesStatHash.isEmpty())
+    if (!datesStatMap.isEmpty())
     {
         d->maxDateTime.setTime(QTime(0, 0, 0, 0));
         d->minDateTime.setTime(QTime(0, 0, 0, 0));

@@ -81,9 +81,9 @@ void DatesJob::run()
 
     if (m_jobInfo.isFoldersJob())
     {
-        const QHash<QDateTime, int>& dateNumberHash = CoreDbAccess().db()->getAllCreationDates();
+        const QMap<QDateTime, int>& dateNumberMap = CoreDbAccess().db()->getAllCreationDates();
 
-        Q_EMIT foldersData(dateNumberHash);
+        Q_EMIT foldersData(dateNumberMap);
     }
     else
     {

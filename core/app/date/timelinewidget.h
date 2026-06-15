@@ -93,7 +93,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void slotDatesHash(const QHash<QDateTime, int>&);
+    void slotDatesMap(const QMap<QDateTime, int>&);
     void slotPrevious();
     void slotNext();
     void slotBackward();

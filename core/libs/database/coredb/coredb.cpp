@@ -3447,10 +3447,10 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
     return values.first().toLongLong();
 }
 
-QHash<QDateTime, int> CoreDB::getAllCreationDates() const
+QMap<QDateTime, int> CoreDB::getAllCreationDates() const
 {
-    QVariantList          values;
-    QHash<QDateTime, int> dateNumberHash;
+    QVariantList         values;
+    QMap<QDateTime, int> dateNumberMap;
 
     d->db->execSql(QString::fromUtf8("SELECT creationDate, COUNT(*) FROM ImageInformation "
                                      "INNER JOIN Images ON Images.id=ImageInformation.imageid "
@@ -3467,10 +3467,10 @@ QHash<QDateTime, int> CoreDB::getAllCreationDates() const
         count    = (*it).toInt();
         ++it;
 
-        dateNumberHash[dateTime] = count;
+        dateNumberMap.insert(dateTime, count);
     }
 
-    return dateNumberHash;
+    return dateNumberMap;
 }
 
 QList<qlonglong> CoreDB::getObsoleteItemIds() const
