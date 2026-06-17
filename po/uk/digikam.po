@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-15 00:41+0000\n"
+"POT-Creation-Date: 2026-06-17 00:42+0000\n"
 "PO-Revision-Date: 2026-06-07 12:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -994,13 +994,13 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:203
+#: core/app/items/utils/itemviewutilities.cpp:208
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Виберіть теку призначення"
 
-#: core/app/items/utils/itemviewutilities.cpp:229
+#: core/app/items/utils/itemviewutilities.cpp:234
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -1009,7 +1009,7 @@ msgstr ""
 "<p>Будь ласка, виберіть альбом призначення з бібліотеки digiKam, щоб "
 "пересунути до нього вибрані зображення.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:363
+#: core/app/items/utils/itemviewutilities.cpp:368
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-15 00:41+0000\n"
+"POT-Creation-Date: 2026-06-17 00:42+0000\n"
 "PO-Revision-Date: 2026-06-08 20:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1024,13 +1024,13 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:203
+#: core/app/items/utils/itemviewutilities.cpp:208
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "اختر المجلد الهدف"
 
-#: core/app/items/utils/itemviewutilities.cpp:229
+#: core/app/items/utils/itemviewutilities.cpp:234
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -1038,7 +1038,7 @@ msgid ""
 msgstr ""
 "<p>رجاء اختر الألبوم المقصد من مكتبة «دِجي‌كام» لنقل الصّور المحدّدة إليه.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:363
+#: core/app/items/utils/itemviewutilities.cpp:368
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175

@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-15 00:41+0000\n"
+"POT-Creation-Date: 2026-06-17 00:42+0000\n"
 "PO-Revision-Date: 2024-11-23 12:48+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1004,13 +1004,13 @@ msgctxt "Month String - Year String"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/app/items/utils/itemviewutilities.cpp:203
+#: core/app/items/utils/itemviewutilities.cpp:208
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Target Folder"
 msgstr "Select Target Folder"
 
-#: core/app/items/utils/itemviewutilities.cpp:229
+#: core/app/items/utils/itemviewutilities.cpp:234
 #, kde-format
 msgid ""
 "<p>Please select the destination album from the digiKam library to move the "
@@ -1019,7 +1019,7 @@ msgstr ""
 "<p>Please select the destination album from the digiKam library to move the "
 "selected images into.</p>"
 
-#: core/app/items/utils/itemviewutilities.cpp:363
+#: core/app/items/utils/itemviewutilities.cpp:368
 #: core/utilities/imageeditor/main/imagewindow.cpp:1118
 #: core/utilities/imageeditor/main/imagewindow.cpp:1143
 #: core/utilities/imageeditor/main/imagewindow.cpp:1175
