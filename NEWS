@@ -26,7 +26,7 @@ BUGFIXES:
 003 --> 521262 - Newly installed 9.1.0 crashes under Windows.
 004 --> 521397 - Low-resolution/pixelated thumbnail generated for JXL images after internal editing (e.g., Local Contrast).
 005 --> 521428 - Bug: "Find new items" progress bar and percentage do not update during scan (stuck at 0% until 100%).
-006 --> 
+006 --> 521485 - The Dates and Timeline views no longer work after update.
 007 --> 
 008 --> 
 009 --> 
