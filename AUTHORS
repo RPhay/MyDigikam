@@ -150,8 +150,8 @@ DIGIKAM SPLASHSCREENS CREDITS:
 3.2.0          : Dmitri Popov                   <dmpop at linux dot com>
 3.1.0          : Martin Lubich                  <martin dot lubich at gmx dot at>
 3.0.0          : Thomas Caswell                 <tcaswell at gmail dot com>
-3.0.0-RC       : Andreas K. Huettel             <dilfridge at gentoo dot org>
-3.0.0-beta3    : Theodor Fruendt                <frundt at gmail dot com>
+.0.0-RC       : Andreas K. Huettel             <dilfridge at gentoo dot org>
+.0.0-beta3    : Theodor Fruendt                <frundt at gmail dot com>
 3.0.0-beta1    : Thomas Jacquin                 <jacquin dot thomas at gmail dot com>
 2.9.0          : Dmitri Popov                   <dmpop at linux dot com>
 2.8.0          : Alberto Garcia                 <info at trebol-a dot com>
@@ -206,6 +206,7 @@ DIGIKAM SPLASHSCREENS CREDITS:
 SHOWFOTO SPLASHSCREENS CREDITS:
 -------------------------------
 
+9.2.0          : James Wyper                    <jimwyper at icloud.com>
 9.1.0          : Fabien Crespel                 <fabien at crespel dot net>
 9.0.0          : Didier Dalcantara              <didier.dalcantara@free.fr>
 8.8.0          : Caulier Gilles                 <caulier dot gilles at gmail dot com>
