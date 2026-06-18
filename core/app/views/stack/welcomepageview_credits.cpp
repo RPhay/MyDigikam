@@ -48,23 +48,23 @@ QString WelcomePageView::creditsTabContent()  const
                 "</table>")
 
         .arg(i18n("Author:"))
-        .arg(QString::fromUtf8("Fabien Crespel"))
+        .arg(QString::fromUtf8("Jack Gold"))
 
         .arg(i18n("Location:"))
         .arg(QString::fromUtf8("<a href=\""
-                                    "https://en.wikipedia.org/wiki/Lac_de_Roy"
+                                    "https://en.wikipedia.org/wiki/Victoria_Bridge,_Brisbane"
                                "\">"
-                                    "Lake of Roy, Haute-Savoie, Alps, France."
+                                    "Brisbane CBD Victoria bridge, Queensland, Australia."
                                "</a>"))
 
         .arg(i18n("Date:"))
-        .arg(QString::fromUtf8("August 2024"))
+        .arg(QString::fromUtf8("July 2019"))
 
         .arg(i18n("Camera:"))
-        .arg(QString::fromUtf8("Sony ILCA-68"))
+        .arg(QString::fromUtf8("Nikon D3100"))
 
         .arg(i18n("Lens:"))
-        .arg(QString::fromUtf8("24-105mm f/3.5-4.5"))
+        .arg(QString::fromUtf8("Sigma 17-50mm F2.8"))
     ;
 
     return creditsTab;
