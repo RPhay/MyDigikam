@@ -93,7 +93,7 @@ cp $DOWNLOAD_DIR/lensfun_manifest.txt $ORIG_WD/data/
 
 # Clean up previous install (see bug #459276)
 
-FILES=$(find "$VCPKG_INSTALL_PREFIX" -name \* | grep -E '(digikam|showfoto)') || true
+FILES=$(find "$VCPKG_INSTALL_PREFIX" -mindepth 1 \( -name "*digikam*" -o -name "*showfoto*" \)) || true
 
 for FILE in $FILES ; do
     if [[ -f $FILE || -d $FILE ]] ; then

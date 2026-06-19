@@ -27,7 +27,7 @@ BUGFIXES:
 004 --> 521397 - Low-resolution/pixelated thumbnail generated for JXL images after internal editing (e.g., Local Contrast).
 005 --> 521428 - Bug: "Find new items" progress bar and percentage do not update during scan (stuck at 0% until 100%).
 006 --> 521485 - The Dates and Timeline views no longer work after update.
-007 --> 
+007 --> 521756 - 03-build-digikam.sh script bug: cleanup logic inadvertently deletes all VCPKG dependencies.
 008 --> 
 009 --> 
 010 --> 
