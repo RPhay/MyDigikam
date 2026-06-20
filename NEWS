@@ -19,6 +19,7 @@ Bundles component versions:
 Icon-View: Improve filename matching for timelapse/burst grouping items.
 
 *****************************************************************************************************
+
 BUGFIXES:
 
 001 --> 521193 - Survey tool shortcuts do not toggle labels with keyboard shorcuts.
@@ -28,7 +29,7 @@ BUGFIXES:
 005 --> 521428 - Bug: "Find new items" progress bar and percentage do not update during scan (stuck at 0% until 100%).
 006 --> 521485 - The Dates and Timeline views no longer work after update.
 007 --> 521756 - 03-build-digikam.sh script bug: cleanup logic inadvertently deletes all VCPKG dependencies.
-008 --> 
+008 --> 436975 - Advanced search - right sidebar metadata tab is disabled.
 009 --> 
 010 --> 
 011 --> 
