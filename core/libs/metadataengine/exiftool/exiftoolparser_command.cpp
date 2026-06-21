@@ -108,6 +108,13 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll, bool dropMak
         cmdArgs << QByteArray("-xmp-microsoft:RatingPercent<Microsoft:SharedUserRating");
     }
 
+    cmdArgs << QByteArray("-GPSDateTime<Composite:GpsPosition");
+    cmdArgs << QByteArray("-GpsAltitude<Composite:GpsPosition");
+    cmdArgs << QByteArray("-GpsLatitude<Composite:GpsPosition");
+    cmdArgs << QByteArray("-GpsLongitude<Composite:GpsPosition");
+    cmdArgs << QByteArray("-GpsLatitudeRef<Composite:GpsPosition");
+    cmdArgs << QByteArray("-GpsLongitudeRef<Composite:GpsPosition");
+
     cmdArgs << QByteArray("-o");
     cmdArgs << QByteArray("-.exv");
     d->currentPath = fileInfo.filePath();
