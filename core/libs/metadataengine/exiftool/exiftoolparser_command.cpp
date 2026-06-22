@@ -109,7 +109,7 @@ bool ExifToolParser::loadChunk(const QString& path, bool copyToAll, bool dropMak
     }
 
     cmdArgs << QByteArray("-GpsDateTime<Composite:GpsPosition");
-    cmdArgs << QByteArray("-GpsAltitude<Composite:GpsPosition");
+    cmdArgs << QByteArray("-GpsAltitude*<Composite:GpsPosition");
     cmdArgs << QByteArray("-GpsLatitude*<Composite:GpsPosition");
     cmdArgs << QByteArray("-GpsLongitude*<Composite:GpsPosition");
 

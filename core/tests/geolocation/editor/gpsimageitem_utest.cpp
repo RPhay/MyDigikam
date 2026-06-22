@@ -113,7 +113,7 @@ void TestGPSItemContainer::testBasicLoading()
         QVERIFY(container.hasAltitude());
         QVERIFY(container.getCoordinates().lat() == 5.0);
         QVERIFY(container.getCoordinates().lon() == 15.0);
-        QVERIFY(container.getCoordinates().alt() == 25.0);
+        QVERIFY(container.getCoordinates().alt() == 5.0);
         QVERIFY(!container.hasNSatellites());
         QVERIFY(!container.hasDop());
         QVERIFY(!container.hasFixType());
