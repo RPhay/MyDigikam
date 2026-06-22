@@ -252,6 +252,11 @@ void SurveyWindow::slotDeleteItem()
     Q_EMIT d->stack->imagePreviewView()->signalDeleteItem();
 }
 
+void SurveyWindow::slotDeleteFinalItem()
+{
+    // TODO
+}
+
 void SurveyWindow::slotZoomFactorChanged(double zoom)
 {
     double zmin = d->stack->zoomMin();

@@ -79,9 +79,6 @@ private:
     void showEvent(QShowEvent* e)                       override;
     void changeEvent(QEvent* e)                         override;
 
-    void deleteItem(bool permanently);
-    void deleteItem(const ItemInfo& info, bool permanently);
-
 private:
 
     /// @note disabled
@@ -98,6 +95,7 @@ private Q_SLOTS:
     void slotZoomFactorChanged(double);
 
     void slotDeleteItem();
+    void slotDeleteFinalItem();
 
     void slotItemSelected();
 
