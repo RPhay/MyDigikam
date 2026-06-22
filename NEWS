@@ -30,7 +30,7 @@ BUGFIXES:
 006 --> 521485 - The Dates and Timeline views no longer work after update.
 007 --> 521756 - 03-build-digikam.sh script bug: cleanup logic inadvertently deletes all VCPKG dependencies.
 008 --> 436975 - Advanced search - right sidebar metadata tab is disabled.
-009 --> 
+009 --> 522001 - MP4: [Composite] GPSLatitude / GPSLongitude / ... metadata - ignored and deleted (on save).
 010 --> 
 011 --> 
 012 --> 
