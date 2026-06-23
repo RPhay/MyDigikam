@@ -31,7 +31,7 @@ BUGFIXES:
 007 --> 521756 - 03-build-digikam.sh script bug: cleanup logic inadvertently deletes all VCPKG dependencies.
 008 --> 436975 - Advanced search - right sidebar metadata tab is disabled.
 009 --> 522001 - MP4: [Composite] GPSLatitude / GPSLongitude / ... metadata - ignored and deleted (on save).
-010 --> 
+010 --> 522052 - In the TableView the seconds from creation Date/Time isn't shown correctly eg it stay always at 00.
 011 --> 
 012 --> 
 013 --> 
