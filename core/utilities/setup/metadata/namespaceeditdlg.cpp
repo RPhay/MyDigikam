@@ -279,9 +279,10 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
 
     if (entry.nsType == NamespaceEntry::TAGS)
     {
-        d->specialOptsCombo->addItem(QLatin1String("TAG_XMPBAG"), NamespaceEntry::TAG_XMPBAG);
-        d->specialOptsCombo->addItem(QLatin1String("TAG_XMPSEQ"), NamespaceEntry::TAG_XMPSEQ);
-        d->specialOptsCombo->addItem(QLatin1String("TAG_ACDSEE"), NamespaceEntry::TAG_ACDSEE);
+        d->specialOptsCombo->addItem(QLatin1String("TAG_XMPBAG"),  NamespaceEntry::TAG_XMPBAG);
+        d->specialOptsCombo->addItem(QLatin1String("TAG_XMPSEQ"),  NamespaceEntry::TAG_XMPSEQ);
+        d->specialOptsCombo->addItem(QLatin1String("TAG_ACDSEE"),  NamespaceEntry::TAG_ACDSEE);
+        d->specialOptsCombo->addItem(QLatin1String("TAG_ALTLANG"), NamespaceEntry::TAG_ALTLANG);
     }
 
     d->alternativeNameLabel = new QLabel(d->page);
@@ -311,9 +312,10 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
 
     if (entry.nsType == NamespaceEntry::TAGS)
     {
-        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_XMPBAG"), NamespaceEntry::TAG_XMPBAG);
-        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_XMPSEQ"), NamespaceEntry::TAG_XMPSEQ);
-        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_ACDSEE"), NamespaceEntry::TAG_ACDSEE);
+        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_XMPBAG"),  NamespaceEntry::TAG_XMPBAG);
+        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_XMPSEQ"),  NamespaceEntry::TAG_XMPSEQ);
+        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_ACDSEE"),  NamespaceEntry::TAG_ACDSEE);
+        d->altSpecialOptsCombo->addItem(QLatin1String("TAG_ALTLANG"), NamespaceEntry::TAG_ALTLANG);
     }
 
     // --------------------------------------------------------

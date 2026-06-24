@@ -32,7 +32,7 @@ BUGFIXES:
 008 --> 436975 - Advanced search - right sidebar metadata tab is disabled.
 009 --> 522001 - MP4: [Composite] GPSLatitude / GPSLongitude / ... metadata - ignored and deleted (on save).
 010 --> 522052 - In the TableView the seconds from creation Date/Time isn't shown correctly eg it stay always at 00.
-011 --> 
+011 --> 521955 - Failed to map xmp metadata Xmp.iptcExt.Event to digiKam Tag.
 012 --> 
 013 --> 
 014 --> 

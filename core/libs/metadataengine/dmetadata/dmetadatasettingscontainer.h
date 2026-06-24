@@ -64,7 +64,8 @@ public:
         COMMENT_JPEG        = 4,
         TAG_XMPBAG          = 5,
         TAG_XMPSEQ          = 6,
-        TAG_ACDSEE          = 7
+        TAG_ACDSEE          = 7,
+        TAG_ALTLANG         = 8
     };
 
     enum NamespaceType

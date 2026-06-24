@@ -76,6 +76,13 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                             break;
                         }
 
+                        case NamespaceEntry::TAG_ALTLANG:
+                        {
+                            QString altlang = getXmpTagStringLangAlt(nameSpace, QString(), false);
+                            xmpTagsPath.append(altlang.split(entry.separator));
+                            break;
+                        }
+
                         // not used here, to suppress warnings
                         case NamespaceEntry::COMMENT_XMP:
                         case NamespaceEntry::COMMENT_ALTLANG:
@@ -161,9 +168,9 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                 {
                     if (entry.tagPaths == NamespaceEntry::TAGPATH)
                     {
-                       exifTagsPath = keyWords.split(QLatin1Char(';'));
+                        exifTagsPath = keyWords.split(QLatin1Char(';'));
 
-                       if (entry.separator != QLatin1String("/"))
+                        if (entry.separator != QLatin1String("/"))
                         {
                             exifTagsPath.replaceInStrings(entry.separator, QLatin1String("/"));
                         }
@@ -285,6 +292,19 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
                             qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image tags failed" << nameSpace;
                             return false;
                         }
+
+                        break;
+                    }
+
+                    case NamespaceEntry::TAG_ALTLANG:
+                    {
+                        if (!setXmpTagStringLangAlt(nameSpace, newList.join(entry.separator), QString()))
+                        {
+                            qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting image tags failed" << nameSpace;
+                            return false;
+                        }
+
+                        break;
                     }
 
                     default:
