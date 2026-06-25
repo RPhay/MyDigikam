@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:42+0000\n"
+"POT-Creation-Date: 2026-06-25 00:41+0000\n"
 "PO-Revision-Date: 2026-03-13 17:00+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -67526,77 +67526,77 @@ msgstr ""
 msgid "Special Options"
 msgstr "Erityisvalinnat"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:288
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:289
 #, kde-format
 msgid "Alternative name"
 msgstr "Vaihtoehtoinen nimi"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
 #, kde-format
 msgid "Alternative special options"
 msgstr "Vaihtoehtoiset erityisvalinnat"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
 #, kde-format
 msgid "Separator:"
 msgstr "Erotin:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:330
 #, kde-format
 msgid "Set Tags Path:"
 msgstr "Aseta luokituspolku:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:350
 #, kde-format
 msgid "Rating Mapping:"
 msgstr "Arviovastaavuudet:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:537
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr "Tämä on oletusnimiavaruus. Sen voi vain poistaa käytöstä"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:564
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Nimiavaruuden nimi vaaditaan"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:575
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "EXIF-nimiavaruuden nimen tulee alkaa ”Exif”."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:585
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "Vaihtoehtoisen EXIF-nimiavaruuden nimen tulee alkaa ”Exif”."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "IPTC-nimiavaruuden nimen tulee alkaa ”Iptc”."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:607
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "Vaihtoehtoisen IPTC-nimiavaruuden nimen tulee alkaa ”Iptc”."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:619
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "XMP-nimiavaruuden nimen tulee alkaa ”Xmp”."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:629
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "Vaihtoehtoisen XMP-nimiavaruuden nimen tulee alkaa ”Xmp”."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:650
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Luokituspolun erotin vaaditaan"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:656
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Toistaiseksi tuetaan vain yksimerkkisiä luokituspolkuerottimia"

@@ -51,7 +51,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:42+0000\n"
+"POT-Creation-Date: 2026-06-25 00:41+0000\n"
 "PO-Revision-Date: 2026-06-11 21:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -66644,79 +66644,79 @@ msgstr ""
 msgid "Special Options"
 msgstr "Özel Seçenekler"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:288
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:289
 #, kde-format
 msgid "Alternative name"
 msgstr "Alternatif ad"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
 #, kde-format
 msgid "Alternative special options"
 msgstr "Alternatif özel seçenekler"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
 #, kde-format
 msgid "Separator:"
 msgstr "Ayırıcı:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:330
 #, kde-format
 msgid "Set Tags Path:"
 msgstr "Künyeler yolunu ayarla:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:350
 #, kde-format
 msgid "Rating Mapping:"
 msgstr "Derecelendirme eşlemleme:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:537
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Bu bir öntanımlı ad alanıdır. Öntanımlı ad alanları yalnızca devre dışı "
 "bırakılabilir"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:564
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Ad alanı adı gerekli"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:575
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "EXIF ad alanı adı “Exif” ile başlamaılıdır."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:585
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "EXIF alternatif ad alanı adı “Exif” ile başlamalıdır."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "IPTC ad alanı adı “Iptc” ile başlamalıdır."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:607
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "IPTC alternatif ad alanı adı “Iptc” ile başlamalıdır."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:619
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "XMP ad alanı adı “Xmp” ile başlamalıdır."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:629
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "XMP alternatif ad alanı adı “Xmp” ile başlamalıdır."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:650
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Künye yolu ayırıcısı gerekiyor"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:656
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr "Künye yolu ayırıcısı olarak yalnızca bir karakter desteklenir"

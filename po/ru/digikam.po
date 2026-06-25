@@ -18,7 +18,7 @@
 #
 # --- libkexiv2
 # translation of Rawstudio to Russian
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2022, 2023, 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2018-2020, 2022-2026 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2023, 2024, 2025 Olesya Gerasimenko <translation-team@basealt.ru>
 # Dimitiry Ryazantcev <DJm00n@rambler.ru>, 2004.
 # Alexandre Prokoudine <alexandre.prokoudine@gmail.com>, 2006, 2007.
@@ -56,15 +56,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:42+0000\n"
-"PO-Revision-Date: 2026-04-03 19:52+0200\n"
+"POT-Creation-Date: 2026-06-25 00:41+0000\n"
+"PO-Revision-Date: 2026-06-24 23:47+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -3615,17 +3615,13 @@ msgstr ""
 "%1\">400 отчётов об ошибках</a> в Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
-#, fuzzy, kde-format
-#| msgid ""
-#| "Internal QtAVPlayer has been updated to the latest upstream 2026-01-24 "
-#| "which brings with it a variety of bug fixes and performance improvements "
-#| "(Qt5 only)."
+#, kde-format
 msgid ""
 "Internal QtAVPlayer has been updated to the latest upstream 2026-04-05 which "
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
-"Внутренний проигрыватель QtAVPlayer обновлён до последней версии 2026-01-24, "
+"Встроенный проигрыватель QtAVPlayer обновлён до последней версии 2026-04-05, "
 "что обеспечило различные исправления ошибок и улучшения производительности "
 "(только для Qt5)."
 
@@ -3971,12 +3967,11 @@ msgid "Add support to search recently modified items in the database."
 msgstr "Добавлена поддержка поиска недавно изменённых элементов в базе данных."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2026-03-26."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
-"Внутренний модуль для обработки RAW-изображений обновлён до последней версии "
-"Libraw от 26.03.2026;"
+"Встроенный модуль для обработки RAW-изображений обновлён до последней версии "
+"Libraw от 06.04.2026."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
@@ -3984,16 +3979,13 @@ msgid "New RAW camera supported:"
 msgstr "Поддержка «цифровых негативов» новых моделей камер:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
-#| "EOS R100, EOS Ra ;"
+#, kde-format
 msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
-"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
-"R100, EOS Ra;"
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, "
+"EOS  R100, EOS Ra Canon EOS Kiss M2;"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
@@ -4795,7 +4787,7 @@ msgstr "LibAVUtil"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFMpeg"
-msgstr ""
+msgstr "FFMpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:149
 #: core/app/views/utils/componentsinfodlg.cpp:154
@@ -22708,33 +22700,7 @@ msgid "A tool to render slideshow"
 msgstr "Инструмент для создания слайд-шоу"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Video forward:</td><td><i>Ctrl+Right</i> key</"
-#| "td></tr><tr><td>Video backward:</td><td><i>Ctrl+Left</i> key</td></"
-#| "tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22762,35 +22728,36 @@ msgid ""
 "b></center></nobr></td></tr><tr><td>Show this help:</td><td><i>F1</i> key</"
 "td></tr></table>"
 msgstr ""
-"<p>Этот инструмент представляет ряд элементов в виде простого слайд-шоу.</"
-"p><p>Во время его работы можно показывать множество свойств элементов в виде "
-"наложения.</p><p>Этот инструмент позволяет воспроизводить содержимое альбома "
-"в рекурсивном режиме с дочерними альбомами, если таковые имеются.</"
-"p><p><u>Использование:</u></p><table><tr><td colspan="
-"\"2\"><nobr><center><b><h1>Доступ к объекту</h1></b></center></nobr></td></"
-"tr><tr><td>Предыдущий объект:</td><td>Клавиша <i>Вверх</i></td></"
-"tr><tr><td></td><td>Клавиша <i>PgUp</i></td></tr><tr><td></td><td>Клавиша "
-"<i>Влево</i></td></tr><tr><td></td><td>Колесо мыши вверх</td></tr><tr><td></"
-"td><td>Левая кнопка мыши</td></tr><tr><td>Следующий объект:</td><td>Клавиша "
-"<i>Вниз</i></td></tr><tr><td></td><td>Клавиша <i>PgDown</i></td></"
-"tr><tr><td></td><td>Клавиша <i>Вправо</i></td></tr><tr><td></"
-"td><td>Прокрутка колёсика мыши вниз</td></tr><tr><td></td><td>Правая кнопка "
-"мыши</td></tr><tr><td>Пауза/Воспроизведение:</td><td>Клавиша <i>Пробел</i></"
-"td></tr><tr><td>Перемотка видео вперёд:</td><td><i>Ctrl+клавиша Вправо</i></"
-"td></tr><tr><td>Перемотка видео назад:</td><td><i>Ctrl+клавиша Влево</i></"
-"td></tr><tr><td>Настройка слайд-шоу:</td><td>комбинация клавиш <i>Alt+P</i></"
-"td></tr><tr><td>Показать/скрыть элементы наложения:</td><td>Комбинация "
-"клавиш <i>Alt+Y</i></td></tr><tr><td>Выход:</td><td>Клавиша <i>Esc</i></td></"
-"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Свойства объекта</h1></b></"
-"center></nobr></td></tr><tr><td>Изменить метки:</td><td>Используйте "
-"комбинации клавиш для меток</td></tr><tr><td>Изменить оценку:</"
-"td><td>Используйте комбинации клавиш для присваивания оценок</td></"
-"tr><tr><td>Изменить цвет ярлыка:</td><td>Используйте комбинации клавиш для "
-"изменения цвета ярлыков</td></tr><tr><td>Изменить ярлык отбора:</"
-"td><td>Используйте комбинации клавиш для изменения ярлыка отбора</td></"
-"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Другое</h1></b></center></"
-"nobr></td></tr><tr><td>Показать эту справку:</td><td>Клавиша <i>F1</i></td></"
-"tr></table>"
+"<p>Этот инструмент представляет ряд элементов в виде простого слайд-шоу.</ "
+"p><p>Во время его работы можно показывать множество свойств элементов в "
+"виде  наложения.</p><p>Этот инструмент позволяет воспроизводить содержимое "
+"альбома  в рекурсивном режиме с дочерними альбомами, если таковые имеются.</ "
+"p><p><u>Использование:</u></p><table><tr><td colspan= "
+"\"2\"><nobr><center><b><h1>Доступ к объекту</h1></b></center></nobr></td></ "
+"tr><tr><td>Предыдущий объект:</td><td>Клавиша <i>Вверх</i></td></ "
+"tr><tr><td></td><td>Клавиша <i>PgUp</i></td></tr><tr><td></td><td>Клавиша  "
+"<i>Влево</i></td></tr><tr><td></td><td>Колесо мыши вверх</td></tr><tr><td></ "
+"td><td>Левая кнопка мыши</td></tr><tr><td>Следующий объект:</td><td>Клавиша  "
+"<i>Вниз</i></td></tr><tr><td></td><td>Клавиша <i>PgDown</i></td></ "
+"tr><tr><td></td><td>Клавиша <i>Вправо</i></td></tr><tr><td></ td><td>Колесо "
+"мыши вниз</td></tr><tr><td></td><td>Правая кнопка  мыши</td></"
+"tr><tr><td>Пауза/Воспроизведение:</td><td>Клавиша <i>Пробел</i></ td></"
+"tr><tr><td>Удалить (в корзину):</td><td>Клавиша <i>Delete</i></td></ "
+"tr><tr><td>Перемотка видео вперёд:</td><td><i>Ctrl+клавиша Вправо</i></ td></"
+"tr><tr><td>Перемотка видео назад:</td><td><i>Ctrl+клавиша Влево</i></ td></"
+"tr><tr><td>Настройка слайд-шоу:</td><td>комбинация клавиш <i>Alt+P</i></ "
+"td></tr><tr><td>Показать/скрыть элементы наложения:</td><td>комбинация  "
+"клавиш <i>Alt+Y</i></td></tr><tr><td>Выход:</td><td>Клавиша <i>Esc</i></"
+"td></ tr><tr><td colspan=\"2\"><nobr><center><b><h1>Свойства объекта</h1></"
+"b></ center></nobr></td></tr><tr><td>Изменить метки:</td><td>Используйте  "
+"комбинации клавиш для меток</td></tr><tr><td>Изменить оценку:</ "
+"td><td>Используйте комбинации клавиш для присваивания оценок</td></ "
+"tr><tr><td>Изменить цветовой ярлык:</td><td>Используйте комбинации клавиш "
+"для  цветовых ярлыков</td></tr><tr><td>Изменить ярлык отбора:</ "
+"td><td>Используйте комбинации клавиш для изменения ярлыка отбора</td></ "
+"tr><tr><td colspan=\"2\"><nobr><center><b><h1>Другое</h1></b></center></ "
+"nobr></td></tr><tr><td>Показать эту справку:</td><td>Клавиша <i>F1</i></"
+"td></ tr></table>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:160
 #, kde-format
@@ -64206,16 +64173,14 @@ msgid "and"
 msgstr "и"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Вернуть записи без областей с лицами"
+msgstr "Вернуть записи с подтверждёнными областями с лицами"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Нет областей с лицами"
+msgstr "Подтверждённые области лиц"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
@@ -67264,79 +67229,79 @@ msgstr ""
 msgid "Special Options"
 msgstr "Специальные параметры"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:288
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:289
 #, kde-format
 msgid "Alternative name"
 msgstr "Альтернативное имя"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
 #, kde-format
 msgid "Alternative special options"
 msgstr "Альтернативные специальные параметры"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
 #, kde-format
 msgid "Separator:"
 msgstr "Разделитель:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:330
 #, kde-format
 msgid "Set Tags Path:"
 msgstr "Установить путь метки:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:350
 #, kde-format
 msgid "Rating Mapping:"
 msgstr "Привязка оценки:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:537
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 "Это пространство имён по умолчанию. Пространства имён по умолчанию можно "
 "только отключить."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:564
 #, kde-format
 msgid "The namespace name is required"
 msgstr "Необходимо имя пространства имён"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:575
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr "Имя пространства имён EXIF должно начинаться с «Exif»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:585
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr "Имя альтернативного пространства имён EXIF должно начинаться с «Exif»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr "Имя пространства имён IPTC должно начинаться с «Iptc»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:607
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr "Имя альтернативного пространства имён IPTC должно начинаться с «Iptc»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:619
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr "Имя пространства имён XMP должно начинаться с «Xmp»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:629
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr "Имя альтернативного пространства имён XMP должно начинаться с «Xmp»."
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:650
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr "Необходим разделитель пути к метке"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:656
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""

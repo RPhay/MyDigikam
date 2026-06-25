@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:42+0000\n"
+"POT-Creation-Date: 2026-06-25 00:41+0000\n"
 "PO-Revision-Date: 2023-08-27 22:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -68314,77 +68314,77 @@ msgstr ""
 msgid "Special Options"
 msgstr "캡션:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:288
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:289
 #, kde-format
 msgid "Alternative name"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:292
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:293
 #, kde-format
 msgid "Alternative special options"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:322
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:324
 #, kde-format
 msgid "Separator:"
 msgstr "구분자:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:328
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:330
 #, kde-format
 msgid "Set Tags Path:"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:348
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:350
 #, fuzzy, kde-format
 msgid "Rating Mapping:"
 msgstr "별점:"
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:535
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:537
 #, kde-format
 msgid "This is a default namespace. Default namespaces can only be disabled"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:562
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:564
 #, kde-format
 msgid "The namespace name is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:573
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:575
 #, kde-format
 msgid "EXIF namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:583
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:585
 #, kde-format
 msgid "EXIF alternative namespace name must start with \"Exif\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:595
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:597
 #, kde-format
 msgid "IPTC namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:605
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:607
 #, kde-format
 msgid "IPTC alternative namespace name must start with \"Iptc\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:617
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:619
 #, kde-format
 msgid "XMP namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:627
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:629
 #, kde-format
 msgid "XMP alternative namespace name must start with \"Xmp\"."
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:648
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:650
 #, kde-format
 msgid "Tag Path separator is required"
 msgstr ""
 
-#: core/utilities/setup/metadata/namespaceeditdlg.cpp:654
+#: core/utilities/setup/metadata/namespaceeditdlg.cpp:656
 #, kde-format
 msgid "Only one character is now supported as tag path separator"
 msgstr ""
