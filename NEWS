@@ -9,12 +9,12 @@ Bundles component versions:
 
 | Bundles       | Qt         | KDE        | OpenCV   | FFmpeg    | Heif       | ExifTool  | Exiv2      | LibRaw       | QtAvPlayer   | Build Environment   |
 |---------------|------------|------------|----------|-----------|------------|-----------|------------|--------------|--------------|---------------------|
-| Windows Qt5   | 5.15.17    | 5.116      | 4.11     | 7.1.1     | 1.20.2     | 13.58 (*) | 0.28.8     | 20260523 (*) | 20260405 (*) | Windows 10 + VCPKG  |
-| Windows Qt6   | 6.11.0     | 6.26.0     | 4.12     | 8.1.1     | 1.21.2     | 13.58 (*) | 0.28.8     | 20260523 (*) |    -         | Windows 11 + VCPKG  |
-| AppImage Qt5  | 5.15.18    | 5.116      | 4.13     | 8.0.1     | 1.21.2     | 13.58 (*) | 0.28.8     | 20260523 (*) | 20260405 (*) | XUbuntu 20.06       |
-| AppImage Qt6  | 6.11.0     | 6.26.0     | 4.13     | 8.1.1     | 1.21.2     | 13.58 (*) | 0.28.8     | 20260523 (*) |    -         | XUbuntu 22.04       |
-| macOS Qt5     | 5.15.18    | 5.116      | 4.13     | 8.0.1     | 1.20.2     | 13.58 (*) | 0.28.8     | 20260523 (*) | 20260405 (*) | Monterey + Macports |
-| macOS Qt6     | 6.11.0     | 6.26.0     | 4.13     | 8.1.0     | 1.21.2     | 13.58 (*) | 0.28.8     | 20260523 (*) |    -         | Tathoe + Macports   |
+| Windows Qt5   | 5.15.17    | 5.116      | 4.11     | 7.1.1     | 1.20.2     | 13.59 (*) | 0.28.8     | 20260523 (*) | 20260405     | Windows 10 + VCPKG  |
+| Windows Qt6   | 6.11.0     | 6.26.0     | 4.12     | 8.1.1     | 1.21.2     | 13.59 (*) | 0.28.8     | 20260523 (*) |    -         | Windows 11 + VCPKG  |
+| AppImage Qt5  | 5.15.18    | 5.116      | 4.13     | 8.0.1     | 1.21.2     | 13.59 (*) | 0.28.8     | 20260523 (*) | 20260405     | XUbuntu 20.06       |
+| AppImage Qt6  | 6.11.0     | 6.26.0     | 4.13     | 8.1.1     | 1.21.2     | 13.59 (*) | 0.28.8     | 20260523 (*) |    -         | XUbuntu 22.04       |
+| macOS Qt5     | 5.15.18    | 5.116      | 4.13     | 8.0.1     | 1.20.2     | 13.59 (*) | 0.28.8     | 20260523 (*) | 20260405     | Monterey + Macports |
+| macOS Qt6     | 6.11.0     | 6.26.0     | 4.13     | 8.1.0     | 1.21.2     | 13.59 (*) | 0.28.8     | 20260523 (*) |    -         | Tathoe + Macports   |
 
 Icon-View: Improve filename matching for timelapse/burst grouping items.
 
@@ -33,7 +33,7 @@ BUGFIXES:
 009 --> 522001 - MP4: [Composite] GPSLatitude / GPSLongitude / ... metadata - ignored and deleted (on save).
 010 --> 522052 - In the TableView the seconds from creation Date/Time isn't shown correctly eg it stay always at 00.
 011 --> 521955 - Failed to map xmp metadata Xmp.iptcExt.Event to digiKam Tag.
-012 --> 
+012 --> 522204 - Core Mysql database schema update to V 17 failed using AppImage 9.1.0.
 013 --> 
 014 --> 
 015 --> 
