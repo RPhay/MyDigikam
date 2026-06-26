@@ -24,8 +24,8 @@ set -C
 
 echo "Download ExifTool archives..."
 
-wget https://exiftool.org/Image-ExifTool-$1.tar.gz
-wget https://exiftool.org/exiftool-$1_64.zip
+wget https://sourceforge.net/projects/exiftool/files/Image-ExifTool-$1.tar.gz/download -O Image-ExifTool-$1.tar.gz
+wget https://sourceforge.net/projects/exiftool/files/exiftool-$1_64.zip/download       -O exiftool-$1_64.zip
 
 echo "Rename archives..."
 
