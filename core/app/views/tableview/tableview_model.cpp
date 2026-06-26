@@ -235,7 +235,7 @@ QVariant TableViewModel::data(const QModelIndex& i, int role) const
 
 QModelIndex TableViewModel::index(int row, int column, const QModelIndex& parent) const
 {
-    Item* parentItem = d->rootItem;
+    const Item* parentItem = d->rootItem;
 
     if (parent.isValid())
     {
@@ -281,8 +281,8 @@ QModelIndex TableViewModel::parent(const QModelIndex& childIndex) const
         return QModelIndex();
     }
 
-    Item* const grandParentItem = parentItem->parent;
-    const int rowIndex          = grandParentItem->children.indexOf(parentItem);
+    const Item* const grandParentItem = parentItem->parent;
+    const int rowIndex                = grandParentItem->children.indexOf(parentItem);
 
     /// @todo What should be the column number?
 
@@ -296,7 +296,7 @@ int TableViewModel::rowCount(const QModelIndex& parent) const
         return 0;
     }
 
-    Item* parentItem = d->rootItem;
+    const Item* parentItem = d->rootItem;
 
     if (parent.isValid())
     {
@@ -380,14 +380,14 @@ void TableViewModel::addColumnAt(const TableViewColumnConfiguration& configurati
 
 void TableViewModel::slotColumnDataChanged(const qlonglong imageId)
 {
-    Item* const item = itemFromImageId(imageId);
+    Item* const item                    = itemFromImageId(imageId);
 
     if (!item)
     {
         return;
     }
 
-    Item* const parentItem              = item->parent;
+    const Item* const parentItem        = item->parent;
 
     /// @todo This is a waste of time because itemFromImageId already did this search.
     ///       We should modify it to also give the row index.
@@ -1080,19 +1080,19 @@ QVariant TableViewModel::itemDatabaseFieldRaw(TableViewModel::Item* const item,
 
 QModelIndex TableViewModel::indexFromImageId(const qlonglong imageId, const int columnIndex) const
 {
-    Item* const item = itemFromImageId(imageId);
+    Item* const item             = itemFromImageId(imageId);
 
     if (!item)
     {
         return QModelIndex();
     }
 
-    Item* const parentItem = item->parent;
+    const Item* const parentItem = item->parent;
 
     /// @todo This is a waste of time because itemFromImageId already did this search.
     ///       We should modify it to also give the row index.
 
-    const int rowIndex     = parentItem->children.indexOf(item);
+    const int rowIndex           = parentItem->children.indexOf(item);
 
     return createIndex(rowIndex, columnIndex, item);
 }
@@ -1223,7 +1223,7 @@ void TableViewModel::sort(int column, Qt::SortOrder order)
     {
         Item* const itemToSort = itemsRequiringSorting.takeFirst();
 
-        for (Item* const itemToCheck : std::as_const(itemToSort->children))
+        for (Item* const itemToCheck : std::as_const(itemToSort->children))         // cppcheck-suppress constVariablePointer
         {
             if (!itemToCheck->children.isEmpty())
             {
@@ -1375,7 +1375,7 @@ QModelIndex TableViewModel::itemIndex(TableViewModel::Item* const item) const
 
 bool TableViewModel::hasChildren(const QModelIndex& parent) const
 {
-    Item* parentItem = d->rootItem;
+    const Item* parentItem = d->rootItem;
 
     if (parent.isValid())
     {

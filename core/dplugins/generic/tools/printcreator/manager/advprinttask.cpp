@@ -617,11 +617,11 @@ double AdvPrintTask::getMaxDPI(const QList<AdvPrintPhoto*>& photos,
 
     for ( ; current < photos.count() ; ++current)
     {
-        AdvPrintPhoto* const photo   = photos.at(current);
-        double dpi                   = ((double) photo->m_cropRegion.width() +
-                                        (double) photo->m_cropRegion.height()) /
-                                       (((double) layout->width()  / 1000.0) +
-                                        ((double) layout->height() / 1000.0));
+        const AdvPrintPhoto* const photo = photos.at(current);
+        double dpi                       = ((double) photo->m_cropRegion.width() +
+                                            (double) photo->m_cropRegion.height()) /
+                                           (((double) layout->width()  / 1000.0) +
+                                            ((double) layout->height() / 1000.0));
 
         if (dpi > maxDPI)
         {
@@ -631,7 +631,7 @@ double AdvPrintTask::getMaxDPI(const QList<AdvPrintPhoto*>& photos,
         // iterate to the next position
 
         ++it;
-        layout = (it == layouts.end()) ? nullptr : static_cast<QRect*>(*it);
+        layout = ((it == layouts.end()) ? nullptr : static_cast<QRect*>(*it));
 
         if (layout == nullptr)
         {
