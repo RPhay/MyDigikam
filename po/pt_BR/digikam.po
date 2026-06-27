@@ -12,15 +12,15 @@
 # Marcus Gama <marcus.gama@gmail.com>, 2011, 2012.
 # Thiago Masato Costa Sueto <herzenschein@gmail.com>, 2019.
 # Frederico Gonçalves Guimarães <frederico@teia.bio.br>, 2019.
-# SPDX-FileCopyrightText: 2025, 2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 # SPDX-FileCopyrightText: 2026 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-25 00:41+0000\n"
-"PO-Revision-Date: 2026-06-07 04:32-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2026-06-26 03:28-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -21282,7 +21282,7 @@ msgstr "Faixa de áudio"
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:65
 #, kde-format
 msgid "On Screen Display"
-msgstr "Exibição na tela"
+msgstr "Indicador na tela"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:277
 #, kde-format
@@ -43062,13 +43062,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option"
 msgid "On Screen Display Font:"
-msgstr "Fonte de exibição na tela:"
+msgstr "Fonte do indicador na tela:"
 
 #: core/libs/video/osd/frameosdwidget.cpp:92
 #, kde-format
 msgctxt "@info"
 msgid "Select here the font used to display text on the screen display ."
-msgstr "Selecione aqui a fonte usada para exibir o texto na exibição na tela."
+msgstr "Selecione aqui a fonte usada para exibir o texto no indicador na tela."
 
 #: core/libs/video/player/audplayerwdg.cpp:264
 #, kde-format
