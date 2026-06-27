@@ -114,19 +114,19 @@ public:
 private:
 
     void addthe(double c1, double s1, double c2, double s2,
-                double& c, double& s);
+                double& _c, double& _s);
     double sinus(double phi);
     void long_periodic(double t);
     void minit(double t);
-    void term(int p, int q, int r, int s, double& x, double& y);
+    void term(int _p, int _q, int _r, int _s, double& x, double& y);
     void addsol(double coeffl, double coeffs, double coeffg,
-                double coeffp, int p, int q, int r, int s);
+                double coeffp, int _p, int _q, int _r, int _s);
     void solar1();
     void solar2();
     void solar3();
-    void addn(double coeffn, int p, int q, int r, int s,
-              double& n, double& x, double& y);
-    void solarn(double& n);
+    void addn(double coeffn, int _p, int _q, int _r, int _s,
+              double& _n, double& x, double& y);
+    void solarn(double& _n);
     void planetary(double t);
 
 private:

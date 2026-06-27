@@ -88,8 +88,8 @@ public:
 
 public:
 
-    QString PsmCodeToValue(PageSegmentationModes psm)   const;
-    QString OemCodeToValue(EngineModes oem)             const;
+    QString PsmCodeToValue(PageSegmentationModes _psm)   const;
+    QString OemCodeToValue(EngineModes _oem)             const;
 
 public:
 

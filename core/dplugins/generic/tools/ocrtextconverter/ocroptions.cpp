@@ -101,14 +101,14 @@ QMap<OcrOptions::EngineModes, QPair<QString, QString> > OcrOptions::oemNames()
     return oem;
 }
 
-QString OcrOptions::PsmCodeToValue(OcrOptions::PageSegmentationModes psm) const
+QString OcrOptions::PsmCodeToValue(OcrOptions::PageSegmentationModes _psm) const
 {
-   return QString::fromLatin1("%1").arg((int)psm);  // psm tesseract cli values if range from 0 to 13
+   return QString::fromLatin1("%1").arg((int)_psm);  // psm tesseract cli values if range from 0 to 13
 }
 
-QString OcrOptions::OemCodeToValue(OcrOptions::EngineModes oem) const
+QString OcrOptions::OemCodeToValue(OcrOptions::EngineModes _oem) const
 {
-   return QString::fromLatin1("%1").arg((int)oem);  // oem tesseract cli values if range from 0 to 3
+   return QString::fromLatin1("%1").arg((int)_oem);  // oem tesseract cli values if range from 0 to 3
 }
 
 } // namespace DigikamGenericTextConverterPlugin

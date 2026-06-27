@@ -2046,10 +2046,10 @@ Vec3 Moon200::position(double t)    // position of the Moon at time t
 
 
 void Moon200::addthe(double c1, double s1, double c2, double s2,
-                     double& c, double& s)
+                     double& _c, double& _s)
 {
-    c = c1 * c2 - s1 * s2;
-    s = s1 * c2 + c1 * s2;
+    _c = c1 * c2 - s1 * s2;
+    _s = s1 * c2 + c1 * s2;
 }
 
 double Moon200::sinus(double phi)
@@ -2155,31 +2155,33 @@ void Moon200::minit(double t)
     }
 }
 
-void Moon200::term(int p, int q, int r, int s, double& x, double& y)
+void Moon200::term(int _p, int _q, int _r, int _s, double& x, double& y)
 {
     // calculate x=cos(p*arg1+q*arg2...); y=sin(p*arg1+q*arg2...)
     int i[4];
     int k;
 
-    i[0] = p;
-    i[1] = q;
-    i[2] = r;
-    i[3] = s;
+    i[0] = _p;
+    i[1] = _q;
+    i[2] = _r;
+    i[3] = _s;
     x = 1.0;
     y = 0.0;
 
     for (k = 0; k < 4; k++)
+    {
         if (i[k] != 0)
         {
             addthe(x, y, co[i[k] + 6][k], si[i[k] + 6][k], x, y);
         }
+    }
 }
 
 void Moon200::addsol(double coeffl, double coeffs, double coeffg,
-                     double coeffp, int p, int q, int r, int s)
+                     double coeffp, int _p, int _q, int _r, int _s)
 {
     double x, y;
-    term(p, q, r, s, x, y);
+    term(_p, _q, _r, _s, x, y);
     dlam = dlam + coeffl * y;
     ds = ds + coeffs * y;
     gam1c = gam1c + coeffg * x;
@@ -2302,29 +2304,29 @@ void Moon200::solar3()
     addsol(-0.330, -0.04, 0.0, 0.0, 3, 0, 2, 0);
 }
 
-void Moon200::addn(double coeffn, int p, int q, int r, int s,
-                   double& n, double& x, double& y)
+void Moon200::addn(double coeffn, int _p, int _q, int _r, int _s,
+                   double& _n, double& x, double& y)
 {
-    term(p, q, r, s, x, y);
-    n = n + coeffn * y;
+    term(_p, _q, _r, _s, x, y);
+    _n = _n + coeffn * y;
 }
 
-void Moon200::solarn(double& n)
+void Moon200::solarn(double& _n)
 {
     // perturbation N of ecliptic latitude
     double x, y;
 
-    n = 0.0;
-    addn(-526.069, 0, 0, 1, -2, n, x, y);
-    addn(-3.352, 0, 0, 1, -4, n, x, y);
-    addn(44.297, 1, 0, 1, -2,  n, x, y);
-    addn(-6.0, 1, 0, 1, -4, n, x, y);
-    addn(20.599, -1, 0, 1, 0, n, x, y);
-    addn(-30.598, -1, 0, 1, -2, n, x, y);
-    addn(-24.649, -2, 0, 1, 0, n, x, y);
-    addn(-2.0, -2, 0, 1, -2, n, x, y);
-    addn(-22.571, 0, 1, 1, -2, n, x, y);
-    addn(10.985, 0, -1, 1, -2, n, x, y);
+    _n = 0.0;
+    addn(-526.069, 0,  0, 1, -2, _n, x, y);
+    addn(-3.352,   0,  0, 1, -4, _n, x, y);
+    addn(44.297,   1,  0, 1, -2, _n, x, y);
+    addn(-6.0,     1,  0, 1, -4, _n, x, y);
+    addn(20.599,  -1,  0, 1,  0, _n, x, y);
+    addn(-30.598, -1,  0, 1, -2, _n, x, y);
+    addn(-24.649, -2,  0, 1,  0, _n, x, y);
+    addn(-2.0,    -2,  0, 1, -2, _n, x, y);
+    addn(-22.571,  0,  1, 1, -2, _n, x, y);
+    addn(10.985,   0, -1, 1, -2, _n, x, y);
 }
 
 void Moon200::planetary(double t)
