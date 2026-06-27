@@ -211,7 +211,7 @@ Qt::DropAction TagDragDropHandler::accepts(const QDropEvent* e, const QModelInde
 
         // Dragging a parent on its child makes no sense
 
-        if (droppedAlbum && droppedAlbum->isAncestorOf(destAlbum))
+        if (droppedAlbum && droppedAlbum->isAncestorOf(destAlbum))  // cppcheck-suppress knownConditionTrueFalse
         {
             return Qt::IgnoreAction;
         }

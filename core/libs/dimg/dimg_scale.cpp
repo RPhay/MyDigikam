@@ -466,7 +466,7 @@ DImg DImg::smoothScaleSection(int sx, int sy,
     // do a second check to see if we now have invalid coords
     // do not do anything if we have a 0 width or height image to render
 
-    if ((dw <= 0) || (dh <= 0))
+    if ((dw <= 0) || (dh <= 0))     // cppcheck-suppress knownConditionTrueFalse
     {
         return DImg();
     }

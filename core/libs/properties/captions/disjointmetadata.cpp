@@ -350,7 +350,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
                              (saveColorLabel && d->colorLabelChanged) ||
                              (saveRating     && d->ratingChanged)     ||
                              (saveTemplate   && d->templateChanged)   ||
-                             (saveTags       && d->tagsChanged)
+                             (saveTags       && d->tagsChanged)             // cppcheck-suppress knownConditionTrueFalse
                          );
     }
     else // PartialWrite

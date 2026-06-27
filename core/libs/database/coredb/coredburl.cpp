@@ -412,7 +412,7 @@ bool CoreDbUrl::areaCoordinates(double* lat1, double* lat2, double* lon1, double
     bool ok;
     bool allOk = true;
     *lat1      = QUrlQuery(*this).queryItemValue(QLatin1String("lat1")).toDouble(&ok);
-    allOk      = ok && allOk;
+    allOk      = ok && allOk;   // cppcheck-suppress knownConditionTrueFalse
     *lat2      = QUrlQuery(*this).queryItemValue(QLatin1String("lat2")).toDouble(&ok);
     allOk      = ok && allOk;
     *lon1      = QUrlQuery(*this).queryItemValue(QLatin1String("lon1")).toDouble(&ok);
