@@ -4572,7 +4572,7 @@ msgstr "数据库后端程序"
 #, kde-format
 msgctxt "@item: component info"
 msgid "Database internal server"
-msgstr "数据库本机服务器"
+msgstr "数据库内建服务器"
 
 #: core/app/views/utils/componentsinfodlg.cpp:219
 #, kde-format
@@ -28250,7 +28250,7 @@ msgstr "SQLite"
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:62
 #, kde-format
 msgid "Mysql Internal"
-msgstr "MySQL 本机服务器"
+msgstr "MySQL 内建服务器"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:67
 #, kde-format
@@ -28275,7 +28275,7 @@ msgid ""
 "collection sizes. This backend is recommend for local collections with more "
 "than 100K items.</p>"
 msgstr ""
-"<p><b>MySQL 本地服务器</b>后端程序适用于数据库存储在本地的大型相册集合。推荐"
+"<p><b>MySQL 内建服务器</b>后端程序适用于数据库存储在本地的大型相册集合。推荐"
 "超过 100K 件项目的本地相册集合使用。</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:86
@@ -28653,9 +28653,9 @@ msgid ""
 msgstr ""
 "<p>请在此配置页面中设置远程 <a href=\"https://en.wikipedia.org/wiki/MySQL"
 "\">MySQL 数据库服务器</a> (或者 <a href=\"https://en.wikipedia.org/wiki/"
-"MariaDB\">MariaDB</a>) 的连接信息。与使用 SQLite 和 MySQL 本机服务器时一样，"
+"MariaDB\">MariaDB</a>) 的连接信息。与使用 SQLite 和 MySQL 本地服务器时一样，"
 "digiKam 会在远程服务器上存储 3 个数据库：一个用于相册集合属性，一个用于存储压"
-"缩后的缩略图，一个用于存储人脸识别元数据。</p><p>与使用 SQLite 和 MySQL 本机"
+"缩后的缩略图，一个用于存储人脸识别元数据。</p><p>与使用 SQLite 和 MySQL 内建"
 "服务器时不同，您可以自定义数据库名称以便简化备份流程。</p><p>数据库属于 "
 "digiKam 核心引擎的一部分，为了提高性能，请在客户端和服务器计算机之间使用高速"
 "网络连接。请尽可能把服务器的数据库保存在高速存储设备上 (如 <a href=\"https://"
@@ -28845,7 +28845,7 @@ msgstr "数据库路径"
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
 msgid "Database internal server"
-msgstr "数据库内部服务器"
+msgstr "数据库内建服务器"
 
 #: core/libs/database/utils/widgets/dbstatdlg.cpp:87
 #, kde-format
