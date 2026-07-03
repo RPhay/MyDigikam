@@ -1,27 +1,27 @@
 # Translation for digikam.po to Euskara/Basque (eu).
-# Copyright (C) 2005-2025 This file is copyright:
+# Copyright (C) 2005-2026 This file is copyright:
 # This package is distributed under the same license as the digikam package.
-# SPDX-FileCopyrightText: 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # --- kipiplugin_acquireimages
 # Translation for kipiplugin_acquireimages.po to Euskara/Basque (eu).
-# Copyright (C) 2005-2025 This_file_is_part_of_KDE
+# Copyright (C) 2005-2026 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
 #
 # --- kipiplugin_dngconverter
-# Copyright (C) 2005-2025 This_file_is_part_of_KDE
+# Copyright (C) 2005-2026 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
 #
 # --- kipiplugin_metadataedit
 # translation for kipiplugin_metadataedit.po to Euskara/Basque (eu).
-# Copyright (C) 2005-2025 This_file_is_part_of_KDE
+# Copyright (C) 2005-2026 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
 # --- kipiplugin_gpssync
 # Translation for kipiplugin_gpssync.po to Euskara/Basque (eu).
-# Copyright (C) 2005-2025 This_file_is_part_of_KDE
+# Copyright (C) 2005-2026 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
 #
@@ -32,21 +32,21 @@
 # Ion Gaztañaga <igaztanaga@gmail.com>, 2006.
 # Marcos <marcos@euskalgnu.org>, 2006, 2011.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2007, 2010.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2021, 2022, 2023, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2010, 2011, 2018, 2021, 2022, 2023, 2024, 2025, 2026.
 # Enbata <urazpian@hotmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-25 00:41+0000\n"
-"PO-Revision-Date: 2026-03-21 20:25+0100\n"
+"PO-Revision-Date: 2026-07-02 07:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/app/date/ddateedit.cpp:489
@@ -3481,18 +3481,18 @@ msgstr ""
 "transferitu ditzakezu zure kameratik zuzenean edo kanpoko biltegiratze "
 "gailuetatik (SD txartelak, USB diskoak, etab.). Aplikazioak inportatutako "
 "elementuak inportatu ahala prozesatu eta antolatzeko inportazio-ezarpena eta "
-"arauak konfiguratzeko aukera ematen dizu.<p> <p>Laburbilduz, digiKam-ekin "
+"arauak konfiguratzeko aukera ematen dizu.</p> <p>Laburbilduz, digiKam-ekin "
 "zure argazki eta bideo bildumak inportatu, antolatu, hobetu, bilatu eta "
 "esportatu ditzakezu, eta askoz gehiago…</p><p>Une honetan digiKamen albumen "
 "ikuspegian zaude. Albumak fitxategiak gordetzen diren lekuak dira, eta zure "
 "disko zurruneko karpeten baliokideak dira.</p><p>digiKamek ezaugarri ahaltsu "
 "ugari ditu, <b><a href=\"https://docs.digikam.org/en/index.html"
 "\">dokumentazioan</a></b> azaltzen dira.</p><p><b><a href=\"https://www."
-"digikam.org\">digiKam webguneak</a></b> digiKam-en bertsio berriei buruzko "
-"informazioa eskaintzen du.</p><p>digiKam erabiltzaileen komunitatearekin "
-"harremanetan jartzeko edo garapen-taldeari laguntzeko, jarraitu "
-"aplikazioaren <b>Laguntza</b> menu-sarrerako estekei.</p><h3>Eskerrik asko "
-"digiKam proiektua erabiltzeagatik eta babesteagatik.</h3>"
+"digikam.org\">digiKam atariko-orriak</a></b> digiKam-en bertsio berriei "
+"buruzko informazioa eskaintzen du.</p><p>digiKam erabiltzaileen "
+"komunitatearekin harremanetan jartzeko edo garapen-taldeari laguntzeko, "
+"jarraitu aplikazioaren <b>Laguntza</b> menu-sarrerako estekei.</"
+"p><h3>Eskerrik asko digiKam proiektua erabiltzeagatik eta babesteagatik.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
