@@ -113,7 +113,9 @@ const QPair<int, int> DNNModelBase::getBackendAndTarget() const
     const std::map<std::string, int> str2backend
     {
         { "default",     cv::dnn::DNN_BACKEND_DEFAULT          },
+#if OPENCV_TEST_VERSION(5,0,0)
         { "halide",      cv::dnn::DNN_BACKEND_HALIDE           },
+#endif
         { "ie",          cv::dnn::DNN_BACKEND_INFERENCE_ENGINE },
         { "opencv",      cv::dnn::DNN_BACKEND_OPENCV           },
         { "cuda",        cv::dnn::DNN_BACKEND_CUDA             }

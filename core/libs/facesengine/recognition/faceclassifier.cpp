@@ -215,7 +215,7 @@ cv::Ptr<cv::ml::SVM> FaceClassifier::createSVM(int iterations) const
     cvClassifier->setKernel(d->svm_kernel);
     cvClassifier->setGamma(d->svm_gamma);
     cvClassifier->setC(d->svm_C);
-    cvClassifier->setTermCriteria(cvTermCriteria(
+    cvClassifier->setTermCriteria(cv::TermCriteria(
                                                  cv::TermCriteria::Type::MAX_ITER + cv::TermCriteria::Type::EPS,
                                                  iterations,
                                                  d->svm_epsilon
