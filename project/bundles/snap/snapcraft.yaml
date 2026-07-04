@@ -200,7 +200,7 @@ parts:
       - libopenexr-3-1-30
       - libwebp7
       - libbtbb1
-      - libippcp11
+      - libippcp12
     cmake-generator: Ninja
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
