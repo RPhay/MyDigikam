@@ -38,7 +38,7 @@ BUGFIXES:
 013 --> 522716 - OPenCV 5 exception while processing face recognition.
 014 --> 522423 - Pictures in Dates tab not showing, also takes very long to load (0-100%).
 015 --> 522695 - Face management workflow "Scan new images" incorrectly scans the entire photo collection.
-016 --> 
+016 --> 522792 - The 9.1.0 compile version will not deploy on Ubuntu 26. I had to extract the AppImage.
 017 --> 
 018 --> 
 019 --> 
