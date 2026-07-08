@@ -1208,15 +1208,15 @@ qlonglong CoreDB::findImageId(int albumID, const QString& name,
                        boundValues, &values);
     }
 
-    if (values.isEmpty())
+    // If there are several identical image ids, we do not use
+    // any of them, as correct assignment is not possible.
+
+    if (values.size() != 1)
     {
         return -1;
     }
 
-    // If there are several identical image ids,
-    // probably use the last most recent one.
-
-    return values.last().toLongLong();
+    return values.first().toLongLong();
 }
 
 QStringList CoreDB::getItemTagNames(qlonglong imageID) const

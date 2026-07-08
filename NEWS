@@ -39,7 +39,7 @@ BUGFIXES:
 014 --> 522423 - Pictures in Dates tab not showing, also takes very long to load (0-100%).
 015 --> 522695 - Face management workflow "Scan new images" incorrectly scans the entire photo collection.
 016 --> 522792 - The 9.1.0 compile version will not deploy on Ubuntu 26. I had to extract the AppImage.
-017 --> 
+017 --> 522770 - Face tag not read from .xmp for jxl files.
 018 --> 
 019 --> 
 020 --> 
