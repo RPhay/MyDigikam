@@ -886,9 +886,13 @@ void CollectionScanner::scanFileNormal(const QFileInfo& fi, const ItemScanInfo& 
 {
     bool hasMetadataHint       = (d->hints && d->hints->hasMetadataHint(scanInfo.id));
     QDateTime modificationDate = asDateTimeUTC(fi.lastModified());
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Scanner debug:" << modificationDate
-                                                      << scanInfo.modificationDate
-                                                      << s_modificationDateEquals(modificationDate, scanInfo.modificationDate);
+
+    if (!s_modificationDateEquals(modificationDate, scanInfo.modificationDate))
+    {
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Scanner debug:" << modificationDate
+                                                          << scanInfo.modificationDate;
+    }
+
     // if the date is null, this signals a full rescan
 
     if      (scanInfo.modificationDate.isNull())
