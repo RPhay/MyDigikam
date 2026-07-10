@@ -29,7 +29,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2023, 2024, 2025, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2007-2010, 2023-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 # Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Arve Eriksson <031299870@telia.com>, 2011.
 # Stefan Asserhäll <stefan.asserhall@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
@@ -44,14 +44,14 @@ msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-25 00:41+0000\n"
-"PO-Revision-Date: 2026-01-20 20:24+0100\n"
+"PO-Revision-Date: 2026-07-09 17:55+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/app/date/ddateedit.cpp:489
@@ -356,13 +356,11 @@ msgstr[0] "Ändra ansiktsnamn från '%2' till '%3'"
 msgstr[1] "Ändra ansiktsnamn från '%2' till '%3'"
 
 #: core/app/dragdrop/tagdragdrop.cpp:538
-#, fuzzy, kde-format
-#| msgid "Assign Tag '%1' to Items"
-#| msgid_plural "Assign Tag(s) '%1' to Items"
+#, kde-format
 msgid "Assign Tag '%2' to Items"
 msgid_plural "Assign Tag(s) '%2' to Items"
-msgstr[0] "Tilldela etikett '%1' till objekt"
-msgstr[1] "Tilldela etiketter '%1' till objekt"
+msgstr[0] "Tilldela etikett '%2' till objekt"
+msgstr[1] "Tilldela etiketterna '%2' till objekt"
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:38
 #, kde-format
@@ -390,36 +388,30 @@ msgstr ""
 "filtrera bilderna. Det omfattar också kryssrutan '%1'."
 
 #: core/app/filters/filtersidebarwidget_faces.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgctxt "@title"
 msgid "People"
 msgstr "Personer"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:36
-#, fuzzy, kde-format
-#| msgid "Text Filter"
+#, kde-format
 msgid "Text Filter:"
-msgstr "Textfilter"
+msgstr "Textfilter:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:41
-#, fuzzy, kde-format
-#| msgid "MIME Type Filter"
+#, kde-format
 msgid "MIME Type Filter:"
-msgstr "Mimetyp-filter"
+msgstr "Mimetyp-filter:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:46
-#, fuzzy, kde-format
-#| msgid "Geolocation Filter"
+#, kde-format
 msgid "Geolocation Filter:"
-msgstr "Geografiskt lokaliseringsfilter"
+msgstr "Geografiskt lokaliseringsfilter:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:51
-#, fuzzy, kde-format
-#| msgid "Labels Filter"
+#, kde-format
 msgid "Labels Filter:"
-msgstr "Beteckningsfilter"
+msgstr "Beteckningsfilter:"
 
 #: core/app/filters/filtersidebarwidget_properties.cpp:72
 #: core/libs/dplugins/setup/dpluginaboutdlg.cpp:150
@@ -2115,18 +2107,16 @@ msgid "By Rating"
 msgstr "Enligt betyg"
 
 #: core/app/main/digikamapp_setup.cpp:630
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Pick Label"
-msgstr "Urvalsbeteckning:"
+msgstr "Enligt urvalsbeteckning"
 
 #: core/app/main/digikamapp_setup.cpp:631
-#, fuzzy, kde-format
-#| msgid "Color Label:"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Color Label"
-msgstr "Färgbeteckning:"
+msgstr "Enligt färgbeteckning:"
 
 #: core/app/main/digikamapp_setup.cpp:633
 #, kde-format
@@ -2135,11 +2125,10 @@ msgid "By Image Size"
 msgstr "Enligt bildstorlek"
 
 #: core/app/main/digikamapp_setup.cpp:634
-#, fuzzy, kde-format
-#| msgid "Any Orientation"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Orientation"
-msgstr "Godtycklig orientering"
+msgstr "Enligt orientering"
 
 #: core/app/main/digikamapp_setup.cpp:635
 #, kde-format
@@ -2148,11 +2137,10 @@ msgid "By Aspect Ratio"
 msgstr "Enligt proportion"
 
 #: core/app/main/digikamapp_setup.cpp:636
-#, fuzzy, kde-format
-#| msgid "Position"
+#, kde-format
 msgctxt "@action: setup"
 msgid "By Gps Position"
-msgstr "Position"
+msgstr "Enligt GPS-position"
 
 #: core/app/main/digikamapp_setup.cpp:638
 #, kde-format
@@ -2872,11 +2860,9 @@ msgid "format settings"
 msgstr "Formatinställningar"
 
 #: core/app/utils/digikam_version.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "@info: week properties"
-#| msgid "Start: "
+#, kde-format
 msgid "Support: "
-msgstr "Start: "
+msgstr "Support: "
 
 #: core/app/utils/digikam_version.cpp:63
 #, kde-format
@@ -2884,127 +2870,103 @@ msgid "Documentation: "
 msgstr "Dokumentation: "
 
 #: core/app/utils/digikam_version.cpp:66
-#, fuzzy, kde-format
-#| msgid "Contribute..."
+#, kde-format
 msgid "Contribute: "
-msgstr "Ge ett bidrag..."
+msgstr "Bidra: "
 
 #: core/app/utils/digikam_version.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Date: "
+#, kde-format
 msgid "Donate: "
-msgstr "Datum: "
+msgstr "Ge ett bidrag: "
 
 #: core/app/views/preview/itempreviewvideo.cpp:98
 #: core/app/views/preview/itempreviewview.cpp:283
-#, fuzzy, kde-format
-#| msgid "Crop Information"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show OSD Information"
-msgstr "Beskärningsinformation"
+msgstr "Visa information på skärmen"
 
 #: core/app/views/preview/itempreviewview.cpp:194
-#, fuzzy, kde-format
-#| msgctxt "go to previous image"
-#| msgid "Back"
+#, kde-format
 msgctxt "@info:tooltip Go to previous image"
 msgid "Back"
 msgstr "Tillbaka"
 
 #: core/app/views/preview/itempreviewview.cpp:196
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@info:tooltip Go to next image"
 msgid "Forward"
 msgstr "Framåt"
 
 #: core/app/views/preview/itempreviewview.cpp:207
-#, fuzzy, kde-format
-#| msgid "Add a Face Tag"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a Face Tag"
 msgstr "Lägg till en ansiktsetikett"
 
 #: core/app/views/preview/itempreviewview.cpp:212
-#, fuzzy, kde-format
-#| msgid "Clear all faces on this image"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear all faces on this image"
 msgstr "Rensa alla ansikten på den här bilden"
 
 #: core/app/views/preview/itempreviewview.cpp:215
-#, fuzzy, kde-format
-#| msgid "Mark all unconfirmed faces as ignored"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Mark all unconfirmed faces as ignored"
 msgstr "Markera alla obekräftade ansikten som ignorerade"
 
 #: core/app/views/preview/itempreviewview.cpp:222
-#, fuzzy, kde-format
-#| msgid "Show Face Tags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Face Tags"
 msgstr "Visa ansiktsetiketter"
 
 #: core/app/views/preview/itempreviewview.cpp:227
-#, fuzzy, kde-format
-#| msgid "Add a focus point"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a focus point"
 msgstr "Lägg till en fokuseringspunkt"
 
 #: core/app/views/preview/itempreviewview.cpp:229
-#, fuzzy, kde-format
-#| msgid "Show focus points"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show focus points"
 msgstr "Visa fokuseringspunkter"
 
 #: core/app/views/preview/itempreviewview.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Player error"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Play Motion Photo"
-msgstr "Uppspelningsfel"
+msgstr "Spela upp rörligt foto"
 
 #: core/app/views/preview/itempreviewview.cpp:247
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show Magnifier"
-msgstr "Visa nummer"
+msgstr "Visa förstoringsglas"
 
 #: core/app/views/preview/itempreviewview.cpp:252
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Zoom Factor"
-msgstr "Anpassa"
+msgstr "Zoomfaktor"
 
 #: core/app/views/preview/itempreviewview.cpp:275
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Under-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Under-Exposure Indicator"
 msgstr "Indikering av underexponering"
 
 #: core/app/views/preview/itempreviewview.cpp:279
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Over-Exposure Indicator"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Over-Exposure Indicator"
 msgstr "Indikering av överexponering"
 
 #: core/app/views/preview/itempreviewview.cpp:724
 #: core/app/views/stack/itemiconview_views.cpp:325
-#, fuzzy, kde-format
-#| msgid "Faces"
+#, kde-format
 msgctxt "@action: face workflow"
 msgid "Faces"
 msgstr "Ansikten"
@@ -3501,6 +3463,24 @@ msgid ""
 "development team, follow the links provided in the application <b>Help</b> "
 "menu entry. </p><h3>Thanks to support and use the digiKam project.</h3>"
 msgstr ""
+"<h3>Digikam är ett avancerat program med öppen källkod för hantering av "
+"digitala foton som finns på Linux, Windows och MacOS.</h3><p>Programmet "
+"tillhandahåller en omfattande uppsättning verktyg för att importera, "
+"hantera, redigera och dela media som tagits med en kamera. Man kan använda "
+"digiKams importfunktioner för att enkelt överföra foton, obehandlade filer "
+"och videor direkt från kameran och externa lagringsenheter (SD-kort, USB-"
+"diskar etc.). Programmet gör det möjligt att ställa in importinställningar "
+"och regler som bearbetar och organiserar importerade objekt i realtid.</"
+"p><p>För att återuppta, med Digikam kan man importera, organisera, "
+"förbättra, söka, exportera samlingar av foton och videor med mera...</"
+"p><p>För närvarande visas albumvyn i Digikam. Album är platserna där filer "
+"lagras och är identiska med kataloger på hårddisken.</p><p>Digikam har många "
+"kraftfulla funktioner som beskrivs i <b><a href=\"https://docs.digikam.org/"
+"en/index.html\">dokumentationen</a></b></p><p><b><a href=\"https://www."
+"digikam.org\">Digikams hemsida</a></b> ger information om nya versioner av "
+"Digikam.</p><p>För att kontakta Digikams användargemenskap eller för att "
+"stödja utvecklingsteamet, följ länkarna i programmets meny <b>Hjälp</b>.</"
+"p><h3>Tack till stödet och användningen av Digikam-projektet.</h3>"
 
 #: core/app/views/stack/welcomepageview_credits.cpp:50
 #, kde-format
@@ -3530,6 +3510,9 @@ msgid ""
 "f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
 "%1\">400 user-reports</a> closed on Bugzilla."
 msgstr ""
+"Mer än <a href=\"https://bugs.kde.org/buglist.cgi?"
+"f1=cf_versionfixedin&limit=0&o1=equals&order=bug_id&product=digikam&v1="
+"%1\">400 användarrapporter</a> stängda på Bugzilla."
 
 #: core/app/views/stack/welcomepageview_features.cpp:27
 #, kde-format
@@ -3538,12 +3521,17 @@ msgid ""
 "brings with it a variety of bug fixes and performance improvements (Qt5 "
 "only)."
 msgstr ""
+"Intern QtAVPlayer har uppdaterats till den senaste tillgängliga versionen "
+"2026-04-05 vilket för med sig en mängd felrättningar och "
+"prestandaförbättringar (bara Qt5)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:28
 #, kde-format
 msgid ""
 "Add support of customizable date format to show everywhere in the program."
 msgstr ""
+"Lägg till stöd för anpassningsbart datumformat som visas överallt i "
+"programmet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:29
 #, kde-format
@@ -3551,12 +3539,17 @@ msgid ""
 "Color label names are now customizable in the Labels tab from left sidebar "
 "by double clicking on text. Label strings size are limited to 32 characters."
 msgstr ""
+"Färgbeteckningsnamn kan nu anpassas under fliken Etiketter i vänster sidorad "
+"genom att dubbelklicka på texten. Beteckningarnas strängstorlek är begränsad "
+"till 32 tecken."
 
 #: core/app/views/stack/welcomepageview_features.cpp:30
 #, kde-format
 msgid ""
 "Add regular expression wildcard support for ignored directories settings."
 msgstr ""
+"Lägg till stöd för reguljära uttryck med jokertecken för inställningar av "
+"ignorerade kataloger."
 
 #: core/app/views/stack/welcomepageview_features.cpp:31
 #, kde-format
@@ -3564,27 +3557,33 @@ msgid ""
 "Split filters view into 3 separated tabs for better usability: Properties, "
 "Tags, and People."
 msgstr ""
+"Dela upp filtervyn i tre separata flikar för bättre användbarhet: "
+"Egenskaper, Etiketter och Personer."
 
 #: core/app/views/stack/welcomepageview_features.cpp:32
 #, kde-format
 msgid "Load and save Trash-view column states between sessions."
-msgstr ""
+msgstr "Läs in och spara kolumnstatus för papperskorgen mellan sessioner."
 
 #: core/app/views/stack/welcomepageview_features.cpp:33
 #, kde-format
 msgid ""
 "Clicking on GPS icon overlay opens the Geolocation tab from the left sidebar."
 msgstr ""
+"Att klicka på den överlagrade GPS-ikonen öppnas fliken Geografisk "
+"lokalisering i vänster sidorad."
 
 #: core/app/views/stack/welcomepageview_features.cpp:34
 #, kde-format
 msgid "Add customizable columns to show Grouped and Versioned properties."
 msgstr ""
+"Lägg till anpassningsbara kolumner för att visa grupperade och "
+"versionsbaserade egenskaper."
 
 #: core/app/views/stack/welcomepageview_features.cpp:35
 #, kde-format
 msgid "New Advanced Rename modifier Date Format."
-msgstr ""
+msgstr "Ny ändring av datumformat i Avancerat namnbyte."
 
 #: core/app/views/stack/welcomepageview_features.cpp:36
 #, kde-format
@@ -3592,45 +3591,46 @@ msgid ""
 "Add support to merge existing template entries assigned in items with a new "
 "template."
 msgstr ""
+"Lägg till stöd för att sammanfoga befintliga mallposter som tilldelats i "
+"objekt med en ny mall."
 
 #: core/app/views/stack/welcomepageview_features.cpp:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Slideshow option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Aktivera alternativet för att använda bakgrundsfärgen från temat i "
-"bildredigeringsområdet."
+"Lägg till ett nytt bildspelsalternativ för att anpassa bakgrundsfärgen "
+"istället för rent svart om bilderna används med genomskinlighet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid ""
 "Add new Presentation option to customize the color background instead pure "
 "black in case of images transparency usage."
 msgstr ""
-"Aktivera alternativet för att använda bakgrundsfärgen från temat i "
-"bildredigeringsområdet."
+"Lägg till ett nytt presentationsalternativ för att anpassa bakgrundsfärgen "
+"istället för rent svart vid användning av bilders genomskinlighet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:39
 #, kde-format
 msgid "Complete rewrite the File-Transfert tool GUI for a better usability."
 msgstr ""
+"Fullständig omskrivning av filöverföringsverktygets grafiska "
+"användargränssnittet för bättre användbarhet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:40
 #, kde-format
 msgid "Complete rewrite the File-Copy tool GUI for a better usability."
 msgstr ""
+"Fullständig omskrivning av filkopieringsverktygets grafiska "
+"användargränssnittet för bättre användbarhet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:41
 #, kde-format
 msgid "Add marching-ants effect to the canvas selection rubber band."
 msgstr ""
+"Lägg till effekten markeringsram på gummibandet för markering på duken."
 
 #: core/app/views/stack/welcomepageview_features.cpp:42
 #, kde-format
@@ -3638,11 +3638,13 @@ msgid ""
 "Add pick color histogram indicators for the Curves, Levels, White Balance, "
 "and Black & White Sepia tools."
 msgstr ""
+"Lägg till färgvalshistogramindikering för verktygen Kurvor, Nivåer, "
+"Vitbalans och Svartvitt sepia."
 
 #: core/app/views/stack/welcomepageview_features.cpp:43
 #, kde-format
 msgid "Rewrite the welcome page in more modern style."
-msgstr ""
+msgstr "Skriv om välkomstsidan i en mer modern stil."
 
 #: core/app/views/stack/welcomepageview_features.cpp:44
 #, kde-format
@@ -3650,73 +3652,73 @@ msgid ""
 "Huge web site update about contents and design eg. screenshots, description, "
 "history, features, support, download, etc."
 msgstr ""
+"Stor webbplatsuppdatering av innehåll och design, t.ex. skärmbilder, "
+"beskrivningar, historik, funktioner, support, nerladdningar etc."
 
 #: core/app/views/stack/welcomepageview_features.cpp:46
-#, fuzzy, kde-format
-#| msgctxt "Caption type: COMMENT"
-#| msgid "Item comments"
+#, kde-format
 msgid "Sort Item improvements:"
-msgstr "objektkommentarer"
+msgstr "Förbättringar av objektsortering:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:48
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Lägg till stöd för sortera objekt enligt urval och färgbeteckningar i "
+"albumikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:49
 #, kde-format
 msgid "Add support of Import Icon-View sort items by Pick and Color Labels."
 msgstr ""
+"Lägg till stöd för sortera objekt enligt urval och färgbeteckningar i "
+"importikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:50
 #, kde-format
 msgid "Add support of Album Icon-View sort items by Orientation."
-msgstr ""
+msgstr "Lägg till stöd för sortera objekt enligt orientering i albumikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:51
 #, kde-format
 msgid "Add support of Album Icon-View sort items by GPS location."
-msgstr ""
+msgstr "Lägg till stöd för sortera objekt enligt GPS-plats i albumikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:52
 #, kde-format
 msgid "Add support of Album Icon-View sort items by File Format."
-msgstr ""
+msgstr "Lägg till stöd för sortera objekt enligt filformat i albumikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:53
 #, kde-format
 msgid "Add support of Import Icon-View sort items by File Format."
-msgstr ""
+msgstr "Lägg till stöd för sortera objekt enligt filformat i importikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:56
-#, fuzzy, kde-format
-#| msgid "Item Properties"
+#, kde-format
 msgid "Item Property improvements:"
-msgstr "Objektegenskaper"
+msgstr "Förbättringar av objektegenskaper:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:58
-#, fuzzy, kde-format
-#| msgid "Copy the all properties in clipboard"
+#, kde-format
 msgid "Add new button to copy all properties as text in clipboard."
-msgstr "Kopiera alla egenskaper på klippbordet"
+msgstr ""
+"Lägg till ny knapp för att kopiera alla egenskaper som text på klippbordet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:59
-#, fuzzy, kde-format
-#| msgid "Add new tag to current tag. Current tag is last clicked tag."
+#, kde-format
 msgid "Add new button to open current item in file manager."
-msgstr ""
-"Lägg till ny etikett i nuvarande etikett. Nuvarande etikett är den senast "
-"klickade etiketten."
+msgstr "Lägg till ny knapp för att öppna aktuellt objekt i filhanteraren."
 
 #: core/app/views/stack/welcomepageview_features.cpp:60
 #, kde-format
 msgid "If no icon-view item selected, show current album statistics."
-msgstr ""
+msgstr "Om inget objekt är valt i ikonvyn visas aktuell albumstatistik."
 
 #: core/app/views/stack/welcomepageview_features.cpp:63
 #, kde-format
 msgid "Grouped Item improvements:"
-msgstr ""
+msgstr "Förbättringar av grupperade objekt:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:65
 #, kde-format
@@ -3724,23 +3726,26 @@ msgid ""
 "Show items from an open group highlighted for a better usability with Icon-"
 "View."
 msgstr ""
+"Visa objekt från en öppen grupp markerade för bättre användbarhet med ikonvy."
 
 #: core/app/views/stack/welcomepageview_features.cpp:66
 #, kde-format
 msgid "Usability improvements of the grouped icon-view items overlay."
 msgstr ""
+"Användbarhetsförbättringar av överlagring för grupperade objekt i ikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:67
 #, kde-format
 msgid ""
 "Thumbbar improvements to support grouped items visibility as with Icon-View."
 msgstr ""
+"Förbättringar av miniatyrraden för att stödja synligheten av grupperade "
+"objekt som med ikonvyn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:70
-#, fuzzy, kde-format
-#| msgid "Preview grouped items"
+#, kde-format
 msgid "Preview Mode improvements:"
-msgstr "Förhandsgranskar grupperade objekt"
+msgstr "Förbättringar av förhandsgranskningsläge:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:72
 #, kde-format
@@ -3750,11 +3755,18 @@ msgid ""
 "available in preview mode. I can be used in fullscreen on a separated "
 "monitor to quickly review items during you workflow."
 msgstr ""
+"Ett nytt undersökningsverktyg har introducerats för att förhandsgranska "
+"objekt i separata fönster och synkroniseras med ikonvyn. Det stöder alla "
+"funktioner som är tillgängliga i förhandsgranskningsläge. Det kan användas i "
+"fullskärm på en separat skärm för att snabbt granska objekt under "
+"arbetsflödet."
 
 #: core/app/views/stack/welcomepageview_features.cpp:73
 #, kde-format
 msgid "Extend Image and Video preview toolbar overlay with Labels editor."
 msgstr ""
+"Utöka överlagring av verktygsraden för förhandsgranskning av bilder och "
+"videor med beteckningseditorn."
 
 #: core/app/views/stack/welcomepageview_features.cpp:74
 #, kde-format
@@ -3762,17 +3774,21 @@ msgid ""
 "Add new Preview toolbar buttons: exposure indicators, color management, OSD, "
 "magnifier."
 msgstr ""
+"Lägg till nya knappar i verktygsraden för förhandsgranskning: "
+"exponeringsindikatorer, färghantering, skärmtext, förstoringsglas."
 
 #: core/app/views/stack/welcomepageview_features.cpp:75
 #, kde-format
 msgid "Add context-menu to the video player."
-msgstr ""
+msgstr "Tillägg av sammanhangsberoende meny i videospelaren."
 
 #: core/app/views/stack/welcomepageview_features.cpp:76
 #, kde-format
 msgid ""
 "Add load progress indicator on the status bar (Icon-view and LightTable)."
 msgstr ""
+"Lägg till en indikator för laddningsförlopp i statusfältet (ikonvy och "
+"ljusbordet)."
 
 #: core/app/views/stack/welcomepageview_features.cpp:77
 #, kde-format
@@ -3780,6 +3796,8 @@ msgid ""
 "Add trackpad gesture events support to zoom the contents, pan the canvas, "
 "and change to previous/next items."
 msgstr ""
+"Lägg till stöd för gester på styrplattan för att zooma innehållet, panorera "
+"duken och byta till föregående/nästa objekt."
 
 #: core/app/views/stack/welcomepageview_features.cpp:78
 #, kde-format
@@ -3787,11 +3805,14 @@ msgid ""
 "Add a magnifier glass tool to zoom and explore a small area of the preview "
 "canvas. Tool Size and zoom factor are customizable."
 msgstr ""
+"Lägg till ett förstoringsglas för att zooma och utforska ett litet område av "
+"förhandsgranskningsduken. Verktygsstorlek och zoomfaktor kan anpassas."
 
 #: core/app/views/stack/welcomepageview_features.cpp:79
 #, kde-format
 msgid "Add under and over exposure indicators for the preview canvas."
 msgstr ""
+"Tillägg av under- och överexponeringsindikering för förhandsgranskningsduken."
 
 #: core/app/views/stack/welcomepageview_features.cpp:80
 #, kde-format
@@ -3799,22 +3820,18 @@ msgid ""
 "Railway over the canvas is displayed as an overlay when the scrollbar are "
 "visible."
 msgstr ""
+"Spår över duken visas som en överlagring när rullningslisten är synlig."
 
 #: core/app/views/stack/welcomepageview_features.cpp:83
-#, fuzzy, kde-format
-#| msgid "Advanced Searches Tool Improvements"
+#, kde-format
 msgid "Advanced Search improvements:"
-msgstr "Förbättringar av det avancerade sökverktyget"
+msgstr "Förbättringar av avancerad sökning:"
 
 #: core/app/views/stack/welcomepageview_features.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "Add video support to find files based on properties registered on "
-#| "database."
+#, kde-format
 msgid "New options to find empty properties registered in the database."
 msgstr ""
-"Lägg till videostöd för att hitta filer baserat på egenskaper registrerade i "
-"databasen."
+"Nya alternativ för att hitta tomma egenskaper registrerade i databasen."
 
 #: core/app/views/stack/welcomepageview_features.cpp:86
 #, kde-format
@@ -3822,24 +3839,25 @@ msgid ""
 "Add support to search Creator and Author fields to be drop down lists "
 "populated with the values already presents in the database."
 msgstr ""
+"Lägg till stöd för att söka i fälten Skapare och Upphovsman som "
+"kombinationslistor som fylls i med de värden som redan finns i databasen."
 
 #: core/app/views/stack/welcomepageview_features.cpp:87
 #, kde-format
 msgid "Add support to search recently modified items in the database."
-msgstr ""
+msgstr "Lägg till stöd för att söka efter nyligen ändrade objekt i databasen."
 
 #: core/app/views/stack/welcomepageview_features.cpp:90
-#, fuzzy, kde-format
-#| msgid "Update internal RAW engine to last Libraw snapshot 2025-05-12."
+#, kde-format
 msgid "Update internal RAW engine to last Libraw snapshot 2026-04-06."
 msgstr ""
 "Uppdatering av internt gränssnitt för obehandlade bilder till senaste Libraw "
-"avbilden 2025-05-12."
+"avbilden 2026-04-06."
 
 #: core/app/views/stack/welcomepageview_features.cpp:91
 #, kde-format
 msgid "New RAW camera supported:"
-msgstr ""
+msgstr "Nytt kamerastöd för obehandlade bilder"
 
 #: core/app/views/stack/welcomepageview_features.cpp:93
 #, kde-format
@@ -3847,31 +3865,33 @@ msgid ""
 "Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
 "R100, EOS Ra Canon EOS Kiss M2;"
 msgstr ""
+"Canon EOS R1, EOS R5 Mark II, EOS R5 C, EOS R6 Mark II, EOS R8, EOS R50, EOS "
+"R100, EOS Ra Canon EOS Kiss M2"
 
 #: core/app/views/stack/welcomepageview_features.cpp:94
 #, kde-format
 msgid "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S ;"
-msgstr ""
+msgstr "Fujifilm X-T50, GFX 100S II, GFX100-II, X-T5, X-S20, X-H2, X-H2S"
 
 #: core/app/views/stack/welcomepageview_features.cpp:95
 #, kde-format
 msgid "Hasselblad  CFV-50c, CFV-100c, X2D-100c ;"
-msgstr ""
+msgstr "Hasselblad  CFV-50c, CFV-100c, X2D-100c"
 
 #: core/app/views/stack/welcomepageview_features.cpp:96
 #, kde-format
 msgid "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom ;"
-msgstr ""
+msgstr "Leica Q3 43, D-Lux8, SL3, Q3, M11 Monochrom"
 
 #: core/app/views/stack/welcomepageview_features.cpp:97
 #, kde-format
 msgid "Nikon (standard compression only): Z6-III, Z f, Z30, Z8 ;"
-msgstr ""
+msgstr "Nikon (standard compression only): Z6-III, Z f, Z30, Z8"
 
 #: core/app/views/stack/welcomepageview_features.cpp:98
 #, kde-format
 msgid "Olympus/OM System OM-1 Mark II, TG-7, OM-5 ;"
-msgstr ""
+msgstr "Olympus/OM System OM-1 Mark II, TG-7, OM-5"
 
 #: core/app/views/stack/welcomepageview_features.cpp:99
 #, kde-format
@@ -3879,11 +3899,13 @@ msgid ""
 "Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
 "TZ220D, DC-S5-II, DC-GH6 ;"
 msgstr ""
+"Panasonic GH7, S9, DC-G9 II, DC-ZS200D / ZS220D, DC-TZ200D / TZ202D / "
+"TZ220D, DC-S5-II, DC-GH6"
 
 #: core/app/views/stack/welcomepageview_features.cpp:100
 #, kde-format
 msgid "Pentax KF, K III Monochrome ;"
-msgstr ""
+msgstr "Pentax KF, K III Monochrome"
 
 #: core/app/views/stack/welcomepageview_features.cpp:101
 #, kde-format
@@ -3891,39 +3913,37 @@ msgid ""
 "Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
 "ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1 ;"
 msgstr ""
+"Sony ZV-E10M2, UMC-R10C, A9-III, ILX-LR1, A7C-II, A7CR, ILCE-6700,  ZV-1M2, "
+"ZV-E1, ILCE-7RM5 (A7R-V), ILME-FX30, A1"
 
 #: core/app/views/stack/welcomepageview_features.cpp:102
 #, kde-format
 msgid "Multiple DJI and Skydio drones ;"
-msgstr ""
+msgstr "Flera DJI- och Skydio-drönare"
 
 #: core/app/views/stack/welcomepageview_features.cpp:103
 #, kde-format
 msgid "Multiple smartphones with DNG format recorded."
-msgstr ""
+msgstr "Flera smarta telefoner med DNG-format."
 
 #: core/app/views/stack/welcomepageview_features.cpp:108
 #, kde-format
 msgid "...and much more."
-msgstr "... och mycket mer."
+msgstr "... och många fler."
 
 #: core/app/views/stack/welcomepageview_features.cpp:114
-#, fuzzy, kde-format
-#| msgid "<li>%1</li><br>"
+#, kde-format
 msgid "<li>%1</li>"
-msgstr "<li>%1</li><br>"
+msgstr "<li>%1</li>"
 
 #: core/app/views/stack/welcomepageview_features.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some of the new features in this release of digiKam include (compared to "
-#| "digiKam 7):"
+#, kde-format
 msgid ""
 "<h3>Some of the new features in this release of digiKam include (compared to "
 "digiKam version 8):</h3><ul>%1</ul>"
 msgstr ""
-"Vissa av de nya funktionerna i den här utgåvan av Digikam omfattar (jämfört "
-"med Digikam 7):"
+"<h3>Vissa av de nya funktionerna i den här utgåvan av Digikam omfattar "
+"(jämfört med Digikam version 8):</h3><ul>%1</ul>"
 
 #: core/app/views/tableview/tableview.cpp:369
 #, kde-format
@@ -4032,20 +4052,16 @@ msgid "Tags"
 msgstr "Etiketter"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:82
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgctxt "@title: grouped"
 msgid "Grouped"
-msgstr "Grupperad: "
+msgstr "Grupperad"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versioned: "
+#, kde-format
 msgctxt "@title: versioned"
 msgid "Versioned"
-msgstr "Versionshanterad: "
+msgstr "Versionshanterad"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:94
 #, kde-format
@@ -4084,20 +4100,16 @@ msgid "Tags"
 msgstr "Etiketter"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:124
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Grouped"
-msgstr "Grupperad: "
+msgstr "Grupperad"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versioned: "
+#, kde-format
 msgctxt "@info: tableview"
 msgid "Versioned"
-msgstr "Versionshanterad: "
+msgstr "Versionshanterad"
 
 #: core/app/views/tableview/tableview_column_digikam.cpp:348
 #: core/app/views/tableview/tableview_column_digikam.cpp:388
@@ -4655,7 +4667,7 @@ msgstr "LibAVUtil"
 #, kde-format
 msgctxt "@item: component info"
 msgid "FFMpeg"
-msgstr ""
+msgstr "FFMpeg"
 
 #: core/app/views/utils/componentsinfodlg.cpp:149
 #: core/app/views/utils/componentsinfodlg.cpp:154
@@ -6465,6 +6477,8 @@ msgctxt "@label"
 msgid ""
 "Use the variable $ORGTEXT to insert the existing text into the new text."
 msgstr ""
+"Använd variabeln $ORGTEXT för att infoga den befintliga texten i den nya "
+"texten."
 
 #: core/dplugins/bqm/metadata/assigncaptions/assigncaptionsplugin.cpp:42
 #, kde-format
@@ -6549,12 +6563,10 @@ msgstr ""
 "djupinlärningsmodeller.</para>"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:42
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Apply Metadata Template"
+#, kde-format
 msgctxt "@title"
 msgid "Apply Template"
-msgstr "Använd metadatamall"
+msgstr "Använd mall"
 
 #: core/dplugins/bqm/metadata/assigntemplate/assigntemplateplugin.cpp:57
 #, kde-format
@@ -6836,9 +6848,7 @@ msgid "Auto-Rotate"
 msgstr "Rotera automatiskt"
 
 #: core/dplugins/bqm/transform/autorotate/autorotateplugin.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "AI tool to automatically rotate images"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to automatically rotate images"
 msgstr "Ett verktyg för att automatiskt rotera bilder"
@@ -20997,17 +21007,15 @@ msgid "Media Container Format:"
 msgstr "Mediebehållarens format:"
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "This control allows to choose the format of the media container to host "
-#| "video stream and soundtrack."
+#, kde-format
 msgid ""
 "This control allows to choose the format of the media container to host "
 "video stream and soundtrack.The entries in this list are populated "
 "corresponding to the format supported by FFMpeg."
 msgstr ""
 "Kontrollen gör det möjligt att välja format på mediebehållaren som "
-"innehåller videoströmmen och ljudspåret."
+"innehåller videoströmmen och ljudspåret. Posterna i listan är ifyllda i "
+"enlighet med det format som stöds av FFMpeg."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslideoutputpage.cpp:123
 #, kde-format
@@ -21150,6 +21158,9 @@ msgid ""
 "entries in this list are populated corresponding to the codec supported by "
 "FFMpeg."
 msgstr ""
+"Kontrollen gör det möjligt att välja kodaren använd för att koda "
+"videoströmmen. Posterna i listan är ifyllda i enlighet med det kodaren som "
+"stöds av FFMpeg."
 
 #: core/dplugins/generic/tools/videoslideshow/vidslidevideopage.cpp:169
 #, kde-format
@@ -21348,36 +21359,12 @@ msgid "OpenGL Viewer"
 msgstr "OpenGL-visare"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:56
-#, fuzzy, kde-format
-#| msgid "A tool to preview image with OpenGL"
+#, kde-format
 msgid "A tool to preview items with OpenGL"
 msgstr "Ett verktyg för att förhandsgranska bilder med OpenGL"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:61
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool preview a series of items using OpenGL effects.</"
-#| "p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td>Next Item:</"
-#| "td><td><i>Down</i> key</td></tr><tr><td></td><td><i>PgDown</i> key</td></"
-#| "tr><tr><td></td><td><i>Right</i> key</td></tr><tr><td></td><td>Mouse "
-#| "wheel down</td></tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td "
-#| "colspan=\"2\"><nobr><center><b><h1>Item Display</h1></b></center></nobr></"
-#| "td></tr><tr><td>Toggle fullscreen to normal:</td><td><i>f</i> key</td></"
-#| "tr><tr><td>Toggle scroll-wheel action:</td><td><i>c</i> key (either zoom "
-#| "or change image)</td></tr><tr><td>Rotation:</td><td><i>r</i> key</td></"
-#| "tr><tr><td>Reset view:</td><td>double click</td></tr><tr><td>Original "
-#| "size:</td><td><i>o</i> key</td></tr><tr><td>Zooming:</td><td>Move mouse "
-#| "in up-down-direction while pressing the right mouse button</td></"
-#| "tr><tr><td></td><td><i>c</i> key and use the scroll-wheel</td></"
-#| "tr><tr><td></td><td><i>+</i> and <i>-</i> keys</td></tr><tr><td></"
-#| "td><td>ctrl + scrollwheel</td></tr><tr><td>Panning:</td><td>Move mouse "
-#| "while pressing the left button</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool preview a series of items using OpenGL effects.</p><p><u>Usage:"
 "</u></p><table><tr><td colspan=\"2\"><nobr><center><b><h1>Item Access</h1></"
@@ -21414,8 +21401,8 @@ msgstr ""
 "colspan=\"2\"><nobr><center><b><h1>Objektvisning</h1></b></center></nobr></"
 "td></tr><tr><td>Byt fullskärm till normal:</td><td>tangenten <i>f</i></td></"
 "tr><tr><td>Ändra mushjulets åtgärd:</td><td>tangenten <i>c</i> (antingen "
-"zooma eller byt bild)</td></tr><tr><td>Rotation:</td><td>tangenten <i>r</i></"
-"td></tr><tr><td>Återställ visning:</td><td>dubbelklick</td></"
+"zooma eller byt objekt)</td></tr><tr><td>Rotation:</td><td>tangenten <i>r</"
+"i></td></tr><tr><td>Återställ visning:</td><td>dubbelklick</td></"
 "tr><tr><td>Originalstorlek:</td><td>tangenten <i>o</i></td></"
 "tr><tr><td>Zoomning:</td><td>Flytta musen i riktning uppåt eller neråt medan "
 "höger musknapp hålls nere</td></tr><tr><td></td><td>tangenten <i>c</i> och "
@@ -21427,8 +21414,7 @@ msgstr ""
 "table>"
 
 #: core/dplugins/generic/view/glviewer/glviewerplugin.cpp:138
-#, fuzzy, kde-format
-#| msgid "OpenGL Viewer"
+#, kde-format
 msgctxt "@action"
 msgid "OpenGL Viewer"
 msgstr "OpenGL-visare"
@@ -21977,10 +21963,9 @@ msgstr "Sk&riv ut filnamn"
 
 #. i18n: ectx: property (text), widget (QLabel, m_bgLabel)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:241
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for images:"
-msgstr "An&vänd bakgrundsfärg från tema"
+msgstr "Använd bakgrundsfärg för bilder:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, m_printCommentsCheckBox)
 #: core/dplugins/generic/view/presentation/dialogs/presentation_mainpage.ui:248
@@ -22279,34 +22264,28 @@ msgid "Behavior"
 msgstr "Beteende"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:112
-#, fuzzy, kde-format
-#| msgid "Delay between images:"
+#, kde-format
 msgid "Delay between items: "
-msgstr "Fördröjning mellan bilder:"
+msgstr "Fördröjning mellan objekt:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:116
-#, fuzzy, kde-format
-#| msgid "The delay, in seconds, between images."
+#, kde-format
 msgid "The delay, in seconds, between items."
-msgstr "Fördröjningen i sekunder mellan bilder."
+msgstr "Fördröjningen i sekunder mellan objekt."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:118
-#, fuzzy, kde-format
-#| msgid "Start with current image"
+#, kde-format
 msgid "Start with current item"
-msgstr "Starta med nuvarande bild"
+msgstr "Starta med nuvarande objekt"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:119
-#, fuzzy, kde-format
-#| msgid ""
-#| "If this option is enabled, the Slideshow will be started with the current "
-#| "image selected in the images list."
+#, kde-format
 msgid ""
 "If this option is enabled, the Slideshow will be started with the current "
 "item selected in the items list."
 msgstr ""
-"Om alternativet är markerat, startas bildspelet med den nuvarande bilden som "
-"valts i bildlistan."
+"Om alternativet är markerat, startas bildspelet med det nuvarande objektet "
+"som valts i objektlistan."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:122
 #, kde-format
@@ -22319,10 +22298,9 @@ msgid "Run the slideshow in a loop."
 msgstr "Kör bildspelet upprepade gånger."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Shuffle images"
+#, kde-format
 msgid "Shuffle items"
-msgstr "Blanda bilder"
+msgstr "Blanda objekt"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:126
 #, kde-format
@@ -22341,50 +22319,39 @@ msgid ""
 msgstr "Visa förloppsindikering med väntande objekt att visa och tidsåtgång."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "Show progress indicator"
+#, kde-format
 msgid "Show labels editor"
-msgstr "Visa förloppsindikering"
+msgstr "Visa beteckningseditor"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:132
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the digiKam image color label and pick label at the bottom of the "
-#| "screen."
+#, kde-format
 msgid ""
 "Show the digiKam item color label and pick label editors at the bottom of "
 "the screen."
 msgstr ""
-"Visa Digikams färgbeteckning och urvalsbeteckning för bilder längst ner på "
-"skärmen."
+"Visa Digikams editorer för färgbeteckning och urvalsbeteckning för objekt "
+"längst ner på skärmen."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Show Geolocation Indicator"
+#, kde-format
 msgid "Show rating editor"
-msgstr "Visa geografisk lokaliseringsindikering"
+msgstr "Visa betygseditor"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image rating at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item rating editor at the bottom of the screen."
-msgstr "Visa Digikams bildbetyg längst ner på skärmen."
+msgstr "Visa Digikams editor för objektbetyg längst ner på skärmen."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:137
-#, fuzzy, kde-format
-#| msgid "&Use theme background color"
+#, kde-format
 msgid "Use background color for items:"
-msgstr "An&vänd bakgrundsfärg från tema"
+msgstr "Använd bakgrundsfärg för objekt:"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:139
-#, fuzzy, kde-format
-#| msgid ""
-#| "Enable this option to use the background theme color in the image editor "
-#| "area."
+#, kde-format
 msgid "Define a color to use as background to render items on screen."
 msgstr ""
-"Aktivera alternativet för att använda bakgrundsfärgen från temat i "
-"bildredigeringsområdet."
+"Definiera en färg att använda som bakgrund för att återge objekt på skärmen."
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:141
 #, kde-format
@@ -22417,16 +22384,13 @@ msgid "Screen %1"
 msgstr "Skärm %1"
 
 #: core/dplugins/generic/view/slideshow/dialogs/setupslideshow_dialog.cpp:178
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: This dialog for the Slideshow Settings can be activated at any "
-#| "time with the F2 key.</b>"
+#, kde-format
 msgid ""
 "<b>Note: This dialog for the Slideshow Settings can be activated at any time "
 "with the Alt+P key.</b>"
 msgstr ""
 "<b>Observera: Dialogrutan för inställningar av bildspelet kan aktiveras när "
-"som helst med F2-tangenten.</b>"
+"som helst med tangenten Alt+P.</b>"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:50
 #, kde-format
@@ -22439,33 +22403,7 @@ msgid "A tool to render slideshow"
 msgstr "Ett verktyg för att återge ett bildspel"
 
 #: core/dplugins/generic/view/slideshow/slideshowplugin.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>This tool render a series of items as a simple slide-show.</"
-#| "p><p>Plenty of items properties can be displayed as overlay while running."
-#| "</p><p>This tool can play album contents in recursive mode with children "
-#| "albums if any.</p><p><u>Usage:</u></p><table><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Access</h1></b></center></nobr></td></"
-#| "tr><tr><td>Previous Item:</td><td><i>Up</i> key</td></tr><tr><td></"
-#| "td><td><i>PgUp</i> key</td></tr><tr><td></td><td><i>Left</i> key</td></"
-#| "tr><tr><td></td><td>Mouse wheel up</td></tr><tr><td></td><td>Left mouse "
-#| "button</td></tr><tr><td>Next Item:</td><td><i>Down</i> key</td></"
-#| "tr><tr><td></td><td><i>PgDown</i> key</td></tr><tr><td></td><td><i>Right</"
-#| "i> key</td></tr><tr><td></td><td>Mouse wheel down</td></tr><tr><td></"
-#| "td><td>Right mouse button</td></tr><tr><td>Pause/Start:</td><td><i>Space</"
-#| "i> key</td></tr><tr><td>Video forward:</td><td><i>Ctrl+Right</i> key</"
-#| "td></tr><tr><td>Video backward:</td><td><i>Ctrl+Left</i> key</td></"
-#| "tr><tr><td>Slideshow Settings:</td><td><i>Alt+P</i> key</td></"
-#| "tr><tr><td>Hide/Show Overlays:</td><td><i>Alt+Y</i> key</td></"
-#| "tr><tr><td>Quit:</td><td><i>Esc</i> key</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Item Properties</h1></b></center></nobr></td></"
-#| "tr><tr><td>Change Tags:</td><td>Use Tags keyboard shortcuts</td></"
-#| "tr><tr><td>Change Rating:</td><td>Use Rating keyboard shortcuts</td></"
-#| "tr><tr><td>Change Color Label:</td><td>Use Color label keyboard "
-#| "shortcuts</td></tr><tr><td>Change Pick Label:</td><td>Use Pick label "
-#| "keyboard shortcuts</td></tr><tr><td colspan="
-#| "\"2\"><nobr><center><b><h1>Others</h1></b></center></nobr></td></"
-#| "tr><tr><td>Show this help:</td><td><i>F1</i> key</td></tr></table>"
+#, kde-format
 msgid ""
 "<p>This tool render a series of items as a simple slide-show.</p><p>Plenty "
 "of items properties can be displayed as overlay while running.</p><p>This "
@@ -22506,6 +22444,7 @@ msgstr ""
 "Down</i></td></tr><tr><td></td><td>tangenten <i>Högerpil</i></td></"
 "tr><tr><td></td><td>Mushjul ner</td></tr><tr><td></td><td>Höger musknapp</"
 "td></tr><tr><td>Paus/Start:</td><td>tangenten <i>Mellanslag</i></td></"
+"tr><tr><td>Ta bort (till papperskorg):</td><td>tangenten <i>Delete</i></td></"
 "tr><tr><td>Video framåt:</td><td>tangenten <i>Ctrl+Högerpil</i></td></"
 "tr><tr><td>Video bakåt:</td><td>tangenten <i>Ctrl+Vänsterpil</i></td></"
 "tr><tr><td>Bildspelets inställningar:</td><td>tangenten <i>Alt+P</i></td></"
@@ -23120,8 +23059,7 @@ msgid "Use the album path of the items in the target"
 msgstr "Använd albumsökvägen för objekten i målet"
 
 #: core/dplugins/generic/webservices/filecopy/fcexportwidget.cpp:123
-#, fuzzy, kde-format
-#| msgid "Adjust image properties"
+#, kde-format
 msgid "Adjust Image Properties"
 msgstr "Justera bildegenskaper"
 
@@ -23222,39 +23160,35 @@ msgid "Export to local storage..."
 msgstr "Exportera till lokal lagring..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Target Location: "
 msgstr "Målplats: "
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the target address to upload the images to. This can be any address as "
 "used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
 "Ställer in måladress att ladda upp bilderna till. Det kan vara vilken "
-"address som helst använd i Dolphin eller Konqueror, t.ex. ftp://min.server."
-"org/under/katalog."
+"address som helst använd i en filhanterare, t.ex.<br><i>ftp://min.server.org/"
+"under/katalog</i><br><i>fish://användarnamn@min.server.org/under/katalog</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:81
-#, fuzzy, kde-format
-#| msgid "Select export location..."
+#, kde-format
 msgid ""
 "Select export\n"
 "location..."
-msgstr "Välj exportplats..."
+msgstr ""
+"Välj\n"
+"exportplats..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:153
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Target Location..."
-msgstr "Välj importplats..."
+msgstr "Välj målplats..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftexportwidget.cpp:154
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:178
@@ -23295,43 +23229,36 @@ msgstr ""
 "nu försöka exportera bilderna igen."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Target location: "
+#, kde-format
 msgid "Source Location: "
-msgstr "Målplats: "
+msgstr "Källplats:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sets the target address to upload the images to. This can be any address "
-#| "as used in Dolphin or Konqueror, e.g. ftp://my.server.org/sub/folder."
+#, kde-format
 msgid ""
 "Sets the source address to download the images to. This can be any address "
 "as used in your file-manager, e.g:<br><i>ftp://my.server.org/sub/folder</"
 "i><br><i>fish://username@my.server.org/sub/folder</i>"
 msgstr ""
-"Ställer in måladress att ladda upp bilderna till. Det kan vara vilken "
-"address som helst använd i Dolphin eller Konqueror, t.ex. ftp://min.server."
-"org/under/katalog."
+"Ställer in källadress att ladda ner bilderna till. Det kan vara vilken "
+"address som helst använd i en filhanterare, t.ex.<br><i>ftp://min.server.org/"
+"under/katalog</i><br><i>fish://användarnamn@min.server.org/under/katalog</i>"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Select import location..."
+#, kde-format
 msgid "Select Source Location..."
-msgstr "Välj importplats..."
+msgstr "Välj källplats..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:89
-#, fuzzy, kde-format
-#| msgid "This is the list of items to copy to the specified target."
+#, kde-format
 msgid ""
 "This is the list of source items to import into the selected destination."
-msgstr "Det här är listan av objekt att kopiera till angivet mål."
+msgstr "Det här är listan av källobjekt att importera till angivet mål."
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:101
-#, fuzzy, kde-format
-#| msgid "Destination Path:"
+#, kde-format
 msgid "Select Destination Location:"
-msgstr "Målsökväg:"
+msgstr "Välj målplats:"
 
 #: core/dplugins/generic/webservices/filetransfer/ftimportwidget.cpp:176
 #, kde-format
@@ -23397,20 +23324,16 @@ msgstr ""
 "SAMBA, etc."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Export to Remote Storage..."
-msgstr "Exportera till annan dator"
+msgstr "Exportera till annan dator..."
 
 #: core/dplugins/generic/webservices/filetransfer/ftplugin.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Import from Remote Storage"
+#, kde-format
 msgctxt "@action"
 msgid "Import from Remote Storage..."
-msgstr "Importera från annan dator"
+msgstr "Importera från annan dator..."
 
 #: core/dplugins/generic/webservices/flickr/flickrlist.cpp:499
 #, kde-format
@@ -26614,35 +26537,29 @@ msgid "xdotcom"
 msgstr "xdotcom"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "A tool to export to Twitter web-service"
+#, kde-format
 msgctxt "@info"
 msgid "A tool to export to x.com (aka Twitter) web-service"
-msgstr "Ett verktyg för att exportera till webbtjänsten Twitter"
+msgstr ""
+"Ett verktyg för att exportera till webbtjänsten x.com (också känd som "
+"Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This tool allows users to export items to Twitter web-service.<br><br>See "
-#| "Twitter web site for details: %1"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This tool allows users to export items to x.com (aka Twitter) web-service."
 "<br><br>See Twitter web site for details: %1"
 msgstr ""
 "Verktyget gör det möjligt för användare att exportera objekt till "
-"webbtjänsten Twitter.<br><br>Se Twitter webbplats för detaljerad "
-"information: %1"
+"webbtjänsten x.com (också känd som Twitter).<br><br>Se Twitters webbplats "
+"för detaljerad information: %1"
 
 #: core/dplugins/generic/webservices/twitter/twitterplugin.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Export to &Twitter..."
+#, kde-format
 msgctxt "@action"
 msgid "Export to x.com (aka &Twitter)..."
-msgstr "Exportera till &Twitter..."
+msgstr "Exportera till x.com (också känd som &Twitter)..."
 
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:464
 #: core/dplugins/generic/webservices/twitter/twittertalker.cpp:476
@@ -26671,12 +26588,10 @@ msgid "Failed to create tweet for photo uploaded"
 msgstr "Misslyckades skapa inlägg för uppladdat foto"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:75
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Export to Twitter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export to x.com (aka Twitter)"
-msgstr "Exportera till Twitter"
+msgstr "Exportera till x.com (också känd som Twitter)"
 
 #: core/dplugins/generic/webservices/twitter/twitterwindow.cpp:78
 #, kde-format
@@ -27973,10 +27888,9 @@ msgid "Color"
 msgstr "Färg"
 
 #: core/libs/album/treeview/labelstreeview_p.cpp:52
-#, fuzzy, kde-format
-#| msgid "Enter tag name here..."
+#, kde-format
 msgid "Customize label name here..."
-msgstr "Skriv in nytt etikettnamn här..."
+msgstr "Anpassa etikettnamn här..."
 
 #: core/libs/album/widgets/albumpropsedit.cpp:104
 #, kde-format
@@ -29202,10 +29116,9 @@ msgid "Scanning images in individual albums..."
 msgstr "Söker efter bilder i individuella album..."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:129
-#, fuzzy, kde-format
-#| msgid "Migrate ->"
+#, kde-format
 msgid "Migrate →"
-msgstr "Överför ->"
+msgstr "Överför →"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:130
 #: core/libs/dplugins/webservices/wstooldialog.cpp:107
@@ -29232,16 +29145,14 @@ msgid "%p%"
 msgstr "%p %"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:143
-#, fuzzy, kde-format
-#| msgid "Step Progress"
+#, kde-format
 msgid "Step progress:"
-msgstr "Förloppssteg"
+msgstr "Stegförlopp:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:144
-#, fuzzy, kde-format
-#| msgid "Overall Progress"
+#, kde-format
 msgid "Overall progress:"
-msgstr "Totalt förlopp"
+msgstr "Totalt förlopp:"
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:218
 #, kde-format
@@ -29269,10 +29180,9 @@ msgid "Database conversion canceled."
 msgstr "Databaskonvertering avbruten."
 
 #: core/libs/database/utils/widgets/dbmigrationdlg.cpp:299
-#, fuzzy, kde-format
-#| msgid "Step Progress (%1)"
+#, kde-format
 msgid "Step progress (%1):"
-msgstr "Förloppssteg (%1)"
+msgstr "Stegförlopp (%1):"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:42
 #, kde-format
@@ -29280,9 +29190,7 @@ msgid "Database Configuration"
 msgstr "Databasinställning"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Type: "
+#, kde-format
 msgid "Type: "
 msgstr "Typ: "
 
@@ -29337,41 +29245,25 @@ msgstr ""
 "att hantera samlingsstorlekar med fler än 100 000 objekt.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Type</b>"
-msgstr "Hämta information om <b>Uppdatera filernas kontrollsummor</b>."
+msgstr "Hämta information om <b>Databastyp</b>."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:107
-#, fuzzy, kde-format
-#| msgid "Path: %1"
+#, kde-format
 msgctxt "@label:database path"
 msgid "Path: "
-msgstr "Sökväg: %1"
+msgstr "Sökväg: "
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>Database Path</b>"
-msgstr "Hämta information om <b>Uppdatera filernas kontrollsummor</b>."
+msgstr "Hämta information om <b>Databassökväg</b>."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set here the location where the database files will be stored on your "
-#| "system. There are four databases: one for all collections properties, one "
-#| "to store compressed thumbnails, one to store faces recognition metadata, "
-#| "and one to store similarity fingerprints.<br>Write access is required to "
-#| "be able to edit image properties.</p><p>Databases are digiKam core "
-#| "engines. Take care to use a place hosted by fast hardware (eg. SSD or "
-#| "NVMe) with enough free space especially for thumbnails database.</"
-#| "p><p>Note: a remote file system such as NFS, cannot be used here. For "
-#| "performance reasons, it is also recommended not to use network storage "
-#| "media.</p><p></p>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "<p>Set here the location where the database files will be stored on your "
@@ -29393,7 +29285,7 @@ msgstr ""
 "plats som finns på snabb hårdvara (t.ex. SSD eller NVMe), med tillräckligt "
 "ledigt utrymme, särskilt för miniatyrbildsdatabasen.</p><p>Observera: Ett "
 "delat filsystem, som NFS, kan inte kan användas här. Av prestandaskäl "
-"rekommenderas också att inte använda nätverkslagringsmedia.</p><p></p>"
+"rekommenderas också att inte använda nätverkslagringsmedia.</p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:141
 #, kde-format
@@ -29410,12 +29302,10 @@ msgstr ""
 "system som stöder det."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:149
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Get information about <b>Update File Hashes</b>"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Get information about <b>WAL Mode</b>"
-msgstr "Hämta information om <b>Uppdatera filernas kontrollsummor</b>."
+msgstr "Hämta information om <b>Loggskrivning i förväg</b>."
 
 #: core/libs/database/utils/widgets/dbsettingswidget.cpp:150
 #, kde-format
@@ -29809,12 +29699,12 @@ msgid "The similarity database name is empty"
 msgstr "Likhetsdatabasens namn är tomt"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:154
-#, fuzzy, kde-format
-#| msgid "This path was set as a command lineoption (--database-directory)."
+#, kde-format
 msgid ""
 "<p>This path was set as a command lineoption (--database-directory).</p>"
 msgstr ""
-"Sökvägen ställdes in med en kommandoradsväljare (--database-directory)."
+"<p>Sökvägen ställdes in med en kommandoradsväljare (--database-directory).</"
+"p>"
 
 #: core/libs/database/utils/widgets/dbsettingswidget_properties.cpp:293
 #, kde-format
@@ -31275,15 +31165,7 @@ msgid "Monochrome"
 msgstr "Monokrom"
 
 #: core/libs/dimg/filters/bw/mixersettings.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "@info: help"
-#| msgid ""
-#| "Use \"Monochrome\" mode to convert color picture to Black and White:\n"
-#| "The \"red channel\" modifies the contrast of photograph.\n"
-#| "The \"green channel\" enhances or reduces the details level of "
-#| "photograph.\n"
-#| "The \"blue channel\" affects the noise of photograph.\n"
-#| "Note: in this mode, the histogram will display only luminosity values."
+#, kde-format
 msgctxt "@info: help"
 msgid ""
 "Use \"Monochrome\" mode to convert color picture to Black and White.\n"
@@ -31524,16 +31406,13 @@ msgstr ""
 "misslyckades."
 
 #: core/libs/dimg/filters/curves/curveswidget.cpp:288
-#, fuzzy, kde-format
-#| msgid ""
-#| "x:%1\n"
-#| "y:%2"
+#, kde-format
 msgid ""
 "x:%1\n"
 "y:%2\n"
 msgstr ""
 "x:%1\n"
-"y:%2"
+"y:%2\n"
 
 #: core/libs/dimg/filters/decorate/borderfilter.cpp:117
 #, kde-format
@@ -35680,10 +35559,9 @@ msgid "Item Name"
 msgstr "Objektnamn"
 
 #: core/libs/filters/textfilter.cpp:76
-#, fuzzy, kde-format
-#| msgid "Item date"
+#, kde-format
 msgid "Item Path"
-msgstr "Objektdatum"
+msgstr "Objektsökväg"
 
 #: core/libs/filters/textfilter.cpp:78
 #, kde-format
@@ -35716,10 +35594,9 @@ msgid "Item Pixel Size"
 msgstr "Objektets storlek i bildpunkter"
 
 #: core/libs/filters/textfilter.cpp:91
-#, fuzzy, kde-format
-#| msgid "Infrared Filter"
+#, kde-format
 msgid "Inverted Filter"
-msgstr "Infrarött filter"
+msgstr "Inverterat filter"
 
 #: core/libs/filters/textfilter.cpp:94
 #, kde-format
@@ -38916,30 +38793,24 @@ msgid "Mime"
 msgstr "Mime"
 
 #: core/libs/properties/itempropertiestab.cpp:495
-#, fuzzy, kde-format
-#| msgctxt "@info: tableview"
-#| msgid "Rational"
+#, kde-format
 msgid "Ratio"
-msgstr "Rationellt tal"
+msgstr "Förhållande"
 
 #: core/libs/properties/itempropertiestab.cpp:496
-#, fuzzy, kde-format
-#| msgid "Bit depth"
+#, kde-format
 msgid "Bit Depth"
 msgstr "Bitdjup"
 
 #: core/libs/properties/itempropertiestab.cpp:497
-#, fuzzy, kde-format
-#| msgid "Color Model"
+#, kde-format
 msgid "Color Mode"
-msgstr "Färgmodell"
+msgstr "Färgläge"
 
 #: core/libs/properties/itempropertiestab.cpp:498
-#, fuzzy, kde-format
-#| msgctxt "@title:tab"
-#| msgid "Sidecars"
+#, kde-format
 msgid "Has Sidecar"
-msgstr "Associerade filer"
+msgstr "Har associerade filer"
 
 #: core/libs/properties/itempropertiestab.cpp:499
 #, kde-format
@@ -38947,37 +38818,27 @@ msgid "Has GPS"
 msgstr "Har GPS"
 
 #: core/libs/properties/itempropertiestab.cpp:500
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Versioned: "
+#, kde-format
 msgid "Versioned"
-msgstr "Versionshanterad: "
+msgstr "Versionshanterad"
 
 #: core/libs/properties/itempropertiestab.cpp:501
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Grouped"
-msgstr "Grupperad: "
+msgstr "Grupperad"
 
 #: core/libs/properties/itempropertiestab.cpp:503
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgid "Make"
-msgstr "Tillverkare"
+msgstr "Märke"
 
 #: core/libs/properties/itempropertiestab.cpp:504
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgid "Model"
 msgstr "Modell"
 
 #: core/libs/properties/itempropertiestab.cpp:505
-#, fuzzy, kde-format
-#| msgctxt "@item: date properties"
-#| msgid "Date & Time"
+#, kde-format
 msgid "Date Time"
 msgstr "Datum och tid"
 
@@ -38996,16 +38857,12 @@ msgid "Aperture"
 msgstr "Bländare"
 
 #: core/libs/properties/itempropertiestab.cpp:508
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Focal Length"
+#, kde-format
 msgid "Focal Length"
 msgstr "Fokallängd"
 
 #: core/libs/properties/itempropertiestab.cpp:509
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Exposure Time"
+#, kde-format
 msgid "Exposure Time"
 msgstr "Exponeringstid"
 
@@ -39017,15 +38874,12 @@ msgid "Sensitivity"
 msgstr "Känslighet"
 
 #: core/libs/properties/itempropertiestab.cpp:511
-#, fuzzy, kde-format
-#| msgid "Exposure mode"
+#, kde-format
 msgid "Exposure Mode"
 msgstr "Exponeringsläge"
 
 #: core/libs/properties/itempropertiestab.cpp:512
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Flash"
+#, kde-format
 msgid "Flash"
 msgstr "Blixt"
 
@@ -39048,47 +38902,37 @@ msgid "Video Frame Rate"
 msgstr "Videons bildfrekvens"
 
 #: core/libs/properties/itempropertiestab.cpp:518
-#, fuzzy, kde-format
-#| msgid "Show Video Codec"
+#, kde-format
 msgid "Video Video Codec"
-msgstr "Visa videokodare"
+msgstr "Videons videokodare"
 
 #: core/libs/properties/itempropertiestab.cpp:519
-#, fuzzy, kde-format
-#| msgid "Audio Bit Rate"
+#, kde-format
 msgid "Video Audio Bit Rate"
-msgstr "Ljudbithastighet"
+msgstr "Videons ljudbithastighet"
 
 #: core/libs/properties/itempropertiestab.cpp:520
-#, fuzzy, kde-format
-#| msgid "Audio Channel Type"
+#, kde-format
 msgid "Video Audio Channel Type"
-msgstr "Ljudkanaltyp"
+msgstr "Videons ljudkanaltyp"
 
 #: core/libs/properties/itempropertiestab.cpp:521
-#, fuzzy, kde-format
-#| msgid "Audio Codec"
+#, kde-format
 msgid "Video Audio Codec"
-msgstr "Ljudkodare"
+msgstr "Videons ljudkodare"
 
 #: core/libs/properties/itempropertiestab.cpp:523
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Caption"
+#, kde-format
 msgid "Caption"
 msgstr "Rubrik"
 
 #: core/libs/properties/itempropertiestab.cpp:524
-#, fuzzy, kde-format
-#| msgctxt "@title: tableview"
-#| msgid "Title"
+#, kde-format
 msgid "Title"
 msgstr "Titel"
 
 #: core/libs/properties/itempropertiestab.cpp:526
-#, fuzzy, kde-format
-#| msgctxt "Browse images sorted by depicted people"
-#| msgid "People"
+#, kde-format
 msgid "Peoples"
 msgstr "Personer"
 
@@ -39100,16 +38944,12 @@ msgid "Rights"
 msgstr "Rättigheter"
 
 #: core/libs/properties/itempropertiestab.cpp:529
-#, fuzzy, kde-format
-#| msgctxt "@title: pick tree"
-#| msgid "Pick"
+#, kde-format
 msgid "Pick"
-msgstr "Välj"
+msgstr "Urval"
 
 #: core/libs/properties/itempropertiestab.cpp:530
-#, fuzzy, kde-format
-#| msgctxt "@item: color tree"
-#| msgid "Color"
+#, kde-format
 msgid "Color"
 msgstr "Färg"
 
@@ -39139,17 +38979,15 @@ msgid " fps"
 msgstr " bilder/s"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:108
-#, fuzzy, kde-format
-#| msgid "Selection Properties"
+#, kde-format
 msgid "<b>Selected Items Properties</b>"
-msgstr "Urvalsegenskaper"
+msgstr "<b>Egenskaper för markerade objekt</b>"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:111
 #: core/libs/properties/itemselectionpropertiestab.cpp:164
-#, fuzzy, kde-format
-#| msgid "Open item in the file manager"
+#, kde-format
 msgid "Open in the file manager"
-msgstr "Öppna objekt i filhanteraren"
+msgstr "Öppna i filhanteraren"
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:118
 #: core/libs/properties/itemselectionpropertiestab.cpp:171
@@ -39165,22 +39003,17 @@ msgstr "Storlek: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:120
 #: core/libs/properties/itemselectionpropertiestab.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@label: item properties"
-#| msgid "Grouped: "
+#, kde-format
 msgid "Groups: "
-msgstr "Grupperad: "
+msgstr "Grupper: "
 
 #: core/libs/properties/itemselectionpropertiestab.cpp:161
-#, fuzzy, kde-format
-#| msgid "Album Properties"
+#, kde-format
 msgid "<b>All Item Properties</b>"
-msgstr "Albumegenskaper"
+msgstr "<b>Alla objektegenskaper</b>"
 
 #: core/libs/properties/itemsgroupedtoolbar.cpp:45
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Remove From Group"
+#, kde-format
 msgid "Remove from Group"
 msgstr "Ta bort från grupp"
 
@@ -41658,16 +41491,14 @@ msgid "Do not change"
 msgstr "Ändra inte"
 
 #: core/libs/template/templateselector.cpp:215
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template overwrites all"
-msgstr "Mallrubrik:"
+msgstr "Mall skriver över allt"
 
 #: core/libs/template/templateselector.cpp:219
-#, fuzzy, kde-format
-#| msgid "Template Title:"
+#, kde-format
 msgid "Template will be merged"
-msgstr "Mallrubrik:"
+msgstr "Mall sammanfogas"
 
 #: core/libs/template/templateviewer.cpp:102
 #, kde-format
@@ -41680,28 +41511,24 @@ msgid "Usages:"
 msgstr "Användningar:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Show image file name"
+#, kde-format
 msgid "Show item file name"
-msgstr "Visa bildens filnamn"
+msgstr "Visa objektets filnamn"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Show the image file name at the bottom of the screen."
+#, kde-format
 msgid "Show the item file name at the bottom of the screen."
-msgstr "Visa bildens filnamn längst ner på skärmen."
+msgstr "Visa objektets filnamn längst ner på skärmen."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Show image creation date"
+#, kde-format
 msgid "Show item creation date"
-msgstr "Visa bildens tillkomstdatum"
+msgstr "Visa objektets tillkomstdatum"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Show the image creation time/date at the bottom of the screen."
+#, kde-format
 msgid "Show the item creation time/date at the bottom of the screen."
-msgstr "Visa bildens tillkomsttid och datum längst ner på skärmen."
+msgstr "Visa objektets tillkomsttid och datum längst ner på skärmen."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:78
 #: core/showfoto/setup/showfotosetuptooltip.cpp:133
@@ -41747,66 +41574,57 @@ msgid "Show the camera lens model at the bottom of the screen."
 msgstr "Visa kamerans linsmodell längst ner på skärmen."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show image caption"
+#, kde-format
 msgid "Show item caption"
-msgstr "Visa bildrubrik"
+msgstr "Visa objektets rubrik"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Show the image caption at the bottom of the screen."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen."
-msgstr "Visa bildrubriken längst ner på skärmen."
+msgstr "Visa objektets rubrik längst ner på skärmen."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:93
-#, fuzzy, kde-format
-#| msgid "Show image title"
+#, kde-format
 msgid "Show item title"
-msgstr "Visa bildtitel"
+msgstr "Visa objektets titel"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Show the image title at the bottom of the screen."
+#, kde-format
 msgid "Show the item title at the bottom of the screen."
-msgstr "Visa bildens titel längst ner på skärmen."
+msgstr "Visa objektets titel längst ner på skärmen."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:96
-#, fuzzy, kde-format
-#| msgid "Show image caption if it has not title"
+#, kde-format
 msgid "Show item caption if it has not title"
-msgstr "Visa bildrubriken om den inte har en titel"
+msgstr "Visa objektets rubrik om det inte har en titel"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:97
-#, fuzzy, kde-format
-#| msgid ""
-#| "Show the image caption at the bottom of the screen if no titles existed."
+#, kde-format
 msgid "Show the item caption at the bottom of the screen if no titles existed."
 msgstr ""
-"Visa bildrubriken längst ner på skärmen om det inte finns några titlar."
+"Visa objektets rubrik längst ner på skärmen om det inte finns några titlar."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:99
-#, fuzzy, kde-format
-#| msgid "Show image tags"
+#, kde-format
 msgid "Show item tags"
-msgstr "Visa bildetiketter"
+msgstr "Visa objektetiketter"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:100
-#, fuzzy, kde-format
-#| msgid "Show the digiKam image tag names at the bottom of the screen."
+#, kde-format
 msgid "Show the digiKam item tag names at the bottom of the screen."
-msgstr "Visa Digikams etikettnamn för bilder längst ner på skärmen."
+msgstr "Visa Digikams etikettnamn för objekt längst ner på skärmen."
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:102
-#, fuzzy, kde-format
-#| msgid "Next month"
+#, kde-format
 msgid "Text font:"
-msgstr "Nästa månad"
+msgstr "Teckensnitt:"
 
 #: core/libs/threadimageio/preview/previewosdwidget.cpp:103
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in the slideshow."
+#, kde-format
 msgid "Select here the font used to display OSD text over the slideshow."
-msgstr "Ställ in teckensnittet som används för att visa text i bildspelet."
+msgstr ""
+"Ställ in teckensnittet som används för att visa text på skärmen över "
+"bildspelet här."
 
 #: core/libs/threadimageio/thumb/thumbnailcreator.cpp:200
 #, kde-format
@@ -41900,10 +41718,9 @@ msgid "File last modified"
 msgstr "Filen senast ändrad"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:157
-#, fuzzy, kde-format
-#| msgid "File date"
+#, kde-format
 msgid "File created"
-msgstr "Fildatum"
+msgstr "Filen skapad"
 
 #: core/libs/timeadjust/timeadjustsettings.cpp:163
 #, kde-format
@@ -42934,11 +42751,9 @@ msgstr "Ett fel uppstod med mediaspelaren..."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:198
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "@info: media loading"
-#| msgid "No media"
+#, kde-format
 msgid "End of media."
-msgstr "Inget media"
+msgstr "Slut på media."
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:210
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:305
@@ -42970,16 +42785,14 @@ msgstr "Lagra"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:222
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:323
-#, fuzzy, kde-format
-#| msgid "Rotate Left"
+#, kde-format
 msgctxt "rotate video in counterclockwize"
 msgid "Rotate Left"
 msgstr "Rotera åt vänster"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:225
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:326
-#, fuzzy, kde-format
-#| msgid "Rotate Right"
+#, kde-format
 msgctxt "rotate video in clockwize"
 msgid "Rotate Right"
 msgstr "Rotera åt höger"
@@ -42992,13 +42805,15 @@ msgstr "Stäng av eller sätt på upprepad spelning"
 
 #: core/libs/video/player/QtAVPlayer/mediaplayerview.cpp:910
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:741
-#, fuzzy, kde-format
-#| msgid "Error: %1"
+#, kde-format
 msgid ""
 "%1\n"
 "\n"
 "Error: \"%2\""
-msgstr "Fel: %1"
+msgstr ""
+"%1\n"
+"\n"
+"Fel: \"%2\""
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:311
 #, kde-format
@@ -43019,11 +42834,9 @@ msgid "Change video playback rate"
 msgstr "Ändra videons uppspelningshastighet"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:335
-#, fuzzy, kde-format
-#| msgctxt "@info: download status"
-#| msgid "Rate:"
+#, kde-format
 msgid "Rate"
-msgstr "Hastighet:"
+msgstr "Hastighet"
 
 #: core/libs/video/player/qtmm/mediaplayerview.cpp:339
 #, kde-format
@@ -43909,9 +43722,7 @@ msgstr[1] ""
 "\"%1\" markerade bilder"
 
 #: core/libs/widgets/itemview/itemviewdelegate.cpp:406
-#, fuzzy, kde-format
-#| msgctxt "date of last image modification"
-#| msgid "Mod.: %1"
+#, kde-format
 msgctxt "Date of last image modification, shortened"
 msgid "Mod.: %1"
 msgstr "Ändrad: %1"
@@ -43967,10 +43778,9 @@ msgid "A KDE Family Project"
 msgstr "Ett projekt i KDE-familjen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:61
-#, fuzzy, kde-format
-#| msgid "(c) 2001-2025, digiKam developers team"
+#, kde-format
 msgid "(c) 2001-2026, digiKam developers team"
-msgstr "© 2001-2025, Digikam-utvecklingsgruppen"
+msgstr "© 2001-2026, Digikam-utvecklingsgruppen"
 
 #: core/libs/widgets/mainview/daboutdata.cpp:74
 #, kde-format
@@ -48034,12 +47844,10 @@ msgid "Macao"
 msgstr "Macao"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:173
-#, fuzzy, kde-format
-#| msgctxt "@info: country code"
-#| msgid "Macedonia"
+#, kde-format
 msgctxt "@info: country code"
 msgid "North Macedonia"
-msgstr "Makedonien"
+msgstr "Nordmakedonien"
 
 #: core/libs/widgets/metadata/utils/countryselector.cpp:174
 #, kde-format
@@ -51055,27 +50863,21 @@ msgstr "Använd systemets ikontema"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:304
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Date and Time Information"
+#, kde-format
 msgid "Date and time format (%1):"
-msgstr "Information om datum och tid"
+msgstr "Datum och tidsformat (%1):"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:311
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:116
-#, fuzzy, kde-format
-#| msgid "Select here the font used to display text in whole application."
+#, kde-format
 msgid "This string is used as the date and time format in whole application."
-msgstr ""
-"Ställ in teckensnittet som används för att visa text i hela programmet här."
+msgstr "Strängen används som datum och tidsformat för hela programmet."
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:314
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:119
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Write the corrected date and time for each image"
+#, kde-format
 msgid "Reverts to the local short date and time format"
-msgstr "Skriv korrigerat datum och tid för varje bild"
+msgstr "Återgår till det lokala korta datum och tidsformatet"
 
 #: core/showfoto/setup/showfotosetupmisc.cpp:316
 #: core/utilities/setup/misc/setupmisc_appearance.cpp:121
@@ -53468,7 +53270,7 @@ msgstr "Föredra annat än markerat album som referens"
 #, kde-format
 msgctxt "@label:listbox similarity reference selection method"
 msgid "Prefer Newer Creation Date"
-msgstr "Föredra nyare skapelsedatum"
+msgstr "Föredra nyare tillkomstdatum"
 
 #: core/utilities/fuzzysearch/findduplicatesview.cpp:137
 #, kde-format
@@ -60385,9 +60187,7 @@ msgid "By Size"
 msgstr "Enligt storlek"
 
 #: core/utilities/import/main/importui.cpp:417
-#, fuzzy, kde-format
-#| msgctxt "@action: setup"
-#| msgid "By Format"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By Format"
 msgstr "Enligt format"
@@ -60399,18 +60199,16 @@ msgid "By Rating"
 msgstr "Enligt betyg"
 
 #: core/utilities/import/main/importui.cpp:420
-#, fuzzy, kde-format
-#| msgid "Pick Label:"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By PickLabel"
-msgstr "Urvalsbeteckning:"
+msgstr "Enligt urvalsbeteckning"
 
 #: core/utilities/import/main/importui.cpp:421
-#, fuzzy, kde-format
-#| msgid "Color Label:"
+#, kde-format
 msgctxt "@item:inmenu Sort by"
 msgid "By ColorLabel"
-msgstr "Färgbeteckning:"
+msgstr "Enligt färgbeteckning"
 
 #: core/utilities/import/main/importui.cpp:423
 #, kde-format
@@ -63055,16 +62853,14 @@ msgid "and"
 msgstr "och"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:188
-#, fuzzy, kde-format
-#| msgid "Modified Date"
+#, kde-format
 msgid "Modified last"
-msgstr "Ändringsdatum"
+msgstr "Senast ändrad"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:189
-#, fuzzy, kde-format
-#| msgid "Return items modified between"
+#, kde-format
 msgid "Return items modified within the last"
-msgstr "Returnera objekt ändrade mellan"
+msgstr "Returnera objekt ändrade under senaste"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:196
 #, kde-format
@@ -63208,33 +63004,27 @@ msgid "The type of the lens"
 msgstr "Linsens typ"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:449
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without a camera ..."
-msgstr "Returnera objekt utan ansiktsområden"
+msgstr "Returnera objekt utan en kamera..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:452
-#, fuzzy, kde-format
-#| msgctxt "@info: xslt param"
-#| msgid "Make"
+#, kde-format
 msgctxt "Camera"
 msgid "Make"
-msgstr "Tillverkare"
+msgstr "Märke"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:453
-#, fuzzy, kde-format
-#| msgctxt "@info: Camera Model"
-#| msgid "Model"
+#, kde-format
 msgctxt "Camera"
 msgid "Model"
 msgstr "Modell"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:454
-#, fuzzy, kde-format
-#| msgid "No Lens Filter"
+#, kde-format
 msgctxt "Camera"
 msgid "Lens Type"
-msgstr "Inget linsfilter"
+msgstr "Linstyp"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:466
 #, kde-format
@@ -63362,33 +63152,29 @@ msgid "Macro, close or distant view"
 msgstr "Makro, närbild eller avståndsbild"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:663
-#, fuzzy, kde-format
-#| msgid "Capture One Settings"
+#, kde-format
 msgid "Capture Settings"
-msgstr "Capture One-inställningar"
+msgstr "Tagningsinställningar"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:663
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without selected capture settings ..."
-msgstr "Returnera objekt utan ansiktsområden"
+msgstr "Returnera objekt utan valda tagningsinställningar..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:673
 #, kde-format
 msgid "ISO film speed"
-msgstr ""
+msgstr "ISO filmkänslighet"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:677
-#, fuzzy, kde-format
-#| msgid "White balance (color temperature)"
+#, kde-format
 msgid "White balance color temperature"
-msgstr "Vitbalans (färgtemperatur)"
+msgstr "Vitbalans färgtemperatur"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:679
-#, fuzzy, kde-format
-#| msgid "Subject distance (category)"
+#, kde-format
 msgid "Subject Distance Category"
-msgstr "Motivets avstånd (kategori)"
+msgstr "Motivets avståndskategori"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:698
 #: core/utilities/searchwindow/searchfields_createfield.cpp:721
@@ -63455,22 +63241,19 @@ msgid "Sublocation shown in the item"
 msgstr "Delplats visad i objektet"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:795
-#, fuzzy, kde-format
-#| msgid "Place:"
+#, kde-format
 msgid "Place"
-msgstr "Plats:"
+msgstr "Plats"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:795
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items without selected place information ..."
-msgstr "Returnera objekt utan ansiktsområden"
+msgstr "Returnera objekt utan vald platsinformation..."
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:800
-#, fuzzy, kde-format
-#| msgid "State/Province:"
+#, kde-format
 msgid "State/Province"
-msgstr "Stat/Provins:"
+msgstr "Stat/Provins"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:812
 #, kde-format
@@ -63728,16 +63511,14 @@ msgid "and"
 msgstr "och"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1176
-#, fuzzy, kde-format
-#| msgid "Return items without face regions"
+#, kde-format
 msgid "Return items with confirmed face regions"
-msgstr "Returnera objekt utan ansiktsområden"
+msgstr "Returnera objekt med bekräftade ansiktsområden"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1177
-#, fuzzy, kde-format
-#| msgid "No Face Regions"
+#, kde-format
 msgid "Confirmed Face Regions"
-msgstr "Inga ansiktsområden"
+msgstr "Bekräftade ansiktsområden"
 
 #: core/utilities/searchwindow/searchfields_createfield.cpp:1185
 #, kde-format
@@ -63780,30 +63561,22 @@ msgid "Portrait orientation"
 msgstr "Porträttorientering"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:47
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "seconds"
+#, kde-format
 msgid "seconds"
 msgstr "sekunder"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "minutes"
+#, kde-format
 msgid "minutes"
 msgstr "minuter"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "time"
-#| msgid "hours"
+#, kde-format
 msgid "hours"
 msgstr "timmar"
 
 #: core/utilities/searchwindow/searchfields_recentmodified.cpp:50
-#, fuzzy, kde-format
-#| msgctxt "time adjust offset, days value label"
-#| msgid "days"
+#, kde-format
 msgid "days"
 msgstr "dagar"
 
@@ -63984,11 +63757,9 @@ msgid "Add Search Group"
 msgstr "Lägg till sökgrupp"
 
 #: core/utilities/searchwindow/searchview.cpp:537
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Close All Groups"
+#, kde-format
 msgid "Clear All Groups"
-msgstr "Stäng alla grupper"
+msgstr "Rensa alla grupper"
 
 #: core/utilities/searchwindow/searchview.cpp:559
 #, kde-format
@@ -64026,8 +63797,7 @@ msgid "Show file&name"
 msgstr "Visa fil&namn"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:28
-#, fuzzy, kde-format
-#| msgid "Set this option to show the filename below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the filename below the thumbnail."
 msgstr "Aktivera alternativet för att visa filnamn under miniatyrbilden."
 
@@ -64038,8 +63808,7 @@ msgid "Show file si&ze"
 msgstr "Visa &filstorlek"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:31
-#, fuzzy, kde-format
-#| msgid "Set this option to show the file size below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the file size below the thumbnail."
 msgstr "Aktivera alternativet för att visa filstorlek under miniatyrbilden."
 
@@ -64050,10 +63819,7 @@ msgid "Show camera creation &date"
 msgstr "Visa tillkomst&datum från kameran"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:34
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the camera creation date below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the camera creation date below the thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa tillkomstdatum från kameran under "
@@ -64065,62 +63831,50 @@ msgid "Show file &modification date"
 msgstr "Visa filens ändringsdatum"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the file modification date below the image "
-#| "thumbnail if it is different than camera creation date. This option is "
-#| "useful to identify quickly which items have been modified."
+#, kde-format
 msgid ""
 "Set this option to show the file modification date below the thumbnail if it "
 "is different than camera creation date. This option is useful to identify "
 "quickly which items have been modified."
 msgstr ""
 "Aktivera alternativet för att visa filens ändringsdatum under miniatyrbilden "
-"om det skiljer sig från kamerans datum då filen skapades. Alternativet är "
-"användbart för att snabbt identifiera vilka objekt som har ändrats."
+"om det skiljer sig från kamerans tillkomstdatum. Alternativet är användbart "
+"för att snabbt identifiera vilka objekt som har ändrats."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:42
-#, fuzzy, kde-format
-#| msgid "Show image dimensions"
+#, kde-format
 msgid "Show item dimensions"
-msgstr "Visa bildens storlek"
+msgstr "Visa objektets dimensioner"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image size in pixels below the image "
-#| "thumbnail."
+#, kde-format
 msgid "Set this option to show the item size in pixels below the thumbnail."
 msgstr ""
-"Aktivera alternativet för att visa bildstorlek i bildpunkter under "
+"Aktivera alternativet för att visa objektets storlek i bildpunkter under "
 "miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:46
-#, fuzzy, kde-format
-#| msgid "Show image aspect ratio"
+#, kde-format
 msgid "Show item aspect ratio"
-msgstr "Visa bildproportion"
+msgstr "Visa objektets proportion"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:47
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the image aspect ratio below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the item aspect ratio below the thumbnail."
 msgstr ""
-"Aktivera alternativet för att visa bildproportion under miniatyrbilden."
+"Aktivera alternativet för att visa objektets proportion under miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:50
-#, fuzzy, kde-format
-#| msgid "Show image format"
+#, kde-format
 msgid "Show item format"
-msgstr "Visa bildformat"
+msgstr "Visa objektets format"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:51
-#, fuzzy, kde-format
-#| msgid "Set this option to show image mime type over image thumbnail."
+#, kde-format
 msgid "Set this option to show item mime type over thumbnail."
 msgstr ""
-"Aktivera alternativet för att visa bildens Mime-type ovanför miniatyrbilden."
+"Aktivera alternativet för att visa objektets Mime-type ovanför "
+"miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:53
 #, kde-format
@@ -64128,8 +63882,7 @@ msgid "Show digiKam tit&le"
 msgstr "Visa Digikams tite&l"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:54
-#, fuzzy, kde-format
-#| msgid "Set this option to show the digiKam title below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam title below the thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa Digikams titel under miniatyrbilden."
@@ -64140,9 +63893,7 @@ msgid "Show digiKam &captions"
 msgstr "Visa Digikams ru&briker"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam captions below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam captions below the thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa Digikams rubriker under miniatyrbilden."
@@ -64154,9 +63905,7 @@ msgid "Show digiKam &tags"
 msgstr "Visa Digikams e&tiketter"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:62
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam tags list below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam tags list below the thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa Digikams etikettlista under "
@@ -64168,9 +63917,7 @@ msgid "Show digiKam &rating"
 msgstr "Visa Digikams &betyg"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:66
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam rating below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam rating below the thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa Digikams betyg under miniatyrbilden."
@@ -64181,9 +63928,7 @@ msgid "Show digiKam &pick label"
 msgstr "Visa Digikams &urvalsbeteckning"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam pick label below the image thumbnail."
+#, kde-format
 msgid "Set this option to show the digiKam pick label below the thumbnail."
 msgstr ""
 "Aktivera alternativet för att visa Digikams urvalsbeteckning under "
@@ -64195,16 +63940,13 @@ msgid "Show digiKam color &label"
 msgstr "Visa Digikams &färgbeteckning"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show the digiKam color label as a border around the "
-#| "thumbnail."
+#, kde-format
 msgid ""
 "Set this option to show the digiKam color label as a line below the "
 "thumbnail."
 msgstr ""
-"Aktivera alternativet för att visa Digikams färgbeteckning som en kant runt "
-"miniatyrbilden."
+"Aktivera alternativet för att visa Digikams färgbeteckning som en linje "
+"under miniatyrbilden."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:79
 #: core/utilities/setup/camera/setupcamera.cpp:459
@@ -64213,16 +63955,13 @@ msgid "Show rotation overlay buttons"
 msgstr "Visa överlagrade knappar för rotation"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:80
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show overlay buttons over the image thumbnail to be "
-#| "able to process left or right image rotation."
+#, kde-format
 msgid ""
 "Set this option to show the transformation overlay buttons over the "
 "thumbnail to process left or right rotation."
 msgstr ""
-"Aktivera alternativet för att visa överlagrade knappar på miniatyrbilden för "
-"att kunna behandla vänster- eller högerrotation av bilden."
+"Aktivera alternativet för att visa överlagrade knappar för transformering på "
+"miniatyrbilden för att behandla vänster- eller högerrotation."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:83
 #, kde-format
@@ -64230,10 +63969,7 @@ msgid "Show fullscreen overlay button"
 msgstr "Visa överlagrad knapp för fullskärm"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:84
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to open it in "
 "fullscreen mode."
@@ -64242,22 +63978,18 @@ msgstr ""
 "att visa den med fullskärm."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:87
-#, fuzzy, kde-format
-#| msgid "Show rotation overlay buttons"
+#, kde-format
 msgid "Show geolocation overlay button"
-msgstr "Visa överlagrade knappar för rotation"
+msgstr "Visa överlagrad knapp för geografisk lokalisering"
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:88
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set this option to show an overlay button over the image thumbnail to "
-#| "open it in fullscreen mode."
+#, kde-format
 msgid ""
 "Set this option to show an overlay button over the thumbnail to identify "
 "geolocated item and open the map tab."
 msgstr ""
 "Aktivera alternativet för att visa en överlagrad knapp på miniatyrbilden för "
-"att visa den med fullskärm."
+"att identifiera geografiskt lokaliserade objekt och visa kartfliken."
 
 #: core/utilities/setup/album/setupalbumview_iconview.cpp:93
 #: core/utilities/setup/camera/setupcamera.cpp:463
@@ -64363,9 +64095,7 @@ msgid "Preview shows the full image"
 msgstr "Förhandsgranskning visar hela bilden"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:31
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Mode of RAW preview decoding:"
-#| msgid "Raw images:"
+#, kde-format
 msgctxt "@label:listbox Mode of RAW preview decoding"
 msgid "Raw images:"
 msgstr "Obehandlade bilder:"
@@ -64401,14 +64131,11 @@ msgstr ""
 "Förhandsgranskningsbilden har konverterats till 8 bitar för snabbare visning"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to convert a 16 bits preview image to 8 "
-#| "bits."
+#, kde-format
 msgid "Check this if you want to convert a 16 bits preview image to 8 bits."
 msgstr ""
-"Avmarkera det här om du inte vill konvertera en 16-bitars "
-"förhandsgranskningsbild till 8 bitar."
+"Markera om du vill konvertera en 16-bitars förhandsgranskningsbild till 8 "
+"bitar."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:45
 #, kde-format
@@ -64416,11 +64143,9 @@ msgid "Preview image is always scaled to fit to window"
 msgstr "Förhandsgranskningsbild skalas alltid för att passa fönstret"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:46
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to scale small images to fit to window."
+#, kde-format
 msgid "Check this if you want to scale small images to fit to window."
-msgstr "Avmarkera om du inte vill skala små bilder så att de passar fönstret."
+msgstr "Markera om du vill skala små bilder så att de passar fönstret."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:48
 #, kde-format
@@ -64428,63 +64153,50 @@ msgid "Preview image use Anti-aliasing to scale up"
 msgstr "Förhandsgranskningsbild använder kantutjämning för att skalas upp"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:49
-#, fuzzy, kde-format
-#| msgid "Uncheck this if you do not want use Anti-aliasing to scale up."
+#, kde-format
 msgid "Check this if you want to use Anti-aliasing to scale up."
-msgstr "Avmarkera om du inte vill använda kantutjämning för att skala upp."
+msgstr "Markera om du vill använda kantutjämning för att skala upp."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:53
-#, fuzzy, kde-format
-#| msgid "Show numbers"
+#, kde-format
 msgid "Magnifier"
-msgstr "Visa nummer"
+msgstr "Förstoringsglas"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Zoom to Fit"
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool zoom factor"
 msgid "Zoom Factor:"
-msgstr "Anpassa"
+msgstr "Zoomfaktor:"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:68
-#, fuzzy, kde-format
-#| msgid "Total Size: "
+#, kde-format
 msgctxt "@label:listbox Preview magnifier tool size"
 msgid "Tool Size:"
-msgstr "Total storlek: "
+msgstr "Verktygsstorlek:"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:70
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Small"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Small"
 msgstr "Liten"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:71
-#, fuzzy, kde-format
-#| msgctxt "embedded preview type in dng file"
-#| msgid "Medium"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Medium"
 msgstr "Normal"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Large"
 msgstr "Stor"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "@label: listbox face size"
-#| msgid "Large"
+#, kde-format
 msgctxt "@item Magnifier tool size"
 msgid "Very Large"
-msgstr "Stor"
+msgstr "Mycket stor"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:84
 #: core/utilities/setup/camera/setupcamera.cpp:507
@@ -64493,13 +64205,10 @@ msgid "Show icons and text over preview"
 msgstr "Visa ikoner och text över förhandsgranskning"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you don't want to see icons and text in the image preview."
+#, kde-format
 msgid "Check this if you want to see icons and text in the image preview."
 msgstr ""
-"Avmarkera det här om du inte vill se ikoner och text i förhandsgranskningen "
-"av bilder."
+"Markera om du vill se ikoner och text i förhandsgranskningen av bilder."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:87
 #, kde-format
@@ -64507,30 +64216,23 @@ msgid "Auto play of videos or animations"
 msgstr "Spela automatiskt upp videor eller animeringar"
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:88
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to auto play of videos or animations."
+#, kde-format
 msgid "Check this if you want to auto play the videos or animations."
-msgstr ""
-"Avmarkera om du inte vill spela upp videor eller animeringar automatiskt."
+msgstr "Markera om du vill spela upp videor eller animeringar automatiskt."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:90
-#, fuzzy, kde-format
-#| msgid "Show icons and text over preview"
+#, kde-format
 msgid "Show a text overlay over preview."
-msgstr "Visa ikoner och text över förhandsgranskning"
+msgstr "Visa en överlagrad text på förhandsgranskning."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:91
-#, fuzzy, kde-format
-#| msgid ""
-#| "Uncheck this if you do not want to see icons and text in the image "
-#| "preview."
+#, kde-format
 msgid ""
 "Check this if you want to show a canvas overlay with technical shot settings "
 "and properties."
 msgstr ""
-"Avmarkera det här om du inte vill se ikoner och text i förhandsgranskningen "
-"av bilder."
+"Markera om du vill visa en överlagring på duken med tekniska "
+"tagningsinställningar och egenskaper."
 
 #: core/utilities/setup/album/setupalbumview_preview.cpp:115
 #, kde-format
@@ -65360,18 +65062,14 @@ msgid "Monitor the albums for external changes (requires restart)"
 msgstr "Övervaka album för externa ändringar (kräver omstart)"
 
 #: core/utilities/setup/collections/setupcollections.cpp:116
-#, fuzzy, kde-format
-#| msgid ""
-#| "<b>Note: Album monitoring consumes system resources and can slow down "
-#| "digiKam. If you are using MacOS and network collections, you should not "
-#| "activate album monitoring.</b>"
+#, kde-format
 msgid ""
 "<b>Note: Album monitoring consumes system resources and can slow down "
 "digiKam. If you are using macOS and network collections, you should not "
 "activate album monitoring.</b>"
 msgstr ""
 "<b>Observera: Albumövervakning använder systemresurser och kan göra DIgikam "
-"långsammare. Om du använder MacOS och nätverkssamlingar, ska inte "
+"långsammare. Om du använder macOS och nätverkssamlingar, ska inte "
 "albumövervakning aktiveras.</b>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:129
@@ -65381,16 +65079,7 @@ msgid "Root Album Folders"
 msgstr "Rotalbumkataloger"
 
 #: core/utilities/setup/collections/setupcollections.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>Set the names of directories that you want to ignore from your photo "
-#| "collections. The names are case sensitive and should be separated by a "
-#| "semicolon.</p><p>This is for example useful when you store your photos on "
-#| "a Synology NAS (Network Attached Storage). In every directory the system "
-#| "creates a subdirectory @eaDir to store thumbnails. To avoid digiKam "
-#| "inserting the original photo and its corresponding thumbnail twice, "
-#| "@eaDir is ignored by default.</p><p>To re-include directories that are "
-#| "ignored by default prefix it with a minus, e.g. -@eaDir.</p>"
+#, kde-format
 msgid ""
 "<p>Set the names of directories that you want to ignore from your photo "
 "collections. The names are case sensitive and should be separated by a "
@@ -65407,9 +65096,9 @@ msgstr ""
 "användbart när foton lagras på en Synology NAS (nätverkslagring). Systemet "
 "skapar underkatalogen @eaDir i varje katalog för att lagra miniatyrbilder. "
 "För att undvika att Digikam infogar originalfotot och dess motsvarande "
-"miniatyrbild två gånger, ignoreras @eaDir normalt.</p><p>För att inkludera "
-"kataloger som normalt ignoreras igen, inled dem med ett minustecken, t.ex. -"
-"@eaDir.</p>"
+"miniatyrbild två gånger, ignoreras @eaDir normalt.</p><p>Jokertecken såsom "
+"'*' eller '?' stöds.</p><p>För att inkludera kataloger som normalt ignoreras "
+"igen, inled dem med ett minustecken, t.ex. -@eaDir.</p>"
 
 #: core/utilities/setup/collections/setupcollections.cpp:155
 #, kde-format
@@ -67704,14 +67393,7 @@ msgid "AI GPU Test"
 msgstr "AI-grafikprocessortest"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This will check if your system is able to use GPU acceleration\n"
-#| "when running the AI models by validating OpenCV and OpenCL have the\n"
-#| "required libraries and drivers installed.\n"
-#| "\n"
-#| "Do you want to test your system now?"
+#, kde-format
 msgctxt "@info"
 msgid ""
 "This will check if your system is able to use GPU acceleration\n"
@@ -67728,25 +67410,19 @@ msgstr ""
 "Vill du testa systemet nu?"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:104
-#, fuzzy, kde-format
-#| msgctxt "@action: button"
-#| msgid "Start"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Start"
 msgstr "Starta"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:106
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Begin test"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Begin test"
 msgstr "Börja test"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:142
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Testing..."
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Testing..."
 msgstr "Testar..."
@@ -67775,18 +67451,21 @@ msgid ""
 "online documentation and configure you device to be detectable and usable at "
 "digiKam run-time."
 msgstr ""
+"Testet misslyckades. Systemet kanske inte kan använda grafikprocessorn för "
+"acceleration för AI-modellerna.\n"
+"\n"
+"Anmärkning för användare av NVidia grafikprocessor: använd knappen \"Hjälp\" "
+"för att läsa nätdokumentationen och ställ in enheten så att den kan "
+"detekteras och användas vid körning av digiKam."
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:229
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close"
 msgstr "Stäng"
 
 #: core/utilities/setup/misc/ocvocldnntestdlg.cpp:230
-#, fuzzy, kde-format
-#| msgctxt "@action:button start the AI GUP test"
-#| msgid "Close the test dialog"
+#, kde-format
 msgctxt "@action:button start the AI GPU test"
 msgid "Close the test dialog"
 msgstr "Stäng testdialogrutan"
