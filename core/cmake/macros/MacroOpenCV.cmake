@@ -1,9 +1,9 @@
 # A macro wrapper to find OpenCV library
 #
-# Syntax:  DETECT_OPENCV(OPENCV_MIN_VERSION OPENCV_REQUIRED_COMPONENTS) 
+# Syntax:  DETECT_OPENCV(OPENCV_MIN_VERSION OPENCV_REQUIRED_COMPONENTS)
 #
-# Example: DETECT_OPENCV(3.3.0 core highgui objdetect contrib)
-# which try to find OpenCV version 3.3.0
+# Example: DETECT_OPENCV(3.3.0 4.8.0 core highgui objdetect contrib)
+# which try to find OpenCV version between 3.3.0 and 4.8.0
 # with internal components "core", "highgui", "objdetect", and "contrib".
 #
 # Once done this will be adjusted:
@@ -17,7 +17,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-macro(DETECT_OPENCV OPENCV_MIN_VERSION)
+macro(DETECT_OPENCV OPENCV_MIN_VERSION OPENCV_MAX_VERSION)
 
     # Reset to avoid picking up extra libraries
     set(OpenCV_LIBS)
@@ -34,11 +34,18 @@ macro(DETECT_OPENCV OPENCV_MIN_VERSION)
 
         if(OpenCV_VERSION)
 
-            message(STATUS "OpenCV: Found version ${OpenCV_VERSION} (required: ${OPENCV_MIN_VERSION})")
+            message(STATUS "OpenCV: Found version ${OpenCV_VERSION} (required min|max: ${OPENCV_MIN_VERSION}|${OPENCV_MAX_VERSION})")
 
             if(${OpenCV_VERSION} VERSION_LESS ${OPENCV_MIN_VERSION})
 
                 message(WARNING "OpenCV: Version is too old.")
+                set(OpenCV_FOUND FALSE)
+
+            endif()
+
+            if(${OpenCV_VERSION} VERSION_GREATER ${OPENCV_MAX_VERSION})
+
+                message(WARNING "OpenCV: Version is not yet supported.")
                 set(OpenCV_FOUND FALSE)
 
             endif()

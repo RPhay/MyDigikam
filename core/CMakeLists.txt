@@ -19,6 +19,7 @@ message(STATUS "")
 set(KF${QT_VERSION_MAJOR}_MIN_VERSION       "5.95.0")
 set(EXIV2_MIN_VERSION                       "0.27.1")
 set(OPENCV_MIN_VERSION                      "4.8.0")
+set(OPENCV_MAX_VERSION                      "4.99.0")       # Not yet ported to 5.0 and later (See bug #522887)
 set(LENSFUN_MIN_VERSION                     "0.2.8.0")      # For Lens auto-correction plugin
 set(KSANE_MIN_VERSION                       "21.12.0")      # For digital scanner support.
 set(CALENDAR_MIN_VERSION                    "5.95.0")       # Calendar Core dependency for plugin.

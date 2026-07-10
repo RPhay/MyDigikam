@@ -17,7 +17,6 @@ Bundles component versions:
 | macOS Qt6     | 6.11.0     | 6.26.0     | 4.13     | 8.1.0     | 1.21.2     | 13.59 (*) | 0.28.8     | 20260710 (*) |    -         | Tathoe + Macports   |
 
 Icon-View: Improve filename matching for timelapse/burst grouping items.
-General  : Add OpenCV version 5 API support.
 
 *****************************************************************************************************
 

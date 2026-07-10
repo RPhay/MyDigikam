@@ -4,12 +4,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
-DETECT_OPENCV(${OPENCV_MIN_VERSION} core
-                                    objdetect
-                                    imgproc
-                                    imgcodecs
-                                    dnn
-                                    flann
+DETECT_OPENCV(${OPENCV_MIN_VERSION} ${OPENCV_MAX_VERSION} core
+                                                          objdetect
+                                                          imgproc
+                                                          imgcodecs
+                                                          dnn
+                                                          flann
 )
 
 if(${OpenCV_FOUND})
