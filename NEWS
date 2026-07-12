@@ -40,7 +40,7 @@ BUGFIXES:
 016 --> 522792 - The 9.1.0 compile version will not deploy on Ubuntu 26. I had to extract the AppImage.
 017 --> 522770 - Face tag not read from .xmp for jxl files.
 018 --> 522944 - Detect new files without refreshing thumbnails.
-019 --> 
+019 --> 522954 - Copy as path.
 020 --> 
 021 --> 
 022 --> 
