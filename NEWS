@@ -41,7 +41,7 @@ BUGFIXES:
 017 --> 522770 - Face tag not read from .xmp for jxl files.
 018 --> 522944 - Detect new files without refreshing thumbnails.
 019 --> 522954 - Copy as path.
-020 --> 
+020 --> 522968 - Missing folders.
 021 --> 
 022 --> 
 023 --> 
