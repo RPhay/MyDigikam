@@ -10,7 +10,8 @@
 # https://files.kde.org/digikam/reports/ (default yes).
 #
 # Tested compilation env with Clazy :
-#     Kubuntu 24.04.4 LTS + LLVM 19.1.1 + Clazy 1.18 + Qt 6.9.2 + G++ 13.3.0 + 4.1.1
+#     Kubuntu 24.04.4 LTS + LLVM 19.1.1 + Clazy 1.18 + Qt 6.9.2  + G++ 13.3.0 + CMake 4.1.1
+#     Kubuntu 24.04.4 LTS + LLVM 19.1.1 + Clazy 1.18 + Qt 6.10.2 + G++ 13.3.0 + CMake 4.2.3
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
