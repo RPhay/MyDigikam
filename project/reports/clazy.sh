@@ -9,6 +9,9 @@
 # If '--nowebupdate' is passed as argument, static analyzer results are not pushed online at
 # https://files.kde.org/digikam/reports/ (default yes).
 #
+# Tested compilation env with Clazy :
+#     Kubuntu 24.04.4 LTS + LLVM 19.1.1 + Clazy 1.18 + Qt 6.9.2 + G++ 13.3.0 + 4.1.1
+#
 # SPDX-License-Identifier: BSD-3-Clause
 #
 
@@ -82,20 +85,9 @@ fi
 export LLVM_VERSION=19
 
 export PATH=/opt/qt6/bin/:/opt/clazy/bin/:$PATH
-#export PATH=/usr/lib/llvm-$LLVM_VERSION/bin:$PATH
-
-#      -DCMAKE_CXX_COMPILER_LAUNCHER=/opt/clazy/bin/clazy \
-#      -DCMAKE_C_COMPILER=clang-$LLVM_VERSION \
-#      -DCMAKE_CXX_COMPILER=clang-$LLVM_VERSION \
-#      -DLLVM_DIR=/usr/lib/llvm-$LLVM_VERSION/cmake \
-#      -DClang_DIR=/usr/lib/llvm-$LLVM_VERSION/cmake \
-#      -DCMAKE_EXE_LINKER_FLAGS="-lstdc++" \
-#      -DCMAKE_SHARED_LINKER_FLAGS="-lstdc++" \
 
 $CMAKE_BINARY -G "Unix Makefiles" \
-      -DCMAKE_CXX_COMPILER_LAUNCHER=/opt/clazy/bin/clazy \
-      -DCMAKE_C_COMPILER=clang-$LLVM_VERSION \
-      -DCMAKE_CXX_COMPILER=clang-$LLVM_VERSION \
+      -DCMAKE_CXX_COMPILER=clazy \
       -DCMAKE_BUILD_TYPE=Debug \
       -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
       -DBUILD_WITH_QT6=$BUILD_WITH_QT6 \
