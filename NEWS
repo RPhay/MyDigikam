@@ -42,7 +42,7 @@ BUGFIXES:
 018 --> 522944 - Detect new files without refreshing thumbnails.
 019 --> 522954 - Copy as path.
 020 --> 522968 - Missing folders.
-021 --> 
+021 --> 523055 - Test GPU AI Compatibility fails instantly with QString::arg Argument missing: OpenCLDNN error (Windows, NVIDIA RTX 3080 Ti).
 022 --> 
 023 --> 
 024 --> 
