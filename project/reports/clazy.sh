@@ -12,6 +12,7 @@
 # Tested compilation env with Clazy :
 #     Kubuntu 24.04.4 LTS + LLVM 19.1.1 + Clazy 1.18 + Qt 6.9.2  + G++ 13.3.0 + CMake 4.1.1
 #     Kubuntu 24.04.4 LTS + LLVM 19.1.1 + Clazy 1.18 + Qt 6.10.2 + G++ 13.3.0 + CMake 4.2.3
+#     Kubuntu 26.04.0 LTS + LLVM 19.1.7 + Clazy 1.18 + Qt 6.11.1 + G++ 15.2.0 + CMake 4.4.0
 #
 # SPDX-License-Identifier: BSD-3-Clause
 #
