@@ -22,6 +22,14 @@ class TimelapseFilenameMatchTest : public QObject
 {
     Q_OBJECT
 
+public:
+
+    explicit TimelapseFilenameMatchTest(QObject* const parent = nullptr)
+        : QObject(parent)
+    {
+    }
+
+
 private Q_SLOTS:
 
     void testParseNumberedFilename_data();

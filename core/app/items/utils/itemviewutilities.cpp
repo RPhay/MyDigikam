@@ -591,7 +591,7 @@ void ItemViewUtilities::createGroupByTimelapseFromInfoList(const ItemInfoList& i
     TimelapseFilenameMatch previousNumberMatch;
     ItemInfoList group;
 
-    for (const auto& itemInfo : groupingList)
+    for (const auto& itemInfo : std::as_const(groupingList))
     {
         TimelapseFilenameMatch numberMatch(itemInfo.name());
 
