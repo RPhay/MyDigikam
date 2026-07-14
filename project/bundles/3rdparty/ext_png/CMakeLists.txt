@@ -11,7 +11,7 @@ SET(PREFIX_ext_png "${EXTPREFIX}")
 ExternalProject_Add(ext_png
 
     GIT_REPOSITORY https://github.com/pnggroup/libpng.git
-    GIT_TAG 1.6.55
+    GIT_TAG 1.6.58
 
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
