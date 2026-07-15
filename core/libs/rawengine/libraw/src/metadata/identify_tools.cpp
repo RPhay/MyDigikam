@@ -45,7 +45,7 @@ float LibRaw::find_green(int bps, int bite, int off0, int off1)
 {
   UINT64 bitbuf = 0;
   int vbits, col, i, c;
-  ushort img[2][2064];
+  ushort img[2][2065];
   float sum[] = {0, 0};
   if (width > 2064)
     return 0.f; // too wide
@@ -79,12 +79,19 @@ void LibRaw::trimSpaces(char *s)
 {
   char *p = s;
   int l = int(strlen(p));
-  if (!l)
+  if (l<1)
     return;
-  while (isspace(p[l - 1]))
+  while (l > 0 && isspace(p[l - 1]))
     p[--l] = 0; /* trim trailing spaces */
-  while (*p && isspace(*p))
+  if (l < 1)
+	  return; // only spaces in the input string, all wiped out;
+  while (*p && isspace(*p) && l > 0)
     ++p, --l;   /* trim leading spaces */
+  if (l < 1)  // should not happen, but safety belt
+  {
+	  *s = 0;
+	  return;
+  }
   memmove(s, p, l + 1);
 }
 
