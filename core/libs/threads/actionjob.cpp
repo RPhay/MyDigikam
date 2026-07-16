@@ -42,7 +42,17 @@ void ActionJob::cancel()
 
 void ActionJob::run()
 {
-    ActionThreadBase::setCurrentThreadName(objectName());
+    QString name = objectName();
+
+    if (name.isEmpty())
+    {
+        // No explicit name set with QObject::setObjectName(): fall back
+        // to the class name of the derived job implementation.
+
+        name = QString::fromLatin1(metaObject()->className());
+    }
+
+    ActionThreadBase::setCurrentThreadName(name);
 }
 
 } // namespace Digikam
