@@ -81,6 +81,9 @@ public:
      *    Linux:   15 characters max (UTF8).
      *    macOS:   64 characters max (UTF8).
      *    Windows: 260 characters max (UTF16).
+     * A C++ namespace prefix in the name (as when the name comes from a class
+     * name) is stripped on all platforms, so that the significant part
+     * survives these limits.
      */
     static void setCurrentThreadName(const QString& name);
 

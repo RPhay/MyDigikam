@@ -84,10 +84,9 @@ static QString currentThreadNameFromOS()
 
 /**
  * @brief Minimal ActionJob which records the thread name applied by
- * ActionJob::run(). The class name is at most 15 characters long, so
- * it survives the Linux kernel thread name limit untruncated.
+ * ActionJob::run().
  */
-class FallbackTestJob : public ActionJob
+class NameRecordingJob : public ActionJob
 {
     Q_OBJECT
 
@@ -103,6 +102,25 @@ public:
     }
 };
 
+/**
+ * @brief The class names below are at most 15 characters long, so they
+ * survive the Linux kernel thread name limit untruncated.
+ */
+class FallbackTestJob : public NameRecordingJob
+{
+    Q_OBJECT
+};
+
+namespace DigikamTests
+{
+
+class ScopedTestJob : public NameRecordingJob
+{
+    Q_OBJECT
+};
+
+} // namespace DigikamTests
+
 // -------------------------------------------------------
 
 class ActionJobTest : public QObject
@@ -113,13 +131,14 @@ private Q_SLOTS:
 
     void testExplicitObjectNameIsApplied();
     void testUnnamedJobFallsBackToClassName();
+    void testNamespacePrefixIsStrippedFromClassName();
 
 private:
 
-    QString runOnWorkerThread(FallbackTestJob& job);
+    QString runOnWorkerThread(NameRecordingJob& job);
 };
 
-QString ActionJobTest::runOnWorkerThread(FallbackTestJob& job)
+QString ActionJobTest::runOnWorkerThread(NameRecordingJob& job)
 {
     QScopedPointer<QThread> thread(QThread::create([&job]()
         {
@@ -170,6 +189,22 @@ void ActionJobTest::testUnnamedJobFallsBackToClassName()
 
     QVERIFY(job.objectName().isEmpty());
     QCOMPARE(runOnWorkerThread(job), QLatin1String("FallbackTestJob"));
+}
+
+void ActionJobTest::testNamespacePrefixIsStrippedFromClassName()
+{
+#if !defined(Q_OS_LINUX) && !defined(Q_OS_MACOS) && !defined(Q_OS_NETBSD) && !defined(Q_OS_WIN)
+
+    QSKIP("Reading back the current thread name is not supported on this platform");
+
+#endif
+
+    DigikamTests::ScopedTestJob job;
+
+    QVERIFY(job.objectName().isEmpty());
+    QCOMPARE(QString::fromLatin1(job.metaObject()->className()),
+             QLatin1String("DigikamTests::ScopedTestJob"));
+    QCOMPARE(runOnWorkerThread(job), QLatin1String("ScopedTestJob"));
 }
 
 // -------------------------------------------------------

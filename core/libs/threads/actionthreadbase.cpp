@@ -264,22 +264,27 @@ void ActionThreadBase::run()
 
 void ActionThreadBase::setCurrentThreadName(const QString& name)
 {
+    // A name taken from a class name carries a C++ namespace prefix which
+    // eats most of the platform length limits listed in the API docs (15
+    // characters on Linux). Only the last, most significant part is applied.
+
+    const QString threadName = name.section(QLatin1String("::"), -1);
 
 #if defined(Q_OS_LINUX)
 
-    prctl(PR_SET_NAME, (unsigned long)name.toLatin1().constData(), 0, 0, 0);
+    prctl(PR_SET_NAME, (unsigned long)threadName.toLatin1().constData(), 0, 0, 0);
 
 #elif defined(Q_OS_MACOS)
 
-    pthread_setname_np(name.toLatin1().constData());
+    pthread_setname_np(threadName.toLatin1().constData());
 
 #elif defined(Q_OS_WIN)
 
-    SetThreadDescription(GetCurrentThread(), reinterpret_cast<const wchar_t *>(name.utf16()));
+    SetThreadDescription(GetCurrentThread(), reinterpret_cast<const wchar_t *>(threadName.utf16()));
 
 #elif defined(Q_OS_NETBSD)
 
-    pthread_setname_np(pthread_self(), "%s", (void*)name.toLatin1().constData());
+    pthread_setname_np(pthread_self(), "%s", (void*)threadName.toLatin1().constData());
 
 #else
 
