@@ -72,7 +72,12 @@ ActionThreadBase::ActionThreadBase(QObject* const parent)
 {
     d->pool = new QThreadPool(this);
 
-    setDefaultMaximumNumberOfThreads();
+    // The pool size is set directly rather than through
+    // setDefaultMaximumNumberOfThreads(), whose debug log reads the
+    // objectName() that derived classes can only assign once this base
+    // constructor has finished.
+
+    d->pool->setMaxThreadCount(QThread::idealThreadCount());
 }
 
 ActionThreadBase::~ActionThreadBase()
@@ -217,6 +222,9 @@ void ActionThreadBase::appendJobs(const ActionJobCollection& jobs)
 
 void ActionThreadBase::run()
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Threads Pool" << objectName()
+                                 << "will use" << maximumNumberOfThreads() << "threads";
+
     d->running   = true;
     d->cancelled = false;
 
