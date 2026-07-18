@@ -202,6 +202,11 @@ void ThemeManager::populateThemeMenu()
 
 void ThemeManager::updateCurrentDesktopDefaultThemePreview()
 {
+    if (!d->themeMenuActionGroup)
+    {
+        return;
+    }
+
     QList<QAction*> list = d->themeMenuActionGroup->actions();
 
     for (QAction* const action : std::as_const(list))
