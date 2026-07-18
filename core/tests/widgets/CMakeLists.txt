@@ -13,6 +13,7 @@ include_directories(
 ##################################################################
 
 ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/searchtextbar_utest.cpp
+              ${CMAKE_CURRENT_SOURCE_DIR}/thememanager_utest.cpp
 
               NAME_PREFIX
 
