@@ -333,14 +333,19 @@ QDateTime DImg::creationDateFromFilesystem(const QFileInfo& fileInfo) const
     QDateTime ctime = asDateTimeUTC(fileInfo.birthTime());
     QDateTime mtime = asDateTimeUTC(fileInfo.lastModified());
 
-    if (ctime.isValid())
+    if (ctime.isValid() && mtime.isValid())
     {
-        return ctime;
+        return qMin(ctime, mtime);
     }
 
     if (mtime.isValid())
     {
         return mtime;
+    }
+
+    if (ctime.isValid())
+    {
+        return ctime;
     }
 
     return asDateTimeUTC(QDateTime::currentDateTime());

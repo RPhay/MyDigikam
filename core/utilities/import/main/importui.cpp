@@ -1517,11 +1517,20 @@ void ImportUI::slotDownloaded(const QString& folder, const QString& file, const 
 
         if (!creationDate.isValid())
         {
-            creationDate = asDateTimeUTC(tempInfo.birthTime());
+            QDateTime ctime = asDateTimeUTC(tempInfo.birthTime());
+            QDateTime mtime = asDateTimeUTC(tempInfo.lastModified());
 
-            if (!creationDate.isValid())
+            if      (ctime.isValid() && mtime.isValid())
             {
-                creationDate = asDateTimeUTC(tempInfo.lastModified());
+                creationDate = qMin(ctime, mtime);
+            }
+            else if (mtime.isValid())
+            {
+                creationDate = mtime;
+            }
+            else if (ctime.isValid())
+            {
+                creationDate = ctime;
             }
         }
 

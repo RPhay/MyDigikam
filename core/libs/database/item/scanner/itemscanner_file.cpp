@@ -78,14 +78,19 @@ QDateTime ItemScanner::creationDateFromFilesystem(const QFileInfo& info)
     QDateTime ctime = asDateTimeUTC(info.birthTime());
     QDateTime mtime = asDateTimeUTC(info.lastModified());
 
-    if (ctime.isValid())
+    if (ctime.isValid() && mtime.isValid())
     {
-        return ctime;
+        return qMin(ctime, mtime);
     }
 
     if (mtime.isValid())
     {
         return mtime;
+    }
+
+    if (ctime.isValid())
+    {
+        return ctime;
     }
 
     return asDateTimeUTC(QDateTime::currentDateTime());
