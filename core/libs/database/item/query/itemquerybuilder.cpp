@@ -271,6 +271,42 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             }
 
             sql += QString::fromUtf8(" )) ");
+
+            if (name == QLatin1String("labels"))
+            {
+                bool noPick  = ids.contains(TagsCache::instance()->tagForPickLabel(NoPickLabel));
+                bool noColor = ids.contains(TagsCache::instance()->tagForColorLabel(NoColorLabel));
+
+                if (noPick || noColor)
+                {
+                    sql += QString::fromUtf8(" OR (Images.id NOT IN ");
+                    sql += QString::fromUtf8("   (SELECT ImageTags.imageid FROM ImageTags "
+                           "    WHERE ");
+
+                    if (noPick && noColor)
+                    {
+                        sql += QString::fromUtf8(" (ImageTags.tagid BETWEEN ? AND ? OR ImageTags.tagid BETWEEN ? AND ? ) ");
+                    }
+                    else
+                    {
+                        sql += QString::fromUtf8(" (ImageTags.tagid BETWEEN ? AND ? ) ");
+                    }
+
+                    if (noPick)
+                    {
+                        *boundValues << TagsCache::instance()->tagForPickLabel(FirstPickLabel + 1)
+                                     << TagsCache::instance()->tagForPickLabel(LastPickLabel);
+                    }
+
+                    if (noColor)
+                    {
+                        *boundValues << TagsCache::instance()->tagForColorLabel(FirstColorLabel + 1)
+                                     << TagsCache::instance()->tagForColorLabel(LastColorLabel);
+                    }
+
+                    sql += QString::fromUtf8(" )) ");
+                }
+            }
         }
         else if (relation == SearchXml::OneOf)
         {

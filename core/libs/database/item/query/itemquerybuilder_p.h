@@ -35,10 +35,12 @@
 
 // Local includes
 
-#include "metaengine.h"
 #include "digikam_debug.h"
+#include "digikam_globals.h"
+#include "metaengine.h"
 #include "coredbaccess.h"
 #include "coredb.h"
+#include "tagscache.h"
 #include "coredbbackend.h"
 #include "fieldquerybuilder.h"
 

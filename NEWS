@@ -44,7 +44,7 @@ BUGFIXES:
 020 --> 522968 - Missing folders.
 021 --> 523055 - Test GPU AI Compatibility fails instantly with QString::arg Argument missing: OpenCLDNN error (Windows, NVIDIA RTX 3080 Ti).
 022 --> 523250 - Created filename on import is wrong (date/time).
-023 --> 
+023 --> 522889 - Pick Label "None" filter and Advanced Search return drastically different counts for the same criterion.
 024 --> 
 025 --> 
 026 --> 
