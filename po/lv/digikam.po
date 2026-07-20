@@ -35,7 +35,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:41+0000\n"
+"POT-Creation-Date: 2026-07-20 00:41+0000\n"
 "PO-Revision-Date: 2022-10-18 20:02+0300\n"
 "Last-Translator: Jānis Elmeris <janise@inbox.lv>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -37693,7 +37693,7 @@ msgid "Description"
 msgstr "Apraksts"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1996
+#: core/utilities/import/main/importui.cpp:2005
 #, fuzzy, kde-format
 #| msgid "Information"
 msgctxt "@title"
@@ -60626,7 +60626,7 @@ msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2513
+#: core/utilities/import/main/importui.cpp:2522
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to download file \"%1\"."
 msgid "Failed to download <filename>%1</filename>"
@@ -61463,19 +61463,19 @@ msgid ""
 "device is not available. Please select another destination album."
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:1542
+#: core/utilities/import/main/importui.cpp:1551
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:1549
+#: core/utilities/import/main/importui.cpp:1558
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:1993
+#: core/utilities/import/main/importui.cpp:2002
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -61487,7 +61487,7 @@ msgstr ""
 "izdzēsti. Ja tiešām vēlaties tos dzēst, lūdzu, atslēdziet tos un mēģiniet "
 "vēlreiz."
 
-#: core/utilities/import/main/importui.cpp:2004
+#: core/utilities/import/main/importui.cpp:2013
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -61504,19 +61504,19 @@ msgstr[1] ""
 msgstr[2] ""
 "Grasās dzēst šos %1 failus. Tos vairs nevarēs atgūt. Vai tiešām dzēst?"
 
-#: core/utilities/import/main/importui.cpp:2014
+#: core/utilities/import/main/importui.cpp:2023
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Brīdinājums"
 
-#: core/utilities/import/main/importui.cpp:2058
+#: core/utilities/import/main/importui.cpp:2067
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Nepietiek diska vietas"
 
-#: core/utilities/import/main/importui.cpp:2059
+#: core/utilities/import/main/importui.cpp:2068
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -61534,8 +61534,8 @@ msgstr ""
 "Nepieciešama apmēram: %1\n"
 "Pieejama: %2"
 
-#: core/utilities/import/main/importui.cpp:2327
-#: core/utilities/import/main/importui.cpp:2353
+#: core/utilities/import/main/importui.cpp:2336
+#: core/utilities/import/main/importui.cpp:2362
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -61544,13 +61544,13 @@ msgstr[0] "Nekas nav atlasīts (no %1)"
 msgstr[1] "Nekas nav atlasīts (no %1)"
 msgstr[2] "Nekas nav atlasīts (no %1)"
 
-#: core/utilities/import/main/importui.cpp:2346
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2. no %3)"
 
-#: core/utilities/import/main/importui.cpp:2363
+#: core/utilities/import/main/importui.cpp:2372
 #, fuzzy, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -61559,24 +61559,24 @@ msgstr[0] "izvēlēts %1/%2"
 msgstr[1] "izvēlēti %1/%2"
 msgstr[2] "izvēlēti %1/%2"
 
-#: core/utilities/import/main/importui.cpp:2448
+#: core/utilities/import/main/importui.cpp:2457
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2470
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Pārdēvēt failu par <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2502
 #, fuzzy, kde-kuit-format
 #| msgid "Failed to upload file \"%1\"."
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Neizdevās augšupielādēt failu \"%1\"."
 
-#: core/utilities/import/main/importui.cpp:2570
+#: core/utilities/import/main/importui.cpp:2579
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -61584,19 +61584,19 @@ msgid ""
 "are auto-rotated"
 msgstr ""
 
-#: core/utilities/import/main/importui.cpp:2578
+#: core/utilities/import/main/importui.cpp:2587
 #, fuzzy, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Atzīmēt kā lejupielādētu"
 
-#: core/utilities/import/main/importui.cpp:2604
+#: core/utilities/import/main/importui.cpp:2613
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Fails ar tādu pašu nosaukumu (%1) jau pastāv mapē %2."
 
-#: core/utilities/import/main/importui.cpp:2617
+#: core/utilities/import/main/importui.cpp:2626
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:41+0000\n"
+"POT-Creation-Date: 2026-07-20 00:41+0000\n"
 "PO-Revision-Date: 2026-05-08 18:37+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -39053,7 +39053,7 @@ msgid "Description"
 msgstr "Beschreibung"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1996
+#: core/utilities/import/main/importui.cpp:2005
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -61190,7 +61190,7 @@ msgstr "Fehler beim Holen der Metadaten für <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2513
+#: core/utilities/import/main/importui.cpp:2522
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Fehler beim Herunterladen der Datei <filename>%1</filename>"
@@ -62078,19 +62078,19 @@ msgstr ""
 "enthält, ist nicht verfügbar.Bitte wählen Sie ein anderes Standard-Zielalbum "
 "im Einrichtungsdialog der Kamera."
 
-#: core/utilities/import/main/importui.cpp:1542
+#: core/utilities/import/main/importui.cpp:1551
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr ""
 "Das Verschieben der Filialdatei von <filename>%1</filename> ist "
 "fehlgeschlagen"
 
-#: core/utilities/import/main/importui.cpp:1549
+#: core/utilities/import/main/importui.cpp:1558
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Das Verschieben der Datei <filename>%1</filename> ist fehlgeschlagen"
 
-#: core/utilities/import/main/importui.cpp:1993
+#: core/utilities/import/main/importui.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62102,7 +62102,7 @@ msgstr ""
 "Sie werden nicht gelöscht. Falls Sie sie löschen möchten, müssen Sie den "
 "Schutz dieser Einträge aufheben."
 
-#: core/utilities/import/main/importui.cpp:2004
+#: core/utilities/import/main/importui.cpp:2013
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62122,19 +62122,19 @@ msgstr[1] ""
 "Gelöschte Dateien können nicht wiederhergestellt werden.\n"
 "Sind Sie sicher?"
 
-#: core/utilities/import/main/importui.cpp:2014
+#: core/utilities/import/main/importui.cpp:2023
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Warnung"
 
-#: core/utilities/import/main/importui.cpp:2058
+#: core/utilities/import/main/importui.cpp:2067
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Unzureichender Plattenplatz"
 
-#: core/utilities/import/main/importui.cpp:2059
+#: core/utilities/import/main/importui.cpp:2068
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -62154,8 +62154,8 @@ msgstr ""
 "Verfügbarer Speicher: %2\n"
 "Möchten Sie es trotzdem versuchen?"
 
-#: core/utilities/import/main/importui.cpp:2327
-#: core/utilities/import/main/importui.cpp:2353
+#: core/utilities/import/main/importui.cpp:2336
+#: core/utilities/import/main/importui.cpp:2362
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -62163,13 +62163,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Kein Eintrag ausgewählt (%1 Eintrag)"
 msgstr[1] "Kein Eintrag ausgewählt (%1 Einträge)"
 
-#: core/utilities/import/main/importui.cpp:2346
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "„%1“ (%2 von %3)"
 
-#: core/utilities/import/main/importui.cpp:2363
+#: core/utilities/import/main/importui.cpp:2372
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -62177,23 +62177,23 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 Eintrag ausgewählt"
 msgstr[1] "%2/%1 Einträge ausgewählt"
 
-#: core/utilities/import/main/importui.cpp:2448
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Datei <filename>%1</filename> übersprungen"
 
-#: core/utilities/import/main/importui.cpp:2470
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Datei umbenennen zu <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2502
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr ""
 "Das Speichern der Filialdatei für <filename>%1</filename> ist fehlgeschlagen"
 
-#: core/utilities/import/main/importui.cpp:2570
+#: core/utilities/import/main/importui.cpp:2579
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -62203,20 +62203,20 @@ msgstr ""
 "Das Herunterladen der Bilder ist abgeschlossen. Sie können Ihre Kamera jetzt "
 "entfernen während die Bilder automatisch gedreht werden"
 
-#: core/utilities/import/main/importui.cpp:2578
+#: core/utilities/import/main/importui.cpp:2587
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Herunterladen der Bilder ist abgeschlossen"
 
-#: core/utilities/import/main/importui.cpp:2604
+#: core/utilities/import/main/importui.cpp:2613
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr ""
 "Es existiert bereits eine Datei mit dem gleichen Namen „%1“ im Ordner„%2“."
 
-#: core/utilities/import/main/importui.cpp:2617
+#: core/utilities/import/main/importui.cpp:2626
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

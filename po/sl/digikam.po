@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:41+0000\n"
+"POT-Creation-Date: 2026-07-20 00:41+0000\n"
 "PO-Revision-Date: 2026-07-13 21:38+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -38025,7 +38025,7 @@ msgid "Description"
 msgstr "Opis"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1996
+#: core/utilities/import/main/importui.cpp:2005
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -59829,7 +59829,7 @@ msgstr "Ni bilo mogoče pridobiti metapodatkov za <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2513
+#: core/utilities/import/main/importui.cpp:2522
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Ni bilo mogoče prejeti <filename>%1</filename>"
@@ -60625,17 +60625,17 @@ msgstr ""
 "obdelavo prejema iz vašega fotoaparata, ni na voljo. Izberite novi ciljni "
 "album."
 
-#: core/utilities/import/main/importui.cpp:1542
+#: core/utilities/import/main/importui.cpp:1551
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Ni bilo mogoče preseliti priklopne datoteke za <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1549
+#: core/utilities/import/main/importui.cpp:1558
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Ni bilo mogoče preseliti datoteke za <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1993
+#: core/utilities/import/main/importui.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60647,7 +60647,7 @@ msgstr ""
 "predmeti ne bodo izbrisani. Če jih resnično želite izbrisati, jih odklenite "
 "in poskusite znova."
 
-#: core/utilities/import/main/importui.cpp:2004
+#: core/utilities/import/main/importui.cpp:2013
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60675,19 +60675,19 @@ msgstr[3] ""
 "Izbrisanih datotek ni mogoče obnoviti.\n"
 "Ali ste prepričani?"
 
-#: core/utilities/import/main/importui.cpp:2014
+#: core/utilities/import/main/importui.cpp:2023
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Opozorilo"
 
-#: core/utilities/import/main/importui.cpp:2058
+#: core/utilities/import/main/importui.cpp:2067
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Ni dovolj prostora"
 
-#: core/utilities/import/main/importui.cpp:2059
+#: core/utilities/import/main/importui.cpp:2068
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -60707,8 +60707,8 @@ msgstr ""
 "\n"
 "Poskusim vseeno?"
 
-#: core/utilities/import/main/importui.cpp:2327
-#: core/utilities/import/main/importui.cpp:2353
+#: core/utilities/import/main/importui.cpp:2336
+#: core/utilities/import/main/importui.cpp:2362
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -60718,13 +60718,13 @@ msgstr[1] "Ni izbranih predmetov (%1 predmet)"
 msgstr[2] "Ni izbranih predmetov (%1 predmeta)"
 msgstr[3] "Ni izbranih predmetov (%1 predmeti)"
 
-#: core/utilities/import/main/importui.cpp:2346
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 od %3)"
 
-#: core/utilities/import/main/importui.cpp:2363
+#: core/utilities/import/main/importui.cpp:2372
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -60734,22 +60734,22 @@ msgstr[1] "%2/%1 izbran predmet"
 msgstr[2] "%2/%1 izbrana predmeta"
 msgstr[3] "%2/%1 izbrani predmeti"
 
-#: core/utilities/import/main/importui.cpp:2448
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Datoteka <filename>%1</filename> preskočena"
 
-#: core/utilities/import/main/importui.cpp:2470
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Preimenujem datoteko v <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2502
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Ni bilo mogoče shraniti priklopne datoteke za <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2570
+#: core/utilities/import/main/importui.cpp:2579
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -60759,19 +60759,19 @@ msgstr ""
 "Prejem slik je zaključen. Sedaj lahko odklopite kamero, medtem ko bodo slike "
 "samodejno zavrtene"
 
-#: core/utilities/import/main/importui.cpp:2578
+#: core/utilities/import/main/importui.cpp:2587
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Prejem slik je zaključen"
 
-#: core/utilities/import/main/importui.cpp:2604
+#: core/utilities/import/main/importui.cpp:2613
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Datoteka z enakim imenom (\"%1\") že obstaja v mapi \"%2\"."
 
-#: core/utilities/import/main/importui.cpp:2617
+#: core/utilities/import/main/importui.cpp:2626
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."

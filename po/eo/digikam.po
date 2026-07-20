@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-25 00:41+0000\n"
+"POT-Creation-Date: 2026-07-20 00:41+0000\n"
 "PO-Revision-Date: 2025-03-30 23:35+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -38564,7 +38564,7 @@ msgid "Description"
 msgstr "Priskribo"
 
 #: core/libs/properties/captions/itemdescedittab_infoview.cpp:45
-#: core/utilities/import/main/importui.cpp:1996
+#: core/utilities/import/main/importui.cpp:2005
 #, kde-format
 msgctxt "@title"
 msgid "Information"
@@ -60558,7 +60558,7 @@ msgstr "Malsukcesis akiri metadatumojn por <filename>%1</filename>"
 
 #: core/utilities/import/backend/cameracontroller.cpp:645
 #: core/utilities/import/backend/cameracontroller.cpp:1016
-#: core/utilities/import/main/importui.cpp:2513
+#: core/utilities/import/main/importui.cpp:2522
 #, kde-kuit-format
 msgid "Failed to download <filename>%1</filename>"
 msgstr "Malsukcesis elŝuti <filename>%1</filename>"
@@ -61423,17 +61423,17 @@ msgstr ""
 "Kolekto elektita kiel celalbumo por elŝuto el fotila aparato, ne haveblas. "
 "Bonvolu elekti alian celalbumon."
 
-#: core/utilities/import/main/importui.cpp:1542
+#: core/utilities/import/main/importui.cpp:1551
 #, kde-kuit-format
 msgid "Failed to move sidecar file for <filename>%1</filename>"
 msgstr "Malsukcesis movi kroman dosieron por <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1549
+#: core/utilities/import/main/importui.cpp:1558
 #, kde-kuit-format
 msgid "Failed to move file for <filename>%1</filename>"
 msgstr "Malsukcesis movi dosieron por <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:1993
+#: core/utilities/import/main/importui.cpp:2002
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61445,7 +61445,7 @@ msgstr ""
 "eroj ne estos forigitaj. Se vi vere volas forigi ĉi tiujn erojn, bonvolu "
 "malŝlosi ilin kaj provi denove."
 
-#: core/utilities/import/main/importui.cpp:2004
+#: core/utilities/import/main/importui.cpp:2013
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61465,19 +61465,19 @@ msgstr[1] ""
 "Forigitaj dosieroj estas nerestaŭreblaj.\n"
 "Ĉu vi certas?"
 
-#: core/utilities/import/main/importui.cpp:2014
+#: core/utilities/import/main/importui.cpp:2023
 #, kde-format
 msgctxt "@title: confirm delete items dialog"
 msgid "Warning"
 msgstr "Averto"
 
-#: core/utilities/import/main/importui.cpp:2058
+#: core/utilities/import/main/importui.cpp:2067
 #, kde-format
 msgctxt "@title:window"
 msgid "Insufficient Disk Space"
 msgstr "Nesufiĉa Diskospaco"
 
-#: core/utilities/import/main/importui.cpp:2059
+#: core/utilities/import/main/importui.cpp:2068
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -61497,8 +61497,8 @@ msgstr ""
 "\n"
 "Ĉu klopodi tamen?"
 
-#: core/utilities/import/main/importui.cpp:2327
-#: core/utilities/import/main/importui.cpp:2353
+#: core/utilities/import/main/importui.cpp:2336
+#: core/utilities/import/main/importui.cpp:2362
 #, kde-format
 msgctxt "@info:status"
 msgid "No item selected (%1 item)"
@@ -61506,13 +61506,13 @@ msgid_plural "No item selected (%1 items)"
 msgstr[0] "Neniu ero elektita (%1 ero)"
 msgstr[1] "Neniu ero elektita (%1 eroj)"
 
-#: core/utilities/import/main/importui.cpp:2346
+#: core/utilities/import/main/importui.cpp:2355
 #, kde-format
 msgctxt "@info:status Filename of first selected item of number of items"
 msgid "\"%1\" (%2 of %3)"
 msgstr "\"%1\" (%2 el %3)"
 
-#: core/utilities/import/main/importui.cpp:2363
+#: core/utilities/import/main/importui.cpp:2372
 #, kde-format
 msgctxt "@info:status"
 msgid "%2/%1 item selected"
@@ -61520,22 +61520,22 @@ msgid_plural "%2/%1 items selected"
 msgstr[0] "%2/%1 ero elektita"
 msgstr[1] "%2/%1 eroj elektitaj"
 
-#: core/utilities/import/main/importui.cpp:2448
+#: core/utilities/import/main/importui.cpp:2457
 #, kde-kuit-format
 msgid "Skipped file <filename>%1</filename>"
 msgstr "Preterpasita dosiero <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2470
+#: core/utilities/import/main/importui.cpp:2479
 #, kde-kuit-format
 msgid "Rename file to <filename>%1</filename>"
 msgstr "Alinomi dosieron al <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2493
+#: core/utilities/import/main/importui.cpp:2502
 #, kde-kuit-format
 msgid "Failed to save sidecar file for <filename>%1</filename>"
 msgstr "Malsukcesis konservi kroman dosieron por <filename>%1</filename>"
 
-#: core/utilities/import/main/importui.cpp:2570
+#: core/utilities/import/main/importui.cpp:2579
 #, kde-format
 msgctxt "@info Popup notification"
 msgid ""
@@ -61545,19 +61545,19 @@ msgstr ""
 "Elŝuto de bildoj finiĝis, vi nun povas dekroĉi vian fotilon dum la bildoj "
 "aŭtomate turniĝas"
 
-#: core/utilities/import/main/importui.cpp:2578
+#: core/utilities/import/main/importui.cpp:2587
 #, kde-format
 msgctxt "@info Popup notification"
 msgid "Images download finished"
 msgstr "Elŝuto de bildoj finiĝis"
 
-#: core/utilities/import/main/importui.cpp:2604
+#: core/utilities/import/main/importui.cpp:2613
 #, kde-format
 msgctxt "@info"
 msgid "A file with the same name (\"%1\") already exists in folder \"%2\"."
 msgstr "Dosiero kun la sama nomo (\"%1\") jam ekzistas en dosierujo \"%2\"."
 
-#: core/utilities/import/main/importui.cpp:2617
+#: core/utilities/import/main/importui.cpp:2626
 #, kde-format
 msgctxt "@info"
 msgid "Failed to find Album for path \"%1\"."
